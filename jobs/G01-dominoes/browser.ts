@@ -38,7 +38,7 @@ try {
    assert(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),'TV match must fit its viewport');
    await page.screenshot({path:'media/tv.png',fullPage:true});const capture=mkdtempSync(join(tmpdir(),'G01-capture-'));
    for(let i=0;i<36;i++){await page.screenshot({path:join(capture,`${String(i).padStart(3,'0')}.png`)});await page.waitForTimeout(66);}
-   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-1.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.stderr);rmSync(capture,{recursive:true});
+   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-1.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
   }
   await context.close();
  }

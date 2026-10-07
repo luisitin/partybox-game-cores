@@ -17,7 +17,9 @@ Remaining delivery:
    G01 verification run 37645288915 FAILED in npm test. Its log download is
    blocked at results-receiver.actions.githubusercontent.com (draft hostname
    addition saved). The workflow now emits the failure tail as a check annotation
-   so the next run can be diagnosed through the working API. No green claim.
+   and diagnosed run 37646777685: missing system ffmpeg during video capture.
+   CI now explicitly installs the encoder and tests prerequisites before
+   long suites. Recheck the next run; no green claim until it passes.
 2. Confirm actual job workflow outcome, investigate failures before claiming
    green. Keep the reviewable PR title/body aligned with the final implementation.
 3. After green PR CI, do KEEP GOING: reread requirements, list five biggest

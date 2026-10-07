@@ -149,3 +149,19 @@ Add explicit failure-tail annotations to the workflow while preserving npm's
 underlying exit status. This permits diagnosis through the working GitHub API
 without weakening assertions or depending only on an inaccessible log download.
 No KEEP GOING rounds execute before actual green CI.
+
+Second CI diagnostic run 37646777685 exposed the failure through its annotation:
+all game/league/baseline checks had passed, then the ffmpeg spawn returned null
+status while creating the video. Ubuntu runner lacked the system capture encoder.
+Explicitly install ffmpeg through signed Ubuntu packages; add an early Node,
+Python reference-import and ffmpeg preflight, preserving every game assertion.
+Capture assertions now include process-start errors/signals. This is a CI setup
+correction, not a change to game behavior or a weakened performance check.
+
+Affected local checks after the encoder correction: `npm run check`,
+`node preflight.ts`, `node browser.ts`, `node checksums.ts` and
+`node checksums.ts --check` all passed. No game assertions were changed.
+The original capture assertion did not expose spawn.error/signal, so the null
+status alone cannot prove the exact startup cause; the new diagnostics distinguish
+missing executable from encoder crashes. Explicitly installing the required
+encoder removes dependence on runner-image defaults.
