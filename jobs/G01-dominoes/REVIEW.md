@@ -67,3 +67,7 @@ Five remaining weaknesses: finite 32-sample hidden-hand budget (highest testable
 ## Round 12
 
 Five weaknesses: coalition opponent model in multi-player free-for-all; depth-three horizon; remaining finite sampling variance; bounded upstream comparison; no physical-phone hardware evidence. The 32-sample max-n probe narrowly crossed zero; re-evaluate this most plausible opponent-model candidate under the newly confirmed 64-sample policy over 2,000 rotating-seat matches. Require a positive lower bound for its candidate-versus-shipped win difference; do not accept a favorable point estimate alone.
+
+## Round13
+
+Five weaknesses: finite hidden-hand sampling variance (highest); depth-three horizon; coalition model with unreplicated max-n improvement; bounded upstream reference; unavailable physical-phone evidence. Test antithetic pairs at the same64 worlds: mirror each32-bit draw within a pair, preserve uniform marginal grid and exact conditional constraints. This is a variance-reduction hypothesis, not a promised improvement. Compare against immutable64 source over2,000 alternating-seat Block matches; require a positive lower win bound and fresh confirmation before acceptance.

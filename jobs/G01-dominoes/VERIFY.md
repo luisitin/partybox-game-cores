@@ -241,3 +241,5 @@ Completed 0.2.5 leagues: `node league.ts`: sharp/normal 1,449/2,000 (72.45%, 95%
 Round12 `node strategy-samples64-study.ts`: candidate803, shipped691, medium506 wins over2,000 three-seat Block matches; difference 5.60pp, multinomial95% 1.82–9.38pp. Positive initial signal; fresh-seed confirmation required before production change.
 
 Round12 confirmation: `STRATEGY_SEED_START=2001 node strategy-samples64-study.ts`: 2,000 fresh matches, candidate750, shipped719, medium531; difference1.55pp, multinomial95% -2.21–5.31pp crosses zero. Reject initial5.6pp signal: no replicated strength gain. Production stays0.2.5 /64 coalition.
+
+Round13: `BUDGET_STUDY=paired node budget-samples64-study.ts`: 2,000 full Block matches, candidate1,002 wins /998 losses,50.1%,95%47.91–52.29%,594,030 turns in692s. Reject: no established gain. `CORE_PATH=./mutant-samples64-paired-study.ts FAST_TEST=1 node --test test.ts`:25/25 pass; `npm run check` passes. Production unchanged. CI37669823683 succeeded for64-sample source ee5694f, including full npm test. Later documentation/installer heads still require actual CI.

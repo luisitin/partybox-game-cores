@@ -83,3 +83,5 @@ Round 11 production: version 0.2.5 increases strong samples 32→64 after fresh-
 Round 12: preserve exact 0.2.5 source in study-samples64-baseline.ts and add isolated strategy-samples64-study.ts; compare max-n to the newly accepted sampler without modifying production.
 
 After measured 30-minute encoder-install timeout, bound APT refresh/install and connections; retain last complete indexes after refresh warning and fail on unsuccessful installation. No timeout increase or skipped game checks. Add STRATEGY_SEED_START and separate confirmation report to isolated max-n study for independent fresh-seed validation.
+
+Round13: add isolated budget-samples64-study.ts for antithetic hidden-hand draws and depth-four candidates against frozen0.2.5 source. Pairing reflects the discrete32-bit grid (maximum1−2^-32), keeping floats in[0,1) and a fresh base stream per pair; candidate guards mismatched draw counts. Production unchanged pending measurements.

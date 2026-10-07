@@ -44,3 +44,16 @@ any production change. Initial report preserved; fresh report separate.
 
 Round12 COMPLETE: fresh max-n750 vs719,95% difference crosses zero. Rejected;
 production unchanged. No-gain streak1. Continue three-round stopping rule.
+
+Round13 underway: BUDGET_STUDY=paired node budget-samples64-study.ts;
+2,000 alternating-seat Block games versus frozen64 source. Production unchanged.
+/tmp/G01-paired64.log is progress; require completed report before conclusion.
+
+Round13 COMPLETE: paired64 candidate1,002/2,000 (50.1%, confidence includes50%).
+Rejected; no-gain streakTWO. Source64 ee5694f passed CI37669823683. Recheck
+latest documentation/installer head CI. Next review should measure unmodeled
+first-round Block opener information: highest-double start makes higher-valued
+unknown tiles impossible in other initial hands; they must remain in stock.
+Round1 only and Block only (Draw can introduce tiles later). Largest played
+tile by opener ranking remains the first opener in Block, so no private history
+is needed. Preserve existing public/private views; test before changing code.
