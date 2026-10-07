@@ -25,6 +25,21 @@ jobs:
       - run: npm install --prefix ../../contract --ignore-scripts --no-package-lock --no-audit --no-fund
       - run: python -m pip install --require-hashes --target .baseline -r baseline-requirements.txt
       - run: npx playwright install --with-deps chromium
-      - run: npm test
+      - name: Verify and expose failures in check annotations
+        shell: bash
+        run: |
+          set +e
+          npm test > "$RUNNER_TEMP/g01-test.log" 2>&1
+          test_exit=$?
+          cat "$RUNNER_TEMP/g01-test.log"
+          if [ "$test_exit" -ne 0 ]; then
+            python - "$RUNNER_TEMP/g01-test.log" <<'PYCODE'
+          import pathlib, sys
+          tail = "\n".join(pathlib.Path(sys.argv[1]).read_text().splitlines()[-100:])
+          escaped = tail.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+          print("::error title=G01 verification failure::" + escaped)
+          PYCODE
+          fi
+          exit "$test_exit"
         env:
           BASELINE_PYTHONPATH: ${{ github.workspace }}/jobs/G01-dominoes/.baseline

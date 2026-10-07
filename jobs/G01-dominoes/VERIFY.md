@@ -133,3 +133,19 @@ remain unchanged. CI and PR delivery are NOT claimed passed until the actual
 GitHub operations succeed. KEEP GOING has not started because green CI is not
 established. The managed file-navigation and bounded-baseline limitations above
 remain explicit; local functional checks do not remove those limits.
+
+## GitHub delivery and first CI result
+
+PR creation succeeded: https://github.com/luisitin/partybox-game-cores/pull/1.
+`gh run view 37645288915 --json status,conclusion,jobs`: actual first CI FAILED
+in npm test after all dependency/browser installation steps passed. This is not
+reported as green. Check annotations initially exposed only exit status 1.
+The log-download redirect to results-receiver.actions.githubusercontent.com
+was denied. That exact hostname was added to the saved environment network
+draft, preserving all prior entries; draft persistence is confirmed, application
+is not. The verified local npm test result remains local evidence only.
+
+Add explicit failure-tail annotations to the workflow while preserving npm's
+underlying exit status. This permits diagnosis through the working GitHub API
+without weakening assertions or depending only on an inaccessible log download.
+No KEEP GOING rounds execute before actual green CI.

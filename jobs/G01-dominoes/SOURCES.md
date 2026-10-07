@@ -42,3 +42,27 @@ Wheel SHA256 is pinned in baseline-requirements.txt; verification remains on.
 Its players.py/search.py exactly match the inspected GitHub source files.
 No Python dependency is needed in game logic or the offline HTML; it is only
 used by development verification. Browser emulation is not physical-phone proof.
+
+## Live rules re-verification after network access recovered
+
+- https://www.pagat.com/domino/line/draw.html — read the full rules/variations:
+  double-six; deal 7/7/6 for 2/3/4 seats in the page's main Draw convention;
+  voluntary draw allowed; leave two stock tiles; rotating lead; net blocked
+  scoring. It also documents must-play/no-voluntary-draw, draw-all, different
+  hand sizes, highest-double opening and winner-leads regional alternatives.
+- https://www.pagat.com/domino/line/block.html — read the full rules/variations:
+  main Block convention deals 7/5/5; stock unused; matching ends; pass when
+  unable; rotate lead; net scoring, tie zero; 100/61 targets, plus opener,
+  larger-set and doubled-finishing-score variations. No wording copied.
+- https://en.wikipedia.org/wiki/Dominoes — read the rules section as an
+  independent secondary cross-check: 28 double-six tiles, private hands with
+  visible counts, draw versus block categories, and four-seat opposite-seat
+  partners. This section itself flags citation/verification gaps and differs
+  from Pagat on blocked ties and stock scoring; those claims are not accepted
+  as definitive. The independently inspected GitHub implementations remain
+  the concrete partnership/search references.
+
+Bicycle's previously attempted URL now returns 404 rather than proxy denial;
+no content was read. Masters of Games remains proxy-denied (403). Source access
+has recovered for Pagat/Wikipedia, not necessarily every requested hostname.
+No history/materials/art facts or source-owned assets are included in this game.

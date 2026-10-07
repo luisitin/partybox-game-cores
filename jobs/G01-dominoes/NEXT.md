@@ -12,13 +12,15 @@ functional/offline/privacy/browser frame-time checks and all checksums pass.
 See VERIFY.md and JSON reports for exact scope/results. No green CI claim.
 
 Remaining delivery:
-1. GitHub API route currently fails HTTPS proxy CONNECT 403. Network host
-   additions are saved in the cloud draft but not applied or published.
-   Recheck api.github.com after a real policy change. Native Git read/push works.
-   GH_TOKEN is present; do not ask for another token based on a gh login prompt.
-2. Once API works, retry PR creation using the prepared description. Confirm
-   actual job workflow outcome; investigate failures before claiming green.
-3. Only after green PR CI, do KEEP GOING: reread requirements, list five biggest
+1. PR opened successfully: https://github.com/luisitin/partybox-game-cores/pull/1.
+   GitHub API access recovered; no additional token was needed. First actual
+   G01 verification run 37645288915 FAILED in npm test. Its log download is
+   blocked at results-receiver.actions.githubusercontent.com (draft hostname
+   addition saved). The workflow now emits the failure tail as a check annotation
+   so the next run can be diagnosed through the working API. No green claim.
+2. Confirm actual job workflow outcome, investigate failures before claiming
+   green. Keep the reviewable PR title/body aligned with the final implementation.
+3. After green PR CI, do KEEP GOING: reread requirements, list five biggest
    weaknesses each round, fix worst, measure/log/push, repeat to three rounds
    without player-noticeable gains. LOOP.md has no executed rounds yet.
 4. Refresh G01's line on main for each push, preserving concurrent claims.
@@ -26,9 +28,11 @@ Remaining delivery:
 
 ## Re-verify when web works
 
-Read Pagat Draw/Block and Bicycle rules. Confirm hand sizes, stock reserve,
-opening/tie conventions and individual blocked scoring; expand variant survey.
-Knowledge conventions remain marked unverified under main's fallback.
+Pagat Draw/Block and Wikipedia were read after source access recovered; see
+SOURCES.md/CONFLICTS.md. Pagat Draw uses 7/7/6, versus the current explicit
+Block-sized 7/5/5 house convention. Add a selectable deal convention as a
+player-noticeable improvement. Bicycle URL returns 404; Masters of Games 403.
+Continue marking unsupported conventions separately under main's fallback.
 The strong policy beat the researched package's configured 16-sample endgame
 policy, not every AI or unlimited full-game search. File:// is blocked by managed
 Chromium; exact file bytes were functionally exercised through setContent.
