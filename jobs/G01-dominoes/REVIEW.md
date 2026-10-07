@@ -71,3 +71,7 @@ Five weaknesses: coalition opponent model in multi-player free-for-all; depth-th
 ## Round13
 
 Five weaknesses: finite hidden-hand sampling variance (highest); depth-three horizon; coalition model with unreplicated max-n improvement; bounded upstream reference; unavailable physical-phone evidence. Test antithetic pairs at the same64 worlds: mirror each32-bit draw within a pair, preserve uniform marginal grid and exact conditional constraints. This is a variance-reduction hypothesis, not a promised improvement. Compare against immutable64 source over2,000 alternating-seat Block matches; require a positive lower win bound and fresh confirmation before acceptance.
+
+## Round14
+
+Five weaknesses: unmodeled public Block opener constraint (highest, measured2,315/10,000 impossible worlds); depth-three horizon; finite variance with rejected antithetic pairing; coalition model with rejected max-n; physical-phone evidence unavailable. Correct the public deduction, prove tile/suit conditional counts against10,000 independent brute cases, measure the same10,000 dealt states after correction, and preserve disabled-mode/later-round behavior.

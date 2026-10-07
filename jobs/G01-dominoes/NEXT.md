@@ -1,59 +1,42 @@
 # Resume G01
 
 Branch job/G01-dominoes; PR https://github.com/luisitin/partybox-game-cores/pull/1.
-Read current main README.md, RULES.md, JOBS.md and CLAIMS.md before resuming.
-Production 0.2.5 /64 samples: fresh-seed comparison versus 32 confirms 54.1%,
-lower 95% 51.92%. 35 tests /9,003 matches, 25 mutants, types/build/fixtures,
-browser/privacy/offline/mixed-idle progression and bounded upstream 132/200 pass.
-New capture is milestone-9-samples64.webm; preserve all earlier captures/data.
-64-sample leagues complete: Block72.45%, Draw84.2% versus medium (2,000 each).
-Bounded upstream66%. Recheck newest-head CI: previous0.2.4 head57f2584 run
-37666868394 green; source64 ee5694f run37669823683 still pending. Older281fac8
-run37666474956 timed out during encoder install; updated workflow bounds APT
-refresh180s/install300s with complete-index fallback and fatal install failures.
-27,000 timer-only /36,000 mixed idle cases passed for unchanged normal policies
-and reducers in that green run; the full CI repeats them for every new head.
+Read current main README.md, RULES.md, JOBS.md and CLAIMS.md first.
+Production0.2.6 /64 samples: public standings/configured scoring, mixed unattended
+progression, public first-round Block opener constraints and inactive forced-tile
+privacy. All39 tests/9,003 matches,25 mutants,10,000 conditional counts with tile
+and suit bans,10,000 opener comparisons(2,315 violations→0), types/build/fixtures,
+browser/offline/privacy/reduced-motion and checksums pass locally. New capture10.
+Current Block71.9%, medium/easy80.95% over2,000 each. Draw84.2%, normal/easy57.75%
+and bounded upstream66% reused from behavior-identical applicable paths; full CI
+repeats all. VERIFY.md documents commands, limits and source-specific archives.
 
-KEEP GOING rounds 1–11 recorded. Round 11 gain resets no-gain streak to ZERO.
-Continue five-weakness review and candidate measurement until THREE consecutive
-no-gain rounds, then claim lowest eligible main job. Immutable comparators:
+RECHECK ACTUAL CURRENT-HEAD CI. Green0.2.5 sourceee5694f run37669823683 and later
+bounded-installer heads runs37670713628 /37671365271. New0.2.6 requires its own
+green pipeline, including27,000 timer-only and36,000 mixed idle cases. Reducers
+and normal timer policies are unchanged. Older281fac8 timed out before tests in
+encoder installation; bounded APT recipe is now verified by later green runs.
+
+KEEP GOING rounds1–14 recorded. Round14 model/privacy gain resets no-gain streak
+ZERO. Continue five-weakness reviews and measurements until THREE consecutive
+no-gain rounds; then claim lowest eligible main job. Preserve immutable sources:
 study-baseline.ts /16, study-score-baseline.ts /32 score-aware,
-study-goal-baseline.ts /32 goal-aware. Preserve their historical experiments.
-Refresh G01 on main each push. If native Git remote500 recurs, verified helper
-/workspace/.onboarding/publish-commit.py publishes exact single-parent objects
-through existing auth, force:false; never overwrite concurrent claims.
+study-goal-baseline.ts /32 goal-aware, study-samples64-baseline.ts /64 before opener.
+Rejected candidates include max-n(initial signal failed fresh confirmation) and
+antithetic pairing(no clear2,000-match gain). Avoid reusing stale baselines as if
+they were current. Remaining weaknesses include coalition opponents, depth-three
+horizon, sampling variance, physical-phone evidence and incomplete Draw inference.
 
-For G08 preserve owner's Shake Up and assets/name/word lists; read START-HERE.md
-and start/HANDOFF.md first, then seven items. Other jobs remain unimplemented.
-Never stop on research403; use RULES fallback. Future G02 live research cached
-/tmp/gin-pagat.html and gin-wikipedia.html (both200); read and cite after claim.
+Refresh main G01 each push, preserving others. Native Git works; remote500
+fallback /workspace/.onboarding/publish-commit.py verifies exact single-parent
+objects and advances force:false. No credential request solely from metadata.
 
-Node24, Chromium, ffmpeg, Python baseline /workspace/.baseline-libs ready.
-npm cache /workspace/.npm-cache. npm test is complete pipeline. No services or
-runtime network. Cloud setup is an unpublished saved draft. Physical-phone and
-file-navigation evidence unavailable; browser uses exact HTML via setContent.
-Upstream comparison is bounded/configured, not unlimited-search parity.
+For G08 preserve owner's Shake Up and all assets/name/word lists. Read
+START-HERE.md and start/HANDOFF.md before work, then seven ordered items. Other
+jobs remain unimplemented. Research403 never stops work; use RULES fallback.
+G02 live research cache /tmp/gin-pagat.html and gin-wikipedia.html(both200).
 
-Round 12 underway: node strategy-samples64-study.ts, isolated max-n versus
-shipped 64-sample sharp and medium, 2,000 rotating-seat three-player Block games.
-Production remains unchanged; /tmp/G01-samples64-maxn.log records progress.
-
-Round12 initial max-n:803 vs691 shipped wins; difference5.6pp, lower95%1.82pp.
-Confirm with STRATEGY_SEED_START=2001 node strategy-samples64-study.ts before
-any production change. Initial report preserved; fresh report separate.
-
-Round12 COMPLETE: fresh max-n750 vs719,95% difference crosses zero. Rejected;
-production unchanged. No-gain streak1. Continue three-round stopping rule.
-
-Round13 underway: BUDGET_STUDY=paired node budget-samples64-study.ts;
-2,000 alternating-seat Block games versus frozen64 source. Production unchanged.
-/tmp/G01-paired64.log is progress; require completed report before conclusion.
-
-Round13 COMPLETE: paired64 candidate1,002/2,000 (50.1%, confidence includes50%).
-Rejected; no-gain streakTWO. Source64 ee5694f passed CI37669823683. Recheck
-latest documentation/installer head CI. Next review should measure unmodeled
-first-round Block opener information: highest-double start makes higher-valued
-unknown tiles impossible in other initial hands; they must remain in stock.
-Round1 only and Block only (Draw can introduce tiles later). Largest played
-tile by opener ranking remains the first opener in Block, so no private history
-is needed. Preserve existing public/private views; test before changing code.
+Node24/Chromium/ffmpeg/Python baseline /workspace/.baseline-libs ready; npm cache
+/workspace/.npm-cache. npm test is full pipeline. No services/runtime network.
+Cloud setup is an unpublished saved draft. Physical-phone and direct file
+navigation unavailable; exact HTML via setContent tested. Upstream is bounded.

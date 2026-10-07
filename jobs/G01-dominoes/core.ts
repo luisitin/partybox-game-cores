@@ -28,7 +28,7 @@ export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.2.5',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.6',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
  {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
@@ -154,10 +154,10 @@ export function results(s:State):GameResults|null{
 }
 // Bot policy consumes only a sanitized observation. Changing opponents' tile
 // identities or boneyard order cannot change a decision with the same supplied RNG.
-export interface Observation {seat:number;counts:number[];scores:number[];hand:number[];played:number[];ends:Tile|null;missed:number[];settings:Settings;forced:number|null;legal:Input[];}
+export interface Observation {seat:number;round:number;counts:number[];scores:number[];hand:number[];played:number[];ends:Tile|null;missed:number[];settings:Settings;forced:number|null;legal:Input[];}
 export function observe(s:State,id:string):Observation|null{
  const seat=s.seats.indexOf(id);if(seat<0||s.phase.paused)return null;
- return {seat,scores:[...s.scores],counts:s.hands.map(h=>h.length),hand:[...s.hands[seat]!],played:s.board.map(t=>t.tile),ends:s.ends,missed:[...s.missed],settings:{...s.settings},forced:s.forced,legal:legal(s,seat)};
+ return {seat,round:s.round,scores:[...s.scores],counts:s.hands.map(h=>h.length),hand:[...s.hands[seat]!],played:s.board.map(t=>t.tile),ends:s.ends,missed:[...s.missed],settings:{...s.settings},forced:seat===s.turn?s.forced:null,legal:legal(s,seat)};
 }
 export function greedy(hand:number[],ends:Tile|null,moves:Input[]):Input{
  const scored=moves.map((m,i)=>{
@@ -206,8 +206,8 @@ export function solve(p:Position,root:number,depth=128,alpha=-Infinity,beta=Infi
  * Memo keys are remaining bin capacities; these also determine the tile index.
  * At most 27 hidden tiles and four bins keep exact integer counts below 2^53.
  */
-export function conditionalDeals(unknown:number[],capacities:number[],forbidden:number[],rng:Rng):{ways:number;sample:()=>number[][]|null}{
- const allowed=unknown.map(t=>capacities.map((_,i)=>tile(t).every(n=>!(forbidden[i]!&(1<<n)))));
+export function conditionalDeals(unknown:number[],capacities:number[],forbidden:number[],rng:Rng,excludedByBin:number[][]=[]):{ways:number;sample:()=>number[][]|null}{
+ const allowed=unknown.map(t=>capacities.map((_,i)=>!excludedByBin[i]?.includes(t)&&tile(t).every(n=>!(forbidden[i]!&(1<<n)))));
  const memo=new Map<string,number>();
  const count=(caps:number[]):number=>{
   const left=caps.reduce((a,b)=>a+b,0);if(left===0)return 1;
@@ -229,13 +229,20 @@ export function conditionalDeals(unknown:number[],capacities:number[],forbidden:
   return bins.map(bin=>rng.shuffle(bin));
  }};
 }
+export function openingExclusions(o:Observation):number[]{
+ if(o.round!==1||o.settings.mode!=='block'||o.settings.opening!=='highest-double'||!o.played.length)return [];
+ const rank=(t:number)=>{const [a,b]=tile(t);return a===b?100+a:a+b;};
+ // Block introduces no new tiles: later plays cannot outrank the forced opener.
+ const highest=Math.max(...o.played.map(rank));
+ return allTiles().filter(t=>rank(t)>highest);
+}
 function handSampler(o:Observation,rng:Rng):()=>number[][]|null{
- const unknown=allTiles().filter(t=>!o.hand.includes(t)&&!o.played.includes(t));
+ const unknown=allTiles().filter(t=>!o.hand.includes(t)&&!o.played.includes(t));const excluded=openingExclusions(o);
  const seats=o.counts.map((_,i)=>i).filter(i=>i!==o.seat);
  const capacities=seats.map(i=>o.counts[i]!);capacities.push(unknown.length-capacities.reduce((a,b)=>a+b,0));
  // Unconstrained deals retain the inexpensive uniform shuffle path.
- if(seats.every(i=>o.missed[i]===0))return ()=>{const shuffled=rng.shuffle(unknown);let offset=0;return o.counts.map((count,i)=>{if(i===o.seat)return [...o.hand];const h=shuffled.slice(offset,offset+count);offset+=count;return h;});};
- const sampler=conditionalDeals(unknown,capacities,[...seats.map(i=>o.missed[i]!),0],rng);
+ if(!excluded.length&&seats.every(i=>o.missed[i]===0))return ()=>{const shuffled=rng.shuffle(unknown);let offset=0;return o.counts.map((count,i)=>{if(i===o.seat)return [...o.hand];const h=shuffled.slice(offset,offset+count);offset+=count;return h;});};
+ const sampler=conditionalDeals(unknown,capacities,[...seats.map(i=>o.missed[i]!),0],rng,capacities.map((_,i)=>i<seats.length?excluded:[]));
  return ()=>{const bins=sampler.sample();if(bins===null)return null;return o.counts.map((_,i)=>i===o.seat?[...o.hand]:bins[seats.indexOf(i)]!);};
 }
 export function choose(o:Observation,rng:Rng,skill:BotSkill='normal'):Input|null{

@@ -20,3 +20,5 @@ Bots approximate future draws in lookahead; the reducer implements actual draws.
 - Managed Chromium forbids file:// navigation. Browser checks use the exact
   on-disk standalone HTML through setContent, with zero external requests.
   Direct file navigation is unverified in this managed instance.
+
+First-round highest-double Block inference: no initially held tile can outrank the forced opener; no stock tile enters play. Therefore the maximum ranked played tile remains that opener, even after physical board reordering. Rank is the reducer's double-first ordering. Use only public played tiles and round/settings; leave stock unrestricted and disable for Draw, rotating openings and later rounds. This is a deduction from implemented rules, not a hidden-hand observation.

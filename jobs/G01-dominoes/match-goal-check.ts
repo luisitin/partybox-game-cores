@@ -14,7 +14,7 @@ try{
  const candidate:typeof base=await import(path);const id=(a:number,b:number)=>base.allTiles().find(t=>JSON.stringify(base.tile(t))===JSON.stringify([a,b]))!;
  const hand=[id(0,1),id(0,2)],others=[id(1,1),id(2,2)];
  const initial=base.init({players:[0,1,2].map(i=>({id:`p${i}`,name:`P${i}`,avatarId:'🙂',connected:true})),seed:1,now:0,settings:{mode:'draw',deal:'traditional'}});const settings=initial.settings;
- const o={seat:0,counts:[2,1,1],scores:[0,0,99],hand,played:base.allTiles().filter(t=>!hand.includes(t)&&!others.includes(t)),ends:[1,2] as const,missed:[0,1<<2,1<<1],settings,forced:null,legal:[{type:'play' as const,tile:hand[0]!,side:'left' as const},{type:'play' as const,tile:hand[1]!,side:'right' as const}]};
+ const o={seat:0,round:2,counts:[2,1,1],scores:[0,0,99],hand,played:base.allTiles().filter(t=>!hand.includes(t)&&!others.includes(t)),ends:[1,2] as const,missed:[0,1<<2,1<<1],settings,forced:null,legal:[{type:'play' as const,tile:hand[0]!,side:'left' as const},{type:'play' as const,tile:hand[1]!,side:'right' as const}]};
  const remaining=new Set(o.played);const board:base.State['board']=[];
  const walk=(a:number)=>{while(true){const t=[...remaining].find(t=>base.tile(t).includes(a));if(t===undefined)break;remaining.delete(t);const [x,y]=base.tile(t),b=x===a?y:x;walk(b);board.push({tile:t,a,b,player:t%3});}};
  walk(1);board.reverse();assert.equal(remaining.size,0);assert.equal(board[0]!.a,1);assert.equal(board.at(-1)!.b,2);for(let i=1;i<board.length;i++)assert.equal(board[i-1]!.b,board[i]!.a);

@@ -9,7 +9,8 @@ stock-order substitution tests compare decisions with identical RNG seeds.
   otherwise among legal placements. It does not plan ahead or count suits.
 - Medium: prioritize pip shedding, retain playable endpoint coverage, and shed
   doubles. Deterministic ties follow legal-move order.
-- Strong: sample 64 deals conditioned on public missing-suit evidence. Use
+- Strong: sample 64 deals conditioned on public missing-suit evidence and, in
+  first-round highest-double Block, the public opener rank. Use
   alpha-beta search, exact to exhaustion at <=9 remaining hand-plus-stock tiles and
   depth-three otherwise. Favor the medium move on equal sampled values.
   Count constrained hidden partitions exactly with memoized seat capacities.
@@ -62,7 +63,16 @@ bounded current-hand heuristic, not a solved future-hand match value.
 64 versus 32 samples: 1,048/2,000 initial wins (52.4%, lower 95% 50.21%);
 fresh seeds 2001–4000 confirm 1,082/2,000 (54.1%, 95% 51.92–56.28%).
 Current 64-sample leagues (2,000 matches each comparison): Block sharp/normal
-1,449 wins (72.45%, 95% 70.49–74.41%); normal/easy 1,619 (80.95%). Draw
+1,438 wins (71.9%, 95% 69.93–73.87%); normal/easy 1,619 (80.95%). Draw
 sharp/normal 1,684 (84.2%, 95% 82.60–85.80%); normal/easy 1,155 (57.75%).
 Current league-report.json and draw-league-report.json contain these completed
 results; the corresponding *-goal32-report.json files preserve prior measurements.
+
+Opener correction0.2.6:10,000 dealt first-round Block cases improve from2,315
+impossible sampled worlds to zero. A higher-ranked unknown tile stays in stock.
+Round/settings/played tiles supply the deduction; never inspect true opposing
+hands. Disabled for Draw, rotating openings and later rounds;15 multi-move
+regressions preserve prior decisions and RNG consumption in those contexts.
+Prior64 Block league1,449 wins is archived in league-samples64-report.json; the
+correction is a consistency gain, not a claimed win-rate improvement. Draw and
+four-player partner comparison paths are unchanged; full CI repeats them.
