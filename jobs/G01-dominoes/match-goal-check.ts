@@ -2,13 +2,14 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,unlinkSync} from 'node:fs';
 import {createRng} from '../../contract/rng.ts';
-import * as base from './core.ts';
+import * as base from './study-score-baseline.ts';
+import * as production from './core.ts';
 export function matchAwareSource(source:string):string{
  const from=' return group(root)===winning?100+points:-100-points;';assert(source.includes(from));
  return source.replace(from,` if(p.scores&&p.target!==undefined&&p.scores[winning]!+points>=p.target)return group(root)===winning?10000:-10000;
 ${from}`).replace('seat:number;counts:number[];hand:', 'seat:number;counts:number[];scores:number[];hand:').replace('return {seat,counts:', 'return {seat,scores:[...s.scores],counts:').replace('partners:boolean;blocked?:', 'partners:boolean;scores?:number[];target?:number;blocked?:').replace('partners:o.settings.partners,blocked:', 'partners:o.settings.partners,scores:[...o.scores],target:o.settings.target,blocked:');
 }
-const path='./mutant-match-goal.ts';writeFileSync(path,matchAwareSource(readFileSync('core.ts','utf8')));
+const path='./mutant-match-goal.ts';writeFileSync(path,matchAwareSource(readFileSync('study-score-baseline.ts','utf8')));
 try{
  const candidate:typeof base=await import(path);const id=(a:number,b:number)=>base.allTiles().find(t=>JSON.stringify(base.tile(t))===JSON.stringify([a,b]))!;
  const hand=[id(0,1),id(0,2)],others=[id(1,1),id(2,2)];
@@ -23,6 +24,7 @@ try{
  const before=base.choose(o,createRng(77),'sharp'),after=candidate.choose(o,createRng(77),'sharp');
  assert.equal(before?.type,'play');assert.equal(after?.type,'play');if(after?.type==='play')assert.equal(after.tile,hand[1]);
  assert(before&&after);const oldOutcome=playOut(before),newOutcome=playOut(after);assert.equal(oldOutcome.phase.id,'done');assert.equal(oldOutcome.scores[2],103);assert.equal(newOutcome.phase.id,'round-end');assert.equal(newOutcome.scores[1],5);
- const report={before,after,beforePhase:oldOutcome.phase.id,afterPhase:newOutcome.phase.id,rootScores:o.scores,target:100,beforeOutcome:'p2 (third seat) plays its last tile for 4 points and reaches 103: match lost',afterOutcome:'p1 (second seat) plays its last tile for 5 points and reaches 5: match continues',publicConstraints:'missing-suit evidence uniquely assigns remaining opponents tiles; no stock remains'};
+ const current=production.choose(o,createRng(77),'sharp');if(process.argv.includes('--production'))assert.deepEqual(current,after);
+ const report={before,after,production:current,beforePhase:oldOutcome.phase.id,afterPhase:newOutcome.phase.id,rootScores:o.scores,target:100,beforeOutcome:'p2 (third seat) plays its last tile for 4 points and reaches 103: match lost',afterOutcome:'p1 (second seat) plays its last tile for 5 points and reaches 5: match continues',publicConstraints:'missing-suit evidence uniquely assigns remaining opponents tiles; no stock remains'};
  writeFileSync('match-goal-report.json',JSON.stringify(report,null,2)+'\n');console.log(report);
 }finally{unlinkSync(path);}

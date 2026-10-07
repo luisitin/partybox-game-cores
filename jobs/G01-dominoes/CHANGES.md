@@ -60,3 +60,14 @@ Production changes wait until the prior milestone's strength pipeline finishes.
 Round 7 production correction: version 0.2.2 forwards both selected scoring policies into sampled search positions; terminal reward uses actual configured points while retaining its winner preference. Omitted standalone blocked policy defaults to the selected net rule. Independently extend reference scoring and random differential cases for both policies; add direct regression examples and the 10,000-case production alignment check to npm test. Preserve prior captures and record a distinct sixth score-policy milestone.
 
 Round 8 isolated probe: add a public-score endgame checker demonstrating a forced full-match loss that the round-only policy chooses to minimize pip loss. Candidate forwards public standings and target, assigning match wins/losses greater weight than ordinary round outcomes. Validate tile conservation, oriented board adjacency, legal moves and both resulting phases with the actual reducer; production remains unchanged pending the prior milestone push.
+
+Round 8 production correction: version 0.2.3 forwards copied public standings and target to sampled positions, valuing a full-match win/loss above an ordinary round outcome. Preserve exact prior score-aware source as study-score-baseline.ts; keep the tactical before/after study reproducible against it and add --production choice validation to npm test. Independently extend the exhaustive reference and random cases for target completion; add terminal reward and score-copy regressions, plus a distinct seventh capture.
+
+Round 8 verification correction: decouple randomized target cases from the partner-seat parity, which otherwise excluded all partnership target cases. Draw targets independently from 100/150/250, record explicit goal/partner/target case counts, and add a shared-team score regression for either teammate. This broadens validation without altering production behavior.
+
+Round 9 measurement preparation: add mixed-idle.ts to exercise zero human inputs
+with active medium computer seats, 200ms computer moves, automatic phase deadlines,
+all 2–4 seat/computer-count combinations, both modes and all three targets over
+1,000 seeds each (36,000 cases). Report per-configuration failures and maxima;
+optional --enforce enables the existing simulated-time budget as a check after
+correction. Current core and wrapper are unchanged during baseline measurement.

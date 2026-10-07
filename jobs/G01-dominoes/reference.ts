@@ -19,7 +19,8 @@ export function reference(p:Position,root:number):number {
    const remaining=totals.reduce((n,v,i)=>n+(groups[i]===winner?v:0),0);
    const opposition=totals.reduce((n,v,i)=>n+(groups[i]!==winner?v:0),0);
    const points=p.partners?(p.teamPoints==='all'?opposition+remaining:opposition):Math.max(0,opposition-(exhausted<0&&(p.blocked??'difference')==='difference'?remaining:0));
-   const value=100+points;
+   const finished=p.scores!==undefined&&p.target!==undefined&&p.scores[winner]!+points>=p.target;
+   const value=finished?10000:100+points;
    return groups[root]===winner?value:-value;
   }
   const children:number[]=[];

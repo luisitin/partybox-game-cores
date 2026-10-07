@@ -169,7 +169,7 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
 
 test('milestone archives and preceding comparison data retain checked content hashes',()=>{
  const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
- for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm']){
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm']){
   const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
  }
 });
@@ -179,4 +179,16 @@ test('search reward respects net blocked and all-remaining partner settings',()=
  assert.equal(C.utility(p,0),102);assert.equal(C.utility({...p,blocked:'difference'},0),102);assert.equal(C.utility({...p,blocked:'opponents'},0),112);
  const q={hands:[[],[id(0,1)],[id(6,6)],[id(1,1)]],ends:[0,1] as const,turn:1,passes:0,partners:true};
  assert.equal(C.utility(q,0),103);assert.equal(C.utility({...q,teamPoints:'all'},0),115);assert.equal(C.utility({...q,teamPoints:'all'},1),-115);
+});
+
+test('match goal dominates an ordinary round reward without exposing new private data',()=>{
+ const p={hands:[[],[id(0,1)]],ends:[0,1] as const,turn:1,passes:0,partners:false};
+ assert.equal(C.utility({...p,scores:[99,0],target:100},0),10000);assert.equal(C.utility({...p,scores:[99,0],target:100},1),-10000);
+ assert.equal(C.utility({...p,scores:[0,0],target:100},0),101);
+ const s=init(context(3));s.scores=[0,0,99];const o=observe(s,'p0')!;assert.deepEqual(o.scores,s.scores);o.scores[0]=100;assert.equal(s.scores[0],0);
+});
+
+test('partner target completion uses the shared team score for either teammate',()=>{
+ const p={hands:[[],[id(0,1)],[id(6,6)],[id(1,1)]],ends:[0,1] as const,turn:1,passes:0,partners:true,teamPoints:'all' as const,scores:[99,0,99,0],target:100};
+ assert.equal(C.utility(p,2),10000);assert.equal(C.utility(p,3),-10000);
 });

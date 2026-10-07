@@ -35,3 +35,23 @@ scores in 10,000 seeded cases: 3,934 old mismatches, zero corrected-model
 mismatches. Candidate remains isolated until the 32-sample milestone completes.
 Keep the +100 winner preference, but use the actual configured round points;
 this remains a round heuristic, not a solved full-match value function.
+
+## Round 8
+
+Five weaknesses: missing public match standings in search (highest); mixed
+computer/idle-human timing remains unmeasured; coalition opponent model;
+finite 32-sample budget; physical-phone/file navigation evidence unavailable.
+The public-score tactical probe demonstrates a real forced match loss changed
+to a continuing match, verified through the reducer. Fix and validate standings,
+target completion and shared-team scoring rather than infer a win-rate gain.
+
+## Round 9 candidate
+
+Inspect mixed unattended play: every computer input currently calls the same
+`human` helper and resets global idle acceleration. Also, the standalone wrapper
+schedules no round-end timer when any human seat exists. Five weaknesses ranked:
+mixed unattended progression; coalition model; finite 32-sample budget; depth-three
+horizon; unavailable physical-phone/file navigation evidence. Measure mixed
+human/computer rosters against the contract simulated-time bound before changing
+code. Repair both the role-aware activity reset and missing wrapper exit if the
+probe confirms the failure; preserve a genuine human's 30-second recovery window.

@@ -4,7 +4,7 @@ Branch job/G01-dominoes; PR https://github.com/luisitin/partybox-game-cores/pull
 Read current main README.md, RULES.md, JOBS.md and CLAIMS.md before resuming.
 Keep this isolated checkout; preserve shared contract and the other repositories.
 
-Latest production is 0.2.2, 32 hidden samples. A6fe928 (16 samples, archived
+Latest production is 0.2.3, 32 hidden samples. A6fe928 (16 samples, archived
 captures) passed CI run 37652798819. Latest 32-sample head needs its own green CI.
 Local affected checks pass: 30 tests / 9,003 full matches, 25/25 mutants, 20,000
 independent solver cases, 10,000 exact conditional count cases, Block/Draw
@@ -16,22 +16,34 @@ confirmation passed (53.15% versus 16 samples, lower 95% 50.96%). Accepted 32
 samples reset the no-gain streak to zero. Historical study-baseline.ts is the
 exact 16-sample source; archived study scripts use it, not changing production.
 
-Round 7 configured terminal scoring is corrected, version 0.2.2. Its 31 tests,
-9,003 complete matches, 25/25 mutants, 20,000 independent solver cases and
-10,000 scoring alignment cases pass, along with browser/build/strength checks.
-Strong/medium: Block 68.85%, Draw 83.25%; bounded upstream 68.0%.
-The semantic scoring correction is a gain; no-gain streak remains zero.
+Round 7 configured scoring passed CI 37656004333 for 8ec9b5e.
+Round 8 match-goal correction is implemented, version 0.2.3, with copied public
+standings and target. The tactical fixture now preserves the match; 20,000
+independent cases include 15,000 standings and 1,689 partner target cases.
+Full 32 tests plus expanded 23 FAST cases cover all current 33 tests; 9,003 full
+matches and 25/25 mutations pass. Block/Draw strong rates 69.15%/83.3%; bounded
+upstream 67.5%. Current head needs its actual CI; no-gain streak stays zero.
+Historical score-aware source is study-score-baseline.ts; the older 16-sample
+source is study-baseline.ts. Preserve these historical comparators.
 
-Next substantive correction: round 8 match-goal-check.ts shows an unavoidable
-match loss chosen over a surviving round loss because Observation omits public
-standings and utility ignores target completion. The candidate chooses 0–2
-instead of 0–1 in a conserved, oriented four-tile endgame: reducer phase changes
-from done (p2 reaches 103) to round-end (p1 reaches 5). Before applying, preserve
-the current 0.2.2 source as an immutable score-aware study baseline, point this
-probe at it, add --production validation, then apply matchAwareSource to core.
-Forward public scores/target only; extend independent reward reference and
-random goal cases, add explicit choice/terminal tests, a seventh capture and
-required checks/leagues. Keep historical comparators reproducible.
+Next correction (round 9): mixed-idle.ts measures 25,248 budget failures among
+36,000 zero-human-input mixed rosters; maximum 21,210,103ms. Computer inputs
+currently reset the human inactivity counter. Change the submission helper to
+reset idle only for a non-bot sender, using e.playerId (including any participant's
+round-end Next). Standalone schedule() also returns at human-containing round-end
+without any timer; schedule its declared 5s timer while retaining immediate
+manual Next and fast all-computer advancement. Add direct computer-retention,
+human-recovery/round-end sender tests, enforce mixed-idle budget in npm test,
+and browser zero-human-input progression; record a distinct eighth capture.
+Run affected checks and preserve prior measurements; do not claim this pending
+correction is already applied.
+
+Git HTTPS writes intermittently return remote Internal Server Error. Reads and
+Git Data API are verified; /workspace/.onboarding/publish-commit.py publishes
+exact single-parent committed objects, checks all hashes and current parent,
+and updates refs force:false. Never force or overwrite concurrent claims. Read
+current runtime policy/status first; use normal platform auth, never request
+credentials merely because a variable is absent. If native pushes work, use them.
 
 After actual latest green CI, continue KEEP GOING to three consecutive rounds
 without player-noticeable gains; then claim the lowest eligible main job.
