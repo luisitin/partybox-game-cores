@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
 import {createRng} from '../../contract/rng.ts';
 import type {State,Input} from './core.ts';
 const C:typeof import('./core.ts')=await import(process.env.CORE_PATH??'./core.ts');
@@ -164,4 +165,11 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
  // Reserving the only useful draw reverses which player wins the blocked board.
  const q={...p,hands:[[id(5,5)],[id(0,0)]],stock:[id(1,5)]};
  assert.equal(C.solve(q,0),100);assert.equal(C.solve({...q,reserve:1},0),-110);
+});
+
+test('milestone archives and preceding comparison data retain checked content hashes',()=>{
+ const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm']){
+  const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
+ }
 });

@@ -40,3 +40,16 @@ Environment: Node 24.19.0, npm 11.9.0, Python 3, Chromium and ffmpeg. npm cache
 /workspace/.npm-cache. `npm ci --ignore-scripts` installs the job lockfile.
 Baseline wheel hashes are in baseline-requirements.txt; installed under
 /workspace/.baseline-libs. No long-running services or runtime network needed.
+
+
+Latest milestone: delivery archives now preserve four distinct VP9 captures and
+all archived comparison JSON are checksummed. Archive-hash regression passes;
+unit count is now 30 (20 in FAST_TEST). Rounds 4–5 rejected max-n and depth-four
+candidates; consecutive no-gain streak 2. Round 6 32-sample direct match rate is
+52.25% over seeds 1–2,000, only marginally above chance. Independent confirmation
+seeds 2,001–4,000 is running locally; if interrupted, run
+`BUDGET_STUDY=samples32 BUDGET_SEED_START=2001 node budget-study.ts`.
+Accept only if that independent lower 95% bound exceeds 50%; otherwise retain
+16 samples and record no demonstrated repeatable gain (streak 3). If accepted,
+rerun required leagues/baseline/affected checks, push and restart the no-gain
+streak. Never label this unfinished confirmation as complete.

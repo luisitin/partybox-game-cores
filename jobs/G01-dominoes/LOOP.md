@@ -6,3 +6,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 2. Model forced stock draws and reserve in strong lookahead; Draw win rate versus medium rises 75.65%→81.5% over the same 2,000 seeds (+5.85pp), 20,000 independent endgames pass; player-noticeable gain, no no-gain streak. Five-weakness review is in REVIEW.md.
 3. Replace constrained rejection with exact conditional counts; rare feasible samples improve 89/1,000→1,000/1,000, 10,000 brute-force counts agree; player-noticeable reliability gain, no no-gain streak.
 4. Test and reject selfish max-n opponent model: 766 versus 702 wins in 2,000 three-seat matches, +3.2pp with 95% interval crossing zero; no established player-noticeable gain, no-gain streak 1.
+5. Test and reject depth-four early search: 907/2,000 wins versus shipped sharp (45.35%, 95% 43.17–47.53); no gain, no-gain streak 2.

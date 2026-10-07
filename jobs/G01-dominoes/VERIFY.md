@@ -187,3 +187,13 @@ Round 3 remaining checks passed: 29 tests / 9,003 complete matches, 25/25 mutant
 ## KEEP GOING round 4
 
 Three-seat Block experiment: 2,000 independent seeds with rotating policy seats, candidate selfish max-n 766 wins, shipped coalition policy 702, medium 532. Candidate-minus-shipped difference 3.2pp; approximate multinomial 95% interval -0.55 to +6.95pp, includes zero. No demonstrated strength gain, so the candidate is not deployed. The reproducible study leaves production untouched; strategy-study-report.json preserves counts and scope. This is the first consecutive round without an established player-noticeable gain.
+
+Milestone delivery correction: `node browser.ts`, `node checksums.ts`, `node checksums.ts --check`, `npm run check` and `FAST_TEST=1 node --test test.ts` validate distinct archived capture filenames and archived Draw comparison hashes. `ffprobe -v error -show_entries format=duration:stream=codec_name,width,height -of json media/<capture>.webm` passes for all four captures: VP9, 1920×1080, 3 seconds, each under 265KB and the 10MB limit. Original bytes recovered with `git show <milestone-commit>:jobs/G01-dominoes/media/milestone-1.webm`; production game behavior unchanged. Add explicit archive-hash regression coverage for both comparison JSON files and all four milestone videos.
+
+## KEEP GOING round 5
+
+`BUDGET_STUDY=depth4 node budget-study.ts`: 2,000 complete two-seat Block matches, candidate against shipped sharp, alternating seats. Depth-four candidate wins 907/2,000 (45.35%, 95% 43.17–47.53), loses 1,093. Reject; deeper search is not automatically better under the chosen imperfect-information heuristic. No-gain streak 2. Production remains depth three.
+
+## KEEP GOING round 6 measurement underway
+
+`BUDGET_STUDY=samples32 node budget-study.ts`: candidate wins 1,045/2,000 (52.25%, 95% 50.06–54.44), loses 955. This barely clears chance. Before acceptance, run independent confirmation seeds 2,001–4,000: `BUDGET_STUDY=samples32 BUDGET_SEED_START=2001 node budget-study.ts`. Require its independent lower 95% bound above 50% to establish a reproducible gain. Do not count round 6 as a no-gain round or deploy the candidate until confirmation completes.

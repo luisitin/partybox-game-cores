@@ -15,3 +15,11 @@ Five largest weaknesses, ranked: bounded hidden-deal rejection fallback; coaliti
 ## Round 4
 
 Five largest weaknesses, ranked: coalition assumption in individual games; depth-three early-game horizon; only 16 hidden samples; physical-phone/file-navigation evidence unavailable here; bounded upstream reference scope. Tested the first with selfish max-n against the shipped policy and medium over 2,000 three-seat Block matches. Candidate wins 766 versus 702, but the difference confidence interval crosses zero; reject the production change. This records an unsuccessful substantive improvement attempt, not a cosmetic patch.
+
+## Round 5
+
+Five largest weaknesses, ranked: depth-three early-game horizon; 16 hidden samples; coalition model (tested alternative did not establish a gain); physical-phone/file-navigation evidence unavailable here; bounded upstream reference scope. Isolate depth-four lookahead, preserving exact small-endgame search and every other production choice. Measure 2,000 complete matches directly against shipped sharp, rotating seats.
+
+## Round 6 candidate
+
+Five largest weaknesses: only 16 hidden samples; depth-three horizon (round 5 measurement underway); coalition model (round 4 alternative rejected); physical-phone/file-navigation evidence unavailable here; bounded upstream reference scope. Isolate 32 conditional samples versus shipped sharp over 2,000 complete matches. This concurrent study is evidence against the current shipped baseline only; if round 5 changes production, remeasure against that new baseline before acceptance or a no-gain claim.
