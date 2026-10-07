@@ -11,7 +11,12 @@ function schedule(){
  if(pending!==null)clearTimeout(pending);pending=null;if(!state||state.phase.id==='done')return;
  const captured=state.phase.startedAt;
  if(state.phase.id==='round-end'){
-  if(modes.every(m=>m!=='human'))pending=setTimeout(()=>{if(state?.phase.startedAt===captured)send({type:'next'});},200);
+  const allComputers=modes.every(m=>m!=='human');
+  pending=setTimeout(()=>{
+   if(!state||state.phase.startedAt!==captured)return;
+   if(allComputers)send({type:'next'});
+   else {state=reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:captured,now:Math.max(Date.now(),state.phase.deadline!)});revealed=false;render();}
+  },allComputers?200:Math.max(0,state.phase.deadline!-Date.now()));
   return;
  }
  const skill=modes[state.turn];
@@ -30,7 +35,7 @@ function render(){
   const winners=game.results(state)!.winnerIds.map(id=>state!.players[id]!.name).join(' & ');element('message').textContent=`Winner${game.results(state)!.winnerIds.length>1?'s':''}: ${winners}.`;schedule();return;
  }
  if(state.phase.id==='round-end'){
-  const last=state.last!;element('message').textContent=last.winner===null?'Blocked tie — no points.':`${state.players[state.seats[last.winner]!]!.name}${state.settings.partners?' and partner':''} scored ${last.points}${last.blocked?' on a blocked board':''}.`;
+  const last=state.last!;element('message').textContent=last.winner===null?'Blocked tie — no points.':`${state.players[state.seats[last.winner]!]!.name}${state.settings.partners?' and partner':''} scored ${last.points}${last.blocked?' on a blocked board':''}. Next round starts automatically.`;
   actions.append(button('Next round',()=>send({type:'next'})));schedule();return;
  }
  element('message').textContent='Match either open end. You must play when able. Stuck? Draw one at a time or pass.';

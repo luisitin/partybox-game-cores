@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npm run check && node preflight.ts && node --test test.ts && node idle.ts && node differential.ts && node conditional-check.ts && node score-policy-check.ts --production && node match-goal-check.ts --production && node mutations.ts && node build.ts --check && node league.ts && npm run draw-league && node baseline.ts && node browser.ts && node checksums.ts && node checksums.ts --check",
+    "test": "npm run check && node preflight.ts && node --test test.ts && node idle.ts && node mixed-idle.ts --enforce && node differential.ts && node conditional-check.ts && node score-policy-check.ts --production && node match-goal-check.ts --production && node mutations.ts && node build.ts --check && node league.ts && npm run draw-league && node baseline.ts && node browser.ts && node checksums.ts && node checksums.ts --check",
     "check": "tsc --noEmit",
     "build": "node build.ts",
     "fixtures": "node fixtures.ts && node checksums.ts",

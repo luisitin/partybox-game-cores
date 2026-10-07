@@ -26,6 +26,11 @@ try {
  await automated.page.selectOption('#players','4');await automated.page.check('#partners');await automated.page.selectOption('#mode','block');
  for(let i=0;i<4;i++)await automated.page.selectOption(`#seat-${i}`,'normal');await automated.page.click('#start');
  await automated.page.clock.runFor(300000);assert.equal(await automated.page.locator('#status').innerText(),'Match complete','full browser bot match must terminate');await automated.context.close();
+ const mixed=await pageFor({width:390,height:844});await mixed.page.clock.install({time:new Date('2026-01-01T00:00:00Z')});
+ await mixed.page.click('#start');await mixed.page.clock.runFor(3600000);
+ assert.equal(await mixed.page.locator('#status').innerText(),'Match complete','mixed idle-human/computer page must honor automatic round exits');
+ assert.equal(await mixed.page.locator('#hand .hand-tile').count(),0,'automatic progression must never reveal an idle human hand');
+ await mixed.context.close();
  const performanceReports=[];
  for(const [name,viewport,throttle] of [['tv',{width:1920,height:1080},1],['phone',{width:390,height:844},4]] as const){
   const {page,context}=await pageFor(viewport);const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:throttle});
@@ -38,13 +43,13 @@ try {
    assert(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),'TV match must fit its viewport');
    await page.screenshot({path:'media/tv.png',fullPage:true});const capture=mkdtempSync(join(tmpdir(),'G01-capture-'));
    for(let i=0;i<36;i++){await page.screenshot({path:join(capture,`${String(i).padStart(3,'0')}.png`)});await page.waitForTimeout(66);}
-   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-7-match-goal.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
+   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-8-unattended.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
   }
   await context.close();
  }
  const reduced=await pageFor({width:390,height:844},'reduce');assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));
  await reduced.page.click('#start');await reduced.page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await reduced.page.locator('#hand .hand-tile').count(),7);assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);
  await reduced.context.close();assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',capture:'media/milestone-7-match-goal.webm'},null,2)+'\n');
+ writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',mixedUnattended:'passed within 3600000ms with private hands hidden',capture:'media/milestone-8-unattended.webm'},null,2)+'\n');
  console.log('Browser functional, hot-seat privacy, offline, frame-time and reduced-motion checks pass');
 } finally {await browser.close();}

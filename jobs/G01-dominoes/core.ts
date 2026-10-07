@@ -28,7 +28,7 @@ export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.2.3',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.4',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
  {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
@@ -115,7 +115,7 @@ export function apply(s:State,i:Input,now:number):State{
  const next:State={...s,hands,board,ends:[board[0]!.a,board.at(-1)!.b],forced:null,passes:0,turn:(s.turn+1)%s.seats.length,phase:phase(s,'play',now)};
  return hands[s.turn]!.length===0?finishRound(next,s.turn,now):next;
 }
-function human(s:State,i:Input,now:number):State {return legal(s).some(x=>sameInput(x,i))?apply({...s,idleTurns:0},i,now):s;}
+function submitted(s:State,i:Input,now:number,playerId:string):State {const idleTurns=s.players[playerId]?.bot===true?s.idleTurns:0;return legal(s).some(x=>sameInput(x,i))?apply({...s,idleTurns},i,now):s;}
 function automatic(s:State,now:number):State {return apply({...s,idleTurns:Math.min(2,s.idleTurns+1)},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
 export function reduce(s:State,e:GameEvent<Input>):State{
  if(e.type==='player')return own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
@@ -136,9 +136,9 @@ export function reduce(s:State,e:GameEvent<Input>):State{
   return automatic(s,e.now);
  }
  if(e.type!=='input'||!own(s,e.playerId))return s;
- if(s.phase.id==='round-end'){return e.input.type==='next'?human(s,e.input,e.now):s;}
+ if(s.phase.id==='round-end'){return e.input.type==='next'?submitted(s,e.input,e.now,e.playerId):s;}
  if(s.seats[s.turn]!==e.playerId)return s;
- return human(s,e.input,e.now);
+ return submitted(s,e.input,e.now,e.playerId);
 }
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,

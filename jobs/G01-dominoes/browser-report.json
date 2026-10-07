@@ -12,10 +12,10 @@
       },
       "throttle": 1,
       "frames": 300,
-      "meanMs": 16.66578,
-      "p95Ms": 16.799999999999955,
+      "meanMs": 16.665666666666667,
+      "p95Ms": 16.700000000000728,
       "p99Ms": 16.800000000000182,
-      "fps": 60.00319216982343
+      "fps": 60.00360021601296
     },
     {
       "name": "phone",
@@ -25,12 +25,13 @@
       },
       "throttle": 4,
       "frames": 300,
-      "meanMs": 16.665999999999997,
-      "p95Ms": 16.799999999999727,
+      "meanMs": 16.721666666666664,
+      "p95Ms": 16.799999999999955,
       "p99Ms": 16.800000000000182,
-      "fps": 60.00240009600385
+      "fps": 59.80265125087213
     }
   ],
   "reducedMotion": "passed",
-  "capture": "media/milestone-7-match-goal.webm"
+  "mixedUnattended": "passed within 3600000ms with private hands hidden",
+  "capture": "media/milestone-8-unattended.webm"
 }

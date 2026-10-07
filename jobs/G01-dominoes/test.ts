@@ -169,7 +169,7 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
 
 test('milestone archives and preceding comparison data retain checked content hashes',()=>{
  const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
- for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm']){
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm','media/milestone-8-unattended.webm']){
   const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
  }
 });
@@ -191,4 +191,19 @@ test('match goal dominates an ordinary round reward without exposing new private
 test('partner target completion uses the shared team score for either teammate',()=>{
  const p={hands:[[],[id(0,1)],[id(6,6)],[id(1,1)]],ends:[0,1] as const,turn:1,passes:0,partners:true,teamPoints:'all' as const,scores:[99,0,99,0],target:100};
  assert.equal(C.utility(p,2),10000);assert.equal(C.utility(p,3),-10000);
+});
+
+test('computer moves preserve inactivity and actual human input restores its window',()=>{
+ const ctx=context(2,1,{opening:'rotating'});let s=init({...ctx,players:ctx.players.map((p,i)=>({...p,bot:i===1}))});
+ s=reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!});assert.equal(s.idleTurns,1);
+ const bot=()=>{const input=game.bot.sampleInput(s,'p1',createRng(1),'normal')!;const idle=s.idleTurns;s=reduce(s,{type:'input',playerId:'p1',input,now:s.phase.startedAt+200});assert.equal(s.idleTurns,idle);};
+ bot();let tries=0;while(s.turn===0&&tries++<64)s=reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!});assert.equal(s.turn,1);assert.equal(s.idleTurns,2);
+ bot();tries=0;while(s.turn===1&&tries++<64)bot();assert.equal(s.turn,0);
+ s=reduce(s,{type:'input',playerId:'p0',input:legal(s)[0]!,now:s.phase.startedAt+1});assert.equal(s.idleTurns,0);if(s.phase.id==='play')assert.equal(s.phase.deadline!-s.phase.startedAt,30000);
+});
+test('round-end activity follows the sender rather than the next-turn seat',()=>{
+ const ctx=context(2);const initial=init({...ctx,players:ctx.players.map((p,i)=>({...p,bot:i===1}))});
+ const s={...initial,idleTurns:2,turn:1,scores:[0,1],last:{winner:1,points:1,blocked:false},phase:{id:'round-end',startedAt:0,deadline:5000}};
+ const humanNext=reduce(s,{type:'input',playerId:'p0',input:{type:'next'},now:1});assert.equal(humanNext.idleTurns,0);assert.equal(humanNext.phase.deadline!-humanNext.phase.startedAt,30000);
+ const botNext=reduce({...s,turn:0},{type:'input',playerId:'p1',input:{type:'next'},now:1});assert.equal(botNext.idleTurns,2);assert.equal(botNext.phase.deadline!-botNext.phase.startedAt,1000);
 });
