@@ -59,3 +59,7 @@ probe confirms the failure; preserve a genuine human's 30-second recovery window
 ## Round 10
 
 Ranked weaknesses: coalition opponents in three-seat free-for-all; finite 32-sample budget; depth-three horizon; bounded upstream search; unavailable physical-phone evidence. Re-test isolated max-n with current goal-aware scoring against shipped strong and medium over 2,000 rotating-seat matches. Accept only an established candidate-versus-shipped win difference; preserve current production and baseline otherwise.
+
+## Round 11
+
+Five remaining weaknesses: finite 32-sample hidden-hand budget (highest testable); depth-three horizon; coalition model with rejected max-n candidate; bounded upstream reference; no physical-phone hardware evidence. Test 64 versus 32 samples in 2,000 alternating-seat Block matches against immutable current-goal baseline. Require a positive lower 95% bound and independent fresh-seed confirmation before accepting a marginal strength gain.

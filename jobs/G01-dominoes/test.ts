@@ -169,7 +169,7 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
 
 test('milestone archives and preceding comparison data retain checked content hashes',()=>{
  const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
- for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm','media/milestone-8-unattended.webm']){
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm','media/milestone-8-unattended.webm','media/milestone-9-samples64.webm']){
   const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
  }
 });

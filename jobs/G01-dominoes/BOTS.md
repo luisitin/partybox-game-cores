@@ -9,7 +9,7 @@ stock-order substitution tests compare decisions with identical RNG seeds.
   otherwise among legal placements. It does not plan ahead or count suits.
 - Medium: prioritize pip shedding, retain playable endpoint coverage, and shed
   doubles. Deterministic ties follow legal-move order.
-- Strong: sample 32 deals conditioned on public missing-suit evidence. Use
+- Strong: sample 64 deals conditioned on public missing-suit evidence. Use
   alpha-beta search, exact to exhaustion at <=9 remaining hand-plus-stock tiles and
   depth-three otherwise. Favor the medium move on equal sampled values.
   Count constrained hidden partitions exactly with memoized seat capacities.
@@ -32,22 +32,22 @@ GitHub checkout. Baseline uses its documented pip-greedy opener and actual
 public observation reaches Python; arbitrary unseen partition labels are
 resampled by the package, and public missing-suit constraints are retained.
 
-Measured: 135 wins / 65 losses / 0 ties, 67.5% (approximate 95% interval
-61.01–73.99%). This is a bounded, configured reference comparison. It does not
+Measured: 132 wins / 68 losses / 0 ties, 66% (approximate 95% interval
+59.43–72.57%). This is a bounded, configured reference comparison. It does not
 establish parity with unlimited sampling/full-game search, with every open-source
 AI, or with optimal imperfect-information play. The shipped policy adds shallow
 early-game lookahead; baseline uses pip-greedy early play.
 
 Draw search models forced draws on the same turn and honors the stock reserve.
 Unknown stock order is sampled from public unseen tiles, never the real stock.
-Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,666/2,000
+Prior 32-sample two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,666/2,000
 (83.3%, 95% 81.67–84.93), versus 1,513/2,000 (75.65%) before stock modeling.
 Historical 16-sample exact policy was 1,608/2,000 (80.4%).
 Direct 32-versus-16 comparison: 1,045/2,000 on initial seeds and 1,063/2,000
 on independent confirmation seeds, 53.15% (95% 50.96–55.34) in confirmation.
 Normal/easy is unchanged at 1,155/2,000 (57.75%, 95% 55.6–59.9).
 See archived comparison reports, budget-samples32-confirmation-report.json
-and the current draw-league-report.json.
+and archived draw-league-goal32-report.json.
 
 Limitations: FFA search pessimistically treats opponents as a coalition.
 Impossible public evidence falls back to medium; every feasible conditional
@@ -58,3 +58,8 @@ Terminal search rewards follow the selected blocked and partner scoring, verifie
 against 10,000 reducer-scored terminals. Public standings and target completion are forwarded to search; a completed
 match takes priority over an ordinary +100 round preference. This remains a
 bounded current-hand heuristic, not a solved future-hand match value.
+
+64 versus 32 samples: 1,048/2,000 initial wins (52.4%, lower 95% 50.21%);
+fresh seeds 2001–4000 confirm 1,082/2,000 (54.1%, 95% 51.92–56.28%).
+Current 64-sample Block/Draw versus medium leagues are running; existing current
+league JSONs retain prior 32-sample results until their complete replacements.

@@ -225,3 +225,11 @@ Cloud setup recheck: `bash /workspace/.onboarding/install.sh` passed through dep
 ## Round 10 current-goal max-n
 
 `node strategy-goal-study.ts`: 2,000 complete rotating-seat three-player Block matches; candidate 763, shipped 692, medium 545 wins. Difference 3.55pp, multinomial 95% interval -0.18–7.28pp includes zero. Reject candidate: no established strength gain. Strict types pass; production source remains unchanged. Immutable study-goal-baseline.ts is exact 0.2.4 source.
+
+Round 11 initial probe: `BUDGET_STUDY=samples64 node budget-goal-study.ts`: seeds 1–2000, 1,048 wins /952 losses, 52.4%, 95% 50.21–54.59%, 600,471 moves; 525 seconds. Confirmation pending; no production strength claim yet. CI 37664215151 is green for 9a9151a.
+
+CI run 37666868394 succeeded for 57f2584 (0.2.4); every dependency and npm test step passed. Round 11 isolated candidate: `CORE_PATH=./mutant-goal-samples64-study.ts FAST_TEST=1 node --test test.ts`: 25/25 pass. Fresh-seed strength confirmation remains pending.
+
+`BUDGET_STUDY=samples64 BUDGET_SEED_START=2001 node budget-goal-study.ts`: independent seeds 2001–4000, 1,082 wins /918 losses, 54.1%, 95% 51.92–56.28%; 593,443 moves in 525s. Acceptance criterion met. Production integration starts at 0.2.5; affected validation pending. Previous reports archived as *-goal32-report.json and browser-unattended32-report.json.
+
+0.2.5 affected checks: `npm run check`, `node fixtures.ts`, `node build.ts`, `node browser.ts`, `node --test test.ts` and `node mutations.ts` pass. Tests 35/35 with 9,003 full matches (138.87s); 25/25 mutants killed; phone 4x CPU 59.61fps, p99 16.8ms; ninth original capture. `node baseline.ts`: 132/200 wins, 66%, 95% 59.43–72.57%. Block/Draw leagues still running at this milestone; no final results asserted. Timed liveness reducers/policies are unchanged from green 0.2.4; current-head CI will repeat the complete pipeline.
