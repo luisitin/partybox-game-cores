@@ -63,3 +63,7 @@ Ranked weaknesses: coalition opponents in three-seat free-for-all; finite 32-sam
 ## Round 11
 
 Five remaining weaknesses: finite 32-sample hidden-hand budget (highest testable); depth-three horizon; coalition model with rejected max-n candidate; bounded upstream reference; no physical-phone hardware evidence. Test 64 versus 32 samples in 2,000 alternating-seat Block matches against immutable current-goal baseline. Require a positive lower 95% bound and independent fresh-seed confirmation before accepting a marginal strength gain.
+
+## Round 12
+
+Five weaknesses: coalition opponent model in multi-player free-for-all; depth-three horizon; remaining finite sampling variance; bounded upstream comparison; no physical-phone hardware evidence. The 32-sample max-n probe narrowly crossed zero; re-evaluate this most plausible opponent-model candidate under the newly confirmed 64-sample policy over 2,000 rotating-seat matches. Require a positive lower bound for its candidate-versus-shipped win difference; do not accept a favorable point estimate alone.

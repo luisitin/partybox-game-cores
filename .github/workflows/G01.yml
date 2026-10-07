@@ -25,7 +25,10 @@ jobs:
       - run: npm install --prefix ../../contract --ignore-scripts --no-package-lock --no-audit --no-fund
       - run: python -m pip install --require-hashes --target .baseline -r baseline-requirements.txt
       - name: Install capture encoder
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+        run: |
+          sudo timeout 180s apt-get update -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 || echo "::warning::Index refresh did not finish; trying existing complete package indexes"
+          sudo timeout 300s apt-get install -y --no-install-recommends -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 ffmpeg
+          ffmpeg -version
       - run: npx playwright install --with-deps chromium
       - name: Verify and expose failures in check annotations
         shell: bash

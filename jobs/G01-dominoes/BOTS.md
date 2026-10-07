@@ -61,5 +61,8 @@ bounded current-hand heuristic, not a solved future-hand match value.
 
 64 versus 32 samples: 1,048/2,000 initial wins (52.4%, lower 95% 50.21%);
 fresh seeds 2001–4000 confirm 1,082/2,000 (54.1%, 95% 51.92–56.28%).
-Current 64-sample Block/Draw versus medium leagues are running; existing current
-league JSONs retain prior 32-sample results until their complete replacements.
+Current 64-sample leagues (2,000 matches each comparison): Block sharp/normal
+1,449 wins (72.45%, 95% 70.49–74.41%); normal/easy 1,619 (80.95%). Draw
+sharp/normal 1,684 (84.2%, 95% 82.60–85.80%); normal/easy 1,155 (57.75%).
+Current league-report.json and draw-league-report.json contain these completed
+results; the corresponding *-goal32-report.json files preserve prior measurements.

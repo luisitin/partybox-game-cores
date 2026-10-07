@@ -79,3 +79,7 @@ Round 10: add immutable study-goal-baseline.ts (exact 0.2.4 source) and strategy
 Round 11: add budget-goal-study.ts for isolated depth/sample experiments against exact current goal-aware 32-sample source; production stays unchanged during evaluation.
 
 Round 11 production: version 0.2.5 increases strong samples 32→64 after fresh-seed confirmation (54.1%, lower 95% 51.92%). Preserve prior league/baseline/browser JSON reports and eighth capture; browser records separate ninth capture and archive regression covers it. Existing privacy/determinism, independent sampling and legal-move checks continue to apply; no reducer/rule changes.
+
+Round 12: preserve exact 0.2.5 source in study-samples64-baseline.ts and add isolated strategy-samples64-study.ts; compare max-n to the newly accepted sampler without modifying production.
+
+After measured 30-minute encoder-install timeout, bound APT refresh/install and connections; retain last complete indexes after refresh warning and fail on unsuccessful installation. No timeout increase or skipped game checks. Add STRATEGY_SEED_START and separate confirmation report to isolated max-n study for independent fresh-seed validation.
