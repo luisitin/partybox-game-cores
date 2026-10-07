@@ -112,7 +112,7 @@ function simulate(n:number,seed:number,settings:Record<string,string|boolean|num
  while(s.phase.id!=='done'&&steps<20000){
   const input=game.bot.sampleInput(s,s.seats[s.turn]!,rng,skill);assert(input);assert(game.inputSchema.safeParse(input).success);
   const e={type:'input' as const,playerId:s.seats[s.turn]!,input,now:steps*100};
-  const before=JSON.stringify(s);const next=reduce(s,e);assert.equal(JSON.stringify(s),before);r=reduce(r,e);s=next;assert.deepEqual(s,r);
+  const before=JSON.stringify(s);const next=reduce(s,e);assert.equal(JSON.stringify(s),before);r=reduce(r,e);s=next;assert.deepEqual(s,r);assert.equal(JSON.stringify(s),JSON.stringify(r));
   assert(Buffer.byteLength(JSON.stringify(s))<=256*1024);assert.equal(new Set([...s.hands.flat(),...s.stock,...s.board.map(t=>t.tile)]).size,28);
   assert.equal(s.hands.flat().length+s.stock.length+s.board.length,28);
   for(let i=1;i<s.board.length;i++)assert.equal(s.board[i-1]!.b,s.board[i]!.a);
@@ -146,3 +146,11 @@ test('idle acceleration resets on human activity and input key order is immateri
  const i=legal(s)[0]!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input:i,now:s.phase.startedAt+1});assert.equal(s.idleTurns,0);if(s.phase.id==='play')assert.equal(s.phase.deadline!-s.phase.startedAt,30000);
  const q=init(context(2,1,{opening:'rotating'}));const p=legal(q)[0]!;assert.equal(p.type,'play');if(p.type==='play'){const reordered={side:p.side,tile:p.tile,type:p.type};assert.deepEqual(apply(q,reordered,1),apply(q,p,1));}
 });
+test('published Draw deal is selectable and never changes Block or partnership deals',()=>{
+ for(const [n,count] of [[2,7],[3,7],[4,6]]){const s=init(context(n,1,{deal:'traditional'}));assert.equal(s.hands[0]!.length,count);assert.equal(s.stock.length,28-n!*count!);}
+ assert.equal(init(context(3,1,{mode:'block',deal:'traditional'})).hands[0]!.length,5);
+ assert.equal(init(context(4,1,{mode:'block',deal:'traditional'})).hands[0]!.length,5);
+ assert.equal(init(context(4,1,{partners:true,deal:'traditional'})).hands[0]!.length,7);
+ assert.equal(init(context(3,1,{deal:'unknown'})).settings.deal,'block-sized');
+});
+if(!process.env.FAST_TEST)for(const n of [3,4])test(`1,000 published-deal Draw matches: ${n} seats`,()=>{for(let seed=1;seed<=1000;seed++)simulate(n,seed,{mode:'draw',deal:'traditional'});});

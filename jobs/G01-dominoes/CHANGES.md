@@ -25,3 +25,10 @@
   throttled frame-time checks and a short original milestone video.
 - Record rule knowledge fallbacks honestly; main's new web-fallback policy
   supersedes the initial research-only BLOCKED.md.
+
+KEEP GOING round 1: add a selectable published Draw deal (7/7/6), preserving
+Block-sized 7/5/5 as the labelled house default. Live rules recovery established
+the difference, so players can now choose the convention rather than guessing.
+Bump saveable-state version to 0.2.0 for the new settings field; regenerate the
+manifest, fixtures and offline bundle. Add explicit byte-for-byte replay checks
+and 1,000 full matches each at three/four seats for the new setting.

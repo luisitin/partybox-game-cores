@@ -165,3 +165,7 @@ The original capture assertion did not expose spawn.error/signal, so the null
 status alone cannot prove the exact startup cause; the new diagnostics distinguish
 missing executable from encoder crashes. Explicitly installing the required
 encoder removes dependence on runner-image defaults.
+
+## KEEP GOING round 1
+
+Published Draw deal option: three-seat hands 5→7 (+40%); four-seat hands 5→6 (+20%); Block and partnership defaults unchanged. Strict type check, 28 unit/property tests (9,003 complete bot/property matches including 2,000 additional traditional-deal matches), 25/25 mutation assertions, reproducible build and browser checks passed. Idle suite: 27,000 cases, maximum 2,007,103ms against 3,600,000ms budget. Browser TV/phone checks remained offline and private; measured phone frame rate approximately 60.00fps, p95 16.7ms. Latest change requires its own CI result; earlier green run belongs to c28d4e4.

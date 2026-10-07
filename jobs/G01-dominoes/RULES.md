@@ -12,7 +12,9 @@ that inaccessible official sources were read. Re-verification is in NEXT.md.
    seats 1/3 versus 2/4; partners cannot see one another's private hands.
 3. Shuffle deterministically from the engine seed before each round. Deal
    seven tiles to each of two players, five each to three/four individuals,
-   and seven each to four partners. Keep undealt tiles face down as stock.
+   and seven each to four partners. The Draw deal setting alternatively uses
+   Pagat's published 7/7/6 for two/three/four individuals; partners always get
+   seven. Keep undealt tiles face down as stock.
 4. First round: the highest dealt double opens. If nobody has a double, the
    largest pip total opens (stable deal-order tie break). Its owner must play
    that tile. The alternative opener setting starts seat 1 with a free tile.
@@ -47,6 +49,8 @@ that inaccessible official sources were read. Re-verification is in NEXT.md.
 
 ## Variants surveyed / deferred
 
+- Draw hand size: Block-sized 7/5/5 house default versus published Pagat
+  Draw 7/7/6; selectable.
 - Highest double versus selected/rotating opener: setting; future-round opener
   disagreements need official-source re-verification.
 - Draw-to-play versus one-draw-and-pass: draw-to-play selected; one-draw variant

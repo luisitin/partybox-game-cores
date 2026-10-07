@@ -14,7 +14,7 @@ export const inputSchema:z.ZodType<Input>=z.discriminatedUnion('type',[
  z.object({type:z.literal('play'),tile:z.number().int().min(0).max(27),side:z.enum(['left','right'])}).strict(),
  z.object({type:z.literal('draw')}).strict(),z.object({type:z.literal('pass')}).strict(),z.object({type:z.literal('next')}).strict()
 ]);
-export interface Settings {mode:'draw'|'block';partners:boolean;target:number;reserve:number;opening:'highest-double'|'rotating';blocked:'difference'|'opponents';teamPoints:'opponents'|'all';}
+export interface Settings {mode:'draw'|'block';deal:'block-sized'|'traditional';partners:boolean;target:number;reserve:number;opening:'highest-double'|'rotating';blocked:'difference'|'opponents';teamPoints:'opponents'|'all';}
 export interface State extends GameStateBase {
  seats:string[]; settings:Settings; hands:number[][]; stock:number[];
  board:{tile:number;a:number;b:number;player:number}[]; ends:Tile|null;
@@ -28,9 +28,10 @@ export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.1.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
+ {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
  {key:'partners',label:'Partners (four seats only)',type:'boolean',default:false},
  {key:'target',label:'Target score',type:'select',default:'100',options:[{value:'100',label:'100'},{value:'150',label:'150'},{value:'250',label:'250'}]},
  {key:'reserve',label:'Tiles kept in the boneyard',type:'select',default:'0',options:[{value:'0',label:'Draw all'},{value:'2',label:'Keep last two'}]},
@@ -77,7 +78,7 @@ function finishRound(s:State,out:number|null,now:number):State{
  return {...next,phase:phase(next,Math.max(...scores)>=s.settings.target?'done':'round-end',now)};
 }
 function deal(s:State,now:number):State{
- const [deck,rng]=shuffle(s.rng,allTiles());const count=s.seats.length===2||s.settings.partners?7:5;
+ const [deck,rng]=shuffle(s.rng,allTiles());const count=s.seats.length===2||s.settings.partners?7:s.settings.mode==='draw'&&s.settings.deal==='traditional'?(s.seats.length===3?7:6):5;
  const hands=s.seats.map((_,i)=>deck.slice(i*count,(i+1)*count));const stock=deck.slice(count*s.seats.length);
  let starter=s.last?.winner??((s.round-1)%s.seats.length);let forced:number|null=null;
  if(s.round===1&&s.settings.opening==='highest-double'){
@@ -88,7 +89,7 @@ function deal(s:State,now:number):State{
 }
 export function init(ctx:InitContext):State{
  const seats=ctx.players.map(p=>p.id);if(seats.length<2||seats.length>4||new Set(seats).size!==seats.length)throw new Error('Dominoes requires 2–4 unique players');
- const c=ctx.settings;const settings:Settings={mode:c.mode==='block'?'block':'draw',partners:c.partners===true&&seats.length===4,target:[100,150,250].includes(Number(c.target))?Number(c.target):100,reserve:c.reserve==='2'?2:0,opening:c.opening==='rotating'?'rotating':'highest-double',blocked:c.blocked==='opponents'?'opponents':'difference',teamPoints:c.teamPoints==='all'?'all':'opponents'};
+ const c=ctx.settings;const settings:Settings={mode:c.mode==='block'?'block':'draw',deal:c.deal==='traditional'?'traditional':'block-sized',partners:c.partners===true&&seats.length===4,target:[100,150,250].includes(Number(c.target))?Number(c.target):100,reserve:c.reserve==='2'?2:0,opening:c.opening==='rotating'?'rotating':'highest-double',blocked:c.blocked==='opponents'?'opponents':'difference',teamPoints:c.teamPoints==='all'?'all':'opponents'};
  const s:State={players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),phase:{id:'play',startedAt:ctx.now-1,deadline:null},rng:seedRng(ctx.seed),seats,settings,hands:[],stock:[],board:[],ends:null,turn:0,idleTurns:0,starter:0,forced:null,round:1,passes:0,scores:seats.map(()=>0),missed:seats.map(()=>0),history:[],last:null};
  return deal(s,ctx.now);
 }
