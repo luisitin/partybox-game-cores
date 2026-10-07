@@ -8,3 +8,4 @@ G06 free (re-claim: web-blocked fallback in RULES.md)
 G07 free (re-claim: web-blocked fallback in RULES.md)
 G08 free (re-claim: web-blocked fallback in RULES.md)
 G09 BLOCKED
+G10 2026-10-07T15:05:57Z codex-domino
