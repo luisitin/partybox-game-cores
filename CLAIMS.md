@@ -1,10 +1,10 @@
 # CLAIMS (one line per job: ID, UTC time, chat nickname)
-G01 BLOCKED
-G02 BLOCKED
-G03 BLOCKED
-G04 BLOCKED
-G05 BLOCKED
-G06 BLOCKED
-G07 BLOCKED
-G08 BLOCKED
+G01 free (re-claim: web-blocked fallback in RULES.md)
+G02 free (re-claim: web-blocked fallback in RULES.md)
+G03 free (re-claim: web-blocked fallback in RULES.md)
+G04 free (re-claim: web-blocked fallback in RULES.md)
+G05 free (re-claim: web-blocked fallback in RULES.md)
+G06 free (re-claim: web-blocked fallback in RULES.md)
+G07 free (re-claim: web-blocked fallback in RULES.md)
+G08 free (re-claim: web-blocked fallback in RULES.md)
 G09 2026-10-07T15:05:51Z codex-domino
