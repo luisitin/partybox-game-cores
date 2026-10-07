@@ -6,3 +6,9 @@
 - AI strength must eventually be measured, not inferred from popularity.
 - normal/sharp contract skills will correspond to medium/strong job labels.
 - No game checks or KEEP GOING rounds count until a game exists and CI passes.
+
+Update: main RULES.md gained an explicit web-blocked fallback during work.
+The initial research-only stop is superseded; use inspected GitHub sources
+and mark remaining knowledge conventions unverified. Exact adversarial search
+is a strategy reference, not a claim to have solved imperfect information.
+Bots approximate future draws in lookahead; the reducer implements actual draws.

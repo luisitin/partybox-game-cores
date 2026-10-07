@@ -1,0 +1,246 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "🙂",
+      "connected": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "🙂",
+      "connected": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "🙂",
+      "connected": true
+    },
+    "p3": {
+      "id": "p3",
+      "name": "Player 4",
+      "avatarId": "🙂",
+      "connected": true
+    }
+  },
+  "phase": {
+    "id": "round-end",
+    "startedAt": 2701,
+    "deadline": 7701
+  },
+  "rng": {
+    "seed": 1,
+    "step": 27
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "settings": {
+    "mode": "draw",
+    "partners": true,
+    "target": 100,
+    "reserve": 0,
+    "opening": "highest-double",
+    "blocked": "difference",
+    "teamPoints": "opponents"
+  },
+  "hands": [
+    [
+      18
+    ],
+    [
+      22
+    ],
+    [
+      2,
+      4
+    ],
+    []
+  ],
+  "stock": [],
+  "board": [
+    {
+      "tile": 24,
+      "a": 4,
+      "b": 6,
+      "player": 3
+    },
+    {
+      "tile": 6,
+      "a": 6,
+      "b": 0,
+      "player": 3
+    },
+    {
+      "tile": 0,
+      "a": 0,
+      "b": 0,
+      "player": 2
+    },
+    {
+      "tile": 1,
+      "a": 0,
+      "b": 1,
+      "player": 1
+    },
+    {
+      "tile": 7,
+      "a": 1,
+      "b": 1,
+      "player": 0
+    },
+    {
+      "tile": 12,
+      "a": 1,
+      "b": 6,
+      "player": 2
+    },
+    {
+      "tile": 21,
+      "a": 6,
+      "b": 3,
+      "player": 3
+    },
+    {
+      "tile": 20,
+      "a": 3,
+      "b": 5,
+      "player": 1
+    },
+    {
+      "tile": 25,
+      "a": 5,
+      "b": 5,
+      "player": 3
+    },
+    {
+      "tile": 23,
+      "a": 5,
+      "b": 4,
+      "player": 2
+    },
+    {
+      "tile": 15,
+      "a": 4,
+      "b": 2,
+      "player": 1
+    },
+    {
+      "tile": 17,
+      "a": 2,
+      "b": 6,
+      "player": 2
+    },
+    {
+      "tile": 27,
+      "a": 6,
+      "b": 6,
+      "player": 1
+    },
+    {
+      "tile": 26,
+      "a": 6,
+      "b": 5,
+      "player": 3
+    },
+    {
+      "tile": 16,
+      "a": 5,
+      "b": 2,
+      "player": 0
+    },
+    {
+      "tile": 14,
+      "a": 2,
+      "b": 3,
+      "player": 0
+    },
+    {
+      "tile": 9,
+      "a": 3,
+      "b": 1,
+      "player": 0
+    },
+    {
+      "tile": 11,
+      "a": 1,
+      "b": 5,
+      "player": 1
+    },
+    {
+      "tile": 5,
+      "a": 5,
+      "b": 0,
+      "player": 3
+    },
+    {
+      "tile": 3,
+      "a": 0,
+      "b": 3,
+      "player": 1
+    },
+    {
+      "tile": 19,
+      "a": 3,
+      "b": 4,
+      "player": 3
+    },
+    {
+      "tile": 10,
+      "a": 4,
+      "b": 1,
+      "player": 0
+    },
+    {
+      "tile": 8,
+      "a": 1,
+      "b": 2,
+      "player": 0
+    },
+    {
+      "tile": 13,
+      "a": 2,
+      "b": 2,
+      "player": 2
+    }
+  ],
+  "ends": [
+    4,
+    2
+  ],
+  "turn": 0,
+  "starter": 1,
+  "forced": null,
+  "round": 1,
+  "passes": 0,
+  "scores": [
+    0,
+    12,
+    0,
+    12
+  ],
+  "missed": [
+    0,
+    68,
+    10,
+    0
+  ],
+  "history": [
+    {
+      "round": 1,
+      "winner": 3,
+      "points": 12,
+      "blocked": false
+    }
+  ],
+  "last": {
+    "winner": 3,
+    "points": 12,
+    "blocked": false
+  }
+}

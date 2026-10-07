@@ -1,0 +1,12 @@
+{
+  "name": "partybox-g01-dominoes", "version": "0.1.0", "private": true, "type": "module",
+  "scripts": {
+    "test": "npm run check && node --test test.ts && node differential.ts && node mutations.ts && node build.ts && node checksums.ts --check",
+    "check": "tsc --noEmit",
+    "build": "node build.ts",
+    "fixtures": "node fixtures.ts && node checksums.ts",
+    "league": "node league.ts"
+  },
+  "dependencies": {"zod": "4.6.5"},
+  "devDependencies": {"typescript": "5.9.3", "@types/node": "24.10.0", "esbuild": "0.25.12"}
+}

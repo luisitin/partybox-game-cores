@@ -16,3 +16,22 @@
 This is initial AI research, not a completed strength comparison or rules
 survey. Denied rules URLs are listed separately in BLOCKED.md and are not
 claimed as read sources. No corroborated factual rules dataset is shipped.
+
+## Research resumed under main's web fallback
+
+Read abw333/dominoes `game.py` and the full alpha-beta/probabilistic policy
+implementation. Read DominAI `domino.py`, `algorithms/negamax.py` and
+`algorithms/p_negamax.py`. Independent live implementations corroborate the
+28-tile, four-seat partnership model, hidden hands, matching ends, legal passes
+and search of sampled hidden states. They do not independently establish every
+Draw/individual convention; those details are **from knowledge, unverified**.
+The exact points to re-check are listed in NEXT.md.
+
+Read https://github.com/dskart/dominoes_game_solver at
+05ec4720baf1c6748706c90c4540e9997c0838c4 (README.md). It is Domineering on a
+rectangular grid, a different game. Rejected as a domino-chain strength baseline.
+No code or media copied from any external implementation.
+
+All HTML/CSS is original. esbuild bundles zod (MIT) and its own output helpers;
+package versions/integrities are retained in package-lock.json. No logo/art/data
+assets are included. Browser scripts have no runtime network calls.
