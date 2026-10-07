@@ -4,7 +4,7 @@ import type {Position} from './core.ts';
 const pairs=()=>{const a:number[][]=[];for(let i=0;i<7;i++)for(let j=i;j<7;j++)a.push([i,j]);return a;};
 export function reference(p:Position,root:number):number {
  const values=pairs();const seats=p.hands.length;const groups=p.hands.map((_,i)=>p.partners?i%2:i);
- const go=(hands:number[][],left:number|null,right:number|null,turn:number,passes:number):number=>{
+ const go=(hands:number[][],left:number|null,right:number|null,turn:number,passes:number,stock:number[]):number=>{
   const totals=hands.map(h=>h.reduce((sum,t)=>sum+values[t]![0]!+values[t]![1]!,0));
   const exhausted=hands.findIndex(h=>h.length===0);
   if(exhausted>=0||passes===seats){
@@ -22,14 +22,20 @@ export function reference(p:Position,root:number):number {
   const children:number[]=[];
   for(let index=0;index<hands[turn]!.length;index++){
    const t=hands[turn]![index]!;const [a,b]=values[t]!;const reduced=hands.map((h,i)=>i===turn?h.filter((_,j)=>j!==index):[...h]);
-   if(left===null)children.push(go(reduced,a!,b!,(turn+1)%seats,0));
+   if(left===null)children.push(go(reduced,a!,b!,(turn+1)%seats,0,stock));
    else {
-    if(a===left||b===left)children.push(go(reduced,a===left?b!:a!,right,(turn+1)%seats,0));
-    if(a===right||b===right)children.push(go(reduced,left,a===right?b!:a!,(turn+1)%seats,0));
+    if(a===left||b===left)children.push(go(reduced,a===left?b!:a!,right,(turn+1)%seats,0,stock));
+    if(a===right||b===right)children.push(go(reduced,left,a===right?b!:a!,(turn+1)%seats,0,stock));
    }
   }
-  if(children.length===0)return go(hands,left,right,(turn+1)%seats,passes+1);
+  if(children.length===0){
+   if(stock.length>(p.reserve??0)){
+    const drawn=hands.map((h,i)=>i===turn?h.concat(stock[0]!):h.slice());
+    return go(drawn,left,right,turn,0,stock.slice(1));
+   }
+   return go(hands,left,right,(turn+1)%seats,passes+1,stock);
+  }
   return groups[turn]===groups[root]?Math.max(...children):Math.min(...children);
  };
- return go(p.hands,p.ends?.[0]??null,p.ends?.[1]??null,p.turn,p.passes);
+ return go(p.hands,p.ends?.[0]??null,p.ends?.[1]??null,p.turn,p.passes,p.stock??[]);
 }

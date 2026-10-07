@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "npm run check && node preflight.ts && node --test test.ts && node idle.ts && node differential.ts && node mutations.ts && node build.ts --check && node league.ts && node baseline.ts && node browser.ts && node checksums.ts && node checksums.ts --check",
+    "test": "npm run check && node preflight.ts && node --test test.ts && node idle.ts && node differential.ts && node mutations.ts && node build.ts --check && node league.ts && npm run draw-league && node baseline.ts && node browser.ts && node checksums.ts && node checksums.ts --check",
     "check": "tsc --noEmit",
     "build": "node build.ts",
     "fixtures": "node fixtures.ts && node checksums.ts",
@@ -12,7 +12,8 @@
     "browser": "node browser.ts",
     "baseline": "node baseline.ts",
     "idle": "node idle.ts",
-    "preflight": "node preflight.ts"
+    "preflight": "node preflight.ts",
+    "draw-league": "LEAGUE_MODE=draw node league.ts"
   },
   "dependencies": {
     "zod": "4.6.5"

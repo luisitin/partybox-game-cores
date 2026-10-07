@@ -10,7 +10,7 @@ stock-order substitution tests compare decisions with identical RNG seeds.
 - Medium: prioritize pip shedding, retain playable endpoint coverage, and shed
   doubles. Deterministic ties follow legal-move order.
 - Strong: sample 16 deals conditioned on public missing-suit evidence. Use
-  alpha-beta search, exact to exhaustion at <=9 remaining hand tiles and
+  alpha-beta search, exact to exhaustion at <=9 remaining hand-plus-stock tiles and
   depth-three otherwise. Favor the medium move on equal sampled values.
   If bounded rejection sampling cannot find a consistent deal, use medium;
   never quietly discard pass evidence or inspect the true hidden deal.
@@ -36,8 +36,14 @@ establish parity with unlimited sampling/full-game search, with every open-sourc
 AI, or with optimal imperfect-information play. The shipped policy adds shallow
 early-game lookahead; baseline uses pip-greedy early play.
 
-Limitations: Draw lookahead models subsequent play as Block, ignoring future
-stock draws. FFA search pessimistically treats opponents as a coalition.
+Draw search models forced draws on the same turn and honors the stock reserve.
+Unknown stock order is sampled from public unseen tiles, never the real stock.
+Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,630/2,000
+(81.5%, 95% 79.8–83.2), versus 1,513/2,000 (75.65%) before stock modeling.
+Normal/easy is unchanged at 1,155/2,000 (57.75%, 95% 55.6–59.9).
+See draw-league-before.json and draw-league-report.json.
+
+Limitations: FFA search pessimistically treats opponents as a coalition.
 Rejection sampling has a bounded budget and can fall back to medium late in a
 constrained hand. These are disclosed bot approximations; actual game rules and
 public/private views are independent of search assumptions.

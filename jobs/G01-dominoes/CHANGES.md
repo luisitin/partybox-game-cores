@@ -32,3 +32,7 @@ the difference, so players can now choose the convention rather than guessing.
 Bump saveable-state version to 0.2.0 for the new settings field; regenerate the
 manifest, fixtures and offline bundle. Add explicit byte-for-byte replay checks
 and 1,000 full matches each at three/four seats for the new setting.
+
+KEEP GOING round 2 candidate: model forced Draw actions on the same turn in sampled alpha-beta positions, including the configured stock reserve. Sample unseen stock order from public information only; include stock tiles when deciding the exact-search cutoff. Add regression cases for draw/play/pass/empty-hand and reserve reversal without mutating sampled positions. Extend league runner with an explicit Draw mode and separate report so the existing Block results remain intact. Correct the stale rules-source header after live sources recovered. Candidate acceptance depends on seeded Draw measurements and existing regression checks.
+
+Round 2 measured acceptance: strong/medium Draw wins improve from 1,513 to 1,630 over the same 2,000 seeds (+5.85 percentage points); medium/easy remains 1,155. Independently extend the exhaustive reference with forced draws and validate 10,000 Draw cases in addition to the original 10,000 Block cases. Add the Draw league to npm test so the new behavior remains measured in CI.

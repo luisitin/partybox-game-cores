@@ -167,7 +167,7 @@ export function greedy(hand:number[],ends:Tile|null,moves:Input[]):Input{
   return {m,value:pips(m.tile)*2+exposed*3+(a===b?2:0),i};
  });scored.sort((a,b)=>b.value-a.value||a.i-b.i);return scored[0]!.m;
 }
-export interface Position {hands:number[][];ends:Tile|null;turn:number;passes:number;partners:boolean;}
+export interface Position {hands:number[][];ends:Tile|null;turn:number;passes:number;partners:boolean;stock?:number[];reserve?:number;}
 export function positionMoves(p:Position):{tile:number;side:'left'|'right'}[]{
  const out:{tile:number;side:'left'|'right'}[]=[];for(const t of p.hands[p.turn]!){const [a,b]=tile(t);if(p.ends===null)out.push({tile:t,side:'right'});else {if(a===p.ends[0]||b===p.ends[0])out.push({tile:t,side:'left'});if(a===p.ends[1]||b===p.ends[1])out.push({tile:t,side:'right'});}}return out;
 }
@@ -189,7 +189,14 @@ export function solve(p:Position,root:number,depth=128,alpha=-Infinity,beta=Infi
  const terminal=utility(p,root);if(terminal!==null)return terminal;
  const allied=(i:number)=>p.partners?i%2===root%2:i===root;
  if(depth<=0){const mine=p.hands.reduce((n,h,i)=>n+(allied(i)?handPips(h):0),0);const other=p.hands.reduce((n,h,i)=>n+(!allied(i)?handPips(h):0),0);return other/(p.partners?1:p.hands.length-1)-mine;}
- const moves=positionMoves(p);const choices=moves.length?moves:[null];const max=allied(p.turn);let best=max?-Infinity:Infinity;
+ const moves=positionMoves(p);
+ // In Draw, a forced draw keeps the same turn until a tile can be played.
+ // The order is sampled from public unknown tiles, never the real boneyard.
+ if(!moves.length&&p.stock&&p.stock.length>(p.reserve??0)){
+  const next={...p,hands:p.hands.map((h,i)=>i===p.turn?[...h,p.stock![0]!]:h),stock:p.stock.slice(1),passes:0};
+  return solve(next,root,depth-1,alpha,beta);
+ }
+ const choices=moves.length?moves:[null];const max=allied(p.turn);let best=max?-Infinity:Infinity;
  for(const m of choices){const v=solve(positionPlay(p,m),root,depth-1,alpha,beta);best=max?Math.max(best,v):Math.min(best,v);if(max)alpha=Math.max(alpha,best);else beta=Math.min(beta,best);if(alpha>=beta)break;}return best;
 }
 function sampleHands(o:Observation,rng:Rng):number[][]|null{
@@ -210,8 +217,9 @@ export function choose(o:Observation,rng:Rng,skill:BotSkill='normal'):Input|null
  const total=o.counts.reduce((a,b)=>a+b,0);
  for(let k=0;k<16;k++){
   const hands=sampleHands(o,rng);if(hands===null)continue;samples++;
-  const p:Position={hands,ends:o.ends,turn:o.seat,passes:0,partners:o.settings.partners};
-  moves.forEach((m,i)=>{if(m.type!=='play')return;const q=positionPlay(p,m);values[i]!+=solve(q,o.seat,total<=9?(total+1)*o.counts.length:3);});
+  const stock=o.settings.mode==='draw'?rng.shuffle(allTiles().filter(t=>!hands.flat().includes(t)&&!o.played.includes(t))):undefined;
+  const p:Position={hands,ends:o.ends,turn:o.seat,passes:0,partners:o.settings.partners,stock,reserve:o.settings.reserve};
+  moves.forEach((m,i)=>{if(m.type!=='play')return;const q=positionPlay(p,m);values[i]!+=solve(q,o.seat,total+(stock?.length??0)<=9?(total+(stock?.length??0)+1)*o.counts.length:3);});
  }
  if(samples===0)return greedy(o.hand,o.ends,moves);
  const preferred=greedy(o.hand,o.ends,moves);let best=moves.findIndex(m=>JSON.stringify(m)===JSON.stringify(preferred));

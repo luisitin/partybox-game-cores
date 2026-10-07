@@ -5,7 +5,7 @@ Read latest README.md, RULES.md, JOBS.md and CLAIMS.md on main before proceeding
 Do not rebuild/replace the owner's G08 Shake Up when the queue reaches it:
 read its START-HERE.md and start/HANDOFF.md first, and preserve existing assets.
 
-Baseline full integration passed and CI run 37647980032 is green for c28d4e4. KEEP GOING round 1 affected checks pass: 28 tests / 9,003 complete matches, 27,000 idle cases, 25/25 mutants, type/build/browser/checksums. Inspect newest PR CI before claiming latest head green.
+Baseline full integration passed and CI run 37647980032 is green for c28d4e4. KEEP GOING rounds 1–2 affected checks pass: 29 tests / 9,003 complete matches, 27,000 idle cases, 25/25 mutants, type/build/browser/checksums. Inspect newest PR CI before claiming latest head green.
 
 Remaining delivery:
 1. PR opened successfully: https://github.com/luisitin/partybox-game-cores/pull/1.
@@ -16,12 +16,12 @@ Remaining delivery:
    and diagnosed run 37646777685: missing system ffmpeg during video capture.
    CI now explicitly installs the encoder and tests prerequisites before
    long suites. Corrected run 37647980032 PASSED for c28d4e4. KEEP GOING round 1 is
-   implemented (selectable published Draw deal); inspect its latest CI next.
+   implemented; round 2 adds measured stock-aware Draw search (+5.85pp versus medium). Inspect latest CI next.
 2. Confirm actual job workflow outcome, investigate failures before claiming
    green. Keep the reviewable PR title/body aligned with the final implementation.
 3. After green PR CI, do KEEP GOING: reread requirements, list five biggest
    weaknesses each round, fix worst, measure/log/push, repeat to three rounds
-   without player-noticeable gains. LOOP.md records round 1; no no-gain streak yet.
+   without player-noticeable gains. LOOP.md records rounds 1–2; no no-gain streak yet. Round 3 worst remaining bot issue is rejection fallback; consider exact conditional sampling with dynamic programming over tile index and remaining seat capacities.
 4. Refresh G01's line on main for each push, preserving concurrent claims.
 5. Then continue with the lowest eligible job from current main CLAIMS.md.
 

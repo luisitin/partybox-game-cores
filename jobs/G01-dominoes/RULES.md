@@ -1,9 +1,10 @@
 # Dominoes rules and selected variants
 
-Source status: partnership mechanics were read in the two GitHub implementations
-in SOURCES.md. Draw and individual Block details below are **from knowledge,
-unverified**, under main RULES.md's web-blocked fallback. This is not a claim
-that inaccessible official sources were read. Re-verification is in NEXT.md.
+Source status: Pagat Draw/Block and Wikipedia were read after network access
+recovered; partnership mechanics were also read in two pinned GitHub
+implementations. SOURCES.md records dates, scope and unavailable endpoints.
+CONFLICTS.md distinguishes published variants from selected house conventions;
+unsupported details remain labelled from knowledge, unverified there.
 
 ## Selected game
 

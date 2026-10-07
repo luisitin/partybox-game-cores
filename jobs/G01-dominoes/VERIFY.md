@@ -169,3 +169,9 @@ encoder removes dependence on runner-image defaults.
 ## KEEP GOING round 1
 
 Published Draw deal option: three-seat hands 5→7 (+40%); four-seat hands 5→6 (+20%); Block and partnership defaults unchanged. Strict type check, 28 unit/property tests (9,003 complete bot/property matches including 2,000 additional traditional-deal matches), 25/25 mutation assertions, reproducible build and browser checks passed. Idle suite: 27,000 cases, maximum 2,007,103ms against 3,600,000ms budget. Browser TV/phone checks remained offline and private; measured phone frame rate approximately 60.00fps, p95 16.7ms. Latest change requires its own CI result; earlier green run belongs to c28d4e4.
+
+## KEEP GOING round 2
+
+Same 2,000 two-seat Draw seeds, alternating seats: strong/medium before stock modeling 1,513 wins / 487 losses (75.65%, 95% 73.77–77.53%); after 1,630 / 370 (81.5%, 95% 79.80–83.20%), +5.85 percentage points. Medium/easy unchanged 1,155 / 845 (57.75%, 95% 55.59–59.91%). These compare each policy to medium, not a direct old-versus-new tournament. Reports preserve counts and turn totals. Independent exhaustive differential check now covers 10,000 Block plus 10,000 Draw endgames with sampled 0–2 stock tiles and reserve choices, seed 53759, all pass. Draw regression checks same-turn drawing, reserve-dependent winner reversal and immutability. Full regression results pending below.
+
+Round 2 affected regressions passed: strict TypeScript, all 29 tests / 9,003 complete matches, 25/25 mutants, offline/privacy/reduced-motion browser checks and reproducible build/checksums. Block search behavior is unchanged; its existing league and upstream baseline are also rerun by required CI.

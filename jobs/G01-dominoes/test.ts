@@ -154,3 +154,14 @@ test('published Draw deal is selectable and never changes Block or partnership d
  assert.equal(init(context(3,1,{deal:'unknown'})).settings.deal,'block-sized');
 });
 if(!process.env.FAST_TEST)for(const n of [3,4])test(`1,000 published-deal Draw matches: ${n} seats`,()=>{for(let seed=1;seed<=1000;seed++)simulate(n,seed,{mode:'draw',deal:'traditional'});});
+
+test('Draw lookahead draws on the same turn, respects reserve and does not mutate samples',()=>{
+ const p={hands:[[id(0,0)],[id(6,6)]],ends:[1,1] as const,turn:0,passes:0,partners:false,stock:[id(0,1)],reserve:0};
+ const before=JSON.stringify(p);
+ // Root draws 0-1, plays it, opponent passes, root then empties with 0-0.
+ assert.equal(C.solve(p,0),112);assert.equal(JSON.stringify(p),before);
+ assert.equal(C.solve({...p,reserve:1},0),112); // blocked: root has fewer pips
+ // Reserving the only useful draw reverses which player wins the blocked board.
+ const q={...p,hands:[[id(5,5)],[id(0,0)]],stock:[id(1,5)]};
+ assert.equal(C.solve(q,0),100);assert.equal(C.solve({...q,reserve:1},0),-110);
+});
