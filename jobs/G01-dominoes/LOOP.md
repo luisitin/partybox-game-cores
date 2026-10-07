@@ -13,3 +13,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 9. Preserve inactivity across computer inputs and schedule mixed-roster round-end timers; budget failures fall 25,248/36,000→0, browser advances past its permanent Round 1 stall, all 35 tests pass; player-noticeable liveness gain, no-gain streak 0.
 10. Re-test selfish max-n against current goal-aware strong: 763 versus 692 wins in 2,000 three-seat games (+3.55pp, 95% -0.18–7.28pp crosses zero); reject, no-gain streak 1.
 11. Increase strong samples 32→64 after 1,048/2,000 initial wins and 1,082/2,000 fresh confirmation (54.1%, lower 95% 51.92%); 35 tests, 25 mutants and browser pass, Block/Draw leagues 72.45%/84.2%; demonstrated strength gain, no-gain streak reset to 0.
+12. Test max-n under64 samples: initial803 vs691 wins, but fresh750 vs719 (+1.55pp,95% -2.21–5.31pp crosses zero); reject unreplicated advantage, no-gain streak1.

@@ -41,3 +41,6 @@ Production remains unchanged; /tmp/G01-samples64-maxn.log records progress.
 Round12 initial max-n:803 vs691 shipped wins; difference5.6pp, lower95%1.82pp.
 Confirm with STRATEGY_SEED_START=2001 node strategy-samples64-study.ts before
 any production change. Initial report preserved; fresh report separate.
+
+Round12 COMPLETE: fresh max-n750 vs719,95% difference crosses zero. Rejected;
+production unchanged. No-gain streak1. Continue three-round stopping rule.
