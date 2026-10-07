@@ -1,0 +1,165 @@
+{
+ "phase": {
+  "id": "shake",
+  "startedAt": 1241000,
+  "deadline": 1245200
+ },
+ "rng": {
+  "s": 419101514
+ },
+ "cfg": {
+  "rounds": 3,
+  "huntMs": 180000,
+  "size": 4,
+  "minLen": 3,
+  "spicy": false,
+  "lang": "en",
+  "reader": "host-hype",
+  "mode": "together"
+ },
+ "order": [
+  "ana",
+  "ben",
+  "cleo",
+  "dev",
+  "eli",
+  "priya"
+ ],
+ "players": {
+  "ana": {
+   "id": "ana",
+   "name": "Ana",
+   "bot": false,
+   "away": false,
+   "seat": 0
+  },
+  "ben": {
+   "id": "ben",
+   "name": "Ben",
+   "bot": false,
+   "away": false,
+   "seat": 1
+  },
+  "cleo": {
+   "id": "cleo",
+   "name": "Cleo",
+   "bot": false,
+   "away": false,
+   "seat": 2
+  },
+  "dev": {
+   "id": "dev",
+   "name": "Dev",
+   "bot": true,
+   "away": false,
+   "seat": 3
+  },
+  "eli": {
+   "id": "eli",
+   "name": "Eli",
+   "bot": false,
+   "away": false,
+   "seat": 4
+  },
+  "priya": {
+   "id": "priya",
+   "name": "Priya",
+   "bot": false,
+   "away": false,
+   "seat": 5
+  }
+ },
+ "round": 2,
+ "grid": [
+  "n",
+  "e",
+  "b",
+  "t",
+  "l",
+  "w",
+  "s",
+  "o",
+  "h",
+  "i",
+  "z",
+  "s",
+  "t",
+  "a",
+  "a",
+  "f"
+ ],
+ "throwSeed": 1887566704,
+ "words": {
+  "ana": [],
+  "ben": [],
+  "cleo": [],
+  "dev": [],
+  "eli": [],
+  "priya": []
+ },
+ "done": {},
+ "verdicts": {},
+ "seq": 90,
+ "counted": [],
+ "beats": [],
+ "missed": null,
+ "pausedMs": 0,
+ "scores": {
+  "ana": 0,
+  "ben": 11,
+  "cleo": 0,
+  "dev": 0,
+  "eli": 0,
+  "priya": 0
+ },
+ "log": [
+  {
+   "round": 1,
+   "points": {
+    "ana": 0,
+    "ben": 11,
+    "cleo": 0,
+    "dev": 0,
+    "eli": 0,
+    "priya": 0
+   },
+   "unique": {
+    "ana": 0,
+    "ben": 10,
+    "cleo": 0,
+    "dev": 0,
+    "eli": 0,
+    "priya": 0
+   },
+   "shared": {
+    "ana": 11,
+    "ben": 23,
+    "cleo": 10,
+    "dev": 14,
+    "eli": 9,
+    "priya": 13
+   },
+   "counted": {
+    "ana": 0,
+    "ben": 0,
+    "cleo": 0,
+    "dev": 0,
+    "eli": 0,
+    "priya": 0
+   },
+   "best": {
+    "ben": "flesh"
+   },
+   "firstMs": {
+    "ana": 1000,
+    "ben": 1000,
+    "cleo": 2000,
+    "dev": 1000,
+    "eli": 1000,
+    "priya": 2000
+   },
+   "missed": "seeable"
+  }
+ ],
+ "leadersBefore": []
+}

@@ -29,8 +29,8 @@ Partnership Spades, bids incl. nil and blind nil, bags (10 = -100), 500 points; 
 ## G07 Liar's Dice
 Perudo rules, 2-8 players, palifico round, ones wild setting; bots that use exact probability plus a bluffing model.
 
-## G08 Word Grid
-A Boggle-style 4x4/5x5 letter grid, 3-minute rounds, duplicate words cancel, uses a public-domain English word list (cite it; ship it compressed under 400 KB). Fair dice sets for 4x4 and 5x5 researched and cited.
+## G08 Word Grid (= the owner's Shake Up)
+Already built: read jobs/G08-word-grid/START-HERE.md first. Verify and improve the existing Shake Up build in jobs/G08-word-grid/start/ (cube sets, word lists, bots, rules tests, play.html); never rebuild it or replace its assets.
 
 ## G09 Category Rush
 Scattergories-style: a random letter and 12 categories, everyone writes answers, the group votes off bad ones, duplicates score zero. 300+ original categories you wrote.

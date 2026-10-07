@@ -1,0 +1,14 @@
+{
+  "name": "letter-cube",
+  "group": "shake-up",
+  "title": "Letter cube",
+  "description": "Rounded white cube with a letter on each face (gold when highlighted). Faces are canvas textures, so any label works.",
+  "source": "cine/shake-up/lib/tray.js#letterCube (procedural, three.js)",
+  "forms": {
+    "film": "films/shake-up/lib/tray.js (letterCube)",
+    "station": "games/shake-up/client/station/cube-{p,l,a,y}.glb",
+    "game": "SDK Dice3d with `faces` (sdk-tasks/dice3d-letter-faces)"
+  },
+  "licence": "own work",
+  "usedBy": ["shake-up"]
+}

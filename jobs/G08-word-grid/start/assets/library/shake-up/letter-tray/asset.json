@@ -1,0 +1,14 @@
+{
+  "name": "letter-tray",
+  "group": "shake-up",
+  "title": "Shake Up letter tray",
+  "description": "Lidded wooden tray with a felt floor and an engraved SHAKE UP lid. Built in code so every form shares one look.",
+  "source": "cine/shake-up/lib/tray.js#letterTray (procedural, three.js)",
+  "forms": {
+    "film": "films/shake-up/lib/tray.js (letterTray)",
+    "station": "games/shake-up/client/station/tray.glb (baked by cine/shake-up/export-glb.mjs)",
+    "game": "games/shake-up/client/tv/Tray3d.tsx (SDK Solid3d tray + felt)"
+  },
+  "licence": "own work",
+  "usedBy": ["shake-up"]
+}

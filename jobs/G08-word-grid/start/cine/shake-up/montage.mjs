@@ -1,0 +1,11 @@
+import { chromium } from 'playwright';
+import { writeFileSync } from 'node:fs';
+const [out, ...files] = process.argv.slice(2);
+const html = `<body style="margin:0;background:#000;display:grid;grid-template-columns:repeat(3,640px);gap:4px">${files.map((f) => `<div style="position:relative"><img src="file://${f}" style="width:640px;display:block"><b style="position:absolute;left:6px;top:4px;color:#fff;font:16px sans-serif;background:#0008;padding:2px 6px">${f.split('-').pop()}</b></div>`).join('')}</body>`;
+writeFileSync('/tmp/claude-0/-home-claude/b0149710-8741-5b0b-be67-3e17e52eb6f4/scratchpad/m.html', html);
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium' });
+const p = await b.newPage({ viewport: { width: 1928, height: 100 } });
+await p.goto('file:///tmp/claude-0/-home-claude/b0149710-8741-5b0b-be67-3e17e52eb6f4/scratchpad/m.html');
+await p.waitForTimeout(300);
+await p.screenshot({ path: out, fullPage: true });
+await b.close();

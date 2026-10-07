@@ -1,0 +1,92 @@
+/* Letter grid. Tokens only; sizes scale from the container. */
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--n), 1fr);
+  gap: calc(var(--pb-space-2) * 1.25);
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  container-type: inline-size;
+  /* A face-down cube's back: a shade off the card so it reads on cream (daylight) as on navy. */
+  --su-back: color-mix(in srgb, var(--pb-surface-2) 82%, var(--pb-text));
+  --turn-step: var(--pb-motion-fast);
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.cube {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 18%;
+  background: var(--pb-cube, var(--pb-text));
+  color: var(--pb-cube-ink, var(--pb-bg));
+  font-family: var(--pb-font);
+  font-weight: 900;
+  font-size: calc(46cqi / var(--n));
+  line-height: 1;
+  box-shadow: inset 0 -0.12em 0 color-mix(in srgb, var(--pb-bg) 25%, transparent), 0 0 0 calc(var(--pb-space-1) / 4) var(--pb-line);
+  transition: transform var(--pb-motion-fast) var(--pb-ease), scale var(--pb-motion-fast) var(--pb-ease), opacity var(--pb-motion-base) var(--pb-ease);
+}
+.wide .face { font-size: 0.78em; letter-spacing: -0.02em; }
+.on {
+  background: var(--pb-accent-2);
+  color: var(--pb-on-accent);
+  outline: calc(var(--pb-space-1) * 0.75) solid var(--pb-accent);
+  /* `scale`, not transform: it stacks with the glow's pop, and the wider gaps show the links. */
+  scale: 0.92;
+}
+.off { opacity: 0.35; }
+.glow { animation: global(pb-pop) var(--pb-motion-base) var(--pb-ease) both; animation-delay: calc(var(--pb-motion-fast) * var(--k)); }
+.n {
+  position: absolute;
+  top: 6%;
+  right: 9%;
+  font-style: normal;
+  font-size: 0.32em;
+  font-weight: 800;
+}
+/* Under the cubes (they paint over it): only the links between path cubes show. */
+.line {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+.line line {
+  stroke: var(--pb-accent);
+  stroke-width: calc(var(--pb-space-2) * 1.25);
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+}
+/* Reveal glow: link k appears as cube k pops (cube k waits k fast steps). */
+.drawn line { animation: global(pb-fade-in) var(--pb-motion-base) var(--pb-ease) both; animation-delay: calc(var(--pb-motion-fast) * var(--k)); }
+.broken { animation: global(pb-shake) var(--pb-motion-base) var(--pb-ease); }
+/* PhoneStage shake: cube backs rattle like the TV's tray, then turn over one diagonal (--d) at a time:
+   edge-on at half-way, where the blank back gives way to the lettered face. */
+/* With turnMs: the steps shorten so the last cube (a slow turn) lands a fast step before --turn-span ends
+   (5×5 has 8 diagonals to the 4×4's 6). */
+.fit { --turn-step: min(var(--pb-motion-fast), max(0ms, calc((var(--turn-span) - var(--pb-motion-slow) - var(--pb-motion-fast)) / (2 * (var(--n) - 1))))); }
+.down { background: var(--su-back); box-shadow: inset 0 0 0 calc(var(--pb-space-1) / 2) var(--pb-line), inset 0 -0.12em 0 color-mix(in srgb, var(--pb-bg) 25%, transparent); animation: rattle var(--pb-motion-base) ease-in-out infinite; animation-delay: calc(var(--pb-motion-fast) / -4 * var(--d)); }
+@keyframes rattle { 30% { transform: translateY(-6%) rotate(-3deg); } 70% { transform: translateY(-2%) rotate(2deg); } }
+.up { animation: turn var(--pb-motion-slow) both; animation-delay: calc(var(--turn-step) * var(--d)); }
+.up .face { animation: face-up var(--pb-motion-slow) step-end both; animation-delay: calc(var(--turn-step) * var(--d)); }
+@keyframes turn {
+  0% { transform: perspective(calc(var(--pb-space-8) * 6)) rotateX(0); background-color: var(--su-back); animation-timing-function: ease-in; }
+  50% { transform: perspective(calc(var(--pb-space-8) * 6)) rotateX(90deg); background-color: var(--su-back); animation-timing-function: step-end; }
+  50.1% { transform: perspective(calc(var(--pb-space-8) * 6)) rotateX(-90deg); background-color: var(--pb-cube, var(--pb-text)); animation-timing-function: ease-out; }
+  100% { transform: perspective(calc(var(--pb-space-8) * 6)) rotateX(0); }
+}
+@keyframes face-up { 0% { opacity: 0; } 50% { opacity: 1; } }
+.paused .cube { opacity: 0.4; }
+:global(:root[data-motion='off']) .cube,
+:global(:root[data-motion='off']) .glow,
+:global(:root[data-motion='off']) .drawn line,
+:global(:root[data-motion='off']) .down,
+:global(:root[data-motion='off']) .up,
+:global(:root[data-motion='off']) .up .face,
+:global(:root[data-motion='off']) .broken { animation: none; transition: none; }

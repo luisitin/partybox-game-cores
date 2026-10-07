@@ -1,0 +1,68 @@
+/* TV stage: designed at 1920×1080 in px (fit.ts zooms <html>); overscan is the shell's. */
+.stage { --su-tray: calc(var(--pb-space-8) * 12); --su-spot: calc(var(--pb-space-8) * 1.5); position: relative; display: flex; gap: var(--pb-space-7); height: 100%; padding: var(--pb-space-6) 0; font-family: var(--pb-font); color: var(--pb-text); }
+.column { flex-direction: column; justify-content: center; }
+.trayCol { flex: 0 0 var(--su-tray); height: var(--su-tray); align-self: center; position: relative; }
+.flat { width: var(--su-tray); }
+/* Right column: panels hang from the top (a card's header never moves), the caption sits at the foot. */
+.side { flex: 1; min-width: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: var(--pb-space-5); overflow: hidden; }
+.panel { display: flex; flex-direction: column; gap: var(--pb-space-4); }
+.middle { height: 100%; justify-content: center; }
+/* Gold as text uses the ink variant: the fill gold is unreadable on light themes. */
+.kicker { margin: 0; display: flex; align-items: center; gap: var(--pb-space-3); font-size: var(--pb-tv-h2); font-weight: 800; color: var(--pb-accent-2-ink, var(--pb-accent-2)); text-wrap: balance; }
+.sub { margin: 0; font-size: var(--pb-tv-body); color: var(--pb-text-muted); font-weight: 700; text-wrap: balance; }
+.h2 { margin: 0; font-size: var(--pb-tv-h2); font-weight: 900; }
+/* Two lines tall with the text on the bottom line, so a new or longer line never moves anything. */
+.captionSlot { min-height: calc(var(--pb-tv-body) * 2.8); display: grid; align-content: end; }
+.caption { margin: 0; min-height: 100%; display: flex; align-items: flex-end; font-size: var(--pb-tv-body); font-style: italic; color: var(--pb-text-muted); text-wrap: balance; }
+.timer { font-size: var(--pb-tv-display); font-weight: 900; line-height: 1; font-variant-numeric: tabular-nums; color: var(--pb-accent-2-ink, var(--pb-accent-2)); display: flex; align-items: baseline; gap: var(--pb-space-3); }
+.timer small { font-size: var(--pb-tv-h2); color: var(--pb-text-muted); }
+.danger { color: var(--pb-danger); animation: global(pb-tick) var(--pb-motion-pulse) var(--pb-ease) infinite; }
+/* One ranked column (eight 52 px faces fit under the timer), kept to a readable width so a count sits by
+   its name: every re-sort is a vertical glide (HuntPanel). */
+.counts { position: relative; list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, calc(var(--pb-space-8) * 10)); grid-auto-flow: row; gap: var(--pb-space-3); }
+.counts li { display: grid; grid-template-columns: auto 1fr auto 1.2em; align-items: center; gap: var(--pb-space-3); font-size: var(--pb-tv-body); transform-origin: left center; transition: transform var(--pb-motion-base) var(--pb-ease); }
+.counts b { font-size: var(--pb-tv-h2); font-variant-numeric: tabular-nums; }
+/* A new word bumps its count (re-keyed per value) in gold: the digit never leaves, so a bot tick that
+   moves six counts at once reads as six bumps, not six blinks. A 0 has nothing to celebrate. */
+.counts b.up { animation: su-bump var(--pb-motion-base) var(--pb-ease); }
+@keyframes su-bump { 35% { transform: scale(1.22); color: var(--pb-accent-2-ink, var(--pb-accent-2)); } }
+.name { font-weight: 800; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.state { text-align: center; color: var(--pb-text-muted); }
+.away { opacity: 0.5; }
+.toast { align-self: flex-start; padding: var(--pb-space-3) var(--pb-space-5); border-radius: var(--pb-radius-lg); background: var(--pb-surface-2); font-size: var(--pb-tv-body); font-weight: 800; animation: global(pb-pop) var(--pb-motion-base) var(--pb-ease) both, global(pb-fade-out) var(--pb-motion-slow) var(--pb-ease) calc(var(--pb-motion-pulse) * 4) forwards; }
+.card { display: flex; flex-direction: column; gap: var(--pb-space-4); padding: var(--pb-space-6); border-radius: var(--pb-radius-lg); background: var(--pb-surface); }
+/* A player's card unrolls from its header down as its chips arrive, never a tall blank slab up front.
+   --su-k: its staggered entries (RevealPanel); the unroll spans the chip stagger (words.module.css). */
+.unroll { animation: su-unroll calc(var(--pb-motion-base) + var(--pb-motion-fast) * min(var(--su-k), 6) + var(--pb-motion-fast) / 3 * max(0, var(--su-k) - 6)) ease-out backwards; }
+@keyframes su-unroll { from { clip-path: inset(0 0 calc(100% - var(--pb-space-8) * 2) 0 round var(--pb-radius-lg)); } to { clip-path: inset(0 round var(--pb-radius-lg)); } }
+/* A sparse card lets its few scoring words breathe (header unmoved): up to three chips at h2. */
+.card ul:first-child:not(:has(> li:nth-child(4))) > li { font-size: var(--pb-tv-h2); }
+.missed .spotWord { --wt-max: calc(var(--pb-space-8) * 2); }
+.cardHead { display: flex; align-items: center; gap: var(--pb-space-4); font-size: var(--pb-tv-h2); font-weight: 900; }
+.total { margin-left: auto; color: var(--pb-accent-3); font-variant-numeric: tabular-nums; animation: global(pb-tick) var(--pb-motion-base) var(--pb-ease); }
+.zero { color: var(--pb-text-muted); }
+.faces { display: flex; flex-wrap: wrap; gap: var(--pb-space-3); }
+.progress { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--pb-space-3); font-size: var(--pb-tv-caption); color: var(--pb-text-muted); }
+.progress .past { color: var(--pb-accent-3); }
+.progress .now { color: var(--pb-accent-2-ink, var(--pb-accent-2)); font-weight: 900; animation: global(pb-pop) var(--pb-motion-base) var(--pb-ease) both; }
+.tally { --su-enter: calc(var(--pb-motion-slow) - var(--pb-motion-fast)); display: grid; grid-template-columns: 1fr 1fr; gap: var(--pb-space-7); width: 100%; align-items: center; }
+.spot { display: flex; flex-direction: column; gap: var(--pb-space-4); align-items: flex-start; }
+.spotWord { --wt-max: var(--su-spot); }
+/* The tally arrives by the shell's pan with its headings already up (never an empty stage); the events,
+   tiles, stat line and the Scoreboard climb, wait until the camera eases into its stop (--su-enter;
+   TallyStage gives the Scoreboard the same wait, pace.ts panEnterMs). */
+.tally .spotWord > * { animation-delay: calc(var(--su-enter) + var(--pb-motion-fast) * var(--i)); }
+.who { color: var(--pb-text); font-weight: 900; }
+.board { display: flex; flex-direction: column; gap: var(--pb-space-4); }
+.spot .kicker, .board .h2 { animation: global(pb-rise) var(--pb-motion-base) var(--pb-ease) both; }
+/* The stat waits until the last tile has landed (tiles land one fast step apart, each over slow). */
+.afterTiles { animation: global(pb-rise) var(--pb-motion-base) var(--pb-ease) both; animation-delay: calc(var(--su-enter, 0ms) + var(--pb-motion-fast) * (var(--su-n) - 1) + var(--pb-motion-slow)); }
+:global(:root[data-motion='off']) .counts b.up,
+:global(:root[data-motion='off']) .unroll,
+:global(:root[data-motion='off']) .total,
+:global(:root[data-motion='off']) .progress .now,
+:global(:root[data-motion='off']) .spot .kicker,
+:global(:root[data-motion='off']) .board .h2,
+:global(:root[data-motion='off']) .afterTiles,
+:global(:root[data-motion='off']) .toast,
+:global(:root[data-motion='off']) .danger { animation: none; }
