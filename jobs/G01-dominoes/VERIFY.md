@@ -253,3 +253,7 @@ Round13: `BUDGET_STUDY=paired node budget-samples64-study.ts`: 2,000 full Block 
 `node league.ts`: current Block sharp/normal1,438/2,000=71.9% (95%69.93–73.87%); normal/easy1,619/2,000=80.95%. Prior64 Block1,449 wins archived, no strength-increase claim. Draw policy/RNG and four-player partners are unchanged; prior actual Draw1,684/2,000 and bounded upstream132/200 remain labelled reused measurements and will be rerun by full CI. `node checksums.ts && node checksums.ts --check` passes. CI37670713628 and37671365271 succeeded, validating bounded encoder installer plus complete0.2.5 pipeline. New0.2.6 head requires its own actual CI.
 
 Round15:0.2.7 Draw public-opener probe10,000:2,315 impossible sampled hands before,0 after;40/40 tests,25/25 mutants, browser59.605fps/p9916.8ms, Draw strong1,684/2,000 and medium1,155/2,000. Block parity rerun pending. Previous843cab0 GitHub run37676347377 SUCCESS.
+
+CI diagnosis:run37673184073 cancelled during `npx playwright install --with-deps chromium` (19:21:50–19:46:27 UTC), verification step skipped. This is installation evidence, not a measured game regression. Later843cab0 run37676347377 passed the entire workflow. Currentecbbb34 run37681469962 pending.
+
+Round15 Block parity complete:strong1,438/2,000 (71.9%),medium1,619/2,000 (80.95%); all win/loss/step totals identical to0.2.6. Draw totals likewise identical. No league-strength gain claimed.
