@@ -131,6 +131,18 @@ if(!process.env.FAST_TEST){
   }
  });
  test('idle timer-only full matches terminate for every valid count',()=>{
-  for(const n of [2,3,4]){let s=init(context(n,3)),steps=0;while(s.phase.id!=='done'&&steps++<20000)s=reduce(s,{type:'timer',now:s.phase.deadline!,phaseId:s.phase.id,startedAt:s.phase.startedAt});assert.equal(s.phase.id,'done');}
+  for(const n of [2,3,4]){let s=init(context(n,3)),steps=0;while(s.phase.id!=='done'&&steps++<20000)s=reduce(s,{type:'timer',now:s.phase.deadline!,phaseId:s.phase.id,startedAt:s.phase.startedAt});assert.equal(s.phase.id,'done');assert(s.phase.startedAt<=game.manifest.estimatedMinutes*3*60000);}
  });
 }
+test('manifest equals generated JSON, fixtures cover every phase and play on',()=>{
+ assert.deepEqual(game.manifest,JSON.parse(readFileSync('manifest.json','utf8')));
+ for(const phase of game.phases){let s=JSON.parse(readFileSync(`fixtures/${phase}.json`,'utf8')) as State;assert.equal(s.phase.id,phase);assert.doesNotThrow(()=>tvView(s));assert.doesNotThrow(()=>controllerView(s,'unknown'));const rng=createRng(24);let steps=0;
+  while(s.phase.id!=='done'&&steps++<20000){const i=game.bot.sampleInput(s,s.seats[s.turn]!,rng)!;assert(game.inputSchema.safeParse(i).success);s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input:i,now:steps*100});}assert.equal(s.phase.id,'done');assert.equal(Object.keys(results(s)!.scores).length,s.seats.length);
+ }
+});
+test('idle acceleration resets on human activity and input key order is immaterial',()=>{
+ let s=init(context());s=reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!});assert.equal(s.idleTurns,1);
+ s=reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!});assert.equal(s.idleTurns,2);assert.equal(s.phase.deadline!-s.phase.startedAt,s.phase.id==='play'?1000:5000);
+ const i=legal(s)[0]!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input:i,now:s.phase.startedAt+1});assert.equal(s.idleTurns,0);if(s.phase.id==='play')assert.equal(s.phase.deadline!-s.phase.startedAt,30000);
+ const q=init(context(2,1,{opening:'rotating'}));const p=legal(q)[0]!;assert.equal(p.type,'play');if(p.type==='play'){const reordered={side:p.side,tile:p.tile,type:p.type};assert.deepEqual(apply(q,reordered,1),apply(q,p,1));}
+});

@@ -1,0 +1,27 @@
+# Implementation and verification corrections
+
+- Add a deterministic Draw/Block reducer, regional scoring toggles, four-seat
+  partners, safe views, results, fixtures and a standalone hot-seat/bot page.
+- Keep bot decisions behind a public-observation boundary; use sampled deals
+  and bounded alpha-beta to provide stronger play without hidden-hand access.
+- Add an independent exhaustive endgame implementation, 10,000 differential
+  cases and an assertion-based mutation harness with a mandatory passing baseline.
+- Correct test setup: oriented-chain tests must supply the preexisting board,
+  and hidden-view comparisons must pass the same viewer ID. Discard the first
+  mutation attempt against the failing baseline; it is not evidence of kills.
+- Fix build substitution to use a callback: literal `$` replacement sequences
+  in the bundled dependency previously corrupted embedded JavaScript. Parse
+  the generated script before writing it, and functionally exercise it in Chromium.
+- Fix order-sensitive input comparison: equivalent schema-valid play inputs
+  are accepted regardless of object-key insertion order. Add regression coverage.
+- Fix unattended match timing: retain 30 seconds for humans, accelerate after
+  two missed/automatic turns, restore normal time after real input, and check
+  18,000 full idle matches against the contract's simulated-time budget.
+- Add a doubles-first easy strategy, retain stronger pip/coverage medium play,
+  and rerun measured leagues after the policy change.
+- Collapse configuration after starting a match so TV gameplay fits 1080px.
+  Keep settings available through the accessible Configure match disclosure.
+- Add functional browser privacy, full bot-match, offline, reduced-motion,
+  throttled frame-time checks and a short original milestone video.
+- Record rule knowledge fallbacks honestly; main's new web-fallback policy
+  supersedes the initial research-only BLOCKED.md.

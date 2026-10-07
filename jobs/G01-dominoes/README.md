@@ -3,11 +3,13 @@
 Pure double-six Draw/Block core, 2–4 seats, optional four-seat partners,
 100/150/250 targets, hidden-information views and three seeded bot policies.
 
-Requires Node 24+. From this directory:
+Requires Node 24+, Python 3 and ffmpeg. From this directory:
 
 ```sh
 npm ci --ignore-scripts --cache /workspace/.npm-cache
-npm test
+python -m pip install --require-hashes --target .baseline -r baseline-requirements.txt
+npx playwright install chromium
+BASELINE_PYTHONPATH="$PWD/.baseline" npm test
 ```
 
 Open `play.html` directly from disk: no server, external assets or network.

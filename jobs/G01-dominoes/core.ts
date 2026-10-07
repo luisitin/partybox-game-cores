@@ -18,7 +18,7 @@ export interface Settings {mode:'draw'|'block';partners:boolean;target:number;re
 export interface State extends GameStateBase {
  seats:string[]; settings:Settings; hands:number[][]; stock:number[];
  board:{tile:number;a:number;b:number;player:number}[]; ends:Tile|null;
- turn:number; starter:number; forced:number|null; round:number; passes:number;
+ turn:number; idleTurns:number; starter:number; forced:number|null; round:number; passes:number;
  scores:number[]; missed:number[]; history:{round:number;winner:number|null;points:number;blocked:boolean}[];
  last:{winner:number|null;points:number;blocked:boolean}|null;
 }
@@ -41,7 +41,7 @@ export const manifest:GameManifest={
 };
 export function team(s:Pick<State,'settings'>,seat:number):number{return s.settings.partners?seat%2:seat;}
 const own=(s:State,id:string):boolean=>Object.hasOwn(s.players,id);
-function phase(s:State,id:string,now:number):State['phase']{return {id,startedAt:Math.max(now,s.phase.startedAt+1),deadline:id==='done'?null:Math.max(now,s.phase.startedAt+1)+(id==='round-end'?5000:30000)};}
+function phase(s:State,id:string,now:number):State['phase']{return {id,startedAt:Math.max(now,s.phase.startedAt+1),deadline:id==='done'?null:Math.max(now,s.phase.startedAt+1)+(id==='round-end'?5000:(s.idleTurns>=2?1000:30000))};}
 export function legal(s:State,seat=s.turn):Input[]{
  if(s.phase.id==='round-end')return [{type:'next'}];
  if(s.phase.id!=='play'||seat!==s.turn)return [];
@@ -89,11 +89,12 @@ function deal(s:State,now:number):State{
 export function init(ctx:InitContext):State{
  const seats=ctx.players.map(p=>p.id);if(seats.length<2||seats.length>4||new Set(seats).size!==seats.length)throw new Error('Dominoes requires 2–4 unique players');
  const c=ctx.settings;const settings:Settings={mode:c.mode==='block'?'block':'draw',partners:c.partners===true&&seats.length===4,target:[100,150,250].includes(Number(c.target))?Number(c.target):100,reserve:c.reserve==='2'?2:0,opening:c.opening==='rotating'?'rotating':'highest-double',blocked:c.blocked==='opponents'?'opponents':'difference',teamPoints:c.teamPoints==='all'?'all':'opponents'};
- const s:State={players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),phase:{id:'play',startedAt:ctx.now-1,deadline:null},rng:seedRng(ctx.seed),seats,settings,hands:[],stock:[],board:[],ends:null,turn:0,starter:0,forced:null,round:1,passes:0,scores:seats.map(()=>0),missed:seats.map(()=>0),history:[],last:null};
+ const s:State={players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),phase:{id:'play',startedAt:ctx.now-1,deadline:null},rng:seedRng(ctx.seed),seats,settings,hands:[],stock:[],board:[],ends:null,turn:0,idleTurns:0,starter:0,forced:null,round:1,passes:0,scores:seats.map(()=>0),missed:seats.map(()=>0),history:[],last:null};
  return deal(s,ctx.now);
 }
+export function sameInput(a:Input,b:Input):boolean{return a.type===b.type&&(a.type!=='play'||(b.type==='play'&&a.tile===b.tile&&a.side===b.side));}
 export function apply(s:State,i:Input,now:number):State{
- const options=legal(s);if(!options.some(x=>JSON.stringify(x)===JSON.stringify(i)))return s;
+ const options=legal(s);if(!options.some(x=>sameInput(x,i)))return s;
  if(i.type==='next')return deal({...s,round:s.round+1},now);
  if(i.type==='draw'){
   const t=s.stock[0]!;const hands=s.hands.map((h,j)=>j===s.turn?[...h,t]:h);
@@ -113,6 +114,8 @@ export function apply(s:State,i:Input,now:number):State{
  const next:State={...s,hands,board,ends:[board[0]!.a,board.at(-1)!.b],forced:null,passes:0,turn:(s.turn+1)%s.seats.length,phase:phase(s,'play',now)};
  return hands[s.turn]!.length===0?finishRound(next,s.turn,now):next;
 }
+function human(s:State,i:Input,now:number):State {return legal(s).some(x=>sameInput(x,i))?apply({...s,idleTurns:0},i,now):s;}
+function automatic(s:State,now:number):State {return apply({...s,idleTurns:Math.min(2,s.idleTurns+1)},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
 export function reduce(s:State,e:GameEvent<Input>):State{
  if(e.type==='player')return own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
  if(e.type==='vip'){
@@ -123,18 +126,18 @@ export function reduce(s:State,e:GameEvent<Input>):State{
    if(!s.phase.paused)return s;const {paused,...p}=s.phase;
    return {...s,phase:{...p,deadline:p.deadline===null?null:p.deadline+Math.max(0,e.now-paused.at)}};
   }
-  if(e.action==='skip'&&!s.phase.paused)return apply(s,legal(s)[0]!,e.now);
+  if(e.action==='skip'&&!s.phase.paused)return automatic(s,e.now);
   return s;
  }
  if(s.phase.paused||s.phase.id==='done')return s;
  if(e.type==='timer'){
   if(e.phaseId!==s.phase.id||e.startedAt!==s.phase.startedAt||s.phase.deadline===null||e.now<s.phase.deadline)return s;
-  return apply(s,legal(s)[0]!,e.now);
+  return automatic(s,e.now);
  }
  if(e.type!=='input'||!own(s,e.playerId))return s;
- if(s.phase.id==='round-end'){return e.input.type==='next'?apply(s,e.input,e.now):s;}
+ if(s.phase.id==='round-end'){return e.input.type==='next'?human(s,e.input,e.now):s;}
  if(s.seats[s.turn]!==e.playerId)return s;
- return apply(s,e.input,e.now);
+ return human(s,e.input,e.now);
 }
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,
@@ -200,7 +203,7 @@ function sampleHands(o:Observation,rng:Rng):number[][]|null{
 }
 export function choose(o:Observation,rng:Rng,skill:BotSkill='normal'):Input|null{
  const moves=o.legal;if(!moves.length)return null;if(moves.length===1)return moves[0]!;
- if(skill==='easy')return rng.pick(moves);
+ if(skill==='easy'){const doubles=moves.filter(m=>m.type==='play'&&tile(m.tile)[0]===tile(m.tile)[1]);return rng.pick(doubles.length?doubles:moves);}
  if(skill==='normal')return greedy(o.hand,o.ends,moves);
  const values=moves.map(()=>0);let samples=0;
  const total=o.counts.reduce((a,b)=>a+b,0);

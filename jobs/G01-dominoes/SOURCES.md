@@ -35,3 +35,10 @@ No code or media copied from any external implementation.
 All HTML/CSS is original. esbuild bundles zod (MIT) and its own output helpers;
 package versions/integrities are retained in package-lock.json. No logo/art/data
 assets are included. Browser scripts have no runtime network calls.
+
+Baseline validation also installs the upstream `dominoes==6.1.0` wheel from
+https://pypi.org/project/dominoes/6.1.0/ through the package-manager preset.
+Wheel SHA256 is pinned in baseline-requirements.txt; verification remains on.
+Its players.py/search.py exactly match the inspected GitHub source files.
+No Python dependency is needed in game logic or the offline HTML; it is only
+used by development verification. Browser emulation is not physical-phone proof.

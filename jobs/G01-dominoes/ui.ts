@@ -53,6 +53,6 @@ element('players').addEventListener('change',roster);roster();
 element('start').addEventListener('click',()=>{
  const n=Number(element<HTMLSelectElement>('players').value);modes.length=0;for(let i=0;i<n;i++)modes.push(element<HTMLSelectElement>(`seat-${i}`).value as typeof modes[number]);
  const settings:Record<string,string|boolean>={};for(const spec of manifest.settings){const e=element<HTMLInputElement>(spec.key);settings[spec.key]=spec.type==='boolean'?e.checked:e.value;}
- state=init({players:Array.from({length:n},(_,i)=>({id:`p${i}`,name:`Seat ${i+1}`,avatarId:'🙂',connected:true,bot:modes[i]!=='human'})),settings,seed:seed(),now:Date.now()});viewer='';revealed=false;botStep=0;element('table').hidden=false;render();
+ state=init({players:Array.from({length:n},(_,i)=>({id:`p${i}`,name:`Seat ${i+1}`,avatarId:'🙂',connected:true,bot:modes[i]!=='human'})),settings,seed:seed(),now:Date.now()});viewer='';revealed=false;botStep=0;element<HTMLDetailsElement>('setup').open=false;element('table').hidden=false;render();
 });
 element('end').addEventListener('click',()=>{if(!state)return;state=reduce(state,{type:'vip',action:'end',now:Date.now()});render();});

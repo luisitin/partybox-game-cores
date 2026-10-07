@@ -37,10 +37,11 @@ that inaccessible official sources were read. Re-verification is in NEXT.md.
     A blocked partnership tie awards nothing in either scoring variant.
 13. Add round points to the match total; first side at or above 100, 150 or
     250 ends the match. Equal top totals on a host-ended game are joint winners.
-14. A host may pause/resume/end. Skip and a live turn timeout play the first
+14. A host may pause/resume/end. Skip and a live 30-second turn timeout play a strategic
     legal action, so an idle or disconnected seat cannot trap the game. Inputs
     while paused and stale/early timers are ignored. The next-round phase also
-    has a timer. End reports every original seat, including disconnected ones.
+    has a timer. After two automatic turns, deadlines shorten to one second;
+    a human input restores the full 30-second turn. End reports every original seat, including disconnected ones.
 15. The local hot-seat page conceals each human hand until that seat reveals
     it. Bots never receive others' hand contents or the stock order.
 
