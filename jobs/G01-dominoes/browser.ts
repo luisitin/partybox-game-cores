@@ -38,13 +38,13 @@ try {
    assert(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),'TV match must fit its viewport');
    await page.screenshot({path:'media/tv.png',fullPage:true});const capture=mkdtempSync(join(tmpdir(),'G01-capture-'));
    for(let i=0;i<36;i++){await page.screenshot({path:join(capture,`${String(i).padStart(3,'0')}.png`)});await page.waitForTimeout(66);}
-   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-4-conditional.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
+   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-5-samples32.webm'],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
   }
   await context.close();
  }
  const reduced=await pageFor({width:390,height:844},'reduce');assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));
  await reduced.page.click('#start');await reduced.page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await reduced.page.locator('#hand .hand-tile').count(),7);assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);
  await reduced.context.close();assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',capture:'media/milestone-4-conditional.webm'},null,2)+'\n');
+ writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',capture:'media/milestone-5-samples32.webm'},null,2)+'\n');
  console.log('Browser functional, hot-seat privacy, offline, frame-time and reduced-motion checks pass');
 } finally {await browser.close();}

@@ -2,7 +2,7 @@
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,unlinkSync} from 'node:fs';
 import {createRng} from '../../contract/rng.ts';
-import * as base from './core.ts';
+import * as base from './study-baseline.ts';
 const path='./mutant-selfish-study.ts';
 const maxn=`
 function selfish(p:Position,depth:number):number[]{
@@ -13,7 +13,7 @@ function selfish(p:Position,depth:number):number[]{
  return children.reduce((best,v)=>v[p.turn]!>best[p.turn]!?v:best);
 }
 `;
-let source=readFileSync('./core.ts','utf8');const call='solve(q,o.seat,total+(stock?.length??0)<=9?(total+(stock?.length??0)+1)*o.counts.length:3)';assert(source.includes(call));
+let source=readFileSync('./study-baseline.ts','utf8');const call='solve(q,o.seat,total+(stock?.length??0)<=9?(total+(stock?.length??0)+1)*o.counts.length:3)';assert(source.includes(call));
 source+=maxn;source=source.replace(call,`p.hands.length>2&&!p.partners&&!stock?selfish(q,total<=9?(total+1)*o.counts.length:3)[o.seat]!:${call}`);
 // Parenthesize the conditional after +=; candidate is loaded only by this study.
 source=source.replace('values[i]!+=p.hands.length','values[i]!+=(p.hands.length').replace(`:${call};`, `:${call});`);

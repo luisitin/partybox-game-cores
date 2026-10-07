@@ -46,3 +46,13 @@ Rounds 5–6 experiments: add a reproducible isolated search-budget tournament, 
 Delivery correction during budget reviews: preserve each original milestone capture under a distinct filename instead of overwriting the previous capture; recover exact original bytes from their verified commits. Latest browser runs update the conditional-sampling milestone capture. Expand data checksum discovery to include archived Draw comparison JSON, which do not end in -report.json, while continuing to exclude package/compiler configuration. Verify recovered video streams with ffprobe and regenerate/check the complete data/media checksum list.
 
 Budget study gains a validated positive-integer starting-seed option and separate confirmation report, permitting independent confirmation of the borderline 32-sample result without overwriting its original 2,000-seed report. Production remains unchanged pending confirmation.
+
+Round 6 acceptance: independent seeds 2,001–4,000 give 1,063/2,000 wins against the 16-sample policy (53.15%, 95% 50.96–55.34), confirming the initial 52.25%. Increase shipped sampling from 16 to 32, version 0.2.1, preserve the exact prior source in study-baseline.ts, and point archived experiments at that baseline so they remain reproducible after production changes. Record a separate fifth milestone video; extend archive-hash regression to it. Rerun required strengths and regression checks for the accepted policy.
+
+Round 7 probe: add an isolated score-policy checker against the immutable prior
+source, comparing terminal search rewards with configured reducer scores across
+10,000 seeded individual/partnership and blocked/out cases. The proposed model
+subtracts the winner's remaining pips for individual net blocked scoring and
+includes the partner's remaining pips for all-remaining partnership scoring.
+This discovers 3,934 mismatches in the old model; corrected candidate has zero.
+Production changes wait until the prior milestone's strength pipeline finishes.

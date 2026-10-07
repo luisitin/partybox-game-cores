@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,unlinkSync} from 'node:fs';
 import {performance} from 'node:perf_hooks';
 import {createRng} from '../../contract/rng.ts';
-import * as base from './core.ts';
+import * as base from './study-baseline.ts';
 const study=process.env.BUDGET_STUDY??'depth4';assert(['depth4','samples32'].includes(study));
 const seedStart=Number(process.env.BUDGET_SEED_START??1);assert(Number.isSafeInteger(seedStart)&&seedStart>0);
 const reportPath=`budget-${study}${seedStart===1?'':'-confirmation'}-report.json`;
-const path=`./mutant-${study}-study.ts`;const text=readFileSync('core.ts','utf8');
+const path=`./mutant-${study}-study.ts`;const text=readFileSync('study-baseline.ts','utf8');
 const from=study==='depth4'?'*o.counts.length:3)':'k<16';const to=study==='depth4'?'*o.counts.length:4)':'k<32';assert(text.includes(from));writeFileSync(path,text.replace(from,to));
 try{
  const candidate:typeof base=await import(path);const games=2000;let wins=0,losses=0,ties=0,steps=0;const start=performance.now();

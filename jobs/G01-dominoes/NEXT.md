@@ -1,55 +1,48 @@
 # Resume G01
 
-Branch: job/G01-dominoes. Use this isolated checkout; do not create a worktree.
-Read latest README.md, RULES.md, JOBS.md and CLAIMS.md on main before proceeding.
-Do not rebuild/replace the owner's G08 Shake Up when the queue reaches it:
-read its START-HERE.md and start/HANDOFF.md first, and preserve existing assets.
+Branch job/G01-dominoes; PR https://github.com/luisitin/partybox-game-cores/pull/1.
+Read current main README.md, RULES.md, JOBS.md and CLAIMS.md before resuming.
+Keep this isolated checkout; preserve shared contract and the other repositories.
 
-Baseline full integration passed and CI run 37647980032 is green for c28d4e4. KEEP GOING rounds 1–2 affected checks pass: 29 tests / 9,003 complete matches, 27,000 idle cases, 25/25 mutants, type/build/browser/checksums. Inspect newest PR CI before claiming latest head green.
+Latest production is 0.2.1, 32 hidden samples. A6fe928 (16 samples, archived
+captures) passed CI run 37652798819. Latest 32-sample head needs its own green CI.
+Local affected checks pass: 30 tests / 9,003 full matches, 25/25 mutants, 20,000
+independent solver cases, 10,000 exact conditional count cases, Block/Draw
+2,000-match leagues, 200 upstream matches, browser/build/checksums. Idle 27,000
+cases passed after the deal change; reducers are unchanged by sample increases.
 
-Remaining delivery:
-1. PR opened successfully: https://github.com/luisitin/partybox-game-cores/pull/1.
-   GitHub API access recovered; no additional token was needed. First actual
-   G01 verification run 37645288915 FAILED in npm test. Its log download is
-   blocked at results-receiver.actions.githubusercontent.com (draft hostname
-   addition saved). The workflow now emits the failure tail as a check annotation
-   and diagnosed run 37646777685: missing system ffmpeg during video capture.
-   CI now explicitly installs the encoder and tests prerequisites before
-   long suites. Corrected run 37647980032 PASSED for c28d4e4. KEEP GOING round 1 is
-   implemented; round 2 adds measured stock-aware Draw search (+5.85pp versus medium). Stock-aware commit 7af35a6 passed actual CI run 37650872168. Inspect newest CI next.
-2. Confirm actual job workflow outcome, investigate failures before claiming
-   green. Keep the reviewable PR title/body aligned with the final implementation.
-3. After green PR CI, do KEEP GOING: reread requirements, list five biggest
-   weaknesses each round, fix worst, measure/log/push, repeat to three rounds
-   without player-noticeable gains. LOOP.md records rounds 1–4. Round 3 implements exact conditional sampling; all affected checks, Block/Draw leagues and upstream baseline pass locally. Round 4 max-n experiment was rejected for no established gain. No-gain streak is 1; try depth-four lookahead and increased sampling next, preserve/reproduce measurements and reject changes without supported gains.
-4. Refresh G01's line on main for each push, preserving concurrent claims.
-5. Then continue with the lowest eligible job from current main CLAIMS.md.
+KEEP GOING rounds 1–6 are recorded in LOOP.md and REVIEW.md. Round 6 independent
+confirmation passed (53.15% versus 16 samples, lower 95% 50.96%). Accepted 32
+samples reset the no-gain streak to zero. Historical study-baseline.ts is the
+exact 16-sample source; archived study scripts use it, not changing production.
 
-## Re-verify when web works
+Next substantive correction: round 7 terminal utility ignores configured net
+blocked scoring and all-remaining partnership scoring. score-policy-check.ts
+finds 3,934 mismatches in 10,000 terminal cases; isolated corrected model has
+zero. Production is deliberately unchanged until the previous milestone is
+committed. Apply its scoreAwareSource transformation to core.ts; prefer the
+chosen difference default for omitted standalone Position.blocked; forward
+both settings into sampled positions. Extend the independent reference for
+both variants and differential cases; add direct blocked/partner regression
+examples, npm-test production score-policy validation and a sixth capture.
+Run affected checks/leagues/baseline, record results, push and refresh claim.
+Do not claim the round 7 correction is already implemented.
 
-Pagat Draw/Block and Wikipedia were read after source access recovered; see
-SOURCES.md/CONFLICTS.md. Pagat Draw uses 7/7/6, versus the current explicit
-Block-sized 7/5/5 house convention. A selectable published Draw deal was added in KEEP GOING round 1. Bicycle URL returns 404; Masters of Games 403.
-Continue marking unsupported conventions separately under main's fallback.
-The strong policy beat the researched package's configured 16-sample endgame
-policy, not every AI or unlimited full-game search. File:// is blocked by managed
-Chromium; exact file bytes were functionally exercised through setContent.
-Physical-phone measurements and direct file navigation are unverified here.
+After actual latest green CI, continue KEEP GOING to three consecutive rounds
+without player-noticeable gains; then claim the lowest eligible main job.
+Refresh G01 on main on every push, preserving concurrent claims.
 
-Environment: Node 24.19.0, npm 11.9.0, Python 3, Chromium and ffmpeg. npm cache
-/workspace/.npm-cache. `npm ci --ignore-scripts` installs the job lockfile.
-Baseline wheel hashes are in baseline-requirements.txt; installed under
-/workspace/.baseline-libs. No long-running services or runtime network needed.
+Re-verify when web works: Pagat/Wikipedia have been read; Bicycle endpoint 404,
+Masters of Games 403. Use main's GitHub/package/knowledge fallback, never stop
+solely on 403. Physical-phone and managed file-navigation verification are
+unavailable; exact offline file bytes were exercised with setContent. Upstream
+comparison is bounded and configured, not universal unlimited-search parity.
 
+When reaching G08, preserve the owner's Shake Up and all assets/name/word lists;
+read START-HERE.md and start/HANDOFF.md first and follow its seven ordered items.
 
-Latest milestone: delivery archives now preserve four distinct VP9 captures and
-all archived comparison JSON are checksummed. Archive-hash regression passes;
-unit count is now 30 (20 in FAST_TEST). Rounds 4–5 rejected max-n and depth-four
-candidates; consecutive no-gain streak 2. Round 6 32-sample direct match rate is
-52.25% over seeds 1–2,000, only marginally above chance. Independent confirmation
-seeds 2,001–4,000 is running locally; if interrupted, run
-`BUDGET_STUDY=samples32 BUDGET_SEED_START=2001 node budget-study.ts`.
-Accept only if that independent lower 95% bound exceeds 50%; otherwise retain
-16 samples and record no demonstrated repeatable gain (streak 3). If accepted,
-rerun required leagues/baseline/affected checks, push and restart the no-gain
-streak. Never label this unfinished confirmation as complete.
+Node 24, Python, Chromium and ffmpeg are installed. npm cache
+/workspace/.npm-cache; Python baseline /workspace/.baseline-libs. npm test runs
+the required pipeline; BASELINE_PYTHONPATH selects an alternate pip target.
+No application services or runtime network are required. Environment setup
+instructions/configuration are saved as a draft; publication is not claimed.

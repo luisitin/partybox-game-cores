@@ -23,3 +23,15 @@ Five largest weaknesses, ranked: depth-three early-game horizon; 16 hidden sampl
 ## Round 6 candidate
 
 Five largest weaknesses: only 16 hidden samples; depth-three horizon (round 5 measurement underway); coalition model (round 4 alternative rejected); physical-phone/file-navigation evidence unavailable here; bounded upstream reference scope. Isolate 32 conditional samples versus shipped sharp over 2,000 complete matches. This concurrent study is evidence against the current shipped baseline only; if round 5 changes production, remeasure against that new baseline before acceptance or a no-gain claim.
+
+## Round 7 candidate
+
+New semantic probe promotes configured search-reward mismatch to the highest
+priority. Five weaknesses: terminal rewards ignore selected blocked/team scoring;
+coalition assumption in individual play; finite 32 hidden samples; physical phone
+and managed file navigation unavailable; bounded upstream reference scope.
+`node score-policy-check.ts` compares rewards to the reducer's configured terminal
+scores in 10,000 seeded cases: 3,934 old mismatches, zero corrected-model
+mismatches. Candidate remains isolated until the 32-sample milestone completes.
+Keep the +100 winner preference, but use the actual configured round points;
+this remains a round heuristic, not a solved full-match value function.
