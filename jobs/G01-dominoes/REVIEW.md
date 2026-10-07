@@ -75,3 +75,7 @@ Five weaknesses: finite hidden-hand sampling variance (highest); depth-three hor
 ## Round14
 
 Five weaknesses: unmodeled public Block opener constraint (highest, measured2,315/10,000 impossible worlds); depth-three horizon; finite variance with rejected antithetic pairing; coalition model with rejected max-n; physical-phone evidence unavailable. Correct the public deduction, prove tile/suit conditional counts against10,000 independent brute cases, measure the same10,000 dealt states after correction, and preserve disabled-mode/later-round behavior.
+
+## Round15
+
+Five weaknesses: unmodeled Draw opener information while stock remains untouched(highest newly testable); coalition model; depth-three horizon; finite sampling variance; physical-phone evidence unavailable. Before anyone draws, public stock size equals its initial value, so the Block opener deduction remains valid. Measure before changing eligibility; disable immediately when stock shrinks to avoid inferring an original opener from newly introduced higher tiles.

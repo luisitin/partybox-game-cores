@@ -40,3 +40,12 @@ Node24/Chromium/ffmpeg/Python baseline /workspace/.baseline-libs ready; npm cach
 /workspace/.npm-cache. npm test is full pipeline. No services/runtime network.
 Cloud setup is an unpublished saved draft. Physical-phone and direct file
 navigation unavailable; exact HTML via setContent tested. Upstream is bounded.
+
+Round15 implemented in0.2.7: Draw opener constraint applies while inferred stock
+is untouched, then conservatively disables after a real draw.10,000 worlds:
+2,315 impossible before→0 after;40 tests,25 mutants,types,fixtures,browser pass.
+Draw league finished:strong1,684/2,000,medium1,155/2,000 (same prior totals).
+Block parity league still running in /tmp/G01-draw-opener-block-parity.log;
+finish it, regenerate SHA256SUMS, push report and observe newest-head CI.
+Previous843cab0 CI37676347377 is SUCCESS. Current milestone needs its own CI.
+Round15 resets no-gain streak0. Frozen study-opener-baseline.ts is0.2.6.

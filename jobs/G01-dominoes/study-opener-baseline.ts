@@ -28,7 +28,7 @@ export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.2.7',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.6',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
  {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
@@ -230,12 +230,9 @@ export function conditionalDeals(unknown:number[],capacities:number[],forbidden:
  }};
 }
 export function openingExclusions(o:Observation):number[]{
- if(o.round!==1||o.settings.opening!=='highest-double'||!o.played.length)return [];
- const n=o.counts.length;const dealt=n===2?7:o.settings.partners?7:o.settings.mode==='draw'&&o.settings.deal==='traditional'?(n===3?7:6):5;
- const initialStock=28-n*dealt;const currentStock=28-o.played.length-o.counts.reduce((a,b)=>a+b,0);
- if(o.settings.mode==='draw'&&currentStock!==initialStock)return [];
+ if(o.round!==1||o.settings.mode!=='block'||o.settings.opening!=='highest-double'||!o.played.length)return [];
  const rank=(t:number)=>{const [a,b]=tile(t);return a===b?100+a:a+b;};
- // While stock is untouched, later plays cannot outrank the forced opener.
+ // Block introduces no new tiles: later plays cannot outrank the forced opener.
  const highest=Math.max(...o.played.map(rank));
  return allTiles().filter(t=>rank(t)>highest);
 }

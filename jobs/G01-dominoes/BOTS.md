@@ -76,3 +76,5 @@ regressions preserve prior decisions and RNG consumption in those contexts.
 Prior64 Block league1,449 wins is archived in league-samples64-report.json; the
 correction is a consistency gain, not a claimed win-rate improvement. Draw and
 four-player partner comparison paths are unchanged; full CI repeats them.
+
+Draw round-one opener exclusions also apply before any stock consumption, inferred from public played/hand counts and configured initial deal. After a stock draw they disable conservatively;10,000 first-turn worlds improve2,315 impossible→0.

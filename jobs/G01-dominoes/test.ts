@@ -169,7 +169,7 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
 
 test('milestone archives and preceding comparison data retain checked content hashes',()=>{
  const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
- for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm','media/milestone-8-unattended.webm','media/milestone-9-samples64.webm','media/milestone-10-opener.webm']){
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm','media/milestone-7-match-goal.webm','media/milestone-8-unattended.webm','media/milestone-9-samples64.webm','media/milestone-10-opener.webm','media/milestone-11-draw-opener.webm']){
   const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
  }
 });
@@ -221,20 +221,20 @@ test('public opener deduction survives later Block plays and excludes other mode
  for(let k=0;k<20&&s.phase.id==='play';k++){
   const o=observe(s,s.seats[s.turn]!)!;assert.equal(o.round,1);assert.deepEqual(C.openingExclusions(o),expected);
   assert.deepEqual(C.openingExclusions({...o,round:2}),[]);assert.deepEqual(C.openingExclusions({...o,played:[]}),[]);
-  assert.deepEqual(C.openingExclusions({...o,settings:{...o.settings,mode:'draw'}}),[]);
+  assert.deepEqual(C.openingExclusions({...o,counts:o.counts.map((count,i)=>count+(i===0?1:0)),settings:{...o.settings,mode:'draw'}}),[]);
   assert.deepEqual(C.openingExclusions({...o,settings:{...o.settings,opening:'rotating'}}),[]);
   const input=game.bot.sampleInput(s,s.seats[s.turn]!,createRng(k),'normal')!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input,now:s.phase.startedAt+1});
  }
 });
 
-test('Draw, rotating Block and later-round decisions retain the prior policy and RNG consumption',async()=>{
+test('Draw after stock consumption, rotating Block and later rounds retain the prior policy and RNG consumption',async()=>{
  const previous=await import('./study-samples64-baseline.ts');
  for(const variant of [{mode:'draw',opening:'highest-double',round:1},{mode:'block',opening:'rotating',round:1},{mode:'block',opening:'highest-double',round:2}] as const){
   let checked=0;
   for(let seed=1;seed<=1000&&checked<5;seed++){
-   let s=init(context(2,seed,{mode:variant.mode,opening:variant.opening}));
-   for(let k=0;k<2&&s.phase.id==='play';k++){const input=game.bot.sampleInput(s,s.seats[s.turn]!,createRng(k),'normal')!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input,now:s.phase.startedAt+1});}
-   if(s.phase.id!=='play')continue;const o={...observe(s,s.seats[s.turn]!)!,round:variant.round};if(o.legal.filter(m=>m.type==='play').length<2)continue;
+   let s=init(context(2,seed,{mode:variant.mode,opening:variant.opening}));const initialStock=s.stock.length;
+   for(let k=0;k<(variant.mode==='draw'?8:2)&&s.phase.id==='play';k++){const input=game.bot.sampleInput(s,s.seats[s.turn]!,createRng(k),'normal')!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input,now:s.phase.startedAt+1});}
+   if(s.phase.id!=='play'||(variant.mode==='draw'&&s.stock.length===initialStock))continue;const o={...observe(s,s.seats[s.turn]!)!,round:variant.round};if(o.legal.filter(m=>m.type==='play').length<2)continue;
    const a=createRng(seed),b=createRng(seed);assert.deepEqual(choose(o,a,'sharp'),previous.choose(o,b,'sharp'));assert.deepEqual(a.state(),b.state());checked++;
   }
   assert.equal(checked,5,'each excluded context must exercise multiple legal moves');
@@ -247,5 +247,23 @@ test('inactive observation cannot reveal another player\'s forced opening tile',
   const o=observe(s,s.seats[seat]!)!;
   if(seat===s.turn){assert.equal(o.forced,s.forced);assert(o.hand.includes(o.forced!));}
   else {assert.equal(o.forced,null);assert.equal(o.legal.length,0);}
+ }
+});
+
+test('untouched-stock Draw inference follows each deal and stops after a real draw',()=>{
+ const rank=(t:number)=>{const [a,b]=tile(t);return a===b?100+a:a+b;};
+ for(const n of [2,3,4])for(const deal of ['block-sized','traditional']){
+  let found=false;
+  for(let seed=1;seed<=500&&!found;seed++){
+   let s=init(context(n,seed,{mode:'draw',deal}));if(rank(s.forced!)===106)continue;
+   const initialStock=s.stock.length;const first=legal(s)[0]!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input:first,now:1});
+   for(let step=0;step<200&&s.phase.id==='play';step++){
+    const o=observe(s,s.seats[s.turn]!)!;assert.equal(28-o.played.length-o.counts.reduce((a,b)=>a+b,0),s.stock.length);
+    if(s.stock.length===initialStock)assert(C.openingExclusions(o).length>0);
+    const input=game.bot.sampleInput(s,s.seats[s.turn]!,createRng(step),'normal')!;s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input,now:s.phase.startedAt+1});
+    if(input.type==='draw'){assert(s.stock.length<initialStock);assert.deepEqual(C.openingExclusions(observe(s,s.seats[s.turn]!)!),[]);found=true;break;}
+   }
+  }
+  assert(found,'each supported hand-size rule must exercise a real stock draw');
  }
 });

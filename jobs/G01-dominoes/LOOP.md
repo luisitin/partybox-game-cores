@@ -16,3 +16,5 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 12. Test max-n under64 samples: initial803 vs691 wins, but fresh750 vs719 (+1.55pp,95% -2.21–5.31pp crosses zero); reject unreplicated advantage, no-gain streak1.
 13. Test same-budget antithetic sampling:1,002/2,000 wins versus independent64 (50.1%,95%47.91–52.29%); focused25 tests pass but no strength gain, reject; no-gain streak2.
 14. Enforce public first-round Block opener constraints:impossible worlds2,315/10,000→0,10,000 independent counts agree; hide inactive forced tile,39 tests/25 mutants/browser pass; model/privacy gain, no-gain streak reset0 (Block71.9%, no win-rate gain claimed).
+
+15. Extend public opener inference to untouched-stock Draw;2,315/10,000 impossible worlds→0,40 tests/25 mutants/browser pass, Draw win totals unchanged; model gain, no-gain streak reset0. Block parity and newest CI pending.
