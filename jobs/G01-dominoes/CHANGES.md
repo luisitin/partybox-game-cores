@@ -73,3 +73,5 @@ optional --enforce enables the existing simulated-time budget as a check after
 correction. Current core and wrapper are unchanged during baseline measurement.
 
 Round 9 correction, version 0.2.4: rename submission handling and distinguish the actual sender's bot flag when resetting inactivity, including any participant's round-end Next. Computer inputs preserve acceleration; genuine human activity restores its 30-second window. Schedule the declared round-end timer in human-containing standalone matches, retain manual Next and fast all-computer rounds, and inform players of automatic advancement. Add sender/recovery regressions, zero-human-input browser progression/privacy and enforced 36,000-case mixed-roster timing to npm test. Record a separate eighth capture.
+
+Round 10: add immutable study-goal-baseline.ts (exact 0.2.4 source) and strategy-goal-study.ts so max-n is evaluated against current goal-aware rules, without modifying production or historical 16-sample reports.

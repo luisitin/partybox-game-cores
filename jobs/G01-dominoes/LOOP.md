@@ -11,3 +11,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 7. Align search rewards with selected blocked/partner scoring: 10,000 terminals improve from 3,934 mismatches to zero; independent solver/regression/strength checks pass; substantive rule-model gain, no-gain streak remains 0.
 8. Forward public standings/target and prioritize match completion; conserved tactical fixture changes forced match loss to continuing round, 20,000 independent cases and regressions pass; player-noticeable decision gain, no-gain streak 0.
 9. Preserve inactivity across computer inputs and schedule mixed-roster round-end timers; budget failures fall 25,248/36,000→0, browser advances past its permanent Round 1 stall, all 35 tests pass; player-noticeable liveness gain, no-gain streak 0.
+10. Re-test selfish max-n against current goal-aware strong: 763 versus 692 wins in 2,000 three-seat games (+3.55pp, 95% -0.18–7.28pp crosses zero); reject, no-gain streak 1.

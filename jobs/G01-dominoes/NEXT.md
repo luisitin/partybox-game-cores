@@ -8,7 +8,7 @@ and 36,000 mixed idle cases pass locally. New browser capture is milestone 8.
 VERIFY.md contains measurements. CI 37656004333 was green for 8ec9b5e;
 9a9151a run 37664215151 and this new head require actual green CI.
 
-KEEP GOING rounds 1–9 are recorded. Round 9 gain resets no-gain streak to 0.
+KEEP GOING rounds 1–10 are recorded. Round 10 max-n rejected; no-gain streak 1.
 Continue candidate evaluation until THREE consecutive no-gain rounds, then claim
 lowest eligible main job. Preserve historical comparators study-baseline.ts
 (16 samples) and study-score-baseline.ts (32 score-aware). Refresh main G01 claim

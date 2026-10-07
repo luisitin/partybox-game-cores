@@ -221,3 +221,7 @@ Cloud setup recheck: `bash /workspace/.onboarding/install.sh` passed through dep
 ## Mixed unattended progression (0.2.4)
 
 `node mixed-idle.ts --enforce`: 36,000 cases, zero failures against 3,600,000ms budget; maximum 1,432,103ms (23.87 minutes), zero human inputs and 200ms computer moves. Before: 25,248 failures, maximum 21,210,103ms. `node idle.ts`: 27,000 pass, maximum 2,007,103ms. Browser before stalled at Round 1 round-end; after completes within one simulated hour with private hands hidden. Full tests 35/35 including 9,003 matches; FAST 25/25; mutations 25/25 killed. Types, fixtures, offline bundle, Chromium privacy/reduced-motion and checksums pass. Phone 4x CPU: 59.80fps, p99 16.8ms; TV 60.00fps. New capture media/milestone-8-unattended.webm. Current-head green CI still required.
+
+## Round 10 current-goal max-n
+
+`node strategy-goal-study.ts`: 2,000 complete rotating-seat three-player Block matches; candidate 763, shipped 692, medium 545 wins. Difference 3.55pp, multinomial 95% interval -0.18–7.28pp includes zero. Reject candidate: no established strength gain. Strict types pass; production source remains unchanged. Immutable study-goal-baseline.ts is exact 0.2.4 source.

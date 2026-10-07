@@ -55,3 +55,7 @@ horizon; unavailable physical-phone/file navigation evidence. Measure mixed
 human/computer rosters against the contract simulated-time bound before changing
 code. Repair both the role-aware activity reset and missing wrapper exit if the
 probe confirms the failure; preserve a genuine human's 30-second recovery window.
+
+## Round 10
+
+Ranked weaknesses: coalition opponents in three-seat free-for-all; finite 32-sample budget; depth-three horizon; bounded upstream search; unavailable physical-phone evidence. Re-test isolated max-n with current goal-aware scoring against shipped strong and medium over 2,000 rotating-seat matches. Accept only an established candidate-versus-shipped win difference; preserve current production and baseline otherwise.
