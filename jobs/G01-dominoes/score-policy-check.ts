@@ -8,7 +8,7 @@ export function scoreAwareSource(source:string):string{
  const from=' const points=totals.reduce((n,v,i)=>n+(group(i)!==winning?v:0),0);';
  const to=` const opponents=totals.reduce((n,v,i)=>n+(group(i)!==winning?v:0),0);
  const own=totals.reduce((n,v,i)=>n+(group(i)===winning?v:0),0);
- const points=p.partners&&p.teamPoints==='all'?opponents+own:!p.partners&&empty<0&&p.blocked==='difference'?Math.max(0,opponents-own):opponents;`;
+ const points=p.partners&&p.teamPoints==='all'?opponents+own:!p.partners&&empty<0&&(p.blocked??'difference')==='difference'?Math.max(0,opponents-own):opponents;`;
  assert(source.includes(from));return source.replace(from,to).replace('partners:boolean;stock?:number[];', "partners:boolean;blocked?:'difference'|'opponents';teamPoints?:'opponents'|'all';stock?:number[];").replace('partners:o.settings.partners,stock,reserve:o.settings.reserve','partners:o.settings.partners,blocked:o.settings.blocked,teamPoints:o.settings.teamPoints,stock,reserve:o.settings.reserve');
 }
 const path='./mutant-score-policy.ts';writeFileSync(path,scoreAwareSource(readFileSync('study-baseline.ts','utf8')));

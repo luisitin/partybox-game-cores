@@ -169,7 +169,14 @@ test('Draw lookahead draws on the same turn, respects reserve and does not mutat
 
 test('milestone archives and preceding comparison data retain checked content hashes',()=>{
  const sums=new Map(readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>[line.slice(66),line.slice(0,64)]));
- for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm']){
+ for(const file of ['draw-league-before.json','draw-league-stock.json','media/milestone-1.webm','media/milestone-2-deal.webm','media/milestone-3-stock.webm','media/milestone-4-conditional.webm','media/milestone-5-samples32.webm','media/milestone-6-score-policy.webm']){
   const data=readFileSync(file);assert.equal(sums.get(file),createHash('sha256').update(data).digest('hex'),file);if(file.endsWith('.webm'))assert(data.length>0&&data.length<10_000_000);
  }
+});
+
+test('search reward respects net blocked and all-remaining partner settings',()=>{
+ const p={hands:[[id(5,5)],[id(6,6)]],ends:[0,0] as const,turn:0,passes:2,partners:false};
+ assert.equal(C.utility(p,0),102);assert.equal(C.utility({...p,blocked:'difference'},0),102);assert.equal(C.utility({...p,blocked:'opponents'},0),112);
+ const q={hands:[[],[id(0,1)],[id(6,6)],[id(1,1)]],ends:[0,1] as const,turn:1,passes:0,partners:true};
+ assert.equal(C.utility(q,0),103);assert.equal(C.utility({...q,teamPoints:'all'},0),115);assert.equal(C.utility({...q,teamPoints:'all'},1),-115);
 });

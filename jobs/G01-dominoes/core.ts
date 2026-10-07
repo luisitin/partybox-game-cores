@@ -28,7 +28,7 @@ export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.2.1',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.2',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
  {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
@@ -167,7 +167,7 @@ export function greedy(hand:number[],ends:Tile|null,moves:Input[]):Input{
   return {m,value:pips(m.tile)*2+exposed*3+(a===b?2:0),i};
  });scored.sort((a,b)=>b.value-a.value||a.i-b.i);return scored[0]!.m;
 }
-export interface Position {hands:number[][];ends:Tile|null;turn:number;passes:number;partners:boolean;stock?:number[];reserve?:number;}
+export interface Position {hands:number[][];ends:Tile|null;turn:number;passes:number;partners:boolean;blocked?:'difference'|'opponents';teamPoints?:'opponents'|'all';stock?:number[];reserve?:number;}
 export function positionMoves(p:Position):{tile:number;side:'left'|'right'}[]{
  const out:{tile:number;side:'left'|'right'}[]=[];for(const t of p.hands[p.turn]!){const [a,b]=tile(t);if(p.ends===null)out.push({tile:t,side:'right'});else {if(a===p.ends[0]||b===p.ends[0])out.push({tile:t,side:'left'});if(a===p.ends[1]||b===p.ends[1])out.push({tile:t,side:'right'});}}return out;
 }
@@ -181,7 +181,9 @@ export function utility(p:Position,root:number):number|null{
  let winning=empty<0?-1:group(empty);
  if(empty<0&&p.passes<p.hands.length)return null;
  if(empty<0){const groups=[...new Set(p.hands.map((_,i)=>group(i)))];const sums=groups.map(g=>totals.reduce((n,v,i)=>n+(group(i)===g?v:0),0));const min=Math.min(...sums);if(sums.filter(v=>v===min).length>1)return 0;winning=groups[sums.indexOf(min)]!;}
- const points=totals.reduce((n,v,i)=>n+(group(i)!==winning?v:0),0);
+ const opponents=totals.reduce((n,v,i)=>n+(group(i)!==winning?v:0),0);
+ const own=totals.reduce((n,v,i)=>n+(group(i)===winning?v:0),0);
+ const points=p.partners&&p.teamPoints==='all'?opponents+own:!p.partners&&empty<0&&(p.blocked??'difference')==='difference'?Math.max(0,opponents-own):opponents;
  return group(root)===winning?100+points:-100-points;
 }
 /** Adversarial team minimax with alpha-beta; exact when depth exhausts the hand. */
@@ -244,7 +246,7 @@ export function choose(o:Observation,rng:Rng,skill:BotSkill='normal'):Input|null
  for(let k=0;k<32;k++){
   const hands=sampleHands();if(hands===null)continue;samples++;
   const stock=o.settings.mode==='draw'?rng.shuffle(allTiles().filter(t=>!hands.flat().includes(t)&&!o.played.includes(t))):undefined;
-  const p:Position={hands,ends:o.ends,turn:o.seat,passes:0,partners:o.settings.partners,stock,reserve:o.settings.reserve};
+  const p:Position={hands,ends:o.ends,turn:o.seat,passes:0,partners:o.settings.partners,blocked:o.settings.blocked,teamPoints:o.settings.teamPoints,stock,reserve:o.settings.reserve};
   moves.forEach((m,i)=>{if(m.type!=='play')return;const q=positionPlay(p,m);values[i]!+=solve(q,o.seat,total+(stock?.length??0)<=9?(total+(stock?.length??0)+1)*o.counts.length:3);});
  }
  if(samples===0)return greedy(o.hand,o.ends,moves);

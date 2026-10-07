@@ -56,3 +56,7 @@ subtracts the winner's remaining pips for individual net blocked scoring and
 includes the partner's remaining pips for all-remaining partnership scoring.
 This discovers 3,934 mismatches in the old model; corrected candidate has zero.
 Production changes wait until the prior milestone's strength pipeline finishes.
+
+Round 7 production correction: version 0.2.2 forwards both selected scoring policies into sampled search positions; terminal reward uses actual configured points while retaining its winner preference. Omitted standalone blocked policy defaults to the selected net rule. Independently extend reference scoring and random differential cases for both policies; add direct regression examples and the 10,000-case production alignment check to npm test. Preserve prior captures and record a distinct sixth score-policy milestone.
+
+Round 8 isolated probe: add a public-score endgame checker demonstrating a forced full-match loss that the round-only policy chooses to minimize pip loss. Candidate forwards public standings and target, assigning match wins/losses greater weight than ordinary round outcomes. Validate tile conservation, oriented board adjacency, legal moves and both resulting phases with the actual reducer; production remains unchanged pending the prior milestone push.

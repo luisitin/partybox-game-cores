@@ -32,16 +32,16 @@ GitHub checkout. Baseline uses its documented pip-greedy opener and actual
 public observation reaches Python; arbitrary unseen partition labels are
 resampled by the package, and public missing-suit constraints are retained.
 
-Measured: 138 wins / 62 losses / 0 ties, 69.0% (approximate 95% interval
-62.59–75.41%). This is a bounded, configured reference comparison. It does not
+Measured: 136 wins / 64 losses / 0 ties, 68.0% (approximate 95% interval
+61.53–74.47%). This is a bounded, configured reference comparison. It does not
 establish parity with unlimited sampling/full-game search, with every open-source
 AI, or with optimal imperfect-information play. The shipped policy adds shallow
 early-game lookahead; baseline uses pip-greedy early play.
 
 Draw search models forced draws on the same turn and honors the stock reserve.
 Unknown stock order is sampled from public unseen tiles, never the real stock.
-Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,660/2,000
-(83.0%, 95% 81.35–84.65), versus 1,513/2,000 (75.65%) before stock modeling.
+Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,665/2,000
+(83.25%, 95% 81.61–84.89), versus 1,513/2,000 (75.65%) before stock modeling.
 Historical 16-sample exact policy was 1,608/2,000 (80.4%).
 Direct 32-versus-16 comparison: 1,045/2,000 on initial seeds and 1,063/2,000
 on independent confirmation seeds, 53.15% (95% 50.96–55.34) in confirmation.
@@ -53,3 +53,7 @@ Limitations: FFA search pessimistically treats opponents as a coalition.
 Impossible public evidence falls back to medium; every feasible conditional
 deal is sampled without a rejection-budget failure. These are disclosed bot approximations; actual game rules and
 public/private views are independent of search assumptions.
+
+Terminal search rewards follow the selected blocked and partner scoring, verified
+against 10,000 reducer-scored terminals. A +100 winner preference remains a
+round heuristic; it does not yet model the public match standings/target.

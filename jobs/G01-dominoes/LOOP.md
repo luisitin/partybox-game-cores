@@ -8,3 +8,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 4. Test and reject selfish max-n opponent model: 766 versus 702 wins in 2,000 three-seat matches, +3.2pp with 95% interval crossing zero; no established player-noticeable gain, no-gain streak 1.
 5. Test and reject depth-four early search: 907/2,000 wins versus shipped sharp (45.35%, 95% 43.17–47.53); no gain, no-gain streak 2.
 6. Increase strong sampling 16→32 after independent confirmation: 52.25% wins on initial 2,000 seeds, 53.15% on fresh 2,000 (95% 50.96–55.34) versus 16 samples; demonstrated strength gain, no-gain streak reset to 0.
+7. Align search rewards with selected blocked/partner scoring: 10,000 terminals improve from 3,934 mismatches to zero; independent solver/regression/strength checks pass; substantive rule-model gain, no-gain streak remains 0.

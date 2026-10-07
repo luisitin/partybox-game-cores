@@ -16,7 +16,10 @@ export function reference(p:Position,root:number):number {
     if(candidates[0]!.total===candidates[1]!.total)return 0;
     winner=candidates[0]!.g;
    }
-   let value=100;for(let i=0;i<seats;i++)if(groups[i]!==winner)value+=totals[i]!;
+   const remaining=totals.reduce((n,v,i)=>n+(groups[i]===winner?v:0),0);
+   const opposition=totals.reduce((n,v,i)=>n+(groups[i]!==winner?v:0),0);
+   const points=p.partners?(p.teamPoints==='all'?opposition+remaining:opposition):Math.max(0,opposition-(exhausted<0&&(p.blocked??'difference')==='difference'?remaining:0));
+   const value=100+points;
    return groups[root]===winner?value:-value;
   }
   const children:number[]=[];
