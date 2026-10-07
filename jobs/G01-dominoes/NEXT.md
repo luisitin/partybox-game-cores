@@ -16,12 +16,12 @@ Remaining delivery:
    and diagnosed run 37646777685: missing system ffmpeg during video capture.
    CI now explicitly installs the encoder and tests prerequisites before
    long suites. Corrected run 37647980032 PASSED for c28d4e4. KEEP GOING round 1 is
-   implemented; round 2 adds measured stock-aware Draw search (+5.85pp versus medium). Inspect latest CI next.
+   implemented; round 2 adds measured stock-aware Draw search (+5.85pp versus medium). Stock-aware commit 7af35a6 passed actual CI run 37650872168. Inspect newest CI next.
 2. Confirm actual job workflow outcome, investigate failures before claiming
    green. Keep the reviewable PR title/body aligned with the final implementation.
 3. After green PR CI, do KEEP GOING: reread requirements, list five biggest
    weaknesses each round, fix worst, measure/log/push, repeat to three rounds
-   without player-noticeable gains. LOOP.md records rounds 1–2; no no-gain streak yet. Round 3 worst remaining bot issue is rejection fallback; consider exact conditional sampling with dynamic programming over tile index and remaining seat capacities.
+   without player-noticeable gains. LOOP.md records rounds 1–4. Round 3 implements exact conditional sampling; all affected checks, Block/Draw leagues and upstream baseline pass locally. Round 4 max-n experiment was rejected for no established gain. No-gain streak is 1; try depth-four lookahead and increased sampling next, preserve/reproduce measurements and reject changes without supported gains.
 4. Refresh G01's line on main for each push, preserving concurrent claims.
 5. Then continue with the lowest eligible job from current main CLAIMS.md.
 

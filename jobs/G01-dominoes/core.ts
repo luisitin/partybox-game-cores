@@ -199,24 +199,50 @@ export function solve(p:Position,root:number,depth=128,alpha=-Infinity,beta=Infi
  const choices=moves.length?moves:[null];const max=allied(p.turn);let best=max?-Infinity:Infinity;
  for(const m of choices){const v=solve(positionPlay(p,m),root,depth-1,alpha,beta);best=max?Math.max(best,v):Math.min(best,v);if(max)alpha=Math.max(alpha,best);else beta=Math.min(beta,best);if(alpha>=beta)break;}return best;
 }
-function sampleHands(o:Observation,rng:Rng):number[][]|null{
+/** Count and sample labelled tile partitions consistent with public suit evidence.
+ * Memo keys are remaining bin capacities; these also determine the tile index.
+ * At most 27 hidden tiles and four bins keep exact integer counts below 2^53.
+ */
+export function conditionalDeals(unknown:number[],capacities:number[],forbidden:number[],rng:Rng):{ways:number;sample:()=>number[][]|null}{
+ const allowed=unknown.map(t=>capacities.map((_,i)=>tile(t).every(n=>!(forbidden[i]!&(1<<n)))));
+ const memo=new Map<string,number>();
+ const count=(caps:number[]):number=>{
+  const left=caps.reduce((a,b)=>a+b,0);if(left===0)return 1;
+  const key=caps.join(',');const cached=memo.get(key);if(cached!==undefined)return cached;
+  const index=unknown.length-left;let ways=0;
+  for(let i=0;i<caps.length;i++)if(caps[i]!>0&&allowed[index]![i]){const next=[...caps];next[i]!--;ways+=count(next);}
+  memo.set(key,ways);return ways;
+ };
+ const ways=count(capacities);
+ return {ways,sample:()=>{
+  if(ways===0)return null;
+  const bins=capacities.map(()=>[] as number[]);const caps=[...capacities];
+  for(let index=0;index<unknown.length;index++){
+   const weights=caps.map((cap,i)=>{if(!cap||!allowed[index]![i])return 0;const next=[...caps];next[i]!--;return count(next);});
+   let choice=rng.float()*weights.reduce((a,b)=>a+b,0);let selected=weights.length-1;
+   for(let i=0;i<weights.length;i++){choice-=weights[i]!;if(choice<0){selected=i;break;}}
+   bins[selected]!.push(unknown[index]!);caps[selected]!--;
+  }
+  return bins.map(bin=>rng.shuffle(bin));
+ }};
+}
+function handSampler(o:Observation,rng:Rng):()=>number[][]|null{
  const unknown=allTiles().filter(t=>!o.hand.includes(t)&&!o.played.includes(t));
- // Rejection sampling preserves an unbiased conditional distribution. Do not
- // silently ignore pass evidence if the sample budget is exhausted.
- for(let attempt=0;attempt<128;attempt++){
-  const shuffled=rng.shuffle(unknown);let offset=0;
-  const hands=o.counts.map((count,i)=>{if(i===o.seat)return [...o.hand];const h=shuffled.slice(offset,offset+count);offset+=count;return h;});
-  if(hands.every((h,i)=>i===o.seat||h.every(t=>tile(t).every(n=>!(o.missed[i]!&(1<<n))))))return hands;
- }return null;
+ const seats=o.counts.map((_,i)=>i).filter(i=>i!==o.seat);
+ const capacities=seats.map(i=>o.counts[i]!);capacities.push(unknown.length-capacities.reduce((a,b)=>a+b,0));
+ // Unconstrained deals retain the inexpensive uniform shuffle path.
+ if(seats.every(i=>o.missed[i]===0))return ()=>{const shuffled=rng.shuffle(unknown);let offset=0;return o.counts.map((count,i)=>{if(i===o.seat)return [...o.hand];const h=shuffled.slice(offset,offset+count);offset+=count;return h;});};
+ const sampler=conditionalDeals(unknown,capacities,[...seats.map(i=>o.missed[i]!),0],rng);
+ return ()=>{const bins=sampler.sample();if(bins===null)return null;return o.counts.map((_,i)=>i===o.seat?[...o.hand]:bins[seats.indexOf(i)]!);};
 }
 export function choose(o:Observation,rng:Rng,skill:BotSkill='normal'):Input|null{
  const moves=o.legal;if(!moves.length)return null;if(moves.length===1)return moves[0]!;
  if(skill==='easy'){const doubles=moves.filter(m=>m.type==='play'&&tile(m.tile)[0]===tile(m.tile)[1]);return rng.pick(doubles.length?doubles:moves);}
  if(skill==='normal')return greedy(o.hand,o.ends,moves);
- const values=moves.map(()=>0);let samples=0;
+ const values=moves.map(()=>0);let samples=0;const sampleHands=handSampler(o,rng);
  const total=o.counts.reduce((a,b)=>a+b,0);
  for(let k=0;k<16;k++){
-  const hands=sampleHands(o,rng);if(hands===null)continue;samples++;
+  const hands=sampleHands();if(hands===null)continue;samples++;
   const stock=o.settings.mode==='draw'?rng.shuffle(allTiles().filter(t=>!hands.flat().includes(t)&&!o.played.includes(t))):undefined;
   const p:Position={hands,ends:o.ends,turn:o.seat,passes:0,partners:o.settings.partners,stock,reserve:o.settings.reserve};
   moves.forEach((m,i)=>{if(m.type!=='play')return;const q=positionPlay(p,m);values[i]!+=solve(q,o.seat,total+(stock?.length??0)<=9?(total+(stock?.length??0)+1)*o.counts.length:3);});

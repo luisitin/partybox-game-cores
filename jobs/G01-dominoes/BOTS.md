@@ -12,7 +12,9 @@ stock-order substitution tests compare decisions with identical RNG seeds.
 - Strong: sample 16 deals conditioned on public missing-suit evidence. Use
   alpha-beta search, exact to exhaustion at <=9 remaining hand-plus-stock tiles and
   depth-three otherwise. Favor the medium move on equal sampled values.
-  If bounded rejection sampling cannot find a consistent deal, use medium;
+  Count constrained hidden partitions exactly with memoized seat capacities.
+  Sample branches in proportion to completion counts; use an ordinary shuffle
+  for unconstrained deals. If public evidence admits no consistent deal, use medium;
   never quietly discard pass evidence or inspect the true hidden deal.
 
 `npm run league`: 2,000 complete two-seat Block matches per comparison, seeds
@@ -38,12 +40,14 @@ early-game lookahead; baseline uses pip-greedy early play.
 
 Draw search models forced draws on the same turn and honors the stock reserve.
 Unknown stock order is sampled from public unseen tiles, never the real stock.
-Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,630/2,000
-(81.5%, 95% 79.8–83.2), versus 1,513/2,000 (75.65%) before stock modeling.
+Two-seat Draw league (2,000 seeds, alternating seats): sharp/normal 1,608/2,000
+(80.4%, 95% 78.66–82.14), versus 1,513/2,000 (75.65%) before stock modeling.
+Stock-aware rejection policy was 1,630/2,000 (81.5%); exact sampling changes
+this by -1.1pp, with overlapping intervals, so no win-rate gain is claimed.
 Normal/easy is unchanged at 1,155/2,000 (57.75%, 95% 55.6–59.9).
-See draw-league-before.json and draw-league-report.json.
+See draw-league-before.json, draw-league-stock.json and draw-league-report.json.
 
 Limitations: FFA search pessimistically treats opponents as a coalition.
-Rejection sampling has a bounded budget and can fall back to medium late in a
-constrained hand. These are disclosed bot approximations; actual game rules and
+Impossible public evidence falls back to medium; every feasible conditional
+deal is sampled without a rejection-budget failure. These are disclosed bot approximations; actual game rules and
 public/private views are independent of search assumptions.

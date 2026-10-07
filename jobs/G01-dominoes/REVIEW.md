@@ -7,3 +7,11 @@ Five largest weaknesses, ranked: published Draw deal not selectable; Draw bot lo
 ## Round 2
 
 Five largest weaknesses, ranked: Draw lookahead ignores future stock; bounded hidden-deal rejection can fall back; coalition assumption in individual games; no physical-phone/file-navigation proof in managed environment; limited upstream baseline scope. Candidate fixes the first using sampled stock order, preserving the public-information boundary. Measure against the unchanged policy over 2,000 seeded Draw matches per comparison.
+
+## Round 3
+
+Five largest weaknesses, ranked: bounded hidden-deal rejection fallback; coalition assumption in individual games; no physical-phone/file-navigation proof in managed environment; limited upstream baseline scope; depth-three early-game horizon. Candidate fixes the first with exact conditional partition counts. The rare feasible distribution has one admissible opponent hand among 1,540; old sampling finds it in 89/1,000 seeded trials, exact sampling in 1,000/1,000. Ten thousand independently enumerated small counts agree, including 6,459 impossible cases that remain explicitly impossible rather than discarding evidence. Full-game regressions and leagues determine acceptance; statistical win-rate gains are not presumed.
+
+## Round 4
+
+Five largest weaknesses, ranked: coalition assumption in individual games; depth-three early-game horizon; only 16 hidden samples; physical-phone/file-navigation evidence unavailable here; bounded upstream reference scope. Tested the first with selfish max-n against the shipped policy and medium over 2,000 three-seat Block matches. Candidate wins 766 versus 702, but the difference confidence interval crosses zero; reject the production change. This records an unsuccessful substantive improvement attempt, not a cosmetic patch.
