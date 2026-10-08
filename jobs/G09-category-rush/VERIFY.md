@@ -1,5 +1,37 @@
 # Verification
 
+## Tenth review completed: actual native late-sheet recovery
+
+`timeout 300s node scripts/browser-late-save.mjs probe > .work/round-10-probe-seed-once.log 2>&1`
+Delegated root grant21:23:14.218493UTC after5fresh quiet ACKs/global zero runnable
+workload audit;actual EXIT0/natural CLOSED21:23:38.750UTC. No STOP/fake clocks,
+new FPS sample or hard handler-latency gate. Actual960trusted events per desktop
+andphone4x reproduce every character prefix on12×80ASCII fields. All12drafts
+save/recover privately with exact original history/scores/RNG;elapsed writing
+time persists. Second navigation attempts reseeding but actual counter shows
+2attempts/1write and newly typed payload remains,refusing the original defect.
+Desktop95426B/phone95414B snapshots have exact recorded hashes. Native handler
+p991.8/9.2ms,max4/20.1ms;aftertyping save waits268.609/271.160ms. Observations
+only,not physical keyboard/paint/FPS or cross-attempt speed-gain guarantees.
+One55ms phone longtask remains raw with no claimed cause or optimization.
+
+`npx tsx --test tests/late-save-artifact.test.ts` PASS1/fail0. It binds all19
+distinct current paths,authentic producer,raw payload/decoder/history/RNG,
+1920trusted prefix events/recomputed handler statistics,second-seed refusal,
+real private reload and byte-identical media. `npm run typecheck` and
+`git diff --check` PASS. Independent Python reader of the same actual bytes
+passes3894assertions;receipt evidence/round-10-late-save-validation.json.
+
+`ffprobe -v error -count_frames -select_streams v:0 -show_entries stream=codec_name,width,height,nb_read_frames -show_entries format=duration,size -of json evidence/browser/round-10-late-save/late-save-phone4x.webm`
+PASS VP8/390×720/160decodedframes/6.4s/393783B.
+`ffmpeg -hide_banner -v error -threads 1 -i evidence/browser/round-10-late-save/late-save-phone4x.webm -map 0:v:0 -f null -`
+EXIT0/full decode. SHAe2f9584058bd1de143ca6fefb7753cf04fdb58a5b1ef4b2644db402b852817c0;
+media/round-10-late-save-phone4x.webm is byte-identical. Recording is separate
+from the actual input observations. Complete first failure remains archived.
+LOOP10 now completes three actual consecutive no-player-gain reviews. The new
+final-source CI execution/artifact retention is enabled; its exact complete
+green and genuine artifact validation remain required before PR8Ready.
+
 ## Tenth review actual preparation and preserved first observer failure
 
 `timeout 600s node scripts/browser-late-save.mjs prepare > .work/round-10-prepare-first.log 2>&1`
@@ -19,8 +51,8 @@ This is confirmed by its unconditional every-navigation init script and the
 exact failure stage. Complete first runner/report/native events/saved payload
 remain in round-10-late-save-first;phone and capture NOT RUN. No game recovery
 defect or player gain is established. The seed-once setup and actual second-seed
-refusal/payload checks are syntax/strict-TS checked;retest remains unlaunched.
-New artifact test/CI integration will be published after its actual report passes.
+refusal/payload checks were syntax/strict-TS checked; the retest had not launched
+at that checkpoint. Its separate successful report and integration are above.
 
 ## Exact 5f46 full green and tenth-review preparation
 

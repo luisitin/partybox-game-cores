@@ -51,5 +51,24 @@ empty snapshot on every navigation. Natural EXIT1/CLOSED21:08:14.515UTC.
 First report,exact runner,all native events and95398-byte saved payload remain
 archived;phone/capture were not run. This is a test-setup defect,not a proven
 player recovery defect. The only correction seeds once per session and checks
-refusal of a second seed. The changed-setup retest is prepared but unlaunched.
-No third no-gain round has been counted and no runtime optimization adopted.
+refusal of a second seed. At this first checkpoint, the retest was prepared
+but unlaunched. No third no-gain round had been counted and no runtime
+optimization adopted. The separate completed retest follows below.
+
+Actual changed-setup retest is now complete. Delegated root grant
+21:23:14.218493UTC followed all five fresh quiet acknowledgments and a global
+zero-runnable-workload check. Natural EXIT0/CLOSED21:23:38.750UTC;direct release
+21:23:53.231577UTC. Both960-trusted-character profiles retain all twelve long
+answers,actual new saved payload,private reload,history/scores/RNG and elapsed
+writing time. Two actual initializer attempts produce only one seed write.
+The original authentic producer and payload remain unedited;only isolated test
+setup was corrected. Independent3894assertions and the new source-bound artifact
+test pass. Actual393783-byte VP8 milestone fully decodes160frames.
+
+Native handler p99 desktop1.8ms/phone9.2ms and save waits269/271ms are scoped
+observations. The real55ms phone long task stays recorded with its cause
+unresolved. Different attempts are not a speed-gain comparison. No FPS run,
+hard latency gate,physical-device promise or runtime optimization was added.
+Already-correct gameplay/recovery now has stronger late-game coverage. Actual
+third consecutive no-player-gain review satisfies the stop rule; final exact
+head fullCI and genuine fresh artifact validation remain outstanding.

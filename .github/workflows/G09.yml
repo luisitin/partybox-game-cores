@@ -108,6 +108,15 @@ jobs:
         run: |
           node scripts/browser-paste.mjs after
           node scripts/browser-legacy-save.mjs
+      - name: Authentic late-game full-sheet typing and autosave recovery
+        run: |
+          node scripts/browser-late-save.mjs
+          npx tsx --test tests/late-save-artifact.test.ts
+      - name: Hash the complete latest recovery and late-save attempt
+        if: always()
+        run: |
+          npx tsx scripts/checksums.ts
+          npx tsx scripts/checksums.ts --check
       - name: Retain the complete recovery attempt even on failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -120,3 +129,6 @@ jobs:
             jobs/G09-category-rush/scripts/browser-resume.mjs
             jobs/G09-category-rush/evidence/browser/round-9-legacy-save/
             jobs/G09-category-rush/scripts/browser-legacy-save.mjs
+            jobs/G09-category-rush/evidence/browser/round-10-late-save/
+            jobs/G09-category-rush/scripts/browser-late-save.mjs
+            jobs/G09-category-rush/SHA256SUMS.txt
