@@ -96,3 +96,13 @@ sources so earlier bank/strategy experiments remain reproducible under their
 actual old semantics. Changed-core oracle/roster/property/secrecy, actual
 mutations, skill league, data/schema/semantic checks and rebuilt-page proof
 remain required. No full absent-SDK stemmer is claimed.
+
+Completed round 4: nine actual accepted-pair games per two/eight-seat roster
+reduce improper duplicate points from 18 to zero; real mouse/mice review changes
+two groups/two points into one anonymous group/zero points. The independent
+oracle, all restored games/invariants/properties, 28 actual mutants, 4,000 duels,
+schemas and real-page regressions pass. Exact 8c70a85 CI 37782409140 is green,
+including genuine hosted be311/1ac strict600 and separate clips. Both local
+phone failures stay archived and unresolved; hosted acceptance does not imply
+local acceptance. This evidence-only completion commit awaits its own green CI
+before another formal review. Four player-gain rounds leave the no-gain streak zero.

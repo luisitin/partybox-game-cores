@@ -371,3 +371,38 @@ local failures remain archived as failures. Fresh hosted evidence hashes are
 computed separately after capture; committed static hashes are validated first.
 This is a pending distinct-environment check, not a conversion of local failure
 into pass or a gate relaxation. PR8 is restored to draft while acceptance is unresolved.
+
+Round 4 completed with distinct genuine HOSTED visual acceptance on exact
+`8c70a857fe7e4d0e35c57203562621bad10f8b00`, run 37782409140, attempt 1.
+The SAME frozen be311 HTML and unmodified 1ac72 runner executed on the actual
+GitHub host at 13:12:09.527–13:12:40.185 UTC. Desktop measured 60.002376 fps;
+phone 4× measured 60.002940 fps. Both p99/max were 16.8 ms. All 600 actual
+intervals per profile and separate 326,051/218,982-byte clips are retained,
+with independent clean request/error streams and matching source/license guards.
+Artifact 11552283013 was retrieved through the native GitHub artifact connector
+after the shell client could not follow the redirect. ZIP SHA256 is
+17cba3f654e6e3484de05a5b5e7ebd18ceedd017e584e934b5c4a840d27da321.
+Every uploaded file matches the original host manifest; every captured source
+fingerprint matches the frozen local source; all interval summaries were
+independently recomputed. The original artifact tree, manifest, runner and
+retrieval receipt are in evidence/browser/round-4-hosted-37782409140.
+Canonical current visual acceptance is explicitly HOSTED. Both coordinated
+local phone failures, their raw intervals, exact runners/pages, manual source
+guards and partial clips remain failures; no variance cause is established.
+
+Exact-head CI 37782409140 completed SUCCESS on 8c70a85: every original step
+passed, including all 37 tests, changed-source oracle/rosters/properties/privacy,
+28 genuine isolated mutants, 4,000 duels, deterministic historical/current
+breadth, duplicate protocols/audit, and 28 gameplay + eight pacing + clock +
+four receipts + 17 recovery + three plural UI checks. Final local
+`npm run typecheck && npx tsx --test tests/artifacts.test.ts` also PASS; the
+artifact test body took 63.763627 ms. The runtime/sampler were unchanged while
+retrieving and binding evidence. This completion commit changes evidence/docs
+only and still requires its own exact-head green CI before the next formal round.
+
+Final completion integrity: all 259 data/media files pass SHA256SUMS.txt
+regeneration and --check; git diff --check passes. Source, client, codec,
+builder, sampler, generated content, manifest, fixtures and play.html have no
+change from the genuine exact-head green hosted run. All evidence writers and
+local browser/test processes are closed before staging. LOOP.md records exactly
+one completed round-4 line; its measured player gain leaves the no-gain streak zero.
