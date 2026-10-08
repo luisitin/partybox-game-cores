@@ -1,0 +1,57 @@
+{
+  "status": "INCOMPLETE_MEMORY_CAP",
+  "recordedAt": "2026-10-08T17:00:55.599000+00:00",
+  "expectedTests": 91,
+  "completedPassLines": 89,
+  "assertionFailureLines": 0,
+  "tapFinalSummaryPresent": false,
+  "remainingTestsIncomplete": 2,
+  "signal": "SIGTERM",
+  "exitCode": -15,
+  "resource": {
+    "startedAt": "2026-10-08T16:56:03.966567+00:00",
+    "closedAt": "2026-10-08T16:59:06.504527+00:00",
+    "elapsedSeconds": 182.5433948970167,
+    "exitCode": -15,
+    "maxGroupRssKiB": 4743124,
+    "maxWithMonitorRssKiB": 4753492,
+    "memoryLimitKiB": 4718592,
+    "memoryCapExceeded": true,
+    "samples": 705
+  },
+  "guards": {
+    "unchanged": true,
+    "counts": {
+      "gameInputs": 127,
+      "modules": 213
+    },
+    "changedPaths": {
+      "gameInputs": [],
+      "modules": []
+    }
+  },
+  "closure": {
+    "checkedAt": "2026-10-08T17:00:01.135445+00:00",
+    "ownedPgids": [
+      171097,
+      171194
+    ],
+    "remainingMembers": [
+      {
+        "pid": 171195,
+        "pgid": 171194,
+        "state": "Z",
+        "rssKiB": 0
+      }
+    ],
+    "liveOwnedProcesses": 0,
+    "browserOwned": false
+  },
+  "nativeResourceReceiptAvailable": false,
+  "nativeResourceReceiptLimitation": "Memory-cap SIGTERM targeted the entire test process group including the resource wrapper; wrapper getrusage output was therefore not written. Sampled actual process-group and Node RSS is preserved in observed-resource.json and memory-cap-exceeded.json.",
+  "stderrBytes": 0,
+  "commandReceipt": "invocation.json",
+  "sourceEditsByWorker": false,
+  "testEditsByWorker": false,
+  "rerunStarted": false
+}

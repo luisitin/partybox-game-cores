@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "recordedAt": "2026-10-08T17:09:18.826446+00:00",
+  "counts": {
+    "tests": 91,
+    "suites": 0,
+    "pass": 91,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0
+  },
+  "tapDurationMs": 215463.964168,
+  "resource": {
+    "command": [
+      ".work/memory-json-private/node22/runtime/bin/node",
+      "--test",
+      "--experimental-test-isolation=none",
+      "--test-reporter=tap",
+      "--test-concurrency=1",
+      "tests/bots.test.mjs",
+      "tests/chinook-reference.test.mjs",
+      "tests/chinook.test.mjs",
+      "tests/core.test.mjs",
+      "tests/data.test.mjs",
+      "tests/draws.test.mjs",
+      "tests/endgame-reference.test.mjs",
+      "tests/endgame.test.mjs",
+      "tests/international-full.test.mjs",
+      "tests/international-transport.test.mjs",
+      "tests/international.test.mjs",
+      "tests/moves.test.mjs",
+      "tests/properties.test.mjs",
+      "tests/purity.test.mjs",
+      "tests/reference-international.test.mjs",
+      "tests/reference-moves.test.mjs",
+      "tests/variant-bundles.test.mjs",
+      "tests/worker-pack.test.mjs"
+    ],
+    "startedAt": "2026-10-08T17:04:27.223277+00:00",
+    "closedAt": "2026-10-08T17:08:03.355877+00:00",
+    "exitCode": 0,
+    "elapsedSeconds": 216.13285042200005,
+    "maxRssKiB": 4595816,
+    "userCpuSeconds": 204.591869,
+    "systemCpuSeconds": 40.72921
+  },
+  "observedResource": {
+    "startedAt": "2026-10-08T17:04:27.143349+00:00",
+    "closedAt": "2026-10-08T17:08:03.450673+00:00",
+    "elapsedSeconds": 216.30990203400142,
+    "exitCode": 0,
+    "maxGroupRssKiB": 4559976,
+    "maxWithMonitorRssKiB": 4570344,
+    "memoryLimitKiB": 6291456,
+    "memoryCapExceeded": false,
+    "samples": 766
+  },
+  "guards": {
+    "unchanged": true,
+    "counts": {
+      "gameInputs": 127,
+      "modules": 213
+    },
+    "changedPaths": {
+      "gameInputs": [],
+      "modules": []
+    }
+  },
+  "pureSourceGameInputs": 16,
+  "dataGameInputs": 111,
+  "sameGuardedInputsAsIncompleteAttempt": true,
+  "closure": {
+    "checkedAt": "2026-10-08T17:09:18.821567+00:00",
+    "ownedPgids": [
+      171802,
+      171822
+    ],
+    "remainingMembers": [],
+    "liveOwnedProcesses": 0,
+    "browserOwned": false
+  },
+  "nodeVersion": "v22.16.0",
+  "testProcessCount": 1,
+  "testFileCount": 18,
+  "stderrBytes": 0,
+  "sourceTestAssertionOrNativeWallLimitChanges": false,
+  "priorIncompleteEvidenceRetained": "../current91-resumed/result.json",
+  "artifacts": {
+    "invocation.json": {
+      "bytes": 4267,
+      "sha256": "e307766071fc6a7bd2698efdb3d62a161a49c792a33baa3befb071325fb2f30b"
+    },
+    "run.py": {
+      "bytes": 5316,
+      "sha256": "334664b883f005418e452c1b9a7f26fe4692f06f77535f7c45247d7303e834e7"
+    },
+    "input-guards.mjs": {
+      "bytes": 898,
+      "sha256": "78ec04626a841d69de72fa630ee86e94deb05d33b5f5129863009211423568a8"
+    },
+    "stdout.tap": {
+      "bytes": 21116,
+      "sha256": "df309f9d2d4f016bb3233eb2722aa7da6a689373d5baf03a0b55303ef08606fb"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "resource.json": {
+      "bytes": 1054,
+      "sha256": "b761d6f568dc809500f5fc037dd99ad26399cf336a5feb9cb080ce7aa259f8aa"
+    },
+    "observed-resource.json": {
+      "bytes": 302,
+      "sha256": "d24266a43e3365cc10103a76b96f0d3a40c08e8ddb524f92079967d96d5efd1a"
+    },
+    "guards-before.json": {
+      "bytes": 35685,
+      "sha256": "af5c618b423b10d884f437e977f02783fbc93b750f3ddda3196c7927957b8821"
+    },
+    "guards-after.json": {
+      "bytes": 35685,
+      "sha256": "af5c618b423b10d884f437e977f02783fbc93b750f3ddda3196c7927957b8821"
+    },
+    "guards-result.json": {
+      "bytes": 150,
+      "sha256": "5b7b4be81ded66a492b5c23bab814b236cd5af51b9e4070ed05da686d5eb6528"
+    },
+    "closure.json": {
+      "bytes": 178,
+      "sha256": "c150e6eda48740f7ab0fb814e6ac8e4f439ddcaa48a2fb6355ab6aa35cacd031"
+    }
+  }
+}

@@ -216,3 +216,7 @@ both profiles: DOMContentLoaded 27.082/89.455 seconds, peak summed RSS
 4,040,486,912/3,325,009,920 bytes. These are payload/parser/source-access
 measurements; no full-bot or frame acceptance is implied. The baseline
 failure is preserved, and no causal percentage gain is claimed.
+
+## Hosted runner delivery capacity (live read2026-10-08)
+
+OfficialGitHub documentation, pinnedhttps://raw.githubusercontent.com/github/docs/ca64eb3491bce1212c3d3dddbbb8af2d494b6df3/data/reusables/actions/supported-github-runners.md: publicUbuntu-latest advertised4CPU/16GBRAM/14GBdisk. Repositorymetadatahttps://api.github.com/repos/luisitin/partybox-game-cores confirmspublic. Tookpublishedcapacity facts only, not anactualrunner guarantee; currentworkflow memory/time/disk/upload mustbemeasured. This correctsnominal7GiBhistoricalplanninganddoesnotrelaxanygame/assertion/FPS/CI30mingate.

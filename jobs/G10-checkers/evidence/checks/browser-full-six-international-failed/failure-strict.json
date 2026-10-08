@@ -1,0 +1,95 @@
+{
+  "command": "node scripts/browser-check.mjs --international-frames-only",
+  "htmlPath": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/play-full-guarded.html",
+  "htmlBytes": 1390845993,
+  "loadTimeoutMs": 300000,
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "profiles": [],
+  "capture": false,
+  "functionalOnly": false,
+  "frameVariants": [
+    "international"
+  ],
+  "failure": {
+    "phase": "desktop: international frame sample",
+    "message": "AssertionError [ERR_ASSERTION]: {\"profile\":\"desktop\",\"variant\":\"international\",\"fps\":17.510456661036088,\"p99\":799.8999999999942}"
+  },
+  "checks": [
+    {
+      "profile": "desktop",
+      "name": "disk load, no external assets and reduced motion",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "American standard board and complete hot-seat turn",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "multi-jump draft leaves the actual position unchanged",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "American crown ends the capture turn",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International full maximum capture and promotion",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International crown transit stays a man",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause/resume and optional exact deadline forfeit",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "winner/results and explicit next table",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual Strong move uses local full-corpus worker and preserves legal core choice",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International actual2–5 corpus worker prepares offline and preserves pending input",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International actual six-piece Strong worker reads original local blocks",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "consecutive bot turns reuse the prepared worker and pause cancels it",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause cancels worker before it can apply an old move",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "names remain text and hostile original IDs have finite public results",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "viewport fits both boards and all controls",
+      "pass": true
+    }
+  ],
+  "totalChecks": 15
+}

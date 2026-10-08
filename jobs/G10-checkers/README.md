@@ -6,8 +6,8 @@ Implementation checkpoint: licensed American2–6 and complete International2–
 source are installed. The actual full offline game passed30 desktop/phone4×
 control checks and600 American-board strict frames per profile, including a
 Strong six-piece lookup. International-board frame checks remain pending.
-The complete-source7000-game matrix and25 real mutants pass; current91unit
-combined run remains pending (90PASS/1corrected stale test, focused1PASS). Final4000strength/CI fit, public download/PR and KEEP GOING are pending.
+The complete-source7000-game matrix,25 real mutants and current91 combined
+unit checks pass. International strict desktop failed17.510FPS; phone not run. Final4000strength/CI fit, public download/PR and KEEP GOING are pending.
 Two Human seats can now
 start while the database loads; actual phone4× controls appeared after2.398s
 and the first legal move finished after9.128s. Computer seats wait for data.
