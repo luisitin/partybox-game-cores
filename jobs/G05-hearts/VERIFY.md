@@ -1,5 +1,14 @@
 # Verification record
 
+Current check scope:30 tests,25/25 mutations,10,000 independent comparisons,
+1003 property seeds,1000 full games at each3–6 count and2x2000 leagues. Head
+5509a20 passed push37741005827/PR37741010277. The exact public actual-disk
+report is media/visual-measurements-ci-37741010277.json: desktop60.002fps,
+CPU4x phone60.000fps,p9516.8ms,max16.8ms,all outcome/recovery/clock/native-input/
+privacy/roster gates true,0 outgoing requests/exceptions. Historical failures
+and smaller early-suite counts below are retained; they are not current counts.
+
+
 Core checkpoint; full contract, mutation, visual and CI gates remain pending.
 
 `curl --silent --show-error --location --max-time 30` against the canonical
@@ -288,3 +297,25 @@ the work reduction caused the timing change. Updated actual-disk CI is needed.
 `node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs`
 PASS29 JSON/54 hashes,standalone153921B.30-test full suite unchanged.
 Round7 has a real keyboard/accessibility gain; cosmetic streak resets to0.
+
+`G05_PROBE_HTML=.tmp/before-selection.html node .tmp/selection-work-probe.mjs
+--http` and `node .tmp/selection-work-probe.mjs --http`: native MutationObserver
+counts17→1 aria-pressed writes; both produce exactly1 selected card. Baseline
+page is `git show c5da083:jobs/G05-hearts/play.html`; no production DOM prototype
+is changed by the probe. These are direct browser mutation observations.
+
+Round8's typography-only local trial failed the unchanged cadence gate at
+55.105fps/p9533.3ms/max50ms. Revert the trial rather than change the criterion.
+Game/UI/browser-check source is byte-identical to5509a20 after regeneration.
+The subsequent documentation milestone records a fresh capture of that same UI;
+its capture is not a frame benchmark. Fresh default CI remains required.
+
+KEEP GOING8: `node scripts/html.mjs` and `git diff HEAD -- src ui play.html
+scripts` confirm exact unchanged game/UI/browser-gate source. `node .tmp/
+documentation-capture.mjs --http --milestone 09` records36 real PNG frames
+(native page render) into a3.6s140221B VP9 clip. This is capture-only evidence,
+not a frame benchmark or a replacement for default actual-disk CI. `node
+scripts/generate.mjs --fixtures-only` and `node scripts/check-data.mjs` PASS
+30 JSON/56 hashes, including the unmodified public CI browser report. Current
+verification summary distinguishes30 tests from early incomplete checkpoints.
+No player gain; cosmetic streak1. Await fresh updated-head full CI.

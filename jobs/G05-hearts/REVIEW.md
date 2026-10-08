@@ -69,3 +69,12 @@ the existing tolerance at57.145fps/p9516.8ms/max100ms. Selection wrote17
 aria-pressed attributes and inspected17 badges for one changed card; update
 only changed controls. This is a measured work reduction; frame-time gains
 will be judged by the next complete run rather than attributed in advance.
+
+Round8, after5509a20 GREEN push37741005827/PR37741010277. Re-read G05.
+Five remaining documentation/cosmetic weaknesses: chronological VERIFY obscures
+current checks; old README status wording; fixture navigation; source-license
+index formatting; decorative layout differences with no functional gap.
+Worst selected: verification summary. Add a current30-test/actual-disk summary
+and preserve the unmodified hosted report. An eyebrow-tracking trial failed
+local cadence55.105fps/p9533.3ms/max50ms and was reverted; all game/UI/test
+source stays byte-identical to the proven5509a20. No player gain is claimed.

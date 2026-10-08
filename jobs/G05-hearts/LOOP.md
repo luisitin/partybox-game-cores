@@ -13,3 +13,5 @@
 6 | Passive separator color+2 RGB levels/channel; zero functional gains,all native-input/privacy/clock/recovery/contrast gates retained. Desktop60.002fps/CPU4x phone59.672fps,p9516.7/16.8ms,136348B clip. Player gain: none meaningful; cosmetic streak2.
 
 7 | Fix public outcome keyboard targets and announce all winners; scored Continue stays focused,final focus body→New table,all tied winners spoken; scrolled mobile winner224.125–277.875px is visible in844px. Redundant selection updates limited to changed controls. Desktop60.004fps/CPU4x phone58.068fps,p9516.8ms,136272B clip. Player gain: yes; cosmetic streak0.
+
+8 | Clarify current30-test verification and preserve exact actual-disk60fps report; runtime/UI/test source byte-identical to5509a20,all player behavior unchanged; fresh140221B capture (not a frame benchmark),30 JSON/56 hashes validate. Typography trial reverted after local cadence failure. Player gain: none meaningful; cosmetic streak1.
