@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "status": "RUNNING",
+  "scope": "Private payload parser/bounded-source/RSS feasibility only; full game consumption and frame acceptance not tested",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/workspace/g10-private-engineering/prototype-browser.mjs"
+  ],
+  "pid": 142297,
+  "startedUtc": "2026-10-08T12:55:02.784Z",
+  "sourceHtml": {
+    "path": "/tmp/g10-rules-oracle-corpus/international-stream-prototype.html",
+    "bytes": 1380811379,
+    "sha256": "460a2edd8f81e5146887fd4d15cd7e7490d98d15689e9f7e3db6a1fb791bd168"
+  },
+  "actualBrowserFilePath": "/workspace/g10-private-engineering/rules-oracle-corpus/international-stream-prototype.html",
+  "profiles": [],
+  "budgets": {
+    "navigationTimeoutMs": 300000,
+    "maximumOwnedSummedRssBytes": 6442450944,
+    "maximumEncodedSlice": 1048576
+  },
+  "memorySemantics": "Sum of owned process RSS is an upper bound that double-counts shared pages; actual phone RAM is not emulated",
+  "strictFrameAcceptance": false,
+  "fullGameDeliveryProven": false
+}

@@ -1,0 +1,143 @@
+// Original private payload/parser/RSS experiment, independent of game acceptance.
+import {chromium} from '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/node_modules/playwright/index.mjs';
+import assert from 'node:assert/strict';
+import {readFile,mkdir,writeFile,open} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+import {pathToFileURL} from 'node:url';
+
+const root='/workspace/g10-private-engineering';
+const corpus=root+'/rules-oracle-corpus';
+const html=corpus+'/international-stream-chunked-prototype.html';
+const evidence=root+'/browser-payload-chunked';
+const manifest=JSON.parse(await readFile(corpus+'/international-complete/file-manifest.json','utf8'));
+const writer=JSON.parse(await readFile(corpus+'/international-stream-chunked-prototype-report.json','utf8'));
+const files=manifest.filter(row=>row.file.startsWith('db6-'));
+assert.equal(files.length,74);
+const bytesHash=data=>createHash('sha256').update(data).digest('hex');
+const began=Date.now();
+const report={schemaVersion:1,status:'RUNNING',scope:'Private payload parser/bounded-source/RSS feasibility only; full game consumption and frame acceptance not tested',
+  command:[process.execPath,...process.argv.slice(1)],pid:process.pid,startedUtc:new Date().toISOString(),
+  sourceHtml:writer.outputHtml,actualBrowserFilePath:html,profiles:[],experimentVariant:'max-1-MiB-inert-tags',baselineReport:root+'/browser-payload-prototype/report.json',
+  budgets:{navigationTimeoutMs:300000,maximumOwnedSummedRssBytes:6*1024**3,maximumEncodedSlice:1048576},
+  memorySemantics:'Sum of owned process RSS is an upper bound that double-counts shared pages; actual phone RAM is not emulated',
+  strictFrameAcceptance:false,fullGameDeliveryProven:false};
+await mkdir(evidence,{recursive:true});
+await writeFile(evidence+'/startup.json',JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify({phase:'start',pid:process.pid,html,bytes:writer.outputHtml.bytes,budgets:report.budgets}));
+
+function ownedMemory(){
+  const output=execFileSync('ps',['-eo','pid=,ppid=,pgid=,rss=,stat=,comm='],{encoding:'utf8'});
+  const rows=output.trim().split('\n').filter(Boolean).map(line=>{
+    const [pid,ppid,pgid,rss,stat,...comm]=line.trim().split(/\s+/);
+    return {pid:+pid,ppid:+ppid,pgid:+pgid,rssKiB:+rss,stat,comm:comm.join(' ')};
+  });
+  const included=new Set([process.pid]);
+  let changed=true;
+  while(changed){changed=false;for(const row of rows)if(included.has(row.ppid)&&!included.has(row.pid)){included.add(row.pid);changed=true;}}
+  const own=rows.filter(row=>included.has(row.pid)&&row.comm!=='ps');
+  return {utc:new Date().toISOString(),elapsedMs:Date.now()-began,sumRssBytes:own.reduce((sum,row)=>sum+row.rssKiB*1024,0),processes:own};
+}
+
+const specs=[];
+for(const row of files){
+  const positions=new Set([0,Math.floor(row.bytes/2),Math.max(0,row.bytes-4096)]);
+  const handle=await open(corpus+'/international-complete/output/app/'+row.file,'r');
+  try{
+    for(const start of positions){
+      const length=Math.min(4096,row.bytes-start),data=Buffer.alloc(length);
+      if(length){const read=await handle.read(data,0,length,start);assert.equal(read.bytesRead,length);}
+      const firstCharacter=Math.floor(start/3)*4,lastCharacter=Math.ceil((start+length)/3)*4;
+      specs.push({file:row.file,start,length,firstCharacter,encodedLength:lastCharacter-firstCharacter,
+        decodedLeadingBytes:start%3,expectedSha256:bytesHash(data)});
+    }
+  }finally{await handle.close();}
+}
+await writeFile(evidence+'/bounded-source-specs.json',JSON.stringify(specs,null,2)+'\n');
+
+try{
+  for(const profile of [{name:'desktop',width:1920,height:1080,throttle:1},{name:'phone',width:390,height:844,throttle:4}]){
+    const profileStart=Date.now(),result={profile,status:'RUNNING',startedUtc:new Date().toISOString(),errors:[],requests:[],memory:[]};
+    let context,closed=false,closing,peak=0;
+    const close=async()=>{if(!closing)closing=(async()=>{if(context)await context.close();closed=true;})();return closing;};
+    let memoryTimer;
+    try{
+      context=await chromium.launchPersistentContext(evidence+'/profile-'+profile.name,{
+        headless:true,args:['--no-sandbox','--disable-dev-shm-usage'],
+        viewport:{width:profile.width,height:profile.height},reducedMotion:'reduce'});
+      const page=context.pages()[0]??await context.newPage();
+      page.on('pageerror',error=>result.errors.push({kind:'pageerror',message:String(error)}));
+      page.on('crash',()=>result.errors.push({kind:'crash',message:'Chromium page crashed'}));
+      page.on('request',request=>{if(/^(?:https?|wss?):/.test(request.url()))result.requests.push(request.url());});
+      await context.route(/^(?:https?|wss?):/,route=>route.abort());
+      const cdp=await context.newCDPSession(page);
+      await cdp.send('Emulation.setCPUThrottlingRate',{rate:profile.throttle});
+      result.cpuThrottleAcknowledged=true;
+      result.browserVersion=await cdp.send('Browser.getVersion');
+      memoryTimer=setInterval(()=>{
+        try{
+          const sample=ownedMemory();result.memory.push(sample);peak=Math.max(peak,sample.sumRssBytes);
+          if(sample.sumRssBytes>report.budgets.maximumOwnedSummedRssBytes){
+            result.errors.push({kind:'memory-budget',sumRssBytes:sample.sumRssBytes});void close();
+          }
+        }catch(error){result.errors.push({kind:'memory-monitor',message:String(error)});}
+      },1000);
+      const navigationStart=Date.now();
+      await page.goto(pathToFileURL(html).href,{waitUntil:'domcontentloaded',timeout:report.budgets.navigationTimeoutMs});
+      result.domContentLoadedMs=Date.now()-navigationStart;
+      result.parser=await page.evaluate(()=>{
+        const p=window.__g10InlinePayloadProof;
+        if(!p)throw new Error('Prototype metadata absent');
+        const files=p.files.map(f=>{const parts=f.parts??[{elementId:f.elementId,encodedOffset:0,encodedBytes:f.encodedBytes}],elements=parts.map(part=>document.getElementById(part.elementId)),nodes=elements.flatMap(e=>[...(e?.childNodes??[])]);return {
+          file:f.file,encodedBytes:f.encodedBytes,actualTextCharacters:nodes.filter(n=>n.nodeType===Node.TEXT_NODE).reduce((sum,n)=>sum+n.length,0),textNodes:nodes.filter(n=>n.nodeType===Node.TEXT_NODE).length,
+          declaredSha256:elements.map(e=>e?.getAttribute('data-sha256')),
+          partExtents:parts.map((part,index)=>({encodedOffset:part.encodedOffset,encodedBytes:part.encodedBytes,
+            actualCharacters:[...(elements[index]?.childNodes??[])].reduce((sum,n)=>sum+(n.nodeType===Node.TEXT_NODE?n.length:0),0)}))};});
+        return {state:p.state,expectedFiles:p.expectedFiles,parsedFiles:p.parsedFiles,expectedTags:p.expectedTags,parsedTags:p.parsedTags,startedAt:p.startedAt,parsedAt:p.parsedAt,
+          paint:performance.getEntriesByType('paint').map(e=>({name:e.name,startTime:e.startTime})),files};
+      });
+      assert.equal(result.parser.state,'parsed');assert.equal(result.parser.parsedFiles,74);
+      assert.equal(result.parser.parsedTags,writer.tagCount);
+      assert.equal(result.parser.expectedTags,writer.tagCount);
+      for(const row of result.parser.files){
+        const expected=files.find(f=>f.file===row.file);assert(expected);
+        assert.equal(row.actualTextCharacters,4*Math.ceil(expected.bytes/3));
+        assert(row.declaredSha256.every(sha=>sha===expected.sha256));
+        let offset=0;
+        for(const part of row.partExtents){
+          assert.equal(part.encodedOffset,offset);assert.equal(part.actualCharacters,part.encodedBytes);
+          assert(part.encodedBytes<=1048576);offset+=part.encodedBytes;
+        }
+        assert.equal(offset,row.encodedBytes);
+      }
+      const actual=await page.evaluate(specs=>specs.map(spec=>({file:spec.file,start:spec.start,
+        encoded:window.__g10InlinePayloadProof.readEncodedSlice(spec.file,spec.firstCharacter,spec.encodedLength)})),specs);
+      result.boundedReadChecks=actual.map((item,index)=>{
+        const spec=specs[index];assert.equal(item.file,spec.file);assert.equal(item.start,spec.start);
+        const decoded=Buffer.from(item.encoded,'base64').subarray(spec.decodedLeadingBytes,spec.decodedLeadingBytes+spec.length);
+        const sha256=bytesHash(decoded);assert.equal(decoded.length,spec.length);assert.equal(sha256,spec.expectedSha256);
+        return {file:spec.file,start:spec.start,length:spec.length,sha256,sourceMatches:true};
+      });
+      assert.equal(result.requests.length,0);assert.equal(result.errors.length,0);
+      result.status='PAYLOAD_PARSE_AND_BOUNDED_SOURCE_PASS';
+    }catch(error){result.status='FAIL';result.failure=String(error);}
+    finally{
+      if(memoryTimer)clearInterval(memoryTimer);
+      try{await close();}catch(error){result.errors.push({kind:'close',message:String(error)});result.status='FAIL';}
+      result.ownedContextClosed=closed;result.peakOwnedSummedRssBytes=peak;result.seconds=(Date.now()-profileStart)/1000;
+      result.closedUtc=new Date().toISOString();report.profiles.push(result);
+      await writeFile(evidence+'/'+profile.name+'.json',JSON.stringify(result,null,2)+'\n');
+      await writeFile(evidence+'/report.json',JSON.stringify(report,null,2)+'\n');
+      console.log(JSON.stringify({phase:'profile-done',profile:profile.name,status:result.status,seconds:result.seconds,
+        domContentLoadedMs:result.domContentLoadedMs,peakOwnedSummedRssBytes:peak,contextClosed:closed,failure:result.failure}));
+    }
+  }
+  report.status=report.profiles.every(p=>p.status==='PAYLOAD_PARSE_AND_BOUNDED_SOURCE_PASS')?'PAYLOAD_FEASIBILITY_PASS':'FAIL';
+}catch(error){report.status='FAIL';report.failure=String(error);}
+finally{
+  report.closedUtc=new Date().toISOString();report.seconds=(Date.now()-began)/1000;
+  report.finalOwnedProcessSnapshot=ownedMemory();
+  await writeFile(evidence+'/report.json',JSON.stringify(report,null,2)+'\n');
+  console.log(JSON.stringify({phase:'done',status:report.status,seconds:report.seconds,scope:report.scope}));
+}
+if(report.status!=='PAYLOAD_FEASIBILITY_PASS')process.exitCode=1;

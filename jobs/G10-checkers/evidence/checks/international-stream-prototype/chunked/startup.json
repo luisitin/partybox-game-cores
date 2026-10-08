@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "status": "RUNNING",
+  "scope": "Private payload parser/bounded-source/RSS feasibility only; full game consumption and frame acceptance not tested",
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "/workspace/g10-private-engineering/prototype-browser-chunked.mjs"
+  ],
+  "pid": 144075,
+  "startedUtc": "2026-10-08T13:09:43.578Z",
+  "sourceHtml": {
+    "path": "/workspace/g10-private-engineering/rules-oracle-corpus/international-stream-chunked-prototype.html",
+    "bytes": 1381347661,
+    "sha256": "a2511da2c6b728d7b1011a4f411d3fb0f9344c752184c4c72cf955a9e6d567c5"
+  },
+  "actualBrowserFilePath": "/workspace/g10-private-engineering/rules-oracle-corpus/international-stream-chunked-prototype.html",
+  "profiles": [],
+  "experimentVariant": "max-1-MiB-inert-tags",
+  "baselineReport": "/workspace/g10-private-engineering/browser-payload-prototype/report.json",
+  "budgets": {
+    "navigationTimeoutMs": 300000,
+    "maximumOwnedSummedRssBytes": 6442450944,
+    "maximumEncodedSlice": 1048576
+  },
+  "memorySemantics": "Sum of owned process RSS is an upper bound that double-counts shared pages; actual phone RAM is not emulated",
+  "strictFrameAcceptance": false,
+  "fullGameDeliveryProven": false
+}

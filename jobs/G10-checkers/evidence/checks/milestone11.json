@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-10-08T13:17:51.778357+00:00",
+  "gameSourceUnchanged": true,
+  "gameCoverage": "American2\u20136/International2\u20135; fullsix pending",
+  "privateFullSourceTransport": {
+    "blocks": {
+      "pass": 10000,
+      "exit": 0,
+      "seconds": 4.799802552,
+      "retries": 1,
+      "blocks": 6826,
+      "loadedBytes": 27950054
+    },
+    "encoded": {
+      "pass": 10000,
+      "exit": 0,
+      "seconds": 23.937573683,
+      "sourceBytes": 1006478762
+    },
+    "installedInGame": false
+  },
+  "privatePayloadBaseline": {
+    "desktopPass": true,
+    "phonePass": false,
+    "phoneDeadlineMs": 300000,
+    "retainedRaw": true
+  },
+  "privatePayloadChunked": {
+    "pass": true,
+    "exit": 0,
+    "desktopDomMs": 27082,
+    "phoneDomMs": 89455,
+    "parts": 1293,
+    "files": 74,
+    "boundedOriginalWindows": 214,
+    "byteHash": "a2511da2c6b728d7b1011a4f411d3fb0f9344c752184c4c72cf955a9e6d567c5",
+    "gameBotIntegration": false,
+    "frameAcceptance": false,
+    "controlledCausalPercentClaim": false
+  },
+  "allGroupsClosed": true,
+  "privateOnlyNoLfsPublication": true
+}

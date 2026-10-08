@@ -351,3 +351,51 @@ Next: private complete-payload startup/RSS, integrate full-six bounded immutable
 reads with exact node/browser bot choices/RNG/transcripts, final game/matrix/
 league/data/CI gates and KEEP GOING. No source unavailable/BLOCKED or ready claim.
 Checkpointstage~12:51, earlytarget12:51:30/hard12:56:30.
+
+Milestone10 successful origin-reflog push1abfdfa at12:52:27UTC.
+12:26:30→12:52:27 =25m57s, binding30min PASS; early12:51:30 missed57s,
+hard12:56:30 met. Mainclaimb8c59be at12:52:19. Next stage~13:12,
+targetsuccessfulpush13:17:27/hard13:22:27. Source/proof game remains2–5.
+
+## Milestone11 complete-source transport and disk startup
+
+Private `.work/api-validate-full.mjs --transport blocks --out
+.work/api-evidence/full-blocks`: PASS10,000, actual exit0/4.799803s.
+All37six classes/148orientations/22second-subslice native+independent queries
+match; one deterministic missing-block retry loads6826original4KiB blocks,
+27,950,054 bytes. Unknown bytes are never accepted as a synthetic WLD.
+Same adapter `--transport encoded --out .work/api-evidence/full-encoded`:
+PASS10,000, exit0/23.937574s; all41datafiles/156slices,1,006,478,762bytes
+through immutable encoded source, identical theoretical WLD transcript
+eceea444e925cc58f1d8ee5be13205f9bd548a5d1d2e2201b2cd31f9013ac9f1.
+Private source832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce
+is archived with exact adapter/raw outputs in experimental-transport/.
+These APIs are NOT integrated into the current game, still2–5.
+
+Private full-payload browser baseline: desktop PASS80.772sDOMContentLoaded,
+peak summed ownedRSS3,667,918,848B; phone4× FAIL unchanged300,000ms load
+timeout (300.786s withclosure), peak3,440,832,512B. EXIT1/runnerclosed
+13:01:27.945, all raw reports/errors retained under stream-prototype/baseline.
+Private1MiB-tag representation: writer PASS1,381,347,661B SHA256
+a2511da2c6b728d7b1011a4f411d3fb0f9344c752184c4c72cf955a9e6d567c5;
+same current d5cb base and original corpus hashes,1293parts/74files.
+Browser PASS desktop27.082sDOMContentLoaded/peak4,040,486,912B and phone4×
+89.455s/peak3,325,009,920B. All part extents and214first/middle/final
+original4KiB windows match; zero runtimeHTTP/page errors, EXIT0.
+Actual closure13:11:49.900; every ownedgroup closed. Observed separate
+runs/other root activity are not a controlled causal percentage claim.
+This proves complete source payload parsing/byte access, not Strong game
+integration or frame acceptance. Both private scripts/exact raw are archived.
+
+Own scratch relocation PASS529files/720items, recursive inventory byte/hash
+identity; actual closed12:51:40.295. The old /tmp path is a canonical symlink
+to /workspace disk; source data deleted only after verifiedcopy. Raw inventory
+proof is under private-scratch-relocation/. No causal FPSclaim, LFS config,
+charges/upload/publication or source-unavailable BLOCKED assertion.
+
+Next concrete implementation: licensed six-piece files as bounded ordinary
+Git chunks and immutable encoded Node modules; shared pure probe dependency
+for actual browser worker; bounded originalblock messages with same-request
+RNG restart until zero-missing. Full actual game/final-source properties,
+7k matrix/4k leagues/data/CI/PR/KEEP GOING remain pending.
+Checkpoint earlytarget13:17:27/hard13:22:27; pending gates remain explicit.

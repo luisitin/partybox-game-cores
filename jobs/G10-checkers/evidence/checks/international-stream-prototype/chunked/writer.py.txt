@@ -1,0 +1,217 @@
+#!/usr/bin/env python3
+"""Privately stream an existing HTML page plus complete International payload.
+
+This measures standalone HTML payload parsing and bounded source access. It
+does not connect the new tables to the game's bot, and is not delivery proof.
+No source table is loaded whole by the Python writer. The browser retains
+inert base64 text; callers may retrieve bounded ranges using substringData.
+"""
+import argparse
+import base64
+import hashlib
+import json
+import os
+from pathlib import Path
+import time
+
+CHUNK = 3 * 262144
+MAX_BROWSER_SLICE = 1048576
+
+
+def canonical_six():
+    result = set()
+    for bm in range(6):
+        for bk in range(6 - bm):
+            for wm in range(6):
+                wk = 6 - bm - bk - wm
+                nb, nw = bm + bk, wm + wk
+                if wk < 0 or not 1 <= nb <= 5 or not 1 <= nw <= 5:
+                    continue
+                if nb < nw or (nb == nw and bk < wk):
+                    continue
+                result.add(f"{bm}{bk}{wm}{wk}")
+    if len(result) != 37:
+        raise AssertionError("Expected all 37 canonical six-piece materials")
+    return result
+
+
+def stream(args):
+    began = time.time()
+    if args.max_tag_encoded_bytes < 4 or args.max_tag_encoded_bytes % 4:
+        raise ValueError('Each tag budget must be a positive complete base64 quartet')
+    part_raw_limit = args.max_tag_encoded_bytes // 4 * 3
+    rows = json.loads(args.manifest.read_text())
+    wanted = {f"db6-{m}.{ext}" for m in canonical_six() for ext in ("cpr1", "idx1")}
+    if args.include_small:
+        wanted |= {f"db{n}.{ext}" for n in range(2, 6) for ext in ("cpr1", "idx1")}
+    selected = sorted((r for r in rows if r["file"] in wanted), key=lambda r: r["file"])
+    if len(selected) != len(wanted) or {r["file"] for r in selected} != wanted:
+        raise ValueError("Manifest is missing a required file or duplicates one")
+    for row in selected:
+        if Path(row["file"]).name != row["file"]:
+            raise ValueError("Manifest filename must be a plain basename")
+        if not row["installerSha1Matches"] or not row["originalDriverCrcMatches"]:
+            raise ValueError("Source manifest must record both original checksums")
+        if (args.database / row["file"]).stat().st_size != row["bytes"]:
+            raise ValueError("Actual corpus file size differs: " + row["file"])
+
+    base_size = args.base_html.stat().st_size
+    with args.base_html.open("rb") as source:
+        source.seek(max(0, base_size - 65536))
+        tail = source.read()
+    local_marker = tail.lower().rfind(b"</body>")
+    if local_marker < 0:
+        raise ValueError("The last 64 KiB of the base HTML must contain </body>")
+    insertion = max(0, base_size - 65536) + local_marker
+    detail = [{"file": r["file"], "bytes": r["bytes"], "sha256": r["sha256"],
+               "encodedBytes": 4 * ((r["bytes"] + 2) // 3),
+               "elementId": "g10-prototype-" + r["file"].replace(".", "-")}
+              for r in selected]
+    for row, info in zip(selected, detail):
+        info['parts'] = []
+        for index, offset in enumerate(range(0, max(1, row['bytes']), part_raw_limit)):
+            raw_bytes = min(part_raw_limit, row['bytes'] - offset)
+            info['parts'].append({'elementId': info['elementId'] + '-part-' + str(index),
+                                  'rawOffset': offset, 'rawBytes': raw_bytes,
+                                  'encodedOffset': offset // 3 * 4,
+                                  'encodedBytes': 4 * ((raw_bytes + 2) // 3)})
+    expected_tags = sum(len(info['parts']) for info in detail)
+    bootstrap = ("\n<script>window.__g10InlinePayloadProof=" + json.dumps({
+        "schemaVersion": 1, "state": "loading", "scope": "payload/startup measurement only",
+        "expectedFiles": len(detail), "expectedTags": expected_tags, "sixCanonicalClasses": 37,
+        "maximumTagEncodedBytes": args.max_tag_encoded_bytes,
+        "writerBufferBytes": CHUNK, "maximumEncodedSlice": MAX_BROWSER_SLICE,
+        "files": detail}) + ";window.__g10InlinePayloadProof.startedAt=performance.now();</script>\n").encode()
+    footer = ("\n<script>(()=>{const p=window.__g10InlinePayloadProof,sources=new Map();"
+              "const elements=[...document.querySelectorAll('[data-g10-prototype-table]')];"
+              "p.parsedTags=elements.length;p.parsedFiles=new Set(elements.map(e=>e.getAttribute('data-g10-prototype-table'))).size;"
+              "for(const f of p.files){const nodes=[],starts=[];let total=0;"
+              "for(const part of f.parts){if(total!==part.encodedOffset)p.invalidFile=f.file;let partLength=0;"
+              "for(const n of document.getElementById(part.elementId)?.childNodes??[]){"
+              "if(n.nodeType!==Node.TEXT_NODE){p.invalidFile=f.file;continue;}"
+              "if(!n.length)continue;starts.push(total);nodes.push(n);total+=n.length;partLength+=n.length;}"
+              "if(partLength!==part.encodedBytes)p.invalidFile=f.file;}"
+              "if(total!==f.encodedBytes)p.invalidFile=f.file;"
+              "sources.set(f.file,{nodes,starts,total});}"
+              "p.parsedAt=performance.now();p.state=p.parsedFiles===p.expectedFiles&&p.parsedTags===p.expectedTags&&!p.invalidFile?'parsed':'invalid';"
+              "p.readEncodedSlice=(file,start,length)=>{"
+              "if(!Number.isSafeInteger(start)||start<0||!Number.isSafeInteger(length)||length<0||length>1048576)"
+              "throw new RangeError('Bounded encoded slice required');"
+              "const f=p.files.find(f=>f.file===file);if(!f)throw new RangeError('Unknown file');"
+              "const s=sources.get(file);"
+              "if(!s||s.total!==f.encodedBytes||start+length>s.total)throw new RangeError('Invalid corpus text');"
+              "if(!length)return '';let i=0,upper=s.starts.length;"
+              "while(i+1<upper){const m=Math.floor((i+upper)/2);if(s.starts[m]<=start)i=m;else upper=m;}"
+              "const parts=[];let at=start,left=length;while(left){"
+              "const within=at-s.starts[i],take=Math.min(left,s.nodes[i].length-within);"
+              "if(take<=0)throw new RangeError('Invalid split corpus text');"
+              "parts.push(s.nodes[i].substringData(within,take));at+=take;left-=take;i++;}"
+              "return parts.join('');};"
+              "window.dispatchEvent(new Event('g10-inline-payload-parsed'));})();</script>\n").encode()
+    tags = []
+    for row, info in zip(selected, detail):
+        parts = []
+        for index, part in enumerate(info['parts']):
+            start = (f'<script id="{part["elementId"]}" type="application/octet-stream" '
+                     f'data-g10-prototype-table="{row["file"]}" data-part="{index}" '
+                     f'data-encoded-offset="{part["encodedOffset"]}" data-bytes="{row["bytes"]}" '
+                     f'data-sha256="{row["sha256"]}">').encode()
+            parts.append((start, b"</script>\n"))
+        tags.append(parts)
+    expected_output = base_size + len(bootstrap) + len(footer)
+    expected_output += sum(f['encodedBytes'] + sum(len(t[0]) + len(t[1]) for t in file_tags)
+                           for f, file_tags in zip(detail, tags))
+    if expected_output > args.max_output_bytes:
+        raise ValueError(f"Exact output budget {expected_output} exceeds allowed {args.max_output_bytes}")
+
+    args.out.parent.mkdir(parents=True, exist_ok=True, mode=0o700)
+    partial = args.out.with_name(args.out.name + ".partial")
+    if partial.exists() or args.out.exists():
+        raise ValueError("Output already exists; use a distinct private path")
+    out_hash = hashlib.sha256()
+    base_hash = hashlib.sha256()
+    source_proofs = []
+    written = 0
+    with partial.open("xb") as target, args.base_html.open("rb") as source:
+        def write(data):
+            nonlocal written
+            target.write(data)
+            out_hash.update(data)
+            written += len(data)
+
+        def copy_base(count):
+            while count:
+                data = source.read(min(CHUNK, count))
+                if not data:
+                    raise ValueError("Base HTML became shorter during streaming")
+                base_hash.update(data)
+                write(data)
+                count -= len(data)
+
+        copy_base(insertion)
+        write(bootstrap)
+        for row, info, file_tags in zip(selected, detail, tags):
+            data_hash = hashlib.sha256()
+            actual_bytes = encoded_bytes = 0
+            with (args.database / row["file"]).open("rb") as table:
+                for part, tag in zip(info['parts'], file_tags):
+                    write(tag[0])
+                    left = part['rawBytes']
+                    while left:
+                        data = table.read(min(CHUNK, left))
+                        if not data:
+                            raise ValueError('Source became shorter while writing a part')
+                        data_hash.update(data)
+                        actual_bytes += len(data)
+                        left -= len(data)
+                        encoded = base64.b64encode(data)
+                        encoded_bytes += len(encoded)
+                        write(encoded)
+                    write(tag[1])
+                if table.read(1):
+                    raise ValueError('Source became longer while writing parts')
+            if actual_bytes != row["bytes"] or data_hash.hexdigest() != row["sha256"]:
+                raise ValueError("Actual source checksum changed: " + row["file"])
+            if encoded_bytes != info["encodedBytes"]:
+                raise ValueError("Encoded byte budget differs")
+            source_proofs.append({**info, "actualSha256": data_hash.hexdigest(), "sourceVerified": True})
+            print(json.dumps({"phase": "file", "file": row["file"], "sourceBytes": actual_bytes,
+                              "encodedBytes": encoded_bytes, "outputBytesSoFar": written}), flush=True)
+        write(footer)
+        copy_base(base_size - insertion)
+        if source.read(1):
+            raise ValueError("Base HTML became longer during streaming")
+    if written != expected_output:
+        raise ValueError("Exact output byte budget differs")
+    partial.replace(args.out)
+    report = {
+        "schemaVersion": 1, "status": "STREAM_AND_SOURCE_HASH_PASS",
+        "scope": "Private standalone payload prototype; game/bot consumption and browser checks UNRUN",
+        "baseHtml": {"path": str(args.base_html), "bytes": base_size, "sha256": base_hash.hexdigest()},
+        "outputHtml": {"path": str(args.out), "bytes": written, "sha256": out_hash.hexdigest()},
+        "fileCount": len(detail), "tagCount": expected_tags,
+        "maximumTagEncodedBytes": args.max_tag_encoded_bytes,
+        "sixCanonicalClasses": 37, "files": source_proofs,
+        "writerBufferBytes": CHUNK, "maximumBrowserEncodedSlice": MAX_BROWSER_SLICE,
+        "completeFileDecodeRequired": False, "fullBrowserMemoryMeasured": False,
+        "seconds": time.time() - began,
+    }
+    args.report.write_text(json.dumps(report, indent=2) + "\n")
+    print(json.dumps({"phase": "done", "status": report["status"], "outputBytes": written,
+                      "outputSha256": out_hash.hexdigest(), "seconds": report["seconds"]}), flush=True)
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--base-html", type=Path, required=True)
+    parser.add_argument("--database", type=Path, required=True)
+    parser.add_argument("--manifest", type=Path, required=True)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument("--include-small", action="store_true")
+    parser.add_argument("--max-output-bytes", type=int, default=1900000000)
+    parser.add_argument('--max-tag-encoded-bytes', type=int, default=1048576)
+    args = parser.parse_args()
+    print(json.dumps({"phase": "start", "pid": os.getpid(), "pgid": os.getpgrp(),
+                      "scope": "private payload-only prototype"}), flush=True)
+    stream(args)
