@@ -51,3 +51,21 @@ per channel (#2a4650→#2c4852). Controls use their independently verified borde
 color; no action/legibility/rules/recovery/timing improvement is claimed.
 GraphQL status reads intermittently returned401; public REST and Git work.
 Use /workspace/partybox-ci-head.py G05 to verify both exact-head workflow events.
+
+Round7, afterc5da083 GREEN push37739020916/PR37739025567. Re-read G05.
+A scrolled six-seat mobile probe shows the winner remains visible (top224.125,
+bottom277.875 in844px), but focus is the page body. Five revised weaknesses:
+final-result keyboard target lost; scored-hand Continue target lost; generic
+winner live message; decorative brand tracking; passive corner-radius variation.
+Fix public outcome focus and name every tied winner in the live message.
+The tiny brand tracking adjustment remains cosmetic; the focus change is a
+real player gain, so reset the cosmetic streak. The full regression now checks
+scrolled winner visibility, scored Continue focus and final New table focus.
+
+Further round7 diagnosis: second full local gate failed54.825fps/p9533.4ms/
+max66.7ms. Low observed system load and no active background worker establish
+no obvious competing process, not a proven cause. Isolated selection passed
+the existing tolerance at57.145fps/p9516.8ms/max100ms. Selection wrote17
+aria-pressed attributes and inspected17 badges for one changed card; update
+only changed controls. This is a measured work reduction; frame-time gains
+will be judged by the next complete run rather than attributed in advance.

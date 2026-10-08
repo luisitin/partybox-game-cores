@@ -2,6 +2,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "outcomeFocus": {
+      "type": "boolean"
+    },
+    "winnerAnnounced": {
+      "type": "boolean"
+    },
+    "mobileWinnerVisible": {
+      "type": "boolean"
+    },
     "accessibleControls": {
       "type": "boolean"
     },

@@ -57,12 +57,14 @@ function cardMarkup(card:number,extra=''):string{
  return `<span class="card-face ${color}" ${extra}><span class="card-rank">${'23456789TJQKA'[rank(card)]}</span><span class="card-suit" aria-hidden="true">${['♣','♦','♠','♥'][suit(card)]}</span></span>`;
 }
 function spokenCard(card:number):string{return `${['2','3','4','5','6','7','8','9','10','Jack','Queen','King','Ace'][rank(card)]} of ${['clubs','diamonds','spades','hearts'][suit(card)]}`;}
-function focusPrimary():void{const focus=document.querySelector<HTMLElement>('#start-turn, #continue, #pass-confirm:not([disabled]), .hand-card:not([disabled])');focus?.focus({preventScroll:true});}
+function focusPrimary():void{if(manageOpen)return;const focus=document.querySelector<HTMLElement>('#start-turn, #continue, #new-table, #pass-confirm:not([disabled]), .hand-card:not([disabled])');focus?.focus({preventScroll:true});}
 function refreshSelection():void{
  for(const button of document.querySelectorAll<HTMLButtonElement>('.hand-card')){
-  const on=selected.has(Number(button.dataset.card));button.classList.toggle('selected',on);button.setAttribute('aria-pressed',String(on));button.disabled=selected.size===3&&!on;
-  const mark=button.querySelector('.picked');
-  if(on&&!mark){const pick=document.createElement('span');pick.className='picked';pick.setAttribute('aria-hidden','true');pick.textContent='✓';button.append(pick);}else if(!on)mark?.remove();
+  const on=selected.has(Number(button.dataset.card)),disabled=selected.size===3&&!on;
+  if(button.disabled!==disabled)button.disabled=disabled;
+  if(button.classList.contains('selected')===on)continue;
+  button.classList.toggle('selected',on);button.setAttribute('aria-pressed',String(on));
+  if(on){const pick=document.createElement('span');pick.className='picked';pick.setAttribute('aria-hidden','true');pick.textContent='✓';button.append(pick);}else button.querySelector('.picked')?.remove();
  }
  const confirm=$<HTMLButtonElement>('#pass-confirm');confirm.disabled=selected.size!==3;confirm.textContent=`Pass ${selected.size} / 3 selected`;
  $('#turn-announcement').textContent=`${selected.size} of 3 cards selected. ${selected.size===3?'Ready to pass.':`Choose ${3-selected.size} more.`}`;
@@ -92,7 +94,8 @@ function render():void{
  }
  const canPause=!human||Boolean(cv)||Boolean(manageHold);const paused=Boolean(s.phase.paused);
  $('#table').innerHTML=`<div class="table-top"><div><p class="eyebrow">HAND ${v.handNumber} · FIRST TO ${s.settings.target} ENDS THE MATCH</p><h1>${phaseLabel}</h1></div><div class="top-controls"><span class="clock" id="clock-label">${paused?'Clock held':v.deadline===null?'No rush':'Clock running'}</span><details class="manage"${manageOpen?' open':''}><summary>Manage</summary><div><button id="pause"${!canPause?' disabled':''}>${paused&&!manageHold?'Resume':'Pause'}</button><button id="skip">Auto-play / continue</button><button id="end">End match</button><button id="reset">New table</button></div></details></div></div><div class="score-strip">${scores}</div><div class="play-layout${phase==='hand'||phase==='done'?' results':''}"><section class="felt" aria-label="Public trick"><div class="felt-top"><span class="eyebrow">${v.heartsBroken?'HEARTS BROKEN':'HEARTS UNBROKEN'}</span><span class="phase-pill">${s.order.length} seats · ${direction}</span></div><div class="trick-grid">${trick}</div><p class="table-instruction">${heading}</p><div class="felt-bottom"><span>♥ +1 · Q♠ +13${s.settings.jack?' · J♦ −10':''}</span><span>${s.settings.moon==='add'?'Moon adds 26 to others':'Moon subtracts 26'}</span></div></section><section class="private-panel" aria-label="Player controls">${privateContent}</section></div><div class="table-footer"><p id="save-status">${saveUnavailable?'Saving is unavailable in this browser.':'Saved on this device · lowest score wins'}</p>${s.order.every(id=>s.players[id]!.bot)?`<label class="fast-option"><input id="fast-bots" type="checkbox"${fast?' checked':''}> Fast bot table</label>`:''}<button id="rules-toggle" class="plain">Rules</button></div>`;
- const announcement=manageHold?'Clock held. Close Manage to return to your hand.':human?`${s.players[s.actor]!.name}. ${cv?(phase==='pass'?'Choose three cards to pass.':'Choose a legal card.'):'Your hand is concealed. Show your hand when ready.'}`:phase==='done'?'Final scores. Lowest score wins.':phase==='hand'?'Hand scored. Continue when ready.':phase==='trick'?`${s.players[v.lastWinner!]!.name} takes the trick.`:`${s.players[s.actor]!.name} is choosing a card.`;
+ const final=phase==='done'?game.results(s):null;
+ const announcement=manageHold?'Clock held. Close Manage to return to your hand.':human?`${s.players[s.actor]!.name}. ${cv?(phase==='pass'?'Choose three cards to pass.':'Choose a legal card.'):'Your hand is concealed. Show your hand when ready.'}`:final?`${final.winnerIds.map(id=>s.players[id]!.name).join(' and ')} ${final.winnerIds.length===1?'wins':'win'}. Final scores.`:phase==='hand'?'Hand scored. Continue when ready.':phase==='trick'?`${s.players[v.lastWinner!]!.name} takes the trick.`:`${s.players[s.actor]!.name} is choosing a card.`;
  if($('#turn-announcement').textContent!==announcement)$('#turn-announcement').textContent=announcement;
  const menu=$<HTMLDetailsElement>('.manage');
  menu.addEventListener('toggle',()=>{
@@ -117,7 +120,7 @@ function render():void{
  $('#rules-toggle').addEventListener('click',()=>{$('#rules').hidden=!$('#rules').hidden;});
  document.querySelector<HTMLInputElement>('#fast-bots')?.addEventListener('change',e=>{fast=(e.target as HTMLInputElement).checked;lastBotAt=0;});
  if(oldFocus!==undefined){const match=document.querySelector<HTMLElement>(`.hand-card[data-card="${Number(oldFocus)}"]`);if(match&&!match.hasAttribute('disabled'))match.focus({preventScroll:true});else focusPrimary();}
- else if(human&&cv===null)focusPrimary();
+ else if(human&&cv===null||phase==='trick'||phase==='hand'||phase==='done')focusPrimary();
  updateClock();
 }
 function reset():void{try{localStorage.removeItem(saveKey);}catch{saveUnavailable=true;}saved=null;$('#resume-box').hidden=true;state=null;revealed=null;selected=new Set();manageOpen=false;manageHold=null;$('#table').hidden=true;$('#table').innerHTML='';$('#setup').hidden=false;setupSeats();$('#seat-count').focus({preventScroll:true});}

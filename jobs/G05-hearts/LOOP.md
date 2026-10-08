@@ -11,3 +11,5 @@
 5 | Standardize score-row tabular numerals; native Tab reaches ready Pass after the third selected card. No action, rules, privacy, recovery or timing gain; all prior gates hold. Desktop60.002fps/CPU4x phone60.000fps,p9516.8/16.7ms,136614B clip. Player gain: none meaningful; cosmetic streak1.
 
 6 | Passive separator color+2 RGB levels/channel; zero functional gains,all native-input/privacy/clock/recovery/contrast gates retained. Desktop60.002fps/CPU4x phone59.672fps,p9516.7/16.8ms,136348B clip. Player gain: none meaningful; cosmetic streak2.
+
+7 | Fix public outcome keyboard targets and announce all winners; scored Continue stays focused,final focus body→New table,all tied winners spoken; scrolled mobile winner224.125–277.875px is visible in844px. Redundant selection updates limited to changed controls. Desktop60.004fps/CPU4x phone58.068fps,p9516.8ms,136272B clip. Player gain: yes; cosmetic streak0.

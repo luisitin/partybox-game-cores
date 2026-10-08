@@ -261,3 +261,30 @@ Local desktop60.002fps,phone CPU4x59.672fps,p9516.7/16.8ms,max33.3ms;
 video136348B. No measured player gain; cosmetic streak2. `node scripts/
 generate.mjs --fixtures-only`, `node scripts/check-data.mjs` PASS28 JSON/50
 hashes,standalone153713B. Updated default actual-disk CI still required.
+
+Round7 extra audit: the first new full browser probe failed the performance gate
+before reaching the scroll assertion: phone mean39.998ms/p9516.8/max3466.5ms
+(25.001fps). No sample was discarded and no pass claimed. An isolated actual
+six-human/24-char-name mobile probe (`node .tmp/scroll-probe.mjs --http`) then
+measured before scroll347,after256,winner top224.125/bottom277.875 in844px:
+winner visible, but activeElement.id empty (page body). Fix outcome focus and
+live winner names, then rerun the full gate; do not blame the stall on a cause
+that has not been established.
+
+The second round7 full browser attempt failed phone54.825fps,p9533.4/max66.7ms.
+Observed runtime load0.07–0.22,4 CPU quota,no active competing worker; this
+snapshot does not establish the cause. Isolated `node .tmp/performance-probe.mjs
+--http` passed the existing cadence tolerance at desktop60.002/phone57.145fps,
+p9516.8ms/max100ms. No failed sample was hidden or removed from the gate.
+After updating only changed selection controls: `npm run build`, `node scripts/
+html.mjs`, `node scripts/visual.mjs --http --record --milestone 08` PASS every
+gate. Every scored hand has Continue focused; final New table focus replaces
+body focus, and the live announcement names every winner (including ties).
+Scrolled six-seat24-char-name winner top224.125/bottom277.875 fits844px after
+scroll256. Prior privacy/reload/clock/native-input/contrast/roster gates true.
+Desktop60.004fps; CPU4x phone58.068fps,p9516.8ms,max50ms;136272B video.
+These are raw local HTTP observations, not a claim of exact60fps or proof that
+the work reduction caused the timing change. Updated actual-disk CI is needed.
+`node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs`
+PASS29 JSON/54 hashes,standalone153921B.30-test full suite unchanged.
+Round7 has a real keyboard/accessibility gain; cosmetic streak resets to0.
