@@ -32,7 +32,9 @@ SHA256:5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801.
 Full artifact publication is pending;
 tracked play.html remains the earlier International2–5 baseline. Build the full
 file locally with G10_HTML_OUT=.work/play-full.html npm run build.
-After all workflow checks pass, the prepared read-only Actions step uploads
+One workflow runs complete Node, American league, International league and
+browser workloads on separate runners, with30-minute limits each. After every
+current stage and final combined validation pass, read-only Actions uploads
 the generated play.html and exact commit/digest receipt as a seven-day ZIP
 artifact. Actual upload/quota/download remain unproved; this temporary download
 is separate from a persistent Release, whose upload tool is currently unavailable.

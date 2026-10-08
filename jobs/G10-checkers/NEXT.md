@@ -1,3 +1,15 @@
+# CI partition checkpoint —2026-10-08 around19:44UTC
+
+Last observed successful branch push2f821d157ee597494e38401d505cf2e337e23b94 at19:16:00.587/main52beb2b ownrow19:15:44. Target19:41 missed while correcting genuine outcome-forgery validation; hard19:46 remains. Next actual successful push resets cadence.
+
+Current host-only edits split the required full pipeline into one workflow/four independent full stages plus final validation/delivery. Both required PR paths and own branch push trigger run exact head checks. All original workloads and budgets remain; default npm test executes all checks. Exact current run/attempt/source/runtime/test/bundle/HTML guards prevent stale stage mixing. Root read-only review approved the architecture and found one meaningful terminal-forgery hole, corrected by actual current-core replay plus independent coordinate replay. Native corrected controls are running under owned session96302 at19:44; no PASS is claimed until its actual result. Earlier10/68 controls were pre-terminal components and remain historical.
+
+Private board-key microbench/exact48reports/cursors/3games/32pilotrecords pass, but whole-game ABBA shows no consistent gain; public game/key/bot/data files remain unchanged. Full evidence is retained under evidence/checks/key-loop-private. The recovered current4,000 strength result remains valid for unchanged game inputs; stage source binding and final current hosted proof are still pending.
+
+After checkpoint, inspect actual terminal-control result/resources and source fingerprints. Preserve any failure, fix validator without weakening assertions, run meaningful controls, then observe first exact-head hosted stage run. All stages must pass under their30min timeout; actual full standalone ZIP upload/download/byte/source receipt must validate before PR. International local17.510FPS failure remains unresolved; do not claim causal repair or replay unchanged local acceptance. Current hosted runner will provide a distinct current-head execution scope and retain genuine failures. No PR or KEEP rounds exist.
+
+## Prior recovery checkpoint/history
+
 # Current recovery checkpoint — 2026-10-08 around19:15UTC
 
 Existing branch job/G10-checkers-complete-20261008, nick codex-audit; worktree /workspace/game-cores-G10-audit-worker, claims clone /workspace/game-cores-audit-main-claims. Do not reclaim another job. Read fresh rootREADME/RULES/JOBS and claims before queue actions.
