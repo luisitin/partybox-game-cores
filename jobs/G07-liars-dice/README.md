@@ -27,4 +27,5 @@ Original code/CSS/SVG are MIT; standalone includes original and Zod notices.
 Browser-only verification hook: API.md. Historical blocked attempt: evidence/.
 NEXT.md tracks hosted CI, KEEP GOING and queue status; current-head CI is required.
 
-KEEP GOING round 1: full browser 52/52 and pacing recordings pass; current-head CI pending.
+KEEP GOING round 1: GitHub run 37741554805 passed at head 6387696.
+Round 2's Medium correction is in progress; its new-source checks are pending.

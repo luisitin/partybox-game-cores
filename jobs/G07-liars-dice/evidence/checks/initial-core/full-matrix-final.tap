@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: contract 4, 6, 7, 8: 1,000 complete seeded bot games at EACH player count 2–8, every-event replay hash and byte JSON roundtrip
+ok 1 - contract 4, 6, 7, 8: 1,000 complete seeded bot games at EACH player count 2–8, every-event replay hash and byte JSON roundtrip
+  ---
+  duration_ms: 1169653.745843
+  type: 'test'
+  ...
+# Subtest: properties: seeds 1, 2, 3 plus 1,000 fixed random seeds preserve dice, turns, conservation, secrecy and totality
+ok 2 - properties: seeds 1, 2, 3 plus 1,000 fixed random seeds preserve dice, turns, conservation, secrecy and totality
+  ---
+  duration_ms: 18536.641171
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1170068.273816

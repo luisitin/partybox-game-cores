@@ -4,7 +4,22 @@ Branch: job/G07-liars-dice; owner codex-dice. Read root README/RULES/JOBS and
 latest main CLAIMS before continuing. Historical research blocker is resolved;
 old notes are under evidence/historical-blocker/, not current state.
 
-All local checks PASS at this delivery checkpoint:
+Current work: KEEP GOING round 2, Medium's exact-certainty safeguard.
+Core source is frozen at 5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18.
+The only policy change is an integer-string comparison before Medium's dudo.
+Easy, Strong, thresholds and the probability implementation are unchanged.
+
+| Work | Current status |
+| --- | --- |
+| Minimal core correction | Saved; new-source checks pending |
+| Natural 27-event/six-hidden-die regression | Authored; focused execution pending |
+| Standalone build and 52 browser checks | PASS, source-matched e17275c6; all 600 intervals per profile |
+| Round-2 desktop/phone clips | Recording after browser pass |
+| Full matrix, properties, leagues and mutations | Waiting for browser CPU isolation to end |
+| GitHub CI | Previous head 6387696 is green; cadence push of guard pending |
+| Browser recovery, standings and rule help | Read-only preparation; no later-round edits |
+
+Initial delivery checks PASS (historical core, unchanged through round 1):
 
 - Twelve fetched source extractions; explicit edition/settings/owner extension.
 - Independent exact-probability oracle; 20,000 differential cases plus full boundaries.
@@ -28,12 +43,17 @@ Mean bot bid window improved 791→2095.143 ms; both late-click races use the co
 timer outcome. The earlier 50/52 test-oracle failure is preserved. LOOP round 1
 has a player-visible gain; consecutive no-gain count is zero.
 
-Push this verified checkpoint with refreshed main claim and regenerated hashes.
-Require exact current-head G07 verify CI success before round 2. Re-read the
-job and rank five remaining weaknesses anew: Medium's certain-loss challenge
-(new reproducible bug), refresh recovery, final standings, palifico help, and
-mixed-table strategy evidence. The diagnostic transcripts/recovery design are
-in ignored .work and agent messages; no later-round changes have been made.
+Round 1 is pushed at 6387696 and accepted by exact-head run 37741554805:
+35/35 node tests, 52/52 browser checks, 25/25 mutation kills and 174-file
+integrity. Public metadata: evidence/checks/ci-round-1.json.
+Round 2 began after that green run: Medium's exact-certainty guard and a
+naturally rolled 27-event regression are in progress. Re-run all required core
+checks, regenerate fixtures twice, obtain fresh source-matched browser proof
+and clips, then regenerate hashes, refresh main claim and push. No round-2
+completion or new-source pass is claimed before verification.
+Recovery remains read-only preparation, followed by final standings, palifico
+help and mixed-table evidence limits. The diagnostic transcripts/recovery
+design are in ignored .work and agent messages.
 Continue review/fix/measure/one LOOP line until three consecutive rounds gain
 nothing a player notices, then mark PR ready and claim the lowest eligible next
 job after fresh main CLAIMS/branch checks. G08 preparation remains read-only,

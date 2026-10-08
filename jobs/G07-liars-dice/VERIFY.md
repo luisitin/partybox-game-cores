@@ -1,7 +1,7 @@
 # Verification log
 
-Current checkpoint: all local checks below passed against the final core/page.
-Hosted exact-head CI and the post-green KEEP GOING loop remain pending.
+Current checkpoint: round 1 passed exact-head GitHub run 37741554805.
+Round 2's Medium correction is in progress; its new-source checks are pending.
 Intermediate failures below are retained as history, not current blockers.
 
 ## Research milestone (2026-10-08)
@@ -221,3 +221,11 @@ The matching seven-bid mean window grows 791→2095.142857 ms (2.648727×); huma
 `node scripts/hashes.mjs` twice + `cmp`, `sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: required for this checkpoint; output is recorded below after execution. Exact current-head hosted CI remains the acceptance gate before round 2.
 
 Round 1 final hash/integrity output: PASS, 174 delivered files, two byte-identical manifest generations, all checksums valid, fixtures regenerated twice byte-identically, source-matched passing raw-frame proof, media below 10 MB and pure core scan.
+
+Round 1 hosted acceptance: `gh run view 37741554805 --repo luisitin/partybox-game-cores --json status,conclusion,headSha,jobs` and `gh run view 37741554805 --repo luisitin/partybox-game-cores --log`: PASS, exact head 6387696d0891f25e01df76f50aa4c7aefdb3ee35. Full npm test passed: 35/35 node tests, 52/52 browser checks, 25/25 compiled assertion mutation kills and 174-file integrity. Artifact 11533424414 is reported uploaded, unexpired and tied to that head. No hosted frame values are inferred from artifact metadata. Public summary: evidence/checks/ci-round-1.json. Round 2 begins after this green result.
+
+## Round 2 cadence milestone — full core verification pending
+
+`npm run build`: PASS, frozen core source 5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18 and HTML e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3. The sole core change guards Medium's dudo with exact numerator/denominator certainty; no threshold, Easy or Strong policy changed.
+`node scripts/fixtures.mjs`: PASS, two byte-identical generations. Historical initial-core fixtures/checks are preserved under evidence/checks/initial-core with hashes and provenance.
+`node scripts/browser-check.mjs --snapshot`: PASS 52/52, exact default full run 20261008073119716. Desktop1920×1080CPU1x and phone390×844CPU4x each retained all600 intervals: 59.803247 FPS, p99 16.8ms, max50ms, one interval above17ms. Unchanged mean/p99 gates pass; equal totals are measured, not substituted. The archived reports/raw frames identify the frozen HTML. Clips, focused regression, complete matrix, properties, leagues and mutations are recorded after execution below; no completed round2 or full-core acceptance is claimed at this cadence checkpoint.

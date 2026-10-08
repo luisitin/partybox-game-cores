@@ -21,3 +21,20 @@ Round 1 completed locally: configurable Fast/Normal/Slow/Manual host pacing, plu
 The first expanded run failed two assertions (50/52): a test wrongly required timed dudo, although the normal core timer can make a legal raise. Its runner and complete measurements are archived under evidence/browser/runs/aa9d7b31…/20261008065708225. The corrected regression compares against the exact real core timer result and proves stale manual/human actions are consumed. This corrects the test oracle without relaxing the host requirement.
 
 Current-head CI must pass before the next round begins. Newly discovered concrete remaining weakness: Medium challenges even when its own cup proves the bid true; six hidden-die counterfactuals all lose a die, while one legal raise has positive 1/6 probability. Rank this alongside recovery, standings, help and multiplayer evidence in the next review.
+
+## Round 2 — Medium certainty guard
+
+Started after exact head 6387696 passed run 37741554805. Re-read root
+README.md, RULES.md and JOBS.md before choosing the next improvement.
+
+Five biggest remaining weaknesses, ranked:
+
+1. Medium's independent low-raise threshold can override a bid proved true by its own cup. A naturally rolled, 27-event game from seed 1309716532 reaches two own ones against an opposing two-ones bid: Medium challenges and loses a die for every possible opposing die, although three ones is a legal raise with positive 1/6 raw probability.
+2. Refreshing an active standalone page loses the session; no browser recovery yet.
+3. Final rankings and finishing order are omitted from the page despite complete core results.
+4. The concise palifico help omits the duel exclusion and prior-experience condition for face exemptions.
+5. Strong's mixed-table advantage is inconclusive at six to eight players in the separate 24,000-game diagnostic; optional-variant strength is unmeasured. This is an evidence limit rather than a demonstrated regression.
+
+Selected correction: an exact-integer certainty guard for Medium, with no
+threshold retuning and no Easy/Strong policy change. Regression and required
+new-source checks are pending; no completed round or gain is recorded yet.

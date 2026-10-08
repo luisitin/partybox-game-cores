@@ -21,6 +21,9 @@ can interrupt with calza out of turn, including interrupt-only settings. Reveals
 are acknowledged through the actual continue input, not by skipping the core.
 
 ## Required paired leagues
+
+The following measurements certify the initial core (unchanged through round 1).
+Round 2's exact-certainty guard is being verified; new-source results are pending.
 Actual command: node scripts/league.mjs (also tests/league.test.mjs in npm test).
 1,000 fixed seeds, both seats swapped at each seed: 2,000 full games per matchup.
 95% Wilson bounds and a paired-seed cluster interval are both reported because

@@ -363,7 +363,7 @@ function chooseInput(s:State,id:string,rng:Rng,skill:BotSkill):Input|null {
     // A fixed, unlearned support likelihood recognizes that naming a face
     // is evidence about the bidder's cup; the raw binomial odds stay exact.
     const believable=raw===null?1:modelProbability(s,id,s.bid!,raw.atLeast,false);
-    if(raw!==null&&(believable<.4||best.p<.3))return {type:'dudo'};
+    if(raw!==null&&raw.atLeastNumerator!==raw.total&&(believable<.4||best.p<.3))return {type:'dudo'};
     // Choose the most credible legal raise, rather than jumping to an average
     // pool quantity that discards the evidence in our own cup.
     return {type:'bid',quantity:best.quantity,face:best.face};
