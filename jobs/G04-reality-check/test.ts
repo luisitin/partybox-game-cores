@@ -152,6 +152,15 @@ test('game modules contain no host entropy, clock, timers, network or I/O',()=>{
  for(const name of ['core.ts','bots.ts','scoring.ts','samples.ts'])assert(!/Math\.random|Date\.now|setTimeout\(|setInterval\(|fetch\(|node:fs|node:child_process/.test(readFileSync(name,'utf8')),name);
  assert(manifestSchema.safeParse(C.manifest).success);
 });
+test('strong bots read short public years and explicit eras without seeing the answer',()=>{
+ const s=toPhase('answer',1,{mode:'quick'});
+ const cases:[string,string,number][]=[['century','Label: 1 CE',1],['century','Label: 9 BCE',-1],['century','Label: 23 bce',-1],['century','Object 7, dated 101CE',2],['century','Object 7, dated 2001CE',21],['century','Object 7, dated 10000 CE',100],['decade','The name peaked in 7',0],['decade','The name peaked in 23',20]];
+ for(const [kind,prompt,expected] of cases){
+  const row=sampleRows.find(r=>r.kind===kind)!,n={...s,question:{...row,prompt,min:kind==='century'?-100:0,max:kind==='century'?100:3000,correct:expected} as State['question']};
+  const action=C.game.bot.sampleInput(n,'p0',createRng(1),'sharp');assert(action?.type==='answer');assert.equal(action.value,expected,prompt);
+  const changed={...n,question:{...n.question,correct:kind==='century'?99:2900} as State['question']};assert.deepEqual(C.game.bot.sampleInput(changed,'p0',createRng(1),'sharp'),action,'live truth must not affect the public-clue answer');
+ }
+});
 test('manifest bytes and all seven phase fixtures use the contract and play to completion',()=>{
  assert.deepEqual(C.manifest,JSON.parse(readFileSync('manifest.json','utf8')));
  for(const phase of C.game.phases){let s:State=JSON.parse(readFileSync(`fixtures/${phase}.json`,'utf8'));assert.equal(s.phase.id,phase);let steps=0;

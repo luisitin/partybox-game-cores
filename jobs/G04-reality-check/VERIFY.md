@@ -123,3 +123,12 @@ scenarios, including keyboard-only entry, nearby question, matching timer,
 wheel visible and160-character unbroken votes wrapping. TV60.0032fps/
 p9516.80ms,phone4×60.0028fps/p9516.80ms; no network/errors/reduced-motion
 animation. HTML492,810bytes,20 checksums PASS,capture4<10MB. Core unchanged.
+
+Round3 public-only baseline (/tmp/G04-date-before.json):0/8 correct on
+short/case/spacing/object-ID/five-digit-year probes. FAST_TEST=1 node
+--test test.ts after explicit year/era parsing:24/24 PASS, all8 clues correct,
+and changing hidden truth preserves each input. npm run check PASS.
+node league.ts:12,000 matches PASS, exact win counts unchanged. node
+build.ts/--check PASS492,898bytes. node browser.ts PASS22 scenarios;
+TV/phone60fps,p95≤16.8ms,no network/errors,reduced-motion honored.
+Capture5<10MB; node checksums.ts/--check PASS21 data/media files.

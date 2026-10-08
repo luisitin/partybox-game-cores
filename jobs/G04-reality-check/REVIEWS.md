@@ -28,3 +28,12 @@ After:wheel/question visible,keyboard typing reaches its field,timer matches,
 shared board returns on concealment and160-character votes do not overflow.
 Remove developer factory wording from the player help. Observable gain;
 no-gain streak0. Core/bots unchanged.
+
+Round3 five weaknesses: short-year/era parsing (worst); Medium fake style;
+phase-event/privacy matrix; custom zero/date catalogs; independent seed
+strength robustness. Baseline public-only probe missed8/8 supported dates,
+including1CE,9BCE,lowercase23bce,101CE/2001CE with another numeric ID,
+10000CE and7/23-year decades. Explicit era/year parsing fixes all8 and
+preserves hidden-truth independence.24 focused tests and all12,000 default
+league matches pass with identical old win counts. Observable valid-content
+bot gain; no-gain streak0. Default corpus and core are unchanged.

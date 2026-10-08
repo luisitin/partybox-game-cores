@@ -3,8 +3,10 @@ import type {BotSkill} from '../../contract/constants.ts';
 import type {PhoneView,Input,QuestionView} from './core.ts';
 import {plants,harbours,materials,machines,defects} from './samples.ts';
 function dateAnswer(q:QuestionView):number{
- const year=Number(q.prompt.match(/\b\d{3,4}\b/)?.[0]??2000);
- return q.kind==='decade'?Math.floor(year/10)*10:(q.prompt.includes('BCE')?-1:1)*Math.ceil(year/100);
+ const era=q.prompt.match(/\b(\d{1,5})\s*(BCE|CE)\b/i);
+ const year=Number(era?.[1]??q.prompt.match(/\b\d{1,4}\b/)?.[0]??2000);
+ const before=era?era[2]!.toUpperCase()==='BCE':/\bBCE\b/i.test(q.prompt);
+ return q.kind==='decade'?Math.floor(year/10)*10:(before?-1:1)*Math.ceil(year/100);
 }
 function bluff(q:QuestionView,rng:Rng,skill:BotSkill):string{
  if(skill==='easy')return rng.pick(['A dancing spoon','A bucket of moonlight','The very surprising answer','A lost purple umbrella']);

@@ -76,3 +76,11 @@ view. Wrap legal unbroken fake text and use two vote columns on wide
 controllers. Remove implementation-only factory wording from player help.
 Add keyboard/context/timer/wheel/maximum-length layout regressions and
 milestone4 capture. All rendering still uses own/public projections.
+
+KEEP GOING3: parse explicit case-insensitive BCE/CE year markers before
+fallback numbers, supporting1–5 digits and optional marker spacing. This
+prevents short-year/default2000 errors and unrelated object IDs being used
+as years. Add eight supported-clue regressions and hidden-answer substitution
+checks. Default samples/fixtures/policies outside date parsing are unchanged.
+Regenerate bundled HTML and capture5; all six2,000-game leagues retain
+identical measured counts, and22 browser scenarios pass.
