@@ -98,3 +98,13 @@ jobs:
         run: node scripts/browser-resume.mjs after
       - name: Real human plural duplicate review and scored receipts
         run: node scripts/browser-plurals.mjs after
+      - name: Retain the complete recovery attempt even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G09-recovery-${{ github.event.pull_request.head.sha }}-${{ github.run_id }}
+          retention-days: 14
+          compression-level: 0
+          path: |
+            jobs/G09-category-rush/evidence/browser/round-3-resume-after/report.json
+            jobs/G09-category-rush/scripts/browser-resume.mjs

@@ -98,6 +98,21 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert(resumeAfter.checks.length>=17);
   assert(resumeAfter.details.some((row:any)=>row.case==='mixed bot continuation'));
   assert(resumeAfter.details.some((row:any)=>row.case==='double handover reload'));
+  const doubleReload=resumeAfter.details.find((row:any)=>row.case==='double handover reload');
+  assert.deepEqual(doubleReload.observations.map((row:any)=>row.label),['before first reload','after first reload','after first Resume','after second reload','after closed-time wait','after second Resume','after Ready']);
+  assert.equal(doubleReload.observations[0].timer,doubleReload.timer);
+  assert.equal(doubleReload.observations.at(-1).timer,doubleReload.timer);
+  const restoredBoundary=doubleReload.observations[2];
+  for(const observation of doubleReload.observations){
+    assert.equal(observation.saved.draft[0],'Private repeated draft');
+    assert.deepEqual(observation.saved.state,doubleReload.observations[0].saved.state);
+    assert.deepEqual(observation.saved.botRngs,doubleReload.observations[0].saved.botRngs);
+    assert(Number.isFinite(observation.saved.seatElapsed)&&observation.saved.seatElapsed>=0);
+  }
+  for(const observation of doubleReload.observations.slice(3,6)){
+    assert.equal(observation.saved.seatElapsed,restoredBoundary.saved.seatElapsed);
+    assert.equal(observation.saved.handover,true);
+  }
   assert(resumeAfter.details.some((row:any)=>row.case==='near expiry'&&row.submitted===true));
   assert.equal(resumeAfter.details.filter((row:any)=>row.case==='storage failure').length,2);
   assert.equal(resumeAfter.details.filter((row:any)=>row.case==='invalid save').length,2);

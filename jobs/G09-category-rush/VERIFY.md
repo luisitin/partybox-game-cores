@@ -406,3 +406,43 @@ builder, sampler, generated content, manifest, fixtures and play.html have no
 change from the genuine exact-head green hosted run. All evidence writers and
 local browser/test processes are closed before staging. LOOP.md records exactly
 one completed round-4 line; its measured player gain leaves the no-gain streak zero.
+
+
+Source-unchanged completion 47e1adf / run 37784359281 FAILED its seventh recovery
+check, double reload on a restored handover: expected 0:50, observed 1:00.
+All six single-reload two/eight-human writing/review/scores cases passed, and
+every preceding original strict/core/mutation/duel/data/gameplay/pacing/receipt
+step passed. Exact old runner and unmodified failed-step log are preserved
+under evidence/browser/round-4-hosted-recovery-first. The old workflow did not
+upload its failed recovery JSON; no full boundary trace is claimed. A private
+bounded diagnostic is pending and the workflow now always retains future
+recovery reports, including failures. Runtime be311 is unchanged from the
+actual 8c full 17-case green run. No cause or new formal KEEP round is asserted;
+current exact-head green remains required.
+
+The private bounded diagnostic `node .work/double-reload-diagnostic.mjs` ran
+13:41:50.818–13:42:26.544 UTC, 35.474 seconds. All 20 repetitions preserve
+0:50 and the draft, and all 80 post-client lifecycle snapshots report successful
+saving without zero elapsed. Complete unfiltered snapshots/script/log remain
+ignored under .work/double-reload-diagnostic.*. Diagnostic runner SHA256
+0d85a8a191832982b32cd3fa61e6d900dd6ea94ab9159c09ea96de920890a647
+and report SHA256
+41fbdaa0d2e640c710d6c50b010f7c73ba630b99c960bbf6830c05ce8100b332.
+Added reads/listeners may affect scheduling; non-reproduction establishes no
+cause and is not acceptance evidence. Runtime/old reference runner stayed frozen.
+
+The actual acceptance runner now adds atomic observations of timer, saved
+snapshot, handover, save status and browser clock at seven double-reload
+boundaries; all original actions and equality/privacy assertions remain.
+The old accepted local report/runner are archived under
+round-4-recovery-before-observations. One fresh full 17-case run on unchanged
+be311 passes, actual 2026-10-08T13:44:07.921Z–2026-10-08T13:45:09.498Z;
+errors/requests/dialogs remain zero. Its runner SHA256 is
+e5fec44ac4988073f6b972fc89237e8e755206518850e4b72ec858dae1401458. The independent artifact binder checks the complete
+boundary sequence, unchanged game/RNG/draft, frozen handover elapsed and equal
+before/after timer text. `npm run typecheck && npx tsx --test
+tests/artifacts.test.ts` passes (artifact body 62.455466 ms). Owned Node 147634
+and Chrome 147646 closed; only zombies remain. No runtime defect or variance
+fix is claimed, no extra LOOP line is logged, and exact current-head CI must
+still pass before formal round 5. The workflow always uploads complete future
+recovery attempts, including failures.
