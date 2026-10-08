@@ -759,3 +759,13 @@ PASS3/3,zero failures; catches stale runtime/runner/payload hashes, incompatible
 authentic saves, shifted time, leaked private sheets and weakened negative scores.
 `npm run typecheck` PASS; `node --check scripts/browser-legacy-save.mjs` PASS.
 No product source or acceptance gate changed. Full new-head CI remains required.
+
+R9 proof-integration checkpoint: root added the already measured legacy runner
+after the existing native-paste command in the final CI clipboard step. Both
+original commands remain; the final always-upload recovery artifact now retains
+the actual legacy report/original-restored saves and exact source runner even
+on failure. The workflow still uses only actions/*, read-only permissions and
+original30minute timeout. This is integration of formal9, not an additional
+KEEP review or player-visible gain. Full new source-head CI is required.
+Successful prior source pushf527665 was confirmed20:23:57Z,24m47s afterd131,
+25/30minute cadencePASS; ownmainb2a4bb2 row20:23:46Z.

@@ -45,7 +45,10 @@ Never invent a third no-gain round or transfer old source-head proof.
 Coordinate local heavy browser READY/grant/CLOSED with root, exact three-key
 grant only. If genuinely blocked, preserve reason/evidence and notify root.
 
-Last confirmed public pushd131 was19:59:10Z/main2ca08ee row19:58:32Z,21m13s
-afterec;25/30minPASS. Current target20:24:10/hard20:29:10. Derive new deadlines
+Last confirmed public pushf527665 was20:23:57Z/mainb2a4bb2 row20:23:46Z,24m47s
+afterd131;25/30minPASS. Current target20:48:57/hard20:53:57. Derive new deadlines
 from the ACTUAL successful new push. Earlier interruption gap66m03s missed30.
 Refresh ONLY own G09 claim; normal pushes only, no force/merge/other claims.
+
+The next R9 integration checkpoint adds fresh legacy-save CI execution and
+always-retained actual report/saves/runner; no extra KEEP round is counted.

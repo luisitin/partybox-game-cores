@@ -105,7 +105,9 @@ jobs:
       - name: Private nonblocking draft feedback and previous-sheet privacy
         run: node scripts/browser-draft-hints.mjs after
       - name: Native clipboard word boundaries, bounded selection and scoring
-        run: node scripts/browser-paste.mjs after
+        run: |
+          node scripts/browser-paste.mjs after
+          node scripts/browser-legacy-save.mjs
       - name: Retain the complete recovery attempt even on failure
         if: always()
         uses: actions/upload-artifact@v4
@@ -116,3 +118,5 @@ jobs:
           path: |
             jobs/G09-category-rush/evidence/browser/round-3-resume-after/report.json
             jobs/G09-category-rush/scripts/browser-resume.mjs
+            jobs/G09-category-rush/evidence/browser/round-9-legacy-save/
+            jobs/G09-category-rush/scripts/browser-legacy-save.mjs
