@@ -1,3 +1,15 @@
+# G08 — native minimum-hold proof repaired, full acceptance pending
+
+Latest work reads main README/RULES/JOBS, START-HERE and original owner instructions. Canonical branch job/G08-word-grid-the-owner-s-shake-up, originalPR9 stays DRAFT. Current game/pageSHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e remains14,208,702bytes, owner assets/core/data unchanged. Resume clock gain is genuine; no-player-gain streak0 and the old stop3 is invalidated.
+
+Read review/repair12/README.md for exact recovered partial recording, unknown interrupted session exit, real2170.605254ms two-second Pause and19negative controls. Prior22f PR37838445873 green and push37838439275 red both preserved. The red push correctly rejected1999.752709ms hold. Harness now waits for the real native deadline without weakening>=2000, frames, source guards or page.
+
+Normal push checkpoint and refresh ONLY own G08 claim in /workspace/game-cores-G08-claims. Then read full exact-new-head push and PR logs and independently download/validate genuine current artifacts before PR9 is ready. KEEP: re-read/rank five/fix worst/measure/push until three consecutive no-player-gain rounds after full green. Never merge/force push or edit owner art/name/film. No new unchanged local FPS retry; local phone57.6947FAIL and all raw/grants/CLOSED preserved, Spanish NOTRUN.
+
+Re-verify when web works: manufacturer primary PDFs and physical edition labels; actual production SDK audio/3D/UI runtime. Test-only bindings are permitted by G08; denied sources remain labelled unread.
+
+Previous checkpoint follows unchanged for evidence history.
+
 # G08 — CSP-safe capture checkpoint, full delivery pending
 
 Current KEEP9 player gain remains the repaired Resume clock; owner game/client/core/art/data are preserved and page14,208,702B/SHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e remains unchanged. Old stop3 is invalidated; current no-player-gain streak0 until new full acceptance and formal subsequent rounds.

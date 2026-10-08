@@ -54,7 +54,9 @@ const found=[...referenceSolve(letters,4,dictionary,3)].filter(([w])=>w.length>=
 const [word,path]=found[0]!;await cells.nth(0).focus();await phone.page.keyboard.press('ArrowRight');assert.equal(await cells.nth(1).evaluate(el=>el===document.activeElement),true);
 await trace(phone.page,path);await phone.page.getByText(word.toUpperCase(),{exact:true}).last().waitFor();
 await phone.page.getByRole('button',{name:'Pause',exact:true}).click();const clock=await phone.page.locator('[aria-live="polite"]').first().innerText();
-const pauseHoldStarted=performance.now();await phone.page.waitForTimeout(2000);const heldMs=performance.now()-pauseHoldStarted,pausedClock=await phone.page.locator('[aria-live="polite"]').first().innerText();assert.equal(pausedClock,clock);assert.equal(await cells.nth(0).getAttribute('tabindex'),'-1');
+const pauseHoldStarted=performance.now(),pauseHoldDeadline=pauseHoldStarted+2000;
+while(performance.now()<pauseHoldDeadline)await phone.page.waitForTimeout(Math.max(1,pauseHoldDeadline-performance.now()));
+const heldMs=performance.now()-pauseHoldStarted,pausedClock=await phone.page.locator('[aria-live="polite"]').first().innerText();assert.equal(pausedClock,clock);assert.equal(await cells.nth(0).getAttribute('tabindex'),'-1');
 await phone.page.getByRole('button',{name:'Resume',exact:true}).click();assert.equal(await cells.nth(0).getAttribute('aria-disabled'),'false');
 const afterResumeClock=await phone.page.locator('[aria-live="polite"]').first().innerText(),resumeCountdown={beforeSeconds:countdownSeconds(clock),pausedSeconds:countdownSeconds(pausedClock),afterSeconds:countdownSeconds(afterResumeClock),heldMs};assert(resumeCountdown.afterSeconds<=resumeCountdown.beforeSeconds,'Resume must never inflate the actual displayed countdown');assert(resumeCountdown.afterSeconds>=resumeCountdown.beforeSeconds-2,'pause must preserve remaining hunt time');
 const [dragWord,dragPath]=found.find(([w])=>w!==word)!;

@@ -52,3 +52,5 @@
 - KEEP9 fixes a genuine temporary Resume countdown inflation in the existing offline clock binding: current shell clock on every render, existing250ms trigger retained. Exact before/after real-pause diagnostics and original failed raw/hosted focus receipts are preserved. Original game/client/art/data unchanged; existing HTML regenerated twice identically as3763. Add recorded immediate Resume regression/numeric independent receipt and scheduled-focus event wait; visible gain resets stopping streak0.
 
 - Repair11 preserves actual current-page phoneFPS failure and SpanishNOTRUN evidence, and replaces CSP-incompatible string focus polling with direct bounded locator identity observation. Page3763/game/core/client/art/data remain unchanged. Source-bound native-only functional capture/18real corruptions pass; full current CI and KEEP stop3 remain pending.
+
+- Capture verifier waits against actual monotonic two-second deadline, rather than assuming a2000ms scheduled delay is at least2000ms. Existing heldMs>=2000 gate retained; add actual1999ms negative. Product/page/frame-sampler bytes unchanged. See review/repair12.

@@ -27,3 +27,5 @@
 - New-game focus is scheduled with requestAnimationFrame. A bounded wait for the actual focused setup heading is the correct observable check; keep the exact heading identity assertion. Do not add arbitrary benchmark settling/warmup or fake clocks.
 
 - Actual ca8 local phone speed failure is unresolved and is not attributed to the clock display or CSP checker. Hosted frame positives and local numeric failure remain distinct machine/time/source scopes. Poll actual heading identity from Node without unsafe-eval or weakening CSP; native-only recordings cannot substitute for full speed evidence.
+
+- Second workspace restart approximately20:31–20:40 interrupted capture-session observation. Persisted full report and real clips are validated independently; exact exit and termination time remain unknown. No recorded-session FPS claim.
