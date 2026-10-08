@@ -1,3 +1,20 @@
+# Current G07 evidence
+
+The final32-source observer/workload checker uses exact current source and
+complete reports. The native600-frame callback and all gameplay are unchanged.
+
+- [Actual full hosted41f6226 report](evidence/browser/report.json),[desktop raw](evidence/browser/desktop-frames.json),[phone raw](evidence/browser/phone4x-frames.json):94/94 plusall1200 intervals,60.001800/60.002400FPS,p99/max16.8.
+- [Permanent official hosted artifact ZIP](evidence/browser/hosted-41f6226/artifact.zip) and [1387-assertion independent actual-byte receipt](evidence/browser/hosted-41f6226/independent-current-hosted-validation.json); exact run37831510960/source41f6226.
+- [Independent offline reader](evidence/checks/resume-audit-13-independent-hosted-reader.py):copy the public ZIP to a scratch directory as artifact.zip; pass `--base <scratch> --local-repository <repo> --head 41f6226274e0eb693adfe00c29bd0ae8ae981ff9 --run-id 37831510960 --job-id 113497745355 --artifact-id 11573104871 --zip-bytes 1249277 --zip-sha256 87a98e203ec7f2b5bac369258e52a9d51081f0184861963d23a0f324c834f739`. It safely extracts verified bytes and never generates positive frames.
+- [Actual local93/94 failure and complete strict-frame results](evidence/checks/resume-audit-13-local-full-failure.json):phone calza pre-click bound failed; both600-frame profiles pass,but the full report correctly rejects. Allraw/grant/STOP-CONT evidence is in the identified run directory.
+- [Four real trusted-click diagnostic](evidence/checks/resume-audit-11-clock-observer-diagnostic.json),[unsampled player-map guard error](evidence/checks/resume-audit-12-unsampled-guard-failure.json):scopes/old source identities/failures preserved.
+- [Fresh five-round clip report](evidence/browser/resume-audit-13-captures.json),[actual complete VP8 decode](evidence/checks/resume-audit-13-real-clip-decode.json),[desktop clip](media/resume-audit-13-desktop.webm),[phone clip](media/resume-audit-13-phone4x.webm). Recordings are separate from native frame acceptance.
+
+This41f6226 proof remains source-specific; the newer final evidence-only commit
+requires its own complete green CI/actual artifact before PR6 is ready.
+
+---
+
 # Evidence index
 
 Current runtime page SHA256:

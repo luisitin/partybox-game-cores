@@ -1,6 +1,6 @@
 {
-  "runId": "20261008193007731",
-  "startedAt": "2026-10-08T19:30:07.731Z",
+  "runId": "20261008192314580",
+  "startedAt": "2026-10-08T19:23:14.580Z",
   "sourceGuardHashes": {
     "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
     "manifest.json": "4d4831f00da81ff0832bacd8b6589ea38affe1c7d348a0f6573095e5a7f14c4c",
@@ -71,7 +71,7 @@
       "height": 1080,
       "cpuThrottle": 1,
       "frameFile": "desktop-frames.json",
-      "totalMs": 9999.7,
+      "totalMs": 9999.600000000006,
       "workload": {
         "beforeReady": {
           "phase": "bid",
@@ -85,7 +85,7 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "d834e1290b48005b094774f48579592387123868a2d86bf887988fc24e197063"
+          "stateSha256": "535aa0db91b7ac96f08067d4ab638434a58c0702f712f841eb4a6f6d0fcfc464"
         },
         "atStart": {
           "phase": "bid",
@@ -99,7 +99,7 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "d834e1290b48005b094774f48579592387123868a2d86bf887988fc24e197063"
+          "stateSha256": "535aa0db91b7ac96f08067d4ab638434a58c0702f712f841eb4a6f6d0fcfc464"
         },
         "atEnd": {
           "phase": "bid",
@@ -113,14 +113,14 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "d834e1290b48005b094774f48579592387123868a2d86bf887988fc24e197063"
+          "stateSha256": "535aa0db91b7ac96f08067d4ab638434a58c0702f712f841eb4a6f6d0fcfc464"
         }
       },
-      "archivedFrameFile": "runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008193007731/desktop-frames.json",
-      "meanMs": 16.66616666666667,
-      "fps": 60.00180005400161,
-      "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
+      "archivedFrameFile": "runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008192314580/desktop-frames.json",
+      "meanMs": 16.66600000000001,
+      "fps": 60.002400096003804,
+      "p99Ms": 16.79999999998836,
+      "maxMs": 16.800000000017462,
       "droppedIntervalsOver17Ms": 0,
       "sampleCount": 600
     },
@@ -130,7 +130,7 @@
       "height": 844,
       "cpuThrottle": 4,
       "frameFile": "phone4x-frames.json",
-      "totalMs": 9999.599999999999,
+      "totalMs": 10116.199999999997,
       "workload": {
         "beforeReady": {
           "phase": "bid",
@@ -144,7 +144,7 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "7bdbdaeaf86fcb8bf275446ef279aabb30b4e15efc63407cc4ab79c24d3f6772"
+          "stateSha256": "fc000d2cc97becfcc00e72e2c7759acce3fc9d96b91ca3f7d330d4d80e724b57"
         },
         "atStart": {
           "phase": "bid",
@@ -158,7 +158,7 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "7bdbdaeaf86fcb8bf275446ef279aabb30b4e15efc63407cc4ab79c24d3f6772"
+          "stateSha256": "fc000d2cc97becfcc00e72e2c7759acce3fc9d96b91ca3f7d330d4d80e724b57"
         },
         "atEnd": {
           "phase": "bid",
@@ -172,15 +172,15 @@
             "face": 3
           },
           "oddsAvailable": true,
-          "stateSha256": "7bdbdaeaf86fcb8bf275446ef279aabb30b4e15efc63407cc4ab79c24d3f6772"
+          "stateSha256": "fc000d2cc97becfcc00e72e2c7759acce3fc9d96b91ca3f7d330d4d80e724b57"
         }
       },
-      "archivedFrameFile": "runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008193007731/phone4x-frames.json",
-      "meanMs": 16.665999999999997,
-      "fps": 60.002400096003846,
-      "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
-      "droppedIntervalsOver17Ms": 0,
+      "archivedFrameFile": "runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008192314580/phone4x-frames.json",
+      "meanMs": 16.86033333333333,
+      "fps": 59.31080840631859,
+      "p99Ms": 16.80000000000291,
+      "maxMs": 66.69999999999709,
+      "droppedIntervalsOver17Ms": 3,
       "sampleCount": 600
     }
   ],
@@ -537,7 +537,8 @@
     {
       "profile": "phone4x",
       "name": "a human can call calza after reading for over 900ms at normal pace",
-      "passed": true
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(calledAt - before.armedAt > 900 && calledAt - before.armedAt < 1650)\n\n    at file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:832:7\n    at async run (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:309:9)\n    at async file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:817:5"
     },
     {
       "profile": "phone4x",
@@ -675,11 +676,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "normal",
-      "armedAt": 72,
-      "observedAt": 2138,
-      "elapsedMs": 2066,
-      "lastUnchangedMs": 2049,
-      "phaseStartedAt": 2125,
+      "armedAt": 153,
+      "observedAt": 2184,
+      "elapsedMs": 2031,
+      "lastUnchangedMs": 2014,
+      "phaseStartedAt": 2170,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -692,11 +693,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "fast",
-      "armedAt": 2147,
-      "observedAt": 2938,
-      "elapsedMs": 791,
-      "lastUnchangedMs": 774,
-      "phaseStartedAt": 2925,
+      "armedAt": 2204,
+      "observedAt": 2984,
+      "elapsedMs": 780,
+      "lastUnchangedMs": 763,
+      "phaseStartedAt": 2970,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -709,11 +710,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "slow",
-      "armedAt": 2946,
-      "observedAt": 7038,
-      "elapsedMs": 4092,
-      "lastUnchangedMs": 4075,
-      "phaseStartedAt": 7025,
+      "armedAt": 3012,
+      "observedAt": 7083,
+      "elapsedMs": 4071,
+      "lastUnchangedMs": 4055,
+      "phaseStartedAt": 7069,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -726,11 +727,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "fast",
-      "armedAt": 7045,
-      "observedAt": 7538,
-      "elapsedMs": 493,
-      "lastUnchangedMs": 476,
-      "phaseStartedAt": 7525,
+      "armedAt": 7120,
+      "observedAt": 7583,
+      "elapsedMs": 463,
+      "lastUnchangedMs": 447,
+      "phaseStartedAt": 7569,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -743,11 +744,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "normal",
-      "armedAt": 7546,
-      "observedAt": 9238,
-      "elapsedMs": 1692,
-      "lastUnchangedMs": 1675,
-      "phaseStartedAt": 9225,
+      "armedAt": 7610,
+      "observedAt": 9283,
+      "elapsedMs": 1673,
+      "lastUnchangedMs": 1657,
+      "phaseStartedAt": 9269,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -760,11 +761,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "slow",
-      "armedAt": 9247,
-      "observedAt": 12937,
-      "elapsedMs": 3690,
-      "lastUnchangedMs": 3674,
-      "phaseStartedAt": 12925,
+      "armedAt": 9297,
+      "observedAt": 12983,
+      "elapsedMs": 3686,
+      "lastUnchangedMs": 3670,
+      "phaseStartedAt": 12969,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -777,23 +778,23 @@
       "profile": "desktop",
       "kind": "manual-regular",
       "pace": "manual",
-      "heldMs": 2298
+      "heldMs": 2327
     },
     {
       "profile": "desktop",
       "kind": "manual-interrupt",
       "pace": "manual",
-      "heldMs": 2273
+      "heldMs": 2279
     },
     {
       "profile": "desktop",
       "kind": "pace-change",
       "pace": "fast",
-      "armedAt": 2648,
-      "observedAt": 3436,
-      "elapsedMs": 788,
-      "lastUnchangedMs": 769,
-      "phaseStartedAt": 3433,
+      "armedAt": 2769,
+      "observedAt": 3570,
+      "elapsedMs": 801,
+      "lastUnchangedMs": 784,
+      "phaseStartedAt": 3556,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -806,12 +807,12 @@
       "profile": "desktop",
       "kind": "resume",
       "pace": "normal",
-      "pauseAcceptedAfterArmMs": 837,
-      "armedAt": 3198,
-      "observedAt": 5241,
-      "elapsedMs": 2043,
-      "lastUnchangedMs": 2026,
-      "phaseStartedAt": 5226,
+      "pauseAcceptedAfterArmMs": 869,
+      "armedAt": 3298,
+      "observedAt": 5368,
+      "elapsedMs": 2070,
+      "lastUnchangedMs": 2053,
+      "phaseStartedAt": 5356,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -824,18 +825,18 @@
       "profile": "desktop",
       "kind": "human-calza",
       "pace": "normal",
-      "elapsedMs": 1120,
-      "requestedAt": 1186
+      "elapsedMs": 1190,
+      "requestedAt": 1302
     },
     {
       "profile": "desktop",
       "kind": "core-clock",
       "pace": "normal",
-      "armedAt": 64,
-      "observedAt": 1135,
-      "elapsedMs": 1071,
-      "lastUnchangedMs": 1054,
-      "phaseStartedAt": 1126,
+      "armedAt": 127,
+      "observedAt": 1170,
+      "elapsedMs": 1043,
+      "lastUnchangedMs": 1026,
+      "phaseStartedAt": 1157,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -848,11 +849,11 @@
       "profile": "desktop",
       "kind": "core-clock",
       "pace": "manual",
-      "armedAt": 1152,
-      "observedAt": 2235,
-      "elapsedMs": 1083,
-      "lastUnchangedMs": 1066,
-      "phaseStartedAt": 2226,
+      "armedAt": 1208,
+      "observedAt": 2269,
+      "elapsedMs": 1061,
+      "lastUnchangedMs": 1045,
+      "phaseStartedAt": 2257,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -865,9 +866,9 @@
       "profile": "desktop",
       "kind": "overdue-clock-manual-step",
       "pace": "manual",
-      "armedAt": 2245,
-      "clickedAt": 3257,
-      "deadline": 3245,
+      "armedAt": 2297,
+      "clickedAt": 3313,
+      "deadline": 3297,
       "expected": {
         "phase": "bid",
         "turn": "p2",
@@ -929,9 +930,9 @@
       "profile": "desktop",
       "kind": "overdue-clock-human-input",
       "pace": "manual",
-      "armedAt": 3264,
-      "clickedAt": 4279,
-      "deadline": 4264,
+      "armedAt": 3329,
+      "clickedAt": 4370,
+      "deadline": 4329,
       "late": {
         "quantity": 1,
         "face": 2
@@ -975,142 +976,142 @@
       "profile": "desktop",
       "kind": "saved-game-resume",
       "pace": "normal",
-      "armedAt": 1206,
-      "observedAt": 3231,
-      "elapsedMs": 2025,
-      "lastUnchangedMs": 2006,
-      "phaseStartedAt": 3227,
-      "phase": "bid",
-      "turn": "p0",
-      "bid": {
-        "quantity": 1,
-        "face": 4,
-        "playerId": "p1"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "regular",
-      "pace": "normal",
-      "armedAt": 256,
-      "observedAt": 2342,
-      "elapsedMs": 2086,
-      "lastUnchangedMs": 2063,
-      "phaseStartedAt": 2329,
-      "phase": "bid",
-      "turn": "p0",
-      "bid": {
-        "quantity": 1,
-        "face": 4,
-        "playerId": "p1"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "regular",
-      "pace": "fast",
-      "armedAt": 2371,
-      "observedAt": 3136,
-      "elapsedMs": 765,
-      "lastUnchangedMs": 747,
-      "phaseStartedAt": 3127,
-      "phase": "bid",
-      "turn": "p0",
-      "bid": {
-        "quantity": 1,
-        "face": 4,
-        "playerId": "p1"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "regular",
-      "pace": "slow",
-      "armedAt": 3169,
-      "observedAt": 7236,
-      "elapsedMs": 4067,
-      "lastUnchangedMs": 4050,
-      "phaseStartedAt": 7228,
-      "phase": "bid",
-      "turn": "p0",
-      "bid": {
-        "quantity": 1,
-        "face": 4,
-        "playerId": "p1"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "interrupt",
-      "pace": "fast",
-      "armedAt": 7265,
-      "observedAt": 7739,
-      "elapsedMs": 474,
-      "lastUnchangedMs": 453,
-      "phaseStartedAt": 7727,
-      "phase": "reveal",
-      "turn": "p1",
-      "bid": {
-        "quantity": 1,
-        "face": 2,
-        "playerId": "p0"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "interrupt",
-      "pace": "normal",
-      "armedAt": 7770,
-      "observedAt": 9435,
-      "elapsedMs": 1665,
-      "lastUnchangedMs": 1648,
-      "phaseStartedAt": 9426,
-      "phase": "reveal",
-      "turn": "p1",
-      "bid": {
-        "quantity": 1,
-        "face": 2,
-        "playerId": "p0"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "interrupt",
-      "pace": "slow",
-      "armedAt": 9463,
-      "observedAt": 13135,
-      "elapsedMs": 3672,
-      "lastUnchangedMs": 3655,
-      "phaseStartedAt": 13127,
-      "phase": "reveal",
-      "turn": "p1",
-      "bid": {
-        "quantity": 1,
-        "face": 2,
-        "playerId": "p0"
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "manual-regular",
-      "pace": "manual",
-      "heldMs": 2328
-    },
-    {
-      "profile": "phone4x",
-      "kind": "manual-interrupt",
-      "pace": "manual",
-      "heldMs": 2287
-    },
-    {
-      "profile": "phone4x",
-      "kind": "pace-change",
-      "pace": "fast",
-      "armedAt": 2880,
+      "armedAt": 1582,
       "observedAt": 3635,
-      "elapsedMs": 755,
-      "lastUnchangedMs": 731,
-      "phaseStartedAt": 3623,
+      "elapsedMs": 2053,
+      "lastUnchangedMs": 2035,
+      "phaseStartedAt": 3622,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "normal",
+      "armedAt": 569,
+      "observedAt": 2621,
+      "elapsedMs": 2052,
+      "lastUnchangedMs": 2018,
+      "phaseStartedAt": 2599,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "fast",
+      "armedAt": 2697,
+      "observedAt": 3506,
+      "elapsedMs": 809,
+      "lastUnchangedMs": 790,
+      "phaseStartedAt": 3498,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "slow",
+      "armedAt": 3557,
+      "observedAt": 7615,
+      "elapsedMs": 4058,
+      "lastUnchangedMs": 4030,
+      "phaseStartedAt": 7601,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "fast",
+      "armedAt": 7668,
+      "observedAt": 8121,
+      "elapsedMs": 453,
+      "lastUnchangedMs": 419,
+      "phaseStartedAt": 8098,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "normal",
+      "armedAt": 8174,
+      "observedAt": 9909,
+      "elapsedMs": 1735,
+      "lastUnchangedMs": 1713,
+      "phaseStartedAt": 9899,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "slow",
+      "armedAt": 9940,
+      "observedAt": 13613,
+      "elapsedMs": 3673,
+      "lastUnchangedMs": 3647,
+      "phaseStartedAt": 13599,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-regular",
+      "pace": "manual",
+      "heldMs": 2479
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-interrupt",
+      "pace": "manual",
+      "heldMs": 2327
+    },
+    {
+      "profile": "phone4x",
+      "kind": "pace-change",
+      "pace": "fast",
+      "armedAt": 3218,
+      "observedAt": 3991,
+      "elapsedMs": 773,
+      "lastUnchangedMs": 741,
+      "phaseStartedAt": 3976,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -1123,12 +1124,12 @@
       "profile": "phone4x",
       "kind": "resume",
       "pace": "normal",
-      "pauseAcceptedAfterArmMs": 897,
-      "armedAt": 3436,
-      "observedAt": 5446,
-      "elapsedMs": 2010,
-      "lastUnchangedMs": 1993,
-      "phaseStartedAt": 5431,
+      "pauseAcceptedAfterArmMs": 930,
+      "armedAt": 3706,
+      "observedAt": 5723,
+      "elapsedMs": 2017,
+      "lastUnchangedMs": 1954,
+      "phaseStartedAt": 5682,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -1139,20 +1140,13 @@
     },
     {
       "profile": "phone4x",
-      "kind": "human-calza",
-      "pace": "normal",
-      "elapsedMs": 1169,
-      "requestedAt": 1401
-    },
-    {
-      "profile": "phone4x",
       "kind": "core-clock",
       "pace": "normal",
-      "armedAt": 233,
-      "observedAt": 1237,
-      "elapsedMs": 1004,
+      "armedAt": 579,
+      "observedAt": 1609,
+      "elapsedMs": 1030,
       "lastUnchangedMs": 988,
-      "phaseStartedAt": 1223,
+      "phaseStartedAt": 1574,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -1165,11 +1159,11 @@
       "profile": "phone4x",
       "kind": "core-clock",
       "pace": "manual",
-      "armedAt": 1286,
-      "observedAt": 2337,
-      "elapsedMs": 1051,
-      "lastUnchangedMs": 1034,
-      "phaseStartedAt": 2323,
+      "armedAt": 1709,
+      "observedAt": 2788,
+      "elapsedMs": 1079,
+      "lastUnchangedMs": 1039,
+      "phaseStartedAt": 2764,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -1182,9 +1176,9 @@
       "profile": "phone4x",
       "kind": "overdue-clock-manual-step",
       "pace": "manual",
-      "armedAt": 2378,
-      "clickedAt": 3402,
-      "deadline": 3378,
+      "armedAt": 2929,
+      "clickedAt": 3990,
+      "deadline": 3929,
       "expected": {
         "phase": "bid",
         "turn": "p2",
@@ -1246,9 +1240,9 @@
       "profile": "phone4x",
       "kind": "overdue-clock-human-input",
       "pace": "manual",
-      "armedAt": 3435,
-      "clickedAt": 4478,
-      "deadline": 4435,
+      "armedAt": 4066,
+      "clickedAt": 5197,
+      "deadline": 5066,
       "late": {
         "quantity": 1,
         "face": 2
@@ -1292,11 +1286,11 @@
       "profile": "phone4x",
       "kind": "saved-game-resume",
       "pace": "normal",
-      "armedAt": 1620,
-      "observedAt": 3654,
-      "elapsedMs": 2034,
-      "lastUnchangedMs": 2009,
-      "phaseStartedAt": 3638,
+      "armedAt": 2254,
+      "observedAt": 4354,
+      "elapsedMs": 2100,
+      "lastUnchangedMs": 2041,
+      "phaseStartedAt": 4305,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -2580,69 +2574,69 @@
       ]
     }
   ],
-  "passed": true,
+  "passed": false,
   "clockObservations": [
     {
       "selector": "#resume",
       "eventTrusted": true,
-      "clickHostBefore": 1544,
-      "nativeBeforeMs": 1544.0999999999767,
-      "nativeEventTimeStampMs": 1543.5,
-      "clickHostAfter": 1545,
-      "nativeAfterMs": 1545.5,
+      "clickHostBefore": 1730,
+      "nativeBeforeMs": 1730,
+      "nativeEventTimeStampMs": 1729.300000011921,
+      "clickHostAfter": 1739,
+      "nativeAfterMs": 1739.2000000178814,
       "profile": "desktop",
       "kind": "pause-resume",
-      "beforeDeadline": 1051,
-      "pausedAt": 278,
-      "afterDeadline": 2317,
+      "beforeDeadline": 1109,
+      "pausedAt": 382,
+      "afterDeadline": 2457,
       "limitMs": 200
     },
     {
       "selector": "#resume-saved",
       "eventTrusted": true,
-      "clickHostBefore": 1331,
-      "nativeBeforeMs": 593.4000000000233,
-      "nativeEventTimeStampMs": 592,
-      "clickHostAfter": 1333,
-      "nativeAfterMs": 595,
+      "clickHostBefore": 1474,
+      "nativeBeforeMs": 663.7999999821186,
+      "nativeEventTimeStampMs": 661.2999999821186,
+      "clickHostAfter": 1476,
+      "nativeAfterMs": 665.8999999761581,
       "profile": "desktop",
       "kind": "saved-resume",
-      "savedDeadline": 3088,
-      "savedHostNow": 764,
-      "afterDeadline": 3647,
-      "elapsedBeforeCheckpointMs": 676,
+      "savedDeadline": 3137,
+      "savedHostNow": 828,
+      "afterDeadline": 3750,
+      "elapsedBeforeCheckpointMs": 691,
       "fullClockMs": 3000,
       "limitMs": 250
     },
     {
       "selector": "#resume",
       "eventTrusted": true,
-      "clickHostBefore": 1764,
-      "nativeBeforeMs": 1764.0999999999767,
-      "nativeEventTimeStampMs": 1761.4000000000233,
-      "clickHostAfter": 1769,
-      "nativeAfterMs": 1769.5999999999767,
+      "clickHostBefore": 2318,
+      "nativeBeforeMs": 2318.9000000059605,
+      "nativeEventTimeStampMs": 2309.7000000178814,
+      "clickHostAfter": 2335,
+      "nativeAfterMs": 2335.5999999940395,
       "profile": "phone4x",
       "kind": "pause-resume",
-      "beforeDeadline": 1168,
-      "pausedAt": 464,
-      "afterDeadline": 2468,
+      "beforeDeadline": 1445,
+      "pausedAt": 940,
+      "afterDeadline": 2823,
       "limitMs": 200
     },
     {
       "selector": "#resume-saved",
       "eventTrusted": true,
-      "clickHostBefore": 1684,
-      "nativeBeforeMs": 760.7000000000698,
-      "nativeEventTimeStampMs": 754.9000000000233,
-      "clickHostAfter": 1691,
-      "nativeAfterMs": 767.9000000000233,
+      "clickHostBefore": 2442,
+      "nativeBeforeMs": 1287.5,
+      "nativeEventTimeStampMs": 1268.0999999940395,
+      "clickHostAfter": 2464,
+      "nativeAfterMs": 1310,
       "profile": "phone4x",
       "kind": "saved-resume",
-      "savedDeadline": 3331,
-      "savedHostNow": 1066,
-      "afterDeadline": 3930,
-      "elapsedBeforeCheckpointMs": 735,
+      "savedDeadline": 3688,
+      "savedHostNow": 1510,
+      "afterDeadline": 4563,
+      "elapsedBeforeCheckpointMs": 822,
       "fullClockMs": 3000,
       "limitMs": 250
     }
@@ -2685,5 +2679,5 @@
     "dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
     "../../.github/workflows/G07.yml": "6be4602ad47134629eaa231a3e905e9f72c046a245e8f200809918baa08f7ddd"
   },
-  "finishedAt": "2026-10-08T19:33:27.612Z"
+  "finishedAt": "2026-10-08T19:31:11.610Z"
 }

@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-08T19:37:04.087285+00:00",
+  "scope": "Actual separate gameplay clips; encoded25FPS is not native game performance proof",
+  "htmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "rows": [
+    {
+      "path": "media/resume-audit-13-desktop.webm",
+      "bytes": 935764,
+      "sha256": "2b37fd77c80e9b5858e00b2c09af67a4b2eed9c84c297bec26ac1dcb9742093a",
+      "codec": "vp8",
+      "width": 1280,
+      "height": 720,
+      "encodedFps": "25/1",
+      "decodedFrames": 264,
+      "durationSeconds": 10.56,
+      "decodeExitCode": 0
+    },
+    {
+      "path": "media/resume-audit-13-phone4x.webm",
+      "bytes": 956240,
+      "sha256": "754169458a7a9199721d2101226b079f8fe212af839caa5b6975548bd8e0f7cb",
+      "codec": "vp8",
+      "width": 390,
+      "height": 844,
+      "encodedFps": "25/1",
+      "decodedFrames": 310,
+      "durationSeconds": 12.4,
+      "decodeExitCode": 0
+    }
+  ]
+}

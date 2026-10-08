@@ -152,3 +152,37 @@ acceptance. Workload corruption controls alter BOTH report/raw boundaries, so
 finished/timed/closed-cup/missing-odds/changed-bid/dice fixtures cannot merely
 fail because two copied reports differ. Current full/CI acceptance remains
 PENDING; no unchanged strict timing retry occurred.
+
+## Final actual-current proof13 and retained local failure
+
+Exact41f6226 run37831510960 SUCCESS19:33:31UTC; actual job113497745355 full
+137918-character log inspected:116/116 units,25 actual compiled assertion kills,
+full94/94 browser,32 guards/1200 intervals,88/88 current controls and404 hashes/
+2x identical regeneration PASS. Genuine official artifact11573104871 ZIP
+1249277B/SHA87a98e203ec7f2b5bac369258e52a9d51081f0184861963d23a0f324c834f739
+was downloaded,CRC/safe-path checked and independently validated with1387 Python
+assertions:all32 actual source bytes match,all94 checks/1200 intervals/click
+observations/active workload boundaries verified. Desktop60.001800/phone60.002400,
+p99/max16.8. ZIP+reader+receipt persist publicly; no14-day artifact dependency.
+`G07_CURRENT_BROWSER_REPORT=<actual extracted hosted report> node --test
+tests/browser-evidence.test.mjs`:88/88 PASS. Current-only CLI PASS against that
+actual report. Actual retained local93/94 is rejected as complete acceptance
+despite passing both strict profiles; this meaningful negative control PASS.
+
+Local20261008192314580 EXIT1 at19:31:11.671UTC:93/94,one phone calza pre-click
+RPC time-bound assertion failed before real-dispatch assertion. Actual elapsed
+value is absent; no product cause inferred or criteria relaxed. Both600-native
+profiles PASS60.002400/59.310808,p9916.8; actual phone max66.7 remains. All32
+source guards unchanged. Full report/all1200 intervals/native sidecars/grants/
+STOP-CONT markers remain byte-preserved. Waiting-only desktop hold19:25:39.795546
+to19:27:22.180445 preceded any measured frame/timing task; no native elapsed
+acceptance window was stopped. Root's continuous G07phone/G02desktop/G08enTV
+quiet hold ended only19:33:36.516122. No invented intermediate release.
+
+`node scripts/capture.mjs resume-audit-13`:actual EXIT0 closed19:35:32.748;two
+five-round games,same33f5 page,zero errors/network. Actual935764B SHA2b37fd77
+and956240B SHA75416945 recordings are under10MB. `ffprobe -count_frames ...`
+and `ffmpeg -v error -threads 1 -i <actual clip> -f null -`:both actual VP8
+decodes PASS,1280x720/390x844,264/310 encoded frames,10.56/12.4s. Encoded25FPS
+is a recording property,not game refresh proof. Final checkpoint's new-head CI
+still must pass before ready;prior source-specific green remains explicit.
