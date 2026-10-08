@@ -3,20 +3,28 @@ import {applyMove,geometry,positionKey} from './moves.js';
 
 export function endingWindows(board:readonly Piece[],variant:Config['variant'],windows:readonly DrawClock[],ply:number,policy:Config['drawPolicy']):DrawClock[]{
   if(variant!=='international'||policy!=='official')return [];
-  const next=windows.map(window=>({...window})),g=geometry(variant);
+  const next=windows.map(window=>({...window}));
+  let light=0,dark=0,lightKings=0,darkKings=0,lightSquare=-1,darkSquare=-1;
+  for(let square=0;square<board.length;square++){
+    const piece=board[square];
+    if(piece>0){light++;lightSquare=square;if(piece===2)lightKings++;}
+    else if(piece<0){dark++;darkSquare=square;if(piece===-2)darkKings++;}
+  }
   for(const weak of [1,-1] as const){
-    const own=board.flatMap((piece,square)=>piece!==0&&Math.sign(piece)===weak?[square]:[]);
-    const opposing=board.flatMap((piece,square)=>piece!==0&&Math.sign(piece)===-weak?[square]:[]);
-    if(own.length!==1||Math.abs(board[own[0]])!==2||!opposing.some(square=>Math.abs(board[square])===2))continue;
+    const ownCount=weak===1?light:dark,ownKings=weak===1?lightKings:darkKings;
+    const opposingCount=weak===1?dark:light,opposingKings=weak===1?darkKings:lightKings;
+    if(ownCount!==1||ownKings!==1||opposingKings===0)continue;
     const add=(kind:DrawClock['kind'],limit:number)=>{
       if(!next.some(window=>window.kind===kind&&window.weak===weak))next.push({kind,weak,started:ply,limit});
     };
-    if(opposing.length===3){
+    if(opposingCount===3){
       add('sixteen',32);
-      const square=own[0];
-      if(g.rows[square]+g.columns[square]===9&&opposing.every(other=>g.rows[other]+g.columns[other]!==9))add('diagonalFive',10);
+      const square=weak===1?lightSquare:darkSquare,g=geometry(variant);
+      let opponentOnDiagonal=false;
+      for(let other=0;other<board.length;other++)if(board[other]*weak<0&&g.rows[other]+g.columns[other]===9){opponentOnDiagonal=true;break;}
+      if(g.rows[square]+g.columns[square]===9&&!opponentOnDiagonal)add('diagonalFive',10);
     }
-    if(opposing.length<=2&&opposing.length>0)add('five',10);
+    if(opposingCount<=2&&opposingCount>0)add('five',10);
   }
   return next;
 }

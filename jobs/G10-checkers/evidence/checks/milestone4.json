@@ -51,5 +51,20 @@
     "Offline strict600RAF+clips",
     "Broader International6/threat coverage",
     "Integrity/CI/PR/KEEP GOING"
-  ]
+  ],
+  "cadence": {
+    "verifiedFrom": "origin/job/G10-checkers-complete-20261008 reflog, update by push",
+    "previousSuccessfulUpdate": "2026-10-08T09:49:08Z",
+    "latestSuccessfulUpdate": "2026-10-08T10:19:38Z",
+    "intervalSeconds": 1830,
+    "limitSeconds": 1800,
+    "missSeconds": 30,
+    "observationTimesNotPushTimes": [
+      "09:49:23",
+      "approximately10:19:45"
+    ],
+    "nextStageTarget": "2026-10-08T10:40:00Z",
+    "nextPushTarget": "2026-10-08T10:44:38Z",
+    "nextHardDeadline": "2026-10-08T10:49:38Z"
+  }
 }

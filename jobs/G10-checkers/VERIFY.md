@@ -101,3 +101,52 @@ accepted. Source/checksum checks do not substitute for these obligations.
 - Full International corpus/unresolved threats, matrix/leagues/mutations/browser,
   PR/CI/KEEP GOING still pending. Unknown-distance WDL is strategic guidance,
   not proof against accumulated repetition/move-count draw history.
+
+
+Cadence correction verified from origin branch reflog: the prior successful
+update was 2026-10-08T09:49:08Z and the latest was 2026-10-08T10:19:38Z,
+a 30-minute30-second interval. This missed the 30-minute limit by30 seconds.
+09:49:23/~10:19:45 were observation times, not successful push times.
+For the next large-artifact milestone, begin staging/packing around10:40 UTC,
+target successful branch push10:44:38, hard deadline10:49:38. The main claim
+refresh time does not reset the branch push cadence.
+
+## Checkpoint around10:42UTC
+
+- `node scripts/matrix.mjs`: PASS7,000 complete games, seven settings at the
+  sole valid player count2, deterministic event replay and public-view equality;
+  raw matrix.stdout and exact totals/transcript in matrix.json.
+- `node scripts/mutations.mjs`: first attempt FAILED assertion floor21/25;
+  three other bugs produced unexpected exceptions and the undeclared-field bug
+  survived. All25 TAP+baseline+stdout retained in mutation-attempt1. Explicit
+  valid-zero/count, legal-input extra-field and paused-skip hold assertions were
+  added. Final attempt PASS25/25 assertion kills, baseline9/9; every mutation's
+  raw TAP is in mutations/, list and actual replacement in mutations.json.
+- `npm run build` then `node --test --test-reporter=tap --test-concurrency=1
+  tests/bots.test.mjs tests/core.test.mjs tests/draws.test.mjs tests/endgame.test.mjs
+  tests/properties.test.mjs tests/chinook.test.mjs`: PASS27/27; raw
+  build-optimization.stdout and optimization-core.tap. Independent exhaustive
+  coordinate minimax matches all480 PVS choices/scores, and4,000 independent
+  material/diagonal classifications match optimized ending windows.
+- `node --cpu-prof --cpu-prof-dir=.work/profile scripts/league.mjs --games 4
+  --variant international`: smoke/profile only, Strong4W0D0L13.47s. One-pass
+  ending-window counts and cached ordering keys preserve the unchanged6000-node/
+  5-plyStrong budget. New `node scripts/league.mjs --games 4 --variant
+  international --workers 1`: Strong4W0D0L8.30s, same410plies and exact outcome
+  transcriptSHA. Baseline was profiled/overlapped other work, so no controlled
+  percentage speedup is claimed. Both raw outputs and CPU profile are retained.
+- `G10_FRAME_NOT_BEFORE=1791455880000 node scripts/browser-check.mjs`: PASS24/24,
+  raw browser-first.stdout. All strict intervals were measured in the granted
+  quiet window after10:38UTC, without video: desktop600RAF60.0024FPS/p9916.8ms,
+  phone4×600RAF59.9026FPS/p9916.8ms. All intervals, page hash and functional
+  assertions are retained in evidence/browser; no external runtime requests.
+- `node scripts/browser-check.mjs --capture`: PASS24/24 separate same-source
+  functional clips; desktop and phone each~2.1MiB. Captured phone frame mean
+ 49.05FPS/p9983.3ms under overlapping fullleague is retained without an acceptance
+  claim. The unrecorded gate remains unchanged. No gameplay/page edits or rebuild
+  occurred between strict sampling and clips. CPU/browser writers are closed.
+- `node scripts/league.mjs`:4,000-game required paired league launched with
+  fourworkerthreads; still PENDING. Exact seeds/all inputs/final results are
+  retained per shard. Balanced1,000 games per variant gives2,000 per required
+  skill comparison and keeps separate pervariant advantage gates. Smoke is not
+  the full strength check. International corpus and CI/PR/KEEP GOING are pending.

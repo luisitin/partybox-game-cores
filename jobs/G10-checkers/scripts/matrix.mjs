@@ -4,6 +4,7 @@ import {createHash} from 'node:crypto';
 import * as core from '../dist/core.mjs';
 const matrix=[{variant:'american'},{variant:'american',drawPolicy:'fortyMove'},{variant:'american',repetition:false},
   {variant:'american',turnSeconds:20},{variant:'international'},{variant:'international',drawPolicy:'fortyMove'},{variant:'international',repetition:false}];
+const proofDirectory=process.env.G10_EVIDENCE_DIR??'evidence/checks';
 const reports=[],hash=createHash('sha256');
 for(let index=0;index<matrix.length;index++){
   const settings=matrix[index],totals={games:0,wins:0,draws:0,moves:0,maximumPlies:0};
@@ -21,4 +22,4 @@ for(let index=0;index<matrix.length;index++){
   }
   reports.push({settings,playerCount:2,...totals});process.stdout.write(JSON.stringify(reports.at(-1))+'\n');
 }
-await mkdir('evidence/checks',{recursive:true});await writeFile('evidence/checks/matrix.json',JSON.stringify({command:'node scripts/matrix.mjs',games:7000,skills:'easy seeded legal play for exhaustive contract matrix; all3levels separately tested and leased in leagues',reports,transcriptSha256:hash.digest('hex')},null,2)+'\n');
+await mkdir(proofDirectory,{recursive:true});await writeFile(proofDirectory+'/matrix.json',JSON.stringify({command:'node scripts/matrix.mjs',games:7000,skills:'easy seeded legal play for exhaustive contract matrix; all3levels separately tested and compared in leagues',reports,transcriptSha256:hash.digest('hex')},null,2)+'\n');

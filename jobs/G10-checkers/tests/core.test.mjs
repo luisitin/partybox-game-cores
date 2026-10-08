@@ -12,6 +12,8 @@ test('contract manifest/counts/settings and deterministic initial boards',()=>{
   assert.equal(manifest.minPlayers,2);assert.equal(manifest.maxPlayers,2);assert.equal(manifest.unlimitedDuration,true);assert.equal(manifest.supportsBots,true);
   assert.throws(()=>init({...context(),players:[]}),RangeError);assert.throws(()=>init(context({},1,['same','same'])),RangeError);
   for(const now of [NaN,Infinity,-1,-0,1e15+1])assert.throws(()=>init({...context(),now}));
+  assert.doesNotThrow(()=>init(context()),'a valid two-seat game must initialize');
+  assert.doesNotThrow(()=>init({...context(),now:0}),'zero is a valid host clock');
   const first=init(context());assert.deepEqual(first,init(context()));assert.deepEqual(first.rng,{seed:1,step:0});assert.equal(first.board.filter(value=>value===1).length,12);assert.equal(first.board.filter(value=>value===-1).length,12);assert.equal(first.phase.deadline,null);assert.equal(init({...context(),now:0}).phase.startedAt,0);
   const international=init(context({variant:'international'}));assert.equal(international.board.length,50);assert.equal(international.board.filter(value=>value===1).length,20);
   const normalized=init(context({variant:'oops',drawPolicy:'oops',turnSeconds:400,repetition:false}));assert.equal(normalized.settings.turnSeconds,300);assert.equal(normalized.settings.variant,'american');assert.equal(normalized.settings.drawPolicy,'official');assert.equal(normalized.settings.repetition,false);
@@ -29,6 +31,9 @@ test('contract total immutable reducer ignores malformed/unknown events in both 
     {type:'timer',phaseId:'other',startedAt:1000,now:5000},{type:'timer',phaseId:'move',startedAt:999,now:5000}];
   for(const state of [first,done])for(const event of invalid)assert.equal(reduce(state,event),state);
   for(const now of [NaN,Infinity,-1,-0,1e15+1])assert.equal(reduce(first,{type:'vip',action:'end',now}),first);
+  const validMove=sampleInput(first,'light',createRng(4),'easy');assert(validMove);
+  assert.equal(inputSchema.safeParse({...validMove,injected:true}).success,false,'complete legal moves must reject undeclared input fields');
+  assert.equal(reduce(first,{type:'input',playerId:'light',input:{...validMove,injected:true},now:2000}),first);
   const before=JSON.stringify(first),input=sampleInput(first,'light',createRng(4),'easy');assert(input);const after=reduce(first,{type:'input',playerId:'light',input,now:2000});assert.notEqual(after,first);assert.equal(JSON.stringify(first),before);assertJson(after);
 });
 
@@ -45,7 +50,7 @@ test('VIP pause/resume shifts only the deadline; skip/end remain available',()=>
   const input=sampleInput(first,'light',createRng(1),'easy');assert.equal(reduce(held,{type:'input',playerId:'light',input,now:4000}),held);assert.equal(reduce(held,{type:'timer',phaseId:'move',startedAt:first.phase.startedAt,now:4000}),held);
   assert.equal(reduce(held,{type:'vip',action:'pause',now:1800}),held);const resumed=reduce(held,{type:'vip',action:'resume',now:4500});assert.equal(resumed.phase.deadline,6000);assert.equal(resumed.phase.startedAt,first.phase.startedAt);assert.equal(resumed.phase.paused,undefined);
   assert.equal(reduce(resumed,{type:'vip',action:'resume',now:4600}),resumed);
-  const skipped=reduce(held,{type:'vip',action:'skip',now:2000});assert.equal(skipped.ply,1);assert.equal(skipped.phase.paused.at,2000);assert.equal(skipped.side,-1);
+  const skipped=reduce(held,{type:'vip',action:'skip',now:2000});assert.equal(skipped.ply,1);assert(skipped.phase.paused,'VIP skip must preserve an intentional hold');assert.equal(skipped.phase.paused.at,2000);assert.equal(skipped.side,-1);
   const ended=reduce(held,{type:'vip',action:'end',now:2200});assert.equal(ended.phase.id,'done');assert.equal(ended.endReason,'vip-end');assert.equal(ended.winner,null);
 });
 

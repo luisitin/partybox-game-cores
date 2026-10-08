@@ -1,0 +1,71 @@
+{
+  "checkpoint": "2026-10-08T10:42UTC",
+  "commands": [
+    {
+      "command": "node scripts/matrix.mjs",
+      "exitCode": 0,
+      "games": 7000,
+      "raw": "matrix.stdout"
+    },
+    {
+      "command": "node scripts/mutations.mjs",
+      "exitCode": 0,
+      "baselinePass": 9,
+      "assertionKills": 25,
+      "raw": "mutations.stdout"
+    },
+    {
+      "command": "npm run build",
+      "result": "PASS strict build; raw final stdout retained",
+      "raw": "build-optimization.stdout"
+    },
+    {
+      "command": "node --test --test-reporter=tap --test-concurrency=1 tests/bots.test.mjs tests/core.test.mjs tests/draws.test.mjs tests/endgame.test.mjs tests/properties.test.mjs tests/chinook.test.mjs",
+      "result": "PASS27/27, rawTAP",
+      "raw": "optimization-core.tap"
+    },
+    {
+      "command": "G10_FRAME_NOT_BEFORE=1791455880000 node scripts/browser-check.mjs",
+      "exitCode": 0,
+      "checks": 24,
+      "raw": "browser-first.stdout"
+    },
+    {
+      "command": "node scripts/browser-check.mjs --capture",
+      "exitCode": 0,
+      "checks": 24,
+      "raw": "browser-capture-first.stdout"
+    }
+  ],
+  "inputSha256": {
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "d94ca25475847ad29f679ca154f64a5c4c7a15e618c45272e473ba8e9283385a",
+    "src/draws.ts": "e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/endgame.ts": "ef9c12eda9c06aece0efdde6ac443054dc107fe889fa59a25da28087eec51435",
+    "src/chinook.ts": "97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a",
+    "src/browser.ts": "0c1ce51305ebd69e57243997018e4cb75980e8f3b76627fa4d796b66d3b2c5d7",
+    "src/bot-worker.ts": "7750fea3f6a1ff850b8dc03c718a037a1a0d7d2e4b19fed718f3ed36874cc20b",
+    "play.html": "59779eae7dfb093c5451b5ccc1090179ad23646cb8f6328531263726d2046c43",
+    "scripts/browser-check.mjs": "94169a2d9de7c33c40f2f90c50f29519662e1fcc42e77ac0dd14500eed651c56",
+    "scripts/league.mjs": "23e0d5997862e6ef362fb686e0373276a2087430029fdd404040048ef5693ee8",
+    "scripts/league-worker.mjs": "c80739119efcdab0f1b5b01614e6eed55c31b816c0d2618fa09f8c82f2fdce1c",
+    "tests/core.test.mjs": "8791ae9680aabb6708324bc960573110c8ff5fddde2e965f2b15d2237bc9082f",
+    "tests/bots.test.mjs": "0c9caa5d8c764a428b95f9aff53a8b3518d383d0237e276ad102108690149fc4",
+    "tests/draws.test.mjs": "2f8ca55058fbdb9c3e17ebb3073b007b8c3cc249c48b6fac25a0c8cbbfdabe11",
+    "INTERNATIONAL-ENDGAME-HANDOFF.md": "c75e5cd3ca6045fb2f62fd1203e9469989b68a301471835b90494d7c863d695a",
+    "tests/reference-international.mjs": "7e68a8685858877e2d7f2a1423e03155e81696a1c80297dcfb7c6c9df45910e3"
+  },
+  "pending": [
+    "Full4000game league",
+    "Full International corpus portable probe/offlinepackaging",
+    "Opponent-only threat/history-safe progress",
+    "Remaining integrity/dataregeneration/CI/PR/KEEP GOING"
+  ],
+  "cadence": {
+    "previousSuccessfulUpdate": "2026-10-08T10:19:38Z",
+    "pushTarget": "2026-10-08T10:44:38Z",
+    "hardDeadline": "2026-10-08T10:49:38Z",
+    "priorIntervalMissSeconds": 30
+  }
+}

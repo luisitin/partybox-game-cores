@@ -3,6 +3,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {build} from 'esbuild';
+const proofDirectory=resolve(process.env.G10_EVIDENCE_DIR??'evidence/checks');await mkdir(proofDirectory+'/mutations',{recursive:true});
 const source=await readFile('src/core.ts','utf8');await mkdir('.work/mutations',{recursive:true});
 const mutations=[
   ['input admits extra fields',").max(21)}).strict(),", ").max(21)}),"],
@@ -32,12 +33,12 @@ const mutations=[
   ['paused game accepts inputs/timers',"if(s.phase.paused||s.phase.id==='done')","if(s.phase.id==='done')"],
 ];
 const baseline=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/core.test.mjs'],{encoding:'utf8',maxBuffer:4*1024*1024});assert.equal(baseline.status,0,baseline.stdout+'\n'+baseline.stderr);
-await writeFile('.work/mutations/baseline.tap',baseline.stdout+baseline.stderr);const rows=[];
+await writeFile(proofDirectory+'/mutations/baseline.tap',baseline.stdout+baseline.stderr);const rows=[];
 for(let index=0;index<mutations.length;index++){
   const [name,before,after]=mutations[index],matches=source.split(before).length-1;assert.equal(matches,1,'Mutation must identify one actual source site: '+name);
   const path=resolve('.work/mutations/'+String(index+1).padStart(2,'0')+'.mjs');
   await build({stdin:{contents:source.replace(before,after),resolveDir:resolve('src'),sourcefile:'core-mutant.ts',loader:'ts'},bundle:true,platform:'node',format:'esm',target:'es2022',outfile:path,alias:{zod:resolve('node_modules/zod')},plugins:[{name:'shared-endgame',setup(api){api.onResolve({filter:/endgame\.js$/},()=>({path:resolve('dist/endgame.mjs'),external:true}));}}]});
-  const result=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/core.test.mjs'],{encoding:'utf8',env:{...process.env,G10_CORE:path},maxBuffer:4*1024*1024});const raw=result.stdout+result.stderr;await writeFile('.work/mutations/'+String(index+1).padStart(2,'0')+'.tap',raw);
+  const result=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/core.test.mjs'],{encoding:'utf8',env:{...process.env,G10_CORE:path},maxBuffer:4*1024*1024});const raw=result.stdout+result.stderr;await writeFile(proofDirectory+'/mutations/'+String(index+1).padStart(2,'0')+'.tap',raw);
   const assertionKilled=result.status!==0&&/not ok/.test(raw)&&(/ERR_ASSERTION|AssertionError/.test(raw));rows.push({id:index+1,name,before,after,exitCode:result.status,assertionKilled});process.stdout.write(JSON.stringify(rows.at(-1))+'\n');
 }
-const killed=rows.filter(row=>row.assertionKilled).length;assert.equal(rows.length,25);assert(killed>=24,JSON.stringify(rows));await mkdir('evidence/checks',{recursive:true});await writeFile('evidence/checks/mutations.json',JSON.stringify({command:'node scripts/mutations.mjs',baseline:'PASS, unchanged actual source',total:25,assertionKilled:killed,mutations:rows},null,2)+'\n');
+const killed=rows.filter(row=>row.assertionKilled).length;assert.equal(rows.length,25);assert(killed>=24,JSON.stringify(rows));await writeFile(proofDirectory+'/mutations.json',JSON.stringify({command:'node scripts/mutations.mjs',baseline:'PASS, unchanged actual source',total:25,assertionKilled:killed,mutations:rows},null,2)+'\n');

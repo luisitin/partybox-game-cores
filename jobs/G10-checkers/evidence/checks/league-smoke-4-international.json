@@ -1,0 +1,51 @@
+{
+  "command": "node scripts/league.mjs --games 4 --variant international --workers 1",
+  "gamesPerVariantComparison": 4,
+  "gamesPerComparison": 4,
+  "workers": 1,
+  "opening": "Standard starting board; paired identical seed with stronger side alternated. No outcome-based opening selection.",
+  "startAt": "2026-10-08T10:36:09.918Z",
+  "comparisons": [
+    {
+      "variant": "international",
+      "higher": "sharp",
+      "lower": "normal",
+      "games": 4,
+      "wins": 4,
+      "draws": 0,
+      "losses": 0,
+      "scoreShare": 1,
+      "decisiveWinRate": 1,
+      "decisiveWilson95": [
+        0.5100999795960008,
+        1
+      ],
+      "moves": 410,
+      "maximumPlies": 111,
+      "workerSeconds": 8.301900644,
+      "transcriptSha256": "b0a84722798f9bf955d58065b3055b8eeaff7102778bc103d385137b7ddeb79c"
+    },
+    {
+      "variant": "international",
+      "higher": "normal",
+      "lower": "easy",
+      "games": 4,
+      "wins": 4,
+      "draws": 0,
+      "losses": 0,
+      "scoreShare": 1,
+      "decisiveWinRate": 1,
+      "decisiveWilson95": [
+        0.5100999795960008,
+        1
+      ],
+      "moves": 304,
+      "maximumPlies": 87,
+      "workerSeconds": 0.20084618899999987,
+      "transcriptSha256": "c3c6c6ee663f3713edbabf7b4825f93c2f71dcf4a1cf7c0cb5a8003ce13f3fdd"
+    }
+  ],
+  "botSourceSha256": "d94ca25475847ad29f679ca154f64a5c4c7a15e618c45272e473ba8e9283385a",
+  "totalGames": 8,
+  "elapsedSeconds": 10.32006194
+}

@@ -4,9 +4,10 @@ import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {createHash} from 'node:crypto';
 import {chromium} from 'playwright';
+const browserDirectory=resolve(process.env.G10_BROWSER_DIR??'evidence/browser'),mediaDirectory=resolve(process.env.G10_MEDIA_DIR??'media');
 const capturing=process.argv.includes('--capture'),profiles=[{name:'desktop',width:1920,height:1080,throttle:1},{name:'phone',width:390,height:844,throttle:4}];
 const html=await readFile('play.html'),sourceSha256=createHash('sha256').update(html).digest('hex');
-await mkdir('evidence/browser',{recursive:true});await mkdir('media',{recursive:true});
+await mkdir(browserDirectory,{recursive:true});await mkdir(mediaDirectory,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']}),report={command:'node scripts/browser-check.mjs'+(capturing?' --capture':''),sourceSha256,profiles:[],capture:capturing};
 const checks=[];let sequence=0;
 try{
@@ -37,18 +38,20 @@ try{
   await check('names remain text and hostile original IDs have finite public results',async()=>{await newTable();await hook(()=>{const state=window.__G10.getState();const old=state.order;state.order=['__proto__',''];state.players=Object.fromEntries(old.map((id,index)=>[state.order[index],{...state.players[id],id:state.order[index],name:index?'Dark':'<img src="https://invalid.invalid/tracker">'}]));window.__G10.setState(state);window.__G10.act({type:'resign'});});assert.equal(await page.locator('img').count(),0);assert.match(await page.locator('#seats').innerText(),/<img/);assert.equal(await page.locator('.result-row').count(),2);});
   await check('viewport fits both boards and all controls',async()=>{for(const variant of ['american','international']){await newTable(variant);assert.equal(await hook(()=>document.documentElement.scrollWidth<=innerWidth),true);const box=await page.locator('#board').boundingBox();assert(box.x>=0&&box.x+box.width<=profile.width);assert(box.width>250);}});
   await newTable();
+  const frameNotBefore=Number(process.env.G10_FRAME_NOT_BEFORE??0);
+  if(frameNotBefore>Date.now())await new Promise(resolve=>setTimeout(resolve,frameNotBefore-Date.now()));
   const frames=await hook(async()=>{
     const intervals=[];let previous;const controller=window.__G10.getController(window.__G10.getView().turn),move=controller.legalMoves[0];
     await new Promise(resolve=>{function frame(timestamp){if(previous!==undefined)intervals.push(timestamp-previous);previous=timestamp;window.__G10.chooseSquare(move.path[0]);document.getElementById('undo-draft').click();if(intervals.length<600)requestAnimationFrame(frame);else resolve();}requestAnimationFrame(frame);});return intervals;
   });
   const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((sum,value)=>sum+value,0)/frames.length,p99=sorted[Math.ceil(.99*frames.length)-1],fps=1000/mean;
   const raw={...profile,frames,meanMs:mean,p99Ms:p99,meanFps:fps,sourceSha256,workload:'600 consecutive RAF intervals with real board selection/cancel each callback; no filtering; acceptance measurements run separately from recorded clips',capturing};
-  await writeFile('evidence/browser/'+profile.name+(capturing?'-capture':'')+'-frames.json',JSON.stringify(raw,null,2)+'\n');
+  await writeFile(browserDirectory+'/'+profile.name+(capturing?'-capture':'')+'-frames.json',JSON.stringify(raw,null,2)+'\n');
   if(!capturing){assert.equal(frames.length,600);assert(fps>=59,JSON.stringify({profile:profile.name,fps,p99}));assert(p99<=17,JSON.stringify({profile:profile.name,fps,p99}));}
   assert.equal(errors.length,0,errors.join('\n'));assert.equal(requests.length,0,JSON.stringify(requests));
-  const video=page.video();await page.screenshot({path:'media/'+profile.name+'.png',fullPage:true});await context.close();
-  if(capturing){const old=await video.path(),next=resolve('media/'+profile.name+'.webm');await rename(old,next);assert((await stat(next)).size<10*1024*1024);}
+  const video=page.video();await page.screenshot({path:mediaDirectory+'/'+profile.name+'.png',fullPage:true});await context.close();
+  if(capturing){const old=await video.path(),next=resolve(mediaDirectory+'/'+profile.name+'.webm');await rename(old,next);assert((await stat(next)).size<10*1024*1024);}
   report.profiles.push({name:profile.name,throttle:profile.throttle,checks:checks.filter(check=>check.profile===profile.name).length,meanFps:fps,p99Ms:p99});
  }
 }finally{await browser.close();}
-report.checks=checks;report.totalChecks=sequence;await writeFile('evidence/browser/'+(capturing?'capture':'checks')+'.json',JSON.stringify(report,null,2)+'\n');process.stdout.write(JSON.stringify(report)+'\n');
+report.checks=checks;report.totalChecks=sequence;await writeFile(browserDirectory+'/'+(capturing?'capture':'checks')+'.json',JSON.stringify(report,null,2)+'\n');process.stdout.write(JSON.stringify(report)+'\n');

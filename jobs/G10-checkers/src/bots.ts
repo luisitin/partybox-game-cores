@@ -25,9 +25,9 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
   const maximum=skill==='sharp'?5:2,budget=skill==='sharp'?6000:800;
   let nodes=0,hits=0,corpusHits=0,exhausted=false,best=rootMoves[0],bestScore=-Infinity,completed=0;
   const table=new Map<string,{depth:number;score:number;bound:'exact'|'lower'|'upper';move:string|null}>();
-  const ordered=(moves:Move[],preferred:string|null)=>[...moves].sort((a,b)=>
-    Number(moveKey(b)===preferred)-Number(moveKey(a)===preferred)||Number(b.promotes)-Number(a.promotes)||
-    b.captures.length-a.captures.length||(moveKey(a)<moveKey(b)?-1:moveKey(a)>moveKey(b)?1:0));
+  const ordered=(moves:Move[],preferred:string|null)=>moves.map(move=>({move,key:moveKey(move)})).sort((a,b)=>
+    Number(b.key===preferred)-Number(a.key===preferred)||Number(b.move.promotes)-Number(a.move.promotes)||
+    b.move.captures.length-a.move.captures.length||(a.key<b.key?-1:a.key>b.key?1:0)).map(row=>row.move);
   function visit(current:Position,depth:number,alpha:number,beta:number,ply:number):number{
     nodes++;if(nodes>budget){exhausted=true;return evaluate(current.board,current.variant,current.side);}
     const originalAlpha=alpha,originalBeta=beta,level=Math.max(0,depth);

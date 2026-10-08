@@ -35,3 +35,11 @@ positions return null. Full-six-piece coverage is still required before G10 can
 be marked complete. No external binary with unconfirmed data-use permission is
 redistributed. Kingsrow's original author statement is a live confirmed lead,
 and selective installer extraction is still being investigated.
+
+- JOBS.md requires2,000 Strong/Medium games and2,000 Medium/Easy games without
+  saying per variant. The canonical league balances1,000 American and1,000
+  International per comparison,4,000 total; each variant must separately pass
+  the clear-advantage threshold. The earlier8,000-game default was an added scope.
+- Full International corpus availability is confirmed; its1.009GB compressed
+  payload exceeds GitHub's100MiB single-blob limit. This is portable-probe and
+  offline-delivery engineering, not unavailable-source grounds for BLOCKED.

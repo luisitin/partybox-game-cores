@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: contract manifest/counts/settings and deterministic initial boards
+ok 1 - contract manifest/counts/settings and deterministic initial boards
+  ---
+  duration_ms: 3.153576
+  type: 'test'
+  ...
+# Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+ok 2 - contract total immutable reducer ignores malformed/unknown events in both phases
+  ---
+  duration_ms: 7.284875
+  type: 'test'
+  ...
+# Subtest: contract live timer requires exact phase instance and elapsed deadline
+ok 3 - contract live timer requires exact phase instance and elapsed deadline
+  ---
+  duration_ms: 0.707653
+  type: 'test'
+  ...
+# Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+ok 4 - VIP pause/resume shifts only the deadline; skip/end remain available
+  ---
+  duration_ms: 42.716794
+  type: 'test'
+  ...
+# Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+ok 5 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+  ---
+  duration_ms: 4.450012
+  type: 'test'
+  ...
+# Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+ok 6 - hostile seat IDs, public view equality, spectator safety and cloned projections
+  ---
+  duration_ms: 3.541948
+  type: 'test'
+  ...
+# Subtest: complete legal inputs and terminal scores preserve every original seat
+ok 7 - complete legal inputs and terminal scores preserve every original seat
+  ---
+  duration_ms: 4.41061
+  type: 'test'
+  ...
+# Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+ok 8 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+  ---
+  duration_ms: 636.979863
+  type: 'test'
+  ...
+# Subtest: manifest and every generated phase fixture replay without throwing
+ok 9 - manifest and every generated phase fixture replay without throwing
+  ---
+  duration_ms: 16.648334
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2963.479047

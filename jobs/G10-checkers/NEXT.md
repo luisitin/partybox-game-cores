@@ -1,49 +1,46 @@
 # Resume G10
 
 Branch: job/G10-checkers-complete-20261008.
-Worktree: /workspace/game-cores-G10-audit-worker.
-Claim: codex-audit. Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md first.
-Legacy job/G10-checkers history was preserved by a normal merge.
+Worktree: /workspace/game-cores-G10-audit-worker. Claim: codex-audit.
+Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
+Original job/G10-checkers research history is preserved by a normal merge.
 
-Current checkpoint10:15: strict TS/node and67MiB standalone browser builds PASS. Production
-American/International move generation, draw windows, reducer/views/results,
-three-level iterative alpha-beta bots, exact partial endgame lookup and original
-responsive CSS/SVG host with an inline Blob worker are authored. Independent
-movement differential passed 10,000 original boards plus rotated twins and every
-resulting board. The independent complete one-vs-one WDL/certificate suite passed.
+Checkpoint2026-10-08T10:42UTC: strict build and focused core/draw/properties/
+endgame/actual-Chinook proof PASS27/27. Independent movement covers10k original
+boards plus rotated twins; all480 independent exhaustive bot minimax cases pass.
+Seven settings×1,000 games PASS7,000; mutations PASS25/25 assertion kills with
+baseline9/9. First mutation attempt/raw exceptions/survivor remain retained.
+Offline page PASS24/24 functional and unrecorded600RAF/profile: desktop60.0024FPS,
+phone4×59.9026FPS, p9916.8ms both. ActualStrongworker corpus use is checked.
+Same-source separate desktop/phone clips PASS24/24, each<10MB. Recorded phone
+frames under simultaneous league work are49.05FPS; they are retained, not used
+as acceptance measurements. HTML/source/runner were unchanged across both runs.
 
-Next: run seven×1,000-game contract matrix, full paired leagues,25mutations and
-offline browser proofs/captures; finish integrity/CI. These checks are UNRUN.
-Core/draw/properties/production endgame/schema checks now PASS. Confirm every source
-and permission before redistributing any external database. Complete two-piece
-coverage and proved tactical three-to-six entries must be labeled precisely;
-unknown/limited search results cannot be reported as a complete six-piece tablebase.
+Active fullleague: PGID115703, fourworkerthreads, session57163. It is SIGSTOPPED
+for consistent milestone hashing/staging; resume with kill -CONT -- -115703
+only after parent grants CPU. Default4,000 actual games =1,000 per variant for
+Strong/Medium and Medium/Easy,2,000 per required comparison. Every input/seed/
+result is retained per50-game shard; pervariant strength gates apply. This
+fullleague is RUNNING/PENDING, not accepted from smoke results.
 
-Executed: dependency installation, strict types/build, movement differential,
-independent WDL/certificates, deterministic endgame regeneration. Database has
-29,286 rows: full one-per-side domains plus 2,000 tactical3–6 rows per variant.
-The generated JSON is NOT a full six-piece tablebase. Actual licensed ChinookDB6
-and index are now in data/chinook and connected to the pure node/Strong worker,
-with all American2–6 material tuples including5v1/4v2. Free redistribution requires
-acknowledgement and no sale; separate terms/provenance are attached. Independent
-weighted-prefix/enumeration readers PASS10k actual queries and complete capture-free
-2-piece WDL. Original author C independently agrees on10k quiet3–6 queries, with
-explicit LP64 bookkeeping repairs and unchanged rank/decode. Corpus excludes
-captures for either side: closed current-side capture components are exact;
-unresolved opponent-only threats remain null and use bounded alpha-beta.
-International full-six corpus options remain a pending obligation.
-Focused full-corpus core/draw/reference/properties PASS25/25, including1,003 seeds.
-Eight-game smoke is NOT a full league. PVS/history-aware transient cache is passing;
-full matrix/leagues/mutations/browser/CI/KEEP GOING still need completion.
+Remaining: finish fullleague, integrity/check wrapper/CI workflow, final current
+mutations/data schemas/2×source regeneration, manual30spot log, and complete
+International portable corpus/probe/offline packaging. The licensed fullIntl2–6
+source is AVAILABLE (~1.009GB compressed); selective acquisition is PROVEN.
+Read INTERNATIONAL-ENDGAME-HANDOFF.md. Its independent reference is authored,
+UNRUN; sample self-tests and production integration remain engineering work.
+No source/tool BLOCKED claim is justified. American corpus supports every2–6
+material tuple in quiet positions; exact closed capture components work;
+opponent-only threat closure and history-safe progress remain explicit limits.
+Generated29,286 rows alone are partial and never a full six-piece database.
 
-09:50 source-only checkpoint was authored during root's isolated browser proof.
-Heavy G10 builds/tests/generation/decompression were held as requested. Previous
-successful proof outputs describe milestone2 inputs, not these new source hashes.
-After CPU release, current full-corpus integration was built and focused tests passed.
-Coordinate CPU isolation with root before heavy work, especially browser proof.
-Push every milestone and no later than30 minutes; refresh ONLY own main claim.
-Open PR after the local required checks pass, verify the exact current CI head,
-then run KEEP GOING until three consecutive rounds yield no player-visible gain.
+PR/CI/KEEP GOING have not started. Open PR only after required checks pass;
+require exact current CI green, then five weaknesses/fix/measure rounds until
+three consecutive rounds yield no player-visible gain. G10 is not completed.
+Coordinate heavy PGIDs/strict browser isolation with parent; no questions.
 
-Re-verify when web works: all unread URLs remain candidates, never citations;
-research403 alone must follow GitHub→registry→knowledge fallback, not stop.
+Cadence: origin branch reflog verifies09:49:08→10:19:38 successful pushes,
+30m30s: a30-second miss.09:49:23/~10:19:45 were observation times.
+This checkpoint staging began10:42UTC after actual browser/clip closure.
+Target next successful push10:44:38, hard10:49:38. Main claim times do not
+reset branch cadence. Log the actual successful push via reflog after push.

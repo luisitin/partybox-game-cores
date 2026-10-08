@@ -1,0 +1,91 @@
+TAP version 13
+# Subtest: contract manifest/counts/settings and deterministic initial boards
+not ok 1 - contract manifest/counts/settings and deterministic initial boards
+  ---
+  duration_ms: 2.645441
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:11:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Got unwanted exception: zero is a valid host clock
+    Actual message: "Checkers requires two distinct seats and a supported host timestamp"
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  actual:
+  error: 'Checkers requires two distinct seats and a supported host timestamp'
+  name: 'RangeError'
+  stack: |-
+    init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/07.mjs:23610:11)
+    file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:16:27
+    getActual (node:assert:611:5)
+    strict.doesNotThrow (node:assert:779:32)
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:16:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  operator: 'doesNotThrow'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:16:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+ok 2 - contract total immutable reducer ignores malformed/unknown events in both phases
+  ---
+  duration_ms: 7.114498
+  type: 'test'
+  ...
+# Subtest: contract live timer requires exact phase instance and elapsed deadline
+ok 3 - contract live timer requires exact phase instance and elapsed deadline
+  ---
+  duration_ms: 0.536381
+  type: 'test'
+  ...
+# Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+ok 4 - VIP pause/resume shifts only the deadline; skip/end remain available
+  ---
+  duration_ms: 5.497057
+  type: 'test'
+  ...
+# Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+ok 5 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+  ---
+  duration_ms: 1.87602
+  type: 'test'
+  ...
+# Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+ok 6 - hostile seat IDs, public view equality, spectator safety and cloned projections
+  ---
+  duration_ms: 2.554802
+  type: 'test'
+  ...
+# Subtest: complete legal inputs and terminal scores preserve every original seat
+ok 7 - complete legal inputs and terminal scores preserve every original seat
+  ---
+  duration_ms: 2.580849
+  type: 'test'
+  ...
+# Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+ok 8 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+  ---
+  duration_ms: 339.209356
+  type: 'test'
+  ...
+# Subtest: manifest and every generated phase fixture replay without throwing
+ok 9 - manifest and every generated phase fixture replay without throwing
+  ---
+  duration_ms: 20.595942
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 8
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1931.713516

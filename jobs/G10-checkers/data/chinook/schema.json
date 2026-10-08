@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "archiveUrl": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "termsUrl": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "terms": {
+      "type": "string",
+      "minLength": 1
+    },
+    "formatSourceUrl": {
+      "type": "string",
+      "pattern": "^https://"
+    },
+    "files": {
+      "type": "object",
+      "properties": {
+        "DB6.zip": {
+          "type": "object",
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "bytes",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "DB6": {
+          "type": "object",
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "bytes",
+            "sha256"
+          ],
+          "additionalProperties": false
+        },
+        "DB6.idx": {
+          "type": "object",
+          "properties": {
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "bytes",
+            "sha256"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "DB6.zip",
+        "DB6",
+        "DB6.idx"
+      ],
+      "additionalProperties": false
+    },
+    "baseSlices": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "materialCoverage": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "properties": {
+          "pieces": {
+            "type": "integer",
+            "minimum": 2,
+            "maximum": 6
+          },
+          "pieceTypeTuples": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "materialSplits": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              ],
+              "minItems": 2,
+              "maxItems": 2
+            }
+          }
+        },
+        "required": [
+          "pieces",
+          "pieceTypeTuples",
+          "materialSplits"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "coverageCheckScope": {
+      "type": "string",
+      "minLength": 1
+    },
+    "probeContract": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "author",
+    "archiveUrl",
+    "termsUrl",
+    "terms",
+    "formatSourceUrl",
+    "files",
+    "baseSlices",
+    "materialCoverage",
+    "coverageCheckScope",
+    "probeContract"
+  ],
+  "additionalProperties": false
+}

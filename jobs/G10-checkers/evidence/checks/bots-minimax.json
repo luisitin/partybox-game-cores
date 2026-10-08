@@ -1,0 +1,16 @@
+{
+  "cases": 480,
+  "oracle": "Coordinate legal moves; exhaustive whole-tree minimax, no production pruning/cache/move helpers",
+  "reports": [
+    {
+      "variant": "american",
+      "matched": 240,
+      "limited": 0
+    },
+    {
+      "variant": "international",
+      "matched": 240,
+      "limited": 0
+    }
+  ]
+}

@@ -60,3 +60,26 @@ test('published32-ply FMJD regression draws when original16-each window expires'
 test('last permitted move capturing final opponent wins before a draw counter expires',()=>{
   const board=sparseBoard('american',{10:1,6:-1});const state=positionState(core,board,'american',1,{drawWindows:[{kind:'five',weak:-1,started:0,limit:10}],ply:9,quietPlies:79});const next=core.reduce(state,{type:'input',playerId:'light',input:{type:'move',path:[10,1]},now:2000});assert.equal(next.phase.id,'done');assert.equal(next.winner,'light');assert.equal(next.endReason,'no-legal-move');
 });
+
+test('optimized ending classification matches independently counted material and diagonal memberships',()=>{
+  const rng=core.createRng(0xD10A110C);
+  for(let n=0;n<4000;n++){
+    const board=Array(50).fill(0),squares=rng.shuffle(Array.from({length:50},(_,i)=>i));
+    for(let i=0;i<2+n%12;i++)board[squares[i]]=(i===0?1:i===1?-1:rng.chance(.5)?1:-1)*(rng.chance(.6)?2:1);
+    const old=n%3===0?[{kind:'sixteen',weak:-1,started:2,limit:32}]:[],expected=structuredClone(old);
+    for(const weak of [1,-1]){
+      const own=board.map((piece,square)=>({piece,square})).filter(row=>Math.sign(row.piece)===weak);
+      const enemy=board.map((piece,square)=>({piece,square})).filter(row=>Math.sign(row.piece)===-weak);
+      if(own.length!==1||Math.abs(own[0].piece)!==2||!enemy.some(row=>Math.abs(row.piece)===2))continue;
+      const add=(kind,limit)=>{if(!expected.some(row=>row.kind===kind&&row.weak===weak))expected.push({kind,weak,started:17,limit});};
+      if(enemy.length===3){
+        add('sixteen',32);
+        const diagonal=square=>Math.floor(square/5)+2*(square%5)+(Math.floor(square/5)+1)%2===9;
+        if(diagonal(own[0].square)&&enemy.every(row=>!diagonal(row.square)))add('diagonalFive',10);
+      }
+      if(enemy.length===1||enemy.length===2)add('five',10);
+    }
+    const before=JSON.stringify({board,old});assert.deepEqual(endingWindows(board,'international',old,17,'official'),expected);
+    assert.equal(JSON.stringify({board,old}),before);
+  }
+});
