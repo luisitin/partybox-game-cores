@@ -13,7 +13,9 @@ browser checks passed after one recorded frame-gate failure. Check current CI.
 
 Continue KEEP GOING: review timer alignment, help phrasing, border/font weight,
 value alignment and spacing; fix the worst, measure and log each round.
-No-gain streak1; need two more consecutive rounds with only cosmetic gains.
+No-gain streak2; need one more consecutive round with only cosmetic gains.
+Round7 keeps the active score badge size consistent; browser/name checks pass.
+Record current CI conclusions before calling the job complete.
 Refresh the claim on main after every push. Do not alter the shared contract
 or other jobs. Runtime uses inline original CSS/SVG and zod's embedded licence.
 

@@ -297,3 +297,21 @@ delivery gate, and the failed sample is retained here.
 Round6 data gates passed:8 JSON files,7 schemas,24 hashes, two byte-identical
 regenerations. `git diff --check` passed; the sealed independent reference
 remains c944077d28097f377fdac1dba088cf4eec2aa44a970096e9181d562497e1cc74.
+
+## KEEP GOING round7: score-badge border (cosmetic)
+
+Re-read G03 and reviewed active-border weight, eyebrow tracking, icon baseline,
+help punctuation and footer spacing. `node .tmp/chip-baseline.mjs --http`
+measured the same active chip before/after the proposed border/shadow style:
+331.859×37px→329.859×35px. Visible emphasis remains; the2px extra box size is
+removed. This is presentation only; second consecutive no-meaningful-gain round.
+
+`npm run build` and `node scripts/visual.mjs --http --record --milestone 09`
+passed every interaction, roster, maximum-name and runtime-isolation check.
+Video104,489bytes; desktop60.002fps, CPU4x phone59.341fps, p95≤16.8ms.
+`node scripts/generate.mjs --fixtures-only` refreshes hashes;
+`node scripts/check-data.mjs` validates schemas/hashes and two regenerations.
+Full strict disk CI is triggered for the new push.
+
+Round7 data gates completed:8 JSON files,7 schemas,25 hashes, two byte-identical
+regenerations. The pure core, solver, generator and bot code are unchanged.
