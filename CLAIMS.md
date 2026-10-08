@@ -1,5 +1,5 @@
 # CLAIMS (one line per job: ID, UTC time, chat nickname)
 G01 2026-10-08T02:21:33Z codex-domino
 G02 2026-10-08T03:26:28Z codex-gin
-G03 2026-10-08T03:38:09Z codex-core
+G03 2026-10-08T03:40:42Z codex-core
 G04 2026-10-08T03:39:57Z codex-domino
