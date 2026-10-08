@@ -235,3 +235,14 @@ remain true. Desktop60.002fps,CPU4x phone59.018fps,p9516.8ms/max33.4ms;
 video135598B. Local HTTP remains partial. `node scripts/generate.mjs
 --fixtures-only`, `node scripts/check-data.mjs` PASS26 JSON/42 hashes,
 standalone153660B. Updated full30-test default disk CI remains required.
+
+KEEP GOING5, after99f6025 GREEN push37737893201/PR37737896702. `npm run build`,
+`node scripts/html.mjs`, `node scripts/visual.mjs --http --record --milestone 06`
+PASS. Native Tab from the third selected card reaches enabled Pass; all prior
+input/recovery/privacy/menu/contrast/roster gates stay true. Change is score
+numeral spacing only, with no meaningful player gain. Desktop60.002fps,
+CPU4x phone60.000fps,p9516.8/16.7ms,max16.8ms; video136614B. Frame variance is
+not attributed to the cosmetic CSS. `node scripts/generate.mjs --fixtures-only`
+and `node scripts/check-data.mjs` PASS27 JSON/46 hashes,standalone153713B.
+Local HTTP remains partial; updated default disk CI must be green. Cosmetic
+streak1; two more consecutive no-meaningful-gain rounds are required.

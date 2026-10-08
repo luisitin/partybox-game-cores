@@ -34,3 +34,11 @@ text4.429:1 against the brightest felt color. Worst: small/hard-to-distinguish
 controls. Raise control borders above3:1, these label/summary targets to44px,
 and footer text above4.5:1 against the conservative brightest surface. Muted
 text already7.064:1 and bot marker4.760:1; those remain adequate.
+
+Round5, after99f6025 GREEN push37737893201/PR37737896702. Re-read G05.
+The remaining five candidates are cosmetic: score-row numerals differ from
+score-strip tabular numerals; decorative label tracking varies; passive panel
+borders are slightly uneven; card/table spacing differs by viewport; the empty
+felt heart has a thin stroke. Worst selected: score typography. Standardize
+only numeral spacing. No rules, action, timing, privacy or recovery change.
+Also audit native Tab from the third selected card to the ready Pass button.

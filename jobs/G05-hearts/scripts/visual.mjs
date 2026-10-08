@@ -149,6 +149,9 @@ try {
   await send('Input.dispatchKeyEvent',{type:'keyDown',key:' ',code:'Space',windowsVirtualKeyCode:32});await send('Input.dispatchKeyEvent',{type:'keyUp',key:' ',code:'Space',windowsVirtualKeyCode:32});
   assert.ok(await evaluate(`window.__hearts.snapshot().selected.includes(${keyCard})`),'native keyboard Space must choose card');assert.equal(await evaluate('Number(document.activeElement.dataset.card)'),keyCard,'selection preserves keyboard focus');
   assert.equal(await evaluate('window.__hearts.snapshot().selected.length'),3);
+  await send('Input.dispatchKeyEvent',{type:'keyDown',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});await send('Input.dispatchKeyEvent',{type:'keyUp',key:'Tab',code:'Tab',windowsVirtualKeyCode:9});
+  assert.equal(await evaluate('document.activeElement.id'),'pass-confirm','native Tab must reach ready Pass after the third chosen card');
+
   const shot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${output}/hearts-desktop-${milestone}.png`,Buffer.from(shot.data,'base64'));
   const frames=resolve('.tmp/capture');mkdirSync(frames,{recursive:true});
   for(let frame=0;frame<36;frame++){
