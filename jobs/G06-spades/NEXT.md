@@ -17,15 +17,21 @@ Standalone play.html is built/byte-identical; browser controls checked,
 full browser/performance capture passes:8 grouped scenarios,zero requests/
 errors,900 TV frames59.6709fps and9004×phone frames60.0024fps. Initial offline actor, partial
 end conservation and malformed-ID exceptions are fixed with regressions.
-Next:run the complete npm test with expanded settings, record real result,
-push final delivery, refresh main claim, then open PR and wait for exact-head
-hosted CI. Do not claim completion yet. RULES/CONFLICTS
+Final npm test passes:31 core tests,all1,003 sampled-setting replays,
+2,000 roster completion matches,20,000 independent cases,25 mutation kills,
+8,000 exact leagues and8 browser groups. Fresh TV/4×phone~60fps.
+Extra1,003 replay run passes every-event256KB bound(93,236.49ms);focused
+all-skill/all-fixture bot envelope checks pass. Reusable installer and final
+25/25 mutation rerun also pass. Local delivery is ready.
+Next:push final delivery, refresh main claim, open PR, wait for exact-head
+hosted CI, then KEEP GOING. Do not claim completion yet. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
 Sequential2-card partner exchange must permit returning a received card.
 Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
-Playable browser build exists; final pipeline pending;no PR opened for G06.
+Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
+No PR opened yet at this writing; check gh before creating a duplicate.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.
 Do not stage orphan G01/G04 dependency caches or touch G08 Shake Up.

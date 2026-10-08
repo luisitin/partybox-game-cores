@@ -89,3 +89,62 @@ Browser milestone,2026-10-08:
   `node checksums.ts` and`--check` cover the complete delivered path set.
 - Complete final`npm test` (including expanded settings) and hosted CI
   are still pending; this milestone is not a DONE assertion.
+
+The25 planted bugs, each killed by actual assertions:
+1. Exact contract treated as failure.
+2. Contracts worth nine instead of ten.
+3. Failed contract awards points.
+4. Blind nil loses double bonus.
+5. Nil success/failure signs reversed.
+6. Bag penalty waits until eleven.
+7. Bag carry uses nine.
+8. Carried bags ignored by penalty.
+9. Failed nil silently rescues normal contract.
+10. Nil tricks stop counting as bags.
+11. Follow latest card rather than original lead.
+12. Unbroken spades always leadable.
+13. All-spades exception removed.
+14. Lower rank beats higher rank.
+15. Hearts become trump.
+16. Blind decision leaks own hand.
+17. Four-player bids exceed thirteen.
+18. Duplicate exchange accepted.
+19. Wrong actor accepted.
+20. Spectator input accepted.
+21. Stale phase nonce ignored.
+22. Early deadline accepted.
+23. Pause stops freezing input/timer.
+24. Exact500 fails to end match.
+25. Shared leading tie ends match.
+
+Contract coverage:unexpected events/all-phase fuzz(1);frozen states and
+four-module clock/entropy/I/O scan(2);stale/early timers and shifted pause
+deadline(3);seeded full-match byte replay and finite bounded JSON(4);
+six-viewer hidden-hand/stock substitutions, detached views and public-only
+bot comparisons(5);every phase skip, active completion and idle VIP end
+under unlimitedDuration(6);all original seats/departures and finite results(7).
+Also schema-valid bots(8),actual shared manifest/seven valid fixtures with
+final-hand→done score equality and exact regeneration(9).
+
+Final local delivery gate,2026-10-08:
+- `npm test`:PASS(exit0). Strict types; exact schemas/deck/manifest/fixtures/
+  HTML;19 hashes; both10,000-case independent differentials;31/31 core
+  tests176,823.52ms, including sampled-setting1,003 seeded full replays and
+  1,000 full matches at each roster;25 genuine mutation kills;8,000 league
+  matches284,678.31ms, exact recorded counts reproduced;all8 browser groups,
+  zero requests/errors. Fresh900-frame samples:TV60.0024fps/p95 16.8ms,
+  4×phone60.0028fps/p95 16.7ms, both max16.8ms. Reduced motion passes.
+- Subsequent explicit storage/bot envelope coverage:
+  `FAST_TEST=1 node --test test.ts`:PASS28/28. All three skills for six
+  viewers in each fixture return schema-valid input or null.
+  `node --test --test-name-pattern='seeds 1/2/3' test.ts`:PASS,1,003 full
+  sampled-setting match replays,93,236.49ms; every event's exact JSON now
+  also asserts≤256KB. The last-state bound alone was insufficient evidence.
+- Read-only regeneration/hash checks and required hosted CI are the final
+  gates on the pushed delivery. Local success does not establish CI green.
+- `bash /workspace/.onboarding/install.sh`:PASS(exit0), pinned shared/job
+  installs, strict shared types, RNG/Zod smoke,28 focused checks333.52ms,
+  exact deck/manifest/schemas/fixtures/488,969-byte HTML and19 hashes;
+  external Playwright system-ffmpeg recorder fallback is available.
+- `node mutations.ts`:PASS25/25 again after the every-event storage and
+  all-fixture bot-envelope assertions; baseline28/28, no startup/timeouts.

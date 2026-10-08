@@ -75,3 +75,6 @@ Full verification and standalone page:
   disabled Cutthroat-only/partnership-only settings are tested in context.
   Runtime setup links the installed system ffmpeg when its download403s;
   no downloaded source or encoder binary is committed.
+- `runner.ts`: reuse the exact replay JSON to check the256KB limit after
+  every event, rather than checking only the final state. `test.ts` also
+  checks all skills/known and unknown seats in all seven phase fixtures.

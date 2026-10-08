@@ -151,6 +151,7 @@ test('view arrays/objects are detached; unknown viewers receive no hand, role or
 });
 test('all fixtures conform to JSON schemas and every phase is exitable',()=>{
  for(const phase of C.game.phases){const s=fixture(phase);stateSchema.parse(s);conservation(s);assert.equal(s.phase.id,phase);
+  for(const id of [...s.seats,'unknown','__proto__'])for(const skill of ['easy','normal','sharp'] as const){const value=C.game.bot.sampleInput(s,id,createRng(601),skill);assert(value===null||C.inputSchema.safeParse(value).success);}
   if(phase==='done'){assert(C.results(s));assert.equal(input(s,'p0',{type:'next'}),s);}else assert.notEqual(C.reduce(freeze(s),{type:'vip',action:'skip',now:s.phase.startedAt+1}),s);
  }
 });

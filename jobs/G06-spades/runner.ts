@@ -20,7 +20,7 @@ export function simulate(n:number,seed:number,{skills=Array.from({length:n},(_,i
  while(s.phase.id!=='done'&&steps++<100000){
   const sampled=nextAction(s,rngs,skills);assert(sampled,`no action in ${s.phase.id}`);if(check)assert(game.inputSchema.safeParse(sampled.input).success);
   const event={type:'input' as const,...sampled,now:s.phase.startedAt+1},before=s;s=reduce(s,event);assert.notEqual(s,before,'legal bot must progress');
-  if(other){other=reduce(other,event);assert.equal(JSON.stringify(s),JSON.stringify(other));}
+  if(other){other=reduce(other,event);const encoded=JSON.stringify(s);assert.equal(encoded,JSON.stringify(other));assert(Buffer.byteLength(encoded)<=256*1024,'every replayed state must fit the contract storage limit');}
   if(check)conservation(s);
  }
  assert.equal(s.phase.id,'done',`seed ${seed} ${n} failed completion`);const result=results(s)!;
