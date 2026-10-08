@@ -60,16 +60,7 @@ function runBots():void {
   try {for(let i=0;i<256;i++){let moved=false;for(const s of seats){if(s.kind==='human'||!state||state.phase.id==='scores'||state.phase.id==='done') continue;const input=game.bot.sampleInput(state,s.id,botRngs.get(s.id)!,s.kind);if(!input) continue;const parsed=game.inputSchema.safeParse(input);if(!parsed.success) throw new Error('Bot returned invalid input');const next=game.reduce(state,{type:'input',now:coreNow,playerId:s.id,input:parsed.data});if(next!==state){state=next;moved=true;coreNow=Math.max(coreNow,state.phase.startedAt);}}if(!moved) break;}}finally{botRunning=false;}
 }
 function settle():void {
-  if(!state) return;runBots();
-  // No ballot can change an empty category. Advance through the real timer
-  // boundary, preserving core scoring and the next nonempty private review.
-  for(let steps=0;steps<12&&state.phase.id==='review'&&!state.phase.paused&&!menuOpen&&view().review?.groups.length===0;steps++){
-    const deadline=state.phase.deadline;if(deadline===null)break;
-    const previous:State=state;coreNow=Math.max(coreNow,deadline);
-    state=game.reduce(state,{type:'timer',now:coreNow,phaseId:state.phase.id,startedAt:state.phase.startedAt});
-    if(state===previous)break;runBots();
-  }
-  const key=instanceKey();
+  if(!state) return;runBots();const key=instanceKey();
   if(key!==phaseKey){phaseKey=key;phaseElapsed=0;seatElapsed=0;seatStarted=0;activeHuman=null;handover=true;draft=Array(12).fill('');ballot=[];coreNow=Math.max(coreNow,state.phase.startedAt);phaseBase=coreNow;}
   if(state.phase.id==='answer'||state.phase.id==='review') {
     const pending=humanIds().find(id=>state!.phase.id==='answer'?!privateView(id).submitted:!privateView(id).voted);

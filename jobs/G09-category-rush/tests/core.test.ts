@@ -78,6 +78,22 @@ test('pause ignores inputs/timers, shifts deadlines, player drops close on resum
   const done=reduce(held,{type:'vip',now:5000,action:'end'});assert.equal(done.phase.id,'done');assert.equal(done.phase.deadline,null);assert(!done.phase.paused);
   for(const action of ['skip','pause','resume','end'] as const)assert.equal(reduce(done,{type:'vip',now:9000,action}),done);
 });
+test('pause ignores an empty-review deadline until explicit resume at both roster extremes',()=>{
+  for(const count of [2,8]){
+    let s=init({players:players(count).map(p=>({...p,bot:false})),settings:{rounds:1,roundSeconds:30},seed:42,now:1000});
+    for(const id of s.order)s=submit(s,id,Array(12).fill(''));
+    assert.equal(s.phase.id,'review');assert.deepEqual(tvView(s).review!.groups,[]);
+    const pauseAt=s.phase.startedAt+5,held=reduce(s,{type:'vip',now:pauseAt,action:'pause'});
+    assert.equal(reduce(held,{type:'timer',now:held.phase.deadline!+20,phaseId:'review',startedAt:held.phase.startedAt}),held);
+    const resumed=reduce(held,{type:'vip',now:pauseAt+1000,action:'resume'});
+    assert.equal(resumed.phase.deadline,held.phase.deadline!+1000);assert(!resumed.phase.paused);
+    assert.equal(reduce(resumed,{type:'timer',now:resumed.phase.deadline!-1,phaseId:'review',startedAt:resumed.phase.startedAt}),resumed);
+    const next=reduce(resumed,{type:'timer',now:resumed.phase.deadline!,phaseId:'review',startedAt:resumed.phase.startedAt});
+    assert.equal(next.reviewIndex,1);assert.deepEqual(tvView(next).review!.groups,[]);
+    const ended=reduce(next,{type:'vip',now:next.phase.deadline!,action:'end'});
+    assert.equal(ended.phase.id,'done');for(const id of s.order)assert.equal(results(ended)!.scores[id],0);
+  }
+});
 test('unknown prototype seats never act; genuine prototype ids survive JSON and results',()=>{
   const s=setup();for(const id of ['spectator','__proto__','constructor','toString','']){
     assert.equal(reduce(s,event(s,id,{type:'submit',answers:Array(12).fill('Banana')})),s);

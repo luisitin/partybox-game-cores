@@ -1,5 +1,9 @@
 # Offline play verification
 
+KEEP GOING round 1 is in progress. The delivered candidate is now `0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3` (439,850 bytes), built twice identically after adding empty-review advancement through actual core timer events. Full current functional and strict visual verification are pending the coordinated CPU release. The accepted round-0 proof described below is archived in `evidence/browser/round-0-accepted/`; it verifies the earlier `a209acd1…` HTML, rather than this candidate.
+
+Round-1 targeted checks initially failed two test-fixture assertions: category casing, then a wrong-initial answer that was also deliberately duplicated and therefore displayed the existing duplicate verdict. These were fixture corrections; the runtime patch was unchanged. Both runs completed the two/eight-human blank cases with zero review actions. The saved second report and exact observations from the first tool output are retained in `evidence/browser/round-1-after/fixture-attempts.json` and `fixture-failure-second.json`; complete current verification remains pending.
+
 `play.html` is generated from `client.ts`, `src/play.template.html`, and the real pure game exported by `src/index.ts`. It embeds the whole bundle and opens directly from disk. The shell calls the actual input schema, reducer, views, results, and three bot strategies. It does not implement a second game.
 
 ## Commands

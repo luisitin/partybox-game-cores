@@ -13,10 +13,11 @@ const sourceSha256=digest(await readFile(resolve(root,'play.html')));
 const bundle=await build({entryPoints:[resolve(root,'src/index.ts')],bundle:true,write:false,platform:'node',format:'esm',target:'es2022'});
 const {game}=await import(`data:text/javascript;base64,${Buffer.from(bundle.outputFiles[0].text).toString('base64')}`);
 let reference=game.init({players:['p1','p2'].map((id,i)=>({id,name:['Alex','Sam'][i],avatarId:'default',connected:true})),settings:{rounds:1,roundSeconds:60},seed:42,now:0});
-for(const playerId of ['p1','p2'])reference=game.reduce(reference,{type:'input',playerId,now:0,input:{type:'submit',answers:Array(12).fill('')}});
+const answers=Array.from({length:12},(_,i)=>`${reference.letter} clock-${i}`);
+for(const playerId of ['p1','p2'])reference=game.reduce(reference,{type:'input',playerId,now:0,input:{type:'submit',answers:playerId==='p1'?answers:Array(12).fill('')}});
 const reviewStartedAt=reference.phase.startedAt;
 const firstBudget=reference.phase.deadline-reviewStartedAt;
-for(const playerId of ['p1','p2'])reference=game.reduce(reference,{type:'input',playerId,now:reviewStartedAt+8000,input:{type:'vote',votes:[]}});
+for(const playerId of ['p1','p2'])reference=game.reduce(reference,{type:'input',playerId,now:reviewStartedAt+8000,input:{type:'vote',votes:[null]}});
 assert.equal(reference.phase.startedAt,reviewStartedAt,'a review beat keeps the same phase instance');
 assert.equal(reference.reviewIndex,1);
 const expectedNextBudget=reference.phase.deadline-(reviewStartedAt+8000);
@@ -31,7 +32,7 @@ try {
   await page.locator('#rounds').selectOption('1');
   await page.locator('#seconds').selectOption('60');
   await page.getByRole('button',{name:'Let’s play'}).click();
-  for(let i=0;i<2;i++){await page.locator('#ready').click();await page.getByRole('button',{name:'Lock my answers'}).click();}
+  for(let i=0;i<2;i++){await page.locator('#ready').click();if(i===0)for(let category=0;category<12;category++)await page.locator(`#answer-${category}`).fill(answers[category]);await page.getByRole('button',{name:'Lock my answers'}).click();}
   await page.locator('#ready').click();
   const displayedMs=async()=>{const [minutes,seconds]=(await page.locator('#timer').innerText()).split(':').map(Number);return (minutes*60+seconds)*1000;};
   report.firstDisplayedMs=await displayedMs();

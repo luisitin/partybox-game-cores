@@ -1,0 +1,52 @@
+[
+  {
+    "attempt": 1,
+    "command": "node scripts/browser-empty-review.mjs after",
+    "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+    "recordedFrom": "tool output; original report was overwritten by attempt 2",
+    "result": "FAIL: fixture used case-sensitive category text assertion while CSS text-transform made innerText uppercase",
+    "completedBlankProfiles": [
+      {
+        "humans": 2,
+        "readyClicks": 0,
+        "ballotLocks": 0,
+        "reviewActionCount": 0,
+        "reviewElapsedMs": 32.88136600000007
+      },
+      {
+        "humans": 8,
+        "readyClicks": 0,
+        "ballotLocks": 0,
+        "reviewActionCount": 0,
+        "reviewElapsedMs": 31.05749399999968
+      }
+    ]
+  },
+  {
+    "attempt": 2,
+    "command": "node scripts/browser-empty-review.mjs after",
+    "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+    "savedReport": "evidence/browser/round-1-after/fixture-failure-second.json",
+    "result": "FAIL: fixture expected Invalid for a duplicated wrong-initial answer; current receipt prioritizes Duplicate",
+    "executedChecks": 3,
+    "passedChecks": 2,
+    "completedBlankProfiles": [
+      {
+        "humans": 2,
+        "readyClicks": 0,
+        "ballotLocks": 0,
+        "reviewActionCount": 0,
+        "reviewElapsedMs": 46.52080500000011,
+        "categories": []
+      },
+      {
+        "humans": 8,
+        "readyClicks": 0,
+        "ballotLocks": 0,
+        "reviewActionCount": 0,
+        "reviewElapsedMs": 23.94264099999964,
+        "categories": []
+      }
+    ]
+  }
+]
