@@ -2,6 +2,19 @@
 
 ## Verification-only revalidation19:16 UTC
 
+Archive correction: recursive dist ignore hid3 copied bundles in first
+milestone. Map them to sources/job/bundled/; source-copy-index.json now
+byte-verifies all35 originally guarded inputs. No game/harness bytes changed.
+Final17 focused groups PASS. `node scripts/hashes.mjs`:363 hashes before
+final notes. Standard integrity passes file inventory/historical1200raw/
+26links/two identical regenerations/purity/licenses/media, then correctly
+FAILS because a required fresh live recording report is unavailable after
+the failed local timing run; this is not full acceptance. No gate skipped.
+Independent actual capture validator checks both current35 source maps,
+actual bytes/SHA and full ffmpeg decode:726815/546355 bytes, VP8
+1280x844/390x844,14.0/14.32s. Saved functional-clip-validation.json;
+these clips prove functions only, not FPS. Current full CI still required.
+
 Read/ranked gaps/limits: evidence/reverify-1900/REVIEW.md.
 `npm ci --ignore-scripts --no-audit --no-fund && npm run build`: PASS,
 strict ES2022/production unchanged. Actual old full CI37780918144 read.
