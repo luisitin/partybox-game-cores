@@ -311,7 +311,7 @@ function renderDock(){
  if(seat===null){
   if(solo>=0){
    lab.textContent=`${label(solo)}’s tiles`;const backs=h('div','hidden-rack');for(let i=0;i<s.hands[solo]!.length;i++)backs.append(h('span','mini-back'));hand.append(backs);
-   const b=h('button','btn primary reveal-inline',view==='tv'?'Reveal my tiles':'Show tiles');b.type='button';b.setAttribute('aria-label',`${label(solo)} — reveal hand`);b.addEventListener('click',()=>reveal(solo));hand.append(b);
+   const b=h('button','btn primary',view==='tv'?'Reveal my tiles':'Show tiles');b.type='button';b.setAttribute('aria-label',`${label(solo)} — reveal hand`);b.addEventListener('click',()=>reveal(solo));actions.append(b);
   }else lab.textContent=isHuman(t)?'':`${label(t)} is choosing a tile…`;
   return;
  }
