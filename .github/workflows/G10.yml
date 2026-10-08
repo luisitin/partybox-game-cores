@@ -36,6 +36,13 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G10-checkers/package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install actual video probe and decoder
+        if: matrix.stage == 'node' || matrix.stage == 'browser'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffprobe -version
+          ffmpeg -version
       - name: Record actual runner resources
         run: |
           node --version
@@ -45,7 +52,9 @@ jobs:
       - if: matrix.stage == 'browser'
         run: npx playwright install --with-deps chromium
       - name: Run complete assigned workload
-        run: node scripts/check.mjs --stage '${{ matrix.stage }}' > '.work-stage-${{ matrix.stage }}.stdout' 2>&1
+        run: |
+          set -o pipefail
+          node scripts/check.mjs --stage '${{ matrix.stage }}' 2>&1 | tee '.work-stage-${{ matrix.stage }}.stdout'
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -75,13 +84,21 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G10-checkers/package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Install actual video probe and decoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffprobe -version
+          ffmpeg -version
       - uses: actions/download-artifact@v4
         with:
           pattern: G10-stage-*-${{ github.event.pull_request.head.sha || github.sha }}
           path: jobs/G10-checkers
           merge-multiple: true
       - name: Verify every current stage and combine all4000 actual games
-        run: node scripts/check.mjs --stage final > .work-stage-final.stdout 2>&1
+        run: |
+          set -o pipefail
+          node scripts/check.mjs --stage final 2>&1 | tee .work-stage-final.stdout
       - run: node scripts/standalone-receipt.mjs
       - uses: actions/upload-artifact@v4
         with:

@@ -1,0 +1,50 @@
+
+> partybox-g10-checkers@1.0.0 build
+> tsc --noEmit && node scripts/build.mjs
+
+PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page (delivery execution gates explicitly excluded).
+node:internal/child_process:285
+      const err = new ErrnoException(exitCode, syscall);
+                  ^
+
+Error: spawn ffprobe ENOENT
+    at ChildProcess._handle.onexit (node:internal/child_process:285:19)
+    at onErrorNT (node:internal/child_process:483:16)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'spawn ffprobe',
+  path: 'ffprobe',
+  spawnargs: [
+    '-v',
+    'error',
+    '-count_frames',
+    '-show_entries',
+    'stream=codec_name,codec_type,width,height,avg_frame_rate,nb_read_frames:format=format_name,duration',
+    '-of',
+    'json',
+    '/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/media/milestone-19/desktop.webm'
+  ]
+}
+
+Node.js v22.16.0
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: {"command":"node","args":["scripts/browser-evidence-controls.mjs"],"exitCode":1,"signal":null}
+
+1 !== 0
+
+    at run (file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/scripts/check.mjs:20:10)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/scripts/check.mjs:27:1 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual'
+}
+
+Node.js v22.16.0

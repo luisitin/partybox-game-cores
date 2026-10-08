@@ -1,3 +1,15 @@
+# Native GitHub video-tool repair — 2026-10-08 around20:08UTC
+
+Last observed successful branch push: 68d428eef59fea115510a1267e51ba0455057130 at19:50:44.127439 UTC; main6d5c1a8 own row19:49:41. Next early target20:15:44.127439, hard20:20:44.127439 until the next actual successful push. Quiet hold from20:00:38 acknowledgment through explicit root release20:04:24.587563 was honored; no local CPU/source writer ran during that hold.
+
+The first actual a9 workflow37834410114 naturally finished with both complete2000-game variant jobs SUCCESS (American job19:46:09–19:51:19; International19:46:09–19:58:10), node/browser FAILURE, delivery SKIPPED. Independent league validation actually CLOSED20:07:18.478 PASS: all4000 games/80 raw files byte-identical to accepted phase gold, all127 game inputs/348 current guards (exact Git-original a9 workflow for historical binding), independent legal moves and true current-core terminal/results plus every strength summary. Its actual artifacts, all original raw game/timestamp/recording bytes, official metadata and independent readers are archived under evidence/checks/hosted-ci-first-native. Independent strict reader PASS19:56:36.286: all2400 raw intervals/2404 timestamps,30 literal named functionals,158 unchanged current browser guards and full5ed HTML digest. This is historical strict-only proof, not current full acceptance or a causal repair of localInternational17.510FPS.
+
+Current68-node actual stdout now survives the corrected hidden artifact path and directly shows spawn ffprobe ENOENT after fullbuild/source integrity pass. a9-browser capture failed the same native probe; full clip checks did not complete. The workflow now explicitly installs the genuine ffmpeg package in node/browser/delivery jobs and tees stdout/stderr with pipefail so failures remain visible in native job logs. Pure game/bot/data/HTML bytes and all assertions/workloads are unchanged. Do not rerun unchanged local RAF or call tool installation a frame-rate fix.
+
+After this substantive fix is pushed, observe its fresh exact-head full workflow. All four stages and final combination must pass, using the same source head/run/attempt/runtime/guard map and original4000 workloads; source-bound standalone1.39GB artifact upload and actual download/byte/digest verification must complete before PR. Rerun ALL stages for a new attempt, never mix older receipts. Every job remains Ubuntu/read-only/actions-only/timeout30. No current PR, full green, published full page, accepted new capture or KEEP round is claimed.
+
+## Previous checkpoint retained as history
+
 # Delivery-path correction —2026-10-08 around19:49UTC
 
 Last actual push a9c09a2dcef7fe8acf4014d879d87b550c99e9e4 at19:46:04.318355 UTC; main32c23a0 ownrow19:45:47. Previous push19:16:00.586934→19:46:04.318355 is30m03.731421s: hard30min missed3.731421s during genuine corrective controls/commit/push. No backdated timing. Next early20:11:04/hard20:16:04 until actual subsequent push.
