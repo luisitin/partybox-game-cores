@@ -84,3 +84,10 @@ KEEP GOING round1:
   width. Valid40-character names otherwise made a390px page830px wide.
 - `browser.ts`: regressions for both editions at maximum supported name
   length, before and after opening a hand. Rebuild the standalone artifact.
+
+KEEP GOING round2:
+- `ui.ts`:focus the first enabled card after handover; choosing the first
+  card could target a disabled off-suit card and leave keyboard focus empty.
+- `browser.ts`:seed1/diamond lead reproduces an illegal first held club;
+  assert native focus moves to the legal diamond, then press Enter at page
+  level and verify a second card was played. No manual focus masks the bug.

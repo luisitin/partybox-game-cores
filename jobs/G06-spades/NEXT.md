@@ -28,9 +28,12 @@ Initial delivery headf34a4860a4e51fcb0b4070bbf43b8f079d225427.
 Initial green gatebadf4005bd3961764492a4f48f6047af3fa249cc/run37738084749
 SUCCESS observed2026-10-08T06:46:28Z. KEEP GOING is active;R1 fixes
 long-name phone overflow830→390. Ten browser groups,23 hashes after refresh,
-new capture and~60fps pass. Next:R2 fix confirmed lost keyboard focus when
-the first held card is illegal;then audit bot/reader pacing and duplicate
-name handovers. Five weaknesses per round in AUDIT. No-gain streak0.
+new capture and~60fps pass. R2 fixes native follow-suit keyboard focus:
+body/null→legalcard15,Enter plays it;11 browser groups pass,27 hashes.
+Next:R3 stop bots advancing reader reviews, lengthen conservative review
+deadlines with human Next retained. Baseline24/24 review policy calls return
+prematureNext; durations2s/15s. Then audit duplicate-name handovers and
+held-out/presence properties. Five weaknesses per round in AUDIT. Streak0.
 Query actual current PR head/CI after pushes; do not assume earlier hashes
 are current. Do not claim completion yet. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
@@ -39,7 +42,7 @@ Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
 Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
-PR7 exists; do not create a duplicate. R1 is logged; three no-gain rounds
+PR7 exists; do not create a duplicate. R1–2 are logged; three no-gain rounds
 are still required after the last player-visible improvement.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.

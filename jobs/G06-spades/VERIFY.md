@@ -160,3 +160,17 @@ KEEP GOING round1:
   mean16.9251ms,p95 16.8/max50.1;4×phone60.0025fps,mean16.6660ms,
   p95/max16.8. Offline HTML489,042bytes. New eight-second capture<10MB.
   Both editions test maximum names before/after opening the private hand.
+
+KEEP GOING round2:
+- `npm run check; node build.ts; node browser.ts --write --capture --repeat=3`:
+  PASS11 groups; native follow-suit handover now focuses legalcard15,
+  page-level Enter plays it. The old handler left body focused,card null.
+  Long-name390px bounds remain green. Zero exceptions/requests.
+ 900frames each:TV60.0029fps,mean16.6659ms,p95 16.7/max16.8;
+ 4×phone59.8030fps,mean16.7216ms,p95 16.8/max50.0. Reduced motion passes.
+  Offline HTML489,057bytes;new eight-second capture<10MB;27 hashes.
+- `node /workspace/.onboarding/G06-phone-audit.mjs`:seed1 confirms focused
+  card15 is one of the legal diamonds15/16/25 after a diamond lead.
+- Read-only bot review probe:all12 seat/skill policies return Next during
+  each2-second trick and15-second hand review.24 premature advances are
+  a confirmed remaining defect; recorded before a pacing fix.

@@ -33,6 +33,10 @@ try{
   const long=await pageFor();await long.page.selectOption('#mode',mode);for(let i=0;i<(mode==='cutthroat'?3:4);i++)await long.page.fill(`#name-${i}`,'X'.repeat(40));await start(long.page,mode);
   assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap at handover');await long.page.click('#show-hand');assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap with an open private hand');await long.ctx.close();functional.push(`${mode} valid40-character names fit390px, concealed and open`);
  }
+ const keyboard=await pageFor();await start(keyboard.page,'partnership',1);for(let i=0;i<4;i++){await keyboard.page.click('#show-hand');await keyboard.page.click('#bid');}
+ const hand=game.init(context(4,1)),leaderId=hand.seats[(hand.dealer+1)%4]!,diamond=hand.hands[leaderId]!.find(c=>c>=13&&c<26)!;
+ await keyboard.page.click('#show-hand');await keyboard.page.click(`#card-${diamond}`);await keyboard.page.click('#show-hand');const firstLegal=await keyboard.page.locator('[data-card]:not(:disabled)').first().getAttribute('data-card');
+ assert.equal(await keyboard.page.evaluate(()=>document.activeElement?.getAttribute('data-card')),firstLegal,'handover must focus an enabled follow-suit card');await keyboard.page.keyboard.press('Enter');assert.equal(await keyboard.page.locator('.trick-card').count(),2);await keyboard.ctx.close();functional.push('follow-suit hand focuses first enabled card; native keyboard Enter plays it');
  const standard=await pageFor();await freeze(standard.page);await standard.page.fill('#name-0','<img onerror=alert(1)>');await start(standard.page);
  assert.equal(await phase(standard.page),'bid');assert.equal(await standard.page.locator('#private [data-card]').count(),0);assert.equal(await standard.page.locator('#public img').count(),0);
  await standard.page.click('#show-hand');assert.equal(await standard.page.locator('#private [data-card]').count(),13);await standard.page.selectOption('#bid-value','5');

@@ -14,3 +14,14 @@ Round1, five largest weaknesses:
 Fix worst:wrap long labels within their containers. Measure both editions
 before/after; add actual browser regressions with40-character names and
 private hand opening. No layout change without evidence of a problem.
+
+Round2, re-read JOBS;five largest remaining weaknesses:
+1. Confirmed keyboard focus loss when first held card cannot follow suit.
+2. Bots can submit Next before trick/score review is read.
+3. Review durations are short for slow readers.
+4. Duplicate names make the private handover's owner ambiguous.
+5. Win-rate generalization beyond the original2,000 seeds is unmeasured.
+
+Fix worst:focus the first enabled card when a private hand opens. Native
+keyboard Enter must actually play it; a test that focuses the card manually
+would miss the defect. Confirm original suit legality remains enforced.
