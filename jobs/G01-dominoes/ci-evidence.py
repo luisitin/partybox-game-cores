@@ -85,7 +85,7 @@ def main():
         start = {
             'schema': 'g01-ci-evidence/1', 'startedAt': now(), 'status': 'STARTED',
             'checkoutHead': git('rev-parse', 'HEAD').decode().strip(),
-            'checkoutParents': git('show', '-s', '--format=%P', 'HEAD').decode().strip().split(),
+            'checkoutParents': [line.split()[1] for line in git('cat-file', '-p', 'HEAD').decode().split('\n\n', 1)[0].splitlines() if line.startswith('parent ')],
             'github': {key: os.environ.get(key) for key in [
                 'GITHUB_REPOSITORY', 'GITHUB_SHA', 'GITHUB_RUN_ID', 'GITHUB_RUN_ATTEMPT',
                 'GITHUB_EVENT_NAME', 'GITHUB_REF', 'GITHUB_HEAD_REF']},

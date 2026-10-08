@@ -375,3 +375,30 @@ source's renewed review is open; old0.2.7R21–23 cannot certify changedUI/core.
 A short zero-work HOLD for B19's single native check began23:22:54UTC;
 direct release reported natural closure23:24:33.285692UTC. No elapsed
 process was paused or rerun for luck.
+
+## Accepted current8c proof and public audit checkpoint
+
+Full original hosted run37859386989/job113591225852 completed SUCCESS
+23:46:25UTC; all workflow steps succeeded. Genuine artifact11586162947
+was downloaded naturally/exit0 and independently accepted23:51:23UTC.
+The exact10,067,417B archive is preserved with official SHA256 in
+media/accepted-checkpoint-8c57376-proof.zip; artifact-acceptance-8c57376.json
+records actual1,044 checks.138 declared source bytes match8c Git,119 immutable
+inputs and runtime identities remain unchanged, full npm exited0,25 genuine
+mutants pass. All600 original native intervals/602 timestamps are retained;
+TV58.6349777187fps/p9516.8 and phone4x59.8038433937fps/p9516.7 pass original
+58fps/p95<=18 gates. No warmup/filtering. Independent full FFmpeg decode
+reproduced all36 currentVP9 frame rows. Capture268,630B/1920x1080/3s/12 encoded
+fps; encoded fps is not native browser refresh. See ARTIFACT-AUDIT.md.
+
+The first auxiliary reader's Wrong source parent failure is preserved.
+Shallow git show metadata omitted real parents; corrected reader validates
+actual raw merge commit46f8ead5 and all expected source bytes. Future CI
+records parents from raw headers. Neither failed-reader output nor historical
+local55.73/51.58fps failures is represented as a passing run.
+
+This later checkpoint adds a public independent reader/archive/receipt and
+metadata repair. Its own full CI is UNRUN; accepted proof is explicitly for
+8c. Player/core/UI/page are unchanged, renewed KEEP rounds/gains remain0.
+Conservative23:55:44 wall-clock checkpoint was exceeded during coordinator
+HOLD23:51:23–23:57:29.128565; no owned local process was paused or active.

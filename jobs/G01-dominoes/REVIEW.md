@@ -10,17 +10,19 @@ Five current weaknesses, ranked:
    actual responsiveness for exact-policy worker transport before adopting;
    retain seeds/RNG/state, stale guards and simulated functional checks.
    Earlier FPS failures have UNKNOWN cause.
-2. Missing current CI artifacts/raw/source-bound frame proof. Repair proof
-   delivery first; this verifier change is not a player gain or KEEP round.
-3. Four-seat/partner phone presentation coverage is incomplete. Exercise
+2. Four-seat/partner phone presentation coverage is incomplete. Exercise
    private hands, valid placement, all controls and round-end reveal.
+3. Current strength evidence uses a bounded upstream reference. Preserve
+   its inspected policy/scope rather than infer universal bot superiority.
 4. Thinking-dot background-colour animation repaints. Profile before
    changing visible behaviour or claiming an improvement.
 5. Physical-phone/direct-disk proof is unavailable here. State actual
    emulation/exact-byte setContent limitations without fabricating evidence.
 
-No renewed round or player-visible gain is yet measured. After current full
-CI green, fix/measure the worst testable weakness as round25 and continue
+Current8c full CI and genuine source-bound artifact acceptance passed; see
+ARTIFACT-AUDIT.md. Proof delivery repair is not a player gain or KEEP round.
+No renewed round or player-visible gain is yet measured. Fix/measure the
+worst testable weakness as round25 and continue
 until three consecutive meaningful reviews find no player-visible gain.
 
 ## Round 1

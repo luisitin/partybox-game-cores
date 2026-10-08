@@ -1,46 +1,56 @@
 # G01 current delivery review — incomplete
 
-Chat codex-domino-audit; local branch job/G01-dominoes-queue-audit-20261008
-started from lawful main claim98529de285adc352f036c0e60db03304d12d15c8
-(2026-10-08T22:58:53Z), then normally merged canonical327f3dd4079df7fe74a094a3b1f557ea704b0196.
-Reuse original PR1/canonical job/G01-dominoes; no duplicate, merge or force-push.
-Refresh only G01 on main every milestone. PR1 became draft23:18:04UTC.
+Chat codex-domino-audit; lawful main claim98529de at2026-10-08T22:58:53Z.
+Own checkpoint branch job/G01-dominoes-queue-audit-20261008 preserves the
+claimed-main merge and original canonical327 source. Original PR1 remains
+open/unmerged/draft on job/G01-dominoes at accepted8c57376d817d1b34c165425cd8bf8d9ee219f7f6.
+No duplicate PR, force-push or public merge. Refresh ONLY G01 on main every push.
 
-Old completed0.2.7/04287939 body and R21–23 stop are historical:57efe0b
-changed core to0.2.8 (full human-idle cycle/round-end reveal),9497dea rebuilt
-presentation,3001349 changed board/reveal layout. Preserve those changes.
-Canonical327 full hosted CI37812880528 passed42 tests,25 real mutants,
-full leagues/upstream and native gates(TV58.4453535944fps/phone4x59.6057437684).
-Its artifacts are empty; current raw intervals were not retained. Restored
-57efe0b browser-report.json is historical. Milestone14/tv.png from a
-lowered-threshold run show presentation only. LOOP24 retains local55.73fps
-and standalone51.58fps FAIL against original58fps; cause UNKNOWN and phone
-NOT REACHED. Never relabel those failures as passing current evidence.
+Current full original workflow37859386989, job113591225852, succeeded
+2026-10-08T23:46:25Z. Genuine official artifact11586162947 is retained
+byte-exact at media/accepted-checkpoint-8c57376-proof.zip (10,067,417B;
+SHA256 f5e31c1bcd9e01fa4f1924e5f44c413d25169a9ebd18145196ff2ee8760106f6).
+Independent reader naturally exited0; actual closure was observed23:51:23Z.
+artifact-acceptance-8c57376.json records1,044 checks:138 exact declared Git
+source files,119 immutable inputs, complete npm log/exit,25 genuine mutants,
+600 original unfiltered native intervals/602 timestamps and all36 decoded
+current VP9 frames. TV58.6349777187fps/p9516.8ms; phone390x844/4xCPU
+59.8038433937fps/p9516.7ms. Both ORIGINAL58fps/p95<=18ms gates pass.
+No warmup/filtering or substituted timing. Clip268,630B,1920x1080,
+36 frames/12 encoded fps/3s; encoded fps is not browser refresh.
 
-This milestone repairs proof delivery without changing core/UI/page,
-original58fps/p95<=18ms gates, exactly300 unfiltered native intervals,
-zero warmup, bot workloads or intentional simulated functional contexts.
-browser-evidence.ts retains real timestamps/raw intervals before gates,
-source/Node/Chromium identities, failures and full36-frame VP9 decode.
-CI always uploads full logs/before-after tracked bytes, and checks immutable
-inputs against actual Git. Current-head full hosted checks and genuine
-artifact acceptance remain REQUIRED; none is yet claimed for this milestone.
-No new native browser or elapsed trial has run in this reclaimed pass.
+First auxiliary reader failed on shallow checkout's empty parent metadata.
+The failure is retained in artifact-reader-first-failure.json. Corrected reader
+verifies actual merge46f8ead5 raw Git parents and all source bytes; it does
+not trust an empty parent list. Future CI receipt uses raw Git headers too.
+Reproduce with verify-ci-artifact.py; ARTIFACT-AUDIT.md gives exact command.
+The archived proof belongs to accepted8c, not automatically to this later
+verifier/docs audit head. Original core/UI/page and original browser gates
+remain unchanged; this audit checkpoint is not a player gain or KEEP round.
 
-After current full CI green, renew KEEP review starting at25. REVIEW.md
-ranks five weaknesses; no renewed round or player-visible gain is complete.
-Native elapsed trials need root's exclusive owner grant; never SIGSTOP,
-filter intervals, add settling/warmup or retry unchanged FPS for luck.
-The Strong bot's synchronous64-world UI-thread search is a responsiveness
-hypothesis, not an explanation of prior failures. Measure actual player
-outcomes before adopting workers; retain exact state/seed/RNG/policy,
-stale-turn guards and existing simulated functional checks.
+Old completed0.2.7/04287939 and R21–23 are historical. Later0.2.8 changed
+the full human-idle cycle/round-end reveal and rebuilt UI; preserve these.
+Restored browser-report.json and milestone14/tv.png are historical.
+LOOP24 retains local55.73/51.58fps failures against58; UNKNOWN cause,
+phone NOT REACHED. Current hosted pass does not erase those failures.
 
-Keep NEXT/VERIFY/assumptions current every push; log only actually measured
-rounds in LOOP.md. First reclaimed push deadline23:28:53UTC, target earlier.
-After three consecutive genuine no-player-gain rounds, fresh-read main/all
-matching refs and claim the lowest eligible job under strict six-hour rules.
+Renewed KEEP rounds/gains remain0. Start genuine round25 with REVIEW.md's
+five current weaknesses. Strong64-world UI-thread search is a concrete
+responsiveness hypothesis, not an attributed cause of earlier failures.
+No worker prototype is authored yet. Use exported observe→choose plus the
+same UI seed/RNG: transmit own hand/public fields only; retain policy/work,
+stale-state/pause/end/rematch guards and genuine unsupported/error fallback.
+Normal/easy may remain synchronous as product behaviour. NEVER detect fake
+clock/test environments or add acceptance-only branches. Measure actual
+worker legality/privacy/replay/fallback and native player effect before adoption.
+Native elapsed/browser trials require root's fresh exclusive owner grant.
 
-Re-verify when web works: regional opening/tied-round lead conventions.
-Managed file navigation is blocked. Exact-byte setContent and phone
-390x844/4xCPU emulation do not prove physical devices or disk navigation.
+The conservative23:55:44 checkpoint wall-clock deadline was exceeded during
+continuous coordinator HOLD23:51:23–23:57:29.128565; no local readers/writers
+ran during that hold. B19's once-only comparison closed naturally/exit0.
+Resume uses real timestamps; no backdating. Push this meaningful public
+proof checkpoint, refresh only G01, then author private round25 candidate.
+After three consecutive meaningful no-player-gain rounds, fresh-read main
+and all matching refs before claiming lowest eligible job under six-hour rules.
+Managed disk navigation/physical phone remain unverified; exact-byte
+setContent and emulation are the actual available checks.

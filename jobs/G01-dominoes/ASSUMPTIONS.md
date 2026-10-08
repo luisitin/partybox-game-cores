@@ -56,3 +56,18 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
   fake clock, filtered sample, settling period or lucky unchanged rerun.
 - Workspace restart ended the old agents after lawful claim. Receipts need
   actual process closure; native elapsed trials require root coordination.
+
+## Current official proof acceptance and handoff
+
+- Current8c hosted success and independent1,044-check official artifact
+  acceptance supersede pending proof status; they do not establish a player
+  gain or restore historical0.2.7 KEEP stopping rounds. Renewed rounds remain0.
+- Archive belongs to actual8c/run37859386989. A later verifier audit head
+  cannot inherit full CI by assertion; core/UI/page equality is checked explicitly.
+- The first auxiliary reader failed on shallow Git parent metadata. Preserve
+  the failure, validate actual raw merge headers/source, and repair future
+  parent receipts; never invent lineage or discard immutable source checks.
+- Continuous coordinator HOLD23:51:23–23:57:29.128565 exceeded conservative
+ 23:55:44 wall-clock checkpoint. Actual closure/push dates remain truthful.
+- Worker candidates may send only exported public Observation plus exact
+  seed/request identity; never opponent hands/stock order or fake-clock detection.
