@@ -1,26 +1,33 @@
-# G03 stale delivery recheck
+# G03 implementation and renewed reviews complete
 
-Chat codex-domino;working job/G03-pack-the-hold-reverify from claimed main.
-Exact prior delivery2a9c5e1 locally merged;PR3 remains on
-job/G03-pack-the-hold. Preserve original game/content/rules/bots/research.
-Original final CI37724395966/37724392755 passed;R6–8 stop was satisfied.
-R9 confirmed8/12 exceptions and3 invalid presence updates;guards now
-produce0/0.11 focused/22 full tests,25 mutations,all properties/games/
-leagues/solver/data/partial HTTP browser and2,000-level benchmark PASS.
-Milestone11 copied from the full-run capture,decodes under10MB;29 hashes.
-Real reliability gain resets the no-gain streak0.
+Chat codex-domino;working job/G03-pack-the-hold-reverify from claimed main,
+preserving exact2a9c5e1 source/research. Existing PR3 uses
+job/G03-pack-the-hold. Push both branches non-force and refresh only G03.
+No duplicate PR and no public PR merge/closure.
 
-Next:push both branches,refresh G03 claim,R9 hosted37763715949/ca415c8 SUCCESS10:31:03UTC.
-R10 valid baseline compatibility PASS1,003 games/17,119 transitions/0
-differences;early30-hash validation rejects corrupted HTML before build.
-R11 malformed JSON PASS304,912 probes/4,012 states/0 failures.
-No-gain streak2. Next:R12 fresh browser audit. Three consecutive no
-player-visible gains are required after R9;do not use the previous stop.
-Reuse PR3;do not create a duplicate or merge/close any public PR.
-Managed file navigation is blocked:local G03_VISUAL_MODE=http is labelled
-partial HTTP;actual disk test remains mandatory in exact-head hosted CI.
-Re-verify when web works:human solve-rate calibration is unmeasured;
-ArXiv/Wikipedia/MathWorld403s are not evidence or research blockers.
-G01 PR1/head0428793/run37760799157 SUCCESS and G04/G06 are complete.
-G08 belongs to its current worker;preserve Shake Up and follow START-HERE
-if it is ever selected. Keep each milestone push≤30min.
+R9 core guards fix12 probes:8 exceptions/3 invalid presence updates→0/0.
+11 focused/22 full tests,25 mutations,all properties/games/leagues/solver/
+data/partial HTTP browser PASS. Hosted37763715949/ca415c8 SUCCESS
+2026-10-08T10:31:03Z,including real disk navigation. Original game,rules,
+geometry,calibrated tiers,art,state format and bots remain intact.
+
+R10–12 renewed KEEP GOING:1,003 valid games/17,119 transitions/0 differences
+against frozen2a9c5e1;304,912 invalid JSON probes/4,012 frozen states/0
+failures;fresh all-roster/input/private-view/browser audit. Three consecutive
+no-player-gain rounds;stop met. Early checksum validation catches corrupted
+committed HTML before rebuilding.31 hashes include all data/media+notice.
+Milestone12 VP9/3.6s/104178bytes decodes;TV/4×CPU phone≈60fps.
+
+Next:final combined local `G03_VISUAL_MODE=http npm test >
+/tmp/G03-final-npm-test.log 2>&1`;run benchmark if needed,record actual
+final result,push evidence,then require SUCCESS for PR3's exact current head.
+Check log/process before restarting a running pipeline. Do not call this
+combined final run passed until it finishes. Local HTTP is partial;hosted
+CI must use actual disk opening. After final gate,update PR3 evidence and
+read main README/RULES/JOBS/CLAIMS/all refs for next eligible job.
+
+G01 PR1/head0428793/CI37760799157 SUCCESS10:17:11UTC and G04/G06 are complete.
+G08 is another fresh claim;preserve Shake Up and follow its START-HERE if
+selected. Re-verify when web works:human solve rates are unmeasured;
+ArXiv/Wikipedia/MathWorld403s are not read-source evidence or blockers.
+Cloud draft15 installer/startup is tested and saved,unpublished.

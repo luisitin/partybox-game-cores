@@ -13,3 +13,5 @@ R10:src/study-total-baseline.ts freezes exact2a9c5e1 reducer;tests/total-events.
 R10:scripts/check-hashes.mjs verifies complete data/media coverage and committed bytes before npm test builds or regenerates anything. scripts/generate.mjs adds the existing THIRD_PARTY_NOTICES.md to hashes. An owned corrupt-HTML probe proves early rejection and restores every modified byte. No production game behavior changes.
 
 R11:tests/total-events.test.mjs adds seeded malformed JSON across pack/paused/reveal/done. It rejects invalid root/actor/input/clock/presence/VIP/stale-timer data and checks frozen-state identity plus unchanged JSON. Actual evidence is printed and written to.tmp/total-envelopes.json;the existing npm test glob runs it. No game code changes.
+
+R12:retain fresh milestone12 browser evidence and hashes from the existing interaction audit;no runtime/UI change. G03.yml uploads.tmp/total-*.json alongside existing evidence so reviewers can inspect both new regression reports.
