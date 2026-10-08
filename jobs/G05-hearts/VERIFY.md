@@ -38,3 +38,13 @@ SHA256 and both data hashes; it reports fullJobChecks:false explicitly.
 An initial package-file command used the wrong relative directory and failed
 to create its files. It was corrected in the job directory; no unrelated
 manifest/lockfile changed. No installation/build failure is hidden.
+
+The first milestone push found the older remote research scaffold75bf358
+(2026-10-07T15:05:23Z). The checkout fetched only main, so its local-ref check
+missed that branch. An explicit branch fetch and merge preserved the old
+history; seven job-doc add/add conflicts use the new live-source checkpoint.
+An initial cleanup command failed because the old BLOCKED.md was staged, and
+the shell continued to commit it. The following cleanup removes that obsolete
+marker while preserving its exact text in RESEARCH-HISTORY.md. No force-push
+or unrelated-file replacement was used. The next-claim helper now explicitly
+fetches every job branch before selecting.

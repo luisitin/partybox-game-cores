@@ -27,3 +27,7 @@ Use explicit localhost HTTP for partial managed-cloud browser checks; normal
 GitHub CI must actually open the file from disk and validate60fps/reduced motion.
 Add only .github/workflows/G05.yml. Push milestones and refresh the claim on
 main after each push. No PR or completed checks claimed at this checkpoint.
+
+Historical remote checkpoint75bf358 was merged after a rejected branch push.
+It contains no game code. RESEARCH-HISTORY.md preserves its superseded access
+block; GitHub/API and registry reads now work. Continue from the sealed reference.
