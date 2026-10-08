@@ -7,3 +7,7 @@ Re-read G03 and its selected rules. Five weaknesses ranked:malformed root/actor 
 ## Round10
 
 Re-read G03. Five weaknesses ranked:valid-event compatibility after the guards is unproven;build-before-hash hides corrupted committed HTML;malformed envelope breadth is small;the calibrated hold pool is finite;fresh browser/physical-phone evidence is limited. Freeze exact2a9c5e1 and compare every valid transition over1,003 complete seeded games.17,119 transitions/0 state or result mismatches. Add early read-only checksum/coverage validation,hash the existing license notice,and prove corrupted HTML is rejected before rebuilding. These verification gains change no runtime gameplay;no-gain streak1.
+
+## Round11
+
+Re-read G03. Five weaknesses ranked:malformed-envelope coverage lacks1,003-seed/all-phase breadth;older browser capture;finite hold pool;predictable exact-fraction bots;human solve rates unmeasured. Add plain-JSON rejection probes across seeded pack/paused/reveal/done states. Deep-freeze and require identical identity/JSON after every event.304,912 probes/4,012 states/0 throws,mutations or identity failures. No additional player-visible defect;no-gain streak2.
