@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "chrome": "Chrome/154.0.8037.97",
+  "fileOpened": true,
+  "serving": "disk",
+  "desktop": {
+    "width": 1920,
+    "height": 1080,
+    "cpu": 1,
+    "warmupFrames": 60,
+    "interaction": "17-card private pass selection at10Hz; retained card controls",
+    "frames": 180,
+    "meanMs": 16.665555555555553,
+    "p95Ms": 16.700000000000728,
+    "maxMs": 16.800000000000182,
+    "fps": 60.00400026668446,
+    "overflow": false
+  },
+  "phone": {
+    "width": 390,
+    "height": 844,
+    "cpu": 4,
+    "warmupFrames": 60,
+    "interaction": "17-card private pass selection at10Hz; retained card controls",
+    "frames": 180,
+    "meanMs": 16.66611111111111,
+    "p95Ms": 16.800000000000182,
+    "maxMs": 16.80000000000109,
+    "fps": 60.00200006666889,
+    "overflow": false
+  },
+  "reducedMotion": true,
+  "externalRequests": 0,
+  "runtimeExceptions": 0,
+  "completedPlayerCounts": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "privateHandoff": true,
+  "passing": true,
+  "mouseCard": true,
+  "touchCard": true,
+  "keyboardCard": true,
+  "keyboardFocus": true,
+  "longNamesFit": true,
+  "videoBytes": 138561
+}

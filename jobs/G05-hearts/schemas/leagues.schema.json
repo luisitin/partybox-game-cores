@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "method": {
+      "type": "string"
+    },
+    "leagues": {
+      "minItems": 2,
+      "maxItems": 2,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "league": {
+            "type": "string"
+          },
+          "games": {
+            "type": "number",
+            "const": 2000
+          },
+          "seedStart": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "seedEnd": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "players": {
+            "type": "number",
+            "const": 4
+          },
+          "target": {
+            "type": "number",
+            "const": 100
+          },
+          "moon": {
+            "type": "string",
+            "const": "add"
+          },
+          "jack": {
+            "type": "boolean",
+            "const": false
+          },
+          "wins": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2000
+          },
+          "ties": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2000
+          },
+          "headToHeadRate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "wilson95": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "firstPlaceShare": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "focalMean": {
+            "type": "number"
+          },
+          "rivalMean": {
+            "type": "number"
+          },
+          "steps": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "stateHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "league",
+          "games",
+          "seedStart",
+          "seedEnd",
+          "players",
+          "target",
+          "moon",
+          "jack",
+          "wins",
+          "ties",
+          "headToHeadRate",
+          "wilson95",
+          "firstPlaceShare",
+          "focalMean",
+          "rivalMean",
+          "steps",
+          "stateHash"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "method",
+    "leagues"
+  ],
+  "additionalProperties": false
+}
