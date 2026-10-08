@@ -1,0 +1,75 @@
+{
+  "id": "reality-check",
+  "name": "Reality Check",
+  "icon": "🧭",
+  "tagline": "Guess the scale. Write the bluff. Find the truth.",
+  "description": "An offline quiz and fake-answer party game with fictional workshop examples in eight realms.",
+  "howToPlay": [
+    "A realm wheel brings a question; its first appearance teaches the rules.",
+    "Estimate, choose a date, or write a fake and vote for the truth.",
+    "Earn points for accuracy and fooled voters; the final round doubles points."
+  ],
+  "version": "0.1.0",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "estimatedMinutes": 12,
+  "estimate": {
+    "fixedSeconds": 80,
+    "perRoundSeconds": 78,
+    "perPlayerPerRoundSeconds": 0,
+    "roundsSetting": "rounds"
+  },
+  "tags": [
+    "trivia",
+    "bluff"
+  ],
+  "presence": {
+    "needs": "anywhere"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "noCards": true,
+  "settings": [
+    {
+      "key": "mode",
+      "label": "Realms",
+      "type": "select",
+      "default": "mixed",
+      "options": [
+        {
+          "value": "quick",
+          "label": "Quick only"
+        },
+        {
+          "value": "mixed",
+          "label": "Mixed"
+        },
+        {
+          "value": "bluff",
+          "label": "Bluff only"
+        }
+      ]
+    },
+    {
+      "key": "rounds",
+      "label": "Rounds",
+      "type": "select",
+      "default": "8",
+      "options": [
+        {
+          "value": "4",
+          "label": "4 — short"
+        },
+        {
+          "value": "8",
+          "label": "8 — standard"
+        },
+        {
+          "value": "12",
+          "label": "12 — long"
+        }
+      ]
+    }
+  ]
+}

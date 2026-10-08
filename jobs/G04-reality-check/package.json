@@ -1,0 +1,23 @@
+{
+  "name": "partybox-g04-reality-check",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "tsc --noEmit",
+    "test": "node checksums.ts --check && npm run check && node generate.ts --check && node --test test.ts && node differential.ts && node bluff-differential.ts && node bounds-probe.ts && node style-probe.ts && node phase-audit.ts && node catalog-probe.ts && node churn-probe.ts && node mutations.ts && node league.ts && node league.ts --held-out && node build.ts --check && node browser.ts && node browser.ts --repeat=2 && node browser.ts --repeat=3 && node checksums.ts && node checksums.ts --check",
+    "build": "node build.ts",
+    "fixtures": "node fixtures.ts && node checksums.ts",
+    "league": "node league.ts",
+    "browser": "node browser.ts"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1",
+    "typescript": "5.9.3"
+  }
+}
