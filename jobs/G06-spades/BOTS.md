@@ -31,8 +31,14 @@ All four direct-pair lower bounds also exceed50%. One Cutthroat strong/
 medium pair tie; no other ties. All8,000 matches ended naturally at the
 500-point or documented−500 mercy condition. Average hands respectively
 19.5855,22.6875,12.2530,12.2955; maxima34,48,26,28. Largest final state
-5,634 bytes. These are comparisons within this implementation, not claims
+5,637 bytes with scheduled review timers. These are comparisons within this implementation, not claims
 against published AIs. Measured total286,438.80 ms with core checks running
 concurrently. `bot-results.json` contains exact reproducible counts;
 `node league.ts` recomputes/asserts them. Optional`--start=2001` measures a
 fresh held-out sequence, which has not run at this milestone.
+
+Round3 corrected the bot API's review behavior:it returns null instead of
+premature Next. Engine timers now drive8s trick/60–90s ledger reviews;
+human Next remains available. Recomputed all8,000 matches in230,678.18ms:
+every win/tie/hand/input count above is unchanged; final timestamp sizes
+increase slightly.31 invariant/replay/completion tests and25 mutations pass.

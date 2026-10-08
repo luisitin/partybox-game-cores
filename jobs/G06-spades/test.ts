@@ -96,6 +96,14 @@ test('play rejects wrong seats, unheld cards and illegal suit choices',()=>{
 test('each completed trick has one winner who leads next; hands score once',()=>{
  const s=fixture('trick'),winner=s.completed.at(-1)!.winner,next=input(s,'p0',{type:'next'});assert.equal(next.phase.id,'play');assert.equal(next.seats[next.turn],winner);assert.equal(next.trickNumber,s.trickNumber+1);assert.deepEqual(next.trick,[]);
  const hand=fixture('hand'),done=input(hand,'p0',{type:'next'});assert.equal(done.phase.id,'done');assert.deepEqual(done.scores,hand.scores);
+ assert.deepEqual(done,fixture('done'));
+ assert.equal(s.phase.deadline!-s.phase.startedAt,8000);assert.equal(hand.phase.deadline!-hand.phase.startedAt,60000);
+ for(const review of [s,hand])for(const id of review.seats)for(const skill of ['easy','normal','sharp'] as const)assert.equal(C.game.bot.sampleInput(review,id,createRng(601),skill),null,'bots must not skip the reader review');
+ let cut=C.init(context(3,1));const rngs=cut.seats.map((_,i)=>createRng(601+i));
+ for(let steps=0;steps<100&&cut.phase.id!=='hand';steps++){
+  if(cut.phase.id==='trick')cut=C.reduce(cut,timer(cut));else {const id=cut.seats[cut.turn]!,value=C.game.bot.sampleInput(cut,id,rngs[cut.turn]!,'normal');assert(value);cut=input(cut,id,value);}
+ }
+ assert.equal(cut.phase.id,'hand');assert.equal(cut.phase.deadline!-cut.phase.startedAt,90000);
  assert.equal(C.reduce(done,{...timer(hand),now:hand.phase.deadline!}),done);
 });
 test('500 threshold, mercy threshold and shared leading ties follow the selected rules',()=>{

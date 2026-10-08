@@ -174,3 +174,22 @@ KEEP GOING round2:
 - Read-only bot review probe:all12 seat/skill policies return Next during
   each2-second trick and15-second hand review.24 premature advances are
   a confirmed remaining defect; recorded before a pacing fix.
+
+KEEP GOING round3:
+- `npm run check; node fixtures.ts; node fixtures.ts --check`:
+  PASS, all7 fixtures regenerate exactly, final human Next matches the
+  done fixture byte-for-byte. Holds8s/60s/90s; all24 review policies now
+  return null, compared with24 premature Next inputs before the fix.
+- `FAST_TEST=1 node --test test.ts`:PASS28/28,383.73ms,including real17-trick
+  three-player progression into its90s review and pause/deadline regressions.
+- Initial parallel broad run started before fixture regeneration and read
+  an old2s deadline:30 pass/1 fail. Corrected dependency ordering and ran
+  `node --test test.ts` again:PASS31/31,160,476.53ms;1,003 every-event JSON
+  replays plus1,000 full3p/1,000 full4p timer-driven matches. No race retained.
+- `node mutations.ts --write`:PASS25/25 genuine kills,baseline28/28.
+- `node league.ts --write`:PASS8,000 matches,230,678.18ms. All recorded
+  win/tie/hand/step counts unchanged; maximum final state5,637bytes.
+- `node browser.ts --write --capture --repeat=4`:PASS11 groups and three
+  complete UI games;assert7.9s trick still present then scheduled advance.
+  Zero requests/errors,reduced motion.900frames each:TV/4×phone60.0024fps,
+  mean16.6660ms,p95 16.7/max16.8. New8s capture<10MB;31 hashes.

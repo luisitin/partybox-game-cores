@@ -18,8 +18,11 @@ export function simulate(n:number,seed:number,{skills=Array.from({length:n},(_,i
  let s=init(context(n,seed,settings)),other=replay?init(context(n,seed,settings)):null;
  const rngs=s.seats.map((_,i)=>createRng(seed^Math.imul(i+13,0x9e3779b1)));let steps=0;
  while(s.phase.id!=='done'&&steps++<100000){
-  const sampled=nextAction(s,rngs,skills);assert(sampled,`no action in ${s.phase.id}`);if(check)assert(game.inputSchema.safeParse(sampled.input).success);
-  const event={type:'input' as const,...sampled,now:s.phase.startedAt+1},before=s;s=reduce(s,event);assert.notEqual(s,before,'legal bot must progress');
+  const timed=s.phase.id==='trick'||s.phase.id==='hand',sampled=timed?null:nextAction(s,rngs,skills);
+  if(timed)assert(s.phase.deadline!==null);else assert(sampled,`no action in ${s.phase.id}`);
+  const event=timed?{type:'timer' as const,phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!}:{type:'input' as const,...sampled!,now:s.phase.startedAt+1};
+  if(check&&event.type==='input')assert(game.inputSchema.safeParse(event.input).success);
+  const before=s;s=reduce(s,event);assert.notEqual(s,before,'legal bot or due timer must progress');
   if(other){other=reduce(other,event);const encoded=JSON.stringify(s);assert.equal(encoded,JSON.stringify(other));assert(Buffer.byteLength(encoded)<=256*1024,'every replayed state must fit the contract storage limit');}
   if(check)conservation(s);
  }

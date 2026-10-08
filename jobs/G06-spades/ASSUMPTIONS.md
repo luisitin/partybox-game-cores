@@ -22,3 +22,8 @@
 - Playwright's ffmpeg download is blocked; reuse installed system ffmpeg
   through `/home/agent/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux`.
   This external setup link produces a real browser capture; not repo data.
+- The shared readingMs SDK implementation is not supplied in this repository
+  and Zod is the sole permitted runtime dependency. Do not copy that helper.
+  Use conservative fixed data holds:8s for a completed trick,60s for two
+  side ledgers/90s for three, with explicit human Next/VIP skip available.
+  Bots leave reviews to the engine timer so they cannot override a reader.

@@ -45,7 +45,7 @@ try{
  for(let i=0;i<3;i++){await standard.page.click('#show-hand');await standard.page.click('#bid');}
  assert.equal(await phase(standard.page),'play');const initial=game.init(context(4,17)),leader=(initial.dealer+1)%4,played:{playerId:string;card:number}[]=[];
  for(let i=0;i<4;i++){await standard.page.click('#show-hand');const button=standard.page.locator('#private [data-card]:not(:disabled)').first();played.push({playerId:`p${(leader+i)%4}`,card:Number(await button.getAttribute('data-card'))});await button.click();assert.equal(await standard.page.locator('#private [data-card]').count(),0);}
- assert.equal(await phase(standard.page),'trick');const winner=winningPlay(played)!.playerId;await standard.page.clock.runFor(2400);assert.equal(await phase(standard.page),'play');
+ assert.equal(await phase(standard.page),'trick');const winner=winningPlay(played)!.playerId;await standard.page.clock.runFor(7900);assert.equal(await phase(standard.page),'trick','the complete trick must remain readable');await standard.page.clock.runFor(500);assert.equal(await phase(standard.page),'play');
  const expectedName=winner==='p0'?'<img onerror=alert(1)>':`Player ${Number(winner.slice(1))+1}`;assert((await standard.page.locator('#public h2').innerText()).startsWith(expectedName));
  await standard.page.click('#show-hand');await standard.page.locator('#private [data-card]:not(:disabled)').first().press('Enter');await standard.page.click('#end');assert.equal(await phase(standard.page),'done');assert.deepEqual(await standard.page.locator('.score strong').allTextContents(),['0','0']);assert.equal(await standard.page.locator('#private [data-card]').count(),0);
  await standard.page.click('#restart');assert(await standard.page.locator('#setup').isVisible());assert.equal(await standard.page.locator('#private [data-card]').count(),0);await standard.ctx.close();functional.push('four humans / concealed handover / escaped names / bid draft hide-pause-resume / legal keyboard play / trick timer and winner lead / partial end / restart');
@@ -66,7 +66,7 @@ try{
   if(mode==='cutthroat'){await full.page.selectOption('#setting-cutDeck',deck);await full.page.selectOption('#setting-cutLead','club');assert(await full.page.locator('#setting-exchange').isDisabled());}
   else assert(await full.page.locator('#setting-cutDeck').isDisabled());
   await full.page.selectOption('#setting-nilValue','50');await full.page.check('#setting-failedNilCounts');await full.page.uncheck('#setting-mercy');await full.page.uncheck('#setting-blind');if(mode==='partnership')await full.page.uncheck('#setting-exchange');await start(full.page,mode,44,true);
-  for(let i=0;i<20&&(await phase(full.page))!=='done';i++)await full.page.clock.runFor(300000);
+  for(let i=0;i<80&&(await phase(full.page))!=='done';i++)await full.page.clock.runFor(300000);
   assert.equal(await phase(full.page),'done');assert.equal(await full.page.locator('.score').count(),mode==='cutthroat'?3:2);assert.equal(await full.page.locator('[data-card]').count(),0);assert(!(await full.page.locator('#clock').innerText()));assert(await full.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await full.page.locator('#match summary').click();assert((await full.page.locator('#rules').innerText()).includes('±50'));await full.ctx.close();functional.push(`complete UI ${mode}/${deck} / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides`);
  }
  const performanceResults=[];

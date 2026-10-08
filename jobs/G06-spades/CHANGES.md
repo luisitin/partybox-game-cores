@@ -91,3 +91,17 @@ KEEP GOING round2:
 - `browser.ts`:seed1/diamond lead reproduces an illegal first held club;
   assert native focus moves to the legal diamond, then press Enter at page
   level and verify a second card was played. No manual focus masks the bug.
+
+KEEP GOING round3:
+- `core.ts`, `bots.ts`:readonly reviews return no bot input; the original
+  policies submitted Next immediately, defeating readable engine deadlines.
+  Hold a trick8s and ledgers60s(partners)/90s(Cutthroat); human Next remains.
+- `runner.ts`:drive due timer events during bot reviews, preserving real
+  engine pacing in simulations. Recompute league metadata because final
+  timestamps now use scheduled time; rules/bids/tricks remain unchanged.
+- `fixtures.ts`:explicit human Next generates review transitions, with
+  final hand→done exact-state equality. No bot shortcut in the engine.
+- `test.ts`:24 review policies now must return null; verify8/60/90s holds,
+  actual three-player hand progression and exact final done fixture.
+- `browser.ts`:assert trick still visible at7.9s, then advances on its
+  timer; extend only the debug virtual-time budget for unlimited long games.

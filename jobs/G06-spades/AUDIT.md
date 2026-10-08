@@ -25,3 +25,15 @@ Round2, re-read JOBS;five largest remaining weaknesses:
 Fix worst:focus the first enabled card when a private hand opens. Native
 keyboard Enter must actually play it; a test that focuses the card manually
 would miss the defect. Confirm original suit legality remains enforced.
+
+Round3, re-read JOBS;five largest remaining weaknesses:
+1. Bots/readability clocks rush review:24/24 policies submit early Next,
+   trick2s/score15s is short for the visible new words/ledger.
+2. Duplicate names leave the private handover's owner ambiguous.
+3. Held-out skill generalization is not yet measured.
+4. Presence churn combinations exceed the current fixed regression cases.
+5. Repeated browser measurements have not covered the final timing model.
+
+Fix worst:bot API waits for engine data timers during reviews; human Next
+still signals readiness. Give tricks8s and side ledgers60s(partners)/90s
+(three individuals). Drivers must exercise actual timers, not bot shortcuts.

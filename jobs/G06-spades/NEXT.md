@@ -30,10 +30,13 @@ SUCCESS observed2026-10-08T06:46:28Z. KEEP GOING is active;R1 fixes
 long-name phone overflow830→390. Ten browser groups,23 hashes after refresh,
 new capture and~60fps pass. R2 fixes native follow-suit keyboard focus:
 body/null→legalcard15,Enter plays it;11 browser groups pass,27 hashes.
-Next:R3 stop bots advancing reader reviews, lengthen conservative review
-deadlines with human Next retained. Baseline24/24 review policy calls return
-prematureNext; durations2s/15s. Then audit duplicate-name handovers and
-held-out/presence properties. Five weaknesses per round in AUDIT. Streak0.
+R3 fixes reader pacing:24 premature botNext→0;holds8s/60–90s with human
+Next preserved.31 core tests/25 mutations/8,000 timer-driven skill matches
+pass,win counts unchanged,max final state5,637bytes.11 browser groups,
+31 hashes,TV/4×phone60.0024fps,p95 16.7ms. No open test failure.
+Next:R4 disambiguate duplicate-name handovers;then held-out skill/presence/
+final repeated frames for three consecutive no-player-gain rounds.
+Five weaknesses per round in AUDIT. Streak0.
 Query actual current PR head/CI after pushes; do not assume earlier hashes
 are current. Do not claim completion yet. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
@@ -42,7 +45,7 @@ Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
 Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
-PR7 exists; do not create a duplicate. R1–2 are logged; three no-gain rounds
+PR7 exists; do not create a duplicate. R1–3 are logged; three no-gain rounds
 are still required after the last player-visible improvement.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.

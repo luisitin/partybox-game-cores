@@ -9,7 +9,8 @@ const rngs=s.seats.map((_,i)=>createRng(121+i));
 while(s.phase.id!=='done'&&steps++<100000){
  if(!states.has(s.phase.id)||s.phase.id==='hand')states.set(s.phase.id,s);
  let id='',input:Input|null=null;
- if(s.phase.id==='blind'){id=s.seats[s.turn]!;input=firstBlind?{type:'look'}:{type:'blind-nil'};firstBlind=true;}
+ if(s.phase.id==='trick'||s.phase.id==='hand'){id=s.seats[0]!;input={type:'next'};}
+ else if(s.phase.id==='blind'){id=s.seats[s.turn]!;input=firstBlind?{type:'look'}:{type:'blind-nil'};firstBlind=true;}
  else for(let i=0;i<s.seats.length;i++){const a=game.bot.sampleInput(s,s.seats[i]!,rngs[i]!,'normal');if(a){id=s.seats[i]!;input=a;break;}}
  assert(input);s=reduce(s,{type:'input',playerId:id,input,now:s.phase.startedAt+1});
 }

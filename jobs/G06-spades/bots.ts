@@ -46,7 +46,7 @@ function play(v:PhoneView,rng:Rng,skill:BotSkill):number{
 }
 /** Public/own projection is the complete information boundary, including blind decisions. */
 export function fromView(v:PhoneView,rng:Rng,skill:BotSkill='normal'):Input|null{
- if(!v.inputType)return null;if(v.inputType==='next')return {type:'next'};
+ if(!v.inputType||v.inputType==='next')return null;
  if(v.inputType==='blind'){
   const own=v.sides.find(side=>side.ids.includes(v.me.id))!,top=Math.max(...v.sides.map(s=>s.score));
   const take=v.blindEligible&&(skill==='easy'?rng.chance(.03):skill==='sharp'&&top>=400&&top-own.score>=200&&rng.chance(.05));

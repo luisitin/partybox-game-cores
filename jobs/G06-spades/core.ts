@@ -46,7 +46,7 @@ const member=(s:State,id:string)=>typeof id==='string'&&Object.hasOwn(s.players,
 const eligible=(s:State,id:string)=>member(s,id)&&s.players[id]!.connected&&!s.left.includes(id);
 const actor=(s:State)=>s.phase.id==='exchange'?s.exchangePlan[s.exchangeStep]?.from??null:['blind','bid','play'].includes(s.phase.id)?s.seats[s.turn]!:null;
 export function blindEligible(s:State,id:string):boolean{const side=sideOf(s,id);return member(s,id)&&s.settings.blind&&s.scores[side]!<=Math.max(...s.scores.filter((_,i)=>i!==side))-s.settings.blindGap;}
-function enter(s:State,id:Phase,now:number):State{const startedAt=Math.max(now,s.phase.startedAt+1);return {...s,phase:{id,startedAt,deadline:id==='trick'?startedAt+2000:id==='hand'?startedAt+15000:null}};}
+function enter(s:State,id:Phase,now:number):State{const startedAt=Math.max(now,s.phase.startedAt+1);return {...s,phase:{id,startedAt,deadline:id==='trick'?startedAt+8000:id==='hand'?startedAt+(s.seats.length===3?90000:60000):null}};}
 function bidTurn(s:State,now:number):State{
  const id=s.seats[s.turn]!;return blindEligible(s,id)?enter(s,'blind',now):enter({...s,looked:[...s.looked,id]},'bid',now);
 }
@@ -161,6 +161,6 @@ export function results(s:State):GameResults|null{
  return {scores,ranking:s.seats.map(playerId=>({playerId,score:scores[playerId]!,rank:1+s.seats.filter(id=>scores[id]!>scores[playerId]!).length})),winnerIds:s.seats.filter(id=>scores[id]===high),awards:[],headline:s.doneReason==='host'?'Match ended by the host':s.doneReason==='mercy'?'A side reached −500':'500-point match complete'};
 }
 export const game:GameDefinition<State,Input,PublicView,PhoneView>={manifest,phases:['blind','bid','exchange','play','trick','hand','done'],inputSchema,init,reduce,tvView,controllerView,results,bot:{sampleInput(s,id,rng,skill){
- if(!eligible(s,id)||s.phase.paused||s.phase.id==='done'||actor(s)!==id&&!['trick','hand'].includes(s.phase.id))return null;
+ if(!eligible(s,id)||s.phase.paused||!['blind','bid','exchange','play'].includes(s.phase.id)||actor(s)!==id)return null;
  return fromView(controllerView(s,id),rng,skill);
 }}};

@@ -47,3 +47,6 @@ interactive decisions can wait;active bots must finish under extended
 simulation,while idle play remains available until VIP end. Catalog estimate
 is60 minutes,not a promise that a500-point game ends on a clock. Trick/review
 readability deadlines are data only;there are no game-logic timers or I/O.
+Completed tricks hold8s;score ledgers hold60s for partners/90s for three
+individuals. Bots wait for those engine timers. Human Next/VIP skip remains
+an explicit readiness control;pauses shift the displayed deadline.
