@@ -58,7 +58,7 @@ function awards(state: State): Award[] {
   const entry = (id: string, playerIds: string[], value: string): Award => {
     const a = AWARDS[id] as (typeof AWARDS)[string];
     const [title, description] = E ? a.es : a.en;
-    return { id, icon: a.icon, title, description, playerIds, value };
+    return { id, icon: a.icon, title, description, playerId: playerIds[0] ?? '', playerIds, value };
   };
   const add = (id: string, p: Pick | null, value: (v: number) => string) => {
     if (p) list.push(entry(id, p.ids, value(p.value)));
@@ -69,7 +69,7 @@ function awards(state: State): Award[] {
   add('lone-wolf', best(state, sum(state, 'unique'), 1, (v) => v > 0), (v) => count(E, v, ['unique word', 'unique words'], ['palabra única', 'palabras únicas']));
   add('great-minds', best(state, sum(state, 'shared'), 1, (v) => v > 0), (v) => count(E, v, ['shared word', 'shared words'], ['palabra repetida', 'palabras repetidas']));
   const avgFirst = (id: string) => {
-    const t = state.log.map((r) => r.firstMs[id]).filter((x): x is number => x !== undefined);
+    const t = state.log.map((r) => Object.hasOwn(r.firstMs, id) ? r.firstMs[id] : undefined).filter((x): x is number => x !== undefined);
     return t.length ? Math.round(t.reduce((a, b) => a + b, 0) / t.length) : null;
   };
   add('quick-draw', best(state, avgFirst, -1, () => true), (v) => `${E ? 'primera palabra en' : 'first word in'} ${seconds(E, v)} s`);
@@ -89,7 +89,7 @@ export function rankingOf(state: State): RankRow[] {
   let place = 0;
   return rows.map((r, k) => {
     if (k === 0 || r.score !== (rows[k - 1] as { score: number }).score) place = k + 1;
-    return { playerId: r.id, score: r.score, place };
+    return { playerId: r.id, score: r.score, rank: place, place };
   });
 }
 
@@ -119,7 +119,7 @@ export function results(state: State): Results {
   const placeLines: Record<string, string> = {};
   for (const id of state.order) {
     const u = state.log.reduce((s, r) => s + (r.unique[id] ?? 0), 0);
-    placeLines[id] = count(E, u, ['unique word', 'unique words'], ['palabra única', 'palabras únicas']);
+    Object.defineProperty(placeLines, id, { value: count(E, u, ['unique word', 'unique words'], ['palabra única', 'palabras únicas']), enumerable: true });
   }
   const topScore = ranking[0]?.score ?? 0;
   const winner = name(winnerIds[0] as string);
@@ -128,13 +128,14 @@ export function results(state: State): Results {
     : topScore === 0 ? 'Nobody scored. The cubes win.' : winnerIds.length > 1 ? 'A tie at the top!' : `${winner} out-spelled the room`;
   const note = missed ? `${E ? 'La mejor palabra que nadie encontró' : 'Best word nobody found'}: ${showWord(missed)}` : '';
   return {
+    scores: { ...state.scores },
     ranking,
     winnerIds,
     awards: awards(state),
     headline,
     ...(note ? { headlineNote: note } : {}),
     placeLines,
-    tags: [state.cfg.lang, `${state.cfg.size}x${state.cfg.size}`],
+    tags: Object.fromEntries(state.order.map(id => [id, [state.cfg.lang, `${state.cfg.size}x${state.cfg.size}`]])),
     detail: {
       grid: state.grid.slice(),
       size: state.cfg.size,

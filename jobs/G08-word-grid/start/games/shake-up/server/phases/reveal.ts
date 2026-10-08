@@ -35,7 +35,7 @@ function buildBeats(state: State): Beat[] {
 }
 
 export function enterReveal(state: State, now: number): State {
-  const pack = packFor(state.cfg.lang);
+  const pack = packFor(state.cfg.lang, state.cfg.dictionary);
   const taken = new Set<string>();
   for (const id of state.order) for (const e of state.words[id] ?? []) taken.add(e.w);
   const all = solve(state.grid, state.cfg.size, pack.words, state.cfg.minLen);
@@ -60,7 +60,7 @@ export function rulable(state: State): string[] {
 export function reduceReveal(state: State, ev: GameEvent<Input>, next: (s: State) => State): State {
   const advanceBeat = () => {
     const i = (state.phase.step ?? 0) + 1;
-    return i < state.beats.length ? nextStep(state, ev.now + beatMs(state, i)) : next(state);
+    return i < state.beats.length ? nextStep(state, ev.now + beatMs(state, i), s => ({ ...s, phase: { ...s.phase, step: i } })) : next(state);
   };
   if (isTimerFor(state, ev)) return advanceBeat();
   if (ev.type === 'vip' && ev.action === 'skip') return advanceBeat();

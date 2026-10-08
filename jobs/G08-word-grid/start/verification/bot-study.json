@@ -1,0 +1,280 @@
+{
+  "version": 1,
+  "method": "Actual original reducer and seeded bot entry, 1 Hz clock. Found share against the unbounded family-mode solver on 2000 independent boards (500 each language/size). Leagues are complete default three-round games with alternating seats; ties count as non-wins.",
+  "calibrationGrids": 2000,
+  "leagueGames": 4000,
+  "calibration": [
+    {
+      "lang": "en",
+      "grid": "4x4",
+      "grids": 500,
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "sharpBelowFullSolver": 500,
+      "levels": {
+        "easy": {
+          "found": {
+            "mean": 6.524,
+            "min": 0,
+            "median": 7,
+            "p95": 9,
+            "max": 9
+          },
+          "foundShare": {
+            "mean": 0.05863201272657561,
+            "min": 0,
+            "median": 0.05263157894736842,
+            "p95": 0.10714285714285714,
+            "max": 0.20689655172413793
+          }
+        },
+        "normal": {
+          "found": {
+            "mean": 13.762,
+            "min": 2,
+            "median": 14,
+            "p95": 18,
+            "max": 18
+          },
+          "foundShare": {
+            "mean": 0.13007519390124478,
+            "min": 0.02553191489361702,
+            "median": 0.11235955056179775,
+            "p95": 0.27450980392156865,
+            "max": 0.4827586206896552
+          }
+        },
+        "sharp": {
+          "found": {
+            "mean": 26.08,
+            "min": 3,
+            "median": 26,
+            "p95": 34,
+            "max": 34
+          },
+          "foundShare": {
+            "mean": 0.23850538596220042,
+            "min": 0.06516290726817042,
+            "median": 0.21296296296296297,
+            "p95": 0.42857142857142855,
+            "max": 0.6511627906976745
+          }
+        }
+      }
+    },
+    {
+      "lang": "en",
+      "grid": "5x5",
+      "grids": 500,
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "sharpBelowFullSolver": 500,
+      "levels": {
+        "easy": {
+          "found": {
+            "mean": 6.7,
+            "min": 1,
+            "median": 7,
+            "p95": 9,
+            "max": 9
+          },
+          "foundShare": {
+            "mean": 0.03128720406467605,
+            "min": 0.007575757575757576,
+            "median": 0.027149321266968326,
+            "p95": 0.058823529411764705,
+            "max": 0.14035087719298245
+          }
+        },
+        "normal": {
+          "found": {
+            "mean": 13.984,
+            "min": 7,
+            "median": 14,
+            "p95": 18,
+            "max": 18
+          },
+          "foundShare": {
+            "mean": 0.06720121531980205,
+            "min": 0.016793893129770993,
+            "median": 0.058823529411764705,
+            "p95": 0.14285714285714285,
+            "max": 0.2982456140350877
+          }
+        },
+        "sharp": {
+          "found": {
+            "mean": 26.45,
+            "min": 9,
+            "median": 27,
+            "p95": 33,
+            "max": 34
+          },
+          "foundShare": {
+            "mean": 0.12611723034395675,
+            "min": 0.030303030303030304,
+            "median": 0.1111111111111111,
+            "p95": 0.2601626016260163,
+            "max": 0.45454545454545453
+          }
+        }
+      }
+    },
+    {
+      "lang": "es",
+      "grid": "4x4",
+      "grids": 500,
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "sharpBelowFullSolver": 500,
+      "levels": {
+        "easy": {
+          "found": {
+            "mean": 6.746,
+            "min": 1,
+            "median": 7,
+            "p95": 9,
+            "max": 9
+          },
+          "foundShare": {
+            "mean": 0.0487464670802606,
+            "min": 0.010395010395010396,
+            "median": 0.04245283018867924,
+            "p95": 0.09803921568627451,
+            "max": 0.2857142857142857
+          }
+        },
+        "normal": {
+          "found": {
+            "mean": 13.426,
+            "min": 4,
+            "median": 13,
+            "p95": 18,
+            "max": 18
+          },
+          "foundShare": {
+            "mean": 0.0979885030930949,
+            "min": 0.01692047377326565,
+            "median": 0.08333333333333333,
+            "p95": 0.20930232558139536,
+            "max": 0.35294117647058826
+          }
+        },
+        "sharp": {
+          "found": {
+            "mean": 26.42,
+            "min": 10,
+            "median": 26,
+            "p95": 34,
+            "max": 34
+          },
+          "foundShare": {
+            "mean": 0.19351619882535698,
+            "min": 0.032,
+            "median": 0.16363636363636364,
+            "p95": 0.40816326530612246,
+            "max": 0.6785714285714286
+          }
+        }
+      }
+    },
+    {
+      "lang": "es",
+      "grid": "5x5",
+      "grids": 500,
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "sharpBelowFullSolver": 500,
+      "levels": {
+        "easy": {
+          "found": {
+            "mean": 6.918,
+            "min": 1,
+            "median": 7,
+            "p95": 9,
+            "max": 9
+          },
+          "foundShare": {
+            "mean": 0.02527801379300694,
+            "min": 0.005192107995846314,
+            "median": 0.022167487684729065,
+            "p95": 0.05042016806722689,
+            "max": 0.16666666666666666
+          }
+        },
+        "normal": {
+          "found": {
+            "mean": 13.672,
+            "min": 1,
+            "median": 14,
+            "p95": 18,
+            "max": 18
+          },
+          "foundShare": {
+            "mean": 0.051016611162879484,
+            "min": 0.011086474501108648,
+            "median": 0.0438871473354232,
+            "p95": 0.10606060606060606,
+            "max": 0.25925925925925924
+          }
+        },
+        "sharp": {
+          "found": {
+            "mean": 27.096,
+            "min": 3,
+            "median": 27,
+            "p95": 34,
+            "max": 34
+          },
+          "foundShare": {
+            "mean": 0.10117148732386362,
+            "min": 0.022172949002217297,
+            "median": 0.08740359897172237,
+            "p95": 0.20967741935483872,
+            "max": 0.42592592592592593
+          }
+        }
+      }
+    }
+  ],
+  "leagues": [
+    {
+      "better": "sharp",
+      "worse": "normal",
+      "games": 2000,
+      "rounds": 3,
+      "grid": "4x4",
+      "lang": "en",
+      "dictionary": "full",
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "seatAlternated": true,
+      "wins": 2000,
+      "losses": 0,
+      "ties": 0,
+      "winRate": 1,
+      "meanBetterScore": 77.287,
+      "meanWorseScore": 15.524,
+      "events": 273656
+    },
+    {
+      "better": "normal",
+      "worse": "easy",
+      "games": 2000,
+      "rounds": 3,
+      "grid": "4x4",
+      "lang": "en",
+      "dictionary": "full",
+      "clockSeconds": 180,
+      "cadenceHz": 1,
+      "seatAlternated": true,
+      "wins": 2000,
+      "losses": 0,
+      "ties": 0,
+      "winRate": 1,
+      "meanBetterScore": 51.752,
+      "meanWorseScore": 14.415,
+      "events": 158338
+    }
+  ]
+}

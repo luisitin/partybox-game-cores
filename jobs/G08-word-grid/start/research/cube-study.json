@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "method": "10,000 independently seeded uniform cube permutations/faces per candidate; distinct family-mode words; unbounded production solver. Same seeds pair candidates. Common=en SCOWL levels <=70 intersection. Quantiles nearest rank, population SD. First 2000 cases per candidate diff against sealed independent trie/frontier oracle.",
+  "referenceSha256": "4badf6088f45d388d247468aedd582d0ff9a9ee36d37a3037b2aba93cf4a19df",
+  "differentialCases": 10000,
+  "pathsChecked": 2383756,
+  "results": [
+    {
+      "candidate": "en-big-5",
+      "lang": "en",
+      "size": 5,
+      "grids": 10000,
+      "seedRange": [
+        1,
+        10000
+      ],
+      "dictionaryWords": 274711,
+      "blockedWords": 172,
+      "full": {
+        "mean": 255.2593,
+        "standardDeviation": 112.722033,
+        "min": 15,
+        "p05": 101,
+        "median": 240,
+        "p95": 467,
+        "max": 806,
+        "below60": 50,
+        "shareBelow60": 0.005
+      },
+      "commonDictionaryWords": 105840,
+      "common": {
+        "mean": 136.3969,
+        "standardDeviation": 61.566749,
+        "min": 8,
+        "p05": 53,
+        "median": 128,
+        "p95": 252,
+        "max": 454,
+        "below60": 788,
+        "shareBelow60": 0.0788
+      },
+      "q": {
+        "gridsWithQu": 1678,
+        "shareWithQu": 0.1678,
+        "wordsOnQuGrids": {
+          "mean": 9.650179,
+          "standardDeviation": 9.146525,
+          "min": 0,
+          "p05": 0,
+          "median": 7,
+          "p95": 27,
+          "max": 64,
+          "below60": 1677,
+          "shareBelow60": 0.999404
+        },
+        "invalidQuPaths": 0
+      },
+      "differentialCases": 2000
+    },
+    {
+      "candidate": "en-master-5",
+      "lang": "en",
+      "size": 5,
+      "grids": 10000,
+      "seedRange": [
+        1,
+        10000
+      ],
+      "dictionaryWords": 274711,
+      "blockedWords": 172,
+      "full": {
+        "mean": 246.3785,
+        "standardDeviation": 110.345015,
+        "min": 10,
+        "p05": 96,
+        "median": 231,
+        "p95": 452,
+        "max": 865,
+        "below60": 67,
+        "shareBelow60": 0.0067
+      },
+      "commonDictionaryWords": 105840,
+      "common": {
+        "mean": 131.8427,
+        "standardDeviation": 60.316511,
+        "min": 6,
+        "p05": 51,
+        "median": 123,
+        "p95": 244,
+        "max": 493,
+        "below60": 867,
+        "shareBelow60": 0.0867
+      },
+      "q": {
+        "gridsWithQu": 1678,
+        "shareWithQu": 0.1678,
+        "wordsOnQuGrids": {
+          "mean": 9.087008,
+          "standardDeviation": 9.013739,
+          "min": 0,
+          "p05": 0,
+          "median": 6,
+          "p95": 26,
+          "max": 76,
+          "below60": 1675,
+          "shareBelow60": 0.998212
+        },
+        "invalidQuPaths": 0
+      },
+      "differentialCases": 2000
+    },
+    {
+      "candidate": "en-owner-4",
+      "lang": "en",
+      "size": 4,
+      "grids": 10000,
+      "seedRange": [
+        1,
+        10000
+      ],
+      "dictionaryWords": 274711,
+      "blockedWords": 172,
+      "full": {
+        "mean": 134.54,
+        "standardDeviation": 67.563798,
+        "min": 0,
+        "p05": 44,
+        "median": 124,
+        "p95": 261,
+        "max": 503,
+        "below60": 1073,
+        "shareBelow60": 0.1073
+      },
+      "commonDictionaryWords": 105840,
+      "common": {
+        "mean": 75.4819,
+        "standardDeviation": 38.079998,
+        "min": 0,
+        "p05": 24,
+        "median": 69,
+        "p95": 146,
+        "max": 291,
+        "below60": 3845,
+        "shareBelow60": 0.3845
+      },
+      "q": {
+        "gridsWithQu": 1590,
+        "shareWithQu": 0.159,
+        "wordsOnQuGrids": {
+          "mean": 4.990566,
+          "standardDeviation": 5.304849,
+          "min": 0,
+          "p05": 0,
+          "median": 3,
+          "p95": 16,
+          "max": 38,
+          "below60": 1590,
+          "shareBelow60": 1
+        },
+        "invalidQuPaths": 0
+      },
+      "differentialCases": 2000
+    },
+    {
+      "candidate": "es-owner-4",
+      "lang": "es",
+      "size": 4,
+      "grids": 10000,
+      "seedRange": [
+        1,
+        10000
+      ],
+      "dictionaryWords": 636513,
+      "blockedWords": 50,
+      "full": {
+        "mean": 183.9479,
+        "standardDeviation": 101.296539,
+        "min": 2,
+        "p05": 55,
+        "median": 165,
+        "p95": 377,
+        "max": 872,
+        "below60": 610,
+        "shareBelow60": 0.061
+      },
+      "q": {
+        "gridsWithQu": 1644,
+        "shareWithQu": 0.1644,
+        "wordsOnQuGrids": {
+          "mean": 10.966545,
+          "standardDeviation": 14.946644,
+          "min": 0,
+          "p05": 0,
+          "median": 5,
+          "p95": 41,
+          "max": 102,
+          "below60": 1622,
+          "shareBelow60": 0.986618
+        },
+        "invalidQuPaths": 0
+      },
+      "differentialCases": 2000
+    },
+    {
+      "candidate": "es-owner-5",
+      "lang": "es",
+      "size": 5,
+      "grids": 10000,
+      "seedRange": [
+        1,
+        10000
+      ],
+      "dictionaryWords": 636513,
+      "blockedWords": 50,
+      "full": {
+        "mean": 368.8508,
+        "standardDeviation": 196.259464,
+        "min": 27,
+        "p05": 121,
+        "median": 333,
+        "p95": 738,
+        "max": 1822,
+        "below60": 50,
+        "shareBelow60": 0.005
+      },
+      "q": {
+        "gridsWithQu": 1657,
+        "shareWithQu": 0.1657,
+        "wordsOnQuGrids": {
+          "mean": 18.894991,
+          "standardDeviation": 24.609953,
+          "min": 0,
+          "p05": 0,
+          "median": 11,
+          "p95": 68,
+          "max": 209,
+          "below60": 1536,
+          "shareBelow60": 0.926976
+        },
+        "invalidQuPaths": 0
+      },
+      "differentialCases": 2000
+    }
+  ]
+}

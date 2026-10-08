@@ -1,0 +1,11 @@
+import { writeFileSync } from 'node:fs';
+import { game } from '../games/shake-up/server';
+import { GRID, STRANDED, fire, input, room, until } from '../games/shake-up/__tests__/helpers';
+const folder=new URL('../games/shake-up/fixtures/',import.meta.url);
+const write=(name:string,data:unknown)=>writeFileSync(new URL(`${name}.json`,folder),JSON.stringify(data,null,2)+'\n');
+let s=room(6,{rounds:3},17);write('shake',s);s=fire(s);s={...s,grid:GRID.slice()};
+for(const [id,path] of [['p1',STRANDED],['p2',[1,2,3,7,6]],['p3',[8,9,10]],['p4',[1,5,4]]] as const)s=game.reduce(s,input(id,{t:'word',path:[...path]},s.phase.startedAt+1500));
+write('hunt',s);s=fire(s);write('reveal',s);
+let last=s;
+while(s.phase.id==='reveal'){last=s;s=fire(s);}write('reveal-last',last);write('tally',s);write('done',until(s,'done'));
+console.log('six owner fixtures regenerated through the actual contract reducer');

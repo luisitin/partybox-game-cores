@@ -1,0 +1,1009 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://partybox.invalid/shake-up-data.schema.json",
+  "definitions": {
+    "words": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z\u00f1]{3,26}$"
+      },
+      "uniqueItems": true
+    },
+    "bots": {
+      "type": "object",
+      "required": [
+        "easy",
+        "normal",
+        "sharp"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "easy": {
+          "$ref": "#/definitions/words"
+        },
+        "normal": {
+          "$ref": "#/definitions/words"
+        },
+        "sharp": {
+          "$ref": "#/definitions/words"
+        }
+      }
+    },
+    "cube": {
+      "type": "object",
+      "required": [
+        "id",
+        "faces"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "faces": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": {
+            "type": "string",
+            "pattern": "^(Qu|[A-Z\u00d1])$"
+          }
+        }
+      }
+    },
+    "cubes": {
+      "type": "object",
+      "required": [
+        "lang",
+        "source",
+        "sets"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "lang": {
+          "enum": [
+            "en",
+            "es"
+          ]
+        },
+        "source": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sets": {
+          "type": "object",
+          "required": [
+            "4x4",
+            "5x5"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "4x4": {
+              "type": "array",
+              "minItems": 16,
+              "maxItems": 16,
+              "items": {
+                "$ref": "#/definitions/cube"
+              }
+            },
+            "5x5": {
+              "type": "array",
+              "minItems": 25,
+              "maxItems": 25,
+              "items": {
+                "$ref": "#/definitions/cube"
+              }
+            }
+          }
+        }
+      }
+    },
+    "translations": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "original": {
+      "type": "object",
+      "minProperties": 116,
+      "maxProperties": 116,
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{64}$"
+      }
+    },
+    "phase": {
+      "type": "object",
+      "required": [
+        "id",
+        "startedAt",
+        "deadline"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "shake",
+            "hunt",
+            "reveal",
+            "tally",
+            "done"
+          ]
+        },
+        "startedAt": {
+          "type": "number"
+        },
+        "deadline": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "paused": {
+          "type": "object",
+          "required": [
+            "at"
+          ],
+          "properties": {
+            "at": {
+              "type": "number"
+            }
+          }
+        }
+      }
+    },
+    "fixture": {
+      "type": "object",
+      "required": [
+        "phase",
+        "rng",
+        "players",
+        "cfg",
+        "round",
+        "order",
+        "grid",
+        "botPlans",
+        "scores",
+        "log",
+        "words",
+        "submissionBytes"
+      ],
+      "properties": {
+        "phase": {
+          "$ref": "#/definitions/phase"
+        },
+        "rng": {
+          "type": "object",
+          "required": [
+            "seed",
+            "step"
+          ],
+          "properties": {
+            "seed": {
+              "type": "integer"
+            },
+            "step": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "grid": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 25,
+          "items": {
+            "type": "string",
+            "pattern": "^(qu|[a-z\u00f1])$"
+          }
+        },
+        "order": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "submissionBytes": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 98304
+        },
+        "players": {
+          "type": "object",
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "words": {
+          "type": "object"
+        },
+        "scores": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "botPlans": {
+          "type": "object",
+          "required": [
+            "easy",
+            "normal",
+            "sharp"
+          ]
+        },
+        "round": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "log": {
+          "type": "array",
+          "maxItems": 5
+        },
+        "cfg": {
+          "type": "object",
+          "required": [
+            "rounds",
+            "huntMs",
+            "size",
+            "minLen",
+            "spicy",
+            "lang",
+            "dictionary",
+            "reader",
+            "mode"
+          ],
+          "properties": {
+            "rounds": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 5
+            },
+            "size": {
+              "enum": [
+                4,
+                5
+              ]
+            },
+            "lang": {
+              "enum": [
+                "en",
+                "es"
+              ]
+            },
+            "dictionary": {
+              "enum": [
+                "full",
+                "common"
+              ]
+            },
+            "spicy": {
+              "type": "boolean"
+            },
+            "huntMs": {
+              "enum": [
+                90000,
+                120000,
+                180000,
+                240000
+              ]
+            }
+          }
+        }
+      }
+    },
+    "asset": {
+      "type": "object",
+      "required": [
+        "name",
+        "group",
+        "title",
+        "description",
+        "source",
+        "forms",
+        "licence",
+        "usedBy"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "group": {
+          "const": "shake-up"
+        },
+        "licence": {
+          "const": "own work"
+        },
+        "forms": {
+          "type": "object",
+          "required": [
+            "film",
+            "station",
+            "game"
+          ],
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "usedBy": {
+          "type": "array",
+          "items": {
+            "const": "shake-up"
+          }
+        }
+      }
+    },
+    "candidates": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "lang",
+          "size",
+          "origin",
+          "faces"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "lang": {
+            "enum": [
+              "en",
+              "es"
+            ]
+          },
+          "size": {
+            "enum": [
+              4,
+              5
+            ]
+          },
+          "origin": {
+            "type": "string"
+          },
+          "faces": {
+            "type": "array",
+            "minItems": 16,
+            "maxItems": 25,
+            "items": {
+              "type": "array",
+              "minItems": 6,
+              "maxItems": 6,
+              "items": {
+                "type": "string",
+                "pattern": "^(qu|[a-z\u00f1])$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "receipts": {
+      "type": "object",
+      "required": [
+        "sources"
+      ],
+      "properties": {
+        "sources": {
+          "type": "array",
+          "minItems": 10,
+          "items": {
+            "type": "object",
+            "required": [
+              "repo",
+              "path",
+              "commit",
+              "url",
+              "readUtc",
+              "bytes",
+              "sha256",
+              "use"
+            ],
+            "properties": {
+              "commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "bytes": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https://"
+              }
+            }
+          }
+        }
+      }
+    },
+    "report": {
+      "type": "object",
+      "required": [
+        "version"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        }
+      }
+    },
+    "manifest": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "minPlayers",
+        "maxPlayers",
+        "version",
+        "settings"
+      ],
+      "properties": {
+        "id": {
+          "const": "shake-up"
+        },
+        "minPlayers": {
+          "const": 1
+        },
+        "maxPlayers": {
+          "const": 16
+        },
+        "settings": {
+          "type": "array"
+        },
+        "name": {
+          "const": "Shake Up"
+        }
+      }
+    },
+    "study": {
+      "type": "object",
+      "required": [
+        "version",
+        "differentialCases",
+        "pathsChecked",
+        "referenceSha256",
+        "results"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "differentialCases": {
+          "const": 10000
+        },
+        "pathsChecked": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "referenceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "results": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "candidate",
+              "lang",
+              "size",
+              "grids",
+              "full",
+              "q",
+              "differentialCases"
+            ],
+            "properties": {
+              "grids": {
+                "const": 10000
+              },
+              "differentialCases": {
+                "const": 2000
+              },
+              "q": {
+                "type": "object",
+                "required": [
+                  "invalidQuPaths"
+                ],
+                "properties": {
+                  "invalidQuPaths": {
+                    "const": 0
+                  }
+                }
+              },
+              "full": {
+                "type": "object",
+                "required": [
+                  "mean",
+                  "standardDeviation",
+                  "min",
+                  "p05",
+                  "median",
+                  "p95",
+                  "max",
+                  "below60",
+                  "shareBelow60"
+                ],
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "required": [
+        "version",
+        "calibrationGrids",
+        "leagueGames",
+        "calibration",
+        "leagues"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "calibrationGrids": {
+          "const": 2000
+        },
+        "leagueGames": {
+          "const": 4000
+        },
+        "calibration": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "lang",
+              "grid",
+              "grids",
+              "clockSeconds",
+              "cadenceHz",
+              "sharpBelowFullSolver",
+              "levels"
+            ],
+            "properties": {
+              "grids": {
+                "const": 500
+              },
+              "clockSeconds": {
+                "const": 180
+              },
+              "levels": {
+                "type": "object",
+                "required": [
+                  "easy",
+                  "normal",
+                  "sharp"
+                ]
+              }
+            }
+          }
+        },
+        "leagues": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "games",
+              "wins",
+              "losses",
+              "ties",
+              "winRate"
+            ],
+            "properties": {
+              "games": {
+                "const": 2000
+              },
+              "wins": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "losses": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "ties": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "winRate": {
+                "type": "number",
+                "minimum": 0.6,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "seeded": {
+      "type": "object",
+      "required": [
+        "version",
+        "propertySeeds",
+        "requiredSeeds",
+        "randomSeeds",
+        "propertyEvents",
+        "peakEventBytes",
+        "rosterGames",
+        "rosters",
+        "idleGames"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "propertySeeds": {
+          "const": 1003
+        },
+        "requiredSeeds": {
+          "const": [
+            1,
+            2,
+            3
+          ]
+        },
+        "randomSeeds": {
+          "type": "array",
+          "minItems": 1000,
+          "maxItems": 1000,
+          "items": {
+            "type": "integer",
+            "minimum": 4
+          }
+        },
+        "propertyEvents": {
+          "type": "integer",
+          "minimum": 1000
+        },
+        "peakEventBytes": {
+          "type": "integer",
+          "maximum": 262144
+        },
+        "rosterGames": {
+          "const": 16000
+        },
+        "rosters": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "required": [
+              "players",
+              "games",
+              "allFinished",
+              "maxMs",
+              "events"
+            ],
+            "properties": {
+              "players": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16
+              },
+              "games": {
+                "const": 1000
+              },
+              "allFinished": {
+                "const": true
+              },
+              "events": {
+                "type": "integer",
+                "minimum": 1000
+              },
+              "maxMs": {
+                "type": "number",
+                "maximum": 2520000
+              }
+            }
+          }
+        },
+        "idleGames": {
+          "const": 4
+        }
+      }
+    },
+    "mutations": {
+      "type": "object",
+      "required": [
+        "version",
+        "mutations",
+        "killed",
+        "minimumRequired",
+        "results"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "mutations": {
+          "const": 25
+        },
+        "killed": {
+          "type": "integer",
+          "minimum": 24,
+          "maximum": 25
+        },
+        "minimumRequired": {
+          "const": 24
+        },
+        "results": {
+          "type": "array",
+          "minItems": 25,
+          "maxItems": 25,
+          "items": {
+            "type": "object",
+            "required": [
+              "number",
+              "name",
+              "file",
+              "killed",
+              "failedAssertions"
+            ],
+            "properties": {
+              "number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 25
+              },
+              "killed": {
+                "type": "boolean"
+              },
+              "failedAssertions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rebuild": {
+      "type": "object",
+      "required": [
+        "version",
+        "runs",
+        "byteIdentical",
+        "matchesCommitted",
+        "files"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "runs": {
+          "const": 2
+        },
+        "byteIdentical": {
+          "const": true
+        },
+        "matchesCommitted": {
+          "const": true
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 7,
+          "maxProperties": 7,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "spots": {
+      "type": "object",
+      "required": [
+        "version",
+        "rows"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 30,
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "required": [
+              "number",
+              "candidate",
+              "row",
+              "faces",
+              "primary",
+              "second",
+              "result"
+            ],
+            "properties": {
+              "result": {
+                "const": "match"
+              },
+              "faces": {
+                "type": "string",
+                "pattern": "^[A-Z]{6}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "fixtureRebuild": {
+      "type": "object",
+      "required": [
+        "version",
+        "runs",
+        "byteIdentical",
+        "matchesCommitted",
+        "files"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "runs": {
+          "const": 2
+        },
+        "byteIdentical": {
+          "const": true
+        },
+        "matchesCommitted": {
+          "const": true
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 6,
+          "maxProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "browser": {
+      "type": "object",
+      "required": [
+        "version",
+        "fileOpened",
+        "urlMode",
+        "desktop",
+        "phone",
+        "gates",
+        "outgoingRequests",
+        "pageErrors",
+        "videoBytes"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "fileOpened": {
+          "type": "boolean"
+        },
+        "nativeOnly": {
+          "type": "boolean"
+        },
+        "desktop": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "phone": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "gates": {
+          "type": "object",
+          "required": [
+            "nativeKeyboard",
+            "nativeDrag",
+            "nativeCancel",
+            "privateHandoff",
+            "otherPhonePrivate",
+            "pauseResume",
+            "reducedMotion",
+            "allPhasesToResults"
+          ],
+          "properties": {
+            "nativeKeyboard": {
+              "const": true
+            },
+            "nativeDrag": {
+              "const": true
+            },
+            "nativeCancel": {
+              "const": true
+            },
+            "privateHandoff": {
+              "const": true
+            },
+            "otherPhonePrivate": {
+              "const": true
+            },
+            "pauseResume": {
+              "const": true
+            },
+            "reducedMotion": {
+              "const": true
+            },
+            "allPhasesToResults": {
+              "const": true
+            },
+            "longNamesFit": {
+              "const": true
+            },
+            "fullSixteenSeatHotseat": {
+              "const": true
+            },
+            "sixteenTiedWinnersFit": {
+              "const": true
+            },
+            "cancelRestartKeepsProgress": {
+              "const": true
+            },
+            "newGameFreshSeed": {
+              "const": true
+            },
+            "handoffAndGridFocus": {
+              "const": true
+            },
+            "spanishHostControls": {
+              "const": true
+            },
+            "botObserverPublicOnly": {
+              "const": true
+            },
+            "observerFullFinalAwards": {
+              "const": true
+            }
+          }
+        },
+        "outgoingRequests": {
+          "const": 0
+        },
+        "pageErrors": {
+          "const": 0
+        },
+        "videoBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10485760
+        }
+      }
+    }
+  }
+}

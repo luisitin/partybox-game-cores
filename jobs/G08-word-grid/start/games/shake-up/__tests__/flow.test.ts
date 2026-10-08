@@ -54,15 +54,16 @@ describe('phase flow', () => {
     s = game.reduce(s, input('p1', { t: 'word', path: STRANDED }, t));
     expect(s.words.p1?.map((e) => e.w)).toEqual(['stranded']);
   });
-  it('a late joiner plays at once with score 0', () => {
+  it('root events ignore unknown identities; a known player reconnects with their words and score', () => {
     let s = withGrid(until(room(2), 'hunt'));
     const t = s.phase.startedAt + 2000;
-    s = game.reduce(s, { type: 'player', playerId: 'late', name: 'Zoe', connected: true, now: t });
-    expect(s.order).toContain('late');
-    expect(s.scores.late).toBe(0);
-    s = game.reduce(s, input('late', { t: 'word', path: STRANDED }, t + 1));
-    expect(s.words.late?.length).toBe(1);
-    expect(game.controllerView(s, 'late').grid).toHaveLength(16);
+    expect(game.reduce(s, { type: 'player', playerId: 'late', connected: true, now: t })).toBe(s);
+    s = game.reduce(s, input('p2', { t: 'word', path: STRANDED }, t));
+    s = game.reduce(s, { type: 'player', playerId: 'p2', connected: false, now: t + 1 });
+    s = game.reduce(s, { type: 'player', playerId: 'p2', connected: true, now: t + 2 });
+    expect(s.words.p2?.length).toBe(1);
+    expect(s.players.p2?.name).toBe('Ben');
+    expect(s.players.p2?.connected).toBe(true);
   });
   it('pause freezes the clock and word times exclude the pause', () => {
     let s = withGrid(until(room(2), 'hunt'));
@@ -81,7 +82,7 @@ describe('phase flow', () => {
       const s = until(room(3), phase);
       const e = game.reduce(s, { type: 'vip', action: 'end', now: s.phase.startedAt + 5 });
       expect(e.phase.id).toBe('done');
-      expect(game.results(e).ranking).toHaveLength(3);
+      expect(game.results(e)!.ranking).toHaveLength(3);
     }
   });
   it('invalid inputs change nothing', () => {

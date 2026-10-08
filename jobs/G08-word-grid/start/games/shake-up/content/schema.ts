@@ -11,7 +11,7 @@ export const cubePackSchema = z.object({
   sets: z.object({ '4x4': z.array(cubeSchema).length(16), '5x5': z.array(cubeSchema).length(25) }),
 });
 
-const word = z.string().regex(/^[a-zñ]{3,17}$/);
+const word = z.string().regex(/^[a-zñ]{3,26}$/);
 /** Sorted by code unit, no duplicates (checked in the content test, too slow for zod at 600k). */
 export const wordListSchema = z.array(word);
 

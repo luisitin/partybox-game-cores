@@ -74,7 +74,7 @@ describe('results text follows the room language', () => {
     s = say(s, 'p1', long.path);
     s = say(s, 'p1', other.path);
     s = say(s, 'p2', other.path);
-    const r = game.results(until(fire(s), 'done'));
+    const r = game.results(until(fire(s), 'done'))!;
     expect(r.headline).toBe('Ana dominó las letras');
     if (r.headlineNote) expect(r.headlineNote).toMatch(/^La mejor palabra que nadie encontró: [A-ZÑ]+$/u);
     expect(r.placeLines).toEqual({ p1: '1 palabra única', p2: '0 palabras únicas' });
@@ -85,7 +85,7 @@ describe('results text follows the room language', () => {
     expect(text).not.toMatch(/\b(word|words|letters|unique|shared|first|ruled|in one round)\b/);
   });
   it('an idle Spanish game still has three Spanish awards', () => {
-    const r = game.results(until(room(3, { rounds: 1 }, 1, { lang: 'es' }), 'done'));
+    const r = game.results(until(room(3, { rounds: 1 }, 1, { lang: 'es' }), 'done'))!;
     expect(r.headline).toBe('Nadie anotó. Ganan los cubos.');
     expect(r.awards.length).toBeGreaterThanOrEqual(3);
     expect(r.awards.map((a) => a.title)).toContain('Gran ronda');
@@ -94,7 +94,7 @@ describe('results text follows the room language', () => {
   it('English stays English, with "1 unique word" singular', () => {
     let s = hunt(2, { rounds: 1 });
     s = say(s, 'p1', STRANDED);
-    const r = game.results(until(fire(s), 'done'));
+    const r = game.results(until(fire(s), 'done'))!;
     expect(r.headline).toBe('Ana out-spelled the room');
     expect(r.placeLines).toEqual({ p1: '1 unique word', p2: '0 unique words' });
     expect(r.awards.find((a) => a.id === 'lone-wolf')?.value).toBe('1 unique word');

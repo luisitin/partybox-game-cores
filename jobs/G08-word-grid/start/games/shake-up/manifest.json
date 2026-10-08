@@ -9,29 +9,55 @@
     "Words need 3+ letters and each cube only once. Longer words score more.",
     "If someone else found your word too, it scores zero. Find the rare ones!"
   ],
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minPlayers": 1,
   "maxPlayers": 16,
   "estimatedMinutes": 14,
-  "tags": ["words"],
-  "presence": { "needs": "anywhere" },
+  "tags": [
+    "words"
+  ],
+  "presence": {
+    "needs": "anywhere"
+  },
   "addedOn": "2026-10-05",
   "supportsBots": true,
-  "contentLangs": ["en", "es"],
+  "contentLangs": [
+    "en",
+    "es"
+  ],
   "saveable": false,
-  "playerCounts": { "best": [3, 8] },
   "settings": [
-    { "key": "rounds", "type": "number", "label": "Rounds", "default": 3, "min": 1, "max": 5, "step": 1 },
+    {
+      "key": "rounds",
+      "type": "number",
+      "label": "Rounds",
+      "default": 3,
+      "min": 1,
+      "max": 5,
+      "step": 1
+    },
     {
       "key": "huntSeconds",
       "type": "select",
       "label": "Hunt time",
       "default": "180",
       "options": [
-        { "value": "90", "label": "1:30" },
-        { "value": "120", "label": "2:00" },
-        { "value": "180", "label": "3:00" },
-        { "value": "240", "label": "4:00" }
+        {
+          "value": "90",
+          "label": "1:30"
+        },
+        {
+          "value": "120",
+          "label": "2:00"
+        },
+        {
+          "value": "180",
+          "label": "3:00"
+        },
+        {
+          "value": "240",
+          "label": "4:00"
+        }
       ]
     },
     {
@@ -40,8 +66,14 @@
       "label": "Grid",
       "default": "4x4",
       "options": [
-        { "value": "4x4", "label": "4×4 (words of 3+ letters)" },
-        { "value": "5x5", "label": "5×5 (words of 4+ letters)" }
+        {
+          "value": "4x4",
+          "label": "4×4 (words of 3+ letters)"
+        },
+        {
+          "value": "5x5",
+          "label": "5×5 (words of 4+ letters)"
+        }
       ]
     },
     {
@@ -50,10 +82,46 @@
       "label": "Reader voice",
       "default": "host-hype",
       "options": [
-        { "value": "host-hype", "label": "Hype host" },
-        { "value": "none", "label": "No voice" }
+        {
+          "value": "host-hype",
+          "label": "Hype host",
+          "lang": "en"
+        },
+        {
+          "value": "dora",
+          "label": "Dora (Spanish)",
+          "lang": "es"
+        },
+        {
+          "value": "none",
+          "label": "No voice"
+        }
       ]
     },
-    { "key": "spicy", "type": "boolean", "label": "Spicy words", "default": false, "help": "Off: rude words are refused and never read aloud." }
+    {
+      "key": "spicy",
+      "type": "boolean",
+      "label": "Spicy words",
+      "default": false,
+      "help": "Off: rude words are refused and never read aloud."
+    },
+    {
+      "key": "dictionary",
+      "label": "English dictionary",
+      "description": "Common uses the smaller SCOWL 70 intersection; Full accepts more obscure words. Spanish uses its full dictionary.",
+      "type": "select",
+      "default": "full",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full"
+        },
+        {
+          "value": "common",
+          "label": "Common",
+          "lang": "en"
+        }
+      ]
+    }
   ]
 }

@@ -1,0 +1,47 @@
+name: G08 Shake Up
+on:
+  pull_request:
+    paths:
+      - 'jobs/G08-word-grid/**'
+      - '.github/workflows/G08.yml'
+      - 'contract/**'
+  push:
+    branches: ['job/G08-*']
+    paths:
+      - 'jobs/G08-word-grid/**'
+      - '.github/workflows/G08.yml'
+permissions:
+  contents: read
+concurrency:
+  group: G08-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G08-word-grid
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: jobs/G08-word-grid/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: Install capture tool
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G08-check-evidence
+          path: |
+            jobs/G08-word-grid/.tmp/visual/
+            jobs/G08-word-grid/.tmp/check-*.log
+            jobs/G08-word-grid/.tmp/mutations/*.json
