@@ -29,3 +29,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 20. Re-read G01/five weaknesses in REVIEW;malformed events7/9 throws→0/9,30 focused regressions/25 mutations pass;reliability gain,no-gain streak0.
 21. Frozen pre-guard compatibility:1,003 seeded games/378,899 every-event state comparisons/0 state or result mismatches;no player-visible gain,no-gain streak1.
 22. Seeded JSON envelopes:234,936 probes/3,012 deep-frozen states/1,003 seeds/1,003 paused states/3 phases;0 throws,mutations or identity failures;no player-visible gain,no-gain streak2.
+23. Fresh browser:privacy/full bot+mixed-idle/offline/reduced-motion PASS;300 frames each,TV60.0036fps/phone59.6054fps,p9516.7/16.8ms;new VP9 capture decodes under10MB;no player-visible gain,no-gain streak3.

@@ -115,3 +115,7 @@ Re-read root G01 and selected rules. Five weaknesses ranked:unproven valid-event
 ## Round22
 
 Re-read G01. Five weaknesses ranked:malformed-envelope coverage is limited to nine probes;invalid events on paused states need breadth;finite64-world sampling;older browser/performance evidence;physical-phone evidence unavailable. Add deterministic plain-JSON invalid envelopes across1,003 seed states plus their next/paused states and all3 phase fixtures. Deep-freeze states and require identical identity/JSON after each rejected event.234,936 probes pass with0 throws/mutations/identity failures;no new gameplay defect,no-gain streak2.
+
+## Round23
+
+Re-read G01 and selected rules. Five weaknesses ranked:browser evidence predates the core guard;managed file navigation cannot be verified directly;physical phone unavailable;finite64-world hidden-hand sampling;coalition model still has rejected alternatives. Run the existing browser regression unmodified on new standalone bytes,with a new captured milestone. Hot-seat/private hands,complete bot/mixed-idle matches,zero requests/errors,reduced motion,and300-frame TV/4×CPU phone measurements pass.60.0036/59.6054fps,p95 16.7/16.8ms;VP9 clip decodes. No new player-visible gain;streak3,stop met. Final full pipeline/current-head CI remains required.

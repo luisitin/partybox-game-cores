@@ -10,8 +10,11 @@ Exactc19e580 hosted run37755885752 SUCCESS2026-10-08T09:35:55Z runs
 the entire npm test. Real reliability gain resets the old stop.
 R21 1,003 games/378,899 valid transitions against exact949c2e3:0 differences.
 R22 malformed JSON sweep234,936 probes/0 failures;no-gain streak2.
-Remaining:R23 fresh browser;
-then full local npm test and final-current-head hosted CI before DONE.
+R23 browser PASS60.0036/59.6054fps,p9516.7/16.8ms;no-gain streak3.
+Stop met. Remaining:full local npm test and final-current-head hosted CI
+before DONE. Run `G01_CAPTURE_PATH=media/milestone-13-total-events.webm
+npm test > /tmp/G01-total-npm-test.log 2>&1` after installer passes.
+If resuming,check the log/process before restarting a running pipeline.
 Commands/report counts and five weaknesses are in VERIFY/REVIEW/LOOP.
 
 Run browser with G01_CAPTURE_PATH=media/milestone-13-total-events.webm;
