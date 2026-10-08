@@ -78,6 +78,7 @@ function renderBoard(): void {
 }
 function render(): void {
   if (!state) return; const s = state; const tv = game.tvView(s); const id = s.order[s.seat] as string;
+  const focusedCrate = (document.activeElement as HTMLElement | null)?.dataset?.select;
   $('round-label').textContent = `Round ${s.round} of ${s.settings.rounds} · difficulty ${s.settings.difficulty}`;
   $('turn-label').textContent = s.phase.id === 'pack' ? `${s.players[id]!.name}'s hold` : s.phase.id === 'reveal' ? 'Cargo inspection' : 'Voyage complete';
   $('scores').innerHTML = tv.players.map(p => `<span class="score-chip ${p.id === id && s.phase.id === 'pack' ? 'active' : ''}"><span>${escapeHtml(p.name)}</span><b>${p.score?.toFixed(2) ?? '0.00'}</b></span>`).join('');
@@ -97,12 +98,19 @@ function render(): void {
   $('result').hidden = !results;
   if (results) $('result').textContent = `${results.winnerIds.map(w => s.players[w]!.name).join(' & ')} ${results.winnerIds.length === 1 ? 'wins' : 'tie'}! ${results.ranking.map(row => `${s.players[row.playerId]!.name}: ${row.score.toFixed(2)}`).join(' · ')}`;
   renderBoard(); updateClock();
+  if (focusedCrate && !handoff) document.querySelector<HTMLButtonElement>(`[data-select="${CSS.escape(focusedCrate)}"]`)?.focus({ preventScroll: true });
+}
+function announceSelection(): void {
+  if (!state || !selected) { $('message').textContent = 'Crate deselected.'; return; }
+  const p = selectedPlacement() as Placement;
+  const fits = evaluateLayout(state.level, [...own().filter(a => a.crateId !== selected), p]).valid;
+  $('message').textContent = `Crate ${selected.split('-')[1]}: row ${y + 1}, column ${x + 1}, ${rotation % 4 * 90} degrees${rotation >= 4 ? ', mirrored' : ''}. ${fits ? 'Fits here.' : 'Does not fit here.'}`;
 }
 function selectCrate(id: string): void {
   if (!canEdit() || !state) return;
   if (selected === id) { render(); return; }
   selected = id; const previous = own().find(p => p.crateId === id); rotation = previous?.rotation ?? 0; x = previous?.x ?? 0; y = previous?.y ?? 0;
-  render();
+  render(); announceSelection();
 }
 function movePointer(event: PointerEvent): void {
   const svg = document.getElementById('hold-svg') as unknown as SVGSVGElement | null;
@@ -145,14 +153,14 @@ $('start').addEventListener('click', startGame);
 $('start-turn').addEventListener('click', () => { if (state) { handoff = false; dispatch({ type: 'vip', action: 'resume', now: Date.now() }); render(); } });
 $('tray').addEventListener('pointerdown', event => {
   const target = (event.target as Element).closest<HTMLElement>('[data-select]');
-  if (!target || !canEdit()) return; selectCrate(target.dataset.select as string); dragging = true; event.preventDefault();
+  if (!target || !canEdit()) return; selectCrate(target.dataset.select as string); dragging = true; $('tray').setPointerCapture(event.pointerId); event.preventDefault();
 });
 $('tray').addEventListener('click', event => { const target = (event.target as Element).closest<HTMLElement>('[data-select]'); if (target && !dragging) selectCrate(target.dataset.select as string); });
 $('board').addEventListener('pointerdown', event => {
   if (!canEdit()) return;
   const target = (event.target as Element).closest<SVGElement>('[data-crate]');
   if (target) selectCrate(target.dataset.crate as string);
-  if (selected) { dragging = true; movePointer(event); event.preventDefault(); }
+  if (selected) { dragging = true; $('board').setPointerCapture(event.pointerId); movePointer(event); event.preventDefault(); }
 });
 document.addEventListener('pointermove', event => { if (dragging) movePointer(event); });
 document.addEventListener('pointerup', event => {
@@ -161,8 +169,8 @@ document.addEventListener('pointerup', event => {
   if (event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom) { movePointer(event); place(); }
 });
 document.addEventListener('pointercancel', () => { dragging = false; });
-$('rotate').addEventListener('click', () => { rotation = Math.floor(rotation / 4) * 4 + (rotation + 1) % 4; render(); });
-$('flip').addEventListener('click', () => { rotation = (rotation + 4) % 8; render(); });
+$('rotate').addEventListener('click', () => { rotation = Math.floor(rotation / 4) * 4 + (rotation + 1) % 4; render(); announceSelection(); });
+$('flip').addEventListener('click', () => { rotation = (rotation + 4) % 8; render(); announceSelection(); });
 $('place').addEventListener('click', place);
 $('remove').addEventListener('click', () => { if (state && selected) { dispatch({ type: 'input', playerId: state.order[state.seat] as string, input: { type: 'remove', crateId: selected }, now: Date.now() }); selected = null; render(); } });
 $('clear').addEventListener('click', () => { if (state) dispatch({ type: 'input', playerId: state.order[state.seat] as string, input: { type: 'clear' }, now: Date.now() }); });
@@ -177,11 +185,12 @@ $('next').addEventListener('click', () => {
 $('pause').addEventListener('click', () => { if (state && !handoff) dispatch({ type: 'vip', action: state.phase.paused ? 'resume' : 'pause', now: Date.now() }); });
 document.addEventListener('keydown', event => {
   if (!canEdit() || !selected || (event.target instanceof Element && event.target.matches('input,select'))) return;
+  let fullRender = false;
   if (event.key === 'ArrowLeft') x--; else if (event.key === 'ArrowRight') x++; else if (event.key === 'ArrowUp') y--; else if (event.key === 'ArrowDown') y++;
-  else if (event.key.toLowerCase() === 'r') { rotation = Math.floor(rotation / 4) * 4 + (rotation + 1) % 4; }
-  else if (event.key.toLowerCase() === 'f' && state?.level.allowFlip) rotation = (rotation + 4) % 8;
+  else if (event.key.toLowerCase() === 'r') { rotation = Math.floor(rotation / 4) * 4 + (rotation + 1) % 4; fullRender = true; }
+  else if (event.key.toLowerCase() === 'f' && state?.level.allowFlip) { rotation = (rotation + 4) % 8; fullRender = true; }
   else if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); place(); return; }
-  else if (event.key === 'Escape') selected = null; else return;
-  event.preventDefault(); renderBoard();
+  else if (event.key === 'Escape') { selected = null; fullRender = true; } else return;
+  event.preventDefault(); if (fullRender) render(); else renderBoard(); announceSelection();
 });
 setupSeats(); requestAnimationFrame(tick);

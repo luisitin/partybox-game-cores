@@ -1,25 +1,22 @@
 # Resume G03
 
-PR: https://github.com/luisitin/partybox-game-cores/pull/3
-Branch job/G03-pack-the-hold; claim codex-core. Initial full implementation and
-PR CI are green at c2b21a2 (runs37719283425 and37719344618). Actual disk opening,
-all UI rosters, pointer/keyboard play and the complete suite passed.
+PR https://github.com/luisitin/partybox-game-cores/pull/3
+Branch job/G03-pack-the-hold; claim codex-core.
+Rounds1/2 green: twelve distinct holds per tier, independent proofs for all240
+calibrated templates, no repeated hold within a voyage.21 logic tests,25/25
+mutations, full data checks and actual disk-mode CI passed. Latest green base
+is d1e073e (runs37721189901 and37721185632).
 
-KEEP GOING round1 milestone: twelve original hold
-templates per tier instead of one, separately calibrated normal/mirror pools.
-Generator tests prove all240 templates against the independent grid checker
-and see all12 holds over200 seeds at each tier. Twenty-test full validation passed, with all25 mutations and data checks.
-The explicit HTTP browser check passed; check the new strict disk-mode CI.
+Round3 keyboard/touch improvement: focused selection no longer falls to BODY;
+R/F previews and Escape deselection update the tray; coordinates are announced;
+stable pointer capture verified with a real phone touch drag. Updated browser
+record/script passed over explicit localhost HTTP; regenerate/hash/schema checks
+and strict disk CI validate this push. No new core change in round3.
 
-Round2 is implemented locally: seenHolds is JSON state, and each round selects
-a fresh member of the same calibrated pool. 400 three-round games had zero
-repeats and identical replays. All21 tests,25/25 mutations and data checks passed; disk CI checks this push.
-Next review targets: keyboard focus, touch dragging and clock fairness.
-Then review touch capture, keyboard focus, clock fairness and the remaining
-five-weakness list. Continue until three consecutive rounds gain nothing a
-player would notice; zero such rounds yet. Maintain media, hashes and fixtures.
-
-No shared contract/other-job edits or worktree. The local browser blocks disk
-navigation; explicit HTTP checks are partial and CI must use actual disk mode.
-All required live research is accessible via GitHub; unread denied URLs are not
-cited as evidence. README contains exact commands and VERIFY.md actual results.
+Continue KEEP GOING: re-read G03, list five remaining weaknesses, fix the worst
+if meaningful, measure/log/push. Three consecutive rounds without a
+player-noticeable gain are required. Current no-gain streak:0. Next review:
+clock precision, typography, alignment, crate border weight, help phrasing.
+Keep media/fixtures/hashes current and refresh the main claim on every push.
+No contract/other-job changes or worktree. Cloud disk navigation remains blocked;
+mandatory CI uses actual disk mode, forbids HTTP fallback, and has passed.

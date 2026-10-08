@@ -55,6 +55,10 @@ try {
   assert.ok(await evaluate('!!document.getElementById("start")'), 'self-contained page did not load');
   await evaluate('document.getElementById("rounds").value="1";document.getElementById("start").click();document.getElementById("start-turn").click()');
   assert.equal(await evaluate('document.getElementById("handoff").hidden'), true);
+  const focus = await evaluate("(()=>{const button=document.querySelector('[data-select]');button.focus();button.click();return{selected:button.dataset.select,focused:document.activeElement.dataset.select??null}})()");
+  assert.equal(focus.focused, focus.selected, 'keyboard selection must preserve tray focus');
+  await evaluate("document.activeElement.dispatchEvent(new KeyboardEvent('keydown',{key:'Escape',bubbles:true}))");
+  assert.equal(await evaluate('document.querySelectorAll("[data-select][aria-pressed=true]").length'), 0);
   async function measure(width, height, cpu) {
     await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 700 });
     await send('Emulation.setCPUThrottlingRate', { rate: cpu });
@@ -68,9 +72,20 @@ try {
   await send('Emulation.setEmulatedMedia', { features: [{ name: 'prefers-reduced-motion', value: 'reduce' }] });
   assert.equal(await evaluate('matchMedia("(prefers-reduced-motion: reduce)").matches'), true);
   const motion = await evaluate('getComputedStyle(document.getElementById("board")).animationName'); assert.equal(motion, 'none');
-  await send('Emulation.setCPUThrottlingRate', { rate: 1 }); await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  await send('Emulation.setCPUThrottlingRate', { rate: 1 });
   const fixture = JSON.parse(readFileSync('fixtures/pack.json', 'utf8'));
   const cargo = fixture.solution[0]; const cargoValue = fixture.level.crates.find(c => c.id === cargo.crateId).value;
+  await send('Emulation.setTouchEmulationEnabled', { enabled: true, maxTouchPoints: 1 });
+  await evaluate(`document.querySelector('[data-select="${cargo.crateId}"]').click();for(let i=0;i<${cargo.rotation};i++)document.getElementById('rotate').click()`);
+  const touchPoints = await evaluate(`(()=>{const b=document.querySelector('[data-select="${cargo.crateId}"]').getBoundingClientRect();const svg=document.getElementById('hold-svg');const p=new DOMPoint(${cargo.x + 0.5},${cargo.y + 0.5}).matrixTransform(svg.getScreenCTM());return{from:{x:b.x+b.width/2,y:b.y+b.height/2},to:{x:p.x,y:p.y}}})()`);
+  assert.ok(touchPoints.from.y < 844 && touchPoints.to.y > 0, 'touch targets must fit in the phone viewport');
+  await send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...touchPoints.from, id: 1 }] });
+  await send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ ...touchPoints.to, id: 1 }] });
+  await send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
+  assert.equal(await evaluate('parseInt(document.getElementById("value").textContent)'), cargoValue, 'real phone touch drag must pack the crate');
+  await evaluate('document.getElementById("clear").click()');
+  await send('Emulation.setTouchEmulationEnabled', { enabled: false });
+  await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
   await evaluate(`document.querySelector('[data-select="${cargo.crateId}"]').click();for(let i=0;i<${cargo.rotation};i++)document.getElementById('rotate').click()`);
   const points = await evaluate(`(()=>{const b=document.querySelector('[data-select="${cargo.crateId}"]').getBoundingClientRect();const svg=document.getElementById('hold-svg');const p=new DOMPoint(${cargo.x + 0.5},${cargo.y + 0.5}).matrixTransform(svg.getScreenCTM());return{from:{x:b.x+b.width/2,y:b.y+b.height/2},to:{x:p.x,y:p.y}}})()`);
   await send('Input.dispatchMouseEvent', { type: 'mouseMoved', ...points.from });
@@ -107,6 +122,6 @@ try {
     completedPlayerCounts.push(count);
   }
   assert.equal(requests.filter(url => /^https?:/.test(url) && url !== documentUrl && !url.endsWith('/favicon.ico')).length, 0); assert.deepEqual(errors, []);
-  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/${videoFile}`).length };
+  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, touchDrag: true, keyboardFocus: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/${videoFile}`).length };
   writeFileSync(`${output}/visual-measurements.json`, JSON.stringify(report, null, 2) + '\n'); console.log(JSON.stringify(report));
 } finally { socket?.close(); browser.kill('SIGTERM'); localServer?.close(); }

@@ -203,3 +203,18 @@ HTTP measurements do not replace the required normal-runner disk/frame gate.
 files/seven schemas,20 hashes and two byte-identical regenerations. The final
 partial browser sample measured59.670fps desktop and60.004fps CPU4x phone;
 p95≤16.8ms, zero exceptions/requests, all roster sizes completed.
+
+## KEEP GOING round3: keyboard focus and touch
+
+Round2 is green atd1e073e in runs37721189901 and37721185632. Actual keyboard
+baseline (a CDP click on a focused crate):activeTag=BODY,focusedCrate=null.
+The page now restores selected-button focus after rebuilding the tray, updates
+rotation and Escape feedback, and announces keyboard coordinates. Stable parent
+pointer capture supports touch across DOM changes.
+
+`npm run build && node scripts/visual.mjs --http --record --milestone 05` passed:
+focusedCrate equals selectedCrate, Escape clears all aria-pressed selections,
+real touch dragging on390×844, mouse dragging, keyboard placement, UI rosters
+2–8, reduced motion, zero exceptions/requests. Video103,401bytes. Raw samples:
+desktop60.000fps,16.667ms mean,p95=16.8ms; CPU4x phone58.379fps,17.129ms mean,
+p95=16.8ms,max50.1ms. Normal-runner disk/frame checks remain the final gate.
