@@ -23,15 +23,18 @@ Final npm test passes:31 core tests,all1,003 sampled-setting replays,
 Extra1,003 replay run passes every-event256KB bound(93,236.49ms);focused
 all-skill/all-fixture bot envelope checks pass. Reusable installer and final
 25/25 mutation rerun also pass. Local delivery is ready.
-Next:push final delivery, refresh main claim, open PR, wait for exact-head
-hosted CI, then KEEP GOING. Do not claim completion yet. RULES/CONFLICTS
+PR7 is open: https://github.com/luisitin/partybox-game-cores/pull/7
+Initial delivery headf34a4860a4e51fcb0b4070bbf43b8f079d225427.
+This handoff synchronization push may advance the head; query gh rather
+than assuming that initial hash is current. Next:wait for exact-head hosted
+G06 CI, then KEEP GOING. Do not claim completion yet. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
 Sequential2-card partner exchange must permit returning a received card.
 Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
 Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
-No PR opened yet at this writing; check gh before creating a duplicate.
+PR7 exists; do not create a duplicate. No KEEP GOING rounds yet.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.
 Do not stage orphan G01/G04 dependency caches or touch G08 Shake Up.
