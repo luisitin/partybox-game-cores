@@ -8,6 +8,7 @@
     "decade control / private handover / exact score",
     "bluff write/vote/reveal / duplicates / own vote disabled / escaped user text",
     "correct-write credit confirmation is private and concealed before handover",
+    "bluff/number/range drafts survive hide and pause, remain absent from hidden DOM and never cross owners",
     "draft and keyboard focus survive another player’s input",
     "full quick, 2 seats, eight rounds, finite results, no overflow",
     "full quick, 4 seats, eight rounds, finite results, no overflow",
@@ -33,10 +34,10 @@
       "throttle": 1,
       "scenario": "eight seats, open human controller, seven concurrent bot inputs",
       "frames": 300,
-      "meanMs": 16.665999999999997,
+      "meanMs": 16.665893333333333,
       "p95Ms": 16.700000000000728,
       "p99Ms": 16.800000000000182,
-      "fps": 60.00240009600385
+      "fps": 60.002784129183595
     },
     {
       "name": "phone",
@@ -47,13 +48,13 @@
       "throttle": 4,
       "scenario": "eight seats, open human controller, seven concurrent bot inputs",
       "frames": 300,
-      "meanMs": 16.665893333333333,
-      "p95Ms": 16.799999999999955,
+      "meanMs": 16.666,
+      "p95Ms": 16.700000000000728,
       "p99Ms": 16.800000000000182,
-      "fps": 60.002784129183595
+      "fps": 60.00240009600384
     }
   ],
   "physicalPhone": "unavailable; 390×844 Chromium with 4× CPU is the measured approximation",
-  "capture": "media/milestone-2.webm",
-  "captureBytes": 286613
+  "capture": "media/milestone-3-drafts.webm",
+  "captureBytes": 294619
 }

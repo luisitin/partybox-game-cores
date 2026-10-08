@@ -9,6 +9,13 @@ let state:State|null=null;
 let kinds:Record<string,SeatKind>={},rngs:Record<string,Rng>={};
 let phaseTimer:ReturnType<typeof setTimeout>|null=null,botTimer:ReturnType<typeof setTimeout>|null=null;
 let viewer:string|null=null,open=false,visited:string[]=[],privateStamp='',wheelStamp='';
+const drafts=new Map<string,{fake?:string;answer?:string}>();
+const draftKey=()=>state&&viewer?`${phaseKey(state)}:${viewer}`:null;
+function rememberDraft(){
+ const key=draftKey();if(!open||!key)return;
+ const fake=$<HTMLTextAreaElement>('fake'),answer=$<HTMLInputElement>('answer');
+ if(fake)drafts.set(key,{fake:fake.value});else if(answer)drafts.set(key,{answer:answer.value});
+}
 const value=<T extends HTMLInputElement|HTMLSelectElement>(id:string)=>$(id) as T;
 function seatFields(){
  const old=Array.from(document.querySelectorAll<HTMLSelectElement>('#seats select')).map(e=>e.value);
@@ -21,9 +28,9 @@ const phaseKey=(s:State)=>`${s.phase.id}:${s.phase.startedAt}`;
 function humans(){return state?.seats.filter(id=>kinds[id]==='human')??[];}
 function nextViewer(){viewer=humans().find(id=>!visited.includes(id))??null;open=false;privateStamp='';}
 function dispatch(event:Parameters<typeof game.reduce>[1]){
- if(!state)return;const old=state,next=game.reduce(state,event);if(next===old)return;
+ if(!state)return;rememberDraft();const old=state,next=game.reduce(state,event);if(next===old)return;
  const changed=phaseKey(old)!==phaseKey(next);state=next;
- if(changed){visited=[];nextViewer();}
+ if(changed){drafts.clear();visited=[];nextViewer();}
  if(state.phase.paused){open=false;privateStamp='';}
  render();schedule();
 }
@@ -65,10 +72,11 @@ function renderPublic(v:ReturnType<typeof game.tvView>){
 }
 function pass(){if(viewer&&!visited.includes(viewer))visited.push(viewer);nextViewer();renderPrivate();}
 function submit(input:Input){
- if(!state||!viewer)return;const previous=state,id=viewer;
+ if(!state||!viewer)return;const previous=state,id=viewer,key=draftKey();rememberDraft();
  // Conceal the submitted input before any public update or handover.
  open=false;privateStamp='';dispatch({type:'input',playerId:id,input,now:Date.now()});
  if(state===previous){open=true;privateStamp='';renderPrivate();$('input-error').textContent='Check the allowed range and answer format.';return;}
+ if(key)drafts.delete(key);
  if(phaseKey(previous)===phaseKey(state!)){visited.push(id);nextViewer();renderPrivate();}
 }
 function renderPrivate(){
@@ -80,18 +88,19 @@ function renderPrivate(){
  const v=game.controllerView(state,viewer),stamp=`${phaseKey(state)}:${viewer}:${open}:${v.inputType}:${v.foundTruth}`;
  if(stamp===privateStamp)return;privateStamp=stamp;
  if(!open){area.innerHTML=`<h3>Pass the screen to ${h(names.get(viewer))}</h3><p class="hidden-note">Keep other players looking away. Only ${h(names.get(viewer))} should open this controller.</p><button id="reveal-private">Reveal my controller</button>`;$('reveal-private').onclick=()=>{open=true;privateStamp='';renderPrivate();};return;}
- let form='';const q=v.question!;
- if(v.inputType==='write')form='<form id="input-form"><label for="fake">Your fake answer · up to 160 characters</label><textarea id="fake" maxlength="160" required autocomplete="off" spellcheck="false"></textarea><div class="actions"><button type="submit">Lock in bluff</button></div></form>';
+ let form='';const q=v.question!,draft=drafts.get(draftKey()!);
+ if(v.inputType==='write')form=`<form id="input-form"><label for="fake">Your fake answer · up to 160 characters</label><textarea id="fake" maxlength="160" required autocomplete="off" spellcheck="false">${h(draft?.fake??'')}</textarea><div class="actions"><button type="submit">Lock in bluff</button></div></form>`;
  if(v.inputType==='vote')form=`<p class="hint">Choose the real answer. Your own bluff is marked and cannot be chosen.</p><div class="option-grid">${v.menu.map(o=>`<button data-choice="${o.id}" ${o.mine?'disabled':''}>${h(o.text)}${o.mine?' · Your bluff':''}</button>`).join('')}</div>`;
  if(v.inputType==='answer'){
   if(q.kind==='choice')form=`<div class="option-grid"><button data-value="0">${h(q.left)}</button><button data-value="1">${h(q.right)}</button></div>`;
   else {const min=q.min!,max=q.max!,initial=q.kind==='century'?1:q.kind==='decade'?Math.floor((min+max)/20)*10:Math.round(Math.sqrt(min*max));
-   form=`<form id="input-form"><label for="answer">${q.kind==='number'?`Estimate between ${min} and ${max}`:q.kind==='century'?'Century slider · negative values are BCE':'Decade dial · labelled by its starting year'}</label><input id="answer" type="${q.kind==='number'?'number':'range'}" min="${min}" max="${max}" step="${q.kind==='decade'?10:q.kind==='century'?1:'any'}" value="${initial}" required><output id="answer-readout" for="answer" class="answer-readout">${h(q.kind==='number'?initial:dateLabel(q,initial))}</output><div class="actions"><button id="lock-answer" type="submit">Lock in estimate</button></div></form>`;
+   const raw=draft?.answer??String(initial),n=Number(raw),zero=q.kind==='century'&&n===0;
+   form=`<form id="input-form"><label for="answer">${q.kind==='number'?`Estimate between ${min} and ${max}`:q.kind==='century'?'Century slider · negative values are BCE':'Decade dial · labelled by its starting year'}</label><input id="answer" type="${q.kind==='number'?'number':'range'}" min="${min}" max="${max}" step="${q.kind==='decade'?10:q.kind==='century'?1:'any'}" value="${h(raw)}" required><output id="answer-readout" for="answer" class="answer-readout">${h(q.kind==='number'?raw:zero?'No century zero':dateLabel(q,n))}</output><div class="actions"><button id="lock-answer" type="submit" ${zero?'disabled':''}>Lock in estimate</button></div></form>`;
   }
  }
  if(!v.inputType)form=`<p class="hidden-note">${v.foundTruth?'You wrote the truth! You earn its points at the reveal, and do not vote.':`Your answer is locked${v.mine!==null?`: ${h(v.mine)}`:'.'}`}</p><button id="acknowledge">Hide and pass</button>`;
  area.innerHTML=`<h3>${h(names.get(viewer))} · Private controller</h3>${form}<p id="input-error" class="error" role="alert"></p><button id="hide-private" class="secondary">Hide controller</button>`;
- $('hide-private').onclick=()=>{open=false;privateStamp='';renderPrivate();};
+ $('hide-private').onclick=()=>{rememberDraft();open=false;privateStamp='';renderPrivate();};
  const ack=$('acknowledge');if(ack)ack.onclick=pass;
  area.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b=>b.onclick=()=>submit({type:'vote',choice:b.dataset.choice!}));
  area.querySelectorAll<HTMLButtonElement>('[data-value]').forEach(b=>b.onclick=()=>submit({type:'answer',value:Number(b.dataset.value)}));
@@ -109,11 +118,11 @@ $('start').onclick=()=>{
   const id=`p${i}`,kind=value<HTMLSelectElement>(`seat-${i}`).value as SeatKind,name=value<HTMLInputElement>(`name-${i}`).value.trim()||`Player ${i+1}`;
   kinds[id]=kind;names.set(id,name);rngs[id]=createRng(seed^(i+113));return {id,name,avatarId:'🙂',connected:true,bot:kind!=='human'};
  });
- state=game.init({players,seed,now:Date.now(),settings:{mode:value('mode').value,rounds:value('rounds').value}});visited=[];nextViewer();$('setup').hidden=true;$('match').hidden=false;render();schedule();
+ state=game.init({players,seed,now:Date.now(),settings:{mode:value('mode').value,rounds:value('rounds').value}});drafts.clear();visited=[];nextViewer();$('setup').hidden=true;$('match').hidden=false;render();schedule();
 };
 $('players').onchange=seatFields;
 $('pause').onclick=()=>dispatch({type:'vip',action:state?.phase.paused?'resume':'pause',now:Date.now()});
 $('skip').onclick=()=>dispatch({type:'vip',action:'skip',now:Date.now()});
 $('end').onclick=()=>dispatch({type:'vip',action:'end',now:Date.now()});
-$('restart').onclick=()=>{clearTimers();state=null;open=false;viewer=null;visited=[];privateStamp='';kinds={};rngs={};$('private').replaceChildren();$('match').hidden=true;$('setup').hidden=false;};
+$('restart').onclick=()=>{clearTimers();drafts.clear();state=null;open=false;viewer=null;visited=[];privateStamp='';kinds={};rngs={};$('private').replaceChildren();$('match').hidden=true;$('setup').hidden=false;};
 seatFields();setInterval(countdown,100);

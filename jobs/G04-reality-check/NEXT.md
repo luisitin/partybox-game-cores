@@ -19,10 +19,14 @@ No network/errors. Wheel landing checks cover all eight realms; captures1/2
 are preserved under10MB. Native final pipeline log/tmp/G04-final-npm-test.log.
 
 PR4 is OPEN: https://github.com/luisitin/partybox-game-cores/pull/4
-Initial head6fdd9343d7bb3e451a0324e3f82d1f2231598fb5. Current-head hosted
-G04 CI is pending; no KEEP GOING rounds count yet. Observe green CI,
-then re-read the job and repeat five-weakness/worst-fix/measure/log until
-three consecutive rounds have no player-noticeable gain.
+Baseline f7ef26c passed hosted CI37723786704. Round1 draft-cache fix is
+complete locally:23 focused tests,20 browser scenarios,no private-field
+leak,restored bluff/number/range drafts,60fps and capture3. No-gain streak0.
+New-head hosted CI pending; do not call the whole job complete.
+Re-read job and list five weaknesses each round. Next most important:
+phone question context/keyboard focus/visible wheel, then short-date parsing
+and Medium's fake-answer style. Final stop requires three no-gain rounds
+and actual final-head green CI. G04 workflow cancels superseded own runs.
 Keep NEXT current and refresh ONLY G04 claim on main after each push.
 Stage G04/workflow only; G01 dependency caches are untracked locally.
 

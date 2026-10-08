@@ -104,3 +104,14 @@ Current-head hosted PR CI and KEEP GOING remain pending.
 
 GitHub REST pull creation confirmed PR4 OPEN at6fdd934; current-head
 hosted G04 CI pending. No KEEP GOING rounds count before its green run.
+
+Hosted CI: run37723477241 SUCCESS for6fdd934; run37723786704 SUCCESS
+for current PR4 checkpoint f7ef26c080046a2f04642572bb5df1aaaae09430,
+observed03:47UTC; PR API head matched. KEEP GOING may begin.
+Round1 baseline inline Playwright measurement (/tmp/G04-draft-before.json):
+before='My unfinished harbour draft',after='',hiddenInputs0. After fix,
+node browser.ts PASS20 scenarios including that restored value, six numeric/
+range restores, bluff pause restore, hidden fields0 and next-owner blank.
+npm run check and FAST_TEST=1 node --test test.ts PASS23/23; core unchanged.
+TV60.0028fps/p9516.70ms;phone4×60.0024fps/p9516.70ms. build491,924bytes;
+19 checksums PASS. Capture3 is under10MB. New-head hosted CI pending.

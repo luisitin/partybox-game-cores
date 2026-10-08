@@ -60,3 +60,11 @@ Bot documentation now states the harness's actual conservative tie handling
 Data integrity: run the committed checksums before any benchmark/capture
 regeneration in npm test, so modified input data cannot be silently
 re-blessed by the final checksum writer. The entry guard passed locally.
+
+KEEP GOING1: add an owner/phase draft cache in ui.ts, restore escaped
+fake/value text only inside its owner's revealed controller, and clear
+on submission/new phase/restart. Capture before pause/hide to prevent
+losing unfinished input without leaving secret fields in concealed DOM.
+Add browser regressions for all numeric/range types, bluff hide/pause
+and owner isolation, plus milestone3 capture. G04 workflow concurrency
+cancels only superseded runs of this PR; final-head green remains required.
