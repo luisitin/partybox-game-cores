@@ -613,3 +613,32 @@ HTML33f5e801 start/end equal,zero errors/network. Desktop1,251,873B and
 phone4x1,165,745B,both<10MB. Capture is functional evidence,not frame acceptance.
 Existing game/core/session/HTML bytes and three prior no-player-gain rounds
 remain unchanged; this verification gain does not assert a performance gain.
+
+
+## Current source-bound hosted proof and local failure preservation
+
+Exact a490f6f run37817956480 SUCCESS17:47:35UTC; job113451323074 full130,728
+character log inspected:116/116 nodes,25/25 compiled assertion kills,94/94
+browser,current30 guards/1200 native intervals,68/68 actual-current controls,
+370 hashes/2x regeneration PASS. Actual artifact11569180344 ZIP1,220,572B and
+SHA2425066a63324fac47b31591767033b4942290f510b2dee88df43801ef9d8190 match
+native metadata. Independent Python1306 assertions validate both full raw
+profiles,all30 actual source bytes,all94 checks/offline data/metrics/gates.
+Both hosted profiles60.002400FPS,p99/max16.8,0 drops. The actual native timed
+callback1493 bytes/SHA4d12a4f66f7d97066534f3693fea41583a7e1779640d29cfc1259433368879ba
+is byte-identical to the original f8 runner. Proof/reader are public under
+resume-audit-9-hosted-independent.json/resume-audit-9-independent-reader.py;
+the manual reader expects downloaded artifact.zip and extracted source next
+to its script and runs from repository root. It is not a default-test scratch
+dependency. This specific hosted success does not erase local failures.
+
+Local20261008173740283 completed91/94 EXIT1:phone pause-clock<200ms,
+saved-resume clock<250ms,and strict phone600 FPS58.825836307 failed. Raw p99
+16.8,max83.4,5 dropped intervals,total10199.6ms are all retained; desktop600
+PASS60.002400FPS,p99/max16.8. Source maps/runner and genuine pre-sample idle
+STOP/grant/CLOSED receipts are public. STOP preceded any phone grant/sample;
+no elapsed acceptance window was paused or manufactured. No cause claimed.
+The current-head PR remains draft pending actual clock-boundary review.
+
+Fresh resume-audit-proof-10 clips PASS two actual five-round games,unchanged
+page hash and zero errors/network. No unchanged strict frame retry occurred.

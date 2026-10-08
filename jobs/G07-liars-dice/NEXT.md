@@ -30,11 +30,32 @@ exact UUID nonce/profile/source with600-second wait and immediate CLOSED.
 CI uploads genuine raw reports and guarded sources,including hidden .work.
 It never falls back to historical positive evidence.
 
-Current audit acceptance PENDING: fresh full browser and exact new-head hosted
-npm test have not completed. Fresh resume-audit-9 clips PASS: both actual
-five-round games,source-matched,zero network/errors,1,251,873/1,165,745 bytes.
-Recording is separate from strict timing. Preserve any genuine failed runs;
-never retry an unchanged strict frame sample merely to seek luck.
+Current repair source a490f6f hosted run37817956480 SUCCESS17:47:35UTC:
+116 node tests,25 actual mutant kills,full94/94 browser,30 guards/1200 intervals,
+68 actual-current controls,370 hashes/2x regeneration PASS. Actual artifact
+11569180344 ZIP1,220,572B/SHA2425066a63324fac47b31591767033b4942290f510b2dee88df43801ef9d8190
+was independently downloaded:1306 Python checks PASS,all30 source bytes match,
+both profiles60.002400FPS,p99/max16.8,0 drops. Actual native callback1493 bytes
+is byte-identical to original f8 runner; no runtime performance gain claimed.
+
+Local same-source full run20261008173740283 CLOSED EXIT1:91/94; phone pause
+elapsed-clock<200ms and saved-resume remaining-clock<250ms assertions failed;
+phone600 FPS58.825836307/p9916.8/max83.4/5drops FAIL. All1200 raw intervals,
+source maps,exact observed runner/checker and pre-sample idle STOP/nonce grant
+receipts are preserved under evidence/browser/runs. No frames were paused,
+filtered or retried. Causes are unproved. Exact new checkpoint CI must still
+be read; PR6 stays DRAFT pending the clock-observation audit.
+
+Both clock checks read post-click state/time in separate RPCs. Independent
+source audit confirms a trusted ordinary-click capture listener BEFORE the
+handler supplies its host epoch; an AFTER-handler observer can retain actual
+state/time without transport delay. Planned focused real425ms stale-read
+countercontrol must demonstrate the weakness without claiming historical
+causation; original200/250ms criteria and all600-frame gates stay unchanged.
+The save fixture should consume>=600ms before checkpoint so a full3s-reset
+negative control cannot hide within the250ms allowance. No game edit needed.
+Fresh resume-audit-proof-10 clips PASS two actual five-round games,source-matched
+and zero errors/network. Recordings remain separate from performance.
 
 KEEP rounds6–8 established three consecutive zero-player-gain reviews. This
 repair changes verification only; unchanged runtime does not reset that stop
@@ -42,9 +63,10 @@ or establish a player-visible/timing performance improvement. LOOP9 records
 this milestone without claiming new full acceptance.
 
 Next concrete actions:
-1. Freeze guarded files and run one fresh full94 browser attempt. Coordinate
-   each actual strict600-sample READY with the parent and its matching grant.
-   Preserve actual failures and raw/source metadata.
+1. Complete focused real trusted-click clock diagnostic,then repair the two
+   measurement boundaries if its actual positive/negative controls establish
+   the weakness. Preserve original criteria,all failed frames and unchanged
+   game bytes. No unchanged strict timing luck retry.
 2. Refresh only own main G07 claim at each normal milestone push,preserve other
    rows,then normal FF canonical branch push. No force or PR merge.
 3. Inspect exact new-head hosted G07 CI and actual uploaded raw/source bytes.

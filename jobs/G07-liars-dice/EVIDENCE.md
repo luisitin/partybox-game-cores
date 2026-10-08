@@ -37,3 +37,13 @@ Run commands, interpretation and limits: [VERIFY](VERIFY.md). File integrity:
 regenerate2x byte-identically. Ignored scratch and old git history are not
 default-test dependencies. The full SDK is unavailable; the unchanged shared
 contract and local adapter are verified, with that integration limit disclosed.
+
+
+Current repaired-source a490 hosted full proof: [actual report](evidence/browser/hosted-a490-37817956480/report.json),
+[1306-check independent receipt](evidence/checks/resume-audit-9-hosted-independent.json).
+Exact a490 run37817956480 SUCCESS; both full600 profiles60.002400FPS,p99/max16.8,
+all30 source bytes matched. This is specific hosted evidence,not a universal
+wall-time guarantee. Local [full failed report](evidence/browser/runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008173740283/report.json)
+and both raw files retain91/94,all three failures and actual coordination.
+Fresh [checkpoint clips](evidence/browser/resume-audit-proof-10-captures.json)
+remain separate from timing. A new final head still needs its own CI green.

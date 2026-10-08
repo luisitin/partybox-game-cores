@@ -1,0 +1,62 @@
+{
+  "observedAt": "2026-10-08T17:53:37.355725+00:00",
+  "scope": "whole owned idle runner/browser stopped before any phone grant or native sample",
+  "ready": {
+    "profile": "phone4x",
+    "sourceSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "attemptNonce": "ecf313c2-afaa-433e-95b9-8326f7aeb633",
+    "readyAt": "2026-10-08T17:47:53.608Z",
+    "intervals": 600,
+    "minimumMeanFps": 59,
+    "maximumP99Ms": 17
+  },
+  "grantPresent": false,
+  "phoneSampleStarted": false,
+  "groups": [
+    175350,
+    175366
+  ],
+  "states": [
+    {
+      "pid": 175350,
+      "pgid": 175350,
+      "state": "T"
+    },
+    {
+      "pid": 175354,
+      "pgid": 175350,
+      "state": "T"
+    },
+    {
+      "pid": 175366,
+      "pgid": 175366,
+      "state": "T"
+    },
+    {
+      "pid": 175368,
+      "pgid": 175366,
+      "state": "T"
+    },
+    {
+      "pid": 175369,
+      "pgid": 175366,
+      "state": "T"
+    },
+    {
+      "pid": 175384,
+      "pgid": 175366,
+      "state": "T"
+    },
+    {
+      "pid": 175386,
+      "pgid": 175366,
+      "state": "T"
+    },
+    {
+      "pid": 176737,
+      "pgid": 175366,
+      "state": "T"
+    }
+  ],
+  "guardedSourcesChanged": false
+}
