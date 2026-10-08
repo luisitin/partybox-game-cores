@@ -26,3 +26,7 @@
   This local source merge does not merge or close the public PR.
 - G01 final04287939ef188cc65928b387522e840ac7e2a0b2 passed hosted
   run37760799157 at10:17:11UTC with its renewed three-round stop met.
+
+- After G03 completion,the fresh all-ref queue at2026-10-08T10:48:44.273455+00:00 contains no
+  eligible job. Preserve active claims;do not manufacture an expired stamp
+  or take another worker's fresh branch. Re-check on a later continuation.
