@@ -114,3 +114,9 @@ correct vote option. Reuse pure normalization; preserve all160 sample bytes.
 Add blank-truth factory regressions,catalog-probe.ts (10,000 valid varied
 rows/30,000 actual reducer submissions/7,500 defaults),before/after JSON
 and npm test wiring. Rebuild bundled HTML and record milestone8 capture.
+
+KEEP GOING8: parameterize league.ts with a held-out seed cohort2,001–4,000
+and separate report;record both seed bounds in every report and run both
+cohorts in npm test. Re-run the original cohort and compare every prior
+report field to the committed result:identical. This is a verification
+change only;no core,bot,content or UI behavior changes.

@@ -70,3 +70,9 @@ Reject those values before init. After:4/4 rejected,10,000 valid rows,
 30,000 real reducer submissions and7,500 defaults all pass.28 focused tests,
 25 mutation kills and22 browser scenarios pass. Player gain for valid
 content selection;no-gain streak resets0. Default dataset/policies unchanged.
+
+Round8 five weaknesses: held-out skill strength (worst);frame-sample
+variance;presence churn;factory scale;clarity of benchmark limits. Add
+12,000 fresh matches without tuning policy. All six confidence lower
+bounds>50%;original12,000-match reports reproduce exactly. No player
+behavior change;player gain0,no-gain streak1. Corpus scope remains explicit.

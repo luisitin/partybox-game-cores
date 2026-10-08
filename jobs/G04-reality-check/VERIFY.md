@@ -184,3 +184,15 @@ PASS493,491bytes;node browser.ts PASS22 scenarios,TV60.0028fps/p9516.80ms,
 phone4×60.0020fps/p9516.70ms,0 requests/errors,reduced motion honored.
 Capture8<10MB;node checksums.ts/--check PASS32 files. Valid injected-content
 play improves by excluding invisible truth;no-gain streak resets0.
+
+Round8 npm run check PASS;node league.ts and node league.ts --held-out
+PASS24,000 matches total. Python comparison of baseline git-show JSON
+to the new default report,excluding added seed bounds:all six reports
+identical. Fresh seeds2,001–4,000:Quick Strong1786/2000(89.30%,lower87.95%),
+Medium1949(97.45%,lower96.76%);Mixed Strong1973(98.65%,lower98.14%),
+Medium1988(99.40%,lower99.06%);Bluff Strong1987(99.35%,lower99.00%),
+Medium1991(99.55%,lower99.26%). Ties count as no win;all lower bounds>50%.
+Cloud restart preserved source and the completed default report but killed
+the just-started held-out process(empty log);after inspection it was re-run
+successfully with the same declared seeds. node checksums.ts/--check PASS33.
+No production change or defect found;player gain0,no-gain streak1.

@@ -28,9 +28,10 @@ catalog rows,30,000 real bot submissions,7,500 defaults pass.28 focused
 tests,25/25 mutation kills,22 browser scenarios,TV/phone60fps,p95≤16.8ms,
 HTML493,491bytes,32 hashes. Default sample bytes and bot policies unchanged.
 Captures1–8 retained<10MB. Rounds1–5 and7 showed player gains;Round6 none;
-current no-gain streak0. New-head hosted CI pending;job remains unfinished.
-Next worst:held-out skill strength,then independent frame/performance
-sampling and presence-churn robustness. Each round re-reads job,lists five
+Round8 held-out12,000 matches pass(all lower bounds>50%),default12,000
+reports unchanged;33 hashes. Current no-gain streak1. New-head hosted CI pending;job remains unfinished.
+Next worst:independent frame/performance sampling,then presence-churn
+robustness. npm test now runs both12,000-match league cohorts. Each round re-reads job,lists five
 weaknesses,fixes worst,measures/logs. Stop requires three consecutive
 no-gain rounds and actual final-head green CI. Refresh ONLY G04 claim on
 main after each push. Stage G04/workflow only;G01 caches are untracked.

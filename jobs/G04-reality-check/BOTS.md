@@ -26,3 +26,16 @@ All six lower bounds exceed 50%. league-report.json records raw results.
 These high rates describe the deliberately clued fictional corpus, not
 real-world trivia expertise or universal bluff intelligence. Future real
 packs need their own benchmark; the local factory provides no retrieval.
+
+Held-out check: node league.ts --held-out,2,000 games per pair/mode
+with fresh seeds2,001–4,000;12,000 additional matches. These were not
+used to choose any policy. Wins/losses/ties;ties remain no win.
+
+| Mode | Strong vs Medium | Medium vs Easy |
+| --- | --- | --- |
+| Quick | 1,786/214/0; 89.30% [87.95, 90.65] | 1,949/51/0; 97.45% [96.76, 98.14] |
+| Mixed | 1,973/18/9; 98.65% [98.14, 99.16] | 1,988/11/1; 99.40% [99.06, 99.74] |
+| Bluff | 1,987/0/13; 99.35% [99.00, 99.70] | 1,991/0/9; 99.55% [99.26, 99.84] |
+
+All six held-out lower bounds exceed50%. No policy tuning was needed.
+held-out-league-report.json records the exact seed range and results.
