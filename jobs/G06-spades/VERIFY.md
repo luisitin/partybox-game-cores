@@ -148,3 +148,15 @@ Final local delivery gate,2026-10-08:
   external Playwright system-ffmpeg recorder fallback is available.
 - `node mutations.ts`:PASS25/25 again after the every-event storage and
   all-fixture bot-envelope assertions; baseline28/28, no startup/timeouts.
+
+KEEP GOING round1:
+- GitHub REST/PR head match:badf4005bd3961764492a4f48f6047af3fa249cc,
+  run37738084749 COMPLETED/SUCCESS,2026-10-08T06:46:28Z. Initial green gate.
+- `node /workspace/.onboarding/G06-phone-audit.mjs`:before valid40-character
+  names expanded390px to830px; after wrapping,390px exactly. Keyboard focus
+  remains a separate confirmed defect for the next round.
+- `npm run check; node build.ts; node browser.ts --write --capture --repeat=2`:
+  PASS10 groups,zero requests/errors,900frames each. TV59.0837fps,
+  mean16.9251ms,p95 16.8/max50.1;4×phone60.0025fps,mean16.6660ms,
+  p95/max16.8. Offline HTML489,042bytes. New eight-second capture<10MB.
+  Both editions test maximum names before/after opening the private hand.

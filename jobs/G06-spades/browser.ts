@@ -29,6 +29,10 @@ async function house(p:Page){await p.locator('#setup summary').click();}
 let fileOpen='passed';let video:string|undefined;
 try{
  const direct=await browser.newPage();try{await direct.goto(new URL('play.html',import.meta.url).href);assert(await direct.locator('#start').isVisible());}catch(error){assert(String(error).includes('ERR_BLOCKED_BY_ADMINISTRATOR'),String(error));fileOpen='managed file navigation blocked; exact bytes exercised using setContent';}finally{await direct.close();}
+ for(const mode of ['partnership','cutthroat']){
+  const long=await pageFor();await long.page.selectOption('#mode',mode);for(let i=0;i<(mode==='cutthroat'?3:4);i++)await long.page.fill(`#name-${i}`,'X'.repeat(40));await start(long.page,mode);
+  assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap at handover');await long.page.click('#show-hand');assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap with an open private hand');await long.ctx.close();functional.push(`${mode} valid40-character names fit390px, concealed and open`);
+ }
  const standard=await pageFor();await freeze(standard.page);await standard.page.fill('#name-0','<img onerror=alert(1)>');await start(standard.page);
  assert.equal(await phase(standard.page),'bid');assert.equal(await standard.page.locator('#private [data-card]').count(),0);assert.equal(await standard.page.locator('#public img').count(),0);
  await standard.page.click('#show-hand');assert.equal(await standard.page.locator('#private [data-card]').count(),13);await standard.page.selectOption('#bid-value','5');

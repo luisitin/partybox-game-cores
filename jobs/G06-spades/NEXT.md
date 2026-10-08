@@ -25,16 +25,22 @@ all-skill/all-fixture bot envelope checks pass. Reusable installer and final
 25/25 mutation rerun also pass. Local delivery is ready.
 PR7 is open: https://github.com/luisitin/partybox-game-cores/pull/7
 Initial delivery headf34a4860a4e51fcb0b4070bbf43b8f079d225427.
-This handoff synchronization push may advance the head; query gh rather
-than assuming that initial hash is current. Next:wait for exact-head hosted
-G06 CI, then KEEP GOING. Do not claim completion yet. RULES/CONFLICTS
+Initial green gatebadf4005bd3961764492a4f48f6047af3fa249cc/run37738084749
+SUCCESS observed2026-10-08T06:46:28Z. KEEP GOING is active;R1 fixes
+long-name phone overflow830→390. Ten browser groups,23 hashes after refresh,
+new capture and~60fps pass. Next:R2 fix confirmed lost keyboard focus when
+the first held card is illegal;then audit bot/reader pacing and duplicate
+name handovers. Five weaknesses per round in AUDIT. No-gain streak0.
+Query actual current PR head/CI after pushes; do not assume earlier hashes
+are current. Do not claim completion yet. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
 Sequential2-card partner exchange must permit returning a received card.
 Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
 Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
-PR7 exists; do not create a duplicate. No KEEP GOING rounds yet.
+PR7 exists; do not create a duplicate. R1 is logged; three no-gain rounds
+are still required after the last player-visible improvement.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.
 Do not stage orphan G01/G04 dependency caches or touch G08 Shake Up.

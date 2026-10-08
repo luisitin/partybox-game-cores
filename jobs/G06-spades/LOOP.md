@@ -1,5 +1,3 @@
 # KEEP GOING
 
-No rounds yet. Begin only after the delivered PR's actual hosted CI is green.
-Each round re-reads the job,lists five weaknesses,fixes worst,measures,
-logs one line and pushes. Stop after three consecutive no-player-gain rounds.
+R1: re-read RULES/JOBS/G06 after exact-head CI37738084749 success; five weaknesses in AUDIT; wrap valid40-character names, measured phone width830→390 in both editions/open and concealed hands;10 browser groups pass,TV59.0837/4×phone60.0025fps,p95 16.8ms;player-visible gain, no-gain streak0.

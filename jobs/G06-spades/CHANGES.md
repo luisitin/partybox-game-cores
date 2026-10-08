@@ -78,3 +78,9 @@ Full verification and standalone page:
 - `runner.ts`: reuse the exact replay JSON to check the256KB limit after
   every event, rather than checking only the final state. `test.ts` also
   checks all skills/known and unknown seats in all seven phase fixtures.
+
+KEEP GOING round1:
+- `shell.html`: wrap heading/paragraph/button/player labels and cap their
+  width. Valid40-character names otherwise made a390px page830px wide.
+- `browser.ts`: regressions for both editions at maximum supported name
+  length, before and after opening a hand. Rebuild the standalone artifact.
