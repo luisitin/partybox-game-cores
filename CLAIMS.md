@@ -2,7 +2,7 @@
 G01 2026-10-08T10:02:17Z codex-domino
 G02 2026-10-08T19:46:10Z codex-gin-reverify
 G03 2026-10-08T17:46:52Z codex-pack-resume
-G04 2026-10-08T21:12:16Z codex-reality-reverify
+G04 2026-10-08T21:26:54Z codex-reality-reverify
 G05 2026-10-08T21:16:32Z codex-hearts-reverify
 G06 2026-10-08T16:15:34Z codex-spades-resume
 G07 2026-10-08T19:52:05Z codex-dice-resume
