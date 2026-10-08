@@ -25,6 +25,9 @@ for(let run=0;run<2;run++) {
  for(const p of inputs)assert.equal(sum(await readFile(p)),before[p],'non-deterministic generated fixture '+p);
 }
 const html=await readFile('play.html','utf8');assert(!/<(?:script|link)[^>]+(?:src|href)=['"]https?:/i.test(html));
+const zodLicense=await readFile('node_modules/zod/LICENSE','utf8');
+assert((await readFile('THIRD-PARTY-LICENSES.txt','utf8')).includes(zodLicense),'Zod notice must match the pinned package');
+assert(html.includes(zodLicense),'standalone page must retain the bundled Zod permission/copyright notice');
 for(const file of await readdir('src'))if(file.endsWith('.ts')&&file!=='browser.ts') {
  const text=await readFile('src/'+file,'utf8');assert(!/Math\.random|Date\.now|setTimeout|setInterval|\bfetch\(|\bconsole\.|from ['"]node:/.test(text),'impure core '+file);
 }

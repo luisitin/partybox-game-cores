@@ -40,3 +40,10 @@ point target, before game/line bonuses. P separately defines final settlement
 by the post-bonus point difference. Our result keeps that game winner while
 preserving all final points; the three/four-seat ranking is an explicit house
 extension, not an invented independently corroborated multiplayer rule.
+
+Zod4.6.5 package license was read from node_modules/zod/LICENSE and retained
+verbatim in THIRD-PARTY-LICENSES.txt and the self-contained HTML comment.
+Package https://www.npmjs.com/package/zod/v/4.6.5 ; upstream
+https://github.com/colinhacks/zod . Only MIT runtime code is bundled; pinned
+package notice is verified during integrity checks. Our CSS/text art remains
+original. No new external runtime requests are introduced.

@@ -4,7 +4,7 @@ export const suit=(c:Card):number=>Math.floor(c/13);
 export const value=(c:Card):number=>Math.min(rank(c),10);
 export const cardName=(c:Card):string=>['A','2','3','4','5','6','7','8','9','10','J','Q','K'][rank(c)-1]+['♣','♦','♥','♠'][suit(c)];
 export function validMeld(cards:readonly Card[]):boolean {
-  if(cards.length<3||new Set(cards).size!==cards.length)return false;
+  if(cards.length<3||cards.some(c=>!Number.isInteger(c)||c<0||c>51)||new Set(cards).size!==cards.length)return false;
   const ranks=cards.map(rank).sort((a,b)=>a-b);
   return (cards.length<=4&&ranks.every(r=>r===ranks[0])) ||
     (cards.every(c=>suit(c)===suit(cards[0]))&&ranks.every((r,i)=>r===ranks[0]+i));

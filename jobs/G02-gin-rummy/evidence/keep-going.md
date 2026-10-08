@@ -169,3 +169,33 @@ Measured player-noticeable gain: none; consecutive no-gain streak1.
 Round5 hosted npm test run37728310327 at b784006 actually SUCCESS;
 its242 exact check-step log lines are retained. Round6 current-head CI remains
 required; source-bound summary and complete local log delivered.
+
+Round7: G02 common requirements and KEEP GOING re-read. Five remaining gaps:
+1. Standalone runtime bundle omits its pinned Zod MIT notice.
+2. Exported meld validator accepts impossible/fractional IDs, although live schema rejects them.
+3. Malformed event/view coverage should span all phases with random JSON inputs.
+4. Standalone user-name rendering deserves an actual injection witness.
+5. Latest acceptance facts need an index above historical pending reports.
+Worst distribution gap fixed: retain the exact pinned Zod notice in delivered
+THIRD-PARTY-LICENSES.txt and an HTML comment; integrity checks both against
+installed pinned LICENSE. Utility boundaries also reject non-deck IDs before
+meld math. Actual before values: [52,53,54],[-3,-2,-1] and[.5,1.5,2.5]
+were accepted melds, and the standalone page lacked the package notice.
+Live input already validates distinct deck IDs; no valid-game behavior change
+is intended. Measure independent valid-domain proofs and browser behavior.
+
+Round7 actual npm run build PASS; node --test tests/card-domain.test.mjs
+ tests/differential.test.mjs tests/layoff-differential.test.mjs
+ tests/rules.test.mjs tests/branching-layoff.test.mjs PASS11/exit0.
+10,000 independent deadwood minima/checksum584788 and2,000 independent
+joint-layoff minima/checksum102460 (1534 laid cards) remain correct.
+Impossible IDs now reject; legitimate low/high edge runs and four-card sets
+remain valid. node scripts/mutations.mjs catches25/25 compiled mutants.
+Actual node scripts/browser-check.mjs PASS: desktop60.003FPS; phone4x
+59.670FPS,p9916.8ms/max33.3ms (one dropped frame retained). All offline,
+privacy, clock, meld and final-result regressions PASS. node scripts/capture.mjs
+ round-7 records actual production page at1x/4x; videos55,705/100,521 bytes,
+not used as frame measurements. Integrity verifies exact pinned license in
+both delivered notice and standalone page. No valid-game/UI behavior changes;
+measured player-noticeable gain none, consecutive no-gain streak2.
+Current-head hosted acceptance remains required after push.

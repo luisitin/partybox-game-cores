@@ -134,3 +134,13 @@ SHA256/byte/size/strict-roundtrip checks. Property/secrecy/idle tests also pass.
 Exact command/output/rows/source hashes: round-6-replay-tests.log/summary.json.
 No production/visual behavior changed. Hosted round5 run37728310327 actually
 SUCCESS at b784006; exact npm-test step is ci-round-5-accepted.log.
+
+Round7 exact commands/results: npm run build PASS;
+node --test tests/card-domain.test.mjs tests/differential.test.mjs
+ tests/layoff-differential.test.mjs tests/rules.test.mjs
+ tests/branching-layoff.test.mjs PASS11; node scripts/mutations.mjs PASS25/25;
+node scripts/browser-check.mjs PASS (60.003/59.670FPS,p9916.8ms,phone max33.3);
+node scripts/capture.mjs round-7 PASS,55,705/100,521-byte1x/4x clips.
+Raw logs, independent proof totals, source hashes and complete frames are in
+round-7-* and keep-going.md. Licensing checks now require the pinned package's
+exact notice in both HTML and delivered text. No player-visible behavior gain.

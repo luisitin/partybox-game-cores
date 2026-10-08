@@ -1,0 +1,68 @@
+{
+  "commandsPassed": [
+    "npm run build",
+    "node --test tests/card-domain.test.mjs tests/differential.test.mjs tests/layoff-differential.test.mjs tests/rules.test.mjs tests/branching-layoff.test.mjs",
+    "node scripts/mutations.mjs",
+    "node scripts/browser-check.mjs",
+    "node scripts/capture.mjs round-7"
+  ],
+  "targetedTestsPassed": 11,
+  "independentDeadwoodCases": 10000,
+  "independentLayoffCases": 2000,
+  "mutantsCaught": 25,
+  "browser": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "meanMs": 16.665744444444442,
+      "p99Ms": 16.799999999999955,
+      "maxMs": 16.800000000000182,
+      "fps": 60.00332018371684,
+      "targetRefreshHz": 60,
+      "measurementRoundingTolerance": "mean >=59 FPS; p99 <=17ms",
+      "interactionChecks": 17,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "reducedMotion": {
+        "matches": true,
+        "transform": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "label": "phone4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "meanMs": 16.758888888888887,
+      "p99Ms": 16.799999999999955,
+      "maxMs": 33.30000000000018,
+      "fps": 59.66982695750183,
+      "targetRefreshHz": 60,
+      "measurementRoundingTolerance": "mean >=59 FPS; p99 <=17ms",
+      "interactionChecks": 17,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "reducedMotion": {
+        "matches": true,
+        "transform": "none",
+        "animation": "none"
+      }
+    }
+  ],
+  "sourceSha256": {
+    "src/browser.ts": "b14a8327517d6ab558a7941b5a3c2dd01d7c5bff8f1132ddcac9d7ad349c9b36",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f"
+  },
+  "zodLicenseSha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+  "playerObservableChange": false,
+  "noPlayerGainStreak": 2
+}
