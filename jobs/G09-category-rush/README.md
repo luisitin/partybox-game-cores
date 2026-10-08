@@ -18,6 +18,7 @@ npm run build:play
 npm run mutations
 npm run bots
 node scripts/browser-check.mjs
+node scripts/browser-performance.mjs
 ```
 
 Development tools are build/test dependencies. Zod is the only runtime dependency

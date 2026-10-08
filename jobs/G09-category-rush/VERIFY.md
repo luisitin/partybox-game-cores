@@ -51,7 +51,18 @@ host controls and zero runtime network requests.
 - `node scripts/browser-check.mjs`: **28/28 PASS** on that current HTML, desktop+phone full games and every bot roster 2–8; zero runtime network/errors. `node scripts/browser-clock.mjs`: independent review-step clock probe PASS, correctly handles a later deadline with unchanged phase startedAt.
 - `node scripts/browser-performance.mjs`: first current licensed cold run **FAILED**: desktop 600 consecutive real RAF deltas, 57.419 fps, p99 33.4 ms, max 166.6 ms. Source/HTML fingerprints matched before/after and both notices were checked; zero errors/network. Runner stopped before phone. Failed raw samples/report/video are preserved; earlier milestone proof belongs to its own distinct hash. An unchanged confirmation is pending after the current CPU-isolation hold, with no gate relaxation.
 
-Final visual, checksum/drift and exact-head CI status remain pending; this is a milestone, not completion.
+The historical failure below is retained. Final local acceptance is recorded after the separate diagnostic; exact-head CI and KEEP GOING remain pending.
+
+The fresh reproducible-file run used `node scripts/browser-performance.mjs`
+on `a209acd1…` at 09:27:53.904–09:28:20.711 UTC, with unrecorded sampling
+and separately recorded clips. Desktop passed: 600 actual consecutive deltas,
+59.803843 fps, p99 16.8 ms, max 33.4 ms; its 316,990-byte clip had no errors or
+nonfile requests. Phone 4× failed the unchanged mean gate: 600 actual deltas,
+57.880765 fps, p99 16.8 ms, max 183.2 ms. Its six long intervals cluster
+4.1–5.85 s after sample start. No phone clip was attempted after the failure.
+`evidence/browser/failed-reproducible-first/` preserves the exact HTML, sampler,
+report and unfiltered raw samples. Source stayed frozen and matched throughout.
+This failure requires diagnosis, not changed thresholds or reuse of older proof.
 
 ## Push cadence deviation
 
@@ -64,6 +75,33 @@ push-second measurements. CPU-isolation holds and a required license rebuild
 occupied the interval; a proof-pending source checkpoint should still have
 been pushed. Subsequent checkpoints target 25 minutes, independently of test,
 browser or license work. The next target is 09:25 UTC, before 09:30:39 UTC.
+
+That target was met: checkpoint `5e0707c` was committed at 09:23:39 UTC,
+with successful push completion observed by 09:23:47 UTC, and main claim
+`33f306d` refreshed at 09:23:58 UTC. The next 25-minute target is 09:48:39 UTC.
+
+## Separate phone diagnostic
+
+`node scripts/browser-profile.mjs` ran on unchanged `a209acd1…` at
+09:33:55–09:34:14 UTC. It retained 600 actual phone 4× RAF deltas, a
+4,393,419-byte CDP/V8 trace, LongTasks and before/after Performance metrics.
+This instrumented diagnostic is separate from acceptance evidence. Its worst
+1,050 ms interval overlaps a 721.9 ms TimerFire event, whose tick FunctionCall
+was 89.7 ms; layout/style work and minimal diagnostic RAF callbacks also show
+large durations. Four recorded GC safepoints total only 0.67 ms (max 0.644 ms).
+No evidence establishes the cause of the earlier uninstrumented 183.2 ms gap,
+so no runtime optimization or threshold change follows from this diagnostic.
+The raw trace and aligned report are in `evidence/browser/diagnostic-phone/`.
+An unchanged, uninstrumented confirmation followed after the shared CPU hold.
+
+## Final local acceptance
+
+- `node scripts/browser-performance.mjs`: **PASS**, 09:41:53.562–09:42:24.762 UTC on reproducible HTML `a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08` and unchanged sampler `274a54ce91f1dc173e094b06af713e8cc945e75983985ca8623d4cd5a018720a`. All source fingerprints matched. Desktop retained 600 consecutive actual intervals: 59.507268 fps, p99 16.8 ms, max 83.3 ms; phone 390×844 at 4× retained 600: 60.002784 fps, p99/max 16.8 ms. No filtering or threshold changes. Separate clips are 303,055 and 233,152 bytes; both sampling and recording contexts had zero page errors/nonfile requests.
+- `node scripts/browser-check.mjs && node scripts/browser-clock.mjs`: **28/28 gameplay checks and independent review-clock probe PASS** on the same final HTML, including both complete licenses and valid comment delimiters.
+- `npm run build:play && sha256sum play.html` twice: **byte-identical**, 439,584 bytes and the exact final SHA above. `npm run generate` twice and `git diff --exit-code -- content/categories.json content/categories.ts content/categories.schema.json manifest.json fixtures`: **PASS**, generated content, manifest and actual phase states unchanged.
+- `node scripts/generate-content.mjs --check && npx tsx scripts/content-schema.ts --check`: **PASS**, authoritative data and emitted Draft 2020-12 schema match.
+- `npm run typecheck`: **PASS** after the added artifact test. `npx tsx --test tests/artifacts.test.ts`: **1/1 PASS**, 13.637 ms test body; recomputes raw frame totals/fps/p99, validates both thresholds, binds exact HTML/source/sampler/licensing hashes, all 28 functional results and both separate clip hashes/metadata/sizes/error/request streams. Alongside the prior unchanged 20/20 core/data suite, every local test has passed.
+- `npx tsx scripts/checksums.ts && npx tsx scripts/checksums.ts --check`: **71 data/media files PASS**, including historical HTML, raw failed attempts, original samplers, diagnostic trace and all clips. `git diff --check`: **PASS**.
 
 ## Thirty independently sourced content checks
 
