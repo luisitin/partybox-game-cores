@@ -68,3 +68,11 @@ losing unfinished input without leaving secret fields in concealed DOM.
 Add browser regressions for all numeric/range types, bluff hide/pause
 and owner isolation, plus milestone3 capture. G04 workflow concurrency
 cancels only superseded runs of this PR; final-head green remains required.
+
+KEEP GOING2: show controller question/hint/countdown, focus its input or
+legal choice on reveal, and return the shared board on phone concealment.
+Show a compact phone wheel during wheel phases; scroll new phases into
+view. Wrap legal unbroken fake text and use two vote columns on wide
+controllers. Remove implementation-only factory wording from player help.
+Add keyboard/context/timer/wheel/maximum-length layout regressions and
+milestone4 capture. All rendering still uses own/public projections.

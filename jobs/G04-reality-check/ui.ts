@@ -32,7 +32,7 @@ function dispatch(event:Parameters<typeof game.reduce>[1]){
  const changed=phaseKey(old)!==phaseKey(next);state=next;
  if(changed){drafts.clear();visited=[];nextViewer();}
  if(state.phase.paused){open=false;privateStamp='';}
- render();schedule();
+ render();schedule();if(changed)$('match').scrollIntoView({block:'start'});
 }
 function schedule(){
  clearTimers();if(!state||state.phase.paused||state.phase.id==='done')return;
@@ -82,6 +82,7 @@ function submit(input:Input){
 function renderPrivate(){
  const area=$('private');if(!state)return;
  const phase=state.phase.id;
+ area.dataset.open=String(open&&!!viewer&&['answer','write','vote'].includes(phase)&&!state.phase.paused);
  if(!['answer','write','vote'].includes(phase)||state.phase.paused){area.hidden=true;area.replaceChildren();privateStamp='';return;}
  area.hidden=false;
  if(!viewer){area.innerHTML=`<h3>Controllers concealed</h3><p class="hidden-note">${humans().length?'Your answers are locked. Waiting for the other players or the deadline.':'The bots are taking their turns.'}</p>`;privateStamp='';return;}
@@ -99,7 +100,7 @@ function renderPrivate(){
   }
  }
  if(!v.inputType)form=`<p class="hidden-note">${v.foundTruth?'You wrote the truth! You earn its points at the reveal, and do not vote.':`Your answer is locked${v.mine!==null?`: ${h(v.mine)}`:'.'}`}</p><button id="acknowledge">Hide and pass</button>`;
- area.innerHTML=`<h3>${h(names.get(viewer))} · Private controller</h3>${form}<p id="input-error" class="error" role="alert"></p><button id="hide-private" class="secondary">Hide controller</button>`;
+ area.innerHTML=`<div class="meta"><h3>${h(names.get(viewer))}</h3><span id="controller-countdown" class="clock"></span></div><p class="hint private-question">${h(q.prompt)}</p><p class="hint">${h(q.hint)}</p>${form}<p id="input-error" class="error" role="alert"></p><button id="hide-private" class="secondary">Hide controller</button>`;
  $('hide-private').onclick=()=>{rememberDraft();open=false;privateStamp='';renderPrivate();};
  const ack=$('acknowledge');if(ack)ack.onclick=pass;
  area.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(b=>b.onclick=()=>submit({type:'vote',choice:b.dataset.choice!}));
@@ -109,8 +110,9 @@ function renderPrivate(){
   const n=Number(answer.value);$('answer-readout').textContent=q.kind==='number'?String(n):n===0&&q.kind==='century'?'No century zero':dateLabel(q,n);
   $<HTMLButtonElement>('lock-answer').disabled=q.kind==='century'&&n===0;
  };
+ area.querySelector<HTMLElement>('textarea,input,[data-value],[data-choice]:not(:disabled),#acknowledge')?.focus();countdown();
 }
-function countdown(){if(!state||!$('countdown'))return;const at=state.phase.paused?.at??Date.now();$('countdown').textContent=state.phase.id==='done'?'Finished':state.phase.paused?'Paused':`${Math.max(0,Math.ceil((state.phase.deadline!-at)/1000))} s`;}
+function countdown(){if(!state)return;const at=state.phase.paused?.at??Date.now(),label=state.phase.id==='done'?'Finished':state.phase.paused?'Paused':`${Math.max(0,Math.ceil((state.phase.deadline!-at)/1000))} s`;for(const id of ['countdown','controller-countdown'])if($(id))$(id).textContent=label;}
 function render(){if(!state)return;const v=game.tvView(state);renderPublic(v);wheel(v);renderPrivate();countdown();$('pause').textContent=v.paused?'Resume':'Pause';$<HTMLButtonElement>('pause').disabled=$<HTMLButtonElement>('end').disabled=v.phaseId==='done';$<HTMLButtonElement>('skip').disabled=v.paused||v.phaseId==='done';}
 $('start').onclick=()=>{
  const seed=Number(value('seed').value);if(!Number.isInteger(seed)||seed<0||seed>4294967295){$('setup-error').textContent='Use a whole replay seed from 0 to 4294967295.';return;}

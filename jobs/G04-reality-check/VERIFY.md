@@ -115,3 +115,11 @@ range restores, bluff pause restore, hidden fields0 and next-owner blank.
 npm run check and FAST_TEST=1 node --test test.ts PASS23/23; core unchanged.
 TV60.0028fps/p9516.70ms;phone4×60.0024fps/p9516.70ms. build491,924bytes;
 19 checksums PASS. Capture3 is under10MB. New-head hosted CI pending.
+
+Round2 inline Playwright baseline (/tmp/G04-phone-before.json):phone wheel
+invisible,private question absent,focus BODY and keyboard typing produced
+empty fake. After:npm run check/node build.ts/node browser.ts PASS22
+scenarios, including keyboard-only entry, nearby question, matching timer,
+wheel visible and160-character unbroken votes wrapping. TV60.0032fps/
+p9516.80ms,phone4×60.0028fps/p9516.80ms; no network/errors/reduced-motion
+animation. HTML492,810bytes,20 checksums PASS,capture4<10MB. Core unchanged.

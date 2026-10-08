@@ -18,3 +18,13 @@ the identical case now retains it. Browser regressions additionally pass
 six number/range concealment restores, bluff hide/pause restores, no
 hidden DOM fields and no next-owner inheritance. Gain is observable;
 no-gain streak0. Core and bot policies are unchanged.
+
+Round2 five weaknesses: phone context/focus/wheel/long-answer layout (worst);
+short public years; Medium fake style; all-phase fuzz coverage; custom zero
+catalog coverage. Fix phone play: show question/hint/timer beside inputs,
+focus the field, show the wheel during its phase, and wrap legal long fakes.
+Before:wheelVisible=false,nearbyQuestion=false,focus=BODY,keyboardDraft=''.
+After:wheel/question visible,keyboard typing reaches its field,timer matches,
+shared board returns on concealment and160-character votes do not overflow.
+Remove developer factory wording from the player help. Observable gain;
+no-gain streak0. Core/bots unchanged.
