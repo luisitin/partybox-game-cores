@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-08T22:45:47.738792+00:00",
+  "runtime": "v22.16.0",
+  "runtimeBinarySha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "serverSha256": "fcadbe071f7db59ae88e97e94422a36b18481ab996940ed4b8410501cf7bc191",
+  "deltaManifestSha256": "46f8c353696a3c04a4b4e7e01c36dd2f64eba6cf54fc31e1aac3d2f9ca86028e",
+  "requests": [
+    {
+      "variant": "baseline",
+      "actualBytesReadThroughEOF": 1390845993,
+      "actualSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+      "closedAt": "2026-10-08T22:45:55.184873+00:00"
+    },
+    {
+      "variant": "candidate",
+      "actualBytesReadThroughEOF": 1390846291,
+      "actualSha256": "b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb",
+      "closedAt": "2026-10-08T22:46:00.880420+00:00"
+    }
+  ],
+  "scope": "Actual independent complete HTTP-byte receiver of both genuine full baseline/candidate emissions, hashes through EOF and final source identity. No browser/native player timing, cold-cache comparison or offline acceptance.",
+  "serverExitCode": 0,
+  "closedAt": "2026-10-08T22:46:03.912329+00:00"
+}

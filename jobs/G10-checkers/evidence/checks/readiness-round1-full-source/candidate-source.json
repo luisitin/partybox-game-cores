@@ -1,0 +1,40 @@
+{
+  "status": "PRIVATE_SOURCE_ONLY",
+  "acceptedBaselineHead": "491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+  "sourceOriginalSha256": "dc29bcf9d10189bf92983344854970dcfb54b3366c25558d695d04e72e39dcdf",
+  "sourceCandidateSha256": "1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81",
+  "changes": [
+    {
+      "old": "let botsPrepared=document.readyState!=='loading';",
+      "new": "const initiallyPrepared=document.readyState!=='loading';\nconst readyVariants:Record<Variant,boolean>={american:initiallyPrepared,international:initiallyPrepared};\nconst botsPrepared=()=>readyVariants[select('variant') as Variant]===true;",
+      "count": 1
+    },
+    {
+      "old": "return botsPrepared||",
+      "new": "return botsPrepared()||",
+      "count": 1
+    },
+    {
+      "old": "!botsPrepared",
+      "new": "!botsPrepared()",
+      "count": 2
+    },
+    {
+      "old": "startReadiness();['seat-0','seat-1'].forEach",
+      "new": "startReadiness();['variant','seat-0','seat-1'].forEach",
+      "count": 1
+    },
+    {
+      "old": "document.addEventListener('DOMContentLoaded',()=>{botsPrepared=true;startReadiness();},{once:true});",
+      "new": "document.addEventListener('g10-american-corpus-ready',()=>{readyVariants.american=true;startReadiness();});\ndocument.addEventListener('DOMContentLoaded',()=>{readyVariants.american=true;readyVariants.international=true;startReadiness();},{once:true});",
+      "count": 1
+    },
+    {
+      "old": "workerVariant,botsPrepared,canStart:",
+      "new": "workerVariant,botsPrepared:botsPrepared(),preparedVariants:{...readyVariants},canStart:",
+      "count": 1
+    }
+  ],
+  "scope": "Variant readiness only; unchanged core/bot budgets/complete corpus. No compile/browser/parser measurement/player gain yet.",
+  "reviewCorrection": "American-only parser signal; International has no event shortcut and remains false until genuine original DOMContentLoaded."
+}

@@ -1,0 +1,6 @@
+Original private orchestration failure (before any nested tool ran):
+Script error:
+SyntaxError: Unexpected token ')'
+
+The JavaScript archive construction had one extra closing parenthesis. Correcting that private tool source does not change CI, game data, compiler assertions or acceptance. The original error is retained; no actual source file or native experiment was modified by the failed parse.
+
