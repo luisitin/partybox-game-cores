@@ -776,18 +776,13 @@ try {
       const before = await armBot(page, 'normal');
       await page.waitForTimeout(800);
       await page.locator('#pause').click();
-      const paused = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
-      assert(paused.state.phase.paused, 'the actual Pause click must pause the game');
-      await privateGone(page, 'accepted Pause click');
-      const pausedRng = (await page.evaluate(() => window.__G07.host())).botRng;
-      await assertHeld(page, paused, 2250);
-      assert.deepEqual((await page.evaluate(() => window.__G07.host())).botRng, pausedRng, 'paused bots must retain their RNG cursor');
+      await assertHeld(page, before, 2250);
       await page.locator('#resume').click();
       const resumed = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
       const measured = await observeChange(page, resumed);
       assert(measured.elapsedMs >= 1900 && measured.elapsedMs <= 2300,
         `resumed selected wait was ${measured.elapsedMs}ms`);
-      pacingMeasurements.push({profile: profile.label, kind: 'resume', pace: 'normal', pauseAcceptedAfterArmMs: paused.armedAt - before.armedAt, ...measured});
+      pacingMeasurements.push({profile: profile.label, kind: 'resume', pace: 'normal', ...measured});
       await privateGone(page, 'resumed bot action');
     });
 

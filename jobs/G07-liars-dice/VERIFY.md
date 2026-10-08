@@ -1,10 +1,10 @@
 # Verification log
 
-Current checkpoint: round4 passed exact-head GitHub run37755395776 at
-445cf47c54df697e1b70e3b3214f550fe646ce12 (46 node/25 mutations/84 browser,
-293-file integrity). Round5's help/seat-ID source builds, but browser proof is
-pending: the first full run failed89/94; its complete raw evidence is retained.
-The corrected JSON-only test transport is syntax-checked and not yet rerun.
+Current checkpoint: round5 local proof is complete at33f5e801 HTML: full94/94,
+both strict600-frame gates and matching desktop/phone clips pass. Core/session
+source is unchanged. Round4 exact445cf47 passed GitHub37755395776; the round5
+cadence passed all94 hosted browser checks, then rejected its old snapshot.
+The completed new-source evidence is published; final-head CI must pass.
 Intermediate failures below are retained as history, not current blockers.
 
 ## Research milestone (2026-10-08)
@@ -462,3 +462,51 @@ Cadence file checks: `git diff --check`, `node scripts/hashes.mjs` twice plus
 browser snapshot does not match the new33f5 page. Exact stderr is retained
 under ignored .work/round-5-cadence-integrity.log. The guard remains required;
 new passing source-matched proof must replace the top snapshot before acceptance.
+
+## KEEP GOING round5 — completed local proof
+
+`node scripts/browser-check.mjs --snapshot`: PASS94/94, exact default full run
+20261008100423816, completed10:08:17 UTC. Frozen HTML33f5e801…f6c7d37a,
+runnerf8a8d602…5bcba77, unchanged core/session bundles. All ten new profile
+cases pass: actual core/session saved roster['','__proto__','constructor'],
+covered Resume, ordinary bids/handoff, unknown-seat privacy, empty-seat
+loss/acknowledgement/winner, accurate palifico help and18 exemption conditions.
+The actual before/after probe measures private-dice availability0→5; no
+initial turn/cup was edited. Public proof: evidence/browser/round-5-host.json.
+
+All600 consecutive frame intervals retained, no filtering: desktop60.002400FPS,
+p99/max16.8ms, zero above17ms; phone4x59.803247FPS,p9916.8ms,max50ms,
+one above17ms. Same eight-seat live bid/cup/legal-selector workload; no
+recording overhead. HTML/core/session start-end guards and offline/error checks
+pass. Public report/raw/complete archive: evidence/browser/report.json.
+
+The second full run20261008094526208 failed92/94: existing pause comparison
+and phone48.716325FPS/p99133.4ms/max350ms. Its exact runner/log/raw are
+retained alongside the first89/94 failure. Actual-pause instrumentation proves
+a deliberately2571ms delayed click follows a legitimate pre-pause bot move;
+once accepted, paused state/RNG holds and cup5→0. The oracle now compares
+against accepted paused state, asserts pause/private removal/RNG hold and
+retains1900–2300ms resume bounds. Final actual resumes2026/2074ms pass.
+The diagnostic phone600 sample is explicitly nongating; no original frame-
+failure cause or runtime FPS improvement is claimed. Exact diagnostic harness,
+summary and measurement are under evidence/browser/diagnostics/.
+
+`node scripts/capture.mjs round-5 --pace-demo`: functional PASS, independently
+recorded before final FPS acceptance. Desktop1,877,270bytes and phone1,741,894;
+matching33f5 start/end source, zero network/page errors. Both show correct
+help, genuine saved custom-ID Resume/open/bid/dudo/Next, Normal/Manual pacing
+and five actual rounds/winner. Recording is not a performance measurement.
+Source guards/hashes: evidence/browser/round-5-captures.json. All delivery
+writers and processes stopped10:08:17 UTC for final hashes/claim/push.
+
+Hosted cadence37758787707 at26222ec passed46 node/25 mutations/full94 browser
+checks including both strict gates, then correctly failed the retained09f9
+snapshot comparison. Metadata: evidence/checks/ci-round-5-cadence.json.
+Artifact was not downloaded; no hosted FPS values are inferred. The current
+published local source-matched snapshot resolves that recorded evidence gap.
+
+Final round5 `node scripts/hashes.mjs` twice plus `cmp`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs` and
+`git diff --check`: PASS334 delivered files,2× byte-identical fixtures/manifest,
+source-matched full94 raw frames, original/Zod notices, pure core and all
+recordings below10MB. Manifest regenerated once more for this final log entry.

@@ -164,3 +164,21 @@ covered-cup privacy and unknown-seat behavior. Add actual UI/core comparisons
 for rule conditions and a genuine valid empty-ID saved-game recovery/move/
 acknowledgement, including prototype-named seats. Core/session/strategy source
 remain unchanged; require strict build, full browser and source-matched clips.
+
+Round5 completed locally10:08:17: full94/94 on unchanged33f5 HTML,
+desktop60.002400FPS/phone4x59.803247FPS, all600 raw intervals each and both
+unchanged gates pass. The genuine seed1 saved roster improves empty-seat
+private-dice availability0→5; ordinary empty/prototype bids and constructor
+cup work, while unknown-seat private dice remain0. All ten new profile cases
+and18 exemption conditions pass. Matching functional clips demonstrate
+Resume, private opening, bid, challenge and acknowledgement plus pacing and
+natural finish. Core/session source unchanged; player-visible gain, streak0.
+
+Both failed expanded runs remain with exact runners/raw frames. JSON text
+transport preserves original own prototype keys. Actual pause instrumentation
+proves pre-pause arm-time state can legitimately change before a delayed
+click; accepted paused state/RNG holds and cup clears. The final oracle keeps
+the actual pause/privacy/RNG/resume assertions. Diagnostic FPS remains
+nongating and original frame-failure cause unestablished. Cadence hosted
+all94 browser checks passed before the old-snapshot integrity rejection;
+the complete new snapshot is now published.
