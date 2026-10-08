@@ -66,6 +66,8 @@ that the earlier2–5 browser proof accepts the new full-six source. Separate
 payload load proof and actual full-game/frame proof remain distinct gates.
 # Current delivery and startup interpretation
 
+2026-10-08 20:42 UTC recovery: a second workspace restart interrupted the 30-minute push cadence after the actual 20:10:42 push. Its missed deadline remains explicit. A green native workflow and artifact metadata do not establish a downloaded deliverable: independently verify official ZIP bytes, safe member paths and the complete original HTML bytes before PR. Stream the large member rather than extract a duplicate copy because the shared disk is limited. A documentation-only checkpoint still requires exact new-head hosted acceptance before calling the final PR complete.
+
 Two Human seats may play while the inert original database tags are still
 parsing; any computer seat waits until DOMContentLoaded so every original
 data part is available. Actual file-navigation/first legal turns verify this

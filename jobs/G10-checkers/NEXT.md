@@ -1,3 +1,15 @@
+# Recovery checkpoint — 2026-10-08 20:42 UTC
+
+The previous successful push was 6de661bc96798b8c9ed146e7a6cafcfa37bca150 at 20:10:42.291192 UTC. A second workspace restart around 20:31–20:40 interrupted this chat. The hard 20:40:42.291192 push deadline was missed; no timestamp is backdated. The next observed successful push resets cadence.
+
+Fresh native GitHub read at 20:42 confirms workflow 37837474779 completed SUCCESS at 20:32:31 on exact head 6de661bc96798b8c9ed146e7a6cafcfa37bca150: node 20:14:49, American 20:15:58, browser 20:17:06, International 20:29:51, delivery 20:32:31. The earlier independent component reader completed at 20:29:12 and passed all guarded inputs, original workloads, all four native frame profiles and decoded captures. The auxiliary reader’s mistaken seed-list numeric interpretation was corrected without changing CI or source. Its original failure remains retained.
+
+Actual official delivery metadata now exists: standalone artifact 11576888627, ZIP 968,040,269 bytes, SHA-256 1b04adca169c200569b894a60ce9ebb26d27408fa8b4474e7c80879a1652bf08; complete evidence artifact 11577710435, ZIP 10,484,190 bytes, SHA-256 bac499e7f0d8ce2ce0db443aada0ecf3c011003d11c25f6fa6c76bcc92a48155. Both expire 2026-10-15. Actual download, ZIP safety/CRC and full 1,390,845,993-byte HTML member SHA-256 verification are still pending. Temporary Actions artifacts are not durable Releases. No PR or KEEP round is claimed yet.
+
+Next: download the official artifacts, stream the full HTML member without a second 1.39 GB extraction, verify every receipt against the actual accepted Git head and source guards, and preserve actual delivery logs. This documentation checkpoint creates a new head; its fresh full workflow remains mandatory before final current-head acceptance. After checks and download verification, open the job PR and perform the binding ranked-five KEEP GOING rounds. The American per-variant startup idea is only a candidate and has not been prototyped or claimed as a player gain. Preserve the genuine local International 17.510 FPS failure, phone NOTRUN, and earlier hosted missing-tool failures without causal or retry claims.
+
+## Earlier checkpoint retained as history
+
 # Native GitHub video-tool repair — 2026-10-08 around20:08UTC
 
 Last observed successful branch push: 68d428eef59fea115510a1267e51ba0455057130 at19:50:44.127439 UTC; main6d5c1a8 own row19:49:41. Next early target20:15:44.127439, hard20:20:44.127439 until the next actual successful push. Quiet hold from20:00:38 acknowledgment through explicit root release20:04:24.587563 was honored; no local CPU/source writer ran during that hold.
