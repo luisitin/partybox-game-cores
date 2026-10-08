@@ -1,5 +1,12 @@
 # G01 Dominoes → PartyBox integration guide
 
+Current recovery note (2026-10-08): original PR1 is DRAFT for renewed review
+of later0.2.8/core/UI changes. Canonical327 full hosted run37812880528
+passed, but retained no artifacts/raw intervals. The older restored browser
+report is historical and local55.73/51.58fps failures retain UNKNOWN cause.
+NEXT.md and the new current CI artifact bind outstanding delivery checks.
+The historical polish descriptions below remain evidence of their own runs.
+
 > For the owner's desktop Claude agent, who ports this into the main repo (luisitin/partybox, local
 > C:/dev/partybox). Read this file first; everything else in this folder is the job's own record.
 

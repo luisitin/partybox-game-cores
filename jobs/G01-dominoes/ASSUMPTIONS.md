@@ -36,3 +36,23 @@ For improvement studies, alternate candidate seats on the same 2,000 deal seeds 
   stay satisfied because the delivery follow-up changes no player behavior.
 
 R20 is a real reliability gain and supersedes the previous R16–18 stop:three fresh consecutive no-player-gain reviews are required. R21 valid compatibility is evidence of preservation,not a new player-visible improvement. The execution service disconnected before the first compatibility command executed;reconnection retained the pushed branch and working files.
+
+## Current-source recovery, 2026-10-08T22:58:53Z
+
+- Fresh main/all17matching-ref strict audit selected only G01; claim98529de
+  changes only that row. Local merged3015b8 preserves canonical327 source.
+- Old completed0.2.7/R21–23 cannot certify later0.2.8/UI changes. Reuse
+  original PR1 as draft; renew current full checks and player review.
+- Current327 hosted green is real; its empty artifact list and missing raw
+  intervals prevent current artifact acceptance. Older restored reports and
+  lowered-threshold milestone14 remain labelled historical.
+- Fresh strict compilation/build first failed because contract/node_modules
+  lacked Zod. Install the existing contract package as CI does and repeat;
+  the setup failures remain recorded, not labelled game regressions.
+- Proof delivery repair is not a player gain or KEEP round. Original300
+  native intervals/no warmup/filtering/58fps/p95<=18ms gates are retained.
+- Synchronous Strong-bot search and thinking-dot colour animation are
+  source-level hypotheses. Prior frame failures have UNKNOWN cause; no
+  fake clock, filtered sample, settling period or lucky unchanged rerun.
+- Workspace restart ended the old agents after lawful claim. Receipts need
+  actual process closure; native elapsed trials require root coordination.

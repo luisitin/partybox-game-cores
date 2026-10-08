@@ -1,5 +1,28 @@
 # KEEP GOING reviews
 
+## Current0.2.8 preparation (not a completed round)
+
+Later core/UI changes make the old0.2.7/R21–23 stop historical. Original
+PR1 is draft while current checks and renewed review remain incomplete.
+Five current weaknesses, ranked:
+
+1. Strong-bot64-world search runs synchronously on the UI thread. Measure
+   actual responsiveness for exact-policy worker transport before adopting;
+   retain seeds/RNG/state, stale guards and simulated functional checks.
+   Earlier FPS failures have UNKNOWN cause.
+2. Missing current CI artifacts/raw/source-bound frame proof. Repair proof
+   delivery first; this verifier change is not a player gain or KEEP round.
+3. Four-seat/partner phone presentation coverage is incomplete. Exercise
+   private hands, valid placement, all controls and round-end reveal.
+4. Thinking-dot background-colour animation repaints. Profile before
+   changing visible behaviour or claiming an improvement.
+5. Physical-phone/direct-disk proof is unavailable here. State actual
+   emulation/exact-byte setContent limitations without fabricating evidence.
+
+No renewed round or player-visible gain is yet measured. After current full
+CI green, fix/measure the worst testable weakness as round25 and continue
+until three consecutive meaningful reviews find no player-visible gain.
+
 ## Round 1
 
 Five largest weaknesses, ranked: published Draw deal not selectable; Draw bot lookahead ignores future stock; bounded hidden-deal rejection can fall back; no physical-phone/file-navigation proof in managed environment; limited upstream baseline scope. Fixed the first with a labelled 7/7/6 Draw option, retaining 7/5/5 as the explicit house default and seven-per-partner override. Other regional rules remain independently configurable; this option does not claim a complete Pagat rules edition.

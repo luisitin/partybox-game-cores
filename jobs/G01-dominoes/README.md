@@ -47,12 +47,13 @@ Single steps:
 - `npm run fixtures`: regenerate `fixtures/` and `manifest.json`.
 - `node league.ts` and `npm run draw-league`: 2,000-match strength leagues.
 - `node browser.ts`: Chromium checks at 1920×1080 (TV) and 390×844 (phone,
-  4× CPU). Frame gate: TV average at least 58 fps; phone p95 at most 18 ms.
+  4× CPU). Both profiles require average at least 58 fps and p95 at most 18 ms.
 - `node checksums.ts --check`: hashes of every shipped file.
 
 ## Status
 
-Rules, privacy, determinism and bot checks are the job's own harness. The
-browser frame-rate gate is open on this loaded shared machine (see
-`INTEGRATION.md`, "Known gaps and risks"). The gate is not weakened. Do not
-treat the job as green until `npm test` exits 0 on a machine that can meet it.
+PR1 is draft for renewed review of current0.2.8/UI changes. Canonical327
+full hosted CI passed; local55.73/51.58fps failures retain UNKNOWN cause.
+Older browser-report.json is historical; current raw/log/capture proof
+belongs in the new CI artifact. NEXT.md binds outstanding delivery checks.
+No gate is weakened and no renewed player-visible gain is yet measured.

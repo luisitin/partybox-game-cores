@@ -1,37 +1,46 @@
-# G01 completed implementation and final delivery gate
+# G01 current delivery review — incomplete
 
-Chat codex-domino;working branch job/G01-dominoes-reverify reuses
-https://github.com/luisitin/partybox-game-cores/pull/1 on job/G01-dominoes.
-Both branches are pushed to the same commit,non-force;only own G01 claim
-is refreshed on main. No duplicate PR and no public PR merge/closure.
+Chat codex-domino-audit; local branch job/G01-dominoes-queue-audit-20261008
+started from lawful main claim98529de285adc352f036c0e60db03304d12d15c8
+(2026-10-08T22:58:53Z), then normally merged canonical327f3dd4079df7fe74a094a3b1f557ea704b0196.
+Reuse original PR1/canonical job/G01-dominoes; no duplicate, merge or force-push.
+Refresh only G01 on main every milestone. PR1 became draft23:18:04UTC.
 
-Core0.2.7 strategy/state format retained. R20 fixes malformed envelopes:
-7/9 exceptions→0/9. R21–23 have three consecutive no-player-gain rounds:
-1,003 valid games/378,899 transitions/0 differences;234,936 invalid JSON
-probes/3,012 frozen states/0 failures;fresh browser/privacy/offline audit.
-The renewed KEEP GOING stop is met. All rejected strategy studies stay out
-of production. VERIFY/CHANGES/REVIEW/LOOP record reasons and actual counts.
+Old completed0.2.7/04287939 body and R21–23 stop are historical:57efe0b
+changed core to0.2.8 (full human-idle cycle/round-end reveal),9497dea rebuilt
+presentation,3001349 changed board/reveal layout. Preserve those changes.
+Canonical327 full hosted CI37812880528 passed42 tests,25 real mutants,
+full leagues/upstream and native gates(TV58.4453535944fps/phone4x59.6057437684).
+Its artifacts are empty; current raw intervals were not retained. Restored
+57efe0b browser-report.json is historical. Milestone14/tv.png from a
+lowered-threshold run show presentation only. LOOP24 retains local55.73fps
+and standalone51.58fps FAIL against original58fps; cause UNKNOWN and phone
+NOT REACHED. Never relabel those failures as passing current evidence.
 
-Final installer plus full local npm test EXIT0 on2026-10-08:
-logs /tmp/G01-total-install.log and /tmp/G01-total-npm-test.log.
-40 tests/9,003 games,25 mutation kills,independent solver/count/probe
-checks,leagues71.9%/84.2% strong,upstream132/200,67 hashes and browser PASS.
-Final TV60.0036fps,phone59.4095fps at4×CPU;p9516.7ms both.
-Milestone13 VP9 clip decodes,3seconds,under10MB.
+This milestone repairs proof delivery without changing core/UI/page,
+original58fps/p95<=18ms gates, exactly300 unfiltered native intervals,
+zero warmup, bot workloads or intentional simulated functional contexts.
+browser-evidence.ts retains real timestamps/raw intervals before gates,
+source/Node/Chromium identities, failures and full36-frame VP9 decode.
+CI always uploads full logs/before-after tracked bytes, and checks immutable
+inputs against actual Git. Current-head full hosted checks and genuine
+artifact acceptance remain REQUIRED; none is yet claimed for this milestone.
+No new native browser or elapsed trial has run in this reclaimed pass.
 
-Before declaring delivery DONE,read PR1's actual head and check CI SUCCESS
-for that exact head. The committed full suite has already passed locally;
-only that hosted final gate remains until SUCCESS is observed. On success,
-update PR1's final evidence externally,then advance to the lowest eligible
-job after reading main README/RULES/JOBS/CLAIMS and fetching ALL refs.
-A continuing chat that sees current-head SUCCESS should go to the queue,
-not restart completed strategy experiments or these checks.
+After current full CI green, renew KEEP review starting at25. REVIEW.md
+ranks five weaknesses; no renewed round or player-visible gain is complete.
+Native elapsed trials need root's exclusive owner grant; never SIGSTOP,
+filter intervals, add settling/warmup or retry unchanged FPS for luck.
+The Strong bot's synchronous64-world UI-thread search is a responsiveness
+hypothesis, not an explanation of prior failures. Measure actual player
+outcomes before adopting workers; retain exact state/seed/RNG/policy,
+stale-turn guards and existing simulated functional checks.
 
-G04 PR4/head152e5a0 and G06 PR7/head0037add/CI37748960265 are complete.
-G08 Shake Up has another fresh owner. If selected later,FIRST read
-START-HERE/start-HANDOFF,preserve its assets/name and perform the7 tasks.
+Keep NEXT/VERIFY/assumptions current every push; log only actually measured
+rounds in LOOP.md. First reclaimed push deadline23:28:53UTC, target earlier.
+After three consecutive genuine no-player-gain rounds, fresh-read main/all
+matching refs and claim the lowest eligible job under strict six-hour rules.
 
-Re-verify when web works:regional opening/tied-round lead house choices;
-old Bicycle404/Masters403 gaps use live alternatives,not blockers.
-Managed file:// is blocked;exact-byte setContent fallback is disclosed.
-Phone390×844/4×CPU is emulation. Cloud draft13 is saved,unpublished.
+Re-verify when web works: regional opening/tied-round lead conventions.
+Managed file navigation is blocked. Exact-byte setContent and phone
+390x844/4xCPU emulation do not prove physical devices or disk navigation.

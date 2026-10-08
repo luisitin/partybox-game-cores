@@ -4,8 +4,10 @@ import {spawnSync} from 'node:child_process';
 import {tmpdir} from 'node:os';
 import {join,resolve} from 'node:path';
 import assert from 'node:assert/strict';
+import {evidence,bindBrowser,saveEvidence,beginEncoding,finishEncoding,verifyCapture,finishEvidence} from './browser-evidence.ts';
 const executable=process.env.CHROMIUM_PATH??(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined);
 const browser=await chromium.launch({headless:true,executablePath:executable,args:['--no-sandbox']});
+bindBrowser(executable??chromium.executablePath(),browser.version());
 mkdirSync('media',{recursive:true});const url='file://'+resolve('play.html');
 const errors:string[]=[],requests:string[]=[];
 const capturePath=process.env.G01_CAPTURE_PATH??'media/milestone-14-presentation.webm';
@@ -42,15 +44,18 @@ try {
  for(const [name,viewport,throttle] of [['tv',{width:1920,height:1080},1],['phone',{width:390,height:844},4]] as const){
   const {page,context}=await pageFor(viewport);const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:throttle});
   await page.selectOption('#seat-0','sharp');await page.selectOption('#seat-1','normal');await page.click('#start');
-  const frames=await page.evaluate(()=>new Promise<number[]>(resolve=>{const deltas:number[]=[];let previous:number|null=null;function tick(now:number){if(previous!==null)deltas.push(now-previous);previous=now;if(deltas.length>=300)resolve(deltas);else requestAnimationFrame(tick);}requestAnimationFrame(tick);}));
+  const measurement=await page.evaluate(()=>new Promise<{deltas:number[];timestamps:number[]}>(resolve=>{const deltas:number[]=[],timestamps:number[]=[];let previous:number|null=null;function tick(now:number){timestamps.push(now);if(previous!==null)deltas.push(now-previous);previous=now;if(deltas.length>=300)resolve({deltas,timestamps});else requestAnimationFrame(tick);}requestAnimationFrame(tick);}));
+  const frames=measurement.deltas;
   const sorted=[...frames].sort((a,b)=>a-b);const mean=frames.reduce((a,b)=>a+b,0)/frames.length;
   const report={name,viewport,throttle,frames:frames.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)],p99Ms:sorted[Math.floor(sorted.length*.99)],fps:1000/mean};performanceReports.push(report);console.log(report);
+  (evidence.profiles as unknown[]).push({...report,intervals:frames,timestamps:measurement.timestamps,actualCpuThrottleRate:throttle,clockInstalled:false,passed:report.fps>=58&&report.p95Ms!<=18});saveEvidence();
   assert(report.fps>=58,`${name}: average refresh below 58fps`);assert(report.p95Ms!<=18,`${name}: p95 frame time above one refresh`);
   if(name==='tv'){
    assert(await page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight),'TV match must fit its viewport');
    await page.screenshot({path:'media/tv.png',fullPage:true});const capture=mkdtempSync(join(tmpdir(),'G01-capture-'));
    for(let i=0;i<36;i++){await page.screenshot({path:join(capture,`${String(i).padStart(3,'0')}.png`)});await page.waitForTimeout(66);}
-   const encoded=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an',capturePath],{encoding:'utf8'});assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));rmSync(capture,{recursive:true});
+   const encoderArgs=['-y','-loglevel','error','-framerate','12','-i',join(capture,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an',capturePath],encoder=beginEncoding(encoderArgs,capture);
+   const encoded=spawnSync(encoder.path,encoderArgs,{encoding:'utf8'});finishEncoding(encoder,encoded.status);assert.equal(encoded.status,0,encoded.error?.message||encoded.stderr||String(encoded.signal));verifyCapture(capturePath);rmSync(capture,{recursive:true});
   }
   await context.close();
  }
@@ -59,4 +64,5 @@ try {
  await reduced.context.close();assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',automatedBotMatchMs:automatedMs,mixedUnattended:'passed within 3600000ms with private hands hidden',mixedUnattendedMs:mixedMs,capture:capturePath},null,2)+'\n');
  console.log('Browser functional, hot-seat privacy, offline, frame-time and reduced-motion checks pass');
-} finally {await browser.close();}
+ evidence.functional='PASS';evidence.externalRequests=requests;evidence.errors=errors;finishEvidence('PASS');
+} catch(error){evidence.externalRequests=requests;evidence.errors=errors;finishEvidence('FAIL',error);throw error;} finally {await browser.close();evidence.browserClosedAt=new Date().toISOString();saveEvidence();}
