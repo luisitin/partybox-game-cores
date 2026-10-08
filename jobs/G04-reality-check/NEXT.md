@@ -18,9 +18,11 @@ Active eight-seat UI:TV60.0024fps/p9516.70ms;phone4×60.0028fps/p9516.80ms.
 No network/errors. Wheel landing checks cover all eight realms; captures1/2
 are preserved under10MB. Native final pipeline log/tmp/G04-final-npm-test.log.
 
-Remaining: publish this checkpoint,open PR,observe actual current-head
-G04 CI,then KEEP GOING until three no-player-gain rounds. None count yet.
-Use gh api pull list filtered by head to resolve its URL after creation.
+PR4 is OPEN: https://github.com/luisitin/partybox-game-cores/pull/4
+Initial head6fdd9343d7bb3e451a0324e3f82d1f2231598fb5. Current-head hosted
+G04 CI is pending; no KEEP GOING rounds count yet. Observe green CI,
+then re-read the job and repeat five-weakness/worst-fix/measure/log until
+three consecutive rounds have no player-noticeable gain.
 Keep NEXT current and refresh ONLY G04 claim on main after each push.
 Stage G04/workflow only; G01 dependency caches are untracked locally.
 

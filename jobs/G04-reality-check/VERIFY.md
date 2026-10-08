@@ -101,3 +101,6 @@ strict types/RNG checks and pinned G04 install,23 focused tests,generated
 sample identity,standalone build identity and18 checksums all PASS.
 Cloud install_script/start_skill saved at draftrevision6 (unpublished).
 Current-head hosted PR CI and KEEP GOING remain pending.
+
+GitHub REST pull creation confirmed PR4 OPEN at6fdd934; current-head
+hosted G04 CI pending. No KEEP GOING rounds count before its green run.
