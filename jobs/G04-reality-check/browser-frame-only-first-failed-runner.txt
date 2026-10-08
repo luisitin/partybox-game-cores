@@ -2,12 +2,12 @@ import {chromium,type Page} from 'playwright';
 import {existsSync,readFileSync,writeFileSync,mkdirSync,mkdtempSync,rmSync,statSync} from 'node:fs';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
+import {spawnSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {game} from './core.ts';
-import {encodeCapture} from './capture-encoder.ts';
 const executable=process.env.G04_BROWSER_EXECUTABLE;
 const browser=await chromium.launch({headless:true,executablePath:executable,args:['--no-sandbox']});
 const html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[];
@@ -140,7 +140,7 @@ try {
   if(!framesOnly)await match.page.screenshot({path:`media/notice-${repeat===1?'':`repeat-${repeat}-`}${name}.png`,fullPage:true});
   if(name==='tv'&&!framesOnly){
    const directory=mkdtempSync(join(tmpdir(),'G04-capture-'));
-   try{for(let i=0;i<36;i++){if(i===12)await match.page.click('#hide-private');if(i===18){await match.page.click('#reveal-private');assert.equal(await match.page.inputValue('#fake'),'My harbour bluff');}await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.jpg`),quality:80});await match.page.waitForTimeout(66);}encodeCapture(directory,capturePath);}finally{rmSync(directory,{recursive:true});}
+   try{for(let i=0;i<36;i++){if(i===12)await match.page.click('#hide-private');if(i===18){await match.page.click('#reveal-private');assert.equal(await match.page.inputValue('#fake'),'My harbour bluff');}await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.png`)});await match.page.waitForTimeout(66);}const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(directory,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an',capturePath],{encoding:'utf8'});assert.equal(encode.status,0,encode.stderr||encode.error?.message);assert(statSync(capturePath).size<10*1024*1024);}finally{rmSync(directory,{recursive:true});}
   }
   await match.context.close();
  }

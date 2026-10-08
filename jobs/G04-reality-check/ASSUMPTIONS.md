@@ -37,3 +37,8 @@ Pure core/bot/UI/data behavior is preserved. Only builder/license documentation
 and verification transport/evidence change; no new local core league/matrix
 rerun is warranted. Hosted npm test still runs the complete suite.
 Original reports/clips are preserved; fresh recordings use milestone11 names.
+
+Cadence exception, observed not authorized: initial claim11:00:12 to first
+successful push11:31:26 took31m14s (74s beyond30min). Current NEXT gives
+actual previous push and both early/hard next deadlines. No retroactive claim
+time adjustment; future milestones keep a five-minute buffer.

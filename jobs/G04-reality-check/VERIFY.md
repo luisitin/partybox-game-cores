@@ -264,3 +264,47 @@ retained for its original source; new snapshot remains pending.
 Failure log is preserved; console elided some intervals, so full first failed
 raw300 reconstruction is unavailable. Future raw retention must precede gates.
 Unchanged core/gameplay checks remain accepted; new full CI still required.
+
+Cadence audit: main claim11:00:12UTC, successful branch push11:31:26UTC,
+elapsed31m14s: FAIL30-minute instruction by1m14s. This failure is retained,
+not converted into a passing check. PR4 converted to draft via
+`gh pr ready 4 --undo --repo luisitin/partybox-game-cores`; body now identifies
+current cd20cb7, historical152e5a and pending phone proof separately.
+
+Diagnostic command: `node .work/diagnostics/actual-file-frame-diagnostic.mjs`
+START11:41:07.854/END11:41:20.703UTC, actual disk page25e0b2, source guards PASS.
+Public nongating JSON and exact runner preserve all300 intervals/profile and
+timer/LongTask observations; process-command monitoring stays private.
+TV59.019079FPS, phone54.382275FPS, phone max200ms. Instrumented and concurrent
+with other verification; NOT acceptance. Largest stalls after all seven bot
+callbacks; phase write/no deadline transition; attribution unresolved.
+No gameplay/performance change claimed from this evidence.
+
+`npm run check` after raw-retention/frame-only runner update: PASS, strict ES2022.
+No inline/runtime/gameplay file changed. Frame-only confirmation is pending.
+
+`node browser.ts --frames-only`: EXIT1, start11:46:51.549UTC, actualfile25e0b2.
+All owned heavy groups acknowledged STOP/closed before launch; no inference
+about unobserved host work. Desktop300 consecutive intervals57.881535790FPS,
+p9516.8ms,p9950ms,max83.3ms; mean gate>=59 FAIL. Phone not run. Complete
+failedraw JSON/exact runner/log retained; all10 launch/end source hashes match.
+This verifies pre-assert raw retention, not frame-rate acceptance.
+
+`gh run view 37770616469 --repo luisitin/partybox-game-cores --log` read actual
+final logs: FAIL setup exit124 at11:46:15UTC, OS ffmpeg installation exceeded
+300s while still downloading packages; no core/browser suite executed. Exact
+encoder-stage log retained in JSON. Pinned Playwright ffmpeg1011 actual
+`-hide_banner -encoders` lists PNG and libvpx VP8; registry lookup succeeds.
+Runner/workflow now use that existing pinned encoder; no OS apt setup.
+Strict types and actual new codec capture remain pending, not claimed passed.
+
+Encoder follow-up: first strict check FAILTS2769 because optional path escaped
+closure narrowing; resolver now returns asserted string, `npm run check` PASS.
+First `node capture.ts` FAIL254: pinned binary lacks image2/PNG input decoding;
+exact error log retained. `-formats`/`-decoders` confirm image2pipe+MJPEG+VP8.
+Change tool-only capture to JPEG pipe with existing pinned libvpx encoder.
+`npm run check && node capture.ts`: EXIT0. Actual18-frame desktop conceal/reopen
+capture157496 bytes,1.5s encoded at12fps, all11 source hashes identical, zero
+HTTP/page errors. No frame filtering and no performance-gate weakening; no new
+FPS pass claimed. Both build-page and eight runtime files remain unchanged.
+`node checksums.ts && node checksums.ts --check`: new data/media integrity PASS.

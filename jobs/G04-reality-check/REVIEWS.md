@@ -92,3 +92,13 @@ games finish,all seats survive into finite independently checked results,
 0 failures. Core/bots/UI unchanged;player gain0,no-gain streak3. Remaining
 limits are documented scope/hardware concerns or cosmetic wording,not
 measured defects;final combined checks/current-head CI remain the gate.
+
+Corrective continuation before new acceptance: re-read repository README.md,
+RULES.md and JOBS.md on2026-10-08. Ranked weaknesses: (1) failing phone
+frame sample and lost raw intervals; (2) absent bundled Zod MIT notice;
+(3) stale ready PR/handoff; (4) physical-phone approximation; (5) source-bound
+new milestone capture. Notice is restored without script/runtime changes;
+PR is draft. Worst actionable verification gap: retain per-profile raw300
+intervals BEFORE assertions and add a frame-only confirmation mode that
+keeps prior functional/capture evidence separate. No gameplay gain or new
+completed KEEP round is claimed while acceptance remains pending.

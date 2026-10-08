@@ -1,0 +1,90 @@
+import { chromium } from 'playwright';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { resolve, join } from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { spawnSync } from 'node:child_process';
+import assert from 'node:assert/strict';
+import { game } from '../../core.ts';
+
+const job = resolve('.');
+const output = resolve('.work/diagnostics', new Date().toISOString().replace(/[:.]/g, '-'));
+mkdirSync(output, { recursive: true });
+const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+const guardedFiles = ['play.html','browser.ts','core.ts','ui.ts','bots.ts','samples.ts','scoring.ts','estimates.ts','shell.html'];
+const hashes = () => Object.fromEntries(guardedFiles.map(name => [name, sha(readFileSync(join(job,name)))]));
+const initialHashes = hashes();
+assert.equal(initialHashes['play.html'],'25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f','use the frozen notice page');
+const html = readFileSync('play.html', 'utf8');
+const inlineScripts = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map(m => sha(m[1]));
+const url = pathToFileURL(resolve('play.html')).href;
+let seed;
+for(let n=1;n<1000;n++) {
+ const s = game.init({players:[0,1,2].map(i=>({id:`p${i}`,name:`Player ${i+1}`,avatarId:'🙂',connected:true})),seed:n,now:100000,settings:{mode:'bluff',rounds:4}});
+ if(s.question.kind==='bluff'||s.question.realm==='bluff'){seed=n;break;}
+}
+assert(seed);
+const report={diagnostic:true,gating:false,startedAt:new Date().toISOString(),pid:process.pid,fixture:{seed,mode:'bluff',players:8,rounds:8,p0:'human',p1ThroughP7:'odd sharp / even normal',humanDraft:'My harbour bluff'},measurement:{intervals:300,frameFiltering:'none',navigation:'actual file://',recordVideo:false,fakeClock:false,instrumentation:'timer callback wall duration, DOM snapshots, LongTasks and LongAnimationFrames; one-second all-process ps samples; no CPU profiler or CDP trace'},sourceHashesAtStart:initialHashes,inlineScriptSha256:inlineScripts,profiles:[]};
+writeFileSync(join(output,'launch.json'),JSON.stringify(report,null,2)+'\n');
+console.log(JSON.stringify({startedAt:report.startedAt,pid:process.pid,output,htmlSha256:initialHashes['play.html']}));
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+const processes=[];
+const monitor=setInterval(()=>{
+ const p=spawnSync('ps',['-eo','pid,ppid,pgid,stat,pcpu,time,comm','--sort=-pcpu'],{encoding:'utf8',maxBuffer:1024*1024});
+ processes.push({at:new Date().toISOString(),exitCode:p.status,lines:p.stdout.trim().split('\n').slice(0,35),stderr:p.stderr});
+},1000);
+try {
+ for(const [name,viewport,rate] of [['tv',{width:1920,height:1080},1],['phone',{width:390,height:844},4]]){
+  const context=await browser.newContext({viewport,reducedMotion:'no-preference'});
+  await context.addInitScript(()=>{
+   const nativeNow=performance.now.bind(performance), nativeTimeout=window.setTimeout.bind(window), nativeInterval=window.setInterval.bind(window);
+   const d=window.__G04_DIAG={timers:[],functions:[],mutations:[],longTasks:[],longAnimationFrames:[],supported:PerformanceObserver.supportedEntryTypes,started:nativeNow()};
+   function snapshot(){
+    const p=document.getElementById('public'),privateArea=document.getElementById('private');
+    return {now:nativeNow(),dateNow:Date.now(),phase:p?.dataset.phase??null,question:p?.querySelector('.question')?.textContent??null,received:p?.textContent?.match(/\d+ of \d+ answers locked in\./)?.[0]??null,countdown:document.getElementById('countdown')?.textContent??null,privateOpen:privateArea?.dataset.open??null,privateInputCount:privateArea?.querySelectorAll('input,textarea').length??0,draft:document.getElementById('fake')?.value??null,focus:document.activeElement?.id??null};
+   }
+   d.snapshot=snapshot;
+   let sequence=0;
+   function wrap(fn,delay,type,args){
+    if(typeof fn!=='function')return fn;
+    const id=++sequence,source=String(fn),scheduledAt=nativeNow();
+    d.functions.push({id,fn,delay,type,source});
+    return function(...values){
+     const before=snapshot(),start=nativeNow();let result;
+     try{return result=fn.apply(this,values);}finally{const end=nativeNow();d.timers.push({id,type,delay,scheduledAt,start,end,duration:end-start,before,after:snapshot()});}
+    };
+   }
+   window.setTimeout=(fn,delay,...args)=>nativeTimeout(wrap(fn,delay,'timeout',args),delay,...args);
+   window.setInterval=(fn,delay,...args)=>nativeInterval(wrap(fn,delay,'interval',args),delay,...args);
+   const observer=new MutationObserver(records=>{
+    if(records.some(r=>r.target?.nodeType===1&&r.target.closest?.('#public')||r.target?.parentElement?.closest('#public')))d.mutations.push({at:nativeNow(),count:records.length,snapshot:snapshot()});
+   });
+   observer.observe(document,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:['data-phase','data-open']});
+   if(d.supported.includes('longtask'))new PerformanceObserver(list=>{for(const e of list.getEntries())d.longTasks.push(e.toJSON());}).observe({type:'longtask',buffered:true});
+   if(d.supported.includes('long-animation-frame'))new PerformanceObserver(list=>{for(const e of list.getEntries())d.longAnimationFrames.push(e.toJSON());}).observe({type:'long-animation-frame',buffered:true});
+  });
+  const page=await context.newPage(),errors=[],requests=[];
+  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+  await page.route('**/*',r=>r.request().url()===url?r.continue():r.abort());
+  await page.goto(url);assert.equal(page.url(),url);
+  const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate});
+  await page.selectOption('#players','8');for(let i=1;i<8;i++)await page.selectOption(`#seat-${i}`,i%2?'sharp':'normal');
+  await page.selectOption('#players','8');await page.selectOption('#mode','bluff');await page.selectOption('#rounds','8');await page.fill('#seed',String(seed));await page.click('#start');
+  assert.equal(await page.locator('#public').getAttribute('data-phase'),'wheel');await page.click('#skip');assert.equal(await page.locator('#public').getAttribute('data-phase'),'demo');await page.click('#skip');assert.equal(await page.locator('#public').getAttribute('data-phase'),'write');await page.click('#reveal-private');await page.fill('#fake','My harbour bluff');
+  const pre=await page.evaluate(()=>window.__G04_DIAG.snapshot());
+  const measured=await page.evaluate(()=>new Promise(resolve=>{
+   const d=window.__G04_DIAG,deltas=[],timestamps=[],sampleStart=performance.now(),before=d.snapshot();let previous=null;
+   function tick(now){if(previous!==null)deltas.push(now-previous);timestamps.push(now);previous=now;if(deltas.length===300)resolve({deltas,timestamps,sampleStart,sampleEnd:performance.now(),before,after:d.snapshot()});else requestAnimationFrame(tick);}requestAnimationFrame(tick);
+  }));
+  const observations=await page.evaluate(()=>{const d=window.__G04_DIAG;return {timers:d.timers,functions:d.functions.map(({fn,...v})=>v),mutations:d.mutations,longTasks:d.longTasks,longAnimationFrames:d.longAnimationFrames,supported:d.supported,after:d.snapshot()};});
+  const sorted=[...measured.deltas].sort((a,b)=>a-b),mean=measured.deltas.reduce((a,b)=>a+b,0)/measured.deltas.length;
+  const profile={name,viewport,throttle:rate,pre,measured,observations,frames:measured.deltas.length,meanMs:mean,fps:1000/mean,p95Ms:sorted[Math.floor(sorted.length*.95)],p99Ms:sorted[Math.floor(sorted.length*.99)],maxMs:sorted.at(-1),over18:measured.deltas.filter(x=>x>18).length,errors,requests,sceneGuard:{players:await page.locator('.score').count(),privateInputValue:await page.locator('#fake').inputValue(),phase:await page.locator('#public').getAttribute('data-phase'),overflowX:await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth)}};
+  assert.equal(profile.frames,300);assert.equal(profile.sceneGuard.players,8);assert.equal(profile.sceneGuard.privateInputValue,'My harbour bluff');assert.equal(profile.sceneGuard.phase,'write');assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
+  report.profiles.push(profile);writeFileSync(join(output,`${name}-raw.json`),JSON.stringify(profile,null,2)+'\n');
+  console.log(JSON.stringify({name,frames:300,fps:profile.fps,p95:profile.p95Ms,p99:profile.p99Ms,max:profile.maxMs,over18:profile.over18,longTasks:observations.longTasks.length,longAnimationFrames:observations.longAnimationFrames.length,before:measured.before,after:measured.after}));
+  await context.close();
+ }
+}catch(error){report.error=String(error?.stack??error);process.exitCode=1;console.error(report.error);}finally{
+ clearInterval(monitor);await browser.close();report.finishedAt=new Date().toISOString();report.sourceHashesAtEnd=hashes();report.sourceGuardsMatch=JSON.stringify(initialHashes)===JSON.stringify(report.sourceHashesAtEnd);report.processMonitor={samplingMs:1000,limits:'one-second process-list snapshots do not establish causation or catch every transient process; ps %CPU is lifetime average and TIME is rounded cumulative CPU seconds',samples:processes};
+ writeFileSync(join(output,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({finishedAt:report.finishedAt,output,sourceGuardsMatch:report.sourceGuardsMatch,error:report.error??null}));
+}
