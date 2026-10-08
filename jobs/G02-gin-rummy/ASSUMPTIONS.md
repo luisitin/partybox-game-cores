@@ -61,3 +61,7 @@ VIP pause/end retain their existing ordering. New match destroys private hand
 and draft DOM/cache; previous hidden-DOM retention was not a visual/core leak.
 Real-click evidence uses actual file navigation and elapsed time; separate
 deterministic regressions use controlled host time and withheld timer callbacks.
+
+Opening-pass history records the actor before the turn changes. The correction
+changes each new Pass entry's player field; existing state schemas remain
+compatible and already stored historical entries keep their recorded values.

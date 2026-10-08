@@ -1,0 +1,81 @@
+{
+  "negativeControl": false,
+  "started": "2026-10-08T12:04:52.888Z",
+  "completed": "2026-10-08T12:04:57.540Z",
+  "sourceStart": {
+    "play.html": "a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f",
+    "src/core.ts": "59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4"
+  },
+  "sourceEnd": {
+    "play.html": "a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f",
+    "src/core.ts": "59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4"
+  },
+  "sourceUnchanged": true,
+  "performanceMeasurement": false,
+  "rows": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "actualFileNavigation": true,
+      "actualGameInitSeed": 3660348618,
+      "entropySeed": 7,
+      "actors": [
+        "p1",
+        "p0"
+      ],
+      "desired": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "actual": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "core": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "attributionCorrect": true,
+      "stateInjected": false,
+      "privateCardsAfterPass": 0
+    },
+    {
+      "label": "phone4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "actualFileNavigation": true,
+      "actualGameInitSeed": 3660348618,
+      "entropySeed": 7,
+      "actors": [
+        "p1",
+        "p0"
+      ],
+      "desired": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "actual": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "core": [
+        "Player 2: pass",
+        "Player 1: pass"
+      ],
+      "attributionCorrect": true,
+      "stateInjected": false,
+      "privateCardsAfterPass": 0
+    }
+  ]
+}

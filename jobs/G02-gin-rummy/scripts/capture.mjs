@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import assert from 'node:assert/strict';
 import {seedHost} from './clock-check.mjs';
 const tag=process.argv[2]??'latest';assert(/^[a-z0-9-]+$/.test(tag));
+const publicHistory=process.argv.includes('--public-history');
 const sourcePaths=['play.html','src/core.ts','src/cards.ts','src/browser.ts','src/play.template.html'];
 const hashes=async()=>Object.fromEntries(await Promise.all(sourcePaths.map(async path=>[path,createHash('sha256').update(await readFile(path)).digest('hex')])));
 const sourceStart=await hashes(),started=new Date().toISOString(),rows=[];
@@ -17,7 +18,17 @@ try{
   await seedHost(context);const page=await context.newPage(),cd=await context.newCDPSession(page);
   await cd.send('Emulation.setCPUThrottlingRate',{rate});await page.goto('file://'+resolve('play.html'));
   await page.locator('#start').click();
-  for(let i=0;i<2;i++){await page.getByRole('button',{name:'Show my hand',exact:true}).click();await page.getByRole('button',{name:'Pass upcard',exact:true}).click();}
+  const passActors=[];
+  for(let i=0;i<2;i++){
+   const actor=(await page.locator('#status').textContent()).split(' · ')[0];passActors.push(actor+': pass');
+   await page.getByRole('button',{name:'Show my hand',exact:true}).click();await page.getByRole('button',{name:'Pass upcard',exact:true}).click();
+   if(publicHistory){
+    await page.getByText('Public turn history',{exact:true}).click();
+    assert.deepEqual(await page.locator('#log p').allTextContents(),passActors);
+    await page.locator('#log').scrollIntoViewIfNeeded();await page.waitForTimeout(650);
+    await page.getByText('Public turn history',{exact:true}).click();
+   }
+  }
   await page.getByRole('button',{name:'Show my hand',exact:true}).click();await page.getByRole('button',{name:'Draw stock',exact:true}).click();
   await page.locator('#hand .card').first().click();await page.locator('#meld-choice summary').click();
   await page.waitForFunction(()=>document.querySelectorAll('#meld-builder select').length===10);
@@ -32,7 +43,7 @@ try{
   await page.getByRole('button',{name:'Resume',exact:true}).click();await page.getByRole('button',{name:'End match',exact:true}).click();
   const video=page.video();await context.close();const path=`media/${tag}-${label}.webm`;await video.saveAs(path);
   const bytes=(await stat(path)).size;assert(bytes<10*1024*1024);
-  const row={path,bytes,sha256:createHash('sha256').update(await readFile(path)).digest('hex'),cpuThrottle:rate,viewport:{width,height},performanceMeasurement:false,newMatchPrivateDomCleared:true,actualElapsedTimeoutCoveredHand:true};rows.push(row);console.log(JSON.stringify(row));
+  const row={path,bytes,sha256:createHash('sha256').update(await readFile(path)).digest('hex'),cpuThrottle:rate,viewport:{width,height},performanceMeasurement:false,newMatchPrivateDomCleared:true,actualElapsedTimeoutCoveredHand:true,publicPassHistoryShown:publicHistory,passActors};rows.push(row);console.log(JSON.stringify(row));
  }
 }finally{await browser.close();}
 const sourceEnd=await hashes();assert.deepEqual(sourceEnd,sourceStart,'sources changed during recording');

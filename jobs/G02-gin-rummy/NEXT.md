@@ -1,35 +1,35 @@
 # Resume G02
 
-Branch job/G02-gin-rummy; nickname codex-gin-resume; existing PR#2/history retained.
-Main contains CLAIMS only. Shared contract and other jobs remain unchanged.
+Branch job/G02-gin-rummy; nickname codex-gin-resume; original PR#2/history retained.
+Main changes are CLAIMS only. Shared contract and other jobs are untouched.
 
-Original delivery: head 723bfa77ce91482f4084bbc195c117fa8d71480b passed exact-head
-CI 37730486159; PR#2 was ready. Original rounds 6–8 met the no-player-gain streak.
-That completion is historical, not acceptance of the resumed repair.
+Verified host checkpoint 11150c85ffdf8579706488c6824e269782c6f590 passed exact
+CI37772625259 at11:55:13 UTC. The first resumed source8136bf2 also passed
+CI37770743158; all actually read logs and local raw600-frame reports are retained.
+Host fix: overdue input/bot steps consume the timer and discard stale actions;
+New match removes private cards/drafts/cache. Local desktop60.002400 and
+phone59.902957 FPS, p9916.8ms; phone max33.3ms kept. Earlier desktop58.730056
+failure is preserved without a causal claim. Clips are under10MB/source-guarded.
 
-Current resumed host repair: strict build PASS. Actual real-file before/after
-shows30 ms-overdue human/bot clicks now consume only the timer move; New match
-clears11→0 private cards and10→0 meld selectors (old hidden DOM was not visually
-exposed). Full browser functionals/all five host regressions PASS. Desktop
-58.730056 FPS fails the unchanged 59 FPS gate; phone4x 60.001800 FPS passes. Both
-p99 16.8 ms; all 600 intervals/failures/source guards retained in resume evidence.
-The same source then passed actual exact-head hosted CI 37770743158 at 8136bf2
-and one unchanged local full confirmation (desktop 60.002400/phone 59.902957 FPS,
-both p99 16.8; phone max 33.3 ms retained). The complete passing snapshot is now
-published alongside all prior failures; no cause of earlier stalls is claimed.
+Formal KEEP round9 is active after that exact green. Worst of five reviewed
+weaknesses: opening Pass history names the next turn holder. Actual desktop/
+phone before logs [Player1,Player2] for actors[p1,p0]; all3 focused node tests
+fail. One-line fix logs the actual actor before switching turn. Strict build,
+3 focused tests (360 direct +240 valid-ID cases,3 automation routes), twice
+byte-identical fixtures and actual after UI PASS. Core59bd5055/HTMLa5a56d6a;
+card/RNG/scoring/strategy implementation unchanged.
 
-Initial guarded desktop/phone clips PASS (596,569/593,936 bytes); fresh verified
-milestone clips also pass with independent guards and are under 10 MB.
-Next: refresh claim/hashes, publish the verified host milestone within 30 minutes
-and wait for its actual exact-head CI. Hosted logs were actually read; artifact
-metadata was read but the Azure endpoint returned 403, so contents are unread.
-No further unchanged local benchmark or core matrix is queued.
-Retain every failed run. No unchanged full local leagues/matrices are needed
-for this host-only change; hosted npm test still runs all required checks.
+Final-source35 node tests, both2k leagues and25/25 actual mutations PASS.
+Complete default600-frame browser PASS: desktop59.703869/phone60.003000FPS,
+bothp9916.8; all raw/maxima and actual public-history comparisons retained.
+Fresh round9 public-history clips PASS; next refresh claim/hashes/integrity and
+push by12:19:42 latest, then inspect its actual exact-head CI. If proof cannot finish,
+push an honest pending cadence checkpoint. Preserve every failed run/source hash.
+No strict frame launch outside root's global quiet GO.
 
-After green, reread job/rules, rank five weaknesses and continue KEEP GOING.
-The new player-visible repair resets the stopping streak to 0. A concrete next
-candidate is opening-pass log attribution: the original core switches turn
-before appendLog, naming the opponent. It is not changed in this host milestone.
-Completion needs three consecutive subsequent rounds with no player-noticeable
-gain and exact current-head CI green. Never merge the PR or overwrite owners.
+Round9 is a new player-visible gain, so the stopping streak stays0. After its
+actual current-head CI goes green, reread/rank five and continue until three
+consecutive rounds gain nothing a player notices. No invented mechanics or
+repeated unchanged local core matrices/leagues are needed for cosmetic rounds.
+PR#2 remains draft until final exact-head green and stopping criteria are met.
+Never merge the PR, force-push, or overwrite another owner.

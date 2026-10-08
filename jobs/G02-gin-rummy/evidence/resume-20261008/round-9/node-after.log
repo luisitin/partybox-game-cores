@@ -1,0 +1,61 @@
+{"suite":"all-phases","phases":6,"cases":408}
+✔ every event family, roster id and bot skill in every delivered phase (68.355777ms)
+✔ registered prototype-looking ids remain valid players and finite result keys (3.317039ms)
+{"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+✔ 10500 batch outcomes retain exact standalone layouts and independent minima (4324.661824ms)
+{"suite":"boundary-fuzz","seed":912701,"invalidInputs":1000,"phases":6,"rejectedInputs":6000,"metadataChecks":282,"viewChecks":66}
+✔ 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase (87.998902ms)
+{"suite":"mixed-event-replay","phaseStarts":6,"seedsPerPhase":100,"transitions":48000,"changed":12742,"eventFamilies":["input","player","speech","speechStart","timer","vip"]}
+✔ mixed event families replay through JSON after every transition from every phase (15837.841854ms)
+✔ branching target ends retain exact minima, legal chains, layouts and all cards (53.693034ms)
+✔ meld validation rejects impossible card IDs while preserving legitimate edge runs/sets (1.128777ms)
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612,"replayChecks":261181,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775,"replayChecks":286246,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825,"replayChecks":343987,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755,"replayChecks":258472,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812,"replayChecks":269750,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929,"replayChecks":317252,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event (246037.945708ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (14797.985627ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (4761.041813ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (29.610883ms)
+{"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+✔ departures in every live phase finish the absent turn without exposing its hand (22.555562ms)
+✔ 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play (5598.169438ms)
+✔ empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin (1.343865ms)
+✔ departures during VIP pause drain only on resume; malformed control events do nothing (0.459911ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (8354.693559ms)
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (12.313888ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (5.919892ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (2.729616ms)
+{"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+✔ 2000 independent joint meld/layoff weighted packings including chained extensions (9623.544765ms)
+{"suite":"opening-pass-attribution","directPassCases":360,"editions":2,"counts":[2,3,4]}
+{"suite":"pass-valid-ids","cases":240,"ids":["","__proto__","constructor","last"]}
+{"suite":"automatic-pass-attribution","routes":["timer","vip","player"]}
+✔ both opening passes identify their actual actors across counts, editions and seeds (113.805746ms)
+✔ empty and prototype-shaped original IDs retain pass attribution as own keys (43.903446ms)
+✔ timer, VIP skip and absent-seat automation identify the automatic passer (3.249632ms)
+✔ first raw target winner keeps the crown even when final box settlement reverses points (9.416889ms)
+✔ every valid string ID, including empty, wins, earns bonuses and stays in rotation (16.396517ms)
+✔ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.088509ms)
+✔ early end preserves earned raw points and reports current standings (0.561173ms)
+✔ aces low, set cardinality, runs and overlap (5.259228ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (2.876462ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (2.514318ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (23.329513ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (12.967116ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (2.31852ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (112.300936ms)
+✔ same-timestamp turns cannot share timer instance identity (10.28974ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 266587.111068

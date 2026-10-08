@@ -88,6 +88,42 @@ failure. No local failed measurement is silently relabeled as accepted.
 
 # Historical verification records
 
+## Resumed KEEP round 9 — correct opening-pass attribution
+
+Verified host checkpoint 11150c8 passed exact CI 37772625259 at 11:55:13 UTC.
+After rereading root/job rules and ranking five weaknesses (round-9/review.md),
+the proven worst defect was a Pass entry naming the new turn holder.
+`node .work/public-log-probe.mjs`: actual game.init witness p1 passes, log p0.
+`node --test tests/public-log.test.mjs` before: FAIL all three focused suites.
+`node scripts/public-history-check.mjs --before`: negative-control PASS, actual
+desktop/phone history [Player 1,Player 2] for actors [p1,p0], both wrong.
+Exact before source guards, harnesses, output and assertions remain in round-9/.
+
+The core now appends the Pass entry before switching turn. `npm run build`:
+PASS. Focused tests after: PASS 3/3, 360 ordinary direct passes, 240 original
+valid-ID passes (empty/prototype-shaped IDs) and timer/VIP/departure routes.
+`node scripts/public-history-check.mjs`: PASS actual desktop/phone labels
+[Player 2,Player 1], matching the genuine human actors and actual core view.
+`node scripts/fixtures.mjs` twice plus recursive byte comparison: PASS.
+
+Final-source `node --test tests/*.test.mjs`: PASS 35/35, including the required
+6,000 complete games/every-event replays, properties/secrecy and exact solvers.
+`node scripts/league.mjs`: PASS, 1152/2000 strong wins and 1743/2000 medium wins;
+outcomes/events exactly match the prior source. `node scripts/mutations.mjs`:
+PASS 25/25 compiled assertion kills. Raw output is round-9/*-after.log.
+Core 59bd5055, HTML a5a56d6a; card/RNG/score/strategy implementation unchanged.
+`node scripts/browser-check.mjs --snapshot`: PASS full default run starting
+12:15:12.540 UTC. Desktop 59.703869 FPS/p99 16.8/max 50 ms; phone4x 60.003000
+FPS/p99=max 16.8 ms. All 600 consecutive intervals remain per profile. All old
+suites/34 interactions/five host regressions and both new public-history UI
+comparisons PASS; start/end HTML/core/card/host/template guards match. Complete
+report/raw plus exact runner/helper/log are under attempts/12-15-12-540Z and
+the current resume browser snapshot. `node scripts/capture.mjs
+round-9-public-pass --public-history`: PASS, source-guarded actual history
+demonstrations 709,877/587,283 bytes. `node scripts/integrity.mjs`: PASS,254
+hashes/two byte-identical regenerations/purity/licenses/media. New-head hosted
+CI remains required. Player-visible gain leaves the stopping streak 0.
+
 Nine actually read Exa extractions, exact extraction hashes and all short quote
 matches are recorded in evidence/research-sources.json. Origin HTTP unobserved.
 

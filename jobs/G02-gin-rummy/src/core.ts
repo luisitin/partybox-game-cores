@@ -168,7 +168,7 @@ function phaseInput(state:State,id:string,input:Input,now:number):State {
   if(id!==state.turn||!state.active.includes(id))return state;
   if(state.phase.id==='upcard'&&input.type==='pass') {
     const passes=state.openingPasses+1;
-    return phase(appendLog({...state,turn:other(state),openingPasses:passes,mustStock:passes===2},'pass'),passes===2?'draw':'upcard',now);
+    return phase({...appendLog(state,'pass'),turn:other(state),openingPasses:passes,mustStock:passes===2},passes===2?'draw':'upcard',now);
   }
   if((state.phase.id==='upcard'||state.phase.id==='draw')&&input.type==='draw') {
     if(state.phase.id==='upcard'&&input.source!=='discard'||state.mustStock&&input.source!=='stock')return state;
