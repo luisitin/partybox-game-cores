@@ -3,7 +3,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 await mkdir('dist',{recursive:true});
 const alias={zod:resolve('node_modules/zod')};
-for(const name of ['core','probability','rules']) {
+for(const name of ['core','probability','rules','session']) {
  await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'.mjs',alias});
 }
 await build({entryPoints:['../../contract/contract.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/contract.mjs',alias});

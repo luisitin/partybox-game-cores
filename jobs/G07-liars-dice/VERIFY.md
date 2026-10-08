@@ -1,7 +1,8 @@
 # Verification log
 
-Current checkpoint: round 1 passed exact-head GitHub run 37741554805.
-Round 2's Medium correction is in progress; its new-source checks are pending.
+Current checkpoint: round 2 passed exact-head GitHub run 37746548680 at
+2ba462691ea3bbecf8607f0737b3287cc8909af7. Round 3 session recovery is in
+progress: focused tests pass; new browser proof and hosted acceptance are pending.
 Intermediate failures below are retained as history, not current blockers.
 
 ## Research milestone (2026-10-08)
@@ -253,3 +254,39 @@ Final round 2 checksum/integrity command: `node scripts/hashes.mjs` twice,
 `sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: PASS,
 256 delivered files, byte-identical manifests/fixtures, matching passing raw
 browser frames, media below 10 MB, original/Zod licenses and pure core scan.
+
+
+Round 2 hosted acceptance: `gh run view 37746548680 --json status,conclusion,headSha,jobs`
+and `gh run view 37746548680 --log`: PASS at exact head 2ba462691ea3bbecf8607f0737b3287cc8909af7,
+completed 08:03:56 UTC. Full npm test: 38/38 node, 52/52 browser, 25/25 compiled
+mutation assertion kills and 256-file integrity. Artifact 11535814866 is uploaded,
+unexpired and tied to this head; its bytes were not downloaded. Public metadata:
+evidence/checks/ci-round-2.json. No hosted frame values are inferred.
+
+## Round 3 cadence milestone — browser proof pending
+
+`npm run build` and `node --test tests/session.test.mjs`: module build PASS and
+8/8 focused tests PASS. Tests cover original prototype-named seats, 1,101
+same-tick bids whose logical stamp exceeds host time, pause/resume twins,
+intentional/automatic/terminal holds, natural palifico and elimination
+transitions, all 2–8 seats, 36 corruption cases/size limits and shared RNG
+parity over four seeds with 1,000 mixed calls each. Initial TypeScript mismatch
+in the JSON-schema converter's inferred parameter type was corrected before
+the successful build. These are focused host-persistence checks; the game
+core/probability implementation and accepted matrix/leagues remain unchanged.
+
+The browser adds an explicit Resume/Discard gate and covered-cup recovery,
+with exact random cursor, saved host time and current timer/interrupt markers.
+The default full browser run now includes real reload scenarios; its expanded
+result, both raw 600-frame measurements and source-matched round-3 clips are
+pending at this milestone. Previous browser evidence is retained for its
+previous HTML. The unchanged integrity gate requires passing evidence matched
+to the new page before acceptance. No completed LOOP round or new frame pass
+is asserted at the cadence push.
+
+Final host `npm run build`: PASS, strict TypeScript and self-contained bundling;
+frozen HTML 48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378.
+Focused recorded command/input provenance: evidence/checks/round-3/session-verification.json;
+no raw focused-test TAP was retained. Cadence hash generation twice and `cmp`,
+followed by `sha256sum --check SHA256SUMS.txt`: PASS, 260 delivered files. Full
+integrity is not claimed while new source-matched browser proof is pending.

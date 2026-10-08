@@ -11,6 +11,9 @@ import {chromium} from 'playwright';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
 const paceDemo = process.argv.includes('--pace-demo');
+const recoveryDemo = process.argv.includes('--recovery-demo') || process.argv.includes('round-3');
+const saveKey = 'partybox.g07.session.v1';
+const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
 const tag = process.argv.slice(2).find(value => !value.startsWith('--')) ?? (paceDemo ? 'round-1' : 'milestone');
 assert(/^[a-z0-9-]+$/.test(tag), 'capture tag must contain only lowercase letters, digits and hyphens');
 const evidence = resolve(root, 'evidence/browser');
@@ -39,6 +42,35 @@ try {
     await cdp.send('Emulation.setCPUThrottlingRate', {rate});
     await page.goto(pathToFileURL(html).href);
     await page.waitForFunction(() => Boolean(window.__G07));
+    let recovery = null;
+    if (recoveryDemo) {
+      // A real reload keeps the checkpoint in this exact browser tab. No
+      // initialization script clears storage in the recovery demonstration.
+      await page.evaluate(() => window.__G07.init({players: 3, mode: 'hotseat', pace: 'manual', seed: 17,
+        settings: {turnSeconds: 12}}));
+      await page.locator('#show-cup').click();
+      const before = await page.evaluate(() => window.__G07.state());
+      await page.waitForTimeout(650);
+      await page.reload(); await page.waitForFunction(() => Boolean(window.__G07));
+      assert.equal(await page.evaluate(() => window.__G07.state()), null);
+      assert(await page.locator('#recovery').isVisible());
+      assert.equal(await page.locator('#cup .die').count(), 0);
+      await page.waitForTimeout(750);
+      await page.screenshot({path: resolve(evidence, `${tag}-${label}-resume-gate.png`), fullPage: true});
+      await page.locator('#resume-saved').click();
+      const resumed = await page.evaluate(() => window.__G07.state());
+      assert.deepEqual(resumed.cups, before.cups); assert.deepEqual(resumed.rng, before.rng);
+      assert.equal(resumed.turn, before.turn); assert.equal(await page.locator('#cup .die').count(), 0);
+      await page.waitForTimeout(650); await page.locator('#show-cup').click(); await page.waitForTimeout(500);
+      await page.reload(); await page.waitForFunction(() => Boolean(window.__G07));
+      assert(await page.locator('#recovery').isVisible()); await page.waitForTimeout(500);
+      await page.locator('#discard-saved').click();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      await page.locator('#start').click(); await page.waitForTimeout(300); await page.locator('#new-game').click();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      recovery = {actualReloads: 2, pendingStateNull: true, coveredOnResume: true,
+        cupsAndRngPreserved: true, discardRemovedCheckpoint: true, newGameRemovedCheckpoint: true};
+    }
     let pacingDemo = null;
     if (paceDemo) {
       // Only initialization is seeded. Bot moves below come from the actual
@@ -131,9 +163,9 @@ try {
     await video.saveAs(path);
     const bytes = (await stat(path)).size;
     assert(bytes < 10_000_000, `${path} exceeds the 10MB capture budget`);
-    const capture = {path: `media/${tag}-${label}.webm`, bytes, viewport: {width, height}, videoSize, cpuThrottle: rate,
+    const capture = {path: `media/${tag}-${label}.webm`, bytes, sha256: createHash('sha256').update(await readFile(path)).digest('hex'), viewport: {width, height}, videoSize, cpuThrottle: rate,
       seed: 7199, rounds, winner: final.winner, initialRoster: initial.order.length,
-      recordingMeasuresPerformance: false, pacingDemo, networkRequests: network.length, pageErrors: errors.length};
+      recordingMeasuresPerformance: false, pacingDemo, recoveryDemo: recovery, networkRequests: network.length, pageErrors: errors.length};
     captures.push(capture);
     console.log(JSON.stringify(capture));
   }
@@ -143,7 +175,9 @@ try {
 } finally {
   await browser.close();
   await rm(temporary, {recursive: true, force: true});
+  const finalHtmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
+  if (finalHtmlSha256 !== htmlSha256 && failure === null) { failure = 'HTML source changed during capture'; process.exitCode = 1; }
   await writeFile(resolve(evidence, `${tag}-captures.json`), JSON.stringify({browser: browser.version(),
-    htmlSha256: createHash('sha256').update(await readFile(html)).digest('hex'),
+    htmlSha256, finalHtmlSha256, sourceUnchanged: finalHtmlSha256 === htmlSha256,
     passed: failure === null && captures.length === 2, failure, captures}, null, 2) + '\n');
 }

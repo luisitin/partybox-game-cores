@@ -13,11 +13,12 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
 const evidence = resolve(root, 'evidence/browser');
 const work = resolve(root, '.work/browser');
+const saveKey = 'partybox.g07.session.v1';
 const snapshot = process.argv.includes('--snapshot');
 const performanceOnly = process.argv.includes('--performance-only');
 const functionalOnly = process.argv.includes('--functional-only');
 assert(!(performanceOnly && functionalOnly), 'choose only one partial-check mode');
-assert(!(functionalOnly && snapshot), 'functional-only mode cannot publish an incomplete snapshot');
+assert(!(snapshot && (functionalOnly || performanceOnly)), 'only a fresh default full run can publish a snapshot');
 await mkdir(work, {recursive: true});
 const runId = new Date().toISOString().replace(/\D/g, '');
 const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
@@ -39,25 +40,10 @@ const report = {
   benchmark: {players: 8, existingBid: {quantity: 8, face: 3}, openPrivateDice: 5,
     interaction: 'change quantity and face every 30 intervals, including exact controller odds',
     isolation: 'fresh browser context; functional test navigation history is not retained'},
+  recoveryStorage: {key: saveKey, scope: 'same-tab sessionStorage', ordinaryChecks: 'remove only this key before each document', recoveryChecks: 'fresh isolated contexts preserve this key across actual reloads'},
   seed: 7199, profiles: rows, checks, pacingMeasurements, passed: false,
   scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
 };
-if (performanceOnly && snapshot) {
-  const previous = JSON.parse(await readFile(resolve(work, 'report.json'), 'utf8'));
-  assert.equal(previous.htmlSha256, htmlSha256, 'reused functional proof must match the exact current HTML');
-  assert(previous.checks.some(check => check.name === 'HTML source stayed unchanged throughout the run' && check.passed), 'functional proof must certify stable source');
-  const functional = previous.checks.filter(check => ![
-    '600 actual animation-frame intervals meet the strict refresh budget',
-    'self-contained file works offline without network, external resources, errors or dialogs',
-    'HTML source stayed unchanged throughout the run',
-  ].includes(check.name));
-  assert.equal(functional.length, 47, 'both profiles and the before/after probe require all 47 functional checks');
-  assert(functional.every(check => check.passed), 'a failed functional check cannot be reused');
-  checks.push(...functional.map(check => ({...check, reusedFromRunId: previous.runId})));
-  report.functionalProof = {htmlSha256, runId: previous.runId,
-    reportFile: `runs/${htmlSha256}/${previous.runId}/report.json`, reusedChecks: functional.length};
-  report.scope = 'full: source-matched functional proof plus fresh performance measurements';
-}
 async function executablePath() {
   if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
   try { await access(chromium.executablePath(), constants.X_OK); return undefined; }
@@ -169,6 +155,7 @@ async function interruptFixture(page, pace, humanTurn = false) {
 try {
   for (const profile of profiles) {
     let context = await browser.newContext({viewport: {width: profile.width, height: profile.height}, offline: true});
+    await context.addInitScript(key => { try { sessionStorage.removeItem(key); } catch {} }, saveKey);
     let page = await context.newPage();
     const errors = [], network = [], resources = [], dialogs = [];
     function observe(page) {
@@ -183,18 +170,20 @@ try {
     observe(page);
     const cdp = await context.newCDPSession(page);
     await cdp.send('Emulation.setCPUThrottlingRate', {rate: profile.cpuThrottle});
-    async function run(name, fn, {reduce = false, fresh = false} = {}) {
+    async function run(name, fn, {reduce = false, fresh = false, recovery = false, storageFault = null} = {}) {
       if (performanceOnly && !fresh) return;
       if (functionalOnly && fresh) return;
       const check = {profile: profile.label, name, passed: false};
       checks.push(check);
       try {
-        if (fresh) {
+        if (fresh || recovery) {
           // Repeated full-document navigation belongs to the integration test
           // harness. Measure ordinary live play in its own context so discarded
           // functional documents do not accumulate in the benchmark renderer.
           await context.close();
           context = await browser.newContext({viewport: {width: profile.width, height: profile.height}, offline: true});
+          if (!recovery) await context.addInitScript(key => { try { sessionStorage.removeItem(key); } catch {} }, saveKey);
+          if (storageFault) await context.addInitScript(method => { Storage.prototype[method] = function () { throw new DOMException('Blocked test storage', 'SecurityError'); }; }, storageFault);
           page = await context.newPage();
           observe(page);
           const freshCdp = await context.newCDPSession(page);
@@ -797,6 +786,232 @@ try {
       assert(reduced.matches);
       assert.deepEqual(reduced.offenders, []);
     }, {reduce: true});
+
+    async function checkpoint() {
+      return page.evaluate(key => {
+        window.__G07.save();
+        const raw = sessionStorage.getItem(key);
+        if (!raw) throw new Error('The live session was not checkpointed');
+        return {raw, saved: JSON.parse(raw), state: window.__G07.state(), host: window.__G07.host()};
+      }, saveKey);
+    }
+    async function reloadRecovery() {
+      await page.reload();
+      await page.waitForFunction(() => Boolean(window.__G07));
+    }
+    async function assertPending() {
+      assert.equal(await state(page), null, 'a saved game must wait for explicit consent');
+      assert.deepEqual(await page.evaluate(() => [window.__G07.view(), window.__G07.controller()]), [null, null]);
+      assert.equal((await page.evaluate(() => window.__G07.host())).pending, true);
+      assert(await page.locator('#recovery').isVisible());
+      await privateGone(page, 'saved-game gate');
+      assert.equal(await page.locator('#private-note').textContent(), '');
+      assert.equal(await page.locator('#bid-quantity option, #bid-face option').count(), 0);
+      assert.equal(await page.locator('#reveal-cups .die').count(), 0);
+    }
+    async function installRaw(raw) {
+      await page.evaluate(({key, raw}) => {
+        document.querySelector('#new-game').click();
+        sessionStorage.setItem(key, raw);
+      }, {key: saveKey, raw});
+      await reloadRecovery();
+    }
+    function equivalentRecovered(actual, expected) {
+      assert.equal(actual.phase.startedAt, expected.phase.startedAt);
+      assert.equal(actual.phaseClock, expected.phaseClock);
+      const copy = structuredClone(actual);
+      if (expected.phase.deadline !== null && !expected.phase.paused && expected.phase.id !== 'done') {
+        const shift = actual.phase.deadline - expected.phase.deadline;
+        assert(shift >= 0, `saved hold/resume clock shift ${shift}ms`);
+        copy.phase.deadline = expected.phase.deadline;
+      }
+      assert.deepEqual(copy, expected, 'resumption must preserve the complete game state');
+    }
+    function withoutClock(s) {
+      const copy = structuredClone(s);
+      delete copy.phase.startedAt; delete copy.phase.deadline; delete copy.phaseClock;
+      return copy;
+    }
+
+    await run('reload hides an open cup behind an explicit saved-game gate', async () => {
+      await init(page, {players: 3, pace: 'manual'}); await show(page);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      const before = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      equivalentRecovered(await state(page), before.state);
+      assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+      await privateGone(page, 'explicit saved-game resume');
+      await show(page);
+      assert.deepEqual(await page.locator('#cup .die').evaluateAll(dice => dice.map(die => Number(die.getAttribute('aria-label')))),
+        (await control(page)).ownDice);
+    }, {recovery: true});
+
+    await run('pending time and a second reload preserve the original remaining turn clock', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 3}});
+      const before = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      const first = await page.evaluate(key => sessionStorage.getItem(key), saveKey);
+      await page.waitForTimeout(1250);
+      await reloadRecovery(); await assertPending();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), first, 'pending reload must not rewrite the candidate');
+      await page.waitForTimeout(500);
+      await page.locator('#resume-saved').click();
+      const after = await state(page), at = await page.evaluate(() => window.__G07.time());
+      equivalentRecovered(after, before.state);
+      assert(Math.abs((after.phase.deadline - at) - (before.saved.state.phase.deadline - before.saved.savedHostNow)) < 250);
+      assert.equal(after.bid, null, 'time spent deciding whether to resume cannot take a turn');
+      await privateGone(page, 'clock recovery');
+    }, {recovery: true});
+
+    await run('an already-expired saved turn is consumed once after explicit resume', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 1}});
+      const before = await checkpoint(), saved = before.saved;
+      saved.state.phase.deadline = saved.savedHostNow - 1;
+      await installRaw(JSON.stringify(saved)); await assertPending();
+      await page.waitForTimeout(200);
+      await page.locator('#resume-saved').click();
+      await page.waitForFunction(() => window.__G07.state()?.bidLog.length === 1, null, {timeout: 2000});
+      const after = await state(page);
+      assert.notEqual(after.turn, saved.state.turn);
+      assert.equal(after.bidLog.length, 1);
+      await privateGone(page, 'expired saved timer');
+      await page.evaluate(() => { window.__G07.tick(); window.__G07.tick(); });
+      assert.equal((await state(page)).bidLog.length, 1, 'the old timer cannot be replayed');
+    }, {recovery: true});
+
+    await run('intentional and empty-room pauses survive saved-game recovery', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 3}});
+      await page.locator('#pause').click();
+      const held = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      assert.deepEqual(await state(page), held.state);
+      await page.waitForTimeout(250);
+      assert((await state(page)).phase.paused, 'recovery consent is not a VIP resume');
+      await privateGone(page, 'held saved game');
+      await page.locator('#resume').click(); assert(!(await state(page)).phase.paused);
+      await page.evaluate(() => {
+        const h = window.__G07;
+        for (const id of h.state().order) h.event({type: 'player', playerId: id, connected: false, now: h.time()});
+      });
+      assert.equal((await state(page)).autoPaused, true);
+      const empty = await checkpoint(); await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      assert.deepEqual(await state(page), empty.state);
+      await page.locator('#resume').click();
+      assert((await state(page)).phase.paused, 'an empty room remains auto-paused');
+    }, {recovery: true});
+
+    await run('reveal and winner phases survive recovery without automatic acknowledgement', async () => {
+      for (const players of [3, 2]) {
+        await singleDieState(page, players); await show(page);
+        await makeBid(page, {quantity: players, face: 6}); await show(page); await page.locator('#dudo').click();
+        const before = await checkpoint();
+        assert.equal(before.state.phase.id, players === 3 ? 'reveal' : 'done');
+        await reloadRecovery(); await assertPending(); await page.locator('#resume-saved').click();
+        equivalentRecovered(await state(page), before.state);
+        await privateGone(page, 'public reveal recovered');
+        await page.waitForTimeout(250);
+        assert.equal((await state(page)).phase.id, before.state.phase.id);
+        if (players === 3) { await page.locator('#next-round').click(); assert.equal((await state(page)).round, before.state.round + 1); }
+        else assert((await page.locator('#status').textContent()).includes('wins'));
+      }
+    }, {recovery: true});
+
+    await run('saved manual bot cursor, mixed skills and phase markers continue deterministically', async () => {
+      await init(page, {players: 3, mode: 'bots', pace: 'manual', seed: 17, settings: {calzaEnabled: false}});
+      const fixture = await state(page); fixture.turn = 'p1';
+      fixture.bid = {quantity: 1, face: 2, playerId: 'p0'}; fixture.bidLog = [fixture.bid];
+      await page.evaluate(s => window.__G07.setState(s), fixture);
+      const original = await checkpoint(), saved = original.saved;
+      saved.skills = [['p0', 'easy'], ['p1', 'sharp'], ['p2', 'normal']];
+      saved.currentTimerConsumed = true; saved.sampledCurrentBid = true;
+      await installRaw(JSON.stringify(saved)); await assertPending(); await page.locator('#resume-saved').click();
+      const host = await page.evaluate(() => window.__G07.host());
+      assert.deepEqual(host.botRng, saved.botRng); assert.deepEqual(host.skills, saved.skills);
+      assert.equal(host.pace, 'manual'); assert.equal(host.currentTimerConsumed, true); assert.equal(host.sampledCurrentBid, true);
+      const before = await checkpoint();
+      await page.waitForTimeout(300); assert.deepEqual((await state(page)).bid, saved.state.bid);
+      await page.locator('#bot-step').click();
+      const first = {state: withoutClock(await state(page)), host: await page.evaluate(() => window.__G07.host())};
+      await installRaw(before.raw); await assertPending(); await page.locator('#resume-saved').click();
+      await page.locator('#bot-step').click();
+      assert.deepEqual(withoutClock(await state(page)), first.state, 'the saved bot must sample the same next input');
+      assert.deepEqual((await page.evaluate(() => window.__G07.host())).botRng, first.host.botRng);
+      await privateGone(page, 'recovered bot action');
+    }, {recovery: true});
+
+    await run('saved automatic pacing restarts a full presentation wait after resume', async () => {
+      const before = await armBot(page, 'normal');
+      await page.waitForTimeout(500); await checkpoint(); await reloadRecovery(); await assertPending();
+      await page.waitForTimeout(500); await page.locator('#resume-saved').click();
+      const resumed = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      assert.equal(resumed.state.turn, before.state.turn);
+      await assertHeld(page, resumed, 1000);
+      const measured = await observeChange(page, resumed, 3000);
+      assert(measured.elapsedMs >= 1900 && measured.elapsedMs <= 2300);
+      pacingMeasurements.push({profile: profile.label, kind: 'saved-game-resume', pace: 'normal', ...measured});
+      await privateGone(page, 'recovered automatic bot action');
+    }, {recovery: true});
+
+    await run('corrupt, incompatible and invalid own-leaf saves are rejected safely', async () => {
+      await init(page, {players: 3, pace: 'manual'}); const before = await checkpoint();
+      const variants = ['{'];
+      for (const mutate of [
+        saved => { saved.version = 2; }, saved => { saved.gameVersion = '0.0.0'; },
+        saved => { saved.state.cups.p0[0] = 7; }, saved => { saved.botRng.step = -1; },
+        saved => { saved.state.models.p0.truth = 0; },
+        saved => { Object.defineProperty(saved.state.cups, '__proto__', {value: [7], enumerable: true}); },
+      ]) { const saved = structuredClone(before.saved); mutate(saved); variants.push(JSON.stringify(saved)); }
+      for (const raw of variants) {
+        await installRaw(raw);
+        assert.equal(await state(page), null);
+        assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+        assert(await page.locator('#setup').isVisible()); await privateGone(page, 'invalid save');
+        assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null, 'bad saves are removed');
+      }
+      await page.locator('#start').click(); assert.equal((await state(page)).phase.id, 'bid');
+    }, {recovery: true});
+
+    await run('Discard and New game remove only the session checkpoint', async () => {
+      await init(page, {players: 2, pace: 'manual'}); await checkpoint();
+      await page.evaluate(() => sessionStorage.setItem('g07-test-unrelated', 'keep'));
+      await reloadRecovery(); await assertPending(); await page.locator('#discard-saved').click();
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      assert.equal(await page.evaluate(() => sessionStorage.getItem('g07-test-unrelated')), 'keep');
+      await page.locator('#start').click(); await checkpoint(); await page.locator('#new-game').click();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      await reloadRecovery(); assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+    }, {recovery: true});
+
+    await run('blocked storage reads keep the game playable with a visible notice', async () => {
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert((await page.locator('#storage-note').textContent()).trim());
+      await page.locator('#start').click(); await show(page);
+      await makeBid(page, (await control(page)).legalBids[0]); await privateGone(page, 'blocked storage read');
+    }, {recovery: true, storageFault: 'getItem'});
+
+    await run('blocked storage writes keep ordinary play and explicit pause working', async () => {
+      await init(page, {players: 2, pace: 'manual'});
+      await page.evaluate(() => window.__G07.save());
+      assert((await page.locator('#storage-note').textContent()).trim());
+      await show(page); await makeBid(page, (await control(page)).legalBids[0]);
+      await page.locator('#pause').click(); assert((await state(page)).phase.paused);
+      await privateGone(page, 'blocked storage write');
+    }, {recovery: true, storageFault: 'setItem'});
+
+    await run('blocked removal uses a tombstone without trapping the table', async () => {
+      await init(page, {players: 2, pace: 'manual'}); await checkpoint();
+      await reloadRecovery(); await assertPending(); await page.locator('#discard-saved').click();
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), '', 'blocked removal must tombstone the old checkpoint');
+      await reloadRecovery(); assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+      await page.locator('#start').click(); assert.equal((await state(page)).phase.id, 'bid');
+      await page.locator('#new-game').click(); assert.equal(await state(page), null);
+      await privateGone(page, 'blocked storage removal');
+    }, {recovery: true, storageFault: 'removeItem'});
 
     await run('600 actual animation-frame intervals meet the strict refresh budget', async () => {
       await init(page, {players: 8, settings: {turnSeconds: 0}});

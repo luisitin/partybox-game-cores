@@ -1,5 +1,7 @@
-import {game, createRng, canCalza, canChangePalificoFace} from './core.js';
+import {game, canCalza, canChangePalificoFace} from './core.js';
 import type {State, Input} from './core.js';
+import {SAVE_KEY, encodeSession, decodeSession, createResumableRng, restoreSessionState, phaseKey, currentBidKey} from './session.js';
+import type {Skill, Pace, SavedSession} from './session.js';
 
 // This file is the local browser host. Entropy, elapsed real time and timers live
 // here; the core receives deterministic inputs and explicit timestamps only.
@@ -7,8 +9,6 @@ const $ = (id: string): HTMLElement => document.getElementById(id)!;
 const select = (id: string): HTMLSelectElement => $(id) as HTMLSelectElement;
 const input = (id: string): HTMLInputElement => $(id) as HTMLInputElement;
 const button = (id: string): HTMLButtonElement => $(id) as HTMLButtonElement;
-type Skill = 'easy' | 'normal' | 'sharp';
-type Pace = 'fast' | 'normal' | 'slow' | 'manual';
 type Settings = Record<string, string | number | boolean>;
 type HostOptions = {players?: number; settings?: Settings; mode?: string; skill?: Skill; pace?: Pace; seed?: number};
 type Event = Parameters<typeof game.reduce>[1];
@@ -27,7 +27,9 @@ let botDue: number | null = null;
 let interruptDue: number | null = null;
 let interruptSampled: string | null = null;
 let lastClock = 0;
-let botRng = createRng(entropy());
+let clockOffset = 0;
+let pendingSession: SavedSession | null = null;
+let botRng = createResumableRng(entropy());
 let cachedState: State | null = null;
 let cachedViewer: string | null = null;
 let cachedController: ReturnType<typeof game.controllerView> | null = null;
@@ -37,7 +39,37 @@ const skills = new Map<string, Skill>();
 const settingControls = new Map<string, HTMLInputElement | HTMLSelectElement>();
 
 function entropy(): number { return crypto.getRandomValues(new Uint32Array(1))[0]!; }
-function clockNow(): number { lastClock = Math.max(lastClock, Math.floor(performance.now())); return lastClock; }
+function clockNow(): number { lastClock = Math.max(lastClock, Math.floor(performance.now()) + clockOffset); return lastClock; }
+function storageMessage(message: string): void {
+  $('storage-note').textContent = message; $('storage-note').hidden = !message;
+}
+function removeSaved(): boolean {
+  try { sessionStorage.removeItem(SAVE_KEY); return true; }
+  catch {
+    // A tombstone also prevents an older game returning if removal is blocked.
+    try { sessionStorage.setItem(SAVE_KEY, ''); return true; }
+    catch { storageMessage('The previous game could not be cleared. This tab may offer it again after a reload.'); return false; }
+  }
+}
+function saveSession(): void {
+  // A reload at the recovery gate keeps the original checkpoint unchanged.
+  if (!state || pendingSession) return;
+  const value: SavedSession = {
+    version: 1, gameId: 'liars-dice', gameVersion: game.manifest.version,
+    state, savedHostNow: clockNow(), botRng: {...botRng.state()},
+    skills: [...skills], pace: botPace,
+    currentTimerConsumed: firedTimers.has(phaseKey(state)),
+    sampledCurrentBid: interruptKey() !== null && interruptSampled === interruptKey(),
+  };
+  const encoded = encodeSession(value);
+  try {
+    if (encoded === null) throw new Error('Unavailable checkpoint');
+    sessionStorage.setItem(SAVE_KEY, encoded); storageMessage('');
+  } catch {
+    const cleared = removeSaved();
+    if (cleared) storageMessage('This game could not be kept for a reload. Keep this page open to continue playing.');
+  }
+}
 function name(id: string): string { return state?.players[id]?.name ?? 'Player'; }
 function option(value: string, text = value): HTMLOptionElement {
   const o = document.createElement('option'); o.value = value; o.textContent = text; return o;
@@ -86,7 +118,7 @@ function changePace(value: string): void {
   botPace = Object.hasOwn(pacing, value) ? value as Pace : 'normal';
   paceSetup.value = botPace; select('bot-pace').value = botPace;
   botDue = null; interruptDue = null; interruptSampled = null;
-  if (state) { cover(); render(); }
+  if (state) { cover(); render(); saveSession(); }
 }
 paceSetup.onchange = () => changePace(paceSetup.value);
 select('bot-pace').onchange = () => changePace(select('bot-pace').value);
@@ -144,7 +176,7 @@ function hasBotInterrupt(): boolean {
   return !!state && state.phase.id === 'bid' && state.order.some(id => id !== state!.turn && state!.players[id]!.bot && canCalza(state!, id));
 }
 function interruptKey(): string | null {
-  return state?.bid ? `${state.round}:${state.bidLog.length}:${state.bid.playerId}:${state.bid.quantity}:${state.bid.face}` : null;
+  return state ? currentBidKey(state) : null;
 }
 function privateView(): ReturnType<typeof game.controllerView> | null {
   if (!state || !viewer) return null;
@@ -172,7 +204,13 @@ function cover(): void {
   $('cup').replaceChildren(); $('private-note').textContent = '';
   $('private').hidden = true;
 }
+function clearPrivateDraft(): void {
+  cover(); cachedState = null; cachedViewer = null; cachedController = null;
+  bidsByQuantity.clear(); select('bid-quantity').replaceChildren(); select('bid-face').replaceChildren();
+  $('private-note').textContent = ''; $('action-hint').textContent = ''; $('notice').textContent = '';
+}
 function start(options: HostOptions = {}): void {
+  pendingSession = null; $('recovery').hidden = true; clearPrivateDraft();
   if (options.players !== undefined) { count.value = String(options.players); renderNames(); }
   if (options.mode !== undefined) { mode.value = options.mode; changeMode(); }
   if (options.skill !== undefined) { difficulty.value = options.skill; changeDifficulty(); }
@@ -180,14 +218,14 @@ function start(options: HostOptions = {}): void {
   const settings: Settings = {};
   for (const [key, control] of settingControls) settings[key] = control instanceof HTMLInputElement ? control.type === 'checkbox' ? control.checked : Number(control.value) : control.value;
   Object.assign(settings, options.settings);
-  const seed = options.seed ?? entropy(); botRng = createRng(seed ^ 0xc3a5c85c); skills.clear(); firedTimers.clear();
+  const seed = options.seed ?? entropy(); botRng = createResumableRng(seed ^ 0xc3a5c85c); skills.clear(); firedTimers.clear();
   const players = Array.from({length: Number(count.value)}, (_, n) => {
     const kind = select('seat-' + n).value; skills.set('p' + n, kind === 'easy' ? 'easy' : kind === 'sharp' ? 'sharp' : 'normal');
     return {id: 'p' + n, name: input('name-' + n).value.trim() || `Player ${n + 1}`, avatarId: 'face-' + n, connected: true, bot: kind !== 'human'};
   });
   state = game.init({players, settings, seed, now: clockNow()});
   viewer = null; cover(); chooseViewer(); botDue = null; interruptDue = null; interruptSampled = null;
-  $('setup').hidden = true; $('table').hidden = false; render();
+  $('setup').hidden = true; $('table').hidden = false; render(); saveSession();
 }
 function apply(event: Event): void {
   if (!state) return;
@@ -201,7 +239,9 @@ function apply(event: Event): void {
   if (event.type === 'timer' && next.phase.id === old.phase.id && next.phase.startedAt === old.phase.startedAt && next.phase.deadline !== null && old.phase.deadline !== null && next.phase.deadline > old.phase.deadline) {
     firedTimers.delete(`${old.phase.id}:${old.phase.startedAt}`);
   }
-  state = next; cover(); chooseViewer(); botDue = null; interruptDue = null; render();
+  const consumed = firedTimers.has(phaseKey(next));
+  firedTimers.clear(); if (consumed) firedTimers.add(phaseKey(next));
+  state = next; cover(); chooseViewer(); botDue = null; interruptDue = null; render(); saveSession();
 }
 function send(move: Input): void {
   if (!state || !viewer) return;
@@ -344,6 +384,7 @@ function botMove(): void {
   const move = game.bot.sampleInput(state, id, botRng, skills.get(id) ?? 'normal');
   if (move) apply({type: 'input', now: clockNow(), playerId: id, input: move});
   else botDue = pacing[botPace].regular === null ? null : clockNow() + pacing[botPace].regular!;
+  saveSession();
 }
 function botInterrupt(): boolean {
   if (!state || state.phase.paused || state.phase.id !== 'bid') return false;
@@ -356,10 +397,10 @@ function botInterrupt(): boolean {
     if (id === state.turn || !state.players[id]!.bot || !canCalza(state, id)) continue;
     const move = game.bot.sampleInput(state, id, botRng, skills.get(id) ?? 'normal');
     if (move?.type === 'calza') {
-      const before = state; apply({type: 'input', now: clockNow(), playerId: id, input: move}); return state !== before;
+      const before = state; apply({type: 'input', now: clockNow(), playerId: id, input: move}); saveSession(); return state !== before;
     }
   }
-  return false;
+  saveSession(); return false;
 }
 function stepBot(): void {
   if (!state || state.phase.paused || state.phase.id !== 'bid') return;
@@ -369,10 +410,10 @@ function stepBot(): void {
 function deliverDueTimer(): boolean {
   if (!state || state.phase.paused || state.phase.id === 'done') return false;
   const at = clockNow();
-  const instance = `${state.phase.id}:${state.phase.startedAt}`;
+  const instance = phaseKey(state);
   if (state.phase.deadline !== null && at >= state.phase.deadline && !firedTimers.has(instance)) {
     firedTimers.add(instance);
-    apply({type: 'timer', now: at, phaseId: state.phase.id, startedAt: state.phase.startedAt}); return true;
+    apply({type: 'timer', now: at, phaseId: state.phase.id, startedAt: state.phase.startedAt}); saveSession(); return true;
   }
   return false;
 }
@@ -412,14 +453,38 @@ button('resume').onclick = () => apply({type: 'vip', action: 'resume', now: cloc
 button('end-game').onclick = () => apply({type: 'vip', action: 'end', now: clockNow()});
 button('bot-step').onclick = stepBot;
 function newGame(): void {
-  cover(); state = null; viewer = null; botDue = null; interruptDue = null; interruptSampled = null;
+  clearPrivateDraft(); state = null; pendingSession = null; viewer = null; botDue = null; interruptDue = null; interruptSampled = null;
   cachedState = null; cachedViewer = null; cachedController = null;
   bidsByQuantity.clear();
   firedTimers.clear();
   $('reveal-cups').replaceChildren(); $('players').replaceChildren(); $('log').replaceChildren();
-  $('table').hidden = true; $('setup').hidden = false;
+  $('table').hidden = true; $('recovery').hidden = true; $('setup').hidden = false;
+  if (removeSaved()) storageMessage('');
 }
 button('new-game').onclick = newGame; button('play-again').onclick = newGame;
+function resumeSaved(): void {
+  if (!pendingSession) return;
+  const saved = pendingSession;
+  try { state = restoreSessionState(saved, clockNow()); }
+  catch {
+    clockOffset = 0; lastClock = 0; newGame();
+    if ($('storage-note').hidden) storageMessage('The saved game could not be opened. Start a new table when you are ready.');
+    return;
+  }
+  pendingSession = null;
+  botRng = createResumableRng(saved.botRng); skills.clear();
+  for (const [id, skill] of saved.skills) skills.set(id, skill);
+  botPace = saved.pace; paceSetup.value = botPace; select('bot-pace').value = botPace;
+  firedTimers.clear(); if (saved.currentTimerConsumed) firedTimers.add(phaseKey(state));
+  interruptSampled = saved.sampledCurrentBid ? interruptKey() : null;
+  viewer = null; clearPrivateDraft(); chooseViewer(); botDue = null; interruptDue = null;
+  $('recovery').hidden = true; $('setup').hidden = true; $('table').hidden = false;
+  render(); saveSession();
+}
+button('resume-saved').onclick = resumeSaved;
+button('discard-saved').onclick = newGame;
+window.addEventListener('pagehide', saveSession);
+document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') saveSession(); });
 setInterval(tick, 100);
 // Browser-only verification controls, intentionally inspectable on this trusted
 // local host. They are never part of the game's public/controller contract.
@@ -430,9 +495,32 @@ const hook = {
   init: start,
   act: send,
   event: apply,
-  setState: (value: State) => { state = structuredClone(value); cover(); chooseViewer(); botDue = null; interruptDue = null; interruptSampled = null; firedTimers.clear(); $('setup').hidden = true; $('table').hidden = false; render(); },
+  setState: (value: State) => { pendingSession = null; $('recovery').hidden = true; state = structuredClone(value); clearPrivateDraft(); chooseViewer(); botDue = null; interruptDue = null; interruptSampled = null; firedTimers.clear(); $('setup').hidden = true; $('table').hidden = false; render(); saveSession(); },
   time: clockNow,
   pace: () => botPace,
+  save: saveSession,
+  host: () => ({pending: !!pendingSession, botRng: {...botRng.state()}, skills: [...skills], pace: botPace,
+    currentTimerConsumed: !!state && firedTimers.has(phaseKey(state)),
+    sampledCurrentBid: !!state && interruptKey() !== null && interruptSampled === interruptKey()}),
   tick,
 };
 Object.defineProperty(window, '__G07', {value: Object.freeze(hook), writable: false});
+try {
+  const raw = sessionStorage.getItem(SAVE_KEY);
+  if (raw) {
+    const saved = decodeSession(raw);
+    if (saved) {
+      pendingSession = saved; state = null; viewer = null; clearPrivateDraft();
+      clockOffset = saved.savedHostNow - Math.floor(performance.now()); lastClock = saved.savedHostNow;
+      $('setup').hidden = true; $('table').hidden = true; $('recovery').hidden = false;
+      $('recovery-copy').textContent = saved.state.phase.id === 'done'
+        ? 'Your finished game is ready to view. Cups stay covered.'
+        : saved.state.phase.paused
+          ? 'Your table is waiting. It was paused and will stay paused when you return. Cups stay covered.'
+          : 'Your table is waiting. Its turn clock waits until you return, and cups stay covered.';
+    } else {
+      const cleared = removeSaved();
+      if (cleared) storageMessage('The saved game could not be opened. Start a new table when you are ready.');
+    }
+  }
+} catch { storageMessage('This tab cannot keep a game for a reload. Keep this page open to continue playing.'); }

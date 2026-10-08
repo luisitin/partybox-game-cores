@@ -59,3 +59,31 @@ Interim cadence run 37744597968 correctly rejected the stale initial matrix
 report after all 38 node and 52 browser checks passed. The finished local matrix
 report hash 455532eb…dc093 exactly matches the hosted regenerated hash. Publish
 this report with refreshed hashes; exact new-head green is required before round 3.
+
+
+Round 2 hosted acceptance: exact head 2ba462691ea3bbecf8607f0737b3287cc8909af7
+passed run 37746548680 at 08:03:56 UTC. All 38 node tests, 52 browser checks,
+25 compiled mutation kills and 256-file integrity passed. Public metadata is
+evidence/checks/ci-round-2.json.
+
+## Round 3 — recover a browser session
+
+Started after that exact-head green run. Re-read root README.md, RULES.md and
+JOBS.md before selecting the next improvement.
+
+Five biggest remaining weaknesses, ranked:
+
+1. Reloading the offline page loses an active game. The core can already round-trip, but the browser does not preserve the host's random cursor, pace, timer marker or interrupt marker.
+2. The page omits final rankings and finishing order despite complete core results.
+3. The concise palifico help omits the duel exclusion and prior-experience condition for face exemptions.
+4. Strong's mixed-table advantage remains inconclusive at six to eight seats in the separate diagnostic; optional-variant advantage is unmeasured.
+5. The host retains historical timer-instance markers instead of just the current instance. This is a bounded-state hygiene concern with no demonstrated ordinary-play failure.
+
+Selected correction: a versioned, validated same-tab session checkpoint, an
+explicit Resume/Discard gate with private cups absent from the DOM, and exact
+host-clock/random-cursor recovery. Only the active timer marker is retained.
+A returning active game freezes time away; intentional and automatic holds,
+reveal acknowledgements and finished games preserve their existing state.
+Focused module tests pass 8/8; full browser/reload proof and milestone recordings
+are still running at the cadence checkpoint. No completed round or new gain
+is claimed before those measurements pass.

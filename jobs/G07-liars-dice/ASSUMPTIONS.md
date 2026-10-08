@@ -42,3 +42,23 @@ the bluff model does not override a bid already proved true by those dice.
 This fixes an avoidable immediate die loss. It does not claim an optimal
 equilibrium, a guaranteed full-game win, or a new calibrated probability model.
 
+
+## KEEP GOING round 3
+
+- Recovery uses this tab's sessionStorage under one fixed versioned key. It is
+  a convenience checkpoint for a trusted local hot-seat host, not a shared or
+  encrypted save. No network or new game-core dependency is introduced.
+- Returning players explicitly choose Resume or Discard. Private dice, odds and
+  legal selections remain absent until the normal cup-opening handoff. Viewer
+  choice and an open cup are never saved.
+- Time while away or waiting at the recovery gate does not consume a live turn
+  clock. Ordinary core pause/resume events preserve the actual remaining time;
+  existing VIP/automatic holds and reveal acknowledgements are retained.
+- Bot random cursor, skill mapping, pace and current timer/interrupt markers are
+  restored; presentation delays restart when the player explicitly resumes.
+- State validation uses the existing generated fixture schema, validates every
+  original own map entry (including prototype-named seats), and retains the
+  original JSON state rather than a parser-stripped copy.
+- Corrupt, incompatible, oversized or unavailable checkpoints fail safely to
+  the lobby. Storage failures are shown in plain language without interrupting
+  the playable game. New Game/Discard clear only this game's key.
