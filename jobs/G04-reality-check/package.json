@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "node checksums.ts --check && npm run check && node generate.ts --check && node --test test.ts && node differential.ts && node bluff-differential.ts && node bounds-probe.ts && node style-probe.ts && node phase-audit.ts && node catalog-probe.ts && node churn-probe.ts && node mutations.ts && node league.ts && node league.ts --held-out && node build.ts --check && node late-input.ts && node host-deadline-mutation.ts && node browser.ts && node browser.ts --repeat=2 && node browser.ts --repeat=3 && node browser-proof.ts && node browser-proof.ts --self-test && node checksums.ts && node checksums.ts --check",
+    "test": "node checksums.ts --check && npm run check && node generate.ts --check && node --test test.ts && node differential.ts && node bluff-differential.ts && node bounds-probe.ts && node style-probe.ts && node phase-audit.ts && node catalog-probe.ts && node churn-probe.ts && node mutations.ts && node league.ts && node league.ts --held-out && node build.ts --check && node late-input.ts && node host-deadline-mutation.ts && node browser.ts && node browser.ts --repeat=2 && node browser.ts --repeat=3 && node browser-proof.ts && node browser-proof.ts --self-test && node --test strict-proof.test.ts && node strict-browser.ts && node strict-browser-proof.ts && node checksums.ts && node checksums.ts --check",
     "build": "node build.ts",
     "fixtures": "node fixtures.ts && node checksums.ts",
     "league": "node league.ts",

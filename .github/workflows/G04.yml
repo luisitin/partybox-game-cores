@@ -19,6 +19,8 @@ jobs:
         working-directory: jobs/G04-reality-check
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -39,9 +41,12 @@ jobs:
         with:
           name: G04-browser-evidence-${{ github.sha }}
           if-no-files-found: warn
+          include-hidden-files: true
           path: |
             jobs/G04-reality-check/browser-report.json
             jobs/G04-reality-check/browser-repeat-*.json
             jobs/G04-reality-check/browser-raw-*.json
             jobs/G04-reality-check/late-input-report.json
             jobs/G04-reality-check/media/milestone-15-browser*.webm
+            jobs/G04-reality-check/.work/strict/*.json
+            jobs/G04-reality-check/media/strict-reverify-2019-*.webm

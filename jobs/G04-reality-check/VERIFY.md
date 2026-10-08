@@ -407,3 +407,26 @@ status requires actualremote timestamp, not assumed.
 Actual normal5b99dae push13:52:31UTC:29m23 since13:23:08, binding30min cadence PASS; early13:48:08 target missed by4m23. Exact CI37787851588 SUCCESS13:59:13; `gh run view 37787851588 --log` actual225231-byte full logs read,51tests/25mutants/24kleagues/8deadlinecases/current proof3fullruns66scenarios1800unfiltered intervals16guards3actualcapturehashes PASS. Local phone54.057FPS failure remains separate and unresolved. Round13 no-player-gain streak2 complete.
 
 KEEP14 `npm run check && node host-deadline-mutation.ts && node build.ts --check && node capture.ts --milestone=17 && node checksums.ts && node checksums.ts --check`: EXIT0. Actual TypeScript tool reconstructs archived original6 controls using only its own private guard/report paths, compiles real ui.ts <→<= comparator, then old6 EXIT0/PASS versus current8 EXIT1 with exactly the two exact-deadline cases failing and all original6 passing. Both raw reports/full logs retained under host-deadline-automated-*; always-finally restoration validates all13 guarded sources including original UI57b121/pagee570, even on failure. This is an additional actual host mutant, separate from the25 required pure mutants. npmtest now runs it after normal8 deadline controls and before the3 independent full browser runs. Strict types and original offlinebuild PASS. Source-bound milestone17 actual157527-byte VP8 clip/11guards/zeroerrors or network PASS; encoded12FPS is not acceptance. All108data/media checksums PASS. Runtime unchanged, measured playergain0/no-gain streak3, exact newhead CI pending. No unchanged local broad core/leagues/browser rerun.
+
+## Legal re-verification recovery checkpoint, 2026-10-08 20:43 UTC
+
+All commands below ran from jobs/G04-reality-check with Node24.19.0.
+`npm run check` passed strict TypeScript after recovery.
+`node --test strict-proof.test.ts` passed4 tests: exact identity refusal,
+actual asynchronous nonce grant/closure,22 proof corruptions, and loaded
+source/dependency coverage. Synthetic fixtures only test refusal logic,
+not frame acceptance. Actual output is retained in
+results/reverify-2019/strict-refusal-tests.log.
+`node --input-type=module -e 'import {decodeCurrentCapture} from
+"./strict-decode.ts"; for (const path of
+["media/milestone-15-browser.webm",
+"media/milestone-15-browser-repeat-2.webm",
+"media/milestone-15-browser-repeat-3.webm"])
+console.log(JSON.stringify({path,...decodeCurrentCapture(path),
+scope:"decoded historical committed functional clip; not new native FPS evidence"}));'`
+actually decoded all three historical clips, decoder exit0/36 frames each.
+Full progress remains in results/reverify-2019/historical-clip-decode.log.
+These clips and b18952bf CI37791478413 do not count as a fresh strict frame
+sample. New native runs/current clips/current full CI are pending.
+The production page, UI, core and bot remain unchanged, and the existing
+three actual player-no-gain KEEP rounds remain valid.

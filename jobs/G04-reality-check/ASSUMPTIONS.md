@@ -55,3 +55,17 @@ artifact retention are round11 evidence wrap-up, with no player gain or
 additional KEEP streak count. Unexplained local frame failures remain public.
 
 Round14 compiled host comparator mutation is verification-only. The test temporarily mutates only its own job UI/page, reconstructs the archived6-case runner with private guard/report paths, preserves both actual outcomes, and restores exact source buffers in finally. It supplements the25 independent pure-core mutants. Local speed variance and physical-phone approximation remain unresolved; no FPS or gameplay improvement is claimed.
+
+## Recovery claim and verifier repair, 2026-10-08
+
+Owner codex-reality-reverify legally claimed at20:20:15Z after fresh main
+and all18 branch dates; normal merge preserves canonical PR4 history.
+The environment interrupted work around20:31–20:40Z. The paused-before-READY
+setup uses the real game Pause and Resume controls; it never installs a
+virtual clock, changes a native timing API, freezes the sampler clock,
+filters raw frames, changes a bot policy or extends the production deadline.
+The extra600-interval profile is stronger evidence; original six300-interval
+profiles remain valid scoped evidence and are still required by npm test.
+Installed Zod/Playwright source guards refer to loaded public dependencies,
+not committed node_modules. Shared contract and every production game byte
+remain unchanged; no new player gain or additional KEEP round is claimed.
