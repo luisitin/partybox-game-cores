@@ -1,6 +1,6 @@
 # Resume
 
-G09 branch `job/G09-category-rush-parallel-20261008`; PR https://github.com/luisitin/partybox-game-cores/pull/8 . Initial, round-1 and round-2 exact-head CI are GREEN at `b389ce4` / `b1663d9` / `c623ee9` (runs 37758960937 / 37763189188 / 37767733344). Round 3 is complete locally and ready to push; wait for its exact-head CI green before the next formal KEEP GOING round. All three rounds gained something a player notices; consecutive no-gain rounds remain zero.
+G09 branch `job/G09-category-rush-parallel-20261008`; PR https://github.com/luisitin/partybox-game-cores/pull/8 . Initial, round-1 and round-2 exact-head CI are GREEN at `b389ce4` / `b1663d9` / `c623ee9` (runs 37758960937 / 37763189188 / 37767733344). Round 3 is complete locally and pushed at `87eb68c`; exact-head run 37773541708 is GREEN on 87eb68c. Formal round 4 now fixes sourced singular/plural scoring defects; its changed-core checks and rebuilt-page proof are pending. All three rounds gained something a player notices; consecutive no-gain rounds remain zero.
 
 Current round-3 HTML is `084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa`, 455,505 bytes; unchanged pure core `320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1`; sampler `1ac72aab…` only adds the codec source fingerprint to its prior methodology. Round-2 sources/proofs/clips are archived under `round-2-accepted`. Actual reload recovery improves 0/6 → 6/6, with 17 targeted UI cases and four independent codec/RNG tests passing. The legal maximum-length five-round/eight-seat Unicode test measures 246,896 bytes under the corrected bounded 500,000-byte ceiling; its genuine initial 200,000-byte rejection remains archived. Selected-round gains and wrong-initial review focus are corrected.
 
@@ -10,7 +10,14 @@ Scored history exposes all five receipts instead of one in actual two/eight-huma
 
 Full 21 core/data/source tests passed: 10,000 independent comparisons, 7,000 restored-every-event games, all nine invariants, 1,003 properties and 2,000 fuzz cases. Six content/evidence schema/equivalence tests and artifact binding also pass, totaling 24 unique tests. All 25 actual mutants were killed and sources restored. Seven content/archive/schema files and the manifest/four fixtures regenerate twice identically; both historical 200-round bank reports reproduce byte-identically twice. Final typecheck/source/fixture/artifact checks pass. Regenerate/check final data/media hashes before push. Prior accepted files, raw frame failures, samplers and clips remain archived, including the corrected fixture-only label failure.
 
-Next: hash/stage/push completed round 3 and refresh the main claim, then wait for exact-head CI green. Re-read/rank five weaknesses for the next formal round afterward; finite crowded-bot vocabulary and irregular matcher coverage remain real candidates. The offline child has stopped all writers/processes. Continue until three consecutive no-player-gain rounds, with final exact-head CI green. No game code has been merged to main.
+Next: complete formal round 4, already ranked in REVIEW.md after exact round-3 CI green. Preserve actual old matching evidence, implement bounded sourced plurals and independent reference, then run changed-core checks and source-matched browser proof. Finite crowded-bot vocabulary remains a later candidate. The offline child completed with all writers/processes stopped; the sole content child owns bounded matcher/reference/tests and lexical source documentation; parent owns archive/protocol/artifact integration. Continue until three consecutive no-player-gain rounds, with final exact-head CI green. No game code has been merged to main.
+
+Completed round-3 proof `87eb68c` was committed at 11:57:37 UTC and pushed at
+**11:57:39** (actual origin reflog). Claim `22c7999` was refreshed at 11:58:14
+after pulling fresh main and preserving other claims. The 27m51s push interval
+missed the 25-minute target by 2m51s and met the 30-minute limit. All 181 final
+data/media hashes, artifact checks and strict typecheck pass. Next target is
+**12:22:39**, hard limit **12:27:39**.
 
 Round-2 proof `c623ee9` was committed at 11:04:58 UTC; origin reflog records push at 11:05:03. Main claim `cc20ab1` was refreshed at 11:06:44. The current 25-minute checkpoint target is **11:30:03**, hard limit **11:35:03**. Push an honest source/proof-pending checkpoint if round-3 acceptance has not closed by the target.
 
@@ -24,3 +31,11 @@ Cadence deviation: commits `384b4ed` (08:26:23 UTC) and `8be851b` (09:05:39 UTC)
 
 
 Checkpoint `07f2894` was committed at 10:48:45 UTC; origin reflog records push at 10:48:49, six seconds after the 25-minute target and inside the 30-minute limit. Claim `f1d9d95` was refreshed at 10:49:55. Next target is 11:13:49, hard limit 11:18:49, from actual push; reset after the completed proof push.
+
+Round-4 checkpoint is source/proof-pending. Real nine-pair restored protocol
+improves incorrect duplicate points 18→0 per two/eight-seat roster. Strict
+typecheck passes; old oracle is running, full changed-core/new-page proof remains
+pending. Historical breadth semantics are explicitly archived and reproduced
+with their original matcher/experiment rather than overwritten by the fix.
+Do not add LOOP4 until all required source-specific proof closes. Push by
+12:22:39 target / 12:27:39 hard; next deadline resets from actual origin push.

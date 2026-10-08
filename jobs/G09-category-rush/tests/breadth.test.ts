@@ -15,7 +15,7 @@ test('retained content experiment files obey independent emitted JSON schemas', 
   const comparisonSchema = read('evidence/breadth-comparison.schema.json');
   assert.deepEqual(reportSchema, z.toJSONSchema(breadthReportSchema));
   assert.deepEqual(comparisonSchema, z.toJSONSchema(breadthComparisonSchema));
-  for (const name of ['baseline', 'bank-only', 'after']) {
+  for (const name of ['baseline', 'bank-only', 'after', 'lexical']) {
     const report = breadthReportSchema.parse(read(`evidence/breadth-${name}.json`));
     assert.deepEqual(validateJsonSchema(reportSchema, report), []);
     assert.equal(report.outcomes.replayMatches, 200);

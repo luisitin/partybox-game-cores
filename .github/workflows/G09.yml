@@ -38,9 +38,14 @@ jobs:
         run: npm run bots
       - name: Replayed eight-Strong-bot variety experiment
         run: |
-          npx tsx scripts/breadth.ts --label=after
+          npx tsx scripts/breadth.ts --label=after --output=lexical
           node scripts/regenerate-breadth.mjs --check
-          git diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json
+          git diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json evidence/breadth-lexical.json
+      - name: Source-bound singular and plural duplicate protocols
+        run: |
+          node scripts/regenerate-plural-baseline.mjs --check
+          npx tsx scripts/plural-protocol.ts
+          git diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json
       - name: Install development browser
         run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility

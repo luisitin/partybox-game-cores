@@ -11,8 +11,6 @@ import type { Input } from '../src/model';
 const digest = (value: string) => createHash('sha256').update(value).digest('hex');
 const label = process.argv.find(value => value.startsWith('--label='))?.slice(8) ?? 'after';
 assert.ok(['baseline', 'after'].includes(label));
-const output = process.argv.find(value => value.startsWith('--output='))?.slice(9) ?? label;
-assert.ok(['baseline', 'after', 'lexical'].includes(output));
 const hashFile = (path: string) => digest(readFileSync(new URL(path, import.meta.url), 'utf8'));
 const banks = CATEGORIES.flatMap(category => Object.entries(category.answers).map(([letter, answers]) => ({ categoryId: category.id, letter, width: answers.length })));
 const widths = banks.map(bank => bank.width).sort((a, b) => a - b);
@@ -71,5 +69,5 @@ const report = {
   bankImpacts: [...impacts.values()].sort((a, b) => b.duplicated - a.duplicated || a.categoryId.localeCompare(b.categoryId) || a.letter.localeCompare(b.letter)),
   rows,
 };
-writeFileSync(new URL(`../evidence/breadth-${output}.json`, import.meta.url), JSON.stringify(report, null, 2) + '\n');
+writeFileSync(new URL(`../evidence/breadth-${label}.json`, import.meta.url), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ label, sourceHashes: report.sourceHashes, breadth: report.breadth, outcomes: report.outcomes }, null, 2));

@@ -13,35 +13,17 @@ export function referenceNormalize(value:string):{norm:string;compact:string} {
   for(let i=names.length-1;i>=0;i--)s=s.replace(new RegExp(`\\b${names[i]}\\b`,'g'),String(i));
   return {norm:s,compact:s.split(' ').join('')};
 }
-// Independent noun-family representation: no production imports or alias map.
-const nounFamilies=[
-  ['analysis','analyses'],['bus','buses','busses'],['cactus','cacti','cactuses'],
-  ['calf','calves'],['child','children'],['crisis','crises'],['datum','data'],
-  ['diagnosis','diagnoses'],['echo','echoes'],['elf','elves'],['foot','feet'],
-  ['fungus','fungi'],['gas','gases','gasses'],['goose','geese'],['half','halves'],
-  ['hero','heroes'],['knife','knives'],['leaf','leaves'],['life','lives'],
-  ['loaf','loaves'],['man','men'],['mouse','mice'],['oasis','oases'],
-  ['person','people'],['potato','potatoes'],['quiz','quizzes'],['shelf','shelves'],
-  ['status','statuses'],['syllabus','syllabi'],['thesis','theses'],
-  ['tomato','tomatoes'],['tooth','teeth'],['wife','wives'],['wolf','wolves'],
-  ['woman','women'],
-];
-const familyHead=(word:string)=>nounFamilies.find(f=>f.includes(word))?.[0]??word;
-export function referenceStem(input:string):string {
-    if(input==='news')return input;
-    const w=familyHead(input);
+function pluralKey(value:string):string {
+  return value.split(' ').map(w=>{
     const n=w.length;
     if(n>=5&&w.substring(n-3)==='ies')return w.substring(0,n-3)+'i';
     let result=w;
     if(n>=5&&['ches','shes','xes','zes','sses'].some(e=>w.endsWith(e)))result=w.substring(0,n-2);
     else if(n>=4&&w.substring(n-1)==='s'&&!['ss','us','is'].some(e=>w.endsWith(e)))result=w.substring(0,n-1);
-    result=familyHead(result);
     if(result.slice(-2)==='ie')return result.substring(0,result.length-1);
     if(result.slice(-1)==='y'&&'bcdfghjklmnpqrstvwxyz'.includes(result.slice(-2,-1)))return result.substring(0,result.length-1)+'i';
     return result;
-}
-function pluralKey(value:string):string {
-  return value.split(' ').map(referenceStem).join(' ');
+  }).join(' ');
 }
 function distance(a:string,b:string):number {
   const grid=Array.from({length:a.length+1},()=>Array<number>(b.length+1).fill(0));

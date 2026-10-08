@@ -1,0 +1,27 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {z} from 'zod';
+import {pluralProtocolSchema} from '../content/plural-schema';
+import {validateJsonSchema} from '../scripts/json-schema-validator';
+const root=new URL('../',import.meta.url),read=(name:string)=>JSON.parse(readFileSync(new URL(name,root),'utf8'));
+const sha=(name:string)=>createHash('sha256').update(readFileSync(new URL(name,root))).digest('hex');
+test('actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence',()=>{
+ const schema=read('evidence/plural-protocol.schema.json');assert.deepEqual(schema,z.toJSONSchema(pluralProtocolSchema));
+ const before=pluralProtocolSchema.parse(read('evidence/plural-protocol-baseline.json')),after=pluralProtocolSchema.parse(read('evidence/plural-protocol-after.json'));
+ assert.deepEqual(validateJsonSchema(schema,before),[]);assert.deepEqual(validateJsonSchema(schema,after),[]);
+ for(const [field,path] of Object.entries({core:'src/index.ts',matcher:'src/match.ts',scoring:'src/scoring.ts',data:'content/categories.json',reference:'tests/reference.ts',experiment:'scripts/plural-protocol.ts'}))assert.equal(after.sourceHashes[field as keyof typeof after.sourceHashes],sha(path));
+ for(const field of ['core','matcher','scoring'] as const)assert.equal(before.sourceHashes[field],sha(`evidence/browser/round-3-accepted/src/${field==='core'?'index':field==='matcher'?'match':'scoring'}.ts`));
+ assert.equal(before.sourceHashes.reference,sha('evidence/browser/round-3-accepted/tests/reference.ts'));
+ assert.equal(before.sourceHashes.experiment,after.sourceHashes.experiment);
+ for(const count of [2,8]){
+  const old=before.rows.filter(row=>row.count===count),now=after.rows.filter(row=>row.count===count);
+  assert.equal(old.length,9);assert.equal(now.length,9);
+  assert.equal(old.reduce((sum,row)=>sum+row.awarded,0),18);assert.equal(now.reduce((sum,row)=>sum+row.awarded,0),0);
+  assert(old.every(row=>!row.matches&&row.receipt.groups.length===2));
+  assert(now.every(row=>row.matches&&row.receipt.groups.length===1&&row.receipt.groups[0].duplicate&&row.receipt.groups[0].owners.length===2));
+  assert.deepEqual(now.map(row=>[row.singular,row.plural,row.seed,row.letter,row.layout,row.eventCount]),old.map(row=>[row.singular,row.plural,row.seed,row.letter,row.layout,row.eventCount]));
+ }
+ const malformed=structuredClone(after);malformed.rows.pop();assert(validateJsonSchema(schema,malformed).length>0);
+});

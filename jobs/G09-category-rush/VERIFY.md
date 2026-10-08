@@ -269,3 +269,28 @@ target is 11:30:03 and the hard 30-minute limit is 11:35:03.
   privacy flags and measured gains. Pure core/data are unchanged from the full
   accepted round-2 21-test/oracle/7,000-game/property/secrecy, 25-mutation and
   4,000-duel proof; no unchanged expensive local checks were repeated.
+
+
+Round-4 source/proof-pending checkpoint: after exact round-3 CI 37773541708
+green on 87eb68c, reread/ranked five issues in REVIEW.md.
+`node scripts/regenerate-plural-baseline.mjs` replayed 18 actual pre-fix games
+(nine sourced pairs at both two/eight seats), restoring every event and replaying
+all events. Each roster awarded 18 improper duplicate points, matching 0/9 pairs.
+`npm run typecheck && npx tsx scripts/plural-protocol.ts` passes on matcher
+74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b:
+all 18 actual games replay exactly, all nine pairs match at both rosters and
+each roster now awards zero points to the duplicate groups. The players
+unanimously accept these answers; the protocol isolates duplicate adjudication
+and does not claim random prompts semantically fit each noun.
+The first isolated old-oracle launch failed before comparisons because the
+copied contract could not resolve Zod; its exact startup failure is retained in
+evidence/plural-oracle-startup-first.txt. The isolated harness now links the
+pinned dependency at its root; the retained old 10,000-case differential is
+running. The bounded fix, independent reference and lexical tests are authored;
+full changed-source core/oracle/rosters/properties, mutations, duels, historical
+reproduction, current breadth, new-HTML gameplay/frames/clips remain pending.
+The prior accepted HTML and old experiment/core/matcher/reference are retained
+under round-3-accepted and breadth-original-*; old three-layer bank/strategy
+reports retain their actual matching semantics, with a separate lexical layer.
+This is not a completed LOOP round and its pending CI may be red until the new
+source-matched acceptance artifacts are collected.

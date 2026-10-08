@@ -3,20 +3,6 @@
 // and one-edit matching for long answers. Grouping is transitive, as ADR-048 asks.
 const ONES=['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'];
 const TENS=['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety'];
-// Bounded noun facts, independently sourced in SOURCES-MATCHER.md. Ambiguous
-// axes/bases and general -ves/-oes rewrites are deliberately excluded.
-const PLURAL_NOUNS:ReadonlyMap<string,string>=new Map([
-  ['children','child'],['feet','foot'],['teeth','tooth'],['people','person'],
-  ['mice','mouse'],['geese','goose'],['men','man'],['women','woman'],
-  ['knives','knife'],['leaves','leaf'],['shelves','shelf'],['lives','life'],
-  ['wives','wife'],['halves','half'],['loaves','loaf'],['elves','elf'],
-  ['cacti','cactus'],['cactuses','cactus'],['fungi','fungus'],['data','datum'],
-  ['syllabi','syllabus'],['analyses','analysis'],['diagnoses','diagnosis'],
-  ['oases','oasis'],['theses','thesis'],['crises','crisis'],
-  ['potatoes','potato'],['tomatoes','tomato'],['heroes','hero'],['echoes','echo'],
-  ['buses','bus'],['busses','bus'],['quizzes','quiz'],['statuses','status'],
-  ['wolves','wolf'],['calves','calf'],['gases','gas'],['gasses','gas'],
-]);
 export function normalize(text:string):{norm:string;compact:string} {
   let norm=text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()
     .replace(/[‘’'"“”]/g,'').replace(/[^a-z0-9]+/g,' ').trim().replace(/^(a|an|the)\s+/,'');
@@ -29,15 +15,10 @@ export function normalize(text:string):{norm:string;compact:string} {
   norm=out.join(' ');return {norm,compact:norm.replace(/ /g,'')};
 }
 export function stem(word:string):string {
-  // News is singular in construction; removing its s would equate it with new.
-  if(word==='news')return word;
-  word=PLURAL_NOUNS.get(word)??word;
   if(word.length>4&&word.endsWith('ies'))return word.slice(0,-3)+'i';
   let base=word;
   if(word.length>4&&/(ches|shes|xes|zes|sses)$/.test(word))base=word.slice(0,-2);
   else if(word.length>3&&word.endsWith('s')&&!/(ss|us|is)$/.test(word))base=word.slice(0,-1);
-  // Preserve existing apostrophe-stripped forms such as men's/mens and mice's.
-  base=PLURAL_NOUNS.get(base)??base;
   if(base.endsWith('ie'))return base.slice(0,-1);
   if(/[bcdfghjklmnpqrstvwxyz]y$/.test(base))return base.slice(0,-1)+'i';
   return base;

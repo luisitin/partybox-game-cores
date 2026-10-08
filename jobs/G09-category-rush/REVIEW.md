@@ -70,3 +70,29 @@ unmatched: knife/knives, mouse/mice, person/people, leaf/leaves, child/children,
 tooth/teeth, foot/feet, goose/geese and shelf/shelves. Direct independent grammar
 reads are recorded in SOURCES.md. This identifies a later scoring review
 candidate; it does not change the frozen round-3 core or claim the full absent SDK.
+
+## Round 4, after exact round-3 CI green
+
+Re-read binding root RULES.md, JOBS.md G09, this game's selected rules and the
+contract's Typed answers section after exact-head run 37773541708 passed on
+`87eb68c`. The selected rules cancel equivalent duplicates and explicitly
+include common singular/plural matching; the contract likewise requires their
+stem keys to meet. Independent live grammar reads confirm the noun facts.
+
+| Rank | Weakness | Evidence and decision |
+| --- | --- | --- |
+| 1 | Common irregular singular/plural answers can score separately. | Nine verified pairs, including knife/knives and child/children, currently return false. Measure accepted-pair protocols through the real reducer at two/eight seats before fixing the bounded standalone matcher. |
+| 2 | Crowded bot games still duplicate most answers. | The final same-seed eight-Strong study averages 1.415 points/game and 98.423% duplicated submitted owners. Broader prompt selection remains a separate measured candidate; do not suppress answers or change scoring. |
+| 3 | One earlier reload-time comparison failed intermittently. | Eight-human review restored 0:20 from displayed 0:18 once. Exact failure is retained; three diagnostics and the final uninterrupted 17-check suite preserved time. No cause is established, so no speculative lifecycle change is justified. |
+| 4 | Short regular suffix exceptions can evade the matcher. | The current -s heuristic and six-letter fuzzy minimum leave bus/buses and similar cases for actual lexical auditing. Confirm facts and measure outcomes before extending rules. |
+| 5 | Broadening suffix rules can create false duplicate groups. | Cambridge and Grammarist document exceptions and ambiguities. Audit roof/roofs, mass nouns and axes forms; use bounded sourced facts and negative cases rather than universal -ves/-ses substitutions. |
+
+Fix the first issue, including closely related confirmed short-suffix defects
+and negative guards in the same matcher milestone. Preserve normalization,
+numeric no-fuzz, initials, transitive grouping, vote/self-repeat semantics and
+all privacy. The independently implemented reference must not import the
+production matcher or duplicate its algorithm. Archive historical matcher
+sources so earlier bank/strategy experiments remain reproducible under their
+actual old semantics. Changed-core oracle/roster/property/secrecy, actual
+mutations, skill league, data/schema/semantic checks and rebuilt-page proof
+remain required. No full absent-SDK stemmer is claimed.

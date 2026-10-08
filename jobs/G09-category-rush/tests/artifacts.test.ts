@@ -103,10 +103,10 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
     assert.equal(report.sourceHashes.data,sha('content/categories.json'));
     assert.equal(report.sourceHashes.generated,sha('content/categories.ts'));
   }
-  assert.equal(strategy.sourceHashes.core,sha('src/index.ts'));
+  assert.equal(strategy.sourceHashes.core,sha('evidence/breadth-strategy-core.ts'));
   for(const report of [original,bankOnly,strategy]){
-    assert.equal(report.sourceHashes.experiment,sha('scripts/breadth.ts'));
-    assert.equal(report.sourceHashes.scoring,sha('src/scoring.ts'));assert.equal(report.sourceHashes.matcher,sha('src/match.ts'));
+    assert.equal(report.sourceHashes.experiment,sha('evidence/breadth-original-experiment.ts'));
+    assert.equal(report.sourceHashes.scoring,sha('src/scoring.ts'));assert.equal(report.sourceHashes.matcher,sha('evidence/breadth-original-match.ts'));
     assert.equal(report.games,200);assert.equal(report.players,8);assert.equal(report.rows.length,200);
     assert.equal(report.outcomes.replayMatches,200);assert.equal(report.outcomes.repeatedOwn,0);
     assert.equal(report.outcomes.awarded,report.rows.reduce((sum:number,row:any)=>sum+row.awarded,0));
@@ -115,6 +115,10 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert(bankOnly.outcomes.awarded>original.outcomes.awarded);
   assert(strategy.outcomes.awarded>bankOnly.outcomes.awarded);
   assert(strategy.outcomes.duplicateOwnerRate<bankOnly.outcomes.duplicateOwnerRate);
+  const lexical=json('evidence/breadth-lexical.json');
+  for(const [field,path] of Object.entries({core:'src/index.ts',matcher:'src/match.ts',scoring:'src/scoring.ts',experiment:'scripts/breadth.ts',authored:'content/authored.mjs',data:'content/categories.json',generated:'content/categories.ts'}))assert.equal(lexical.sourceHashes[field],sha(path));
+  assert.equal(lexical.outcomes.replayMatches,200);assert.equal(lexical.rows.length,200);
+  assert.deepEqual(lexical.rows.map((row:any)=>[row.seed,row.letter,row.layout]),strategy.rows.map((row:any)=>[row.seed,row.letter,row.layout]));
   const html=readFileSync(new URL('play.html',root),'utf8');
   assert.match(html,/^<!doctype html>\s*<!-- Original Category Rush code, data and CSS\/SVG[\s\S]*?-->\s*<html lang="en">/);
   for(const path of ['LICENSE','node_modules/zod/LICENSE'])assert(html.includes(readFileSync(new URL(path,root),'utf8').trim()));

@@ -31,7 +31,7 @@ test('normalization: articles accents punctuation number words and plural matchi
 });
 test('independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication',()=>{
   const rng=createRng(20261008),words=['banana','bananas','balloon','balloons','baloon','BálLoOn','the balloon','backpack','back-pack',
-    'knife','knives','mouse','mice','child','children','person','people','leaf','leaves','foot','feet','tooth','teeth','goose','geese','shelf','shelves','news','new','hero','heroes','status','statuses','quiz','quizzes','axis','axes','basis','bases','roof','roofs','berry','berries','bus','buses','box','boxes','Book','book','the book','books','boat','boats','twenty one boots','21 boots','22 boots','one','1','','apple','bad','bed','The Twenty-One Pilots'];
+    'berry','berries','bus','buses','box','boxes','Book','book','the book','books','boat','boats','twenty one boots','21 boots','22 boots','one','1','','apple','bad','bed','The Twenty-One Pilots'];
   for(let i=0;i<10000;i++){
     const s=asReview(setup(rng.int(2,8),i));
     s.letter=rng.pick(['A','B','C','O','T']);
