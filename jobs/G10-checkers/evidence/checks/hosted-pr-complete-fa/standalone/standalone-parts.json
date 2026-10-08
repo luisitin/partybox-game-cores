@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "partBytes": 402653184,
+  "deliveryReceipt": {
+    "schemaVersion": 1,
+    "gameId": "checkers",
+    "gameVersion": "1.0.0",
+    "sourceCommit": "fa0b337e1178177ff5b871acae697897c687ee11",
+    "checkoutCommit": "fa0b337e1178177ff5b871acae697897c687ee11",
+    "page": "play.html",
+    "bytes": 1390845993,
+    "sha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+    "builtFrom": "Complete pinned source and original data in this exact checkout",
+    "checks": "Complete local npm test or all source-bound current workflow stages plus final independent validation passed",
+    "acceptedStages": [
+      "node",
+      "league-american",
+      "league-international",
+      "browser"
+    ],
+    "publication": "GitHub Actions standalone artifact; seven-day retention; ZIP download and sign-in may be required; this is not a persistent Release asset"
+  },
+  "helper": "standalone-parts.py",
+  "helperSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+  "parts": [
+    {
+      "name": "play.html.part-00",
+      "offset": 0,
+      "bytes": 402653184,
+      "sha256": "d234b7c10286cf203fc2cb3fba3b334697c084d49c5a5dd6e48c6ad83290cdde"
+    },
+    {
+      "name": "play.html.part-01",
+      "offset": 402653184,
+      "bytes": 402653184,
+      "sha256": "799b61da7870d427439e890ee3fcd5b0607ce0c74e96ba75da8f628fb7792b8d"
+    },
+    {
+      "name": "play.html.part-02",
+      "offset": 805306368,
+      "bytes": 402653184,
+      "sha256": "e1bbd324a8d8a691e99cab07f7b72ede54c96b9ae5a23a968e20c2d0cde8ae0f"
+    },
+    {
+      "name": "play.html.part-03",
+      "offset": 1207959552,
+      "bytes": 182886441,
+      "sha256": "b7dfabfcaa2a28a654b4b7f2a621fe2434b6628cda60d5305a626a899d91f9da"
+    }
+  ],
+  "join": "python3 standalone-parts.py join standalone-parts.json play.html",
+  "publication": "Four bounded GitHub Actions artifacts; seven-day retention; download all four and extract into the same folder. No runtime network."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "closedAt": "2026-10-08T22:23:34.697Z",
+  "acceptedBaselineHead": "491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+  "canonicalBytes": 1390845993,
+  "canonicalSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "bootstrap": {
+    "start": 12092,
+    "end": 12231912,
+    "originalBytes": 12219820,
+    "originalSha256": "c773cfb4b015c78ecc718427fe42879d1fd9f3138a554f1ae680e2ce79e6cf10",
+    "candidateBytes": 12220077,
+    "candidateSha256": "dd35ed4806512cb87019ac6d11d2b35ef6c9916a84619590199f27ded3bf81e6"
+  },
+  "american": {
+    "payloadStart": 12231986,
+    "payloadEncodedBytes": 36521288,
+    "compressedSha256": "3b8c99c4864bd22e1fb7e372d442537c8269bc9163c45325900423c7d13b0db4",
+    "markerInsertionOffset": 48753284
+  },
+  "internationalOriginal": {
+    "files": 41,
+    "parts": 1304,
+    "dataBytes": 1006478762
+  },
+  "workers": {
+    "american": {
+      "bytes": 39479460,
+      "sha256": "950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175"
+    },
+    "international": {
+      "bytes": 6401409,
+      "sha256": "31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2"
+    }
+  },
+  "scope": "Private compiler/source-bound controls only. Exact accepted bootstrap rebuild and both original workers match. Complete corpus metadata is unchanged. No full-page clone or native parser/browser timing yet."
+}

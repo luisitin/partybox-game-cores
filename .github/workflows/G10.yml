@@ -36,6 +36,12 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G10-checkers/package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Use the official Ubuntu archive for the existing runner mirror list
+        if: matrix.stage == 'node' || matrix.stage == 'browser'
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+          fi
       - name: Install actual video probe and decoder
         if: matrix.stage == 'node' || matrix.stage == 'browser'
         run: |
@@ -84,6 +90,11 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G10-checkers/package-lock.json
       - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Use the official Ubuntu archive for the existing runner mirror list
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+          fi
       - name: Install actual video probe and decoder
         run: |
           sudo apt-get update

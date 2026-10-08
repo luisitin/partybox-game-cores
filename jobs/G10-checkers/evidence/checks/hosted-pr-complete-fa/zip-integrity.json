@@ -1,0 +1,1448 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-08T22:34:07.269349+00:00",
+  "closedAt": "2026-10-08T22:34:07.583661+00:00",
+  "head": "fa0b337e1178177ff5b871acae697897c687ee11",
+  "workflowRunId": 37852024033,
+  "artifactId": 11582274811,
+  "zipBytes": 10551930,
+  "zipSha256": "de7209c5d1ebba932a58eb7104682df9328b9e169e218c185354c8ff986b1363",
+  "safeUniqueMembers": 239,
+  "members": [
+    {
+      "name": ".work/browser/capture.json",
+      "bytes": 43899,
+      "sha256": "f773fdbfbbbd6b5381f224812506f35379d6d6bf445d72b66906a83446d1d84e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/checks.json",
+      "bytes": 40228,
+      "sha256": "b7666bccb5144de57469d28654d8326d5627a0e7d967f817950b5f8bceac4822",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/desktop-american-capture-frames.json",
+      "bytes": 25545,
+      "sha256": "07e4a9598732912211670081a6e154a69c2bd19d230d9b7fcaef1f78544087db",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/desktop-american-frames.json",
+      "bytes": 25479,
+      "sha256": "e40966f46ce760e61a9b61d6639e23ab0569bc9fc184d884b22485b9129dd987",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/desktop-international-capture-frames.json",
+      "bytes": 25922,
+      "sha256": "0b32c3b0c94bee0a72b379fed951f9e67dc8921e9d85b8ad4f454ef245147bff",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/desktop-international-frames.json",
+      "bytes": 25883,
+      "sha256": "6a5814729e4e3dd6bf2217f8629f15320aae5932523fd2bfff52d39d39c2d131",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/phone-american-capture-frames.json",
+      "bytes": 25403,
+      "sha256": "f4e26bb36a114d0081d1e7b8fa90f4ecbe5373eb9ccaf4c6bb533017751a1c1b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/phone-american-frames.json",
+      "bytes": 25380,
+      "sha256": "065adfbce45ed653a402d361a2d304b6de1df0b051dc8c877b7b5982f74e2edc",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/phone-international-capture-frames.json",
+      "bytes": 25611,
+      "sha256": "1cd79d8297fc95da25ce226ac406e30bc985a8cc9a3d60e049ee099ed8f13ad3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/browser/phone-international-frames.json",
+      "bytes": 25701,
+      "sha256": "c6e1129e82e790125af04d688cde4757775a0402f4f7717dd20d67f567b5ad1d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/bots-minimax.json",
+      "bytes": 320,
+      "sha256": "43bc0ad24877682cc1b9b24af2f69ae973295aed3ce61c818127117d059d099a",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/browser-evidence-controls.json",
+      "bytes": 32445,
+      "sha256": "ed1895feba7de86e467b22f973dba57b2afcd2decb926e543fc5e1faa7fc188d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/chinook-differential.json",
+      "bytes": 21912,
+      "sha256": "65ec3fddf8d3ea31a3a0810f4753dfd51c10cf7e4341632107f4e960b7e384cb",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/complete-acceptance.json",
+      "bytes": 74964,
+      "sha256": "21d3e2d164cfec155101c8bccb30a949da7aa7cabc07d368fa02140da7c9400a",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/complete-games.json",
+      "bytes": 106547,
+      "sha256": "399ecd4b5a8621a3f3afe93430253615e174be0c3b03a44448be582f7bd840ef",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/default-probes.jsonl",
+      "bytes": 91996,
+      "sha256": "da1c308738c89729daf43600b9296d2055b9be488a119104fb445f14d8b1c904",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/endgame-differential.json",
+      "bytes": 486,
+      "sha256": "221c4016a209889a6dc429b8666ec8343cbe35aea1d1903d706fba29f82e39ef",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/endgame-generation.json",
+      "bytes": 1349,
+      "sha256": "9bcc473693c79fb0b476bfe954cb33a70180b2f7a89cccfc3d5022b47a7e54a9",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/endgame-independent.json",
+      "bytes": 1342,
+      "sha256": "d89842b6bc477128618f2fad2202d9f2647cdecd29a1103494daec5e5555ab64",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/inputs-before.json",
+      "bytes": 1260,
+      "sha256": "516e8b708ab5fb0a18acb6bb7ad4b1fab05361619a50dda48b799c3265017af2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/international-production-original.json",
+      "bytes": 308,
+      "sha256": "6d39425ed8dadbeffc2547148d502d451578324191c8303b15c634a39ae272bd",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/international-ranks.json",
+      "bytes": 235,
+      "sha256": "115f0dbf6258630cb8938f50f5b53cd0ac4aab64cc4b044e8cb064b8bde86f86",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/international-two-piece.json",
+      "bytes": 333,
+      "sha256": "8dd9ab536501c1b886c5fd5d18f37fb9fd9b38aa4312dcb776eca23b2dc7a862",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0000.jsonl",
+      "bytes": 91924,
+      "sha256": "b227d070f11077247f76c0b9b47b84869256d445243ffb28d50aeb74b6c13331",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0050.jsonl",
+      "bytes": 88607,
+      "sha256": "19bff01ed684368c4113e96bbb3759833a2b32f314fe8145569e9306667c60d3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0100.jsonl",
+      "bytes": 88804,
+      "sha256": "de87efdd7032d7f2fa73930daef7190a0bfbec693d30b3f0512a5530b9870f51",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0150.jsonl",
+      "bytes": 90000,
+      "sha256": "af73a2de397eaabbe32107e1ef3e0007cd972d504d6dba1b04eaaac1d9e9c97d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0200.jsonl",
+      "bytes": 86954,
+      "sha256": "7fa9f497ae83ba0522022b767fb3d6be3f3452eb3a7440de7eb1cd84441190ac",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0250.jsonl",
+      "bytes": 93448,
+      "sha256": "6f7ffa466c58936acb42daf435f2f6c001b2139cf68c4b3759ff10ad69564869",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0300.jsonl",
+      "bytes": 91814,
+      "sha256": "b9099ca4a379cf2776804d49df39ae9482517a28c305912289e0ab781dfb8572",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0400.jsonl",
+      "bytes": 95596,
+      "sha256": "860000cea18692e5d56e5621db5a0d7770004ed66ae40fc8405d768e7255ffda",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0350.jsonl",
+      "bytes": 87841,
+      "sha256": "7e5d2761296506fb0ef9850f9dfeeea1152f14a6409fe85ee29eda057d84a196",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0450.jsonl",
+      "bytes": 91682,
+      "sha256": "46ff24dc457bef4c78c195ff6b180050e302efaf781d71e5b818dfaec88dfa79",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0500.jsonl",
+      "bytes": 93354,
+      "sha256": "bf9595e3da2d111c5106a17ab28f86cda274d8e6fef92399be2bcb41b0f9b1a2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0550.jsonl",
+      "bytes": 95339,
+      "sha256": "83189aca5c17f2ccb8caa97838cc74781ea6b1f484da5068097153c7e006d883",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0650.jsonl",
+      "bytes": 87101,
+      "sha256": "09b55ee0f4b7c9d43e3f1791dbb3880f86621d6615cd34eb47355bc4f4c365c0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0700.jsonl",
+      "bytes": 95177,
+      "sha256": "3cd51bfcf27c118f369beeba914ba2b523f1d78d4cb6d4c37aa5f718df3fa704",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0600.jsonl",
+      "bytes": 94432,
+      "sha256": "1d553e2efa0df25c009f164ecb25641da865b11e9a84081a506a0d627a3764ea",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0750.jsonl",
+      "bytes": 93655,
+      "sha256": "5684cb016a50411826f324f973177dd0fd46870977f4b3a7fe490af884cb3c3f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0800.jsonl",
+      "bytes": 90054,
+      "sha256": "d6821b419b32bf21fb04d4544e49c234c5d00e0d9e3d17c2fd460ffc49d67a41",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0850.jsonl",
+      "bytes": 92254,
+      "sha256": "f96039233afffdbb42b60478bd38f0e144ad171c4e9a97fc0a738ad5f1baebad",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0900.jsonl",
+      "bytes": 85030,
+      "sha256": "824a37b12209579dc09087dd7072dd672124514d71b14bf5252d5f04849c2219",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-normal-easy-0950.jsonl",
+      "bytes": 97701,
+      "sha256": "fd1ad83fe3ed88d66ecf7d6bab617d1a1f77db05999cb5432004ddd6be9e4ce2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0000.jsonl",
+      "bytes": 174161,
+      "sha256": "91b4c62be7b3bb19e5df4093c2e61971adfbcf6302a5bdffc8ed5a832c132064",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0050.jsonl",
+      "bytes": 176934,
+      "sha256": "2524bcadb628b1f647e5df06f459b718aa9de8e2bab12922287cdec72aa56de8",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0100.jsonl",
+      "bytes": 175058,
+      "sha256": "a0e02db9cbada7d9745931681045a6c72fc144b9a53e780cc3aa1593117d1e6d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0150.jsonl",
+      "bytes": 168918,
+      "sha256": "975988c10ddedc44211dab2b2c4dd730fd24a794fdfd4c6007c68783899828b0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0200.jsonl",
+      "bytes": 177542,
+      "sha256": "9c8799eb1f9d18910e176f7a3e804a45179d5e43ccfb5d16d554382b9a44fdb2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0250.jsonl",
+      "bytes": 172168,
+      "sha256": "bb1e40bba8da89d78f02e65cf612de8637abab9c51783da7bc3a2da5ac0cbc49",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0300.jsonl",
+      "bytes": 177697,
+      "sha256": "2961a151d2a502e9c55aee58cff8027d19ee10edb9722d33cf0ba8910c5807a7",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0350.jsonl",
+      "bytes": 180648,
+      "sha256": "89a483fdbd97520c52a8b269e8d7791db8ed5caf8a861404d60a771fb099e4c9",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0400.jsonl",
+      "bytes": 180035,
+      "sha256": "3737937f08287a43587c7e29edf622c8732ffb8c55be04fab62d40d2658efb78",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0450.jsonl",
+      "bytes": 174637,
+      "sha256": "42c9d5b912b91f7cee173acede1b40e0bbfa29ba12d869fd675fd499b085b340",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0500.jsonl",
+      "bytes": 172387,
+      "sha256": "8f3ec0c39cd574faffaa90ccdb6179d51f0ee9268f167eb9d3f5061a1d2ac8f3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0550.jsonl",
+      "bytes": 172421,
+      "sha256": "27ba89896c4d158bafe531147c68423658ad08e3f53f20671b09fddf64fb7466",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0600.jsonl",
+      "bytes": 166670,
+      "sha256": "7b711e694a4e666afa779f83d379e9b576439dfb0483d3f879e9c0f1c50779cc",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0650.jsonl",
+      "bytes": 173624,
+      "sha256": "ccfcc0358f00dc0468e3c970f3f57b5458c775bcd4df40d71576bd7c936cb4f1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0700.jsonl",
+      "bytes": 172419,
+      "sha256": "cd75c52f518d61271f02e91cd3b68d525faff1626cf7d92b915c49ad6d7133f4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0750.jsonl",
+      "bytes": 184083,
+      "sha256": "4adcce1fcce82991d759c3b1651309cc2930e6bce76119ad92d008cf01880f70",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0800.jsonl",
+      "bytes": 180704,
+      "sha256": "240c5bf362c1f530cbb6455f5a2bc818f87a251e5e9a179042f0d798c94d618e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0850.jsonl",
+      "bytes": 166403,
+      "sha256": "0edfdc56b44f92f0139a1513e3f3549541474829d52282047a1f6faefbeb326f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0900.jsonl",
+      "bytes": 178318,
+      "sha256": "45fdfc5bb9969134d03e12241848ad200bcd1da117487428ad9439b509ad94e5",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/american-sharp-normal-0950.jsonl",
+      "bytes": 179493,
+      "sha256": "dc63eb5d86c79d68c8014b248b83a8288b830dce49c94dc17a5d74e8474d68ca",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0000.jsonl",
+      "bytes": 132647,
+      "sha256": "5558985ee00c7c5fc06f7c53b048a9b1db7fdeb96287c57f9e0c2fe862817549",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0100.jsonl",
+      "bytes": 137535,
+      "sha256": "b0329284d43575e3ccefb31bab1843bc7d10170e7ff50941e93c4a5006a76f83",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0050.jsonl",
+      "bytes": 133788,
+      "sha256": "4b27a685fd7956f5f13202548720c02320ba5c06a9eafb9e185e6b8cbdbdcb12",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0150.jsonl",
+      "bytes": 132231,
+      "sha256": "58399309fe316f726f6b9e63a7243885ddb752e79c337d2c3d9d2ad1bca10ff4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0200.jsonl",
+      "bytes": 132933,
+      "sha256": "b42ead2a432d9557da1a5e789b8a9b3adc1ea888fc27e1c5795d0e4361d26d7c",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0250.jsonl",
+      "bytes": 136105,
+      "sha256": "99658105fc4843d21c78ad564f99fbaaf9cf0774ae7bd1d420b2743134f2e121",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0300.jsonl",
+      "bytes": 133698,
+      "sha256": "61f45e1dd600061455f325ac683e15a91692778f629cdb72120b943225654ad1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0350.jsonl",
+      "bytes": 136028,
+      "sha256": "60eb9fa4b41c715407759e538a61f7b73b8f8e2b5dae4e623506b7024504dc30",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0400.jsonl",
+      "bytes": 134538,
+      "sha256": "779dac89032d98f0179c136c7bc72018030d4785c5624411afa5f9062a874379",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0450.jsonl",
+      "bytes": 132936,
+      "sha256": "0299c6deb5ba5d683c6660394ca0eca7e6dfcbf0b64f8a14aaa2b9523b963513",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0500.jsonl",
+      "bytes": 130785,
+      "sha256": "9d32c2642b6ab17d161eb38afddf3dfe8a9b93128fb274dcb4821789102f58a1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0550.jsonl",
+      "bytes": 138720,
+      "sha256": "d184cf6b83279b13396fc7037d684cf0dc30af871f6a40466c95260a41536b43",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0600.jsonl",
+      "bytes": 129820,
+      "sha256": "60fa86cef29d55aacfdbfa78e796bb0160d35f1789fb09ca0b5bbc8efe62bfe3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0650.jsonl",
+      "bytes": 136977,
+      "sha256": "19e4d06499c074d2c1339cea93e3a2930c70bc7c75dd98b7a80ca323ff5a087a",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0700.jsonl",
+      "bytes": 138487,
+      "sha256": "e161f032a7b1430132d7fce05b4c55bf80d16fdecae80bab43fe0344c9eb4ca7",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0750.jsonl",
+      "bytes": 131105,
+      "sha256": "f4f1ca09683786bad231aa40fcd5a32e05e6f3be8e4e96399fc769afa4498b3b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0800.jsonl",
+      "bytes": 134452,
+      "sha256": "e6d693d3dc5b04f6770634faad9f324de9d765d12e15eb314dc76243161aed4d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0850.jsonl",
+      "bytes": 134822,
+      "sha256": "feb1e442621e307131e0930acc3f36a801f16261be7166ae869108728db760fd",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0900.jsonl",
+      "bytes": 129626,
+      "sha256": "6fd2d477fc34f475ec1b076c5855f520d68d0f295ac1fd73c525f819547eb13e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-normal-easy-0950.jsonl",
+      "bytes": 137349,
+      "sha256": "0283c64b1c8e0a433528392efa1f6289410effd00a0afed2f7a4825320aa9a38",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0000.jsonl",
+      "bytes": 193730,
+      "sha256": "772f6b346eb5d2566aa5ecfeb40e36bd1f889aabb01305f9af8dea85f8bd4559",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0050.jsonl",
+      "bytes": 193059,
+      "sha256": "c154a16d2d45fcdfc39dd00820c236ea9d222c55ae4dca58759f9fd51ba77eab",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0150.jsonl",
+      "bytes": 196716,
+      "sha256": "ca6b08f56858d941f564fe9cdf9b5f78bf1c8245686718dd26d51e2069e29a5c",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0100.jsonl",
+      "bytes": 194596,
+      "sha256": "7be7e1e214b132cf321fe78eb9e737156a78a2d79211cbb8baf0e81fdb11451d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0200.jsonl",
+      "bytes": 185296,
+      "sha256": "69787f88a49979b81f0e29e41064f6ec9a79c6289009f49e7a6017d73b8d9912",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0250.jsonl",
+      "bytes": 189427,
+      "sha256": "37ffb0f437762310a17e89e425ae623ebaff3e9bda42a5267ebcb869c5bb2b41",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0300.jsonl",
+      "bytes": 190246,
+      "sha256": "933a12da0473f535f27a66bdb8b8069bf50330c6d262aae354c8febe0f131fb4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0400.jsonl",
+      "bytes": 185990,
+      "sha256": "b310248fb216793e0a4a64cc168246cf2ff45d3f5efcabf9bd7b559b3fd3ed72",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0350.jsonl",
+      "bytes": 194643,
+      "sha256": "a4fe8ae6978ddf08fc2c7eb83717e5870f8783ece639133d754dce09d00b06b2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0450.jsonl",
+      "bytes": 196125,
+      "sha256": "04e0873c901d105bc94d2eb16c8f3f83b5e3009d818bfc72e8028d5e9fd64a92",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0500.jsonl",
+      "bytes": 192977,
+      "sha256": "bd9a1bdc0b7d3fa2683dbcedaca6e2c0f04b99d58552b75ebb6e2cf79b69d554",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0550.jsonl",
+      "bytes": 190391,
+      "sha256": "56a2632b6ae550b56e3f72738749eb63a2ed170a8281eaf3ce542a3b003c6129",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0600.jsonl",
+      "bytes": 185751,
+      "sha256": "68bcad1cd4904384296bfaef89831ba1911ae9a58cc2334cef250a1f8941484d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0650.jsonl",
+      "bytes": 188787,
+      "sha256": "c3fcf1b22ac80a18c14a488722f508f9800f0f148842be655cbd72faf1d3634d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0700.jsonl",
+      "bytes": 185428,
+      "sha256": "f8f5530702016b7ba02f2aef09249c9b54ca854aaac08fad41822249e94bf745",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0750.jsonl",
+      "bytes": 182395,
+      "sha256": "4300112dcfcbe68715a1e6c803eba4d19cf5bbacb4ab45923df10d6ec56ae6b6",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0800.jsonl",
+      "bytes": 189334,
+      "sha256": "9e5ed3662dd6e0d0986bcd439b49d0bba625670e4f18965a7a21c3492df36935",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0850.jsonl",
+      "bytes": 185660,
+      "sha256": "9d743f6f9fe9668d7639472daccf2bdba45ba48654078efb9ea15c86e514700d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0900.jsonl",
+      "bytes": 199047,
+      "sha256": "efb65292f1a3613ddb190544ad90ae587a13002db17f9354894a2c4339886aca",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-games/international-sharp-normal-0950.jsonl",
+      "bytes": 189239,
+      "sha256": "ef341d8c355425cfc69aa581a5f603fa5a3381f27c3e4e3cd51f7df41299c241",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0000.jsonl",
+      "bytes": 91924,
+      "sha256": "b227d070f11077247f76c0b9b47b84869256d445243ffb28d50aeb74b6c13331",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0050.jsonl",
+      "bytes": 88607,
+      "sha256": "19bff01ed684368c4113e96bbb3759833a2b32f314fe8145569e9306667c60d3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0100.jsonl",
+      "bytes": 88804,
+      "sha256": "de87efdd7032d7f2fa73930daef7190a0bfbec693d30b3f0512a5530b9870f51",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0150.jsonl",
+      "bytes": 90000,
+      "sha256": "af73a2de397eaabbe32107e1ef3e0007cd972d504d6dba1b04eaaac1d9e9c97d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0200.jsonl",
+      "bytes": 86954,
+      "sha256": "7fa9f497ae83ba0522022b767fb3d6be3f3452eb3a7440de7eb1cd84441190ac",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0250.jsonl",
+      "bytes": 93448,
+      "sha256": "6f7ffa466c58936acb42daf435f2f6c001b2139cf68c4b3759ff10ad69564869",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0350.jsonl",
+      "bytes": 87841,
+      "sha256": "7e5d2761296506fb0ef9850f9dfeeea1152f14a6409fe85ee29eda057d84a196",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0300.jsonl",
+      "bytes": 91814,
+      "sha256": "b9099ca4a379cf2776804d49df39ae9482517a28c305912289e0ab781dfb8572",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0400.jsonl",
+      "bytes": 95596,
+      "sha256": "860000cea18692e5d56e5621db5a0d7770004ed66ae40fc8405d768e7255ffda",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0450.jsonl",
+      "bytes": 91682,
+      "sha256": "46ff24dc457bef4c78c195ff6b180050e302efaf781d71e5b818dfaec88dfa79",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0500.jsonl",
+      "bytes": 93354,
+      "sha256": "bf9595e3da2d111c5106a17ab28f86cda274d8e6fef92399be2bcb41b0f9b1a2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0550.jsonl",
+      "bytes": 95339,
+      "sha256": "83189aca5c17f2ccb8caa97838cc74781ea6b1f484da5068097153c7e006d883",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0600.jsonl",
+      "bytes": 94432,
+      "sha256": "1d553e2efa0df25c009f164ecb25641da865b11e9a84081a506a0d627a3764ea",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0650.jsonl",
+      "bytes": 87101,
+      "sha256": "09b55ee0f4b7c9d43e3f1791dbb3880f86621d6615cd34eb47355bc4f4c365c0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0700.jsonl",
+      "bytes": 95177,
+      "sha256": "3cd51bfcf27c118f369beeba914ba2b523f1d78d4cb6d4c37aa5f718df3fa704",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0750.jsonl",
+      "bytes": 93655,
+      "sha256": "5684cb016a50411826f324f973177dd0fd46870977f4b3a7fe490af884cb3c3f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0800.jsonl",
+      "bytes": 90054,
+      "sha256": "d6821b419b32bf21fb04d4544e49c234c5d00e0d9e3d17c2fd460ffc49d67a41",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0900.jsonl",
+      "bytes": 85030,
+      "sha256": "824a37b12209579dc09087dd7072dd672124514d71b14bf5252d5f04849c2219",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0850.jsonl",
+      "bytes": 92254,
+      "sha256": "f96039233afffdbb42b60478bd38f0e144ad171c4e9a97fc0a738ad5f1baebad",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-normal-easy-0950.jsonl",
+      "bytes": 97701,
+      "sha256": "fd1ad83fe3ed88d66ecf7d6bab617d1a1f77db05999cb5432004ddd6be9e4ce2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0000.jsonl",
+      "bytes": 174161,
+      "sha256": "91b4c62be7b3bb19e5df4093c2e61971adfbcf6302a5bdffc8ed5a832c132064",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0050.jsonl",
+      "bytes": 176934,
+      "sha256": "2524bcadb628b1f647e5df06f459b718aa9de8e2bab12922287cdec72aa56de8",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0150.jsonl",
+      "bytes": 168918,
+      "sha256": "975988c10ddedc44211dab2b2c4dd730fd24a794fdfd4c6007c68783899828b0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0100.jsonl",
+      "bytes": 175058,
+      "sha256": "a0e02db9cbada7d9745931681045a6c72fc144b9a53e780cc3aa1593117d1e6d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0200.jsonl",
+      "bytes": 177542,
+      "sha256": "9c8799eb1f9d18910e176f7a3e804a45179d5e43ccfb5d16d554382b9a44fdb2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0250.jsonl",
+      "bytes": 172168,
+      "sha256": "bb1e40bba8da89d78f02e65cf612de8637abab9c51783da7bc3a2da5ac0cbc49",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0300.jsonl",
+      "bytes": 177697,
+      "sha256": "2961a151d2a502e9c55aee58cff8027d19ee10edb9722d33cf0ba8910c5807a7",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0350.jsonl",
+      "bytes": 180648,
+      "sha256": "89a483fdbd97520c52a8b269e8d7791db8ed5caf8a861404d60a771fb099e4c9",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0400.jsonl",
+      "bytes": 180035,
+      "sha256": "3737937f08287a43587c7e29edf622c8732ffb8c55be04fab62d40d2658efb78",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0500.jsonl",
+      "bytes": 172387,
+      "sha256": "8f3ec0c39cd574faffaa90ccdb6179d51f0ee9268f167eb9d3f5061a1d2ac8f3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0450.jsonl",
+      "bytes": 174637,
+      "sha256": "42c9d5b912b91f7cee173acede1b40e0bbfa29ba12d869fd675fd499b085b340",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0550.jsonl",
+      "bytes": 172421,
+      "sha256": "27ba89896c4d158bafe531147c68423658ad08e3f53f20671b09fddf64fb7466",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0600.jsonl",
+      "bytes": 166670,
+      "sha256": "7b711e694a4e666afa779f83d379e9b576439dfb0483d3f879e9c0f1c50779cc",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0650.jsonl",
+      "bytes": 173624,
+      "sha256": "ccfcc0358f00dc0468e3c970f3f57b5458c775bcd4df40d71576bd7c936cb4f1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0700.jsonl",
+      "bytes": 172419,
+      "sha256": "cd75c52f518d61271f02e91cd3b68d525faff1626cf7d92b915c49ad6d7133f4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0750.jsonl",
+      "bytes": 184083,
+      "sha256": "4adcce1fcce82991d759c3b1651309cc2930e6bce76119ad92d008cf01880f70",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0800.jsonl",
+      "bytes": 180704,
+      "sha256": "240c5bf362c1f530cbb6455f5a2bc818f87a251e5e9a179042f0d798c94d618e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0850.jsonl",
+      "bytes": 166403,
+      "sha256": "0edfdc56b44f92f0139a1513e3f3549541474829d52282047a1f6faefbeb326f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0900.jsonl",
+      "bytes": 178318,
+      "sha256": "45fdfc5bb9969134d03e12241848ad200bcd1da117487428ad9439b509ad94e5",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american.json",
+      "bytes": 16963,
+      "sha256": "271af74c8843cdca73d28fb538858e30575cc87c8ad52e27b2431db957abb21f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-american-games/american-sharp-normal-0950.jsonl",
+      "bytes": 179493,
+      "sha256": "dc63eb5d86c79d68c8014b248b83a8288b830dce49c94dc17a5d74e8474d68ca",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-controls.json",
+      "bytes": 10899,
+      "sha256": "570a2f064cc47102ded32027fec47e3b5c72686e4e28f849bbce56af99092b02",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0000.jsonl",
+      "bytes": 132647,
+      "sha256": "5558985ee00c7c5fc06f7c53b048a9b1db7fdeb96287c57f9e0c2fe862817549",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0050.jsonl",
+      "bytes": 133788,
+      "sha256": "4b27a685fd7956f5f13202548720c02320ba5c06a9eafb9e185e6b8cbdbdcb12",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0100.jsonl",
+      "bytes": 137535,
+      "sha256": "b0329284d43575e3ccefb31bab1843bc7d10170e7ff50941e93c4a5006a76f83",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0150.jsonl",
+      "bytes": 132231,
+      "sha256": "58399309fe316f726f6b9e63a7243885ddb752e79c337d2c3d9d2ad1bca10ff4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0200.jsonl",
+      "bytes": 132933,
+      "sha256": "b42ead2a432d9557da1a5e789b8a9b3adc1ea888fc27e1c5795d0e4361d26d7c",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0250.jsonl",
+      "bytes": 136105,
+      "sha256": "99658105fc4843d21c78ad564f99fbaaf9cf0774ae7bd1d420b2743134f2e121",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0300.jsonl",
+      "bytes": 133698,
+      "sha256": "61f45e1dd600061455f325ac683e15a91692778f629cdb72120b943225654ad1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0350.jsonl",
+      "bytes": 136028,
+      "sha256": "60eb9fa4b41c715407759e538a61f7b73b8f8e2b5dae4e623506b7024504dc30",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0400.jsonl",
+      "bytes": 134538,
+      "sha256": "779dac89032d98f0179c136c7bc72018030d4785c5624411afa5f9062a874379",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0450.jsonl",
+      "bytes": 132936,
+      "sha256": "0299c6deb5ba5d683c6660394ca0eca7e6dfcbf0b64f8a14aaa2b9523b963513",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0500.jsonl",
+      "bytes": 130785,
+      "sha256": "9d32c2642b6ab17d161eb38afddf3dfe8a9b93128fb274dcb4821789102f58a1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0550.jsonl",
+      "bytes": 138720,
+      "sha256": "d184cf6b83279b13396fc7037d684cf0dc30af871f6a40466c95260a41536b43",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0600.jsonl",
+      "bytes": 129820,
+      "sha256": "60fa86cef29d55aacfdbfa78e796bb0160d35f1789fb09ca0b5bbc8efe62bfe3",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0700.jsonl",
+      "bytes": 138487,
+      "sha256": "e161f032a7b1430132d7fce05b4c55bf80d16fdecae80bab43fe0344c9eb4ca7",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0650.jsonl",
+      "bytes": 136977,
+      "sha256": "19e4d06499c074d2c1339cea93e3a2930c70bc7c75dd98b7a80ca323ff5a087a",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0750.jsonl",
+      "bytes": 131105,
+      "sha256": "f4f1ca09683786bad231aa40fcd5a32e05e6f3be8e4e96399fc769afa4498b3b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0800.jsonl",
+      "bytes": 134452,
+      "sha256": "e6d693d3dc5b04f6770634faad9f324de9d765d12e15eb314dc76243161aed4d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0850.jsonl",
+      "bytes": 134822,
+      "sha256": "feb1e442621e307131e0930acc3f36a801f16261be7166ae869108728db760fd",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0900.jsonl",
+      "bytes": 129626,
+      "sha256": "6fd2d477fc34f475ec1b076c5855f520d68d0f295ac1fd73c525f819547eb13e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-normal-easy-0950.jsonl",
+      "bytes": 137349,
+      "sha256": "0283c64b1c8e0a433528392efa1f6289410effd00a0afed2f7a4825320aa9a38",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0000.jsonl",
+      "bytes": 193730,
+      "sha256": "772f6b346eb5d2566aa5ecfeb40e36bd1f889aabb01305f9af8dea85f8bd4559",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0050.jsonl",
+      "bytes": 193059,
+      "sha256": "c154a16d2d45fcdfc39dd00820c236ea9d222c55ae4dca58759f9fd51ba77eab",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0100.jsonl",
+      "bytes": 194596,
+      "sha256": "7be7e1e214b132cf321fe78eb9e737156a78a2d79211cbb8baf0e81fdb11451d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0150.jsonl",
+      "bytes": 196716,
+      "sha256": "ca6b08f56858d941f564fe9cdf9b5f78bf1c8245686718dd26d51e2069e29a5c",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0200.jsonl",
+      "bytes": 185296,
+      "sha256": "69787f88a49979b81f0e29e41064f6ec9a79c6289009f49e7a6017d73b8d9912",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0250.jsonl",
+      "bytes": 189427,
+      "sha256": "37ffb0f437762310a17e89e425ae623ebaff3e9bda42a5267ebcb869c5bb2b41",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0300.jsonl",
+      "bytes": 190246,
+      "sha256": "933a12da0473f535f27a66bdb8b8069bf50330c6d262aae354c8febe0f131fb4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0350.jsonl",
+      "bytes": 194643,
+      "sha256": "a4fe8ae6978ddf08fc2c7eb83717e5870f8783ece639133d754dce09d00b06b2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0400.jsonl",
+      "bytes": 185990,
+      "sha256": "b310248fb216793e0a4a64cc168246cf2ff45d3f5efcabf9bd7b559b3fd3ed72",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0450.jsonl",
+      "bytes": 196125,
+      "sha256": "04e0873c901d105bc94d2eb16c8f3f83b5e3009d818bfc72e8028d5e9fd64a92",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0500.jsonl",
+      "bytes": 192977,
+      "sha256": "bd9a1bdc0b7d3fa2683dbcedaca6e2c0f04b99d58552b75ebb6e2cf79b69d554",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0550.jsonl",
+      "bytes": 190391,
+      "sha256": "56a2632b6ae550b56e3f72738749eb63a2ed170a8281eaf3ce542a3b003c6129",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0600.jsonl",
+      "bytes": 185751,
+      "sha256": "68bcad1cd4904384296bfaef89831ba1911ae9a58cc2334cef250a1f8941484d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0650.jsonl",
+      "bytes": 188787,
+      "sha256": "c3fcf1b22ac80a18c14a488722f508f9800f0f148842be655cbd72faf1d3634d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0700.jsonl",
+      "bytes": 185428,
+      "sha256": "f8f5530702016b7ba02f2aef09249c9b54ca854aaac08fad41822249e94bf745",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0750.jsonl",
+      "bytes": 182395,
+      "sha256": "4300112dcfcbe68715a1e6c803eba4d19cf5bbacb4ab45923df10d6ec56ae6b6",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0800.jsonl",
+      "bytes": 189334,
+      "sha256": "9e5ed3662dd6e0d0986bcd439b49d0bba625670e4f18965a7a21c3492df36935",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0850.jsonl",
+      "bytes": 185660,
+      "sha256": "9d743f6f9fe9668d7639472daccf2bdba45ba48654078efb9ea15c86e514700d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0900.jsonl",
+      "bytes": 199047,
+      "sha256": "efb65292f1a3613ddb190544ad90ae587a13002db17f9354894a2c4339886aca",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international-games/international-sharp-normal-0950.jsonl",
+      "bytes": 189239,
+      "sha256": "ef341d8c355425cfc69aa581a5f603fa5a3381f27c3e4e3cd51f7df41299c241",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league-partition-international.json",
+      "bytes": 17003,
+      "sha256": "56d9a8e58e76cbc9c7d1ed759be20d52b33b30a60948cf0b88aafa5cd8940a9e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/league.json",
+      "bytes": 30009,
+      "sha256": "1a22a9eee082dc187cd10e017a3020e9c237b0277106b9013c8a5f4ca3a7988f",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/matrix.json",
+      "bytes": 1882,
+      "sha256": "4dbe3d3e8bebef2a7427feb60e59f4c1fd16c6ed31392b1c0a9e1dcce4119505",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/moves-reference.json",
+      "bytes": 604,
+      "sha256": "57515b9a823e3c2ebafc64c3c4d0525723f166dae9b2f4e61f2073a965880d01",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/01-cases.json",
+      "bytes": 1730,
+      "sha256": "45088bca2c8a69f2fbbfe51b38ca0793a1a7c9764cec5899dc3492e8f22f54ee",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/02-cases.json",
+      "bytes": 1759,
+      "sha256": "7e5c00d79e622c461f9ec5107da020142d8cc0f18e4763763491306e5dd7d515",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/03-cases.json",
+      "bytes": 3084,
+      "sha256": "c93fb4aa43b6ba72008239404c465d3af001bc2f0b4e86bddef42127449aeaee",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/04-cases.json",
+      "bytes": 1754,
+      "sha256": "cdcd0f977be39bd8fa3d0f08a8024756933b021a2c0d635b37fd0d52d8dfbc67",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/05-cases.json",
+      "bytes": 1687,
+      "sha256": "cae4cbcce4a0be8059abf3436804958202e2ed09c541b60f84866bc10c6ddd58",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/06-cases.json",
+      "bytes": 1679,
+      "sha256": "463105bf1206a794d3fa02dabfc14d234f2ef00b1cc8b01eedcf586046c786d2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/07-cases.json",
+      "bytes": 1850,
+      "sha256": "329673a78311d2a1c9e74b2fe3c2486e80f97706e5420535589bb38f171a088b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/08-cases.json",
+      "bytes": 1652,
+      "sha256": "76e44fe7c5e481c43f70e90e01338f52c09845b9ff55042b79ee8b586499bc7b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/09-cases.json",
+      "bytes": 7024,
+      "sha256": "e157c6e4974c2eae2d994fd33d7903e11d37e2375ce905f1b0af0cc8593ab6f6",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/11-cases.json",
+      "bytes": 8304,
+      "sha256": "ccbacddf1705fe9b6b9ff4501cd3abeb23fb145487c75db777f5f19ce809eee0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/10-cases.json",
+      "bytes": 1693,
+      "sha256": "e32c02a8d936dcfbbe8d2f50db8a06241a6d73a80bc69d18830ef294d0cc38d2",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/12-cases.json",
+      "bytes": 1779,
+      "sha256": "ea6d5b2b95ccba37404e6776fab61f30772bcae1ea520733fff49afccb4f795d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/13-cases.json",
+      "bytes": 3686,
+      "sha256": "731187e3a2760c9c70fefaafb4733e9c2e661c9bd0075eb12fa13a7382377502",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/14-cases.json",
+      "bytes": 1808,
+      "sha256": "c04ec49ed412b6ddf03929502cfade5b6d9e44ca2db9e7b8838d39be2b65eac0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/15-cases.json",
+      "bytes": 1693,
+      "sha256": "ed0e2652e3bb0a6433682db781f2658f95c35fb6eac6187863b750bc78721b61",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/16-cases.json",
+      "bytes": 3352,
+      "sha256": "47b7b90ce6c3a5089105cf9f7285b2127d8642d165d661e3c0aacdf179b99b76",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/17-cases.json",
+      "bytes": 5053,
+      "sha256": "aa3938a127f366cd9d58d1f072c81089f0b9701c773b5d6e1047cc18924ae5fa",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/18-cases.json",
+      "bytes": 3078,
+      "sha256": "eee498d0f411266e4f5c9ac1414c3724552f3e6d47a0c891bc947c0b071fc662",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/19-cases.json",
+      "bytes": 2244,
+      "sha256": "e241778b01b4822f9db3af48e501b41837655075eefc25d4d1400b1b67bfa849",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/20-cases.json",
+      "bytes": 1695,
+      "sha256": "59d6b2050999a00d06508564d935edd003d8ad5b7c13ebe57a95de0f47f996b0",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/21-cases.json",
+      "bytes": 1662,
+      "sha256": "e85480e2cd97b1c9d01e3761b82460e3db96b0386ac7bfba8c035a6ab4d0d93d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/23-cases.json",
+      "bytes": 1698,
+      "sha256": "e08c755856758fe7192b1b8e4da0093e61128429527df1fd5b5a5fd21a963963",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/22-cases.json",
+      "bytes": 5032,
+      "sha256": "e81b117a413676b4f6209740b24443693a37adbf194762ee8966af3b6c84c2f4",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/24-cases.json",
+      "bytes": 3020,
+      "sha256": "1a502a2b87d0dbf2895c4bb3fdc8d032e9755b643355e5a8805f00f8d3867c8c",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/25-cases.json",
+      "bytes": 4724,
+      "sha256": "9baf95c8439044be81880cee63d5768afb3808e4481b55fbcae2cdd893c66efd",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations.json",
+      "bytes": 25026,
+      "sha256": "faea695f97e54756299880830866c7ceb5210c38f2627d4b5a2b1757e7a7e349",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/predeclared-cases.json",
+      "bytes": 49240,
+      "sha256": "7d381072c9e72bd4086b8c244ef50f8d8a0c59cd2eeac7f6af5267d22199d914",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/mutations/baseline-cases.json",
+      "bytes": 1045,
+      "sha256": "53985ca6686e36972edf7cf254d39714e066ab5462bedf3ed523fb7f513bbada",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/properties.json",
+      "bytes": 16017,
+      "sha256": "1f309aaa947a13be57dca81e3394dd92fd0fd008e26bc05a33b764a74aa643cd",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/second-source-30.json",
+      "bytes": 24550,
+      "sha256": "c24e32bda9120ecd61da37abce7b2d2568fd7f055f8e4976819033d04b467ad7",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/report.json",
+      "bytes": 33138,
+      "sha256": "51cff59902cb9797213db02292309f2b61bc2acdb196e1b9ea0a8c4b776eca13",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/stage-browser.json",
+      "bytes": 74889,
+      "sha256": "353ff448c080fd0ce9aad7cd6f3e5f1a1b0381a8edcf67b182e60028a3a99b2e",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/stage-league-american.json",
+      "bytes": 74676,
+      "sha256": "03a50e670a1615e254d7676670e409360ee7b319f260f99b6b1936f54d4c69c1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/stage-league-international.json",
+      "bytes": 74673,
+      "sha256": "43ad16d27ce247b424d745c1b0b1327c3a50e9c2c4914daa9812ee112cc55fb1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/stage-final.json",
+      "bytes": 74860,
+      "sha256": "326a770e2b013ecaed24f85800eecc52d1ea9e2bc38869f6c1d7995ca87247f1",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/stage-node.json",
+      "bytes": 78190,
+      "sha256": "3ec97a1b413043878fed7989732b162f4d705cd9dd29a3e15eaab87be799c5b9",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/transactions-48.json",
+      "bytes": 72764,
+      "sha256": "92fd16499b0c2ca047fb78649ea8e3a4464656f9d207959c42e00ec64329f329",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/variant-bundles.json",
+      "bytes": 1039,
+      "sha256": "87f5589797f04e9b39de296e2f7d02ede29865ddfab8455bfeb392f83184df37",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/checks/worker-pack.json",
+      "bytes": 2184,
+      "sha256": "79408b13c6f9d0115606856e72c8a7b6a5e8fb7e88057efe7b291c8773afad86",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/desktop-original.webm",
+      "bytes": 5432022,
+      "sha256": "03e59380d1ea130607a94f5afabafbd3a20aa4dd4721473e8dced3836f3ad0a9",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/desktop.png",
+      "bytes": 167968,
+      "sha256": "f70ff273ed74031068a435761e5f35d9cd0771e04f3d5c59fe944f5c1990eb03",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/desktop.webm",
+      "bytes": 1212861,
+      "sha256": "b85231066504d9fa1f1a44886d7aec73b4c738a58d18c9e2e57ec1adcd32511a",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/phone-original.webm",
+      "bytes": 2896196,
+      "sha256": "d57d44317eb442f0c01a13478a99c0be744abce6ae5b61d3829cb963347942ab",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/phone.png",
+      "bytes": 85427,
+      "sha256": "56fd9940a61c794a31872ca60957de542e3f139acb339e83bae8328dc0933040",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work/media/phone.webm",
+      "bytes": 534446,
+      "sha256": "f3d63bba01b451e0eb6ad67c9a83f1684e41f64944a880592b69e4ae9af0b26d",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work-stage-browser.stdout",
+      "bytes": 76383,
+      "sha256": "2a4316a232b1555df93fedb6037668980e1a37e4f5858299fc0509e546c4a1fa",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work-stage-final.stdout",
+      "bytes": 828,
+      "sha256": "7a11caef098f3da312067c1c2970e6dea48803ffae94b8adc9a6f29ce63cea6b",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work-stage-league-american.stdout",
+      "bytes": 24668,
+      "sha256": "c0ae38801a8141178023cd2ca67c0acfd7ba2a650d24ac1bb91c9f2130df4845",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work-stage-league-international.stdout",
+      "bytes": 25160,
+      "sha256": "4e1ae4b4ffa0fb0daa54097d80d687fdad64ddd6594405163803155991583eda",
+      "CRC": "PASS"
+    },
+    {
+      "name": ".work-stage-node.stdout",
+      "bytes": 36529,
+      "sha256": "dc31e56922d4d85a252eda94483cd30defdfa9b2aca89cbfbb07e5b115f19396",
+      "CRC": "PASS"
+    }
+  ],
+  "scope": "Actual official current PR complete ZIP: all downloaded bytes match native size/digest and every unique safe non-symlink member read through EOF/CRC. Stage/browser/league semantics independently validated next."
+}
