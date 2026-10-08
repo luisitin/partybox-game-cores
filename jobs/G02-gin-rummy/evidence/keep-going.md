@@ -199,3 +199,40 @@ not used as frame measurements. Integrity verifies exact pinned license in
 both delivered notice and standalone page. No valid-game/UI behavior changes;
 measured player-noticeable gain none, consecutive no-gain streak2.
 Current-head hosted acceptance remains required after push.
+
+Round8: G02 and binding invariants/KEEP GOING re-read. Five remaining weaknesses:
+1. Random malformed input/identity/event boundaries need all-phase evidence.
+2. Mixed player/timer/speech/VIP event histories need serialized replay proof.
+3. User-name markup safety is currently asserted in comments, not an actual browser witness.
+4. VERIFY's leading1.1.0/pending summary is stale above truthful historic records.
+5. Occasional33.3ms or slower frames need honest raw retention, not constant-FPS claims.
+Worst verification gaps addressed with seeded1,000 invalid JSON cases per
+phase, malformed metadata/views and48,000 mixed-family serialized transitions.
+Standalone phone4x checks executable-looking name input as text, with no
+inserted markup, dialog or network. No production behavior change intended.
+
+Round8 actual node --test tests/boundary-fuzz.test.mjs
+ tests/results-boundary.test.mjs tests/all-phases.test.mjs PASS8/exit0:
+6,000 invalid inputs rejected,282 invalid metadata checks,66 safe unknown
+views;48,000 mixed-family JSON-resumed transitions (12,742 changed states)
+and every event family from all six phases replay identically. Actual
+node scripts/name-check.mjs PASS: <svg onload=alert(1)> remains text,
+zero inserted nodes/dialogs/errors/network; production390px/4x page.
+Standalone SHAac9f39656e06a9231ec52ef2c3881a3bbdd91c44978d848a73ba960ac26632b7
+is byte-identical to round7's hosted-accepted build. No production code/UI
+changed this round. Current hosted round7 run37729356667 at b4b52f0
+actually SUCCESS; round6 run37728937921 at a253656 also SUCCESS.
+Local browser gate FAILures are ALL retained:180-frame desktop55.103/57.146;
+600-frame desktop58.922; isolated600 desktop60.003 but phone58.539;
+last600 desktop50.493. No slow frames are discarded. Sampling was extended
+to600 frames (~10s) with the SAME >=59FPS/p99<=17ms gates and no warm-up
+exclusion. Actual separate phone4x idle/interactive control: idle58.444FPS
+p9933.4/max150ms; interactive59.803FPS,p9916.8/max50ms, max handler3.4ms.
+This does not establish a failure cause; local strict timing acceptance remains
+FAILED. Do not report a passing current local full browser suite.
+Actual node scripts/capture.mjs round-8 PASS:58,950/107,924-byte1x/4x
+production-page videos. CI now uploads only frame/report/clock/meld/result/
+name evidence (including failures), never the copyrighted source extractions.
+Measured player-noticeable gain: none, no production behavior changed; streak3.
+Delivery remains gated on ACTUAL exact-head hosted npm test, including the
+longer strict browser check. A failure keeps this job open.

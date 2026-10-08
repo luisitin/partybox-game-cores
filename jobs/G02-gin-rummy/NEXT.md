@@ -1,22 +1,25 @@
 # Resume G02
 
-Branch job/G02-gin-rummy; nickname codex-gin; PR#2 draft.
-Main only contains CLAIMS updates; shared contract/other jobs untouched.
-Actual hosted success through round5: run37728310327/headb784006.
-Round6 every-event replay PASS1,736,888 comparisons, no-player-gain streak1;
-hosted round6 run37728937921/a253656 still pending at this snapshot.
+Branch job/G02-gin-rummy; nickname codex-gin; PR#2 draft at this snapshot.
+Main contains CLAIMS only; shared contract/other jobs untouched.
+Production/page1.2.1 last passed hosted npm test at round7 run37729356667
+(headb4b52f0); round6 run37728937921/a253656 also SUCCESS.
 
-Round7 licensing/invalid-card boundaries: strict build,11 targeted tests,
-10,000 deadwood/2,000 joint-layoff independent proofs,25 compiled mutants,
-browser offline/privacy/clock/meld/results checks PASS. Desktop60.003FPS,
-phone59.670FPS with one33.3ms frame retained. Production page captures
-55,705/100,521 bytes; pinned license verified in HTML/notice by integrity.
-No valid-game behavior change; no-player-gain streak2. Current head needs CI.
+Implementation and KEEP GOING rounds1–8 delivered. Rounds6–8 have no
+player-noticeable gain (streak3): every-event replay, bundled notices/invalid
+card boundaries and all-phase fuzz/name safety. Final round8 targeted tests
+PASS8;6,000 malformed inputs/48,000 mixed transitions; name safety PASS.
+Page bytes unchanged from hosted-accepted round7. Local strict timing FAILures
+are retained, including600-frame samples and idle/interactive control. Do NOT
+claim local browser acceptance or final completion from these failures.
 
-Next round8: re-read G02/list five weaknesses; fuzz malformed events/views
-and JSON-resumed mixed events in every phase, verify name-injection handling
-in the actual standalone page, and replace the stale top-level verification
-summary with a concise current evidence index. Record measured gains (reset
-streak if a player issue is found), refresh main claim and push. Complete only
-once streak reaches3 AND exact-head CI is actually green, then make PR ready
-and claim lowest eligible job from fresh main. Prior failures stay recorded.
+Required next action: push with refreshed main claim; wait for ACTUAL exact
+HEAD hosted npm test, including600-frame strict desktop/phone4x browser gate.
+CI uploads frame/report evidence even on failure. If it fails, inspect exact
+check/artifact, fix its cause or document environment-specific observations
+truthfully, keep draft and continue; no fake blocker or skipped timing gate.
+If exact HEAD is green, mark PR#2 ready and update its body with the actual
+accepted head/run. The three-round stopping criterion is met: then claim the
+lowest eligible next job from fresh main and create its branch. Do not merge
+code to main. A ready PR with current green checks means G02's delivery gate
+has already been completed by this chat; continue the next open queue branch.

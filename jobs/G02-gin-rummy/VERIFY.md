@@ -1,4 +1,28 @@
-# Verification — 1.1.0 full local acceptance passed, current CI pending
+# Verification — version1.2.1
+
+Latest production/page build passed hosted npm test at round7 headb4b52f0,
+run37729356667. Final round8 head has NOT been hosted at this commit;
+PR#2 stays draft until its exact-head checks actually pass.
+
+| Check | Latest actual evidence | Limit |
+|---|---|---|
+| Strict build / exact contract / fixtures | round5 full sequence, round7 build/tests, hosted round7 SUCCESS | Final hosted head remains required |
+| Independent exact solver proofs | 10,000 deadwood +2,000 joint-layoff cases, round7-tests.log | Same-author independently designed references, no false blind-author claim |
+| Mutation resistance | 25/25 compiled real source mutants, round7-mutations.log | Assertion kills, not parse/compile failures |
+| Full bot matrix / every-event replay | 6,000 games+replays,1,736,888 SHA256/byte/roundtrip checks, round6-replay-tests.log | Both editions,2/3/4 players |
+| Properties / secrecy / phases | 1,003 seeds;7,925 perturbations;408 phase cases; full/round6 logs | No physical SDK shipped; ordered local adapter disclosed |
+| Bot leagues | sharp1152/2000=57.60%, normal1743/2000=87.15%, bot-league.json | Correct first-to-target winner; paired seats/deals |
+| Malformed inputs / mixed replay | round8-boundary-tests.log:8PASS,6,000 rejected inputs,282 metadata checks,48,000 mixed events | No production behavior change |
+| Offline UI / clock / meld / result / name | hosted round7 full suite; round8-name-check PASS | Final longer browser gate pending hosted acceptance |
+| Browser frame timing | round7 local60.003/59.670FPS; raw reports/maxima retained | Round8 local strict gate FAILED; all failures/control data retained |
+| Captures / license / hashes | round7/8 capture logs; exact pinned MIT notice; integrity hashes/regeneration | 1x/4x simulations, clips<10MB, not a physical-phone claim |
+
+Exact commands and results by round follow below. Current hosted gate:
+https://github.com/luisitin/partybox-game-cores/pull/2/checks .
+CI retains frame samples/reports as G02-browser-evidence artifacts even on
+failure. No local failed measurement is silently relabeled as accepted.
+
+# Historical verification records
 
 Nine actually read Exa extractions, exact extraction hashes and all short quote
 matches are recorded in evidence/research-sources.json. Origin HTTP unobserved.
@@ -144,3 +168,11 @@ node scripts/capture.mjs round-7 PASS,55,705/100,521-byte1x/4x clips.
 Raw logs, independent proof totals, source hashes and complete frames are in
 round-7-* and keep-going.md. Licensing checks now require the pinned package's
 exact notice in both HTML and delivered text. No player-visible behavior gain.
+
+Round8 exact commands: node --test tests/boundary-fuzz.test.mjs
+ tests/results-boundary.test.mjs tests/all-phases.test.mjs PASS8;
+node scripts/name-check.mjs PASS; node scripts/browser-check.mjs repeated
+five times FAIL (all logs/frames retained; first2 use180 frames, last3 use600);
+node scripts/capture.mjs round-8 PASS. An explicit idle/interactive600-frame
+phone control also records all samples and handler times. No cause of the
+local timing failures is established; hosted exact-head full suite must pass.

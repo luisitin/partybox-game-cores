@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {seedHost,checkClock} from './clock-check.mjs';
 import {checkMelds} from './meld-check.mjs';
 import {checkResults} from './results-check.mjs';
+import {checkNames} from './name-check.mjs';
 const capture=process.argv.includes('--capture');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 await mkdir('.work/browser',{recursive:true});await mkdir('media',{recursive:true});
@@ -33,7 +34,9 @@ try {
     if(previous!==null)times.push(time-previous);previous=time;
     // Stress the actual hand UI, not an empty offscreen benchmark.
     const cards=document.querySelectorAll('#hand .card');if(cards.length)cards[times.length%cards.length].click();
-    if(times.length<180)requestAnimationFrame(tick);else resolve(times);
+    // Ten seconds at60Hz retains startup and occasional stalls in a longer
+    // observation. No warm-up frames or outliers are removed.
+    if(times.length<600)requestAnimationFrame(tick);else resolve(times);
    };requestAnimationFrame(tick);});
   });
   const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((a,b)=>a+b,0)/frames.length;
@@ -61,6 +64,7 @@ try {
  await checkClock(browser);
  await checkMelds(browser);
  await checkResults(browser);
+ await checkNames(browser);
  if(capture) {
   // Recording has its own encoder cost. Capture the same playable UI in a
   // separate context; performance above measures normal play without recording.

@@ -24,3 +24,16 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G02-browser-evidence
+          path: |
+            jobs/G02-gin-rummy/.work/browser/*-frames.json
+            jobs/G02-gin-rummy/.work/browser/report.json
+            jobs/G02-gin-rummy/.work/clock-after.json
+            jobs/G02-gin-rummy/.work/custom-meld-after.json
+            jobs/G02-gin-rummy/.work/results-after.json
+            jobs/G02-gin-rummy/.work/name-check.json
+          include-hidden-files: true
+          if-no-files-found: warn

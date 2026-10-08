@@ -28,7 +28,8 @@ VERIFY records actual commands and coverage, BOTS the measured win rates,
 LOOP post-green improvement rounds, NEXT remaining/resume steps.
 SHA256SUMS covers delivered data/media. No external card art or trackers.
 
-Current status: PR #2 draft during mandatory KEEP GOING. Hosted checks pass
-through round4 (absent turns, layoff latency, timed play and private meld UI).
-Version1.2.1 corrects target winners and identity boundaries; hosted full checks pass.
-Every-event replay passes1,736,888 comparisons; KEEP GOING remains. Raw failures and resumable next steps are retained.
+Required implementation and eight KEEP GOING rounds are delivered;
+rounds6–8 changed no valid gameplay. Hosted checks passed through round7.
+Final exact-head CI must pass before delivery is complete: see
+https://github.com/luisitin/partybox-game-cores/pull/2/checks .
+Round8 local strict timing failures and all raw frames are preserved in VERIFY.
