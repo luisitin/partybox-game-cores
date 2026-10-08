@@ -1,0 +1,56 @@
+{
+  "command": "node --test tests/boundary-fuzz.test.mjs tests/results-boundary.test.mjs tests/all-phases.test.mjs",
+  "exitCode": 0,
+  "testsPassed": 8,
+  "rows": [
+    {
+      "suite": "all-phases",
+      "phases": 6,
+      "cases": 408
+    },
+    {
+      "suite": "boundary-fuzz",
+      "seed": 912701,
+      "invalidInputs": 1000,
+      "phases": 6,
+      "rejectedInputs": 6000,
+      "metadataChecks": 282,
+      "viewChecks": 66
+    },
+    {
+      "suite": "mixed-event-replay",
+      "phaseStarts": 6,
+      "seedsPerPhase": 100,
+      "transitions": 48000,
+      "changed": 12742,
+      "eventFamilies": [
+        "input",
+        "player",
+        "speech",
+        "speechStart",
+        "timer",
+        "vip"
+      ]
+    }
+  ],
+  "nameCheck": {
+    "payload": "<svg onload=alert(1)>",
+    "renderedAsText": true,
+    "insertedMarkupNodes": 0,
+    "dialogs": 0,
+    "pageErrors": 0,
+    "networkRequests": 0,
+    "cpuThrottle": 4
+  },
+  "htmlSha256": "ac9f39656e06a9231ec52ef2c3881a3bbdd91c44978d848a73ba960ac26632b7",
+  "sourceSha256": {
+    "src/browser.ts": "b14a8327517d6ab558a7941b5a3c2dd01d7c5bff8f1132ddcac9d7ad349c9b36",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f"
+  },
+  "playerObservableChange": false,
+  "noPlayerGainStreak": 3,
+  "localStrictBrowserStatus": "FAILED; five runs fully retained",
+  "deliveryStatus": "BLOCKING exact-head hosted full npm test required; PR remains draft"
+}

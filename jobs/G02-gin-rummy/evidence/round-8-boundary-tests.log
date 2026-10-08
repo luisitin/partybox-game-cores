@@ -1,0 +1,19 @@
+{"suite":"all-phases","phases":6,"cases":408}
+✔ every event family, roster id and bot skill in every delivered phase (51.960761ms)
+✔ registered prototype-looking ids remain valid players and finite result keys (2.745991ms)
+{"suite":"boundary-fuzz","seed":912701,"invalidInputs":1000,"phases":6,"rejectedInputs":6000,"metadataChecks":282,"viewChecks":66}
+✔ 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase (37.642061ms)
+{"suite":"mixed-event-replay","phaseStarts":6,"seedsPerPhase":100,"transitions":48000,"changed":12742,"eventFamilies":["input","player","speech","speechStart","timer","vip"]}
+✔ mixed event families replay through JSON after every transition from every phase (10208.956882ms)
+✔ first raw target winner keeps the crown even when final box settlement reverses points (10.95229ms)
+✔ every valid string ID, including empty, wins, earns bonuses and stays in rotation (16.009454ms)
+✔ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.81032ms)
+✔ early end preserves earned raw points and reports current standings (1.000458ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10410.058825

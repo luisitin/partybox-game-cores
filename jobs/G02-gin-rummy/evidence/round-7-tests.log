@@ -1,0 +1,21 @@
+✔ branching target ends retain exact minima, legal chains, layouts and all cards (25.20159ms)
+✔ meld validation rejects impossible card IDs while preserving legitimate edge runs/sets (1.497606ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (7566.590124ms)
+{"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+✔ 2000 independent joint meld/layoff weighted packings including chained extensions (5339.352986ms)
+✔ aces low, set cardinality, runs and overlap (1.89465ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (4.504132ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (2.47985ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (14.979171ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (13.882372ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (3.057332ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (102.469577ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7740.797848

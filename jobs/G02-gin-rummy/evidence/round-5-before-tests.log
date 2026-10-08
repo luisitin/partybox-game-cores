@@ -1,0 +1,93 @@
+✖ first raw target winner keeps the crown even when final box settlement reverses points (7.387875ms)
+✖ every valid string ID, including empty, wins, earns bonuses and stays in rotation (5.864914ms)
+✖ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.893097ms)
+✔ early end preserves earned raw points and reports current standings (0.65231ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 153.651584
+
+✖ failing tests:
+
+test at tests/results-boundary.test.mjs:7:1
+✖ first raw target winner keeps the crown even when final box settlement reverses points (7.387875ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+  +   'p1'
+  -   'p0'
+    ]
+  
+      at TestContext.<anonymous> (file:///workspace/partybox-game-cores/jobs/G02-gin-rummy/tests/results-boundary.test.mjs:11:41)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ 'p1' ],
+    expected: [ 'p0' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/results-boundary.test.mjs:16:1
+✖ every valid string ID, including empty, wins, earns bonuses and stays in rotation (5.864914ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert(won.finished)
+  
+      at TestContext.<anonymous> (file:///workspace/partybox-game-cores/jobs/G02-gin-rummy/tests/results-boundary.test.mjs:18:53)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/results-boundary.test.mjs:28:1
+✖ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.893097ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      active: [
+        '',
+        'p1'
+      ],
+  ...
+      me: {
+  -     id: undefined,
+        role: 'spectator'
+      },
+      multiplier: 1,
+      paused: false,
+      phaseId: 'discard',
+  
+      at TestContext.<anonymous> (file:///workspace/partybox-game-cores/jobs/G02-gin-rummy/tests/results-boundary.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { gameId: 'gin-rummy', phaseId: 'discard', deadline: null, paused: false, players: [ [Object], [Object] ], hand: 1, active: [ '', 'p1' ], waiting: [], turn: '', dealer: 'p1', stockCount: 30, discard: [ 26 ], knockLimit: 10, multiplier: 1, scores: { '': 90, p1: 99 }, boxes: { '': 3, p1: 20 }, target: 100, roundResult: null, log: [], me: { role: 'spectator' }, handCards: [], deadwood: null, legal: [], canBigGin: false, forbiddenDiscard: null, config: { variant: 'standard', mode: 'duel', target: 100, ginBonus: 20, undercutBonus: 10, boxBonus: 20, bigGin: true, bigGinBonus: 31, dealer: 'winner', aceGin: true, spadeDouble: true, extraBoxes: false, shutout: 'gameBonus', turnSeconds: 0 } },
+    expected: { gameId: 'gin-rummy', phaseId: 'discard', deadline: null, paused: false, players: [ [Object], [Object] ], hand: 1, active: [ '', 'p1' ], waiting: [], turn: '', dealer: 'p1', stockCount: 30, discard: [ 26 ], knockLimit: 10, multiplier: 1, scores: { '': 90, p1: 99 }, boxes: { '': 3, p1: 20 }, target: 100, roundResult: null, log: [], me: { id: undefined, role: 'spectator' }, handCards: [], deadwood: null, legal: [], canBigGin: false, forbiddenDiscard: null, config: { variant: 'standard', mode: 'duel', target: 100, ginBonus: 20, undercutBonus: 10, boxBonus: 20, bigGin: true, bigGinBonus: 31, dealer: 'winner', aceGin: true, spadeDouble: true, extraBoxes: false, shutout: 'gameBonus', turnSeconds: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,70 @@
+
+> partybox-g02-gin-rummy@1.0.0 test
+> npm run build && node --test tests/*.test.mjs && node scripts/league.mjs && node scripts/mutations.mjs && node scripts/browser-check.mjs && node scripts/integrity.mjs
+
+
+> partybox-g02-gin-rummy@1.0.0 build
+> tsc --noEmit && node scripts/build.mjs
+
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid player count and BOTH editions (653771.71419ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (27846.308351ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (12852.517588ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (73.738963ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (6646.876966ms)
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (15.024074ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (8.259596ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (2.738985ms)
+✔ aces low, set cardinality, runs and overlap (4.412632ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (11.658184ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (3.113283ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (32.407007ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (20.268047ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (2.259142ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (136.012441ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 694808.658715
+{"stronger":"sharp","weaker":"normal","games":2000,"wins":1151,"losses":849,"ties":0,"winRate":0.5755,"wilsonLower":0.5537133468718273,"events":527438,"pairedSeeds":true}
+{"stronger":"normal","weaker":"easy","games":2000,"wins":1743,"losses":257,"ties":0,"winRate":0.8715,"wilsonLower":0.8561180625080238,"events":490034,"pairedSeeds":true}
+M01 caught wrong rank
+M02 caught wrong suit
+M03 caught wrong face value
+M04 caught reject three-card meld
+M05 caught reject four-card set
+M06 caught off-by-one run
+M07 caught omit three-card candidate runs
+M08 caught omit three-of-kind candidates
+M09 caught maximize instead of minimize
+M10 caught invert Gin layoff prohibition
+M11 caught omit layoffs
+M12 caught allow discard after two opening passes
+M13 caught allow opening stock draw
+M14 caught allow immediate returned upcard
+M15 caught continue past two stock cards
+M16 caught deny tie undercut
+M17 caught subtract opponent Gin deadwood
+M18 caught Big Gin wrong bonus
+M19 caught reverse undercut difference
+M20 caught wrong knock difference
+M21 caught ignore double Big Gin
+M22 caught Oklahoma ace wrong limit
+M23 caught double hearts instead of spades
+M24 caught accept stale timer
+M25 caught resume omits pause duration
+{"label":"desktop","fps":60.00400026668444,"meanMs":16.665555555555557,"p99Ms":16.800000000000182,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+{"label":"phone4x","fps":60.00200006666889,"meanMs":16.66611111111111,"p99Ms":16.799999999999955,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+{"suite":"integrity","fileHashes":63,"regenerationRuns":2,"byteIdentical":true,"coreNoIo":true,"mediaUnder10MB":true}

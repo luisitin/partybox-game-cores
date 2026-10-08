@@ -1,0 +1,86 @@
+
+> partybox-g02-gin-rummy@1.2.1 build
+> tsc --noEmit && node scripts/build.mjs
+
+{"suite":"all-phases","phases":6,"cases":408}
+✔ every event family, roster id and bot skill in every delivered phase (36.238208ms)
+✔ registered prototype-looking ids remain valid players and finite result keys (1.851137ms)
+{"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+✔ 10500 batch outcomes retain exact standalone layouts and independent minima (5986.302494ms)
+✔ branching target ends retain exact minima, legal chains, layouts and all cards (35.687713ms)
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid player count and BOTH editions (202053.432667ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (14995.425964ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (4219.701475ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (28.935431ms)
+{"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+✔ departures in every live phase finish the absent turn without exposing its hand (19.878765ms)
+✔ 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play (4114.042866ms)
+✔ empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin (1.046547ms)
+✔ departures during VIP pause drain only on resume; malformed control events do nothing (0.572117ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (8141.790789ms)
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (11.769274ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (8.861352ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (3.17272ms)
+{"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+✔ 2000 independent joint meld/layoff weighted packings including chained extensions (7049.99858ms)
+✔ first raw target winner keeps the crown even when final box settlement reverses points (13.371225ms)
+✔ every valid string ID, including empty, wins, earns bonuses and stays in rotation (21.198005ms)
+✔ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.813249ms)
+✔ early end preserves earned raw points and reports current standings (0.671254ms)
+✔ aces low, set cardinality, runs and overlap (3.193635ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (5.399406ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (3.000789ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (22.531866ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (22.141616ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (2.552356ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (142.881365ms)
+✔ same-timestamp turns cannot share timer instance identity (14.098908ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 221754.153899
+{"stronger":"sharp","weaker":"normal","games":2000,"wins":1152,"losses":848,"ties":0,"winRate":0.576,"wilsonLower":0.5542157372425242,"events":527438,"pairedSeeds":true}
+{"stronger":"normal","weaker":"easy","games":2000,"wins":1743,"losses":257,"ties":0,"winRate":0.8715,"wilsonLower":0.8561180625080238,"events":490034,"pairedSeeds":true}
+M01 caught wrong rank
+M02 caught wrong suit
+M03 caught wrong face value
+M04 caught reject three-card meld
+M05 caught reject four-card set
+M06 caught off-by-one run
+M07 caught omit three-card candidate runs
+M08 caught omit three-of-kind candidates
+M09 caught maximize instead of minimize
+M10 caught invert Gin layoff prohibition
+M11 caught omit layoffs
+M12 caught allow discard after two opening passes
+M13 caught allow opening stock draw
+M14 caught allow immediate returned upcard
+M15 caught continue past two stock cards
+M16 caught deny tie undercut
+M17 caught subtract opponent Gin deadwood
+M18 caught Big Gin wrong bonus
+M19 caught reverse undercut difference
+M20 caught wrong knock difference
+M21 caught ignore double Big Gin
+M22 caught Oklahoma ace wrong limit
+M23 caught double hearts instead of spades
+M24 caught accept stale timer
+M25 caught resume omits pause duration
+{"label":"desktop","fps":60.00200006666889,"meanMs":16.66611111111111,"p99Ms":16.800000000000182,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+{"label":"phone4x","fps":60.00200006666889,"meanMs":16.66611111111111,"p99Ms":16.800000000000182,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+{"kind":"synthetic delayed-host-callback and pause regression","elapsedMs":20000,"configuredTurnMs":10000,"firstExpiredCallbackCount":1,"actionsBefore":0,"actionsAfter":1,"deadlineAdvancedOnElapsedTime":true,"visibleCountdown":true,"pausePreservesRemainingTime":true,"entropyCalls":1,"controlledTestSeed":7199}
+{"customMeldRegression":[{"label":"desktop","cpuThrottle":1,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"},{"label":"phone4x","cpuThrottle":4,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"}]}
+{"resultsRegression":[{"label":"desktop","cpuThrottle":1,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"},{"label":"phone4x","cpuThrottle":4,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"}]}

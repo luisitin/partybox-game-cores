@@ -1,0 +1,164 @@
+{
+  "cpuThrottle": 4,
+  "browser": "Chromium 141",
+  "kind": "algorithm microbenchmark in throttled browser; not a frame-rate measurement",
+  "cardsSha256": "67377cedad45554fc66edd1b8b480c21a22944d05bb5fb7677cbeb044308ab3f",
+  "rows": [
+    {
+      "hand": [
+        0,
+        1,
+        5,
+        6,
+        13,
+        14,
+        18,
+        19,
+        28,
+        32
+      ],
+      "targets": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          15,
+          16,
+          17
+        ],
+        [
+          29,
+          30,
+          31
+        ]
+      ],
+      "elapsedMs": 6813,
+      "solution": {
+        "deadwood": 0,
+        "loose": [],
+        "melds": [],
+        "laid": [
+          {
+            "card": 1,
+            "target": 0
+          },
+          {
+            "card": 0,
+            "target": 0
+          },
+          {
+            "card": 5,
+            "target": 0
+          },
+          {
+            "card": 6,
+            "target": 0
+          },
+          {
+            "card": 14,
+            "target": 1
+          },
+          {
+            "card": 13,
+            "target": 1
+          },
+          {
+            "card": 18,
+            "target": 1
+          },
+          {
+            "card": 19,
+            "target": 1
+          },
+          {
+            "card": 28,
+            "target": 2
+          },
+          {
+            "card": 32,
+            "target": 2
+          }
+        ]
+      }
+    },
+    {
+      "hand": [
+        0,
+        1,
+        5,
+        6,
+        13,
+        14,
+        18,
+        19,
+        38,
+        32
+      ],
+      "targets": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          15,
+          16,
+          17
+        ],
+        [
+          29,
+          30,
+          31
+        ]
+      ],
+      "elapsedMs": 1278.0999999940395,
+      "solution": {
+        "deadwood": 10,
+        "loose": [
+          38
+        ],
+        "melds": [],
+        "laid": [
+          {
+            "card": 1,
+            "target": 0
+          },
+          {
+            "card": 0,
+            "target": 0
+          },
+          {
+            "card": 5,
+            "target": 0
+          },
+          {
+            "card": 6,
+            "target": 0
+          },
+          {
+            "card": 14,
+            "target": 1
+          },
+          {
+            "card": 13,
+            "target": 1
+          },
+          {
+            "card": 18,
+            "target": 1
+          },
+          {
+            "card": 19,
+            "target": 1
+          },
+          {
+            "card": 32,
+            "target": 2
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-08T02:39:55.822570+00:00",
+  "version": "1.1.0",
+  "command": "npm test",
+  "exitCode": 0,
+  "tests": 20,
+  "completeMatches": 6000,
+  "identicalFinalStateReplays": 6000,
+  "propertySeeds": 1003,
+  "deadwoodHands": 10000,
+  "batchDiscardOutcomes": 10500,
+  "jointLayoffHands": 2000,
+  "compiledMutationsCaught": 25,
+  "compiledMutationsPlanted": 25,
+  "leagueGamesPerPair": 2000,
+  "node": "24.19.0",
+  "sourceSha256": {
+    "src/core.ts": "e2d95e73533ec64cc2f17db24a76098207faccfbf8bb286ac9673a128c44bcba",
+    "src/cards.ts": "67377cedad45554fc66edd1b8b480c21a22944d05bb5fb7677cbeb044308ab3f",
+    "play.html": "a8b23fba8b54253b5a2a181e0829409dfdc74f11a3138f351f71539f831376b7"
+  },
+  "browserActual": "evidence/browser-full-1.1.0.json",
+  "currentHeadHostedCi": "pending",
+  "knownAdditionalIssue": "absent seats can block a turn; post-green repair required",
+  "postGreenRoundsStarted": false
+}

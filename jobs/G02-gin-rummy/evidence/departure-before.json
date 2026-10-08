@@ -1,0 +1,45 @@
+{
+  "coreSha256": "e2d95e73533ec64cc2f17db24a76098207faccfbf8bb286ac9673a128c44bcba",
+  "records": [
+    {
+      "event": {
+        "type": "player",
+        "playerId": "p1",
+        "connected": false,
+        "gone": "left",
+        "now": 1
+      },
+      "phase": {
+        "id": "discard",
+        "startedAt": 1,
+        "deadline": null
+      },
+      "turn": "p1",
+      "left": [
+        "p1"
+      ],
+      "connected": false,
+      "botInput": null
+    },
+    {
+      "event": {
+        "type": "player",
+        "playerId": "p1",
+        "connected": false,
+        "now": 1
+      },
+      "phase": {
+        "id": "upcard",
+        "startedAt": 0,
+        "deadline": null
+      },
+      "turn": "p1",
+      "left": [],
+      "connected": false,
+      "botInput": {
+        "type": "draw",
+        "source": "discard"
+      }
+    }
+  ]
+}

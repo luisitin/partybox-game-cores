@@ -1,0 +1,23 @@
+{"suite":"all-phases","phases":6,"cases":408}
+✔ every event family, roster id and bot skill in every delivered phase (66.294739ms)
+✔ registered prototype-looking ids remain valid players and finite result keys (4.160424ms)
+{"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+✔ departures in every live phase finish the absent turn without exposing its hand (29.767221ms)
+✔ 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play (4221.268192ms)
+✔ empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin (2.106532ms)
+✔ departures during VIP pause drain only on resume; malformed control events do nothing (2.239016ms)
+✔ aces low, set cardinality, runs and overlap (2.124506ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (6.797661ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (3.010011ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (14.028336ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (11.901048ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (4.727202ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (138.027646ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4485.20587

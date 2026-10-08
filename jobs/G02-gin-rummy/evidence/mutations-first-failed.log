@@ -1,0 +1,43 @@
+M01 caught wrong rank
+M02 caught wrong suit
+M03 caught wrong face value
+M04 caught reject three-card meld
+M05 caught reject four-card set
+M06 caught off-by-one run
+M07 caught omit three-card candidate runs
+M08 SURVIVED omit three-of-kind candidates
+M09 caught maximize instead of minimize
+M10 caught invert Gin layoff prohibition
+M11 caught omit layoffs
+M12 caught allow discard after two opening passes
+M13 caught allow opening stock draw
+M14 caught allow immediate returned upcard
+M15 SURVIVED continue past two stock cards
+M16 caught deny tie undercut
+M17 caught subtract opponent Gin deadwood
+M18 caught Big Gin wrong bonus
+M19 caught reverse undercut difference
+M20 caught wrong knock difference
+M21 caught ignore double Big Gin
+M22 caught Oklahoma ace wrong limit
+M23 caught double hearts instead of spades
+M24 caught accept stale timer
+M25 caught resume omits pause duration
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(reports.filter(r=>r.killed).length>=24)
+
+    at file:///workspace/partybox-game-cores/jobs/G02-gin-rummy/scripts/mutations.mjs:62:103 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

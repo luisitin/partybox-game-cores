@@ -1,0 +1,20 @@
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":148579,"maxEvents":385}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":194235,"maxEvents":490}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":133810,"maxEvents":393}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":160278,"maxEvents":522}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid player count and BOTH editions (437539.716397ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (29377.754645ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (13765.651262ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (95.532934ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 481058.117972

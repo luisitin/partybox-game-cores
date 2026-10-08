@@ -1,0 +1,16 @@
+✔ current source-bound raw proof passes without discarding its largest interval (6.163394ms)
+✔ a refreshed inventory cannot accept stale browser or recording source hashes (3.479612ms)
+✔ changed end guards and failed snapshots are rejected (2.306215ms)
+✔ missing, altered and invalid raw intervals cannot be hidden by good summary fields (4.892741ms)
+✔ reported statistics are recomputed from all retained intervals (5.035405ms)
+✔ an honestly recomputed slow raw sample still fails the original frame gate (1.187018ms)
+✔ profile dimensions, CPU rates and encoder separation must remain truthful (2.7203ms)
+✔ changed, oversized and falsely labeled recordings are rejected (7.926341ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 178.139464
