@@ -1,6 +1,7 @@
-# G03 — blocked research checkpoint
+# Pack the Hold — G03
 
-No game implementation or readiness claim yet.
-BLOCKED.md records actual failed source requests. NEXT.md records all resume
-requirements. VERIFY.md distinguishes executed connectivity checks from
-unrun game checks. No runtime application or assets are shipped.
+Original timed polyomino packing game for 2–8 people, under development.
+Research has resumed using two independently authored live packing solvers.
+See SOURCES.md, CONFLICTS.md and PROOF.md for the selected algorithm decisions.
+The previous research-only blocker is resolved. No game checks have passed yet.
+NEXT.md records the exact implementation and verification still required.

@@ -1,15 +1,19 @@
 # Resume G03
 
-Branch: job/G03-pack-the-hold. Status: blocked at research; no game implemented.
-Read README.md, root RULES.md, JOBS.md, CLAIMS.md on main and this BLOCKED.md.
-Retry the exact source requests in VERIFY.md after environment policy changes.
-Finish deep research of exact polyomino packing/cover algorithms before building the required optimum solver; record actual sources, variants, conflicts and assumptions.
-Implement the full G03 specification, exact contract, all valid player counts,
-three honest bot skills, isolated self-contained play.html and phase fixtures.
-Then run ALL binding checks, including independent 10,000-case differential
-validation, 25 mutations (>=24 killed), property seeds 1/2/3 and 1,000 others,
-1,000 bot games per valid count, secrecy diffs, 2,000-game bot leagues,
-job-specific checks and CI. Record real results; none have executed yet.
-Open a PR only after every check passes, then run KEEP GOING to its stated
-three-round stop condition. Keep NEXT.md current and refresh claims on pushes.
-Use the existing isolated checkout; do not create a Git worktree.
+Branch: job/G03-pack-the-hold. Claim: codex-core.
+Research unblocked: two independent live MIT GitHub solvers read. Academic
+candidate hosts still return 403 and are not evidence. Historical checkpoint
+merged without rewriting history.
+
+Milestone: research decisions and exact-solver proof documented. No game code,
+calibration, bot leagues, media or CI has passed yet. Continue with independent
+grid oracle first; bitset solver; certified generator; measured difficulty;
+full contract core; self-contained hot-seat play.html. Run every binding check,
+record actual results in VERIFY.md, maintain fixtures. Push milestones and at
+least every 30 minutes; refresh CLAIMS.md on main. After all checks pass: PR,
+green CI, KEEP GOING until three consecutive rounds gain nothing a player would
+notice. No worktree needed.
+
+## Re-verify when web works
+Optional historical candidates: arxiv.org/abs/cs/0011047, Wikipedia Pentomino,
+MathWorld Polyomino. Two live independent sources already meet research needs.
