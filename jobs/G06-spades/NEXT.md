@@ -1,61 +1,50 @@
 # Resume G06
 
-Branchjob/G06-spades-core;chatcodex-domino;claim on main is current.
-Read main README/RULES/JOBS/CLAIMS first,preserve all concurrent claims.
-Research milestone:read pinned sources and record rules/conflicts/assumptions.
-Oldjob/G06-spades is a403-only research stub,preserved;do not reinstate its
-obsolete blocker. Live GitHub mirrors/implementations supply research.
+Branch `job/G06-spades-core`, nickname `codex-domino`.
+PR7: https://github.com/luisitin/partybox-game-cores/pull/7 (open).
+Read main README/RULES/JOBS/CLAIMS; preserve concurrent claims. The old
+`job/G06-spades` research stub is preserved; its research-only403 blocker
+is obsolete because live GitHub rules mirrors and implementations work.
 
-Core/cards/scoring/public-only bots,seven fixtures and validated metadata
-are implemented. Strict types and26 focused tests pass. Pilot100 matches
-per comparison passed;full required leagues/replays have NOT run yet.
-Independent score/trick differentials10,000 each and25/25 mutations pass.
-Initial full31-test core suite and8,000 required leagues pass; BOTS has
-72%/75.75% strong and89.75%/99.8% medium measured wins. Added sampled
-settings to1,003 full replays; rerun final npm test to validate expansion.
-Standalone play.html is built/byte-identical; browser controls checked,
-full browser/performance capture passes:8 grouped scenarios,zero requests/
-errors,900 TV frames59.6709fps and9004×phone frames60.0024fps. Initial offline actor, partial
-end conservation and malformed-ID exceptions are fixed with regressions.
-Final npm test passes:31 core tests,all1,003 sampled-setting replays,
-2,000 roster completion matches,20,000 independent cases,25 mutation kills,
-8,000 exact leagues and8 browser groups. Fresh TV/4×phone~60fps.
-Extra1,003 replay run passes every-event256KB bound(93,236.49ms);focused
-all-skill/all-fixture bot envelope checks pass. Reusable installer and final
-25/25 mutation rerun also pass. Local delivery is ready.
-PR7 is open: https://github.com/luisitin/partybox-game-cores/pull/7
-Initial delivery headf34a4860a4e51fcb0b4070bbf43b8f079d225427.
-Initial green gatebadf4005bd3961764492a4f48f6047af3fa249cc/run37738084749
-SUCCESS observed2026-10-08T06:46:28Z. KEEP GOING is active;R1 fixes
-long-name phone overflow830→390. Ten browser groups,23 hashes after refresh,
-new capture and~60fps pass. R2 fixes native follow-suit keyboard focus:
-body/null→legalcard15,Enter plays it;11 browser groups pass,27 hashes.
-R3 fixes reader pacing:24 premature botNext→0;holds8s/60–90s with human
-Next preserved.31 core tests/25 mutations/8,000 timer-driven skill matches
-pass,win counts unchanged,max final state5,637bytes.11 browser groups,
-31 hashes,TV/4×phone60.0024fps,p95 16.7ms. No open test failure.
-Next:R4 disambiguate duplicate-name handovers;then held-out skill/presence/
-final repeated frames for three consecutive no-player-gain rounds.
-Five weaknesses per round in AUDIT. Streak0.
-Query actual current PR head/CI after pushes; do not assume earlier hashes
-are current. Do not claim completion yet. RULES/CONFLICTS
-specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
-Sequential2-card partner exchange must permit returning a received card.
-Use unlimitedDuration per the logged long-game interpretation;prove active
-completion and idle persistence/VIP exit. No arbitrary round cap.
+Core, variants, all seven fixtures, public-only bots and standalone offline
+page are implemented. Exact shared contract types and schemas pass.
+Initial full npm test passed:31 tests,1,003 complete every-event JSON
+replays,1,000 matches each at3/4 players,two10,000-case independent
+differentials,25 mutation kills and8,000 required skill comparisons.
+BOTS reports actual measured wins; no expert/search claim is made.
+Initial exact-head hosted gate badf4005bd3961764492a4f48f6047af3fa249cc /
+run37738084749 was SUCCESS at2026-10-08T06:46:28Z. Later R2 hosted gate
+58dd935ab10c831a3f46610735654bf46f8471be /37741463331 is also SUCCESS.
 
-Playable build/full local pipeline pass;hosted CI/KEEP GOING pending.
-PR7 exists; do not create a duplicate. R1–3 are logged; three no-gain rounds
-are still required after the last player-visible improvement.
-Push each milestone≤30min;keep this handoff current and refresh ONLY G06
-on main each push. On a push race,pull/re-check before choosing another job.
-Do not stage orphan G01/G04 dependency caches or touch G08 Shake Up.
-G01 PR1 head949c2e3/CI37715456734 and G04 PR4 head152e5a0/CI37730054904
-are complete. Their KEEP GOING three-round stops are satisfied.
+KEEP GOING active, no-gain streak0. AUDIT lists five weaknesses each round.
+R1:40-character names phone width830→390.
+R2:follow-suit handover focuses a legal card; native Enter plays it.
+R3:bots return null during reviews, holds8s/60–90s;31 full tests,25 kills,
+8,000 recomputed timer-driven leagues and11 browser groups pass. Win counts
+unchanged,max final state5,637bytes;TV/4×phone60.0024fps,p95 16.7ms.
+R4:duplicate names were ambiguous (one distinct all-Alex handover label
+at both rosters). UI now adds roster seat numbers when names repeat;
+browser regression checks actual owner cards and label-like existing names.
+R4 browser PASS13 groups,distinct handovers1→4/3,35 hashes,TV59.7368/
+4×phone59.8695fps,p95 16.8/16.7ms;capture under10MB.
+Next:R5 held-out skill,R6 presence churn,R7 final repeated browser frames. Three consecutive no-player-gain rounds
+are required after the last improvement. Run final npm test and observe
+SUCCESS for the exact final PR head before claiming completion.
+
+Use the selected rules in RULES/CONFLICTS:500,bags10→−100,Nil/BlindNil,
+three-player Cutthroat and explicit house toggles. Sequential two-card
+exchange permits returning received cards. Long-game interpretation is
+logged:unlimitedDuration,no arbitrary hand cap,idle persistence/VIP exit.
+Managed browser file navigation403 uses exact-byte setContent with network
+aborted. Phone390×844/4×CPU is an approximation,not a physical phone.
+Playwright ffmpeg download403 uses the installed system encoder through an
+external cache link; no binary is committed. CI installs its normal tools.
+Push each milestone≤30min and refresh ONLY G06 on main each push.
+Do not stage orphan dependency caches or touch another worker's branch.
+G01 PR1/head949c2e3 and G04 PR4/head152e5a0 have final green gates and their
+three-round KEEP GOING stops satisfied; do not restart those completed PRs.
 
 Re-verify when web works:read original Pagat/Bicycle pages directly;
-verify the unsigned three-player overview's provenance/defaultdeal/lead.
-GitHub mirror is actually read but not a direct-original-site citation.
-Real deck mechanics need no blocked API or copied assets.
-Managed Playwright ffmpeg download also403; existing system ffmpeg works
-through an external cache link. CI's normal Playwright install includes it.
+verify the unsigned three-player overview's provenance/deal/lead default.
+The actually-read GitHub mirror is not a direct-original-site citation.
+G08 Shake Up is untouched. If later claimed,read START-HERE/HANDOFF first.

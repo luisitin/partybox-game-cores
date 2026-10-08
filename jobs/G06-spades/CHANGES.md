@@ -105,3 +105,11 @@ KEEP GOING round3:
   actual three-player hand progression and exact final done fixture.
 - `browser.ts`:assert trick still visible at7.9s, then advances on its
   timer; extend only the debug virtual-time budget for unlimited long games.
+
+KEEP GOING round4:
+- `ui.ts`:append roster seat numbers whenever names repeat. Identical
+  handover labels otherwise leave private-hand ownership ambiguous; adding
+  numbers to the whole roster also avoids collisions with existing names
+  that already look like a generated label. Core names/IDs stay unchanged.
+- `browser.ts`:both editions exercise all-Alex bid handovers, expected
+  owner cards, concealed transitions and mixed names resembling seat labels.

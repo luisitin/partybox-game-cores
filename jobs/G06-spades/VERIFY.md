@@ -193,3 +193,16 @@ KEEP GOING round3:
   complete UI games;assert7.9s trick still present then scheduled advance.
   Zero requests/errors,reduced motion.900frames each:TV/4×phone60.0024fps,
   mean16.6660ms,p95 16.7/max16.8. New8s capture<10MB;31 hashes.
+
+KEEP GOING round4:
+- `node --input-type=module` Playwright probe before the fix,all-Alex names:
+  partnership4 identical `Pass to Alex` labels,Cutthroat3 identical labels;
+  each roster had only1 distinct handover. No hidden cards were inspected.
+- `npm run check; node build.ts`:PASS strict types,HTML489,201bytes.
+- `node browser.ts --write --capture --repeat=5`:PASS13 groups,including
+  every duplicate-name bid handover with its actual expected owner cards,
+  concealed transitions and names resembling generated seat labels.
+  Distinct handovers1→4(partnership),1→3(Cutthroat). Three complete UI
+  variant games pass;zero errors/external requests;reduced motion honored.
+ 900frames each:TV59.7368fps,mean16.7401ms,p95 16.8/max50.0ms;
+ 4×phone59.8695fps,mean16.7030ms,p95 16.7/max50.1ms.8s capture<10MB.

@@ -17,7 +17,11 @@ function setupSeats(){
 }
 $('settings').innerHTML=game.manifest.settings!.filter(s=>s.key!=='mode').map(s=>s.type==='boolean'?`<label class="check"><input type="checkbox" id="setting-${s.key}" ${s.default?'checked':''}>${esc(s.label)}</label>`:s.type==='select'?`<label>${esc(s.label)}<select id="setting-${s.key}">${s.options.map(o=>`<option value="${esc(o.value)}" ${o.value===s.default?'selected':''}>${esc(o.label)}</option>`).join('')}</select></label>`:'').join('');
 setupSeats();$('mode').addEventListener('change',setupSeats);
-const nameOf=(v:PublicView,id:string)=>v.players.find(p=>p.id===id)?.name??id;
+const nameOf=(v:PublicView,id:string)=>{
+ const seat=v.players.findIndex(p=>p.id===id);if(seat<0)return id;
+ const duplicate=v.players.some(p=>v.players.some(other=>other.id!==p.id&&other.name===p.name));
+ return `${v.players[seat]!.name}${duplicate?` (seat ${seat+1})`:''}`;
+};
 const sideName=(v:PublicView,ids:string[])=>ids.length===2?`Team ${v.players.findIndex(p=>p.id===ids[0])%2===0?'A':'B'}`:nameOf(v,ids[0]!);
 const bidName=(v:PublicView,id:string)=>v.bids[id]?.kind==='number'?String(v.bids[id]!.value):v.bids[id]?.kind==='blind'?'Blind nil':v.bids[id]?'Nil':'—';
 function face(card:number){const r=rank(card)>10?['J','Q','K','A'][rank(card)-11]:rank(card),pip=['♣','♦','♥','♠'][suit(card)];return `<span class="card-face ${[1,2].includes(suit(card))?'red':''}" aria-hidden="true"><span class="corner">${r}${pip}</span><span class="pip">${pip}</span><span class="corner">${r}${pip}</span></span>`;}

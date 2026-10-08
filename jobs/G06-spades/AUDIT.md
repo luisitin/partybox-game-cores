@@ -37,3 +37,15 @@ Round3, re-read JOBS;five largest remaining weaknesses:
 Fix worst:bot API waits for engine data timers during reviews; human Next
 still signals readiness. Give tricks8s and side ledgers60s(partners)/90s
 (three individuals). Drivers must exercise actual timers, not bot shortcuts.
+
+Round4, re-read JOBS;five largest remaining weaknesses:
+1. Repeated player names produce identical private handover labels.
+2. Held-out skill generalization is not yet measured.
+3. Presence churn combinations exceed the fixed regression cases.
+4. Final reader timing has only one independent frame measurement.
+5. Mixed names that resemble generated seat labels could remain ambiguous.
+
+Fix worst:when any names repeat, append each public roster seat number to
+every label. This also prevents a third name resembling a generated label
+from colliding. Baseline:all-Alex handovers have only1 distinct label in
+both editions. Check actual revealed cards against each expected seat.

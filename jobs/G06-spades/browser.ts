@@ -33,6 +33,17 @@ try{
   const long=await pageFor();await long.page.selectOption('#mode',mode);for(let i=0;i<(mode==='cutthroat'?3:4);i++)await long.page.fill(`#name-${i}`,'X'.repeat(40));await start(long.page,mode);
   assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap at handover');await long.page.click('#show-hand');assert(await long.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'long names must wrap with an open private hand');await long.ctx.close();functional.push(`${mode} valid40-character names fit390px, concealed and open`);
  }
+ for(const mode of ['partnership','cutthroat']){
+  const same=await pageFor(),n=mode==='cutthroat'?3:4,seed=17,initial=game.init(context(n,seed));await same.page.selectOption('#mode',mode);for(let i=0;i<n;i++)await same.page.fill(`#name-${i}`,'Alex');await start(same.page,mode,seed);
+  const labels:string[]=[];
+  for(let i=0;i<n;i++){
+   const seat=(initial.dealer+1+i)%n,label=`Alex (seat ${seat+1})`;labels.push(await same.page.locator('#private h2').innerText());assert.equal(labels.at(-1),`Pass to ${label}`);assert((await same.page.locator('#show-hand').innerText()).includes(label));
+   await same.page.click('#show-hand');assert.deepEqual(await same.page.locator('#private [data-card]').evaluateAll(cards=>cards.map(card=>Number(card.getAttribute('data-card')))),initial.hands[`p${seat}`]);await same.page.click('#bid');assert.equal(await same.page.locator('#private [data-card]').count(),0);
+  }
+  assert.equal(new Set(labels).size,n);assert.equal(new Set(await same.page.locator('.seat-line > span:first-child').allTextContents()).size,n);
+  await same.page.click('#end');await same.page.click('#restart');await same.page.selectOption('#mode',mode);for(let i=0;i<n;i++)await same.page.fill(`#name-${i}`,i<2?'Alex':'Alex (seat 1)');await start(same.page,mode,seed);assert.equal(new Set(await same.page.locator('.seat-line > span:first-child').allTextContents()).size,n,'generated seat labels must not collide with an existing name');
+  await same.ctx.close();functional.push(`${mode} duplicate-name handovers disambiguated by seat / each revealed hand matches its owner / name resembling seat label stays distinct`);
+ }
  const keyboard=await pageFor();await start(keyboard.page,'partnership',1);for(let i=0;i<4;i++){await keyboard.page.click('#show-hand');await keyboard.page.click('#bid');}
  const hand=game.init(context(4,1)),leaderId=hand.seats[(hand.dealer+1)%4]!,diamond=hand.hands[leaderId]!.find(c=>c>=13&&c<26)!;
  await keyboard.page.click('#show-hand');await keyboard.page.click(`#card-${diamond}`);await keyboard.page.click('#show-hand');const firstLegal=await keyboard.page.locator('[data-card]:not(:disabled)').first().getAttribute('data-card');
