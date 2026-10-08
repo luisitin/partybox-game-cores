@@ -319,3 +319,11 @@ scripts/generate.mjs --fixtures-only` and `node scripts/check-data.mjs` PASS
 30 JSON/56 hashes, including the unmodified public CI browser report. Current
 verification summary distinguishes30 tests from early incomplete checkpoints.
 No player gain; cosmetic streak1. Await fresh updated-head full CI.
+
+KEEP GOING9, afterfeb83f2 GREEN push37742150805/PR37742157321. README relative
+links verified with Python Path.exists (all8),36 lines<60. `node .tmp/
+documentation-capture.mjs --http --milestone 10` records a fresh3.6s140221B clip
+of unchanged UI; no frame benchmark claim. `node scripts/generate.mjs
+--fixtures-only`, `node scripts/check-data.mjs` PASS30 JSON/57 checksums.
+No game/UI/test changes, no player gain, cosmetic streak2. Need updated-head
+full CI before round10. Exact source actual-disk results remain preserved.

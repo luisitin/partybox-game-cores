@@ -15,3 +15,5 @@
 7 | Fix public outcome keyboard targets and announce all winners; scored Continue stays focused,final focus body→New table,all tied winners spoken; scrolled mobile winner224.125–277.875px is visible in844px. Redundant selection updates limited to changed controls. Desktop60.004fps/CPU4x phone58.068fps,p9516.8ms,136272B clip. Player gain: yes; cosmetic streak0.
 
 8 | Clarify current30-test verification and preserve exact actual-disk60fps report; runtime/UI/test source byte-identical to5509a20,all player behavior unchanged; fresh140221B capture (not a frame benchmark),30 JSON/56 hashes validate. Typography trial reverted after local cadence failure. Player gain: none meaningful; cosmetic streak1.
+
+9 | Replace stale README status and link fixtures/rules/sources/bots/current checkpoint;8 relative links resolve,36 lines<60; game/UI/test source unchanged, fresh140221B capture is not a benchmark,30 JSON/57 hashes pass. Player gain: none meaningful; cosmetic streak2.

@@ -78,3 +78,10 @@ Worst selected: verification summary. Add a current30-test/actual-disk summary
 and preserve the unmodified hosted report. An eyebrow-tracking trial failed
 local cadence55.105fps/p9533.3ms/max50ms and was reverted; all game/UI/test
 source stays byte-identical to the proven5509a20. No player gain is claimed.
+
+Round9, afterfeb83f2 GREEN push37742150805/PR37742157321. Re-read G05.
+Five remaining documentation/cosmetic weaknesses: README obsolete baseline
+status; fixture/rule navigation; provenance-license grouping; assumption index;
+minor decorative layout differences. Fix README status and relative navigation
+links, remaining under60 lines. Game/UI/test source stays unchanged. No
+meaningful player gain; fresh unchanged-interface capture records milestone10.

@@ -26,8 +26,11 @@ Checks include1003 replay seeds,1000 full bot games per valid roster,
 all JSON schemas/hashes, two identical regenerations and60fps/reduced-motion
 browser interaction checks. See VERIFY.md/BOTS.md for measured results.
 
-Core entry: src/core.ts; shared types in contract/ are unchanged.
+Core entry: [src/core.ts](src/core.ts); shared contract types are unchanged.
 Cards0–12 are clubs,13–25 diamonds,26–38 spades,39–51 hearts; each suit is2–A.
-Fixtures contain real pass/play/trick/hand/done states; no runtime fixture load.
+[Fixtures](fixtures/) contain real pass/play/trick/hand/done states.
+[Rule choices](RULES.md), [source receipts](SOURCES.md) and [bot results](BOTS.md)
+explain the chosen settings and measured checks.
 Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
-Resume/progress is in NEXT.md; PR5 is green at its baseline; KEEP GOING progress is in LOOP.md.
+[NEXT.md](NEXT.md) records current delivery/resumption status;
+[LOOP.md](LOOP.md) records every measured review round.
