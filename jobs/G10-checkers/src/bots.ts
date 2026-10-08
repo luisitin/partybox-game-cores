@@ -26,7 +26,7 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
   let nodes=0,hits=0,exhausted=false,best=rootMoves[0],bestScore=-Infinity,completed=0;
   const ordered=(moves:Move[],preferred:string|null)=>[...moves].sort((a,b)=>
     Number(moveKey(b)===preferred)-Number(moveKey(a)===preferred)||Number(b.promotes)-Number(a.promotes)||
-    b.captures.length-a.captures.length||moveKey(a).localeCompare(moveKey(b)));
+    b.captures.length-a.captures.length||(moveKey(a)<moveKey(b)?-1:moveKey(a)>moveKey(b)?1:0));
   function visit(current:Position,depth:number,alpha:number,beta:number,ply:number):number{
     nodes++;if(nodes>budget){exhausted=true;return evaluate(current.board,current.variant,current.side);}
     const moves=legalMoves(current.board,current.variant,current.side);

@@ -12,9 +12,10 @@ responsive CSS/SVG host with an inline Blob worker are authored. Independent
 movement differential passed 10,000 original boards plus rotated twins and every
 resulting board. The independent complete one-vs-one WDL/certificate suite passed.
 
-Next: compare production database/probes to the independent WDL/certificates;
-author phase fixtures, schema, contract/properties, mutations, bot leagues, offline
-browser proof/captures and integrity/CI scripts. Confirm every actual source
+Next: build the newly authored schema/fixtures/core tests, production endgame
+comparison,1,003-seed properties, seven×1,000-game contract matrix and8,000-game
+paired leagues. These new checks are UNRUN. Author mutation/offline browser
+proof/capture/integrity/CI scripts. Confirm every actual source
 and permission before redistributing any external database. Complete two-piece
 coverage and proved tactical three-to-six entries must be labeled precisely;
 unknown/limited search results cannot be reported as a complete six-piece tablebase.
@@ -24,8 +25,19 @@ independent WDL/certificates, deterministic endgame regeneration. Database has
 29,286 rows: full one-per-side domains plus 2,000 tactical3–6 rows per variant.
 It is NOT a full six-piece tablebase. Broader six-piece corpus coverage remains a
 binding pending obligation; reachable Kingsrow installers/permissions are being
-investigated without committing unlicensed data. Contract/properties, mutations,
+investigated without committing unlicensed data. Chinook's actual publicDB6 ZIP
+and index were acquired privately; the index includes all2–6 American material
+tuples, including5v1/4v2. Free redistribution requires acknowledgement and no sale.
+An original weighted-combination production parser and independent enumeration
+parser are authored, UNRUN and not yet connected to bots. Both-side capture
+exclusions require exact handling; no full-game probe claim is made from tuple
+presence. International full-six corpus options remain under investigation.
+Contract/properties, mutations,
 leagues, database-to-reference comparison, browser frames/captures and CI UNRUN.
+
+09:50 source-only checkpoint was authored during root's isolated browser proof.
+Heavy G10 builds/tests/generation/decompression were held as requested. Previous
+successful proof outputs describe milestone2 inputs, not these new source hashes.
 Coordinate CPU isolation with root before heavy work, especially browser proof.
 Push every milestone and no later than30 minutes; refresh ONLY own main claim.
 Open PR after the local required checks pass, verify the exact current CI head,

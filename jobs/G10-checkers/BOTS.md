@@ -1,7 +1,7 @@
 # Bot research and endgame proof limits
 
-Initial research design only. Implementation, leagues, endgame coverage,
-and performance are UNRUN here; later evidence must record actual results.
+Research design and corpus audit. Execution results are recorded in VERIFY.md
+and evidence/checks; source availability alone is not a passed delivery check.
 
 Easy: seeded legal choices with simple material/capture/promotion cues.
 Medium: search several complete turns, score material/kings, advancement,
@@ -30,7 +30,31 @@ restrictions [D11]. His download page groups WLD 2–7 in a Mega-hosted
 installer rather than a six-only browser package [D12]. The Boost-licensed
 driver's compressed Tunstall format still requires material indexing and
 recursive resolution of excluded captures. This is a possible licensed
-corpus route; no corpus acquisition or complete coverage is claimed here.
+corpus route. Actual setup-index inspection confirms every six-piece material
+split but the full International payload/probe is not yet delivered.
+
+The original Chinook author provides a practical American alternative:
+free use requires acknowledgement and prohibits database sale [D13]. The
+actual 27.7 MB archive was privately acquired and hashed [D14]. Its 48.1 MB
+compressed database plus 0.9 MB text index includes every nonempty piece-type
+tuple through six, including 4v2/5v1. Tuple presence and the author's complete
+corpus claim must still be checked by independent rank/probe comparisons;
+neither establishes correctness of a newly written decoder on its own.
+
+The Chinook probe format [D15] stores 1,024-byte block checkpoints, five
+high-to-low ternary outcomes per ordinary byte, and default-value runs of
+10–1,600 positions. Rank ordering places black men, reversed white men,
+black kings and white kings with earlier occupied squares removed. The
+original independent JS reference enumerates legal man combinations in
+colex order rather than copying the source's secondary-index tables.
+
+Stored queries are invalid if either side has a capture threat. Current-side
+captures must be resolved under compulsory capture; opponent-only threats
+require searching all current legal quiet moves. Flipping side and negating
+is not equivalent. The remaining temporary graph can contain cycles: exact
+results need complete closure/fixed point against proven database boundaries,
+or UNKNOWN on truncation. Bare WDL also lacks draw history and conversion
+distances, so a winning label alone cannot prove draw-rule-safe play.
 
 An original exact on-demand design can certify closed <=6-piece components:
 

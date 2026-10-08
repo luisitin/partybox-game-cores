@@ -60,3 +60,14 @@ performance/captures, job-specific checks and CI are UNRUN (zero game tests).
 
 - Milestone checksum regeneration twice and comparison: PASS47 files; all47
   SHA256 checks pass. `git diff --check`: PASS after trimming one extra EOF line.
+
+## Source-only checkpoint around09:50UTC
+
+Schema/fixture generation, all9 contract cases, official draw replay, production
+endgame differential,1/2/3+1,000 random seed properties,7,000-game settings matrix
+and paired2,000-game-per-comparison/per-variant league scripts are authored but
+UNRUN. Strict source builds after these edits are pending the shared CPU release.
+The original weighted-combination Chinook reader and separately authored reference
+reader are UNRUN and disconnected from the game. Corpus index/permission facts
+are live-read research; corpus correctness and broad probe coverage are not yet
+accepted. Source/checksum checks do not substitute for these obligations.

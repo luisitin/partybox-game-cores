@@ -44,7 +44,14 @@ source facts in CONFLICTS.md. Tournament administration is background.
 | D9 | https://github.com/eygilbert/GuiCheckers | README lead: optional six-piece DTW corpus externally hosted, too large for repository. | No data licence or delivered coverage assumed. |
 | D10 | https://github.com/loks0n/rapid-draughts/ | Search/package/README lead: MIT TypeScript bitboard engine, WCDF rules, npm rapid-draughts@1.0.6. | Useful future independent-engine lead; implementation not read/imported into coordinate oracle. |
 | D11 | https://damforum.nl/bb3/viewtopic.php?t=8341 | Full thread: database author Ed Gilbert explicitly grants unrestricted availability of Kingsrow WLD through 8 pieces, DTW through 7, and conversion through 8, and links the access driver. | Primary informal author permission for Kingsrow data, beyond the separate Boost driver licence. Does not grant Cake/Scan data. |
-| D12 | http://edgilbert.org/InternationalDraughts/endgame_database_downloads.htm | Author's full download page: WLD 2–7 grouped installer, WLD 8 in two parts, MTC 2–8; .bin/.exe groups hosted on Mega. | Data grant D11; direct six-only package not shown. No installer/corpus downloaded or bundled. |
+| D12 | http://edgilbert.org/InternationalDraughts/endgame_database_downloads.htm | Author's full download page and actual public Mega folder metadata: WLD 2–7 grouped installer, WLD 8 in two parts, MTC 2–8. The small setup executable was privately acquired/decrypted and its file list read with innoextract. | International data grant D11; no full corpus or installer bundled. Installer index contains every 3v3/4v2/5v1 king/man split; individual six-piece compressed files range about 9 KiB–167 MiB. |
+| D13 | https://webdocs.cs.ualberta.ca/~chinook/Software/ | Original Chinook author page explicitly permits free database use with acknowledgement of Chinook and prohibits database sale. | Data conditions are distinct from MIT original project code. No assumption of unrestricted commercial resale. |
+| D14 | https://webdocs.cs.ualberta.ca/~chinook/DataBases/DB6.zip | Actual archive privately acquired: 27,701,728 bytes. It contains DB6 (48,132,029 bytes) and DB6.idx (900,418 bytes), including all nonempty American material/king/man tuples through six pieces. | Author conditions D13. Actual tuple audit: 4/12/25/44/70 tuples for 2/3/4/5/6 pieces; 3,935 rank slices. No binary bundled by the research worker. Position/probe correctness requires separate checks. |
+| D15 | https://webdocs.cs.ualberta.ca/~chinook/databases/code.c | Full original access-code format read: slice identifiers, leading-man ranks, combinatorial ordering, block checkpoints, ternary/default runs, side normalization and both-side capture exclusions. Actual conversion table, rather than its misleading diagram, was inspected. | Format facts only. No source functions/tables copied; tests/reference-chinook.mjs is original JS, pure in-memory, with independent coordinate moves and slow combination enumeration. |
+| D16 | https://github.com/dscharrer/innoextract/releases/tag/1.9 | Official 890,320-byte Linux utility privately acquired to list both Kingsrow setup indexes; Zlib licence read. | Research tool only, no utility/source incorporated into product. Setup indexes are not a claim of completed payload acquisition. |
+| D17 | https://www.npmjs.com/package/scan3.1.js | npm 1.1.0 manifest, actual tarball file list, README and LICENSE read. JavaScript Scan build explicitly excludes bitbases/evaluation data. | Package metadata says MIT, but bundled LICENSE and upstream README say GPLv3. This package is not evidence of a permissively licensed full-six dataset; no code imported. |
+| D18 | https://hjetten.home.xs4all.nl/enddb/ and https://hjetten.home.xs4all.nl/mobydam/mobydam.html | Author directory and full program page: six partitions cover 3v3/4v2/5v1. Their ZIP sizes total 854,776,170 bytes; lower-piece ZIPs are additional. Moby Dam source is GPLv3. | Separate binary-data grant remains unverified; freely downloadable engine source does not establish it. No data acquired/bundled. |
+| D19 | https://edgilbert.org/EnglishCheckers/10pieceEnglishInstall.htm and https://edgilbert.org/EnglishCheckers/KingsRowEnglish.htm | Full author pages plus actual English public Mega setup index: material supports up to five per side; combined db6.cpr1 is about 29.5 MiB, smaller db2–5 included separately. | English-specific binary redistribution permission remains unresolved; D11 arose in an International thread. Small setup privately inspected; no database payload bundled. |
 
 Pinned Cake Git blobs read:
 
@@ -58,6 +65,18 @@ lopsided material and meaningful capture entries. An acquired/generated
 corpus needs actual material coverage, licence, checksums and independent
 checks. A resource-truncated graph is UNKNOWN, never DRAW. Bare-board WDL
 is theoretical; it does not itself solve a game with existing draw history.
+
+Audited Chinook corpus SHA-256 values:
+
+- Author ZIP: `35835dae65a962eafdf5cde290bce380117445acb21819dd0e266b3b0efab3b3`.
+- DB6: `baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f`.
+- DB6.idx: `10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd`.
+
+`scripts/acquire-chinook.py` validates those fixed bytes and regenerates
+material/provenance metadata into a caller-selected private directory. The
+data terms, capture exclusions and theoretical scope must accompany any
+later distribution. American complete-material acquisition is now real;
+International full-six acquisition/probing remains unresolved.
 
 ## Original independent oracle
 
