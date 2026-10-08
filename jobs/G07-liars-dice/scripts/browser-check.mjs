@@ -29,6 +29,7 @@ const profiles = [
 ];
 const rows = [];
 const checks = [];
+const pacingMeasurements = [];
 const report = {
   runId,
   htmlSha256,
@@ -38,7 +39,7 @@ const report = {
   benchmark: {players: 8, existingBid: {quantity: 8, face: 3}, openPrivateDice: 5,
     interaction: 'change quantity and face every 30 intervals, including exact controller odds',
     isolation: 'fresh browser context; functional test navigation history is not retained'},
-  seed: 7199, profiles: rows, checks, passed: false,
+  seed: 7199, profiles: rows, checks, pacingMeasurements, passed: false,
   scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
 };
 if (performanceOnly && snapshot) {
@@ -50,7 +51,7 @@ if (performanceOnly && snapshot) {
     'self-contained file works offline without network, external resources, errors or dialogs',
     'HTML source stayed unchanged throughout the run',
   ].includes(check.name));
-  assert.equal(functional.length, 32, 'both profiles require all 32 functional checks');
+  assert.equal(functional.length, 47, 'both profiles and the before/after probe require all 47 functional checks');
   assert(functional.every(check => check.passed), 'a failed functional check cannot be reused');
   checks.push(...functional.map(check => ({...check, reusedFromRunId: previous.runId})));
   report.functionalProof = {htmlSha256, runId: previous.runId,
@@ -113,6 +114,56 @@ async function singleDieState(page, count) {
   s.bid = null; s.bidLog = []; s.palifico = false; s.palificoStarter = null;
   await page.evaluate(s => window.__G07.setState(s), s);
   return s;
+}
+async function armBot(page, pace, turnSeconds = 0) {
+  await init(page, {players: 2, mode: 'bots', ...(pace ? {pace} : {}), settings: {turnSeconds, calzaEnabled: false}});
+  return page.evaluate(() => {
+    const s = window.__G07.state(); s.turn = 'p1';
+    window.__G07.setState(s);
+    return {armedAt: window.__G07.time(), state: window.__G07.state()};
+  });
+}
+async function observeChange(page, before, timeoutMs = 6000) {
+  return page.evaluate(async ({before, timeoutMs}) => {
+    const signature = s => JSON.stringify({phase: s.phase.id, round: s.round, turn: s.turn, bid: s.bid, bids: s.bidLog.length});
+    const initial = signature(before.state);
+    return new Promise((resolve, reject) => {
+      let lastUnchangedAt = before.armedAt;
+      const poll = () => {
+        const at = window.__G07.time(), s = window.__G07.state();
+        if (signature(s) !== initial) return resolve({armedAt: before.armedAt, observedAt: at,
+          elapsedMs: at - before.armedAt, lastUnchangedMs: lastUnchangedAt - before.armedAt,
+          phaseStartedAt: s.phase.startedAt, phase: s.phase.id, turn: s.turn, bid: s.bid});
+        lastUnchangedAt = at;
+        if (at - before.armedAt > timeoutMs) return reject(new Error(`No scheduled action within ${timeoutMs}ms`));
+        requestAnimationFrame(poll);
+      };
+      requestAnimationFrame(poll);
+    });
+  }, {before, timeoutMs});
+}
+async function assertHeld(page, before, milliseconds) {
+  await page.waitForTimeout(milliseconds);
+  const held = await state(page);
+  assert.equal(held.phase.id, before.state.phase.id);
+  assert.equal(held.turn, before.state.turn);
+  assert.equal(held.round, before.state.round);
+  assert.deepEqual(held.bid, before.state.bid);
+  return (await page.evaluate(() => window.__G07.time())) - before.armedAt;
+}
+async function interruptFixture(page, pace, humanTurn = false) {
+  await init(page, {players: 3, mode: 'bots', skill: 'sharp', pace, settings: {
+    onesWild: false, calzaEnabled: true, calzaPolicy: 'interruptOnly', turnSeconds: 0,
+  }});
+  return page.evaluate(humanTurn => {
+    const s = window.__G07.state();
+    for (const id of s.order) s.diceCount[id] = 1;
+    s.cups = {p0: [6], p1: [4], p2: [2]};
+    s.turn = humanTurn ? 'p0' : 'p1'; s.palifico = false; s.palificoStarter = null;
+    s.bid = {quantity: 1, face: 2, playerId: humanTurn ? 'p1' : 'p0'}; s.bidLog = [s.bid];
+    window.__G07.setState(s);
+    return {armedAt: window.__G07.time(), state: window.__G07.state()};
+  }, humanTurn);
 }
 
 try {
@@ -386,7 +437,7 @@ try {
     });
 
     await run('eligible bots make actual interrupt-only calza calls before the active turn', async () => {
-      await init(page, {players: 3, mode: 'bots', skill: 'sharp', settings: {
+      await init(page, {players: 3, mode: 'bots', skill: 'sharp', pace: 'fast', settings: {
         onesWild: false, calzaEnabled: true, calzaPolicy: 'interruptOnly', turnSeconds: 0,
       }});
       const s = await state(page);
@@ -448,6 +499,188 @@ try {
       assert.equal(continued.phase.id, 'bid');
       assert.equal(continued.round, revealed.round + 1);
       await privateGone(page, 'observer acknowledged');
+    });
+
+    await run('normal, fast and slow bot pacing use actual selected delays', async () => {
+      assert.equal(await page.locator('#bot-pace-setup').inputValue(), 'normal', 'default lobby pace');
+      for (const [pace, minimum, maximum] of [['normal', 1900, 2300], ['fast', 650, 1100], ['slow', 3900, 4500]]) {
+        const before = await armBot(page, pace === 'normal' ? undefined : pace);
+        assert.equal(await page.locator('#bot-pace').inputValue(), pace);
+        assert.equal(await page.evaluate(() => window.__G07.pace()), pace);
+        const measured = await observeChange(page, before);
+        pacingMeasurements.push({profile: profile.label, kind: 'regular', pace, ...measured});
+        assert(measured.elapsedMs >= minimum && measured.elapsedMs <= maximum,
+          `${pace} actual action ${measured.elapsedMs}ms outside ${minimum}–${maximum}ms`);
+        if (pace === 'slow') assert(measured.lastUnchangedMs > 3000);
+        await privateGone(page, `${pace} bot action`);
+      }
+      for (const [pace, minimum, maximum] of [['fast', 350, 800], ['normal', 1550, 2000], ['slow', 3550, 4100]]) {
+        const before = await interruptFixture(page, pace);
+        const measured = await observeChange(page, before);
+        pacingMeasurements.push({profile: profile.label, kind: 'interrupt', pace, ...measured});
+        assert(measured.elapsedMs >= minimum && measured.elapsedMs <= maximum,
+          `${pace} interrupt was ${measured.elapsedMs}ms`);
+        assert.equal((await state(page)).reveal.caller, 'p2');
+      }
+    });
+
+    await run('manual pacing holds regular bot actions until one explicit step', async () => {
+      const before = await armBot(page, 'manual');
+      await show(page);
+      const elapsedMs = await assertHeld(page, before, 2250);
+      assert(elapsedMs >= 2200);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      assert(await page.locator('#bot-step').isVisible());
+      await page.locator('#bot-step').click();
+      const after = await state(page);
+      assert.equal(after.bid.playerId, 'p1');
+      assert.equal(after.bidLog.length, before.state.bidLog.length + 1);
+      pacingMeasurements.push({profile: profile.label, kind: 'manual-regular', pace: 'manual', heldMs: elapsedMs});
+      await privateGone(page, 'manual bot step');
+    });
+
+    await run('manual pacing exposes an eligible bot calza even during a human turn', async () => {
+      const before = await interruptFixture(page, 'manual', true);
+      assert(await page.locator('#bot-step').isVisible());
+      const heldMs = await assertHeld(page, before, 2250);
+      await page.locator('#bot-step').click();
+      const after = await state(page);
+      assert.equal(after.reveal.kind, 'calza');
+      assert.equal(after.reveal.caller, 'p2');
+      assert.equal(after.reveal.correct, true);
+      pacingMeasurements.push({profile: profile.label, kind: 'manual-interrupt', pace: 'manual', heldMs});
+      await privateGone(page, 'manual calza');
+    });
+
+    await run('live pace changes synchronize controls, cover the cup and restart scheduling', async () => {
+      const before = await armBot(page, 'fast');
+      await show(page);
+      await page.waitForTimeout(250);
+      await page.locator('#bot-pace').selectOption('manual');
+      assert.equal(await page.locator('#bot-pace-setup').inputValue(), 'manual');
+      await privateGone(page, 'pace change');
+      assert.equal(await page.locator('#private-note').textContent(), '');
+      assert.equal(await page.locator('#bid-quantity option').count(), 0);
+      await assertHeld(page, before, 2250);
+      await page.locator('#bot-pace').selectOption('fast');
+      const restarted = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      const measured = await observeChange(page, restarted);
+      assert(measured.elapsedMs >= 650 && measured.elapsedMs <= 1100);
+      pacingMeasurements.push({profile: profile.label, kind: 'pace-change', pace: 'fast', ...measured});
+    });
+
+    await run('pause holds bot actions and resume starts a fresh selected wait', async () => {
+      const before = await armBot(page, 'normal');
+      await page.waitForTimeout(800);
+      await page.locator('#pause').click();
+      await assertHeld(page, before, 2250);
+      await page.locator('#resume').click();
+      const resumed = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      const measured = await observeChange(page, resumed);
+      assert(measured.elapsedMs >= 1900 && measured.elapsedMs <= 2300,
+        `resumed selected wait was ${measured.elapsedMs}ms`);
+      pacingMeasurements.push({profile: profile.label, kind: 'resume', pace: 'normal', ...measured});
+      await privateGone(page, 'resumed bot action');
+    });
+
+    await run('a human can call calza after reading for over 900ms at normal pace', async () => {
+      await init(page, {players: 3, mode: 'bots', pace: 'normal', settings: {
+        onesWild: false, calzaEnabled: true, calzaPolicy: 'anyOther', turnSeconds: 0,
+      }});
+      const before = await page.evaluate(() => {
+        const s = window.__G07.state();
+        for (const id of s.order) s.diceCount[id] = 1;
+        s.cups = {p0: [2], p1: [6], p2: [4]}; s.turn = 'p1'; s.palifico = false;
+        s.bid = {quantity: 1, face: 2, playerId: 'p2'}; s.bidLog = [s.bid];
+        window.__G07.setState(s); return {armedAt: window.__G07.time(), state: window.__G07.state()};
+      });
+      await show(page);
+      await assertHeld(page, before, 1050);
+      assert(await page.locator('#calza').isEnabled());
+      const calledAt = await page.evaluate(() => window.__G07.time());
+      assert(calledAt - before.armedAt > 900 && calledAt - before.armedAt < 1650);
+      await page.locator('#calza').click();
+      const after = await state(page);
+      assert.equal(after.reveal.caller, 'p0'); assert.equal(after.reveal.correct, true);
+      const dispatchedMs = after.phase.startedAt - before.armedAt;
+      assert(dispatchedMs > 900 && dispatchedMs < 1650, `human calza dispatched at ${dispatchedMs}ms`);
+      pacingMeasurements.push({profile: profile.label, kind: 'human-calza', pace: 'normal', elapsedMs: dispatchedMs, requestedAt: calledAt});
+      await privateGone(page, 'human calza');
+    });
+
+    await run('a visible one-second core clock takes priority over normal and manual pacing', async () => {
+      for (const pace of ['normal', 'manual']) {
+        const before = await armBot(page, pace, 1);
+        const measured = await observeChange(page, before, 2500);
+        assert(measured.elapsedMs >= 800 && measured.elapsedMs < 1500);
+        assert(measured.bid, 'core deadline must produce a legal automatic opening bid');
+        pacingMeasurements.push({profile: profile.label, kind: 'core-clock', pace, ...measured});
+        await privateGone(page, 'core deadline');
+      }
+      await interruptFixture(page, 'manual');
+      const overdue = await page.evaluate(() => {
+        const s = window.__G07.state(), armedAt = window.__G07.time();
+        s.phase.startedAt = armedAt; s.phase.deadline = armedAt + 1000;
+        window.__G07.setState(s);
+        while (performance.now() < s.phase.deadline + 10) { /* hold queued interval until explicit click */ }
+        document.querySelector('#bot-step').click();
+        const after = window.__G07.state();
+        return {armedAt, clickedAt: window.__G07.time(), deadline: s.phase.deadline, reveal: after.reveal};
+      });
+      assert.equal(overdue.reveal.kind, 'dudo', 'an overdue visible clock must be dispatched before a manual calza');
+      assert.equal(overdue.reveal.caller, 'p1');
+      pacingMeasurements.push({profile: profile.label, kind: 'overdue-clock-manual-step', pace: 'manual', ...overdue});
+    });
+
+    if (profile.label === 'desktop') await run('normal pacing extends the measured eight-seat public bid window', async () => {
+      const beforeBytes = await readFile(resolve(evidence, 'round-1-before-pacing.json'));
+      const baseline = JSON.parse(beforeBytes);
+      await init(page, {players: 8, mode: 'bots', pace: 'normal', settings: {calzaEnabled: true, turnSeconds: 0}, seed: 17});
+      const after = await page.evaluate(async () => {
+        const s = window.__G07.state(); s.turn = 'p1';
+        s.bid = {quantity: 1, face: 2, playerId: 'p7'}; s.bidLog = [s.bid];
+        for (const id of s.order) s.cups[id] = [2, 3, 4, 5, 6];
+        window.__G07.setState(s);
+        const armedAt = window.__G07.time();
+        document.querySelector('#show-cup').click();
+        const capture = () => {
+          const state = window.__G07.state(), calza = document.querySelector('#calza');
+          return {at: window.__G07.time(), phaseStartedAt: state.phase.startedAt, bid: state.bid,
+            turn: state.turn, phase: state.phase.id, canHumanCalza: window.__G07.controller()?.canCalza ?? false,
+            openDice: document.querySelectorAll('#cup .die').length, bidText: document.querySelector('#bid-description').textContent,
+            calzaVisible: calza.getClientRects().length > 0, calzaEnabled: !calza.disabled};
+        };
+        const records = [capture()];
+        return new Promise((resolve, reject) => {
+          const poll = () => {
+            const state = window.__G07.state(), previous = records.at(-1);
+            if (state.turn !== previous.turn || state.phase.id !== previous.phase) records.push(capture());
+            if (state.turn === 'p0' || state.phase.id !== 'bid') return resolve({armedAt, records});
+            if (window.__G07.time() - armedAt > 24000) return reject(new Error('Eight-seat pacing probe did not reach the human'));
+            requestAnimationFrame(poll);
+          };
+          requestAnimationFrame(poll);
+        });
+      });
+      const intervals = after.records.slice(1).map((record, index) => ({elapsedMs: record.at - after.records[index].at,
+        previousBidTextWords: after.records[index].bidText.trim().split(/\s+/).length,
+        oldHumanCupOpen: after.records[index].openDice > 0, newHumanCupOpen: record.openDice > 0}));
+      assert.equal(intervals.length, 7);
+      const trajectory = records => records.map(({turn, phase, bid}) => ({turn, phase, bid}));
+      assert.deepEqual(trajectory(after.records), trajectory(baseline.records), 'before/after probes must have the identical public game trajectory');
+      assert(intervals.every(row => row.elapsedMs >= 1900 && row.elapsedMs <= 2300));
+      const mean = rows => rows.reduce((sum, row) => sum + row.elapsedMs, 0) / rows.length;
+      const probe = {schemaVersion: 1, htmlSha256, browser: report.browser, scope: 'actual standalone browser; no CPU throttle',
+        viewport: {width: profile.width, height: profile.height}, cpuThrottle: profile.cpuThrottle,
+        fixture: {players: 8, mode: 'bots', skill: 'normal', seed: 17, settings: {calzaEnabled: true, turnSeconds: 0},
+          edits: {turn: 'p1', bid: {quantity: 1, face: 2, playerId: 'p7'}, allCups: [2, 3, 4, 5, 6]}},
+        beforeFile: 'round-1-before-pacing.json', beforeSha256: createHash('sha256').update(beforeBytes).digest('hex'),
+        beforeIntervals: baseline.intervals, after: {pace: 'normal', regularDelayMs: 2000, interruptDelayMs: 1650, ...after, intervals},
+        comparison: {beforeMeanMs: mean(baseline.intervals), afterMeanMs: mean(intervals),
+          meanWindowRatio: mean(intervals) / mean(baseline.intervals)}, passed: true};
+      await writeFile(resolve(work, 'round-1-pacing.json'), JSON.stringify(probe, null, 2) + '\n');
+      await writeFile(resolve(archive, 'round-1-pacing.json'), JSON.stringify(probe, null, 2) + '\n');
+      report.pacingProbeFile = 'round-1-pacing.json';
     });
 
     await run('pause holds real deadlines and resume shifts by actual elapsed time', async () => {
@@ -621,6 +854,10 @@ try {
       const destination = resolve(evidence, report.functionalProof.reportFile);
       await mkdir(dirname(destination), {recursive: true});
       await copyFile(resolve(work, report.functionalProof.reportFile), destination);
+    }
+    if (report.pacingProbeFile) {
+      await copyFile(resolve(work, report.pacingProbeFile), resolve(evidence, report.pacingProbeFile));
+      await copyFile(resolve(archive, report.pacingProbeFile), resolve(publishedArchive, report.pacingProbeFile));
     }
   }
 }

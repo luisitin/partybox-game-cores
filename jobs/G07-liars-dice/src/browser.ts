@@ -8,9 +8,18 @@ const select = (id: string): HTMLSelectElement => $(id) as HTMLSelectElement;
 const input = (id: string): HTMLInputElement => $(id) as HTMLInputElement;
 const button = (id: string): HTMLButtonElement => $(id) as HTMLButtonElement;
 type Skill = 'easy' | 'normal' | 'sharp';
+type Pace = 'fast' | 'normal' | 'slow' | 'manual';
 type Settings = Record<string, string | number | boolean>;
-type HostOptions = {players?: number; settings?: Settings; mode?: string; skill?: Skill; seed?: number};
+type HostOptions = {players?: number; settings?: Settings; mode?: string; skill?: Skill; pace?: Pace; seed?: number};
 type Event = Parameters<typeof game.reduce>[1];
+// Host presentation only: the core's turn deadline always takes precedence.
+const pacing: Record<Pace, {regular: number | null; interrupt: number | null}> = {
+  fast: {regular: 750, interrupt: 400},
+  normal: {regular: 2000, interrupt: 1650},
+  slow: {regular: 4000, interrupt: 3650},
+  manual: {regular: null, interrupt: null},
+};
+let botPace: Pace = 'normal';
 let state: State | null = null;
 let viewer: string | null = null;
 let openFor: string | null = null;
@@ -67,7 +76,20 @@ mode.append(option('hotseat', 'Pass the device'), option('bots', 'You vs bots'))
 const difficulty = document.createElement('select'); difficulty.id = 'bot-skill';
 difficulty.append(option('easy', 'Easy'), option('normal', 'Normal'), option('sharp', 'Strong'));
 difficulty.value = 'normal';
-$('setup-grid').append(makeLabel('Players', count), makeLabel('Play style', mode), makeLabel('Bot strength', difficulty));
+const paceSetup = document.createElement('select'); paceSetup.id = 'bot-pace-setup';
+for (const [value, text] of [['fast', 'Fast · 0.75 s'], ['normal', 'Normal · 2 s'], ['slow', 'Slow · 4 s'], ['manual', 'Manual · step only']]) {
+  paceSetup.append(option(value, text)); select('bot-pace').append(option(value, text));
+}
+paceSetup.value = botPace; select('bot-pace').value = botPace;
+$('setup-grid').append(makeLabel('Players', count), makeLabel('Play style', mode), makeLabel('Bot strength', difficulty), makeLabel('Bot pace', paceSetup));
+function changePace(value: string): void {
+  botPace = Object.hasOwn(pacing, value) ? value as Pace : 'normal';
+  paceSetup.value = botPace; select('bot-pace').value = botPace;
+  botDue = null; interruptDue = null; interruptSampled = null;
+  if (state) { cover(); render(); }
+}
+paceSetup.onchange = () => changePace(paceSetup.value);
+select('bot-pace').onchange = () => changePace(select('bot-pace').value);
 for (const spec of game.manifest.settings) {
   const control = spec.type === 'boolean' || spec.type === 'number' ? document.createElement('input') : document.createElement('select');
   control.id = 'setting-' + spec.key;
@@ -115,6 +137,12 @@ renderNames();
 function activeHumans(): string[] {
   return state ? state.order.filter(id => state!.diceCount[id]! > 0 && !state!.players[id]!.bot && state!.players[id]!.connected && !state!.left.includes(id)) : [];
 }
+function isBotTurn(): boolean {
+  return !!state && state.phase.id === 'bid' && (!!state.players[state.turn]?.bot || !state.players[state.turn]?.connected || state.left.includes(state.turn));
+}
+function hasBotInterrupt(): boolean {
+  return !!state && state.phase.id === 'bid' && state.order.some(id => id !== state!.turn && state!.players[id]!.bot && canCalza(state!, id));
+}
 function interruptKey(): string | null {
   return state?.bid ? `${state.round}:${state.bidLog.length}:${state.bid.playerId}:${state.bid.quantity}:${state.bid.face}` : null;
 }
@@ -148,6 +176,7 @@ function start(options: HostOptions = {}): void {
   if (options.players !== undefined) { count.value = String(options.players); renderNames(); }
   if (options.mode !== undefined) { mode.value = options.mode; changeMode(); }
   if (options.skill !== undefined) { difficulty.value = options.skill; changeDifficulty(); }
+  if (options.pace !== undefined) changePace(options.pace);
   const settings: Settings = {};
   for (const [key, control] of settingControls) settings[key] = control instanceof HTMLInputElement ? control.type === 'checkbox' ? control.checked : Number(control.value) : control.value;
   Object.assign(settings, options.settings);
@@ -162,6 +191,9 @@ function start(options: HostOptions = {}): void {
 }
 function apply(event: Event): void {
   if (!state) return;
+  // Sampling a bot input can itself cross a deadline. Recheck at dispatch as
+  // well as before sampling; timer events enter this function without recursion.
+  if (event.type === 'input' && deliverDueTimer()) return;
   const old = state, next = game.reduce(old, event);
   if (next === old) return;
   // A timer can explicitly schedule a later second beat. Other events,
@@ -173,6 +205,7 @@ function apply(event: Event): void {
 }
 function send(move: Input): void {
   if (!state || !viewer) return;
+  if (deliverDueTimer()) return;
   const before = state;
   apply({type: 'input', now: clockNow(), playerId: viewer, input: move});
   if (state === before) $('notice').textContent = 'That move is unavailable. Choose one of the legal options.';
@@ -207,9 +240,9 @@ function render(): void {
   const publicView = game.tvView(state);
   const cv = privateView();
   const paused = !!state.phase.paused, done = state.phase.id === 'done', revealed = state.phase.id === 'reveal';
-  const bot = !!state.players[state.turn]?.bot || !state.players[state.turn]?.connected || state.left.includes(state.turn);
+  const bot = isBotTurn();
   $('round-label').textContent = `Round ${publicView.round} · ${publicView.totalDice} dice at the table`;
-  $('status').textContent = done ? publicView.winner ? `${name(publicView.winner)} wins` : 'Game ended' : paused ? 'The table is paused' : revealed ? 'The truth is out' : bot ? `${name(publicView.turn)} is thinking` : `${name(publicView.turn)}, your move`;
+  $('status').textContent = done ? publicView.winner ? `${name(publicView.winner)} wins` : 'Game ended' : paused ? 'The table is paused' : revealed ? 'The truth is out' : bot ? `${name(publicView.turn)} ${botPace === 'manual' ? 'is waiting' : 'is thinking'}` : `${name(publicView.turn)}, your move`;
   $('meta').replaceChildren(tag(publicView.wild ? 'Ones are wild' : 'Ones count as ones'), ...(publicView.palifico ? [tag('Palifico round', true), tag(publicView.bid === null ? 'Opening face is free' : canChangePalificoFace(state, state.turn) ? 'This seat may change face' : 'Keep the bid face')] : []), ...(publicView.settings.calzaEnabled ? [tag('Calza enabled')] : []));
   button('pause').hidden = paused || done; button('resume').hidden = !paused || done; button('end-game').hidden = done;
   $('players').replaceChildren(...state.order.map((id, index) => {
@@ -253,8 +286,8 @@ function render(): void {
   $('private-panel').hidden = revealed || done;
   $('handoff-title').textContent = viewer ? `Pass to ${name(viewer)}` : 'Cups covered';
   $('handoff-copy').textContent = viewer === state.turn ? 'Everyone else: look away. Open your cup when the device is safely yours.' : `Waiting for ${name(state.turn)}. You can inspect your own cup${cv?.canCalza ? ' or call calza' : ''}.`;
-  $('waiting-title').textContent = paused ? 'Cups covered' : 'The bots are thinking';
-  $('waiting-copy').textContent = paused ? 'Resume when everyone is ready. All private dice have been removed from the screen.' : 'They use their own dice, public bids, and exact probabilities.';
+  $('waiting-title').textContent = paused ? 'Cups covered' : botPace === 'manual' ? 'The bots are waiting' : 'The bots are thinking';
+  $('waiting-copy').textContent = paused ? 'Resume when everyone is ready. All private dice have been removed from the screen.' : botPace === 'manual' ? 'Use Play next bot action when you are ready. Turn clocks keep running.' : 'They use their own dice, public bids, and exact probabilities.';
   $('cup').replaceChildren(...(isOpen ? cv!.ownDice.map(face => die(face)) : []));
   $('private-note').textContent = isOpen ? cv!.odds === null ? `${cv!.ownDice.length} dice in your cup. What story do they tell?` : `Last bid: ${publicView.bid!.quantity} × ${publicView.bid!.face}. Chance it holds, from your cup: ${(cv!.odds.atLeast * 100).toFixed(1)}%.` : '';
   if (isOpen) {
@@ -271,7 +304,7 @@ function render(): void {
     // Legal choices and computed odds are private too; remove them on handoff.
     select('bid-quantity').replaceChildren(); select('bid-face').replaceChildren(); $('action-hint').textContent = '';
   }
-  $('bot-step').hidden = !bot || paused || done || revealed;
+  $('bot-step').hidden = !(bot || hasBotInterrupt()) || paused || done || revealed;
   $('notice').textContent = '';
   $('play-grid').hidden = done || revealed;
   $('reveal-panel').hidden = !publicView.reveal;
@@ -296,24 +329,24 @@ function render(): void {
     $('winner-copy').textContent = publicView.winner ? 'One cup remains. The dice, the bluffs, and the last brave call belonged to this table.' : publicView.endReason === 'vip-end' ? 'The host ended the game. Set up another table whenever you are ready.' : 'This game has ended.';
   }
   renderClock();
-  if (!paused && botDue === null) {
-    if (bot && state.phase.id === 'bid') botDue = clockNow() + 750;
+  const wait = pacing[botPace];
+  if (!paused && botDue === null && wait.regular !== null) {
+    if (bot) botDue = clockNow() + wait.regular;
   }
-  if (!paused && state.phase.id === 'bid' && state.bid && interruptSampled !== interruptKey() && interruptDue === null && state.order.some(id => id !== state!.turn && state!.players[id]!.bot && canCalza(state!, id))) {
-    interruptDue = clockNow() + 400;
+  if (!paused && wait.interrupt !== null && state.bid && interruptSampled !== interruptKey() && interruptDue === null && hasBotInterrupt()) {
+    interruptDue = clockNow() + wait.interrupt;
   }
 }
 
 function botMove(): void {
-  if (!state || state.phase.paused || state.phase.id === 'done') return;
-  const id = state.phase.id === 'reveal' ? state.order.find(id => state!.players[id]!.connected && !state!.left.includes(id)) : state.turn;
-  if (!id) return;
+  if (!state || state.phase.paused || !isBotTurn()) return;
+  const id = state.turn;
   const move = game.bot.sampleInput(state, id, botRng, skills.get(id) ?? 'normal');
   if (move) apply({type: 'input', now: clockNow(), playerId: id, input: move});
-  else botDue = clockNow() + 750;
+  else botDue = pacing[botPace].regular === null ? null : clockNow() + pacing[botPace].regular!;
 }
-function botInterrupt(): void {
-  if (!state || state.phase.paused || state.phase.id !== 'bid') return;
+function botInterrupt(): boolean {
+  if (!state || state.phase.paused || state.phase.id !== 'bid') return false;
   interruptDue = null; interruptSampled = interruptKey();
   // One opportunity per public bid, before the next bot's regular turn. Rotate
   // the scan order so simultaneous exact calls do not always favour seat one.
@@ -322,18 +355,31 @@ function botInterrupt(): void {
   for (const id of order) {
     if (id === state.turn || !state.players[id]!.bot || !canCalza(state, id)) continue;
     const move = game.bot.sampleInput(state, id, botRng, skills.get(id) ?? 'normal');
-    if (move?.type === 'calza') { apply({type: 'input', now: clockNow(), playerId: id, input: move}); return; }
+    if (move?.type === 'calza') {
+      const before = state; apply({type: 'input', now: clockNow(), playerId: id, input: move}); return state !== before;
+    }
   }
+  return false;
 }
-function tick(): void {
-  if (!state || state.phase.id === 'done') return;
-  renderClock(); if (state.phase.paused) return;
+function stepBot(): void {
+  if (!state || state.phase.paused || state.phase.id !== 'bid') return;
+  if (deliverDueTimer()) return;
+  if (!botInterrupt()) botMove();
+}
+function deliverDueTimer(): boolean {
+  if (!state || state.phase.paused || state.phase.id === 'done') return false;
   const at = clockNow();
   const instance = `${state.phase.id}:${state.phase.startedAt}`;
   if (state.phase.deadline !== null && at >= state.phase.deadline && !firedTimers.has(instance)) {
     firedTimers.add(instance);
-    apply({type: 'timer', now: at, phaseId: state.phase.id, startedAt: state.phase.startedAt}); return;
+    apply({type: 'timer', now: at, phaseId: state.phase.id, startedAt: state.phase.startedAt}); return true;
   }
+  return false;
+}
+function tick(): void {
+  if (!state || state.phase.id === 'done') return;
+  renderClock(); if (state.phase.paused || deliverDueTimer()) return;
+  const at = clockNow();
   if (interruptDue !== null && at >= interruptDue) { botInterrupt(); return; }
   if (botDue !== null && at >= botDue) botMove();
 }
@@ -364,7 +410,7 @@ button('next-round').onclick = () => {
 button('pause').onclick = () => apply({type: 'vip', action: 'pause', now: clockNow()});
 button('resume').onclick = () => apply({type: 'vip', action: 'resume', now: clockNow()});
 button('end-game').onclick = () => apply({type: 'vip', action: 'end', now: clockNow()});
-button('bot-step').onclick = botMove;
+button('bot-step').onclick = stepBot;
 function newGame(): void {
   cover(); state = null; viewer = null; botDue = null; interruptDue = null; interruptSampled = null;
   cachedState = null; cachedViewer = null; cachedController = null;
@@ -386,6 +432,7 @@ const hook = {
   event: apply,
   setState: (value: State) => { state = structuredClone(value); cover(); chooseViewer(); botDue = null; interruptDue = null; interruptSampled = null; firedTimers.clear(); $('setup').hidden = true; $('table').hidden = false; render(); },
   time: clockNow,
+  pace: () => botPace,
   tick,
 };
 Object.defineProperty(window, '__G07', {value: Object.freeze(hook), writable: false});

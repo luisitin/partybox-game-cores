@@ -19,13 +19,23 @@ All local checks PASS at this delivery checkpoint:
 - Source-matched delivery-final videos under 10 MB; earlier failures preserved.
 - Final hashes and integrity passed; regenerate them whenever delivered files change.
 
-Next: push verified delivery, refresh main G07 claim, then create/update the PR.
-Require exact current-head hosted G07 verify CI success. Do not infer green from
-another head. Only then start mandatory KEEP GOING: reread job, listfive biggest
-weaknesses, fix the worst, measure, one LOOP line/push/claim refresh. Stop only after
-three consecutive rounds gain nothing a player notices; then claim lowest
-eligible next job after fresh main CLAIMS/branch-commit checks. G08 START-HERE
-has been read as preparation; G08 has not been claimed or modified.
+Initial delivery is pushed and PR #6 is open. Exact head 6dd4c32 is green in
+GitHub run 37737745593 (35 node tests, 37 browser checks, 25 mutation kills).
+KEEP GOING round 1 is implemented but NOT YET verified or complete: adjustable
+Fast/Normal/Slow/Manual bot pace, with overdue timers before human/manual actions.
+Current built HTML aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825.
+Core is unchanged. The expanded 52-check default full browser run and new pacing
+recordings are pending; the existing 37-check snapshot belongs to the previous
+f0559458 page and does not certify this checkpoint. Integrity deliberately
+requires a matching new snapshot, so this milestone is not a green delivery.
+Five weaknesses and measured baseline: evidence/checks/keep-going-reviews.md.
+Finish source-matched full browser proof and recordings, refresh hashes, then
+log round 1 once with actual measured gains and push. Refresh main G07 claim
+on every push and require exact current-head CI success. Re-read the job and
+repeat review/fix/measure/one LOOP line until three consecutive rounds gain
+nothing a player notices. Only then claim the next lowest eligible job after
+fresh main CLAIMS and branch-commit checks. G08 preparation is read-only; it has
+not been claimed or modified.
 
 Default tests write transient browser/mutation runs under ignored .work/. Publish
 passing snapshots explicitly; never overwrite archived failures or evidence with

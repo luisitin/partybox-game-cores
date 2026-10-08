@@ -204,3 +204,11 @@ CI is .github/workflows/G07.yml: pathsfilteredPR,Ubuntu,30min,read-onlypermissio
 actions/* only, pinnedNode22.16.0, npmci, Playwright install, full npm test and
 rawbrowserartifact upload. Local component checks have passed; current pushed
 head hosted CI must succeed before delivery and KEEP GOING begins.
+
+## Initial hosted delivery accepted — 2026-10-08
+`gh run view 37737745593 --repo luisitin/partybox-game-cores --json status,conclusion,headSha,jobs` and `gh run view 37737745593 --repo luisitin/partybox-game-cores --log`: PASS, exact head 6dd4c32b980695de88465b284b0763e287787915. Run completed successfully: full npm test, 35/35 node tests, 37/37 browser checks, 25/25 compiled mutation kills and 155-file integrity. This is the initial delivery acceptance, not a claim that later heads are green. Public metadata: evidence/checks/ci-delivery.json. GitHub reports the uploaded G07-browser-evidence artifact (11532289074); download from this environment failed, so no hosted FPS values are invented. KEEP GOING now begins after this green run.
+
+Final delivery checksum command: `node scripts/hashes.mjs` twice, `cmp SHA256SUMS.txt .work/hashes-before.txt`, `sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: PASS, 155 files before the initial delivery commit. Regenerate hashes for each subsequent checkpoint.
+
+## Round 1 cadence milestone — verification pending
+`npm run build` passed strict TypeScript/bundling for aa9d7b31…66f825; core remains unchanged. Host changes add adjustable pacing and prioritize an overdue timer before user/manual actions or a bot action whose sampling crosses the deadline. Baseline bot bid windows were 741–801 ms. The expanded full browser run and source-matched recordings have not completed at this milestone, so no new pass, performance gain or completed LOOP round is claimed. The previous passing snapshot belongs to f0559458; the unchanged integrity guard requires new matching evidence before acceptance.

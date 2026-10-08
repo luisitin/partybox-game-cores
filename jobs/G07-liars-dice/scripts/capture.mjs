@@ -10,7 +10,8 @@ import {chromium} from 'playwright';
 // confused with the strict unrecorded requestAnimationFrame measurements.
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
-const tag = process.argv[2] ?? 'milestone';
+const paceDemo = process.argv.includes('--pace-demo');
+const tag = process.argv.slice(2).find(value => !value.startsWith('--')) ?? (paceDemo ? 'round-1' : 'milestone');
 assert(/^[a-z0-9-]+$/.test(tag), 'capture tag must contain only lowercase letters, digits and hyphens');
 const evidence = resolve(root, 'evidence/browser');
 const temporary = resolve(root, '.work/capture-temp');
@@ -38,6 +39,49 @@ try {
     await cdp.send('Emulation.setCPUThrottlingRate', {rate});
     await page.goto(pathToFileURL(html).href);
     await page.waitForFunction(() => Boolean(window.__G07));
+    let pacingDemo = null;
+    if (paceDemo) {
+      // Only initialization is seeded. Bot moves below come from the actual
+      // normal scheduler and ordinary manual-step/human controls.
+      await page.evaluate(() => window.__G07.init({players: 3, mode: 'bots', pace: 'normal', seed: 17,
+        settings: {turnSeconds: 0, calzaEnabled: false}}));
+      let before = await page.evaluate(() => ({at: window.__G07.time(), state: window.__G07.state()}));
+      if (!before.state.players[before.state.turn].bot) {
+        await page.locator('#show-cup').click();
+        const bid = await page.evaluate(() => window.__G07.controller().legalBids[0]);
+        await page.locator('#bid-quantity').selectOption(String(bid.quantity));
+        await page.locator('#bid-face').selectOption(String(bid.face));
+        await page.locator('#make-bid').click();
+        before = await page.evaluate(() => ({at: window.__G07.time(), state: window.__G07.state()}));
+      }
+      await page.waitForFunction(turn => window.__G07.state().turn !== turn || window.__G07.state().phase.id !== 'bid', before.state.turn, {timeout: 4000});
+      const normalActionMs = (await page.evaluate(() => window.__G07.time())) - before.at;
+      let active = await page.evaluate(() => window.__G07.state());
+      if (active.phase.id === 'reveal') { await page.locator('#next-round').click(); active = await page.evaluate(() => window.__G07.state()); }
+      if (!active.players[active.turn].bot) {
+        await page.locator('#show-cup').click();
+        const bid = await page.evaluate(() => window.__G07.controller().legalBids[0]);
+        await page.locator('#bid-quantity').selectOption(String(bid.quantity));
+        await page.locator('#bid-face').selectOption(String(bid.face));
+        await page.locator('#make-bid').click();
+      }
+      await page.locator('#bot-pace').selectOption('manual');
+      const manual = await page.evaluate(() => ({at: window.__G07.time(), state: window.__G07.state()}));
+      await page.waitForTimeout(2250);
+      const held = await page.evaluate(() => window.__G07.state());
+      assert.equal(held.turn, manual.state.turn); assert.deepEqual(held.bid, manual.state.bid);
+      assert(await page.locator('#bot-step').isVisible());
+      await page.locator('#bot-step').click();
+      const stepped = await page.evaluate(() => window.__G07.state());
+      const signature = state => JSON.stringify({phase: state.phase.id, turn: state.turn, bid: state.bid, round: state.round});
+      assert.notEqual(signature(stepped), signature(held), 'manual step must execute an actual bot action');
+      pacingDemo = {seed: 17, normalPace: 'normal', normalActionMs, manualHeldMs: (await page.evaluate(() => window.__G07.time())) - manual.at,
+        manualStepTurn: manual.state.turn, normalActionsInjected: false};
+      await page.waitForTimeout(450);
+      await page.locator('#new-game').click();
+      await page.locator('#mode').selectOption('hotseat');
+      await page.locator('#bot-pace-setup').selectOption('normal');
+    }
     await page.locator('#player-count').selectOption('2');
     await page.locator('#setting-turnSeconds').fill('12');
     await page.locator('#start').click();
@@ -89,7 +133,7 @@ try {
     assert(bytes < 10_000_000, `${path} exceeds the 10MB capture budget`);
     const capture = {path: `media/${tag}-${label}.webm`, bytes, viewport: {width, height}, videoSize, cpuThrottle: rate,
       seed: 7199, rounds, winner: final.winner, initialRoster: initial.order.length,
-      recordingMeasuresPerformance: false, networkRequests: network.length, pageErrors: errors.length};
+      recordingMeasuresPerformance: false, pacingDemo, networkRequests: network.length, pageErrors: errors.length};
     captures.push(capture);
     console.log(JSON.stringify(capture));
   }

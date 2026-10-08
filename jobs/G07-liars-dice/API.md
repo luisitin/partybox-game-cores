@@ -52,3 +52,6 @@ view(), controller(), init({players,settings,mode,skill,seed}), act(input),
 event(fullEvent), setState(state), time(), tick(). Full state inspection/injection
 is intentionally browser-only; it is not a TV/controller privacy contract.
 Public game views and bot counterfactual secrecy are tested independently.
+
+Host init also accepts pace ('fast'|'normal'|'slow'|'manual'); pace() reports the
+current presentation setting. This host control is separate from core settings.

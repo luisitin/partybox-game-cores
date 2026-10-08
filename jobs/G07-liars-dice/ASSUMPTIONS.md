@@ -29,3 +29,8 @@
   saves; normal Unix epoch and local-browser clocks fit comfortably.
 - Browser reveals require an explicit Next round acknowledgement, also when a
   connected human has been eliminated. There is no unrequested reading timer.
+- Bot pace belongs to the offline host, independently of core rules or strategy:
+  Fast waits 750 ms (interrupts 400 ms), Normal 2,000 ms (1,650 ms), Slow 4,000 ms
+  (3,650 ms), and Manual waits for an explicit step. Changing pace or resuming
+  restarts that presentation wait. The visible core turn clock still expires
+  normally; overdue timers precede human inputs and manual steps in the host.
