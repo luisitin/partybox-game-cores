@@ -7,6 +7,9 @@ import type {SearchReport} from './bots.js';
 import {geometry} from './moves.js';
 import type {Variant} from './types.js';
 declare const G10_WORKER_PARTS:Record<Variant,{prefix:string;suffix:string;payloads:{name:string;before:string;after:string}[]}>;
+interface OfflineFile {byteLength:number;parts:{id:string;offset:number;bytes:number;encodedLength:number}[]}
+interface OfflineBlockNeed {file:string;offset:number;length:number}
+declare const G10_INTERNATIONAL_PARTS:Record<string,OfflineFile>;
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const text=(id:string,value:string)=>{const node=el(id);if(node.textContent!==value)node.textContent=value;};
 const show=(id:string,visible:boolean)=>{el(id).hidden=!visible;};
@@ -19,6 +22,7 @@ let workerVariant:Variant|null=null,workerReady=false,workerStarts=0;
 let botCursor:RngState={seed:20261008,step:0},botDue=Infinity,forcedStep=false,virtualNow:number|null=null;
 let pace='1500',notice='',timerKey='';
 let lastBotReport:SearchReport|null=null;
+let originalBlockReads=0,originalFiles=new Set<string>();
 const now=()=>virtualNow??performance.now();
 const crown='<svg aria-hidden="true" viewBox="0 0 40 32"><path d="M4 9 12 16 20 4 28 16 36 9 31 27H9Z"/><path d="M9 29H31V32H9Z"/></svg>';
 function stopWorker(){if(worker)worker.terminate();worker=null;pending=null;workerVariant=null;workerReady=false;if(workerUrl)URL.revokeObjectURL(workerUrl);workerUrl=null;}
@@ -26,6 +30,38 @@ function workerBlob(variant:Variant){
   const definition=G10_WORKER_PARTS[variant],parts:BlobPart[]=[definition.prefix];
   for(const payload of definition.payloads){const encoded=el<HTMLScriptElement>('g10-corpus-'+payload.name).textContent;if(!encoded)throw new Error('Offline bot data missing');parts.push(payload.before,encoded,payload.after);}
   parts.push(definition.suffix);return new Blob(parts,{type:'text/javascript'});
+}
+function originalBlock(need:OfflineBlockNeed){
+  const file=G10_INTERNATIONAL_PARTS[need.file];
+  if(!file||!Number.isSafeInteger(need.offset)||need.offset<0||need.offset%4096!==0||need.offset>=file.byteLength||need.length!==Math.min(4096,file.byteLength-need.offset))throw new Error('Invalid offline block request');
+  const result=new Uint8Array(need.length),end=need.offset+need.length;let copied=0;
+  for(const part of file.parts){
+    const start=Math.max(need.offset,part.offset),stop=Math.min(end,part.offset+part.bytes);if(start>=stop)continue;
+    const node=el<HTMLScriptElement>(part.id)?.firstChild;
+    if(!(node instanceof Text)||node.length!==part.encodedLength)throw new Error('Offline source data missing');
+    const local=start-part.offset,first=Math.floor(local/3)*4,last=Math.ceil((stop-part.offset)/3)*4;
+    const decoded=atob(node.substringData(first,last-first)),skip=local%3;
+    if(decoded.length<skip+stop-start)throw new Error('Offline source block truncated');
+    for(let i=0;i<stop-start;i++)result[start-need.offset+i]=decoded.charCodeAt(skip+i);
+    copied+=stop-start;
+  }
+  if(copied!==result.length)throw new Error('Offline source extent missing');
+  originalBlockReads++;originalFiles.add(need.file);
+  return result;
+}
+function serveOfflineBlocks(activeWorker:Worker,id:number,needs:OfflineBlockNeed[]){
+  if(!Array.isArray(needs)||needs.length===0||needs.length>32768)throw new Error('Invalid offline block batch');
+  const seen=new Set<string>();for(const need of needs){const key=need.file+':'+need.offset;if(seen.has(key))throw new Error('Repeated offline block');seen.add(key);}
+  let at=0;
+  const send=()=>{
+    if(worker!==activeWorker||!pending||pending.id!==id||state!==pending.state)return;
+    try{
+      const blocks=needs.slice(at,at+16).map(need=>({file:need.file,offset:need.offset,data:originalBlock(need)}));at+=blocks.length;
+      activeWorker.postMessage({id,blocks,more:at<needs.length},blocks.map(block=>block.data.buffer));
+      if(at<needs.length)requestAnimationFrame(send);
+    }catch{stopWorker();notice='The offline bot data could not be read. Pause or start a new table.';botDue=Infinity;render();}
+  };
+  requestAnimationFrame(send);
 }
 function humanTurn(){return !!state&&controllers[turnId(state)]==='human';}
 function currentLegal(){
@@ -43,7 +79,7 @@ function setup(){stopWorker();state=null;cachedState=null;draft=[];notice='';sho
 function start(){
   const players=[0,1].map(index=>({id:'seat-'+index,name:el<HTMLInputElement>('name-'+index).value.trim()||'Player '+(index+1),avatarId:'checkers-'+index,connected:true}));
   controllers=Object.fromEntries(players.map((player,index)=>[player.id,select('seat-'+index) as Controller]));
-  pace=select('pace-setup');el<HTMLSelectElement>('pace').value=pace;botCursor={seed:20261008,step:0};lastBotReport=null;
+  pace=select('pace-setup');el<HTMLSelectElement>('pace').value=pace;botCursor={seed:20261008,step:0};lastBotReport=null;originalBlockReads=0;originalFiles=new Set();
   install(init({players,seed:20261008,now:now(),settings:{variant:select('variant'),drawPolicy:select('draw-policy'),repetition:true,turnSeconds:Number(el<HTMLInputElement>('turn-seconds').value)}}));
 }
 function ensureBoard(){
@@ -127,11 +163,12 @@ function askBot(){
     if(worker&&workerVariant!==state.variant)stopWorker();
     if(!worker){workerVariant=state.variant;workerUrl=URL.createObjectURL(workerBlob(state.variant));worker=new Worker(workerUrl);workerStarts++;}
     const activeWorker=worker;
-    pending={id,state:snapshot};worker.onmessage=(message:MessageEvent<{id?:number;ready?:boolean;report?:SearchReport;cursor?:RngState;error?:string}>)=>{
+    pending={id,state:snapshot};worker.onmessage=(message:MessageEvent<{id?:number;ready?:boolean;report?:SearchReport;cursor?:RngState;error?:string;blocksNeeded?:OfflineBlockNeed[]}>)=>{
       if(worker!==activeWorker)return;
       const data=message.data;if(data.ready){workerReady=true;render();return;}
       if(data.id===undefined&&data.error){stopWorker();notice=data.error;botDue=Infinity;render();return;}
       if(!pending||data.id!==pending.id||state!==pending.state)return;
+      if(data.blocksNeeded){try{serveOfflineBlocks(activeWorker,data.id,data.blocksNeeded);}catch{stopWorker();notice='The offline bot requested invalid data.';botDue=Infinity;render();}return;}
       pending=null;if(data.report?.move&&data.cursor){lastBotReport=structuredClone(data.report);botCursor={...data.cursor};act({type:'move',path:[...data.report.move.path]},true);}
       else{stopWorker();notice=data.error??'This bot could not find a move. Pause or end the table.';botDue=Infinity;render();}
     };
@@ -160,5 +197,5 @@ setInterval(tick,100);
   setState:(next:State,roles?:Record<string,Controller>)=>{if(roles)controllers={...roles};else controllers=Object.fromEntries(next.order.map(id=>[id,'human']));install(structuredClone(next));},
   setTime:(value:number|null)=>{virtualNow=value;},event:(value:GameEvent<Input>)=>event(value),act,
   tick,start,setup,setPace:(value:string)=>{pace=value;el<HTMLSelectElement>('pace').value=value;schedule();renderControls();},
-  workerBlob,chooseSquare,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botCursor:{...botCursor},pace,now:now(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
+  workerBlob,chooseSquare,originalBlock,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botCursor:{...botCursor},pace,now:now(),originalBlockReads,originalFiles:[...originalFiles].sort(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
 };

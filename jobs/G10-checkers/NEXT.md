@@ -5,30 +5,30 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around13:40UTC:
-- Complete licensed International six-piece source is installed as61 unchanged
-  raw24MiB chunks spanning all37 canonical classes. Node game/database builds
-  now include all41 two-to-six data files; strict build PASS, focused transport
-  PASS6/6. Actual default-game equivalence/strength/current-source gates pending.
-- Installed source split regenerated twice: every99 data/index/manifest output
-  and both generated TS files are byte-identical. Both fresh public acquisition
-  runs also reproduce all82 original source files and deterministic manifests.
-- Browser/play.html still carries the earlier American2–6/International2–5
-  delivered baseline. Its exact642/d5cb28+600 proof is retained; it does not
-  accept the new full-six Node source or unfinished full browser implementation.
-- Private chunked complete payload opened from disk: desktop27.082s/phone4×
- 89.455s, all74 extents/214 sampled windows match. Payload-only proof, no full
-  game/frame acceptance. Prior phone300s timeout remains retained.
-- Full browser block worker, same-request RNG restart/zero-missing validation,
-  actual default Strong usage, final-source matrix/league and CI remain pending.
-  No G10 PR or ready/BLOCKED claim; source is available. No LFS config/upload,
-  charges or full artifact publication occurred.
-- Installed proof: evidence/checks/international-six-install/report.json;
-  source reproduction: evidence/checks/international-public-regeneration/.
-- All source/evidence writers frozen for milestone checkpoint around13:40UTC.
-  Last successful push0fba173 at13:19:04, previous1abfdfa12:52:27:
-  interval26m37s PASS; early13:17:27 missed97s, hard13:22:27 met.
-  Target nextpush13:44:04/hard13:49:04; mainclaim time does not reset cadence.
+Current checkpoint, 2026-10-08 around14:01UTC:
+- Complete six-piece Node source installed:37classes/61raw24MiBchunks,
+  strict Node build and pure transport6/6 PASS; both installed/public source
+  regenerations byte-identical. Actual default10k/48transactions/3games tests
+  independently authored, still pending execution under current G05 CPU hold.
+- Actual FULL offline browser game built privately from current source:
+  .work/play-full.html,1,390,845,425B,
+  SHA2562f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b.
+  Functional30/30 PASS desktop+phone4x, genuine6-piece Strong original block
+  reads and realworker startup/reuse/cancel pass; loads24.461s/99.217s.
+  Zero runtime HTTP/page errors. All functional groupsclosed13:59:03.
+- Current browser worker reads bounded original4KiB blocks from1304<=1MiB
+  inert encoded tags, discards incomplete search/report/cursor, then restarts
+  the exact request until zero-missing. Public helper equivalence pending.
+- Existing tracked play.html remains earlier2–5 baseline with retained642/d5cb
+  strict proof. The full artifact exceeds100MiB normalGit file limit; no LFS
+  config/upload/charges/publication occurred. Source is available, not BLOCKED.
+- Full actual host strict600 frames/clips, final-source7k/4k properties/strength,
+  CI/PR and KEEP GOING remain pending. No G10 PR/ready assertion.
+- Current global CPU hold is for G05; all own/childgroupsclosed. Light docs/test
+  authoring only until parent release. Source/runtime frozen since13:54 build.
+- Last successful branch updatec4a0651 at13:44:43, prior13:19:04 interval25m39s
+  PASS30min. Target14:09:43/hard14:14:43; stage/hash before hard deadline.
+  Mainclaim time does not reset branch cadence.
 
 Next concrete work:
 1. Preserve current2–5 page strict28+600 desktop/phone4× and same-source clips

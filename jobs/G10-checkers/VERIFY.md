@@ -428,3 +428,38 @@ by26m37s; binding30min PASS. Early13:17:27 missed97s, hard13:22:27 met.
 Current target13:44:04/hard13:49:04; proof-pending scopes remain explicit.
 Full browser integration/pagebot use/FPS, final-source7k/4k gates, exactheadCI,
 PR/KEEP GOING remain unfinished. No full-six game ready or sourceBLOCKED claim.
+
+## Milestone13 actual full-six offline host (proof still in progress)
+
+Complete browser-only strict build PASS/exit0. The private full single page
+is1,390,845,425B SHA2562f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b;
+41 original source files appear in1304 inert <=1MiB encoded tags. The real
+International worker carries all index metadata plus the native dictionary,
+requests original4KiB blocks from bounded DOM reads, and restarts each incomplete
+pure search from the original request/random cursor. No partial result/cursor
+is accepted. Batches contain <=16 blocks; pause/setup/state changes cancel stale
+reads and worker replies. The host cache is bounded at32768 original blocks.
+
+Actual full-game `browser-check.mjs --functional-only`: PASS30/30/exit0,
+all15 controls in each desktop1920x1080 and phone390x844/CDP4x profile. Both
+American/International Strong corpus use, genuine6piece block reads, worker
+startup/reuse/cancellation, forced captures/promotions, draw/timer/results,
+hostile IDs and viewport checks pass. Actual disk loads24.460753s/99.217193s;
+zero HTTP requests/page errors. Processes149416/149443 closed13:58:52–13:59:03,
+only defunct children remained. Frame gates are not measured in this run.
+Full payload uses an explicit300s loading allowance informed by prior measured
+89.455s phone parsing;600 raw frame/59FPS/p99<=17ms gates remain unchanged.
+Exact current build inputs/raw output and workers are in
+international-full-browser-build/ and browser-full-six-functional/.
+
+Public default10k/all37/148 native/reference verification,48 exact block/full
+transactions and three complete-game controls are independently authored but
+UNRUN at the global G05 quiet hold. Full host strict600 source-matched frames,
+clips, final-source matrix/leagues, CI/PR and KEEP GOING remain pending.
+No LFS configuration/upload/charges or complete full-page publication occurred.
+The public tracked page remains earlier2–5 baseline until delivery engineering
+and real full-source acceptance are complete; current source rebuilds full page.
+
+Successful prior source milestonec4a065113:44:43 follows0fba17313:19:04 by
+25m39s: binding30min PASS, early13:44:04 missed39s/hard13:49:04 met.
+Mainclaim333af6a refreshed13:42:05. Next target14:09:43/hard14:14:43.

@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-08T14:09:14.212004+00:00",
+  "status": "proof-pending",
+  "scope": "Complete six-piece browser game source built; actual desktop/phone functional30/30 PASS; full actual FPS, current default-node independent tests and final-source simulations/strength pending.",
+  "previousSuccessfulPush": {
+    "head": "c4a06516c6ab628e6218ee72d80086126b16ef0f",
+    "utc": "2026-10-08T13:44:43Z",
+    "intervalSeconds": 1539,
+    "earlyTargetMissSeconds": 39,
+    "bindingCadencePass": true
+  },
+  "targetPush": "2026-10-08T14:09:43Z",
+  "hardPush": "2026-10-08T14:14:43Z",
+  "fullArtifact": {
+    "path": ".work/play-full.html",
+    "bytes": 1390845425,
+    "sha256": "2f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b",
+    "privateOnly": true
+  },
+  "executed": {
+    "fullBrowserBuild": true,
+    "functionalChecks": 30,
+    "desktopLoadSeconds": 24.460753249999996,
+    "phone4xLoadSeconds": 99.217192809,
+    "originalSixPieceStrongReads": true
+  },
+  "pending": [
+    "independently authored actual default10k/all37/148 verification",
+    "48 exact full/block Strong transactions and3 complete games",
+    "source-matched strict600 frames/clips",
+    "current-source7000 matrix/4000 strength/mutations/data/manual30 checks",
+    "30minute CI/PR/KEEP GOING",
+    "complete-artifact publication channel"
+  ],
+  "lastGlobalHold": "All own and child groups closed; global G05 hold released by root, received around14:08. No false source BLOCKED or ready assertion."
+}

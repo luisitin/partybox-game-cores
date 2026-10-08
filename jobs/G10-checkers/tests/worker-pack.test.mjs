@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,openSync,readSync,closeSync} from 'node:fs';
 import vm from 'node:vm';
 import {rawZipMember,pack,workerBootstrap,sha256} from '../scripts/corpus-pack.mjs';
 import * as core from '../dist/core.mjs';
@@ -9,6 +9,17 @@ import {positionState} from './helpers.mjs';
 import {evidence} from './evidence.mjs';
 const data=name=>readFileSync(new URL('../data/'+name,import.meta.url));
 const plain=value=>structuredClone(value);
+const six=JSON.parse(data('international/six/manifest.json'));
+function originalBlock(need){
+  let path,position=need.offset;
+  if(need.file.startsWith('db6-')){
+    const file=six.files.find(file=>file.name===need.file);assert(file,'Unknown original file');
+    const index=Math.floor(need.offset/six.chunkBytes);path='international/six/'+file.chunks[index].file;position-=index*six.chunkBytes;
+  }else path='international/'+need.file+'.bin';
+  const descriptor=openSync(new URL('../data/'+path,import.meta.url),'r'),bytes=new Uint8Array(need.length);
+  try{assert.equal(readSync(descriptor,bytes,0,bytes.length,position),bytes.length);}finally{closeSync(descriptor);}
+  return {file:need.file,offset:need.offset,data:bytes};
+}
 
 test('native decompression reproduces exact installed corpora and preserves queued first requests',async()=>{
   const original=rawZipMember(data('chinook/DB6.zip'),'DB6'),payloads=[{name:'chinook',raw:data('chinook/DB6.bin'),compressed:original.compressed}];
@@ -23,7 +34,11 @@ test('native decompression reproduces exact installed corpora and preserves queu
     const length=variant==='american'?32:50,board=Array(length).fill(0);board[0]=-2;board[2]=-2;board[length-7]=2;board[length-1]=2;
     const position=positionState(core,board,variant),before=structuredClone(position),messages=[];
     let finish,fail;const result=new Promise((resolve,reject)=>{finish=resolve;fail=reject;});
-    const scope={onmessage:null,postMessage(value){messages.push(plain(value));if(value.error)fail(new Error(value.error));if(value.id===123)finish(plain(value));}};
+    const scope={onmessage:null,postMessage(value){
+      messages.push(plain(value));if(value.error)fail(new Error(value.error));
+      if(value.blocksNeeded){queueMicrotask(()=>{for(let i=0;i<value.blocksNeeded.length;i+=16){const blocks=value.blocksNeeded.slice(i,i+16).map(originalBlock);scope.onmessage({data:{id:value.id,blocks,more:i+16<value.blocksNeeded.length}});}});}
+      if(value.id===123&&value.report)finish(plain(value));
+    }};
     const source=readFileSync(new URL('../dist/worker-'+variant+'.mjs',import.meta.url),'utf8');
     vm.runInNewContext(source,{self:scope,atob,Blob,Response,DecompressionStream,Uint8Array,DataView},{timeout:10000});
     scope.onmessage({data:{id:123,position,settings:position.settings,skill:'sharp',cursor:{seed:12345,step:0}}});
