@@ -28,8 +28,16 @@ function clearTimers(){if(phaseTimer!==null)clearTimeout(phaseTimer);if(botTimer
 const phaseKey=(s:State)=>`${s.phase.id}:${s.phase.startedAt}`;
 function humans(){return state?.seats.filter(id=>kinds[id]==='human')??[];}
 function nextViewer(){viewer=humans().find(id=>!visited.includes(id))??null;open=false;privateStamp='';}
+function consumeDuePhase(now:number):boolean{
+ if(!state||state.phase.paused||state.phase.deadline===null||now<state.phase.deadline)return false;
+ const {id,startedAt}=state.phase;
+ dispatch({type:'timer',phaseId:id,startedAt,now});return true;
+}
 function dispatch(event:Parameters<typeof game.reduce>[1]){
- if(!state)return;rememberDraft();const old=state,next=game.reduce(state,event);if(next===old)return;
+ if(!state)return;
+ // A queued input belongs to the expired phase; advance its timer and discard it.
+ if(event.type==='input'&&consumeDuePhase(event.now))return;
+ rememberDraft();const old=state,next=game.reduce(state,event);if(next===old)return;
  const changed=phaseKey(old)!==phaseKey(next);state=next;
  if(changed){drafts.clear();visited=[];nextViewer();}
  if(state.phase.paused){open=false;privateStamp='';}
@@ -42,6 +50,7 @@ function schedule(){
  const actor=state.phase.id==='reveal'?null:state.seats.find(playerId=>kinds[playerId]!=='human'&&game.controllerView(state!,playerId).inputType);
  if(actor)botTimer=setTimeout(()=>{
   if(!state||phaseKey(state)!==token||state.phase.paused)return;
+  if(consumeDuePhase(Date.now()))return;
   const input=game.bot.sampleInput(state,actor,rngs[actor]!,kinds[actor] as BotSkill);
   if(input)dispatch({type:'input',playerId:actor,input,now:Date.now()});
  },350);

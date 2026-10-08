@@ -42,3 +42,9 @@ Cadence exception, observed not authorized: initial claim11:00:12 to first
 successful push11:31:26 took31m14s (74s beyond30min). Current NEXT gives
 actual previous push and both early/hard next deadlines. No retroactive claim
 time adjustment; future milestones keep a five-minute buffer.
+
+Deadline fairness belongs to the offline host: keep the pure timer-only
+reducer unchanged, deliver its matching due timer before an expired input,
+and discard that input instead of forwarding it into the new phase. Check
+bot expiry before sampling; dispatch checks again if computation crosses
+the deadline. Controlled wallclock jumps prove ordering, not race frequency.

@@ -15,7 +15,7 @@ const htmlSha256=createHash('sha256').update(html).digest('hex');
 const fileUrl=pathToFileURL(resolve('play.html')).href;
 const repeat=process.argv.includes('--repeat=2')?2:process.argv.includes('--repeat=3')?3:1;
 const framesOnly=process.argv.includes('--frames-only');
-const capturePath=repeat===1?'media/milestone-11-notice.webm':`media/milestone-11-notice-repeat-${repeat}.webm`;
+const capturePath=repeat===1?'media/milestone-13-browser.webm':`media/milestone-13-browser-repeat-${repeat}.webm`;
 const reportPath=framesOnly?`browser-frames-only-${repeat}.json`:repeat===1?'browser-report.json':`browser-repeat-${repeat}.json`;
 const rawPrefix=framesOnly?`browser-frames-only-${repeat}`:`browser-raw-${repeat}`;
 mkdirSync('media',{recursive:true});
@@ -137,7 +137,7 @@ try {
   writeFileSync(`${rawPrefix}-${name}.json`,JSON.stringify({htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),evidenceScope:framesOnly?'performance confirmation only; functional checks and captures not rerun':'full browser suite, profile saved before assertions',gates:{minimumMeanFps:59,maximumP95Ms:18},errors,externalRequests:requests,performance:report},null,2)+'\n');
   console.log({name,frames:report.frames,fps:report.fps,p95Ms:report.p95Ms,p99Ms:report.p99Ms,rawFile:`${rawPrefix}-${name}.json`});assert(report.fps>=59,`${name} mean below 59 fps`);assert(report.p95Ms<=18,`${name} p95 misses 60-Hz budget`);
   assert(await match.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(name==='tv')assert(await match.page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight));
-  if(!framesOnly)await match.page.screenshot({path:`media/notice-${repeat===1?'':`repeat-${repeat}-`}${name}.png`,fullPage:true});
+  if(!framesOnly)await match.page.screenshot({path:`media/deadline-${repeat===1?'':`repeat-${repeat}-`}${name}.png`,fullPage:true});
   if(name==='tv'&&!framesOnly){
    const directory=mkdtempSync(join(tmpdir(),'G04-capture-'));
    try{for(let i=0;i<36;i++){if(i===12)await match.page.click('#hide-private');if(i===18){await match.page.click('#reveal-private');assert.equal(await match.page.inputValue('#fake'),'My harbour bluff');}await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.jpg`),quality:80});await match.page.waitForTimeout(66);}encodeCapture(directory,capturePath);}finally{rmSync(directory,{recursive:true});}

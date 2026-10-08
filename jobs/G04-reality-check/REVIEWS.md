@@ -102,3 +102,19 @@ PR is draft. Worst actionable verification gap: retain per-profile raw300
 intervals BEFORE assertions and add a frame-only confirmation mode that
 keeps prior functional/capture evidence separate. No gameplay gain or new
 completed KEEP round is claimed while acceptance remains pending.
+
+Round11 PRE-EDIT review after exact499ae3e CI37773774295 observedgreen
+2026-10-08 12:08:17UTC. Re-read original root README/RULES/JOBS, selected
+G04 RULES and pure timer contract. Five ranked weaknesses: (1) expired
+human/bot input may beat a delayed deadline callback; (2) hosted raw reports
+are not retained as downloadable artifacts; (3) unexplained local frame
+variance; (4) physical-phone approximation; (5) same-tab recovery limits.
+Worst measured issue: actualfile UI dispatch at deadline+110ms accepts
+correct answer/vote for1000 versus timer-first0; expired fake enters vote
+menu. On-time−1ms and pause controls work. The baseline uses controlled
+wall-clock jumps with held timers, so it proves event-order handling, not
+frequency in ordinary play. Fix only host overdue-input handling and check
+expired bot sampling; keep pure reducer/scoring/catalog/botpolicy unchanged.
+Measure actual-button before/after, on-time/pause/bot regressions, strict
+build/typecheck, affected fullbrowser gates and fresh source-bound capture.
+No completed round/player gain is logged until those checks pass.

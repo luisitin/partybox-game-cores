@@ -308,3 +308,18 @@ capture157496 bytes,1.5s encoded at12fps, all11 source hashes identical, zero
 HTTP/page errors. No frame filtering and no performance-gate weakening; no new
 FPS pass claimed. Both build-page and eight runtime files remain unchanged.
 `node checksums.ts && node checksums.ts --check`: new data/media integrity PASS.
+
+KEEP11 pre-edit re-read/rank recorded in REVIEWS. Two baseline human/bot
+JSONs+exactrunners retain25e0b2 actualfile event-order defect: visible0s,
+lateanswer/vote1000 versus timer-first0, latefake menu2 instead1. Heldtimers
+and wallclockjump limitations explicit. `node build.ts`2x+`cmp` and
+`node build.ts --check` PASS:494865-byte e570 page. Seven non-UI runtime/data
+hashes unchanged; ui.ts consumes due timer before dispatch/bot sample.
+`node late-input.ts`: EXIT0,6/6 actualfile regressions, all sourceguards
+match, zero network/errors; late credit0, truth-only menu, on-time/pause
+controls1000. `npm run check` after test integration PASS. Guarded independent
+phone deadlineclip209705bytes PASS, expiredcorrectclick→0/0/coveredprivateDOM.
+Mainbrowser output names subsequently changed to milestone13 only; no runtime
+change. Current full legacybrowser/FPS and exact-head CI remain PENDING.
+Previous499 exact hosted logs actually read;51tests/25mutants/24kleagues,
+66scenarios and6×300 near60FPS; no downloadedrawartifact configured.

@@ -1,36 +1,33 @@
-# Resume G04 corrective checkpoint
+# Resume G04 KEEP round11
 
-Owner codex-reality; initial claim11:00:12UTC; latest main refresh11:32:01UTC.
-Last successful branch push11:31:26UTC at cd20cb74e8b10844d64820e19197592346ef3fee.
-First push took31m14s from initial claim: missed30-minute rule by1m14s.
-This verification checkpoint must publish by12:01:26UTC (previous push+30min).
-Checkpoint frozen 2026-10-08T11:59:42Z; on resume use this branch latest commit timestamp
-as a conservative start for the next25-minute target/30-minute hard deadline.
-PR4 is draft; CI37770616469 FAILED setup: OS ffmpeg install exceeded300s; game tests not run.
-Runner now resolves the pinned Playwright encoder and uses its VP8 codec;
-workflow uses npx playwright install ffmpeg. Strict types PASS after resolver typing correction; actual JPEG-pipe/VP8
-capture PASS157496 bytes with11 identical start/end source hashes, no requests/errors. Branch job/G04-reality-check-core
-was created from main and merged original152e5a history; preserve PR4.
-Original exact152e5a CI37730054904 is green; stopping rounds8–10 are historical.
-Current corrected notice page25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f
-494642bytes contains full pinned Zod4.6.5 MIT notice;2x builds identical.
-Eight core/bot/UI/data hashes and all inline scripts are unchanged.
-Strict types/build checks pass. Managed browser file navigation failed twice;
-pinned Playwright141 actual disk navigation and22 functional cases pass.
-Current full proof is PENDING: focused desktop300-frame confirmation failed
-57.881535790FPS, fullraw retained; phone was not measured. First phone sample failed
-50.706750691FPS,p99166.6ms; desktop passed. No cause/runtimegain claimed.
-The legacy passing browser-report.json remains explicitly historical.
+Owner codex-reality, branch job/G04-reality-check-core, original PR4 preserved.
+Last confirmed successful push499ae3e at11:59:44UTC; interval28m18s PASS.
+Initial claim11:00:12 to firstpush11:31:26 missed30min by74s; retained audit.
+Current checkpoint frozen 2026-10-08T12:26:59Z; publish by12:29:44UTC hard deadline.
+After publication use latest branch commit timestamp as conservative start
+for the next25-minute target/30-minute hard deadline; refresh own mainclaim.
 
-First failed log/exact runner are preserved. Runner now writes all300 raw
-intervals per profile before asserting; --frames-only keeps this confirmation
-separate from historical full functional and capture evidence.
-Next: verify strict types and run unchanged frame confirmation with fresh
-contexts. Keep gates>=59FPS/currentp95 and log all consecutive intervals.
-No repeat of unchanged core leagues/matrices; hosted npm test runs full suite.
-Current milestone12 clip is independently guarded, under10MB. New source proof
-and exact-head CI must pass before calling this corrective follow-up complete.
-Refresh only G04 claim on every push and keep checkpoint intervals<=30min.
-No BLOCKED: source/browser is available, performance verification remains.
-Other leads own G02/G09/G10 and their separate claims clones. Coordinate
-short actual strictFPS windows; close processes and immediately release CPU.
+Exact499ae3e CI37773774295 is GREEN, actually read:51 tests/21k botgames,
+25 mutations/24k leagues/66 browser scenarios/6 profiles near60fps.
+Its host rawfiles have no download artifact; logged aggregates are retained.
+This is historical acceptance for the pre-fix25e0b2 page, not currentUI.
+
+Current pagee5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b
+494865bytes,2x builds identical. FullMITnotice remains; seven pure/data files
+unchanged. ui.ts now consumes overdue timer before input/bot sampling.
+Actual baseline accepted late correctanswer/vote for1000 atvisible0s and
+inserted latehuman/bot fakes. Six actualfile aftercases PASS: lateanswer/vote
+scores0; latehuman/bot menus truth-only; on-time and pause controls preserved.
+Strict types PASS; short phone deadlineclip209705bytes has sourceguards,
+zero network/errors and0/0 reveal. All before/after evidence is retained.
+Fixture uses heldtimers/wallclock jump; ordinary race frequency unmeasured.
+
+Full legacybrowser/FPS proof for e570 UI and new exact-head CI PENDING.
+Start main browser with fresh G04_FRAME_BARRIER path; after22 functionals,
+coordinate a short frames window, preserve all raw data beforegates.
+Maincapture now uses milestone13 names and preserves oldnotice media.
+No repeat of unchanged local purecore suites; hosted npm test runs everything,
+including new late-input.ts. PR4 stays draft until current checks pass.
+Round11 is pending; visible gain resets no-gain streak0, so after green
+continue formal reviews until three consecutive rounds yield no player gain.
+Other leads own G02/G09/G10; no source/toolBLOCKED applies here.

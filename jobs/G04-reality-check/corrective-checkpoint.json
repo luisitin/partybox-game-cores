@@ -1,6 +1,6 @@
 {
   "job": "G04",
-  "status": "corrective verification pending",
+  "status": "KEEP11 deadline correction; full browser and exact-head CI pending",
   "initialClaimUtc": "2026-10-08T11:00:12Z",
   "lastSuccessfulPushUtc": "2026-10-08T11:31:26Z",
   "lastSuccessfulPushCommit": "cd20cb74e8b10844d64820e19197592346ef3fee",
@@ -11,7 +11,7 @@
     "exceededSeconds": 74
   },
   "nextEarlyPushUtc": "2026-10-08T11:56:26Z",
-  "nextHardPushUtc": "2026-10-08T12:01:26Z",
+  "nextHardPushUtc": "2026-10-08T12:29:44Z",
   "pageSha256": "25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f",
   "originalRuntimeAndInlineScripts": "unchanged",
   "phoneFailure": {
@@ -33,7 +33,7 @@
     "evidence": "browser-frame-only-first-failure.json",
     "sourceUnchanged": true
   },
-  "checkpointFrozenUtc": "2026-10-08T11:59:42Z",
+  "checkpointFrozenUtc": "2026-10-08T12:26:59Z",
   "previousPushHardDeadlineUtc": "2026-10-08T12:01:26Z",
   "mainClaimRefreshUtc": "2026-10-08T11:56:32Z",
   "encoderVerification": {
@@ -43,5 +43,11 @@
     "sourceUnchanged": true,
     "evidence": "capture-pinned-encoder-report.json"
   },
-  "exactHeadCi": "Pending new push; previous cd20cb7 failed encoder setup before game tests"
+  "exactHeadCi": "Pending new push; previous cd20cb7 failed encoder setup before game tests",
+  "previousConfirmedPushUtc": "2026-10-08T11:59:44Z",
+  "previousConfirmedPushCommit": "499ae3e110533f7f0399777feec0b1e27ffd8993",
+  "currentPageSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+  "lateInputAfterCases": 6,
+  "lateInputAfterPassed": true,
+  "noGainStreak": 0
 }
