@@ -1,0 +1,696 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p3": {
+      "id": "p3",
+      "name": "Player 4",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "left": [],
+  "settings": {
+    "mode": "partnership",
+    "blind": true,
+    "blindGap": 0,
+    "exchange": true,
+    "nilValue": 100,
+    "failedNilCounts": false,
+    "mercy": true,
+    "cutDeck": "low-club",
+    "cutLead": "dealer"
+  },
+  "dealer": 3,
+  "turn": 1,
+  "handNumber": 9,
+  "trickNumber": 13,
+  "hands": {
+    "p0": [],
+    "p1": [],
+    "p2": [],
+    "p3": []
+  },
+  "stock": null,
+  "bids": {
+    "p0": {
+      "kind": "number",
+      "value": 5
+    },
+    "p1": {
+      "kind": "number",
+      "value": 1
+    },
+    "p2": {
+      "kind": "number",
+      "value": 1
+    },
+    "p3": {
+      "kind": "number",
+      "value": 2
+    }
+  },
+  "looked": [
+    "p0",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "won": {
+    "p0": 6,
+    "p1": 2,
+    "p2": 3,
+    "p3": 2
+  },
+  "scores": [
+    515,
+    179
+  ],
+  "bags": [
+    5,
+    9
+  ],
+  "trick": [
+    {
+      "playerId": "p2",
+      "card": 28
+    },
+    {
+      "playerId": "p3",
+      "card": 17
+    },
+    {
+      "playerId": "p0",
+      "card": 39
+    },
+    {
+      "playerId": "p1",
+      "card": 19
+    }
+  ],
+  "completed": [
+    {
+      "number": 1,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 38
+        },
+        {
+          "playerId": "p1",
+          "card": 36
+        },
+        {
+          "playerId": "p2",
+          "card": 31
+        },
+        {
+          "playerId": "p3",
+          "card": 37
+        }
+      ],
+      "winner": "p0"
+    },
+    {
+      "number": 2,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 24
+        },
+        {
+          "playerId": "p1",
+          "card": 25
+        },
+        {
+          "playerId": "p2",
+          "card": 18
+        },
+        {
+          "playerId": "p3",
+          "card": 23
+        }
+      ],
+      "winner": "p1"
+    },
+    {
+      "number": 3,
+      "cards": [
+        {
+          "playerId": "p1",
+          "card": 10
+        },
+        {
+          "playerId": "p2",
+          "card": 11
+        },
+        {
+          "playerId": "p3",
+          "card": 12
+        },
+        {
+          "playerId": "p0",
+          "card": 7
+        }
+      ],
+      "winner": "p3"
+    },
+    {
+      "number": 4,
+      "cards": [
+        {
+          "playerId": "p3",
+          "card": 8
+        },
+        {
+          "playerId": "p0",
+          "card": 5
+        },
+        {
+          "playerId": "p1",
+          "card": 4
+        },
+        {
+          "playerId": "p2",
+          "card": 9
+        }
+      ],
+      "winner": "p2"
+    },
+    {
+      "number": 5,
+      "cards": [
+        {
+          "playerId": "p2",
+          "card": 3
+        },
+        {
+          "playerId": "p3",
+          "card": 6
+        },
+        {
+          "playerId": "p0",
+          "card": 51
+        },
+        {
+          "playerId": "p1",
+          "card": 2
+        }
+      ],
+      "winner": "p0"
+    },
+    {
+      "number": 6,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 50
+        },
+        {
+          "playerId": "p1",
+          "card": 48
+        },
+        {
+          "playerId": "p2",
+          "card": 45
+        },
+        {
+          "playerId": "p3",
+          "card": 47
+        }
+      ],
+      "winner": "p0"
+    },
+    {
+      "number": 7,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 49
+        },
+        {
+          "playerId": "p1",
+          "card": 44
+        },
+        {
+          "playerId": "p2",
+          "card": 41
+        },
+        {
+          "playerId": "p3",
+          "card": 46
+        }
+      ],
+      "winner": "p0"
+    },
+    {
+      "number": 8,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 42
+        },
+        {
+          "playerId": "p1",
+          "card": 22
+        },
+        {
+          "playerId": "p2",
+          "card": 40
+        },
+        {
+          "playerId": "p3",
+          "card": 43
+        }
+      ],
+      "winner": "p3"
+    },
+    {
+      "number": 9,
+      "cards": [
+        {
+          "playerId": "p3",
+          "card": 27
+        },
+        {
+          "playerId": "p0",
+          "card": 35
+        },
+        {
+          "playerId": "p1",
+          "card": 34
+        },
+        {
+          "playerId": "p2",
+          "card": 29
+        }
+      ],
+      "winner": "p0"
+    },
+    {
+      "number": 10,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 13
+        },
+        {
+          "playerId": "p1",
+          "card": 14
+        },
+        {
+          "playerId": "p2",
+          "card": 16
+        },
+        {
+          "playerId": "p3",
+          "card": 15
+        }
+      ],
+      "winner": "p2"
+    },
+    {
+      "number": 11,
+      "cards": [
+        {
+          "playerId": "p2",
+          "card": 26
+        },
+        {
+          "playerId": "p3",
+          "card": 32
+        },
+        {
+          "playerId": "p0",
+          "card": 30
+        },
+        {
+          "playerId": "p1",
+          "card": 33
+        }
+      ],
+      "winner": "p1"
+    },
+    {
+      "number": 12,
+      "cards": [
+        {
+          "playerId": "p1",
+          "card": 0
+        },
+        {
+          "playerId": "p2",
+          "card": 1
+        },
+        {
+          "playerId": "p3",
+          "card": 20
+        },
+        {
+          "playerId": "p0",
+          "card": 21
+        }
+      ],
+      "winner": "p2"
+    },
+    {
+      "number": 13,
+      "cards": [
+        {
+          "playerId": "p2",
+          "card": 28
+        },
+        {
+          "playerId": "p3",
+          "card": 17
+        },
+        {
+          "playerId": "p0",
+          "card": 39
+        },
+        {
+          "playerId": "p1",
+          "card": 19
+        }
+      ],
+      "winner": "p0"
+    }
+  ],
+  "broken": true,
+  "forcedLead": null,
+  "exchangePlan": [],
+  "exchangeStep": 0,
+  "report": {
+    "hand": 9,
+    "bids": {
+      "p0": {
+        "kind": "number",
+        "value": 5
+      },
+      "p1": {
+        "kind": "number",
+        "value": 1
+      },
+      "p2": {
+        "kind": "number",
+        "value": 1
+      },
+      "p3": {
+        "kind": "number",
+        "value": 2
+      }
+    },
+    "won": {
+      "p0": 6,
+      "p1": 2,
+      "p2": 3,
+      "p3": 2
+    },
+    "sides": [
+      {
+        "bid": 6,
+        "won": 9,
+        "contractTricks": 9,
+        "contract": 60,
+        "nil": 0,
+        "newBags": 3,
+        "penalty": 0,
+        "score": 515,
+        "bags": 5
+      },
+      {
+        "bid": 3,
+        "won": 4,
+        "contractTricks": 4,
+        "contract": 30,
+        "nil": 0,
+        "newBags": 1,
+        "penalty": 0,
+        "score": 179,
+        "bags": 9
+      }
+    ],
+    "before": [
+      452,
+      148
+    ]
+  },
+  "history": [
+    {
+      "hand": 6,
+      "bids": {
+        "p1": {
+          "kind": "number",
+          "value": 1
+        },
+        "p2": {
+          "kind": "number",
+          "value": 2
+        },
+        "p3": {
+          "kind": "number",
+          "value": 2
+        },
+        "p0": {
+          "kind": "number",
+          "value": 6
+        }
+      },
+      "won": {
+        "p0": 10,
+        "p1": 1,
+        "p2": 0,
+        "p3": 2
+      },
+      "sides": [
+        {
+          "bid": 8,
+          "won": 10,
+          "contractTricks": 10,
+          "contract": 80,
+          "nil": 0,
+          "newBags": 2,
+          "penalty": 0,
+          "score": 452,
+          "bags": 2
+        },
+        {
+          "bid": 3,
+          "won": 3,
+          "contractTricks": 3,
+          "contract": 30,
+          "nil": 0,
+          "newBags": 0,
+          "penalty": 0,
+          "score": 248,
+          "bags": 8
+        }
+      ],
+      "before": [
+        370,
+        218
+      ]
+    },
+    {
+      "hand": 7,
+      "bids": {
+        "p2": {
+          "kind": "number",
+          "value": 2
+        },
+        "p3": {
+          "kind": "number",
+          "value": 2
+        },
+        "p0": {
+          "kind": "number",
+          "value": 2
+        },
+        "p1": {
+          "kind": "number",
+          "value": 3
+        }
+      },
+      "won": {
+        "p0": 8,
+        "p1": 1,
+        "p2": 2,
+        "p3": 2
+      },
+      "sides": [
+        {
+          "bid": 4,
+          "won": 10,
+          "contractTricks": 10,
+          "contract": 40,
+          "nil": 0,
+          "newBags": 6,
+          "penalty": 0,
+          "score": 498,
+          "bags": 8
+        },
+        {
+          "bid": 5,
+          "won": 3,
+          "contractTricks": 3,
+          "contract": -50,
+          "nil": 0,
+          "newBags": 0,
+          "penalty": 0,
+          "score": 198,
+          "bags": 8
+        }
+      ],
+      "before": [
+        452,
+        248
+      ]
+    },
+    {
+      "hand": 8,
+      "bids": {
+        "p3": {
+          "kind": "number",
+          "value": 2
+        },
+        "p0": {
+          "kind": "number",
+          "value": 2
+        },
+        "p1": {
+          "kind": "number",
+          "value": 3
+        },
+        "p2": {
+          "kind": "number",
+          "value": 3
+        }
+      },
+      "won": {
+        "p0": 3,
+        "p1": 3,
+        "p2": 6,
+        "p3": 1
+      },
+      "sides": [
+        {
+          "bid": 5,
+          "won": 9,
+          "contractTricks": 9,
+          "contract": 50,
+          "nil": 0,
+          "newBags": 4,
+          "penalty": 100,
+          "score": 452,
+          "bags": 2
+        },
+        {
+          "bid": 5,
+          "won": 4,
+          "contractTricks": 4,
+          "contract": -50,
+          "nil": 0,
+          "newBags": 0,
+          "penalty": 0,
+          "score": 148,
+          "bags": 8
+        }
+      ],
+      "before": [
+        498,
+        198
+      ]
+    },
+    {
+      "hand": 9,
+      "bids": {
+        "p0": {
+          "kind": "number",
+          "value": 5
+        },
+        "p1": {
+          "kind": "number",
+          "value": 1
+        },
+        "p2": {
+          "kind": "number",
+          "value": 1
+        },
+        "p3": {
+          "kind": "number",
+          "value": 2
+        }
+      },
+      "won": {
+        "p0": 6,
+        "p1": 2,
+        "p2": 3,
+        "p3": 2
+      },
+      "sides": [
+        {
+          "bid": 6,
+          "won": 9,
+          "contractTricks": 9,
+          "contract": 60,
+          "nil": 0,
+          "newBags": 3,
+          "penalty": 0,
+          "score": 515,
+          "bags": 5
+        },
+        {
+          "bid": 3,
+          "won": 4,
+          "contractTricks": 4,
+          "contract": 30,
+          "nil": 0,
+          "newBags": 1,
+          "penalty": 0,
+          "score": 179,
+          "bags": 9
+        }
+      ],
+      "before": [
+        452,
+        148
+      ]
+    }
+  ],
+  "doneReason": "target",
+  "rng": {
+    "seed": 17,
+    "step": 460
+  },
+  "phase": {
+    "id": "done",
+    "startedAt": 651,
+    "deadline": null
+  }
+}

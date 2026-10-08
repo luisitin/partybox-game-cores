@@ -1,0 +1,49 @@
+{
+  "fileOpen": "managed file navigation blocked; exact bytes exercised using setContent",
+  "functional": [
+    "partnership valid40-character names fit390px, concealed and open",
+    "cutthroat valid40-character names fit390px, concealed and open",
+    "follow-suit hand focuses first enabled card; native keyboard Enter plays it",
+    "four humans / concealed handover / escaped names / bid draft hide-pause-resume / legal keyboard play / trick timer and winner lead / partial end / restart",
+    "blind cards absent / late blind unavailable / sequential exchange / two selected cards survive hide and pause / received cards returned / handover removes DOM",
+    "four blind bids / both pairs exchange once / all four sequential transfers complete",
+    "complete UI partnership/low-club / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides",
+    "complete UI cutthroat/low-club / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides",
+    "complete UI cutthroat/stock / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides",
+    "TV reduced motion / no overflow",
+    "phone-4x reduced motion / no overflow"
+  ],
+  "scenarios": 11,
+  "errors": 0,
+  "externalRequests": 0,
+  "performance": [
+    {
+      "label": "TV",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "frames": 900,
+      "averageMs": 16.666,
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "maxMs": 16.80000000000109
+    },
+    {
+      "label": "phone-4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "frames": 900,
+      "averageMs": 16.666,
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "maxMs": 16.80000000000109
+    }
+  ],
+  "phoneLimitation": "390x844 and four-times CPU throttle; no physical phone available",
+  "capture": "media/milestone-4-offline.webm"
+}

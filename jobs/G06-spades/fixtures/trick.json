@@ -1,0 +1,218 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p3": {
+      "id": "p3",
+      "name": "Player 4",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "left": [],
+  "settings": {
+    "mode": "partnership",
+    "blind": true,
+    "blindGap": 0,
+    "exchange": true,
+    "nilValue": 100,
+    "failedNilCounts": false,
+    "mercy": true,
+    "cutDeck": "low-club",
+    "cutLead": "dealer"
+  },
+  "dealer": 3,
+  "turn": 3,
+  "handNumber": 1,
+  "trickNumber": 1,
+  "hands": {
+    "p0": [
+      2,
+      3,
+      4,
+      9,
+      16,
+      18,
+      19,
+      28,
+      29,
+      36,
+      37,
+      40
+    ],
+    "p1": [
+      7,
+      13,
+      14,
+      17,
+      23,
+      24,
+      26,
+      27,
+      31,
+      32,
+      39,
+      50
+    ],
+    "p2": [
+      10,
+      20,
+      21,
+      25,
+      34,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      51
+    ],
+    "p3": [
+      1,
+      5,
+      6,
+      15,
+      22,
+      30,
+      33,
+      35,
+      38,
+      47,
+      48,
+      49
+    ]
+  },
+  "stock": null,
+  "bids": {
+    "p0": {
+      "kind": "blind",
+      "value": 0
+    },
+    "p1": {
+      "kind": "number",
+      "value": 2
+    },
+    "p2": {
+      "kind": "number",
+      "value": 4
+    },
+    "p3": {
+      "kind": "number",
+      "value": 2
+    }
+  },
+  "looked": [
+    "p0",
+    "p1",
+    "p2",
+    "p3"
+  ],
+  "won": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 1,
+    "p3": 0
+  },
+  "scores": [
+    0,
+    0
+  ],
+  "bags": [
+    0,
+    0
+  ],
+  "trick": [
+    {
+      "playerId": "p0",
+      "card": 0
+    },
+    {
+      "playerId": "p1",
+      "card": 11
+    },
+    {
+      "playerId": "p2",
+      "card": 12
+    },
+    {
+      "playerId": "p3",
+      "card": 8
+    }
+  ],
+  "completed": [
+    {
+      "number": 1,
+      "cards": [
+        {
+          "playerId": "p0",
+          "card": 0
+        },
+        {
+          "playerId": "p1",
+          "card": 11
+        },
+        {
+          "playerId": "p2",
+          "card": 12
+        },
+        {
+          "playerId": "p3",
+          "card": 8
+        }
+      ],
+      "winner": "p2"
+    }
+  ],
+  "broken": false,
+  "forcedLead": null,
+  "exchangePlan": [
+    {
+      "from": "p0",
+      "to": "p2"
+    },
+    {
+      "from": "p2",
+      "to": "p0"
+    }
+  ],
+  "exchangeStep": 2,
+  "report": null,
+  "history": [],
+  "doneReason": null,
+  "rng": {
+    "seed": 17,
+    "step": 52
+  },
+  "phase": {
+    "id": "trick",
+    "startedAt": 13,
+    "deadline": 8013
+  }
+}

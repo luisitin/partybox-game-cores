@@ -1,0 +1,31 @@
+{
+  "seeds": 1003,
+  "randomSeed": 1610637318,
+  "seedsOneTwoThree": true,
+  "events": 181386,
+  "phases": [
+    "bid",
+    "blind",
+    "done",
+    "exchange",
+    "hand",
+    "play",
+    "trick"
+  ],
+  "counts": {
+    "input": 44050,
+    "drop": 12243,
+    "pause": 9468,
+    "resume": 9370,
+    "timer": 44340,
+    "reconnect": 9623,
+    "kicked": 3242,
+    "left": 5424,
+    "skip": 42623,
+    "end": 1003
+  },
+  "maxStateBytes": 5650,
+  "protoCases": 145,
+  "privacyComparisons": 45036,
+  "botPrivacyComparisons": 135108
+}

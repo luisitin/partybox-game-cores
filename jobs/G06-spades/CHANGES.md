@@ -1,0 +1,146 @@
+# Code changes and reasons
+
+Initial core milestone (2026-10-08):
+- `cards.ts`: canonical 52-card identifiers, original-lead follow-suit,
+  unbroken-spade exception and detached trick winner. Centralize legality.
+- `scoring.ts`: independent contract/nil awards, carried ten-bag penalties
+  and documented failed-nil contribution toggle. Resolve source conflicts.
+- `core.ts`: exact supplied GameDefinition, strict Zod inputs, seeded deal,
+  locked bids, pre-look blind decision, sequential two-card exchange, all
+  seven phases, side scoring/results and data-only review deadlines.
+  Pause, presence, VIP skip/end and permanent departures retain all seats.
+  Unlimited classic matches preserve the 500-point rules without a cap.
+- `core.ts`: views expose public table information plus only the viewer's
+  revealed hand; foreign hands/stock/exchange selections stay private.
+  Retain four reports to bound saved-state size. Bot wrapper first checks
+  public eligibility to avoid cloning views for every inactive seat.
+- `bots.ts`: separate public/own-view policy; easy randomized play, medium
+  honour/trump bidding and contract play, sharp nil assessment, cheapest
+  winning card, public void/history inference and partner protection.
+  Blind decisions receive no hand and no policy sees the undealt stock.
+- `runner.ts`, `pilot.ts`, `test.ts`: full-match driver, small exploratory
+  skill pilot, 26 focused assertions and pending full replay/completion
+  suites. Frozen-state, detached-view and private-substitution checks.
+- `data-schema.ts`, `generate.ts`, `fixtures.ts`, `preflight.ts`: validate
+  actual shared manifest schema, canonical deck and complete phase states;
+  regenerate metadata byte-identically. Last scored hand leads to done.
+- `checksums.ts`: hash every delivered data/media file, validate both the
+  path set and bytes; include the standalone page when it is built.
+- Pinned package/lock/strict ES2022 TypeScript configuration: Zod is the
+  sole runtime dependency; reproducible local and forthcoming CI checks.
+
+No source code, card art, models, assets or AI weights were imported.
+
+Presence/conservation regression fixes:
+- `core.ts`: apply the existing disconnected-seat default logic during
+  initialization too. A first actor already offline otherwise stalled a
+  populated table until the host intervened. Empty tables still wait.
+- `runner.ts`: count partial trick cards by whether they were collected,
+  rather than by phase name. VIP end preserves uncollected cards in done;
+  the old verification helper falsely counted51 instead of52 cards.
+- `test.ts`: both new regression tests failed before the respective fix.
+- `fixtures.ts`: add read-only exact-byte regeneration checks for CI.
+
+Full verification and standalone page:
+- `reference.ts`, `differential.ts`: independent imperative scoring ledger
+  and ordered-key trick winner;10,000 seeded cases each, both editions and
+  all scoring toggles. Persist reproducible case counts and assert drift.
+- `mutations.ts`:25 isolated one-bug copies exercise the actual focused
+  suite; reject timeouts/import/syntax errors as kills and record failures.
+  `test.ts` now explicitly checks exactly the tenth bag after a threshold
+  mutation exposed the gap in the initial boundary coverage.
+- `league.ts`:2,000 complete matches for each of four skill/edition pairs,
+  rotated seats, explicit third easy seat in Cutthroat, conservative ties
+  and Wilson bounds. Replay committed measurements in the final pipeline.
+- `shell.html`, `ui.ts`, `build.ts`: original CSS cards and shared table,
+  all house-rule controls, three/four human/bot rosters, private hot-seat
+  handover, pre-look blind choice, sequential exchange, legal plays,
+  point ledger, pause/skip/end/restart and visible review countdowns.
+  Escape names; remove hands from DOM on handover/pause. Preserve selected
+  exchange cards and bid drafts across hide/pause, with keyboard focus.
+  Bundle all code/Zod inline; validate exact rebuilt HTML and no externals.
+- `tsconfig.json`: include DOM.Iterable for browser node-list iteration.
+- `core.ts`: reject non-string actor identifiers before own-key lookup.
+  A JSON object with a null toString reproduced a TypeError; the all-phase
+  fuzz test now checks both input and presence payloads of that shape.
+- `test.ts`:60 lowest-club initial leads across both Cutthroat decks;
+  all1,003 replay seeds now sample all house-rule booleans/presets too.
+- `browser.ts`: real-control tests, complete games for both editions/decks,
+  privacy/drafts/keyboard/pause/house rules and900 live frames per viewport.
+  Install virtual time before application timers; CPU-throttled performance
+  uses real time. Managed file blocking is recorded, with exact-byte fallback.
+- `package.json`, `.github/workflows/G06.yml`: wire every required local
+  check into npm test and a read-only, actions-only,30-minute Ubuntu PR gate.
+  Browser checks open the rules panel before asserting its rendered text;
+  disabled Cutthroat-only/partnership-only settings are tested in context.
+  Runtime setup links the installed system ffmpeg when its download403s;
+  no downloaded source or encoder binary is committed.
+- `runner.ts`: reuse the exact replay JSON to check the256KB limit after
+  every event, rather than checking only the final state. `test.ts` also
+  checks all skills/known and unknown seats in all seven phase fixtures.
+
+KEEP GOING round1:
+- `shell.html`: wrap heading/paragraph/button/player labels and cap their
+  width. Valid40-character names otherwise made a390px page830px wide.
+- `browser.ts`: regressions for both editions at maximum supported name
+  length, before and after opening a hand. Rebuild the standalone artifact.
+
+KEEP GOING round2:
+- `ui.ts`:focus the first enabled card after handover; choosing the first
+  card could target a disabled off-suit card and leave keyboard focus empty.
+- `browser.ts`:seed1/diamond lead reproduces an illegal first held club;
+  assert native focus moves to the legal diamond, then press Enter at page
+  level and verify a second card was played. No manual focus masks the bug.
+
+KEEP GOING round3:
+- `core.ts`, `bots.ts`:readonly reviews return no bot input; the original
+  policies submitted Next immediately, defeating readable engine deadlines.
+  Hold a trick8s and ledgers60s(partners)/90s(Cutthroat); human Next remains.
+- `runner.ts`:drive due timer events during bot reviews, preserving real
+  engine pacing in simulations. Recompute league metadata because final
+  timestamps now use scheduled time; rules/bids/tricks remain unchanged.
+- `fixtures.ts`:explicit human Next generates review transitions, with
+  final hand→done exact-state equality. No bot shortcut in the engine.
+- `test.ts`:24 review policies now must return null; verify8/60/90s holds,
+  actual three-player hand progression and exact final done fixture.
+- `browser.ts`:assert trick still visible at7.9s, then advances on its
+  timer; extend only the debug virtual-time budget for unlimited long games.
+
+KEEP GOING round4:
+- `ui.ts`:append roster seat numbers whenever names repeat. Identical
+  handover labels otherwise leave private-hand ownership ambiguous; adding
+  numbers to the whole roster also avoids collisions with existing names
+  that already look like a generated label. Core names/IDs stay unchanged.
+- `browser.ts`:both editions exercise all-Alex bid handovers, expected
+  owner cards, concealed transitions and mixed names resembling seat labels.
+
+KEEP GOING round5:
+- `package.json`:recompute/assert both original and held-out2,000-seed
+  league reports in npm test,so the generalization evidence stays executable.
+  No policy or scoring change; all four fresh skill orderings passed.
+
+KEEP GOING round6:
+- `churn.ts`:independent adversarial driver for1,003 seeded presence/pause
+  sequences,including legitimate prototype-name IDs and drops while paused.
+  Check every-event replay/immutability/schema/conservation/storage,all-seat
+  results and hidden-hand/RNG substitutions for every viewer and bot grade.
+- `package.json`:run/assert the deterministic churn report in npm test.
+
+KEEP GOING round7:
+- `browser.ts`:skip redundant test-clock review ticks with Playwright
+  fastForward only while a review is already on screen. Interactive bot
+  ticks still run normally;the7.9s reader hold assertion remains. This
+  reduces CI cost without touching application timers or game behavior.
+  Assert exact final UI/core scores for all three complete variants;record
+  per-game steps/duration and total audit duration. Correct the partnership
+  report's deck label to52-card(the Cutthroat control is disabled there).
+- `.github/workflows/G06.yml`:remove unnecessary ffmpeg apt installation.
+  Read-only npm test never records/transcodes;it hashes committed captures
+  and exercises every browser check. Local recording retains its encoder.
+
+Additional delivery review8 (applied after the full-suite snapshot finishes):
+- `build.ts`:retain the full pinned Zod MIT notice in an inline comment;
+  assert the delivered notice matches the installed package and is embedded.
+- `checksums.ts`:include the delivered dependency notice in the hashed path
+  set. Runtime game/UI behavior is unchanged;standalone licensing survives
+  the minifier instead of existing only as a dependency file outside HTML.
