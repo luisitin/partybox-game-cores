@@ -323,3 +323,18 @@ Mainbrowser output names subsequently changed to milestone13 only; no runtime
 change. Current full legacybrowser/FPS and exact-head CI remain PENDING.
 Previous499 exact hosted logs actually read;51tests/25mutants/24kleagues,
 66scenarios and6×300 near60FPS; no downloadedrawartifact configured.
+
+Checkpoint 2026-10-08T12:59:20Z: exact25a6023 CI37777044855 SUCCESS, actual full logs
+read,51 tests/21k games/25 mutants/24k leagues/6 late cases/66 browser
+scenarios/6x300 host intervals near60FPS. Public ci-25a6023-success.json
+retains logged aggregates; original workflow supplied no raw download artifact.
+Local current fullbrowser22/22 passed, then TV300-frame gate FAIL55.903378092
+FPS,p9516.8,p9983.2,max166.6; phone not run. All300 actual intervals, source
+hashes, exact runner and log retained; no causal explanation claimed.
+Evidence-only follow-up prints complete raw profile/final reports to CI logs
+and adds always-upload artifacts; gates unchanged. Capture outputnames preserve
+old media. Strict types PASS; actual milestone14 encoder clip156189bytes,
+18JPEGframes, sourceguards match, no HTTP/errors; no FPS claim.
+Cadence: checkpoint was not pushed by12:57:53 (previous push12:27:53).
+This is a second observed30-minute cadence failure, not excused by compaction.
+Actual push timestamp/overrun will be appended after normal publication.

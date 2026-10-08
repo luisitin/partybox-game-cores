@@ -33,3 +33,15 @@ jobs:
         run: npx playwright install ffmpeg
       - name: All core, data, bot and browser checks
         run: npm test
+      - name: Preserve browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G04-browser-evidence-${{ github.sha }}
+          if-no-files-found: warn
+          path: |
+            jobs/G04-reality-check/browser-report.json
+            jobs/G04-reality-check/browser-repeat-*.json
+            jobs/G04-reality-check/browser-raw-*.json
+            jobs/G04-reality-check/late-input-report.json
+            jobs/G04-reality-check/media/milestone-14-browser*.webm

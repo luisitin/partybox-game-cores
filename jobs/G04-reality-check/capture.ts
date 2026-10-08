@@ -14,7 +14,10 @@ const url=pathToFileURL(resolve('play.html')).href;
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 const directory=mkdtempSync(join(tmpdir(),'G04-notice-capture-'));
 mkdirSync('media',{recursive:true});
-const output='media/milestone-12-pinned-encoder.webm';
+const milestoneArg=process.argv.find(arg=>/^--milestone=[1-9]\d{0,3}$/.test(arg));
+const milestone=milestoneArg?.split('=')[1]??'12';
+const output=`media/milestone-${milestone}-pinned-encoder.webm`;
+const reportPath=milestone==='12'?'capture-pinned-encoder-report.json':`capture-pinned-encoder-milestone-${milestone}-report.json`;
 try{
  const context=await browser.newContext({viewport:{width:1920,height:1080}}),page=await context.newPage();
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
@@ -31,6 +34,6 @@ try{
  }
  encodeCapture(directory,output);await context.close();
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);const after=hashes();assert.deepEqual(after,before);
- writeFileSync('capture-pinned-encoder-report.json',JSON.stringify({command:'node capture.ts',evidenceScope:'source-bound offline conceal/reopen capture only; no FPS acceptance',output,bytes:statSync(output).size,frameCount:18,encodedFps:12,durationSeconds:1.5,codec:'VP8 via pinned Playwright ffmpeg',sourceHashesAtStart:before,sourceHashesAtEnd:after,sourceUnchanged:true,errors,externalRequests:requests},null,2)+'\n');
+ writeFileSync(reportPath,JSON.stringify({command:'node capture.ts'+(milestoneArg?' '+milestoneArg:''),evidenceScope:'source-bound offline conceal/reopen capture only; no FPS acceptance',output,bytes:statSync(output).size,frameCount:18,encodedFps:12,durationSeconds:1.5,codec:'VP8 via pinned Playwright ffmpeg',sourceHashesAtStart:before,sourceHashesAtEnd:after,sourceUnchanged:true,errors,externalRequests:requests},null,2)+'\n');
  console.log(`Pinned encoder capture PASS ${statSync(output).size} bytes; source unchanged; no network/errors`);
 }finally{await browser.close();rmSync(directory,{recursive:true,force:true});}

@@ -12,13 +12,10 @@ const executable=process.env.G04_BROWSER_EXECUTABLE;
 const browser=await chromium.launch({headless:true,executablePath:executable,args:['--no-sandbox']});
 const html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[];
 const htmlSha256=createHash('sha256').update(html).digest('hex');
-const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','samples.ts','samples.json','manifest.json','scoring.ts','estimates.ts','build.ts','shell.html','browser.ts','capture-encoder.ts','THIRD-PARTY-LICENSES.md','../../contract/contract.ts','../../contract/rng.ts'];
-const sourceHashes=()=>Object.fromEntries(guardedFiles.map(file=>[file,createHash('sha256').update(readFileSync(file)).digest('hex')]));
-const sourceHashesAtStart=sourceHashes();
 const fileUrl=pathToFileURL(resolve('play.html')).href;
 const repeat=process.argv.includes('--repeat=2')?2:process.argv.includes('--repeat=3')?3:1;
 const framesOnly=process.argv.includes('--frames-only');
-const capturePath=repeat===1?'media/milestone-14-browser.webm':`media/milestone-14-browser-repeat-${repeat}.webm`;
+const capturePath=repeat===1?'media/milestone-13-browser.webm':`media/milestone-13-browser-repeat-${repeat}.webm`;
 const reportPath=framesOnly?`browser-frames-only-${repeat}.json`:repeat===1?'browser-report.json':`browser-repeat-${repeat}.json`;
 const rawPrefix=framesOnly?`browser-frames-only-${repeat}`:`browser-raw-${repeat}`;
 mkdirSync('media',{recursive:true});
@@ -137,10 +134,7 @@ try {
   const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((a,b)=>a+b,0)/frames.length;
   const report={name,viewport,throttle,scenario:'eight seats, open human controller, seven concurrent bot inputs',frameFiltering:'none',intervalsMs:frames,frames:frames.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)]!,p99Ms:sorted[Math.floor(sorted.length*.99)]!,fps:1000/mean};performance.push(report);
   // Persist all intervals before any gate. A failed profile remains inspectable.
-  const rawReport={htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),sourceHashesAtStart,sourceHashesAtEnd:sourceHashes(),evidenceScope:framesOnly?'performance confirmation only; functional checks and captures not rerun':'full browser suite, profile saved before assertions',gates:{minimumMeanFps:59,maximumP95Ms:18},errors,externalRequests:requests,performance:report};
-  writeFileSync(`${rawPrefix}-${name}.json`,JSON.stringify(rawReport,null,2)+'\n');
-  // Machine-readable stdout also preserves evidence when artifact downloads fail.
-  console.log('G04_RAW_PROFILE '+JSON.stringify(rawReport));
+  writeFileSync(`${rawPrefix}-${name}.json`,JSON.stringify({htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),evidenceScope:framesOnly?'performance confirmation only; functional checks and captures not rerun':'full browser suite, profile saved before assertions',gates:{minimumMeanFps:59,maximumP95Ms:18},errors,externalRequests:requests,performance:report},null,2)+'\n');
   console.log({name,frames:report.frames,fps:report.fps,p95Ms:report.p95Ms,p99Ms:report.p99Ms,rawFile:`${rawPrefix}-${name}.json`});assert(report.fps>=59,`${name} mean below 59 fps`);assert(report.p95Ms<=18,`${name} p95 misses 60-Hz budget`);
   assert(await match.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(name==='tv')assert(await match.page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight));
   if(!framesOnly)await match.page.screenshot({path:`media/deadline-${repeat===1?'':`repeat-${repeat}-`}${name}.png`,fullPage:true});
@@ -153,7 +147,5 @@ try {
  if(!framesOnly){const reduced=await pageFor({width:390,height:844},'reduce');await start(reduced.page);assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);await reduced.context.close();functional.push('reduced-motion disables wheel animation');}
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  assert.equal(createHash('sha256').update(readFileSync('play.html')).digest('hex'),htmlSha256,'page changed during verification');
- const sourceHashesAtEnd=sourceHashes();assert.deepEqual(sourceHashesAtEnd,sourceHashesAtStart,'source changed during verification');
- const completeReport={functional,evidenceScope:framesOnly?'performance confirmation only; prior functional/capture evidence remains separate':'full browser suite',navigationMode:'Actual self-contained play.html opened from disk via file://',htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),sourceHashesAtStart,sourceHashesAtEnd,sourceUnchanged:true,externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:framesOnly?null:capturePath,captureBytes:framesOnly?null:statSync(capturePath).size};
- writeFileSync(reportPath,JSON.stringify(completeReport,null,2)+'\n');console.log('G04_COMPLETE_REPORT '+JSON.stringify(completeReport));console.log(`Browser ${framesOnly?'frame-only confirmation':`${functional.length} functional scenarios, offline,privacy,reduced-motion,frame times and capture`} passed (sample ${repeat})`);
+  writeFileSync(reportPath,JSON.stringify({functional,evidenceScope:framesOnly?'performance confirmation only; prior functional/capture evidence remains separate':'full browser suite',navigationMode:'Actual self-contained play.html opened from disk via file://',htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:framesOnly?null:capturePath,captureBytes:framesOnly?null:statSync(capturePath).size},null,2)+'\n');console.log(`Browser ${framesOnly?'frame-only confirmation':`${functional.length} functional scenarios, offline,privacy,reduced-motion,frame times and capture`} passed (sample ${repeat})`);
 }finally{await browser.close();}

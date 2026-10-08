@@ -1,33 +1,41 @@
 # Resume G04 KEEP round11
 
-Owner codex-reality, branch job/G04-reality-check-core, original PR4 preserved.
-Last confirmed successful push499ae3e at11:59:44UTC; interval28m18s PASS.
-Initial claim11:00:12 to firstpush11:31:26 missed30min by74s; retained audit.
-Current checkpoint frozen 2026-10-08T12:26:59Z; publish by12:29:44UTC hard deadline.
-After publication use latest branch commit timestamp as conservative start
-for the next25-minute target/30-minute hard deadline; refresh own mainclaim.
+Owner codex-reality; branch job/G04-reality-check-core; original PR4 remains draft.
+Checkpoint prepared 2026-10-08T12:59:20Z. Last successful branch push25a6023 at12:27:53UTC.
+That push followed499ae3e by28m09s. This checkpoint missed its12:57:53
+hard push deadline; actual publication time and overrun must be retained.
+Earlier initial cadence miss74s also remains recorded. Refresh own main claim
+at every push; set next25-minute target and30-minute limit from actual push.
 
-Exact499ae3e CI37773774295 is GREEN, actually read:51 tests/21k botgames,
-25 mutations/24k leagues/66 browser scenarios/6 profiles near60fps.
-Its host rawfiles have no download artifact; logged aggregates are retained.
-This is historical acceptance for the pre-fix25e0b2 page, not currentUI.
+Exact25a6023542e657260d9b653bd09bec53f904e640 CI37777044855 SUCCESS;
+actual complete logs read:51 tests,21k botgames,25 mutants,24k leagues,
+late-input6/6,66 legacy browser scenarios,6 profiles of300 intervals each,
+all60.00199–60.00319FPS andp95/p99<=16.8ms. See ci-25a6023-success.json.
+The hosted runner did not print complete raw intervals or upload evidence;
+these aggregates are genuine, but full raw source binding remains unproven.
 
-Current pagee5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b
-494865bytes,2x builds identical. FullMITnotice remains; seven pure/data files
-unchanged. ui.ts now consumes overdue timer before input/bot sampling.
-Actual baseline accepted late correctanswer/vote for1000 atvisible0s and
-inserted latehuman/bot fakes. Six actualfile aftercases PASS: lateanswer/vote
-scores0; latehuman/bot menus truth-only; on-time and pause controls preserved.
-Strict types PASS; short phone deadlineclip209705bytes has sourceguards,
-zero network/errors and0/0 reveal. All before/after evidence is retained.
-Fixture uses heldtimers/wallclock jump; ordinary race frequency unmeasured.
+Current standalone pagee5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b,
+494865bytes; pure/data files unchanged, ui.ts consumes overdue timers before
+human/bot inputs. Six actual-file controls PASS: expired correct answer/vote
+credit1000→0, expired human/bot fake menus2→1; on-time/pause remain1000.
+Phone deadline clip209705bytes has matching source guards and no network/errors.
+Held-timer/wallclock-jump fixtures do not establish ordinary race frequency.
 
-Full legacybrowser/FPS proof for e570 UI and new exact-head CI PENDING.
-Start main browser with fresh G04_FRAME_BARRIER path; after22 functionals,
-coordinate a short frames window, preserve all raw data beforegates.
-Maincapture now uses milestone13 names and preserves oldnotice media.
-No repeat of unchanged local purecore suites; hosted npm test runs everything,
-including new late-input.ts. PR4 stays draft until current checks pass.
-Round11 is pending; visible gain resets no-gain streak0, so after green
-continue formal reviews until three consecutive rounds yield no player gain.
-Other leads own G02/G09/G10; no source/toolBLOCKED applies here.
+Local full legacy browser22/22 passed but desktop300-frame gate FAILED
+55.903378092FPS,p9516.8,p9983.2,max166.6ms; phone not run. Complete exact raw
+JSON/runner/log are browser-round-11-first-frame-failure.*. Cause unresolved.
+Do not discard failures or claim the hosted green resolves local variance.
+Current checkpoint adds full raw per-profile/final JSON to CI stdout and
+always-upload evidence, with identical gates/sample size and unchanged game.
+Strict types PASS. Fresh milestone14 pinned encoder clip156189bytes,18frames,
+source unchanged/zero errors/network; its12fps encoding is not an FPS proof.
+New exact-head CI and current source-bound raw confirmation remain PENDING.
+
+Round11 has a player gain and no-gain streak0. Evidence wrap-up is part of
+round11, not a fabricated formal round12. After current checks pass, reread
+README/RULES/JOBS and rank5 weaknesses BEFORE each fresh KEEP round; continue
+until3 consecutive completed rounds yield no player gain. Preserve failed
+local measurements and source limitations. Do not repeat unchanged local
+pure core/leagues; hosted npm test still executes the required full suite.
+Coordinate a short fresh frame-only window only after all peers acknowledge
+no owned heavy groups. Other leads own G02/G09/G10. No source/tool BLOCKED.

@@ -48,3 +48,8 @@ reducer unchanged, deliver its matching due timer before an expired input,
 and discard that input instead of forwarding it into the new phase. Check
 bot expiry before sampling; dispatch checks again if computation crosses
 the deadline. Controlled wallclock jumps prove ordering, not race frequency.
+
+The observed second30-minute checkpoint miss is retained; no retroactive
+claim adjustment or passing cadence assertion. Full CI JSON logging and
+artifact retention are round11 evidence wrap-up, with no player gain or
+additional KEEP streak count. Unexplained local frame failures remain public.
