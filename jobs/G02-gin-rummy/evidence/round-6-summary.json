@@ -1,0 +1,89 @@
+{
+  "command": "node --test tests/contract.test.mjs",
+  "exitCode": 0,
+  "testsPassed": 4,
+  "completedGames": 6000,
+  "eventReplayChecks": 1736888,
+  "reducerTransitions": 3473776,
+  "rows": [
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 261181,
+      "maxEvents": 612,
+      "replayChecks": 261181,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 286246,
+      "maxEvents": 775,
+      "replayChecks": 286246,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 343987,
+      "maxEvents": 825,
+      "replayChecks": 343987,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 258472,
+      "maxEvents": 755,
+      "replayChecks": 258472,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 269750,
+      "maxEvents": 812,
+      "replayChecks": 269750,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 317252,
+      "maxEvents": 929,
+      "replayChecks": 317252,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    }
+  ],
+  "sourceSha256": {
+    "src/browser.ts": "b14a8327517d6ab558a7941b5a3c2dd01d7c5bff8f1132ddcac9d7ad349c9b36",
+    "src/cards.ts": "69811a1eb99354c938a5003e3a2316ff910ff2365ebaadb1f46f9f4df8a16d86",
+    "src/play.template.html": "828ec34c9514734812752fdb0e11bfaf8e5f1460e46785cc3763c860b18022e2",
+    "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f"
+  },
+  "playerObservableChange": false,
+  "noPlayerGainStreak": 1,
+  "hostedPriorHead": {
+    "head": "b784006c2bdfefc0c2eaa42e75a25abf01237b3f",
+    "run": 37728310327,
+    "actualConclusion": "success"
+  }
+}

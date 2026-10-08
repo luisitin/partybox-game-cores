@@ -2,15 +2,14 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {game} from '../dist/core.mjs';
 import {initial,rng,invariant,play,freeze} from './helpers.mjs';
-test('1000 finished seeded bot games at EACH valid player count and BOTH editions',()=>{
+test('1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event',()=>{
  for(const variant of ['standard','oklahoma'])for(const count of [2,3,4]) {
-  let totalEvents=0,maxEvents=0;
+  let totalEvents=0,maxEvents=0,replayChecks=0;
   for(let seed=1;seed<=1000;seed++){
-   const a=play(seed,count,['sharp','normal','easy','normal'],{variant},seed<=3);
-   const b=play(seed,count,['sharp','normal','easy','normal'],{variant},false);
-   assert.equal(JSON.stringify(a.state),JSON.stringify(b.state));totalEvents+=a.steps;maxEvents=Math.max(maxEvents,a.steps);
+   const a=play(seed,count,['sharp','normal','easy','normal'],{variant},seed<=3,true);
+   assert.equal(a.replayChecks,a.steps);totalEvents+=a.steps;replayChecks+=a.replayChecks;maxEvents=Math.max(maxEvents,a.steps);
   }
-  console.log(JSON.stringify({suite:'bot-contract',variant,players:count,games:1000,replays:1000,totalEvents,maxEvents}));
+  console.log(JSON.stringify({suite:'bot-contract',variant,players:count,games:1000,replays:1000,totalEvents,maxEvents,replayChecks,comparison:'every-event SHA256 and bytes; JSON-roundtrip replay'}));
  }
 });
 test('property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability',()=>{

@@ -127,3 +127,10 @@ and all browser regressions PASS. This is the full check sequence before
 refreshing hashes for newly generated league evidence, not a falsely named
 local npm test execution. Current-head hosted npm test remains required.
 Raw source-bound results: round-5-full-checks.log / round-5-summary.json.
+
+Round6 actual node --test tests/contract.test.mjs: PASS4/exit0,302,249ms.
+All6,000 games now replay from serialized state after EVERY event:1,736,888
+SHA256/byte/size/strict-roundtrip checks. Property/secrecy/idle tests also pass.
+Exact command/output/rows/source hashes: round-6-replay-tests.log/summary.json.
+No production/visual behavior changed. Hosted round5 run37728310327 actually
+SUCCESS at b784006; exact npm-test step is ci-round-5-accepted.log.

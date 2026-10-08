@@ -146,3 +146,26 @@ are delivered. Hash refresh/integrity follows generated league evidence;
 current-head CI's npm test remains the complete hosted acceptance gate.
 Observable gain: correct winner, preserved arbitrary valid IDs, no metadata
 coercion crash. Three consecutive no-player-gain rounds still required.
+
+Round6: G02/JOBS/RULES and contract invariants re-read. Five remaining weaknesses:
+1. Replay checks compare only final states, missing transient divergence.
+2. Standalone page omits the bundled Zod copyright/permission notice.
+3. Exported validMeld accepts impossible/fractional card IDs outside live input schema.
+4. Malformed event/view boundary coverage can be broadened across every phase.
+5. Historic verification text needs a concise final acceptance index.
+Worst verification gap fixed: independently initialized second reducer receives
+the same copied events and resumes from JSON-serialized state after EVERY
+transition. SHA256, exact serialized bytes, <=256KB and strict JSON roundtrip
+are checked at each event. Bot input validation and no-stall checks remain.
+No production behavior is changed; no player-noticeable gain is presumed.
+
+Round6 actual node --test tests/contract.test.mjs PASS4/exit0 in302,249ms:
+6,000 matches plus6,000 serialized-state replays,1,736,888 every-event SHA256
+and exact-byte comparisons (3,473,776 reducer transitions), all<=256KB and
+strict JSON roundtrips. All six event totals match previous gameplay counts.
+Properties1,003 seeds and hidden-view/idle checks also PASS. Core and page
+unchanged; no functional visual milestone is fabricated for a test-only change.
+Measured player-noticeable gain: none; consecutive no-gain streak1.
+Round5 hosted npm test run37728310327 at b784006 actually SUCCESS;
+its242 exact check-step log lines are retained. Round6 current-head CI remains
+required; source-bound summary and complete local log delivered.

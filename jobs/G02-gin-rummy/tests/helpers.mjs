@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {game} from '../dist/core.mjs';
 // Contract RNG type without relying on TS execution in CI: independent xorshift test stream.
 export function rng(seed=1) {
@@ -19,16 +20,29 @@ export function invariant(s) {
  assert(s.active.length===2);assert.equal(new Set([...s.active,...s.waiting]).size,s.order.length);
  for(const id of s.order)assert(Number.isFinite(s.scores[id]));
 }
-export function play(seed,count=2,skills=['sharp','normal'],settings={},check=false) {
+export function play(seed,count=2,skills=['sharp','normal'],settings={},check=false,verifyReplay=false) {
  let s=initial(seed,count,settings),r=rng(seed^0x7e123456),steps=0,now=0;
+ let replay=verifyReplay?initial(seed,count,settings):null,replayChecks=0;
+ if(replay)assert.deepEqual(replay,s);
  while(!s.finished&&steps<40000) {
   const index=s.order.indexOf(s.turn),input=game.bot.sampleInput(s,s.turn,r,skills[index%skills.length]);
   assert(input,`null input ${s.phase.id} ${s.turn}`);assert(game.inputSchema.safeParse(input).success);
-  const next=game.reduce(s,{type:'input',now:++now,playerId:s.turn,input});
+  const event={type:'input',now:++now,playerId:s.turn,input};
+  const next=game.reduce(s,event);
   assert.notEqual(next,s,`stalled ${s.phase.id} ${JSON.stringify(input)}`);
+  if(replay){
+   const repeated=game.reduce(replay,structuredClone(event));
+   const text=JSON.stringify(next),replayedText=JSON.stringify(repeated);
+   assert(Buffer.byteLength(text)<=256*1024);
+   const hash=value=>createHash('sha256').update(value).digest('hex');
+   assert.equal(hash(replayedText),hash(text),`replay hash seed ${seed} event ${steps+1}`);
+   assert.equal(replayedText,text,`replay bytes seed ${seed} event ${steps+1}`);
+   // The second reducer resumes from serialized state at EVERY transition.
+   replay=JSON.parse(replayedText);assert.deepEqual(replay,next);replayChecks++;
+  }
   if(check)invariant(next);s=next;steps++;
  }
  assert(s.finished,'bot match exceeded 40000 events');
  const results=game.results(s);assert(results);assert.deepEqual(Object.keys(results.scores).sort(),s.order.slice().sort());
- assert(results.ranking.every(x=>Number.isFinite(x.score)));return {state:s,results,steps};
+ assert(results.ranking.every(x=>Number.isFinite(x.score)));return {state:s,results,steps,replayChecks};
 }

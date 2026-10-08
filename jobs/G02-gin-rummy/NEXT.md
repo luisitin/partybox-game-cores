@@ -1,22 +1,21 @@
 # Resume G02
 
 Branch job/G02-gin-rummy; nickname codex-gin; PR#2 draft.
-Main only holds CLAIMS updates; shared contract and other jobs untouched.
-Actual hosted success through round4: run37727436693/head369971a.
-Earlier successes and failed measurements are preserved in VERIFY/evidence.
+Main only contains CLAIMS changes; contract/other jobs untouched.
+Actual hosted success through round5 version1.2.1: run37728310327/b784006.
+Exact hosted check-step and earlier failures are retained.
 
-Round5 version1.2.1 fixes target-winner versus final settlement, arbitrary
-valid string IDs including empty, malformed metadata coercion, and early-end
-wording. Full local check sequence PASS:29 tests,6,000 games+6,000 final
-replays, independent proofs, both leagues57.60%/87.15%,25 mutants, browser
-60.002FPS both profiles and clock/meld/result checks. Result clips/screenshot
-and counterexamples are delivered. Refresh hashes/integrity before push;
-current-head hosted npm test remains required.
+Round6 test-only proof PASS4/exit0:6,000 matches plus6,000 JSON-resumed
+replays,1,736,888 EVERY-event SHA256/byte/size/roundtrip checks. Properties,
+secrecy/idle PASS. Source/page unchanged; no-player-gain streak1.
+Current round6 hosted acceptance remains required after push.
 
-Next round6: re-read G02/list five weaknesses, then strengthen replay tests
-to compare state bytes/hashes after EVERY event, not just final states.
-Remaining: bundled license notice, invalid-card utility boundaries and
-malformed event/view fuzz in all phases. Log/push each round and refresh main
-claim. Require three consecutive no-player-noticeable-gain rounds and actual
-exact-head green CI before PR ready/next lowest eligible claim. No completion
-or stop claimed; all earlier failures remain recorded.
+Next round7: re-read G02/list five weaknesses; retain Zod's bundled license
+in the standalone page and delivered notice. The exported validMeld currently
+accepts impossible/fractional IDs although live schema prevents them; reject
+those without changing valid cards and re-run independent proofs/mutations.
+Next round8: malformed-event/view fuzz in every phase and standalone name
+injection checks, plus concise latest verification index. Record measured gains,
+refresh main claim and push. Finish only at three consecutive no-player-gain
+rounds and actual exact-head green CI, then claim fresh lowest eligible job.
+No stop/completion claimed; prior failures remain recorded.

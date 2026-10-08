@@ -30,5 +30,5 @@ SHA256SUMS covers delivered data/media. No external card art or trackers.
 
 Current status: PR #2 draft during mandatory KEEP GOING. Hosted checks pass
 through round4 (absent turns, layoff latency, timed play and private meld UI).
-Version1.2.1 corrects target winners and identity boundaries; the full local check
-sequence passes; current-head hosted acceptance and KEEP GOING remain. Raw failures and resumable next steps are retained.
+Version1.2.1 corrects target winners and identity boundaries; hosted full checks pass.
+Every-event replay passes1,736,888 comparisons; KEEP GOING remains. Raw failures and resumable next steps are retained.
