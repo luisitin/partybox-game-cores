@@ -1,0 +1,817 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{1,31}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "icon": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16
+    },
+    "tagline": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 60
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    },
+    "howToPlay": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 90
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 90
+        },
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 90
+        }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "minPlayers": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    },
+    "maxPlayers": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 16
+    },
+    "playerCounts": {
+      "type": "object",
+      "properties": {
+        "setting": {
+          "type": "string"
+        },
+        "default": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            },
+            {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 16
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "overrides": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16
+              },
+              {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          }
+        }
+      },
+      "required": [
+        "setting",
+        "default",
+        "overrides"
+      ],
+      "additionalProperties": false
+    },
+    "estimatedMinutes": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 60
+    },
+    "unlimitedDuration": {
+      "type": "boolean"
+    },
+    "estimate": {
+      "type": "object",
+      "properties": {
+        "fixedSeconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600
+        },
+        "perRoundSeconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 600
+        },
+        "perPlayerPerRoundSeconds": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 120
+        },
+        "roundsSetting": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        }
+      },
+      "required": [
+        "fixedSeconds",
+        "perRoundSeconds",
+        "perPlayerPerRoundSeconds",
+        "roundsSetting"
+      ],
+      "additionalProperties": false
+    },
+    "tags": {
+      "minItems": 1,
+      "maxItems": 3,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "words",
+          "drawing",
+          "trivia",
+          "bluff",
+          "hidden-roles",
+          "teams",
+          "co-op",
+          "comedy",
+          "strategy",
+          "classic"
+        ]
+      }
+    },
+    "presence": {
+      "type": "object",
+      "properties": {
+        "needs": {
+          "type": "string",
+          "enum": [
+            "anywhere",
+            "voice-if-remote",
+            "same-room"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 140
+        }
+      },
+      "required": [
+        "needs"
+      ],
+      "additionalProperties": false
+    },
+    "addedOn": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "phoneSettings": {
+      "type": "boolean"
+    },
+    "settings": {
+      "maxItems": 12,
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "disabledBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "impliedBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "number"
+              },
+              "default": {
+                "type": "number"
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "step": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              },
+              "maxFromPlayers": {
+                "type": "integer",
+                "minimum": -9007199254740991,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "type",
+              "default",
+              "min",
+              "max"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "disabledBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "impliedBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "boolean"
+              },
+              "default": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "type",
+              "default"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "disabledBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "impliedBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "select"
+              },
+              "default": {
+                "type": "string"
+              },
+              "options": {
+                "minItems": 2,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "lang": {
+                      "type": "string",
+                      "enum": [
+                        "en",
+                        "es"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "label"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "type",
+              "default",
+              "options"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9]*$"
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 40
+              },
+              "description": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "disabledBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "impliedBy": {
+                "type": "object",
+                "properties": {
+                  "key": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "type": [
+                      "boolean",
+                      "string",
+                      "number"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "key",
+                  "value",
+                  "note"
+                ],
+                "additionalProperties": false
+              },
+              "type": {
+                "type": "string",
+                "const": "multiselect"
+              },
+              "default": {
+                "type": "string"
+              },
+              "options": {
+                "minItems": 1,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    },
+                    "group": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "value",
+                    "label"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "groupBy": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "key",
+              "label",
+              "type",
+              "default",
+              "options"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "maxInputBytes": {
+      "type": "integer",
+      "minimum": 1024,
+      "maximum": 262144
+    },
+    "supportsBots": {
+      "type": "boolean"
+    },
+    "saveable": {
+      "type": "boolean"
+    },
+    "minigame": {
+      "type": "object",
+      "properties": {
+        "modes": {
+          "minItems": 1,
+          "maxItems": 4,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "ffa",
+              "2v2",
+              "1v3",
+              "duel"
+            ]
+          }
+        },
+        "seconds": {
+          "type": "integer",
+          "minimum": 20,
+          "maximum": 90
+        },
+        "settings": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": [
+              "number",
+              "boolean",
+              "string"
+            ]
+          }
+        },
+        "controls": {
+          "minItems": 1,
+          "maxItems": 4,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          }
+        },
+        "howTo": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 90
+            },
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 90
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "practice": {
+          "type": "boolean"
+        },
+        "teamScore": {
+          "type": "string",
+          "const": "sum"
+        },
+        "category": {
+          "type": "string",
+          "const": "boss"
+        }
+      },
+      "required": [
+        "modes",
+        "seconds",
+        "controls",
+        "howTo"
+      ],
+      "additionalProperties": false
+    },
+    "contentLangs": {
+      "minItems": 1,
+      "maxItems": 2,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "en",
+          "es"
+        ]
+      }
+    },
+    "noCards": {
+      "type": "boolean",
+      "const": true
+    },
+    "art": {
+      "type": "object",
+      "properties": {
+        "pop": {
+          "type": "object",
+          "properties": {
+            "icon": {
+              "type": "string",
+              "enum": [
+                "icon.png",
+                "icon.svg",
+                "icon.webp"
+              ]
+            },
+            "tile": {
+              "type": "string",
+              "enum": [
+                "tile.png",
+                "tile.svg",
+                "tile.webp"
+              ]
+            },
+            "backdrop": {
+              "type": "string",
+              "enum": [
+                "backdrop.png",
+                "backdrop.svg",
+                "backdrop.webp"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "gouache": {
+          "type": "object",
+          "properties": {
+            "icon": {
+              "type": "string",
+              "enum": [
+                "icon.png",
+                "icon.svg",
+                "icon.webp"
+              ]
+            },
+            "tile": {
+              "type": "string",
+              "enum": [
+                "tile.png",
+                "tile.svg",
+                "tile.webp"
+              ]
+            },
+            "backdrop": {
+              "type": "string",
+              "enum": [
+                "backdrop.png",
+                "backdrop.svg",
+                "backdrop.webp"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "icon",
+    "tagline",
+    "description",
+    "howToPlay",
+    "version",
+    "minPlayers",
+    "maxPlayers",
+    "estimatedMinutes",
+    "tags",
+    "presence",
+    "addedOn",
+    "settings"
+  ],
+  "additionalProperties": false
+}

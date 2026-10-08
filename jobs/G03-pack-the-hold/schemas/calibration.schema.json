@@ -1,0 +1,319 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "humanRates": {
+      "type": "boolean",
+      "const": false
+    },
+    "policy": {
+      "type": "string"
+    },
+    "candidateCount": {
+      "type": "number",
+      "const": 120
+    },
+    "screeningTrials": {
+      "type": "number",
+      "const": 384
+    },
+    "tiers": {
+      "minItems": 10,
+      "maxItems": 10,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "difficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "templates": {
+            "minItems": 12,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cells": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "pieces": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "prefixItems": [
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        },
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        }
+                      ],
+                      "items": false,
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  }
+                },
+                "anchors": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                }
+              },
+              "required": [
+                "cells",
+                "pieces",
+                "anchors"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "trials": {
+            "type": "number",
+            "const": 2000
+          },
+          "solved": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2000
+          },
+          "solveRate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "confidence95": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "policy": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "difficulty",
+          "templates",
+          "trials",
+          "solved",
+          "solveRate",
+          "confidence95",
+          "policy"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "flip": {
+      "minItems": 10,
+      "maxItems": 10,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "difficulty": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "templates": {
+            "minItems": 12,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cells": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "pieces": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "prefixItems": [
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        },
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        }
+                      ],
+                      "items": false,
+                      "minItems": 2,
+                      "maxItems": 2
+                    }
+                  }
+                },
+                "anchors": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                }
+              },
+              "required": [
+                "cells",
+                "pieces",
+                "anchors"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "trials": {
+            "type": "number",
+            "const": 2000
+          },
+          "solved": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2000
+          },
+          "solveRate": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "confidence95": {
+            "type": "array",
+            "prefixItems": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "number"
+              }
+            ],
+            "items": false,
+            "minItems": 2,
+            "maxItems": 2
+          },
+          "policy": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "difficulty",
+          "templates",
+          "trials",
+          "solved",
+          "solveRate",
+          "confidence95",
+          "policy"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "humanRates",
+    "policy",
+    "candidateCount",
+    "screeningTrials",
+    "tiers",
+    "flip"
+  ],
+  "additionalProperties": false
+}
