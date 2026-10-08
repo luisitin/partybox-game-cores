@@ -1,6 +1,6 @@
 # Published rules and the Shake Up edition
 
-This is the owner's existing simultaneous word hunt. The following rules were cross-checked in live, pinned sources before implementation. Manufacturer PDFs were denied by the managed proxy; none is represented as a read primary manual. Root RULES permits GitHub/registry fallbacks. Physical-box edition labels remain a re-verification item.
+This is the owner's existing simultaneous word hunt. The following rules were cross-checked in live, pinned sources before implementation. Manufacturer PDFs were denied in the earlier managed-proxy attempt, then both actually became readable on 2026-10-08 at about 21:20 UTC. [Primary receipts](review/keep11/PRIMARY-MANUALS.md) document the later reads and all newly observed variants. They corroborate the mechanics below but contain no complete cube-face tables; physical-box face authentication remains open. Existing independent fallback evidence is preserved.
 
 ## Sources and agreement
 
@@ -48,6 +48,11 @@ Connected humans may finish early together; bots and away players do not block t
 The offline page uses the same reducer and existing client pieces. Its explicit hot-seat timing adaptation gives each human an equal private hunt duration on the same board, with a masked handoff. Others look away; bots run during the first turn. The production game remains simultaneous. The offline host uses the owner's flat-grid fallback and does not claim the absent production sound/3D SDK.
 
 ## All researched variants and decisions
+
+- Later Hasbro scan: challenge E cube replaces a randomly removed ordinary cube; length 3/4/5/6/7/8+ scores 1/2/3/4/5/6, plus 5 for a word using that cube. Preserve owner's original cube sets/score table; no challenge cube imported.
+- Later Winning Moves manual: Th and other printed double-letter faces must be used together in their printed sequence and count as two letters. Preserve existing Qu and original faces; no unverified physical Th edition added.
+- Big Advanced requires five letters. Handicap lets experienced players use four and younger/newer players three (one point for three letters). Team rules keep individual lists and retain one teammate's copy of an otherwise team-unique word, with combined team scores. Preserve owner board-wide minimum 3/4 and individual standings; these unchosen physical variants have no separate independent verification claimed.
+- Both physical manuals permit an agreed score target such as 50/100. Preserve owner's default three rounds and configurable 1–5 rounds. The Big manual's extra proper-name/abbreviation/contraction/hyphenated/foreign-word exclusions differ from the owner's explicit dictionary-membership/Spanish/VIP rules above; no extra grammar filter is silently added.
 
 - English5×5 BIG vs MASTER/Deluxe: preserve original BIG. In10000grids each, BIG mean255.2593/below60=0.50%; MASTER246.3785/0.67%. MASTER has slightly lower absolute SD. Two DHLNOR cubes in BIG are corroborated, not repaired as a supposed duplicate error.
 - English classic1983 vs New1992 four-by-four face tables, and6×6 Super Big/double-letter/blank-face variants appear in source reports. Keep the owner's New4×4 and BIG5×5; no6×6 edition or new digraph faces are added. Published Spanish faces differ; retain the owner's original Spanish design and report its independent10000-grid density rather than asserting a particular physical edition.

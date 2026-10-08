@@ -9,7 +9,7 @@ Live receipts with pinned commits, byte counts and SHA-256: [source-receipts.jso
 - Existing Spanish bot vocabularies cite FrequencyWords/CC-BY-SA-4.0; fresh pinned upstream525f9b560de45753a5ea01069454e72e9aa541c6 verified: README distinguishes MIT code from CC-BY-SA-4.0 content. Unchanged es_50k input and adaptation attribution in start/research/inputs and licences.
 - Owner source, original CSS, five GLB models and film source: preserved baseline hashes in start/research/original-files.json. No owner model, art, film look or name changes.
 
-Canonical Hasbro and Winning Moves requests were denied by the managed HTTPS proxy; they are candidates, not read evidence. RULES.md permits the live GitHub/registry fallbacks. Physical-box edition labels remain secondary reports; re-verify with the manufacturer when reachable.
+Canonical Hasbro and Winning Moves requests were denied at the earlier 07:52 UTC managed-proxy attempt. Later, at about 21:20 UTC on 2026-10-08, both actual primary PDFs returned HTTP 200 and were read. [Primary receipts and variant decisions](review/keep11/PRIMARY-MANUALS.md) record exact bytes/digests and actual visual/text inspection. Those later reads corroborate ordinary mechanics; neither PDF supplies complete cube-face tables, so physical edition/Spanish face authentication stays unresolved. Independent GitHub/registry sources and their ancestry caveats remain valid; no earlier denial is rewritten as a successful read.
 
 - Build bindings bundle original client dependencies react/react-dom18.3.1, zod3.25.76 and retained three0.171.0 under MIT; their complete installed-package notices are copied into `start/research/licences/` and inline HTML credits. No downloaded art/font/avatar assets are used by the flat offline host.
 
@@ -37,7 +37,7 @@ Canonical Hasbro and Winning Moves requests were denied by the managed HTTPS pro
 - [hermitdave/FrequencyWords — LICENSE](https://raw.githubusercontent.com/hermitdave/FrequencyWords/525f9b560de45753a5ea01069454e72e9aa541c6/LICENSE): Code licence; upstream README content/code distinction separately retained in content SOURCES.
 - [naughty-words — 1.2.0](https://registry.npmjs.org/naughty-words/-/naughty-words-1.2.0.tgz): Existing family filter word list; CC-BY-4.0 attribution retained.
 
-Denied primary candidates, never cited as read: [hasbro](https://www.hasbro.com/common/instruct/Boggle.pdf), [winning-moves](https://winning-moves.com/images/bigboggle_rules.pdf). Independent read fallback evidence above is permitted by root RULES.
+Later actually read primary sources: [Hasbro Boggle](https://www.hasbro.com/common/instruct/Boggle.pdf), two scanned pages visually inspected, 229431 bytes; [Winning Moves Big Boggle](https://winning-moves.com/images/bigboggle_rules.pdf), four pages of extracted text read, 230622 bytes. Their shared Hasbro/Parker ancestry is explicit, not two independent physical-box observations. Only facts, URLs and digests are published; commercial PDFs/art/logos remain private. Independent fallback evidence above still supplies the existing cross-checks.
 
 Pinned installed runtime/build-package notices were inspected locally and included in HTML credits:
 

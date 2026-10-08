@@ -1,5 +1,13 @@
 # G08 verification log
 
+## Current accepted proof and remaining delivery
+
+Accepted baseline `0b24bf6f590bd0e0d49cdafe1d89a4ef6907409d`: full push 37848598123 SUCCESS at 21:47:07 UTC and full PR 37848602939 SUCCESS at 21:50:04 UTC. Both complete logs were read (159332 / 160159 UTF-16 code units, 104 JSON records each). Both actual downloaded artifacts independently pass immutable source binding, all four native speed profiles and real captured controls. See [KEEP11 proof](review/keep11/README.md), [installer history](review/repair14/README.md), [original local failure](review/repair11/README.md) and [current handoff](NEXT.md).
+
+KEEP11 improves this index and reconciles later primary-manual reads. No player/runtime/proof input changes; no-player-gain streak 2. The latest document head still needs its own full paired acceptance; one further formal review remains before the required final stopping streak. Historical failures and unknown recording-session exit below stay historical.
+
+## Historical checkpoints (retained in their original scope)
+
 Actual first local attempt CLOSED by17:51:59Z with runnerexit1/no grant/no sampled frames. Exact failed report and READY retained in review/repair09. No FPS result or acceptance claimed; original120s window was too short for shared coordination. Parent directs a future NEW changed-harness>=600s wait; do not silently retry. Native milestone09 recording, full current four-profile acceptance/fullCI still pending. Firstcheckpoint is a progress publication, not a completion milestone.
 
 ## Resume2026-10-08 proof audit/repair09 — current acceptance pending
@@ -237,3 +245,5 @@ This round re-read G08, START-HERE and root KEEP requirements after genuine acce
 ## Official tool-mirror repair14
 
 Native actual cc464 push43996-character full log and PR160302-character full log/all104JSON records read; pushFAIL installer124/no tests/no artifact, PRfullSUCCESS21:39:11. Genuine PRartifact11581285322 downloaded with fresh native URL:1782361bytes/serverSHA match,57safe ZIP entries/allCRCs. `python .tmp/ci/review-recovered-head-artifact.py cc464dcccfb8aa79b62b7420954df3f349c496c5 .tmp/ci/cc464-pr-artifact .tmp/ci/cc464-pr-independent.json`: actualEXIT0,183immutable-Git guards/2400raw/22native gates/fiverosters/fivedecoded hashed clips,60.002–60.003FPS/real2000.901079msPause. Separate genuine d613 timeout artifact has31safe entries/allCRC/24actual behavioral mutant kills/zero visual data, explicitlypartial. Original proof and exact timeout annotation are retained as text in review/repair14. `curl -sSI --max-time15 https://archive.ubuntu.com/ubuntu/dists/noble/InRelease`: actualHTTP200, not speed proof. Repair only existing runner mirror URL; overall full paired acceptance remains pending, no formal KEEP11 or local native FPS run.
+
+- KEEP11 local checks: `npx tsx start/verification/data-check.ts` PASS57 schema files; `git diff --check` PASS; exact `git diff --exit-code 0b24bf6f590bd0e0d49cdafe1d89a4ef6907409d -- start play.html package.json package-lock.json tsconfig.json vitest.config.ts ../../contract ../../.github/workflows/G08.yml` PASS zero runtime/proof changes. Immediate current index has four links versus zero; README stays17lines. Manifest refreshed for all existing paths and six new unchanged-receipt/primary-review files.
