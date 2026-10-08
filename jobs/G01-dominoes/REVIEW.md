@@ -87,3 +87,7 @@ Five weaknesses, ranked: the depth-three early-game horizon; finite 64-world sam
 ## Round 17
 
 Five weaknesses, ranked: forced Draw steps consume the shallow decision horizon; finite64-world variance; the leaf evaluator only measures remaining pips; coalition opponents in free-for-all; unavailable physical-phone evidence. Test retaining depth across forced draws, so the next play/pass decision remains visible. Stock strictly decreases on each draw, bounding recursion; fully searched small endgames retain their terminal values. General depth-four lost round16, so this isolates the mandatory-draw accounting rather than adopting a globally deeper search. Compare2,000 alternating-seat Draw matches against exact current0.2.7, with fresh-seed confirmation required for acceptance.
+
+## Round 18
+
+Five weaknesses, ranked: shallow evaluation ignores remaining tile count; finite64-world variance; coalition opponents in free-for-all; incomplete Draw action-history inference; unavailable physical-phone evidence. Test adding five points per relative remaining tile to the leaf pip heuristic. This can distinguish blocking an opponent from merely shedding high pips and reduce the risk of stranding low-pip tiles. Keep terminal rewards, all64 worlds, depth-three and exact endgame thresholds unchanged. Compare2,000 alternating-seat Block matches to exact0.2.7; fresh-seed confirmation is required if the initial lower95% bound exceeds50%.

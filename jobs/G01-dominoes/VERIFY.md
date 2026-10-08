@@ -271,3 +271,7 @@ Direct disk-navigation recheck: launch Playwright Chromium at /usr/bin/chromium,
 Round17 `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts` underway; do not count until all2,000 Draw matches finish.
 
 Round17 initial `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts`:1,050/2,000 wins(52.5%,95%50.31–54.69%),0 ties,556,571 turns. Every shard passes10 focused regressions and exact0.2.7/seed coverage checks. Initial positive signal only; production unchanged and no-gain streak remains1 pending independent confirmation. `IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts` underway on fresh seeds2001–4000.
+
+Round17 confirmation `IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts`:1,041/2,000 wins(52.05%,95%49.86–54.24%),0 ties,559,548 turns. Every shard passes10 focused regressions. Reject because the predeclared independent lower bound crosses50%; do not pool the initial signal to override this condition. No established gain; no-gain streak2. Production remains0.2.7.
+
+Round18 `IMPROVEMENT_STUDY=leaf-count node parallel-improvement.ts` underway. Candidate adds relative tile count to the shallow evaluator; no result counted until2,000 matches complete.

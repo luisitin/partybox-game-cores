@@ -20,3 +20,5 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 15. Extend public opener inference to untouched-stock Draw;2,315/10,000 impossible worlds→0,40 tests/25 mutants/browser pass, Draw win totals unchanged; model gain, no-gain streak reset0. Block parity passes with identical2,000-game totals; bedf43a full CI37681790311 passed.
 
 16. Test depth-four early search against current0.2.7:926/2,000 wins(46.3%,95%44.11–48.49%) versus shipped sharp,592,277 turns;10 focused regressions pass per shard. Reject weaker candidate; no-gain streak1.
+
+17. Test preserving decision depth across forced Draw steps:initial1,050/2,000 wins(52.5%,lower95%50.31%);fresh1,041/2,000(52.05%,95%49.86–54.24%) fails predeclared independent bound. Reject unconfirmed gain; all focused regressions pass, production unchanged; no-gain streak2.

@@ -8,18 +8,17 @@ probes10,000 pass. Block strong1,438/2,000;Draw1,684/2,000.
 The actual bedf43a head passed full CI37681790311; prior ecbbb34 encoder
 installation exit124 does not establish a game regression.
 
-KEEP GOING rounds1–16 recorded. Round16 depth-four lost926/2,000
-(46.3%, upper95%48.49%); rejected, no-gain streak ONE.
-Round17 initial forced-draw study wins1,050/2,000(52.5%,lower95%50.31%).
-Not yet accepted. Fresh2001–4000 confirmation against exact0.2.7 underway:
-`IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts`. Check local
-process and /tmp/G01-round17-confirmation.log first; completed report is
-improvement-draw-depth-confirmation-report.json. Never count partial results.
+KEEP GOING rounds1–17 recorded. Round16 depth-four rejected926/2,000.
+Round17 Draw decision-depth initial1,050/2,000, fresh1,041/2,000; lower
+confirmation95%49.86% fails the predeclared bound, rejected.
+No-gain streak TWO. Round18 relative-tile-count leaf study underway:
+`IMPROVEMENT_STUDY=leaf-count node parallel-improvement.ts`. Check local
+process and /tmp/G01-round18.log first; completed report is
+improvement-leaf-count-report.json. Never count partial results.
 Require positive lower95% bound plus fresh seeds2001–4000 for adoption.
-If rejected, record no-gain round2, then do a new five-weakness review
-and substantive candidate. THREE consecutive no-gain rounds plus actual
-current-head green CI are required before claiming the next main job.
-Current main G02 and G03 are claimed by other workers; preserve them.
+If rejected, record no-gain round3. Then observe actual final-head green
+CI before completion and next claim. Preserve other main claims(G02/G03).
+Current production stays0.2.7 and every gain would reset the streak.
 
 New study-current-baseline.ts is exact0.2.7; script refuses stale comparisons.
 Historical immutable baselines/reports must remain intact. Every code reason

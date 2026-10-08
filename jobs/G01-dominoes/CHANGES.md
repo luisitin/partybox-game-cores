@@ -99,3 +99,5 @@ Round 16 measurement: freeze exact current 0.2.7 in study-current-baseline.ts an
 Study throughput: add parallel-improvement.ts and bounded, separate shard output to improvement-study.ts. Four processes evaluate disjoint500-seed ranges; aggregate validates source hashes, contiguous ranges, regression success and exact2,000-match totals before recording results. No game behavior changes. The partial sequential run is discarded, not counted as evidence.
 
 Round17 isolated candidate: improvement-study.ts supports draw-depth, preserving search depth on mandatory stock draws and selecting Draw for its comparison. Stock decreases on each recursive draw; production stays untouched unless2,000-match strength and fresh-seed confirmation pass. The round16 global depth-four candidate lost and is not shipped.
+
+Round17 confirmation fails the predeclared strength bound; the forced-draw depth candidate is not shipped. Round18 uses the already isolated leaf-count candidate, adding a five-point relative tile-count term to the shallow pip evaluation while preserving terminal rules. No production change.
