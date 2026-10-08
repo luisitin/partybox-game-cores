@@ -3,7 +3,8 @@
 Original final delivery passed exact-head hosted CI37730486159 at
 723bfa77ce91482f4084bbc195c117fa8d71480b; PR#2 was ready. The following original
 table and records describe historical checks. They do not accept the resumed
-host repair, whose current-head hosted result is pending.
+host repair, whose source at 8136bf2 passed exact-head hosted CI 37770743158.
+The latest metadata/evidence head still requires its own green check.
 
 ## Resumed host repair, 2026-10-08
 
@@ -42,6 +43,23 @@ guards match. Captures/report/log remain in media and resume evidence. Frame
 acceptance and current-head hosted CI remain pending; recording is not FPS proof.
 No unchanged local core matrices/leagues/mutations were repeated for host-only
 edits; hosted npm test continues to run the entire required suite.
+
+Exact head 8136bf2136da4c5223aa1a2c43881dc71e0ad7fe passed hosted run 37770743158
+at 11:36:08 UTC: 32/32 node tests, leagues 57.60%/87.15%, 25/25 compiled
+assertion-killed mutants, all browser suites/five host regressions, 209-file
+integrity. The actually read hosted log reports desktop 60.002196 FPS and
+phone4x 60.002400 FPS, both p99/max 16.8 ms, with matching 796f66c6 guards.
+Log/metadata are hosted-8136bf2.*. Artifact 11548086113 exists/unexpired but its
+Azure download returned 403; raw contents were not read or reconstructed.
+
+This same-source hosted pass justified one unchanged local confirmation:
+`node scripts/browser-check.mjs --snapshot`: PASS, start 11:43:45.886 UTC,
+desktop 60.002400 FPS/p99=max 16.8 ms; phone4x 59.902957 FPS/p99 16.8/max 33.3 ms.
+All 600 intervals per profile remain, including the phone stall. Every existing
+suite, 34 interactions and five host regressions PASS; source guards match.
+Complete report/raw arrays: browser.json/*-frames.json in resume evidence;
+exact runner/helper/log/report/raw also remain under the attempt's directory.
+The previous failure is preserved; its cause remains unestablished.
 
 `node scripts/hashes.mjs` twice plus byte comparison: PASS,208 delivered files
 at the first verification snapshot. `node scripts/integrity.mjs`: PASS,208
@@ -222,3 +240,8 @@ five times FAIL (all logs/frames retained; first2 use180 frames, last3 use600);
 node scripts/capture.mjs round-8 PASS. An explicit idle/interactive600-frame
 phone control also records all samples and handler times. No cause of the
 local timing failures is established; hosted exact-head full suite must pass.
+
+`node scripts/capture.mjs resume-verified`: PASS; fresh verified-milestone
+recordings retain source guards and demonstrate the repaired host. Their exact
+bytes/hashes are in resume-verified-captures.json, with the actual run log.
+No new frame measurement or physical-hardware claim is inferred from video.

@@ -13,13 +13,17 @@ clears11→0 private cards and10→0 meld selectors (old hidden DOM was not visu
 exposed). Full browser functionals/all five host regressions PASS. Desktop
 58.730056 FPS fails the unchanged 59 FPS gate; phone4x 60.001800 FPS passes. Both
 p99 16.8 ms; all 600 intervals/failures/source guards retained in resume evidence.
-No passing current snapshot or cause of desktop stalls is claimed.
+The same source then passed actual exact-head hosted CI 37770743158 at 8136bf2
+and one unchanged local full confirmation (desktop 60.002400/phone 59.902957 FPS,
+both p99 16.8; phone max 33.3 ms retained). The complete passing snapshot is now
+published alongside all prior failures; no cause of earlier stalls is claimed.
 
-New guarded desktop/phone functional clips PASS (596,569/593,936 bytes).
-Next: refresh claim/hashes, push the honest proof-pending milestone within 30
-minutes and inspect actual
-current-head CI/artifact. Profile the failure before a further isolated strict
-rerun; preserve the unchanged 59 FPS/p99<=17ms/600-frame gates.
+Initial guarded desktop/phone clips PASS (596,569/593,936 bytes); fresh verified
+milestone clips also pass with independent guards and are under 10 MB.
+Next: refresh claim/hashes, publish the verified host milestone within 30 minutes
+and wait for its actual exact-head CI. Hosted logs were actually read; artifact
+metadata was read but the Azure endpoint returned 403, so contents are unread.
+No further unchanged local benchmark or core matrix is queued.
 Retain every failed run. No unchanged full local leagues/matrices are needed
 for this host-only change; hosted npm test still runs all required checks.
 

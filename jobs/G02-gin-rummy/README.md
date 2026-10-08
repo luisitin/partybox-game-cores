@@ -31,8 +31,8 @@ SHA256SUMS covers delivered data/media. No external card art or trackers.
 The original eight KEEP GOING rounds finished at head723bfa77, with exact-head
 CI37730486159 green and PR#2 ready. Earlier timing failures remain preserved.
 The resumed host repair consumes an overdue clock before human/bot moves and
-clears private DOM when starting over. Its current acceptance is pending;
-new player-visible fixes restart the KEEP GOING stopping streak at zero.
+clears private DOM when starting over. Its unchanged source passed full local
+and hosted browser gates; new fixes restart the KEEP GOING streak at zero.
 Current exact-head CI must pass before delivery is complete: see
 https://github.com/luisitin/partybox-game-cores/pull/2/checks .
 VERIFY and NEXT distinguish current checks from historical evidence.
