@@ -33,3 +33,10 @@ and Playwright are development tools. The shared contract/RNG remain unchanged.
 
 The actual earlier source-access failures are preserved in
 `evidence/historical-blocker/`; they do not describe the current environment.
+
+Target winner versus final points was re-checked against the already-read
+P and B extractions. Both end the game when one player first reaches the hand
+point target, before game/line bonuses. P separately defines final settlement
+by the post-bonus point difference. Our result keeps that game winner while
+preserving all final points; the three/four-seat ranking is an explicit house
+extension, not an invented independently corroborated multiplayer rule.

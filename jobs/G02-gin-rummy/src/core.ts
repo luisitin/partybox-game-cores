@@ -53,7 +53,7 @@ export const manifest:GameManifest={
   id:'gin-rummy',name:'Gin Rummy',icon:'🃏',tagline:'Build melds, keep your deadwood low.',
   description:'Standard or Oklahoma Gin, exact meld scoring, and an optional winner-stays rotation.',
   howToPlay:['Draw a card, then discard one.','Make sets and runs; knock with low deadwood.','Gin earns a bonus. First to the target ends the match.'],
-  version:'1.2.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
+  version:'1.2.1',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
   tags:['classic','strategy'],presence:{needs:'same-room'},addedOn:'2026-10-08',supportsBots:true,saveable:true,
   playerCounts:{setting:'mode',default:[2,2],overrides:{duel:[2,2],rotation:[3,4]}},
   settings:[
@@ -124,7 +124,7 @@ export function handAward(config:Config,knockerDeadwood:number,defenderDeadwood:
 export function finalScores(state:State,matchWinner:string|null):Record<string,number> {
   const scores={...state.scores};
   for(const id of state.order)scores[id]+=state.boxes[id]*state.config.boxBonus;
-  if(matchWinner) {
+  if(matchWinner!==null) {
     const shutout=state.order.filter(id=>id!==matchWinner).every(id=>state.wins[id]===0);
     scores[matchWinner]+=100;
     if(shutout) {
@@ -136,7 +136,7 @@ export function finalScores(state:State,matchWinner:string|null):Record<string,n
   return scores;
 }
 function endRound(state:State,now:number,result:RoundResult):State {
-  if(!result.winner)return phase({...state,pending:null,roundResult:result},'round-end',now);
+  if(result.winner===null)return phase({...state,pending:null,roundResult:result},'round-end',now);
   const id=result.winner,scores={...state.scores,[id]:state.scores[id]+result.points};
   const extras=state.config.variant==='oklahoma'&&state.config.extraBoxes?(result.kind==='undercut'?1:result.kind==='gin'||result.kind==='bigGin'?2:0)*state.multiplier:0;
   const next={...state,pending:null,roundResult:result,scores,boxes:{...state.boxes,[id]:state.boxes[id]+1+extras},wins:{...state.wins,[id]:state.wins[id]+1}};
@@ -154,7 +154,7 @@ function nextHand(state:State,now:number):State {
   if(state.phase.id!=='round-end')return state;
   const winner=state.roundResult?.winner;
   let active=[...state.active],waiting=[...state.waiting],dealer=state.dealer;
-  if(winner) {
+  if(winner!==null&&winner!==undefined) {
     const loser=state.active.find(x=>x!==winner)!;
     if(state.config.mode==='rotation') {
       const entrant=waiting.shift()!;waiting.push(loser);active=[winner,entrant];dealer=entrant;
@@ -213,7 +213,7 @@ function advance(state:State,now:number):State {
 function reduceEvent(state:State,event:GameEvent<Input>):State {
   if(!event||typeof event!=='object'||!Number.isFinite(event.now))return state;
   if(event.type==='player') {
-    if(!Object.hasOwn(state.players,event.playerId)||typeof event.connected!=='boolean'||
+    if(typeof event.playerId!=='string'||!Object.hasOwn(state.players,event.playerId)||typeof event.connected!=='boolean'||
       ![undefined,'left','kicked'].includes(event.gone))return state;
     const left=event.gone&&!state.left.includes(event.playerId)?[...state.left,event.playerId]:state.left;
     return {...state,left,players:{...state.players,[event.playerId]:{...state.players[event.playerId],connected:event.connected&&!left.includes(event.playerId)}}};
@@ -233,7 +233,7 @@ function reduceEvent(state:State,event:GameEvent<Input>):State {
   if(state.phase.paused||state.finished)return state;
   if(event.type==='timer')return event.phaseId===state.phase.id&&event.startedAt===state.phase.startedAt&&state.phase.deadline!==null&&event.now>=state.phase.deadline?advance(state,event.now):state;
   if(event.type==='input') {
-    if(!Object.hasOwn(state.players,event.playerId)||state.left.includes(event.playerId)||!state.players[event.playerId].connected)return state;
+    if(typeof event.playerId!=='string'||!Object.hasOwn(state.players,event.playerId)||state.left.includes(event.playerId)||!state.players[event.playerId].connected)return state;
     const parsed=inputSchema.safeParse(event.input);
     return parsed.success?phaseInput(state,event.playerId,parsed.data,event.now):state;
   }
@@ -266,7 +266,7 @@ export function reduce(state:State,event:GameEvent<Input>):State {
   return next===state?state:continueAbsent(next,event.now);
 }
 function legal(state:State,id:string):Input[] {
-  if(state.finished||state.phase.paused||!Object.hasOwn(state.players,id)||!available(state,id))return [];
+  if(state.finished||state.phase.paused||typeof id!=='string'||!Object.hasOwn(state.players,id)||!available(state,id))return [];
   if(state.phase.id==='round-end')return [{type:'next'}];
   if(id!==state.turn)return [];
   if(state.phase.id==='upcard')return [{type:'pass'},{type:'draw',source:'discard'}];
@@ -293,8 +293,8 @@ export function tvView(state:State):PublicView {
     log:state.publicLog.map(x=>({...x}))};
 }
 export function controllerView(state:State,id:string):PrivateView {
-  const player=Object.hasOwn(state.players,id),hand=player&&available(state,id)&&state.active.includes(id)?state.hands[id]:[];
-  return {...tvView(state),me:{id,role:player?'player':'spectator'},handCards:[...hand],
+  const player=typeof id==='string'&&Object.hasOwn(state.players,id),hand=player&&available(state,id)&&state.active.includes(id)?state.hands[id]:[];
+  return {...tvView(state),me:{id:typeof id==='string'?id:'',role:player?'player':'spectator'},handCards:[...hand],
     deadwood:hand.length?minimizeDeadwood(hand).deadwood:null,legal:legal(state,id),
     canBigGin:state.phase.id==='discard'&&id===state.turn&&state.config.bigGin&&hand.length===11&&minimizeDeadwood(hand).deadwood===0,
     forbiddenDiscard:id===state.turn?state.drawnDiscard:null,
@@ -302,8 +302,15 @@ export function controllerView(state:State,id:string):PrivateView {
 }
 export function results(state:State):GameResults|null {
   if(!state.finished)return null;
-  const ranking=state.order.map(playerId=>({playerId,score:state.scores[playerId],rank:1+state.order.filter(id=>state.scores[id]>state.scores[playerId]).length}));
-  return {scores:{...state.scores},ranking,winnerIds:ranking.filter(x=>x.rank===1).map(x=>x.playerId),awards:[],headline:state.endedEarly?'Match ended early':'Gin match complete'};
+  const targetWinner=state.endedEarly?null:state.roundResult?.winner??null;
+  const ranking=state.order.map(playerId=>({playerId,score:state.scores[playerId],rank:targetWinner===null?
+    1+state.order.filter(id=>state.scores[id]>state.scores[playerId]).length:playerId===targetWinner?1:
+    2+state.order.filter(id=>id!==targetWinner&&state.scores[id]>state.scores[playerId]).length})).sort((a,b)=>a.rank-b.rank);
+  return {scores:{...state.scores},ranking,winnerIds:targetWinner===null?ranking.filter(x=>x.rank===1).map(x=>x.playerId):[targetWinner],awards:[],
+    headline:state.endedEarly?'Match ended early':'Gin match complete',
+    headlineNote:state.endedEarly?'Current hand-point standings; no end-of-match bonuses.':`First to ${state.config.target} hand points wins; final points include earned game and line bonuses.`,
+    placeLines:targetWinner===null?{}:Object.fromEntries(state.order.map(id=>[id,id===targetWinner?'Reached the hand-point target first.':'Final points include line bonuses; the winner reached the hand-point target first.'])),
+    detail:{handPointTarget:state.config.target,targetWinner}};
 }
 // Strategy reads only the controller observation: no stock order, opponent hand or state RNG.
 export function sampleInput(state:State,id:string,rng:Rng,skill:BotSkill='normal'):Input|null {

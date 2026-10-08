@@ -22,3 +22,10 @@
 - Four-player winner-stays is an owner-requested house extension, not an
   invented official four-player rule. Pagat's official four-player partnership
   variant is documented but not mislabeled as the requested rotation.
+
+Final result versus settlement: P explicitly first reaches100 and receives the
+game bonus, then lower final points pay higher final points; B independently
+ends the game at100 before adding bonuses. We retain the first-to-target
+winner and use final earned points as scores. The renderer/contract explanation
+prevents box-heavy settlement from silently replacing that winner. Rotation
+ranking is the requested house extension: winner first, others by final score.

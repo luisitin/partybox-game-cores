@@ -113,3 +113,36 @@ clock and custom-meld regressions PASS. Accepted raw frames and ALL failures
 are delivered; no physical-phone or constant-zero-jank claim.
 Round2 CI37722950853/d32ca3b and round3 CI37725396032/c85b243 actually
 SUCCESS. Round4 current-head hosted full checks remain required.
+
+Round5: G02 and its binding checks re-read. Five largest remaining weaknesses:
+1. Final bonuses can reverse the reported target winner; confirm exact official semantics.
+2. Empty valid IDs are treated as absent winners; malformed metadata can throw/coerce identity.
+3. Replay checks compare final states rather than every event.
+4. Bundled third-party license notice needs explicit retention.
+5. Browser timing variation requires complete failure/raw-frame retention.
+Actual pre-fix tests: three FAIL and one PASS. A real Gin118 award takes p0
+from90 to208 hand points, then final bonuses yield388 versus p1's499; results
+incorrectly name p1. Empty ID loses its win/bonus/rotation, and a malformed
+identity object throws TypeError. Pagat and Bicycle independently state
+first-to-target before game/line bonuses; Pagat distinguishes final payment
+settlement. Repair uses target winner for the crown, keeps ALL settlement
+points, and explains it in results/UI. String guards reject identity coercion;
+explicit null checks preserve every valid string ID. Version1.2.1 is a
+compatible scoring-result/boundary correction, with no new state fields.
+
+Round5 actual full local sequence PASS/exit0: npm run build &&
+node --test tests/*.test.mjs && node scripts/league.mjs &&
+node scripts/mutations.mjs && node scripts/browser-check.mjs.
+All29 tests PASS, six1,000-match groups plus final-state replays PASS,
+10,000 deadwood proofs,10,500 discard layouts,2,000 joint-layoff proofs,
+1003 adversarial seeds and25/25 compiled mutants PASS. Bot wins now use
+actual game winnerIds: sharp1152/2000=57.60% (Wilson lower55.42%),
+normal1743/2000=87.15% (lower85.61%); previous settlement counts retained.
+Actual browser60.002FPS both profiles, p99/max16.8ms; clock/meld/result
+regressions PASS. Result fixture screenshots inspected on390px: no overflow,
+final388/499 points and truthful first-to-target winner/explanation visible.
+Functional clips30,452/85,191 bytes. Exact outputs and source-bound summary
+are delivered. Hash refresh/integrity follows generated league evidence;
+current-head CI's npm test remains the complete hosted acceptance gate.
+Observable gain: correct winner, preserved arbitrary valid IDs, no metadata
+coercion crash. Three consecutive no-player-gain rounds still required.

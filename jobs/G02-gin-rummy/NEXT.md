@@ -1,21 +1,22 @@
 # Resume G02
 
 Branch job/G02-gin-rummy; nickname codex-gin; PR#2 draft.
-Main contains CLAIMS changes only; shared contract/other jobs untouched.
-Historical research blockers/failures retained; sources now actually read.
+Main only holds CLAIMS updates; shared contract and other jobs untouched.
+Actual hosted success through round4: run37727436693/head369971a.
+Earlier successes and failed measurements are preserved in VERIFY/evidence.
 
-Actual hosted successes:1.0.0 run37717614222/c0dabcfd,
-1.1.0 run37719011330/b82c0cbc,round1 run37721051891/b096b6a,
-round2 run37722950853/d32ca3b,round3 run37725396032/c85b243.
-Rounds1–4 fixed absent turns, branching layoff latency, real host timing/entropy,
-and usable private meld choices/truthful reveals. Round4 strict build and
-custom-meld regression/captures PASS; full browser FAIL/FAIL/PASS recorded,
-accepted60.004FPS both profiles. Current round4 hosted run remains required.
+Round5 version1.2.1 fixes target-winner versus final settlement, arbitrary
+valid string IDs including empty, malformed metadata coercion, and early-end
+wording. Full local check sequence PASS:29 tests,6,000 games+6,000 final
+replays, independent proofs, both leagues57.60%/87.15%,25 mutants, browser
+60.002FPS both profiles and clock/meld/result checks. Result clips/screenshot
+and counterexamples are delivered. Refresh hashes/integrity before push;
+current-head hosted npm test remains required.
 
-Next: adversarial target winner versus final settlement points and all valid
-string IDs (including empty), plus malformed metadata coercion. Re-read G02
-and list five weaknesses first. Strengthen every-event replay proof and bundled
-license notices. Log/push each round and refresh main claim. Complete only
-after three consecutive rounds yield no player-noticeable gain and exact-head
-CI is actually green; then claim the lowest eligible job from fresh main.
-No completion/stop claimed. Earlier failures stay recorded.
+Next round6: re-read G02/list five weaknesses, then strengthen replay tests
+to compare state bytes/hashes after EVERY event, not just final states.
+Remaining: bundled license notice, invalid-card utility boundaries and
+malformed event/view fuzz in all phases. Log/push each round and refresh main
+claim. Require three consecutive no-player-noticeable-gain rounds and actual
+exact-head green CI before PR ready/next lowest eligible claim. No completion
+or stop claimed; all earlier failures remain recorded.

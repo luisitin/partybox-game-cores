@@ -46,3 +46,10 @@
   to seed its passed PRNG. Neither enters the pure core. Browser tests inject
   controlled entropy7199 and synthetic time in a separate clock context;
   normal-play frame profiles always use the actual browser frame clock.
+
+Version1.2.1 treats valid player IDs as arbitrary strings, including empty,
+without coercing invalid metadata. Invalid controller IDs use an empty string
+spectator envelope but never gain the registered empty-ID player's cards.
+A game's target winner and final settlement leader can differ; target winner
+ranks first, remaining seats rank by final points. Early end reports current
+raw standings and earns no game/line bonuses.

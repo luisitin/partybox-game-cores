@@ -29,8 +29,12 @@ undercut and earn the difference plus the undercut bonus. Otherwise the
 knocker earns the positive difference. Gin earns its bonus plus the
 defender's minimum deadwood. A stock of two after a non-knocking discard
 ends a drawn hand, with no points and the same dealer. No 50th-card exception.
-The target (100/150/250 setting) uses hand points only. At match end add the
-game bonus and each player's box/line bonus for every hand they won.
+The first player to the target (100/150/250 setting) in hand points wins
+the game (P+B). At match end add the game bonus and each player's box/line
+bonus for every hand they won. Final settlement points can put the other
+player ahead; they do not change who first reached the winning target (P).
+Results rank that winner first, then other seats by final points, and explain
+the distinction. The requested rotation uses the same first-to-target policy.
 
 ## Exposed scoring choices and Big Gin
 The default Classic profile uses Gin 20, undercut 10 and boxes 20 (P+B).

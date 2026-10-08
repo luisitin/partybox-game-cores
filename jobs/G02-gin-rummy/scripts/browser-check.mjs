@@ -5,6 +5,7 @@ import {writeFile,mkdir,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {seedHost,checkClock} from './clock-check.mjs';
 import {checkMelds} from './meld-check.mjs';
+import {checkResults} from './results-check.mjs';
 const capture=process.argv.includes('--capture');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 await mkdir('.work/browser',{recursive:true});await mkdir('media',{recursive:true});
@@ -59,6 +60,7 @@ try {
  }
  await checkClock(browser);
  await checkMelds(browser);
+ await checkResults(browser);
  if(capture) {
   // Recording has its own encoder cost. Capture the same playable UI in a
   // separate context; performance above measures normal play without recording.

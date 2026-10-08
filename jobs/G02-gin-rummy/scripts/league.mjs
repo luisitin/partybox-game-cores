@@ -7,8 +7,8 @@ for(const [stronger,weaker]of [['sharp','normal'],['normal','easy']]){
  for(let i=0;i<games;i++){
   const index=i%2,skills=index===0?[stronger,weaker]:[weaker,stronger];
   const run=play(70000+Math.floor(i/2),2,skills);events+=run.steps;
-  const a=run.results.scores['p'+index],b=run.results.scores['p'+(1-index)];
-  if(a>b)wins++;else if(a<b)losses++;else ties++;
+  const winnerIds=run.results.winnerIds;
+  if(winnerIds.length>1)ties++;else if(winnerIds.includes('p'+index))wins++;else losses++;
  }
  const winRate=(wins+.5*ties)/games,z=1.96,p=wins/games;
  const wilsonLower=(p+z*z/(2*games)-z*Math.sqrt(p*(1-p)/games+z*z/(4*games*games)))/(1+z*z/games);

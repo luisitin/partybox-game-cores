@@ -114,3 +114,16 @@ The production renderer now shows declared/resolved layouts; privacy covers
 remove named-card controls and deadwood text. The accepted strict browser run
 measured60.004FPS desktop and phone4x; captures143KB/232KB. The two prior
 hosted heads passed actual CI; current-head CI remains required.
+
+Round5 before: node --test tests/results-boundary.test.mjs FAIL3/PASS1,
+with actual wrong-target-winner, empty-ID and invalid-identity witnesses retained.
+After: npm run build; node --test tests/results-boundary.test.mjs
+ tests/ends.test.mjs tests/rules.test.mjs PASS14. node scripts/results-check.mjs
+ --capture PASS desktop/phone4x. Full exact local sequence (on one line):
+npm run build && node --test tests/*.test.mjs && node scripts/league.mjs &&
+node scripts/mutations.mjs && node scripts/browser-check.mjs: exit0,29 tests,
+6,000 complete matches+6,000 final-state replays, both leagues,25 mutants,
+and all browser regressions PASS. This is the full check sequence before
+refreshing hashes for newly generated league evidence, not a falsely named
+local npm test execution. Current-head hosted npm test remains required.
+Raw source-bound results: round-5-full-checks.log / round-5-summary.json.

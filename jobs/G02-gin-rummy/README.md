@@ -28,6 +28,7 @@ VERIFY records actual commands and coverage, BOTS the measured win rates,
 LOOP post-green improvement rounds, NEXT remaining/resume steps.
 SHA256SUMS covers delivered data/media. No external card art or trackers.
 
-Current status: PR #2 draft. Rounds1–3 fix absent turns, layoff latency and
-timed play. Clock/host/browser checks pass; current hosted acceptance and
-custom-meld/remaining KEEP GOING work remain. Failed checks are retained.
+Current status: PR #2 draft during mandatory KEEP GOING. Hosted checks pass
+through round4 (absent turns, layoff latency, timed play and private meld UI).
+Version1.2.1 corrects target winners and identity boundaries; the full local check
+sequence passes; current-head hosted acceptance and KEEP GOING remain. Raw failures and resumable next steps are retained.

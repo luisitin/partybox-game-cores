@@ -134,7 +134,9 @@ function render():void {
   $('scores').replaceChildren(...v.players.map(p=>{const d=document.createElement('div');d.className='score'+(p.id===v.turn?' current':'');d.textContent=`${p.name} · ${p.score} points${state!.left.includes(p.id)?' · left; auto-playing':!p.connected?' · disconnected; auto-playing':v.waiting.includes(p.id)?' · waiting':''}`;return d;}));
   $('meta').textContent=`Hand ${v.hand} · Target ${v.target} · Knock at ${v.knockLimit} or less${v.multiplier===2?' · DOUBLE HAND':''}`;
   const name=state.players[state.turn].name;
-  $('status').textContent=state.finished?game.results(state)!.winnerIds.map(id=>state!.players[id].name).join(' & ')+' wins':v.paused?'Paused':v.phaseId==='round-end'?'Hand complete':`${name} · ${v.phaseId==='upcard'?'accept the upcard or pass':v.phaseId==='draw'?'draw one card':v.phaseId==='discard'?'discard or knock':'resolve your best layoffs'}`;
+  const result=state.finished?game.results(state):null;
+  $('status').textContent=result?(state.endedEarly?'Match ended early · Current leader: ':'')+result.winnerIds.map(id=>state!.players[id].name).join(' & ')+(state.endedEarly?'':' wins'):v.paused?'Paused':v.phaseId==='round-end'?'Hand complete':`${name} · ${v.phaseId==='upcard'?'accept the upcard or pass':v.phaseId==='draw'?'draw one card':v.phaseId==='discard'?'discard or knock':'resolve your best layoffs'}`;
+  $('result-note').hidden=!result;$('result-note').textContent=result?.headlineNote??'';
   $('piles').replaceChildren();const stock=document.createElement('div');stock.textContent=`Stock · ${v.stockCount} cards`;$('piles').append(stock);if(v.discard.length)$('piles').append(card(v.discard.at(-1)!));
   const reveal=['layoff','round-end','done'].includes(v.phaseId),bot=!!state.players[state.turn].bot;
   $('handoff').hidden=reveal||bot||openFor===state.turn||v.paused;
@@ -164,7 +166,7 @@ function render():void {
   $('meld-choice').hidden=$('private').hidden||v.phaseId!=='discard';
   $('reveal').replaceChildren();
   if(reveal&&publicView.roundResult) {
-    const r=publicView.roundResult;const heading=document.createElement('h2');heading.textContent=r.winner?`${state.players[r.winner].name}: ${r.kind} +${r.points}`:v.phaseId==='layoff'?'Both hands are now public':'Drawn hand';$('reveal').append(heading);
+    const r=publicView.roundResult;const heading=document.createElement('h2');heading.textContent=r.winner!==null?`${state.players[r.winner].name}: ${r.kind} +${r.points}`:v.phaseId==='layoff'?'Both hands are now public':'Drawn hand';$('reveal').append(heading);
     for(const [id,cards]of Object.entries(r.hands)){const p=document.createElement('p');p.textContent=state.players[id].name;
       const layout=id===r.knocker&&r.knockerLayout?r.knockerLayout:id!==r.knocker&&r.defenderLayout?r.defenderLayout:minimizeDeadwood(cards);
       const shown=displayLayout(layout);shown.dataset.player=id;$('reveal').append(p,shown);}
