@@ -174,3 +174,15 @@ After the own-property fix: `npm run build`, `node scripts/html.mjs`,
 and `node scripts/check-data.mjs` PASS21 JSON/25 hashes. Prototype-shaped real
 seats now play a full match and retain finite original-player scores. The new
 head still needs full CI; the incorrect prior audit-pass note is corrected above.
+
+KEEP GOING1, after PR5/head9c68bca had two GREEN runs37732593065/37733349438:
+`node --test tests/save.test.mjs` PASS three meaningful recovery/corruption/clock
+checks, covering all5 phases at counts3–6, unmutated live state, identical final
+scores, malformed/missing/duplicate-card/impossible-turn rejection and18s saved
+remaining time. `node scripts/visual.mjs --http --record --milestone 02` PASS:
+two fresh default hands differ; after a scored hand, reload/Resume restores the
+complete public view exactly with0 private-card DOM; corrupt stored JSON is
+rejected. Optional entered seed stays reproducible. Desktop60.000fps and phone
+CPU4x59.670fps, p9516.8ms/max33.4ms; all previous browser gates pass, clip135356B.
+This is localhost partial browser evidence; updated full default CI remains
+required. No runtime network calls, new dependency or pure-core randomness/I/O.

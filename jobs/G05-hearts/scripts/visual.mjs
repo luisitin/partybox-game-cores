@@ -52,9 +52,21 @@ try {
   const nav=await send('Page.navigate',{url:documentUrl});if(nav.errorText)throw Error(`Disk navigation failed: ${nav.errorText}`);
   for(let i=0;i<100&&!(await evaluate('!!window.__hearts'));i++)await delay(50);
   assert.ok(await evaluate('!!window.__hearts'),'standalone page did not initialize: '+JSON.stringify(errors));
-  async function chooseTable(count,mode='human',long=false,target=25){
-    await evaluate(`(()=>{if(window.__hearts.snapshot()){(document.getElementById('new-table')??document.getElementById('reset')).click()}const count=document.getElementById('seat-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('target').value='${target}';for(let i=0;i<${count};i++){const mode=document.getElementById('mode-'+i);mode.value='${mode}';mode.dispatchEvent(new Event('change',{bubbles:true}));if(${long}){const name=document.getElementById('name-'+i);name.value=String(i+1)+'W'.repeat(23);name.dispatchEvent(new Event('input',{bubbles:true}));}}document.getElementById('start-table').click();})()`);
+  async function chooseTable(count,mode='human',long=false,target=25,fresh=false){
+    await evaluate(`(()=>{if(window.__hearts.snapshot()){(document.getElementById('new-table')??document.getElementById('reset')).click()}const count=document.getElementById('seat-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('target').value='${target}';document.getElementById('seed').value=${fresh?'""':'"103"'};for(let i=0;i<${count};i++){const mode=document.getElementById('mode-'+i);mode.value='${mode}';mode.dispatchEvent(new Event('change',{bubbles:true}));if(${long}){const name=document.getElementById('name-'+i);name.value=String(i+1)+'W'.repeat(23);name.dispatchEvent(new Event('input',{bubbles:true}));}}document.getElementById('start-table').click();})()`);
   }
+  const privateHand=()=>evaluate("[...document.querySelectorAll('.hand-card')].map(b=>Number(b.dataset.card))");
+  await chooseTable(3,'human',false,25,true);await evaluate('document.getElementById("start-turn").click()');const fresh1=await privateHand();
+  await chooseTable(3,'human',false,25,true);await evaluate('document.getElementById("start-turn").click()');const fresh2=await privateHand();assert.notDeepEqual(fresh1,fresh2,'default tables must deal fresh hands');
+  await chooseTable(3,'human',false,100);
+  const beforeReload=await evaluate(`(()=>{for(let k=0;k<6000;k++){const snap=window.__hearts.snapshot();if(snap.view.handNumber>=2)return snap.view;const reveal=document.getElementById('start-turn');if(reveal)reveal.click();const next=document.getElementById('continue');if(next){next.click();continue;}if(snap.view.phaseId==='pass'){while(window.__hearts.snapshot().selected.length<3)document.querySelector('.hand-card:not([disabled])[aria-pressed=false]').click();document.getElementById('pass-confirm').click();}else document.querySelector('.hand-card:not([disabled])').click();}throw new Error('cannot reach scored next hand')})()`);
+  assert.ok(Object.values(beforeReload.scores).some(v=>v!==0),'reload test must preserve an actually scored hand');
+  await send('Page.reload');for(let k=0;k<100&&!(await evaluate('!!window.__hearts'));k++)await delay(50);
+  assert.ok(await evaluate('!document.getElementById("resume-box").hidden&&!document.getElementById("resume-saved").disabled'));
+  await evaluate('document.getElementById("resume-saved").click()');assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'reload never reveals a private hand');
+  const restored=await evaluate('window.__hearts.snapshot().view');assert.deepEqual(restored,beforeReload,'scored hand/actor/cards/counts/clock survive reload');
+  await evaluate('document.getElementById("reset").click();localStorage.setItem("partybox-hearts-save-v1","{broken")');await send('Page.reload');for(let k=0;k<100&&!(await evaluate('!!window.__hearts'));k++)await delay(50);
+  assert.ok(await evaluate('document.getElementById("resume-saved").disabled'));await evaluate('document.getElementById("discard-saved").click()');
   await chooseTable(3);
   assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'concealed hand must have no card controls in DOM');
   assert.equal(await evaluate('window.__hearts.snapshot().view.paused'),true,'handoff holds the clock');
@@ -107,6 +119,6 @@ try {
   await assertFit('handoff');await evaluate('document.getElementById("start-turn").click()');await assertFit('private hand');await playHuman();await assertFit('full results');
   await evaluate('window.scrollTo(0,0)');const mobileShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${output}/hearts-phone-${milestone}.png`,Buffer.from(mobileShot.data,'base64'));
   assert.equal(requests.filter(url=>/^https?:/.test(url)&&url!==documentUrl).length,0,'zero network requests after document load');assert.deepEqual(errors,[]);
-  const report={schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
+  const report={freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
   writeFileSync(`${output}/visual-measurements-${milestone}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }finally{socket?.close();browser.kill('SIGTERM');localServer?.close();}

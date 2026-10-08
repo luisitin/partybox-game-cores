@@ -3,13 +3,22 @@ import {createRng} from '../../../contract/rng.js';
 import {cardName,rank,suit} from './rules.js';
 import type {HeartsState,Input} from './types.js';
 import type {BotSkill} from '../../../contract/constants.js';
-type Mode='human'|BotSkill;
+import {makeSave,parseSave} from './save.js';
+import type {Mode,SavedGame} from './save.js';
 const $=<T extends Element=HTMLElement>(sel:string):T=>{const v=document.querySelector<T>(sel);if(!v)throw new Error(`Missing ${sel}`);return v;};
 const escape=(s:string):string=>s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
 const seatPrefs:Array<{name:string;mode:Mode}>=Array.from({length:6},(_,i)=>({name:i===0?'You':`Player ${i+1}`,mode:i===0?'human':'normal'}));
-let state:HeartsState|null=null;
+let state:HeartsState|null=null;let saved:SavedGame|null=null;let saveUnavailable=false;
+const saveKey='partybox-hearts-save-v1';
 let revealed:string|null=null;let selected=new Set<number>();let lastBotAt=0;let fast=false;let revision=0;
 const now=():number=>Math.max(Date.now(),state?.phase.startedAt??0);
+function saveCurrent():void{
+ if(!state)return;
+ try{localStorage.setItem(saveKey,JSON.stringify(makeSave(state,seatPrefs.slice(0,state.order.length),now())));saveUnavailable=false;}catch{saveUnavailable=true;}
+}
+function readSaved():void{
+ try{const raw=localStorage.getItem(saveKey);saved=raw?parseSave(JSON.parse(raw)):null;$('#resume-box').hidden=!raw;$<HTMLButtonElement>('#resume-saved').disabled=!saved;$('#resume-description').textContent=saved?`Saved table · Hand ${saved.state.handNumber} · ${saved.state.order.length} seats`:'The saved table could not be opened.';}catch{$('#resume-box').hidden=false;$<HTMLButtonElement>('#resume-saved').disabled=true;$('#resume-description').textContent='The saved table could not be opened.';}
+}
 function setupSeats():void{
  const n=Number($<HTMLSelectElement>('#seat-count').value);
  $('#seats').innerHTML=seatPrefs.slice(0,n).map((p,i)=>`<div class="seat-row"><span class="seat-index">${i+1}</span><label><span class="sr">Player ${i+1} name</span><input id="name-${i}" data-name="${i}" maxlength="24" value="${escape(p.name)}" required autocomplete="off"></label><label><span class="sr">Player ${i+1} type</span><select id="mode-${i}" data-mode="${i}">${(['human','easy','normal','sharp'] as const).map(m=>`<option value="${m}"${p.mode===m?' selected':''}>${m==='human'?'Human':m==='normal'?'Medium bot':m==='sharp'?'Strong bot':'Easy bot'}</option>`).join('')}</select></label></div>`).join('');
@@ -32,8 +41,8 @@ const input=(value:Input):void=>{if(!state)return;dispatch({type:'input',playerI
 function startTable(e:Event):void{
  e.preventDefault();const n=Number($<HTMLSelectElement>('#seat-count').value);const prefs=seatPrefs.slice(0,n);
  const roster=prefs.map((p,i)=>({id:`p${i}`,name:p.name.trim()||`Player ${i+1}`,avatarId:'face-1',connected:true,bot:p.mode!=='human'}));
- state=game.init({players:roster,seed:Number($<HTMLInputElement>('#seed').value)>>>0,now:Date.now(),settings:{target:Number($<HTMLSelectElement>('#target').value),moon:$<HTMLSelectElement>('#moon').value,jack:$<HTMLInputElement>('#jack').checked,noPass:$<HTMLInputElement>('#no-pass').checked,queenBreaks:$<HTMLInputElement>('#queen-breaks').checked,threeDeck:$<HTMLSelectElement>('#three-deck').value,turnSeconds:Number($<HTMLSelectElement>('#clock-setting').value)}});
- revealed=null;selected=new Set();fast=false;revision=0;lastBotAt=performance.now();$('#setup').hidden=true;$('#table').hidden=false;concealIfNeeded();render();focusPrimary();
+ state=game.init({players:roster,seed:$<HTMLInputElement>('#seed').value.trim()===''?crypto.getRandomValues(new Uint32Array(1))[0]!:Number($<HTMLInputElement>('#seed').value)>>>0,now:Date.now(),settings:{target:Number($<HTMLSelectElement>('#target').value),moon:$<HTMLSelectElement>('#moon').value,jack:$<HTMLInputElement>('#jack').checked,noPass:$<HTMLInputElement>('#no-pass').checked,queenBreaks:$<HTMLInputElement>('#queen-breaks').checked,threeDeck:$<HTMLSelectElement>('#three-deck').value,turnSeconds:Number($<HTMLSelectElement>('#clock-setting').value)}});
+ $<HTMLInputElement>('#seed').value='';revealed=null;selected=new Set();fast=false;revision=0;lastBotAt=performance.now();$('#setup').hidden=true;$('#table').hidden=false;concealIfNeeded();render();focusPrimary();
 }
 $('#setup-form').addEventListener('submit',startTable);
 function cardMarkup(card:number,extra=''):string{
@@ -51,7 +60,7 @@ function refreshSelection():void{
  const confirm=$<HTMLButtonElement>('#pass-confirm');confirm.disabled=selected.size!==3;confirm.textContent=`Pass ${selected.size} / 3 selected`;
 }
 function render():void{
- if(!state)return;const s=state,v=game.tvView(s);const phase=v.phaseId;const name=(id:string)=>escape(s.players[id]!.name);
+ if(!state)return;saveCurrent();const s=state,v=game.tvView(s);const phase=v.phaseId;const name=(id:string)=>escape(s.players[id]!.name);
  const oldFocus=document.activeElement instanceof HTMLElement?document.activeElement.dataset.card:undefined;
  const privatePhase=phase==='pass'||phase==='play';const human=privatePhase&&!s.players[s.actor]!.bot;
  const cv=human&&revealed===s.actor&&!s.phase.paused?game.controllerView(s,s.actor):null;
@@ -74,7 +83,7 @@ function render():void{
   privateContent=`<div class="summary-panel"><p class="eyebrow">${phase==='done'?'TABLE COMPLETE':phase==='hand'?'HAND '+v.handNumber:'PUBLIC TRICK'}</p><h2>${phase==='done'?result!.winnerIds.map(name).join(' &amp; ')+' win'+(result!.winnerIds.length===1?'s':''):phase==='hand'?moon?name(moon)+' shot the moon':'The score is in':name(v.lastWinner!)+' takes the trick'}</h2>${phase==='trick'?`<p>${v.takenPoints[v.lastWinner!]} penalty points taken so far this hand.</p>`:`<div class="score-rows">${(result?.ranking.map(r=>r.playerId)??s.order).map(id=>`<div><span>${name(id)}</span><strong>${v.scores[id]}</strong>${v.lastHand?`<small>${v.lastHand.points[id]!>=0?'+':''}${v.lastHand.points[id]} this hand</small>`:''}</div>`).join('')}</div>`}<p class="fine">${phase==='trick'?'No trump: only the led suit can win.':`${s.settings.jack?'The J♦ taker receives −10 separately. ':''}${moon?(s.settings.moon==='add'?'Moon: +26 to everyone else.':'Moon: −26 to the shooter.'):'Hearts +1 each · Q♠ +13.'}`}</p>${phase==='done'?'<button class="primary" id="new-table">New table</button>':`<button class="primary" id="continue">${phase==='trick'?'Next trick':s.order.some(id=>s.scores[id]!>=s.settings.target)?'See final scores':'Deal next hand'}</button>`}</div>`;
  }
  const canPause=!human||Boolean(cv);const paused=Boolean(s.phase.paused);
- $('#table').innerHTML=`<div class="table-top"><div><p class="eyebrow">HAND ${v.handNumber} · FIRST TO ${s.settings.target} ENDS THE MATCH</p><h1>${phaseLabel}</h1></div><div class="top-controls"><span class="clock" id="clock-label">${paused?'Clock held':v.deadline===null?'No rush':'Clock running'}</span><details class="manage"><summary>Manage</summary><div><button id="pause"${!canPause?' disabled':''}>${paused?'Resume':'Pause'}</button><button id="skip">Auto-play / continue</button><button id="end">End match</button><button id="reset">New table</button></div></details></div></div><div class="score-strip">${scores}</div><div class="play-layout"><section class="felt" aria-label="Public trick"><div class="felt-top"><span class="eyebrow">${v.heartsBroken?'HEARTS BROKEN':'HEARTS UNBROKEN'}</span><span class="phase-pill">${s.order.length} seats · ${direction}</span></div><div class="trick-grid">${trick}</div><p class="table-instruction">${heading}</p><div class="felt-bottom"><span>♥ +1 · Q♠ +13${s.settings.jack?' · J♦ −10':''}</span><span>${s.settings.moon==='add'?'Moon adds 26 to others':'Moon subtracts 26'}</span></div></section><section class="private-panel" aria-label="Player controls">${privateContent}</section></div><div class="table-footer"><p>Private hands · shared table · lowest score wins</p>${s.order.every(id=>s.players[id]!.bot)?`<label class="fast-option"><input id="fast-bots" type="checkbox"${fast?' checked':''}> Fast bot table</label>`:''}<button id="rules-toggle" class="plain">Rules</button></div>`;
+ $('#table').innerHTML=`<div class="table-top"><div><p class="eyebrow">HAND ${v.handNumber} · FIRST TO ${s.settings.target} ENDS THE MATCH</p><h1>${phaseLabel}</h1></div><div class="top-controls"><span class="clock" id="clock-label">${paused?'Clock held':v.deadline===null?'No rush':'Clock running'}</span><details class="manage"><summary>Manage</summary><div><button id="pause"${!canPause?' disabled':''}>${paused?'Resume':'Pause'}</button><button id="skip">Auto-play / continue</button><button id="end">End match</button><button id="reset">New table</button></div></details></div></div><div class="score-strip">${scores}</div><div class="play-layout"><section class="felt" aria-label="Public trick"><div class="felt-top"><span class="eyebrow">${v.heartsBroken?'HEARTS BROKEN':'HEARTS UNBROKEN'}</span><span class="phase-pill">${s.order.length} seats · ${direction}</span></div><div class="trick-grid">${trick}</div><p class="table-instruction">${heading}</p><div class="felt-bottom"><span>♥ +1 · Q♠ +13${s.settings.jack?' · J♦ −10':''}</span><span>${s.settings.moon==='add'?'Moon adds 26 to others':'Moon subtracts 26'}</span></div></section><section class="private-panel" aria-label="Player controls">${privateContent}</section></div><div class="table-footer"><p id="save-status">${saveUnavailable?'Saving is unavailable in this browser.':'Saved on this device · lowest score wins'}</p>${s.order.every(id=>s.players[id]!.bot)?`<label class="fast-option"><input id="fast-bots" type="checkbox"${fast?' checked':''}> Fast bot table</label>`:''}<button id="rules-toggle" class="plain">Rules</button></div>`;
  document.querySelector('#start-turn')?.addEventListener('click',()=>{if(!state)return;revealed=state.actor;state=game.reduce(state,{type:'vip',action:'resume',now:now()});render();focusPrimary();});
  // These elements vary by phase; direct optional queries avoid hidden placeholders.
  for(const button of document.querySelectorAll<HTMLButtonElement>('.hand-card'))button.addEventListener('click',()=>{if(!state)return;const card=Number(button.dataset.card);if(state.phase.id==='pass'){selected.has(card)?selected.delete(card):selected.size<3&&selected.add(card);refreshSelection();}else input({type:'play',card});});
@@ -92,7 +101,7 @@ function render():void{
  else if(human&&cv===null)focusPrimary();
  updateClock();
 }
-function reset():void{state=null;revealed=null;selected=new Set();$('#table').hidden=true;$('#table').innerHTML='';$('#setup').hidden=false;setupSeats();$('#seat-count').focus({preventScroll:true});}
+function reset():void{try{localStorage.removeItem(saveKey);}catch{saveUnavailable=true;}saved=null;$('#resume-box').hidden=true;state=null;revealed=null;selected=new Set();$('#table').hidden=true;$('#table').innerHTML='';$('#setup').hidden=false;setupSeats();$('#seat-count').focus({preventScroll:true});}
 function updateClock():void{
  if(!state)return;const label=$('#clock-label');const text=state.phase.paused?'Clock held':state.phase.deadline===null?'No rush':`${Math.max(0,Math.ceil((state.phase.deadline-now())/1000))}s`;
  if(label.textContent!==text)label.textContent=text;
@@ -115,6 +124,14 @@ function tick(t:number):void{
  }
  if(state)updateClock();requestAnimationFrame(tick);
 }
-setupSeats();requestAnimationFrame(tick);
+$('#resume-saved').addEventListener('click',()=>{
+ if(!saved)return;const value=saved;seatPrefs.splice(0,value.seats.length,...value.seats.map(p=>({...p})));$<HTMLSelectElement>('#seat-count').value=String(value.seats.length);setupSeats();
+ for(const [id,key] of [['target','target'],['moon','moon'],['three-deck','threeDeck'],['clock-setting','turnSeconds']] as const)$<HTMLSelectElement>('#'+id).value=String(value.state.settings[key]);
+ for(const [id,key] of [['jack','jack'],['no-pass','noPass'],['queen-breaks','queenBreaks']] as const)$<HTMLInputElement>('#'+id).checked=value.state.settings[key];
+ state=game.reduce(value.state,{type:'vip',action:'resume',now:Date.now()});revealed=null;selected=new Set();fast=false;revision=0;$('#setup').hidden=true;$('#table').hidden=false;concealIfNeeded();render();focusPrimary();
+});
+$('#discard-saved').addEventListener('click',()=>{try{localStorage.removeItem(saveKey);}catch{saveUnavailable=true;}saved=null;$('#resume-box').hidden=true;});
+addEventListener('pagehide',saveCurrent);document.addEventListener('visibilitychange',()=>{if(document.hidden)saveCurrent();});
+setupSeats();readSaved();requestAnimationFrame(tick);
 const bridge=window as unknown as{__hearts:{snapshot:()=>unknown}};
 bridge.__hearts={snapshot:()=>state?{view:game.tvView(state),result:game.results(state),revealed,privateCards:document.querySelectorAll('.hand-card').length,selected:[...selected],revision,fast}:null};

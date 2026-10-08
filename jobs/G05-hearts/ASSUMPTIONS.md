@@ -35,3 +35,12 @@
   control gives slow readers unlimited time. An unattended all-bot table has public
   timers and schema-valid Next bot inputs; the standalone page separately paces
   its display unless the user selects Fast. No private SDK reading helper is copied.
+
+- Standalone default deals now draw a fresh uint32 from browser crypto outside the
+  pure core; an entered seed remains reproducible. The core still uses only passed
+  RNG/state. The active DOM clears the setup seed after dealing.
+- The page autosaves only its own connected p0–p5 hot-seat roster to local storage,
+  never a network service. Core JSON remains independently saveable by its host.
+  Reload starts concealed and holds the saved clock until Resume/hand reveal.
+  Save failure is shown only if the browser actually refuses storage. A malformed
+  stored table is rejected without deleting it until Discard/new-table is chosen.

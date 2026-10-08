@@ -9,6 +9,8 @@ human/bot seats, names, finish score and house rules. Reveal only your own
 hand, select three cards to pass, or click a legal card. Human tables wait
 for Continue at public tricks/scores; the handoff holds optional turn clocks.
 All-bot tables have an optional Fast mode. Keyboard Tab/Space/Enter works.
+Defaults use fresh deals; enter a seed to reproduce one. The table saves locally
+and Resume restores progress after reload with every private hand concealed.
 
 For source checks use Node24, Chrome/Chromium and ffmpeg: `npm ci`, `npm test`.
 `npm run generate` rebuilds the page, fixtures, schemas and reproducible leagues.
@@ -25,4 +27,4 @@ Core entry: src/core.ts; shared types in contract/ are unchanged.
 Cards0–12 are clubs,13–25 diamonds,26–38 spades,39–51 hearts; each suit is2–A.
 Fixtures contain real pass/play/trick/hand/done states; no runtime fixture load.
 Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
-Resume/progress is in NEXT.md; GitHub CI status is the remaining delivery gate.
+Resume/progress is in NEXT.md; PR5 is green at its baseline; KEEP GOING progress is in LOOP.md.

@@ -2,6 +2,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "freshDeals": {
+      "type": "boolean"
+    },
+    "resumedSavedGame": {
+      "type": "boolean"
+    },
+    "corruptSaveRejected": {
+      "type": "boolean"
+    },
     "schemaVersion": {
       "type": "number",
       "const": 1
