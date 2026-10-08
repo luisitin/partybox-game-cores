@@ -203,3 +203,4 @@ Recovery commands from job folder:
 
 Exact new-head full push and PR checks and downloaded current artifact remain pending. Prior local TV60060.0024PASS/phone60057.6947FAIL/Spanish NOTRUN are retained in repair11; no unchanged FPS rerun. Resume clock player gain remains current and resets the earlier stop streak to0. Three subsequent formal no-player-gain reviews require fresh full acceptance.
 
+- Recovery quick checks: `npm run typecheck` PASS; `npx tsx start/verification/data-check.ts` PASS52JSON/schema/contract/fixtures; `sha256sum -c SHA256SUMS.txt` PASS143current paths. The initial `git diff --check` reported an extra EOF blank line; this follow-up removes it, with no runtime/source/sample change.
