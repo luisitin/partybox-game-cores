@@ -2,64 +2,50 @@
 
 Branch `job/G09-category-rush-parallel-20261008`; original draft PR
 https://github.com/luisitin/partybox-game-cores/pull/8; owner `codex-category`.
-Eight actual KEEP GOING rounds are complete: seven measured player-visible gains,
-then round8 current-bot-source attribution correction. Consecutive no-player-gain
-streak is one. Do not mark ready until three actual
-consecutive no-gain rounds and full final exact-head CI have completed.
+Nine actual KEEP GOING reviews complete: seven player gains, then R8 evidence
+attribution and R9 authentic legacy-save coverage. Consecutive no-player-gain
+streak2. Final formal R10 and full final current-head checks still required.
 
-Round7 preserves pasted word boundaries before hints/save/submission. Native
-Chromium14-case before/after at2/8humans shows6authored article-tab/vertical-tab/
-DEL answers improve0→1point;8ordinary/article/newline/CRLF controls stay1.
-Caret/backward-selection/80-character/private-handover/own-repeat/wrong-initial
-checks pass. Eight core/scorer/matcher/selector/bot/data/save files remain byte
-identical; current standalone HTML91a0c95d is457,688B.
+R7 current runtime normalizes pasted controls into visible spaces before own
+advice/save/submit. Real14-case native before/after rescues6authored answers
+0→1,8controls stay1. Core/scorer/matcher/selector/data/bots/RNG/save codec are
+unchanged. Current HTML91a0c95d is457688B.
+R8 independently corrected one stale BOTS current-source320→a62 label; all
+4000league results/runtime hashes unchanged. Historical layer stays historical.
 
-Exact17c0d3009e09d671db0b3d45719b3d927ed44038/run37830364323/job113493816334
-SUCCESS19:29:06Z. Actual133,519-character full log read:67tests,both10k
-independent oracles,7k restored/all9invariants,1,003properties,43actual mutation
-kills,4kduels,every regeneration and original/new UI suite. Source-head receipt:
-evidence/round-7-source-head.json. Genuine hosted artifact11572918105 is
-1,301,965B ZIP/SHA33c83ffe5cb74da63ae3377226d5fd0dc13a4a83b0e214dc6bb4c8f7a3f931e3.
-All8uploaded files/18current sources/1,200native intervals/1,202active-answer
-callbacks independently validate: visible form,no modal,nativeDate.now and
-advancing60→50-second timer. Desktop60.002580/phone4x60.003168FPS,p99/max16.8ms;
-actual335,186/259,749B VP8clips decode and show3private warnings/authored native
-article-tab paste. Original ZIP/files/validator/runner archived separately in
-round-7-hosted-37830364323. Canonical accepted reports/clips are copied BYTE-FOR-
-BYTE from that actual artifact. Phone4x approximates a phone, not a physical device.
+R9 authentic old68f43a/current91a migration probe completed20:21:39.189Z/EXIT0.
+All12native clipboard/autosave/current-resume cases pass at2/8humans: normal,
+tab,VT,DEL,repeat,wrong-initial. Raw snapshots transfer byte-for-byte, remain
+private before Ready, timer53survives120seconds handover then advances to48;
+8valid cases score1,4negative controls0; own advice/other-sheet privacy/RNG pass.
+No runtime change/new player gain. Paused manual clocks are not FPS evidence.
+See AUDIT-ROUND-9.md, round-9-legacy-save/report.json and bound payload tests.
 
-First round7 LOCAL attempt DID sample600desktop59.704297FPS and600phone
-58.444306FPS/p9933.3ms FAIL. Both screenshots show private handover after the
-old timer expired while waiting. Full raw/source/receipts/clip remain in
-round-7-frame-first. Prior coordinated local phase claims have the same
-unverified scope; the corrected hosted per-callback proof is independent.
-Corrected LOCAL setup610b0451 READY19:16:24.194Z timed out19:26:24.653Z/EXIT1
-before starting the timer,sampling or recording. Root's grant contained extra
-metadata; the helper requires EXACTLY profile/sourceSha256/attemptNonce.
-All groups closed naturally; no local retry for luck. Original rejected grant,
-report,source copies and receipt remain in round-7-workload-coordination-timeout.
+Exactd131fda/run37836028404/job113513167776 fullSUCCESS20:14:33UTC. Native
+complete log133554characters/136362bytes read:67tests/43actualmutants/4kduels/
+10k+10koracles/7k-all9/1003properties/allregen/allUI. Artifact11576210249 actual
+1322004BZIP/digesta951ab11bd0f98e1f72e65b899654ecf7da03dab3bfb0070769d557586de1e80
+verifies8files/18exactheadguards/1200nativeintervals/1202active-phase witnesses.
+Both60.002940FPS,p99max16.8ms,timer60→50;347647/261135BVP8clips decode.
+Original ZIP/files/receipts and byte-identical canonical copies are archived.
+Extra private10ms Date-versus-RAF assertion failed at desktop -15.51ms; original
+reader/error/raw stay preserved. No original gate changed. Specific cause is
+unresolved: execution offsets were not recorded. See CLOCK-DIAGNOSTIC.md.
 
-This round8 checkpoint requires its OWN full exact-head green CI before
-formal round9. Then re-read README/RULES/JOBS,rank5actual weaknesses,address/
-measure the worst and push a truthful LOOP line. Preserve every failure; never
-invent gains/no-gain rounds. Coordinate heavy browser/native timing READY/
-grant/CLOSED with root. Coordinator metadata belongs in a separate receipt.
+Old local R7 phone58.444306FPS/p9933.3FAIL and desktop sampled in expired
+handover: both real series preserved, neither proves active-writing workload.
+Corrected local READY610b0451 timed out19:26:24.653Z before timer/sample due
+to rejected extra-key coordinator grant. All naturally closed; no FPS luck retry.
 
-Latest confirmed pushec22469 was19:37:57Z/mainafa0ce8 row19:37:49Z,24m19s
-after17c;25/30min cadencePASS. Earlier interruption gap66m03s exceeds30minutes.
-Current25min target20:02:57/hard20:07:57; derive new deadlines from next ACTUAL
-successful push.
-Refresh ONLY own G09 main row per normal branch push; never force,merge or
-change another claim. VERIFY.md preserves historical cadence/failed commands.
+This new R9 checkpoint needs its OWN full current-head green and genuine fresh
+artifact validation before formal10. Then reread README/RULES/JOBS, rank5 and
+measure the worst. Continuous full-sheet/late maximum-size autosave workload
+remains unmeasured; finite bot vocabulary/morphology limits remain disclosed.
+Never invent a third no-gain round or transfer old source-head proof.
+Coordinate local heavy browser READY/grant/CLOSED with root, exact three-key
+grant only. If genuinely blocked, preserve reason/evidence and notify root.
 
-Round8 reread root/game rules,ranked5weaknesses and verified actual exactec full
-CI37833413069/job113504276655 SUCCESS19:50:07Z/133489-character complete log.
-Corrected BOTS current-source320c99f2→a62e5fff after independent actual4000-game
-summary/table comparison; all7runtime/script/summary hashes unchanged. Receipt:
-evidence/round-8-bot-source.json. Wrong source labels1→0; player gain:none.
-Actualec artifact11574701286 ZIP1274699B SHA38edc47223b1c85f8e75fc9ddccd732542c9592461af668936bc46ef805348dc
-binds8files/18sources/1200native/1202active callbacks,desktop60.002556/phone60.003000,
-p99max16.8ms,timer60→50,real341185/221751B VP8clips decoded. Canonical copies
-match actual uploaded bytes; original artifact preserved separately. Formal9
-must wait for this new source checkpoint's fullgreen; the old-control recovery
-and full-sheet/late-autosave concerns are unmeasured and no claims are made.
+Last confirmed public pushd131 was19:59:10Z/main2ca08ee row19:58:32Z,21m13s
+afterec;25/30minPASS. Current target20:24:10/hard20:29:10. Derive new deadlines
+from the ACTUAL successful new push. Earlier interruption gap66m03s missed30.
+Refresh ONLY own G09 claim; normal pushes only, no force/merge/other claims.

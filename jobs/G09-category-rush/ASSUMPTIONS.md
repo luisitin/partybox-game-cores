@@ -73,3 +73,14 @@
   corrected local setup timed out without sampling because root's grant had
   extra keys; this is distinct from the sampled failure and no local luck
   retry is required. Phone4x remains an emulation, not a physical-device claim.
+
+Round9 assumes an old unsent draft may legitimately contain raw ASCII controls.
+The original old browser creates every payload by native clipboard and normal
+autosave; no snapshot is invented or edited. Transferring raw snapshots via an
+init script isolates version compatibility; test clocks are paused and advanced
+explicitly and do not establish wall-time performance. Existing migration was
+already correct, so filling its coverage is no new player-visible gain.
+The extra independent10ms Date-versus-RAF equality assertion has no original
+acceptance basis. Its actual failure/raw discrepancy are preserved; MDN explains
+different timestamp semantics but does not prove this particular cause. No
+callback execution offsets are retrospectively manufactured.

@@ -709,3 +709,53 @@ remain identical. Receipt is evidence/round-8-bot-source.json. This is a real
 source-evidence correction, not a bot-strength/player/typing/recovery gain.
 LOOP8 records the first actual consecutive no-player-gain review after R7.
 New checkpoint's complete exact-head CI remains required before formal9.
+
+## Exact d131 full acceptance and formal round9 legacy recovery
+
+Native current run37836028404/job113513167776 SUCCESS20:14:33UTC at exact
+d131fda3f4de526889babe4b26bdf2d911bf5cce. Actual complete log is133554characters/
+136362UTF8bytes/SHAbc2a393a8e343d4ea0aa6ed37abdda91d03f39387f6f14038ee556c1d0b2eca1:
+67tests/pass67/fail0,both10k oracles,7k restored/all9invariants,1003propertyseeds,
+43actual mutation kills,4000duels,all regeneration and every original/new UI suite.
+Current artifact11576210249 ZIP1322004B/SHAa951ab11bd0f98e1f72e65b899654ecf7da03dab3bfb0070769d557586de1e80
+independently validates8files/18exactd131sources/1200nativeintervals/1202active
+form+nativeDate+timer callbacks; both60.002940FPS/p99max16.8ms,timer60→50.
+Actual347647/261135B VP8clips decode. Original ZIP/files and six byte-identical
+canonical raw/report/media copies are preserved in round-8-hosted-37836028404.
+
+The first private reader's extra abs(DateElapsed-sumRAF)<10 assertion failed
+for actual desktop Date9984ms versus RAF9999.51ms (-15.51ms). This extra rule
+is not original acceptance. Original reader/error/raw observations and revised
+independent validation are all retained. MDN's live RAF timestamp semantics do
+not guarantee cross-clock equality; actual callback execution offsets were not
+recorded, so this specific cause remains unresolved. Original speed/600/phase/
+timer/nativeDate/source/nonce/capture gates stay unchanged; no local rerun.
+See archived CLOCK-DIAGNOSTIC.md.
+
+Formal9 reread README/RULES/JOBS and game rules, then AUDIT-ROUND-9.md ranked
+five weaknesses before any probe. Command:
+`timeout 300s node scripts/browser-legacy-save.mjs > .work/round-9-legacy-first.log 2>&1`
+Actual EXIT0, natural browser closure2026-10-08T20:21:39.189Z. All12cases pass:
+2/8humans × normal/tab/vertical-tab/DEL/own-repeat/wrong-initial. The actual old
+68f43a page native clipboard preserves control characters in authentic local
+autosave payloads. Each raw payload is persisted before transfer and injected
+unchanged into actual current91a page. Saves share real compatibility
+dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea.
+Resume never displays the old draft before Ready. Saved7300ms remains through
+120000ms private-handover wait; timer53seconds resumes and drops to48 after
+5000ms writing. Real Ready/save/submit normalize words, eight valid cases score1,
+four own-repeat/wrong-initial cases score0. Other sheets have blank advice,
+core and bot RNG states stay unchanged; offline runtime has zero errors, external
+requests or dialogs. Paused manual clocks prove functional behavior only, not FPS.
+Authentic original/restored snapshots, report, exact runner and full actual log
+remain in round-9-legacy-save. Current runtime was already correct: no new gain.
+Source-specific artifact test verifies actual payload hashes/current decoder/
+18source-cohort provenance through unchanged existing binder, time/privacy/
+negative scoring. Formal9 no-gain streak is2; formal10 waits for new fullgreen.
+
+Focused current-artifact/actual-paste/legacy-save checks:
+`npx tsx --test tests/legacy-save-artifact.test.ts tests/paste-artifact.test.ts tests/artifacts.test.ts`
+PASS3/3,zero failures; catches stale runtime/runner/payload hashes, incompatible
+authentic saves, shifted time, leaked private sheets and weakened negative scores.
+`npm run typecheck` PASS; `node --check scripts/browser-legacy-save.mjs` PASS.
+No product source or acceptance gate changed. Full new-head CI remains required.
