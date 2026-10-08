@@ -1,0 +1,151 @@
+{
+  "id": "dominoes",
+  "name": "Dominoes",
+  "icon": "🁣",
+  "tagline": "Match the ends. Read the table. Empty your hand.",
+  "description": "Double-six Draw or Block dominoes with individual or four-seat partnership scoring.",
+  "howToPlay": [
+    "Play a tile matching either open end.",
+    "If stuck, draw in Draw mode or pass in Block mode.",
+    "Empty your hand or win a blocked board; reach the target score."
+  ],
+  "version": "0.2.7",
+  "minPlayers": 2,
+  "maxPlayers": 4,
+  "estimatedMinutes": 20,
+  "tags": [
+    "classic",
+    "strategy"
+  ],
+  "presence": {
+    "needs": "anywhere"
+  },
+  "addedOn": "2026-10-07",
+  "supportsBots": true,
+  "saveable": true,
+  "noCards": true,
+  "settings": [
+    {
+      "key": "mode",
+      "label": "Game",
+      "type": "select",
+      "default": "draw",
+      "options": [
+        {
+          "value": "draw",
+          "label": "Draw"
+        },
+        {
+          "value": "block",
+          "label": "Block"
+        }
+      ]
+    },
+    {
+      "key": "deal",
+      "label": "Draw hand sizes",
+      "type": "select",
+      "default": "block-sized",
+      "options": [
+        {
+          "value": "block-sized",
+          "label": "House deal: 7/5/5"
+        },
+        {
+          "value": "traditional",
+          "label": "Pagat Draw: 7/7/6"
+        }
+      ]
+    },
+    {
+      "key": "partners",
+      "label": "Partners (four seats only)",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "target",
+      "label": "Target score",
+      "type": "select",
+      "default": "100",
+      "options": [
+        {
+          "value": "100",
+          "label": "100"
+        },
+        {
+          "value": "150",
+          "label": "150"
+        },
+        {
+          "value": "250",
+          "label": "250"
+        }
+      ]
+    },
+    {
+      "key": "reserve",
+      "label": "Tiles kept in the boneyard",
+      "type": "select",
+      "default": "0",
+      "options": [
+        {
+          "value": "0",
+          "label": "Draw all"
+        },
+        {
+          "value": "2",
+          "label": "Keep last two"
+        }
+      ]
+    },
+    {
+      "key": "opening",
+      "label": "First-round opener",
+      "type": "select",
+      "default": "highest-double",
+      "options": [
+        {
+          "value": "highest-double",
+          "label": "Highest double"
+        },
+        {
+          "value": "rotating",
+          "label": "First seat / rotating"
+        }
+      ]
+    },
+    {
+      "key": "blocked",
+      "label": "Individual blocked score",
+      "type": "select",
+      "default": "difference",
+      "options": [
+        {
+          "value": "difference",
+          "label": "Opponents less winner"
+        },
+        {
+          "value": "opponents",
+          "label": "Opponents only"
+        }
+      ]
+    },
+    {
+      "key": "teamPoints",
+      "label": "Partnership scoring",
+      "type": "select",
+      "default": "opponents",
+      "options": [
+        {
+          "value": "opponents",
+          "label": "Opposing team pips"
+        },
+        {
+          "value": "all",
+          "label": "All remaining pips"
+        }
+      ]
+    }
+  ]
+}

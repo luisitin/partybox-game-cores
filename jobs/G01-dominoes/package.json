@@ -1,0 +1,27 @@
+{
+  "name": "partybox-g01-dominoes",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm run check && node preflight.ts && node --test test.ts && node idle.ts && node mixed-idle.ts --enforce && node differential.ts && node conditional-check.ts && node opener-probe.ts --production && node draw-opener-probe.ts --production && node score-policy-check.ts --production && node match-goal-check.ts --production && node mutations.ts && node build.ts --check && node league.ts && npm run draw-league && node baseline.ts && node browser.ts && node checksums.ts && node checksums.ts --check",
+    "check": "tsc --noEmit",
+    "build": "node build.ts",
+    "fixtures": "node fixtures.ts && node checksums.ts",
+    "league": "node league.ts",
+    "browser": "node browser.ts",
+    "baseline": "node baseline.ts",
+    "idle": "node idle.ts",
+    "preflight": "node preflight.ts",
+    "draw-league": "LEAGUE_MODE=draw node league.ts"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "24.10.0",
+    "esbuild": "0.25.12",
+    "playwright": "1.56.1",
+    "typescript": "5.9.3"
+  }
+}

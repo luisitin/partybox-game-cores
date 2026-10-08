@@ -1,0 +1,37 @@
+{
+  "functional": "passed",
+  "navigationMode": "setContent; managed Chromium blocks file:// navigation",
+  "externalRequests": [],
+  "errors": [],
+  "performance": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "frames": 300,
+      "meanMs": 16.666,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "fps": 60.00240009600384
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "frames": 300,
+      "meanMs": 16.776999999999997,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182,
+      "fps": 59.60541217142517
+    }
+  ],
+  "reducedMotion": "passed",
+  "mixedUnattended": "passed within 3600000ms with private hands hidden",
+  "capture": "media/milestone-11-draw-opener.webm"
+}

@@ -1,0 +1,16 @@
+import {build} from 'esbuild';
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {Script} from 'node:vm';
+import {manifest} from './core.ts';
+const contract=await build({entryPoints:['../../contract/contract.ts'],bundle:true,write:false,format:'esm',platform:'node',target:'es2022'});
+const {gameManifestSchema}=await import('data:text/javascript;base64,'+Buffer.from(contract.outputFiles[0]!.text).toString('base64'));
+gameManifestSchema.parse(manifest);
+const output=await build({entryPoints:['ui.ts'],bundle:true,write:false,format:'iife',target:'es2022',minify:true,legalComments:'inline'});
+const js=output.outputFiles[0]!.text.replaceAll('</script','<\\/script');
+new Script(js);
+const html=readFileSync('shell.html','utf8').replace('/* INLINE_GAME */',()=>js);
+assert(!/<(?:script|link)[^>]+(?:src|href)=/i.test(html));
+assert(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(js));
+if(process.argv.includes('--check'))assert.equal(readFileSync('play.html','utf8'),html);else writeFileSync('play.html',html);
+console.log(`Standalone play.html: ${Buffer.byteLength(html)} bytes; no external script/style or runtime fetch`);

@@ -1,0 +1,112 @@
+{
+  "study": "draw-depth",
+  "sourceSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+  "productionVersion": "0.2.7",
+  "games": 2000,
+  "wins": 1050,
+  "losses": 950,
+  "ties": 0,
+  "winRate": 0.525,
+  "confidence95": [
+    0.5031139427945552,
+    0.5468860572054448
+  ],
+  "steps": 556571,
+  "seedRange": [
+    1,
+    2000
+  ],
+  "mode": "two-seat draw; candidate versus current sharp; alternating seats",
+  "candidateRegressions": "passed in every shard",
+  "workers": 4,
+  "shards": [
+    {
+      "study": "draw-depth",
+      "sourceSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+      "productionVersion": "0.2.7",
+      "games": 500,
+      "wins": 259,
+      "losses": 241,
+      "ties": 0,
+      "winRate": 0.518,
+      "confidence95": [
+        0.4742014767006923,
+        0.5617985232993077
+      ],
+      "steps": 138095,
+      "seedRange": [
+        1,
+        500
+      ],
+      "mode": "two-seat draw; candidate versus current sharp; alternating seats",
+      "candidateRegressions": "passed",
+      "seconds": 148
+    },
+    {
+      "study": "draw-depth",
+      "sourceSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+      "productionVersion": "0.2.7",
+      "games": 500,
+      "wins": 256,
+      "losses": 244,
+      "ties": 0,
+      "winRate": 0.512,
+      "confidence95": [
+        0.4681856916156377,
+        0.5558143083843623
+      ],
+      "steps": 142027,
+      "seedRange": [
+        501,
+        1000
+      ],
+      "mode": "two-seat draw; candidate versus current sharp; alternating seats",
+      "candidateRegressions": "passed",
+      "seconds": 146
+    },
+    {
+      "study": "draw-depth",
+      "sourceSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+      "productionVersion": "0.2.7",
+      "games": 500,
+      "wins": 252,
+      "losses": 248,
+      "ties": 0,
+      "winRate": 0.504,
+      "confidence95": [
+        0.46017447012527973,
+        0.5478255298747203
+      ],
+      "steps": 140020,
+      "seedRange": [
+        1001,
+        1500
+      ],
+      "mode": "two-seat draw; candidate versus current sharp; alternating seats",
+      "candidateRegressions": "passed",
+      "seconds": 142
+    },
+    {
+      "study": "draw-depth",
+      "sourceSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+      "productionVersion": "0.2.7",
+      "games": 500,
+      "wins": 283,
+      "losses": 217,
+      "ties": 0,
+      "winRate": 0.566,
+      "confidence95": [
+        0.5225565657342792,
+        0.6094434342657207
+      ],
+      "steps": 136429,
+      "seedRange": [
+        1501,
+        2000
+      ],
+      "mode": "two-seat draw; candidate versus current sharp; alternating seats",
+      "candidateRegressions": "passed",
+      "seconds": 139
+    }
+  ]
+}
