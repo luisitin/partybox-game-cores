@@ -18,9 +18,11 @@ export function useReading(line: unknown, opts: { on?: boolean; delayMs?: number
   const shell = useContext(Context); useEffect(() => { if (opts.on !== false && line) shell.say(line); }, [line, opts.on, shell]);
 }
 export function useServerNow(ms = 250): number {
-  const shell = useContext(Context); const [now, setNow] = useState(shell.now);
+  const shell = useContext(Context); const [, setNow] = useState(shell.now);
   useEffect(() => { const id = setInterval(() => setNow(shell.now()), ms); return () => clearInterval(id); }, [ms, shell]);
-  return now;
+  // Read the current host clock on every phase/pause render; the existing
+  // interval remains the periodic render trigger, not a cached clock.
+  return shell.now();
 }
 export const buzz = (_ms?: number | number[]): void => {};
 export function Screen({ title, footer, children }: { title?: ReactNode; footer?: ReactNode; children?: ReactNode }): React.JSX.Element {

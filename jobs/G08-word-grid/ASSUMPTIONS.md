@@ -22,3 +22,6 @@
 
 - Recovery after the environment interruption: absent old processes and missing completion files do not establish a precise exit time/result. The surviving 18:18 READY is retained; no FPS claim. A new namespace/nonce is justified by loss of the old process and current resumed environment. Preserve published historical evidence and game bytes.
 - ffprobe may add harmless empty stream_groups/programs arrays between versions. Independent capture validation compares all requested codec, dimensions and duration fields and fully decodes actual bytes; it never rewrites original metadata, clips or thresholds.
+
+- KEEP9: an actual temporary Resume countdown inflation is player-visible, so the old stop3 is invalidated. Root explicitly authorized the minimal test/offline clock repair; preserve owner client/core/assets and regenerate only the existing HTML. Every new-page performance claim needs current source-bound proof.
+- New-game focus is scheduled with requestAnimationFrame. A bounded wait for the actual focused setup heading is the correct observable check; keep the exact heading identity assertion. Do not add arbitrary benchmark settling/warmup or fake clocks.

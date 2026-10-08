@@ -1002,6 +1002,34 @@
           "type": "integer",
           "minimum": 1,
           "maximum": 10485760
+        },
+        "resumeCountdown": {
+          "type": "object",
+          "required": [
+            "beforeSeconds",
+            "pausedSeconds",
+            "afterSeconds",
+            "heldMs"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "beforeSeconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pausedSeconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "afterSeconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "heldMs": {
+              "type": "number",
+              "minimum": 2000
+            }
+          }
         }
       }
     },
@@ -1330,6 +1358,120 @@
           }
         }
       ]
+    },
+    "pauseDiagnostic": {
+      "type": "object",
+      "required": [
+        "kind",
+        "fpsAcceptance",
+        "startedAt",
+        "finishedAt",
+        "sourceSha256",
+        "endSourceSha256",
+        "profiles",
+        "errors",
+        "requests"
+      ],
+      "properties": {
+        "kind": {
+          "const": "real-pause-resume-diagnostic-only"
+        },
+        "fpsAcceptance": {
+          "const": false
+        },
+        "startedAt": {
+          "type": "string"
+        },
+        "finishedAt": {
+          "type": "string"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "endSourceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "profiles": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "profile",
+              "before",
+              "paused",
+              "pausedAfter",
+              "immediate",
+              "trace",
+              "recordingPath"
+            ],
+            "properties": {
+              "profile": {
+                "enum": [
+                  "en-4x4-TV",
+                  "en-4x4-phone-4x"
+                ]
+              },
+              "trace": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "nativeRafMs",
+                    "elapsedMs",
+                    "clockClasses",
+                    "roleAndLive"
+                  ],
+                  "properties": {
+                    "nativeRafMs": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "elapsedMs": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "clockClasses": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "roleAndLive": {
+                      "type": "array",
+                      "items": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    }
+                  }
+                }
+              },
+              "recordingPath": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "errors": {
+          "type": "array",
+          "maxItems": 0
+        },
+        "requests": {
+          "type": "array",
+          "maxItems": 0
+        }
+      }
     }
   }
 }

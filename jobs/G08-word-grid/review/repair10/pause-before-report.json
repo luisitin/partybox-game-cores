@@ -1,0 +1,691 @@
+{
+  "kind": "real-pause-resume-diagnostic-only",
+  "fpsAcceptance": false,
+  "startedAt": "2026-10-08T19:39:12.693Z",
+  "finishedAt": "2026-10-08T19:39:21.715Z",
+  "sourceSha256": "863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9",
+  "endSourceSha256": "863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9",
+  "profiles": [
+    {
+      "profile": "en-4x4-TV",
+      "before": {
+        "label": "before-pause",
+        "at": "2026-10-08T19:39:14.380Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "4:00left",
+              "class": "ia ",
+              "role": "timer"
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "paused": {
+        "label": "paused",
+        "at": "2026-10-08T19:39:14.472Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "0:00paused",
+              "class": "ia ",
+              "role": "timer"
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "pausedAfter": {
+        "label": "paused-after-two-real-seconds",
+        "at": "2026-10-08T19:39:16.478Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "0:00paused",
+              "class": "ia ",
+              "role": "timer"
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "immediate": {
+        "label": "immediately-after-resume",
+        "at": "2026-10-08T19:39:16.517Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "4:02left",
+              "class": "ia ",
+              "role": "timer"
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "trace": [
+        {
+          "nativeRafMs": 3648.266,
+          "elapsedMs": 4.5999999940395355,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:02left"
+          ]
+        },
+        {
+          "nativeRafMs": 3664.9,
+          "elapsedMs": 24.099999994039536,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:02left"
+          ]
+        },
+        {
+          "nativeRafMs": 3681.6,
+          "elapsedMs": 37.900000005960464,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:02left"
+          ]
+        },
+        {
+          "nativeRafMs": 3698.2,
+          "elapsedMs": 54.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:02left"
+          ]
+        },
+        {
+          "nativeRafMs": 3714.9,
+          "elapsedMs": 71.09999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:02left"
+          ]
+        },
+        {
+          "nativeRafMs": 3731.5,
+          "elapsedMs": 88.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3748.2,
+          "elapsedMs": 111.7000000178814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3764.9,
+          "elapsedMs": 122.90000000596046,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3781.6,
+          "elapsedMs": 137.90000000596046,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3798.2,
+          "elapsedMs": 154.59999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3814.9,
+          "elapsedMs": 172.09999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3831.6,
+          "elapsedMs": 188,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3848.2,
+          "elapsedMs": 204.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3864.8,
+          "elapsedMs": 221.2000000178814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3881.6,
+          "elapsedMs": 237.80000001192093,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3898.3,
+          "elapsedMs": 254.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3914.9,
+          "elapsedMs": 271.40000000596046,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3931.5,
+          "elapsedMs": 288,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3948.2,
+          "elapsedMs": 304.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3964.8,
+          "elapsedMs": 321.2000000178814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3981.6,
+          "elapsedMs": 339.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 3998.2,
+          "elapsedMs": 354.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4014.9,
+          "elapsedMs": 371.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4031.5,
+          "elapsedMs": 387.80000001192093,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4048.2,
+          "elapsedMs": 404.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4064.9,
+          "elapsedMs": 421.2000000178814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4081.6,
+          "elapsedMs": 437.90000000596046,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4098.2,
+          "elapsedMs": 454.90000000596046,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4114.9,
+          "elapsedMs": 472.59999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4131.5,
+          "elapsedMs": 488.7000000178814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        },
+        {
+          "nativeRafMs": 4148.2,
+          "elapsedMs": 504.59999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "4:00left"
+          ]
+        }
+      ],
+      "recordingPath": "/workspace/game-cores-G08-resume/jobs/G08-word-grid/.tmp/recovery11/pause-diagnostic/d4590c302ee230545bcb65209e1d8c66.webm"
+    },
+    {
+      "profile": "en-4x4-phone-4x",
+      "before": {
+        "label": "before-pause",
+        "at": "2026-10-08T19:39:18.888Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "⏱ 4:000 words",
+              "class": "w",
+              "role": null
+            },
+            {
+              "text": "Drag through touching letters, then lift.",
+              "class": "y",
+              "role": null
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "paused": {
+        "label": "paused",
+        "at": "2026-10-08T19:39:18.979Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "⏱ 4:000 words",
+              "class": "w",
+              "role": null
+            },
+            {
+              "text": "Drag through touching letters, then lift.",
+              "class": "y",
+              "role": null
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "pausedAfter": {
+        "label": "paused-after-two-real-seconds",
+        "at": "2026-10-08T19:39:20.991Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "⏱ 4:000 words",
+              "class": "w",
+              "role": null
+            },
+            {
+              "text": "Drag through touching letters, then lift.",
+              "class": "y",
+              "role": null
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "immediate": {
+        "label": "immediately-after-resume",
+        "at": "2026-10-08T19:39:21.104Z",
+        "values": {
+          "phase": "hunt",
+          "roleAndLive": [
+            {
+              "text": "⏱ 4:030 words",
+              "class": "w",
+              "role": null
+            },
+            {
+              "text": "Drag through touching letters, then lift.",
+              "class": "y",
+              "role": null
+            }
+          ],
+          "clockClasses": []
+        }
+      },
+      "trace": [
+        {
+          "nativeRafMs": 3430.8,
+          "elapsedMs": 25.299999982118607,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3447.4,
+          "elapsedMs": 30.299999982118607,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3464.1,
+          "elapsedMs": 39.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3480.7,
+          "elapsedMs": 60.599999994039536,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3497.4,
+          "elapsedMs": 76.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3514.1,
+          "elapsedMs": 95.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3530.8,
+          "elapsedMs": 110.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3547.4,
+          "elapsedMs": 123,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3564,
+          "elapsedMs": 139,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3580.7,
+          "elapsedMs": 155.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3597.4,
+          "elapsedMs": 171.69999998807907,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3614,
+          "elapsedMs": 190.39999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3630.7,
+          "elapsedMs": 207,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3647.4,
+          "elapsedMs": 221.59999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3664,
+          "elapsedMs": 238.69999998807907,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3680.7,
+          "elapsedMs": 254.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3697.4,
+          "elapsedMs": 272.09999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3714,
+          "elapsedMs": 288.19999998807907,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3730.7,
+          "elapsedMs": 304.7999999821186,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3747.3,
+          "elapsedMs": 321.7999999821186,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3764.1,
+          "elapsedMs": 339.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3780.7,
+          "elapsedMs": 354.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3797.4,
+          "elapsedMs": 371.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3814,
+          "elapsedMs": 392.69999998807907,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3830.7,
+          "elapsedMs": 404.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3847.4,
+          "elapsedMs": 421.69999998807907,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3864.1,
+          "elapsedMs": 438.2999999821186,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3880.7,
+          "elapsedMs": 457.59999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3897.4,
+          "elapsedMs": 476.5,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3914,
+          "elapsedMs": 487.89999997615814,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        },
+        {
+          "nativeRafMs": 3930.7,
+          "elapsedMs": 505.09999999403954,
+          "clockClasses": [],
+          "roleAndLive": [
+            "⏱ 4:000 words",
+            "Drag through touching letters, then lift."
+          ]
+        }
+      ],
+      "recordingPath": "/workspace/game-cores-G08-resume/jobs/G08-word-grid/.tmp/recovery11/pause-diagnostic/474d4b15b38d46c6a010f299a4d8683a.webm"
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

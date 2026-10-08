@@ -1,3 +1,13 @@
+# G08 — visible Resume clock repaired, current proof pending
+
+KEEP9 fixes a real temporary inflated countdown after Resume in the existing test/offline clock binding. Owner game/client/art/data remain unchanged; the compiled page now14,208,702B/SHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e, twice byte-identical. Genuine before/after real2-second Pause diagnostics record oldTV+2sec/phone+3sec inflation→0onboth. See review/repair10 and VERIFY. This is player-visible gain and resets KEEP streak0; old6–8 stop3 no longer completes the changed page.
+
+Current native-only recorded functional pass CLOSED/exit0 observed19:51:40Z and independently passes183guards/22gates/5rosters/5full-decode clips plus18actual captured-baseline corruption controls; zero errors/network, resume90→90after2012.923224ms Pause. This is EXPLICITPARTIAL/nullFPS, not speed/full acceptance. Public checkpoint includes actual source-bound report/clips and47validated JSON files. Publish/refresh ONLY own main G08 claim, then run a fresh four-profile600-interval native actual-file attempt with root exact nonce grants and all sources frozen, then independent raw/23negative controls; full exact-head push/PR CI and downloaded actual current artifact must pass before READY. After fullgreen run three consecutive no-player-gain KEEP rounds, keeping current-source evidence distinctions.
+
+Preserve old863a actual local59.902FPS pass/clock-failed600raw and CI focus failure as historical. No old positive is transferred to3763. No force pushes, PR merges, new game/asset replacement, other claim/Site/original-repo main writes. Claim clone /workspace/game-cores-G08-claims; canonical job/G08-word-grid-the-owner-s-shake-up; PR9draft. Latest branch ce1 push observed19:29:27; checkpoint target19:54:27/hard19:59:27.
+
+Retained prior verification handoff:
+
 # G08 — corrected endpoint proof pending
 
 Checkpoint4047 CI caught a wrong TV-grid expectation BEFORE samples (16!==0, profiles[]). The original public TV legitimately shows the board; its private word lists remain hidden. Read review/repair09/RECOVERY.md for actual artifact/failed-report/cancelled-waiter receipts. Local attempt was cancelled with no grant/raw and all owned groups are now absent. This verifier assumption is corrected; no game/HTML/FPS gain is claimed.
