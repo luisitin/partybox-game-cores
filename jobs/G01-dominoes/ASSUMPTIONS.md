@@ -34,3 +34,5 @@ For improvement studies, alternate candidate seats on the same 2,000 deal seeds 
   updates. This local source merge is separate from merging a public PR.
   Existing strategy experiments remain rejected;three no-gain rounds16–18
   stay satisfied because the delivery follow-up changes no player behavior.
+
+R20 is a real reliability gain and supersedes the previous R16–18 stop:three fresh consecutive no-player-gain reviews are required. R21 valid compatibility is evidence of preservation,not a new player-visible improvement. The execution service disconnected before the first compatibility command executed;reconnection retained the pushed branch and working files.

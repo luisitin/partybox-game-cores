@@ -310,3 +310,6 @@ Stale-claim delivery recheck19,2026-10-08:
   the script. Full production recheck and current-head CI are pending.
 
 R19 full `G01_CAPTURE_PATH=media/milestone-12-license.webm npm test`:EXIT0,40 tests/127643.79ms,25 kills,all production probes and leagues(71.9%/84.2% strong),132/200 upstream;64 hashes. Additional nine malformed-envelope probes found7 TypeErrors. R20 `npm run check; FAST_TEST=1 node --test test.ts; node fixtures.ts; node build.ts; node mutations.ts`:PASS30/30(547.94ms),25/25 kills,all9 probes now throw0. Full new-code recheck and three no-gain reviews remain required.
+
+R20 exact-head hosted CI:run37755885752,headc19e580047dbc5f8ffd824871bff5128dc6466d0,verify SUCCESS2026-10-08T09:35:55Z. Every setup and full npm test step succeeded.
+R21 `npm run check && node total-compatibility.ts --write`:PASS,1,003 complete seeded games,378,899 JSON transitions(player2,006/vip14,177/timer22,533/input340,183),0 state or result mismatches against exact949c2e3 frozen core. BaselineSHA256e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be. Catches legitimate-event behavior changes and input-state mutation;production rules/settings/state format stay unchanged.

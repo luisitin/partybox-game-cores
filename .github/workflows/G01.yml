@@ -7,6 +7,9 @@ on:
       - '.github/workflows/G01.yml'
 permissions:
   contents: read
+concurrency:
+  group: G01-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   verify:
     runs-on: ubuntu-latest

@@ -107,3 +107,7 @@ gain. Re-run the full production pipeline and final-head CI.
 ## Round20
 
 Re-read G01. Five weaknesses:7/9 malformed-event probes throw;nonfinite clocks can corrupt state;presence fields lack validation;payload schemas are not enforced at reduce;the existing fuzz cases omit malformed envelopes. Guard these cases and extend the all-phase test. Actual probes7→0 exceptions;30 focused tests and25 mutations pass. This robustness gain resets the no-gain streak.
+
+## Round21
+
+Re-read root G01 and selected rules. Five weaknesses ranked:unproven valid-event compatibility after guards;missing malformed-envelope breadth;finite64-world bot sampling;unavailable physical-phone measurements;older browser capture. Add a frozen exact949c2e3 reducer and compare every JSON transition, including player/pause/resume/timer/skip/input events, over1,003 seeded full games. Production state/results agree at all378,899 transitions. No new player-visible fix;streak1. Scope remains the guarded0.2.7 core. CI concurrency cancels obsolete PR1 runs without changing the checks.
