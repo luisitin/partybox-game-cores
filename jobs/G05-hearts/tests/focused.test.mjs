@@ -101,3 +101,17 @@ test('human public phases wait for explicit Continue; all-bot phases remain exit
  const h=toPhase(t,'hand');assert.equal(h.phase.deadline,null);assert.equal(timer(h),h);
  const bot=toPhase(base,'trick');assert.ok(bot.phase.deadline!==null);assert.deepEqual(game.bot.sampleInput(bot,bot.order[0],createRng(1),'normal'),{type:'next'});
 });
+
+test('JSON canonical state: negative-zero cards/timestamps and undefined optional player flags',()=>{
+ const players=Array.from({length:4},(_,i)=>({id:'p'+i,name:'Player '+i,avatarId:'1',connected:true,bot:undefined,canSeeTv:undefined}));
+ const ctx={players,settings:{},seed:1,now:-0};const s=game.init(ctx);assert.deepEqual(JSON.parse(JSON.stringify(s)),s);assert.equal(Object.hasOwn(s.players.p0,'bot'),false);
+ const p=game.reduce(s,{type:'vip',action:'pause',now:-0});assert.equal(Object.is(p.phase.paused.at,-0),false);assert.deepEqual(JSON.parse(JSON.stringify(p)),p);
+ const owner=s.order.find(id=>s.hands[id].includes(0));const pass=game.reduce(s,{type:'input',playerId:owner,input:{type:'pass',cards:[-0,...s.hands[owner].filter(c=>c!==0).slice(0,2)]},now:1});assert.equal(Object.is(pass.passes[owner][0],-0),false);assert.deepEqual(JSON.parse(JSON.stringify(pass)),pass);
+ const opening=game.init({...ctx,settings:{noPass:true}});const played=game.reduce(opening,{type:'input',playerId:opening.actor,input:{type:'play',card:-0},now:2});assert.equal(played.trick[0].card,0);assert.equal(Object.is(played.trick[0].card,-0),false);assert.deepEqual(JSON.parse(JSON.stringify(played)),played);
+ const flags=game.init({...ctx,players:players.map(p=>({...p,bot:false,canSeeTv:false}))});assert.equal(flags.players.p0.bot,false);assert.equal(flags.players.p0.canSeeTv,false);
+});
+test('legitimate prototype-shaped seat ids play and retain scores; unknown ids remain spectators',()=>{
+ const ids=['__proto__','constructor','toString','p3'];const s=game.init({players:ids.map(id=>({id,name:id,avatarId:'1',connected:true,bot:true})),settings:{target:25},seed:4,now:1000});
+ for(const id of ids){assert.equal(game.controllerView(s,id).me.role,'player');assert.equal(game.controllerView(s,id).hand.length,13);}
+ const d=finish(s).state;assert.deepEqual(Object.keys(game.results(d).scores).sort(),[...ids].sort());assert.deepEqual(JSON.parse(JSON.stringify(d)),d);
+});

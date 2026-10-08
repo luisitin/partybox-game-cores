@@ -76,7 +76,7 @@ Full local milestone: `G05_VISUAL_MODE=http npm test` PASSED. This explicit
 local mode uses HTTP because managed Chrome blocks disk; it is refused in CI.
 G05 CI must run default npm test and prove actual disk opening before delivery.
 
-Strict build/bundle equality and all22 tests pass: nine contract invariants,
+Strict build/bundle equality and all23 tests pass: nine contract invariants,
 1003 property seeds (204,184 event-by-event replays, max state3898B),1000 full
 100-point bot games at EACH count3–6 (630414/774184/897675/997785 events),
 10,000 independent scoring/legal/winner comparisons, finite scores for leavers,
@@ -149,3 +149,19 @@ stopped before edits and were corrected with absolute job paths.
 
 CI actual disk status remains pending at this checkpoint. No source BLOCKED
 marker, PR or DONE claim. Full local log: /workspace/g05-full-check.log.
+
+Actual disk gate PASSED at head100dfb1: G05 Actions run37731301909/job113160777783
+https://github.com/luisitin/partybox-game-cores/actions/runs/37731301909
+Default npm test on Ubuntu/Chrome154: fileOpened:true, desktop60.004fps,
+phone CPU4x60.002fps, p9516.7/16.8ms, max16.8ms, zero requests/exceptions,
+all3–6 UI games/input/privacy/reduced-motion gates true. CI video138561B.
+The unmodified public CI report is preserved in media/; it is separate from
+local milestone01. `gh run view 37731301909 --log` retrieved the exact report.
+
+A later audit demonstrated−0 survived in paused.at and trick.card, violating
+JSON round trips; optional player flags explicitly set to undefined could
+also disappear on serialization. Normalize zero ids/timestamps and copy only
+known, defined optional booleans. Two added focused tests cover these real
+failures and legitimate __proto__/constructor/toString seats. Focused/reference
+and25/25 mutations pass; ordinary seeded state/league hashes are unchanged.
+Full suite now contains25 tests. Run default CI on the updated head before PR.

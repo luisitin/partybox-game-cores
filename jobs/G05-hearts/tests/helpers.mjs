@@ -20,7 +20,7 @@ export function eventFor(s,skill='normal',salt=0) {
 export function finish(initial,skills={},onStep=null) {
  let state=initial; let steps=0; const events=[];
  while(state.phase.id!=='done'&&steps++<30_000) {
-  const event=eventFor(state,skills[state.actor]??'normal',steps);
+  const event=eventFor(state,Object.hasOwn(skills,state.actor)?skills[state.actor]:'normal',steps);
   const next=game.reduce(state,event);
   if(next===state)throw new Error(`Stuck at ${state.phase.id}: ${JSON.stringify(event)}`);
   if(onStep)onStep(state,event,next); events.push(event);state=next;

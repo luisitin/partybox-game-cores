@@ -13,7 +13,7 @@ const available = (s: HeartsState, id: string): boolean => has(s, id) && !s.left
 const records = (order: readonly string[]): Record<string, Card[]> => Object.fromEntries(order.map(id => [id, []]));
 const bounded = (v: unknown, fallback: number, min: number, max: number): number => typeof v === 'number' && Number.isFinite(v) ? Math.max(min, Math.min(max, Math.trunc(v))) : fallback;
 function phase(s: HeartsState, id: string, now: number, ms: number | null): HeartsState['phase'] {
-  const startedAt = Math.max(now, s.phase.startedAt + 1);
+  const startedAt = Math.max(now || 0, s.phase.startedAt + 1);
   return { id, startedAt, deadline: ms === null ? null : startedAt + ms };
 }
 const hasHuman = (s: HeartsState): boolean => s.order.some(id => available(s,id) && !s.players[id]!.bot);
@@ -48,7 +48,7 @@ export function init(ctx: InitContext): HeartsState {
   };
   const [dealer, rng] = nextInt(seedRng(ctx.seed), 0, order.length - 1);
   const base: HeartsState = {
-    phase: { id: 'pass', startedAt: ctx.now - 2, deadline: null }, rng, players: Object.fromEntries(ctx.players.map(p => [p.id, { ...p }])),
+    phase: { id: 'pass', startedAt: ctx.now - 2, deadline: null }, rng, players: Object.fromEntries(ctx.players.map(p => [p.id, { id:p.id,name:p.name,avatarId:p.avatarId,connected:p.connected,...(typeof p.bot==='boolean'?{bot:p.bot}:{}),...(typeof p.canSeeTv==='boolean'?{canSeeTv:p.canSeeTv}:{}) }])),
     settings, order, left: [], handNumber: 1, dealer, hands: records(order), passes: {}, sent: {}, received: {},
     passOffset: 0, opening: 0, actor: order[0]!, trick: [], lastTrick: [], lastWinner: null,
     trickNumber: 0, played: [], captured: records(order), heartsBroken: false,
@@ -129,7 +129,7 @@ export function reduce(s: HeartsState, event: GameEvent<Input>): HeartsState {
   if (event.type === 'vip') {
     if (event.action === 'end') return s.phase.id === 'done' ? s : finishGame(s, event.now);
     if (event.action === 'skip') return advance(s, event.now);
-    if (event.action === 'pause') return s.phase.paused || s.phase.id === 'done' ? s : { ...s, phase: { ...s.phase, paused: { at: event.now } } };
+    if (event.action === 'pause') return s.phase.paused || s.phase.id === 'done' ? s : { ...s, phase: { ...s.phase, paused: { at: event.now || 0 } } };
     if (event.action === 'resume') {
       if (!s.phase.paused) return s;
       const { paused, ...info } = s.phase;
@@ -145,7 +145,7 @@ export function reduce(s: HeartsState, event: GameEvent<Input>): HeartsState {
   if (!parsed.success || (s.phase.deadline !== null && event.now >= s.phase.deadline)) return s;
   const input = parsed.data;
   if (input.type === 'next') return s.phase.id === 'trick' || s.phase.id === 'hand' ? advance(s, event.now) : s;
-  const next = input.type === 'pass' ? passCards(s, event.playerId, input.cards, event.now) : playCard(s, event.playerId, input.card, event.now);
+  const next = input.type === 'pass' ? passCards(s, event.playerId, input.cards.map(c => c || 0), event.now) : playCard(s, event.playerId, input.card || 0, event.now);
   return next === s ? s : drainMissing(next, event.now);
 }
 export function tvView(s: HeartsState): HeartsTv {

@@ -4,7 +4,7 @@ Branch job/G05-hearts; claim codex-core. Read root README/RULES/JOBS first.
 G03 PR3 complete/green/three cosmetic rounds; preserve its open PR.
 
 G05 core/page/research/fixtures/schemas are built. `G05_VISUAL_MODE=http npm test`
-PASSED:22 tests, nine invariants,1003 replay seeds,1000 full games at each3–6
+PASSED at baseline:23 tests, nine invariants,1003 replay seeds,1000 full games at each3–6
 roster,10k independent comparisons,25/25 mutants,2x2000 held-out leagues,
 20 JSON validations/24 hashes, two byte-identical regenerations, real browser
 inputs/privacy/reduced-motion/phone layout checks. See VERIFY.md/BOTS.md.
@@ -23,3 +23,9 @@ No PR or DONE is claimed before CI passes.
 Potential player weakness: mobile final-score winner panel follows a large
 last-trick table, placing the useful ranked result below the first screen.
 Research /workspace/g05-research; local log /workspace/g05-full-check.log.
+
+Baseline head100dfb1 CI37731301909 is GREEN with actual disk +60fps proof.
+The numeric audit adds two tests (25 now) and canonical−0/undefined-field fixes;
+focused/differential/mutations pass. Wait for the new head's full G05 CI to go
+green, then open PR and run KEEP GOING. Future major weaknesses include the
+standalone page's repeated default seed103 and loss of a match on reload.
