@@ -2,6 +2,12 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "receivedMarked": {
+      "type": "boolean"
+    },
+    "mobileResultPriority": {
+      "type": "boolean"
+    },
     "freshDeals": {
       "type": "boolean"
     },

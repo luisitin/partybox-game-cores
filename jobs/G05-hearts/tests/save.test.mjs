@@ -15,3 +15,13 @@ test('saved clocks preserve remaining time and never expose a hand after resume'
  const bot=start(4,4,{turnSeconds:30});const s={...bot,players:Object.fromEntries(Object.entries(bot.players).map(([id,p])=>[id,{...p,bot:false}]))};
  const humans=seats(4).map(p=>({...p,mode:'human'}));const save=parseSave(makeSave(s,humans,s.phase.startedAt+12_000));assert.ok(save);const resumed=game.reduce(save.state,{type:'vip',action:'resume',now:100_000});assert.equal(resumed.phase.deadline-100_000,18_000);assert.ok(!Object.hasOwn(game.tvView(resumed),'hands'));
 });
+
+test('saved passing memory must be complete before any controller can see it',()=>{
+ const s=toPhase(start(1),'play'),good=makeSave(s,seats(4),10000);const bad=structuredClone(good);delete bad.state.received[s.actor];assert.equal(parseSave(bad),null);
+ const wrong=structuredClone(good);wrong.state.received.p0=wrong.state.received.p1;assert.equal(parseSave(wrong),null);
+ const valid=parseSave(good);for(const id of s.order)assert.doesNotThrow(()=>game.controllerView(valid.state,id));
+});
+
+test('a caller mutating an exported save cannot change live hands, scores or paused clocks',()=>{
+ const s=game.reduce(start(1),{type:'vip',action:'pause',now:2000}),before=JSON.stringify(s),saved=makeSave(s,seats(4),3000);saved.state.hands.p0[0]=99;saved.state.scores.p0=999;saved.state.phase.paused.at=999;assert.equal(JSON.stringify(s),before);
+});

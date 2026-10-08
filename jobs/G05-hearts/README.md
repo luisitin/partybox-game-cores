@@ -11,6 +11,7 @@ for Continue at public tricks/scores; the handoff holds optional turn clocks.
 All-bot tables have an optional Fast mode. Keyboard Tab/Space/Enter works.
 Defaults use fresh deals; enter a seed to reproduce one. The table saves locally
 and Resume restores progress after reload with every private hand concealed.
+Received cards are marked in your hand; mobile results appear above the table.
 
 For source checks use Node24, Chrome/Chromium and ffmpeg: `npm ci`, `npm test`.
 `npm run generate` rebuilds the page, fixtures, schemas and reproducible leagues.

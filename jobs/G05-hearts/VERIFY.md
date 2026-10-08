@@ -186,3 +186,19 @@ rejected. Optional entered seed stays reproducible. Desktop60.000fps and phone
 CPU4x59.670fps, p9516.8ms/max33.4ms; all previous browser gates pass, clip135356B.
 This is localhost partial browser evidence; updated full default CI remains
 required. No runtime network calls, new dependency or pure-core randomness/I/O.
+
+KEEP GOING2, after head3818b43 had GREEN runs37734856233/37734861508:
+`npm run build`, `node scripts/html.mjs`, `node --test tests/save.test.mjs`
+PASS five checks (30 tests in the complete suite). Reproduced a malformed
+save with missing received memory that previously parsed then crashed the
+controller; parsing now rejects incomplete pass/sent/received maps and orphan
+memory. Mutating exported hands, scores or paused clocks leaves the live state
+unchanged. These checks protect recovery from incomplete or aliased snapshots.
+`node scripts/visual.mjs --http --record --milestone 03` PASS: mobile score/result
+panel precedes the felt; three newly received cards have private visual badges
+and spoken labels. Prior recovery/privacy/input/roster gates remain true.
+Desktop60.002fps; phone CPU4x59.020fps,p9516.8ms/max33.4ms. Clip135356B. This local
+HTTP run remains partial; full updated default-disk CI is required.
+`node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs`
+PASS24 JSON files validated and34 checksums; browser bundle151948B. Independent
+reference seal and core/bot fixture/league results are unchanged.

@@ -9,3 +9,11 @@ recovery remove the first two. Browser crypto/storage stay outside pure logic.
 Local observation: two fresh17-card hands differ; a scored hand2 reload preserves
 its entire public view and has zero revealed card DOM; malformed save is refused.
 Remaining three will be assessed after this head's CI is green.
+
+Round2, after3818b43's two CI runs37734856233/37734861508 were green. Re-read G05.
+Five weaknesses: mobile ranked results below large old trick; received cards
+unmarked; timed Manage menu runs the clock; generic handoff spoken label lacks
+recipient; saved private passing memory can be incomplete. Fix result priority,
+private received markers/spoken labels and the reproduced save-memory crash.
+Also make exported saves independent so callers cannot mutate the live match.
+Remaining timed-menu/announcement issues are next after updated CI is green.

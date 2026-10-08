@@ -9,8 +9,9 @@ export const saveSchema=object({version:literal(1),savedAt:number().int().min(0)
 const same=(a:readonly number[],b:readonly number[]):boolean=>{const x=[...a].sort((i,j)=>i-j),y=[...b].sort((i,j)=>i-j);return x.length===y.length&&x.every((c,i)=>c===y[i]);};
 /** Snapshot data only: holding a saved clock never mutates the live game. */
 export function makeSave(s:HeartsState,seats:readonly SeatPref[],at:number):SavedGame{
- const phase=s.phase.id==='done'||s.phase.paused?{...s.phase}:{...s.phase,paused:{at}};
- return {version:1,savedAt:at,state:{...s,phase},seats:seats.map(p=>({...p}))};
+ const copy=JSON.parse(JSON.stringify(s)) as HeartsState;
+ if(copy.phase.id!=='done'&&!copy.phase.paused)copy.phase={...copy.phase,paused:{at}};
+ return {version:1,savedAt:at,state:copy,seats:seats.map(p=>({...p}))};
 }
 /** Validate only snapshots this standalone table can emit; reject corrupt data. */
 export function parseSave(value:unknown):SavedGame|null{
@@ -33,6 +34,13 @@ export function parseSave(value:unknown):SavedGame|null{
  if(s.phase.id==='hand'&&(!s.handScored||remaining.length)||s.phase.id==='done'&&!s.handScored)return null;
  if(s.phase.id==='play'&&(!s.hands[s.actor]!.length||!legalCards(s.hands[s.actor]!,s.trick,s.trickNumber===0,s.heartsBroken,s.opening).length))return null;
  if(s.phase.id==='pass'&&(s.passOffset===0||s.played.length||s.order.some(id=>Object.hasOwn(s.passes,id)&&(s.passes[id]!.length!==3||new Set(s.passes[id]).size!==3||s.passes[id]!.some(c=>!s.hands[id]!.includes(c))))))return null;
+ if(Object.keys(s.sent).length){
+  if(Object.keys(s.sent).length!==n||Object.keys(s.received).length!==n||Object.keys(s.passes).length!==n)return null;
+  for(let i=0;i<n;i++){const id=s.order[i]!,from=s.order[(i-s.passOffset+n)%n]!;
+   if(s.sent[id]!.length!==3||new Set(s.sent[id]).size!==3||!same(s.sent[id]!,s.passes[id]!)||!same(s.received[id]!,s.passes[from]!))return null;
+  }
+ }else if(Object.keys(s.received).length)return null;
+ if(s.phase.id==='play'&&s.trick.length>=n)return null;
  if(s.history.some(h=>h.moon!==null&&!ids.has(h.moon)||Object.keys(h.points).length!==n||s.order.some(id=>!Object.hasOwn(h.points,id))))return null;
  return record;
 }
