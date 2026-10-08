@@ -35,6 +35,8 @@ clears private DOM when starting over. Its unchanged source passed full local
 and hosted browser gates; new fixes restart the KEEP GOING streak at zero.
 Current exact-head CI must pass before delivery is complete: see
 https://github.com/luisitin/partybox-game-cores/pull/2/checks .
-VERIFY and NEXT distinguish current checks from historical evidence.
+[Current proof index](evidence/resume-20261008/INDEX.md) separates accepted
+raw samples, source guards and retained historical failures.
+Resumed rounds 10–12 add no player-visible gain (streak 3); final CI is required.
 Integrity checks the current proof index against the actual page/core, all
 1,200 raw frame intervals and guarded recording hashes.

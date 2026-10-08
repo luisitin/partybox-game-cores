@@ -3,6 +3,7 @@ import {createHash} from 'node:crypto';
 import {spawnSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {checkBrowserProof} from './browser-proof.mjs';
+import {checkEvidenceLinks} from './check-evidence-links.mjs';
 const sum=b=>createHash('sha256').update(b).digest('hex');
 const manifest=await readFile('SHA256SUMS.txt','utf8'),covered=new Set();
 for(const line of manifest.trim().split('\n')){
@@ -20,6 +21,7 @@ async function walk(dir='.') {
  }
 }await walk();
 console.log(JSON.stringify(await checkBrowserProof()));
+console.log(JSON.stringify(await checkEvidenceLinks()));
 const inputs=['manifest.json',...(await readdir('fixtures')).map(p=>'fixtures/'+p)];
 const before=Object.fromEntries(await Promise.all(inputs.map(async p=>[p,sum(await readFile(p))])));
 for(let run=0;run<2;run++) {

@@ -86,7 +86,30 @@ https://github.com/luisitin/partybox-game-cores/pull/2/checks .
 CI retains frame samples/reports as G02-browser-evidence artifacts even on
 failure. No local failed measurement is silently relabeled as accepted.
 
-# Historical verification records
+# Resumed KEEP GOING verification
+
+## Resumed KEEP round 12 — index current and historical evidence
+
+Exact fa7e3e9 passed CI 37779189588 at 12:51:17 UTC: the actually read log
+confirms 43/43 tests, 26 compiled assertion kills, unchanged leagues, desktop/
+phone 60.002400 FPS/p99=max16.8 ms, source guards and 293-file integrity.
+Re-read/rank five: round-12/review.md. Correct one nonexistent run-folder path
+and separate current resumed verification from historical pending-at-the-time
+records. Add INDEX.md with actual source SHA256s, complete raw timing, correct
+run paths, before/after probes, guards, failures and coverage/artifact limits.
+`node scripts/check-evidence-links.mjs`: PASS 26 existing local file
+links; before wrong-path absence and after corrected-path existence are retained.
+Integrity runs this link check. External links are not fetched by this check.
+Production and the accepted 1,200 raw intervals remain unchanged.
+`node --test tests/browser-proof.test.mjs` and `node scripts/browser-proof.mjs`
+recheck the current snapshot and fresh recording index; exact-head hosted npm
+test remains mandatory. `node scripts/capture.mjs round-12-final-review
+--public-history`: PASS guarded final clips 726,181/662,629 bytes. No recording
+FPS or physical-phone claim is made. No unchanged local matrices/leagues/full600
+are repeated. `node scripts/hashes.mjs` twice plus byte comparison: PASS
+308 delivered files. `node scripts/integrity.mjs`: PASS 308 hashes, current
+source/raw/recording proof, 26 existing links, two byte-identical regeneration
+runs, purity/licenses/media checks. Player-noticeable gain: none; streak 3.
 
 ## Resumed KEEP round 11 — verify current committed proof
 
@@ -176,12 +199,18 @@ Core 59bd5055, HTML a5a56d6a; card/RNG/score/strategy implementation unchanged.
 FPS/p99=max 16.8 ms. All 600 consecutive intervals remain per profile. All old
 suites/34 interactions/five host regressions and both new public-history UI
 comparisons PASS; start/end HTML/core/card/host/template guards match. Complete
-report/raw plus exact runner/helper/log are under attempts/12-15-12-540Z and
+report/raw plus exact runner/helper/log are under attempts/2026-10-08T12-15-12-540Z and
 the current resume browser snapshot. `node scripts/capture.mjs
 round-9-public-pass --public-history`: PASS, source-guarded actual history
 demonstrations 709,877/587,283 bytes. `node scripts/integrity.mjs`: PASS,254
 hashes/two byte-identical regenerations/purity/licenses/media. New-head hosted
 CI remains required. Player-visible gain leaves the stopping streak 0.
+
+# Historical verification records
+
+The following commands and pending-at-the-time notes describe the original
+delivery stages. Current acceptance is indexed in
+[evidence/resume-20261008/INDEX.md](evidence/resume-20261008/INDEX.md).
 
 Nine actually read Exa extractions, exact extraction hashes and all short quote
 matches are recorded in evidence/research-sources.json. Origin HTTP unobserved.

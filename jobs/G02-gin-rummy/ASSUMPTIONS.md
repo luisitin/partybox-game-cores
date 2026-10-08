@@ -79,3 +79,9 @@ recordings. Integrity compares them to actual production hashes and recomputes
 all intervals. Historical proof remains archived; a fresh file inventory does
 not make an old snapshot current. The isolated comment-only negative control
 proves that evidence-gate gap without claiming a player-visible defect.
+
+Round 12 review makes no gameplay choices: correct current evidence paths and
+separate historical pending-at-the-time records. Current SHA256s/raw/recordings
+and actually read CI logs are indexed; artifact contents and physical/SDK/
+external-strength limits stay explicit. This is the third consecutive no-
+player-gain round after the latest real fix, subject to final exact-head green.

@@ -1,30 +1,27 @@
-# Resume G02
+# Final resumed G02 checkpoint
 
-Branch job/G02-gin-rummy; owner codex-gin-resume; original PR #2/history retained.
-Only this job and the owner's main claim are changed.
+Owner codex-gin-resume; branch job/G02-gin-rummy; original PR #2/history retained.
+Current standalone page/core are a5a56d6a/59bd5055. Deadline-first human/bot host
+input, New match private DOM cleanup and truthful opening-Pass history pass.
+Current proof/limits/failures: evidence/resume-20261008/INDEX.md.
 
-Core 59bd5055/page a5a56d6a fix genuine opening-Pass attribution. The deadline-
-first host and New match private cleanup also pass. Exact round 9 CI37776058436
-and round 10 CI37777230686 are green; actual logs are archived. Current matching
-local600 proof retains desktop59.703869/phone60.003000FPS, p9916.8, max50/16.8.
-All earlier failed measurements remain unchanged; no stall cause is claimed.
+Round 11 exact head fa7e3e9 passed CI37779189588: 43 tests, all full core/
+properties/solver checks, unchanged 57.6%/87.15% leagues, 26 compiled assertion
+kills, both 600-frame browser gates and current-proof integrity. Actual log/
+metadata are archived; artifact contents are not inferred.
 
-KEEP round 10 planted the observed actor bug: 26/26 actual compiled assertion
-kills. Round 11 closes a concrete proof gate gap: old integrity accepts a stale
-report after a copied HTML-comment change; new integrity rejects it. Eight
-proof tests/20 corruption variants pass, all1,200 intervals are independently
-recomputed and current recording/source hashes match. Fresh guarded clips pass.
-Production is unchanged; no repeated local core matrix/leagues/full browser run.
-No player gain in rounds10–11 (streak2). Refresh hashes/claim, push this completed
-checkpoint and inspect its exact-head hosted full npm test before round12.
+KEEP rounds10–12 consecutively gain nothing a player notices after the latest
+player fix. Round12 corrects/indexes evidence navigation, validates local paths
+and retains matching complete local600 proof. Fresh guarded functional clips
+pass; no gameplay change or duplicate unchanged local matrix/leagues/frames.
+Final checkpoint needs its own exact-head hosted full npm test green. After
+that actual result: mark existing PR #2 ready (never merge), then return to the
+queue using fresh main README/RULES/JOBS/CLAIMS plus all candidate branch times
+and strict lowest eligible ID. Do not override any fresh owner or pre-claim.
 
-Round12 candidate: improve accurate navigation of current and historical proof.
-Re-read/rank five first, verify the named paths/hashes and limits. Do not invent
-new mechanics. Three consecutive no-player-gain rounds and final exact-head
-green are required before PR #2 ready. Preserve failures, old source and history.
-
-No strict frame launch without root's explicit global CPU-clear GO. Matching
-unchanged-runtime local600 proof is retained for cosmetic rounds; each milestone
-has fresh guarded functional recordings and exact-head hosted full npm test.
-Own main claim refresh/push every <=30min. Lastpush12:29:27; hard12:59:27,
-target12:54:27 or earlier. Never merge, force-push or override another owner.
+Until green, keep PR draft; if a required gate fails, preserve exact logs/raw/
+source and correct or honestly document before READY. Do not infer Azure
+artifact contents, hardware testing, SDK integration or outside bot strength.
+All old failures and historical source remain. No local strict frame launch
+without root's explicit global CPU-clear GO. Own claim/push <=30min; last
+push12:45:35 gives hard13:15:35, target13:10:35 or earlier.
