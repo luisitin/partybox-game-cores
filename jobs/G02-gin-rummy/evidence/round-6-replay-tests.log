@@ -1,0 +1,20 @@
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612,"replayChecks":261181,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775,"replayChecks":286246,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825,"replayChecks":343987,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755,"replayChecks":258472,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812,"replayChecks":269750,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929,"replayChecks":317252,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event (274204.756994ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (22430.335505ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (5253.1683ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (47.953787ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 302248.558948

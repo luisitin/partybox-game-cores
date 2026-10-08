@@ -1,0 +1,22 @@
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (7.765869ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (6.874832ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (5.406188ms)
+✔ first raw target winner keeps the crown even when final box settlement reverses points (11.253255ms)
+✔ every valid string ID, including empty, wins, earns bonuses and stays in rotation (14.204079ms)
+✔ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.611998ms)
+✔ early end preserves earned raw points and reports current standings (0.626227ms)
+✔ aces low, set cardinality, runs and overlap (1.798524ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (5.730386ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (2.679165ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (11.73118ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (13.957618ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (2.058595ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (79.04298ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 260.063965

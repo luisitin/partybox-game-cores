@@ -1,0 +1,86 @@
+{
+  "version": "1.2.1",
+  "localFullSequenceExitCode": 0,
+  "nodeTestsPassed": 29,
+  "sourceSha256": {
+    "src/browser.ts": "b14a8327517d6ab558a7941b5a3c2dd01d7c5bff8f1132ddcac9d7ad349c9b36",
+    "src/cards.ts": "69811a1eb99354c938a5003e3a2316ff910ff2365ebaadb1f46f9f4df8a16d86",
+    "src/play.template.html": "828ec34c9514734812752fdb0e11bfaf8e5f1460e46785cc3763c860b18022e2",
+    "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f"
+  },
+  "league": [
+    {
+      "stronger": "sharp",
+      "weaker": "normal",
+      "games": 2000,
+      "wins": 1152,
+      "losses": 848,
+      "ties": 0,
+      "winRate": 0.576,
+      "wilsonLower": 0.5542157372425242,
+      "events": 527438,
+      "pairedSeeds": true
+    },
+    {
+      "stronger": "normal",
+      "weaker": "easy",
+      "games": 2000,
+      "wins": 1743,
+      "losses": 257,
+      "ties": 0,
+      "winRate": 0.8715,
+      "wilsonLower": 0.8561180625080238,
+      "events": 490034,
+      "pairedSeeds": true
+    }
+  ],
+  "browser": [
+    {
+      "label": "desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "meanMs": 16.66611111111111,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.800000000000182,
+      "fps": 60.00200006666889,
+      "targetRefreshHz": 60,
+      "measurementRoundingTolerance": "mean >=59 FPS; p99 <=17ms",
+      "interactionChecks": 17,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "reducedMotion": {
+        "matches": true,
+        "transform": "none",
+        "animation": "none"
+      }
+    },
+    {
+      "label": "phone4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "meanMs": 16.66611111111111,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.800000000000182,
+      "fps": 60.00200006666889,
+      "targetRefreshHz": 60,
+      "measurementRoundingTolerance": "mean >=59 FPS; p99 <=17ms",
+      "interactionChecks": 17,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "reducedMotion": {
+        "matches": true,
+        "transform": "none",
+        "animation": "none"
+      }
+    }
+  ],
+  "mutantsCaught": 25,
+  "replayLimit": "Final-state replay only in round5; every-event proof next",
+  "hostedStatus": "Current new head not pushed yet; exact-head npm test required"
+}

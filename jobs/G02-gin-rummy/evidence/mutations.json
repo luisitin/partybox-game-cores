@@ -1,0 +1,282 @@
+{
+  "method": "one real source edit, compile, execute unchanged baseline-passing rules tests",
+  "planted": 25,
+  "caught": 25,
+  "cases": [
+    {
+      "id": "M01",
+      "file": "cards",
+      "from": "c%13+1",
+      "to": "c%13+2",
+      "description": "wrong rank",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M02",
+      "file": "cards",
+      "from": "Math.floor(c/13)",
+      "to": "Math.floor(c/12)",
+      "description": "wrong suit",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M03",
+      "file": "cards",
+      "from": "Math.min(rank(c),10)",
+      "to": "Math.min(rank(c),11)",
+      "description": "wrong face value",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M04",
+      "file": "cards",
+      "from": "cards.length<3",
+      "to": "cards.length<4",
+      "description": "reject three-card meld",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M05",
+      "file": "cards",
+      "from": "cards.length<=4&&ranks",
+      "to": "cards.length<=3&&ranks",
+      "description": "reject four-card set",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M06",
+      "file": "cards",
+      "from": "r===ranks[0]+i",
+      "to": "r===ranks[0]+i+1",
+      "description": "off-by-one run",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M07",
+      "file": "cards",
+      "from": "if(r-start>=2)",
+      "to": "if(r-start>=3)",
+      "description": "omit three-card candidate runs",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M08",
+      "file": "cards",
+      "from": "if(indices.length>=3)",
+      "to": "if(indices.length>=4)",
+      "description": "omit three-of-kind candidates",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M09",
+      "file": "cards",
+      "from": "score<best",
+      "to": "score>best",
+      "description": "maximize instead of minimize",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M10",
+      "file": "cards",
+      "from": "if(!canLayOff)",
+      "to": "if(canLayOff)",
+      "description": "invert Gin layoff prohibition",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M11",
+      "file": "cards",
+      "from": "if(validMeld(extended))",
+      "to": "if(false && validMeld(extended))",
+      "description": "omit layoffs",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M12",
+      "file": "core",
+      "from": "mustStock:passes===2",
+      "to": "mustStock:false",
+      "description": "allow discard after two opening passes",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M13",
+      "file": "core",
+      "from": "state.phase.id==='upcard'&&input.source!=='discard'",
+      "to": "false && input.source!=='discard'",
+      "description": "allow opening stock draw",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M14",
+      "file": "core",
+      "from": "input.card===state.drawnDiscard",
+      "to": "false",
+      "description": "allow immediate returned upcard",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M15",
+      "file": "core",
+      "from": "if(state.stock.length<=2)",
+      "to": "if(state.stock.length<=1)",
+      "description": "continue past two stock cards",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M16",
+      "file": "core",
+      "from": "defenderDeadwood<=knockerDeadwood",
+      "to": "defenderDeadwood<knockerDeadwood",
+      "description": "deny tie undercut",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M17",
+      "file": "core",
+      "from": "config.ginBonus+defenderDeadwood",
+      "to": "config.ginBonus-defenderDeadwood",
+      "description": "subtract opponent Gin deadwood",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M18",
+      "file": "core",
+      "from": "config.bigGinBonus+defenderDeadwood",
+      "to": "config.ginBonus+defenderDeadwood",
+      "description": "Big Gin wrong bonus",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M19",
+      "file": "core",
+      "from": "config.undercutBonus+knockerDeadwood-defenderDeadwood",
+      "to": "config.undercutBonus+defenderDeadwood-knockerDeadwood",
+      "description": "reverse undercut difference",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M20",
+      "file": "core",
+      "from": "(defenderDeadwood-knockerDeadwood)*multiplier",
+      "to": "(defenderDeadwood+knockerDeadwood)*multiplier",
+      "description": "wrong knock difference",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M21",
+      "file": "core",
+      "from": "(config.bigGinBonus+defenderDeadwood)*multiplier",
+      "to": "config.bigGinBonus+defenderDeadwood",
+      "description": "ignore double Big Gin",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M22",
+      "file": "core",
+      "from": "state.config.aceGin?0:value(initialUpcard)",
+      "to": "state.config.aceGin?1:value(initialUpcard)",
+      "description": "Oklahoma ace wrong limit",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M23",
+      "file": "core",
+      "from": "suit(initialUpcard)===3",
+      "to": "suit(initialUpcard)===2",
+      "description": "double hearts instead of spades",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M24",
+      "file": "core",
+      "from": "event.startedAt===state.phase.startedAt",
+      "to": "true",
+      "description": "accept stale timer",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    },
+    {
+      "id": "M25",
+      "file": "core",
+      "from": "state.phase.deadline+delta",
+      "to": "state.phase.deadline",
+      "description": "resume omits pause duration",
+      "compiled": true,
+      "killed": true,
+      "error": null,
+      "actualAssertionFailure": true
+    }
+  ]
+}
