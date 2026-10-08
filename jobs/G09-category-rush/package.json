@@ -1,0 +1,14 @@
+{
+  "name": "category-rush-core", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "npm run typecheck && tsx --test tests/*.test.ts",
+    "test:core": "tsx --test tests/core.test.ts",
+    "generate": "tsx scripts/generate.ts",
+    "build:play": "tsx build-play.ts",
+    "mutations": "tsx scripts/mutations.ts",
+    "bots": "tsx scripts/bots.ts"
+  },
+  "dependencies": {"zod": "4.1.12"},
+  "devDependencies": {"@types/node": "24.7.2", "typescript": "5.9.3", "tsx": "4.20.6", "esbuild": "0.25.10", "playwright": "1.56.0"}
+}

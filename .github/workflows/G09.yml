@@ -1,0 +1,42 @@
+name: G09 Category Rush
+on:
+  pull_request:
+    paths:
+      - 'jobs/G09-category-rush/**'
+      - 'contract/**'
+      - '.github/workflows/G09.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G09-category-rush
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: jobs/G09-category-rush/package-lock.json
+      - run: npm ci
+      - name: Strict core, independent oracle, all rosters and property seeds
+        run: npm test
+      - name: Deterministic regeneration and JSON Schema
+        run: |
+          node scripts/generate-content.mjs --check
+          npx tsx scripts/content-schema.ts --check
+          npm run generate
+          npm run build:play
+          git diff --exit-code -- content/categories.json content/categories.ts content/categories.schema.json manifest.json fixtures play.html
+          npx tsx scripts/checksums.ts --check
+      - name: Twenty-five real planted bugs
+        run: npm run mutations
+      - name: Two thousand duels per adjacent bot skill
+        run: npm run bots
+      - name: Install development browser
+        run: npx playwright install --with-deps chromium
+      - name: Real offline file gameplay and accessibility
+        run: node scripts/browser-check.mjs

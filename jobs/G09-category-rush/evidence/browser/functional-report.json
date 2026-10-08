@@ -1,0 +1,49 @@
+{
+  "sourceSha256": "3ce64d2667bc19f930cd6ea8902106e444b4fe61c34e5616dd6b60864d0e8307",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "profile": "source",
+      "name": "HTML embeds its scripts/styles and blocks network by CSP",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "setup and active screen have no horizontal overflow",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "named players are safely escaped; 12 labeled keyboard inputs",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "private handover removes previous answers from the DOM",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "host pause freezes time and preserves draft; keyboard modal traps focus",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "author names are absent from anonymous voting cards; duplicates marked zero",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "all 12 review categories advance; duplicate scoring comes from actual core",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /category 2 of 12/. Input:\n\n'REVIEW CATEGORY 2 OF 12 · ROUND 1 OF 1'\n"
+    }
+  ],
+  "passed": false,
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /category 2 of 12/. Input:\n\n'REVIEW CATEGORY 2 OF 12 · ROUND 1 OF 1'\n",
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "phase": {
+    "id": "answer",
+    "startedAt": 1000,
+    "deadline": 31000
+  },
+  "phaseClock": 1000,
+  "rng": {
+    "seed": 42,
+    "step": 137
+  },
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "face1",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "face2",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "face3",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "order": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "cfg": {
+    "rounds": 1,
+    "roundSeconds": 30
+  },
+  "round": 1,
+  "letter": "S",
+  "usedLetters": [
+    "S"
+  ],
+  "categories": [
+    {
+      "id": "transport-01",
+      "prompt": "A vehicle carrying passengers on water",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "transport"
+    },
+    {
+      "id": "clothing-04",
+      "prompt": "Something worn around a neck",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "clothing"
+    },
+    {
+      "id": "parks-02",
+      "prompt": "Something you find beside a park path",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "parks"
+    },
+    {
+      "id": "produce-06",
+      "prompt": "A green vegetable served cooked",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "produce"
+    },
+    {
+      "id": "storage-04",
+      "prompt": "Something rolled up for storage",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "storage"
+    },
+    {
+      "id": "home-rooms-04",
+      "prompt": "Something you sit on in a home",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "home-rooms"
+    },
+    {
+      "id": "garden-09",
+      "prompt": "Something a gardener wears for protection",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "garden"
+    },
+    {
+      "id": "travel-packing-07",
+      "prompt": "Something used to carry luggage",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "travel-packing"
+    },
+    {
+      "id": "cooking-04",
+      "prompt": "Something that helps bread dough rise",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "cooking"
+    },
+    {
+      "id": "dining-06",
+      "prompt": "Something used to serve a shared dish",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "dining"
+    },
+    {
+      "id": "streets-03",
+      "prompt": "Something found at a bus stop",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "streets"
+    },
+    {
+      "id": "breakfast-07",
+      "prompt": "A food intended for a toaster",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "breakfast"
+    }
+  ],
+  "answers": {
+    "p0": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "p1": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "p2": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "submitted": {
+    "p0": false,
+    "p1": false,
+    "p2": false
+  },
+  "reviewIndex": 0,
+  "votes": {},
+  "reviewed": [],
+  "scores": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 0
+  },
+  "roundResult": null,
+  "history": []
+}

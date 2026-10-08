@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "lang": {
+      "type": "string",
+      "const": "en"
+    },
+    "letters": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "string",
+          "const": "A"
+        },
+        {
+          "type": "string",
+          "const": "B"
+        },
+        {
+          "type": "string",
+          "const": "C"
+        },
+        {
+          "type": "string",
+          "const": "D"
+        },
+        {
+          "type": "string",
+          "const": "E"
+        },
+        {
+          "type": "string",
+          "const": "F"
+        },
+        {
+          "type": "string",
+          "const": "G"
+        },
+        {
+          "type": "string",
+          "const": "H"
+        },
+        {
+          "type": "string",
+          "const": "I"
+        },
+        {
+          "type": "string",
+          "const": "J"
+        },
+        {
+          "type": "string",
+          "const": "K"
+        },
+        {
+          "type": "string",
+          "const": "L"
+        },
+        {
+          "type": "string",
+          "const": "M"
+        },
+        {
+          "type": "string",
+          "const": "N"
+        },
+        {
+          "type": "string",
+          "const": "O"
+        },
+        {
+          "type": "string",
+          "const": "P"
+        },
+        {
+          "type": "string",
+          "const": "R"
+        },
+        {
+          "type": "string",
+          "const": "S"
+        },
+        {
+          "type": "string",
+          "const": "T"
+        },
+        {
+          "type": "string",
+          "const": "W"
+        }
+      ]
+    },
+    "categories": {
+      "minItems": 300,
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+(?:-[a-z]+)*-\\d{2}$"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 110
+          },
+          "clarification": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 180
+          },
+          "theme": {
+            "type": "string",
+            "pattern": "^[a-z]+(?:-[a-z]+)*$"
+          },
+          "answers": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "R",
+                "S",
+                "T",
+                "W"
+              ]
+            },
+            "additionalProperties": {
+              "minItems": 1,
+              "maxItems": 40,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9 ,.'()/-]*$"
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prompt",
+          "clarification",
+          "theme",
+          "answers"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "lang",
+    "letters",
+    "categories"
+  ],
+  "additionalProperties": false
+}

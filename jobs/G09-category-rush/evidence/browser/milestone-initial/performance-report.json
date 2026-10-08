@@ -1,0 +1,55 @@
+{
+  "sourceSha256": "3ce64d2667bc19f930cd6ea8902106e444b4fe61c34e5616dd6b60864d0e8307",
+  "browser": "Chromium headless shell1194",
+  "profiles": [
+    {
+      "profile": "desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "sourceSha256": "3ce64d2667bc19f930cd6ea8902106e444b4fe61c34e5616dd6b60864d0e8307",
+      "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering or synthetic timestamps",
+      "count": 600,
+      "totalMs": 9999.536,
+      "meanMs": 16.665893333333333,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "networkRequests": [
+        "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+      ],
+      "pageErrors": [],
+      "passed": true,
+      "video": "media/milestone-desktop.webm",
+      "videoBytes": 737872
+    },
+    {
+      "profile": "phone4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "sourceSha256": "3ce64d2667bc19f930cd6ea8902106e444b4fe61c34e5616dd6b60864d0e8307",
+      "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering or synthetic timestamps",
+      "count": 600,
+      "totalMs": 9999.544,
+      "meanMs": 16.665906666666665,
+      "fps": 60.00273612476729,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "networkRequests": [
+        "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+      ],
+      "pageErrors": [],
+      "passed": true,
+      "video": "media/milestone-phone4x.webm",
+      "videoBytes": 389346
+    }
+  ],
+  "passed": true
+}

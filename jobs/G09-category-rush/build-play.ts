@@ -1,0 +1,13 @@
+import {build} from 'esbuild';
+import {readFile,writeFile} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import {dirname,join} from 'node:path';
+const root=dirname(fileURLToPath(import.meta.url));
+const result=await build({entryPoints:[join(root,'client.ts')],bundle:true,write:false,format:'iife',platform:'browser',target:'es2022',minify:true,legalComments:'none',charset:'ascii',sourcemap:false});
+const script=result.outputFiles[0]!.text.replace(/<\/script/gi,'<\\/script');
+const template=await readFile(join(root,'src/play.template.html'),'utf8');
+if(template.split('/*__BUNDLE__*/').length!==2)throw new Error('Expected exactly one bundle marker');
+const html=template.replace('/*__BUNDLE__*/',()=>script);
+if(/<(?:script|link)[^>]+(?:src|href)\s*=/i.test(html))throw new Error('External asset in offline HTML');
+await writeFile(join(root,'play.html'),html);
+console.log(`Built self-contained play.html (${Buffer.byteLength(html)} bytes).`);

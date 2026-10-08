@@ -1,0 +1,50 @@
+{
+  "id": "category-rush",
+  "name": "Category Rush",
+  "icon": "📝",
+  "tagline": "One letter. Twelve categories. Think differently.",
+  "description": "An original category game for 2–8 players. Race to fill twelve prompts, vote on creative answers, and score only answers nobody else wrote.",
+  "howToPlay": [
+    "Write one answer for each category, beginning with the round letter.",
+    "Discuss answers and vote on whether each one fits the category.",
+    "Valid unique answers score one point. Most points after all rounds wins."
+  ],
+  "version": "1.0.0",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "estimatedMinutes": 20,
+  "tags": [
+    "words",
+    "classic"
+  ],
+  "presence": {
+    "needs": "voice-if-remote",
+    "note": "Discuss creative answers before voting."
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "contentLangs": [
+    "en"
+  ],
+  "settings": [
+    {
+      "key": "rounds",
+      "label": "Rounds",
+      "type": "number",
+      "default": 3,
+      "min": 1,
+      "max": 5,
+      "step": 1
+    },
+    {
+      "key": "roundSeconds",
+      "label": "Writing time in seconds",
+      "type": "number",
+      "default": 180,
+      "min": 30,
+      "max": 180,
+      "step": 30
+    }
+  ]
+}
