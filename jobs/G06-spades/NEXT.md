@@ -6,15 +6,18 @@ Research milestone:read pinned sources and record rules/conflicts/assumptions.
 Oldjob/G06-spades is a403-only research stub,preserved;do not reinstate its
 obsolete blocker. Live GitHub mirrors/implementations supply research.
 
-Next:implement strict pure core/cards/scoring/public-only bots,all seven
-phase fixtures and validated metadata/deck;then full tests/differentials/
-mutations/leagues and offline hot-seat UI/browser evidence. RULES/CONFLICTS
+Core/cards/scoring/public-only bots,seven fixtures and validated metadata
+are implemented. Strict types and26 focused tests pass. Pilot100 matches
+per comparison passed;full required leagues/replays have NOT run yet.
+Next:full tests/differentials/mutations/leagues and offline hot-seat
+UI/browser evidence. Investigate initial disconnected actor progression
+and conservation checks when VIP ends during a partial trick. RULES/CONFLICTS
 specify500,bags10→−100,Nil/BlindNil,3-playerCutthroat and house choices.
 Sequential2-card partner exchange must permit returning a received card.
 Use unlimitedDuration per the logged long-game interpretation;prove active
 completion and idle persistence/VIP exit. No arbitrary round cap.
 
-Nothing playable or tested has shipped yet;no PR opened for G06.
+Playable browser build and final pipeline are pending;no PR opened for G06.
 Push each milestone≤30min;keep this handoff current and refresh ONLY G06
 on main each push. On a push race,pull/re-check before choosing another job.
 Do not stage orphan G01/G04 dependency caches or touch G08 Shake Up.

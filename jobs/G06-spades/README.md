@@ -1,7 +1,7 @@
 # Spades
 
 G06 is claimed by codex-domino on job/G06-spades-core.
-Research is complete;implementation and verification are in progress.
+Research and pure core are implemented;full verification is in progress.
 Four-player partnerships and three-player cutthroat,target500,nil and
 blind nil,10 accumulated bags→−100. No code or art is copied from sources.
 
@@ -13,4 +13,8 @@ SOURCES records what was actually read;CONFLICTS records the differences.
 RULES defines the selected presets and optional house rules.
 ASSUMPTIONS and NEXT record implementation choices and the handoff.
 VERIFY lists actual checks;unrun checks are not claimed as passing.
-LOOP starts after the PR is green. No playable build has shipped yet.
+Run `npm ci`, `npm run check`, `node generate.ts`, `node fixtures.ts`,
+then `FAST_TEST=1 node --test test.ts` for26 focused checks.
+`npm test` also runs full seeded replay and1000-match/player-count suites.
+The complete pipeline, browser page and hosted CI are still pending.
+LOOP starts after the PR is green.
