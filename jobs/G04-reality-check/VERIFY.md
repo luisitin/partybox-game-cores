@@ -338,3 +338,45 @@ old media. Strict types PASS; actual milestone14 encoder clip156189bytes,
 Cadence: checkpoint was not pushed by12:57:53 (previous push12:27:53).
 This is a second observed30-minute cadence failure, not excused by compaction.
 Actual push timestamp/overrun will be appended after normal publication.
+
+Actual normal branch push7a7af73 succeeded12:59:30UTC (remote reflog),
+31m37s since12:27:53: cadenceFAIL by97s. Next25min target13:24:30,
+30min hard13:29:30. Own main claim259bffb refreshed before publication.
+
+`node browser.ts --frames-only` current frozen e570/df8688fb runner,
+actual start13:03:06.765UTC, closed by13:03:21UTC, EXIT1. All owned peer
+heavy groups acknowledged closed before launch; no claim about unobserved
+host workload. TV300 PASS59.605412FPS,p95/p9916.8,max33.4; phone300
+FAIL54.056645FPS,p9516.8,p99116.6,max150. Zero errors/network; all16source
+hashes match. Both full300intervals/exactrunner/log retained. This confirms
+continued unexplained variance; neither scratch relocation nor game code
+is established as its cause. No FPS improvement/player gain claim.
+
+`gh run view 37780890383 --log` actual complete logs read. Exact7a7af73
+CI SUCCESS13:06:22UTC: all51node/21k games/25mutants/24kleagues/6deadline
+cases/66legacy scenarios/6x300 intervals/16sourceguards. Every raw/profile
+and complete report parsed from realmachine JSONstdout; ninepublicJSONs
+retain exact source/run provenance. Independently counted300intervals each;
+all60.001992–60.003600FPS,p95/p99<=16.8. Artifact11551993174
+634549bytes uploaded; actualdownload403. Its clip bytes/hashes are unread,
+not inferred from uploadedmetadata. Local failedraw remains separate.
+KEEP12 tooling-only: browser reports now include actual capture SHA256
+and distinctmilestone15 filenames; no runtime/UI/data changes. Genuine
+`node capture.ts --milestone=15` EXIT0:156846bytes,18frames, actual SHA in
+source-bound report,11sourceguards match, zeroHTTP/errors. Encoding12FPS
+is not a frameacceptance measurement. New independent browser-proof CLI
+and focused corruption controls pending; fullcurrentCI remains required.
+
+`npm run check && git diff --check`: PASS after tool integration.
+`node browser-proof.ts --self-test --with-html-comment`: EXIT0,328.845ms,
+completed13:19:50UTC. Actual current HTML harmless comment leaves old
+JSON/media checksum gate PASS; new source guard rejects it; finally restores
+play.html exactlye570. All23 corruption controls rejected, independently
+recomputed actual1,800 historical host intervals/6profiles, all22x3actual
+functional labels/source inventories validated HISTORY ONLY. Uploadedhost
+clips remain unread; no historical fullcapture acceptance is claimed.
+Real localmilestone15 clip156846bytes/SHA6609bc263b72bf2b7d994db2f5db43e67478b2d20509debef7e881355c5d8c8f
+checked separately, never paired with host fullproof. Current CLI correctly
+has no complete localcurrentproof; fresh3fullCIruns/actualcliphashes must pass.
+Eight runtime/data files unchanged since deadlinefix; round12 player gain0,
+no-gain streak1 pending exact newhead CI.

@@ -34,6 +34,6 @@ try{
  }
  encodeCapture(directory,output);await context.close();
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);const after=hashes();assert.deepEqual(after,before);
- writeFileSync(reportPath,JSON.stringify({command:'node capture.ts'+(milestoneArg?' '+milestoneArg:''),evidenceScope:'source-bound offline conceal/reopen capture only; no FPS acceptance',output,bytes:statSync(output).size,frameCount:18,encodedFps:12,durationSeconds:1.5,codec:'VP8 via pinned Playwright ffmpeg',sourceHashesAtStart:before,sourceHashesAtEnd:after,sourceUnchanged:true,errors,externalRequests:requests},null,2)+'\n');
+ writeFileSync(reportPath,JSON.stringify({command:'node capture.ts'+(milestoneArg?' '+milestoneArg:''),evidenceScope:'source-bound offline conceal/reopen capture only; no FPS acceptance',output,bytes:statSync(output).size,sha256:createHash('sha256').update(readFileSync(output)).digest('hex'),frameCount:18,encodedFps:12,durationSeconds:1.5,codec:'VP8 via pinned Playwright ffmpeg',sourceHashesAtStart:before,sourceHashesAtEnd:after,sourceUnchanged:true,errors,externalRequests:requests},null,2)+'\n');
  console.log(`Pinned encoder capture PASS ${statSync(output).size} bytes; source unchanged; no network/errors`);
 }finally{await browser.close();rmSync(directory,{recursive:true,force:true});}

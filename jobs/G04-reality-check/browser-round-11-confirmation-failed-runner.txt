@@ -18,7 +18,7 @@ const sourceHashesAtStart=sourceHashes();
 const fileUrl=pathToFileURL(resolve('play.html')).href;
 const repeat=process.argv.includes('--repeat=2')?2:process.argv.includes('--repeat=3')?3:1;
 const framesOnly=process.argv.includes('--frames-only');
-const capturePath=repeat===1?'media/milestone-15-browser.webm':`media/milestone-15-browser-repeat-${repeat}.webm`;
+const capturePath=repeat===1?'media/milestone-14-browser.webm':`media/milestone-14-browser-repeat-${repeat}.webm`;
 const reportPath=framesOnly?`browser-frames-only-${repeat}.json`:repeat===1?'browser-report.json':`browser-repeat-${repeat}.json`;
 const rawPrefix=framesOnly?`browser-frames-only-${repeat}`:`browser-raw-${repeat}`;
 mkdirSync('media',{recursive:true});
@@ -154,6 +154,6 @@ try {
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  assert.equal(createHash('sha256').update(readFileSync('play.html')).digest('hex'),htmlSha256,'page changed during verification');
  const sourceHashesAtEnd=sourceHashes();assert.deepEqual(sourceHashesAtEnd,sourceHashesAtStart,'source changed during verification');
- const completeReport={functional,evidenceScope:framesOnly?'performance confirmation only; prior functional/capture evidence remains separate':'full browser suite',navigationMode:'Actual self-contained play.html opened from disk via file://',htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),sourceHashesAtStart,sourceHashesAtEnd,sourceUnchanged:true,externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:framesOnly?null:capturePath,captureBytes:framesOnly?null:statSync(capturePath).size,captureSha256:framesOnly?null:createHash('sha256').update(readFileSync(capturePath)).digest('hex')};
+ const completeReport={functional,evidenceScope:framesOnly?'performance confirmation only; prior functional/capture evidence remains separate':'full browser suite',navigationMode:'Actual self-contained play.html opened from disk via file://',htmlSha256,htmlSha256AtEnd:createHash('sha256').update(readFileSync('play.html')).digest('hex'),sourceHashesAtStart,sourceHashesAtEnd,sourceUnchanged:true,externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:framesOnly?null:capturePath,captureBytes:framesOnly?null:statSync(capturePath).size};
  writeFileSync(reportPath,JSON.stringify(completeReport,null,2)+'\n');console.log('G04_COMPLETE_REPORT '+JSON.stringify(completeReport));console.log(`Browser ${framesOnly?'frame-only confirmation':`${functional.length} functional scenarios, offline,privacy,reduced-motion,frame times and capture`} passed (sample ${repeat})`);
 }finally{await browser.close();}

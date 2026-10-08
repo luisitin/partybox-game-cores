@@ -118,3 +118,17 @@ expired bot sampling; keep pure reducer/scoring/catalog/botpolicy unchanged.
 Measure actual-button before/after, on-time/pause/bot regressions, strict
 build/typecheck, affected fullbrowser gates and fresh source-bound capture.
 No completed round/player gain is logged until those checks pass.
+
+Round12 PRE-EDIT review 2026-10-08T13:08:11.924185+00:00: exact7a7af73
+CI37780890383 SUCCESS, actual full logs read, all51tests/25mutants/24kleagues/
+6deadline cases/66browser scenarios/6x300 raw near60FPS and16source guards
+are present. Root README/RULES/JOBS and selected RULES reread in full.
+Five ranked weaknesses: (1) historical reports/media can pass a checksum
+check without proving the current playable source; (2) unexplained local
+phone frame variance; (3) hidden-controller timer boundary coverage;
+(4) physical-phone approximation; (5) recovery-scope navigation clarity.
+Worst actionable reproducible gap is evidence freshness, not a speculative
+performance cause. Demonstrate an actual harmless current-page change that
+existing data/media integrity cannot detect; enforce fresh source and
+independently recomputed frame gates plus exact capture hashes. Preserve
+all local failed raw samples and do not infer a cause or player improvement.
