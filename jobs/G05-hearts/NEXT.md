@@ -1,30 +1,34 @@
-# G05 — final delivery
+# G05 — resumed verification
 
-PR5 https://github.com/luisitin/partybox-game-cores/pull/5; job/G05-hearts.
-Read root README/RULES/JOBS first. Preserve G03 PR3 and this completed game.
+Owner codex-hearts-resume claimed13:39:37Z on2026-10-08, maincfe1d2a. Fresh
+main/all17job branches found onlyG05 eligible: previous claim07:39:03 and
+latest678d077 commit07:39:00 were both strictly older than6h. New branch
+starts at claimed main and normally merges678d077 (mergea322608); PR5/history
+remain intact. Preserve every other owner and original checkout.
 
-Implementation and10 KEEP GOING rounds complete. Last three rounds8–10 have
-no meaningful player gain. The final implementation/review head6cf9fee passed
-full30-test push37743746775 and PR37743752330. Exact public report preserved:
-actual disk,desktop60.004/CPU4x phone60.002fps,p9516.8/max16.8ms; all outcome/
-clock/reload/privacy/input/3–6 roster gates true,0 outgoing requests/errors.
-Code/UI/check source is unchanged since5509a20; this push adds final metadata
-and report only. All local failures and interrupted captures remain in VERIFY.
+Current work: unchanged gameplay; strengthen current browser evidence from
+180 intervals/57.14fps/p95≤20ms to600 consecutive unfiltered intervals per
+profile with≥59fps/p95≤18ms. Retain actual raw intervals,26 start/end source
+hashes, zero-network/error checks and the exact capture bytes/SHA. Independent
+verification refuses historical/partial reports and failed-later-run reuse.
 
-At continuation, verify current PR HEAD has BOTH green G05 push/PR workflows.
-The final metadata workflow was pending at write; when green, no G05 work
-remains. Do not restart or rebuild it. Update/read the final PR body if needed,
-then claim the lowest eligible job on current main (G08 was next at this point).
-Do not merge. No source/rule re-verification gap or BLOCKED marker remains.
+Strict build/bundle equality, four checker unit groups/32 negative controls,
+31 schema JSON and59 hashes pass. Full strict attempt2026-10-08T14-05-20-267Z retained600 raw per profile:
+desktop60.002400fps passes; phone55.047387fps fails (p9516.8,p9966.7,max233.2ms).
+Complete current strict acceptance remains pending; no gate or sample changed. No new gameplay gain or completed review is
+claimed before that proof; default current-head full CI is also mandatory.
 
-Full checks:30 tests,25/25 mutants,10k independent cases,1003 property seeds,
-1000 complete games at each3–6 count,2x2000 strength leagues,twice-identical
-regeneration,29 live source receipts,all JSON/schema/hash and disk browser.
-Strong/medium head-to-head rates71.10%/77.95%; see BOTS for scope/intervals.
-Standalone HTML153921B,11 small original clips. Local --http is explicitly
-partial; capture-only documentation clips are not frame benchmarks.
+First proof-pending push hard14:09:39Z; push an honest proof-pending
+checkpoint if necessary. Refresh onlyG05's main claim on each normal push.
+No force push or PR merge. Existing pure core/bots/rules/fixtures/leagues and
+HTML are unchanged: HTML29ca92ac,coree0e10b9a,browser2e83f1ac.
 
-REST status helper /workspace/partybox-ci-head.py G05 --watch; exact report
-reader /workspace/g05-read-ci-report.py <ID>. Git/REST work if GraphQL401.
-At branch switch preserve installed caches; local .git/info excludes cover
-G05 node_modules/.build/.tmp. Refresh only the next job's claim on its pushes.
+After full proof/push, read exact current-head CI, then re-read README/RULES/
+JOBS and rank five weaknesses for KEEP GOING. Preserve prior no-player-gain
+rounds8–10 as history; any new player fix resets the streak. Recheck actual
+main/all matching job branches before a subsequent claim.
+
+Original completed delivery:678d077, PR5ready, exact push37744744041 and
+PR37744750013 succeeded. Independent REST read confirms npm test success;
+the new audit did not obtain that run's actual logs/artifact contents, so it
+does not infer fresh FPS values. Earlier measured summaries remain in media.

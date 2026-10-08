@@ -92,3 +92,23 @@ licence navigation; historical checkpoint readability; fixture navigation;
 minor visual decoration. Correct the typo and add a short delivered-material
 licence index. No game/UI/test changes, no player gain. This measured review
 makes three consecutive no-meaningful-gain rounds8–10 after the real round7 fix.
+
+Resume review11, after exact original head678d077's push37744744041 and
+PR37744750013 SUCCESS (REST metadata read; no new log/artifact inference).
+Re-read root README/RULES/JOBS and original Hearts rules/docs. Five material
+remaining weaknesses: the57.14fps/p95≤20 browser tolerance is weaker than
+the60fps target; timings lack preserved raw intervals/current source binding;
+captures have no report-bound actual SHA; boundary-test coverage is limited;
+mid-phone CPU4x and absent private SDK remain approximations. Select the
+verification gap:600 consecutive unfiltered intervals,≥59fps/p95≤18,26
+source start/end hashes and independently checked real clip size/SHA.
+No game/core/UI/bot change, and no player-visible gain is claimed. Full proof
+and exact new-head CI remain pending before completing this review.
+
+A synchronous programmatic Manage toggle at real deadline+30ms held the old
+actor in the actual file. A native mouse click delayed by a capture listener
+to that same boundary instead let RAF timeout advance p0→p1 and concealed the
+new hand. Thus the programmatic ordering probe is not a reproduced native
+player defect; no speculative gameplay fix was made. The core already rejects
+inputs at/after deadline. New-table explicitly clears private DOM, and the
+full original Zod MIT notice is bundled.

@@ -1,8 +1,10 @@
 import { spawn, execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync, rmSync, copyFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {sourceHashes, validateReport} from './check-visual.mjs';
 import { createServer } from 'node:http';
 
 const output = process.argv.includes('--record') ? 'media' : '.tmp/visual';
@@ -11,6 +13,11 @@ const milestone = milestoneIndex >= 0 ? process.argv[milestoneIndex + 1] : '01';
 assert.match(milestone, /^\d{2}$/);
 const videoFile = `milestone-${milestone}.webm`;
 mkdirSync('.tmp', { recursive: true }); mkdirSync(output, { recursive: true });
+const sourceStart=sourceHashes();const runId=new Date().toISOString().replace(/[:.]/g,'-');
+const attempt=resolve('.tmp/visual/runs',sourceStart['play.html'],runId);mkdirSync(attempt,{recursive:true});
+copyFileSync(import.meta.filename,resolve(attempt,'visual.mjs'));
+const currentRun={runId,startedAt:new Date().toISOString(),sourceStart};writeFileSync('.tmp/visual/current-run.json',JSON.stringify(currentRun,null,2)+'\n');
+let completeReport=null;let failure=null;
 const userData = resolve('.tmp/chrome'); rmSync(userData, { recursive: true, force: true });
 const binary = process.env.G05_CHROME ?? ['/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium'].find(existsSync);
 if (!binary) throw new Error('Chrome/Chromium executable unavailable');
@@ -130,10 +137,12 @@ try {
   async function measure(width,height,cpu){
     await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<700});await send('Emulation.setCPUThrottlingRate',{rate:cpu});
     await evaluate('new Promise(resolve=>{let n=0;function warm(){if(++n<60)requestAnimationFrame(warm);else resolve()}requestAnimationFrame(warm)})');
-    return evaluate(`new Promise(resolve=>{let previous=0,n=0;const dt=[];function frame(t){if(previous)dt.push(t-previous);previous=t;n++;if(n%6===0)document.querySelector('.hand-card:not([disabled])').click();if(n<182)requestAnimationFrame(frame);else{dt.shift();const sorted=[...dt].sort((a,b)=>a-b);const mean=dt.reduce((a,b)=>a+b)/dt.length;resolve({width:${width},height:${height},cpu:${cpu},warmupFrames:60,interaction:'17-card private pass selection at10Hz; retained card controls',frames:dt.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:Math.max(...dt),fps:1000/mean,overflow:document.documentElement.scrollWidth>${width}})}}requestAnimationFrame(frame)})`);
+    const sample=await evaluate(`new Promise(resolve=>{let previous=null,n=0;const dt=[];function frame(t){if(previous!==null)dt.push(t-previous);previous=t;n++;if(n%6===0)document.querySelector('.hand-card:not([disabled])').click();if(dt.length<600)requestAnimationFrame(frame);else{const sorted=[...dt].sort((a,b)=>a-b);const mean=dt.reduce((a,b)=>a+b,0)/dt.length;resolve({width:${width},height:${height},cpu:${cpu},warmupFrames:60,interaction:'17-card private pass selection at10Hz; retained card controls',frames:dt.length,rawIntervals:dt,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)],p99Ms:sorted[Math.floor(sorted.length*.99)],maxMs:Math.max(...dt),fps:1000/mean,overflow:document.documentElement.scrollWidth>${width}})}}requestAnimationFrame(frame)})`);
+    writeFileSync(resolve(attempt,width===1920?'desktop-frames.json':'phone-frames.json'),JSON.stringify({runId,sourceStart,...sample},null,2)+'\n');
+    return sample;
   }
-  const desktop=await measure(1920,1080,1),phone=await measure(390,844,4);console.log(JSON.stringify({desktop,phone}));
-  assert.equal(desktop.overflow,false);assert.equal(phone.overflow,false);assert.ok(desktop.meanMs<=17.5&&phone.meanMs<=17.5,'60fps cadence tolerance');assert.ok(desktop.p95Ms<=20&&phone.p95Ms<=20,'interactive frame p95 exceeds20ms');
+  const desktop=await measure(1920,1080,1),phone=await measure(390,844,4);console.log(JSON.stringify({desktop:{...desktop,rawIntervals:undefined},phone:{...phone,rawIntervals:undefined}}));
+  assert.equal(desktop.overflow,false);assert.equal(phone.overflow,false);assert.ok(desktop.fps>=59&&phone.fps>=59,'actual mean rate must be at least59FPS');assert.ok(desktop.p95Ms<=18&&phone.p95Ms<=18,'interactive frame p95 exceeds18ms');
   await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});assert.ok(await evaluate('matchMedia("(prefers-reduced-motion:reduce)").matches'));
   const motion=await evaluate('[...document.querySelectorAll(".card-face,.private-panel")].map(e=>({animation:getComputedStyle(e).animationName,transition:getComputedStyle(e).transitionDuration}))');assert.ok(motion.every(m=>m.animation==='none'&&m.transition==='0s'));
   await send('Emulation.setCPUThrottlingRate',{rate:1});
@@ -192,6 +201,11 @@ try {
   const resultOrder=await evaluate('({result:document.querySelector(".private-panel").getBoundingClientRect().top,table:document.querySelector(".felt").getBoundingClientRect().top})');assert.ok(resultOrder.result<resultOrder.table,'mobile ranked results must precede the last-trick table');
   await evaluate('window.scrollTo(0,0)');const mobileShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${output}/hearts-phone-${milestone}.png`,Buffer.from(mobileShot.data,'base64'));
   assert.equal(requests.filter(url=>/^https?:/.test(url)&&url!==documentUrl).length,0,'zero network requests after document load');assert.deepEqual(errors,[]);
-  const report={outcomeFocus:true,winnerAnnounced:true,mobileWinnerVisible:true,accessibleControls:true,minimumTapHeight:Math.min(...tapHeights),controlBoundaryContrast,footerContrast,manageClock:true,selectionAnnouncements:true,handoffAnnouncements:true,receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
-  writeFileSync(`${output}/visual-measurements-${milestone}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
-}finally{socket?.close();browser.kill('SIGTERM');localServer?.close();}
+  const report={kind:'full',passed:true,runId,startedAt:currentRun.startedAt,completedAt:new Date().toISOString(),sourceStart,sourceEnd:sourceHashes(),videoPath:`${output}/${videoFile}`,videoSha256:createHash('sha256').update(readFileSync(`${output}/${videoFile}`)).digest('hex'),outcomeFocus:true,winnerAnnounced:true,mobileWinnerVisible:true,accessibleControls:true,minimumTapHeight:Math.min(...tapHeights),controlBoundaryContrast,footerContrast,manageClock:true,selectionAnnouncements:true,handoffAnnouncements:true,receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
+  validateReport(report);completeReport=report;writeFileSync(`${output}/visual-measurements-${milestone}.json`,JSON.stringify(report,null,2)+'\n');writeFileSync('.tmp/visual/current-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,desktop:{...desktop,rawIntervals:undefined},phone:{...phone,rawIntervals:undefined}}));
+}catch(error){failure=String(error?.stack??error);throw error;}finally{
+ socket?.close();browser.kill('SIGTERM');localServer?.close();const sourceEnd=sourceHashes();
+ writeFileSync(resolve(attempt,'attempt.json'),JSON.stringify({...currentRun,sourceEnd,passed:completeReport!==null,failure},null,2)+'\n');
+ if(completeReport){writeFileSync(resolve(attempt,'report.json'),JSON.stringify(completeReport,null,2)+'\n');copyFileSync(completeReport.videoPath,resolve(attempt,'capture.webm'));}
+ else{const sample=label=>{const file=resolve(attempt,`${label}-frames.json`);if(!existsSync(file))return null;const {runId:ignoredRun,sourceStart:ignoredSources,...row}=JSON.parse(readFileSync(file,'utf8'));return row;};const failed={kind:'failed',schemaVersion:1,...currentRun,completedAt:new Date().toISOString(),sourceEnd,failure:failure??'Incomplete run',desktop:sample('desktop'),phone:sample('phone')};writeFileSync(resolve(attempt,'failure-report.json'),JSON.stringify(failed,null,2)+'\n');if(process.argv.includes('--record'))writeFileSync(`media/visual-measurements-${milestone}-failed-${runId}.json`,JSON.stringify(failed,null,2)+'\n');}
+}

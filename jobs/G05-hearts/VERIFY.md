@@ -360,3 +360,50 @@ before running; rerun in the actual job directory passes. This is a command
 path mistake, not a game-test result. Final JSON/hash checks follow below.
 
 Final metadata commands: `node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs` PASS31 schema-validated JSON files and59 checksums. README remains36 lines/7 valid relative links. Default full final-head CI is the remaining closeout gate.
+
+Resumed audit13:39Z (2026-10-08): fresh main and all17remote matching job refs
+(18heads includingmain) proved onlyG05 strictly eligible. Own claim13:39:37
+normal-pushedcfe1d2a; claimed-main job branch normally merged original678d077
+at a322608. An initial local merge command ran in the claims-clone cwd, was
+noticed before any push, and that own local main was restored to its exact
+pushedcfe1d2a before merging in the new job checkout. No remote/unrelated
+checkout changed.
+
+`npm ci --ignore-scripts --no-audit --no-fund`: PASS9packages. `npm run build`
+and `node scripts/html.mjs --check`: PASS strictES2022 and153921B exact bundle;
+pure core/browser/HTML byte-identical originale0e10b9a/2e83f1ac/29ca92ac.
+`node --test tests/visual-proof.test.mjs`: PASS4 groups/32negative controls,
+including truncated/invalid/wrong-stat/below-threshold timings, stale/missing
+guards, wrong viewport/throttle, network/errors, latest-failed-run reuse,
+historical summaries and actual inherited clip size/SHA/missing-file traps.
+Synthetic profiles are checker unit fixtures, not measured browser evidence;
+that genuine old clip is separately capture-only, not current full acceptance.
+`node scripts/generate.mjs --fixtures-only` and `node scripts/check-data.mjs`:
+PASS31 schema JSON/59 checksums. `git diff --check` PASS. No unchanged local
+4k core games/2×2k leagues repeated; current-head hosted npm test still runs all.
+
+System Chromium actual-file probe failed ERR_BLOCKED_BY_ADMINISTRATOR, with
+no fake HTTP fallback. Existing pinned Chromium1194 then opened the same
+actual file. `node .tmp/audit/clock-menu-probe.mjs` called the real existing
+Manage toggle listener programmatically at actual deadline+30ms: p0 held.
+`node .tmp/audit/clock-menu-native-probe.mjs` delivered a native mouse click
+with a capture listener delaying it to actual deadline+30ms: p0→p1, covered
+DOM0. These source-bound nongating diagnostics expose differing event order,
+not a proven native player bug; their ignored harnesses are not CI acceptance.
+No timer/core rule change. Full new browser/FPS/capture and exact-head CI
+remain pending at this checkpoint. Historical summaries remain unchanged.
+
+Milestone12 strict attempt2026-10-08T14-00-37-077Z: pinned full Chrome also
+returned ERR_BLOCKED_BY_ADMINISTRATOR before frames. Actual binary selection
+corrected to /home/agent/.cache/ms-playwright/chromium_headless_shell-1194/
+chrome-linux/headless_shell; no source change. The14:05:20 full attempt
+retains600 consecutive raw intervals per profile in public failed12 JSON and
+immutable .tmp/visual/runs/29ca92ac…/2026-10-08T14-05-20-267Z. Desktop
+60.002400fps,mean16.666ms,p95/p9916.8,max16.8 PASS; CPU4x phone
+55.047387fps,mean18.166167ms,p9516.8,p9966.7,max233.2 FAIL. No filtering,
+weaker gate, cause inference or completed full-browser PASS. Capture occurs
+after FPS, so that failed gate produced no acceptance clip. Separate
+`.tmp/capture-only.mjs --record --milestone12` uses the actual page and full
+existing functional checks without frame sampling; its guard includes its
+actual harness SHA. Encoding10fps is capture-only, never FPS acceptance.
+PR5 freshly read via REST is DRAFT while current strict proof/CI remain pending.

@@ -49,3 +49,19 @@ Manage temporarily owns a running optional clock. Closing it restores the same
 actor's revealed hand and selected pass, while explicit Pause still conceals.
 The UI uses existing pure VIP pause/resume; browser wall time stays outside core.
 Starting a reveal or submitting input closes an old management menu.
+
+Resumed verification uses≥59 measured mean FPS andp95≤18ms as the explicit
+near60fps acceptance target, with600 consecutive positive RAF-to-RAF intervals
+and no sample removed. These strengthen the former17.5ms/20ms tolerance.
+The first RAF supplies only a timestamp; all600 subsequent intervals remain.
+Clip encoding10fps is a separate capture workflow, never a FPS benchmark.
+System Chromium returned ERR_BLOCKED_BY_ADMINISTRATOR for actual file opening;
+the already-installed pinned Chromium1194 executable opens the same file
+without a local HTTP server. That is a test-tool choice, not runtime network
+or a copied private SDK helper. Current delivery still requires full disk CI.
+
+Executable correction: Chromium's Playwright `executablePath()` points at
+full Chrome, but default headless launch uses headless_shell. Full Chrome
+remains policy-blocked; the actual file succeeds in the pinned headless_shell.
+Local phone55.047fps remains an honest unresolved failure, not a runtime
+causal diagnosis. Historical green metadata cannot satisfy this new strict gate.

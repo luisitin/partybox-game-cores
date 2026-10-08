@@ -1,267 +1,555 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "outcomeFocus": {
-      "type": "boolean"
-    },
-    "winnerAnnounced": {
-      "type": "boolean"
-    },
-    "mobileWinnerVisible": {
-      "type": "boolean"
-    },
-    "accessibleControls": {
-      "type": "boolean"
-    },
-    "minimumTapHeight": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "controlBoundaryContrast": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "footerContrast": {
-      "type": "number",
-      "exclusiveMinimum": 0
-    },
-    "manageClock": {
-      "type": "boolean"
-    },
-    "selectionAnnouncements": {
-      "type": "boolean"
-    },
-    "handoffAnnouncements": {
-      "type": "boolean"
-    },
-    "receivedMarked": {
-      "type": "boolean"
-    },
-    "mobileResultPriority": {
-      "type": "boolean"
-    },
-    "freshDeals": {
-      "type": "boolean"
-    },
-    "resumedSavedGame": {
-      "type": "boolean"
-    },
-    "corruptSaveRejected": {
-      "type": "boolean"
-    },
-    "schemaVersion": {
-      "type": "number",
-      "const": 1
-    },
-    "chrome": {
-      "type": "string"
-    },
-    "fileOpened": {
-      "type": "boolean"
-    },
-    "serving": {
-      "type": "string"
-    },
-    "desktop": {
+  "anyOf": [
+    {
       "type": "object",
       "properties": {
-        "width": {
-          "type": "integer",
-          "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
+        "kind": {
+          "type": "string",
+          "const": "full"
         },
-        "height": {
-          "type": "integer",
-          "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
+        "passed": {
+          "type": "boolean"
         },
-        "cpu": {
+        "runId": {
+          "type": "string"
+        },
+        "startedAt": {
+          "type": "string"
+        },
+        "completedAt": {
+          "type": "string"
+        },
+        "sourceStart": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "sourceEnd": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "videoPath": {
+          "type": "string"
+        },
+        "videoSha256": {
+          "type": "string"
+        },
+        "outcomeFocus": {
+          "type": "boolean"
+        },
+        "winnerAnnounced": {
+          "type": "boolean"
+        },
+        "mobileWinnerVisible": {
+          "type": "boolean"
+        },
+        "accessibleControls": {
+          "type": "boolean"
+        },
+        "minimumTapHeight": {
           "type": "number",
           "exclusiveMinimum": 0
         },
-        "warmupFrames": {
+        "controlBoundaryContrast": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "footerContrast": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "manageClock": {
+          "type": "boolean"
+        },
+        "selectionAnnouncements": {
+          "type": "boolean"
+        },
+        "handoffAnnouncements": {
+          "type": "boolean"
+        },
+        "receivedMarked": {
+          "type": "boolean"
+        },
+        "mobileResultPriority": {
+          "type": "boolean"
+        },
+        "freshDeals": {
+          "type": "boolean"
+        },
+        "resumedSavedGame": {
+          "type": "boolean"
+        },
+        "corruptSaveRejected": {
+          "type": "boolean"
+        },
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "chrome": {
+          "type": "string"
+        },
+        "fileOpened": {
+          "type": "boolean"
+        },
+        "serving": {
+          "type": "string"
+        },
+        "desktop": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "height": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "cpu": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "warmupFrames": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "interaction": {
+              "type": "string"
+            },
+            "frames": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "rawIntervals": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "p99Ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "meanMs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "p95Ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "maxMs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fps": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "overflow": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "width",
+            "height",
+            "cpu",
+            "warmupFrames",
+            "interaction",
+            "frames",
+            "meanMs",
+            "p95Ms",
+            "maxMs",
+            "fps",
+            "overflow"
+          ],
+          "additionalProperties": false
+        },
+        "phone": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "height": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "cpu": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "warmupFrames": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "interaction": {
+              "type": "string"
+            },
+            "frames": {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            "rawIntervals": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "exclusiveMinimum": 0
+              }
+            },
+            "p99Ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "meanMs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "p95Ms": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "maxMs": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "fps": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "overflow": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "width",
+            "height",
+            "cpu",
+            "warmupFrames",
+            "interaction",
+            "frames",
+            "meanMs",
+            "p95Ms",
+            "maxMs",
+            "fps",
+            "overflow"
+          ],
+          "additionalProperties": false
+        },
+        "reducedMotion": {
+          "type": "boolean"
+        },
+        "externalRequests": {
           "type": "integer",
           "minimum": 0,
           "maximum": 9007199254740991
         },
-        "interaction": {
-          "type": "string"
-        },
-        "frames": {
-          "type": "integer",
-          "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
-        },
-        "meanMs": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "p95Ms": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "maxMs": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "fps": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "overflow": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "width",
-        "height",
-        "cpu",
-        "warmupFrames",
-        "interaction",
-        "frames",
-        "meanMs",
-        "p95Ms",
-        "maxMs",
-        "fps",
-        "overflow"
-      ],
-      "additionalProperties": false
-    },
-    "phone": {
-      "type": "object",
-      "properties": {
-        "width": {
-          "type": "integer",
-          "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
-        },
-        "height": {
-          "type": "integer",
-          "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
-        },
-        "cpu": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "warmupFrames": {
+        "runtimeExceptions": {
           "type": "integer",
           "minimum": 0,
           "maximum": 9007199254740991
         },
-        "interaction": {
-          "type": "string"
+        "completedPlayerCounts": {
+          "minItems": 4,
+          "maxItems": 4,
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 3,
+            "maximum": 6
+          }
         },
-        "frames": {
+        "privateHandoff": {
+          "type": "boolean"
+        },
+        "passing": {
+          "type": "boolean"
+        },
+        "mouseCard": {
+          "type": "boolean"
+        },
+        "touchCard": {
+          "type": "boolean"
+        },
+        "keyboardCard": {
+          "type": "boolean"
+        },
+        "keyboardFocus": {
+          "type": "boolean"
+        },
+        "longNamesFit": {
+          "type": "boolean"
+        },
+        "videoBytes": {
           "type": "integer",
           "exclusiveMinimum": 0,
-          "maximum": 9007199254740991
-        },
-        "meanMs": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "p95Ms": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "maxMs": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "fps": {
-          "type": "number",
-          "exclusiveMinimum": 0
-        },
-        "overflow": {
-          "type": "boolean"
+          "maximum": 10000000
         }
       },
       "required": [
-        "width",
-        "height",
-        "cpu",
-        "warmupFrames",
-        "interaction",
-        "frames",
-        "meanMs",
-        "p95Ms",
-        "maxMs",
-        "fps",
-        "overflow"
+        "schemaVersion",
+        "chrome",
+        "fileOpened",
+        "serving",
+        "desktop",
+        "phone",
+        "reducedMotion",
+        "externalRequests",
+        "runtimeExceptions",
+        "completedPlayerCounts",
+        "privateHandoff",
+        "passing",
+        "mouseCard",
+        "touchCard",
+        "keyboardCard",
+        "keyboardFocus",
+        "longNamesFit",
+        "videoBytes"
       ],
       "additionalProperties": false
     },
-    "reducedMotion": {
-      "type": "boolean"
-    },
-    "externalRequests": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 9007199254740991
-    },
-    "runtimeExceptions": {
-      "type": "integer",
-      "minimum": 0,
-      "maximum": 9007199254740991
-    },
-    "completedPlayerCounts": {
-      "minItems": 4,
-      "maxItems": 4,
-      "type": "array",
-      "items": {
-        "type": "integer",
-        "minimum": 3,
-        "maximum": 6
-      }
-    },
-    "privateHandoff": {
-      "type": "boolean"
-    },
-    "passing": {
-      "type": "boolean"
-    },
-    "mouseCard": {
-      "type": "boolean"
-    },
-    "touchCard": {
-      "type": "boolean"
-    },
-    "keyboardCard": {
-      "type": "boolean"
-    },
-    "keyboardFocus": {
-      "type": "boolean"
-    },
-    "longNamesFit": {
-      "type": "boolean"
-    },
-    "videoBytes": {
-      "type": "integer",
-      "exclusiveMinimum": 0,
-      "maximum": 10000000
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "const": "failed"
+        },
+        "schemaVersion": {
+          "type": "number",
+          "const": 1
+        },
+        "runId": {
+          "type": "string"
+        },
+        "startedAt": {
+          "type": "string"
+        },
+        "completedAt": {
+          "type": "string"
+        },
+        "sourceStart": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "sourceEnd": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "failure": {
+          "type": "string"
+        },
+        "desktop": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "width": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "height": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "cpu": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "warmupFrames": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "interaction": {
+                  "type": "string"
+                },
+                "frames": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "rawIntervals": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "p99Ms": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "meanMs": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "p95Ms": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "maxMs": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "fps": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "overflow": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "width",
+                "height",
+                "cpu",
+                "warmupFrames",
+                "interaction",
+                "frames",
+                "meanMs",
+                "p95Ms",
+                "maxMs",
+                "fps",
+                "overflow"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "phone": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "width": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "height": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "cpu": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "warmupFrames": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "interaction": {
+                  "type": "string"
+                },
+                "frames": {
+                  "type": "integer",
+                  "exclusiveMinimum": 0,
+                  "maximum": 9007199254740991
+                },
+                "rawIntervals": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "p99Ms": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "meanMs": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "p95Ms": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "maxMs": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "fps": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "overflow": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "width",
+                "height",
+                "cpu",
+                "warmupFrames",
+                "interaction",
+                "frames",
+                "meanMs",
+                "p95Ms",
+                "maxMs",
+                "fps",
+                "overflow"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "kind",
+        "schemaVersion",
+        "runId",
+        "startedAt",
+        "completedAt",
+        "sourceStart",
+        "sourceEnd",
+        "failure",
+        "desktop",
+        "phone"
+      ],
+      "additionalProperties": false
     }
-  },
-  "required": [
-    "schemaVersion",
-    "chrome",
-    "fileOpened",
-    "serving",
-    "desktop",
-    "phone",
-    "reducedMotion",
-    "externalRequests",
-    "runtimeExceptions",
-    "completedPlayerCounts",
-    "privateHandoff",
-    "passing",
-    "mouseCard",
-    "touchCard",
-    "keyboardCard",
-    "keyboardFocus",
-    "longNamesFit",
-    "videoBytes"
-  ],
-  "additionalProperties": false
+  ]
 }

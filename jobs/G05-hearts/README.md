@@ -18,13 +18,16 @@ Received cards are marked in your hand; mobile results appear above the table.
 For source checks use Node24, Chrome/Chromium and ffmpeg: `npm ci`, `npm test`.
 `npm run generate` rebuilds the page, fixtures, schemas and reproducible leagues.
 The one G05 workflow runs the complete suite and actual disk browser gate.
-Managed cloud Chrome blocks file://; `G05_VISUAL_MODE=http npm test` is an
-explicit partial local browser mode, refused in CI. No silent fallback.
+Managed system Chrome may block file://. Set `G05_CHROME` to an unrestricted
+Chrome/Chromium executable for the actual-disk check. HTTP mode is historical
+partial evidence and cannot satisfy the current delivery gate.
 
 Checks include1003 replay seeds,1000 full bot games per valid roster,
 10,000 independent comparisons,25 mutations,2000 games per strength league,
-all JSON schemas/hashes, two identical regenerations and60fps/reduced-motion
-browser interaction checks. See VERIFY.md/BOTS.md for measured results.
+all JSON schemas/hashes, two identical regenerations and600 consecutive
+frames per desktop/CPU4x phone profile (≥59fps,p95≤18ms), plus reduced motion.
+The current proof binds raw timings, every functional gate and the actual clip
+to26 source hashes; historical summaries are retained separately. See VERIFY.md/BOTS.md for measured results.
 
 Core entry: [src/core.ts](src/core.ts); shared contract types are unchanged.
 Cards0–12 are clubs,13–25 diamonds,26–38 spades,39–51 hearts; each suit is2–A.
@@ -34,3 +37,6 @@ explain the chosen settings and measured checks.
 Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
+
+Resumed verification is pending: latest local CPU4x phone55.047fps failed
+the strict gate. PR5 stays draft until current-source proof and CI are green.
