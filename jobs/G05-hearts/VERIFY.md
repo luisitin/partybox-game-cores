@@ -246,3 +246,18 @@ not attributed to the cosmetic CSS. `node scripts/generate.mjs --fixtures-only`
 and `node scripts/check-data.mjs` PASS27 JSON/46 hashes,standalone153713B.
 Local HTTP remains partial; updated default disk CI must be green. Cosmetic
 streak1; two more consecutive no-meaningful-gain rounds are required.
+
+KEEP GOING6, aftera5e0e4e GREEN push37738469095/PR37738473119; exact SHA verified
+through REST by `python /workspace/partybox-ci-head.py G05`. GraphQL-only
+`gh pr checks` temporarily returned401. `git push --dry-run origin
+job/G05-hearts`, public REST GETs and gh REST PR/run reads work; no credentials
+were changed or printed. `gh run view 37738473119 --log` then recovered full
+actual-disk evidence: desktop60.004fps/CPU4x phone60.002fps,p9516.7ms,min targets
+44px,zero outgoing requests/errors; raw report/log are outside the checkout.
+`npm run build`, `node scripts/html.mjs`, `node scripts/visual.mjs --http
+--record --milestone 07` PASS. Only passive separator RGB increases by2/channel;
+all previous native-input/privacy/menu/recovery/contrast/roster gates hold.
+Local desktop60.002fps,phone CPU4x59.672fps,p9516.7/16.8ms,max33.3ms;
+video136348B. No measured player gain; cosmetic streak2. `node scripts/
+generate.mjs --fixtures-only`, `node scripts/check-data.mjs` PASS28 JSON/50
+hashes,standalone153713B. Updated default actual-disk CI still required.

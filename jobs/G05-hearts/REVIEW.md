@@ -42,3 +42,12 @@ borders are slightly uneven; card/table spacing differs by viewport; the empty
 felt heart has a thin stroke. Worst selected: score typography. Standardize
 only numeral spacing. No rules, action, timing, privacy or recovery change.
 Also audit native Tab from the third selected card to the ready Pass button.
+
+Round6, aftera5e0e4e GREEN REST-verified push37738469095/PR37738473119.
+Re-read G05. Five remaining cosmetic candidates: passive panel stroke tone;
+decorative brand tracking; thin empty-felt heart; tablet-only spacing; minor
+panel-radius differences. Adjust the passive separator color by2 RGB levels
+per channel (#2a4650→#2c4852). Controls use their independently verified border
+color; no action/legibility/rules/recovery/timing improvement is claimed.
+GraphQL status reads intermittently returned401; public REST and Git work.
+Use /workspace/partybox-ci-head.py G05 to verify both exact-head workflow events.

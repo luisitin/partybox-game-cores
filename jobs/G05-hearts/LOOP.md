@@ -9,3 +9,5 @@
 4 | Larger and clearer controls: Manage28→44px,pass memory36→44px,checkbox/Fast labels44px; input boundary1.619→at least3.491:1,footer conservative contrast4.429→5.066:1; native label and Manage touch work. Desktop60.002fps/CPU4x phone59.018fps,p9516.8ms,135598B clip. Player gain: yes; cosmetic streak0.
 
 5 | Standardize score-row tabular numerals; native Tab reaches ready Pass after the third selected card. No action, rules, privacy, recovery or timing gain; all prior gates hold. Desktop60.002fps/CPU4x phone60.000fps,p9516.8/16.7ms,136614B clip. Player gain: none meaningful; cosmetic streak1.
+
+6 | Passive separator color+2 RGB levels/channel; zero functional gains,all native-input/privacy/clock/recovery/contrast gates retained. Desktop60.002fps/CPU4x phone59.672fps,p9516.7/16.8ms,136348B clip. Player gain: none meaningful; cosmetic streak2.
