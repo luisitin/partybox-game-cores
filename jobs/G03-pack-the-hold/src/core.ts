@@ -2,7 +2,7 @@ import type { GameDefinition, GameEvent, GameResults, InitContext, ViewPlayer } 
 import type { BotSkill } from '../../../contract/constants.js';
 import type { Rng } from '../../../contract/rng.js';
 import { seedRng } from '../../../contract/rng.js';
-import { generateLevel } from './generator.js';
+import { generateLevel, holdKey } from './generator.js';
 import { evaluateLayout } from './geometry.js';
 import { solveExact } from './solver.js';
 import { inputSchema } from './schema.js';
@@ -27,6 +27,7 @@ export function init(ctx: InitContext): HoldState {
     level: generated.level, optimum: generated.optimum, solution: generated.solution,
     layouts: Object.fromEntries(order.map(id => [id, []])), submitted: [],
     scores: Object.fromEntries(order.map(id => [id, 0])), history: Object.fromEntries(order.map(id => [id, []])),
+    seenHolds: [holdKey(generated.level.cells)],
   };
 }
 function enterDone(s: HoldState, now: number): HoldState {
@@ -54,13 +55,14 @@ export function advance(s: HoldState, now: number): HoldState {
   if (s.phase.id === 'pack') return finishSeat(s, now);
   if (s.phase.id !== 'reveal') return s;
   if (s.round >= s.settings.rounds) return enterDone(s, now);
-  const generated = generateLevel(s.rng, s.settings.difficulty, s.settings.allowFlip);
+  const generated = generateLevel(s.rng, s.settings.difficulty, s.settings.allowFlip, s.seenHolds);
   let seat = 0;
   while (seat < s.order.length - 1 && !available(s, s.order[seat] as string)) seat++;
   const startedAt = Math.max(now, s.phase.startedAt + 1);
   const next: HoldState = {
     ...s, round: s.round + 1, seat, rng: generated.rng,
     level: generated.level, optimum: generated.optimum, solution: generated.solution,
+    seenHolds: [...s.seenHolds, holdKey(generated.level.cells)],
     layouts: Object.fromEntries(s.order.map(id => [id, []])), submitted: [],
     phase: { id: 'pack', startedAt, deadline: startedAt + s.settings.turnSeconds * 1000 },
   };

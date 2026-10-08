@@ -20,6 +20,7 @@ export interface HoldState extends GameStateBase {
   level: Level; optimum: number; solution: Placement[];
   layouts: Record<string, Placement[]>; submitted: string[];
   scores: Record<string, number>; history: Record<string, RoundScore[]>;
+  seenHolds: string[];
 }
 export type Input =
   | { type: 'place'; placement: Placement }

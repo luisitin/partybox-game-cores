@@ -179,3 +179,27 @@ The full default disk-mode CI must validate this milestone before final delivery
 25/25 mutations,8 JSON files/seven schemas,19 hashes and two byte-identical
 regenerations. The explicitly partial HTTP browser run passed all interactions
 and roster sizes; current disk-mode CI remains the delivery gate.
+
+## KEEP GOING round2: no repeated hold in a voyage
+
+Round1 is green in push/PR runs37720218769 and37720222756 at2502b81. The latter
+reported actual disk opening,60.002fps in both layouts,2,000 generated-level
+benchmarks with max2.271ms, maximum p95 across tiers0.982ms, max802 nodes.
+
+Measured baseline:37 of200 three-round difficulty4 games repeated a hold.
+The revised generator chooses uniformly from unvisited members of the same
+calibrated pool, preserving each round's marginal distribution and exact proof.
+History keys live in JSON state; they do not enter views.
+`node --test tests/generator.test.mjs` passed:400 three-round games across both
+editions and all tiers had zero repeated holds and deterministic final states.
+
+`node scripts/visual.mjs --http --record --milestone 04` passed all roster and
+interaction checks, no exceptions/requests; video98,616bytes. Cloud frame
+samples retain outliers: desktop59.018fps,16.944ms mean,p95=16.7ms,max50.1ms;
+CPU4x phone58.066fps,17.222ms mean,p95=16.8ms,max50ms. These explicitly partial
+HTTP measurements do not replace the required normal-runner disk/frame gate.
+
+`G03_VISUAL_MODE=http npm test` passed21/21 tests,25/25 mutations,8 JSON
+files/seven schemas,20 hashes and two byte-identical regenerations. The final
+partial browser sample measured59.670fps desktop and60.004fps CPU4x phone;
+p95≤16.8ms, zero exceptions/requests, all roster sizes completed.

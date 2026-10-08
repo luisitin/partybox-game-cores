@@ -29,13 +29,16 @@ export function certify(level: Level, witness: Placement[]): number {
   }
   return packed.value;
 }
-export function generateLevel(rng: RngState, difficulty: number, allowFlip = false): {
+export const holdKey = (cells: readonly Cell[]): string => cells.map(c => c.join(',')).join(';');
+export function generateLevel(rng: RngState, difficulty: number, allowFlip = false, avoid: readonly string[] = []): {
   level: Level; optimum: number; solution: Placement[]; rng: RngState; nodes: number;
 } {
   const tier = (allowFlip ? FLIP_TIERS : TIERS)[Math.max(0, Math.min(9, Math.trunc(difficulty) - 1))] as Tier;
   let state = rng;
   const draw = (min: number, max: number): number => { const [value, next] = nextInt(state, min, max); state = next; return value; };
-  const template = tier.templates[draw(0, tier.templates.length - 1)] as Template;
+  const fresh = tier.templates.filter(t => !avoid.includes(holdKey(t.cells)));
+  const pool = fresh.length ? fresh : tier.templates;
+  const template = pool[draw(0, pool.length - 1)] as Template;
   const level = templateLevel(template, tier.difficulty, allowFlip);
   const witness: Placement[] = [];
   for (let i = 0; i < 4; i++) {

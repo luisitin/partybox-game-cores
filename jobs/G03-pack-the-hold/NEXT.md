@@ -11,8 +11,10 @@ Generator tests prove all240 templates against the independent grid checker
 and see all12 holds over200 seeds at each tier. Twenty-test full validation passed, with all25 mutations and data checks.
 The explicit HTTP browser check passed; check the new strict disk-mode CI.
 
-Next measured weakness:37 of200 three-round games repeated a hold. Prevent
-within-game repeats while retaining deterministic RNG and the measured pool.
+Round2 is implemented locally: seenHolds is JSON state, and each round selects
+a fresh member of the same calibrated pool. 400 three-round games had zero
+repeats and identical replays. All21 tests,25/25 mutations and data checks passed; disk CI checks this push.
+Next review targets: keyboard focus, touch dragging and clock fairness.
 Then review touch capture, keyboard focus, clock fairness and the remaining
 five-weakness list. Continue until three consecutive rounds gain nothing a
 player would notice; zero such rounds yet. Maintain media, hashes and fixtures.

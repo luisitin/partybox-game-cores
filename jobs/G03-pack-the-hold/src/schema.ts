@@ -29,4 +29,5 @@ export const stateSchema = z.object({
   level: levelSchema, optimum: z.number().positive(), solution: z.array(placementSchema).max(12),
   layouts: z.record(z.string(), z.array(placementSchema).max(12)), submitted: z.array(z.string()),
   scores: z.record(z.string(), z.number().nonnegative()), history: z.record(z.string(), z.array(roundScoreSchema).max(3)),
+  seenHolds: z.array(z.string().max(800)).min(1).max(3),
 }).strict();
