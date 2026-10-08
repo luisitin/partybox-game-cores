@@ -27,6 +27,12 @@ test('edition rosters, clone safety, deterministic shuffling and default setting
 });
 test('three-player stock and club-removal presets conserve their exact deck',()=>{
  for(const cutDeck of ['stock','low-club']){const s=C.init(context(3,1,{cutDeck}));assert(Object.values(s.hands).every(h=>h.length===17));conservation(s);if(cutDeck==='stock')assert(s.stock!==null);else {assert.equal(s.stock,null);assert(!Object.values(s.hands).flat().includes(0));}}
+ for(const cutDeck of ['stock','low-club'])for(let seed=1;seed<=30;seed++){
+  let s=C.init(context(3,seed,{cutDeck,cutLead:'club'}));for(let i=0;i<3;i++)s=C.reduce(s,{type:'vip',action:'skip',now:i+1});
+  assert.equal(s.phase.id,'play');const club=Math.min(...Object.values(s.hands).flat().filter(c=>c<13)),id=s.seats[s.turn]!;
+  assert.equal(s.forcedLead,club);assert.deepEqual(C.controllerView(s,id).legal,[club]);assert(s.hands[id]!.includes(club));
+  const played=C.reduce(s,{type:'vip',action:'skip',now:4});assert.equal(played.trick[0]!.card,club);conservation(played);
+ }
 });
 test('original lead suit remains compulsory after another player trumps',()=>{
  const trick=[{playerId:'p0',card:1},{playerId:'p1',card:51}];assert.deepEqual(Card.legalCards([0,39],trick,true),[0]);
@@ -44,6 +50,7 @@ test('contract exact/missed/overtrick scoring and carried multiple ten-bag penal
  const normal=(value:number,won:number)=>({bid:{kind:'number' as const,value},won});
  assert.equal(Score.scoreSide([normal(4,4)],0,0).score,40);assert.equal(Score.scoreSide([normal(4,3)],0,0).score,-40);
  assert.deepEqual(Score.scoreSide([normal(4,6)],59,9),{bid:4,won:6,contractTricks:6,contract:40,nil:0,newBags:2,penalty:100,score:1,bags:1});
+ const tenth=Score.scoreSide([normal(4,5)],0,9);assert.equal(tenth.penalty,100);assert.equal(tenth.bags,0);assert.equal(tenth.score,-59);
  const big=Score.scoreSide([{bid:{kind:'nil',value:0},won:17}],0,9);assert.equal(big.penalty,200);assert.equal(big.bags,6);
 });
 test('ordinary and blind nil bonuses are independent of partner success',()=>{
@@ -101,7 +108,7 @@ test('all phases ignore spectators, unexpected inputs, stale timers and early de
  for(const phase of C.game.phases){const s=freeze(fixture(phase));for(const id of ['unknown','__proto__','constructor','toString'])for(const value of [{type:'look'},{type:'nil'},{type:'bid',value:1},{type:'play',card:0},{type:'next'}] as Input[])assert.equal(input(s,id,value),s);
   assert.equal(C.reduce(s,{...timer(s),phaseId:'old'}),s);assert.equal(C.reduce(s,{...timer(s),startedAt:s.phase.startedAt-1}),s);
   if(s.phase.deadline!==null)assert.equal(C.reduce(s,{...timer(s),now:s.phase.deadline-1}),s);
-  for(const event of [null,{},[],{type:'speech',key:'reader',ms:20,now:1},{type:'speechStart',key:'reader',now:1},{type:'vip',action:'unknown',now:1},{...timer(s),now:Infinity}])assert.equal(C.reduce(s,event as never),s);
+  for(const event of [null,{},[],{type:'input',playerId:{toString:null,valueOf:null},input:{type:'next'},now:1},{type:'player',playerId:{toString:null},connected:false,now:1},{type:'speech',key:'reader',ms:20,now:1},{type:'speechStart',key:'reader',now:1},{type:'vip',action:'unknown',now:1},{...timer(s),now:Infinity}])assert.equal(C.reduce(s,event as never),s);
  }
 });
 test('pause freezes input and timer; resume shifts visible deadlines exactly',()=>{
@@ -117,6 +124,19 @@ test('disconnect defaults retain seats; paused drops finish on resume; permanent
  const resumed=C.reduce(left,{type:'vip',action:'resume',now:3});assert.notEqual(resumed.phase.startedAt,s.phase.startedAt);assert.equal(C.controllerView(resumed,id).inputType,null);
  const reconnect=C.reduce(resumed,{type:'player',playerId:id,connected:true,now:4});assert.equal(reconnect.players[id]!.connected,false);
  const done=C.reduce(reconnect,{type:'vip',action:'end',now:5});assert.deepEqual(Object.keys(C.results(done)!.scores),s.seats);assert(C.results(done)!.winnerIds.length>0);
+});
+test('initially disconnected actors take legal defaults, while an empty table waits',()=>{
+ const ctx=context(),actor=C.init(ctx).seats[C.init(ctx).turn]!;
+ ctx.players.find(p=>p.id===actor)!.connected=false;
+ const started=C.init(ctx);assert.notEqual(started.seats[started.turn],actor);assert.deepEqual(started.bids[actor],{kind:'number',value:1});conservation(started);
+ for(const p of ctx.players)p.connected=false;
+ const empty=C.init(ctx);assert.equal(Object.keys(empty.bids).length,0);assert.equal(empty.seats[empty.turn],actor);
+ assert.equal(C.reduce(empty,timer(empty)),empty);assert.equal(C.reduce(empty,{type:'vip',action:'end',now:1}).phase.id,'done');
+});
+test('ending a partial trick leaves the unfinished hand unscored and conserves every card',()=>{
+ const s=fixture('play'),id=s.seats[s.turn]!,card=C.controllerView(s,id).legal[0]!;
+ const played=input(s,id,{type:'play',card}),end=C.reduce(played,{type:'vip',action:'end',now:played.phase.startedAt+1});
+ assert.deepEqual(end.scores,s.scores);assert.equal(end.doneReason,'host');conservation(end);
 });
 test('private hands and stock never influence another viewer or bot policy',()=>{
  for(const phase of C.game.phases){const s=fixture(phase);for(const id of [...s.seats,'unknown','__proto__']){
@@ -148,7 +168,7 @@ test('pure game modules use no host entropy, clock, timers, I/O or network',()=>
 if(!process.env.FAST_TEST){
  test('seeds 1/2/3 plus 1000 unique random seeds replay every full match byte-identically',()=>{
   const rng=createRng(0x6006001),seeds=new Set([1,2,3]);while(seeds.size<1003)seeds.add(rng.int(0,0xffffffff));
-  for(const seed of seeds)simulate(3+seed%2,seed,{replay:true,check:true});
+  for(const seed of seeds)simulate(3+seed%2,seed,{replay:true,check:true,settings:{cutDeck:seed>>>2&1?'stock':'low-club',cutLead:seed>>>3&1?'club':'dealer',nilValue:seed>>>4&1?50:100,failedNilCounts:!!(seed>>>5&1),mercy:!!(seed>>>6&1),blindGap:seed>>>7&1?0:100,blind:!!(seed>>>8&1),exchange:!!(seed>>>9&1)}});
  });
  for(const n of [3,4])test(`1000 complete bot matches at ${n} players`,()=>{for(let seed=1;seed<=1000;seed++)simulate(n,seed,{check:true});});
 }

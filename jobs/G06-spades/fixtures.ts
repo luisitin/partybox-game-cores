@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {mkdirSync,writeFileSync} from 'node:fs';
+import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
 import {createRng} from '../../contract/rng.ts';
 import {game,init,reduce,type State,type Input} from './core.ts';
 import {context} from './runner.ts';
@@ -14,5 +14,5 @@ while(s.phase.id!=='done'&&steps++<100000){
  assert(input);s=reduce(s,{type:'input',playerId:id,input,now:s.phase.startedAt+1});
 }
 assert.equal(s.phase.id,'done');states.set('done',s);mkdirSync('fixtures',{recursive:true});
-for(const phase of game.phases){const state=states.get(phase);assert(state,phase);stateSchema.parse(state);writeFileSync(`fixtures/${phase}.json`,JSON.stringify(state,null,2)+'\n');}
+for(const phase of game.phases){const state=states.get(phase);assert(state,phase);stateSchema.parse(state);const path=`fixtures/${phase}.json`,bytes=JSON.stringify(state,null,2)+'\n';if(process.argv.includes('--check'))assert.equal(readFileSync(path,'utf8'),bytes,`fixture drift ${phase}`);else writeFileSync(path,bytes);}
 assert.deepEqual(states.get('hand')!.scores,s.scores);console.log('all seven valid phase fixtures; done follows the last scored-hand fixture');

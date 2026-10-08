@@ -7,7 +7,8 @@ export function nextAction(s:State,rngs:ReturnType<typeof createRng>[],skills:re
  for(let i=0;i<s.seats.length;i++){const input=game.bot.sampleInput(s,s.seats[i]!,rngs[i]!,skills[i]!);if(input)return {playerId:s.seats[i]!,input};}return null;
 }
 export function conservation(s:State):void{
- const cards=[...Object.values(s.hands).flat(),...s.completed.flatMap(t=>t.cards.map(p=>p.card)),...(s.phase.id==='play'?s.trick.map(p=>p.card):[]),...(s.stock===null?[]:[s.stock])];
+ const completed=s.completed.flatMap(t=>t.cards.map(p=>p.card));
+ const cards=[...Object.values(s.hands).flat(),...completed,...s.trick.map(p=>p.card).filter(c=>!completed.includes(c)),...(s.stock===null?[]:[s.stock])];
  const count=s.seats.length===3&&s.settings.cutDeck==='low-club'?51:52;
  assert.equal(cards.length,count);assert.equal(new Set(cards).size,count);assert(cards.every(c=>Number.isInteger(c)&&c>=0&&c<52));
  assert.equal(Object.values(s.won).reduce((n,v)=>n+v,0),s.completed.length);

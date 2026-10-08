@@ -40,3 +40,52 @@ strict types,contract/manifest/fixtures,purity/privacy/random-seed properties,
 10,000 times,25 mutations with≥24 kills,2,000 matches per skill pair,
 standalone offline page,TV/4×CPU phone60fps/reduced motion,captures/checksums,
 and actual hosted CI before KEEP GOING/completion. No unrun result is PASS.
+
+Expanded verification, actually run before the browser milestone:
+- `node differential.ts --write`:PASS scoring10,000/trick10,000 cases,
+  seed100717055, zero mismatches. Includes4,402 nil/4,469 blind cases,
+  5,702 bag penalties,2,241 failed/2,279 made contracts and4,91817-card
+  cases. Independent ledger uses per-bag increments/reset; winner uses
+  suit/rank ordering rather than the production comparison loop.
+- `node mutations.ts --write`:PASS25/25 assertion kills, baseline28/28;
+  no timeout/import/syntax errors counted. Initially the eleven-bag mutation
+  survived because examples had11/26 cumulative bags. Added the exact10
+  boundary, then reran all25. The complete list with failed test names is
+  `mutation-results.json`;10 scoring,5 card and10 reducer/privacy bugs.
+- `node --test test.ts`:PASS31/31,177,636.08 ms while league ran concurrently:
+  28 focused,1,003 full seed replays,1,000 full3p and1,000 full4p matches.
+  A subsequent expansion to sampled settings is pending full rerun.
+- `FAST_TEST=1 node --test test.ts`:PASS28/28,327.20 ms after presence and
+  malformed-ID fixes.60 lowest-club leads across both Cutthroat decks also
+  pass. New initial-offline and partial-end tests failed before fixes;
+  malformed object actor separately reproduced TypeError before guard.
+- `node league.ts --write`:PASS8,000 complete games in286,438.80 ms;
+  all four95% win-rate lower bounds>50%; exact rates/protocol in BOTS and
+  `bot-results.json`. Maximum final state5,634 bytes, maximum48 hands.
+- `node build.ts` then `node build.ts --check`:PASS byte-identical offline
+  page488,969 bytes. No external scripts/styles/resources; all dependencies
+  are inline. Strict compiler also passes with DOM.Iterable enabled.
+- Browser harness corrections: virtual time must be installed before UI
+  timers, and a collapsed rules panel must be opened before reading its
+  rendered text. These were harness failures, not scoring/rule changes.
+  Browser completion/performance, the final full pipeline and hosted CI
+  remain pending until their actual results are appended here.
+
+Browser milestone,2026-10-08:
+- `node browser.ts --write --capture`:PASS eight grouped scenarios,
+  three complete UI matches(partnership and both Cutthroat decks), all
+  displayed controls/drafts/privacy checks, reduced motion, no overflow,
+  zero application exceptions and zero external requests. Partnership uses
+  the standard52-card/dealer-lead rules; Cutthroat settings are disabled there.
+-900 live rAF intervals at1920×1080:59.6709fps, mean16.7586ms,
+  p95 16.8ms,max50ms.390×844/4×CPU:60.0024fps,mean16.6660ms,
+  p95/max16.8ms. This is a browser/CPU approximation, not a physical phone.
+- Managedfile:// navigation rejected by policy; exact HTML bytes exercised
+  through setContent, all outside requests aborted and counted. No service.
+- `npx playwright install ffmpeg` returned403 on the encoder host. Used
+  the existing `/usr/bin/ffmpeg` through an external Playwright cache link;
+  capture succeeded. No blocker or changed game rules/assets.
+- Actual TV/phone PNGs and an eight-second WebM inmedia/. Capture<10MB.
+  `node checksums.ts` and`--check` cover the complete delivered path set.
+- Complete final`npm test` (including expanded settings) and hosted CI
+  are still pending; this milestone is not a DONE assertion.

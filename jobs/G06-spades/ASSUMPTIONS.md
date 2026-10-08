@@ -19,3 +19,6 @@
   external requests. No application service required for delivered HTML.
 - Stage only G06 and its workflow;old G01/G04 node_modules caches are ignored
   locally. Preserve concurrent workers' main claims and all Shake Up assets.
+- Playwright's ffmpeg download is blocked; reuse installed system ffmpeg
+  through `/home/agent/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux`.
+  This external setup link produces a real browser capture; not repo data.

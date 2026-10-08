@@ -42,7 +42,7 @@ export const manifest:GameManifest={id:'spades',name:'Spades',icon:'♠️',tagl
 ]};
 const clone=<T>(value:T):T=>structuredClone(value);
 export const sideOf=(s:Pick<State,'seats'>,id:string)=>s.seats.length===4?s.seats.indexOf(id)%2:s.seats.indexOf(id);
-const member=(s:State,id:string)=>Object.hasOwn(s.players,id)&&s.seats.includes(id);
+const member=(s:State,id:string)=>typeof id==='string'&&Object.hasOwn(s.players,id)&&s.seats.includes(id);
 const eligible=(s:State,id:string)=>member(s,id)&&s.players[id]!.connected&&!s.left.includes(id);
 const actor=(s:State)=>s.phase.id==='exchange'?s.exchangePlan[s.exchangeStep]?.from??null:['blind','bid','play'].includes(s.phase.id)?s.seats[s.turn]!:null;
 export function blindEligible(s:State,id:string):boolean{const side=sideOf(s,id);return member(s,id)&&s.settings.blind&&s.scores[side]!<=Math.max(...s.scores.filter((_,i)=>i!==side))-s.settings.blindGap;}
@@ -63,7 +63,7 @@ export function init(ctx:InitContext):State{
  const bool=(key:string,fallback:boolean)=>typeof ctx.settings[key]==='boolean'?ctx.settings[key] as boolean:fallback;
  const settings:Settings={mode,blind:bool('blind',true),blindGap:Number(ctx.settings.blindGap)===0?0:100,exchange:bool('exchange',true),nilValue:Number(ctx.settings.nilValue)===50?50:100,failedNilCounts:bool('failedNilCounts',false),mercy:bool('mercy',true),cutDeck:ctx.settings.cutDeck==='stock'?'stock':'low-club',cutLead:ctx.settings.cutLead==='club'?'club':'dealer'};
  const [dealer,rng]=nextInt(seedRng(ctx.seed),0,seats.length-1),sides=seats.length===4?2:3;
- return deal({players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),seats,left:[],settings,dealer,turn:0,handNumber:1,trickNumber:1,hands:{},stock:null,bids:{},looked:[],won:{},scores:Array(sides).fill(0),bags:Array(sides).fill(0),trick:[],completed:[],broken:false,forcedLead:null,exchangePlan:[],exchangeStep:0,report:null,history:[],doneReason:null,rng,phase:{id:'bid',startedAt:ctx.now-1,deadline:null}},ctx.now);
+ return settleAbsent(deal({players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),seats,left:[],settings,dealer,turn:0,handNumber:1,trickNumber:1,hands:{},stock:null,bids:{},looked:[],won:{},scores:Array(sides).fill(0),bags:Array(sides).fill(0),trick:[],completed:[],broken:false,forcedLead:null,exchangePlan:[],exchangeStep:0,report:null,history:[],doneReason:null,rng,phase:{id:'bid',startedAt:ctx.now-1,deadline:null}},ctx.now),ctx.now);
 }
 function beginPlay(s:State,now:number):State{
  let turn=(s.dealer+1)%s.seats.length,forcedLead:number|null=null;
