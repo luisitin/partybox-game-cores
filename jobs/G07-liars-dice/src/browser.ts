@@ -71,6 +71,43 @@ function saveSession(): void {
   }
 }
 function name(id: string): string { return state?.players[id]?.name ?? 'Player'; }
+function clearResults(): void {
+  $('result').hidden = true;
+  $('winner-title').textContent = ''; $('winner-copy').textContent = '';
+  $('standings-body').replaceChildren();
+}
+function ordinal(value: number): string {
+  const suffix = value % 100 >= 11 && value % 100 <= 13 ? 'th' : ({1: 'st', 2: 'nd', 3: 'rd'} as Record<number, string>)[value % 10] ?? 'th';
+  return `${value}${suffix}`;
+}
+function renderResults(): void {
+  const results = state ? game.results(state) : null;
+  if (!state || !results) { clearResults(); return; }
+  const winners = new Set(results.winnerIds);
+  $('result').hidden = false;
+  $('winner-title').textContent = results.winnerIds.length === 1
+    ? `${name(results.winnerIds[0])} ${state.endReason === 'vip-end' ? 'finishes first' : 'wins'}`
+    : results.winnerIds.length > 1 ? 'A tie for first place' : 'Final standings';
+  $('winner-copy').textContent = results.headlineNote ?? '';
+  // Ranking, competition places and winners are owned by the core. Remaining
+  // dice are shown directly; the core's composite ranking score stays internal.
+  $('standings-body').replaceChildren(...results.ranking.map(standing => {
+    const row = document.createElement('tr'); row.dataset.playerId = standing.playerId;
+    const winner = winners.has(standing.playerId);
+    row.className = winner ? 'standing-winner' : '';
+    const rank = document.createElement('td'); rank.className = 'standing-rank'; rank.textContent = String(standing.rank);
+    const player = document.createElement('th'); player.scope = 'row'; player.className = 'standing-player';
+    const playerName = document.createElement('span'); playerName.className = 'standing-name'; playerName.textContent = name(standing.playerId);
+    const status = document.createElement('span'); status.className = 'standing-status';
+    const eliminatedAt = state!.eliminated.indexOf(standing.playerId);
+    status.textContent = winner ? results.winnerIds.length > 1 ? 'Tied winner' : 'Winner'
+      : eliminatedAt >= 0 ? `${ordinal(eliminatedAt + 1)} out`
+      : state!.diceCount[standing.playerId] === 0 ? 'No dice left' : 'At host end';
+    player.append(playerName, status);
+    const dice = document.createElement('td'); dice.className = 'standing-dice'; dice.textContent = String(state!.diceCount[standing.playerId]);
+    row.append(rank, player, dice); return row;
+  }));
+}
 function option(value: string, text = value): HTMLOptionElement {
   const o = document.createElement('option'); o.value = value; o.textContent = text; return o;
 }
@@ -363,11 +400,7 @@ function render(): void {
     }
     button('next-round').disabled = paused; button('next-round').hidden = done;
   }
-  $('result').hidden = !done;
-  if (done) {
-    $('winner-title').textContent = publicView.winner ? `${name(publicView.winner)} wins` : 'Thanks for playing';
-    $('winner-copy').textContent = publicView.winner ? 'One cup remains. The dice, the bluffs, and the last brave call belonged to this table.' : publicView.endReason === 'vip-end' ? 'The host ended the game. Set up another table whenever you are ready.' : 'This game has ended.';
-  }
+  renderResults();
   renderClock();
   const wait = pacing[botPace];
   if (!paused && botDue === null && wait.regular !== null) {
@@ -454,6 +487,7 @@ button('end-game').onclick = () => apply({type: 'vip', action: 'end', now: clock
 button('bot-step').onclick = stepBot;
 function newGame(): void {
   clearPrivateDraft(); state = null; pendingSession = null; viewer = null; botDue = null; interruptDue = null; interruptSampled = null;
+  clearResults();
   cachedState = null; cachedViewer = null; cachedController = null;
   bidsByQuantity.clear();
   firedTimers.clear();

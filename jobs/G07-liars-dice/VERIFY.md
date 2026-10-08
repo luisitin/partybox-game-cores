@@ -351,3 +351,60 @@ Final round3 `node scripts/hashes.mjs` twice + `cmp`,
 source-matched raw600 frames and recordings under10MB, pure-source and
 original/Zod license checks. Docs below change only this recorded summary;
 manifest is regenerated once more for the commit.
+
+
+Round3 hosted acceptance: exact30eec5b80a732996b692bce8ae78b1e2444dbc2b
+passed run37752206859, completed08:54:56 UTC. `gh run view 37752206859
+--json status,conclusion,headSha,jobs` and `gh run view 37752206859 --log`:
+full npm test PASS,46/46node,76/76browser,25/25compiled mutation kills,
+277-file integrity and byte-identical regeneration. Uploaded unexpired
+artifact11539195267 matches that head; bytes were not downloaded. Public
+metadata evidence/checks/ci-round-3.json; no hosted FPS values inferred.
+Round4 final-standings source is a later pending head, so this acceptance
+does not assert later source passes before its own checks.
+
+
+## KEEP GOING round 4 — final standings
+
+`npm run build`: PASS strict TypeScript/bundling, frozen HTML
+09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1.
+Core5d10032d and session0538ddf remain unchanged. The actual core results
+feed the finishing list, with competition ranks, tied winners, remaining dice
+and elimination order; New Game/Discard remove old result rows.
+
+One-off old-page browser probe: actual accepted48be page with eight seats and
+remaining counts[5,5,4,3,3,1,0,0], followed by the real End game button. Old
+finishing rows0, named tied winners0; original core ranks[1,1,3,4,4,6,7,8]
+and winnersp0/p1. Public baseline/source metadata and screenshot are
+evidence/browser/round-4-before-standings.json/.png. Default checks consume
+this stable artifact; they do not depend on ignored files or old git history.
+
+`node scripts/browser-check.mjs --snapshot`: PASS full84/84, run
+20261008090449926 at09f9HTML. Ten actual displayed-standings vs imported
+`game.results` comparisons pass for natural and early endings, unequal and
+tied eight-seat tables, long/markup-like names, semantics, mobile layout,
+recovery and cleanup. Same fixture shows places0→8 and identified tied
+winners0→2. All600 raw intervals retained: desktop59.703869FPS,p99 16.8ms,
+max50ms; phone4x59.506690FPS,p99 16.8ms,max83.4ms; two above17ms each.
+Both unchanged mean/p99 gates pass. Source guard matches HTML and core.
+Full public report/raw/archive and comparisons: evidence/browser/report.json
+and round-4-standings.json. Matching clips are recorded below after completion.
+
+
+`node scripts/capture.mjs round-4 --pace-demo`: PASS, start/end source09f9,
+zero network/page errors. Desktop1,713,641bytes and phone1,545,684bytes;
+per-video SHA256 in evidence/browser/round-4-captures.json. Both show five
+real rounds, natural finishing standings, and an eight-seat prepared live
+fixture followed by the actual End-game button, all eight places and tied
+ranks[1,1,3,4,4,6,7,8]. Normal-action clip values2034/1817ms measure the
+remaining window after a state read, not the whole scheduler delay. Use the
+armed-clock full-run pacing probe for scheduling claims. Recordings do not
+measure FPS. All writers/processes stopped09:10:06 UTC. Final hashes/integrity
+are run for this completed proof checkpoint; final-head GitHub acceptance
+remains required before the PR is marked ready.
+
+Final round4 `node scripts/hashes.mjs` twice + `cmp`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: PASS,
+293 delivered files, byte-identical fixture/manifest regeneration, source-
+matched passing raw600-frame snapshot and recordings below10MB, purity and
+original/Zod license checks. Manifest regenerated for the final docs commit.

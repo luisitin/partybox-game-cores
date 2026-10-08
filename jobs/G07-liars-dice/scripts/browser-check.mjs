@@ -5,12 +5,15 @@ import {constants} from 'node:fs';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
+import {game} from '../dist/core.mjs';
 
 // This is an integration test of the standalone, offline browser adapter. The
 // browser-only __G07 hook intentionally exposes state to deterministic tests;
 // production public/controller views are checked separately below.
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
+const coreModule = resolve(root, 'dist/core.mjs');
+const coreModuleSha256 = createHash('sha256').update(await readFile(coreModule)).digest('hex');
 const evidence = resolve(root, 'evidence/browser');
 const work = resolve(root, '.work/browser');
 const saveKey = 'partybox.g07.session.v1';
@@ -31,9 +34,10 @@ const profiles = [
 const rows = [];
 const checks = [];
 const pacingMeasurements = [];
+const standingsComparisons = [];
 const report = {
   runId,
-  htmlSha256,
+  htmlSha256, coreModuleSha256,
   browser: '', physicalPhoneTested: false, performanceWhileRecording: false,
   performanceRequirements: {intervals: 600, minimumMeanFps: 59, maximumP99Ms: 17},
   frameFiltering: 'none: all 600 consecutive requestAnimationFrame intervals retained',
@@ -41,7 +45,7 @@ const report = {
     interaction: 'change quantity and face every 30 intervals, including exact controller odds',
     isolation: 'fresh browser context; functional test navigation history is not retained'},
   recoveryStorage: {key: saveKey, scope: 'same-tab sessionStorage', ordinaryChecks: 'remove only this key before each document', recoveryChecks: 'fresh isolated contexts preserve this key across actual reloads'},
-  seed: 7199, profiles: rows, checks, pacingMeasurements, passed: false,
+  seed: 7199, profiles: rows, checks, pacingMeasurements, standingsComparisons, passed: false,
   scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
 };
 async function executablePath() {
@@ -137,6 +141,63 @@ async function assertHeld(page, before, milliseconds) {
   assert.deepEqual(held.bid, before.state.bid);
   return (await page.evaluate(() => window.__G07.time())) - before.armedAt;
 }
+const standingNames = ['<img src=x onerror=alert(1)>', 'L'.repeat(40), 'A<&"quote">', 'Player four', 'Player five', 'Player six', 'Player seven', 'Player eight'];
+function eliminationStatus(index) {
+  const n = index + 1, remainder = n % 100;
+  const suffix = remainder >= 11 && remainder <= 13 ? 'th' : n % 10 === 1 ? 'st' : n % 10 === 2 ? 'nd' : n % 10 === 3 ? 'rd' : 'th';
+  return `${n}${suffix} out`;
+}
+async function assertStandings(page, profile, reason) {
+  const s = await state(page), expected = game.results(s);
+  assert(expected, 'the pure core must return results for this completed game');
+  assert(await page.locator('#result').isVisible());
+  assert.equal(await page.locator('table#standings').count(), 1);
+  assert.equal(await page.locator('#standings caption').textContent(), 'Finishing order');
+  assert.deepEqual(await page.locator('#standings thead th').evaluateAll(cells => cells.map(cell => cell.textContent.trim())), ['Place', 'Player', 'Dice left']);
+  assert((await page.locator('#standings thead th').evaluateAll(cells => cells.every(cell => cell.getAttribute('scope') === 'col'))));
+  const actual = await page.locator('#standings-body tr').evaluateAll(rows => rows.map(row => ({
+    playerId: row.dataset.playerId,
+    rank: Number(row.querySelector('.standing-rank').textContent),
+    name: row.querySelector('.standing-name').textContent,
+    dice: Number(row.querySelector('.standing-dice').textContent),
+    status: row.querySelector('.standing-status').textContent,
+  })));
+  const wanted = expected.ranking.map(({playerId, rank}) => ({playerId, rank, name: s.players[playerId].name,
+    dice: s.diceCount[playerId], status: expected.winnerIds.includes(playerId)
+      ? expected.winnerIds.length === 1 ? 'Winner' : 'Tied winner'
+      : s.eliminated.includes(playerId) ? eliminationStatus(s.eliminated.indexOf(playerId)) : 'At host end'}));
+  assert.deepEqual(actual, wanted, 'standings must preserve the real core ranking, competition places and every original seat');
+  assert.equal(await page.locator('#winner-copy').textContent(), expected.headlineNote);
+  const title = await page.locator('#winner-title').textContent();
+  if (expected.winnerIds.length > 1) assert.equal(title, 'A tie for first place');
+  else {
+    assert(title.includes(s.players[expected.winnerIds[0]].name));
+    assert(title.endsWith(s.endReason === 'vip-end' ? ' finishes first' : ' wins'));
+  }
+  assert.equal(await page.locator('#standings-body img, #standings-body script, #winner-title img, #winner-title script').count(), 0);
+  await privateGone(page, reason); await noOverflow(page);
+  standingsComparisons.push({profile, reason, endReason: s.endReason, expected, actual});
+  return {state: s, expected, actual};
+}
+async function earlyStandingsFixture(page, tied) {
+  await page.locator('#player-count').selectOption('8');
+  for (let index = 0; index < standingNames.length; index++) await page.locator(`#name-${index}`).fill(standingNames[index]);
+  await page.locator('#start').click();
+  const s = await state(page), counts = tied ? [5, 5, 4, 3, 3, 1, 0, 0] : [5, 4, 3, 3, 2, 1, 0, 0];
+  for (const [index, id] of s.order.entries()) { s.diceCount[id] = counts[index]; s.cups[id] = Array(counts[index]).fill(3); }
+  s.turn = 'p0'; s.nextStarter = 'p0'; s.eliminated = ['p7', 'p6'];
+  s.bid = null; s.bidLog = []; s.reveal = null; s.palifico = false; s.palificoStarter = null; s.nextPalifico = null;
+  await page.evaluate(s => window.__G07.setState(s), s);
+  await show(page); await page.locator('#end-game').click();
+  assert.equal((await state(page)).endReason, 'vip-end', 'the actual host control must finish the prepared live game');
+}
+async function standingsGone(page, reason) {
+  assert.equal(await page.locator('#standings-body tr').count(), 0, `${reason}: old standings rows remain`);
+  assert.equal(await page.locator('#winner-title').textContent(), '');
+  assert.equal(await page.locator('#winner-copy').textContent(), '');
+  assert(!(await page.locator('#result').isVisible()));
+}
+
 async function interruptFixture(page, pace, humanTurn = false) {
   await init(page, {players: 3, mode: 'bots', skill: 'sharp', pace, settings: {
     onesWild: false, calzaEnabled: true, calzaPolicy: 'interruptOnly', turnSeconds: 0,
@@ -382,6 +443,60 @@ try {
       assert(await page.locator('#start').isVisible());
       await page.locator('#start').click();
       assert.equal((await state(page)).phase.id, 'bid');
+    });
+
+    await run('natural last-die standings agree with the real core results', async () => {
+      await singleDieState(page, 3);
+      let rounds = 0;
+      while ((await state(page)).phase.id !== 'done') {
+        assert(rounds < 3);
+        if ((await state(page)).phase.id === 'reveal') { await page.locator('#next-round').click(); continue; }
+        await show(page); await makeBid(page, {quantity: await page.evaluate(() => window.__G07.view().totalDice), face: 6});
+        await show(page); await page.locator('#dudo').click(); rounds++;
+      }
+      const compared = await assertStandings(page, profile.label, 'natural last-die finish');
+      assert.equal(compared.state.endReason, 'last-die');
+      assert.deepEqual(compared.expected.ranking.map(row => row.rank), [1, 2, 3]);
+      assert.equal(compared.expected.winnerIds.length, 1);
+      await page.locator('#new-game').click(); await standingsGone(page, 'New game after natural finish');
+      await page.locator('#start').click(); await standingsGone(page, 'new live game');
+    });
+
+    await run('early host-end standings include all eight seats and unequal remaining dice', async () => {
+      await earlyStandingsFixture(page, false);
+      const compared = await assertStandings(page, profile.label, 'unequal eight-seat host end');
+      assert.deepEqual(compared.expected.winnerIds, ['p0']);
+      assert.deepEqual(compared.expected.ranking.map(row => row.rank), [1, 2, 3, 3, 5, 6, 7, 8]);
+      assert.equal(compared.actual.length, 8);
+    });
+
+    await run('early tied standings retain competition places and safe long player names', async () => {
+      await earlyStandingsFixture(page, true);
+      const compared = await assertStandings(page, profile.label, 'tied eight-seat host end');
+      assert.deepEqual(compared.expected.winnerIds, ['p0', 'p1']);
+      assert.deepEqual(compared.expected.ranking.map(row => row.rank), [1, 1, 3, 4, 4, 6, 7, 8]);
+      assert.equal(compared.actual.filter(row => row.status === 'Tied winner').length, 2);
+      if (profile.label === 'desktop') {
+        const beforeBytes = await readFile(resolve(evidence, 'round-4-before-standings.json'));
+        const baseline = JSON.parse(beforeBytes), before = baseline.before;
+        assert.equal(baseline.beforeCommit, '30eec5b');
+        assert.equal(before.htmlSha256, '48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378');
+        assert.deepEqual(baseline.fixture, {players: 8, counts: [5,5,4,3,3,1,0,0], eliminated: ['p7','p6'], names: standingNames,
+          transition: 'prepared live state followed by the actual End game button'});
+        assert.deepEqual(before.expected, compared.expected, 'the independently recorded before UI must have the exact same core outcome');
+        assert.equal(before.title, 'Thanks for playing'); assert.equal(before.standingsRows, 0); assert.equal(before.namedTieWinners, 0);
+        assert.equal(baseline.networkRequests, 0); assert.equal(baseline.pageErrors, 0);
+        const probe = {beforeCommit: '30eec5b', fixture: {players: 8, counts: [5,5,4,3,3,1,0,0], eliminated: ['p7','p6'], names: standingNames,
+          transition: 'prepared live state followed by the actual End game button'},
+          before, after: {htmlSha256, title: await page.locator('#winner-title').textContent(), standingsRows: compared.actual.length,
+            namedTieWinners: compared.actual.filter(row => row.status === 'Tied winner').length, expected: compared.expected, actual: compared.actual},
+          measuredGain: {visibleFinishingPlaces: {before: 0, after: 8}, identifiedTiedWinners: {before: 0, after: 2}},
+          baselineFile: 'round-4-before-standings.json', baselineSha256: createHash('sha256').update(beforeBytes).digest('hex'),
+          networkRequests: baseline.networkRequests, pageErrors: baseline.pageErrors};
+        const raw = JSON.stringify(probe, null, 2) + '\n';
+        await writeFile(resolve(work, 'round-4-standings.json'), raw); await writeFile(resolve(archive, 'round-4-standings.json'), raw);
+        report.standingsProbeFile = 'round-4-standings.json';
+      }
     });
 
     await run('bots automate turns for easy, normal and sharp skills', async () => {
@@ -1013,6 +1128,18 @@ try {
       await privateGone(page, 'blocked storage removal');
     }, {recovery: true, storageFault: 'removeItem'});
 
+    await run('recovered standings use the core results and Discard clears prior results', async () => {
+      await earlyStandingsFixture(page, true); const before = await assertStandings(page, profile.label, 'saved tied finish');
+      await checkpoint(); await reloadRecovery(); await assertPending(); await standingsGone(page, 'pending saved finish');
+      await page.locator('#resume-saved').click();
+      const after = await assertStandings(page, profile.label, 'resumed tied finish');
+      assert.deepEqual(after.expected, before.expected);
+      await reloadRecovery(); await assertPending(); await page.locator('#discard-saved').click();
+      await standingsGone(page, 'Discard saved finish');
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      await page.locator('#start').click(); await standingsGone(page, 'new game after Discard');
+    }, {recovery: true});
+
     await run('600 actual animation-frame intervals meet the strict refresh budget', async () => {
       await init(page, {players: 8, settings: {turnSeconds: 0}});
       await show(page);
@@ -1079,8 +1206,9 @@ try {
 } finally {
   await browser.close();
   const finalHtmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
+  const finalCoreModuleSha256 = createHash('sha256').update(await readFile(coreModule)).digest('hex');
   checks.push({profile: 'runner', name: 'HTML source stayed unchanged throughout the run',
-    passed: finalHtmlSha256 === htmlSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256});
+    passed: finalHtmlSha256 === htmlSha256 && finalCoreModuleSha256 === coreModuleSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256, initialCoreModuleSha256: coreModuleSha256, finalCoreModuleSha256});
   report.passed = checks.length > 0 && checks.every(check => check.passed) && rows.length === (functionalOnly ? 0 : profiles.length);
   const result = JSON.stringify(report, null, 2) + '\n';
   await writeFile(resolve(work, 'report.json'), result);
@@ -1100,6 +1228,10 @@ try {
       const destination = resolve(evidence, report.functionalProof.reportFile);
       await mkdir(dirname(destination), {recursive: true});
       await copyFile(resolve(work, report.functionalProof.reportFile), destination);
+    }
+    if (report.standingsProbeFile) {
+      await copyFile(resolve(work, report.standingsProbeFile), resolve(evidence, report.standingsProbeFile));
+      await copyFile(resolve(archive, report.standingsProbeFile), resolve(publishedArchive, report.standingsProbeFile));
     }
     if (report.pacingProbeFile) {
       await copyFile(resolve(work, report.pacingProbeFile), resolve(evidence, report.pacingProbeFile));

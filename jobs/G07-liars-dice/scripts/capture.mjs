@@ -5,12 +5,14 @@ import {createHash} from 'node:crypto';
 import {dirname, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
+import {game} from '../dist/core.mjs';
 
 // Encoding runs separately from browser-check.mjs: its overhead must not be
 // confused with the strict unrecorded requestAnimationFrame measurements.
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
 const paceDemo = process.argv.includes('--pace-demo');
+const standingsDemo = process.argv.includes('--standings-demo') || process.argv.includes('round-4');
 const recoveryDemo = process.argv.includes('--recovery-demo') || process.argv.includes('round-3');
 const saveKey = 'partybox.g07.session.v1';
 const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
@@ -151,10 +153,44 @@ try {
       await page.waitForTimeout(rounds === 0 ? 1000 : 300);
       rounds++;
     }
+    if (standingsDemo) await page.locator('#standings').scrollIntoViewIfNeeded();
     await page.waitForTimeout(900);
     await page.screenshot({path: resolve(evidence, `${tag}-${label}-winner.png`), fullPage: true});
     const final = await page.evaluate(() => window.__G07.state());
     assert(final.winner);
+    let standings = null;
+    if (standingsDemo) {
+      const natural = game.results(final);
+      const displayed = await page.locator('#standings-body tr').evaluateAll(rows => rows.map(row => ({playerId: row.dataset.playerId,
+        rank: Number(row.querySelector('.standing-rank').textContent), name: row.querySelector('.standing-name').textContent,
+        dice: Number(row.querySelector('.standing-dice').textContent), status: row.querySelector('.standing-status').textContent})));
+      assert.deepEqual(displayed.map(row => ({playerId:row.playerId,rank:row.rank})), natural.ranking.map(row => ({playerId:row.playerId,rank:row.rank})));
+      await page.locator('#new-game').click();
+      await page.locator('#player-count').selectOption('8');
+      const names = ['<literal player>', 'L'.repeat(40), 'Player three', 'Player four', 'Player five', 'Player six', 'Player seven', 'Player eight'];
+      for (const [index, name] of names.entries()) await page.locator(`#name-${index}`).fill(name);
+      await page.locator('#start').click();
+      // This short prepared live position illustrates host-end competition
+      // places; the transition itself uses the ordinary End game button.
+      await page.evaluate(() => {
+        const h = window.__G07, s = h.state(), counts = [5,5,4,3,3,1,0,0];
+        for (const [index,id] of s.order.entries()) { s.diceCount[id] = counts[index]; s.cups[id] = Array(counts[index]).fill(3); }
+        s.turn = 'p0'; s.nextStarter = 'p0'; s.eliminated = ['p7','p6'];
+        s.bid = null; s.bidLog = []; s.reveal = null; s.palifico = false; s.palificoStarter = null; s.nextPalifico = null;
+        h.setState(s);
+      });
+      await page.locator('#show-cup').click(); await page.waitForTimeout(400); await page.locator('#end-game').click();
+      const early = await page.evaluate(() => window.__G07.state()), expected = game.results(early);
+      assert.equal(early.endReason, 'vip-end'); assert.deepEqual(expected.winnerIds, ['p0','p1']);
+      const earlyRows = await page.locator('#standings-body tr').evaluateAll(rows => rows.map(row => ({playerId:row.dataset.playerId,
+        rank:Number(row.querySelector('.standing-rank').textContent),dice:Number(row.querySelector('.standing-dice').textContent),status:row.querySelector('.standing-status').textContent})));
+      assert.equal(earlyRows.length,8);assert.equal(earlyRows.filter(row=>row.status==='Tied winner').length,2);
+      assert.deepEqual(earlyRows.map(row=>row.rank),expected.ranking.map(row=>row.rank));
+      await page.locator('#result').scrollIntoViewIfNeeded(); await page.waitForTimeout(900);
+      await page.locator('#standings-body tr:last-child').scrollIntoViewIfNeeded(); await page.waitForTimeout(900);
+      await page.screenshot({path:resolve(evidence,`${tag}-${label}-tied-standings.png`),fullPage:true});
+      standings = {naturalResults:natural,naturalRows:displayed,earlyFixturePrepared:true,actualEndButton:true,earlyResults:expected,earlyRows};
+    }
     assert.deepEqual(errors, []);
     assert.deepEqual(network, []);
     const video = page.video();
@@ -165,7 +201,7 @@ try {
     assert(bytes < 10_000_000, `${path} exceeds the 10MB capture budget`);
     const capture = {path: `media/${tag}-${label}.webm`, bytes, sha256: createHash('sha256').update(await readFile(path)).digest('hex'), viewport: {width, height}, videoSize, cpuThrottle: rate,
       seed: 7199, rounds, winner: final.winner, initialRoster: initial.order.length,
-      recordingMeasuresPerformance: false, pacingDemo, recoveryDemo: recovery, networkRequests: network.length, pageErrors: errors.length};
+      recordingMeasuresPerformance: false, pacingDemo, recoveryDemo: recovery, standingsDemo: standings, networkRequests: network.length, pageErrors: errors.length};
     captures.push(capture);
     console.log(JSON.stringify(capture));
   }

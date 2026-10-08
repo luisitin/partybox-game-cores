@@ -70,3 +70,10 @@ equilibrium, a guaranteed full-game win, or a new calibrated probability model.
   and the three consecutive no-player-gain rounds are complete. Any new
   implementation failure blocks acceptance; evidence-only cadence failures
   remain recorded and must be corrected in the delivered snapshot.
+
+## KEEP GOING round 4
+
+Final standings come directly from game.results, including competition ranks
+and all original seats. The existing composite score remains internal; the
+page shows actual remaining dice and elimination order. Early host endings
+retain the core's tie/winner semantics and explicit headline explanation.

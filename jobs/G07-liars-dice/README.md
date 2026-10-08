@@ -32,3 +32,6 @@ Round 2's Medium correction passes38 node tests,7,000 games and 52 browser check
 Strong 64.70%/Medium 58.90%; GitHub run 37746548680 passed the completed head.
 Round 3 adds explicit same-tab reload recovery; 8 session tests and 76 browser
 checks pass. Reload offers Resume/Discard with covered cups and a held clock.
+
+Round4 shows exact finishing places, ties and remaining dice for every seat;
+84 full browser checks and source-matched desktop/phone recordings pass.

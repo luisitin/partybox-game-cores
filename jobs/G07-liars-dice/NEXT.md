@@ -1,87 +1,56 @@
 # Resume G07
 
-Branch: job/G07-liars-dice; owner codex-dice. Read root README/RULES/JOBS and
-latest main CLAIMS before continuing. PR #6 remains draft while KEEP GOING runs.
+Branch job/G07-liars-dice, owner codex-dice, PR6 draft. Read root README/RULES/
+JOBS and fresh main CLAIMS before continuing. Historical research blocker is
+resolved; old notes are under evidence/historical-blocker.
 
-Current work: round3 completed local proof; final hash/claim/push checkpoint.
-Next KEEP GOING review is final standings, followed by concise rule help.
-Round 2 is accepted at exact head 2ba462691ea3bbecf8607f0737b3287cc8909af7
-by successful GitHub run 37746548680 (38 node / 52 browser / 25 mutation kills).
-Public metadata: evidence/checks/ci-round-2.json.
+Current checkpoint: round4 final-standings implementation and all local proof
+complete; root is hashing, refreshing main claim and pushing. Do not edit the
+frozen source until that checkpoint is pushed.
 
-| Work | Current status |
+| Work | Status |
 | --- | --- |
-| Pure session envelope, authoritative schema and shared RNG cursor | Implemented; 8/8 focused tests PASS, module build PASS |
-| Resume/Discard gate and host integration | Implemented; final strict host build PASS, full browser proof running |
-| Exact reload/clock/cup/hold/storage regressions | PASS final untraced full 76/76, all 24 new recovery cases; first frame failure retained |
-| Desktop/phone performance and round-3 clips | PASS both 600-frame gates and matching clips with two real reloads each |
-| Round-3 hashes/integrity | PASS 277-file hashes/checks and byte-identical regeneration; final claim/push |
-| Exact new-head GitHub CI | Cadence ea57ee0 run37749780610: 46 node / 76 browser pass, stale snapshot rejected; final acceptance pending |
-| Final standings and concise palifico help | Ranked for later KEEP GOING rounds, not edited yet |
+| Exact core standings/ties/all original seats | Implemented; ten actual UI/core-results comparisons PASS |
+| Strict build and full browser suite | PASS84/84 at frozen09f9f709…2b97a1 |
+| Raw desktop/phone performance | PASS all600 each;59.703869/59.506690FPS,p99 16.8ms |
+| Round4 desktop/phone clips | PASS matching source; natural finish and eight-seat tied host end |
+| Final hashes/integrity/main claim/push | PASS293-file hashes/integrity; final claim/commit/push |
+| Hosted acceptance | Round3 exact30eec5b green37752206859; round4 new-head CI required |
+| Next player-visible review | Palifico help; known empty-ID browser compatibility boundary |
 
-Core source remains 5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18,
-core bundle 947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076.
-Current recovery page is 48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378.
-The last accepted page is e17275c6…ba50c3. Do not label its retained browser
-evidence as proof of the new recovery page. All new transient browser evidence
-is under ignored .work/browser until deliberately snapshotted.
+Frozen page09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1.
+Core5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18 and
+session0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30
+are unchanged. Full run20261008090449926 and source-matched capture metadata
+are in evidence/browser; the old48be baseline and new actual-results proof
+show places0→8/tied winners0→2. All writers stopped09:10:06.
 
-Recovery exports live in src/session.ts; host integration is src/browser.ts.
-New pure tests are tests/session.test.mjs; build bundles dist/session.mjs.
-Browser agents own scripts/browser-check.mjs, scripts/capture.mjs and browser
-evidence. Coordinate a writer stop before publishing/checksumming. Run new
-focused checks and full browser suite/recordings; do not repeat unchanged local
-7,000-game core matrix, leagues or mutations without a new core change/failure.
-Hosted npm test will run the complete required suite.
+Required unchanged-core checks already pass:38core+8session node tests,
+7,000completegames(1,000each2–8),1,698,452 every-event restored-twin checks,
+12,279,033bot samples,1,003propertyseeds,20,000probabilitydifferentials,
+25compiledmutationkills,required4,000-game Strong64.70%/Medium58.90%league
+and fresh4,000-game66.8%/57.0%holdout. Exact commands/raw proof:VERIFY.md and
+evidence/checks/round-2. No local repeat without new source/failure concern;
+GitHub npm test runs all required checks.
 
-Required round-2 checks already passed: 7,000 complete games (1,000 each 2–8),
-1,698,452 every-event restored-twin comparisons, 12,279,033 bot samples,
-1,003 property seeds, 20,000 probability differentials and 25/25 mutation kills.
-Strong 64.70% / Medium 58.90% in the required league; fresh holdout 66.8% / 57%.
-All raw proof is in evidence/checks/round-2 and VERIFY.md; the cadence stale-
-matrix checksum failure is preserved as history, corrected at accepted head.
+Rounds1–4 each have a measured player-visible gain; no-gain streak0. Re-read
+the job, rank five weaknesses, fix the worst, measure, log one LOOP line and
+push per round. Completed local milestones can progress while CI runs; keep
+PR draft until exact final head is green and three consecutive rounds add
+nothing a player notices. Then claim fresh lowest eligible queue job.
 
-Round 1 pacing and round 2 Medium certainty correction each have a player-
-visible gain. Consecutive no-gain count remains zero. Complete round 3 proof
-before its one LOOP line and push. Hosted checks rerun while the next measured review
-can proceed; require exact final-head CI green before marking the PR ready. Re-read
-the job, rank five weaknesses, fix/measure and repeat until three consecutive
-rounds gain nothing a player notices. Mark PR ready and claim the lowest
-eligible next job after fresh main CLAIMS and recent branch-commit checks.
+Maintain public failures and raw frames. New transient runs live under ignored
+.work until explicitly published; never replace a passing snapshot with failed
+or mixed-source evidence. Coordinate all writers before final hashes and push.
+Default verification has no ignored-file or old-git dependency.
 
-Parallel G09 is claimed by this chat's isolated worker on
-job/G09-category-rush-parallel-20261008. It has its own claims clone; avoid
-shared main mutations. Coordinate browser CPU windows across both jobs. G08
-is owned by codex-core; our private .work/g08-prep source cache is read-only.
+Parallel G09 worker owns job/G09-category-rush-parallel-20261008 and its own
+claims clone; current strict visual proof is pending, all other local checks
+pass. G10 worker owns job/G10-checkers-complete-20261008 and a separate claims
+clone; first source milestone pushed, further tests and broader database
+coverage pending. G08 and freshly reclaimed G01 belong to other chats.
+Coordinate global browser CPU windows; other agents pause their own heavy
+process groups. Root main-claims clone must never receive game code.
 
-Historical research blocker is resolved; old notes live under
-evidence/historical-blocker. No current research-only blocker. Re-verify when
-web works: Soar extraction coverage limit remains documented in SOURCES.md.
-
-First full recovery failure is preserved in
-evidence/browser/runs/48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378/20261008082353284.
-All 24 recovery cases passed; desktop50.4927FPS/phone58.9229FPS failed unchanged
-frame gates. Source remains frozen while the browser owner profiles actual
-causes; no save calls occur inside the 600-frame sample. Preserve all failures
-and publish only a complete source-matched passing full run.
-
-GitHub cadence run 37749780610 passed all 46 node tests, 25 mutation kills and
-76 browser checks, including strict desktop/phone frame gates, then rejected
-the retained prior-HTML snapshot. Page remains unchanged at 48be0c5b. Paired
-cold profiles found no codec hotspot and the old page also stalled; the default
-untraced full rerun and clips now run under global CPU isolation. G10 is the
-next worker's fresh eligible job after G01's original owner refreshed its claim;
-no G01 audit branch was created.
-
-Final confirmation default full browser run 20261008083956897 passes 76/76
-at unchanged48be0c5b; --snapshot publishes the whole run with no composition.
-Desktop59.902359FPS,p99 16.8ms,max33.4ms; phone4x59.803247FPS,p99 16.8ms,
-max50ms. Both retain all600 intervals, one above17ms each. Source-matched
-recovery/pacing/winner clips are recording; await all-writers-stop before
-completed round-3 hashes, integrity, LOOP line and refreshed claim/push.
-
-Round3 clips PASS matching48be start/end, desktop1,734,468bytes and
-phone1,676,748bytes; metadata evidence/browser/round-3-captures.json.
-All writers/processes stopped08:44:40; LOOPround3 records player-visible
-recovery and no-gain streak0. Root now finalizes hashes/integrity and claim/
-push. Do not change source until that checkpoint is committed and pushed.
+Re-verify when web works: no current research-only blocker. Soar extraction
+coverage limit is documented in SOURCES.md.

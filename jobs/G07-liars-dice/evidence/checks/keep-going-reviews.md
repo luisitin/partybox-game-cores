@@ -105,3 +105,34 @@ passed 46 node/25 mutations/76 browser checks, then correctly rejected the old
 retained page snapshot. The fresh unchanged full confirmation and matching
 clips fix the evidence mismatch. This is a player-visible recovery gain;
 consecutive no-gain count stays zero.
+
+## Round 4 — final standings
+
+Started after the completed local round3 proof was pushed at30eec5b. The PR
+was already green before KEEP GOING; final exact-head hosted acceptance stays
+mandatory. Root README.md, RULES.md and JOBS.md were re-read.
+
+Five biggest remaining weaknesses, ranked:
+
+1. Finished games omit rankings and elimination order even though the core returns complete results. Host-ended games show only thanks, without explaining tied places or remaining dice.
+2. Palifico help still omits its two-survivor exclusion and prior-experience condition for the optional face exemption.
+3. Strong's mixed-table and optional-variant advantage remains an evidence limit; default duels are certified.
+4. Browser-created IDs are safe p0–p7, but manually injecting an otherwise valid save with an empty-string seat exposes existing viewer truthiness checks. This is a developer interoperability limit, not ordinary browser play.
+5. Verification/handoff prose retains historical pending checkpoints beside later passing results, making current acceptance harder to locate.
+
+Selected correction: display the actual core results in an accessible finishing
+list on the done screen, including all original seats, exact competition ranks,
+tied winners and remaining dice. Preserve early-host-end semantics and the
+core's elimination order. Source build, actual-UI results regressions, whole
+browser/raw-frame proof and milestone recordings are required; core strategy
+and gameplay source remain unchanged.
+
+Round4 completed locally: exact results now appear before the final reveal,
+with all original seats, competition ranks, remaining dice, elimination order,
+tied winners and the core's end reason. The same actual eight-seat End-game
+fixture increases visible finishing places0→8 and named tied winners0→2.
+Ten independent displayed-row vs actual imported-core comparisons and the
+whole84-check browser run pass. Both unfiltered600-frame gates and source-
+matched desktop/phone recordings pass; New Game/Discard cleanup and safe
+long/markup-like names also pass. Core/session source remains unchanged.
+This is a player-visible result-screen improvement; no-gain streak stays0.

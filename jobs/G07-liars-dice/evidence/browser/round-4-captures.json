@@ -1,0 +1,376 @@
+{
+  "browser": "141.0.7390.37",
+  "htmlSha256": "09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1",
+  "finalHtmlSha256": "09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1",
+  "sourceUnchanged": true,
+  "passed": true,
+  "failure": null,
+  "captures": [
+    {
+      "path": "media/round-4-desktop.webm",
+      "bytes": 1713641,
+      "sha256": "161d31b31e1652147f43b2200166a45441a11046f8e73f1b948b7b2768240361",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "videoSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuThrottle": 1,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "pacingDemo": {
+        "seed": 17,
+        "normalPace": "normal",
+        "normalActionMs": 2034,
+        "manualHeldMs": 2315,
+        "manualStepTurn": "p1",
+        "normalActionsInjected": false
+      },
+      "recoveryDemo": null,
+      "standingsDemo": {
+        "naturalResults": {
+          "scores": {
+            "p0": 2.5,
+            "p1": 1
+          },
+          "ranking": [
+            {
+              "playerId": "p0",
+              "score": 2.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p1",
+              "score": 1,
+              "rank": 2
+            }
+          ],
+          "winnerIds": [
+            "p0"
+          ],
+          "awards": [],
+          "headlineNote": "Last player with dice."
+        },
+        "naturalRows": [
+          {
+            "playerId": "p0",
+            "rank": 1,
+            "name": "You",
+            "dice": 5,
+            "status": "Winner"
+          },
+          {
+            "playerId": "p1",
+            "rank": 2,
+            "name": "Player 2",
+            "dice": 0,
+            "status": "1st out"
+          }
+        ],
+        "earlyFixturePrepared": true,
+        "actualEndButton": true,
+        "earlyResults": {
+          "scores": {
+            "p0": 8.5,
+            "p1": 8.5,
+            "p2": 8.4,
+            "p3": 8.3,
+            "p4": 8.3,
+            "p5": 8.1,
+            "p6": 2,
+            "p7": 1
+          },
+          "ranking": [
+            {
+              "playerId": "p0",
+              "score": 8.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p1",
+              "score": 8.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p2",
+              "score": 8.4,
+              "rank": 3
+            },
+            {
+              "playerId": "p3",
+              "score": 8.3,
+              "rank": 4
+            },
+            {
+              "playerId": "p4",
+              "score": 8.3,
+              "rank": 4
+            },
+            {
+              "playerId": "p5",
+              "score": 8.1,
+              "rank": 6
+            },
+            {
+              "playerId": "p6",
+              "score": 2,
+              "rank": 7
+            },
+            {
+              "playerId": "p7",
+              "score": 1,
+              "rank": 8
+            }
+          ],
+          "winnerIds": [
+            "p0",
+            "p1"
+          ],
+          "awards": [],
+          "headlineNote": "Ended by the host; remaining dice decide the standings."
+        },
+        "earlyRows": [
+          {
+            "playerId": "p0",
+            "rank": 1,
+            "dice": 5,
+            "status": "Tied winner"
+          },
+          {
+            "playerId": "p1",
+            "rank": 1,
+            "dice": 5,
+            "status": "Tied winner"
+          },
+          {
+            "playerId": "p2",
+            "rank": 3,
+            "dice": 4,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p3",
+            "rank": 4,
+            "dice": 3,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p4",
+            "rank": 4,
+            "dice": 3,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p5",
+            "rank": 6,
+            "dice": 1,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p6",
+            "rank": 7,
+            "dice": 0,
+            "status": "2nd out"
+          },
+          {
+            "playerId": "p7",
+            "rank": 8,
+            "dice": 0,
+            "status": "1st out"
+          }
+        ]
+      },
+      "networkRequests": 0,
+      "pageErrors": 0
+    },
+    {
+      "path": "media/round-4-phone4x.webm",
+      "bytes": 1545684,
+      "sha256": "0f5d7f1c01e83c3c1f48a906256e4fc769b9e6a42399d72a2bd8f0e5966f57b3",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "videoSize": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "pacingDemo": {
+        "seed": 17,
+        "normalPace": "normal",
+        "normalActionMs": 1817,
+        "manualHeldMs": 2332,
+        "manualStepTurn": "p1",
+        "normalActionsInjected": false
+      },
+      "recoveryDemo": null,
+      "standingsDemo": {
+        "naturalResults": {
+          "scores": {
+            "p0": 2.5,
+            "p1": 1
+          },
+          "ranking": [
+            {
+              "playerId": "p0",
+              "score": 2.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p1",
+              "score": 1,
+              "rank": 2
+            }
+          ],
+          "winnerIds": [
+            "p0"
+          ],
+          "awards": [],
+          "headlineNote": "Last player with dice."
+        },
+        "naturalRows": [
+          {
+            "playerId": "p0",
+            "rank": 1,
+            "name": "You",
+            "dice": 5,
+            "status": "Winner"
+          },
+          {
+            "playerId": "p1",
+            "rank": 2,
+            "name": "Player 2",
+            "dice": 0,
+            "status": "1st out"
+          }
+        ],
+        "earlyFixturePrepared": true,
+        "actualEndButton": true,
+        "earlyResults": {
+          "scores": {
+            "p0": 8.5,
+            "p1": 8.5,
+            "p2": 8.4,
+            "p3": 8.3,
+            "p4": 8.3,
+            "p5": 8.1,
+            "p6": 2,
+            "p7": 1
+          },
+          "ranking": [
+            {
+              "playerId": "p0",
+              "score": 8.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p1",
+              "score": 8.5,
+              "rank": 1
+            },
+            {
+              "playerId": "p2",
+              "score": 8.4,
+              "rank": 3
+            },
+            {
+              "playerId": "p3",
+              "score": 8.3,
+              "rank": 4
+            },
+            {
+              "playerId": "p4",
+              "score": 8.3,
+              "rank": 4
+            },
+            {
+              "playerId": "p5",
+              "score": 8.1,
+              "rank": 6
+            },
+            {
+              "playerId": "p6",
+              "score": 2,
+              "rank": 7
+            },
+            {
+              "playerId": "p7",
+              "score": 1,
+              "rank": 8
+            }
+          ],
+          "winnerIds": [
+            "p0",
+            "p1"
+          ],
+          "awards": [],
+          "headlineNote": "Ended by the host; remaining dice decide the standings."
+        },
+        "earlyRows": [
+          {
+            "playerId": "p0",
+            "rank": 1,
+            "dice": 5,
+            "status": "Tied winner"
+          },
+          {
+            "playerId": "p1",
+            "rank": 1,
+            "dice": 5,
+            "status": "Tied winner"
+          },
+          {
+            "playerId": "p2",
+            "rank": 3,
+            "dice": 4,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p3",
+            "rank": 4,
+            "dice": 3,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p4",
+            "rank": 4,
+            "dice": 3,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p5",
+            "rank": 6,
+            "dice": 1,
+            "status": "At host end"
+          },
+          {
+            "playerId": "p6",
+            "rank": 7,
+            "dice": 0,
+            "status": "2nd out"
+          },
+          {
+            "playerId": "p7",
+            "rank": 8,
+            "dice": 0,
+            "status": "1st out"
+          }
+        ]
+      },
+      "networkRequests": 0,
+      "pageErrors": 0
+    }
+  ]
+}
