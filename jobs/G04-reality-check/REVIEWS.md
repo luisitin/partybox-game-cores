@@ -76,3 +76,10 @@ variance;presence churn;factory scale;clarity of benchmark limits. Add
 12,000 fresh matches without tuning policy. All six confidence lower
 bounds>50%;original12,000-match reports reproduce exactly. No player
 behavior change;player gain0,no-gain streak1. Corpus scope remains explicit.
+
+Round9 five weaknesses: single-run frame variance (worst);presence churn;
+factory scale;phone approximation limits;future content integration. Fill
+the measurable variance gap with two independent full browser runs and
+retain each raw report/capture. All66 total scenarios,900 TV+900 phone
+intervals pass,60fps/p95≤16.8ms,zero errors/requests. No production change;
+player gain0,no-gain streak2. Unavailable physical hardware remains labeled.

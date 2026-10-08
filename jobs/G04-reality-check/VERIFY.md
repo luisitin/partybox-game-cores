@@ -196,3 +196,17 @@ Cloud restart preserved source and the completed default report but killed
 the just-started held-out process(empty log);after inspection it was re-run
 successfully with the same declared seeds. node checksums.ts/--check PASS33.
 No production change or defect found;player gain0,no-gain streak1.
+
+Round9 npm run check PASS;node browser.ts --repeat=2 and --repeat=3 each
+PASS22 functional scenarios,zero requests/errors and reduced motion.
+Together with Round7 baseline:three independent processes,900 TV and900
+phone frame intervals,all fps≥60.00,p95≤16.80ms. Actual measurements:
+sample1 tv 60.0028fps/p9516.80ms;
+sample1 phone 60.0020fps/p9516.70ms;
+sample2 tv 60.0020fps/p9516.70ms;
+sample2 phone 60.0036fps/p9516.70ms;
+sample3 tv 60.0036fps/p9516.80ms;
+sample3 phone 60.0032fps/p9516.80ms.
+Separate browser-repeat-{2,3}.json,PNG and milestone9 captures retained
+under10MB. node checksums.ts/--check PASS41 files. No production change
+or player-visible defect found;player gain0,no-gain streak2.

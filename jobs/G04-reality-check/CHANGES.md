@@ -120,3 +120,9 @@ and separate report;record both seed bounds in every report and run both
 cohorts in npm test. Re-run the original cohort and compare every prior
 report field to the committed result:identical. This is a verification
 change only;no core,bot,content or UI behavior changes.
+
+KEEP GOING9: let browser.ts retain separate reports/screenshots/captures
+for two fresh browser process repeats;add both to npm test. Each uses the
+same exact standalone bytes,22 functional scenarios and600 total TV/phone
+frame intervals. Production core,UI and HTML are unchanged. This addresses
+frame-sample variance without relabeling the4×CPU approximation as a device.

@@ -8,6 +8,9 @@ import {game} from './core.ts';
 const executable=process.env.CHROMIUM_PATH??(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined);
 const browser=await chromium.launch({headless:true,executablePath:executable,args:['--no-sandbox']});
 const html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[];
+const repeat=process.argv.includes('--repeat=2')?2:process.argv.includes('--repeat=3')?3:1;
+const capturePath=repeat===1?'media/milestone-8-catalog.webm':`media/milestone-9-repeat-${repeat}.webm`;
+const reportPath=repeat===1?'browser-report.json':`browser-repeat-${repeat}.json`;
 mkdirSync('media',{recursive:true});
 async function pageFor(viewport={width:390,height:844},reducedMotion:'reduce'|'no-preference'='no-preference'){
  const context=await browser.newContext({viewport,reducedMotion}),page=await context.newPage();
@@ -112,14 +115,14 @@ try {
   const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((a,b)=>a+b,0)/frames.length;
   const report={name,viewport,throttle,scenario:'eight seats, open human controller, seven concurrent bot inputs',frames:frames.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)]!,p99Ms:sorted[Math.floor(sorted.length*.99)]!,fps:1000/mean};performance.push(report);console.log(report);assert(report.fps>=58,`${name} mean below 58 fps`);assert(report.p95Ms<=18,`${name} p95 misses 60-Hz budget`);
   assert(await match.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(name==='tv')assert(await match.page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight));
-  await match.page.screenshot({path:`media/${name}.png`,fullPage:true});
+  await match.page.screenshot({path:`media/${repeat===1?'':`repeat-${repeat}-`}${name}.png`,fullPage:true});
   if(name==='tv'){
    const directory=mkdtempSync(join(tmpdir(),'G04-capture-'));
-   try{for(let i=0;i<36;i++){if(i===12)await match.page.click('#hide-private');if(i===18){await match.page.click('#reveal-private');assert.equal(await match.page.inputValue('#fake'),'My harbour bluff');}await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.png`)});await match.page.waitForTimeout(66);}const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(directory,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-8-catalog.webm'],{encoding:'utf8'});assert.equal(encode.status,0,encode.stderr||encode.error?.message);assert(statSync('media/milestone-8-catalog.webm').size<10*1024*1024);}finally{rmSync(directory,{recursive:true});}
+   try{for(let i=0;i<36;i++){if(i===12)await match.page.click('#hide-private');if(i===18){await match.page.click('#reveal-private');assert.equal(await match.page.inputValue('#fake'),'My harbour bluff');}await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.png`)});await match.page.waitForTimeout(66);}const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(directory,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an',capturePath],{encoding:'utf8'});assert.equal(encode.status,0,encode.stderr||encode.error?.message);assert(statSync(capturePath).size<10*1024*1024);}finally{rmSync(directory,{recursive:true});}
   }
   await match.context.close();
  }
  const reduced=await pageFor({width:390,height:844},'reduce');await start(reduced.page);assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);await reduced.context.close();functional.push('reduced-motion disables wheel animation');
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- writeFileSync('browser-report.json',JSON.stringify({functional,navigationMode:'Exact play.html bytes via setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:'media/milestone-8-catalog.webm',captureBytes:statSync('media/milestone-8-catalog.webm').size},null,2)+'\n');console.log(`Browser ${functional.length} functional scenarios, offline,privacy,reduced-motion,frame times and capture passed`);
+ writeFileSync(reportPath,JSON.stringify({functional,navigationMode:'Exact play.html bytes via setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:capturePath,captureBytes:statSync(capturePath).size},null,2)+'\n');console.log(`Browser ${functional.length} functional scenarios, offline,privacy,reduced-motion,frame times and capture passed (sample ${repeat})`);
 }finally{await browser.close();}

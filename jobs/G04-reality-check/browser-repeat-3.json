@@ -1,0 +1,62 @@
+{
+  "functional": [
+    "3s wheel / 10s demo / exact pause-shifted deadline / end and restart",
+    "all eight realm wedges land under the wheel pointer",
+    "number control / private handover / exact score",
+    "choice control / private handover / exact score",
+    "century control / private handover / exact score",
+    "decade control / private handover / exact score",
+    "bluff write/vote/reveal / duplicates / own vote disabled / escaped user text",
+    "correct-write credit confirmation is private and concealed before handover",
+    "bluff/number/range drafts survive hide and pause, remain absent from hidden DOM and never cross owners",
+    "draft and keyboard focus survive another player’s input",
+    "full quick, 2 seats, eight rounds, finite results, no overflow",
+    "full quick, 4 seats, eight rounds, finite results, no overflow",
+    "full quick, 8 seats, eight rounds, finite results, no overflow",
+    "full mixed, 2 seats, eight rounds, finite results, no overflow",
+    "full mixed, 4 seats, eight rounds, finite results, no overflow",
+    "full mixed, 8 seats, eight rounds, finite results, no overflow",
+    "full bluff, 2 seats, eight rounds, finite results, no overflow",
+    "full bluff, 4 seats, eight rounds, finite results, no overflow",
+    "full bluff, 8 seats, eight rounds, finite results, no overflow",
+    "phone controller has question, live timer and keyboard focus; shared board returns after hide",
+    "maximum-length unbroken bluffs wrap within the phone viewport",
+    "reduced-motion disables wheel animation"
+  ],
+  "navigationMode": "Exact play.html bytes via setContent; managed Chromium blocks file:// navigation",
+  "externalRequests": [],
+  "errors": [],
+  "performance": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "scenario": "eight seats, open human controller, seven concurrent bot inputs",
+      "frames": 300,
+      "meanMs": 16.665666666666667,
+      "p95Ms": 16.799999999999955,
+      "p99Ms": 16.800000000000182,
+      "fps": 60.00360021601296
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "scenario": "eight seats, open human controller, seven concurrent bot inputs",
+      "frames": 300,
+      "meanMs": 16.665779999999998,
+      "p95Ms": 16.799999999999955,
+      "p99Ms": 16.800000000000182,
+      "fps": 60.00319216982344
+    }
+  ],
+  "physicalPhone": "unavailable; 390×844 Chromium with 4× CPU is the measured approximation",
+  "capture": "media/milestone-9-repeat-3.webm",
+  "captureBytes": 324217
+}
