@@ -16,4 +16,6 @@
 
 8 | Clarify current30-test verification and preserve exact actual-disk60fps report; runtime/UI/test source byte-identical to5509a20,all player behavior unchanged; fresh140221B capture (not a frame benchmark),30 JSON/56 hashes validate. Typography trial reverted after local cadence failure. Player gain: none meaningful; cosmetic streak1.
 
-9 | Replace stale README status and link fixtures/rules/sources/bots/current checkpoint;8 relative links resolve,36 lines<60; game/UI/test source unchanged, fresh140221B capture is not a benchmark,30 JSON/57 hashes pass. Player gain: none meaningful; cosmetic streak2.
+9 | Replace stale README status and link fixtures/rules/sources/bots/current checkpoint;7 relative links resolve,36 lines<60; game/UI/test source unchanged, fresh140221B capture is not a benchmark,30 JSON/57 hashes pass. Player gain: none meaningful; cosmetic streak2.
+
+10 | Correct notes to7 audited README links and add delivered-material licence index; UI/core/browser checks byte-identical to5509a20,all player behavior unchanged; fresh140221B capture (not benchmark),30 JSON/58 hashes pass. Player gain: none meaningful; cosmetic streak3.

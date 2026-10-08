@@ -85,3 +85,10 @@ status; fixture/rule navigation; provenance-license grouping; assumption index;
 minor decorative layout differences. Fix README status and relative navigation
 links, remaining under60 lines. Game/UI/test source stays unchanged. No
 meaningful player gain; fresh unchanged-interface capture records milestone10.
+
+Round10, afterba95921 GREEN push37742910131/PR37742916541. Re-read G05.
+Five remaining doc/cosmetic weaknesses: link-count typo8vsactual7; delivered
+licence navigation; historical checkpoint readability; fixture navigation;
+minor visual decoration. Correct the typo and add a short delivered-material
+licence index. No game/UI/test changes, no player gain. This measured review
+makes three consecutive no-meaningful-gain rounds8–10 after the real round7 fix.

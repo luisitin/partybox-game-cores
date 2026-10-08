@@ -321,9 +321,26 @@ verification summary distinguishes30 tests from early incomplete checkpoints.
 No player gain; cosmetic streak1. Await fresh updated-head full CI.
 
 KEEP GOING9, afterfeb83f2 GREEN push37742150805/PR37742157321. README relative
-links verified with Python Path.exists (all8),36 lines<60. `node .tmp/
+links verified with Python Path.exists (all7),36 lines<60. `node .tmp/
 documentation-capture.mjs --http --milestone 10` records a fresh3.6s140221B clip
 of unchanged UI; no frame benchmark claim. `node scripts/generate.mjs
 --fixtures-only`, `node scripts/check-data.mjs` PASS30 JSON/57 checksums.
 No game/UI/test changes, no player gain, cosmetic streak2. Need updated-head
 full CI before round10. Exact source actual-disk results remain preserved.
+
+The round9 link enumeration printed7; the notes initially typed8. Correct the
+notes to7 (every link resolves). Round10 adds a delivered-material licence
+index without changing any claim about borrowed code/art. Source/HTML/browser
+checks remain byte-identical to5509a20; fresh unchanged-interface capture is
+not a new frame benchmark. Mandatory updated-head CI still runs the full suite.
+
+KEEP GOING10, afterba95921 GREEN push37742910131/PR37742916541. README exact
+7 links/36 lines verified with Python; documentation count typo corrected.
+`node .tmp/documentation-capture.mjs --http --milestone 11` initially lost its
+execution transport before creating media; status/files survived and no Node
+worker remained. Rerun PASS fresh3.6s140221B clip, explicitly not a benchmark.
+`node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs`
+PASS30 JSON/58 hashes. `git diff HEAD -- src ui play.html scripts` empty:
+product/check code unchanged from the actual-disk verified source. Three
+consecutive no-meaningful-gain rounds8–10 now complete locally. Updated-head
+full CI must be green before DONE/final PR delivery.

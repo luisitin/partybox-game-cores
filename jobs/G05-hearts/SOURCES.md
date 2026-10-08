@@ -4,6 +4,15 @@ Facts are paraphrased; no source art or implementation is included. Every
 retrieval is pinned and recorded in research-access.json. Canonical sites that
 returned403 are explicitly unread. Mirrors retain their original source family.
 
+Licence index for delivered files:
+
+| Delivered material | Licence/provenance |
+|---|---|
+| Original core, UI, fixtures and captures | MIT; written/rendered for this job |
+| Bundled zod | MIT notice embedded in play.html |
+| Rule/AI research | Facts paraphrased; no source implementation or art copied |
+| Hosted browser reports | Exact output of this job's public CI |
+
 Independent rules sources read:
 
 - Pagat's American Hearts/variants, via the pinned PKcards transcription:
