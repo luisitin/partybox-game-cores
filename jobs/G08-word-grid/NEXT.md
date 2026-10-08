@@ -1,3 +1,7 @@
+# G08 — observed slow Ubuntu mirror repaired; full paired acceptance pending
+
+Read review/repair14/README.md first. cc464 PR37847330430 full green and its actual downloaded artifact independently passes183guards/2400raw/fivedecodedclips/22native gates. Same-head push37847322222 correctly FAILS bounded capture installation with exit124; no game/FPS test or artifact there. Concrete new workflow replaces only Azure URL in existing runner mirrorlist with available official HTTPS Ubuntu archive; Ubuntu trust/source definitions and all fatal timeouts/tests/performance gates remain. New exact-head push AND PR full green plus genuine source-bound artifact acceptance pending. PR9 DRAFT. KEEP10 streak1 remains; two subsequent formal reviews still required. No unchanged local FPS retry or owner game/page/art change.
+
 # G08 — actual installer timeout repaired; full acceptance pending
 
 Read review/repair13/README.md first. d613 paired PR naturally hit its actual 30-minute job limit after capture installation consumed 22m6s; push and genuine downloaded push artifact passed, paired overall acceptance did not. New workflow bounds the installer, excludes optional APT recommendations and requires actual ffmpeg/ffprobe. New exact-head full push AND PR and genuine current artifact acceptance pending; PR9 stays DRAFT. No local FPS retry or original page/game/art changes. KEEP10 streak1 preserved; KEEP11/12 not started. New readable primary manuals still need factual/variant reconciliation.

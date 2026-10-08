@@ -30,6 +30,11 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G08-word-grid/package-lock.json
       - run: npm ci --no-audit --no-fund
+      - name: Use official Ubuntu archive for tool dependencies
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+          fi
       - name: Install locked Playwright disk browser
         run: npx playwright-core install chromium --only-shell --with-deps
       - name: Install capture tool

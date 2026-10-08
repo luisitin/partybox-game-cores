@@ -33,3 +33,5 @@
 - KEEP10 archives the authentic failed 22f push native report byte-identically as text. The original accepted-report schema correctly rejects its 1999.752709 ms hold below2000; no positive schema/gate is relaxed to admit a failed historical receipt. Original raw native/frames/clips remain unfiltered.
 
 - Capture installer repair13 follows the actual d613 job-timeout annotation and full log. Excluding optional package recommendations and bounding APT is a concrete tool setup repair; no test, source guard or native gate is skipped. Overall paired acceptance remains incomplete and KEEP10 streak1 is unchanged. Shared timing holds and preserving the natural outcome caused a real publication gap, not a backdated claim.
+
+- Repair14 changes only the existing CI runner mirrorlist's observed slow Azure URL to available official HTTPS Ubuntu archive. Signed Ubuntu metadata/package verification, source definitions, priorities and all tool/test requirements remain. HTTP200 availability is not a throughput or future CI result. Preserve genuine cc464 PR green/artifact and sibling installer124failure separately; no formal KEEP11 or unchanged local speed retry.
