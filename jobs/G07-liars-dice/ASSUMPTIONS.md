@@ -62,3 +62,11 @@ equilibrium, a guaranteed full-game win, or a new calibrated probability model.
 - Corrupt, incompatible, oversized or unavailable checkpoints fail safely to
   the lobby. Storage failures are shown in plain language without interrupting
   the playable game. New Game/Discard clear only this game's key.
+
+- KEEP GOING began only after the initial PR and each prior delivery had green
+  hosted checks. Once an improvement's required local/source-matched checks
+  pass, its milestone can be pushed and the next measured review can proceed
+  while GitHub reruns. The PR stays draft until the exact final head is green
+  and the three consecutive no-player-gain rounds are complete. Any new
+  implementation failure blocks acceptance; evidence-only cadence failures
+  remain recorded and must be corrected in the delivered snapshot.

@@ -290,3 +290,64 @@ Focused recorded command/input provenance: evidence/checks/round-3/session-verif
 no raw focused-test TAP was retained. Cadence hash generation twice and `cmp`,
 followed by `sha256sum --check SHA256SUMS.txt`: PASS, 260 delivered files. Full
 integrity is not claimed while new source-matched browser proof is pending.
+
+
+First full recovery browser run: `node scripts/browser-check.mjs`, run
+20261008082353284 at frozen HTML48be0c5b…065378: FAIL, 74/76 checks. All 24
+new recovery cases and all prior functional/offline/source checks passed.
+Unchanged 600-frame gates failed: desktop50.492725 FPS, p99 116.7 ms,
+max383.4 ms,23 intervals above17; phone4x58.922890 FPS,p99 16.8 ms,
+max150 ms,four above17. Both complete raw600 files, full runner/report and
+pacing probe are preserved in evidence/browser/runs/48be0c5b…/20261008082353284.
+The previous passing top-level snapshot is not replaced by this failure.
+During the sample only bid selections change; no save call is made. A causal
+claim about session validation is therefore unproved. Desktop outliers begin
+after frame300 and phone has four sparse outliers. Profiling/isolated comparison
+are required before changing implementation; gates and raw-frame retention
+remain unchanged. No completed round-3 LOOP line is recorded.
+
+
+Cadence hosted run37749780610 FAILED at exact ea57ee08…b7e72, completed
+08:35:59 UTC. Full npm test passed 46/46 node tests (including eight session
+checks),25/25 compiled mutation kills and76/76 default full browser checks
+including both unchanged frame gates. Integrity then correctly rejected the
+retained prior snapshot e17275c6 instead of delivered48be0c5b. This source-
+matched evidence was explicitly pending when the checkpoint was pushed.
+Commands: `gh run view 37749780610 --json status,conclusion,headSha,jobs` and
+`gh run view 37749780610 --log`. Public summary: evidence/checks/ci-round-3-cadence.json.
+No hosted frame values are inferred; artifact11537921864 is uploaded but has
+not been downloaded. The local isolated comparison found no codec/long-task
+hotspot and the previous page also stalled under profiling. A fresh unchanged,
+untraced full browser run is warranted by those unresolved local frame failures;
+its new result is still pending. All failures/raw frames remain preserved.
+
+
+## Round 3 — completed local verification
+
+`node scripts/browser-check.mjs --snapshot`: PASS full76/76, run
+20261008083956897, unchanged frozenHTML48be0c5b…065378. All24newrecovery
+cases pass on desktop and4xphone; resumed Normal bots wait2012/2037ms.
+All600rawintervals retained: desktop59.9023591546FPS,p99 16.8ms,max33.4,
+phone4x59.8032473163FPS,p99 16.8ms,max50; oneinterval above17ms each.
+Both unchanged nominal60Hz gates pass. This is a complete new untraced full
+run, not a composition of prior probes. First failed full run is retained.
+
+`node scripts/capture.mjs round-3 --pace-demo`: PASS, start/endHTML48be0c5b,
+zero network/page errors. Desktop1,734,468bytes and phone1,676,748bytes;
+per-video hashes in evidence/browser/round-3-captures.json. Each records two
+actual reloads, null-state pending gate, covered explicit Resume, preserved
+cups/RNG, Discard/New Game clearing only this key, Normal and Manual behavior,
+five real rounds and a winner. Normal2084/2044ms; Manual2291/2419ms until step.
+Recordings are not frame-rate measurements. All source/evidence writers
+stopped08:44:40 UTC. No core/probability change; accepted round2matrix/leagues
+and hosted46node/25mutationpass remain valid for identical input hashes.
+
+Final round3 hashes/integrity run after the following docs/LOOP checkpoint;
+exact final-head hosted CI remains required before the PR is called complete.
+
+Final round3 `node scripts/hashes.mjs` twice + `cmp`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: PASS,
+277 delivered files, byte-identical generated fixtures/manifest, passing
+source-matched raw600 frames and recordings under10MB, pure-source and
+original/Zod license checks. Docs below change only this recorded summary;
+manifest is regenerated once more for the commit.

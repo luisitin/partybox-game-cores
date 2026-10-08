@@ -87,3 +87,21 @@ reveal acknowledgements and finished games preserve their existing state.
 Focused module tests pass 8/8; full browser/reload proof and milestone recordings
 are still running at the cadence checkpoint. No completed round or new gain
 is claimed before those measurements pass.
+
+Round 3 completed locally: the versioned same-tab checkpoint restores the
+original JSON state, shared RNG cursor and host markers, with an explicit
+covered-cup gate and preserved remaining timer. Eight focused tests and all
+24 new desktop/phone recovery scenarios pass. The whole final default full
+run 20261008083956897 passes 76/76; both unchanged600-frame gates pass at
+59.902359/59.803247FPS. Both source-matched clips demonstrate two real reloads,
+covered resume and Discard/New Game key cleanup, plus pacing and five actual
+rounds. Public report and capture metadata are in evidence/browser.
+
+The first 74/76 local run failed only frame gates and remains archived. Cold
+paired diagnostic profiling found zero in-sample saves and no codec hotspot;
+the previous page also stalled under tracing. No unproved implementation
+optimization or frame-gate relaxation was made. Hosted cadence independently
+passed 46 node/25 mutations/76 browser checks, then correctly rejected the old
+retained page snapshot. The fresh unchanged full confirmation and matching
+clips fix the evidence mismatch. This is a player-visible recovery gain;
+consecutive no-gain count stays zero.

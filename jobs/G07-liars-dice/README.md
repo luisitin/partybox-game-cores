@@ -30,4 +30,5 @@ NEXT.md tracks hosted CI, KEEP GOING and queue status; current-head CI is requir
 KEEP GOING round 1: GitHub run 37741554805 passed at head 6387696.
 Round 2's Medium correction passes38 node tests,7,000 games and 52 browser checks.
 Strong 64.70%/Medium 58.90%; GitHub run 37746548680 passed the completed head.
-Round 3 adds explicit same-tab reload recovery; browser verification is pending.
+Round 3 adds explicit same-tab reload recovery; 8 session tests and 76 browser
+checks pass. Reload offers Resume/Discard with covered cups and a held clock.

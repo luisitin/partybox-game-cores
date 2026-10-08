@@ -83,11 +83,11 @@
     "pace": "normal",
     "regularDelayMs": 2000,
     "interruptDelayMs": 1650,
-    "armedAt": 176,
+    "armedAt": 159,
     "records": [
       {
-        "at": 182,
-        "phaseStartedAt": 143,
+        "at": 169,
+        "phaseStartedAt": 123,
         "bid": {
           "quantity": 1,
           "face": 2,
@@ -102,8 +102,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 2212,
-        "phaseStartedAt": 2208,
+        "at": 2188,
+        "phaseStartedAt": 2178,
         "bid": {
           "quantity": 1,
           "face": 3,
@@ -118,8 +118,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 4313,
-        "phaseStartedAt": 4308,
+        "at": 4288,
+        "phaseStartedAt": 4278,
         "bid": {
           "quantity": 1,
           "face": 4,
@@ -134,8 +134,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 6411,
-        "phaseStartedAt": 6408,
+        "at": 6388,
+        "phaseStartedAt": 6378,
         "bid": {
           "quantity": 1,
           "face": 5,
@@ -150,8 +150,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 8511,
-        "phaseStartedAt": 8508,
+        "at": 8487,
+        "phaseStartedAt": 8478,
         "bid": {
           "quantity": 1,
           "face": 6,
@@ -166,8 +166,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 10611,
-        "phaseStartedAt": 10607,
+        "at": 10587,
+        "phaseStartedAt": 10578,
         "bid": {
           "quantity": 2,
           "face": 2,
@@ -182,8 +182,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 12711,
-        "phaseStartedAt": 12707,
+        "at": 12687,
+        "phaseStartedAt": 12678,
         "bid": {
           "quantity": 2,
           "face": 3,
@@ -198,8 +198,8 @@
         "calzaEnabled": true
       },
       {
-        "at": 14811,
-        "phaseStartedAt": 14807,
+        "at": 14787,
+        "phaseStartedAt": 14778,
         "bid": {
           "quantity": 2,
           "face": 4,
@@ -216,25 +216,25 @@
     ],
     "intervals": [
       {
-        "elapsedMs": 2030,
+        "elapsedMs": 2019,
         "previousBidTextWords": 12,
         "oldHumanCupOpen": true,
         "newHumanCupOpen": false
       },
       {
-        "elapsedMs": 2101,
-        "previousBidTextWords": 12,
-        "oldHumanCupOpen": false,
-        "newHumanCupOpen": false
-      },
-      {
-        "elapsedMs": 2098,
+        "elapsedMs": 2100,
         "previousBidTextWords": 12,
         "oldHumanCupOpen": false,
         "newHumanCupOpen": false
       },
       {
         "elapsedMs": 2100,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2099,
         "previousBidTextWords": 12,
         "oldHumanCupOpen": false,
         "newHumanCupOpen": false
@@ -261,8 +261,8 @@
   },
   "comparison": {
     "beforeMeanMs": 791,
-    "afterMeanMs": 2089.8571428571427,
-    "meanWindowRatio": 2.6420444283908253
+    "afterMeanMs": 2088.285714285714,
+    "meanWindowRatio": 2.6400577930287157
   },
   "passed": true
 }

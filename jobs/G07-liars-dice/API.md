@@ -4,7 +4,7 @@
 `results`, `sampleInput`, `legalBids`, `effectiveWild`, `canChangePalificoFace`,
 `canCalza`, and `State`, `Input`, `Bid` types. `game` has the exact shared contract.
 Build outputs `dist/core.mjs`, `dist/probability.mjs`, `dist/rules.mjs`, and
-`dist/contract.mjs`. Import shared `createRng` from the core re-export.
+`dist/contract.mjs`, and `dist/session.mjs`. Import shared `createRng` from the core re-export.
 
 Phases: `bid`, `reveal`, `done`. Init starts in bid with privately rolled cups.
 Inputs: `{type:'bid',quantity:number,face:number}`, `{type:'dudo'}`,
@@ -55,3 +55,28 @@ Public game views and bot counterfactual secrecy are tested independently.
 
 Host init also accepts pace ('fast'|'normal'|'slow'|'manual'); pace() reports the
 current presentation setting. This host control is separate from core settings.
+
+## Browser session recovery
+
+The offline host keeps a versioned same-tab checkpoint under
+`partybox.g07.session.v1` in sessionStorage. Loading a valid save shows an
+explicit Resume/Discard gate; private cups, computed odds and legal selections
+are absent until the usual handoff. New Game/Discard remove only this key.
+
+`src/session.ts` exports SAVE_KEY, MAX_SESSION_BYTES, SavedSession, Skill, Pace,
+encodeSession/decodeSession, restoreSessionState, createResumableRng, phaseKey
+and currentBidKey. Decode rejects incompatible/corrupt/oversized state and uses
+the authoritative fixture schema plus original-own-entry/semantic validation.
+Resumable RNG delegates to the unchanged shared generator. Saved metadata is
+host time, random cursor, skill tuples, pace and current timer/interrupt markers;
+viewer and open-cup choice are not persisted.
+
+A live unpaused turn recovers through ordinary core pause/resume events so
+time away and time waiting at the gate do not expire it. Existing intentional
+and automatic holds remain held; reveals still need an acknowledgement.
+Presentation waits restart after explicit recovery. Storage failures are
+reported in plain language while play remains available.
+
+Additional trusted-host verification hooks: save(), host() (pending flag,
+random cursor, skill mapping, pace and current markers). These remain browser
+review controls and are not game contract view fields.
