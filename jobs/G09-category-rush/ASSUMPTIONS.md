@@ -66,3 +66,10 @@
   about every browser. A real authored answer loses a point after controls join
   its initial article to its noun; no player improvement is claimed before a
   measured correction and all current-source checks.
+
+- Current acceptance uses the actual17c GitHub-hosted corrected runner, with
+  independently checked every-callback active-answer/native-clock/timer proof.
+  It does not explain or erase the older58.444306 local phone failure. The
+  corrected local setup timed out without sampling because root's grant had
+  extra keys; this is distinct from the sampled failure and no local luck
+  retry is required. Phone4x remains an emulation, not a physical-device claim.

@@ -1,0 +1,33 @@
+{
+  "scope": "Actual corrected-runner pre-sample coordination timeout only; no native frame or capture ran",
+  "readyAt": "2026-10-08T19:16:24.194Z",
+  "identity": {
+    "profile": "desktop",
+    "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+    "attemptNonce": "610b0451-bae6-4aa8-8f8b-469bbb884fd2"
+  },
+  "failure": "Error: desktop: no matching fresh frame-window grant within 600000ms",
+  "finishedAt": "2026-10-08T19:26:24.653Z",
+  "actualExitCode": 1,
+  "ownedGroupClosed": 183018,
+  "closureReadback": "2026-10-08T19:27:09Z",
+  "nativeSampling": "NOTRUN",
+  "answerTimerStarted": false,
+  "recording": "NOTRUN",
+  "rejectedGrantKeys": [
+    "attemptNonce",
+    "grantedAt",
+    "grantedBy",
+    "profile",
+    "quietWitness",
+    "sourceSha256"
+  ],
+  "requiredExactGrantKeys": [
+    "attemptNonce",
+    "profile",
+    "sourceSha256"
+  ],
+  "coordinationMistakeAcknowledgedByRoot": true,
+  "finalSourceGuardReached": false,
+  "currentHtmlSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"
+}

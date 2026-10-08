@@ -17,8 +17,8 @@
     "THIRD_PARTY_NOTICES.txt": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164",
     "node_modules/zod/LICENSE": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
     "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
-    "scripts/browser-performance.mjs": "885572efb3144dfa5bbaecc6ec252f952277031ec7b693c266d5b9f435138aee",
-    "scripts/frame-window.mjs": "e18637a05e8f1fc1fb5bd9b74392c87fa09bc5ec29f4579713a6cdc311ba2a8d"
+    "scripts/browser-performance.mjs": "d01db1f397f05307187273714f1fe1c09137910248fb45d88963e35e44f09448",
+    "scripts/frame-window.mjs": "d1b84945e7257f8a494b2834ef3393d809c76b36fcabe4fd596cfe35ecbc290a"
   },
   "licenseChecks": {
     "LICENSE": true,
@@ -28,7 +28,7 @@
   "recordingDuringMeasurement": false,
   "frameWindowTimeoutMs": null,
   "browser": "141.0.7390.37",
-  "startedAt": "2026-10-08T19:14:22.526Z",
+  "startedAt": "2026-10-08T18:08:23.836Z",
   "profiles": [
     {
       "profile": "desktop",
@@ -41,30 +41,12 @@
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
-      "nativeDate": true,
-      "workload": {
-        "passed": true,
-        "method": "Visible answer form, no modal and native Date.now/timer on every601 real RAF callback; checked after all600 unfiltered deltas",
-        "nativeDate": true,
-        "witnessCount": 601,
-        "validWalls": true,
-        "visibleAnswerEveryCallback": true,
-        "liveTimerEveryCallback": true,
-        "timerAdvanced": true,
-        "deadlineConsistent": true,
-        "wallElapsedMs": 9999,
-        "firstWallMs": 1791486863671,
-        "lastWallMs": 1791486873670,
-        "timerStartSeconds": 60,
-        "timerEndSeconds": 50,
-        "deadlineUpperMs": 1791486923671
-      },
       "count": 600,
       "totalMs": 9999.570000000002,
       "meanMs": 16.665950000000002,
       "fps": 60.00258011094476,
       "p95Ms": 16.700000000000728,
-      "p99Ms": 16.800000000000182,
+      "p99Ms": 16.80000000000109,
       "maxMs": 16.80000000000109,
       "networkRequests": [
         "file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"
@@ -97,7 +79,7 @@
           "file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 335186
+      "videoBytes": 342608
     },
     {
       "profile": "phone4x",
@@ -110,28 +92,10 @@
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
-      "nativeDate": true,
-      "workload": {
-        "passed": true,
-        "method": "Visible answer form, no modal and native Date.now/timer on every601 real RAF callback; checked after all600 unfiltered deltas",
-        "nativeDate": true,
-        "witnessCount": 601,
-        "validWalls": true,
-        "visibleAnswerEveryCallback": true,
-        "liveTimerEveryCallback": true,
-        "timerAdvanced": true,
-        "deadlineConsistent": true,
-        "wallElapsedMs": 9999,
-        "firstWallMs": 1791486879037,
-        "lastWallMs": 1791486889036,
-        "timerStartSeconds": 60,
-        "timerEndSeconds": 50,
-        "deadlineUpperMs": 1791486939037
-      },
       "count": 600,
-      "totalMs": 9999.472000000002,
-      "meanMs": 16.66578666666667,
-      "fps": 60.00316816727922,
+      "totalMs": 9999.51,
+      "meanMs": 16.66585,
+      "fps": 60.00294014406706,
       "p95Ms": 16.700000000000728,
       "p99Ms": 16.800000000000182,
       "maxMs": 16.80000000000109,
@@ -166,9 +130,9 @@
           "file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 259749
+      "videoBytes": 266964
     }
   ],
   "passed": true,
-  "finishedAt": "2026-10-08T19:14:53.540Z"
+  "finishedAt": "2026-10-08T18:08:54.901Z"
 }

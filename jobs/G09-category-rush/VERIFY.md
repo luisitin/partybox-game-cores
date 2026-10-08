@@ -640,3 +640,47 @@ relaxing speed gates or changing the game. Fresh local acceptance is pending.
 recovery:9PASS/0FAIL,3833.280843ms. `npm run typecheck`:PASS. Current HTML SHA
 91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236 remains457,688B.
 No completed LOOP7 or no-gain round is claimed at this checkpoint.
+
+## Completed round7 source-specific acceptance
+
+Exact17c0d30/run37830364323/job113493816334 fullSUCCESS19:29:06Z. Actual
+133,519-character native job log read; private exactcopy SHA
+5d45d0540b37ae68c14f14b50e03cdfa1ca7433b2a0a9342cb4fbc4f2b7b94a8.
+All67tests/10kmatcher+10kselector/7krestored-all9/1003seeds/43actualmutation
+kills/4kduels/allregeneration and all original/new actualUI suites pass.
+Source/head receipt is evidence/round-7-source-head.json.
+
+Fresh nativeGitHub artifact11572918105 downloaded through inherited proxy:
+1,301,965B ZIP SHA33c83ffe5cb74da63ae3377226d5fd0dc13a4a83b0e214dc6bb4c8f7a3f931e3
+matches official metadata;8safe paths/CRC/manifest verified. Independent Python
+reader recomputes all1200positive unfiltered raw native intervals and checks
+all18actual current source hashes against17c and disk. Every1202callbacks has
+visible answer form,no modal,nativeDate.now and positive advancing60→50timer;
+wall elapsed9999ms each agrees with rawRAF totals. Desktop60.00258011/phone4x
+60.00316817FPS,p99/max16.8ms. Actual335186/259749B VP8clips decode; authored
+article-tab paste preserves its real noun and3private warnings are visible.
+Original ZIP/files/reader/original runner/retrieval receipt remain in
+round-7-hosted-37830364323. Canonical reports/videos are BYTE-identical copies
+of these actual hosted bytes; prior local failure is not relabeled.
+
+The corrected local setup received root's extra-key grant19:26:10.665461Z,
+which the strict3-key validator correctly rejected. No timer/sample/video ran;
+natural EXIT1/final report19:26:24.653Z, group183018 absent19:27:09Z. All original
+READY/rejected-grant/report/source and receipt are archived in
+round-7-workload-coordination-timeout. This is a PRE-SAMPLE coordination failure,
+not a failed/completed frame sample. Root acknowledged its grant mistake.
+Original round7phone58.444306FAIL/expired-workloadscope/raw1200 remain intact.
+
+`npx tsx --test tests/artifacts.test.ts tests/paste-artifact.test.ts
+ tests/draft-artifact.test.ts tests/frame-window.test.ts`:6PASS/0FAIL,978.676188ms.
+`npm run typecheck`:PASS. These controls independently bind actual hosted raw,
+current source,private-warning/paste gain and strict grant/workload negatives.
+No runtime/HTML/core/data/bot source changed. One measured LOOP7 line completes
+the product gain against actual current fullgreen; no-gain streak0. New
+completion head requires its own fullgreen before another formal review.
+
+Actual17c branch push19:13:38Z followed interruption gap66m03s from18:07:35Z;
+30minute cadence was missed. Subsequent root quiet holds19:30 onward and
+RELEASE19:33:36.516122 preceded this completion checkpoint. All own groups
+remain closed; no hidden local retry, source edit during grant or new frame
+optimization claim occurred.

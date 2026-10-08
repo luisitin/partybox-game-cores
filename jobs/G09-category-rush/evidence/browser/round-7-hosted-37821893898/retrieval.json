@@ -1,0 +1,181 @@
+{
+  "scope": "Actual exact3f6 hosted original-runner proof only; corrected active-phase witness/current test helper are pending",
+  "headSha": "3f6d467c029cbb718b27c39ed26b3f6f2a64793a",
+  "runId": "37821893898",
+  "jobId": 113464750151,
+  "artifactId": 11568969406,
+  "zipBytes": 1153457,
+  "zipSha256": "7a2d5b73a30c399558e6f34fa1b59e776e9d41f6052748ddb5b8466777040ff6",
+  "htmlSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+  "uploadedFiles": [
+    {
+      "path": "SHA256SUMS.txt",
+      "bytes": 48542,
+      "sha256": "61390c487e0f8f9a46e1b1b70ebd4c9a0e65171dae14ef1475d4130853b43c5d"
+    },
+    {
+      "path": "evidence/browser/desktop-frames.json",
+      "bytes": 15063,
+      "sha256": "76b3ccce97889511c30a9536b0877189b2588878602a29ee1e4480d0d0d7570e"
+    },
+    {
+      "path": "evidence/browser/hosted-run.json",
+      "bytes": 304,
+      "sha256": "a2942f83c0ac2945fad89f35378f02f6887ff3fedfcc0277c552f308d3e33f5c"
+    },
+    {
+      "path": "evidence/browser/performance-report.json",
+      "bytes": 6044,
+      "sha256": "bc4dd426733540870b1565f6d494bb8ec6d9ef927ff88238abb058f44b921e6a"
+    },
+    {
+      "path": "evidence/browser/phone4x-frames.json",
+      "bytes": 15020,
+      "sha256": "d2beccc717bcfe0a2828d2a99281949b3e79a653887ed7840073bacadbb6f67d"
+    },
+    {
+      "path": "media/delivery-final-desktop.webm",
+      "bytes": 342608,
+      "sha256": "53c1a51bd73a233118b0ec421cb4691d91ab8fabf048d733f614c46d2eb6e3a4"
+    },
+    {
+      "path": "media/delivery-final-phone4x.webm",
+      "bytes": 266964,
+      "sha256": "5b308fc5c4f1ca201798edc1e21a77f07ba570d72f4908757cf16c21291bc6c2"
+    },
+    {
+      "path": "play.html",
+      "bytes": 457688,
+      "sha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"
+    }
+  ],
+  "sourceGuards": [
+    {
+      "path": "client-save.ts",
+      "sha256": "3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff"
+    },
+    {
+      "path": "client-draft.ts",
+      "sha256": "9a5acea792abf2bcb6e727c4b8e69e0e26e8b337463108042ee312fa03af526a"
+    },
+    {
+      "path": "client.ts",
+      "sha256": "73a9e39fb2753185fe2bad12156e99fbc414a272230f33dc5540f64223530167"
+    },
+    {
+      "path": "build-play.ts",
+      "sha256": "ab3b89a8289f52a8914202b89b3746ed85cd2cdb31cb926276b8c749b05eb12a"
+    },
+    {
+      "path": "src/play.template.html",
+      "sha256": "2b89c3dbeb69326a4c6a29bc84882ae25dd3462c502142ccb70359a1a288a501"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12"
+    },
+    {
+      "path": "src/model.ts",
+      "sha256": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4"
+    },
+    {
+      "path": "src/scoring.ts",
+      "sha256": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff"
+    },
+    {
+      "path": "src/match.ts",
+      "sha256": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b"
+    },
+    {
+      "path": "src/select.ts",
+      "sha256": "1fe2cfaf8bfdb4ab3de945bbb31ce61a124f34fee80963821178800112ae1c07"
+    },
+    {
+      "path": "content/categories.ts",
+      "sha256": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "0da98f3882641b8411cfa4137b5533f9f7e5944d5f99101e59a979e9e372da38"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "17936c55642f589858b3023756fc8c73706f0d4118be9d23cf174b1e485d627e"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.txt",
+      "sha256": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164"
+    },
+    {
+      "path": "node_modules/zod/LICENSE",
+      "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+    },
+    {
+      "path": "../../contract/rng.ts",
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    },
+    {
+      "path": "scripts/browser-performance.mjs",
+      "sha256": "d01db1f397f05307187273714f1fe1c09137910248fb45d88963e35e44f09448"
+    },
+    {
+      "path": "scripts/frame-window.mjs",
+      "sha256": "d1b84945e7257f8a494b2834ef3393d809c76b36fcabe4fd596cfe35ecbc290a"
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "desktop",
+      "fps": 60.00258011094477,
+      "p99Ms": 16.80000000000109,
+      "maxMs": 16.80000000000109,
+      "rawCount": 600,
+      "videoBytes": 342608,
+      "videoSha256": "53c1a51bd73a233118b0ec421cb4691d91ab8fabf048d733f614c46d2eb6e3a4",
+      "decoder": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 720,
+            "nb_read_frames": "98"
+          }
+        ],
+        "format": {
+          "duration": "3.920000",
+          "size": "342608"
+        }
+      },
+      "activePhaseWitness": "not present in this original runner; no new corrected-workload proof claimed"
+    },
+    {
+      "profile": "phone4x",
+      "fps": 60.00294014406706,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "rawCount": 600,
+      "videoBytes": 266964,
+      "videoSha256": "5b308fc5c4f1ca201798edc1e21a77f07ba570d72f4908757cf16c21291bc6c2",
+      "decoder": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 720,
+            "nb_read_frames": "112"
+          }
+        ],
+        "format": {
+          "duration": "4.480000",
+          "size": "266964"
+        }
+      },
+      "activePhaseWitness": "not present in this original runner; no new corrected-workload proof claimed"
+    }
+  ],
+  "passed": true
+}
