@@ -335,3 +335,36 @@ Completion still requires both strict disk CI checks on the final pushed head.
 Round7 is green at13c79b2 in runs37723852339 and37723847188. Round8 data
 gates passed:8 JSON files,7 schemas,26 hashes and two byte-identical
 regenerations. `git diff --check` passed.
+
+## Final delivery checkpoint
+
+Both checks passed on implementation head `8fb4327d97833affa6398823c691a1af402c9dc5`:
+- https://github.com/luisitin/partybox-game-cores/actions/runs/37724082944
+- https://github.com/luisitin/partybox-game-cores/actions/runs/37724078943
+
+`gh pr view 3 --json headRefOid,statusCheckRollup` confirmed both SUCCESS.
+`gh run view 37724082944 --log` was read in full and its JSON reports inspected.
+Actual disk opening succeeded; desktop1920×1080 and phone390×844 at CPU4x
+both measured60.002fps. Desktop p95=16.8ms, phone p95=16.7ms, max=16.8ms.
+Real mouse/touch/keyboard placement, all UI rosters2–8, maximum-name screens,
+reduced motion, zero external requests and zero runtime exceptions passed.
+The2,000 generated-level benchmark had max1.815ms, largest tier p95=0.793ms
+and max802 search nodes. These timings include generation and certification.
+
+All21 tests,25/25 mutations,10,000 independent solver comparisons,1,003
+property seeds,7,000 bot games and4,000 league games passed on both runners.
+All240 edition templates independently prove the generated optimum. The
+KEEP GOING record has eight rounds; rounds6–8 were cosmetic-only, meeting
+the required three-round stopping condition.
+
+Final integrity extension: hashes also cover play.html and src/tiers.ts.
+`node scripts/build-html.mjs` run twice left play.html byte-identical to the
+committed implementation (SHA2565ef3a5cf63af58222ab1f9c914f88d828d8168982f6e1f0fbc83df8de9d01182).
+`node scripts/generate.mjs --fixtures-only` and
+`node scripts/check-data.mjs` passed:8 JSON files,7 schema files,28 hashes,
+two byte-identical full regenerations. The metadata push repeats strict CI.
+
+Final scope inspection using the GitHub PR-files API and
+`git diff --name-only origin/main...HEAD` found only this job and its workflow.
+`git diff --check` passed. All ten captures are under105KB; the largest is
+104,489bytes. The independent reference seal remains unchanged.

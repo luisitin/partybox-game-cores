@@ -19,6 +19,8 @@ PROOF.md explains exact search and the generator's independent certificate.
 
 Calibration uses 2,000 greedy attempts per tier, not human playtest rates.
 The rotations-only and mirrored editions are calibrated separately.
+Each tier has twelve original holds; three-round voyages do not repeat a hold.
+SHA256SUMS.txt also covers the delivered HTML and generated template source.
 
 The cloud browser's managed URL policy currently blocks file:// navigation.
 For partial local UI verification only: G03_VISUAL_MODE=http npm test.
