@@ -134,3 +134,6 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 - `npx tsx .tmp/qa-bot-only.ts`: baseline bot-only hunt exposes1phone input/1Finish turn/0Reveal words; finish from public mode lacks final-results heading and awards.
 - `npm run typecheck`, `npm run build:play`: PASS14208697bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallprior gates + bot-only TV/public observer without phone/manual submission surface, Reveal words, full final-results heading and>=3awards.0network/errors;214132-byte clip07. Explicit HTTP/native-only scope remains.
 - `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles and87hashes after round5evidence addition. Protected original29visual files remain unchanged; final complete exact-head CI still required.
+
+## KEEP GOING round6
+- `npx tsx start/verification/data-check.ts`: PASS38JSONfiles. `sha256sum -c SHA256SUMS.txt`: PASS87files after documentation hashes refreshed. Python SHA256 of play.html equals863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9, unchanged from functional round5. Source documentation exposes19read/pinned references and2explicitly refused primary candidates without changing evidence. No extra gameplay tests for a documentation-only round.

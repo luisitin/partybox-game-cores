@@ -36,3 +36,5 @@
 - KEEP round4: original offline Spanish translations for39host entries; reuse shared UI translator with merged owner/host table. Setup labels/help, game controls, private labels, handoff, results heading and restart prompt now follow selected content language immediately. Preserve user names/owner client/source strings/assets. Native Spanish5×5 controls/lang checks and milestone06clip/local-partial report added.
 
 - KEEP round5: bot-only sessions show public counts on the existing TV, hide manual bot phone input/public-mode toggle, and label VIP hunt skip Reveal words. All sessions show the owner’s full phone results/awards after done, including those watching public mode.40thSpanish host translation added. Full native observer→reveal→results/atleast3awards regression, milestone07clip/local-partial report; bot algorithms/pace, core, owner visuals unchanged.
+
+- KEEP round6: source links/uses are visible directly in SOURCES.md as well as hashed receipts. Denied manufacturer URLs are expressly unread. Documentation only; compiled game/page and all data/media unchanged.
