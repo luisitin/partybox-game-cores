@@ -1,5 +1,28 @@
 # Verification
 
+## Exact 5f46 full green and tenth-review preparation
+
+Native full run37839490435/job113524945991 at exact5f46cddfbedd9e59cccc86927b9369db94826340
+SUCCESS20:43:26UTC. The actual complete144319-character log confirms68tests,
+68pass/0fail,43real mutation kills,both2000-game leagues,both10k oracles,
+7000restored/all9invariants,1003properties and every original/newUI stage.
+Fresh native legacy execution completes12cases20:43:22.507UTC.
+Official strict artifact11576154813:1287235B/SHA88f480923f3eef6ee08a37918f8eb430749a9bc43e4e03c62e45c975024dc74d,
+8safe files/18exactguards/1200native intervals/1202activecallbacks/nativeDate/
+timer60→50;desktop60.002388/phone4x60.003000FPS,p99max16.8ms.
+Separate330240/237929BVP8clips actually decoded in the original independent
+reader. Fresh recovery artifact11578111330:578952B/SHA44f5bcce41f20f4a544b1d85f34ec5663597369b4d7841177bc6ecbbc08a4513,
+30safe CRC-checked files;all12original/restored snapshot hashes,privatehandover,
+timer53→48,unchanged RNG and8positive/4negative scores independently pass.
+Actual originals/readers/receipts remain preserved; earlier clock diagnostic,
+phone failure and rejected grant are retained without changed gates.
+
+FormalR10 AUDIT-ROUND-10.md ranks five weaknesses before launching any probe.
+`node --check scripts/browser-late-save.mjs` PASS. No actual late-game browser
+run or third no-gain review is yet claimed. The test prepares genuine played
+history,then observes native long-sheet typing/autosave/private recovery; it
+adds no new FPS run and makes no physical-device/storage-maximum promise.
+
 ## Initial milestone, 2026-10-08
 
 | Exact command | Actual result | What it catches |

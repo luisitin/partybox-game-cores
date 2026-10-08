@@ -50,5 +50,25 @@ afterd131;25/30minPASS. Current target20:48:57/hard20:53:57. Derive new deadline
 from the ACTUAL successful new push. Earlier interruption gap66m03s missed30.
 Refresh ONLY own G09 claim; normal pushes only, no force/merge/other claims.
 
-The next R9 integration checkpoint adds fresh legacy-save CI execution and
-always-retained actual report/saves/runner; no extra KEEP round is counted.
+Exact 5f46cddfbedd9e59cccc86927b9369db94826340 full run37839490435/job113524945991
+is SUCCESS at20:43:26UTC: actual144319-character full log read,68tests/pass68,
+43actualmutants,both2000-game leagues,all original UI plus12fresh legacy cases.
+Official strict artifact11576154813 is1287235B/SHA88f480923f3eef6ee08a37918f8eb430749a9bc43e4e03c62e45c975024dc74d:
+8files/18exactguards/1200raw/1202activewitnesses,60.002388/60.003000FPS,p9916.8,
+330240/237929BVP8clips decoded. Fresh recovery artifact11578111330 is578952B/
+SHA44f5bcce41f20f4a544b1d85f34ec5663597369b4d7841177bc6ecbbc08a4513;30safe
+files/12authentic legacy cases/original and restored payloads independently pass.
+
+The second environment interruption occurred around20:31→20:40; saved proof
+survived. Recovery owner resumed20:41UTC. Root's actual G04 timing hold paused
+all G09 writers/tests/browsers20:46:53→20:50:43.785866UTC. No G09 browser has
+been launched. FormalR10 now has a ranked audit and syntax-checked functional
+runner scripts/browser-late-save.mjs. No player gain or third no-gain round has
+been counted. Prepare authentic full history, then coordinate observational
+native input timing separately. This runner adds no new FPS acceptance run.
+Commands: node scripts/browser-late-save.mjs prepare; then same script probe.
+Keep every failed report. Largest active scope is5rounds/8humans/80ASCII answer
+characters,not a theoretical maximum UTF8-storage claim. Finish actual measured
+coverage,bind raw payload/events/source,capture,log actual R10 result,publish,
+refresh only G09 claim,then require final exacthead green and genuine artifacts
+before PR8Ready. Derive25/30-minute deadlines from the actual new normal push.

@@ -84,3 +84,11 @@ The extra independent10ms Date-versus-RAF equality assertion has no original
 acceptance basis. Its actual failure/raw discrepancy are preserved; MDN explains
 different timestamp semantics but does not prove this particular cause. No
 callback execution offsets are retrospectively manufactured.
+
+Round10 probes maximum configured roster/round count and80-character ASCII
+answers through actually played browser turns. It never manufactures history
+or edits a saved payload. Distinct long tokens avoid the existing one-edit
+matcher grouping near-identical artificial answers. Native trusted input event
+capture/microtask timings observe handler work,not physical keyboard latency,
+paint latency or an FPS guarantee. The existing genuine strict sampler remains
+unchanged. No third no-gain review is counted before actual coverage completes.
