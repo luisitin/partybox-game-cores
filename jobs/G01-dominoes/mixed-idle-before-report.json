@@ -1,0 +1,243 @@
+{
+  "cases": 36000,
+  "budgetMs": 3600000,
+  "failures": 25248,
+  "maximumMs": 21210103,
+  "humanInputs": 0,
+  "botMoveDelayMs": 200,
+  "groups": {
+    "2 seats/1 bots/draw/100": {
+      "cases": 1000,
+      "failures": 569,
+      "maximumMs": 8667823
+    },
+    "2 seats/1 bots/draw/150": {
+      "cases": 1000,
+      "failures": 894,
+      "maximumMs": 11519433
+    },
+    "2 seats/1 bots/draw/250": {
+      "cases": 1000,
+      "failures": 997,
+      "maximumMs": 18317051
+    },
+    "2 seats/1 bots/block/100": {
+      "cases": 1000,
+      "failures": 932,
+      "maximumMs": 9647048
+    },
+    "2 seats/1 bots/block/150": {
+      "cases": 1000,
+      "failures": 1000,
+      "maximumMs": 13487266
+    },
+    "2 seats/1 bots/block/250": {
+      "cases": 1000,
+      "failures": 1000,
+      "maximumMs": 21210103
+    },
+    "3 seats/1 bots/draw/100": {
+      "cases": 1000,
+      "failures": 444,
+      "maximumMs": 8433218
+    },
+    "3 seats/1 bots/draw/150": {
+      "cases": 1000,
+      "failures": 795,
+      "maximumMs": 11609826
+    },
+    "3 seats/1 bots/draw/250": {
+      "cases": 1000,
+      "failures": 988,
+      "maximumMs": 18481242
+    },
+    "3 seats/1 bots/block/100": {
+      "cases": 1000,
+      "failures": 591,
+      "maximumMs": 7276625
+    },
+    "3 seats/1 bots/block/150": {
+      "cases": 1000,
+      "failures": 959,
+      "maximumMs": 10703038
+    },
+    "3 seats/1 bots/block/250": {
+      "cases": 1000,
+      "failures": 1000,
+      "maximumMs": 17377462
+    },
+    "3 seats/2 bots/draw/100": {
+      "cases": 1000,
+      "failures": 44,
+      "maximumMs": 4663418
+    },
+    "3 seats/2 bots/draw/150": {
+      "cases": 1000,
+      "failures": 367,
+      "maximumMs": 6664026
+    },
+    "3 seats/2 bots/draw/250": {
+      "cases": 1000,
+      "failures": 881,
+      "maximumMs": 10527642
+    },
+    "3 seats/2 bots/block/100": {
+      "cases": 1000,
+      "failures": 4,
+      "maximumMs": 3866625
+    },
+    "3 seats/2 bots/block/150": {
+      "cases": 1000,
+      "failures": 402,
+      "maximumMs": 5764438
+    },
+    "3 seats/2 bots/block/250": {
+      "cases": 1000,
+      "failures": 980,
+      "maximumMs": 9390262
+    },
+    "4 seats/1 bots/draw/100": {
+      "cases": 1000,
+      "failures": 552,
+      "maximumMs": 9692024
+    },
+    "4 seats/1 bots/draw/150": {
+      "cases": 1000,
+      "failures": 848,
+      "maximumMs": 12869032
+    },
+    "4 seats/1 bots/draw/250": {
+      "cases": 1000,
+      "failures": 994,
+      "maximumMs": 18920848
+    },
+    "4 seats/1 bots/block/100": {
+      "cases": 1000,
+      "failures": 580,
+      "maximumMs": 9692024
+    },
+    "4 seats/1 bots/block/150": {
+      "cases": 1000,
+      "failures": 901,
+      "maximumMs": 12869032
+    },
+    "4 seats/1 bots/block/250": {
+      "cases": 1000,
+      "failures": 998,
+      "maximumMs": 18920848
+    },
+    "4 seats/2 bots/draw/100": {
+      "cases": 1000,
+      "failures": 546,
+      "maximumMs": 9558424
+    },
+    "4 seats/2 bots/draw/150": {
+      "cases": 1000,
+      "failures": 841,
+      "maximumMs": 12722832
+    },
+    "4 seats/2 bots/draw/250": {
+      "cases": 1000,
+      "failures": 994,
+      "maximumMs": 18693048
+    },
+    "4 seats/2 bots/block/100": {
+      "cases": 1000,
+      "failures": 574,
+      "maximumMs": 9558424
+    },
+    "4 seats/2 bots/block/150": {
+      "cases": 1000,
+      "failures": 898,
+      "maximumMs": 12722832
+    },
+    "4 seats/2 bots/block/250": {
+      "cases": 1000,
+      "failures": 998,
+      "maximumMs": 18693048
+    },
+    "4 seats/3 bots/draw/100": {
+      "cases": 1000,
+      "failures": 34,
+      "maximumMs": 4988624
+    },
+    "4 seats/3 bots/draw/150": {
+      "cases": 1000,
+      "failures": 405,
+      "maximumMs": 6688032
+    },
+    "4 seats/3 bots/draw/250": {
+      "cases": 1000,
+      "failures": 905,
+      "maximumMs": 9738648
+    },
+    "4 seats/3 bots/block/100": {
+      "cases": 1000,
+      "failures": 33,
+      "maximumMs": 4988624
+    },
+    "4 seats/3 bots/block/150": {
+      "cases": 1000,
+      "failures": 368,
+      "maximumMs": 6688032
+    },
+    "4 seats/3 bots/block/250": {
+      "cases": 1000,
+      "failures": 932,
+      "maximumMs": 9738648
+    }
+  },
+  "examples": [
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 1,
+      "ms": 4678012
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 2,
+      "ms": 5110815
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 6,
+      "ms": 3618811
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 12,
+      "ms": 5244415
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 13,
+      "ms": 3709014
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 14,
+      "ms": 5779217
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 15,
+      "ms": 6168417
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 16,
+      "ms": 5586416
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 17,
+      "ms": 4332014
+    },
+    {
+      "key": "2 seats/1 bots/draw/100",
+      "seed": 20,
+      "ms": 3916011
+    }
+  ],
+  "passed": false
+}

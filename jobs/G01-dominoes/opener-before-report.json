@@ -1,0 +1,21 @@
+{
+  "cases": 10000,
+  "samplesPerDeal": 1,
+  "invalidWorlds": 2315,
+  "invalidRate": 0.2315,
+  "groups": {
+    "3 seats": {
+      "cases": 3334,
+      "invalidWorlds": 861
+    },
+    "4 seats": {
+      "cases": 3333,
+      "invalidWorlds": 673
+    },
+    "2 seats": {
+      "cases": 3333,
+      "invalidWorlds": 781
+    }
+  },
+  "scope": "first-round non-partner Block, highest-double opener, next seat observation; only public played tile used for deduction"
+}

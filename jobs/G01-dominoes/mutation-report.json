@@ -1,0 +1,156 @@
+{
+  "mutants": 25,
+  "killed": 25,
+  "results": [
+    {
+      "index": 1,
+      "name": "allow negative tile IDs",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 2,
+      "name": "allow tile 28",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 3,
+      "name": "accept extra pass fields",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 4,
+      "name": "deal six instead of seven",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 5,
+      "name": "deal six instead of five",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 6,
+      "name": "disable first double requirement",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 7,
+      "name": "allow any opening tile",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 8,
+      "name": "swap left orientation",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 9,
+      "name": "swap right orientation",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 10,
+      "name": "do not remove played tile",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 11,
+      "name": "never reset passes after play",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 12,
+      "name": "reverse turn direction",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 13,
+      "name": "draw ignores reserve",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 14,
+      "name": "draw last instead of first",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 15,
+      "name": "draw advances turn",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 16,
+      "name": "keep invalid pass inference",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 17,
+      "name": "block one pass early",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 18,
+      "name": "gross partnership omits teammate pips",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 19,
+      "name": "award ties to first seat",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 20,
+      "name": "break partner team membership",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 21,
+      "name": "target requires strict overshoot",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 22,
+      "name": "spectator prototype membership",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 23,
+      "name": "ignore paused guard",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 24,
+      "name": "omit timer instance guard",
+      "killed": true,
+      "exit": 1
+    },
+    {
+      "index": 25,
+      "name": "TV leaks private hands",
+      "killed": true,
+      "exit": 1
+    }
+  ]
+}
