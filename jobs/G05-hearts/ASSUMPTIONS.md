@@ -7,8 +7,8 @@
 - There is no single international sanctioning body for every regional Hearts
   convention. Record conflicts and expose selected house rules in settings.
 - Use Arnold's published6-player cuts (2♣,3♣,2♦,2♠), not an invented3♦ cut.
-  Exact6-player table currently has one source family; find an independent
-  corroboration before reporting full research verification.
+  Exact6-player table is now corroborated by BGA and the Arnold/Wikipedia
+  source family.
 - Preserve the contract and unrelated jobs. Local build/dependency directories
   from completed G03 are retained and locally excluded; no source is removed.
 - Research on GitHub/registries keeps the proxy and TLS verification. Blocked
@@ -21,3 +21,12 @@
 - Strict ES2022 uses the supplied contract unchanged. The extra optional
   exactOptionalPropertyTypes mode is omitted because the shared contract
   fails that mode; strict itself remains enabled, as verified for G03.
+
+- The exact six-player deck cuts are now corroborated by BGA and the independently
+  published Arnold table captured in Wikipedia. The research-only blocker is closed.
+- Research pilot seeds0–199 are developmental, not the final league seeds. Four-seat
+  matches use one stronger player against three weaker ones; report both head-to-head
+  wins against a rotating designated rival and first-place share, including ties.
+- Explicit VIP end scores only completed tricks of the current hand. Pending cards
+  and an unfinished trick are not silently awarded; completed hand scores are not
+  counted twice. This administrative partial-hand policy is separate from normal play.

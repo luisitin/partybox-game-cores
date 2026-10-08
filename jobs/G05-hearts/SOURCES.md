@@ -24,7 +24,8 @@ Independent rules sources read:
 - Wikipedia's Hearts article, read through a pinned captured HTML file:
   https://github.com/ocentra/ocentra-games/blob/b23f523ae3e5405a84be0bd271f0c012846a1d8b/packages/card-games/src/SourceHtml/wiki-hearts.html
   Arnold2011 deck table, historical/basic-vs-Black-Lady distinction and variants.
-  6-player cuts need another independent corroboration; this mirror is one family.
+  The six-player cuts agree with the independent BGA implementation below;
+  this Wikipedia mirror remains one source family.
 
 Independent implementations inspected for mechanics/strategy:
 
@@ -37,7 +38,7 @@ Independent implementations inspected for mechanics/strategy:
   https://github.com/yyjhao/html5-hearts/tree/501fffd98964ff1a543020be09e7efe4cc7c8f6a/js
   rules.js, SimpleBrain.js and PomDPBrain.js: basic duck/discard strategy and
   information-set sampling with public void observations. Source uses timed
-  search; our pure bot must use a fixed deterministic budget. No port yet.
+  search; our pure bot must use a fixed deterministic budget. No source code is ported; our bounded analytical strategy uses public facts.
 - Python Hearts (MIT), pinned41fe7fbc3e36479cd27335990238fccaf1677b12:
   https://github.com/danielcorin/Hearts/tree/41fe7fbc3e36479cd27335990238fccaf1677b12
   README, Hearts.py, Player.py and Trick.py: standard scoring/play; random legal
@@ -55,3 +56,20 @@ recorded for research; copied runtime dependency notices will accompany zod.
   hearts-rules/types/core/computer/tests:3/4-player implementation, sealed
   passing, public-view-only bot, high-card disposal and short-suit passing.
   It does not support5/6 and is not6-player corroboration. No code is ported.
+
+- BGA Hearts implementation, read as factual code (no code, art or assets copied):
+  https://github.com/wardcanyon/localarena/blob/cb7e785dbcbac37c3f93e9d1893bbfe8169cfe14/src/hearts/hearts.game.php
+  The explicit six-seat cut is2♦,2♣,2♠,3♣, independently corroborating the
+  Arnold/Wikipedia table. Also3/5 cuts, whole-seat passing rotation, suit legality,
+  both moon choices and separate Jack bonus. This source uses a reversed score
+  sign/initial reserve; our conventional increasing-penalty score is equivalent.
+  Additional variants seen: always-right passing; rotating without hold;
+  no shooting the moon; Spot/Black Maria; automatic remaining-trick capture.
+- Rummy rule screen:
+  https://github.com/robertfarnum/rummy-main/blob/1c1e98c315bf7b5916518ef296cae133fb52476c/lib/screens/hearts_rules_screen.dart
+  Independently written3–6 roster, even deal principle,26-point moon and100-point
+  lowest-total finish. Its blanket2♣ opener/four-beat pass is only coherent at
+  four seats, so it does not override the explicit multi-seat implementations.
+
+A search candidate in shmup/card-game-rules/briscola.md was about Briscola,
+not Hearts; it supplies no Hearts fact and is not counted as corroboration.

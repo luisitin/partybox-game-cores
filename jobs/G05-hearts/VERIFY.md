@@ -1,6 +1,6 @@
 # Verification record
 
-Research checkpoint; implementation gates remain unrun.
+Core checkpoint; full contract, mutation, visual and CI gates remain pending.
 
 `curl --silent --show-error --location --max-time 30` against the canonical
 Pagat and Bicycle URLs returned CONNECT403/HTTP000. No TLS bypass or alternate
@@ -13,8 +13,8 @@ confirmed the standard26-point mechanics, rotation, strict suit following,
 first-trick exceptions, moon alternatives and separate J♦ scoring.
 
 GitHub code/repository searches and an npm registry search are research aids,
-not independent rule sources. Exact6-player cuts currently have only one
-source family; no full research validation is claimed. All further tests,
+not independent rule sources. At that earlier checkpoint exact6-player cuts had only one source family.
+The later BGA read below resolves the missing corroboration. All further tests,
 mutation kills, fixtures, visual results and CI gates remain pending.
 
 Registry fallback: `curl` to the npm search endpoint returned HTTP200.
@@ -48,3 +48,26 @@ the shell continued to commit it. The following cleanup removes that obsolete
 marker while preserving its exact text in RESEARCH-HISTORY.md. No force-push
 or unrelated-file replacement was used. The next-claim helper now explicitly
 fetches every job branch before selecting.
+
+Core milestone (2026-10-08): `python /workspace/g05-research/fetch-six.py`
+read the pinned BGA implementation and Rummy rule screen, HTTP200/exit0.
+The unrelated Briscola result was rejected.29 fact/strategy/license receipts
+are now schema/hash checked; BGA and Arnold independently agree on six cuts.
+
+`npm test` passed strict build and13 tests. The differential suite compared
+10,000 valid random card partitions, including500 moons, against the sealed
+independent scoring implementation; it also compared legal moves and winners.
+Focused tests cover deck conservation, passing atomicity, six-seat rotation,
+first-trick exceptions, moon/J♦ order, turn ownership, suit following, capture,
+clock expiry, stale timers, pause shifts, score-once, leaver results and view
+alias/secrecy behavior. These catch mechanical and administrative rule errors.
+
+`node scripts/pilot.mjs 200` ran complete100-point development matches with
+seeds0–199, four rotating seats: sharp beat a designated normal rival146/200
+(1tie), first-place share42.92%, mean penalties58.66 versus78.645; normal beat
+an easy rival155/200 (1tie), first-place share53.25%, penalties53.275 versus78.92.
+These are pilot results, not the required held-out2,000-game leagues.
+The standalone page, phase fixtures, all roster/property runs,25 mutations,
+visual recordings, full JSON-schema coverage and GitHub CI are still pending.
+A documentation update used the repository root instead of the job cwd;
+`set -e` stopped on the missing file before any edit. It was rerun job-locally.

@@ -7,7 +7,7 @@
   Default to2♦; offer the2♣ alternative. Five players remove2♣+2♦. Six follow
   the published Arnold table:2♣,3♣,2♦,2♠. Do not silently substitute3♦.
 - Passing:4 is left/right/across/hold;3 uses left/right/hold;5 uses left/right/
-  second-left/second-right/hold. Six use left/right/opposite/hold. No pass is a
+  second-left/second-right/hold. Six use left/right/second-left/second-right/opposite/hold. No pass is a
   separate setting. All selected schedules are fixed before a hand is dealt.
 - First-trick points: some sources omit the only-points exception. Follow
   Nathan Long/OpenSpiel: follow suit first, then avoid points if possible;
@@ -19,3 +19,10 @@
   not needed for moon qualification.
 - End-of-game tied low scores: use shared winners rather than extra hands.
   Default threshold100; optional short/long thresholds must be settings.
+
+- Six-player pass cycles vary. The BGA implementation reaches every other seat
+  before hold; choose left/right/second-left/second-right/opposite/hold, extending
+  the independently corroborated five-seat cycle. The generic four-beat account
+  in the Rummy screen does not explain five-seat "across" and is not used there.
+- Six-player cut confirmation: Arnold/Wikipedia and independent BGA code agree
+  on2♣,3♣,2♦,2♠. The earlier pending status is resolved; no3♦ substitution.

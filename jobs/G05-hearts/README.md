@@ -1,9 +1,11 @@
-# Hearts — G05
+# Hearts
 
-Research checkpoint for Standard American Hearts, 3–6 players.
-The pure core and offline hot-seat page are in progress.
-NEXT.md lists the current work and remaining delivery checks.
-This checkpoint is not a finished game or a passed validation gate.
+A pure deterministic American Hearts core for3–6 seats: adjusted decks,
+rotating passes, both moon scores, optional J♦, three bot strengths and
+private controller views. Original code, MIT; research is in SOURCES.md.
 
-Selected rules and source disagreements are documented in RULES.md and
-CONFLICTS.md. No external art, card images or code is copied into the game.
+Run `npm ci` then `npm test` here. Current checkpoint: strict build,
+13 mechanical/reference checks,10,000 independent comparisons and29 receipt
+validations pass. Full contract/bot leagues/mutations/fixtures/visual CI and
+play.html are still being built; this is not a completed deliverable.
+Resume from NEXT.md; exact commands/results are in VERIFY.md.

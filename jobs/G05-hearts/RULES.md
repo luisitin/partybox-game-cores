@@ -2,7 +2,7 @@
 
 American Standard Hearts (Black Lady):3–6 seats, clockwise deal/play, no
 partnerships or trump. Ace is high and2 low. Lowest cumulative penalty wins.
-Sources/decisions are in SOURCES.md/CONFLICTS.md; research is not yet complete.
+Sources/decisions are in SOURCES.md/CONFLICTS.md; the deck table now has independent corroboration.
 
 ## Deck and passing
 
@@ -11,7 +11,7 @@ Sources/decisions are in SOURCES.md/CONFLICTS.md; research is not yet complete.
 |3|2♦ by default;2♣ option|17|left,right,hold|
 |4|none|13|left,right,across,hold|
 |5|2♣,2♦|10|left,right,second-left,second-right,hold|
-|6|2♣,3♣,2♦,2♠|8|left,right,opposite,hold|
+|6|2♣,3♣,2♦,2♠|8|left,right,second-left,second-right,opposite,hold|
 
 Shuffle with the supplied seed; deal equally, one card at a time. On passing
 hands everyone selects3 distinct owned cards before anyone receives incoming
@@ -54,3 +54,7 @@ no tricks, unrestricted hearts, and leading hearts instead of loneQ♠; defaults
 are compared in CONFLICTS.md. Older Wikipedia chip scoring, Auction, stock
 Draw Hearts, Heartsette/widow and queen-heavy French variants are historical
 relatives, not the selected game.
+
+The BGA source also shows always-right passing, cycles without hold, no-moon
+scoring, Spot/Black Maria and automatic last-trick claims. These are recorded
+alternatives; this job uses rotating passes with hold and ordinary26-point moons.
