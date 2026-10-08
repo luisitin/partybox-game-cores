@@ -2,8 +2,12 @@ import type {Piece,Side} from './types.js';
 import {legalMoves} from './moves.js';
 
 export interface InternationalFile {name:string;data:Uint8Array;indexText:string}
+export interface InternationalEncodedFile {name:string;byteLength:number;chunks:readonly string[];indexText:string}
+export interface InternationalBlockFile {name:string;byteLength:number;blocks:readonly {offset:number;data:Uint8Array}[];indexText:string}
+interface Bytes {length:number;range:(start:number,end:number)=>Uint8Array}
+interface IndexFile {name:string;bytes:Bytes;indexText:string}
 interface Mark {ordinal:number;catalogue:number;permutation:number}
-interface Slice {bytes:Uint8Array;start:number;end:number;uniform:-1|0|1|null|undefined;marks:Mark[];positions:number}
+interface Slice {bytes:Bytes;start:number;end:number;uniform:-1|0|1|null|undefined;marks:Mark[];positions:number}
 const blockSize=4096,subsliceSize=2**31;
 const combinations=Object.freeze(Array.from({length:51},(_,n)=>Object.freeze(Array.from({length:7},(_,k)=>{
   if(k>n)return 0;let result=1;for(let i=1;i<=k;i++)result=result*(n-k+i)/i;return Math.round(result);
@@ -47,6 +51,70 @@ export function internationalRank(source:readonly Piece[],side:Side){
 }
 
 export function createInternationalDatabase(sources:readonly InternationalFile[],dictionarySource:Uint8Array){
+  return createDatabase(sources.map(source=>{
+    if(!(source.data instanceof Uint8Array))throw new RangeError('Invalid International bytes');
+    const data=new Uint8Array(source.data);
+    return {name:source.name,indexText:source.indexText,bytes:{length:data.length,range:(start:number,end:number)=>data.subarray(start,end)}};
+  }),dictionarySource);
+}
+
+export class MissingInternationalBlock extends Error {
+  constructor(readonly file:string,readonly offset:number,readonly length:number){super('Missing International block '+file+':'+offset);this.name='MissingInternationalBlock';}
+}
+
+// Each supplied block is copied. Missing bytes are explicit and never decoded
+// as a synthetic outcome; adapters may acquire them and restart a calculation.
+export function createInternationalBlockDatabase(sources:readonly InternationalBlockFile[],dictionarySource:Uint8Array){
+  return createDatabase(sources.map(source=>{
+    if(!Number.isSafeInteger(source.byteLength)||source.byteLength<0||!Array.isArray(source.blocks))throw new RangeError('Invalid International block file');
+    const blocks=new Map<number,Uint8Array>(),length=source.byteLength,name=source.name;
+    for(const block of source.blocks){
+      if(!Number.isSafeInteger(block.offset)||block.offset<0||block.offset%blockSize!==0||block.offset>=length||blocks.has(block.offset)||
+        !(block.data instanceof Uint8Array)||block.data.length!==Math.min(blockSize,length-block.offset))throw new RangeError('Invalid International supplied block');
+      blocks.set(block.offset,new Uint8Array(block.data));
+    }
+    return {name,indexText:source.indexText,bytes:{length,range:(start:number,end:number)=>{
+      const offset=Math.floor(start/blockSize)*blockSize,block=blocks.get(offset);
+      if(end>offset+blockSize)throw new RangeError('International block read crosses its boundary');
+      if(!block)throw new MissingInternationalBlock(name,offset,Math.min(blockSize,length-offset));
+      return block.subarray(start-offset,end-offset);
+    }}};
+  }),dictionarySource);
+}
+
+// Strings are immutable. Copying the chunk list preserves a defensive snapshot
+// without allocating a second complete decoded database.
+export function createInternationalEncodedDatabase(sources:readonly InternationalEncodedFile[],dictionarySource:Uint8Array){
+  const digit=(code:number)=>code>=65&&code<=90?code-65:code>=97&&code<=122?code-71:code>=48&&code<=57?code+4:code===43?62:code===47?63:-1;
+  return createDatabase(sources.map(source=>{
+    if(!Number.isSafeInteger(source.byteLength)||source.byteLength<0||!Array.isArray(source.chunks))throw new RangeError('Invalid International encoded file');
+    const chunks=[...source.chunks],starts:number[]=[];let encodedLength=0;
+    for(let i=0;i<chunks.length;i++){
+      const chunk=chunks[i];if(typeof chunk!=='string'||chunk.length===0||chunk.length%4!==0||
+        !(i===chunks.length-1?/^[A-Za-z0-9+/]*(?:={1,2})?$/:/^[A-Za-z0-9+/]+$/).test(chunk))throw new RangeError('Invalid International encoded chunk');
+      starts.push(encodedLength);encodedLength+=chunk.length;
+    }
+    const length=source.byteLength,last=chunks.at(-1)??'',padding=last.endsWith('==')?2:last.endsWith('=')?1:0;
+    if(!Number.isSafeInteger(encodedLength)||encodedLength!==4*Math.ceil(length/3)||encodedLength/4*3-padding!==length)throw new RangeError('Invalid International encoded extent');
+    if(padding&&((digit(last.charCodeAt(last.length-padding-1))&((1<<(padding===2?4:2))-1))!==0))throw new RangeError('Noncanonical International encoding');
+    return {name:source.name,indexText:source.indexText,bytes:{length,range:(start:number,end:number)=>{
+      const output=new Uint8Array(end-start);let chunkIndex=0;
+      const first=Math.floor(start/3)*4;
+      let upper=starts.length;while(chunkIndex+1<upper){const middle=Math.floor((chunkIndex+upper)/2);if(starts[middle]<=first)chunkIndex=middle;else upper=middle;}
+      for(let byte=start;byte<end;){
+        const character=Math.floor(byte/3)*4;
+        while(chunkIndex+1<starts.length&&starts[chunkIndex+1]<=character)chunkIndex++;
+        const chunk=chunks[chunkIndex],at=character-starts[chunkIndex];
+        const a=digit(chunk.charCodeAt(at)),b=digit(chunk.charCodeAt(at+1)),c=digit(chunk.charCodeAt(at+2)),d=digit(chunk.charCodeAt(at+3));
+        const triple=[a*4+(b>>4),(b&15)*16+((c<0?0:c)>>2),((c<0?0:c)&3)*64+(d<0?0:d)];
+        for(let within=byte%3;within<3&&byte<end;within++)output[byte++-start]=triple[within];
+      }
+      return output;
+    }}};
+  }),dictionarySource);
+}
+
+function createDatabase(sources:readonly IndexFile[],dictionarySource:Uint8Array){
   if(!(dictionarySource instanceof Uint8Array)||dictionarySource.length!==61077)throw new RangeError('Invalid International v2 dictionary size');
   const dictionary=new Uint8Array(dictionarySource),view=new DataView(dictionary.buffer),runs=dictionary.subarray(51200);
   const lengths=Array.from({length:12800},(_,index)=>view.getUint16(index*2,true));
@@ -61,8 +129,8 @@ export function createInternationalDatabase(sources:readonly InternationalFile[]
     const values=Array.from({length:4},(_,i)=>(mark.permutation>>2*i)&3);if(new Set(values).size!==4)throw new RangeError('Invalid International outcome permutation');
   };
   for(const source of sources){
-    if(!/^db(?:[2-5]|6-[0-5]{4})$/.test(source.name)||names.has(source.name)||!(source.data instanceof Uint8Array)||typeof source.indexText!=='string')throw new RangeError('Invalid or repeated International file');
-    names.add(source.name);const bytes=new Uint8Array(source.data);totalBytes+=bytes.length;let active:Slice|null=null;
+    if(!/^db(?:[2-5]|6-[0-5]{4})$/.test(source.name)||names.has(source.name)||typeof source.indexText!=='string')throw new RangeError('Invalid or repeated International file');
+    names.add(source.name);const bytes=source.bytes;totalBytes+=bytes.length;let active:Slice|null=null;
     const local:Slice[]=[];
     for(const line of source.indexText.split(/\r?\n/).map(text=>text.trim()).filter(Boolean)){
       if(line.startsWith('BASE')){
@@ -103,8 +171,9 @@ export function createInternationalDatabase(sources:readonly InternationalFile[]
     while(block+1<upper){const middle=Math.floor((block+upper)/2);if(slice.marks[middle].ordinal<=location.ordinal)block=middle;else upper=middle;}
     const mark=slice.marks[block],end=Math.min(slice.end,(Math.floor(slice.start/blockSize)+block+1)*blockSize);
     let cursor=block===0?slice.start:(Math.floor(slice.start/blockSize)+block)*blockSize,ordinal=mark.ordinal;
+    const data=slice.bytes.range(cursor,end),first=cursor;
     while(cursor<end){
-      const token=slice.bytes[cursor++],entry=mark.catalogue*256+token,length=lengths[entry];
+      const token=data[cursor++-first],entry=mark.catalogue*256+token,length=lengths[entry];
       if(ordinal+length>location.ordinal){
         let run=offsets[entry],within=location.ordinal-ordinal;
         while(run+2<runs.length){const value=runs[run],count=runs[run+1]+256*runs[run+2];if(within<count){const decoded=(mark.permutation>>2*value)&3;return decoded===1?1:decoded===2?-1:decoded===3?0:null;}within-=count;run+=3;}

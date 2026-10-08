@@ -5,34 +5,30 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around12:53UTC:
-- Current strict-built offline page includes licensed American2–6/International2–5.
-  Full International six-piece game delivery is REQUIRED and PENDING.
-- Current page functional28/28 PASS, exit0; actual Strong worker Blob hashes,
-  both actual corpus uses, queued startup, reuse and pause cancellation pass.
-  Desktop disk load1.741s, phone4×12.294s. HTML SHA256d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e.
-  Current runner SHA2566e4c520170d3e212c08185e4963bbc56a44cf38887d221b1ba66902953defed8.
-  Current28+600 unrecorded each PASS59.115/60.003FPS,p9916.8ms; matching
-  same-source clips28/28 PASS2.4/1.5MiB. Old24-case frame proof is baseline.
-- Complete licensed International2–6 SOURCE is now acquired privately:
-  82 files/37 six-piece classes, exactly1,010,554,015 bytes; every installer
-  SHA1/original-driver CRC matches. Two independent extractions from the same
-  fixed acquired encrypted input are byte-identical for all82 files/manifests.
-  Deterministic manifest SHA25619be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627.
-- Original unchanged Boost generic driver, independent decoder, and production
-  reader all agree on10,000 six-piece queries spanning37 classes/148 side/colour
-  orientations, including22 second-subslice (>2^31) queries. W2880/L3106/D4014.
-  Evidence/checks/international-original-complete and international-production-complete
-  contain actual inputs/raw outputs/hashes. This is direct sampled theoretical
-  WLD over complete acquired source, not proof of every position or delivered game.
-- Full source remains private at /tmp/g10-rules-oracle-corpus/international-complete/output/app.
-  Public acquisition script --max-pieces6 is authored but UNRUN; its private
-  acquisition/extraction predecessor actually ran twice. No LFS configuration,
-  uploads, charges or publication occurred. Complete inline raw source/base64
-  budget is1,412,863,496 bytes before code, including American/dictionary.
-- Integrated reader/variant-bundle focused6/6 and native-worker2/2 pass.
-  Earlier failures are retained without editing raw stdout/TAP. Source-only
-  integrity checks do not replace final delivery gates.
+Current checkpoint, 2026-10-08 around13:40UTC:
+- Complete licensed International six-piece source is installed as61 unchanged
+  raw24MiB chunks spanning all37 canonical classes. Node game/database builds
+  now include all41 two-to-six data files; strict build PASS, focused transport
+  PASS6/6. Actual default-game equivalence/strength/current-source gates pending.
+- Installed source split regenerated twice: every99 data/index/manifest output
+  and both generated TS files are byte-identical. Both fresh public acquisition
+  runs also reproduce all82 original source files and deterministic manifests.
+- Browser/play.html still carries the earlier American2–6/International2–5
+  delivered baseline. Its exact642/d5cb28+600 proof is retained; it does not
+  accept the new full-six Node source or unfinished full browser implementation.
+- Private chunked complete payload opened from disk: desktop27.082s/phone4×
+ 89.455s, all74 extents/214 sampled windows match. Payload-only proof, no full
+  game/frame acceptance. Prior phone300s timeout remains retained.
+- Full browser block worker, same-request RNG restart/zero-missing validation,
+  actual default Strong usage, final-source matrix/league and CI remain pending.
+  No G10 PR or ready/BLOCKED claim; source is available. No LFS config/upload,
+  charges or full artifact publication occurred.
+- Installed proof: evidence/checks/international-six-install/report.json;
+  source reproduction: evidence/checks/international-public-regeneration/.
+- All source/evidence writers frozen for milestone checkpoint around13:40UTC.
+  Last successful push0fba173 at13:19:04, previous1abfdfa12:52:27:
+  interval26m37s PASS; early13:17:27 missed97s, hard13:22:27 met.
+  Target nextpush13:44:04/hard13:49:04; mainclaim time does not reset cadence.
 
 Next concrete work:
 1. Preserve current2–5 page strict28+600 desktop/phone4× and same-source clips

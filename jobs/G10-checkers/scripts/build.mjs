@@ -1,25 +1,37 @@
 import {build} from 'esbuild';
-import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 import {rawZipMember,pack,workerBootstrap,workerParts,sha256} from './corpus-pack.mjs';
 await mkdir('dist',{recursive:true});
-const alias={zod:resolve('node_modules/zod')},loader={'.bin':'binary','.idx':'text'};
+const alias={zod:resolve('node_modules/zod')},loader={'.bin':'binary','.idx':'text','.chunk':'base64'};
+const chunkExternal={name:'immutable-international-node-chunks',setup(api){
+  api.onResolve({filter:/\.chunk$/},args=>({path:'./intl-'+args.path.split('/').at(-1).replace(/\.chunk$/,'.mjs'),external:true}));
+}};
+for(const name of (await readdir('data/international/six')).filter(name=>name.endsWith('.chunk')).sort()){
+  const encoded=(await readFile('data/international/six/'+name)).toString('base64');
+  await writeFile('dist/intl-'+name.replace(/\.chunk$/,'.mjs'),'export default "'+encoded+'";\n');
+}
 const flags=(american,international)=>({G10_CHINOOK_ENABLED:String(american),G10_INTERNATIONAL_ENABLED:String(international)});
 const sharedEndgame=path=>({name:'shared-node-endgame',setup(api){api.onResolve({filter:/endgame\.js$/},()=>({path,external:true}));}});
 const stub=(american,international)=>({name:'unused-corpus-stub',setup(api){
-  api.onLoad({filter:/data\/(chinook|international)\/[^/]+\.(bin|idx)$/},args=>{
+  if(!international){
+    api.onLoad({filter:/international-six-data\.ts$/},()=>({contents:'export const internationalSixFiles=[];',loader:'js'}));
+    api.onLoad({filter:/international-six-indexes\.ts$/},()=>({contents:'export const internationalSixIndexes=[];',loader:'js'}));
+  }
+  api.onLoad({filter:/data\/(chinook|international)\/.*\.(bin|idx|chunk)$/},args=>{
     if((args.path.includes('/chinook/')&&!american)||(args.path.includes('/international/')&&!international))return {contents:'export default null;',loader:'js'};
   });
 }});
 for(const name of ['core','moves','draws','bots','endgame','retrograde','schema','chinook','international']){
-  await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'.mjs',alias,loader,define:flags(true,true),plugins:name==='endgame'?[]:[sharedEndgame('./endgame.mjs')]});
+  await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'.mjs',alias,loader,define:flags(true,true),plugins:[chunkExternal,...(name==='endgame'?[]:[sharedEndgame('./endgame.mjs')])]});
 }
 for(const variant of ['american','international'])for(const name of ['endgame','core','bots']){
   const american=variant==='american';
-  await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'-'+variant+'.mjs',alias,loader,define:flags(american,!american),plugins:[stub(american,!american),...(name==='endgame'?[]:[sharedEndgame('./endgame-'+variant+'.mjs')])]});
+  await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'-'+variant+'.mjs',alias,loader,define:flags(american,!american),plugins:[stub(american,!american),chunkExternal,...(name==='endgame'?[]:[sharedEndgame('./endgame-'+variant+'.mjs')])]});
 }
 await build({entryPoints:['../../contract/contract.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/contract.mjs',alias});
+if(process.env.G10_BUILD_NODE_ONLY==='1'){process.stdout.write('PASS: strict Node full-corpus bundles; standalone HTML not rebuilt.\n');}else{
 const archive=await readFile('data/chinook/DB6.zip');assert.equal(sha256(archive),'35835dae65a962eafdf5cde290bce380117445acb21819dd0e266b3b0efab3b3');
 const original=rawZipMember(archive,'DB6'),americanBytes=await readFile('data/chinook/DB6.bin');assert.equal(original.uncompressed,americanBytes.length);
 const payloads={american:[{name:'chinook',...pack(americanBytes,original.compressed)}],international:[]};
@@ -47,3 +59,5 @@ const dataTags=Object.values(payloads).flat().map(({name,compressed})=>'<script 
 await writeFile('play.html',template.replace('<!--G10_SCRIPT-->',()=>'<script>'+script+'</script>\n'+dataTags)+notices);
 await writeFile('THIRD-PARTY-LICENSES.txt','Runtime bundle contains Zod4.6.5 under MIT.\n\n'+license+'\n\nChinook database has separate terms:\n'+corpusTerms+'\n\nInternational database/dictionary terms:\n'+internationalTerms+'\n'+boost);
 await writeFile('dist/corpus-pack.json',JSON.stringify({variants:Object.fromEntries(Object.entries(payloads).map(([variant,entries])=>[variant,entries.map(({name,report})=>({name,...report}))])),workers:Object.fromEntries(Object.entries(workerSources).map(([variant,source])=>[variant,{bytes:Buffer.byteLength(source),sha256:sha256(source)}]))},null,2)+'\n');
+
+}

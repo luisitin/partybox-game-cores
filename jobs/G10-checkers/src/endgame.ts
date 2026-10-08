@@ -3,10 +3,12 @@ import type {Piece,Side,Variant} from './types.js';
 import {legalMoves,applyMove,positionKey} from './moves.js';
 import {chinookCorpus} from './chinook-corpus.js';
 import {internationalCorpus} from './international-corpus.js';
+export {internationalCorpus};
+export interface InternationalProbe {probe:(board:readonly Piece[],side:Side)=>-1|0|1|null}
 export interface TablebaseHit {outcome:-1|0|1;dtm:number|null;source:'generated-table'|'closed-captures'|'terminal'|'chinook'|'kingsrow';pieceCount:number}
 export type TableRow=[string,-1|0|1,number|null];
 const rows=database.rows as unknown as readonly TableRow[];
-export const databaseCoverage=()=>({...JSON.parse(JSON.stringify(database.coverage)),byVariant:{american:{fullQuietSixPieceCorpus:!!chinookCorpus,corpus:chinookCorpus?.coverage()??null},international:{fullQuietSixPieceCorpus:false,maximumInstalledPieces:internationalCorpus?5:2,corpus:internationalCorpus?.coverage()??null,scope:'Actual Kingsrow2–5 theoretical WLD plus exact closed capture components; quiet6-piece partitions remain pending'}}}) as unknown;
+export const databaseCoverage=()=>({...JSON.parse(JSON.stringify(database.coverage)),byVariant:{american:{fullQuietSixPieceCorpus:!!chinookCorpus,corpus:chinookCorpus?.coverage()??null},international:{fullQuietSixPieceCorpus:!!internationalCorpus,maximumInstalledPieces:internationalCorpus?6:2,corpus:internationalCorpus?.coverage()??null,scope:'Complete actual Kingsrow2–6 theoretical WLD plus exact closed capture components; draw history is separate'}}}) as unknown;
 function lookup(key:string):TableRow|null{
   let low=0,high=rows.length;
   while(low<high){const mid=(low+high)>>>1;if(rows[mid][0]<key)low=mid+1;else high=mid;}
@@ -14,7 +16,8 @@ function lookup(key:string):TableRow|null{
 }
 // The database is theoretical board+side WDL. It does not silently claim to
 // incorporate a game's earlier repetitions or accumulated draw allowances.
-export function probeEndgame(board:readonly Piece[],variant:Variant,side:Side):TablebaseHit|null{
+export function probeEndgame(board:readonly Piece[],variant:Variant,side:Side,internationalOverride?:InternationalProbe|null):TablebaseHit|null{
+  const international=internationalOverride===undefined?internationalCorpus:internationalOverride;
   const count=board.filter(piece=>piece!==0).length;if(count>6)return null;
   const cache=new Map<string,TablebaseHit|null>();
   function solve(current:readonly Piece[],turn:Side):TablebaseHit|null{
@@ -25,7 +28,7 @@ export function probeEndgame(board:readonly Piece[],variant:Variant,side:Side):T
     const found=lookup(key);
     if(found)return {outcome:found[1],dtm:found[2],source:'generated-table',pieceCount:pieces};
     if(variant==='american'&&chinookCorpus){const outcome=chinookCorpus.probe(current,turn);if(outcome!==null)return {outcome,dtm:null,source:'chinook',pieceCount:pieces};}
-    if(variant==='international'&&internationalCorpus){const outcome=internationalCorpus.probe(current,turn);if(outcome!==null)return {outcome,dtm:null,source:'kingsrow',pieceCount:pieces};}
+    if(variant==='international'&&international){const outcome=international.probe(current,turn);if(outcome!==null)return {outcome,dtm:null,source:'kingsrow',pieceCount:pieces};}
     const moves=legalMoves(current,variant,turn);
     if(!moves.length)return {outcome:-1,dtm:0,source:'terminal',pieceCount:pieces};
     if(!moves[0].captures.length){cache.set(key,null);return null;}

@@ -3,6 +3,16 @@
 Research design and corpus audit. Execution results are recorded in VERIFY.md
 and evidence/checks; source availability alone is not a passed delivery check.
 
+Current source scope: every International db2–6 file is actually acquired
+and independently probed, including all 37 canonical six-piece material
+classes. The tracked public acquisition script regenerated all 82 files
+twice in distinct output folders, matching every original byte and both
+manifests. A private 1.38 GB standalone payload also passed desktop and
+CDP 4× phone source-access measurements when split into at-most-1-MiB
+tags; the earlier five-minute phone timeout is preserved. These source
+and representation proofs do not establish full default-game bot,
+draw-history, capture-resolution or frame delivery.
+
 Easy: seeded uniform legal choices. Medium: two complete search plies with
 an800-node budget, scoring material/kings, advancement and center.
 Strong: five-ply iterative alpha-beta with a6,000-node budget,

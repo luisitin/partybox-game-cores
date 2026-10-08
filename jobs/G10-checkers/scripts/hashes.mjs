@@ -1,4 +1,5 @@
-import {readFile,readdir,writeFile} from 'node:fs/promises';
+import {readdir,writeFile} from 'node:fs/promises';
+import {createReadStream} from 'node:fs';
 import {createHash} from 'node:crypto';
 const paths=[];
 async function walk(dir='.'){
@@ -9,5 +10,10 @@ async function walk(dir='.'){
   }
 }
 await walk();paths.sort();
-const sums=await Promise.all(paths.map(async path=>createHash('sha256').update(await readFile(path)).digest('hex')+'  '+path));
+const sums=[];
+for(const path of paths){
+  const digest=createHash('sha256');
+  for await(const bytes of createReadStream(path))digest.update(bytes);
+  sums.push(digest.digest('hex')+'  '+path);
+}
 await writeFile('SHA256SUMS.txt',sums.join('\n')+'\n');

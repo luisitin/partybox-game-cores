@@ -26,6 +26,15 @@ for(const [member,path] of [['DB6','data/chinook/DB6.bin'],['DB6.idx','data/chin
 const international=await json('data/international/manifest.json');assert(z.fromJSONSchema(await json('data/international/schema.json')).safeParse(international).success);
 assert(z.fromJSONSchema(await json('data/international/dictionary-schema.json')).safeParse(await json('data/international/dictionary-manifest.json')).success);
 for(const [name,metadata] of Object.entries(international.files)){const bytes=await readFile('data/international/'+name);assert.equal(bytes.length,metadata.bytes);assert.equal(hash(bytes),metadata.sha256);}
+const six=await json('data/international/six/manifest.json');
+assert(z.fromJSONSchema(await json('data/international/six/schema.json')).safeParse(six).success);
+assert.equal(six.files.length,37);assert.equal(new Set(six.files.map(file=>file.name)).size,37);
+for(const file of six.files){
+  const digest=createHash('sha256');let size=0;
+  for(const chunk of file.chunks){const bytes=await readFile('data/international/six/'+chunk.file);assert.equal(bytes.length,chunk.bytes);assert.equal(hash(bytes),chunk.sha256);size+=bytes.length;digest.update(bytes);}
+  assert.equal(size,file.bytes);assert.equal(digest.digest('hex'),file.sha256);
+  const bytes=await readFile('data/international/six/'+file.index.file);assert.equal(bytes.length,file.index.bytes);assert.equal(hash(bytes),file.index.sha256);
+}
 for(const name of await readdir('src')){
   if(!name.endsWith('.ts')||name.endsWith('.d.ts')||['browser.ts','bot-worker.ts'].includes(name))continue;
   const source=await readFile('src/'+name,'utf8');

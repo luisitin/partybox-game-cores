@@ -399,3 +399,32 @@ for actual browser worker; bounded originalblock messages with same-request
 RNG restart until zero-missing. Full actual game/final-source properties,
 7k matrix/4k leagues/data/CI/PR/KEEP GOING remain pending.
 Checkpoint earlytarget13:17:27/hard13:22:27; pending gates remain explicit.
+
+## Milestone12 complete installed Node source (2026-10-08 around13:40UTC)
+
+`G10_BUILD_NODE_ONLY=1 npm run build`: PASS/exit0, strict TypeScript and
+complete Node/variant bundles. General/International default database now
+contains all41 original two-to-six files; immutable six-piece encoded modules
+are external static local ESM, with no runtime game I/O. Actual default bot/core
+source equivalence, final-source properties/strength and browser delivery pending.
+Standalone HTML deliberately remains the previously proven2–5 baseline.
+`node --test tests/international-transport.test.mjs`: PASS6/6, exit0,
+2898.134611ms; native/independent10k2–5 outcomes, missing-block retries,
+canonical encoding/padding, immutable snapshots and final-short blocks pass.
+Raw stdout and exact command/input hashes are under international-six-install/.
+
+`python3 scripts/chunk-international.py` run twice from original source:
+PASS37 classes/61 chunks/971,393,762 original data bytes; complete99 raw/index/
+manifest outputs plus both generated TS descriptors byte-identical. Manifest
+SHA2566532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c.
+No original data byte changed. Every chunk <=25,165,824B, under ordinaryGit's
+single-blob limit; licensing/provenance follows the original author's unrestricted
+International data statement. The source-public regeneration script separately
+ran twice fresh, all82 files byte-identical; exact input/output proof retained.
+The streamed checksum generator avoids simultaneously loading the whole corpus.
+
+Observed prior successful origin update0fba17313:19:04 follows1abfdfa12:52:27
+by26m37s; binding30min PASS. Early13:17:27 missed97s, hard13:22:27 met.
+Current target13:44:04/hard13:49:04; proof-pending scopes remain explicit.
+Full browser integration/pagebot use/FPS, final-source7k/4k gates, exactheadCI,
+PR/KEEP GOING remain unfinished. No full-six game ready or sourceBLOCKED claim.

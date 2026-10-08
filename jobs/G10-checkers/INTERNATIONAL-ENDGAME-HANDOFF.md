@@ -25,9 +25,31 @@ Public-source regeneration mode is authored in
 `scripts/acquire-international-small.py --max-pieces 6`. It fetches the
 public folder/keys and exact prefix, then checks every file against the
 fixed installer/driver-verified catalogue in the complete evidence folder.
-This new public mode is not yet executed; the separately retained private
-acquisition/regeneration script was actually run twice. Exact source
-payloads remain private, not copied into this research checkpoint.
+This tracked public mode has now executed twice, with independent empty
+output folders and only encrypted input caches reused. Every one of the
+82 regenerated files is byte-identical to the original acquisition and
+the other public run. Both deterministic manifests match. Proof is under
+`evidence/checks/international-public-regeneration/`; the source file
+manifest SHA-256 remains `19be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627`.
+The tracked source/permission manifest is
+`9a8b23f5f56db2d2c8cd7028f709b28f6bbc90da43266e047d43edde663d7ef1`.
+No source table payload is copied by this reference/research worker.
+
+Private standalone payload feasibility also has actual measurements.
+The unchanged 80,329,212-byte game was expanded with every six-piece
+source file. The first 1,380,811,379-byte page used one tag per file:
+desktop reached DOMContentLoaded in 80.772 seconds, while the CDP 4×
+phone failed the unchanged 300-second deadline. A second representation
+uses 1,293 inert base64 tags capped at 1 MiB, adding only 536,282 bytes.
+It reached DOMContentLoaded in 27.082 seconds on desktop and 89.455
+seconds on the 4× phone, with 214 bounded original-source windows
+matching per profile. Peak summed process RSS was 4,040,486,912 and
+3,325,009,920 bytes respectively; shared pages may be double-counted.
+These separate runs do not establish a causal percentage improvement.
+Proofs and the original failure are under
+`evidence/checks/international-stream-prototype/`. This proves payload
+parsing and source-byte access, not full bot integration or frame-rate
+acceptance. Full-core/offline-game delivery remains unfinished.
 
 ## Permission and actual sources
 
@@ -256,10 +278,12 @@ than its pointer. A release download can deliver the actual single file.
 Both routes preserve the possibility of disk-open, inline, zero-network
 gameplay; multi-file runtime fetches do not satisfy that requirement.
 
-Full-core and page engineering still needs a complete acquired 37-class
-payload, exact regenerated hashes/schema/spot checks, partitioned inline
-transport rather than one giant aggregate string, and actual browser
-startup/memory/frame measurements. Worker-only decoding can isolate
-gameplay from the UI but has not been demonstrated for this full corpus.
+Full-core and page engineering must now integrate the complete acquired
+37-class payload and the independently validated readers into the actual
+default game. Source regeneration and private partitioned-payload
+startup/byte-access measurements are complete; actual full-game bot,
+capture-resolution, draw-history and frame checks remain separate work.
+Worker-only decoding can isolate gameplay from the UI, but the payload
+experiment did not demonstrate full-corpus bot consumption.
 These are concrete alternatives to an ordinary-blob size constraint,
 not source availability blockers and not claimed complete delivery.

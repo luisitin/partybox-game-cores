@@ -58,3 +58,9 @@ existing production adapter's fullSixPieceCoverage:false is conservatively
 about GAME installation, not the now-complete privately acquired source.
 A private streamed/LFS feasibility experiment does not authorize configuring
 LFS, charging the owner, uploading or publishing an unproved artifact.
+
+2026-10-08 around13:40UTC: unchanged licensed International six-piece raw
+files are split into ordinary Git blobs <=24MiB. This installs complete Node
+source without enabling LFS, uploading/charging for a full artifact, or claiming
+that the earlier2–5 browser proof accepts the new full-six source. Separate
+payload load proof and actual full-game/frame proof remain distinct gates.

@@ -190,8 +190,12 @@ Unchanged original generic-driver WDL agrees with the independent reader
 on 10,000 complete-six queries, all 37 classes/148 side-colour orientations,
 including 22 actual second-subslice cases. Offline full-page integration,
 excluded capture resolution and current draw history are separate checks.
-The new public complete-source acquisition mode is authored but UNRUN;
-the private original acquisition/regeneration actually passed twice.
+The tracked public complete-source acquisition mode subsequently ran
+twice in distinct empty output folders with only encrypted caches reused.
+All 82 regenerated files and both manifests are byte-identical; proof is
+under `evidence/checks/international-public-regeneration/`. This is an
+executed public reproduction route, in addition to the earlier private
+acquisition/regeneration pair.
 
 Milestone7 production update: unchanged actual db3–5 bin/idx bytes are now
 installed with per-file SHA/size metadata and separate D11 data permission.
@@ -199,4 +203,16 @@ Production probes equal all10k original-C++/independent db2–5 records, includi
 all45 canonical materials/all180 orientations. The original audited Chinook
 ZIP is retained to embed its exact raw-deflate stream; International payloads
 are deflated at build time and byte-round-tripped. Native local decompression
-adds no network request or runtime package. Actual quiet6 remains pending.
+adds no network request or runtime package. At that db2–5 milestone,
+actual quiet-six probing was still pending; the later complete-source
+proof above supersedes that scope, without asserting full-game delivery.
+
+Private single-file payload experiments are retained under
+`evidence/checks/international-stream-prototype/`. The first per-file-tag
+page passed desktop source reads but failed the CDP 4× phone's unchanged
+300-second navigation deadline. With the same source/base game, a
+1,293-tag representation capped at 1 MiB passed source-byte checks on
+both profiles: DOMContentLoaded 27.082/89.455 seconds, peak summed RSS
+4,040,486,912/3,325,009,920 bytes. These are payload/parser/source-access
+measurements; no full-bot or frame acceptance is implied. The baseline
+failure is preserved, and no causal percentage gain is claimed.

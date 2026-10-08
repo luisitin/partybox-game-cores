@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "status": "READY_UNRUN",
+  "cwd": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers",
+  "command": [
+    "python3",
+    "scripts/acquire-international-small.py",
+    "--max-pieces",
+    "6",
+    "--out",
+    "/tmp/g10-rules-oracle-corpus/international-public-regeneration",
+    "--extractor",
+    "/tmp/g10-rules-oracle-corpus/innoextract/innoextract-1.9-linux/bin/amd64/innoextract",
+    "--metadata",
+    "/tmp/g10-rules-oracle-corpus/international-metadata.json"
+  ],
+  "fixedScriptSha256": "ff65b26e8148b7841adbc7b24b5101aaaca43dba13ccf4fd2db88004f5672d0f",
+  "cryptoHelperSha256": "1aed60e1c9115962a5e40501fb986dc6c36dc91d6e9f668f05bcec6e4c44ba6d",
+  "publicMetadataSha256": "560a9a16f88208a16a657e7ad5e507ee7b951cfe99d56a335b38259f8675e197",
+  "completeEncryptedPrefixCacheBytes": 744300648,
+  "newBulkNetworkRequired": false,
+  "sourceExpectedManifestSha256": "19be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627",
+  "scope": "Actual tracked-script complete-source regeneration gate, not game delivery",
+  "nextRunAfterCheckpointRelease": true
+}

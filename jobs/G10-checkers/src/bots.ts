@@ -18,7 +18,7 @@ export function evaluate(board:readonly Piece[],variant:Config['variant'],side:S
   }
   return value;
 }
-export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkill):SearchReport{
+export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkill,databaseProbe:typeof probeEndgame=probeEndgame):SearchReport{
   const rootMoves=legalMoves(position.board,position.variant,position.side);
   if(!rootMoves.length)return {move:null,score:-WIN,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0,corpusHits:0};
   if(skill==='easy')return {move:rootMoves[rng.int(0,rootMoves.length-1)],score:0,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0,corpusHits:0};
@@ -40,7 +40,7 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
     if(!moves.length)return -WIN+ply;
     if(drawReason(current,config))return 0;
     if(skill==='sharp'){
-      const table=probeEndgame(current.board,current.variant,current.side);
+      const table=databaseProbe(current.board,current.variant,current.side);
       if(table){
         hits++;
         if(table.source==='chinook'||table.source==='kingsrow')corpusHits++;
