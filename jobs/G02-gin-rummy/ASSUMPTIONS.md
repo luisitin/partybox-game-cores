@@ -1,8 +1,31 @@
-# Assumptions
+# Assumptions and limits
 
-- Follow the user’s blocked-source rule and move to the next eligible job.
-- Unread source URLs are candidates, never evidence or completed research.
-- No game checks, bot results or CI outcomes can be claimed yet.
-- Preserve the shared contract and unrelated repositories.
-- No credentials are needed for public source pages. Do not request tokens
-  merely because gh reports an unusable token; native Git access works.
+- G02 was unclaimed on main. Its old research-only blocked branch was merged
+  into the fresh claimed-main branch, preserving all original failure history.
+- Chosen rules are explicitly sourced presets, not a nonexistent universal
+  official Gin rulebook. Classic 20/10/20 is default; every scoring choice
+  offered to players is in settings. The requested four-seat winner-stays
+  extension, optional Big Gin 50 and Oklahoma extra boxes are named house choices.
+- Player IDs are engine identifiers, not object prototype lookups. Original
+  players remain in results even after leaving; a departure never erases score.
+- Contract types and schemas are the exact provided files. The application SDK
+  referenced by the explanatory contract is absent from this public workshop.
+  The core implements the documented event order locally without inventing
+  an unavailable package dependency or changing the shared contract.
+- Two independently designed exact algorithms are implemented by the same
+  author: primary weighted first-card bitmask recursion versus reference
+  enumeration of every subset and every disjoint packing. This is not claimed
+  as separate blind authorship. No primary code is imported by the reference.
+- Bots see only the controller observation and their passed RNG, including
+  public pickups/discards and their own forbidden return card. They never use
+  hidden opponent cards, stock order or engine RNG. No outside AI strength
+  is claimed; separate bot league measurements determine the delivered levels.
+- The privacy cover is hot-seat etiquette, not cryptographic separation on a
+  shared device. The core TV/spectator views and other-player views are tested
+  for actual hidden-state independence; the active player's own hand is private.
+- Turn clock is optional/off by default. Idle matches persist until VIP end,
+  as the classic-board-game contract permits. Timed play uses event timestamps.
+- Full source extractions were read via Exa; origin HTTP codes are unobserved.
+  No unread candidate is promoted to evidence. Source failures remain historical.
+- Desktop and 4x-throttled mobile browser performance will be measured locally
+  rather than pretending this environment is a physical mid-range phone.

@@ -1,0 +1,26 @@
+name: G02 Gin Rummy
+on:
+  pull_request:
+    paths:
+      - 'jobs/G02-gin-rummy/**'
+      - '.github/workflows/G02.yml'
+      - 'contract/**'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G02-gin-rummy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm test
