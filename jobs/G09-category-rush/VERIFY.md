@@ -47,11 +47,23 @@ host controls and zero runtime network requests.
 - `npm run mutations`: **25/25 planted production bugs killed**, each restored in a finally block. Full IDs and failure evidence: `evidence/mutations.json`.
 - `npm run bots`: **4,000 three-round duels PASS**; Strong beats Medium 1,970/2,000 (98.5%); Medium beats Easy 1,981/2,000 (99.05%). Counts and mean scores: BOTS.md and `evidence/bot-matchups.jsonl`.
 - Corrected content/schema each regenerated twice byte-identically. Four data tests pass, including independent evaluation of the actual Draft 2020-12 JSON Schema. CONTENT-VERIFY.md contains exact commands/hashes; the thirty random-row observations are below, with two actually read independent sources each in SOURCES.md.
-- `npm run build:play` twice: byte-identical current licensed HTML `0975fc8982ba5363d49151aecd9288ac06a0490353929ae2a34849c9d3d78113`, 439,586 bytes. Both complete MIT notices are inline and in the source package.
+- The initially measured licensed HTML was `0975fc8982ba5363d49151aecd9288ac06a0490353929ae2a34849c9d3d78113`, 439,586 bytes. The earlier claim that this exact file matched two builder runs was incorrect: the final regeneration check found escaped comment delimiters (`<!- -` and `- ->`) in that artifact. The unchanged checked-in builder emits valid `<!--`/`-->` delimiters. Two actual `npm run build:play` runs at 09:16 UTC produced the same correct SHA-256 `a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08`, 439,584 bytes. Both complete MIT notices are inline and in the source package. Gameplay and strict-frame evidence must be refreshed for the reproducible file; the old evidence remains historical.
 - `node scripts/browser-check.mjs`: **28/28 PASS** on that current HTML, desktop+phone full games and every bot roster 2–8; zero runtime network/errors. `node scripts/browser-clock.mjs`: independent review-step clock probe PASS, correctly handles a later deadline with unchanged phase startedAt.
 - `node scripts/browser-performance.mjs`: first current licensed cold run **FAILED**: desktop 600 consecutive real RAF deltas, 57.419 fps, p99 33.4 ms, max 166.6 ms. Source/HTML fingerprints matched before/after and both notices were checked; zero errors/network. Runner stopped before phone. Failed raw samples/report/video are preserved; earlier milestone proof belongs to its own distinct hash. An unchanged confirmation is pending after the current CPU-isolation hold, with no gate relaxation.
 
 Final visual, checksum/drift and exact-head CI status remain pending; this is a milestone, not completion.
+
+## Push cadence deviation
+
+Milestone `384b4ed` was committed at 2026-10-08 08:26:23 UTC and immediately
+pushed; `8be851b` was committed at 09:05:39 UTC and immediately pushed.
+The approximately 39m16s interval exceeded the required 30-minute push cadence
+by approximately 9m16s. Exact remote transport timestamps were not retained,
+so the precise timestamps above are commit records rather than claimed
+push-second measurements. CPU-isolation holds and a required license rebuild
+occupied the interval; a proof-pending source checkpoint should still have
+been pushed. Subsequent checkpoints target 25 minutes, independently of test,
+browser or license work. The next target is 09:25 UTC, before 09:30:39 UTC.
 
 ## Thirty independently sourced content checks
 

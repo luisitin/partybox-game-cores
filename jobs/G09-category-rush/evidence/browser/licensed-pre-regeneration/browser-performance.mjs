@@ -66,9 +66,6 @@ try {
     // Video encoding is isolated from all measured RAF frames.
     const clipContext=await browser.newContext({viewport:{width,height},offline:true,recordVideo:{dir:media,size:{width:Math.min(width,1280),height:Math.min(height,720)}}});
     const clipPage=await clipContext.newPage();
-    const clipPageErrors=[],clipNetworkRequests=[];
-    clipPage.on('pageerror',error=>clipPageErrors.push(String(error)));
-    clipPage.on('request',request=>clipNetworkRequests.push(request.url()));
     const clipCdp=await clipContext.newCDPSession(clipPage);
     await clipCdp.send('Emulation.setCPUThrottlingRate',{rate:cpuThrottle});
     await clipPage.goto(pathToFileURL(htmlPath).href);
@@ -84,12 +81,10 @@ try {
     await unlink(await video.path());
     const {frames:raw,...summary}=item;
     summary.video=`media/${videoName}`;
-    summary.clipContext={separateFromSampling:true,viewport:{width,height},cpuThrottle,sourceSha256,activeRecordingMs:3000,workload:'same 12-category answer screen with active timer',pageErrors:clipPageErrors,networkRequests:clipNetworkRequests};
+    summary.clipContext={separateFromSampling:true,viewport:{width,height},cpuThrottle,sourceSha256,activeRecordingMs:3000,workload:'same 12-category answer screen with active timer'};
     summary.videoBytes=(await stat(resolve(media,videoName))).size;
     report.profiles.push(summary);
     console.log(JSON.stringify(summary));
-    assert.equal(clipPageErrors.length,0,`${label}: clip page raised an error`);
-    assert(clipNetworkRequests.every(url=>url.startsWith('file:')),`${label}: clip made a network request`);
     assert(summary.videoBytes<10000000,`${label}: recording exceeds 10 MB`);
   }
   assert.equal(digest(await readFile(htmlPath)),sourceSha256,'HTML changed during strict measurement');

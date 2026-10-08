@@ -5,3 +5,5 @@
 - Delivered 320 original prompts and 3,767 illustrative answers, a strict Draft 2020-12 schema with independent validation, byte-identical regeneration and thirty two-source semantic checks.
 - Delivered the actual-core offline page with private hot-seat turns, anonymous review, real vote/duplicate scoring, accessible keyboard flow, full timer/settings range, host controls and original CSS/SVG.
 - Fixed numeric-word initial-letter eligibility, detached public receipt objects, sized score deadlines for slow reading, and prevented future private self-repeats from influencing public review flags or bot ballots.
+- Preserved failed and superseded browser proofs, separated unrecorded frame measurements from recorded clips, and bound the final raw samples, HTML, sources, licenses and media to the exact job head through an artifact-integrity test.
+- Corrected generated HTML license-comment delimiters through the existing reproducible builder; fresh gameplay and frame evidence is required for the resulting file hash.
