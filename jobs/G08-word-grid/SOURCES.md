@@ -10,3 +10,5 @@ Live receipts with pinned commits, byte counts and SHA-256: [source-receipts.jso
 - Owner source, original CSS, five GLB models and film source: preserved baseline hashes in start/research/original-files.json. No owner model, art, film look or name changes.
 
 Canonical Hasbro and Winning Moves requests were denied by the managed HTTPS proxy; they are candidates, not read evidence. RULES.md permits the live GitHub/registry fallbacks. Physical-box edition labels remain secondary reports; re-verify with the manufacturer when reachable.
+
+- Build bindings bundle original client dependencies react/react-dom18.3.1, zod3.25.76 and retained three0.171.0 under MIT; their complete installed-package notices are copied into `start/research/licences/` and inline HTML credits. No downloaded art/font/avatar assets are used by the flat offline host.

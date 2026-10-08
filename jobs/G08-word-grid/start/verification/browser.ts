@@ -6,6 +6,8 @@ import {resolve} from 'node:path';
 import {chromium,type Page} from 'playwright-core';
 import {referenceDictionary,referenceSolve} from '../research/reference-solver';
 const target=process.env.G08_BROWSER_URL??`file://${resolve('play.html')}`;
+const nativeOnly=process.env.G08_NATIVE_ONLY==='1';
+if(process.env.CI){assert(target.startsWith('file:'),'CI must open actual disk HTML');assert(!nativeOnly,'CI must run both FPS gates');}
 const executable=process.env.G08_CHROMIUM??['/usr/bin/google-chrome','/usr/bin/chromium'].find(p=>{try{statSync(p);return true;}catch{return false;}});
 assert(executable,'Chrome/Chromium executable unavailable');
 mkdirSync('.tmp/visual',{recursive:true});mkdirSync('media',{recursive:true});
@@ -43,11 +45,13 @@ async function frames(page:Page,ms=10000){
     const sorted=dt.slice().sort((a,b)=>a-b);return {frames:dt.length,milliseconds:previous-start,fps:dt.length*1000/(previous-start),meanMs:dt.reduce((a,b)=>a+b,0)/dt.length,p95Ms:sorted[Math.ceil(sorted.length*.95)-1],maxMs:sorted.at(-1)};
   })()`);
 }
-const desktop=await open(1920,1080);await setup(desktop.page);await desktop.page.getByRole('button',{name:'Public stage',exact:true}).click();
-await desktop.page.screenshot({path:'.tmp/visual/desktop-original-tv.png'});const desktopFrames=await frames(desktop.page);assert(desktopFrames.fps>=59,`desktop ${desktopFrames.fps} fps`);assert(desktopFrames.p95Ms<=20);
-await desktop.context.close();
-const measured=await open(390,844);await setup(measured.page);const measuredCdp=await measured.context.newCDPSession(measured.page);await measuredCdp.send('Emulation.setCPUThrottlingRate',{rate:4});
-await measured.page.screenshot({path:'.tmp/visual/phone-original-hunt.png'});const phoneFrames=await frames(measured.page);assert(phoneFrames.fps>=59,`CPU4 phone ${phoneFrames.fps} fps`);assert(phoneFrames.p95Ms<=20);await measured.context.close();
+let desktopFrames:Awaited<ReturnType<typeof frames>>|null=null,phoneFrames:Awaited<ReturnType<typeof frames>>|null=null;
+if(!nativeOnly){
+ const desktop=await open(1920,1080);await setup(desktop.page);await desktop.page.getByRole('button',{name:'Public stage',exact:true}).click();
+ await desktop.page.screenshot({path:'.tmp/visual/desktop-original-tv.png'});desktopFrames=await frames(desktop.page);assert(desktopFrames.fps>=59,`desktop ${desktopFrames.fps} fps`);assert(desktopFrames.p95Ms<=20);await desktop.context.close();
+ const measured=await open(390,844);await setup(measured.page);const measuredCdp=await measured.context.newCDPSession(measured.page);await measuredCdp.send('Emulation.setCPUThrottlingRate',{rate:4});
+ await measured.page.screenshot({path:'.tmp/visual/phone-original-hunt.png'});phoneFrames=await frames(measured.page);assert(phoneFrames.fps>=59,`CPU4 phone ${phoneFrames.fps} fps`);assert(phoneFrames.p95Ms<=20);await measured.context.close();
+}
 // Capture native interactions separately so encoder CPU is not part of the player FPS benchmark.
 const phone=await open(390,844,false,true);await setup(phone.page);const cdp=await phone.context.newCDPSession(phone.page);
 const cells=phone.page.getByRole('gridcell');const letters=(await cells.allTextContents()).map(s=>s.toLowerCase());
@@ -85,5 +89,5 @@ const reducedMotion=await reduced.page.getByRole('gridcell').first().evaluate(el
 assert(await reduced.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await reduced.context.close();
 for(const roster of [1,3,16]){const sample=await open(390,844,true);await setup(sample.page,roster);assert.equal(await sample.page.getByRole('gridcell').count(),16);await sample.context.close();}
 await browser.close();assert.deepEqual(errors,[]);assert.deepEqual(outgoing,[]);
-const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',browser:executable,desktop:{width:1920,height:1080,...desktopFrames},phone:{width:390,height:844,cpuThrottle:4,...phoneFrames},gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true},outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
+const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true},outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
 writeFileSync('.tmp/visual/browser-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

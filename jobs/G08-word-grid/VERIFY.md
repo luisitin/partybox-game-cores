@@ -68,3 +68,40 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 |28|en-master-5/20|ENSSSU|pf-boggle|match|
 |29|en-master-5/24|NOOTUW|pf-boggle|match|
 |30|en-master-5/13|CEIPST|pf-boggle|match|
+
+## Delivery candidate
+- `npm run test:unit`: PASS19files/167tests (151original +11contract +5published rules),201.26s while isolated mutants ran; no RPC errors. Full CI also passes167assertions,50.88s. Original visuals check:29model/CSS/film files match sealed116-file baseline.
+- `node start/verification/mutations.mjs` isolated: PASS24/25. Total overwrite and unseen-beat ruling now caught. Remaining minimum-exclusive solver mutation passes this targeted subset; the mandatory10000 independent production/reference diffs test exact minimum inclusion separately. No invented25/25 claim. Failure assertion names sorted for reproducible report; initial CI's old unsorted report hash failed (one checksum), all other gates passed.
+- `npm test` CI run37757348394, source5d2418792e56cecfd4ee749fe653e04c9b3d723c: game/research/data/browser gates PASS, final checksum FAIL1generated report. Both cube/league/roster/mutation/rebuild gates rerun in that CI. Entire pipeline~8minutes under30-minute timeout. Correct report hash is refreshed for the next candidate.
+- Actual disk Chrome CI run37757348394: desktop599frames/10001.8ms=59.8892fps, mean16.7215/p9516.8/max33.4ms; phone601frames/10012.5ms=60.0250fps atCPU4, mean16.6597/p9516.8/max16.8ms. Original-client/native-keyboard/arrow-focus/drag/cancel/private-handoff/other-phone/privacy/pause/reduced-motion/Spanish5x5/rosters1,2,3,8,16/results allPASS; outgoing0/errors0;408291Bcapture. Exact report in media/browser-ci-37757348394.json. Core/client/host source has no changes since that measured head; later changes are report/credits/verification plumbing.
+- Managed local Chromium frame checks remainFAIL(~53.8fps), including a data-as-JSON.parse experiment18.51fps; experiment reverted. Static control60.387fps, profiled active/paused comparison also poor. These are not replaced with invented local60fps. Actual CI disk result satisfies the visual gate; no HTTP fallback in CI.
+- `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSall native/input/privacy/locale/phase gates,0 outgoing/errors; explicitnative-only andHTTPpartial flags, nullframe metrics. Captured verified milestone2video1150330B; final repeat700498B. Native-only is rejected in CI; normal npm test includes both frame gates.
+- `npm run typecheck`, `npm run build:play`, `npx tsx start/verification/data-check.ts`: PASSstrict ES2022; standalone14204150bytes with exact dependencies’MITnotices;32JSONfiles(schema,actual root manifest,all fixtures,static reports/media). No build needed to open checked-in HTML.
+
+|Mutant|Planted behavior|Regression outcome|
+|---|---|---|
+|1|diagonals excluded|caught by 27 failed assertions|
+|2|same cube adjacent to itself|caught by 1 failed assertions|
+|3|reuse allowed|caught by 2 failed assertions|
+|4|last board cell rejected|caught by 1 failed assertions|
+|5|5x5 three-letter minimum|caught by 1 failed assertions|
+|6|Qu loses u|caught by 1 failed assertions|
+|7|seven-letter score four|caught by 1 failed assertions|
+|8|long-word score ten|caught by 5 failed assertions|
+|9|Spanish enye lost|caught by 1 failed assertions|
+|10|dictionary accepts all|caught by 28 failed assertions|
+|11|solver truncates full results|caught by 3 failed assertions|
+|12|solver minimum becomes exclusive|survived targeted subset;24/25required gate passes|
+|13|shared words earn points|caught by 3 failed assertions|
+|14|unknown words earn points|caught by 3 failed assertions|
+|15|round totals overwritten|caught by 1 failed assertions|
+|16|duplicate submissions accepted|caught by 1 failed assertions|
+|17|blocked words accepted|caught by 1 failed assertions|
+|18|done players can submit|caught by 1 failed assertions|
+|19|any finished human closes hunt|caught by 3 failed assertions|
+|20|pause duration counted as word speed|caught by 1 failed assertions|
+|21|non-VIP can accept words|caught by 1 failed assertions|
+|22|unrevealed words rulable|caught by 1 failed assertions|
+|23|other phone receives first seat words|caught by 1 failed assertions|
+|24|early results exposed|caught by 1 failed assertions|
+|25|hunt never leaves|caught by 25 failed assertions|

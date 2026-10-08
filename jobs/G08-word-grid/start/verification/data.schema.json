@@ -890,6 +890,93 @@
           }
         }
       }
+    },
+    "browser": {
+      "type": "object",
+      "required": [
+        "version",
+        "fileOpened",
+        "urlMode",
+        "desktop",
+        "phone",
+        "gates",
+        "outgoingRequests",
+        "pageErrors",
+        "videoBytes"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "fileOpened": {
+          "type": "boolean"
+        },
+        "nativeOnly": {
+          "type": "boolean"
+        },
+        "desktop": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "phone": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "gates": {
+          "type": "object",
+          "required": [
+            "nativeKeyboard",
+            "nativeDrag",
+            "nativeCancel",
+            "privateHandoff",
+            "otherPhonePrivate",
+            "pauseResume",
+            "reducedMotion",
+            "allPhasesToResults"
+          ],
+          "properties": {
+            "nativeKeyboard": {
+              "const": true
+            },
+            "nativeDrag": {
+              "const": true
+            },
+            "nativeCancel": {
+              "const": true
+            },
+            "privateHandoff": {
+              "const": true
+            },
+            "otherPhonePrivate": {
+              "const": true
+            },
+            "pauseResume": {
+              "const": true
+            },
+            "reducedMotion": {
+              "const": true
+            },
+            "allPhasesToResults": {
+              "const": true
+            }
+          }
+        },
+        "outgoingRequests": {
+          "const": 0
+        },
+        "pageErrors": {
+          "const": 0
+        },
+        "videoBytes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10485760
+        }
+      }
     }
   }
 }
