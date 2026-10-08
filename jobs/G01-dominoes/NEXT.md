@@ -10,8 +10,8 @@ installation exit124 does not establish a game regression.
 
 KEEP GOING rounds1–15 recorded. Round15 substantive model gain resets
 no-gain streak ZERO. Round16 depth-four study against exact0.2.7 underway:
-`IMPROVEMENT_STUDY=depth4 node improvement-study.ts`. Check the local process
-and /tmp/G01-round16.log first; completed output is
+`IMPROVEMENT_STUDY=depth4 node parallel-improvement.ts`. Check the local process
+and /tmp/G01-round16-parallel.log first; completed output is
 improvement-depth4-report.json. Do not repeat a running study.
 Require positive lower95% bound plus fresh seeds2001–4000 for acceptance.
 If rejected, record measured no-gain round1; continue another five-weakness

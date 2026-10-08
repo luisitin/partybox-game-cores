@@ -261,3 +261,5 @@ Round15 Block parity complete:strong1,438/2,000 (71.9%),medium1,619/2,000 (80.95
 Current-head CI confirmed: `gh run list --workflow G01.yml --json databaseId,headSha,status,conclusion` and `gh api repos/luisitin/partybox-game-cores/actions/runs/37681790311/jobs` show SUCCESS for bedf43ae6bcf968e5fc844dc804686d0b43c4279, including full npm test. Previous ecbbb34 run37681469962 failed in encoder installation with exit124 (`gh api .../check-runs/112998327209/annotations`), before verification; no game failure inferred. Block parity and Draw leagues are complete.
 
 Round16 `IMPROVEMENT_STUDY=depth4 node improvement-study.ts` underway; no result or no-gain round claimed until all2,000 matches finish.
+
+Round16 throughput: partial sequential study terminated before completion; no result counted. `IMPROVEMENT_STUDY=depth4 node parallel-improvement.ts` repeats the same complete2,000-seed comparison in four disjoint500-seed shards. Aggregation validates coverage and exact production source before publishing a result.
