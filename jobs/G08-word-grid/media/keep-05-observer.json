@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "fileOpened": false,
+  "urlMode": "local HTTP partial",
+  "nativeOnly": true,
+  "browser": "/usr/bin/chromium",
+  "desktop": null,
+  "phone": null,
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true,
+    "longNamesFit": true,
+    "fullSixteenSeatHotseat": true,
+    "sixteenTiedWinnersFit": true,
+    "cancelRestartKeepsProgress": true,
+    "newGameFreshSeed": true,
+    "handoffAndGridFocus": true,
+    "spanishHostControls": true,
+    "botObserverPublicOnly": true,
+    "observerFullFinalAwards": true
+  },
+  "observerVideoBytes": 214132,
+  "spanishVideoBytes": 182362,
+  "restartVideoBytes": 306988,
+  "layoutVideoBytes": 1622056,
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 882907,
+  "provenance": {
+    "keepGoingRound": 5,
+    "parentCommit": "6f40709730b9e9d95efcac87335cc8530229c39b",
+    "playSha256": "863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9",
+    "capture": "07-bot-observer.webm"
+  }
+}

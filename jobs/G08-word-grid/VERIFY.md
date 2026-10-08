@@ -129,3 +129,8 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 ## KEEP GOING round4
 - `npm run typecheck`, `npm run build:play`: PASS14208558bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallprior gates + selected Spanish5×5 host Pausar/Terminar turno/Nueva partida controls and document langes;227542-byte clip06;0requests/errors.39original host translations, explicitly HTTP/native-only proof.
 - `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS37JSONfiles and85hashes after media/translation source addition.
+
+## KEEP GOING round5
+- `npx tsx .tmp/qa-bot-only.ts`: baseline bot-only hunt exposes1phone input/1Finish turn/0Reveal words; finish from public mode lacks final-results heading and awards.
+- `npm run typecheck`, `npm run build:play`: PASS14208697bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallprior gates + bot-only TV/public observer without phone/manual submission surface, Reveal words, full final-results heading and>=3awards.0network/errors;214132-byte clip07. Explicit HTTP/native-only scope remains.
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles and87hashes after round5evidence addition. Protected original29visual files remain unchanged; final complete exact-head CI still required.

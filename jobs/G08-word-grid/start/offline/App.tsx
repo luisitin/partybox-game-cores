@@ -151,13 +151,14 @@ function App() {
     <details><summary>{L("Credits and word-list licences")}</summary><div dangerouslySetInnerHTML={{ __html: '__INLINE_LICENSES__' }} /></details>
   </main>;
   const state = r.state, active = r.humans[r.turn] ?? state.order[0]!, isHunt = state.phase.id === 'hunt';
+  const showTv = state.phase.id !== 'done' && (publicStage || r.humans.length === 0);
   const me = { id: active, name: state.players[active]!.name, isVip: true, canSeeTv: false };
-  return <ShellProvider value={shell.current}><main className={publicStage ? 'room television' : 'room'} data-phase={state.phase.id} data-round={state.round} data-turn={r.turn}>
+  return <ShellProvider value={shell.current}><main className={showTv ? 'room television' : 'room'} data-phase={state.phase.id} data-round={state.round} data-turn={r.turn}>
     <header className="host"><h1 ref={heading} tabIndex={-1}>Shake Up{state.phase.id === 'done' ? L(' · Results') : ''}</h1><nav aria-label={L('Host controls')}>
-      {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{L(state.phase.paused ? 'Resume' : 'Pause')}</button>{!r.handoff ? <button onClick={skip}>{L(isHunt ? 'Finish turn' : state.phase.id === 'reveal' ? 'Next card' : 'Continue')}</button> : null}<button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>{L("Public stage")}</button></> : null}
+      {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{L(state.phase.paused ? 'Resume' : 'Pause')}</button>{!r.handoff ? <button onClick={skip}>{L(isHunt ? r.humans.length ? 'Finish turn' : 'Reveal words' : state.phase.id === 'reveal' ? 'Next card' : 'Continue')}</button> : null}{r.humans.length ? <button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>{L("Public stage")}</button> : null}</> : null}
       <button onClick={reset}>{L("New game")}</button></nav></header>
     {r.handoff ? <section className="handoff" aria-label={L('Pass the device')}><h2 id="handoff-name">{L('Pass to {name}', { name: me.name })}</h2><p id="handoff-clock">{L('Everyone else looks away. Your {seconds}-second clock starts when you’re ready.', { seconds: state.cfg.huntMs / 1000 })}</p><button ref={ready} aria-describedby="handoff-name handoff-clock" onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>{L("I’m ready")}</button></section>
-      : publicStage ? <div className="tv-owner"><Tv view={game.tvView(state)} /></div>
+      : showTv ? <div className="tv-owner"><Tv view={game.tvView(state)} /></div>
       : <div className="phone-owner" key={`${state.round}-${isHunt ? active : 'stage'}`}><p className="private-label">{isHunt ? L('{name} · private turn', { name: me.name }) : L('Round {round} of {total}', { round: state.round, total: state.cfg.rounds })}</p>{isHunt ? <Controller view={game.controllerView(state, active)} send={send} me={me} skip={skip} /> : <PhoneStage view={game.controllerView(state, active)} send={send} me={me} skip={skip} />}</div>}
   </main></ShellProvider>;
 }

@@ -1,5 +1,6 @@
 // Original translations for the offline host. Owner client strings/assets are retained.
 export const offlineStrings: Record<string, string> = {
+  "Reveal words": "Revelar palabras",
   "Players": "Jugadores",
   "Words": "Palabras",
   "Grid": "Cuadrícula",

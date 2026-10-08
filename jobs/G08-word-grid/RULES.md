@@ -57,3 +57,5 @@ The offline page uses the same reducer and existing client pieces. Its explicit 
 - Permissive/full and common English dictionaries, Spanish accent folding, family/spicy, VIP word acceptance, rounds, pause/skip/end and equal-time offline hot-seat are clearly identified software/owner choices rather than unread manufacturer promises. No commercial SOWPODS corpus, game artwork or implementation was copied from the comparison projects.
 
 Offline New game confirms before abandoning live progress, preserves setup choices and selects a fresh seed. Cancelling keeps the game and its private clock; enter a previous seed to replay deliberately.
+
+With bots only, the offline host is an observer: public counts during hunt, a Reveal words skip, and the full results/awards at the finish. Manual bot submissions are not offered.
