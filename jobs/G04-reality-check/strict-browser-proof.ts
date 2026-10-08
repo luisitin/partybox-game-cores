@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readFileSync,writeFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {strictSourceHashes,strictRuntimeIdentity,sha256,type Hashes} from './strict-source-guard.ts';
@@ -54,8 +54,24 @@ export function verifyStrictCapture(capture:Capture,expected:Hashes){
  assert(/^media\/strict-reverify-2019-(tv|phone)\.webm$/.test(capture.path));
  const bytes=readFileSync(capture.path);assert.equal(bytes.length,capture.bytes);assert(bytes.length>0&&bytes.length<10*1024*1024);assert.equal(sha256(bytes),capture.sha256);
  const decoded=decodeCurrentCapture(capture.path);assert.equal(decoded.frames,24,'actual decoded frame count');
+ assert.equal(decoded.codec,'vp8');assert.equal(decoded.width,capture.profile==='tv'?1920:390,'actual capture width');assert.equal(decoded.height,capture.profile==='tv'?1080:844,'actual capture height');
  assert.equal(capture.witnesses.length,24);assert(capture.witnesses.some(w=>w.inputCount===0&&w.privateOpen!=='true'),'concealment captured');assert(capture.witnesses.some(w=>w.inputCount===1&&w.fakeValue==='My harbour bluff'),'reopened draft captured');
  assert(capture.witnesses.every(w=>w.phase==='write'),'actual active capture phase');assert.deepEqual(capture.errors,[]);assert.deepEqual(capture.externalRequests,[]);
+}
+export function selfTestCurrentCaptures(report:Report,expected:Hashes){
+ const original=report.captures[0]!;verifyStrictCapture(original,expected);verifyStrictCapture(report.captures[1]!,expected);
+ const changes:Record<string,(c:Capture)=>void>={
+  'stale start source':c=>{c.sourceStart['play.html']='0'.repeat(64);},'stale end source':c=>{c.sourceEnd['play.html']='0'.repeat(64);},'FPS claim from encoding':c=>{(c as unknown as {performanceMeasurement:boolean}).performanceMeasurement=true;},'undecoded claim':c=>{c.decoded=false;},'decoder nonzero':c=>{c.decodeExit=1;},'wrong frame count':c=>{c.frames=23;},'encoding relabeled60':c=>{c.encodedFps=60;},'unsafe path':c=>{c.path='../play.html';},'false bytes':c=>{c.bytes++;},'false digest':c=>{c.sha256='0'.repeat(64);},'missing witnesses':c=>{c.witnesses.pop();},'concealment absent':c=>{for(const w of c.witnesses){w.inputCount=1;w.privateOpen='true';}},'draft not restored':c=>{for(const w of c.witnesses)w.fakeValue='lost draft';},'inactive phase':c=>{c.witnesses[0]!.phase='done';},'capture page error':c=>{c.errors.push('synthetic negative');},'capture network':c=>{c.externalRequests.push('https://example.invalid/');}
+ };
+ for(const [name,change]of Object.entries(changes)){const copy=structuredClone(original);change(copy);assert.throws(()=>verifyStrictCapture(copy,expected),name);}
+ const bytes=readFileSync(original.path),phone=readFileSync(report.captures[1]!.path);
+ try{
+  // Coherently re-hash real wrong-size media: hashes alone would accept this.
+  writeFileSync(original.path,phone);assert.throws(()=>verifyStrictCapture({...original,bytes:phone.length,sha256:sha256(phone)},expected),'real phone clip forged as TV');
+  const invalid=Buffer.from('deliberate invalid media control');writeFileSync(original.path,invalid);assert.throws(()=>verifyStrictCapture({...original,bytes:invalid.length,sha256:sha256(invalid)},expected),'coherently hashed invalid media');
+ }finally{writeFileSync(original.path,bytes);}
+ verifyStrictCapture(original,expected);assert.equal(Object.keys(changes).length+2,18);
+ return {suite:'current-capture-counterfeit-controls',actualCurrentPositive:2,rejected:18,realWrongSizeClipRejected:true,coherentlyHashedInvalidMediaRejected:true,actualCurrentBytesRestored:true};
 }
 export function verifyStrictCurrent(report:Report,raw:Raw[],expected=strictSourceHashes(),runtime=strictRuntimeIdentity()){
  assert.equal(report.passed,true);assert.equal(report.failure,null);assert.equal(report.scope,'current native workload and separately decoded captures');
@@ -67,5 +83,7 @@ export function verifyStrictCurrent(report:Report,raw:Raw[],expected=strictSourc
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
  const read=<T>(name:string):T=>JSON.parse(readFileSync('.work/strict/'+name,'utf8')) as T;
- console.log(JSON.stringify(verifyStrictCurrent(read<Report>('report.json'),['tv','phone'].map(p=>read<Raw>(p+'-raw.json'))),null,2));
+ const report=read<Report>('report.json'),raw=['tv','phone'].map(p=>read<Raw>(p+'-raw.json'));
+ if(process.argv.includes('--self-test'))console.log(JSON.stringify(selfTestCurrentCaptures(report,strictSourceHashes()),null,2));
+ else console.log(JSON.stringify(verifyStrictCurrent(report,raw),null,2));
 }

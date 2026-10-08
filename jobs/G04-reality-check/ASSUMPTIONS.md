@@ -69,3 +69,14 @@ profiles remain valid scoped evidence and are still required by npm test.
 Installed Zod/Playwright source guards refer to loaded public dependencies,
 not committed node_modules. Shared contract and every production game byte
 remain unchanged; no new player gain or additional KEEP round is claimed.
+
+The genuine Playwright encoder does not provide image2pipe; the local cache
+registry entry was already a symlink to the system FFmpeg before this job.
+No shared cache was changed. Full actual system decoding is therefore an
+explicit CI tool installation, with actual path/version/hash recorded.
+The sampler, native APIs, game, data, bot, UI and original mean/p95 gates
+remain unchanged. Differences in actual Node/decoder binaries across local
+and hosted environments are scoped honestly. An actual isolated install
+reproduced the old hosted package formatting exactly; --no-save preserves
+the original shared package. All public source/artifact archives are public
+code/data/evidence only, with bundled source licences retained.

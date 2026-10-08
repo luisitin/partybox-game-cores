@@ -1,0 +1,37 @@
+{
+  "observedUtc": "2026-10-08T20:51:46.066958+00:00",
+  "sourceCommit": "be30189bf919efae10723288e2d81cad89994905",
+  "sourceGuards": 1034,
+  "nodeVersion": "v24.19.0",
+  "nodeVersionScope": "actual local installed executable queried after closed sampler; not a pre-window executable hash",
+  "rawIntervals": 1200,
+  "nativeTimestamps": 1202,
+  "activeFrameWitnesses": 1202,
+  "captures": [
+    {
+      "profile": "tv",
+      "path": "media/strict-reverify-2019-tv.webm",
+      "bytes": 179210,
+      "sha256": "f03c7c39d5dcd6ba7811b1a094e681e7bbeeddf4d6bf6824b061ac8b7e0b3d5e",
+      "frames": 24,
+      "encodedFps": 12,
+      "performanceMeasurement": false,
+      "decoded": true,
+      "decodeExit": 0
+    },
+    {
+      "profile": "phone",
+      "path": "media/strict-reverify-2019-phone.webm",
+      "bytes": 116414,
+      "sha256": "13eb1a5219216d33adf20e57044471aa6247058f67a8594ed5fe123dbe8f1ab3",
+      "frames": 24,
+      "encodedFps": 12,
+      "performanceMeasurement": false,
+      "decoded": true,
+      "decodeExit": 0
+    }
+  ],
+  "separateShellExitCaptured": false,
+  "naturalTerminationObservedUtc": "2026-10-08T20:50:36Z",
+  "physicalPhoneTested": false
+}

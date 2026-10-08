@@ -3,6 +3,10 @@ import {readFileSync,readdirSync,statSync} from 'node:fs';
 import {join,relative,resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 import assert from 'node:assert/strict';
+import {createRequire} from 'node:module';
+import {dirname} from 'node:path';
+import {realpathSync} from 'node:fs';
+import {decoderIdentity} from './strict-decode.ts';
 
 export type Hashes=Record<string,string>;
 export const sha256=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
@@ -24,5 +28,7 @@ export function strictRuntimeIdentity(){
  const zod=fileURLToPath(import.meta.resolve('zod'));
  const versions=Object.fromEntries(['zod','playwright','playwright-core'].map(name=>[name,(JSON.parse(readFileSync('node_modules/'+name+'/package.json','utf8')) as {version:string}).version]));
  assert.equal(versions.zod,'4.6.5');assert.equal(versions.playwright,'1.56.1');assert.equal(versions['playwright-core'],'1.56.1');
- return {versions,zodModule:relative(resolve('.'),zod),zodModuleSha256:sha256(readFileSync(zod))};
+ const require=createRequire(import.meta.url),{registry}=require(join(dirname(require.resolve('playwright-core/package.json')),'lib/server/registry/index.js')) as {registry:{findExecutable(name:string):{executablePath():string}|undefined}};
+ const encoder=registry.findExecutable('ffmpeg')?.executablePath();assert(encoder);
+ return {versions,nodeVersion:process.version,v8Version:process.versions.v8,zodModule:relative(resolve('.'),zod),zodModuleSha256:sha256(readFileSync(zod)),captureEncoder:{registryPath:encoder,realPath:realpathSync(encoder),sha256:sha256(readFileSync(encoder))},captureDecoder:decoderIdentity()};
 }

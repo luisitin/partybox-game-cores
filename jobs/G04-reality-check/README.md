@@ -39,3 +39,6 @@ retains 600 native frames and active timers per profile, and decodes both clips.
 NEXT records PR/CI/KEEP GOING progress;completion requires actual hosted CI.
 node host-deadline-mutation.ts also proves the real compiled deadline bug
 is caught by current actual-file controls and restores the original page.
+
+CI installs full system FFmpeg for independent decoded-frame checks;
+Playwright's capture encoder is separate. Current artifacts retain both identities.

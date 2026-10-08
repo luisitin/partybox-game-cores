@@ -430,3 +430,72 @@ These clips and b18952bf CI37791478413 do not count as a fresh strict frame
 sample. New native runs/current clips/current full CI are pending.
 The production page, UI, core and bot remain unchanged, and the existing
 three actual player-no-gain KEEP rounds remain valid.
+
+## Actual supported-decoder repair and delivery, 2026-10-08 21:10 UTC
+
+`G04_STRICT_FRAME_BARRIER_DIR=/tmp/g04-recovery-2040-coordination node strict-browser.ts`
+ran the actual source-frozen be30189 local TV/CPU4phone profiles and separate
+clips. Both exact3-key root grants, continuous hold/release receipts, all1200
+raw intervals/1202 native timestamps/active witnesses, 1034 source identities
+and full passed report are public under results/reverify-2019/local-be30189.
+`node strict-browser-proof.ts` independently rechecked that actual source
+while unchanged and decoded both clips; its actual output is archived.
+This scoped local success used the registry's pre-existing symlink to
+/usr/bin/ffmpeg7.1.5, not a genuinely downloaded pinned encoder binary.
+TV59.902538570FPS,p9516.7/p9916.8/max33.2ms; phone59.507267920,
+p9516.7/p9916.8/max49.9. The process naturally terminated/report passed;
+no separate shell exit code was captured. No physical phone is claimed.
+
+Actual full CI37841680065 at exact be30189 FAILED: pinned FFmpeg does not
+support image2pipe,exit234, after every original check and both strict
+native profiles passed. The complete180534-character log and genuine
+1105157-byte archive11578870215 (SHAaa8cd3bd5ab53b36ae5cf37528f90dd4e2b3bebeb104976de745b03b2c8f2233)
+are public in results/reverify-2019/host-failed-be30189. All19 ZIP entries
+passed CRC/path/symlink checks. Independent original-gate validation passed
+both600-interval profiles/1202 active witnesses; actual system decode
+passed three36-frame originals and its new24-frame TV recording. The new
+phone recording never ran. No full/current acceptance is claimed for FAIL.
+The first auxiliary inventory comparison actually failed on the generated
+contract/package.json. Exact old npm install in its own isolated temporary
+folder reproduced the hosted4af0a865 byte hash (same JSON semantics).
+All other1033 file identities matched; 58 Git inputs/1099 actual identity
+assertions passed after accounting for the reproduced install output.
+The correction adds --no-save, rather than ignoring the shared-file check.
+
+`npm run check` and `node --test strict-proof.test.ts` passed on the repair.
+`node --input-type=module -e 'import {readFileSync} from "node:fs";
+import {selfTestCurrentCaptures} from "./strict-browser-proof.ts";
+const report=JSON.parse(readFileSync("results/reverify-2019/local-be30189/report.json",
+"utf8"));console.log(JSON.stringify({...selfTestCurrentCaptures(report,
+report.sourceStart),scope:"current repaired decoder controls using genuine be30189 local captures; no fresh native FPS claim"},null,2));'`
+passed18 meaningful counterfeits with both genuine positive clips: real
+phone video coherently re-hashed as TV and coherently re-hashed invalid
+media reject, along with stale source, bad decode/hash/size, fabricated
+encoding FPS and missing/wrong gameplay witnesses. Exact clip bytes restored.
+Logs final-repair-* are public. These controls do not rerun FPS for luck.
+
+Actual decoder command: `/usr/bin/ffmpeg -v info -nostats -progress pipe:2
+-i <actual-current-clip> -f image2pipe -c:v mjpeg -`, with decoded stdout
+discarded after real decoding and actual stderr/exit/frame count retained.
+It now asserts VP8 and actual1920x1080TV/390x844phone dimensions. Local
+actual decoder /usr/bin/ffmpeg, realpath same, version7.1.5-0+deb13u1,
+SHAe8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a.
+CI explicitly runs `sudo apt-get update` and
+`sudo apt-get install --no-install-recommends -y ffmpeg`; actual hosted
+identity is recorded independently. The unchanged pinned encoder still
+produces the footage; local symlink and genuine hosted encoder identities
+are reported separately. Node/V8 identity also stays explicit.
+
+`node checksums.ts` now recursively binds every public archived output,
+including raw reports and ZIP source/artifact bytes; `node checksums.ts
+--check` verifies it. Production data/UI/core/bot/page and the entire
+strict-browser.ts sampler are byte-identical to be30189. No frame gate,
+filter, native clock, warmup or bot workload changed. Current exact-head
+full hosted checks/artifacts remain required before PR4 Ready.
+
+An earlier accidental `npm run check` from the repository root failed
+ENOENT because that folder has no package.json. Its real output is public
+as actual-wrong-working-directory-command.log; the corrected job-directory
+strict check passed. The G09 quiet hold was active21:08:57 and released
+21:10:08.170786Z, causing the conservative21:09:18 buffered publication
+target miss. Hard21:14:18 remains until actual push; no backdated cadence.

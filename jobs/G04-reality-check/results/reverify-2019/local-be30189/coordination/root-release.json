@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-08T20:50:43.785866+00:00",
+  "status": "native timing window released",
+  "profiles": [
+    "tv",
+    "phone"
+  ],
+  "tvClosedUtc": "2026-10-08T20:48:49.017Z",
+  "phoneClosedUtc": "2026-10-08T20:49:52.342Z",
+  "scope": "Both native timing profiles have actual samples-written closure. Separate functional captures may continue; no new FPS measurement. G10 pure reader may resume with actual STOP/CONT receipt. B19 compile and behavior may run, but its elapsed mixed timing awaits separate quiet coordination."
+}
