@@ -8,8 +8,10 @@ import { Controller } from '../games/shake-up/client/Controller';
 import { PhoneStage } from '../games/shake-up/client/phone/Stage';
 import { Tv } from '../games/shake-up/client/Tv';
 import { strings } from '../games/shake-up/client/strings';
-import { ShellProvider, setLocale } from '../test-support/ui';
+import { L, ShellProvider, setLocale } from '../test-support/ui';
+import { offlineStrings } from './strings';
 import './shell.css';
+const HOST_STRINGS = { ...strings, ...offlineStrings };
 
 type Skill = 'human' | 'easy' | 'normal' | 'sharp';
 type Seat = { name: string; skill: Skill };
@@ -104,7 +106,7 @@ function App() {
 
   const start = (e: React.FormEvent) => {
     e.preventDefault(); const roster = seats.slice(0, count).map((s, i) => ({ ...s, name: s.name.trim() || `Player ${i + 1}` }));
-    setLocale(lang, strings); document.documentElement.lang = lang;
+    setLocale(lang, HOST_STRINGS); document.documentElement.lang = lang;
     const state = game.init({ players: roster.map((s, i) => ({ id: `p${i + 1}`, name: s.name, avatarId: `face-${i}`, connected: true, bot: s.skill !== 'human' })), settings: { grid, dictionary, rounds: Number(rounds), huntSeconds: seconds, reader: 'none' }, contentLang: lang === 'es' ? 'es' : 'en', seed: Number(seed) >>> 0, now: 1000, presence: { mode: 'remote-text', phoneOnly: true } });
     session.current = { state, seats: roster, humans: state.order.filter(id => !state.players[id]!.bot), turn: 0, handoff: false, elapsed: 0, now: 1000, lastWall: performance.now(), botSecond: -1, pauseWall: 0 };
     setPublicStage(false); update();
@@ -112,7 +114,7 @@ function App() {
   const reset = () => {
     const running = session.current;
     if (running && running.state.phase.id !== 'done') {
-      const discard = window.confirm('End this game and return to setup? Current scores will be lost.');
+      const discard = window.confirm(L('End this game and return to setup? Current scores will be lost.'));
       // Native confirmation blocks callbacks. Cancellation preserves the private clock too.
       running.lastWall = performance.now();
       if (!discard) return;
@@ -123,6 +125,9 @@ function App() {
     setPublicStage(false); update();
     requestAnimationFrame(() => heading.current?.focus());
   };
+  const changeLanguage = (next: string) => {
+    setLang(next); setLocale(next, HOST_STRINGS); document.documentElement.lang = next;
+  };
   const resize = (n: number) => {
     setCount(n); setSeats(previous => Array.from({ length: n }, (_, i) => previous[i] ?? { name: `Player ${i + 1}`, skill: 'human' }));
   };
@@ -132,28 +137,28 @@ function App() {
     if (r.handoff) ready.current?.focus();
     else document.querySelector<HTMLElement>('.phone-owner [role="gridcell"][tabindex="0"]')?.focus();
   }, [r?.state.phase.id, r?.state.round, r?.handoff, r?.turn]);
-  if (!r) return <main className="setup"><h1 ref={heading} tabIndex={-1}>Shake Up</h1><p>Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.</p>
+  if (!r) return <main className="setup"><h1 ref={heading} tabIndex={-1}>Shake Up</h1><p>{L("Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.")}</p>
     <form onSubmit={start}><div className="options">
-      <label>Players<select aria-label="Players" value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
-      <label>Words<select aria-label="Words" value={lang} onChange={e => setLang(e.target.value)}><option value="en">English</option><option value="es">Español</option></select></label>
-      <label>Grid<select aria-label="Grid" value={grid} onChange={e => setGrid(e.target.value)}><option>4x4</option><option>5x5</option></select></label>
-      <label>Dictionary<select aria-label="Dictionary" value={lang === 'es' ? 'full' : dictionary} disabled={lang === 'es'} onChange={e => setDictionary(e.target.value)}><option value="full">Full word list</option><option value="common">Common words (SCOWL 70)</option></select></label>
-      <label>Rounds<select aria-label="Rounds" value={rounds} onChange={e => setRounds(e.target.value)}>{[1, 2, 3, 4, 5].map(n => <option key={n}>{n}</option>)}</select></label>
-      <label>Seconds per person<select aria-label="Seconds per person" value={seconds} onChange={e => setSeconds(e.target.value)}>{[90, 120, 180, 240].map(n => <option key={n}>{n}</option>)}</select></label>
-      <label>Seed<input type="number" min="0" max="4294967295" value={seed} onChange={e => setSeed(e.target.value)} required /></label>
-    </div><fieldset><legend>Who is playing?</legend>{seats.slice(0, count).map((s, i) => <div className="seat" key={i}><label>Name {i + 1}<input maxLength={80} value={s.name} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, name: e.target.value } : v))} /></label><label>Player {i + 1}<select aria-label={`Player ${i + 1}`} value={s.skill} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, skill: e.target.value as Skill } : v))}><option value="human">Person</option><option value="easy">Easy bot</option><option value="normal">Normal bot</option><option value="sharp">Sharp bot</option></select></label></div>)}</fieldset><button type="submit">Start Shake Up</button></form>
-    <details><summary>How to play</summary><p>Drag across cubes and lift, or tap letters and press Submit. Keyboard: arrow keys move, Enter or Space adds a cube, Escape clears. Diagonals count; use each cube once. Qu is one cube and two letters. Minimum: 3 letters on 4×4, 4 on 5×5. Length 3–4 scores 1, 5 scores 2, 6 scores 3, 7 scores 5, 8+ scores 11. Words found by two or more players score zero. Unknown words may be accepted together at the reveal.</p><p>During private turns, everyone else looks away. Handoff hides the previous list. Bots play the same board during the first turn. Public stage shows counts during the hunt.</p></details>
-    <details><summary>Credits and word-list licences</summary><div dangerouslySetInnerHTML={{ __html: '__INLINE_LICENSES__' }} /></details>
+      <label>{L("Players")}<select aria-label={L("Players")} value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
+      <label>{L("Words")}<select aria-label={L("Words")} value={lang} onChange={e => changeLanguage(e.target.value)}><option value="en">{L("English")}</option><option value="es">Español</option></select></label>
+      <label>{L("Grid")}<select aria-label={L("Grid")} value={grid} onChange={e => setGrid(e.target.value)}><option>4x4</option><option>5x5</option></select></label>
+      <label>{L("Dictionary")}<select aria-label={L("Dictionary")} value={lang === 'es' ? 'full' : dictionary} disabled={lang === 'es'} onChange={e => setDictionary(e.target.value)}><option value="full">{L("Full word list")}</option><option value="common">{L("Common words (SCOWL 70)")}</option></select></label>
+      <label>{L("Rounds")}<select aria-label={L("Rounds")} value={rounds} onChange={e => setRounds(e.target.value)}>{[1, 2, 3, 4, 5].map(n => <option key={n}>{n}</option>)}</select></label>
+      <label>{L("Seconds per person")}<select aria-label={L("Seconds per person")} value={seconds} onChange={e => setSeconds(e.target.value)}>{[90, 120, 180, 240].map(n => <option key={n}>{n}</option>)}</select></label>
+      <label>{L('Seed')}<input type="number" min="0" max="4294967295" value={seed} onChange={e => setSeed(e.target.value)} required /></label>
+    </div><fieldset><legend>{L("Who is playing?")}</legend>{seats.slice(0, count).map((s, i) => <div className="seat" key={i}><label>{L('Name {n}', { n: i + 1 })}<input maxLength={80} value={s.name} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, name: e.target.value } : v))} /></label><label>{L('Player {n}', { n: i + 1 })}<select aria-label={L('Player {n}', { n: i + 1 })} value={s.skill} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, skill: e.target.value as Skill } : v))}><option value="human">{L("Person")}</option><option value="easy">{L("Easy bot")}</option><option value="normal">{L("Normal bot")}</option><option value="sharp">{L("Sharp bot")}</option></select></label></div>)}</fieldset><button type="submit">{L("Start Shake Up")}</button></form>
+    <details><summary>{L("How to play")}</summary><p>{L("Drag across cubes and lift, or tap letters and press Submit. Keyboard: arrow keys move, Enter or Space adds a cube, Escape clears. Diagonals count; use each cube once. Qu is one cube and two letters. Minimum: 3 letters on 4×4, 4 on 5×5. Length 3–4 scores 1, 5 scores 2, 6 scores 3, 7 scores 5, 8+ scores 11. Words found by two or more players score zero. Unknown words may be accepted together at the reveal.")}</p><p>{L("During private turns, everyone else looks away. Handoff hides the previous list. Bots play the same board during the first turn. Public stage shows counts during the hunt.")}</p></details>
+    <details><summary>{L("Credits and word-list licences")}</summary><div dangerouslySetInnerHTML={{ __html: '__INLINE_LICENSES__' }} /></details>
   </main>;
   const state = r.state, active = r.humans[r.turn] ?? state.order[0]!, isHunt = state.phase.id === 'hunt';
   const me = { id: active, name: state.players[active]!.name, isVip: true, canSeeTv: false };
   return <ShellProvider value={shell.current}><main className={publicStage ? 'room television' : 'room'} data-phase={state.phase.id} data-round={state.round} data-turn={r.turn}>
-    <header className="host"><h1 ref={heading} tabIndex={-1}>Shake Up{state.phase.id === 'done' ? ' · Results' : ''}</h1><nav aria-label="Host controls">
-      {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{state.phase.paused ? 'Resume' : 'Pause'}</button>{!r.handoff ? <button onClick={skip}>{isHunt ? 'Finish turn' : state.phase.id === 'reveal' ? 'Next card' : 'Continue'}</button> : null}<button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>Public stage</button></> : null}
-      <button onClick={reset}>New game</button></nav></header>
-    {r.handoff ? <section className="handoff" aria-label="Pass the device"><h2 id="handoff-name">Pass to {me.name}</h2><p id="handoff-clock">Everyone else looks away. Your {state.cfg.huntMs / 1000}-second clock starts when you’re ready.</p><button ref={ready} aria-describedby="handoff-name handoff-clock" onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>I’m ready</button></section>
+    <header className="host"><h1 ref={heading} tabIndex={-1}>Shake Up{state.phase.id === 'done' ? L(' · Results') : ''}</h1><nav aria-label={L('Host controls')}>
+      {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{L(state.phase.paused ? 'Resume' : 'Pause')}</button>{!r.handoff ? <button onClick={skip}>{L(isHunt ? 'Finish turn' : state.phase.id === 'reveal' ? 'Next card' : 'Continue')}</button> : null}<button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>{L("Public stage")}</button></> : null}
+      <button onClick={reset}>{L("New game")}</button></nav></header>
+    {r.handoff ? <section className="handoff" aria-label={L('Pass the device')}><h2 id="handoff-name">{L('Pass to {name}', { name: me.name })}</h2><p id="handoff-clock">{L('Everyone else looks away. Your {seconds}-second clock starts when you’re ready.', { seconds: state.cfg.huntMs / 1000 })}</p><button ref={ready} aria-describedby="handoff-name handoff-clock" onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>{L("I’m ready")}</button></section>
       : publicStage ? <div className="tv-owner"><Tv view={game.tvView(state)} /></div>
-      : <div className="phone-owner" key={`${state.round}-${isHunt ? active : 'stage'}`}><p className="private-label">{isHunt ? `${me.name} · private turn` : `Round ${state.round} of ${state.cfg.rounds}`}</p>{isHunt ? <Controller view={game.controllerView(state, active)} send={send} me={me} skip={skip} /> : <PhoneStage view={game.controllerView(state, active)} send={send} me={me} skip={skip} />}</div>}
+      : <div className="phone-owner" key={`${state.round}-${isHunt ? active : 'stage'}`}><p className="private-label">{isHunt ? L('{name} · private turn', { name: me.name }) : L('Round {round} of {total}', { round: state.round, total: state.cfg.rounds })}</p>{isHunt ? <Controller view={game.controllerView(state, active)} send={send} me={me} skip={skip} /> : <PhoneStage view={game.controllerView(state, active)} send={send} me={me} skip={skip} />}</div>}
   </main></ShellProvider>;
 }
 createRoot(document.getElementById('root')!).render(<App />);

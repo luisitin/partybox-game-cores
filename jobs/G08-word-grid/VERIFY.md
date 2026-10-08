@@ -125,3 +125,7 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 ## KEEP GOING round3
 - `npm run typecheck`, `npm run build:play`: PASS,14205234bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallnative/private/16-seat/restart gates plus explicit activeElement ready→grid checks and aria-describedby player/clock association. Before handoff focusBODY (round1diagnostic), now ready button then gridcell;0requests/errors,1009300-byte clip05. Report explicitly partial HTTP/native-only; full disk/FPS CI remains mandatory.
 - `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS36JSONfiles and82file hashes after round3evidence addition.
+
+## KEEP GOING round4
+- `npm run typecheck`, `npm run build:play`: PASS14208558bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallprior gates + selected Spanish5×5 host Pausar/Terminar turno/Nueva partida controls and document langes;227542-byte clip06;0requests/errors.39original host translations, explicitly HTTP/native-only proof.
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS37JSONfiles and85hashes after media/translation source addition.

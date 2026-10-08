@@ -13,3 +13,5 @@
 - Local browser recording uses installed system ffmpeg at Playwright's expected locked-version path. This is tool setup, not game code. Managed Chromium rejects file URLs, so local HTTP evidence stays partial until actual disk CI.
 
 - Offline New game asks before discarding live progress; cancelling does not consume private clock time. Returning to setup retains names/bot skills/options and selects a fresh seed; a manually re-entered seed still replays the same board. This is host behavior, not a scoring/rules change.
+
+- The offline host’s interface follows its English/Spanish word-list selection, as its existing owner client already does. Host translations are authored here; legal notices and user-entered names retain their original text. This does not claim a new published Spanish physical-cube edition.

@@ -27,12 +27,14 @@ async function open(width:number,height:number,reduce=false,video=false) {
 }
 async function setup(page:Page,n=2,grid='4x4',lang='en',ready=true){
   await page.getByLabel(/^Players/).selectOption(String(n));await page.getByLabel('Seed',{exact:true}).fill('17');
-  await page.getByLabel(/^Grid/).selectOption(grid);await page.getByLabel(/^Words/).selectOption(lang);
+  await page.getByLabel(/^Grid/).selectOption(grid);
   await page.getByLabel(/^Rounds/).selectOption('1');await page.getByLabel(/^Seconds per person/).selectOption('90');
-  await page.getByRole('button',{name:'Start Shake Up'}).click();assert.equal(await page.locator('main').getAttribute('data-phase'),'shake');
-  await page.getByRole('button',{name:'Continue',exact:true}).click();
-  await page.waitForFunction(`document.activeElement?.textContent==='I’m ready'`);
-  if(ready){await page.getByRole('button',{name:'I’m ready'}).click();await page.waitForFunction(`document.activeElement?.getAttribute('role')==='gridcell'`);}
+  await page.getByLabel(/^Words/).selectOption(lang);
+  const readyText=lang==='es'?'Estoy listo':'I’m ready';
+  await page.getByRole('button',{name:lang==='es'?'Empezar Shake Up':'Start Shake Up'}).click();assert.equal(await page.locator('main').getAttribute('data-phase'),'shake');
+  await page.getByRole('button',{name:lang==='es'?'Continuar':'Continue',exact:true}).click();
+  await page.waitForFunction(`document.activeElement?.textContent===${JSON.stringify(readyText)}`);
+  if(ready){await page.getByRole('button',{name:readyText}).click();await page.waitForFunction(`document.activeElement?.getAttribute('role')==='gridcell'`);}
   assert.equal(await page.locator('main').getAttribute('data-phase'),'hunt');
 }
 async function trace(page:Page,path:number[]){
@@ -87,10 +89,14 @@ assert.equal(await phone.page.locator('main').getAttribute('data-phase'),'done')
 await phone.page.screenshot({path:'.tmp/visual/original-results.png'});
 const video=phone.page.video()!;const videoPath=await video.path();await phone.context.close();
 const destination='.tmp/visual/native-private-input-and-results.webm';renameSync(videoPath,destination);assert(statSync(destination).size<10*1024*1024);
-const reduced=await open(390,844,true);await setup(reduced.page,8,'5x5','es');assert.equal(await reduced.page.getByRole('gridcell').count(),25);
+const reduced=await open(390,844,true,true);await setup(reduced.page,8,'5x5','es');assert.equal(await reduced.page.getByRole('gridcell').count(),25);
 assert((await reduced.page.locator('body').innerText()).includes('palabras'));
 const reducedMotion=await reduced.page.getByRole('gridcell').first().evaluate(el=>getComputedStyle(el).animationDuration==='0s');assert(reducedMotion);
-assert(await reduced.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await reduced.context.close();
+assert(await reduced.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));assert.equal(await reduced.page.getByRole('button',{name:'Pausar',exact:true}).count(),1);
+assert.equal(await reduced.page.getByRole('button',{name:'Terminar turno',exact:true}).count(),1);
+assert.equal(await reduced.page.getByRole('button',{name:'Nueva partida',exact:true}).count(),1);
+assert.equal(await reduced.page.locator('html').getAttribute('lang'),'es');
+const spanishPath=await reduced.page.video()!.path();await reduced.context.close();const spanishDestination='.tmp/visual/spanish-host.webm';renameSync(spanishPath,spanishDestination);assert(statSync(spanishDestination).size<10*1024*1024);
 for(const roster of [1,3,16]){const sample=await open(390,844,true);await setup(sample.page,roster);assert.equal(await sample.page.getByRole('gridcell').count(),16);await sample.context.close();}
 // Full max-roster hot-seat game: permitted long name,16 distinct3-letter words,
 //16way positive tie. Check actual score/avatar bounds, not just document overflow.
@@ -135,5 +141,5 @@ await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).click(
 assert.notDeepEqual(await restart.page.getByRole('gridcell').allTextContents(),restartGrid,'fresh seed should make a fresh board');
 const restartPath=await restart.page.video()!.path();await restart.context.close();const restartDestination='.tmp/visual/restart-preserves-progress.webm';renameSync(restartPath,restartDestination);assert(statSync(restartDestination).size<10*1024*1024);
 await browser.close();assert.deepEqual(errors,[]);assert.deepEqual(outgoing,[]);
-const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true,cancelRestartKeepsProgress:true,newGameFreshSeed:true,handoffAndGridFocus:true},restartVideoBytes:statSync(restartDestination).size,layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
+const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true,cancelRestartKeepsProgress:true,newGameFreshSeed:true,handoffAndGridFocus:true,spanishHostControls:true},spanishVideoBytes:statSync(spanishDestination).size,restartVideoBytes:statSync(restartDestination).size,layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
 writeFileSync('.tmp/visual/browser-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "fileOpened": false,
+  "urlMode": "local HTTP partial",
+  "nativeOnly": true,
+  "browser": "/usr/bin/chromium",
+  "desktop": null,
+  "phone": null,
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true,
+    "longNamesFit": true,
+    "fullSixteenSeatHotseat": true,
+    "sixteenTiedWinnersFit": true,
+    "cancelRestartKeepsProgress": true,
+    "newGameFreshSeed": true,
+    "handoffAndGridFocus": true,
+    "spanishHostControls": true
+  },
+  "spanishVideoBytes": 227542,
+  "restartVideoBytes": 289271,
+  "layoutVideoBytes": 1422864,
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 719622,
+  "provenance": {
+    "keepGoingRound": 4,
+    "parentCommit": "5f4e731a93f0f95fdf3d6fb43d68a0721dce6d0d",
+    "playSha256": "05ad1382bede3e384fb3e7737f06f4e69587290b60cc2435af8161c646e20385",
+    "capture": "06-spanish-host.webm"
+  }
+}
