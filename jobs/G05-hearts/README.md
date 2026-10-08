@@ -38,5 +38,6 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Resumed verification is pending: latest local CPU4x phone55.047fps failed
-the strict gate. PR5 stays draft until current-source proof and CI are green.
+Exact e6 CI passed the strengthened current-source full gate. Latest local
+desktop58.634/CPU4x phone57.695fps failed; raw evidence is preserved and the
+cause remains unresolved. PR5 remains draft; see NEXT.md for current status.

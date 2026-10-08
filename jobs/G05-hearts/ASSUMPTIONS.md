@@ -65,3 +65,14 @@ full Chrome, but default headless launch uses headless_shell. Full Chrome
 remains policy-blocked; the actual file succeeds in the pinned headless_shell.
 Local phone55.047fps remains an honest unresolved failure, not a runtime
 causal diagnosis. Historical green metadata cannot satisfy this new strict gate.
+
+First checkpoint push confirmation14:10:16Z missed requested14:09:39Z by37s
+after a wrong-cwd regeneration command. Preserve actual clocks; subsequent
+work targets an earlier checkpoint with buffer. Current-host CI log proves
+the strengthened gate ran; its printed summary lacks raw arrays and remains
+historical metadata, not current local acceptance or artifact readback.
+
+The authorized fresh untraced confirmation again failed mean FPS (desktop58.634,
+CPU4x phone57.695) while exact-source hosted full acceptance passed. Preserve
+both rather than treating instrumentation, captures or metadata as performance
+proof. The local variance remains unexplained; no speculative runtime change.

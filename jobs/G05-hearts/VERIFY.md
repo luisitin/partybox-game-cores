@@ -407,3 +407,61 @@ after FPS, so that failed gate produced no acceptance clip. Separate
 existing functional checks without frame sampling; its guard includes its
 actual harness SHA. Encoding10fps is capture-only, never FPS acceptance.
 PR5 freshly read via REST is DRAFT while current strict proof/CI remain pending.
+
+The first push was confirmed14:10:16Z,37seconds after requested14:09:39Z.
+Final regeneration was mistakenly invoked from repo cwd and stopped
+MODULE_NOT_FOUND before any mutation; it was rerun job-locally. Claim refresh
+remains the actual14:09:29Z/main835783b; job checkpoint e6bfdc8 is not backdated.
+That checkpoint passes33schema JSON/64hashes and preserves both failed attempts.
+Nongating actual-file milestone12 clip136324bytes SHA256
+85d2c8c3c11bb3616661f87f4912acaebd7ede7f29a7c45e85805845353e9f6b,
+all original functionals/3–6rosters pass with0errors/network. Its own executed
+capture-harness SHA iscf34289e848b50757b187a5fc3a2f40b05e53ef25a919b1270f2c86caaec4843;
+27source start/end hashes agree. This is capture-only/full-functional evidence
+with no frame acceptance.
+
+Exact e6bfdc8 push37790229990 and PR37790237212 SUCCESS. `gh run view
+37790237212 --repo luisitin/partybox-game-cores --log` actually read120323B
+complete log:34/34tests,25mutants, all unchanged required core/leagues/replay/
+solver checks and regenerated/schema/hash gates, then strengthened600-frame
+actual-disk visual runner and independent checker. Chrome154 desktop
+60.003000fps,CPU4x phone60.002400fps,p9516.7/p9916.8/max16.8; all20functional
+flags true,0network/errors,26currentsource guards. Checker logs accepted:true,
+currentSource:true,rawFrames:1200 and captureBytes:138541. CI's logged clip SHA
+53366bf6c00375723d4839ca08075bdd8763f7c2b22fafaaea576addea58fb5a
+was checked against actual bytes by that executed CLI. Its unmodified printed
+summary is preserved in media/visual-measurements-ci-37790237212.json; the
+console intentionally omits raw arrays. This summary is historical metadata,
+not an independently accepted current raw report; artifact contents were not
+read, and no host raw/clip-byte readback is claimed.
+
+Bounded nongating instrumentation of the unchanged actual source: warm original
+prelude+600desktop then600phone measured59.804/59.704fps;100phoneclicks
+max8.5ms, one75ms LongTask(self). A separate fresh browser process with the
+same17card/10Hz/600phone workload measured60.0024fps,clickmax6.5ms,noLongTasks.
+The233ms stall did not reproduce. Coarse performance.memory readings stayed
+10MB and cannot rule outGC; neither correlation nor cold/warm comparison proves
+a cause. No player/core/UI optimization made. Instrumented controls/raw/harness
+remain under ignored .tmp/diagnostic-* and immutable attempts, not acceptance.
+One authorized fresh untraced full run completed14:29:02.523Z on the same
+frozen HTML/runner/checker. Run2026-10-08T14-28-36-173Z retained600 intervals
+per profile and all26matching source start/end guards. Desktop58.634405fps,
+mean17.054833ms,p9516.7,p9916.8,max150ms; phone CPU4x57.695081fps,
+mean17.3325ms,p9516.8,p9933.3,max116.6ms. Both mean gates failed. Public
+media/visual-measurements-13-failed-2026-10-08T14-28-36-173Z.json and the
+immutable ignored run archive preserve all1,200 intervals. Observed process
+closure14:30:51Z; no remaining owned groups. Same-source hosted acceptance
+is distinct from these local failures. No cause, optimization or local PASS
+is inferred, and no further blind rerun is planned.
+
+Milestone13 nongating capture completed2026-10-08T14:34:54.797Z; all20 existing
+functional flags/3–6 rosters pass,0network/errors,27matching start/end guards
+including actual executed cf34289e capture helper. media/milestone-13.webm is
+136324bytes SHA256
+c9284d777034f6dc0c354aab06e40baee78b4ebd16541cf5ced1db5ceb2f53fb.
+Encoding10fps follows checks and has no frame acceptance. The separate failed
+strict run remains latest; this clip cannot replace it.
+
+Checkpoint checks: fixtures-only regeneration and check-data PASS35 schema
+JSON/69 exact checksums; git diff --check PASS. No unchanged core/leagues
+were repeated locally; exact-head hosted npm test runs the entire suite.

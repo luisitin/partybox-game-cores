@@ -12,14 +12,24 @@ profile with≥59fps/p95≤18ms. Retain actual raw intervals,26 start/end source
 hashes, zero-network/error checks and the exact capture bytes/SHA. Independent
 verification refuses historical/partial reports and failed-later-run reuse.
 
-Strict build/bundle equality, four checker unit groups/32 negative controls,
-31 schema JSON and59 hashes pass. Full strict attempt2026-10-08T14-05-20-267Z retained600 raw per profile:
-desktop60.002400fps passes; phone55.047387fps fails (p9516.8,p9966.7,max233.2ms).
-Complete current strict acceptance remains pending; no gate or sample changed. No new gameplay gain or completed review is
-claimed before that proof; default current-head full CI is also mandatory.
+Strict build/bundle equality, four checker groups/32 negative controls, and
+35 schema JSON/69 checksums pass.
+Exact e6bfdc8 push37790229990/PR37790237212 are SUCCESS: the actual full log
+verifies the new600/frame/1200raw independent gates, all20functionals/26sources,
+34tests/25mutants and actual capture bytes/SHA. Host artifact contents were not
+read; the preserved console summary is metadata only.
 
-First proof-pending push hard14:09:39Z; push an honest proof-pending
-checkpoint if necessary. Refresh onlyG05's main claim on each normal push.
+Both local strict attempts retain all raw and fail honestly. The latest
+2026-10-08T14-28-36-173Z completed14:29:02.523Z: desktop58.634405fps and
+CPU4x phone57.695081fps (p9916.8/33.3,max150/116.6ms) fail the59fps gate.
+Earlier phone55.047387fps also failed. No cause is established; instrumented
+nongating controls are not acceptance. No runtime change or new completed
+review is claimed. PR5 remains draft; local strict evidence remains unresolved.
+
+First checkpoint e6bfdc8 push was confirmed14:10:16Z,37s late after a wrong-cwd
+regeneration command; actual mainclaim14:09:29Z/835783b is preserved. Next
+checkpoint targets14:35Z early/14:40:16Z hard. After this push,
+refresh by its actual confirmation+25min and never exceed+30min. Refresh onlyG05's main claim on each normal push.
 No force push or PR merge. Existing pure core/bots/rules/fixtures/leagues and
 HTML are unchanged: HTML29ca92ac,coree0e10b9a,browser2e83f1ac.
 
@@ -32,3 +42,8 @@ Original completed delivery:678d077, PR5ready, exact push37744744041 and
 PR37744750013 succeeded. Independent REST read confirms npm test success;
 the new audit did not obtain that run's actual logs/artifact contents, so it
 does not infer fresh FPS values. Earlier measured summaries remain in media.
+
+Milestone13 functional clip is complete:136324bytes,27matching guards, all20
+existing functionals/3–6 rosters pass. It has no FPS acceptance. Next: publish
+this honest failed-confirmation checkpoint. Read exact new-head CI before deciding the next
+formal review. No repeated unchanged leagues/matrix or blind frame reruns.
