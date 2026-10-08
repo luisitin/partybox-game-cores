@@ -49,7 +49,7 @@ function enterRound(s:State,now:number):State {
   const [which,rng1]=nextInt(s.rng,0,candidates.length-1),letter=candidates[which];
   const pool=CATEGORIES.filter(category=>(category.answers[letter]?.length??0)>0);
   const [deck,rng]=shuffle(rng1,pool);
-  // Preserve the shuffled theme schedule; crowded tables prefer broader answer banks.
+  // Only public presence changes breadth preference; letters/shuffle/RNG stay exact.
   const selected=selectCategories(deck,letter,s.order.filter(id=>present(s,id)).length);
   if(selected.length<12)throw new Error(`Insufficient original categories for ${letter}`);
   const categories:Category[]=selected.map(({id,prompt,clarification,theme})=>({id,prompt,clarification,theme}));

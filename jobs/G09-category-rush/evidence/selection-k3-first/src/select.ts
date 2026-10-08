@@ -22,7 +22,7 @@ export function selectCategories<T extends {id:string;theme:string;answers:Reado
   };
   return leaders.map((leader,slot)=>{
     // These are exploration positions, not a per-prompt exposure guarantee.
-    if(slot%3===0)return leader;
+    if(slot%4===0)return leader;
     let best=leader;
     for(const candidate of firstThree.get(leader.theme)!)if(quality(candidate)>quality(best))best=candidate;
     return best;

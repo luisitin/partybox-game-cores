@@ -17,7 +17,7 @@ export function referenceSelection<T extends SelectionCard>(deck:readonly T[],le
     return [...leaders,...extras].slice(0,12);
   }
   return ordered.slice(0,12).map((group,slot)=>{
-    if([0,3,6,9].includes(slot))return group[0].card;
+    if([0,4,8].includes(slot))return group[0].card;
     const ranked=group.slice(0,3).map(item=>({
       ...item,quality:Math.min(presentCount,referenceGroups(item.card.answers[letter]??[]).length),
     })).sort((a,b)=>b.quality-a.quality||a.position-b.position);

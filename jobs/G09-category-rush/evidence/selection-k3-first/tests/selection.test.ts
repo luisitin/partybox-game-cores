@@ -31,10 +31,9 @@ test('selector fixtures: roster cap preserves equally adequate earlier candidate
   assert.equal(selectCategories(deck,'B',4)[1].id,'four-options');
   assert.equal(selectCategories(deck,'B',8)[1].id,'nine-options');
 });
-test('selector fixtures: slots zero three six and nine retain exploration and original theme order',()=>{
-  const deck=[...leaders(),...[0,1,3,4,6,8,9].map(i=>card(`wide-${i}`,`theme-${i}`,8))];
-  const selected=selectCategories(deck,'B',8),expected=[...expectedLeaders];
-  for(const slot of [1,4,8])expected[slot]=`wide-${slot}`;
+test('selector fixtures: slots zero four and eight retain exploration and original theme order',()=>{
+  const deck=[...leaders(),...[0,1,4,8].map(i=>card(`wide-${i}`,`theme-${i}`,8))];
+  const selected=selectCategories(deck,'B',8),expected=[...expectedLeaders];expected[1]='wide-1';
   assert.deepEqual(ids(selected),expected);
   assert.deepEqual(selected.map(c=>c.theme),Array.from({length:12},(_,i)=>`theme-${i}`));
 });

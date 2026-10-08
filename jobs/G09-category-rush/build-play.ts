@@ -5,7 +5,7 @@ import {dirname,join} from 'node:path';
 import {createHash} from 'node:crypto';
 const root=dirname(fileURLToPath(import.meta.url));
 const compatibility=createHash('sha256');
-for(const path of ['src/index.ts','src/model.ts','src/scoring.ts','src/match.ts','content/categories.ts','client-save.ts','../../contract/rng.ts'])compatibility.update(path).update(await readFile(join(root,path)));
+for(const path of ['src/index.ts','src/select.ts','src/model.ts','src/scoring.ts','src/match.ts','content/categories.ts','client-save.ts','../../contract/rng.ts'])compatibility.update(path).update(await readFile(join(root,path)));
 const result=await build({entryPoints:[join(root,'client.ts')],bundle:true,write:false,format:'iife',platform:'browser',target:'es2022',minify:true,legalComments:'none',charset:'ascii',sourcemap:false,define:{__G09_SAVE_COMPAT__:JSON.stringify(compatibility.digest('hex'))}});
 const script=result.outputFiles[0]!.text.replace(/<\/script/gi,'<\\/script');
 const template=await readFile(join(root,'src/play.template.html'),'utf8');
