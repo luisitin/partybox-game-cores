@@ -5,7 +5,17 @@ import {createRng} from '../../../contract/rng';
 const $=(id:string)=>document.getElementById(id)!;
 let state:State|null=null,openFor:string|null=null,selected:number|null=null,now=0;
 let viewedState:State|null=null,cachedPrivateView:PrivateView|null=null;
-const rng=createRng(7199);
+const rng=createRng(crypto.getRandomValues(new Uint32Array(1))[0]);
+function clockNow():number {now=Math.max(now,Math.floor(performance.now()));return now;}
+function renderClock():void {
+  if(!state)return;
+  const clock=$('clock');
+  if(state.phase.deadline===null){if(!clock.hidden)clock.hidden=true;return;}
+  clock.hidden=false;
+  const at=state.phase.paused?.at??clockNow(),seconds=Math.max(0,Math.ceil((state.phase.deadline-at)/1000));
+  const text=(state.phase.paused?'Paused · ':'')+seconds+'s left for this move';
+  if(clock.textContent!==text)clock.textContent=text;
+}
 const controls=new Map<string,HTMLInputElement|HTMLSelectElement>();
 function option(value:string,label=value):HTMLOptionElement {const el=document.createElement('option');el.value=value;el.textContent=label;return el;}
 function button(label:string,action:()=>void,primary=false):HTMLButtonElement {const b=document.createElement('button');b.textContent=label;b.onclick=action;if(primary)b.className='primary';return b;}
@@ -33,14 +43,14 @@ function skill(id:string):'easy'|'normal'|'sharp' {const kind=(document.getEleme
 function start():void {
   const settings:Record<string,string|number|boolean>={mode:Number(count.value)===2?'duel':'rotation'};
   for(const [key,control]of controls)settings[key]=control instanceof HTMLInputElement?control.type==='checkbox'?control.checked:Number(control.value):control.value;
-  state=game.init({players:Array.from({length:Number(count.value)},(_,i)=>({id:'p'+i,name:(document.getElementById('name-'+i) as HTMLInputElement).value||`Player ${i+1}`,avatarId:'face-'+i,connected:true,bot:(document.getElementById('seat-'+i) as HTMLSelectElement).value!=='Human'})),settings,seed:rng.int(0,0xffffffff),now:++now});
+  state=game.init({players:Array.from({length:Number(count.value)},(_,i)=>({id:'p'+i,name:(document.getElementById('name-'+i) as HTMLInputElement).value||`Player ${i+1}`,avatarId:'face-'+i,connected:true,bot:(document.getElementById('seat-'+i) as HTMLSelectElement).value!=='Human'})),settings,seed:rng.int(0,0xffffffff),now:clockNow()});
   openFor=null;selected=null;$('setup').hidden=true;$('table').hidden=false;render();
 }
 function send(input:Input):void {
   if(!state)return;
   const before=state;
   const actor=state.phase.id==='round-end'?state.order.find(id=>state!.players[id].connected&&!state!.left.includes(id))??state.turn:state.turn;
-  state=game.reduce(state,{type:'input',playerId:actor,input,now:++now});
+  state=game.reduce(state,{type:'input',playerId:actor,input,now:clockNow()});
   if(state===before){$('notice').textContent='That move is not legal. Your hand is unchanged.';return;}
   if(state.turn!==before.turn||state.hand!==before.hand||state.phase.id==='done'){openFor=null;selected=null;}
   render();
@@ -119,13 +129,15 @@ function render():void {
   $('leave-seat').hidden=bot||state.finished||v.paused||reveal;
   $('pause').textContent=v.paused?'Resume':'Pause';$('pause').hidden=state.finished;$('end').hidden=state.finished;
   $('log').replaceChildren(...v.log.map(x=>{const p=document.createElement('p');p.textContent=`${state!.players[x.player].name}: ${x.action}${x.card===null?'':' '+cardName(x.card)}`;return p;}));
+  renderClock();
 }
 $('start').onclick=start;$('new-match').onclick=()=>{$('setup').hidden=false;$('table').hidden=true;state=null;};
 $('bot-step').onclick=()=>{if(state){const input=game.bot.sampleInput(state,state.turn,rng,skill(state.turn));if(input)send(input);}};
-$('pause').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:state.phase.paused?'resume':'pause',now:++now});openFor=null;render();}};
-$('end').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:'end',now:++now});openFor=null;render();}};
-$('leave-seat').onclick=()=>{if(state){state=game.reduce(state,{type:'player',playerId:state.turn,connected:false,gone:'left',now:++now});openFor=null;selected=null;render();}};
+$('pause').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:state.phase.paused?'resume':'pause',now:clockNow()});openFor=null;render();}};
+$('end').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:'end',now:clockNow()});openFor=null;render();}};
+$('leave-seat').onclick=()=>{if(state){state=game.reduce(state,{type:'player',playerId:state.turn,connected:false,gone:'left',now:clockNow()});openFor=null;selected=null;render();}};
 // The host page alone owns real time. The core receives explicit monotonic event timestamps.
-setInterval(()=>{if(!state||state.finished||state.phase.paused)return;now+=1000;
-  if(state.phase.deadline!==null&&now>=state.phase.deadline){state=game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now});openFor=null;selected=null;render();}
-},1000);
+setInterval(()=>{if(!state||state.finished)return;renderClock();if(state.phase.paused)return;
+  const at=clockNow();
+  if(state.phase.deadline!==null&&at>=state.phase.deadline){state=game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now:at});openFor=null;selected=null;render();$('notice').textContent='Time ran out. The game made a legal move.';}
+},250);

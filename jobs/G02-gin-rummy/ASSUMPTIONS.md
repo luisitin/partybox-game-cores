@@ -41,3 +41,8 @@
   pause. VIP pauses require explicit resume, and permanent leaves stay final.
   Version1.2.0 carries the empty-room pause marker. These lifecycle choices
   are workshop behavior, not a claim that classic Gin specifies departures.
+
+- The offline host uses performance.now monotonic elapsed time and Web Crypto
+  to seed its passed PRNG. Neither enters the pure core. Browser tests inject
+  controlled entropy7199 and synthetic time in a separate clock context;
+  normal-play frame profiles always use the actual browser frame clock.

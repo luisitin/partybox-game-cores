@@ -61,3 +61,24 @@ browser/capture passes60.002/60.004FPS, both p99/max16.8ms and17 privacy/
 control checks per profile. The videos explicitly use1x/4x CPU and <10MB.
 Round1 hosted run37721051891 actually SUCCESS at b096b6a; round2 current
 hosted acceptance remains required. Observable gain: no multi-second wait.
+
+Round3: JOBS common requirements and G02 re-read. Five remaining weaknesses:
+1. Host callback counting loses elapsed time and no countdown is visible.
+2. Custom knock groups use IDs, reveal a different layout and leave private drafts.
+3. Complete-match replay proof checks only final states.
+4. The host's fixed7199 initial seed repeats the first shuffle after reopening.
+5. Sporadic browser-frame outliers need continuing honest observation.
+Worst repair begins: use host monotonic elapsed time, show/pause its countdown,
+and consume a late callback at the actual elapsed time. Also seed the host RNG
+from Web Crypto outside the pure core, with controlled test entropy for repeatable
+UI checks. The pre-repair delayed20s/10s-clock witness advanced zero actions.
+
+Round3 actual node scripts/clock-check.mjs PASS/exit0: delayed20s callback
+now advances one expired10s move;9s shows1s, paused time stays10s, resume
+after25s hold restores10s, and the second deadline also advances. Production
+bootstrap obtains one Web Crypto seed outside the pure core. Test entropy is
+controlled7199, rather than claiming to statistically certify randomness.
+Actual node scripts/browser-check.mjs --capture --clock-capture PASS/exit0:
+desktop60.003FPS/phone4x60.004FPS, p99/max16.8ms, offline/privacy/reduced
+motion checks and visible-clock videos PASS. Game logic unchanged this round;
+current-head hosted full checks remain required.

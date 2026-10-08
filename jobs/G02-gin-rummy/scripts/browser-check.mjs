@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {resolve} from 'node:path';
 import {writeFile,mkdir,readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {seedHost,checkClock} from './clock-check.mjs';
 const capture=process.argv.includes('--capture');
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
 await mkdir('.work/browser',{recursive:true});await mkdir('media',{recursive:true});
@@ -10,6 +11,7 @@ const rows=[];
 try {
  for(const [label,width,height,throttle]of [['desktop',1920,1080,1],['phone4x',390,844,4]]){
   const ctx=await browser.newContext({viewport:{width,height}});
+  await seedHost(ctx);
   const page=await ctx.newPage(),errors=[],requests=[];
   page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(!r.url().startsWith('file:'))requests.push(r.url());});
   const cd=await ctx.newCDPSession(page);await cd.send('Emulation.setCPUThrottlingRate',{rate:throttle});
@@ -54,14 +56,17 @@ try {
     targetRefreshHz:60,measurementRoundingTolerance:'mean >=59 FPS; p99 <=17ms',interactionChecks:17,networkRequests:requests.length,pageErrors:errors.length,reducedMotion:reduced});
   console.log(JSON.stringify({label,fps,meanMs:mean,p99Ms:p99,maxMs:max,networkRequests:0,pageErrors:0}));
  }
+ await checkClock(browser);
  if(capture) {
   // Recording has its own encoder cost. Capture the same playable UI in a
   // separate context; performance above measures normal play without recording.
   for(const [label,width,height]of [['desktop',1280,720],['phone4x',390,844]]){
    const context=await browser.newContext({viewport:{width,height},recordVideo:{dir:'.work/browser',size:{width,height}}});
+   await seedHost(context);
    const page=await context.newPage(),cd=await context.newCDPSession(page);
    await cd.send('Emulation.setCPUThrottlingRate',{rate:label==='phone4x'?4:1});
    await page.goto('file://'+resolve('play.html'));
+   if(process.argv.includes('--clock-capture'))await page.locator('#setting-turnSeconds').fill('10');
    await page.locator('#start').click();
    for(let i=0;i<2;i++){await page.getByRole('button',{name:'Show my hand'}).click();await page.getByRole('button',{name:'Pass upcard'}).click();}
    await page.getByRole('button',{name:'Show my hand'}).click();await page.getByRole('button',{name:'Draw stock',exact:true}).click();
@@ -75,6 +80,6 @@ try {
   }
  }
 }finally{await browser.close();}
-const report={htmlSha256:createHash('sha256').update(await readFile('play.html')).digest('hex'),browser:'Chromium 141 Playwright 1.56.0',physicalPhoneTested:false,performanceWhileRecording:false,rows};
+const report={htmlSha256:createHash('sha256').update(await readFile('play.html')).digest('hex'),browser:'Chromium 141 Playwright 1.56.0',physicalPhoneTested:false,performanceWhileRecording:false,controlledHostSeed:7199,productionSeed:'Web Crypto outside pure core',clockRegressionIncluded:true,rows};
 await writeFile('.work/browser/report.json',JSON.stringify(report,null,2)+'\n');
 if(capture)await writeFile('evidence/browser-local.json',JSON.stringify(report,null,2)+'\n');

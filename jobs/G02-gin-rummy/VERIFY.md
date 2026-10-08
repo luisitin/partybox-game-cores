@@ -96,3 +96,12 @@ mutants caught;2,002 full canonical solutions unchanged. Phone4x algorithm
 cases6813→11.3ms and1278.1→10.2ms. Actual playable-page60.002/60.004FPS,
 p99/max16.8ms,17 offline/privacy/control checks per profile PASS. Round1
 hosted CI37721051891 at b096b6a actually SUCCESS. Round2 hosted CI pending.
+
+Round3: npm run build PASS. node scripts/clock-check.mjs PASS: delayed
+20s callback advances expired10s move, paused countdown frozen, resume
+preserves remaining time, and host entropy API called once. node scripts/
+browser-check.mjs --capture --clock-capture PASS: desktop60.003/phone60.004
+FPS, p99/max16.8ms, privacy/offline/reduced-motion checks and visible-clock
+captures. Exact reports: clock-before/after.json and round-3 logs. This
+round changes the host, with controlled test entropy and independent synthetic
+clock checks; game logic remains unchanged. Hosted current acceptance pending.

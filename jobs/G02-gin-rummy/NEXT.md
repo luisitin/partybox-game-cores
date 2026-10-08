@@ -11,12 +11,15 @@ layoff latency:phone4x6813→11.3ms;all2,002 complete layouts unchanged,
 14 targeted tests,10,000 deadwood proofs,2,000 joint-layoff proofs,
 25/25 mutants and desktop/phone browser/capture PASS. Round2 CI pending.
 
-Next: push round2 with refreshed claim, inspect actual hosted result.
-Re-read JOBS and rank five remaining weaknesses. Repair elapsed/visible
-clock next: the20s-delayed callback witness currently advances no10s turn.
-Then repair custom-meld/reveal UX (including clearing private drafts across
-covers/handoffs). Strengthen per-event replay proof. Log measured rounds,
-push/refresh claim each; stop only after THREE consecutive rounds give no
-player-noticeable gain. Then claim lowest eligible job from fresh main.
-No completion/stop claimed yet. Independent algorithms share an author;
-no separate blind-authorship claim. Earlier browser failures stay recorded.
+Round3 clock/host repair: delayed callback, visible countdown, pause/resume
+and one entropy API call verified; actual desktop/phone browser/capture PASS.
+Latest local source passes strict build and targeted browser/clock checks.
+
+Next: push round3 with refreshed claim; check hosted runs. Re-read G02 and
+rank five weaknesses. Custom meld/reveal UX is next, including private-draft
+clearing across covers/handoffs. Then verify all valid string IDs (including
+empty) and target winner versus final settlement points; both deserve actual
+counterexamples. Strengthen every-event replay proof and retained licenses.
+Log/push each round; stop only after three consecutive rounds add no
+player-noticeable gain, then claim lowest eligible job from fresh main.
+No completion/stop claimed. Earlier failures stay recorded.
