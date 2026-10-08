@@ -1,0 +1,44 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\ntrue !== false\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\ntrue !== false\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:19:269\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": true
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": true
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": true
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": true
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": true
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": true
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": true
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": true
+  }
+]

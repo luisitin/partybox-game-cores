@@ -1,0 +1,15 @@
+{
+  "command": [
+    ".work/memory-json-private/node22/runtime/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/core.test.mjs"
+  ],
+  "startedAt": "2026-10-08T15:08:30.300562+00:00",
+  "closedAt": "2026-10-08T15:08:55.805521+00:00",
+  "exitCode": 0,
+  "elapsedSeconds": 25.50507415199536,
+  "maxRssKiB": 3365680,
+  "userCpuSeconds": 14.442906,
+  "systemCpuSeconds": 14.455989
+}

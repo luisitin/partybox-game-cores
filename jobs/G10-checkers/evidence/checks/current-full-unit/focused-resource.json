@@ -1,0 +1,16 @@
+{
+  "command": [
+    ".work/memory-json-private/node22/runtime/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "--test-name-pattern=six-piece full jumps and installed quiet draws",
+    "tests/endgame.test.mjs"
+  ],
+  "startedAt": "2026-10-08T15:20:45.405283+00:00",
+  "closedAt": "2026-10-08T15:21:17.674405+00:00",
+  "exitCode": 0,
+  "elapsedSeconds": 32.26933903399913,
+  "maxRssKiB": 3144252,
+  "userCpuSeconds": 19.405936,
+  "systemCpuSeconds": 16.553886
+}

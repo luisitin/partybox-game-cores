@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/variant-bundles.test.mjs"
+  ],
+  "startedAt": "2026-10-08T15:18:03.562825+00:00",
+  "closedAt": "2026-10-08T15:18:57.553922+00:00",
+  "exitCode": 0,
+  "elapsedSeconds": 53.99113139099791,
+  "maxRssKiB": 2948760,
+  "userCpuSeconds": 43.814479,
+  "systemCpuSeconds": 13.469748
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_NODE22_16_COMPATIBILITY",
+  "archivedAt": "2026-10-08T15:07:58.206582+00:00",
+  "scope": "Exact Node22.16 native JSON import, all10k theoretical WLD and all48 serialized reports/cursors/block totals plus3 complete game transitions. No production source/build/default dist changed; browser performance acceptance is separate.",
+  "runtime": {
+    "version": "v22.16.0",
+    "platform": "linux-x64",
+    "primaryUrl": "https://nodejs.org/dist/v22.16.0/node-v22.16.0-linux-x64.tar.xz",
+    "checksumsUrl": "https://nodejs.org/dist/v22.16.0/SHASUMS256.txt",
+    "archiveSha256": "f4cb75bb036f0d0eddf6b79d9596df1aaab9ddccd6a20bf489be5abe9467e84e",
+    "binarySha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+    "localBinary": ".work/memory-json-private/node22/runtime/bin/node",
+    "fallback": "npm node-linux-x6422.16 metadata was fetched; fallback archive was not needed, downloaded or executed."
+  },
+  "probe": {
+    "pgid": 155238,
+    "session": 77254,
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "180s",
+      ".work/memory-json-private/node22/runtime/bin/node",
+      ".work/memory-json-private/import-probe.mjs",
+      "json",
+      "probe"
+    ],
+    "exitCode": 0,
+    "cases": 10000,
+    "canonicalClasses": 37,
+    "orientationCases": 148,
+    "secondSubslice": 22,
+    "importSeconds": 21.946169897,
+    "totalSeconds": 25.886454484999998,
+    "maxRSSKiB": 3476396,
+    "finalRSSBytes": 1893908480,
+    "transcriptSha256": "da1c308738c89729daf43600b9296d2055b9be488a119104fb445f14d8b1c904"
+  },
+  "behavior": {
+    "pgid": 155766,
+    "session": 70922,
+    "command": [
+      "timeout",
+      "--signal=TERM",
+      "--kill-after=10s",
+      "300s",
+      ".work/memory-json-private/node22/runtime/bin/node",
+      ".work/memory-json-private/full-equivalence.mjs"
+    ],
+    "exitCode": 0,
+    "cases": 48,
+    "completeGames": 3,
+    "gameLengths": [
+      1,
+      84,
+      1
+    ],
+    "importSeconds": 22.167370231,
+    "totalSeconds": 187.39125410199998,
+    "reportCompletedAt": "2026-10-08T15:02:01.340Z",
+    "closureObservedAt": "2026-10-08T15:05:18Z",
+    "maxRSSKiB": 3037692,
+    "exactSerializedReportsAndCursors": true,
+    "exactRequestedBlocks": true,
+    "exactCompleteGameTransitions": true
+  },
+  "environment": {
+    "G10_JSON_OUTPUT_DIR": ".work/memory-json-private/node22"
+  },
+  "unchangedCompiledModuleSha256": {
+    "core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7"
+  },
+  "cpuHolds": [],
+  "guardResults": "Both groups exited0 naturally. No SIGSTOP or guard timeout during these compatibility runs.",
+  "memoryLimits": "Node22 separate10k run transient maximum3,476,396KiB exceeds its final1,893,908,480B RSS; full48/3 max3,037,692KiB. Use actual peaks conservatively; Node24 lower peak is not transferable to Node22 without measurement. Concurrent league memory remains separately unmeasured.",
+  "artifactSha256": {
+    "extraction.stdout": "4289c4ed0084eae59f144280fb0f0c6f9bc8db0502752628345b4d68f12deb0b",
+    "full-equivalence-report.json": "90eb079a255ebb518a977464cbf94c4a94450b6208f41c18ff0c66cb0029f146",
+    "json-probe.stdout": "fc7d2eda70ffcc85cd890dc4422751719292de7be6ffad6d35d53dbcba24a1db",
+    "json-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "json-probe-report.json": "4257e0cfb2a94ddb67db416a1e25a1439d7c4c17148a75bba2999141f75c1679",
+    "full-equivalence.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full-equivalence.mjs": "1200221958c5afb6729b4964801587cd0a33dac463a0fd838544824dd0fb2d95",
+    "SHASUMS256.txt": "e1f5ad5e2a5654721e7b89d84d27f406e582c46ca0b5cde304c5dcdd7bab8b31",
+    "full-equivalence.stdout": "48e2e1ef40c19a5c38150a371244ec9b6d4a45aa7013239ca6f7495125a91b26",
+    "import-probe.mjs": "4130e98046fea6ade43b65ca553376002fa4d34244253e1619aae26aafa58128",
+    "npm-node-linux-x64.json": "3e7451983a32b4ff26b4cb00520838eba7ab7fffb8a3636d757827e4583a33d5"
+  }
+}

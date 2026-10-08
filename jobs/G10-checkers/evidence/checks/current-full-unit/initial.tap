@@ -1,0 +1,584 @@
+TAP version 13
+# Subtest: PVS/transposition tie handling agrees with independent exhaustive minimax and capture horizon
+ok 1 - PVS/transposition tie handling agrees with independent exhaustive minimax and capture horizon
+  ---
+  duration_ms: 700.7866
+  type: 'test'
+  ...
+# Subtest: independent Chinook reader decodes high-to-low ternary digits
+ok 2 - independent Chinook reader decodes high-to-low ternary digits
+  ---
+  duration_ms: 2.084816
+  type: 'test'
+  ...
+# Subtest: independent Chinook reader consumes default runs before ordinary records
+ok 3 - independent Chinook reader consumes default runs before ordinary records
+  ---
+  duration_ms: 0.303121
+  type: 'test'
+  ...
+# Subtest: independent Chinook uniform records need no binary payload
+ok 4 - independent Chinook uniform records need no binary payload
+  ---
+  duration_ms: 0.234671
+  type: 'test'
+  ...
+# Subtest: independent Chinook raw stored probe rejects current-side and opponent-only captures
+ok 5 - independent Chinook raw stored probe rejects current-side and opponent-only captures
+  ---
+  duration_ms: 0.330289
+  type: 'test'
+  ...
+# Subtest: independent Chinook reader rejects malformed or out-of-bounds index records
+ok 6 - independent Chinook reader rejects malformed or out-of-bounds index records
+  ---
+  duration_ms: 1.890376
+  type: 'test'
+  ...
+# Subtest: acquired full American corpus bytes/index match fixed primary-source hashes
+ok 7 - acquired full American corpus bytes/index match fixed primary-source hashes
+  ---
+  duration_ms: 46.211849
+  type: 'test'
+  ...
+# Subtest: both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+ok 8 - both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+  ---
+  duration_ms: 724.695531
+  type: 'test'
+  ...
+# Subtest: 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+ok 9 - 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+  ---
+  duration_ms: 1238.172386
+  type: 'test'
+  ...
+# Subtest: production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+ok 10 - production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+  ---
+  duration_ms: 5.68368
+  type: 'test'
+  ...
+# Subtest: contract manifest/counts/settings and deterministic initial boards
+ok 11 - contract manifest/counts/settings and deterministic initial boards
+  ---
+  duration_ms: 12.869035
+  type: 'test'
+  ...
+# Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+ok 12 - contract total immutable reducer ignores malformed/unknown events in both phases
+  ---
+  duration_ms: 14.110436
+  type: 'test'
+  ...
+# Subtest: contract live timer requires exact phase instance and elapsed deadline
+ok 13 - contract live timer requires exact phase instance and elapsed deadline
+  ---
+  duration_ms: 0.852735
+  type: 'test'
+  ...
+# Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+ok 14 - VIP pause/resume shifts only the deadline; skip/end remain available
+  ---
+  duration_ms: 7.23087
+  type: 'test'
+  ...
+# Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+ok 15 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+  ---
+  duration_ms: 6.616326
+  type: 'test'
+  ...
+# Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+ok 16 - hostile seat IDs, public view equality, spectator safety and cloned projections
+  ---
+  duration_ms: 3.468389
+  type: 'test'
+  ...
+# Subtest: complete legal inputs and terminal scores preserve every original seat
+ok 17 - complete legal inputs and terminal scores preserve every original seat
+  ---
+  duration_ms: 8.207038
+  type: 'test'
+  ...
+# Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+ok 18 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+  ---
+  duration_ms: 525.200795
+  type: 'test'
+  ...
+# Subtest: manifest and every generated phase fixture replay without throwing
+ok 19 - manifest and every generated phase fixture replay without throwing
+  ---
+  duration_ms: 12.636972
+  type: 'test'
+  ...
+# Subtest: authoritative state/data schemas validate generated files and reject corrupt rows
+ok 20 - authoritative state/data schemas validate generated files and reject corrupt rows
+  ---
+  duration_ms: 400.696999
+  type: 'test'
+  ...
+# Subtest: source-backed forty/25 move allowances use both players, with exact boundary
+ok 21 - source-backed forty/25 move allowances use both players, with exact boundary
+  ---
+  duration_ms: 0.542816
+  type: 'test'
+  ...
+# Subtest: quiet king moves increment while every man move and capture reset counters/history
+ok 22 - quiet king moves increment while every man move and capture reset counters/history
+  ---
+  duration_ms: 1.743946
+  type: 'test'
+  ...
+# Subtest: threefold includes side to move and can be disabled explicitly
+ok 23 - threefold includes side to move and can be disabled explicitly
+  ---
+  duration_ms: 0.372581
+  type: 'test'
+  ...
+# Subtest: official king windows start after creation, preserve old deadlines and intersect
+ok 24 - official king windows start after creation, preserve old deadlines and intersect
+  ---
+  duration_ms: 0.695642
+  type: 'test'
+  ...
+# Subtest: latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+ok 25 - latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+  ---
+  duration_ms: 0.181798
+  type: 'test'
+  ...
+# Subtest: published32-ply FMJD regression draws when original16-each window expires
+ok 26 - published32-ply FMJD regression draws when original16-each window expires
+  ---
+  duration_ms: 2.673574
+  type: 'test'
+  ...
+# Subtest: last permitted move capturing final opponent wins before a draw counter expires
+ok 27 - last permitted move capturing final opponent wins before a draw counter expires
+  ---
+  duration_ms: 0.549135
+  type: 'test'
+  ...
+# Subtest: optimized ending classification matches independently counted material and diagonal memberships
+ok 28 - optimized ending classification matches independently counted material and diagonal memberships
+  ---
+  duration_ms: 89.771908
+  type: 'test'
+  ...
+# Subtest: independent WDL never labels a truncated king graph as draw
+ok 29 - independent WDL never labels a truncated king graph as draw
+  ---
+  duration_ms: 0.379741
+  type: 'test'
+  ...
+# Subtest: independent WDL certifies complete six-piece forced-capture components
+ok 30 - independent WDL certifies complete six-piece forced-capture components
+  ---
+  duration_ms: 0.940795
+  type: 'test'
+  ...
+# Subtest: independent complete one-vs-one man/king domains have valid WDL and distance certificates
+ok 31 - independent complete one-vs-one man/king domains have valid WDL and distance certificates
+  ---
+  duration_ms: 1424.026447
+  type: 'test'
+  ...
+# Subtest: production complete one-vs-one lookup matches independent WDL AND distance on every row
+ok 32 - production complete one-vs-one lookup matches independent WDL AND distance on every row
+  ---
+  duration_ms: 1588.133203
+  type: 'test'
+  ...
+# Subtest: every generated three-to-six witness is independently one-turn terminal win
+ok 33 - every generated three-to-six witness is independently one-turn terminal win
+  ---
+  duration_ms: 168.93983
+  type: 'test'
+  ...
+# Subtest: six-piece full multi-jumps are proved and unresolved quiet material remains honest
+not ok 34 - six-piece full multi-jumps are proved and unresolved quiet material remains honest
+  ---
+  duration_ms: 9.763186
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/endgame.test.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    + actual - expected
+    
+    + {
+    +   dtm: null,
+    +   outcome: 0,
+    +   pieceCount: 4,
+    +   source: 'kingsrow'
+    + }
+    - null
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: ~
+  actual:
+    outcome: 0
+    dtm: ~
+    source: 'kingsrow'
+    pieceCount: 4
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/endgame.test.mjs:30:75)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: exact generator/dataset includes all legal one-per-side roots and cloned coverage
+ok 35 - exact generator/dataset includes all legal one-per-side roots and cloned coverage
+  ---
+  duration_ms: 93.12123
+  type: 'test'
+  ...
+# Subtest: actual public default has all41 files/156 slices and agrees with all10k native/reference cases
+ok 36 - actual public default has all41 files/156 slices and agrees with all10k native/reference cases
+  ---
+  duration_ms: 4772.959342
+  type: 'test'
+  ...
+# Subtest: actual default Strong game respects captures, official/house clocks and third repetition
+ok 37 - actual default Strong game respects captures, official/house clocks and third repetition
+  ---
+  duration_ms: 196.771392
+  type: 'test'
+  ...
+# Subtest: 48 predeclared default/block transactions preserve every report field and random cursor
+ok 38 - 48 predeclared default/block transactions preserve every report field and random cursor
+  ---
+  duration_ms: 49767.620568
+  type: 'test'
+  ...
+# Subtest: three complete game transcripts match default/block decisions and independent legal transitions
+ok 39 - three complete game transcripts match default/block decisions and independent legal transitions
+  ---
+  duration_ms: 37254.093073
+  type: 'test'
+  ...
+# Subtest: immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+ok 40 - immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+  ---
+  duration_ms: 2121.774266
+  type: 'test'
+  ...
+# Subtest: an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+ok 41 - an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+  ---
+  duration_ms: 245.089374
+  type: 'test'
+  ...
+# Subtest: transaction retries require all missing original blocks and then equal native outcomes
+ok 42 - transaction retries require all missing original blocks and then equal native outcomes
+  ---
+  duration_ms: 44.047145
+  type: 'test'
+  ...
+# Subtest: encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+ok 43 - encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+  ---
+  duration_ms: 59.505849
+  type: 'test'
+  ...
+# Subtest: canonical encoding and bounded block metadata reject corrupt input before probing
+ok 44 - canonical encoding and bounded block metadata reject corrupt input before probing
+  ---
+  duration_ms: 9.127676
+  type: 'test'
+  ...
+# Subtest: one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+ok 45 - one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+  ---
+  duration_ms: 38.529617
+  type: 'test'
+  ...
+# Subtest: production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+ok 46 - production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+  ---
+  duration_ms: 827.279001
+  type: 'test'
+  ...
+# Subtest: actual International dictionary/data match pinned licensed-source hashes
+ok 47 - actual International dictionary/data match pinned licensed-source hashes
+  ---
+  duration_ms: 0.281783
+  type: 'test'
+  ...
+# Subtest: production/reference International probes agree with independently closed full two-piece WLD
+ok 48 - production/reference International probes agree with independently closed full two-piece WLD
+  ---
+  duration_ms: 1796.349132
+  type: 'test'
+  ...
+# Subtest: 10,000 International material/orientation ranks agree with separately authored reference
+ok 49 - 10,000 International material/orientation ranks agree with separately authored reference
+  ---
+  duration_ms: 209.435475
+  type: 'test'
+  ...
+# Subtest: International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+ok 50 - International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+  ---
+  duration_ms: 30.542562
+  type: 'test'
+  ...
+# Subtest: production rules: American forced complete double jump excludes quiet moves
+ok 51 - production rules: American forced complete double jump excludes quiet moves
+  ---
+  duration_ms: 0.547139
+  type: 'test'
+  ...
+# Subtest: production rules: American crown ends capture even with backward king jump available
+ok 52 - production rules: American crown ends capture even with backward king jump available
+  ---
+  duration_ms: 0.10249
+  type: 'test'
+  ...
+# Subtest: production rules: International man passes crown row and remains man after continuing
+ok 53 - production rules: International man passes crown row and remains man after continuing
+  ---
+  duration_ms: 0.113804
+  type: 'test'
+  ...
+# Subtest: production rules: International global longest route excludes another piece short route
+ok 54 - production rules: International global longest route excludes another piece short route
+  ---
+  duration_ms: 0.253981
+  type: 'test'
+  ...
+# Subtest: production rules: American permits shorter route from a different piece
+ok 55 - production rules: American permits shorter route from a different piece
+  ---
+  duration_ms: 0.311694
+  type: 'test'
+  ...
+# Subtest: production rules: International taken pieces block reversing king between two enemies
+ok 56 - production rules: International taken pieces block reversing king between two enemies
+  ---
+  duration_ms: 0.230457
+  type: 'test'
+  ...
+# Subtest: production rules: International uncrowned man captures backwards
+ok 57 - production rules: International uncrowned man captures backwards
+  ---
+  duration_ms: 0.068449
+  type: 'test'
+  ...
+# Subtest: production rules: American uncrowned man cannot capture backwards
+ok 58 - production rules: American uncrowned man cannot capture backwards
+  ---
+  duration_ms: 0.056226
+  type: 'test'
+  ...
+# Subtest: production rules: American king may return to origin in a four-enemy capture
+ok 59 - production rules: American king may return to origin in a four-enemy capture
+  ---
+  duration_ms: 0.060624
+  type: 'test'
+  ...
+# Subtest: production rules: American short king has only adjacent quiet destinations
+ok 60 - production rules: American short king has only adjacent quiet destinations
+  ---
+  duration_ms: 0.061345
+  type: 'test'
+  ...
+# Subtest: 10,000 independent move differentials plus color-rotated twins and every resulting board
+ok 61 - 10,000 independent move differentials plus color-rotated twins and every resulting board
+  ---
+  duration_ms: 1141.526904
+  type: 'test'
+  ...
+# Subtest: property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+ok 62 - property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+  ---
+  duration_ms: 8432.672775
+  type: 'test'
+  ...
+# Subtest: purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+ok 63 - purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+  ---
+  duration_ms: 22.552204
+  type: 'test'
+  ...
+# Subtest: all delivered pure production modules pass AST inspection; host adapters are explicit
+ok 64 - all delivered pure production modules pass AST inspection; host adapters are explicit
+  ---
+  duration_ms: 92.540857
+  type: 'test'
+  ...
+# Subtest: independent International rank has exact back-rank group boundaries
+ok 65 - independent International rank has exact back-rank group boundaries
+  ---
+  duration_ms: 0.555284
+  type: 'test'
+  ...
+# Subtest: all two-piece material ranks are complete independent bijections
+ok 66 - all two-piece material ranks are complete independent bijections
+  ---
+  duration_ms: 35.273702
+  type: 'test'
+  ...
+# Subtest: rotation and colour reversal preserve canonical location
+ok 67 - rotation and colour reversal preserve canonical location
+  ---
+  duration_ms: 0.479203
+  type: 'test'
+  ...
+# Subtest: six-piece ranks include 3v3 and 5v1 kings
+ok 68 - six-piece ranks include 3v3 and 5v1 kings
+  ---
+  duration_ms: 0.122934
+  type: 'test'
+  ...
+# Subtest: invalid crowns, side, board and out-of-scope material do not produce ranks
+ok 69 - invalid crowns, side, board and out-of-scope material do not produce ranks
+  ---
+  duration_ms: 0.120574
+  type: 'test'
+  ...
+# Subtest: synthetic token mapping and uniform slice decode without mutation
+ok 70 - synthetic token mapping and uniform slice decode without mutation
+  ---
+  duration_ms: 8.044233
+  type: 'test'
+  ...
+# Subtest: synthetic checkpoint changes catalogue at the physical block boundary
+ok 71 - synthetic checkpoint changes catalogue at the physical block boundary
+  ---
+  duration_ms: 1.594239
+  type: 'test'
+  ...
+# Subtest: a token uses a declared-length prefix of a longer shared run record
+ok 72 - a token uses a declared-length prefix of a longer shared run record
+  ---
+  duration_ms: 1.820194
+  type: 'test'
+  ...
+# Subtest: current captures are excluded but opponent-only threats are valid for v2 at <=6
+ok 73 - current captures are excluded but opponent-only threats are valid for v2 at <=6
+  ---
+  duration_ms: 1.445227
+  type: 'test'
+  ...
+# Subtest: malformed dictionary, permutation and checkpoint are rejected
+ok 74 - malformed dictionary, permutation and checkpoint are rejected
+  ---
+  duration_ms: 4.190937
+  type: 'test'
+  ...
+# Subtest: actual licensed two-piece sample agrees with exact corner and quiet-king cases
+ok 75 - actual licensed two-piece sample agrees with exact corner and quiet-king cases
+  ---
+  duration_ms: 9.086048
+  type: 'test'
+  ...
+# Subtest: independent oracle: American forced complete double jump excludes quiet moves
+ok 76 - independent oracle: American forced complete double jump excludes quiet moves
+  ---
+  duration_ms: 0.266466
+  type: 'test'
+  ...
+# Subtest: independent oracle: American crown ends capture even with backward king jump available
+ok 77 - independent oracle: American crown ends capture even with backward king jump available
+  ---
+  duration_ms: 0.06919
+  type: 'test'
+  ...
+# Subtest: independent oracle: International man passes crown row and remains man after continuing
+ok 78 - independent oracle: International man passes crown row and remains man after continuing
+  ---
+  duration_ms: 0.064061
+  type: 'test'
+  ...
+# Subtest: independent oracle: International global longest route excludes another piece short route
+ok 79 - independent oracle: International global longest route excludes another piece short route
+  ---
+  duration_ms: 0.05523
+  type: 'test'
+  ...
+# Subtest: independent oracle: American permits shorter route from a different piece
+ok 80 - independent oracle: American permits shorter route from a different piece
+  ---
+  duration_ms: 0.057993
+  type: 'test'
+  ...
+# Subtest: independent oracle: International taken pieces block reversing king between two enemies
+ok 81 - independent oracle: International taken pieces block reversing king between two enemies
+  ---
+  duration_ms: 0.222968
+  type: 'test'
+  ...
+# Subtest: independent oracle: International uncrowned man captures backwards
+ok 82 - independent oracle: International uncrowned man captures backwards
+  ---
+  duration_ms: 0.066027
+  type: 'test'
+  ...
+# Subtest: independent oracle: American uncrowned man cannot capture backwards
+ok 83 - independent oracle: American uncrowned man cannot capture backwards
+  ---
+  duration_ms: 0.165757
+  type: 'test'
+  ...
+# Subtest: independent oracle: American king may return to origin in a four-enemy capture
+ok 84 - independent oracle: American king may return to origin in a four-enemy capture
+  ---
+  duration_ms: 0.072404
+  type: 'test'
+  ...
+# Subtest: independent oracle: American short king has only adjacent quiet destinations
+ok 85 - independent oracle: American short king has only adjacent quiet destinations
+  ---
+  duration_ms: 0.169497
+  type: 'test'
+  ...
+# Subtest: independent oracle: flying king has all seventeen quiet ray destinations
+ok 86 - independent oracle: flying king has all seventeen quiet ray destinations
+  ---
+  duration_ms: 3.541553
+  type: 'test'
+  ...
+# Subtest: independent oracle: International complete capture can return to its origin
+ok 87 - independent oracle: International complete capture can return to its origin
+  ---
+  duration_ms: 0.182258
+  type: 'test'
+  ...
+# Subtest: independent oracle: full published 16-each draw regression consists of legal turns
+ok 88 - independent oracle: full published 16-each draw regression consists of legal turns
+  ---
+  duration_ms: 1.316638
+  type: 'test'
+  ...
+# Subtest: variant bundles preserve exact choices, reports, cursors and complete game transcripts
+ok 89 - variant bundles preserve exact choices, reports, cursors and complete game transcripts
+  ---
+  duration_ms: 26654.412153
+  type: 'test'
+  ...
+# Subtest: native decompression reproduces exact installed corpora and preserves queued first requests
+ok 90 - native decompression reproduces exact installed corpora and preserves queued first requests
+  ---
+  duration_ms: 14151.983278
+  type: 'test'
+  ...
+# Subtest: bootstrap reports unsupported native decompression without losing a pending caller silently
+ok 91 - bootstrap reports unsupported native decompression without losing a pending caller silently
+  ---
+  duration_ms: 10.501126
+  type: 'test'
+  ...
+1..91
+# tests 91
+# suites 0
+# pass 90
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 180127.129967

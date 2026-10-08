@@ -5,7 +5,7 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around14:52UTC:
+Current checkpoint, 2026-10-08 around15:23UTC:
 - Complete licensed American/International2–6 source is installed. The actual
   default10k native/reference probes cover all37six classes/148 orientations.
   Forty-eight exact full/block SearchReports+cursors and3 complete game
@@ -29,16 +29,23 @@ Current checkpoint, 2026-10-08 around14:52UTC:
   missing-block totals/3complete games on actualNode24.19. Matched10k maxRSS
   original3,246,584KiB, JSON1,969,664KiB; full48/3 JSON2,860,060KiB. Separate
   sequential runs are not a causal startup/FPS claim. Node22.16 compatibility
-  is being checked privately. Actual build/defaultdist have not adopted JSON.
+  PASS on actualNode22.16 as well. Node build now uses the proved JSON wrappers;
+  four game/search compiled module hashes remain byte-identical. Whole shared
+  unit peak4,514,896KiB is the larger relevant measurement.
 - Trackedplay.html remains earlier accepted2–5 baseline. Complete single-page
   publication is pending; no LFS configuration/upload/charges/publication claim.
   No source-unavailable/BLOCKED claim: complete source is acquired and licensed.
 
 Next concrete work:
-1. Finish Node22.16 JSON10k/48/3 compatibility before source integration. Keep
-   defensive public decoding, every original byte, all search budgets and exact
-   reports/cursors unchanged. Measure safe league concurrency, not4×2.73GiB.
-2. Preserve early-human exact-source functional proof and obtain fresh actual
+1. Core/unit combined current91cases PASS (initial90PASS/1legacytestFAIL,
+   independently strengthened test-only focused1PASS; rawfailure retained).
+   Actual25/25mutants all9callbacks each PASS; no assertion/gate removed.
+   Adopt measured dedicated2Intl+2American pool with sequentialprewarm, then
+   run actual4000 strength;16game proof peak4.406GiB is not CI guarantee.
+2. Private template-fragment byte/control proof PASS41files/2647windows each
+   desktop/phone4× plus genuineStrong6. Matched actual runtimecost remains
+   pending; productionhost is unchanged. Preserve early-human exact-source
+   functional proof and obtain fresh actual
    strict600 desktop/phone4× gates with per-profile readiness barriers granted
    by root. Startup/functionals run outside CPU quiet. Separate clips follow.
 3. Finish final-source properties/25 real mutations/7000 matrix/4000 strength,
@@ -52,9 +59,9 @@ Next concrete work:
 
 Cadence:
 - Actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
-- Last successful812f24714:35:25 follows9d66f7d14:10:17 by25m08s: PASS30min,
-  early14:35:17 missed8s/hard14:40:17 met. Mainclaim17a8b9a row14:35:07Z.
-- Next stage14:55, targetsuccessfulpush15:00:25/hard15:05:25.
+- Last successful7fcb56b14:59:33 follows812f24714:35:25 by24m08s: PASS30min,
+  early15:00:25/hard15:05:25 met. Mainclaim0bcc9fd row14:59:29Z.
+- Next targetsuccessfulpush15:24:33/hard15:29:33.
   Main claim time never resets branch cadence. Record observed successful
   origin-reflog push time after closure; pending proofs stay explicitly pending.
 

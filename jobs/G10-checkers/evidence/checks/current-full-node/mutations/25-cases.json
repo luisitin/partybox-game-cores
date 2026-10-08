@@ -1,0 +1,44 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": true
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": true
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": true
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected \"actual\" to be reference-equal to \"expected\":\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n      0,\n+     1,\n      0,\n      0,\n      0,\n+     1,\n      0,\n      1,\n      1,\n      1,\n      1,\n...\n      1,\n-     1,\n-     1\n    ],\n    contentLang: 'en',\n    drawWindows: [],\n    endReason: null,\n+   lastMove: {\n+     move: {\n+       captures: [],\n+       path: [\n+         21,\n+         16\n+       ],\n+       promotes: false\n+     },\n+     playerId: 'light'\n+   },\n-   lastMove: null,\n    left: [],\n+   moveLog: [\n+     {\n+       move: {\n+         captures: [],\n+         path: [\n+           21,\n+           16\n+         ],\n+         promotes: false\n+       },\n+       playerId: 'light'\n+     }\n+   ],\n-   moveLog: [],\n    order: [\n      'light',\n      'dark'\n    ],\n    phase: {\n+     deadline: 6000,\n-     deadline: 3000,\n      id: 'move',\n+     startedAt: 4000\n-     paused: {\n-       at: 1500\n-     },\n-     startedAt: 1000\n    },\n+   phaseClock: 4000,\n-   phaseClock: 1000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'original-1',\n        connected: true,\n...\n    },\n+   ply: 1,\n-   ply: 0,\n    quietPlies: 0,\n    repetition: {\n+     'american:-1:11111111111122223222323333333333': 1\n-     'american:1:11111111111122222222333333333333': 1\n    },\n    rng: {\n      seed: 1,\n      step: 0\n    },\n...\n    },\n+   side: -1,\n-   side: 1,\n    variant: 'american',\n    winner: null\n  }\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected \"actual\" to be reference-equal to \"expected\":\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n      0,\n+     1,\n      0,\n      0,\n      0,\n+     1,\n      0,\n      1,\n      1,\n      1,\n      1,\n...\n      1,\n-     1,\n-     1\n    ],\n    contentLang: 'en',\n    drawWindows: [],\n    endReason: null,\n+   lastMove: {\n+     move: {\n+       captures: [],\n+       path: [\n+         21,\n+         16\n+       ],\n+       promotes: false\n+     },\n+     playerId: 'light'\n+   },\n-   lastMove: null,\n    left: [],\n+   moveLog: [\n+     {\n+       move: {\n+         captures: [],\n+         path: [\n+           21,\n+           16\n+         ],\n+         promotes: false\n+       },\n+       playerId: 'light'\n+     }\n+   ],\n-   moveLog: [],\n    order: [\n      'light',\n      'dark'\n    ],\n    phase: {\n+     deadline: 6000,\n-     deadline: 3000,\n      id: 'move',\n+     startedAt: 4000\n-     paused: {\n-       at: 1500\n-     },\n-     startedAt: 1000\n    },\n+   phaseClock: 4000,\n-   phaseClock: 1000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'original-1',\n        connected: true,\n...\n    },\n+   ply: 1,\n-   ply: 0,\n    quietPlies: 0,\n    repetition: {\n+     'american:-1:11111111111122223222323333333333': 1\n-     'american:1:11111111111122222222333333333333': 1\n    },\n    rng: {\n      seed: 1,\n      step: 0\n    },\n...\n    },\n+   side: -1,\n-   side: 1,\n    variant: 'american',\n    winner: null\n  }\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:50:69\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": true
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": true
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": true
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": true
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": true
+  }
+]

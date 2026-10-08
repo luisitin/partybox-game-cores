@@ -7,6 +7,7 @@ import {probeEndgame,databaseCoverage} from '../dist/endgame.mjs';
 import {referenceWdl,referenceTwoPieceRoots} from './reference-endgame.mjs';
 import {referenceMoves,referenceAfter} from './reference-moves.mjs';
 import {sparseBoard} from './reference-rule-cases.mjs';
+import {createReferenceInternational,unpackReferenceInternationalDictionary} from './reference-international.mjs';
 const dataset=JSON.parse(readFileSync(new URL('../data/endgames.json',import.meta.url),'utf8'));
 const dataKey=(board,variant,side)=>`${variant}:${side}:${board.map(piece=>piece+2).join('')}`;
 
@@ -25,11 +26,18 @@ test('every generated three-to-six witness is independently one-turn terminal wi
   assert.equal(compared,4000);
 });
 
-test('six-piece full multi-jumps are proved and unresolved quiet material remains honest',()=>{
+test('six-piece full jumps and installed quiet draws resolve while absent or oversized data stays unknown',()=>{
   for(const [variant,pieces] of [['american',{17:2,31:1,14:-1,15:-1,23:-1,22:-1}],['international',{40:1,49:1,36:-1,27:-1,18:-1,9:-1}]]){const board=sparseBoard(variant,pieces),hit=probeEndgame(board,variant,1);assert(hit);assert.equal(hit.outcome,1);assert.equal(hit.dtm,1);}
-  const unknown=sparseBoard('international',{0:-2,2:-2,45:2,49:2});assert.equal(probeEndgame(unknown,'international',1),null);
+  const quiet=sparseBoard('international',{0:-2,2:-2,45:2,49:2});
+  const source=new URL('../data/international/',import.meta.url);
+  const reference=createReferenceInternational(new Map([['db4',{data:new Uint8Array(readFileSync(new URL('db4.bin',source))),indexText:readFileSync(new URL('db4.idx',source),'utf8')}]]),unpackReferenceInternationalDictionary(new Uint8Array(readFileSync(new URL('tunstall-v2.bin',source)))));
+  assert.equal(reference.probe(quiet,1),'draw');
+  assert.deepEqual(probeEndgame(quiet,'international',1),{outcome:0,dtm:null,source:'kingsrow',pieceCount:4});
+  assert.equal(probeEndgame(quiet,'international',1,null),null,'An explicitly absent corpus must remain unknown');
   const above=sparseBoard('american',{0:-2,2:-2,4:-2,6:-2,25:2,29:2,31:2});assert.equal(probeEndgame(above,'american',1),null);
   assert.equal(databaseCoverage().fullSixPieceCoverage,false);
+  const aboveInternational=sparseBoard('international',{0:-2,2:-2,4:-2,6:-2,43:2,47:2,49:2});assert.equal(probeEndgame(aboveInternational,'international',1),null);
+  assert.equal(databaseCoverage().byVariant.international.fullQuietSixPieceCorpus,true);
   for(let i=1;i<dataset.rows.length;i++)assert(dataset.rows[i-1][0]<dataset.rows[i][0]);
 });
 

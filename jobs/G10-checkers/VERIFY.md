@@ -547,3 +547,65 @@ checks PASS, all600unfiltered samples retained before assertion. Mean
 established or unchanged retry. Raw/failure/ready/grant/closed/execution
 are under browser-full-six-early-human/. Early-human standalone actual-file
 desktop+phone move proof remains separate and passed.
+
+## Milestone16 Node22 compatible data and final core checks
+
+The proved static JSON containers are now actual Node build output.
+`G10_BUILD_NODE_ONLY=1 npm run build`: PASS/exit0; all61 original base64
+values use native JSON wrappers, game/search module bytes unchanged. Actual
+Node22.16 import10k and full48 reports/cursors/blocktotals/3 games PASS;
+source/raw/version/official binary digest are retained under memory-json/node22/.
+Import-only peak3,476,396KiB is not a whole-pipeline memory guarantee.
+
+The original nine core callbacks were moved unchanged into core-cases.mjs.
+A normalized exact body hash verifies no assertion/import/order was removed.
+PinnedNode22 `--test --test-reporter=tap tests/core.test.mjs`: PASS9/9,
+25.505s/maxRSS3,365,680KiB. `node scripts/mutations.mjs` uses every callback
+on the baseline and each of25 actual sequential source mutant modules sharing
+the actual immutable endgame module. PASS25/25 assertion kills,234 callbacks
+executed,51.112s/maxRSS2,837,100KiB; no synthetic kill or skipped case.
+All raw actual case/error JSON,stdout/resources/body proof are under
+mutations-shared-harness/ and current-full-node/. An attempted `/usr/bin/time`
+command exit127 is retained; the working resource wrapper uses Python's actual
+child resource counters. No source/tool BLOCKED assertion follows.
+
+PinnedNode22 shared-process `--test --experimental-test-isolation=none
+--test-reporter=tap --test-concurrency=1 tests/*.test.mjs`: initial90/91PASS,
+exit1 in181.355s/maxRSS4,514,896KiB. This whole-suite peak exceeds import-only
+measurements. The sole failure was an old expectation that the now-installed
+four-piece Kingsrow quiet DRAW was unknown. TEST ONLY correction adds an
+independent original db4/dictionary reference plus explicit absent-corpus and
+both-variant7piece UNKNOWN controls. Focused `--test-name-pattern='six-piece
+full jumps and installed quiet draws' tests/endgame.test.mjs`: PASS1/1/exit0,
+32.269s, with exact unchanged four production module hashes. Combined current
+91-case proof retains the original failure/source/TAP and focused TAP; passed
+unchanged cases were not rerun. All native10k/48/3, property/movement/draw tests
+and actual full workerpack passed in the initial run. Public raw/summary are
+under current-full-unit/. npm test adopts shared-process unit execution and
+checks the exact rebuilt private page path, preserving the tracked baseline.
+
+Unchanged variant-bundle proof on pinnedNode22: PASS24 paired positions/skills
+(48 actual searches), four complete games51/47/59/85plies,53.991s/maximum child
+RSS2,948,760KiB. Exact reports/cursors/intermediate states/game hashes and
+pre/post source/import hashes are retained under variant-node22/.
+Private2Intl+2American sequential-prewarm pool PASS16 actual terminal games,
+whole-process maxRSS4,620,060KiB; this supports bounded pooling, not completed
+4000-game strength or a CI memory guarantee. Source pool adoption is next.
+
+Two full-source desktop strict failures remain retained; phone NOT RUN in
+both. Early Human actual-file desktop/phone turns remain PASS. The private
+unchanged template-fragment payload experiment is RUNNING and has no claimed
+frame/startup gain. Full final7k/4k/frame/phone/clips/CI30min/publication/PR/
+KEEP GOING remain pending. Previous successful7fcb56b14:59:33 follows812f247
+14:35:25 by24m08s, cadence PASS; current early15:24:33/hard15:29:33.
+
+Private template-fragment byte/control test CLOSED15:24:37.999/PASS/exit0:
+all2647 predeclared original4KiB windows per profile at every encoded-part
+boundary/first/middle/final across all41 datafiles agree with installed
+original bytes. Actual desktop and phone4× early human turns/bot gates and
+genuine6pieceStrong45corpus-hits/26originalblocks PASS; same move/report/
+cursor in both profiles. Actual fullparse20.527s/129.726s under mixed activity,
+not a controlled speed comparison. Private pagef91e333e/1,390,846,045B and
+exact transformation/check scripts/raw/window hashes are retained under
+template-fragment-private/. Production browser/source template remains unchanged.
+Matched runtime cost/FPS investigation remains pending; no improvement claim.

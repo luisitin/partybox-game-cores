@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-08T15:25:01.728714+00:00",
+  "status": "full-source-gates-pending",
+  "previousSuccessfulPush": {
+    "head": "7fcb56b",
+    "utc": "2026-10-08T14:59:33Z",
+    "intervalSeconds": 1448,
+    "bindingCadencePass": true
+  },
+  "targetPush": "2026-10-08T15:24:33Z",
+  "hardPush": "2026-10-08T15:29:33Z",
+  "nodeJson": "PASS actualNode22/24 source-equivalent10k/48/3; actualbuildadopted;fourmodulesidentical",
+  "coreCases": {
+    "pass": 9,
+    "callbacksPreserved": true
+  },
+  "mutations": {
+    "assertionKills": 25,
+    "realMutants": 25,
+    "casesEach": 9,
+    "elapsedSeconds": 51.11176185699878,
+    "maxRssKiB": 2837100
+  },
+  "unit": {
+    "combined": "PASS_ALL91_CURRENT_CASES",
+    "initial": "90PASS1legacyassertionFAIL",
+    "focused": "1PASS test-only strengthened;gameunchanged",
+    "initialElapsedSeconds": 181.35526322599617,
+    "wholeSuiteMaxRssKiB": 4514896
+  },
+  "variants": "PASS24pairs/48searches+fourcompletegames",
+  "privatePool": "PASS16games2Intl+2American/sequentialprewarm/max4620060KiB;actual4000pending",
+  "privateTemplate": "PASS private41files/2647originalwindows eachprofile+earlyHuman/genuineStrong6; nocost/framegainclaim",
+  "pending": [
+    "full-sourceactual7000matrix/4000strength",
+    "actualfullframe/phone/clips/CI30min",
+    "fullartifactpublication/PR/KEEPGOING"
+  ]
+}

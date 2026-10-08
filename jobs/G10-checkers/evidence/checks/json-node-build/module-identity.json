@@ -1,0 +1,18 @@
+{
+  "status": "PASS_BYTE_IDENTICAL_GAME_SEARCH_MODULES",
+  "expected": {
+    "core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7"
+  },
+  "actual": {
+    "core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7"
+  },
+  "buildScriptSha256": "d6ab129ec1f993805226a13a23bed6186c82c1047f4049fea2886a9207048c43",
+  "runtimeProved": "Node22.16.0 and24.19.0; original bytes/10k/48 transactions+cursors/3games retained in memory-json/",
+  "scope": "Only static data packaging changed; browser/worker branch not changed."
+}

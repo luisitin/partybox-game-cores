@@ -1,0 +1,79 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Got unwanted exception: a valid two-seat game must initialize\nActual message: \"Checkers requires two distinct seats and a supported host timestamp\"",
+      "stack": "AssertionError [ERR_ASSERTION]: Got unwanted exception: a valid two-seat game must initialize\nActual message: \"Checkers requires two distinct seats and a supported host timestamp\"\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:15:10\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:25:22\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:41:15\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:49:15\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:58:15\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:71:24\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:80:15\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": false,
+    "error": {
+      "name": "RangeError",
+      "message": "Checkers requires two distinct seats and a supported host timestamp",
+      "stack": "RangeError: Checkers requires two distinct seats and a supported host timestamp\n    at init (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/mutations/09.mjs:23628:11)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:89:19\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:21"
+    }
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": true
+  }
+]

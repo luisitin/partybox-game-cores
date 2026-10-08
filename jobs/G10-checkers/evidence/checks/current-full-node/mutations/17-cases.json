@@ -1,0 +1,73 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": true
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": true
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\n'move' !== 'done'\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'move' !== 'done'\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:43:55\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\n'move' !== 'done'\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'move' !== 'done'\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:54:70\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": true
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": false,
+    "error": {
+      "name": "TypeError",
+      "message": "Cannot read properties of null (reading 'scores')",
+      "stack": "TypeError: Cannot read properties of null (reading 'scores')\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:75:126\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\n'move' !== 'done'\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'move' !== 'done'\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:82:144\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   path: [\n+     21,\n+     17\n+   ],\n+   type: 'move'\n+ }\n- null\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   path: [\n+     21,\n+     17\n+   ],\n+   type: 'move'\n+ }\n- null\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:94:74\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\n'move' !== 'done'\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'move' !== 'done'\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:101:378\n    at async verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:9)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  }
+]

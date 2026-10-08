@@ -1,8 +1,10 @@
 import assert from 'node:assert/strict';
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
-import {spawnSync} from 'node:child_process';
 import {build} from 'esbuild';
+import {pathToFileURL} from 'node:url';
+import {coreCases} from '../tests/core-cases.mjs';
+import {gameInputHashes} from './game-inputs.mjs';
 const proofDirectory=resolve(process.env.G10_EVIDENCE_DIR??'evidence/checks');await mkdir(proofDirectory+'/mutations',{recursive:true});
 const source=await readFile('src/core.ts','utf8');await mkdir('.work/mutations',{recursive:true});
 const mutations=[
@@ -32,13 +34,28 @@ const mutations=[
   ['inactive seat can resign','e.playerId!==turnId(s)||',''],
   ['paused game accepts inputs/timers',"if(s.phase.paused||s.phase.id==='done')","if(s.phase.id==='done')"],
 ];
-const baseline=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/core.test.mjs'],{encoding:'utf8',maxBuffer:4*1024*1024});assert.equal(baseline.status,0,baseline.stdout+'\n'+baseline.stderr);
-await writeFile(proofDirectory+'/mutations/baseline.tap',baseline.stdout+baseline.stderr);const rows=[];
+async function verifyCases(core){
+  const rows=[];
+  for(const {name,run} of coreCases(core)){
+    try{await run();rows.push({name,pass:true});}
+    catch(error){rows.push({name,pass:false,error:{name:error?.name,code:error?.code,message:String(error?.message??error),stack:String(error?.stack??error)}});}
+  }
+  return rows;
+}
+const baseline=await verifyCases(await import('../dist/core.mjs'));
+await writeFile(proofDirectory+'/mutations/baseline-cases.json',JSON.stringify(baseline,null,2)+'\n');
+assert.equal(baseline.length,9);assert(baseline.every(row=>row.pass),'Unchanged actual core baseline must pass all assertions');
+process.stdout.write(JSON.stringify({baseline:'PASS',cases:baseline.length})+'\n');
+const rows=[];
 for(let index=0;index<mutations.length;index++){
   const [name,before,after]=mutations[index],matches=source.split(before).length-1;assert.equal(matches,1,'Mutation must identify one actual source site: '+name);
   const path=resolve('.work/mutations/'+String(index+1).padStart(2,'0')+'.mjs');
   await build({stdin:{contents:source.replace(before,after),resolveDir:resolve('src'),sourcefile:'core-mutant.ts',loader:'ts'},bundle:true,platform:'node',format:'esm',target:'es2022',outfile:path,alias:{zod:resolve('node_modules/zod')},plugins:[{name:'shared-endgame',setup(api){api.onResolve({filter:/endgame\.js$/},()=>({path:resolve('dist/endgame.mjs'),external:true}));}}]});
-  const result=spawnSync(process.execPath,['--test','--test-reporter=tap','tests/core.test.mjs'],{encoding:'utf8',env:{...process.env,G10_CORE:path},maxBuffer:4*1024*1024});const raw=result.stdout+result.stderr;await writeFile(proofDirectory+'/mutations/'+String(index+1).padStart(2,'0')+'.tap',raw);
-  const assertionKilled=result.status!==0&&/not ok/.test(raw)&&(/ERR_ASSERTION|AssertionError/.test(raw));rows.push({id:index+1,name,before,after,exitCode:result.status,assertionKilled});process.stdout.write(JSON.stringify(rows.at(-1))+'\n');
+  const cases=await verifyCases(await import(pathToFileURL(path).href));
+  assert.equal(cases.length,baseline.length);
+  await writeFile(proofDirectory+'/mutations/'+String(index+1).padStart(2,'0')+'-cases.json',JSON.stringify(cases,null,2)+'\n');
+  const assertionKilled=cases.some(row=>!row.pass&&(row.error?.code==='ERR_ASSERTION'||row.error?.name==='AssertionError'));
+  rows.push({id:index+1,name,before,after,caseCount:cases.length,failedCases:cases.filter(row=>!row.pass).map(row=>row.name),assertionKilled});
+  process.stdout.write(JSON.stringify(rows.at(-1))+'\n');
 }
-const killed=rows.filter(row=>row.assertionKilled).length;assert.equal(rows.length,25);assert(killed>=24,JSON.stringify(rows));await writeFile(proofDirectory+'/mutations.json',JSON.stringify({command:'node scripts/mutations.mjs',baseline:'PASS, unchanged actual source',total:25,assertionKilled:killed,mutations:rows},null,2)+'\n');
+const killed=rows.filter(row=>row.assertionKilled).length;assert.equal(rows.length,25);assert(killed>=24,JSON.stringify(rows));await writeFile(proofDirectory+'/mutations.json',JSON.stringify({command:'node scripts/mutations.mjs',baseline:'PASS, unchanged actual source; same9 assertion callbacks for baseline and every mutant',runner:'Sequential actual-source mutant modules in one process; shared immutable actual endgame module loaded once',gameInputHashes:await gameInputHashes(),total:25,assertionKilled:killed,mutations:rows},null,2)+'\n');

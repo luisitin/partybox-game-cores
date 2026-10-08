@@ -13,7 +13,9 @@ const chunkExternal={name:'immutable-international-node-chunks',setup(api){
 const browserOnly=process.env.G10_BUILD_BROWSER_ONLY==='1';
 if(!browserOnly)for(const name of (await readdir('data/international/six')).filter(name=>name.endsWith('.chunk')).sort()){
   const encoded=(await readFile('data/international/six/'+name)).toString('base64');
-  await writeFile('dist/intl-'+name.replace(/\.chunk$/,'.mjs'),'export default "'+encoded+'";\n');
+  const moduleName='intl-'+name.replace(/\.chunk$/,'');
+  await writeFile('dist/'+moduleName+'.json',JSON.stringify(encoded)+'\n');
+  await writeFile('dist/'+moduleName+'.mjs','export {default} from "./'+moduleName+'.json" with {type:"json"};\n');
 }
 const flags=(american,international)=>({G10_CHINOOK_ENABLED:String(american),G10_INTERNATIONAL_ENABLED:String(international)});
 const sharedEndgame=path=>({name:'shared-node-endgame',setup(api){api.onResolve({filter:/endgame\.js$/},()=>({path,external:true}));}});
