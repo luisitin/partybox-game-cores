@@ -684,3 +684,28 @@ Actual17c branch push19:13:38Z followed interruption gap66m03s from18:07:35Z;
 RELEASE19:33:36.516122 preceded this completion checkpoint. All own groups
 remain closed; no hidden local retry, source edit during grant or new frame
 optimization claim occurred.
+
+## Formal round8: bot-source attribution, no player-visible gain
+
+Root/game rules reread after actual exactec22469/run37833413069/job113504276655
+fullSUCCESS19:50:07UTC. Complete133489-character actual job log retained exact.
+All67tests/43actualmutants/4000duels/10k+10koracles/7k-all9/1003properties/
+regeneration/all original-new UI gates pass. Actual current artifact11574701286
+ZIP1274699B/digest38edc47223b1c85f8e75fc9ddccd732542c9592461af668936bc46ef805348dc
+independently checks8files/18actualcurrentguards/1200raw/1202visibleactive-answer+
+nativeDate/timer callbacks. Desktop60.002556/phone4x60.003000FPS,p99max16.8ms;
+wall10000ms each/timer60→50. Actual341185/221751B VP8clips decode. Complete
+original bytes/validator/receipt remain in round-7-completion-hosted-37833413069;
+canonical accepted files are copied from these actual uploaded bytes.
+
+AUDIT-ROUND-8.md ranks five real weaknesses before the edit. An independent
+Python reader of native log/current JSONL/BOTS table found one falsely labeled
+current core320c99f2 versus actuala62e5fff. Both actual2000-game hosted summaries
+match the current JSONL exactly; all counts/means/three-round alternating-seed
+schedule/60percent win guard retain their original scope. Corrected the current
+attribution and added exact current source/run evidence; historical320layer
+remains historical. Wrong labels1→0; all7runtime/script/summary byte hashes
+remain identical. Receipt is evidence/round-8-bot-source.json. This is a real
+source-evidence correction, not a bot-strength/player/typing/recovery gain.
+LOOP8 records the first actual consecutive no-player-gain review after R7.
+New checkpoint's complete exact-head CI remains required before formal9.

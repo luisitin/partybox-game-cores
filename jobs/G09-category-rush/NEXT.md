@@ -2,8 +2,9 @@
 
 Branch `job/G09-category-rush-parallel-20261008`; original draft PR
 https://github.com/luisitin/partybox-game-cores/pull/8; owner `codex-category`.
-Seven actual KEEP GOING rounds have measured player-visible gains.
-Consecutive no-player-gain streak is zero. Do not mark ready until three actual
+Eight actual KEEP GOING rounds are complete: seven measured player-visible gains,
+then round8 current-bot-source attribution correction. Consecutive no-player-gain
+streak is one. Do not mark ready until three actual
 consecutive no-gain rounds and full final exact-head CI have completed.
 
 Round7 preserves pasted word boundaries before hints/save/submission. Native
@@ -38,14 +39,27 @@ metadata; the helper requires EXACTLY profile/sourceSha256/attemptNonce.
 All groups closed naturally; no local retry for luck. Original rejected grant,
 report,source copies and receipt remain in round-7-workload-coordination-timeout.
 
-This completion checkpoint requires its OWN full exact-head green CI before
-formal round8. Then re-read README/RULES/JOBS,rank5actual weaknesses,address/
+This round8 checkpoint requires its OWN full exact-head green CI before
+formal round9. Then re-read README/RULES/JOBS,rank5actual weaknesses,address/
 measure the worst and push a truthful LOOP line. Preserve every failure; never
 invent gains/no-gain rounds. Coordinate heavy browser/native timing READY/
 grant/CLOSED with root. Coordinator metadata belongs in a separate receipt.
 
-Latest confirmed push17c0d30 was19:13:38Z/mainbecaec1 row19:13:19Z. Prior
-18:07:35→19:13:38 interruption gap66m03s exceeds30minutes. Current25min target
-19:38:38/hard19:43:38; derive new deadlines from next ACTUAL successful push.
+Latest confirmed pushec22469 was19:37:57Z/mainafa0ce8 row19:37:49Z,24m19s
+after17c;25/30min cadencePASS. Earlier interruption gap66m03s exceeds30minutes.
+Current25min target20:02:57/hard20:07:57; derive new deadlines from next ACTUAL
+successful push.
 Refresh ONLY own G09 main row per normal branch push; never force,merge or
 change another claim. VERIFY.md preserves historical cadence/failed commands.
+
+Round8 reread root/game rules,ranked5weaknesses and verified actual exactec full
+CI37833413069/job113504276655 SUCCESS19:50:07Z/133489-character complete log.
+Corrected BOTS current-source320c99f2→a62e5fff after independent actual4000-game
+summary/table comparison; all7runtime/script/summary hashes unchanged. Receipt:
+evidence/round-8-bot-source.json. Wrong source labels1→0; player gain:none.
+Actualec artifact11574701286 ZIP1274699B SHA38edc47223b1c85f8e75fc9ddccd732542c9592461af668936bc46ef805348dc
+binds8files/18sources/1200native/1202active callbacks,desktop60.002556/phone60.003000,
+p99max16.8ms,timer60→50,real341185/221751B VP8clips decoded. Canonical copies
+match actual uploaded bytes; original artifact preserved separately. Formal9
+must wait for this new source checkpoint's fullgreen; the old-control recovery
+and full-sheet/late-autosave concerns are unmeasured and no claims are made.

@@ -27,12 +27,21 @@ review flag or bot vote.
 Medium and another 2,000 for Medium versus Easy, alternating seats. It records
 wins, losses, ties and mean scores in `evidence/bot-matchups.jsonl` and fails if
 the better skill wins fewer than 60% of all games or fewer games than its rival.
-Measured with `npm run bots` on 2026-10-08, current core `320c99f2…`, matcher `74827b3d…` and content `5ae665bb…`, two-player games; all 4,000 games passed the gate:
+Measured with `npm run bots` on 2026-10-08, current core `a62e5fff…`, matcher `74827b3d…` and category JSON `5ae665bb…`, two-player games; all 4,000 games passed the gate:
 
 | Matchup | Games | Better wins | Rival wins | Ties | Better mean | Rival mean |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | Strong vs Medium | 2,000 | 1,970 (98.50%) | 11 | 19 | 10.8660 | 5.6745 |
 | Medium vs Easy | 2,000 | 1,981 (99.05%) | 11 | 8 | 15.3970 | 6.3790 |
+
+The current table is independently checked against actual exact-head
+`ec224692d406ebe7a1bb612937e983d214beec26` GitHub run `37833413069`,
+job `113504276655`, fully green at 19:50:07 UTC. Both actual hosted matchup
+summaries equal the checked-in JSONL records; the fixed 2,000 seeds per
+matchup, three-round format, alternating seats and original 60% win gate remain.
+`evidence/round-8-bot-source.json` binds the current source, script and summary
+hashes. The explicitly historical `320c99f2…` layer below keeps its original
+source and measurements.
 
 Both adjacent skills win clearly with the same public information and no private
 answer or ballot access. Deterministic aggregate counts are in the JSONL artifact; the reproducible script executes each of the 4,000 actual games. That file contains two matchup summaries, not individual game transcripts.
