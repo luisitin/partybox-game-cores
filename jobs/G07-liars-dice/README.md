@@ -27,4 +27,4 @@ Original code/CSS/SVG are MIT; standalone includes original and Zod notices.
 Browser-only verification hook: API.md. Historical blocked attempt: evidence/.
 NEXT.md tracks hosted CI, KEEP GOING and queue status; current-head CI is required.
 
-Current pacing milestone: expanded browser proof and recordings pending; see NEXT.md.
+KEEP GOING round 1: full browser 52/52 and pacing recordings pass; current-head CI pending.

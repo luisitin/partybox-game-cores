@@ -1,5 +1,5 @@
 {
-  "runId": "20261008070041971",
+  "runId": "20261008065708225",
   "htmlSha256": "aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825",
   "browser": "141.0.7390.37",
   "physicalPhoneTested": false,
@@ -28,13 +28,13 @@
       "height": 1080,
       "cpuThrottle": 1,
       "frameFile": "desktop-frames.json",
-      "totalMs": 10016.3,
-      "archivedFrameFile": "runs/aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825/20261008070041971/desktop-frames.json",
-      "meanMs": 16.69383333333333,
-      "fps": 59.90235915457804,
+      "totalMs": 9999.5,
+      "archivedFrameFile": "runs/aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825/20261008065708225/desktop-frames.json",
+      "meanMs": 16.66583333333333,
+      "fps": 60.0030001500075,
       "p99Ms": 16.800000000000182,
-      "maxMs": 33.399999999999636,
-      "droppedIntervalsOver17Ms": 1,
+      "maxMs": 16.800000000000182,
+      "droppedIntervalsOver17Ms": 0,
       "sampleCount": 600
     },
     {
@@ -43,13 +43,13 @@
       "height": 844,
       "cpuThrottle": 4,
       "frameFile": "phone4x-frames.json",
-      "totalMs": 10049.57,
-      "archivedFrameFile": "runs/aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825/20261008070041971/phone4x-frames.json",
-      "meanMs": 16.749283333333334,
-      "fps": 59.70404703882853,
+      "totalMs": 10049.699999999999,
+      "archivedFrameFile": "runs/aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825/20261008065708225/phone4x-frames.json",
+      "meanMs": 16.749499999999998,
+      "fps": 59.70327472461865,
       "p99Ms": 16.800000000000182,
-      "maxMs": 33.37000000000012,
-      "droppedIntervalsOver17Ms": 3,
+      "maxMs": 50,
+      "droppedIntervalsOver17Ms": 2,
       "sampleCount": 600
     }
   ],
@@ -147,7 +147,8 @@
     {
       "profile": "desktop",
       "name": "a visible one-second core clock takes priority over normal and manual pacing",
-      "passed": true
+      "passed": false,
+      "error": "TypeError: Cannot read properties of null (reading 'kind')\n    at file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:630:35\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:206:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:611:5"
     },
     {
       "profile": "desktop",
@@ -281,7 +282,8 @@
     {
       "profile": "phone4x",
       "name": "a visible one-second core clock takes priority over normal and manual pacing",
-      "passed": true
+      "passed": false,
+      "error": "TypeError: Cannot read properties of null (reading 'kind')\n    at file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:630:35\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:206:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:611:5"
     },
     {
       "profile": "phone4x",
@@ -330,11 +332,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "normal",
-      "armedAt": 263,
-      "observedAt": 2352,
-      "elapsedMs": 2089,
-      "lastUnchangedMs": 2067,
-      "phaseStartedAt": 2348,
+      "armedAt": 73,
+      "observedAt": 2148,
+      "elapsedMs": 2075,
+      "lastUnchangedMs": 2059,
+      "phaseStartedAt": 2134,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -347,11 +349,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "fast",
-      "armedAt": 2369,
-      "observedAt": 3147,
-      "elapsedMs": 778,
-      "lastUnchangedMs": 761,
-      "phaseStartedAt": 3147,
+      "armedAt": 2161,
+      "observedAt": 2949,
+      "elapsedMs": 788,
+      "lastUnchangedMs": 771,
+      "phaseStartedAt": 2934,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -364,11 +366,11 @@
       "profile": "desktop",
       "kind": "regular",
       "pace": "slow",
-      "armedAt": 3155,
-      "observedAt": 7258,
-      "elapsedMs": 4103,
-      "lastUnchangedMs": 4077,
-      "phaseStartedAt": 7247,
+      "armedAt": 2962,
+      "observedAt": 7048,
+      "elapsedMs": 4086,
+      "lastUnchangedMs": 4070,
+      "phaseStartedAt": 7035,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -381,11 +383,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "fast",
-      "armedAt": 7270,
-      "observedAt": 7763,
-      "elapsedMs": 493,
-      "lastUnchangedMs": 477,
-      "phaseStartedAt": 7747,
+      "armedAt": 7070,
+      "observedAt": 7548,
+      "elapsedMs": 478,
+      "lastUnchangedMs": 462,
+      "phaseStartedAt": 7534,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -398,11 +400,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "normal",
-      "armedAt": 7776,
-      "observedAt": 9463,
-      "elapsedMs": 1687,
-      "lastUnchangedMs": 1670,
-      "phaseStartedAt": 9446,
+      "armedAt": 7564,
+      "observedAt": 9248,
+      "elapsedMs": 1684,
+      "lastUnchangedMs": 1668,
+      "phaseStartedAt": 9234,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -415,11 +417,11 @@
       "profile": "desktop",
       "kind": "interrupt",
       "pace": "slow",
-      "armedAt": 9477,
-      "observedAt": 13151,
-      "elapsedMs": 3674,
-      "lastUnchangedMs": 3652,
-      "phaseStartedAt": 13147,
+      "armedAt": 9260,
+      "observedAt": 12948,
+      "elapsedMs": 3688,
+      "lastUnchangedMs": 3671,
+      "phaseStartedAt": 12934,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -432,23 +434,23 @@
       "profile": "desktop",
       "kind": "manual-regular",
       "pace": "manual",
-      "heldMs": 2307
+      "heldMs": 2329
     },
     {
       "profile": "desktop",
       "kind": "manual-interrupt",
       "pace": "manual",
-      "heldMs": 2276
+      "heldMs": 2278
     },
     {
       "profile": "desktop",
       "kind": "pace-change",
       "pace": "fast",
-      "armedAt": 2648,
-      "observedAt": 3432,
-      "elapsedMs": 784,
-      "lastUnchangedMs": 767,
-      "phaseStartedAt": 3428,
+      "armedAt": 2685,
+      "observedAt": 3532,
+      "elapsedMs": 847,
+      "lastUnchangedMs": 830,
+      "phaseStartedAt": 3530,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -461,11 +463,11 @@
       "profile": "desktop",
       "kind": "resume",
       "pace": "normal",
-      "armedAt": 3201,
-      "observedAt": 5240,
-      "elapsedMs": 2039,
-      "lastUnchangedMs": 2023,
-      "phaseStartedAt": 5227,
+      "armedAt": 3195,
+      "observedAt": 5235,
+      "elapsedMs": 2040,
+      "lastUnchangedMs": 2024,
+      "phaseStartedAt": 5232,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -478,18 +480,18 @@
       "profile": "desktop",
       "kind": "human-calza",
       "pace": "normal",
-      "elapsedMs": 1141,
-      "requestedAt": 1195
+      "elapsedMs": 1140,
+      "requestedAt": 1181
     },
     {
       "profile": "desktop",
       "kind": "core-clock",
       "pace": "normal",
       "armedAt": 56,
-      "observedAt": 1140,
-      "elapsedMs": 1084,
-      "lastUnchangedMs": 1067,
-      "phaseStartedAt": 1128,
+      "observedAt": 1128,
+      "elapsedMs": 1072,
+      "lastUnchangedMs": 1055,
+      "phaseStartedAt": 1126,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -502,11 +504,11 @@
       "profile": "desktop",
       "kind": "core-clock",
       "pace": "manual",
-      "armedAt": 1171,
-      "observedAt": 2268,
-      "elapsedMs": 1097,
-      "lastUnchangedMs": 1052,
-      "phaseStartedAt": 2228,
+      "armedAt": 1155,
+      "observedAt": 2228,
+      "elapsedMs": 1073,
+      "lastUnchangedMs": 1056,
+      "phaseStartedAt": 2226,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -516,124 +518,14 @@
       }
     },
     {
-      "profile": "desktop",
-      "kind": "overdue-clock-manual-step",
-      "pace": "manual",
-      "armedAt": 2316,
-      "clickedAt": 3329,
-      "deadline": 3316,
-      "expected": {
-        "phase": "bid",
-        "turn": "p2",
-        "bid": {
-          "quantity": 1,
-          "face": 4,
-          "playerId": "p1"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 2,
-            "playerId": "p0"
-          },
-          {
-            "quantity": 1,
-            "face": 4,
-            "playerId": "p1"
-          }
-        ],
-        "diceCount": {
-          "p0": 1,
-          "p1": 1,
-          "p2": 1
-        },
-        "reveal": null,
-        "winner": null
-      },
-      "actual": {
-        "phase": "bid",
-        "turn": "p2",
-        "bid": {
-          "quantity": 1,
-          "face": 4,
-          "playerId": "p1"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 2,
-            "playerId": "p0"
-          },
-          {
-            "quantity": 1,
-            "face": 4,
-            "playerId": "p1"
-          }
-        ],
-        "diceCount": {
-          "p0": 1,
-          "p1": 1,
-          "p2": 1
-        },
-        "reveal": null,
-        "winner": null
-      }
-    },
-    {
-      "profile": "desktop",
-      "kind": "overdue-clock-human-input",
-      "pace": "manual",
-      "armedAt": 3353,
-      "clickedAt": 4368,
-      "deadline": 4353,
-      "late": {
-        "quantity": 1,
-        "face": 2
-      },
-      "expected": {
-        "phase": "bid",
-        "bid": {
-          "quantity": 1,
-          "face": 6,
-          "playerId": "p0"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 6,
-            "playerId": "p0"
-          }
-        ],
-        "turn": "p1",
-        "round": 1
-      },
-      "actual": {
-        "phase": "bid",
-        "bid": {
-          "quantity": 1,
-          "face": 6,
-          "playerId": "p0"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 6,
-            "playerId": "p0"
-          }
-        ],
-        "turn": "p1",
-        "round": 1
-      }
-    },
-    {
       "profile": "phone4x",
       "kind": "regular",
       "pace": "normal",
-      "armedAt": 243,
-      "observedAt": 2256,
-      "elapsedMs": 2013,
-      "lastUnchangedMs": 1992,
-      "phaseStartedAt": 2249,
+      "armedAt": 223,
+      "observedAt": 2247,
+      "elapsedMs": 2024,
+      "lastUnchangedMs": 2000,
+      "phaseStartedAt": 2241,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -646,11 +538,11 @@
       "profile": "phone4x",
       "kind": "regular",
       "pace": "fast",
-      "armedAt": 2298,
-      "observedAt": 3055,
-      "elapsedMs": 757,
-      "lastUnchangedMs": 738,
-      "phaseStartedAt": 3049,
+      "armedAt": 2270,
+      "observedAt": 3094,
+      "elapsedMs": 824,
+      "lastUnchangedMs": 755,
+      "phaseStartedAt": 3040,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -663,11 +555,11 @@
       "profile": "phone4x",
       "kind": "regular",
       "pace": "slow",
-      "armedAt": 3085,
-      "observedAt": 7152,
-      "elapsedMs": 4067,
-      "lastUnchangedMs": 4049,
-      "phaseStartedAt": 7149,
+      "armedAt": 3132,
+      "observedAt": 7142,
+      "elapsedMs": 4010,
+      "lastUnchangedMs": 3991,
+      "phaseStartedAt": 7139,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -680,11 +572,11 @@
       "profile": "phone4x",
       "kind": "interrupt",
       "pace": "fast",
-      "armedAt": 7189,
-      "observedAt": 7652,
-      "elapsedMs": 463,
-      "lastUnchangedMs": 445,
-      "phaseStartedAt": 7648,
+      "armedAt": 7170,
+      "observedAt": 7642,
+      "elapsedMs": 472,
+      "lastUnchangedMs": 453,
+      "phaseStartedAt": 7638,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -697,11 +589,11 @@
       "profile": "phone4x",
       "kind": "interrupt",
       "pace": "normal",
-      "armedAt": 7700,
-      "observedAt": 9454,
-      "elapsedMs": 1754,
-      "lastUnchangedMs": 1734,
-      "phaseStartedAt": 9448,
+      "armedAt": 7669,
+      "observedAt": 9343,
+      "elapsedMs": 1674,
+      "lastUnchangedMs": 1654,
+      "phaseStartedAt": 9339,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -714,11 +606,11 @@
       "profile": "phone4x",
       "kind": "interrupt",
       "pace": "slow",
-      "armedAt": 9501,
-      "observedAt": 13254,
-      "elapsedMs": 3753,
-      "lastUnchangedMs": 3733,
-      "phaseStartedAt": 13249,
+      "armedAt": 9378,
+      "observedAt": 13042,
+      "elapsedMs": 3664,
+      "lastUnchangedMs": 3645,
+      "phaseStartedAt": 13039,
       "phase": "reveal",
       "turn": "p1",
       "bid": {
@@ -731,23 +623,23 @@
       "profile": "phone4x",
       "kind": "manual-regular",
       "pace": "manual",
-      "heldMs": 2364
+      "heldMs": 2348
     },
     {
       "profile": "phone4x",
       "kind": "manual-interrupt",
       "pace": "manual",
-      "heldMs": 2309
+      "heldMs": 2303
     },
     {
       "profile": "phone4x",
       "kind": "pace-change",
       "pace": "fast",
-      "armedAt": 2907,
-      "observedAt": 3754,
-      "elapsedMs": 847,
-      "lastUnchangedMs": 830,
-      "phaseStartedAt": 3750,
+      "armedAt": 2867,
+      "observedAt": 3648,
+      "elapsedMs": 781,
+      "lastUnchangedMs": 754,
+      "phaseStartedAt": 3643,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -760,11 +652,11 @@
       "profile": "phone4x",
       "kind": "resume",
       "pace": "normal",
-      "armedAt": 3543,
-      "observedAt": 5570,
-      "elapsedMs": 2027,
-      "lastUnchangedMs": 2005,
-      "phaseStartedAt": 5559,
+      "armedAt": 3440,
+      "observedAt": 5459,
+      "elapsedMs": 2019,
+      "lastUnchangedMs": 2010,
+      "phaseStartedAt": 5454,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -777,18 +669,18 @@
       "profile": "phone4x",
       "kind": "human-calza",
       "pace": "normal",
-      "elapsedMs": 1256,
-      "requestedAt": 1442
+      "elapsedMs": 1210,
+      "requestedAt": 1373
     },
     {
       "profile": "phone4x",
       "kind": "core-clock",
       "pace": "normal",
-      "armedAt": 259,
-      "observedAt": 1275,
-      "elapsedMs": 1016,
-      "lastUnchangedMs": 997,
-      "phaseStartedAt": 1269,
+      "armedAt": 209,
+      "observedAt": 1250,
+      "elapsedMs": 1041,
+      "lastUnchangedMs": 1026,
+      "phaseStartedAt": 1235,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -801,11 +693,11 @@
       "profile": "phone4x",
       "kind": "core-clock",
       "pace": "manual",
-      "armedAt": 1329,
-      "observedAt": 2374,
-      "elapsedMs": 1045,
-      "lastUnchangedMs": 1028,
-      "phaseStartedAt": 2369,
+      "armedAt": 1293,
+      "observedAt": 2350,
+      "elapsedMs": 1057,
+      "lastUnchangedMs": 1041,
+      "phaseStartedAt": 2335,
       "phase": "bid",
       "turn": "p0",
       "bid": {
@@ -813,119 +705,9 @@
         "face": 4,
         "playerId": "p1"
       }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "overdue-clock-manual-step",
-      "pace": "manual",
-      "armedAt": 2428,
-      "clickedAt": 3449,
-      "deadline": 3428,
-      "expected": {
-        "phase": "bid",
-        "turn": "p2",
-        "bid": {
-          "quantity": 1,
-          "face": 4,
-          "playerId": "p1"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 2,
-            "playerId": "p0"
-          },
-          {
-            "quantity": 1,
-            "face": 4,
-            "playerId": "p1"
-          }
-        ],
-        "diceCount": {
-          "p0": 1,
-          "p1": 1,
-          "p2": 1
-        },
-        "reveal": null,
-        "winner": null
-      },
-      "actual": {
-        "phase": "bid",
-        "turn": "p2",
-        "bid": {
-          "quantity": 1,
-          "face": 4,
-          "playerId": "p1"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 2,
-            "playerId": "p0"
-          },
-          {
-            "quantity": 1,
-            "face": 4,
-            "playerId": "p1"
-          }
-        ],
-        "diceCount": {
-          "p0": 1,
-          "p1": 1,
-          "p2": 1
-        },
-        "reveal": null,
-        "winner": null
-      }
-    },
-    {
-      "profile": "phone4x",
-      "kind": "overdue-clock-human-input",
-      "pace": "manual",
-      "armedAt": 3484,
-      "clickedAt": 4524,
-      "deadline": 4484,
-      "late": {
-        "quantity": 1,
-        "face": 2
-      },
-      "expected": {
-        "phase": "bid",
-        "bid": {
-          "quantity": 1,
-          "face": 6,
-          "playerId": "p0"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 6,
-            "playerId": "p0"
-          }
-        ],
-        "turn": "p1",
-        "round": 1
-      },
-      "actual": {
-        "phase": "bid",
-        "bid": {
-          "quantity": 1,
-          "face": 6,
-          "playerId": "p0"
-        },
-        "bidLog": [
-          {
-            "quantity": 1,
-            "face": 6,
-            "playerId": "p0"
-          }
-        ],
-        "turn": "p1",
-        "round": 1
-      }
     }
   ],
-  "passed": true,
+  "passed": false,
   "scope": "full",
   "pacingProbeFile": "round-1-pacing.json"
 }

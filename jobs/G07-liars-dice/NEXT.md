@@ -19,23 +19,25 @@ All local checks PASS at this delivery checkpoint:
 - Source-matched delivery-final videos under 10 MB; earlier failures preserved.
 - Final hashes and integrity passed; regenerate them whenever delivered files change.
 
-Initial delivery is pushed and PR #6 is open. Exact head 6dd4c32 is green in
-GitHub run 37737745593 (35 node tests, 37 browser checks, 25 mutation kills).
-KEEP GOING round 1 is implemented but NOT YET verified or complete: adjustable
-Fast/Normal/Slow/Manual bot pace, with overdue timers before human/manual actions.
-Current built HTML aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825.
-Core is unchanged. The expanded 52-check default full browser run and new pacing
-recordings are pending; the existing 37-check snapshot belongs to the previous
-f0559458 page and does not certify this checkpoint. Integrity deliberately
-requires a matching new snapshot, so this milestone is not a green delivery.
-Five weaknesses and measured baseline: evidence/checks/keep-going-reviews.md.
-Finish source-matched full browser proof and recordings, refresh hashes, then
-log round 1 once with actual measured gains and push. Refresh main G07 claim
-on every push and require exact current-head CI success. Re-read the job and
-repeat review/fix/measure/one LOOP line until three consecutive rounds gain
-nothing a player notices. Only then claim the next lowest eligible job after
-fresh main CLAIMS and branch-commit checks. G08 preparation is read-only; it has
-not been claimed or modified.
+Initial delivery head 6dd4c32 passed GitHub run 37737745593. PR #6 is draft
+while KEEP GOING is active. The pacing cadence checkpoint c4dd013 explicitly
+shipped verification pending; it does not override later acceptance evidence.
+Round 1 now passes all local checks: unchanged core, final HTML aa9d7b31…66f825,
+default full browser 52/52, raw 600-frame gates and source-matched round-1 clips.
+Mean bot bid window improved 791→2095.143 ms; both late-click races use the core
+timer outcome. The earlier 50/52 test-oracle failure is preserved. LOOP round 1
+has a player-visible gain; consecutive no-gain count is zero.
+
+Push this verified checkpoint with refreshed main claim and regenerated hashes.
+Require exact current-head G07 verify CI success before round 2. Re-read the
+job and rank five remaining weaknesses anew: Medium's certain-loss challenge
+(new reproducible bug), refresh recovery, final standings, palifico help, and
+mixed-table strategy evidence. The diagnostic transcripts/recovery design are
+in ignored .work and agent messages; no later-round changes have been made.
+Continue review/fix/measure/one LOOP line until three consecutive rounds gain
+nothing a player notices, then mark PR ready and claim the lowest eligible next
+job after fresh main CLAIMS/branch checks. G08 preparation remains read-only,
+unclaimed by this chat and unmodified; private source cache is .work/g08-prep.
 
 Default tests write transient browser/mutation runs under ignored .work/. Publish
 passing snapshots explicitly; never overwrite archived failures or evidence with

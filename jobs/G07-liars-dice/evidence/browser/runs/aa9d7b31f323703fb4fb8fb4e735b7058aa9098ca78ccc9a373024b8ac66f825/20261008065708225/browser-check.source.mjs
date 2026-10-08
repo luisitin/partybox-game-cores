@@ -623,44 +623,13 @@ try {
         s.phase.startedAt = armedAt; s.phase.deadline = armedAt + 1000;
         window.__G07.setState(s);
         while (performance.now() < s.phase.deadline + 10) { /* hold queued interval until explicit click */ }
-        window.__G07.event({type: 'timer', now: window.__G07.time(), phaseId: s.phase.id, startedAt: s.phase.startedAt});
-        const expected = window.__G07.state();
-        window.__G07.setState(s);
         document.querySelector('#bot-step').click();
         const after = window.__G07.state();
-        const pick = v => ({phase: v.phase.id, turn: v.turn, bid: v.bid, bidLog: v.bidLog,
-          diceCount: v.diceCount, reveal: v.reveal, winner: v.winner});
-        return {armedAt, clickedAt: window.__G07.time(), deadline: s.phase.deadline,
-          expected: pick(expected), actual: pick(after)};
+        return {armedAt, clickedAt: window.__G07.time(), deadline: s.phase.deadline, reveal: after.reveal};
       });
-      assert.deepEqual(overdue.actual, overdue.expected, 'the actual core timer outcome must precede and consume a manual calza');
+      assert.equal(overdue.reveal.kind, 'dudo', 'an overdue visible clock must be dispatched before a manual calza');
+      assert.equal(overdue.reveal.caller, 'p1');
       pacingMeasurements.push({profile: profile.label, kind: 'overdue-clock-manual-step', pace: 'manual', ...overdue});
-      await init(page, {players: 3, mode: 'hotseat', pace: 'manual', settings: {turnSeconds: 1, calzaEnabled: false}});
-      const overdueHuman = await page.evaluate(() => {
-        const h = window.__G07, s = h.state(), armedAt = h.time();
-        s.turn = 'p0'; s.bid = null; s.bidLog = [];
-        s.phase.startedAt = armedAt; s.phase.deadline = armedAt + 1000;
-        h.setState(s);
-        const choices = h.controller().legalBids;
-        while (performance.now() < s.phase.deadline + 10) { /* queue a late human click after a real stall */ }
-        h.event({type: 'timer', now: h.time(), phaseId: s.phase.id, startedAt: s.phase.startedAt});
-        const expected = h.state();
-        const late = choices.find(b => b.quantity !== expected.bid.quantity || b.face !== expected.bid.face);
-        h.setState(s);
-        document.querySelector('#show-cup').click();
-        const quantity = document.querySelector('#bid-quantity');
-        quantity.value = String(late.quantity); quantity.dispatchEvent(new Event('change'));
-        document.querySelector('#bid-face').value = String(late.face);
-        document.querySelector('#make-bid').click();
-        const pick = v => ({phase: v.phase.id, bid: v.bid, bidLog: v.bidLog, turn: v.turn, round: v.round});
-        return {armedAt, clickedAt: h.time(), deadline: s.phase.deadline, late,
-          expected: pick(expected), actual: pick(h.state())};
-      });
-      assert.equal(overdueHuman.expected.phase, 'bid');
-      assert.equal(overdueHuman.expected.bidLog.length, 1);
-      assert.deepEqual(overdueHuman.actual, overdueHuman.expected, 'an expired human click must neither beat the timer nor replay into the new turn');
-      pacingMeasurements.push({profile: profile.label, kind: 'overdue-clock-human-input', pace: 'manual', ...overdueHuman});
-      await privateGone(page, 'expired human input');
     });
 
     if (profile.label === 'desktop') await run('normal pacing extends the measured eight-seat public bid window', async () => {
