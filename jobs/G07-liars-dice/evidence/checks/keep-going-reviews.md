@@ -182,3 +182,29 @@ the actual pause/privacy/RNG/resume assertions. Diagnostic FPS remains
 nongating and original frame-failure cause unestablished. Cadence hosted
 all94 browser checks passed before the old-snapshot integrity rejection;
 the complete new snapshot is now published.
+
+## Round6 — current entry summary and bounded strength claims
+
+Re-read root README/RULES/JOBS (unchanged hashes e4b24b68/4149f36b/20d45e05)
+after completed round5 proof was pushed atcc0e1aa. Independent source-only
+review and a second narrow cross-check found no additional concrete player
+defect or unmet local gate. Default-duel strength, emulated phone coverage,
+absent full SDK and same-tab retention remain explicitly bounded evidence.
+
+Five biggest actionable presentation weaknesses, ranked:
+
+1. README leads with initial37-check/old league numbers and does not immediately state the current default-duel strength scope. Update the entry summary to current source-matched checks and explicit scope.
+2. Calibration notes retain an initial-core holdout/private command alongside the current-core evidence; clarify historical provenance and public reproduction.
+3. Current snapshots, original milestones, failures and nongating diagnostics need a compact evidence index; pacing's round1 filename now holds the latest source-matched rerun.
+4. Trusted-host API should distinguish raw state injection from a complete recoverable checkpoint with matching skills/RNG metadata.
+5. NEXT still describes the just-completed push as next work; keep handoff pointed at review/final acceptance.
+
+Selected change: rewrite README's current validation/scope summary in under60
+lines, preserving implementation and policy. Measure all ten implementation/
+runner/manifest hashes before-after, plus fresh source-matched milestone clips.
+
+Round6 complete: README41 lines; ten implementation/runner/manifest hashes
+are exactly unchanged, measured player-visible gain0. Fresh source-matched
+desktop906,218B/phone883,460B clips each play five actual rounds with zero
+requests/errors. No-gain streak1. Exact round5 cc0e1aa hosted run37762109046
+also passed46 node/full94 browser/integrity334; artifact not downloaded.

@@ -1,0 +1,17 @@
+{
+  "runId": 37762109046,
+  "headSha": "cc0e1aa10914396fa718ad30f36997193c802f98",
+  "conclusion": "success",
+  "completedAt": "2026-10-08T10:23:34Z",
+  "url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37762109046",
+  "nodeTests": 46,
+  "nodePassed": 46,
+  "nodeFailed": 0,
+  "browserChecks": 94,
+  "integrityFileHashes": 334,
+  "regenerationRuns": 2,
+  "byteIdentical": true,
+  "coreNoIo": true,
+  "mediaUnder10MB": true,
+  "evidenceMethod": "gh run view --json plus gh run view --log; hosted log read, artifact not downloaded; no hosted FPS values inferred"
+}

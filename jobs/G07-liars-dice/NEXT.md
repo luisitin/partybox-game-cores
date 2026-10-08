@@ -25,19 +25,24 @@ league (Strong64.70%/Medium58.90%) and fresh4,000 holdout66.8%/57.0%.
 VERIFY.md gives exact commands/raw proof and limits. Do not repeat unchanged
 passed local tests without a new source/failure concern. GitHub npm test runs all.
 
-Latest complete hosted acceptance: round4 exact445cf47, run37755395776.
-Round5 cadence26222ec/run37758787707 passed46 node/25 mutations/full94 browser
-checks, then correctly rejected the retained old snapshot. Completed matching
-new-source proof is now published; exact final-head CI remains required.
-All delivery writers/processes stopped10:08:17; final334-file hashes/integrity
-and2× regeneration PASS. Root claim/commit/push are next. Root owns docs/claims;
-no helper writers remain active.
+Latest complete hosted acceptance: round5 exactcc0e1aa, run37762109046
+SUCCESS10:23:34 UTC;46 node/full94 browser/integrity334,2x identical.
+Round5 cadence failure remains preserved as an evidence-snapshot failure.
 
-Rounds1–5 each have measured player-visible gains; no-gain streak0. Re-read
-job, rank five remaining weaknesses, fix worst, measure/log one line/push.
-Three consecutive rounds with no player-visible gain plus exact-final-head
-CI green are required before PR ready. Completed local milestones may proceed
-while hosted CI reruns. Then take the fresh lowest eligible queue job.
+Round6 completed: entry summary now reports current checks and default-duel/
+emulated-phone scope;41 lines. Ten implementation/runner/manifest hashes
+unchanged, player-visible gain0, fresh five-round desktop/phone clips PASS.
+Evidence: checks/round-6-review.json and browser/round-6-captures.json.
+Rounds1–5 have measured player-visible gains; current no-gain streak1.
+Round6 is prepared for immediate normal claim/commit/push. Root owns docs/
+claims; no helper writers are active. Do not repeat passed unchanged tests.
+
+Next review: re-read job, rank five weaknesses; clarify initial calibration
+provenance and public reproduction/current evidence index. Fix worst, measure
+hash identity/fresh clips, log one line and push. Three consecutive no-player-
+gain rounds plus exact-final-head CI green are required before PR ready.
+Completed local milestones may proceed while hosted CI runs; keep PR draft.
+Then take the fresh lowest eligible queue job.
 
 Preserve failures, raw frames and original/licensed sources. The old research
 blocker is resolved under evidence/historical-blocker; no current BLOCKED.md.

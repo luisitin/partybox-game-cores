@@ -8,6 +8,8 @@ is inline/offline; no build needed to play. Keep other players looking away when
 opening a cup. Settings are on the first screen; reveal screens wait for Next.
 Bot pace is adjustable during play: Fast, Normal (2 s), Slow or Manual.
 A visible turn clock can expire before the selected bot delay.
+Reloading this tab offers Resume/Discard with cups covered and time held.
+Finished games show every original seat, exact places, ties and remaining dice.
 
 Development: npm ci --ignore-scripts; npx playwright install chromium; npm test.
 Node 22.16+; strict ES2022 TypeScript, runtime Zod only. npm run build rebuilds the
@@ -16,9 +18,14 @@ runs the paired skill comparison. Contract skills normal/sharp = Medium/Strong.
 
 src/core.ts exports the exact shared game contract. src/probability.ts counts
 integer outcomes; tests/probability-reference.mjs independently convolves dice.
-Initial delivery checks passed: 7,000 games across 2–8 seats, 1,003 property seeds,
-20,000 differential cases, 25/25 source mutants, 4,000 league games, 37 browser checks.
-Strong wins 64.75%; Medium 58.75%. Desktop and phone at 4× CPU slowdown measured 60 FPS.
+Current checks:46 node tests,7,000 games (1,000 each2–8),1,003 property seeds,
+20,000 differential cases,25/25 source mutants and full94/94 browser checks.
+Default-duel league:Strong64.70% against Medium; Medium58.90% against Easy,
+2,000 games each. Fresh holdout66.8%/57.0%; all confidence lower bounds>50%.
+The multiplayer matrix checks legality/completion; strategy advantage beyond
+default duels remains unproved. BOTS.md gives methods, seeds and bounds.
+Latest raw600-frame measurements:desktop60.0024FPS/phone4x59.8032FPS,
+p9916.8ms. Phone is Chrome CPU emulation; physical devices were not tested.
 
 VERIFY.md gives commands, raw results, failures and material limits. RULES.md,
 SOURCES.md and CONFLICTS.md record edition choices; ASSUMPTIONS.md records policy.
@@ -27,11 +34,8 @@ Original code/CSS/SVG are MIT; standalone includes original and Zod notices.
 Browser-only verification hook: API.md. Historical blocked attempt: evidence/.
 NEXT.md tracks hosted CI, KEEP GOING and queue status; current-head CI is required.
 
-KEEP GOING round 1: GitHub run 37741554805 passed at head 6387696.
-Round 2's Medium correction passes38 node tests,7,000 games and 52 browser checks.
-Strong 64.70%/Medium 58.90%; GitHub run 37746548680 passed the completed head.
-Round 3 adds explicit same-tab reload recovery; 8 session tests and 76 browser
-checks pass. Reload offers Resume/Discard with covered cups and a held clock.
-
-Round4 shows exact finishing places, ties and remaining dice for every seat;
-84 full browser checks and source-matched desktop/phone recordings pass.
+Five completed improvements: pacing/timer races, Medium certainty decisions,
+same-tab recovery, final standings, accurate palifico help/supported saved seats.
+Current full report and matching clips:evidence/browser/report.json and
+round-5-captures.json. Earlier failures and nongating diagnostics are preserved.
+KEEP GOING review/final hosted acceptance remains tracked in NEXT/LOOP/VERIFY.

@@ -510,3 +510,31 @@ Final round5 `node scripts/hashes.mjs` twice plus `cmp`,
 `git diff --check`: PASS334 delivered files,2× byte-identical fixtures/manifest,
 source-matched full94 raw frames, original/Zod notices, pure core and all
 recordings below10MB. Manifest regenerated once more for this final log entry.
+
+## KEEP GOING round6 — current summary and scope
+
+Read root README/RULES/JOBS byte-for-byte; hashes remained
+e4b24b68/4149f36b/20d45e05. Independent source-only audit and narrow cross-check
+found no new concrete gameplay defect. Rewrote README current results and
+explicit default-duel/Chrome-emulation scope;41 lines, under60 requirement.
+Python hashlib SHA256 comparison of the ten paths in
+`evidence/checks/round-6-review.json`: all unchanged,0 implementation changes
+and0 player-visible gain. This detects accidental runtime/runner drift.
+`node scripts/capture.mjs round-6`: PASS, two actual five-round games, matching
+33f5 HTML/core/session start-end guards, zero page errors/requests; desktop
+906,218B and phone883,460B. These fresh milestone recordings are functional
+evidence, not FPS measurements. Current full94/94/strict600 proof is retained
+without repeating unchanged passed local checks. No-gain streak1.
+
+`gh run view 37762109046 --repo luisitin/partybox-game-cores --json
+status,conclusion,headSha,updatedAt,jobs` and `gh run view 37762109046 --repo
+luisitin/partybox-game-cores --log`: PASS exactcc0e1aa, completed10:23:34 UTC,
+46 node tests/94 browser checks/integrity334/2x byte-identical. Published
+metadata: evidence/checks/ci-round-5.json. Hosted log read; artifact not
+downloaded and no hosted frame statistics inferred. Every new branch head
+still requires its own final green CI before PR readiness.
+
+Round6 `node scripts/hashes.mjs` twice plus `cmp`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs` and
+`git diff --check`: PASS; final checksum count is printed by the exact
+commands and includes this log. No fixture/manifest byte drift.
