@@ -1,0 +1,92 @@
+{
+  "command": "node scripts/browser-check.mjs",
+  "htmlPath": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/play-full.html",
+  "htmlBytes": 1390845425,
+  "loadTimeoutMs": 300000,
+  "sourceSha256": "2f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b",
+  "profiles": [],
+  "capture": false,
+  "functionalOnly": false,
+  "failure": {
+    "phase": "desktop: viewport fits both boards and all controls",
+    "message": "AssertionError [ERR_ASSERTION]: {\"profile\":\"desktop\",\"fps\":56.517642829973816,\"p99\":33.29999999998836}"
+  },
+  "checks": [
+    {
+      "profile": "desktop",
+      "name": "disk load, no external assets and reduced motion",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "American standard board and complete hot-seat turn",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "multi-jump draft leaves the actual position unchanged",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "American crown ends the capture turn",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International full maximum capture and promotion",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International crown transit stays a man",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause/resume and optional exact deadline forfeit",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "winner/results and explicit next table",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual Strong move uses local full-corpus worker and preserves legal core choice",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International actual2–5 corpus worker prepares offline and preserves pending input",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "International actual six-piece Strong worker reads original local blocks",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "consecutive bot turns reuse the prepared worker and pause cancels it",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause cancels worker before it can apply an old move",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "names remain text and hostile original IDs have finite public results",
+      "pass": true
+    },
+    {
+      "profile": "desktop",
+      "name": "viewport fits both boards and all controls",
+      "pass": true
+    }
+  ],
+  "totalChecks": 15
+}

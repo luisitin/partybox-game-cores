@@ -462,4 +462,42 @@ and real full-source acceptance are complete; current source rebuilds full page.
 
 Successful prior source milestonec4a065113:44:43 follows0fba17313:19:04 by
 25m39s: binding30min PASS, early13:44:04 missed39s/hard13:49:04 met.
-Mainclaim333af6a refreshed13:42:05. Next target14:09:43/hard14:14:43.
+Mainclaim333af6a refreshed13:42:07. Next target14:09:43/hard14:14:43.
+
+## Milestone14 full default proof and retained strict failure
+
+Actual public default10,000 native/reference probes PASS all37 canonical
+classes/148orientations,22 second-subslice and3817 opponent-only threats;
+41 files/156 slices/1,006,478,762 bytes W2880/L3106/D4014. Forty-eight
+predeclared full/block transactions match EVERY SearchReport field/random
+cursor; three complete core games match every decision/transcript (1/84/1plies).
+Initial group150628 exit1 retained: three gates PASS, one draw assertion treated
+JavaScript -0 as unequal to0. Corrected TEST ONLY numeric-zero comparison,
+focused Strong/history exit0 PASS1/1; no production change or passed-gate rerun.
+Combined proof verifies identical production/reference/corpus hashes; original
+source/raw failure and focused raw TAP are retained. Thirty explicit reviewed
+native/reference/default entries span30 material classes; agent review is
+labelled accurately rather than a hand-solved proof. Initial maxRSS4,613,536KiB
+(~4.40GiB), focused3,247,600KiB; four worker CI resource fit is pending.
+
+Actual frozen full2f5ca133 desktop strict600: FAIL56.517642829973816FPS,
+p9933.3ms, capturing=false. All600 original intervals written before assertion;
+closed14:17:04.647 after actual root grant14:16:53. Phone NOT RUN. Coordinator/
+Chromium closed, no acceptance or cause inferred. Readback delayed by transient
+exec transport failure; read access recovered14:18. All raw/failure/grant files
+preserved under browser-full-six-round1/. No unchanged acceptance retry.
+
+NONgating CDP CPU/layout/GC diagnostic152111 on the SAME full2f page closed
+14:25:11.231/exit0: load14.240s,600 instrumented intervals59.605FPS/p9916.8ms.
+These profiled values are NOT acceptance. Layout0s/style0.145444s/script0.213273s/
+task1.395895s; sampledidle9.507s/program1.163s/renderfunctionself43.53ms/GC23.11ms.
+No dominant cause established for the independent strict failure. Actual trace,
+CPUprofile, source diagnostic script/raw outputs/provenance are retained.
+Private static-JSON representation authoring is UNRUN at public writer freeze;
+source/budgets/defensive APIs are unchanged. Full new host/frame/source gates,
+current matrix/league/CI, artifact publication and PR/KEEP GOING remain pending.
+
+Prior successful branch9d66f7d14:10:17 followsc4a065113:44:43 by25m34s,
+binding30min PASS, early14:09:43 missed34s/hard14:14:43 met. Mainclaim0e402bc
+row14:09:47; prior333af6a claim row was13:42:07 (earlier prose13:42:05 was a
+2-second observation error, corrected below). Next target14:35:17/hard14:40:17.

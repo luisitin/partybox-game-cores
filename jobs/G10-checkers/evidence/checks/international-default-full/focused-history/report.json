@@ -1,0 +1,1254 @@
+{
+  "schemaVersion": 1,
+  "command": [
+    "node",
+    "--test",
+    "tests/international-full.test.mjs"
+  ],
+  "pid": 151611,
+  "startedAt": "2026-10-08T14:20:31.838Z",
+  "inputSha256": "b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167",
+  "scope": "Actual public default Node corpus and game API; full2–6 theoretical WLD, independent capture/draw rules, exact bounded-block search retry equivalence. Browser execution is a separate proof.",
+  "checks": [
+    {
+      "name": "strong-core-capture-history",
+      "captureExpected": 0,
+      "captureHit": {
+        "outcome": 0,
+        "dtm": null,
+        "source": "closed-captures",
+        "pieceCount": 6
+      },
+      "captures": {
+        "report": {
+          "move": {
+            "path": [
+              20,
+              11,
+              2
+            ],
+            "captures": [
+              16,
+              7
+            ],
+            "promotes": true
+          },
+          "score": 0,
+          "nodes": 5,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 5,
+          "corpusHits": 5
+        },
+        "next": {
+          "phase": {
+            "id": "move",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "official",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": -1,
+          "ply": 1,
+          "quietPlies": 0,
+          "repetition": {
+            "international:-1:22422222222222222221222232222222222222222222202222": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "light",
+            "move": {
+              "path": [
+                20,
+                11,
+                2
+              ],
+              "captures": [
+                16,
+                7
+              ],
+              "promotes": true
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "light",
+              "move": {
+                "path": [
+                  20,
+                  11,
+                  2
+                ],
+                "captures": [
+                  16,
+                  7
+                ],
+                "promotes": true
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": null,
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            20,
+            11,
+            2
+          ]
+        }
+      },
+      "official": {
+        "report": {
+          "move": {
+            "path": [
+              33,
+              28
+            ],
+            "captures": [],
+            "promotes": false
+          },
+          "score": 0,
+          "nodes": 445,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 0,
+          "corpusHits": 0
+        },
+        "next": {
+          "phase": {
+            "id": "done",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "official",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": 1,
+          "ply": 1,
+          "quietPlies": 50,
+          "repetition": {
+            "international:-1:22222222222222222222220022202222202202222222422222": 1,
+            "international:1:22222222222222222222220022200222222202222222422222": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "dark",
+            "move": {
+              "path": [
+                33,
+                28
+              ],
+              "captures": [],
+              "promotes": false
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "dark",
+              "move": {
+                "path": [
+                  33,
+                  28
+                ],
+                "captures": [],
+                "promotes": false
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": "twenty-five-move-draw",
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            33,
+            28
+          ]
+        }
+      },
+      "house": {
+        "report": {
+          "move": {
+            "path": [
+              33,
+              28
+            ],
+            "captures": [],
+            "promotes": false
+          },
+          "score": 0,
+          "nodes": 445,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 0,
+          "corpusHits": 0
+        },
+        "next": {
+          "phase": {
+            "id": "done",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "fortyMove",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": 1,
+          "ply": 1,
+          "quietPlies": 80,
+          "repetition": {
+            "international:-1:22222222222222222222220022202222202202222222422222": 1,
+            "international:1:22222222222222222222220022200222222202222222422222": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "dark",
+            "move": {
+              "path": [
+                33,
+                28
+              ],
+              "captures": [],
+              "promotes": false
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "dark",
+              "move": {
+                "path": [
+                  33,
+                  28
+                ],
+                "captures": [],
+                "promotes": false
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": "forty-move-draw",
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            33,
+            28
+          ]
+        }
+      },
+      "fresh": {
+        "report": {
+          "move": {
+            "path": [
+              33,
+              28
+            ],
+            "captures": [],
+            "promotes": false
+          },
+          "score": 21243,
+          "nodes": 232,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 232,
+          "corpusHits": 18
+        },
+        "next": {
+          "phase": {
+            "id": "move",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "fortyMove",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            -2,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": 1,
+          "ply": 1,
+          "quietPlies": 50,
+          "repetition": {
+            "international:-1:22222222222222222222220022202222202202222222422222": 1,
+            "international:1:22222222222222222222220022200222222202222222422222": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "dark",
+            "move": {
+              "path": [
+                33,
+                28
+              ],
+              "captures": [],
+              "promotes": false
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "dark",
+              "move": {
+                "path": [
+                  33,
+                  28
+                ],
+                "captures": [],
+                "promotes": false
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": null,
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            33,
+            28
+          ]
+        }
+      },
+      "repetition": {
+        "report": {
+          "move": {
+            "path": [
+              23,
+              29
+            ],
+            "captures": [],
+            "promotes": false
+          },
+          "score": 0,
+          "nodes": 445,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 0,
+          "corpusHits": 0
+        },
+        "next": {
+          "phase": {
+            "id": "done",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "official",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            -2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": 1,
+          "ply": 1,
+          "quietPlies": 1,
+          "repetition": {
+            "international:-1:22222222222222222222220022202222202202222222422222": 1,
+            "international:1:02222222222222222222222022202222202202222222422222": 2,
+            "international:1:22222222222022222222222022202222202202222222422222": 2,
+            "international:1:22222222222220222222222022202222202202222222422222": 2,
+            "international:1:22222222222222222022222022202222202202222222422222": 2,
+            "international:1:22222222222222222202222022202222202202222222422222": 2,
+            "international:1:22222222222222222222222022200222202202222222422222": 2,
+            "international:1:22220222222222222222222022202222202202222222422222": 2,
+            "international:1:22222202222222222222222022202222202202222222422222": 2,
+            "international:1:22222222202222222222222022202222202202222222422222": 2,
+            "international:1:22222222222202222222220222202222202202222222422222": 2,
+            "international:1:22222222222222022222220222202222202202222222422222": 2,
+            "international:1:22222222222222222202220222202222202202222222422222": 2,
+            "international:1:22222222222222222220220222202222202202222222422222": 2,
+            "international:1:20222222222222222222220222202222202202222222422222": 2,
+            "international:1:22222222222222222222220222200222202202222222422222": 2,
+            "international:1:22222222222222222222220222202022202202222222422222": 3,
+            "international:1:22222222222222222222220222202222002202222222422222": 2,
+            "international:1:22222222222222222222220222202222200202222222422222": 2,
+            "international:1:22222222222222222222220222202222202200222222422222": 2,
+            "international:1:22222222222222222222220222202222202202222022422222": 2,
+            "international:1:22222222222222222222220222202222202202222222420222": 2,
+            "international:1:22222220222222222222220222202222202202222222422222": 2,
+            "international:1:22222222220222222222220022222222202202222222422222": 2,
+            "international:1:22222222222222220222220022222222202202222222422222": 2,
+            "international:1:22222222222222222222200022222222202202222222422222": 2,
+            "international:1:22222222222222222222220022222220202202222222422222": 2,
+            "international:1:22222222222222222222220022222222002202222222422222": 2,
+            "international:1:22222222222222222222220022222222202202022222422222": 2,
+            "international:1:22222222222222222222220022222222202202222220422222": 2,
+            "international:1:22222222222222222222220022222222202202222222422220": 2,
+            "international:1:22222022222222222222220022222222202202222222422222": 2,
+            "international:1:22222222222222222222220002202222222202222222422222": 2,
+            "international:1:22222222222222222222220022200222222202222222422222": 2,
+            "international:1:22222222222222222222220022202022222202222222422222": 2,
+            "international:1:22222222222222222222220022202222222202022222422222": 2,
+            "international:1:22222222222222222222220022202222222202202222422222": 2,
+            "international:1:22222222222222222222220022202222222202222202422222": 2,
+            "international:1:22222222222222222222220022202222222202222222422022": 2,
+            "international:1:22222222222222222222220020202222202222222222422222": 2,
+            "international:1:22222222222222222222220022202202202222222222422222": 2,
+            "international:1:22222222222222222222220022202220202222222222422222": 2,
+            "international:1:22222222222222222222220022202222202222220222422222": 2,
+            "international:1:22222222222222222222220022202222202222222022422222": 2,
+            "international:1:22222222222222222222220022202222202222222222402222": 2,
+            "international:1:22222222222222222222220022202222202222222222422022": 2
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "dark",
+            "move": {
+              "path": [
+                23,
+                29
+              ],
+              "captures": [],
+              "promotes": false
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "dark",
+              "move": {
+                "path": [
+                  23,
+                  29
+                ],
+                "captures": [],
+                "promotes": false
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": "threefold-repetition",
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            23,
+            29
+          ]
+        }
+      },
+      "irreversible": {
+        "report": {
+          "move": {
+            "path": [
+              43,
+              48
+            ],
+            "captures": [],
+            "promotes": true
+          },
+          "score": 20198,
+          "nodes": 31,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 31,
+          "corpusHits": 21
+        },
+        "next": {
+          "phase": {
+            "id": "move",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "official",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            -1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            -2,
+            0
+          ],
+          "variant": "international",
+          "side": 1,
+          "ply": 1,
+          "quietPlies": 0,
+          "repetition": {
+            "international:1:22222221222222222322222222221222222222222222233202": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "dark",
+            "move": {
+              "path": [
+                43,
+                48
+              ],
+              "captures": [],
+              "promotes": true
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "dark",
+              "move": {
+                "path": [
+                  43,
+                  48
+                ],
+                "captures": [],
+                "promotes": true
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": null,
+          "endReason": null,
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            43,
+            48
+          ]
+        }
+      },
+      "win": {
+        "report": {
+          "move": {
+            "path": [
+              40,
+              31,
+              22,
+              13,
+              4
+            ],
+            "captures": [
+              36,
+              27,
+              18,
+              9
+            ],
+            "promotes": true
+          },
+          "score": 99999,
+          "nodes": 5,
+          "completedDepth": 5,
+          "budgetExhausted": false,
+          "databaseHits": 0,
+          "corpusHits": 0
+        },
+        "next": {
+          "phase": {
+            "id": "done",
+            "startedAt": 1001,
+            "deadline": null
+          },
+          "phaseClock": 1001,
+          "rng": {
+            "seed": 1,
+            "step": 0
+          },
+          "players": {
+            "light": {
+              "id": "light",
+              "name": "Light",
+              "avatarId": "original-0",
+              "connected": true
+            },
+            "dark": {
+              "id": "dark",
+              "name": "Dark",
+              "avatarId": "original-1",
+              "connected": true
+            }
+          },
+          "order": [
+            "light",
+            "dark"
+          ],
+          "settings": {
+            "variant": "international",
+            "drawPolicy": "official",
+            "repetition": true,
+            "turnSeconds": 0
+          },
+          "board": [
+            2,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "variant": "international",
+          "side": -1,
+          "ply": 1,
+          "quietPlies": 0,
+          "repetition": {
+            "international:-1:42224222222222222222222222222222222222222222222222": 1
+          },
+          "drawWindows": [],
+          "lastMove": {
+            "playerId": "light",
+            "move": {
+              "path": [
+                40,
+                31,
+                22,
+                13,
+                4
+              ],
+              "captures": [
+                36,
+                27,
+                18,
+                9
+              ],
+              "promotes": true
+            }
+          },
+          "moveLog": [
+            {
+              "playerId": "light",
+              "move": {
+                "path": [
+                  40,
+                  31,
+                  22,
+                  13,
+                  4
+                ],
+                "captures": [
+                  36,
+                  27,
+                  18,
+                  9
+                ],
+                "promotes": true
+              }
+            }
+          ],
+          "left": [],
+          "autoPaused": false,
+          "winner": "light",
+          "endReason": "no-legal-move",
+          "contentLang": "en",
+          "phoneOnly": false
+        },
+        "input": {
+          "type": "move",
+          "path": [
+            40,
+            31,
+            22,
+            13,
+            4
+          ]
+        }
+      },
+      "sourceWitnesses": {
+        "king": 7,
+        "man": 61
+      }
+    }
+  ],
+  "invocation": "node --test --test-reporter=tap --test-name-pattern=actual default Strong tests/international-full.test.mjs",
+  "nodeArguments": [
+    "--experimental-addon-modules",
+    "--test-coverage-functions=0",
+    "--test-concurrency=0",
+    "--inspect-publish-uid=stderr,http",
+    "--inspect-port=127.0.0.1:9229",
+    "--report-signal=SIGUSR2",
+    "--test-coverage-lines=0",
+    "--test-isolation=process",
+    "--heap-prof-interval=524288",
+    "--cpu-prof-interval=1000",
+    "--v8-pool-size=4",
+    "--trace-event-file-pattern=node_trace.${rotation}.log",
+    "--secure-heap-min=2",
+    "--network-family-autoselection-attempt-timeout=250",
+    "--tls-cipher-list=TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256:TLS_AES_128_GCM_SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:DHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA384:DHE-RSA-AES256-SHA384:ECDHE-RSA-AES256-SHA256:DHE-RSA-AES256-SHA256:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!RC4:!MD5:!PSK:!SRP:!CAMELLIA",
+    "--test-name-pattern=actual default Strong",
+    "--use-largepages=off",
+    "--secure-heap=0",
+    "--watch-kill-signal=SIGTERM",
+    "--test-coverage-branches=0",
+    "--max-http-header-size=16384",
+    "--test-timeout=0",
+    "--node-snapshot",
+    "--stack-trace-limit=10",
+    "--heapsnapshot-near-heap-limit=0"
+  ],
+  "expectedChecks": 1,
+  "inputSha256Before": {
+    "tests/international-full.test.mjs": "83b9f85bc70b4e6e512ef023c11aceae2e991da4501b3befdadc6c5b4db43e74",
+    "tests/reference-moves.mjs": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+    "tests/reference-international.mjs": "9ca17c48394a66e9d3f1633a95a322492d75339afd614e24780e62031b72cc1f",
+    "dist/core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "dist/bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "dist/endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "dist/international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7",
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219",
+    "src/endgame.ts": "f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821",
+    "src/international-search.ts": "67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee",
+    "data/international/tunstall-v2.bin": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9",
+    "data/international/six/manifest.json": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+  },
+  "status": "PASS",
+  "completedAt": "2026-10-08T14:20:32.690Z",
+  "wallSeconds": 0.8952589099999968,
+  "peakRss": 3280617472,
+  "resourceUsage": {
+    "userCPUTime": 21063679,
+    "systemCPUTime": 18473760,
+    "maxRSS": 3247600,
+    "sharedMemorySize": 0,
+    "unsharedDataSize": 0,
+    "unsharedStackSize": 0,
+    "minorPageFault": 2442021,
+    "majorPageFault": 0,
+    "swappedOut": 0,
+    "fsRead": 2240456,
+    "fsWrite": 232,
+    "ipcSent": 0,
+    "ipcReceived": 0,
+    "signalsCount": 0,
+    "voluntaryContextSwitches": 7675,
+    "involuntaryContextSwitches": 1803
+  },
+  "sourceSha256": {
+    "tests/international-full.test.mjs": "83b9f85bc70b4e6e512ef023c11aceae2e991da4501b3befdadc6c5b4db43e74",
+    "tests/reference-moves.mjs": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+    "tests/reference-international.mjs": "9ca17c48394a66e9d3f1633a95a322492d75339afd614e24780e62031b72cc1f",
+    "dist/core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "dist/bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "dist/endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "dist/international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7",
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219",
+    "src/endgame.ts": "f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821",
+    "src/international-search.ts": "67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee",
+    "data/international/tunstall-v2.bin": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9",
+    "data/international/six/manifest.json": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+  }
+}

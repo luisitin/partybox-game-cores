@@ -39,10 +39,6 @@ assert.equal(materials.length,37);
 const expectedFiles=['db2','db3','db4','db5',...materials.map(tuple=>'db6-'+tuple.join(''))].sort();
 const record={schemaVersion:1,command:['node','--test','tests/international-full.test.mjs'],pid:process.pid,
   startedAt:new Date().toISOString(),inputSha256:hash(raw),scope:'Actual public default Node corpus and game API; full2–6 theoretical WLD, independent capture/draw rules, exact bounded-block search retry equivalence. Browser execution is a separate proof.',checks:[]};
-record.invocation=process.env.G10_TEST_COMMAND??'node --test tests/international-full.test.mjs';
-record.nodeArguments=[...process.execArgv];
-record.expectedChecks=Number(process.env.G10_EXPECTED_CHECKS??4);
-assert(Number.isInteger(record.expectedChecks)&&record.expectedChecks>=1&&record.expectedChecks<=4);
 let peakRss=process.memoryUsage().rss;
 const memory=()=>{peakRss=Math.max(peakRss,process.memoryUsage().rss);};
 const check=(name,details)=>{memory();record.checks.push({name,...details});save('report.json',{...record,status:'RUNNING',peakRss});};
@@ -50,9 +46,9 @@ const inputPaths=['tests/international-full.test.mjs','tests/reference-moves.mjs
   'dist/core.mjs','dist/bots.mjs','dist/endgame.mjs','dist/international-search.mjs',
   'src/core.ts','src/bots.ts','src/endgame.ts','src/international-search.ts','data/international/tunstall-v2.bin','data/international/six/manifest.json'];
 async function inputHashes(){const hashes={};for(const path of inputPaths){const digest=createHash('sha256');for await(const bytes of createReadStream(new URL(path,root)))digest.update(bytes);hashes[path]=digest.digest('hex');}return hashes;}
-test.before(async()=>{record.inputSha256Before=await inputHashes();save('inputs-before.json',record.inputSha256Before);});
 
 test('actual public default has all41 files/156 slices and agrees with all10k native/reference cases',async()=>{
+  record.inputSha256Before=await inputHashes();save('inputs-before.json',record.inputSha256Before);
   const coverage=internationalCorpus.coverage();
   assert.deepEqual([...coverage.files].sort(),expectedFiles);
   assert.equal(coverage.slices,156);assert.equal(coverage.bytes,1006478762);assert.equal(coverage.maximumPieces,6);
@@ -126,15 +122,15 @@ test('actual default Strong game respects captures, official/house clocks and th
   const captures=coreChoice(pos(captureCase),cfg(),7001);
   assert(captures.report.move.captures.length>=2);
   const official=coreChoice(pos(kingRow,{quietPlies:49}),cfg(),7002);
-  assert(official.report.score===0);assert.equal(official.report.corpusHits,0);
+  assert.equal(official.report.score,0);assert.equal(official.report.corpusHits,0);
   assert.equal(official.next.endReason,'twenty-five-move-draw');
   const house=coreChoice(pos(kingRow,{quietPlies:79}),cfg('fortyMove'),7002);
-  assert(house.report.score===0);assert.equal(house.next.endReason,'forty-move-draw');
+  assert.equal(house.report.score,0);assert.equal(house.next.endReason,'forty-move-draw');
   const fresh=coreChoice(pos(kingRow,{quietPlies:49}),cfg('fortyMove'),7002);
   assert(fresh.report.corpusHits>0);assert.equal(fresh.next.phase.id,'move');
   const repeat={};for(const move of referenceMoves(kingRow.board,'international',kingRow.side))repeat[key(referenceAfter(kingRow.board,move),-kingRow.side)]=2;
   const repetition=coreChoice(pos(kingRow,{repetition:{[key(kingRow.board,kingRow.side)]:1,...repeat}}),cfg(),7003);
-  assert(repetition.report.score===0);assert.equal(repetition.report.corpusHits,0);assert.equal(repetition.next.endReason,'threefold-repetition');
+  assert.equal(repetition.report.score,0);assert.equal(repetition.report.corpusHits,0);assert.equal(repetition.next.endReason,'threefold-repetition');
   const irreversible=coreChoice(pos(manRow,{quietPlies:49}),cfg(),7004);
   assert.equal(irreversible.next.quietPlies,0);assert.equal(Object.keys(irreversible.next.repetition).length,1);
   assert.equal(Object.values(irreversible.next.repetition)[0],1);assert(irreversible.report.corpusHits>0);
@@ -234,6 +230,6 @@ test('three complete game transcripts match default/block decisions and independ
 
 test.after(async()=>{
   const hashes=await inputHashes();assert.deepEqual(hashes,record.inputSha256Before,'Every actual public test input must remain unchanged during the proof');
-  memory();save('report.json',{...record,status:record.checks.length===record.expectedChecks?'PASS':'INCOMPLETE',completedAt:new Date().toISOString(),
+  memory();save('report.json',{...record,status:record.checks.length===4?'PASS':'INCOMPLETE',completedAt:new Date().toISOString(),
     wallSeconds:(performance.now()-start)/1000,peakRss,resourceUsage:process.resourceUsage(),sourceSha256:hashes});
 });

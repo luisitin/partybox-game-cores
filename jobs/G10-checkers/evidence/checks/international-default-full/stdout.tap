@@ -1,0 +1,38 @@
+✔ actual public default has all41 files/156 slices and agrees with all10k native/reference cases (4876.10988ms)
+✖ actual default Strong game respects captures, official/house clocks and third repetition (205.867492ms)
+✔ 48 predeclared default/block transactions preserve every report field and random cursor (45917.303163ms)
+✔ three complete game transcripts match default/block decisions and independent legal transitions (41409.980432ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 3
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 132709.83252
+
+✖ failing tests:
+
+test at tests/international-full.test.mjs:118:1
+✖ actual default Strong game respects captures, official/house clocks and third repetition (205.867492ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + -0
+  - 0
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/international-full.test.mjs:125:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: -0,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

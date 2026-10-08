@@ -1,0 +1,46 @@
+{
+  "recordedAt": "2026-10-08T14:34:41.050235+00:00",
+  "status": "full-source-gates-pending",
+  "previousSuccessfulPush": {
+    "head": "9d66f7d",
+    "utc": "2026-10-08T14:10:17Z",
+    "intervalSeconds": 1534,
+    "bindingCadencePass": true,
+    "earlyTargetMissSeconds": 34
+  },
+  "targetPush": "2026-10-08T14:35:17Z",
+  "hardPush": "2026-10-08T14:40:17Z",
+  "defaultProof": "PASS_COMBINED; initial3passes/exit1 semantic -0 assertion, focused corrected1pass/exit0; no production change",
+  "defaultCases": 10000,
+  "classes": 37,
+  "orientations": 148,
+  "exactTransactions": 48,
+  "completeGames": 3,
+  "nodeInitialMaxRssKiB": 4613536,
+  "fullBrowserFunctionalChecks": 30,
+  "strictFullSource": {
+    "profile": "desktop",
+    "frames": 600,
+    "meanFps": 56.517642829973816,
+    "p99Ms": 33.3,
+    "status": "FAIL",
+    "phone": "NOT RUN",
+    "closedAt": "2026-10-08T14:17:04.647Z",
+    "htmlSha256": "2f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b"
+  },
+  "nongatingProfile": {
+    "status": "recorded with profiling overhead; not acceptance",
+    "closedAt": "2026-10-08T14:25:11.231Z",
+    "layoutSeconds": 0,
+    "styleSeconds": 0.145444,
+    "scriptSeconds": 0.21327300000000002,
+    "taskSeconds": 1.3958949999999994,
+    "dominantCauseEstablished": false
+  },
+  "pending": [
+    "full actual strict frames/phone/clips",
+    "compact static data representation private experiment UNRUN at freeze",
+    "final-source properties/mutations/7000 matrix/4000 strength/CI30min",
+    "full artifact publication/PR/KEEP GOING"
+  ]
+}
