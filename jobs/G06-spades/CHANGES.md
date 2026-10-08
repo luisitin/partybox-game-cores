@@ -137,3 +137,10 @@ KEEP GOING round7:
 - `.github/workflows/G06.yml`:remove unnecessary ffmpeg apt installation.
   Read-only npm test never records/transcodes;it hashes committed captures
   and exercises every browser check. Local recording retains its encoder.
+
+Additional delivery review8 (applied after the full-suite snapshot finishes):
+- `build.ts`:retain the full pinned Zod MIT notice in an inline comment;
+  assert the delivered notice matches the installed package and is embedded.
+- `checksums.ts`:include the delivered dependency notice in the hashed path
+  set. Runtime game/UI behavior is unchanged;standalone licensing survives
+  the minifier instead of existing only as a dependency file outside HTML.

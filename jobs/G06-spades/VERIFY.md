@@ -249,3 +249,21 @@ Final full behavioral snapshot, before the dependency-notice-only follow-up:
  (23,315.94ms),both8,000-game league reports/exact counts(226,887.39/
  219,010.66ms),13 read-only browser groups(49,793.64ms). Generated
  data/fixtures/page and43 hashes are unchanged. No failing check remains.
+
+Additional delivery review8:
+- `npm run check; node generate.ts --check; node fixtures.ts --check;
+ node build.ts; node build.ts --check`:PASS. Full committed/installed Zod
+ MIT notices match and the complete notice is embedded,HTML490,317bytes.
+- `node browser.ts --write --capture --repeat=7`:PASS13 groups/54,913.91ms,
+ exact UI/core score parity in all3 variants,zero errors/requests/reduced
+ motion.900frames each:TV59.9357fps,mean16.6846ms,p95 16.7/max33.3ms;
+ 4×phone59.8692fps,mean16.7031ms,p95 16.7/max50.1ms.8s capture<10MB.
+ Notice-only change;four consecutive rounds have no player-visible gain.
+- Python iteration of every `media/*.webm` executes
+ `ffprobe -v error -show_entries format=duration:stream=codec_name,width,height -of json <clip>`
+ and `ffmpeg -v error -i <clip> -f null -`:PASS9/9 full bitstream decodes,
+ every clip8s/960×540/VP9 and<10MB,largest465,700bytes. Full metadata
+ saved in `/tmp/G06-final-media-audit.json`;all delivered clips are hashed.
+- `node checksums.ts --check; node build.ts --check; npm run check`:
+ PASS48 hashes including dependency notice,byte-identical artifact,strict
+ contract types. Core/strategy source is unchanged from the full-suite pass.

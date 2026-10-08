@@ -41,4 +41,5 @@ explains every code change. BOTS and VERIFY report measured evidence.
 NEXT is the current handoff; LOOP records post-green KEEP GOING rounds.
 
 Earlier403-only research branch is preserved. G08 Shake Up is untouched.
-This job remains in progress until exact-head hosted CI and KEEP GOING pass.
+KEEP GOING's three no-gain rounds passed;final exact-head CI is on PR7.
+The bundled Zod MIT notice is retained in HTML and the hashed notice file.

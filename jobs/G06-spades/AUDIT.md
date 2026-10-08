@@ -87,3 +87,16 @@ the explicit7.9s hold check,actual application timer events and every UI
 action. Compare each complete UI match's final scores with the pure core.
 Measure full audit duration and fresh real-time frames in a new process.
 No gameplay,policy,rule,layout or product timer change is proposed.
+
+Additional delivery review8, re-read JOBS;five remaining weaknesses:
+1. Bundled Zod's full MIT notice is absent from the minified standalone file.
+2. Recorded media hashes are checked,but all clips should also be decoded.
+3. Physical phone measurements remain unavailable and are disclosed.
+4. Outside expert-AI comparisons remain unmeasured and are not claimed.
+5. Blocked original rule sites need the documented later provenance recheck.
+
+Fix worst:retain the installed pinned dependency's exact full MIT notice
+inside the standalone script and deliver/hash the notice. Build checks must
+assert installed/committed/embedded equality. This is delivery metadata;
+the already-satisfied three no-player-gain rounds are not reset. After the
+running full suite finishes,rebuild and repeat artifact/browser verification.

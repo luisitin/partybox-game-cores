@@ -1,7 +1,7 @@
 # Sources and provenance
 
-All references below were actually read from live GitHub endpoints on
-2026-10-08. They are mechanics/strategy references;no source code,models,
+Rules/strategy references below were actually read from live GitHub endpoints on
+2026-10-08. They are mechanics/strategy references;none of their code,models,
 weights,images,logos,sounds or third-party datasets are copied.
 Code and original CSS/SVG use this repository's MIT licence.
 
@@ -59,3 +59,10 @@ Pagat's one-card stock/lowest-club alternatives are also selectable.
 No remembered facts are represented as live quotations. Direct-original
 source availability and the overview's provenance remain re-verification
 points in NEXT. The binding403 fallback has removed the old research blocker.
+
+Runtime dependency:[Zod4.6.5](https://www.npmjs.com/package/zod/v/4.6.5),
+the sole allowed dependency,from the pinned installed npm package. Its
+full MIT notice (`node_modules/zod/LICENSE`,copyright2025 Colin McDonnell)
+is delivered as THIRD-PARTY-LICENSES.txt and retained in the standalone
+script comment. Build checks compare installed/committed/embedded notices.
+This licensed runtime bundle is separate from the rules/strategy references.
