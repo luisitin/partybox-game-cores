@@ -40,6 +40,11 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
     assert.equal(summary.clipContext.cpuThrottle,raw.cpuThrottle);assert.deepEqual(summary.clipContext.viewport,raw.viewport);
     assert.equal(summary.clipContext.pageErrors.length,0);assert(summary.clipContext.networkRequests.every((url:string)=>url.startsWith('file:')));
     assert.equal(summary.clipContext.privateWarningRows,3,'current milestone captures must show the real private feedback');
+    assert.equal(raw.nativeDate,true);assert.equal(raw.witnesses.length,601);assert.equal(summary.workload.passed,true);
+    const seconds=raw.witnesses.map((row:{timerText:string})=>{assert.match(row.timerText,/^\d+:[0-5]\d$/);const [minutes,seconds]=row.timerText.split(':').map(Number);return minutes*60+seconds;});
+    const firstWall=raw.witnesses[0].wallMs,lastWall=raw.witnesses[600].wallMs,deadlineUpper=firstWall+seconds[0]*1000;
+    for(let n=0;n<601;n++){const row=raw.witnesses[n];assert.equal(row.answerFormVisible,true);assert.equal(row.modalAbsent,true);assert(Number.isSafeInteger(row.wallMs)&&row.wallMs>=firstWall&&(!n||row.wallMs>=raw.witnesses[n-1].wallMs));assert(seconds[n]>0&&seconds[n]<=60&&(!n||seconds[n]<=seconds[n-1]));assert(Math.abs(seconds[n]*1000-(deadlineUpper-row.wallMs))<=1200);}
+    assert(lastWall-firstWall>=1000);assert(seconds[0]>seconds[600]);assert.equal(summary.workload.wallElapsedMs,lastWall-firstWall);assert.equal(summary.workload.timerStartSeconds,seconds[0]);assert.equal(summary.workload.timerEndSeconds,seconds[600]);
     const paste=summary.clipContext.nativePasteWordBoundary;
     assert.equal(paste.method,'native Chromium clipboard');assert.equal(paste.pasted,`The\t${paste.noun}`);assert.equal(paste.visible,`The ${paste.noun}`);
     const category=json('content/categories.json').categories.find((row:{id:string})=>row.id===paste.categoryId);

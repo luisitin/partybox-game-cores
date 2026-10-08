@@ -1,5 +1,19 @@
 # Decisions and assumptions
 
+- Recovery19:11:52Z follows the last18:07:35Z branch push:64m17s elapsed during
+  interruption, a real violation of the30-minute milestone rule. Record the
+  next actual successful push and derive new25/30-minute targets from it.
+- Coordinated old frame tests started the60-second answer timer before waiting
+  for their grant. The first round7 screenshots prove the page had already
+  reached private handover. These local samples remain real but do not prove
+  active-answer workload performance; prior coordinated local phase claims
+  have the same unverified scope. Hosted runs do not wait for a local grant,
+  but their old runner still lacks a per-callback active-phase witness.
+  The test-only correction waits before starting the timer and checks visible
+  form, modal absence, native wall time and advancing timer on every callback.
+  It retains600 native deltas,59FPS/p99<=17ms and the original250ms settle.
+  This is a justified changed-workload proof repair, not an unchanged luck retry.
+
 - This workshop supplies exact contract types and schemas, but no game-sdk package. The core uses an explicitly documented local reducer adapter with the required player → speech → VIP → paused → phase order. Its English answer matcher implements the documented normalization, singular/plural, long-answer one-edit and transitive grouping behavior; it does not claim to bundle the absent SDK's complete language stemmer.
 - Fresh category lists, three rounds by default, 2–8 seats, shared victory on a final tie, and canceling all repeated answers within one player's round are stated house choices. Official edition and variant differences are described in RULES.md and CONFLICTS.md.
 - Every authored category is original. Its answer bank supplies examples for deterministic bots, never an exhaustive dictionary or an automatic veto on a human answer. Bots abstain on unfamiliar answers; the group decides their validity.

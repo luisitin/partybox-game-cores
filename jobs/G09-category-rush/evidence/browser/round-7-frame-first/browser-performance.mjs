@@ -4,7 +4,7 @@ import {createHash} from 'node:crypto';
 import {dirname,resolve} from 'node:path';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
-import {waitForFrameWindow,closeFrameWindow,summarizeFrameWorkload} from './frame-window.mjs';
+import {waitForFrameWindow,closeFrameWindow} from './frame-window.mjs';
 
 const root=resolve(dirname(fileURLToPath(import.meta.url)),'..');
 const output=resolve(root,'evidence/browser');
@@ -39,22 +39,15 @@ try {
     await page.locator('#rounds').selectOption('1');
     await page.locator('#seconds').selectOption('60');
     await page.getByRole('button',{name:'Let’s play'}).click();
-    assert.equal(await page.locator('#answer-form').count(),0,'quiet waiting happens at the private handover before its real timer starts');
-    assert.equal(await page.locator('#ready').count(),1);
+    await page.locator('#ready').click();
+    await page.waitForTimeout(250);
     const frameWindow=await waitForFrameWindow(process.env.G09_FRAME_BARRIER_DIR,label,sourceSha256,frameWindowTimeoutMs);
-    let sample;
-    try{
-      await page.locator('#ready').click();
-      await page.waitForTimeout(250);
-      assert.equal(await page.locator('#answer-form').count(),1,'private timer is actually active before the sample');
-      sample=await page.evaluate(async()=>{
-      const times=[],witnesses=[];
-      const nativeDate=Function.prototype.toString.call(Date.now).includes('[native code]');
+    let frames;
+    try{frames=await page.evaluate(async()=>{
+      const times=[];
       await new Promise(resolve=>{
         let previous=null;
         function sample(now){
-          const form=document.getElementById('answer-form');
-          witnesses.push({wallMs:Date.now(),answerFormVisible:!!form&&form.getClientRects().length>0,modalAbsent:!document.querySelector('[role="dialog"]'),timerText:document.getElementById('timer')?.textContent?.trim()??''});
           if(previous!==null)times.push(now-previous);
           previous=now;
           if(times.length===600)resolve();
@@ -62,19 +55,17 @@ try {
         }
         requestAnimationFrame(sample);
       });
-      return {frames:times,witnesses,nativeDate};
+      return times;
     });}catch(error){await closeFrameWindow(frameWindow,{passed:false,failedBeforeCompleteSample:true,error:String(error)});throw error;}
-    const {frames,witnesses,nativeDate}=sample;
-    const workload=summarizeFrameWorkload(witnesses,nativeDate);
     const ordered=[...frames].sort((a,b)=>a-b);
     const totalMs=frames.reduce((total,ms)=>total+ms,0);
     const item={profile:label,viewport:{width,height},cpuThrottle,sourceSha256,samplingRecording:false,recordingDuringMeasurement:false,
       sampleMethod:'601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps',
-      frames,witnesses,nativeDate,workload,count:frames.length,totalMs,meanMs:totalMs/600,fps:600000/totalMs,
+      frames,count:frames.length,totalMs,meanMs:totalMs/600,fps:600000/totalMs,
       p95Ms:ordered[569],p99Ms:ordered[593],maxMs:ordered.at(-1),networkRequests,pageErrors};
-    item.passed=frames.length===600&&frames.every(ms=>Number.isFinite(ms)&&ms>0)&&item.fps>=59&&item.p99Ms<=17&&workload.passed&&pageErrors.length===0&&networkRequests.every(url=>url.startsWith('file:'));
+    item.passed=frames.length===600&&frames.every(ms=>Number.isFinite(ms)&&ms>0)&&item.fps>=59&&item.p99Ms<=17&&pageErrors.length===0&&networkRequests.every(url=>url.startsWith('file:'));
     await writeFile(resolve(output,`${label}-frames.json`),JSON.stringify(item,null,2)+'\n');
-    await closeFrameWindow(frameWindow,{count:item.count,fps:item.fps,p99Ms:item.p99Ms,passed:item.passed,workloadPassed:workload.passed,timerStartSeconds:workload.timerStartSeconds,timerEndSeconds:workload.timerEndSeconds,recordingDuringMeasurement:false});
+    await closeFrameWindow(frameWindow,{count:item.count,fps:item.fps,p99Ms:item.p99Ms,passed:item.passed,recordingDuringMeasurement:false});
     await page.screenshot({path:resolve(output,`${label}-active.png`),fullPage:true});
     await context.close();
     assert(item.passed,`${label}: strict frame or offline runtime check failed`);
@@ -112,7 +103,7 @@ try {
     const videoName=`delivery-final-${label}.webm`;
     await video.saveAs(resolve(media,videoName));
     await unlink(await video.path());
-    const {frames:raw,witnesses:rawWitnesses,...summary}=item;
+    const {frames:raw,...summary}=item;
     summary.video=`media/${videoName}`;
     summary.clipContext={separateFromSampling:true,viewport:{width,height},cpuThrottle,sourceSha256,activeRecordingMs:3000,workload:'offline 12-category answer screen with active timer, three private warnings and a real native article-tab paste retained as separate words; recording only',privateWarningRows:3,nativePasteWordBoundary:{method:'native Chromium clipboard',letter:clipLetter,categoryId:clipCategory.id,prompt:clipPrompt,noun:clipNoun,pasted:pastedWordBoundary,visible:visibleWordBoundary},pageErrors:clipPageErrors,networkRequests:clipNetworkRequests};
     summary.videoBytes=(await stat(resolve(media,videoName))).size;

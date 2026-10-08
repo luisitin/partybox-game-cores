@@ -6,7 +6,7 @@ import {join} from 'node:path';
 import {setTimeout as delay} from 'node:timers/promises';
 // Host-only MJS helper deliberately supplies no game state or timestamps.
 // @ts-expect-error development coordination has no separate declaration file
-import {waitForFrameWindow,closeFrameWindow} from '../scripts/frame-window.mjs';
+import {waitForFrameWindow,closeFrameWindow,summarizeFrameWorkload} from '../scripts/frame-window.mjs';
 
 async function ready(folder:string,previousNonce?:string){
   for(let n=0;n<100;n++){try{const value=JSON.parse(await readFile(join(folder,'desktop-ready.json'),'utf8'));if(value.attemptNonce!==previousNonce)return value;}catch{}await delay(5);}
@@ -32,4 +32,19 @@ test('only an exact fresh grant authorizes a frame window; closure preserves act
 });
 test('CI without local coordination performs no waits or disk marker work',async()=>{
   assert.equal(await waitForFrameWindow(undefined,'desktop','a'.repeat(64)),null);await closeFrameWindow(null,{passed:true});
+});
+
+test('every native callback must retain a visible private answer form and an advancing real timer',()=>{
+  const initialWall=Date.UTC(2026,9,8,18,0,0);
+  const witnesses=Array.from({length:601},(_,n)=>{const left=60-Math.floor(n/60);return {wallMs:initialWall+Math.round(n*1000/60),answerFormVisible:true,modalAbsent:true,timerText:`${Math.floor(left/60)}:${String(left%60).padStart(2,'0')}`};});
+  const good=summarizeFrameWorkload(witnesses,true);assert.equal(good.passed,true);assert.equal(good.wallElapsedMs,10000);assert.equal(good.timerStartSeconds,60);assert.equal(good.timerEndSeconds,50);
+  for(const index of [0,1,299,599,600])for(const change of [{answerFormVisible:false},{modalAbsent:false},{timerText:'0:00'},{timerText:'invalid'}]){
+    const rows=structuredClone(witnesses);Object.assign(rows[index],change);assert.equal(summarizeFrameWorkload(rows,true).passed,false,`invalid callback${index}/${JSON.stringify(change)}`);
+  }
+  assert.equal(summarizeFrameWorkload(witnesses,false).passed,false,'non-native clock rejected');
+  assert.equal(summarizeFrameWorkload(witnesses.slice(1),true).passed,false,'all601 callbacks required');
+  const paused=structuredClone(witnesses);for(const row of paused)row.timerText='1:00';assert.equal(summarizeFrameWorkload(paused,true).passed,false,'stopped player timer rejected');
+  const clockBack=structuredClone(witnesses);clockBack[300].wallMs=initialWall-1;assert.equal(summarizeFrameWorkload(clockBack,true).passed,false,'backward wall clock rejected');
+  const jumped=structuredClone(witnesses);jumped[300].timerText='0:30';assert.equal(summarizeFrameWorkload(jumped,true).passed,false,'timer outside the actual deadline rejected');
+  const fake=structuredClone(witnesses);for(const row of fake)row.wallMs=initialWall;assert.equal(summarizeFrameWorkload(fake,true).passed,false,'frozen wall clock rejected even with plausible timer labels');
 });

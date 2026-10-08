@@ -604,3 +604,39 @@ Cadence:79 push17:07:41 (prior25min target missed30s,30min met); target17:32:41 
 Round7 current adapter on HTML91a0c95d (457,688B): `npm run typecheck`, `npx tsx --test tests/client-draft.test.ts` PASS6,2 `npm run build:play` plus `cmp` byte-identical. `node scripts/browser-paste.mjs after` PASS14, closed17:48:53.584:6actual authored paste cases improve0→1,8ordinary/article/newline/CRLF controls unchanged1. Native caret/80-char/private-handover and separate adversarial backward-selection/own-repeat/wrong-initial controls pass at2/8humans. Original `browser-check`, `browser-empty-review after`, `browser-clock`, `browser-receipts after`, `browser-resume after`, `browser-plurals after`, `browser-draft-hints after` PASS28+8+clock+4+17+3+3 on exact91a0; last closure18:01:23.364. Seven original68f43 functional reports were archived before regeneration. Direct git byte comparisons preserve8core/data/save files; proof in evidence/round-7-source-invariance.json. Final strictTS and4paste/draft/nonce artifact checks pass.
 
 `G09_FRAME_BARRIER_DIR=.work/round-7-frame-barrier G09_FRAME_WAIT_MS=600000 node scripts/browser-performance.mjs` is the FIRST changed-source attempt and remains WAITING: actual desktop READY18:02:54.057/noncef2724c30-2d92-4347-88c5-e12622c6a65d, read/sent18:03:59. No grant/CLOSED at18:06:32; no native sample or current capture has run. The optional600-second wait does not alter gates/frames/source guards. Full strict pair/currentclips/exact-head CI/old-control save compatibility remain pending; no completed LOOP7/gain streak claimed. Target18:02:20 missed during coordination/checks plus delayed READY polling; hard18:07:20 requires pending checkpoint, not fictitious acceptance.
+# Interrupted round7 workload verification recovery
+
+At19:11:52Z the last successful branch push18:07:35Z was64m17s old; this is a
+cadence failure during interruption, not a passing milestone interval. Runtime
+status is connected/current and network policy enforced. Process inspection
+found no non-zombie owned Node/Chromium/timeout groups.
+
+Native exact-head API readback confirms3f6d467/run37821893898/job113464750151
+SUCCESS18:23:12Z and every required workflow step completed successfully. The
+complete132,351-character actual log is privately retained. Actual artifact
+11568969406 is listed at1,153,457B/digest7a2d5b73a30c399558e6f34fa1b59e776e9d41f6052748ddb5b8466777040ff6;
+independent downloaded-byte verification is pending, not claimed.
+
+`G09_FRAME_BARRIER_DIR=.work/round-7-frame-barrier G09_FRAME_WAIT_MS=600000
+node scripts/browser-performance.mjs` first changed-product attempt actually
+sampled both600-native profiles. Desktop59.70429656FPS/p9916.8ms passed its
+old speed gate; phone4x58.44430608FPS/p9933.3ms failed. Actual closure18:10:49.006Z
+EXIT1; phone recording NOTRUN. Both post-sample screenshots show handover after
+the timer expired while waiting for grants. Retained raw/source/receipts/clip
+are in evidence/browser/round-7-frame-first. Active-answer phase is NOTproved;
+no failed sample is filtered, corrected, replaced or called NOTRUN.
+
+Test-only runner moves READY waiting before starting the real answer timer.
+After its fresh exact grant, the original250ms settle occurs once, followed by
+all600 adjacent nativeRAF deltas. Every601 callbacks also records visible
+answer form, no modal, nativeDate.now and an advancing positive60-second timer.
+Independent artifact assertions recompute this witness from raw rows. Pure
+workload checks reject absent form/modal/expired or invalid timer at five
+positions, nonnative/frozen/backward wall time, missing callbacks and stopped
+or inconsistent countdowns. These checks catch the actual handover gap without
+relaxing speed gates or changing the game. Fresh local acceptance is pending.
+
+`npx tsx --test tests/client-draft.test.ts tests/frame-window.test.ts` after
+recovery:9PASS/0FAIL,3833.280843ms. `npm run typecheck`:PASS. Current HTML SHA
+91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236 remains457,688B.
+No completed LOOP7 or no-gain round is claimed at this checkpoint.

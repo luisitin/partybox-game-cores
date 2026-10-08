@@ -1,5 +1,39 @@
 # Resume
 
+Recovery checkpoint, 2026-10-08T19:11:52Z: the preceding normal branch push was
+18:07:35Z. The interrupted environment left a 64m17s milestone gap at this
+readback; this exceeds the binding 30-minute interval and is not a passing
+cadence claim. No owned non-zombie Node/Chrome/timeout process survived.
+
+Exact current public head3f6d467c029cbb718b27c39ed26b3f6f2a64793a has full
+CI37821893898/job113464750151 SUCCESS at18:23:12Z. The complete132,351-character
+actual job log was read and retained privately in .work/current-3f6-full-job.log.
+Its visual artifact11568969406 is listed with1,153,457B and SHA
+7a2d5b73a30c399558e6f34fa1b59e776e9d41f6052748ddb5b8466777040ff6;
+download and independent validation are still pending. The green original
+runner does not prove the new active-phase workload witness.
+
+The first round7 LOCAL attempt did sample both profiles: all600 desktop raw
+intervals59.70429656FPS/p9916.8ms, then600 phone4x58.44430608FPS/p9933.3ms FAIL;
+phone capture did not run. Both actual post-sample screenshots show handover
+"Pass to Sam", so these metrics cannot establish performance of an active
+answer sheet. Full raw data, source guards, receipts, screenshots and the
+346,200B desktop clip remain intact in evidence/browser/round-7-frame-first.
+Do not erase that failure or label the phone measurement NOTRUN.
+
+The unfinished test-only repair now waits at private handover BEFORE starting
+the real answer timer. A matching grant then starts the timer, retains the
+original single250ms settling period and samples all600 native unfiltered
+deltas. Every601 callbacks records native Date.now, visible answer form,
+absence of a modal and the positive advancing60-second timer. Raw samples are
+written before assertion; CLOSED is written on pre-sample startup failures too.
+No product/core/data/bot/HTML bytes changed; HTML remains91a0c95d,457,688B.
+Nine focused draft/nonce/workload checks and strictTS pass after recovery.
+Actual fresh corrected-runner desktop/phone first attempts, separate clips,
+independent raw/current18-guard proof and full new exact-head CI remain pending.
+Coordinate READY/grant/CLOSED with root before starting heavy browser work.
+Round7 has not been completed in LOOP.md; no-gain streak remains0.
+
 G09 Category Rush: branch `job/G09-category-rush-parallel-20261008`, draft PR https://github.com/luisitin/partybox-game-cores/pull/8. Six completed review rounds each measured a player-visible gain; consecutive no-gain streak is zero. Do not mark ready until three actual consecutive no-gain rounds after the last gain, plus full exact-current-head CI and fresh ready readback.
 
 Exact79e9c90b76603137fe5412a81ac33ecbc02419c6/run37814161304/job113438358747 is fully green17:21:43UTC: actual125,257-character log,63tests/both10k oracles/7k restored/all9 invariants/43mutants/4kduels/all regeneration/original and new UI suites. Actual artifact11565694396 ZIP1,136,733B SHA391757c424ce317429f50a3e8c0d5251be874a5c23936cf4f33471e215239f5e is independently verified and fully archived in round-6-hosted-37814161304. All8 uploaded files,18guards,currentHTML68f43a97 and1,200 raw intervals match. Desktop60.002784/phone4x60.002580FPS,p99/max16.8ms. Separate357,866/239,171B VP8 clips decode and show3 actual warnings. Canonical round6 local proof remains explicitly local; historical failures remain failures.

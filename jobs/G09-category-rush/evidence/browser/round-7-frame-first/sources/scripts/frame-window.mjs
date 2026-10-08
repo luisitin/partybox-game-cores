@@ -29,21 +29,3 @@ export async function closeFrameWindow(window,summary){
   const {folder,...identity}=window,receipt={...identity,closedAt:new Date().toISOString(),...summary};
   const tmp=resolve(folder,`${window.profile}-closed-${window.attemptNonce}.tmp`);await writeFile(tmp,JSON.stringify(receipt,null,2)+'\n');await rename(tmp,resolve(folder,`${window.profile}-closed.json`));
 }
-
-// Validate the actual visible workload independently of the RAF frame gate.
-// This runs after sampling; it does not replace, filter or repair timestamps.
-export function summarizeFrameWorkload(witnesses,nativeDate){
-  const seconds=witnesses.map(row=>{
-    const match=/^(\d+):([0-5]\d)$/.exec(row.timerText??'');
-    return match?Number(match[1])*60+Number(match[2]):NaN;
-  });
-  const first=witnesses[0],last=witnesses.at(-1),wallElapsedMs=(last?.wallMs??NaN)-(first?.wallMs??NaN);
-  const deadlineUpperMs=(first?.wallMs??NaN)+seconds[0]*1000;
-  const validWalls=witnesses.every((row,n)=>Number.isSafeInteger(row.wallMs)&&row.wallMs>=0&&(!n||row.wallMs>=witnesses[n-1].wallMs));
-  const visibleAnswerEveryCallback=witnesses.every(row=>row.answerFormVisible===true&&row.modalAbsent===true);
-  const liveTimerEveryCallback=seconds.every((value,n)=>Number.isFinite(value)&&value>0&&value<=60&&(!n||value<=seconds[n-1]));
-  const deadlineConsistent=seconds.every((value,n)=>Math.abs(value*1000-(deadlineUpperMs-witnesses[n].wallMs))<=1200);
-  const timerAdvanced=seconds[0]>seconds.at(-1);
-  const passed=witnesses.length===601&&nativeDate===true&&validWalls&&visibleAnswerEveryCallback&&liveTimerEveryCallback&&wallElapsedMs>=1000&&timerAdvanced&&deadlineConsistent;
-  return {passed,method:'Visible answer form, no modal and native Date.now/timer on every601 real RAF callback; checked after all600 unfiltered deltas',nativeDate,witnessCount:witnesses.length,validWalls,visibleAnswerEveryCallback,liveTimerEveryCallback,timerAdvanced,deadlineConsistent,wallElapsedMs,firstWallMs:first?.wallMs,lastWallMs:last?.wallMs,timerStartSeconds:seconds[0],timerEndSeconds:seconds.at(-1),deadlineUpperMs};
-}
