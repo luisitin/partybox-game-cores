@@ -5,180 +5,60 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around14:33UTC:
-- Complete source/default Node verification PASS_COMBINED:10k/all37/148,
-  48 exact full/block reports+cursors and3 complete game transcripts. Initial
-  exit1/-0 draw assertion and source are retained; test-only focused1/1 passes
-  identical production. Thirty agent-reviewed native/reference/default entries
-  are logged; no hand-solved theoretical WLD claim. Node peak~4.40GiB.
-- Actual full offline browser functional30/30 PASS, fullHTML1,390,845,425B
-  SHA2562f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b.
-  Desktopload24.461s/phone4x99.217s; genuine6pieceStrong blockreads pass.
-- First strict full-source desktop600 FAIL56.5176FPS/p9933.3ms; allraw retained.
-  Closed14:17:04.647; phone NOT RUN. No cause established/unchanged retry.
-- Same-page NONgating CDP profile recorded600instrumented intervals, actual
-  layout/style/script/GC metrics. Its59.605FPS is NOT acceptance and does not
-  establish why the independent strict sample failed. All trace/raw preserved.
-- Private staticJSON source representation is authored, not yet executed at
-  public writer freeze; actual source/budgets/defensive APIs remain unchanged.
-  Existing trackedplay.html remains old2–5 baseline; full artifact private only.
-- Full actual frame/phone/clips, final-source7k/4k/CI30min/PR and KEEP GOING
-  remain pending. No source BLOCKED, LFS/config/upload/charges/publication claim.
-- Last successful9d66f7d14:10:17, previous13:44:43 interval25m34 PASS30min.
-  Target14:35:17/hard14:40:17; mainclaim time never resets branch cadence.
+Current checkpoint, 2026-10-08 around14:52UTC:
+- Complete licensed American/International2–6 source is installed. The actual
+  default10k native/reference probes cover all37six classes/148 orientations.
+  Forty-eight exact full/block SearchReports+cursors and3 complete game
+  transcripts PASS_COMBINED. Initial -0 assertion failure/test-only focused
+  correction/raw TAP remain retained. Thirty agent-reviewed comparisons are
+  labelled accurately; final broader source gates remain pending.
+- Full actual offline browser functional30/30 PASS. Earlier2f5ca133 full page
+  is1,390,845,425B, desktopload24.461s/phone4×99.217s. First strict desktop600
+  FAIL56.5176FPS/p9933.3ms; allraw retained, phone NOT RUN. No cause established
+  or unchanged acceptance retry. Nongating CDP profile is not acceptance.
+- NEW early-human host source built separately to .work/play-full-early.html,
+  SHA256edc476ee9a9bb9b3acbd3ff0efd631814f079a1f6a29cd88a1c188f6b17ca101.
+  Actual-file desktop controls0.776s/firstlegalAmerican1.902s/Intl2.550s;
+  phone4× controls2.398s/firstAmerican9.128s/Intl12.116s while document still
+  loading (fullparse22.574s/103.650s). Strong/Medium starts correctly rejected,
+  no worker/RNG consumption before corpus ready, zero runtimeHTTP/page errors.
+  This is a player startup gain. Newedc desktop600 FAIL57.2363FPS/p9933.4ms;
+  all15 desktop controls PASS/all600raw retained, phone NOT RUN. No cause
+  established or unchanged retry. Full frame/phone/clips remain pending.
+- Private static-JSON Node representation PASS unchanged10k/48reports+cursors/
+  missing-block totals/3complete games on actualNode24.19. Matched10k maxRSS
+  original3,246,584KiB, JSON1,969,664KiB; full48/3 JSON2,860,060KiB. Separate
+  sequential runs are not a causal startup/FPS claim. Node22.16 compatibility
+  is being checked privately. Actual build/defaultdist have not adopted JSON.
+- Trackedplay.html remains earlier accepted2–5 baseline. Complete single-page
+  publication is pending; no LFS configuration/upload/charges/publication claim.
+  No source-unavailable/BLOCKED claim: complete source is acquired and licensed.
 
 Next concrete work:
-1. Preserve current2–5 page strict28+600 desktop/phone4× and same-source clips
-   as its accepted proof; future full-six changes need new exact-source proof.
-2. Build private streamed complete-six single-page prototype and measure real
-   disk startup/memory/phone4×. Engineer immutable lazy block access if whole
-   corpus copies exceed memory. Strong must actually consume every partition,
-   with exact full-reader choices/RNG/reports/transcripts on declared controls.
-   Source unavailable/BLOCKED is not justified: full source is available.
-3. Finish final-source core/properties/mutations7k matrix/4k leagues, complete
-   metadata schemas/2x deterministic regeneration and manual30 spot log;
-   demonstrate whole npm test fits CI30min. Baseline league passed4,000 but
-   predates actual International2–5 integration and is not current acceptance.
-4. Open PR after all required checks pass; exact current head CI must be green
-   before ready. Then KEEP GOING: five weaknesses, fix worst, measure/log/push
-   until three consecutive rounds have no player-visible gain. No G10 PR yet.
+1. Finish Node22.16 JSON10k/48/3 compatibility before source integration. Keep
+   defensive public decoding, every original byte, all search budgets and exact
+   reports/cursors unchanged. Measure safe league concurrency, not4×2.73GiB.
+2. Preserve early-human exact-source functional proof and obtain fresh actual
+   strict600 desktop/phone4× gates with per-profile readiness barriers granted
+   by root. Startup/functionals run outside CPU quiet. Separate clips follow.
+3. Finish final-source properties/25 real mutations/7000 matrix/4000 strength,
+   schemas/regeneration and CI30min fit. Baseline7k/25/4k pass predates actual
+   full-six source and is not final acceptance. Investigate actual repeated
+   cold-import/resource cost without skipping assertions or weakening gates.
+4. Prepare concrete complete-page publication compatible with GitHub's actual
+   blob limits, then open PR after required checks pass. Exact current-head CI
+   must be green before ready. Then KEEP GOING: list five weaknesses/fix worst/
+   measure/log/push until three consecutive player-no-gain rounds. No G10PR yet.
 
-All owned heavy groups CLOSED at12:23:35; child job writes FROZEN12:23:32.
-Root grants each strict quiet slot explicitly; report actual process groups.
-The complete production adapter's fullSixPieceCoverage:false field refers to
-unfinished GAME delivery, not acquired-source completeness. Missing game quiet6
-remains UNKNOWN; theoretical WLD is not history-safe conversion proof.
+Cadence:
+- Actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
+- Last successful812f24714:35:25 follows9d66f7d14:10:17 by25m08s: PASS30min,
+  early14:35:17 missed8s/hard14:40:17 met. Mainclaim17a8b9a row14:35:07Z.
+- Next stage14:55, targetsuccessfulpush15:00:25/hard15:05:25.
+  Main claim time never resets branch cadence. Record observed successful
+  origin-reflog push time after closure; pending proofs stay explicitly pending.
 
-Cadence: actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
-Subsequent pushes10:45:22/11:11:30/11:37:15/12:05:07 met30min.
-Last accepted head2705a5f at12:05:07UTC; mainclaim327f13612:04:08.
-Stage now~12:26, target successfulpush12:30:07/hard12:35:07.
-Main claim time never resets branch cadence. Record actual successful reflog
-push time after closure. Pending proofs are explicitly pending at checkpoints.
-
-Milestone9 successful origin-reflog push642be2f at12:26:30UTC.
-12:05:07→12:26:30 =21m23s, binding30min PASS; early12:30:07 and
-hard12:35:07 met. Mainclaimba88113 at12:26:20. Next stage~12:46,
-targetsuccessfulpush12:51:30/hard12:56:30. Current game2–5, fullsix
-source/probe PASS, strict current page/complete game delivery pending.
-
-## Milestone10 current frozen-page proof and private transport
-
-Current642be2f game/build inputs and HTML remained unchanged through proof.
-`G10_BROWSER_DIR=evidence/browser-round8 G10_MEDIA_DIR=media/round8
-node scripts/browser-check.mjs`: PASS28/28, exit0; both unrecorded600 samples
-retained without filtering. Desktop59.115047735FPS/p9916.8ms, phone4×
-60.002592112FPS/p9916.8ms; disk loads1429.934/8956.791ms. Exact HTML
-d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e,
-runner6e4c520170d3e212c08185e4963bbc56a44cf38887d221b1ba66902953defed8.
-PGID139168 closed/exit0 observed12:38:31–34; all browsers closed.
-Same command `--capture`: PASS28/28, exit0; same-source desktop/phone
-clips under10MiB, recorded frame values retained without acceptance claims.
-PGID139502 closure observed12:45:07, artifacts completed12:42–43.
-
-PRIVATE immutable encoded/block transport strict build PASS and focused
-tests PASS6/6, actual exit0: all10,000 native/independent2–5 WLD outcomes
-match; canonical padding, split quartets, final-short4KiB blocks, absent
-bytes and input-alias mutation controls pass. Initial uniform-slice harness
-assumption was false for the original kings slice; raw5/6 failure retained,
-control fixed to an explicitly uniform index. Production runtime unchanged.
-Exact private source/test snapshots, commands and raw TAP are archived under
-experimental-transport/; these factories are not integrated/delivered APIs.
-
-Private streamed single-page source-payload prototype PASS writer/hash:
-1,380,811,379 bytes, SHA256460a2edd8f81e5146887fd4d15cd7e7490d98d15689e9f7e3db6a1fb791bd168,
-all74six-piece files verified. Browser parsing/memory and actual full-six
-bot use remain UNRUN. /tmp is RAM-backed; own research relocation to
-/workspace disk is in progress with recursive before/after SHA inventories,
-no source loss/publication/LFS config/upload. Current game remains2–5.
-
-Next: private complete-payload startup/RSS, integrate full-six bounded immutable
-reads with exact node/browser bot choices/RNG/transcripts, final game/matrix/
-league/data/CI gates and KEEP GOING. No source unavailable/BLOCKED or ready claim.
-Checkpointstage~12:51, earlytarget12:51:30/hard12:56:30.
-
-Milestone10 successful origin-reflog push1abfdfa at12:52:27UTC.
-12:26:30→12:52:27 =25m57s, binding30min PASS; early12:51:30 missed57s,
-hard12:56:30 met. Mainclaimb8c59be at12:52:19. Next stage~13:12,
-targetsuccessfulpush13:17:27/hard13:22:27. Source/proof game remains2–5.
-
-## Milestone11 complete-source transport and disk startup
-
-Private `.work/api-validate-full.mjs --transport blocks --out
-.work/api-evidence/full-blocks`: PASS10,000, actual exit0/4.799803s.
-All37six classes/148orientations/22second-subslice native+independent queries
-match; one deterministic missing-block retry loads6826original4KiB blocks,
-27,950,054 bytes. Unknown bytes are never accepted as a synthetic WLD.
-Same adapter `--transport encoded --out .work/api-evidence/full-encoded`:
-PASS10,000, exit0/23.937574s; all41datafiles/156slices,1,006,478,762bytes
-through immutable encoded source, identical theoretical WLD transcript
-eceea444e925cc58f1d8ee5be13205f9bd548a5d1d2e2201b2cd31f9013ac9f1.
-Private source832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce
-is archived with exact adapter/raw outputs in experimental-transport/.
-These APIs are NOT integrated into the current game, still2–5.
-
-Private full-payload browser baseline: desktop PASS80.772sDOMContentLoaded,
-peak summed ownedRSS3,667,918,848B; phone4× FAIL unchanged300,000ms load
-timeout (300.786s withclosure), peak3,440,832,512B. EXIT1/runnerclosed
-13:01:27.945, all raw reports/errors retained under stream-prototype/baseline.
-Private1MiB-tag representation: writer PASS1,381,347,661B SHA256
-a2511da2c6b728d7b1011a4f411d3fb0f9344c752184c4c72cf955a9e6d567c5;
-same current d5cb base and original corpus hashes,1293parts/74files.
-Browser PASS desktop27.082sDOMContentLoaded/peak4,040,486,912B and phone4×
-89.455s/peak3,325,009,920B. All part extents and214first/middle/final
-original4KiB windows match; zero runtimeHTTP/page errors, EXIT0.
-Actual closure13:11:49.900; every ownedgroup closed. Observed separate
-runs/other root activity are not a controlled causal percentage claim.
-This proves complete source payload parsing/byte access, not Strong game
-integration or frame acceptance. Both private scripts/exact raw are archived.
-
-Own scratch relocation PASS529files/720items, recursive inventory byte/hash
-identity; actual closed12:51:40.295. The old /tmp path is a canonical symlink
-to /workspace disk; source data deleted only after verifiedcopy. Raw inventory
-proof is under private-scratch-relocation/. No causal FPSclaim, LFS config,
-charges/upload/publication or source-unavailable BLOCKED assertion.
-
-Next concrete implementation: licensed six-piece files as bounded ordinary
-Git chunks and immutable encoded Node modules; shared pure probe dependency
-for actual browser worker; bounded originalblock messages with same-request
-RNG restart until zero-missing. Full actual game/final-source properties,
-7k matrix/4k leagues/data/CI/PR/KEEP GOING remain pending.
-Checkpoint earlytarget13:17:27/hard13:22:27; pending gates remain explicit.
-
-## Milestone14 full default proof and retained strict failure
-
-Actual public default10,000 native/reference probes PASS all37 canonical
-classes/148orientations,22 second-subslice and3817 opponent-only threats;
-41 files/156 slices/1,006,478,762 bytes W2880/L3106/D4014. Forty-eight
-predeclared full/block transactions match EVERY SearchReport field/random
-cursor; three complete core games match every decision/transcript (1/84/1plies).
-Initial group150628 exit1 retained: three gates PASS, one draw assertion treated
-JavaScript -0 as unequal to0. Corrected TEST ONLY numeric-zero comparison,
-focused Strong/history exit0 PASS1/1; no production change or passed-gate rerun.
-Combined proof verifies identical production/reference/corpus hashes; original
-source/raw failure and focused raw TAP are retained. Thirty explicit reviewed
-native/reference/default entries span30 material classes; agent review is
-labelled accurately rather than a hand-solved proof. Initial maxRSS4,613,536KiB
-(~4.40GiB), focused3,247,600KiB; four worker CI resource fit is pending.
-
-Actual frozen full2f5ca133 desktop strict600: FAIL56.517642829973816FPS,
-p9933.3ms, capturing=false. All600 original intervals written before assertion;
-closed14:17:04.647 after actual root grant14:16:53. Phone NOT RUN. Coordinator/
-Chromium closed, no acceptance or cause inferred. Readback delayed by transient
-exec transport failure; read access recovered14:18. All raw/failure/grant files
-preserved under browser-full-six-round1/. No unchanged acceptance retry.
-
-NONgating CDP CPU/layout/GC diagnostic152111 on the SAME full2f page closed
-14:25:11.231/exit0: load14.240s,600 instrumented intervals59.605FPS/p9916.8ms.
-These profiled values are NOT acceptance. Layout0s/style0.145444s/script0.213273s/
-task1.395895s; sampledidle9.507s/program1.163s/renderfunctionself43.53ms/GC23.11ms.
-No dominant cause established for the independent strict failure. Actual trace,
-CPUprofile, source diagnostic script/raw outputs/provenance are retained.
-Private static-JSON representation authoring is UNRUN at public writer freeze;
-source/budgets/defensive APIs are unchanged. Full new host/frame/source gates,
-current matrix/league/CI, artifact publication and PR/KEEP GOING remain pending.
-
-Prior successful branch9d66f7d14:10:17 followsc4a065113:44:43 by25m34s,
-binding30min PASS, early14:09:43 missed34s/hard14:14:43 met. Mainclaim0e402bc
-row14:09:47; prior333af6a claim row was13:42:07 (earlier prose13:42:05 was a
-2-second observation error, corrected below). Next target14:35:17/hard14:40:17.
+Executed commands/historical milestones/raw failures are in VERIFY.md and
+ evidence/checks/milestone*.json. Root grants strict CPU quiet slots explicitly;
+report actual owned/child process groups. Pause pure groups only; native-wall
+functional checks must finish naturally for timing results to remain valid.

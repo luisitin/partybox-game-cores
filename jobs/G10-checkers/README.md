@@ -4,7 +4,10 @@ American 8×8 and International 10×10 Checkers for two seats.
 
 Implementation checkpoint: licensed American2–6 and complete International2–6
 source are installed. The actual full offline game passed30 desktop/phone4×
-control checks, including a Strong six-piece lookup. Final-source frame,
+control checks, including a Strong six-piece lookup. Two Human seats can now
+start while the database loads; actual phone4× controls appeared after2.398s
+and the first legal move finished after9.128s. Computer seats wait for data.
+Final-source frame,
 simulation/strength, CI/PR and KEEP GOING checks remain pending.
 This job is not completed. Prior7k matrix/25 mutations/4k league are baselines.
 

@@ -1,0 +1,567 @@
+{
+  "status": "PASS",
+  "preparedAt": "2026-10-08T14:34:12.875Z",
+  "wallSeconds": 14.804,
+  "node": "v24.19.0",
+  "source": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist",
+  "out": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/shadow-dist",
+  "modules": {
+    "core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7"
+  },
+  "chunks": [
+    {
+      "name": "intl-db6-0303.000.mjs",
+      "jsonName": "intl-db6-0303.000.json",
+      "nativeModuleBytes": 1884279,
+      "jsonBytes": 1884262,
+      "nativeModuleSha256": "7875596066e53298d0972d022d35b3de5913219bc02d05674fbdc76fb1b0b553",
+      "jsonSha256": "1159d54708b613e3e2b925236acb948966cf5498d991a7548e587ad5b00fae11",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0312.000.mjs",
+      "jsonName": "intl-db6-0312.000.json",
+      "nativeModuleBytes": 22610667,
+      "jsonBytes": 22610650,
+      "nativeModuleSha256": "25f7213d267aa28152e572589adda20770940ba5e3f641923cad2990db2df20b",
+      "jsonSha256": "f1df00562b9e8f3f5d05dc81924f38793f9c2da318479a1e1f85438caf5bf37c",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0321.000.mjs",
+      "jsonName": "intl-db6-0321.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "707b83ba97bca9e2781dee5813d95e2c455d375c765dc3ce99e5e649265c4d4a",
+      "jsonSha256": "097cc060571e23a3d3f633b9e5f0f39110abc15d17be83d63858764213649029",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0321.001.mjs",
+      "jsonName": "intl-db6-0321.001.json",
+      "nativeModuleBytes": 14602983,
+      "jsonBytes": 14602966,
+      "nativeModuleSha256": "663a4c96c7610d692b1d95663d0ad2fb8350f3f09b55e1aa5dfe57ec27a86cfa",
+      "jsonSha256": "cd6153b7859939e647d464f8172172269a67081f25c3c891a315af74ca1e721f",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0330.000.mjs",
+      "jsonName": "intl-db6-0330.000.json",
+      "nativeModuleBytes": 14116443,
+      "jsonBytes": 14116426,
+      "nativeModuleSha256": "e6723cafe0a6886db3ccd1a47404b65fb55074340c28d05e5cf053ead5253009",
+      "jsonSha256": "da740998036b4763037b5305a89974cbf05d3b634ef7fc90ad3dfa6e2ebf26a8",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0402.000.mjs",
+      "jsonName": "intl-db6-0402.000.json",
+      "nativeModuleBytes": 19441123,
+      "jsonBytes": 19441106,
+      "nativeModuleSha256": "468618cd877b1a06fb8116e7682ea144e947bb9d7afe1d9eb2c360c45379f939",
+      "jsonSha256": "07cc1e96dd8868f046d767d074be2fb89c09dbb3f082d3657f79b6c7adde7233",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0411.000.mjs",
+      "jsonName": "intl-db6-0411.000.json",
+      "nativeModuleBytes": 32488111,
+      "jsonBytes": 32488094,
+      "nativeModuleSha256": "88a16c7b619be2d49624a0257eb2aa040e961ca421bd3737fa7d5f69a4380e2f",
+      "jsonSha256": "9bbcee1ca7ed81e037a38e17dbf0073e37ff0c1cb09b2527e08f79b9f2381f63",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0420.000.mjs",
+      "jsonName": "intl-db6-0420.000.json",
+      "nativeModuleBytes": 3263655,
+      "jsonBytes": 3263638,
+      "nativeModuleSha256": "a1e0f455bac6bbe42d3857b168f7e270e16901b41c2abcab79a7aee793cfcb60",
+      "jsonSha256": "127a45d95222c378f7902916886959dec093465b7c461507d87d5cbb60fe4d2f",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0501.000.mjs",
+      "jsonName": "intl-db6-0501.000.json",
+      "nativeModuleBytes": 124059,
+      "jsonBytes": 124042,
+      "nativeModuleSha256": "d5b76d84fa74593671f7fc9a4a77c730c7e6c97855777ebea33c64526a0cbae2",
+      "jsonSha256": "17d0ffa6f789190a75f3aeaf5cb027fd685d0dfe469edda87be05be9ebeaa7b9",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-0510.000.mjs",
+      "jsonName": "intl-db6-0510.000.json",
+      "nativeModuleBytes": 12587,
+      "jsonBytes": 12570,
+      "nativeModuleSha256": "ea62b4a474c940af63d40b7ffec7124f7bfa18260a4e75d1dfe40ec8b15be6ac",
+      "jsonSha256": "8b019a0d7e0f85cfbd04ea275e8928cbd2f04216abdd132c28c2b60c7adf3db8",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1212.000.mjs",
+      "jsonName": "intl-db6-1212.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "2d9053e7087bbca5552ba5c22b1c25ffd364bf7689e60ec7e60787160be0c482",
+      "jsonSha256": "365ac99cda2b3904a66fd028ad1bcf1480b5b9e59477f20bbeab189de43e1b8f",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1212.001.mjs",
+      "jsonName": "intl-db6-1212.001.json",
+      "nativeModuleBytes": 6835367,
+      "jsonBytes": 6835350,
+      "nativeModuleSha256": "4b23df0cdba23c9f95e91eaabf05e2140762186b0d626cb1b1b712cf9b214849",
+      "jsonSha256": "8c0117b78fb508ae1de0605b4316f6f8fa6c2c53fd6cda8b9fa64b29f9e95e4a",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1221.000.mjs",
+      "jsonName": "intl-db6-1221.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "af89697a3aeedde4963479f8ec36cf10527d18600698b7afcba263a9aa6a7595",
+      "jsonSha256": "8e188df15c1cfe5ec1bc7a85f1894aba6268f26dd650be0b1565b9eac7ca7274",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1221.001.mjs",
+      "jsonName": "intl-db6-1221.001.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "1da7c5f16c912173d2fdf49bb2a9b7da5f17011737e66c8e3a0e2d27069f777a",
+      "jsonSha256": "b340472a7e6891f0334ce64f0931be14d6fff456fcc5659ce00cf1f3a395e78d",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1221.002.mjs",
+      "jsonName": "intl-db6-1221.002.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "7a88191dfb2cd402063f2c00e83b6001d5f1b8f967ad809d91eca35808e9fa75",
+      "jsonSha256": "7de6e23fa5628ffba03275b8764ca3a8d6637ab40b74dc69c7c07b2c2b036d35",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1221.003.mjs",
+      "jsonName": "intl-db6-1221.003.json",
+      "nativeModuleBytes": 24935063,
+      "jsonBytes": 24935046,
+      "nativeModuleSha256": "c735b91fef5acea410c471ddbb001749a3eff4b2b59c1c4d8849a6fb807063c1",
+      "jsonSha256": "b75fee24889178a554c57efa8f21dea0f42034908ffcda26955aab8cc343ba39",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1230.000.mjs",
+      "jsonName": "intl-db6-1230.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "75be19d946655b03293eb7e389d44d8f22ecc85d20311b375c63a2b4d11e3a95",
+      "jsonSha256": "8936a908514958d1e372d12248777d5a53ef3e3a7b30098d07ca2e746534a9b4",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1230.001.mjs",
+      "jsonName": "intl-db6-1230.001.json",
+      "nativeModuleBytes": 14315335,
+      "jsonBytes": 14315318,
+      "nativeModuleSha256": "8c125ffa152d0fb68e920a4e0101acb32c5d5791e46d59fc71929a243fc23f6b",
+      "jsonSha256": "470415a729bdb7ef11b3aaf31b52e5811c0260a17080299ac65266c63545c599",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1302.000.mjs",
+      "jsonName": "intl-db6-1302.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "8149a1b1ddb3eea275f3a69672230b027b859b21e3ad9f91b8df30529633f508",
+      "jsonSha256": "3be69dcde5838e493e9993be9dd96d3a8bd441cea314f426ecfa93cc6c6ea814",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1302.001.mjs",
+      "jsonName": "intl-db6-1302.001.json",
+      "nativeModuleBytes": 19143679,
+      "jsonBytes": 19143662,
+      "nativeModuleSha256": "5f91e651d16d35702f2c6b1740310b0a694746386d5866a301759f338f6de9d1",
+      "jsonSha256": "9509a7d8b762cd32e996a1e365d0d83c1dc8b62e8e622d4cb02054de918964f4",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1311.000.mjs",
+      "jsonName": "intl-db6-1311.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "c6f846c701a494413b57f2d8262937581d023b28e40e60024996b88613716999",
+      "jsonSha256": "acca51f6207a7ed23b83d82a6ac969413818cc1814bdd8c9a614e202de9e7f24",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1311.001.mjs",
+      "jsonName": "intl-db6-1311.001.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "b3a6efd83f12b33b0fdc29b3662fa6b40c8e4fa3e262e9e37695ee7c47a6baef",
+      "jsonSha256": "e3f7b8451301517ba5ea932c8021042899fa8113a2a178955e656298a89a8fee",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1311.002.mjs",
+      "jsonName": "intl-db6-1311.002.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "66139b8fcf6154ff862dee0838875b1da78b660f81acf2b942214b882892bf70",
+      "jsonSha256": "c5d1713565ac3d39f76074d20a1d34fcd24fea0f214cc4b8a250e2d9771f6fd3",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1311.003.mjs",
+      "jsonName": "intl-db6-1311.003.json",
+      "nativeModuleBytes": 31870759,
+      "jsonBytes": 31870742,
+      "nativeModuleSha256": "2212eef359c158d0b6e8a0a334537cab76003664c50eebacd198dd5421360bc9",
+      "jsonSha256": "f0c19642a47f9a0d76406137831eb0dda29a6bded571549a61820f174e66118f",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1320.000.mjs",
+      "jsonName": "intl-db6-1320.000.json",
+      "nativeModuleBytes": 12789527,
+      "jsonBytes": 12789510,
+      "nativeModuleSha256": "b968f9ce3303ed4e761e501733a223ea14f0f96f799a270345006908af026d0d",
+      "jsonSha256": "fc51087b7f9716d569e7b8fa97b7999a92041a4a9ac1c5e82005fffa5641b3ad",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1401.000.mjs",
+      "jsonName": "intl-db6-1401.000.json",
+      "nativeModuleBytes": 959163,
+      "jsonBytes": 959146,
+      "nativeModuleSha256": "4b75b8daec46f9c3ae377a3ba18dfbc924d075c39089f649800a4ce40f52d10e",
+      "jsonSha256": "e519ccb3e7bec297ae6de731ff38d48090cc88d96fdafa218815af673fcc87ca",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-1410.000.mjs",
+      "jsonName": "intl-db6-1410.000.json",
+      "nativeModuleBytes": 73851,
+      "jsonBytes": 73834,
+      "nativeModuleSha256": "f0dba79714204eb39dfc1b90f3d1d8615a60ebbe1fe7fe89599892a6bd176c13",
+      "jsonSha256": "9e531fb3daca26fd946a9290bf615be82e30aa2707282e62a32941f75b425978",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2121.000.mjs",
+      "jsonName": "intl-db6-2121.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "23d07a80dd1ef494dfa0debd0c99d04f8723b7d06d93ed22d9586d4dd157d29f",
+      "jsonSha256": "2f8af728f4fc28b40a4b6b10f0df11238890532ac6d1b403a871f69d776ba3bd",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2121.001.mjs",
+      "jsonName": "intl-db6-2121.001.json",
+      "nativeModuleBytes": 22599303,
+      "jsonBytes": 22599286,
+      "nativeModuleSha256": "013bf61d3272e09964d49d5aa2db9eb0e71d116413eaa9c52066de0938f1dd6f",
+      "jsonSha256": "278e045570e0bfad7ee3b0b83d2ba2c75960d6b11f038beb5ec79d1b05ccb5ef",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2130.000.mjs",
+      "jsonName": "intl-db6-2130.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "7f123147b64e0afe15f12f262423c84789e94272660233da9d7b40bb48363a16",
+      "jsonSha256": "7e16932dc3bdbefe28629d49f9e1fbdaff68827282c544b999e6559d67c545dc",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2130.001.mjs",
+      "jsonName": "intl-db6-2130.001.json",
+      "nativeModuleBytes": 16122443,
+      "jsonBytes": 16122426,
+      "nativeModuleSha256": "a1bda3e4aa3806bf20f7010b00f14971446b15decb0f480049a9a019f83856cc",
+      "jsonSha256": "69e50cbe80097bbe6d0216b81f4891a740b6669bf8735ef0100469209fc018ef",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2202.000.mjs",
+      "jsonName": "intl-db6-2202.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "db3457aa0edf80e554e734d7986aef3cd1decd401a55c204c03e884ce1e526d7",
+      "jsonSha256": "f5d90710b17aa233916ba83c2ebac4474a1d87db384ded47ebaa3ef3777c6043",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2202.001.mjs",
+      "jsonName": "intl-db6-2202.001.json",
+      "nativeModuleBytes": 20002555,
+      "jsonBytes": 20002538,
+      "nativeModuleSha256": "100261c71660c05bb95045c5b98b045aa924cdcf9408f58afa30bdf733ac2964",
+      "jsonSha256": "079a3541ffadfc2aa6677465cf4336a55683e76d046ed3c224f380401faae5e3",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.000.mjs",
+      "jsonName": "intl-db6-2211.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "71415e20ae6101a0feb9078dea330f59f2c31f5d3702841e65129ce73d7373be",
+      "jsonSha256": "55d43d6e094a4aa225f4fab35c77fec8fcd75b6f0774b8e854ba87c5db27e902",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.001.mjs",
+      "jsonName": "intl-db6-2211.001.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "34722e5de92d34c62f1e628aa9059623e684e446175a011b01d5f89b5cb6ab77",
+      "jsonSha256": "f16b8c977822f5e83575f900f0ce0ca66aaa1bc2f51f3443bd3a382a238b6441",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.002.mjs",
+      "jsonName": "intl-db6-2211.002.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "c5c37424d093bcae97984af957dbc69c16ba75d39e854252b8d2719c6dc5191e",
+      "jsonSha256": "79d4b29539e11544268a9fa9b91ca4c532ac190bb3c53c69f01db6bf85cea79b",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.003.mjs",
+      "jsonName": "intl-db6-2211.003.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "2da86d45c64d197c9bd589ac8432ffbd7d3e1d0b6c94ad8e777600ba735c9e3f",
+      "jsonSha256": "a4eda4e570662ecd838f99e957d31d5df52e26f53cbe3fc1d93ec7cddbb0af72",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.004.mjs",
+      "jsonName": "intl-db6-2211.004.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "3f11a62fbad039c6ec7cf16db439d6391b654dab0116063003d1244e9ea00659",
+      "jsonSha256": "0e74524b1b5a4251a9b105fb6d04fda9afb67739c875d4d83e3cad4c34a3fc7d",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.005.mjs",
+      "jsonName": "intl-db6-2211.005.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "1f5b04ae321d0a3c3dc423fac4423b5f057b47d1e3bfb95a53f3e72467f5de47",
+      "jsonSha256": "cbde08b1fc0a48082bd297df075bdaf347613cfd2b42344e752a59befc4886e0",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2211.006.mjs",
+      "jsonName": "intl-db6-2211.006.json",
+      "nativeModuleBytes": 33504219,
+      "jsonBytes": 33504202,
+      "nativeModuleSha256": "53799be74eeca8ddde40239eb390a82a7690dbf0e7bbd37dd926fa8b5f0f749d",
+      "jsonSha256": "471101904c313918d868cca8308cbac8a964c8b422cdff5cc43d70ddc1088fd4",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2220.000.mjs",
+      "jsonName": "intl-db6-2220.000.json",
+      "nativeModuleBytes": 21317555,
+      "jsonBytes": 21317538,
+      "nativeModuleSha256": "79ee17e28d4e5b00986fd2d784fc0fda3c3504ae6f39a2cf365bd7015102df53",
+      "jsonSha256": "667197506ede6c3a347074a0147383c822117be042a1c9d50646a38dd17975d4",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2301.000.mjs",
+      "jsonName": "intl-db6-2301.000.json",
+      "nativeModuleBytes": 3351923,
+      "jsonBytes": 3351906,
+      "nativeModuleSha256": "b53bc25b9836748c1a2d69895b7eb5a5e801ce38c1432961feb23bac1c4cb0fe",
+      "jsonSha256": "b5d248c5e3d6a34d80b9380a983944cc0117f66b8cb96d193709cb81419c092c",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-2310.000.mjs",
+      "jsonName": "intl-db6-2310.000.json",
+      "nativeModuleBytes": 202175,
+      "jsonBytes": 202158,
+      "nativeModuleSha256": "e6c04c5d015bcf0c037a3cb4d9a4c1453b97acb47b8278cca51d6f79c60502ee",
+      "jsonSha256": "0bd03a8d111f95f1b5846ad1c70c10e82c7b25817a223b95baa39f31778d54f3",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3030.000.mjs",
+      "jsonName": "intl-db6-3030.000.json",
+      "nativeModuleBytes": 11578535,
+      "jsonBytes": 11578518,
+      "nativeModuleSha256": "bb58ca5031cf33054b8de39dad35b3f41b29b49df4bf837503f4689dfd06b20e",
+      "jsonSha256": "14f8a294b4b890780f862dec6bc4dbdc862b92e6ce76fa01ac10613bcb406e07",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3102.000.mjs",
+      "jsonName": "intl-db6-3102.000.json",
+      "nativeModuleBytes": 27063899,
+      "jsonBytes": 27063882,
+      "nativeModuleSha256": "2565caa491b1bf38f7bbe13a9ed24ce2f10ccc366f144ccc67ead89e8feb4c12",
+      "jsonSha256": "e1ebabe21416de3e23819e71a704dfbd5eb5c36fa364a32ad09ffa3a5aa1d99d",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.000.mjs",
+      "jsonName": "intl-db6-3111.000.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "fbbc4af838318a239e0ed0a9ab44d58d0d47d09cf542129fec7031bb8a4cca51",
+      "jsonSha256": "21199f58011ff572485338d8a58941fa5a8762b763ea80747997db74b349b926",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.001.mjs",
+      "jsonName": "intl-db6-3111.001.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "70b954a73c5975eb48e573614db0c98ddb21d8a134fe6d6692631c61324b9e20",
+      "jsonSha256": "1afd46cc83d1d58d151ce4d5cb1ce9213239c5acfa9847acb26b6ada62080f36",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.002.mjs",
+      "jsonName": "intl-db6-3111.002.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "c6466790fa36743edb4bb9f4a95d508e9901c756cab6e209fd020d86dee9755d",
+      "jsonSha256": "7e92767c1944f22e9e8f022e62eb0543caa1ba4a75d78a888127da74669552a8",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.003.mjs",
+      "jsonName": "intl-db6-3111.003.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "cd347abbbe3f26b03cfc20e941cc6f1c6fa91015953e768b6da979ce14981cc4",
+      "jsonSha256": "2206247e9a2f04fb38b6dc332a6de4b0cb219e33c99a59866f0f05de4f9d4570",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.004.mjs",
+      "jsonName": "intl-db6-3111.004.json",
+      "nativeModuleBytes": 33554451,
+      "jsonBytes": 33554434,
+      "nativeModuleSha256": "3c0e85a3ac0edb9af2e746ea3a09711f29a5ae8cccfedbe8bc9bd106257938fa",
+      "jsonSha256": "fe68cafceba774ac1e8ca8754f6bfad3dfdad24b6cdabd6f5b760d0912e355b5",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3111.005.mjs",
+      "jsonName": "intl-db6-3111.005.json",
+      "nativeModuleBytes": 12945399,
+      "jsonBytes": 12945382,
+      "nativeModuleSha256": "00b53f4ec1a7f6e25253052c847eac61989ccd84909c199cd73fc5ccede999fe",
+      "jsonSha256": "ecf85daf718fdcd31d48f2b60bdb4f20a52ec4578048592339b9c77773012985",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3120.000.mjs",
+      "jsonName": "intl-db6-3120.000.json",
+      "nativeModuleBytes": 23779235,
+      "jsonBytes": 23779218,
+      "nativeModuleSha256": "b71fa17dbc7f8fc4603377a5ed64225e37df08fe2652dc0451b3edace95a470a",
+      "jsonSha256": "b342632c56c54182dae371dc6c0c3274c1bc422001a6380d0acc4ea53a78e3c8",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3201.000.mjs",
+      "jsonName": "intl-db6-3201.000.json",
+      "nativeModuleBytes": 6613287,
+      "jsonBytes": 6613270,
+      "nativeModuleSha256": "f3fd7f62eb539154c5f289aeb1d7efcbd46e9e9e8d6b8d16f208338feb391fa4",
+      "jsonSha256": "eb47da5e1136424c291346fd37ebbfe0cefcde8d5f8ff214b257a429c86d2309",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-3210.000.mjs",
+      "jsonName": "intl-db6-3210.000.json",
+      "nativeModuleBytes": 389411,
+      "jsonBytes": 389394,
+      "nativeModuleSha256": "149d1aad2311e25e465c5bae18f8ead0bccb33058986a7dcf55b2ab73f0984e0",
+      "jsonSha256": "f0152c1d269be1ebd4bd1aaad055c40833529394365deca1ebe06088fec0fd5b",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-4002.000.mjs",
+      "jsonName": "intl-db6-4002.000.json",
+      "nativeModuleBytes": 13678939,
+      "jsonBytes": 13678922,
+      "nativeModuleSha256": "eae2fbc1843322ca7a4e313bc0723a4ce6e892ab87284384f8d6566642ab90e6",
+      "jsonSha256": "7f4e72930c07e1dcf79efa139f963639e4b839efad9f8d27e75eac2f19783c98",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-4011.000.mjs",
+      "jsonName": "intl-db6-4011.000.json",
+      "nativeModuleBytes": 31933987,
+      "jsonBytes": 31933970,
+      "nativeModuleSha256": "f24010b53272b42d999b59780036a6472d7fd11b05b22e4f73e22c5748afbc17",
+      "jsonSha256": "cbff9ab2fdd76e8b83f4751d8445449227fd336e37798fd79c16a430c459c37f",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-4020.000.mjs",
+      "jsonName": "intl-db6-4020.000.json",
+      "nativeModuleBytes": 13221015,
+      "jsonBytes": 13220998,
+      "nativeModuleSha256": "28c72ad8813858e1327c276d750b2acb47d1913d6fc0cb7b57c27ad2cb9382ca",
+      "jsonSha256": "8c24def6111002780d1cac605775071892595bc0edb011a7e37c67bea1638774",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-4101.000.mjs",
+      "jsonName": "intl-db6-4101.000.json",
+      "nativeModuleBytes": 7096559,
+      "jsonBytes": 7096542,
+      "nativeModuleSha256": "185774feee75424fa17566f0d01111818403b0f69a4c1d41b236b0a68cb4658c",
+      "jsonSha256": "ea0d407f33a1049a14fb75de0e778ea4d98d467970d7167be61f28274cd3d255",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-4110.000.mjs",
+      "jsonName": "intl-db6-4110.000.json",
+      "nativeModuleBytes": 376443,
+      "jsonBytes": 376426,
+      "nativeModuleSha256": "a31c28524d7b465a7ef84bba469d3a6ed5dc7fdd99b46babe337b7109dfe9ea8",
+      "jsonSha256": "5e19a387827a1e77e4f8fc943a9d133f6fd0593224aa15cd74e8d6338834b9b2",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-5001.000.mjs",
+      "jsonName": "intl-db6-5001.000.json",
+      "nativeModuleBytes": 4332031,
+      "jsonBytes": 4332014,
+      "nativeModuleSha256": "e288a05906dd1cb01491be89cda175a43c9a36553ec19733068f7184b66230f1",
+      "jsonSha256": "5f3ebb69056ba7e17ef920868670cf9f07345f652d4cc3087bf5694ffcec78af",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    },
+    {
+      "name": "intl-db6-5010.000.mjs",
+      "jsonName": "intl-db6-5010.000.json",
+      "nativeModuleBytes": 310511,
+      "jsonBytes": 310494,
+      "nativeModuleSha256": "db7bb408ced42df042a7c3d3a746c3c38b7540c9617dd6eaca923e4fa39e84ea",
+      "jsonSha256": "796f9981f88b9f80732ba3f8f17e0a928721b2629e643ee5a68974786ccc2e89",
+      "change": "Identical existing quoted base64 primitive, copied byte-for-byte; only source container/loader changes."
+    }
+  ],
+  "chunkCount": 61,
+  "scope": "Private static JSON shadow; tracked source/build/default dist unchanged. This does not yet establish import/probe/search equivalence."
+}

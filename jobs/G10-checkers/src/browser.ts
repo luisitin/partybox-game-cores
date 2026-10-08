@@ -23,6 +23,7 @@ let botCursor:RngState={seed:20261008,step:0},botDue=Infinity,forcedStep=false,v
 let pace='1500',notice='',timerKey='';
 let lastBotReport:SearchReport|null=null;
 let originalBlockReads=0,originalFiles=new Set<string>();
+let botsPrepared=document.readyState!=='loading';
 const now=()=>virtualNow??performance.now();
 const crown='<svg aria-hidden="true" viewBox="0 0 40 32"><path d="M4 9 12 16 20 4 28 16 36 9 31 27H9Z"/><path d="M9 29H31V32H9Z"/></svg>';
 function stopWorker(){if(worker)worker.terminate();worker=null;pending=null;workerVariant=null;workerReady=false;if(workerUrl)URL.revokeObjectURL(workerUrl);workerUrl=null;}
@@ -75,8 +76,14 @@ function install(next:State,retainWorker=false){
 }
 function event(value:GameEvent<Input>){if(state)return install(reduce(state,value));return false;}
 function act(input:Input,retainWorker=false){if(state)return install(reduce(state,{type:'input',playerId:turnId(state),input,now:now()}),retainWorker);return false;}
-function setup(){stopWorker();state=null;cachedState=null;draft=[];notice='';show('setup',true);show('table',false);show('result',false);}
+function canStart(){return botsPrepared||(select('seat-0')==='human'&&select('seat-1')==='human');}
+function startReadiness(){
+  el<HTMLButtonElement>('start').disabled=!canStart();show('loading-note',!botsPrepared);
+  if(!botsPrepared)text('loading-note',canStart()?'Bots are getting ready. Two people can start playing now.':'Getting the bots ready. Choose Human for both sides to start sooner.');
+}
+function setup(){stopWorker();state=null;cachedState=null;draft=[];notice='';show('setup',true);show('table',false);show('result',false);startReadiness();}
 function start(){
+  if(!canStart()){startReadiness();return;}
   const players=[0,1].map(index=>({id:'seat-'+index,name:el<HTMLInputElement>('name-'+index).value.trim()||'Player '+(index+1),avatarId:'checkers-'+index,connected:true}));
   controllers=Object.fromEntries(players.map((player,index)=>[player.id,select('seat-'+index) as Controller]));
   pace=select('pace-setup');el<HTMLSelectElement>('pace').value=pace;botCursor={seed:20261008,step:0};lastBotReport=null;originalBlockReads=0;originalFiles=new Set();
@@ -183,8 +190,8 @@ function tick(){
   renderClock();if(!humanTurn()&&!pending&&(forcedStep||time>=botDue)){forcedStep=false;askBot();}
 }
 el('start').addEventListener('click',start);['new-game','play-again'].forEach(id=>el(id).addEventListener('click',setup));
-el<HTMLButtonElement>('start').disabled=document.readyState==='loading';
-document.addEventListener('DOMContentLoaded',()=>{el<HTMLButtonElement>('start').disabled=false;},{once:true});
+startReadiness();['seat-0','seat-1'].forEach(id=>el(id).addEventListener('change',startReadiness));
+document.addEventListener('DOMContentLoaded',()=>{botsPrepared=true;startReadiness();},{once:true});
 ['pause','resume','end'].forEach(action=>el(action).addEventListener('click',()=>event({type:'vip',action:action as 'pause'|'resume'|'end',now:now()})));
 el('resign').addEventListener('click',()=>{if(humanTurn())act({type:'resign'});});
 el('undo-draft').addEventListener('click',()=>{draft=[];notice='';renderBoard();renderControls();});
@@ -197,5 +204,5 @@ setInterval(tick,100);
   setState:(next:State,roles?:Record<string,Controller>)=>{if(roles)controllers={...roles};else controllers=Object.fromEntries(next.order.map(id=>[id,'human']));install(structuredClone(next));},
   setTime:(value:number|null)=>{virtualNow=value;},event:(value:GameEvent<Input>)=>event(value),act,
   tick,start,setup,setPace:(value:string)=>{pace=value;el<HTMLSelectElement>('pace').value=value;schedule();renderControls();},
-  workerBlob,chooseSquare,originalBlock,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botCursor:{...botCursor},pace,now:now(),originalBlockReads,originalFiles:[...originalFiles].sort(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
+  workerBlob,chooseSquare,originalBlock,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botsPrepared,canStart:canStart(),botCursor:{...botCursor},pace,now:now(),originalBlockReads,originalFiles:[...originalFiles].sort(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
 };

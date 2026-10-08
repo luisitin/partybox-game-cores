@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-08T14:59:02.465085+00:00",
+  "command": "G10_HTML_PATH=.work/play-full-early.html G10_BROWSER_DIR=.work/early-human-strict G10_MEDIA_DIR=.work/early-human-strict-media G10_FRAME_BARRIER_DIR=.work/early-human-frame-barrier node scripts/browser-check.mjs",
+  "pgid": 155263,
+  "exitCode": 1,
+  "htmlSha256": "edc476ee9a9bb9b3acbd3ff0efd631814f079a1f6a29cd88a1c188f6b17ca101",
+  "status": "FAIL_STRICT_DESKTOP",
+  "checksPassed": 15,
+  "frames": 600,
+  "meanFps": 57.23632133004988,
+  "p99Ms": 33.39999999999418,
+  "closedAt": "2026-10-08T14:57:35.176Z",
+  "phone": "NOT RUN",
+  "unchangedRetry": false,
+  "causeEstablished": false
+}

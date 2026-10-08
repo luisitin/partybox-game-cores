@@ -64,3 +64,13 @@ files are split into ordinary Git blobs <=24MiB. This installs complete Node
 source without enabling LFS, uploading/charging for a full artifact, or claiming
 that the earlier2–5 browser proof accepts the new full-six source. Separate
 payload load proof and actual full-game/frame proof remain distinct gates.
+# Current delivery and startup interpretation
+
+Two Human seats may play while the inert original database tags are still
+parsing; any computer seat waits until DOMContentLoaded so every original
+data part is available. Actual file-navigation/first legal turns verify this
+in both variants on desktop and phone4×. No bot substitute, runtime network,
+reduced database coverage or search budget is used during startup.
+Private compact JSON proofs concern Node memory only; current public build
+has not adopted them. Node22.16 compatibility and full single-page publication/
+strict frame acceptance remain separately pending.

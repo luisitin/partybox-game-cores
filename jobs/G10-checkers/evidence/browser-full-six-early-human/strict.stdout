@@ -1,0 +1,15 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: {"profile":"desktop","fps":57.23632133004988,"p99":33.39999999999418}
+    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/browser-check.mjs:74:50 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

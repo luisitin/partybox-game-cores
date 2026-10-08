@@ -501,3 +501,49 @@ Prior successful branch9d66f7d14:10:17 followsc4a065113:44:43 by25m34s,
 binding30min PASS, early14:09:43 missed34s/hard14:14:43 met. Mainclaim0e402bc
 row14:09:47; prior333af6a claim row was13:42:07 (earlier prose13:42:05 was a
 2-second observation error, corrected below). Next target14:35:17/hard14:40:17.
+
+## Milestone15 early Human play and compact Node proof
+
+`G10_BUILD_BROWSER_ONLY=1 G10_HTML_OUT=.work/play-full-early.html npm run
+build`: strict TypeScript/browser-only complete source build PASS/exit0.
+`node .work/check-early-human.mjs`: actual file navigation PASS/exit0,
+closed14:47:39.333. Exact new page SHA256
+edc476ee9a9bb9b3acbd3ff0efd631814f079a1f6a29cd88a1c188f6b17ca101,
+1,390,845,907B. Desktop commit16.519ms/usablecontrols776.247ms/firstlegal
+American1901.707ms/International2549.828ms, fullparse22574.090ms.
+Phone390x844/CDP4× commit18.882ms/controls2397.731ms/firstAmerican9127.998ms/
+International12116.363ms, fullparse103649.574ms. Both legal turns happened
+while document.readyState was loading. Strong/Medium selections disabled Start
+and direct start calls rejected premature bot games; no worker/RNG consumption.
+After all original bytes parsed the same controls enabled bots and cleared
+the loading notice. Zero HTTP requests/page errors. Exact executed script,
+build/test raw stdout and report are under early-human-start/. This proves
+usable early human turns and bot gating, not frame-rate acceptance.
+
+Private static-JSON representation experiment: unchanged61 base64 literals
+as JSON primitives with tiny native module wrappers; all four compiled game/
+search modules remain byte-identical. Both original and JSON import+10k runs
+match the actual native/reference/default transcript on every case/all37six
+classes/148 orientations. All48 serialized move reports/cursors/missing-block
+retry/count/byte totals and3 complete1/84/1-ply games exactly match, including
+every intermediate board and independent legal transitions. Actual runtime
+Node24.19.0 only. Original10k import25.1168s/maxRSS3,246,584KiB, JSON26.1439s/
+1,969,664KiB; JSON48/3 maxRSS2,860,060KiB. Separate sequential runs have
+uncontrolled cache/shared CPU conditions: less observed memory, no speed or
+browser FPS claim. Scripts/raw/manifests/reports are in
+international-default-full/memory-json/. Node22.16 compatibility and actual
+build integration remain pending. No search budget/defensive API change.
+
+Prior observed successful origin update812f24714:35:25 follows9d66f7d14:10:17
+by25m08s: binding30min PASS, early14:35:17 missed8s/hard14:40:17 met.
+Mainclaim17a8b9a row14:35:07. Next early15:00:25/hard15:05:25. Current full
+source frame/phone/clips, matrix/strength/mutations/CI30min/publication/PR/
+KEEP GOING remain pending. Retained earlier full-page strictFAIL is unchanged.
+
+New early-human exactedc476ee strict desktop attempt PGID155263: FAIL/exit1,
+closed14:57:35.176 after directrootgrant14:57:24. All15 desktop control
+checks PASS, all600unfiltered samples retained before assertion. Mean
+57.23632133004988FPS/p9933.4ms, capturing=false; phone NOT RUN. No cause
+established or unchanged retry. Raw/failure/ready/grant/closed/execution
+are under browser-full-six-early-human/. Early-human standalone actual-file
+desktop+phone move proof remains separate and passed.
