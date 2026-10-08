@@ -101,3 +101,5 @@ Study throughput: add parallel-improvement.ts and bounded, separate shard output
 Round17 isolated candidate: improvement-study.ts supports draw-depth, preserving search depth on mandatory stock draws and selecting Draw for its comparison. Stock decreases on each recursive draw; production stays untouched unless2,000-match strength and fresh-seed confirmation pass. The round16 global depth-four candidate lost and is not shipped.
 
 Round17 confirmation fails the predeclared strength bound; the forced-draw depth candidate is not shipped. Round18 uses the already isolated leaf-count candidate, adding a five-point relative tile-count term to the shallow pip evaluation while preserving terminal rules. No production change.
+
+Final review: reject the tile-count candidate after its2,000-match interval crosses50%, completing three no-gain rounds. Correct stale documentation that still described Draw lookahead as blocked play or the selectable7/7/6 deal as future work; restore precise remaining research limitations in NEXT.md. Production, existing tests, HTML and archived media remain byte-identical to the green0.2.7 delivery.

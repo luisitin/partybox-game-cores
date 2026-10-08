@@ -13,9 +13,10 @@
   experiments against greedy. Algorithms and reported results need further
   inspection before selecting a baseline. No code or assets copied.
 
-This is initial AI research, not a completed strength comparison or rules
-survey. Denied rules URLs are listed separately in BLOCKED.md and are not
-claimed as read sources. No corroborated factual rules dataset is shipped.
+The list above records the initial research stage. The research-only block was
+removed after the binding fallback rule was added. Completed live rules research
+and the bounded, measured AI comparison are recorded below and in BOTS.md.
+Denied sources are not claimed as read.
 
 ## Research resumed under main's web fallback
 
@@ -25,7 +26,8 @@ implementation. Read DominAI `domino.py`, `algorithms/negamax.py` and
 28-tile, four-seat partnership model, hidden hands, matching ends, legal passes
 and search of sampled hidden states. They do not independently establish every
 Draw/individual convention; those details are **from knowledge, unverified**.
-The exact points to re-check are listed in NEXT.md.
+Later live re-verification below supersedes those broad knowledge labels.
+Remaining exact house-rule choices are identified in CONFLICTS.md and NEXT.md.
 
 Read https://github.com/dskart/dominoes_game_solver at
 05ec4720baf1c6748706c90c4540e9997c0838c4 (README.md). It is Domineering on a

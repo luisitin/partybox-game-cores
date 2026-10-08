@@ -275,3 +275,23 @@ Round17 initial `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts`:1,05
 Round17 confirmation `IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts`:1,041/2,000 wins(52.05%,95%49.86–54.24%),0 ties,559,548 turns. Every shard passes10 focused regressions. Reject because the predeclared independent lower bound crosses50%; do not pool the initial signal to override this condition. No established gain; no-gain streak2. Production remains0.2.7.
 
 Round18 `IMPROVEMENT_STUDY=leaf-count node parallel-improvement.ts` underway. Candidate adds relative tile count to the shallow evaluator; no result counted until2,000 matches complete.
+
+Round18 `IMPROVEMENT_STUDY=leaf-count node parallel-improvement.ts`:2,000 complete Block matches,1,017 wins/983 losses/0 ties(50.85%,95%48.66–53.04%),594,954 turns. All four shards pass10 focused regressions; source SHA and contiguous1–2,000 coverage validate. Reject; no-gain streak3 after rounds16–18. KEEP GOING stop criterion satisfied.
+
+Final delivery checks: `git diff --exit-code bedf43a -- core.ts ui.ts shell.html play.html test.ts reference.ts package.json` confirms all game, UI, tests and full-pipeline entry points remain byte-identical to the40-test/full-CI green0.2.7 source. Only isolated measurement tooling/reports and documentation were added in these rounds. `npm run check`, `FAST_TEST=1 node --test test.ts`, `node build.ts --check`, `node checksums.ts` and `node checksums.ts --check` pass. Final-head CI must still run its full npm test; do not infer that result from the earlier green commit.
+
+Direct-file probe can be reproduced with:
+```sh
+node --input-type=module - <<'JS'
+import {chromium} from 'playwright';
+import {resolve} from 'node:path';
+const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+try {
+ const page=await browser.newPage();
+ await page.goto('file://'+resolve('play.html'),{timeout:15000});
+ await page.click('#start');
+ console.log(await page.locator('#status').innerText());
+} finally {await browser.close();}
+JS
+```
+The managed policy rejects the navigation with ERR_BLOCKED_BY_ADMINISTRATOR. No policy bypass was attempted; the existing exact-byte setContent tests exercise the standalone game, with zero network requests.

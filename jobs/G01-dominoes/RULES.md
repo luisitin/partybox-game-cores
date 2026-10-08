@@ -56,10 +56,12 @@ unsupported details remain labelled from knowledge, unverified there.
   disagreements need official-source re-verification.
 - Draw-to-play versus one-draw-and-pass: draw-to-play selected; one-draw variant
   from knowledge, unverified, not implemented because its legality differs.
-- Last-two-stock reserve: setting; zero is default, both unverified.
+- Last-two-stock reserve: selectable; Pagat publishes two as its main Draw
+  convention and describes draw-all as a variation. Zero is the selected default.
 - Partnership all-remaining versus opponents-only pips: setting; abw333 uses
   all-remaining. DominAI uses an imperfect-information partnership model.
-- Individual blocked net versus gross opponents: setting, unverified.
+- Individual blocked net versus gross opponents: selectable; Pagat corroborates
+  net scoring. Gross opponents remains an explicitly selected house alternative.
 - Lowest *individual* hand deciding a blocked partnership: from knowledge,
   unverified, not selected; this game compares combined team hands.
 - All Fives/Muggins, spinners, Mexican Train and double-nine sets: different

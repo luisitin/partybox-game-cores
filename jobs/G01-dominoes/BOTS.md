@@ -10,7 +10,7 @@ stock-order substitution tests compare decisions with identical RNG seeds.
 - Medium: prioritize pip shedding, retain playable endpoint coverage, and shed
   doubles. Deterministic ties follow legal-move order.
 - Strong: sample 64 deals conditioned on public missing-suit evidence and, in
-  first-round highest-double Block, the public opener rank. Use
+  first-round highest-double play while stock is untouched, the public opener rank. Use
   alpha-beta search, exact to exhaustion at <=9 remaining hand-plus-stock tiles and
   depth-three otherwise. Favor the medium move on equal sampled values.
   Count constrained hidden partitions exactly with memoized seat capacities.
@@ -78,3 +78,10 @@ correction is a consistency gain, not a claimed win-rate improvement. Draw and
 four-player partner comparison paths are unchanged; full CI repeats them.
 
 Draw round-one opener exclusions also apply before any stock consumption, inferred from public played/hand counts and configured initial deal. After a stock draw they disable conservatively;10,000 first-turn worlds improve2,315 impossible→0.
+
+Final KEEP GOING comparisons use exact0.2.7 (source hash in each report),
+2,000 complete alternating-seat matches per candidate: depth-four46.3%;
+forced-draw depth52.5% initial,52.05% fresh with confirmation interval
+crossing50%; tile-count leaf50.85%. All rejected under the declared acceptance
+rule. Production remains64-world0.2.7; rounds16–18 establish the required
+three-round no-gain streak. This does not claim globally optimal play.
