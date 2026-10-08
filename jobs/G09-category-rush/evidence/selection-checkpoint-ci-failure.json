@@ -1,0 +1,19 @@
+{
+  "head": "e0d18e3",
+  "runId": 37801291933,
+  "jobId": 113393895363,
+  "conclusion": "failure",
+  "stage": "Deterministic regeneration and JSON Schema",
+  "changedGeneratedFiles": [
+    "play.html"
+  ],
+  "localStatus": "source/proof-pending checkpoint, new HTML not yet generated",
+  "downstream": "browser and core steps skipped; no acceptance claimed",
+  "excerpt": [
+    "2026-10-08T15:30:26.8624074Z \u001b[36;1mnpx tsx scripts/content-schema.ts --check\u001b[0m",
+    "2026-10-08T15:30:30.0098439Z Generated manifest and 4 actual-core fixtures.",
+    "2026-10-08T15:30:30.3462871Z Built self-contained play.html (456648 bytes).",
+    "2026-10-08T15:30:30.3667796Z diff --git a/jobs/G09-category-rush/play.html b/jobs/G09-category-rush/play.html",
+    "2026-10-08T15:30:30.8779788Z ##[error]Process completed with exit code 1."
+  ]
+}

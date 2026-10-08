@@ -1,15 +1,18 @@
 {
-  "total": 28,
-  "killed": 28,
+  "total": 43,
+  "killed": 43,
   "isolatedActualSource": true,
   "sourceHashes": {
-    "src/index.ts": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "src/index.ts": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
     "src/match.ts": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
     "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "src/select.ts": "1fe2cfaf8bfdb4ab3de945bbb31ce61a124f34fee80963821178800112ae1c07",
     "tests/core.test.ts": "da051e666b5d2acbd9da3e6b66f93cdc862cb283599ad29f8473baf59128611d",
     "tests/plurals.test.ts": "2683f8668c5ef3a9bef2f7d908ad8015a537639a574c6f4928f8376710e27f39",
     "tests/reference.ts": "e8f4eb9d111b30bba12b9ef5121a1d9ec39ff76278afe0b5557c51f934c531be",
-    "scripts/mutations.ts": "27deb5a6f047ec0f85528785a29141ddc41c3bce2b0c9ed02777c50ba0f87f0d"
+    "tests/selection.test.ts": "5f80170e60e2a011768bfc0444bacc848661cb8229643634eafdea1118d443e4",
+    "tests/selection-reference.ts": "e115b9d31f095ae72211ab983fb6986e301d358452f809be467b77b71b81d870",
+    "scripts/mutations.ts": "95d43f510f9032e10deae16fe841bff74a76232b862205a9df4aab1ddc604fa3"
   },
   "mutations": [
     {
@@ -17,9 +20,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (10.37907ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (3.310698ms)",
-        "✖ noun exceptions compose with normalization, compound words and existing possessives (4.424414ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (12.736779ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.780559ms)",
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (7.790261ms)"
       ]
     },
     {
@@ -27,9 +30,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (6.248729ms)",
+        "✖ normalization: articles accents punctuation number words and plural matching (8.962049ms)",
         "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (6.248729ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (8.962049ms)"
       ]
     },
     {
@@ -37,9 +40,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (10.3378ms)",
+        "✖ normalization: articles accents punctuation number words and plural matching (33.014764ms)",
         "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (10.3378ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (33.014764ms)"
       ]
     },
     {
@@ -47,9 +50,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (17.285136ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.649967ms)",
-        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (14.184262ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (27.21074ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.414639ms)",
+        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (8.235206ms)"
       ]
     },
     {
@@ -57,9 +60,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (21.61287ms)",
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (15.936719ms)",
-        "✖ failing tests:"
+        "✖ normalization: articles accents punctuation number words and plural matching (69.182011ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (20.83276ms)",
+        "✖ selector fixtures: transitive fuzzy chains and numeric no-fuzz determine width (11.525316ms)"
       ]
     },
     {
@@ -67,8 +70,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (20.716875ms)",
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (5.935317ms)",
+        "✖ normalization: articles accents punctuation number words and plural matching (49.465239ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (16.057231ms)",
         "✖ failing tests:"
       ]
     },
@@ -77,9 +80,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (15.657399ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (2.18226ms)",
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (11.216443ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (14.518096ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (4.315509ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (10.620998ms)"
       ]
     },
     {
@@ -87,9 +90,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.773402ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.55313ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.773402ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.55313ms)"
       ]
     },
     {
@@ -97,9 +100,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.392273ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (12.847403ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.392273ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (12.847403ms)"
       ]
     },
     {
@@ -107,9 +110,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.170169ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (38.402322ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.170169ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (38.402322ms)"
       ]
     },
     {
@@ -117,9 +120,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.532714ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.513162ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.532714ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.513162ms)"
       ]
     },
     {
@@ -127,9 +130,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.149801ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (11.960552ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.149801ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (11.960552ms)"
       ]
     },
     {
@@ -137,9 +140,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.065604ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.601833ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.065604ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.601833ms)"
       ]
     },
     {
@@ -147,9 +150,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (19.614766ms)",
+        "✖ settings clamp stale values and phases have sound timers (12.568295ms)",
         "✖ failing tests:",
-        "✖ settings clamp stale values and phases have sound timers (19.614766ms)"
+        "✖ settings clamp stale values and phases have sound timers (12.568295ms)"
       ]
     },
     {
@@ -157,8 +160,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (12.978658ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (6.201096ms)",
+        "✖ settings clamp stale values and phases have sound timers (25.151721ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (22.40599ms)",
         "✖ failing tests:"
       ]
     },
@@ -167,9 +170,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (19.738808ms)",
+        "✖ settings clamp stale values and phases have sound timers (86.748176ms)",
         "✖ failing tests:",
-        "✖ settings clamp stale values and phases have sound timers (19.738808ms)"
+        "✖ settings clamp stale values and phases have sound timers (86.748176ms)"
       ]
     },
     {
@@ -177,9 +180,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (14.079615ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (20.36157ms)",
         "✖ failing tests:",
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (14.079615ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (20.36157ms)"
       ]
     },
     {
@@ -187,8 +190,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (10.935786ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (6.048102ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (17.44015ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (3.902592ms)",
         "✖ failing tests:"
       ]
     },
@@ -197,9 +200,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.967849ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.881584ms)",
         "✖ failing tests:",
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.967849ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.881584ms)"
       ]
     },
     {
@@ -207,8 +210,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (0.730943ms)",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (2.877465ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (1.885788ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (1.831776ms)",
         "✖ failing tests:"
       ]
     },
@@ -217,9 +220,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (14.645336ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (20.636611ms)",
         "✖ failing tests:",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (14.645336ms)"
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (20.636611ms)"
       ]
     },
     {
@@ -227,9 +230,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (8.917273ms)",
-        "✖ failing tests:",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (8.917273ms)"
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (13.616114ms)",
+        "✖ selector integration: controlled private answer ballot and submission perturbations cannot affect the next round (11.441ms)",
+        "✖ failing tests:"
       ]
     },
     {
@@ -237,9 +240,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ reducer is total across every event in every phase, immutable and strict inputs (7.527274ms)",
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (9.168433ms)",
         "✖ failing tests:",
-        "✖ reducer is total across every event in every phase, immutable and strict inputs (7.527274ms)"
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (9.168433ms)"
       ]
     },
     {
@@ -247,9 +250,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.542649ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (1.464875ms)",
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (1.652589ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (16.090569ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (33.2404ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (4.433819ms)"
       ]
     },
     {
@@ -257,8 +260,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (8.78907ms)",
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (3.277286ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (19.938054ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (3.183451ms)",
         "✖ failing tests:"
       ]
     },
@@ -267,8 +270,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (15.803495ms)",
-        "✖ noun exceptions compose with normalization, compound words and existing possessives (0.818012ms)",
+        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (35.614891ms)",
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (1.544375ms)",
         "✖ failing tests:"
       ]
     },
@@ -277,9 +280,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (4.936708ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (3.310913ms)",
         "✖ failing tests:",
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (4.936708ms)"
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (3.310913ms)"
       ]
     },
     {
@@ -287,9 +290,159 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ noun exceptions compose with normalization, compound words and existing possessives (5.191582ms)",
-        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (5.093518ms)",
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (21.581889ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (12.679558ms)",
         "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M29 exceed three-candidate window",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: fourth same-theme candidate is outside the bounded window (16.624495ms)",
+        "✖ selector fixtures: empty banks have zero quality and still occupy the candidate window (1.19728ms)",
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (366.93906ms)"
+      ]
+    },
+    {
+      "id": "M30 replace earliest equal-quality candidate",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: earliest equal-quality candidate wins (18.648521ms)",
+        "✖ selector fixtures: roster cap preserves equally adequate earlier candidates (1.1499ms)",
+        "✖ selector fixtures: exhaustive four-candidate orders respect bounds and earliest ties (9.047166ms)"
+      ]
+    },
+    {
+      "id": "M31 ignore public roster cap",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: roster cap preserves equally adequate earlier candidates (8.632658ms)",
+        "✖ failing tests:",
+        "✖ selector fixtures: roster cap preserves equally adequate earlier candidates (8.632658ms)"
+      ]
+    },
+    {
+      "id": "M32 remove exploration positions",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: slots zero three six and nine retain exploration and original theme order (18.417732ms)",
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (304.666988ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (12.300107ms)"
+      ]
+    },
+    {
+      "id": "M33 keep legacy selection at four seats",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: semantic width counts plural families instead of raw examples (6.492649ms)",
+        "✖ selector fixtures: transitive fuzzy chains and numeric no-fuzz determine width (0.606175ms)",
+        "✖ selector fixtures: below four present seats retains exact old selection (0.737099ms)"
+      ]
+    },
+    {
+      "id": "M34 count surface forms as semantic choices",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: semantic width counts plural families instead of raw examples (8.539604ms)",
+        "✖ selector fixtures: transitive fuzzy chains and numeric no-fuzz determine width (0.537625ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M35 ignore empty banks inside candidate window",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: empty banks have zero quality and still occupy the candidate window (5.633842ms)",
+        "✖ failing tests:",
+        "✖ selector fixtures: empty banks have zero quality and still occupy the candidate window (5.633842ms)"
+      ]
+    },
+    {
+      "id": "M36 reverse caller-owned shuffled deck",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: fourth same-theme candidate is outside the bounded window (13.600183ms)",
+        "✖ selector fixtures: earliest equal-quality candidate wins (1.463186ms)",
+        "✖ selector fixtures: roster cap preserves equally adequate earlier candidates (0.483597ms)"
+      ]
+    },
+    {
+      "id": "M37 remove scarce-theme whole fallback",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: scarce-theme fallback is entirely the original leaders then fill order (11.08927ms)",
+        "✖ failing tests:",
+        "✖ selector fixtures: scarce-theme fallback is entirely the original leaders then fill order (11.08927ms)"
+      ]
+    },
+    {
+      "id": "M38 count absent initialized seats",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector integration: absent seats count by public presence and human bot flags do not affect prompts (5.468894ms)",
+        "✖ selector integration: actual departure and reconnection events change next-round present count without extra RNG (8.028034ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M39 use bot flags to choose prompts",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (206.503973ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (3.315724ms)",
+        "✖ selector integration: absent seats count by public presence and human bot flags do not affect prompts (3.17044ms)"
+      ]
+    },
+    {
+      "id": "M40 use private submissions to choose prompts",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (344.731553ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (1.824101ms)",
+        "✖ selector integration: absent seats count by public presence and human bot flags do not affect prompts (2.466472ms)"
+      ]
+    },
+    {
+      "id": "M41 consume extra core RNG after shuffle",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (9.80365ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (13.989671ms)",
+        "✖ selector integration: absent seats count by public presence and human bot flags do not affect prompts (2.958588ms)"
+      ]
+    },
+    {
+      "id": "M42 retain rejected exploration positions",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: slots zero three six and nine retain exploration and original theme order (8.388154ms)",
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (207.947295ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (8.584408ms)"
+      ]
+    },
+    {
+      "id": "M43 accidentally combine old and new exploration sets",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ selector fixtures: slots zero three six and nine retain exploration and original theme order (14.157455ms)",
+        "✖ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (252.349585ms)",
+        "✖ selector integration: all twenty seeded letters retain a supported distinct-theme pool (14.728941ms)"
       ]
     }
   ]

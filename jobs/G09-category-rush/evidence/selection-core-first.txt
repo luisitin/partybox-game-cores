@@ -1,0 +1,91 @@
+✔ retained content experiment files obey independent emitted JSON schemas (290.788536ms)
+✔ expanded banks preserve support/layouts and add no core-equivalent answers (1063.374728ms)
+Measured largest legal five-round Unicode save: 246937 UTF-8 bytes
+✔ bounded local snapshots retain actual played two/eight-seat states, private draft and pause (4206.284244ms)
+✔ corrupt, oversized, stale and inconsistent local saves are rejected before reducer use (26.214218ms)
+✔ restored actual contract RNG continues exactly through all supported saved counters (2.927834ms)
+✔ a legal five-round eight-seat maximum-length Unicode history remains saveable (709.296592ms)
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (72.442389ms)
+✔ the emitted JSON Schema independently rejects malformed content (192.660859ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (16.285296ms)
+✔ original source regenerates generated content byte for byte (166.841973ms)
+✔ normalization: articles accents punctuation number words and plural matching (9.976301ms)
+✔ independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication (88124.533762ms)
+✔ score cancellation and group vote ties exclude author, numeric and article handling (3.858329ms)
+✔ settings clamp stale values and phases have sound timers (3.771549ms)
+✔ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (6.635689ms)
+✔ pause ignores an empty-review deadline until explicit resume at both roster extremes (4.396131ms)
+✔ unknown prototype seats never act; genuine prototype ids survive JSON and results (2.14833ms)
+✔ views never expose others answers, authors, votes or future review; own views roundtrip (3.408222ms)
+✔ reducer is total across every event in every phase, immutable and strict inputs (9.638846ms)
+✔ manifest exact types, JSON artifact and every phase fixture (36.538848ms)
+✔ all nine invariants: 1,000 restored-every-event bot games at each roster 2–8 (323270.960771ms)
+✔ property seeds 1,2,3 plus 1,000 reproducible random seeds; idle and gone seats finish (1970.421184ms)
+✔ bot strategies cannot inspect private answers or ballots; skill controls coverage (5.0596ms)
+✔ event fuzz across every real phase and bot/view role preserves totality and JSON (7364.311927ms)
+✔ future own-repeat adjudication leaks neither a view flag nor bot ballot (1.624767ms)
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (49.935892ms)
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (32.99736ms)
+✔ 47 independently sourced singular/plural facts meet in stems and sameAnswer (41.735249ms)
+✔ noun exceptions compose with normalization, compound words and existing possessives (1.79525ms)
+✔ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (4.852441ms)
+✔ sourced plural duplicates cancel actual two-seat and eight-seat scores (494.022701ms)
+✔ using singular and plural in separate rows cancels both own scores (84.721324ms)
+✔ 750 seeded lexical, spelling, numeric and ballot cases agree with the independent graph oracle (6800.277975ms)
+✔ the bounded fix introduces no new equivalent options within the 2,565 frozen banks (12.23216ms)
+✔ pure core source has no random clock callback IO or runtime dependency beyond zod (2.788749ms)
+✔ done fixture is the played-out last scores fixture; every fixture reaches finite results (17.238339ms)
+ℹ tests 36
+ℹ suites 0
+ℹ pass 34
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 423681.418611
+
+✖ failing tests:
+
+test at tests/plural-protocol.test.ts:1:679
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (49.935892ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1'
+  - 'a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12'
+  
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:15:223)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1',
+    expected: 'a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/plural-protocol.test.ts:1:2885
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (32.99736ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1'
+  - 'a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12'
+  
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:42:150)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1',
+    expected: 'a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

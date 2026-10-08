@@ -151,10 +151,11 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
       if(report===pluralAfter)assert.deepEqual(row.verdicts,['Duplicate · 0']);
     }
   }
-  const mutation=json('evidence/mutations.json');assert.equal(mutation.total,28);assert(mutation.killed>=27);
+  const mutation=json('evidence/mutations.json');assert.equal(mutation.total,43);assert(mutation.killed>=42);
   assert.equal(mutation.isolatedActualSource,true);
   for(const [path,hash] of Object.entries(mutation.sourceHashes))assert.equal(sha(path),hash,path);
   for(const prefix of ['M26','M27','M28'])assert(mutation.mutations.find((row:any)=>row.id.startsWith(prefix))?.killed);
+  for(let id=29;id<=43;id++)assert(mutation.mutations.find((row:any)=>row.id.startsWith(`M${id} `))?.killed);
   const original=json('evidence/breadth-baseline.json'),bankOnly=json('evidence/breadth-bank-only.json'),strategy=json('evidence/breadth-after.json');
   assert.equal(original.sourceHashes.data,sha('evidence/browser/round-1-accepted/categories.json'));
   for(const report of [original,bankOnly])assert.equal(report.sourceHashes.core,sha('evidence/breadth-original-core.ts'));
@@ -176,7 +177,7 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert(strategy.outcomes.awarded>bankOnly.outcomes.awarded);
   assert(strategy.outcomes.duplicateOwnerRate<bankOnly.outcomes.duplicateOwnerRate);
   const lexical=json('evidence/breadth-lexical.json');
-  for(const [field,path] of Object.entries({core:'src/index.ts',matcher:'src/match.ts',scoring:'src/scoring.ts',experiment:'scripts/breadth.ts',authored:'content/authored.mjs',data:'content/categories.json',generated:'content/categories.ts'}))assert.equal(lexical.sourceHashes[field],sha(path));
+  for(const [field,path] of Object.entries({core:'evidence/breadth-lexical-core.ts',matcher:'evidence/breadth-lexical-match.ts',scoring:'src/scoring.ts',experiment:'evidence/breadth-lexical-experiment.ts',authored:'content/authored.mjs',data:'content/categories.json',generated:'content/categories.ts'}))assert.equal(lexical.sourceHashes[field],sha(path));
   assert.equal(lexical.outcomes.replayMatches,200);assert.equal(lexical.rows.length,200);
   assert.deepEqual(lexical.rows.map((row:any)=>[row.seed,row.letter,row.layout]),strategy.rows.map((row:any)=>[row.seed,row.letter,row.layout]));
   const html=readFileSync(new URL('play.html',root),'utf8');

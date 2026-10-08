@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-10-08T15:45:40.427Z",
+  "finishedAt": "2026-10-08T15:46:08.929Z",
+  "htmlSha256": "abde34978aafaefeaf178a1ab51f20a0992ef714a33659ddc4ed4427ef22a97b",
+  "runnerSha256": "9caabfd972f723c957df22d8adda5d50e5b59646d60c6cdb0a7240e1d73c2444",
+  "passed": false,
+  "failure": "AssertionError [ERR_ASSERTION]: phone4x: strict frame or offline runtime check failed",
+  "desktop": {
+    "count": 600,
+    "fps": 60.002532106854915,
+    "p99Ms": 16.800000000000182,
+    "maxMs": 16.80000000000109,
+    "passed": true
+  },
+  "phone4x": {
+    "count": 600,
+    "fps": 58.25504017753029,
+    "p99Ms": 16.80000000000109,
+    "maxMs": 166.60000000000036,
+    "passed": false
+  },
+  "manualSourceGuards": {
+    "client-save.ts": true,
+    "client.ts": true,
+    "build-play.ts": true,
+    "src/play.template.html": true,
+    "src/index.ts": true,
+    "src/model.ts": true,
+    "src/scoring.ts": true,
+    "src/match.ts": true,
+    "src/select.ts": true,
+    "content/categories.ts": true,
+    "package-lock.json": true,
+    "LICENSE": true,
+    "THIRD_PARTY_NOTICES.txt": true,
+    "node_modules/zod/LICENSE": true,
+    "../../contract/rng.ts": true,
+    "scripts/browser-performance.mjs": true
+  },
+  "htmlGuard": true,
+  "clipScope": "Desktop separate clean312601B clip only; no new phone clip. Older canonical phone video is historical and not accepted for this source.",
+  "cause": "unresolved; no speculative runtime optimization or unchanged local retry"
+}

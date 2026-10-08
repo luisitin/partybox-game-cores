@@ -73,15 +73,19 @@ jobs:
             jobs/G09-category-rush/SHA256SUMS.txt
       - name: Strict core, artifact binding, independent oracle, all rosters and property seeds
         run: npm test
-      - name: Twenty-eight real planted bugs
+      - name: Forty-three real planted bugs including selection and privacy defects
         run: npm run mutations
       - name: Two thousand duels per adjacent bot skill
         run: npm run bots
       - name: Replayed eight-Strong-bot variety experiment
         run: |
-          npx tsx scripts/breadth.ts --label=after --output=lexical
           node scripts/regenerate-breadth.mjs --check
           git diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json evidence/breadth-lexical.json
+      - name: Registered original and revised selection evidence
+        run: |
+          node scripts/regenerate-selection.mjs --check
+          node scripts/compare-selection.mjs --check
+          git diff --exit-code -- evidence/selection-revision-baseline.json evidence/selection-revision-candidate.json evidence/selection-revision-comparison.json evidence/selection-revision-seeds.json
       - name: Source-bound singular and plural duplicate protocols
         run: |
           node scripts/regenerate-plural-baseline.mjs --check
