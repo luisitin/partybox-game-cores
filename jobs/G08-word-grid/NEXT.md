@@ -1,3 +1,7 @@
+# G08 — actual installer timeout repaired; full acceptance pending
+
+Read review/repair13/README.md first. d613 paired PR naturally hit its actual 30-minute job limit after capture installation consumed 22m6s; push and genuine downloaded push artifact passed, paired overall acceptance did not. New workflow bounds the installer, excludes optional APT recommendations and requires actual ffmpeg/ffprobe. New exact-head full push AND PR and genuine current artifact acceptance pending; PR9 stays DRAFT. No local FPS retry or original page/game/art changes. KEEP10 streak1 preserved; KEEP11/12 not started. New readable primary manuals still need factual/variant reconciliation.
+
 # G08 — KEEP10 completed; two no-gain reviews remain
 
 Accepted baseline a96d1354a3ec89ef67fa8fdee2a55b1bb0e92387 has both full push/PR green and both actual artifacts independently accepted; see review/keep10/README.md. KEEP10 read/rank/fix/measure is documentation-only, no player gain, streak1. Current source/page/native sampler remain unchanged. Next: complete two further separate binding reviews/pushes, then both final exact-head full CI and genuine artifact acceptance before PR9 is ready. Do not repeat unchanged local FPS or erase any failed/interrupted attempt. Refresh only own G08 claim after each normal push. Prior local phone failure and restart exit unknown remain explicit.

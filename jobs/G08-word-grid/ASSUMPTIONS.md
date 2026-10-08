@@ -31,3 +31,5 @@
 - Second workspace restart approximately20:31–20:40 interrupted capture-session observation. Persisted full report and real clips are validated independently; exact exit and termination time remain unknown. No recorded-session FPS claim.
 
 - KEEP10 archives the authentic failed 22f push native report byte-identically as text. The original accepted-report schema correctly rejects its 1999.752709 ms hold below2000; no positive schema/gate is relaxed to admit a failed historical receipt. Original raw native/frames/clips remain unfiltered.
+
+- Capture installer repair13 follows the actual d613 job-timeout annotation and full log. Excluding optional package recommendations and bounding APT is a concrete tool setup repair; no test, source guard or native gate is skipped. Overall paired acceptance remains incomplete and KEEP10 streak1 is unchanged. Shared timing holds and preserving the natural outcome caused a real publication gap, not a backdated claim.
