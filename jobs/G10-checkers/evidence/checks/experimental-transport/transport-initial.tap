@@ -1,0 +1,61 @@
+TAP version 13
+# Subtest: immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+ok 1 - immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+  ---
+  duration_ms: 1649.266437
+  type: 'test'
+  ...
+# Subtest: an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+not ok 2 - an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+  ---
+  duration_ms: 150.62958
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/api-tests/international-transport.test.mjs:20:1'
+  failureType: 'testCodeFailure'
+  error: 'Missing International block db2:0'
+  code: 'ERR_TEST_FAILURE'
+  name: 'MissingInternationalBlock'
+  stack: |-
+    Object.range (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/api-dist/international.mjs:174:25)
+    Object.probe (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/api-dist/international.mjs:303:30)
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/api-tests/international-transport.test.mjs:24:97)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+# Subtest: transaction retries require all missing original blocks and then equal native outcomes
+ok 3 - transaction retries require all missing original blocks and then equal native outcomes
+  ---
+  duration_ms: 25.796757
+  type: 'test'
+  ...
+# Subtest: encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+ok 4 - encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+  ---
+  duration_ms: 32.060662
+  type: 'test'
+  ...
+# Subtest: canonical encoding and bounded block metadata reject corrupt input before probing
+ok 5 - canonical encoding and bounded block metadata reject corrupt input before probing
+  ---
+  duration_ms: 13.458903
+  type: 'test'
+  ...
+# Subtest: one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+ok 6 - one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+  ---
+  duration_ms: 27.254446
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 5
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3093.672141
