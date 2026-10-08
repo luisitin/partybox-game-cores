@@ -6,9 +6,14 @@ import assert from 'node:assert/strict';
 const ajv = new Ajv2020({ strict: false, allErrors: true });
 ajv.addFormat('date-time', value => typeof value === 'string' && Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value);
 const parse = path => JSON.parse(readFileSync(path, 'utf8'));
-const schemas = Object.fromEntries(['state', 'manifest', 'calibration', 'research', 'seeds', 'visual', 'current-visual', 'capture', 'raw-frame'].map(name => [name, ajv.compile(parse(`schemas/${name}.schema.json`))]));
+const schemas = Object.fromEntries(['state', 'manifest', 'calibration', 'research', 'seeds', 'visual', 'current-visual', 'failed-visual', 'capture', 'raw-frame'].map(name => [name, ajv.compile(parse(`schemas/${name}.schema.json`))]));
 const targets = [['manifest.json', 'manifest'], ['research-access.json', 'research'], ['data/calibration.json', 'calibration'], ['data/property-seeds.json', 'seeds'], ['media/visual-measurements.json', 'visual'], ...readdirSync('fixtures').map(file => [`fixtures/${file}`, 'state'])];
 targets.push(['historical/hosted-731b64b.json', 'visual']);
+for (const file of readdirSync('historical')) {
+  if (/^strict-\d{2}-disk-report\.json\.txt$/.test(file)) targets.push([`historical/${file}`, 'failed-visual']);
+  else if (/^strict-\d{2}-raw-(?:desktop|phone)\.json\.txt$/.test(file) || /^hosted-[a-f0-9]+-raw-(?:desktop|phone)\.json\.txt$/.test(file)) targets.push([`historical/${file}`, 'raw-frame']);
+  else if (/^hosted-[a-f0-9]+-report\.json\.txt$/.test(file)) targets.push([`historical/${file}`, 'current-visual']);
+}
 for (const file of readdirSync('media')) {
   if (/^capture-\d{2}-report\.json$/.test(file)) targets.push([`media/${file}`, 'capture']);
   else if (/^visual-\d{2}-report\.json$/.test(file)) targets.push([`media/${file}`, 'current-visual']);

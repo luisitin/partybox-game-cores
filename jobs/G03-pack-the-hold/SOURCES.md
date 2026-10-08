@@ -1,5 +1,11 @@
 # Sources
 
+Resumed round14 re-read the pinned Dijkstra solver.py and semiexp naive.rs
+through native GitHub fetch at2026-10-08T17:00UTC. Both actual file contents
+were inspected again:integer placement/rotation,overlap/out-of-bounds rejection,
+finite complete enumeration. Original weighted optional packing remains the
+game's own model;no external source code or artwork was copied in this review.
+
 Research resumed 2026-10-08. These are live commit-pinned sources fetched with
 normal HTTPS proxy and TLS trust. Independent authors; no source code copied.
 

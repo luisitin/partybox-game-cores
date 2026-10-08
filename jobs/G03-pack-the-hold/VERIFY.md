@@ -1,5 +1,72 @@
 # Verification ledger
 
+## Round14 final milestone evidence
+
+Original game/core/bot/HTML/calibration/fixtures/template/manifest equality
+against731b64b remains exact after the new verifier and evidence additions.
+No new player-visible change; the previous R10–12 three-round stop applies.
+Current evidence contains new artifact/schema/tool source files,so actual full
+exact-new-head CI is mandatory before declaring final delivery.
+
+First real disk attempt command:
+`setsid --wait timeout 15m env G03_CHROME=/home/agent/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell G03_FRAME_BARRIER_DIR=/workspace/game-cores-G03-resume/jobs/G03-pack-the-hold/.tmp/review-14/disk-frame-barrier node scripts/visual.mjs`.
+Actual EXIT1,final17:28:45.715;TV raw900 mean17.351111111ms/FPS57.633196721,
+p9516.8,p9933.3,max216.6ms FAIL59. All9 intervals above18ms retained;largest
+216.6/200/83.3ms.28 start/end source guards match,errors0,one exact file://
+request. Phone NOTRUN. Actual binary Chromium141.0.7390.37/binary SHA retained.
+Root atomic three-field grant17:28:29.935745;actual CLOSED17:28:45.678,
+quiet released17:28:46. No filtering,threshold change,unchanged retry or cause
+inferred. Actual raw/report/log/READY/GRANT/CLOSED are in historical/strict-14-*.
+
+Exact9362 hosted CI37816512878/job113446410563 SUCCESS17:28:58. Actual
+97275-character native log read and privately preserved:24 tests,25 genuine
+mutation kills,10k solver differentials,1,003 properties,7k roster games,
+4k leagues (2k/2k stronger wins each),304912 malformed probes,17,119 valid
+compatibility transitions,data two regenerations and disk checks PASS.
+New actual-frame/nonce groups3/3,73 frame-corruption controls and10 real grant
+controls PASS;2,000 generated-level benchmark max2.914917ms. This is an actual
+hosted execution,not a claim that the local failing run passed.
+
+Native artifact11567721362 actual ZIP193620bytes/SHA256
+9ddc51b167578a8d61561f3bd2eda4d10c326f77475b693acd0e915738210710 verified
+against metadata before safe extraction.9 files include two actual900 arrays.
+`node scripts/verify-visual.mjs .tmp/review-14/hosted-9362/visual/
+visual-measurements.json` and actual-current corruption suite PASS before
+final tooling changes:28 current guards,all1800 intervals independently
+recomputed,TV60.00240009600384/phone60.00200006666889,p95<=16.8/max16.8ms.
+Actual hosted Chrome154.0.8037.97/fileOpened true/zero external requests or errors.
+Uploaded107410-byte clip SHAfdc05db544cb387fd043d66919c44ae43d8a364b4e23e6332a6befdaff852054
+decodes VP9/36 frames/1280x900/3.6s/encoded10fps. It is separate UI footage.
+
+Hosted9362 proof is preserved as historical after the final tool additions.
+`node scripts/verify-historical.mjs`:PASS;all28 expected hashes recomputed from
+actual Git objects at9362,then all1800 real intervals/clip bytes validated.
+The current CLI has no historical fallback and does not relabel those sources.
+
+Separate current capture command:`setsid --wait timeout 3m env G03_CHROME=/home/agent/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell node scripts/visual.mjs --capture-only --record --milestone 13`. EXIT0,finished
+17:36:02.573,HeadlessChrome141,actual file loading,all2–8 UI rosters/touch/
+mouse/keyboard/focus/long names/privacy/motion/zero external requests or errors PASS.
+Current capture13 has103087bytes/SHAa80f6086b29333183121fcfb0f4bcaf4c2a50e5b6f6b2cab187ef1f33590b912.
+`node scripts/verify-visual.mjs --capture-report media/capture-13-report.json`:
+PASS actual bytes/EBML/hash/all28 source boundaries/functional scope.
+`node --test scripts/verify-capture.test.mjs`:PASS25 actual-record corruptions;
+altered source,bytes,scope,transport,controls and empty/oversized clips fail.
+`ffmpeg -v error -i media/milestone-13.webm -f null -`/`ffprobe -count_frames`:
+PASS VP9/36 real captured images/1280x900/3.6s/encoded10fps. No FPS acceptance
+is claimed from any video; this capture ran separately after timing closed.
+
+`node scripts/generate.mjs --fixtures-only; node scripts/check-hashes.mjs;
+node scripts/check-data.mjs`:PASS15 JSON/11 schemas/two byte-identical full
+regenerations/51 hashes including all public historical data/media/source
+snapshots. `git diff --exit-code 731b64b -- src play.html data fixtures
+manifest.json web`:PASS exact unchanged production/calibration/fixture bytes.
+README44 lines. `git diff --check`:PASS. Required final full exact-head CI,
+fresh current1800 raw proof and actual nonempty uploaded artifact pending.
+
+Cadence:first claimed-main push16:58:58→source milestone9362 pushed17:25:54
+is26m56s,PASS30min. Internal25min target17:23:58 missed1m56s;retain actual
+timestamps without backdating. Claim refreshedmainbc86705,row17:25:43Z.
+
 ## Resumed round14 checkpoint,2026-10-08
 
 Fresh main README/RULES/JOBS/CLAIMS and all18 refs/unique commit dates selected
@@ -16,7 +83,7 @@ Old aggregates about60.002fps cannot reconstruct absent raw intervals.
 The exact old report/runner/actual108387-byte clip are retained in historical/.
 
 `npm ci --ignore-scripts --no-audit --no-fund`:PASS9 packages.
-`npm run build`:PASS strict ES2022; `git diff --exit-code731b64b -- src
+`npm run build`:PASS strict ES2022; `git diff --exit-code 731b64b -- src
 play.html data fixtures manifest.json web`:PASS before/after generation.
 `node --test scripts/frame-coordination.test.mjs`:PASS2 groups,10 real-file
 corruption/replay/removal controls and two fresh sequential attempts.

@@ -74,6 +74,8 @@ try {
   if (nav.errorText) throw Error(`File navigation failed: ${nav.errorText}`);
   for (let i = 0; i < 100 && !(await evaluate('!!document.getElementById("start")')); i++) await delay(50);
   assert.ok(await evaluate('!!document.getElementById("start")'), 'self-contained page did not load');
+  Object.assign(report, { chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; not disk-open proof' : 'disk' });
+  saveReport();
   await evaluate('document.getElementById("rounds").value="1";document.getElementById("start").click();document.getElementById("start-turn").click()');
   assert.equal(await evaluate('document.getElementById("handoff").hidden'), true);
   const focus = await evaluate("(()=>{const button=document.querySelector('[data-select]');button.focus();button.click();return{selected:button.dataset.select,focused:document.activeElement.dataset.select??null}})()");

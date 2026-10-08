@@ -1,4 +1,40 @@
-# G03 resumed source-bound verification — round14 checkpoint
+# G03 final round14 source-bound verification delivery gate
+
+Latest milestone completes verification-only round14. Original game code,
+HTML3147906f,bot strategy,calibration,fixtures,manifest and template remain
+byte-identical to731b64b. Existing player stop R10–12 remains met; no new
+player gain was invented. Historical sections below preserve prior checkpoints.
+
+Local actual disk strict run EXIT1,closed17:28:45.715:all900 TV intervals
+57.633196721fps FAIL>=59,p9516.8/p9933.3/max216.6ms. All28 guards match,
+zero errors/only actual file request. Phone NOTRUN. No unchanged retry or
+causal claim. HTTP setup earlier timed out with0 samples/no grant.
+
+Exact9362 hosted run37816512878 SUCCESS17:28:58; actual97275-character log
+and official193620-byte ZIP11567721362 SHA9ddc51b1...8210710 read/verified.
+Both900 arrays independently pass:TV60.002400096/phone60.002000067,p95<=16.8.
+Chrome154 opened the real file; all28 guard boundaries and73 actual-current
+corruption controls passed. Preserved9362 source-scoped records are historical
+after the final tooling additions. Current CLI requires current source bytes;
+verify-historical.mjs uses all28 real Git objects at9362 without fallback.
+
+Current separate disk capture13 PASS,finished17:36:02.573,HeadlessChrome141:
+103087bytes/SHAa80f6086b29333183121fcfb0f4bcaf4c2a50e5b6f6b2cab187ef1f33590b912,
+VP9/36 real images/3.6s,all28 source guards/rosters2–8/control/privacy/motion
+checks. Its encoded10fps is separate from rendering acceptance. Independent
+capture CLI,25 genuine capture-corruption controls and real decode PASS.
+Data gate15 JSON/11 schemas/2 byte-identical regenerations/51 hashes PASS;
+strict build/source equality/diff checks pass. README44 lines.
+
+Final publication still requires original PR3's EXACT CURRENT head full CI
+SUCCESS and nonempty/unexpired actual G03-check-evidence upload. Fetch actual
+logs/ZIP,digest-check/extract,independently recompute current1800 raw intervals
+and validate current capture13. Then update PR3 externally and mark ready.
+Do not make a prose-only commit to chase a frozen pending-CI snapshot. Do not
+repeat local frames or game suites without new changes/failures/concerns.
+Go to the strict queue after those final delivery gates; preserve active owners.
+
+## Initial resumed checkpoint (historical)
 
 Claim codex-pack-resume16:58:56Z on main084d11e, observed push16:58:58.
 Worktree /workspace/game-cores-G03-resume; original PR3/canonical branch

@@ -22,8 +22,23 @@ The rotations-only and mirrored editions are calibrated separately.
 Each tier has twelve original holds; three-round voyages do not repeat a hold.
 SHA256SUMS.txt also covers the delivered HTML and generated template source.
 
-The cloud browser's managed URL policy currently blocks file:// navigation.
-For partial local UI verification only: G03_VISUAL_MODE=http npm test.
-That explicitly tests localhost HTTP and does not certify disk loading.
-CI uses the default disk check; no HTTP fallback is permitted on CI.
-VERIFY.md records exact results and pending delivery gates; NEXT.md resumes.
+The current browser check opens the actual disk file by default.
+G03_CHROME selects an existing Chrome or headless-shell executable.
+For partial HTTP diagnosis only: G03_VISUAL_MODE=http npm test.
+CI rejects HTTP mode and requires the real file:// check.
+
+Rendering checks retain all900 native RAF intervals per TV/CPU4x phone profile,
+require >=59fps and p95<=18ms, then independently recompute every statistic.
+The28 source hashes bind each sample and separate capture to exact files.
+Date.now is frozen by the host to keep setup waits out of human turns;
+native RAF timestamps and outliers remain unchanged. CPU4x is emulation.
+
+Current separate capture and its checks:
+
+    node scripts/verify-visual.mjs --capture-report media/capture-13-report.json
+
+Record a new unused milestone with the browser tool's --capture-only --record
+--milestone 14 flags. Its encoded10fps video is separate from rendering proof.
+Historical9362 evidence uses node scripts/verify-historical.mjs; current checks
+require current sources. VERIFY.md records failures and successful hosted gates.
+NEXT.md names the remaining exact-head delivery check and resume point.

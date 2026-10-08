@@ -14,6 +14,13 @@
   remains covered separately by the unchanged pure contract tests.
 - A 390px Chrome profile with4x CPU throttle is a phone approximation, not a
   physical-phone measurement. Local HTTP never proves file:// loading.
+- The first actual disk run's Chromium141 failure and hostedChrome154 success
+  are separate observations. No causal browser-version or hardware explanation
+  is established. Mandatory hosted paired current-source/raw proof is accepted
+  with the local failure retained. No unchanged local frame retry was run.
+- The earlier HTTP setup expired before root's requested cancellation could be
+  sent. It produced0 sampled frames;the failed SIGTERM precondition sent no
+  signal. The first public checkpoint preserves the actual timeout receipt.
 
 - G03 is original. The prompt defines its rules; two independent live sources
   substantiate geometry/search facts rather than purported official rules.

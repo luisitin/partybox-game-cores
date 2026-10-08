@@ -1,5 +1,16 @@
 # Changes during stale delivery recheck
 
+R14 resumed verification:preserve all game/HTML/bot/calibration/template/
+fixture bytes. Remove dropped frame intervals and the old57.14fps gate;retain
+900 native intervals per profile with>=59fps/p95<=18 and28 exact source guards.
+Add current independent raw/clip/schema validation,73 genuine frame-corruption
+controls,10 real nonce-grant controls and25 capture-corruption controls. Record
+browser/transport identity before checks so future failures retain both.
+Keep historical actual180-frame proof,zero-sample setup timeout,local900-frame
+failure and hosted9362 paired success separately. Capture13 is source-bound
+offline UI footage;encoding10fps is separate from frame acceptance. CI verifies
+that actual committed current clip. No gameplay improvement is claimed.
+
 R9:src/core.ts rejects non-object/null events,non-string actors and malformed connected/gone fields before accessing properties or copying presence. Eight exceptions and three invalid presence updates in12 baseline probes become zero;valid inputs/state format/rules/bots remain unchanged.
 
 R9:tests/focused.test.mjs adds deep-frozen malformed-event coverage across pack/reveal/done and paused pack. It verifies identity and unchanged JSON after rejection while retaining the existing actual prototype-like player-ID test.
