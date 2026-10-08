@@ -28,6 +28,6 @@ VERIFY records actual commands and coverage, BOTS the measured win rates,
 LOOP post-green improvement rounds, NEXT remaining/resume steps.
 SHA256SUMS covers delivered data/media. No external card art or trackers.
 
-Current status: PR #2 is draft; version1.1.0 hosted CI passed. Round1 fixes
-absent turns/empty rooms; full1.2.0 acceptance and further KEEP GOING remain.
-Historical blockers and earlier measurements are retained separately.
+Current status: PR #2 draft; round1 hosted CI passed. Round2 removes slow
+branching layoffs and passes targeted proofs/mutations/browser checks.
+Its hosted CI and further KEEP GOING remain; historical failures retained.

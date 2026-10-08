@@ -1,0 +1,25 @@
+✔ branching target ends retain exact minima, legal chains, layouts and all cards (41.595717ms)
+{"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+✔ departures in every live phase finish the absent turn without exposing its hand (28.413101ms)
+✔ 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play (5151.418002ms)
+✔ empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin (0.858685ms)
+✔ departures during VIP pause drain only on resume; malformed control events do nothing (0.358277ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (9581.519084ms)
+{"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+✔ 2000 independent joint meld/layoff weighted packings including chained extensions (9782.458889ms)
+✔ aces low, set cardinality, runs and overlap (2.815472ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (14.847119ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (3.604747ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (21.155746ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (18.545834ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (2.516926ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (163.222732ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10424.739172

@@ -87,3 +87,12 @@ raw evidence: round-1-summary.json and related files. No cause of the
 earlier slow frames is established. Current hosted CI pending. Evidence/hash
 preparation initially used the wrong working directory and failed to locate
 job files; it was corrected and integrity re-run before this branch push.
+
+Round2 exact command/results and before/after measurements are recorded in
+keep-going.md, round-2-tests.log, round-2-mutations.log, round-2-browser.log,
+layoff-profile-before/after.json and layoff-browser-before/after.json.
+14 targeted tests PASS; independent10,000/2,000 proofs PASS;25/25 compiled
+mutants caught;2,002 full canonical solutions unchanged. Phone4x algorithm
+cases6813→11.3ms and1278.1→10.2ms. Actual playable-page60.002/60.004FPS,
+p99/max16.8ms,17 offline/privacy/control checks per profile PASS. Round1
+hosted CI37721051891 at b096b6a actually SUCCESS. Round2 hosted CI pending.

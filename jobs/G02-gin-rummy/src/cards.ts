@@ -79,15 +79,39 @@ export function optimalDefense(hand:readonly Card[],targets:readonly Card[][],ca
   if(!canLayOff)return {...minimizeDeadwood(hand),laid:[]};
   const candidates=meldCandidates(hand);
   let best:Defense={...minimizeDeadwood(hand),laid:[]};
+  const bits=new Map(hand.map((card,i)=>[card,1<<i])),visited=new Set<string>();
+  // An optimistic coverage bound: allow every own meld and every reachable
+  // target extension simultaneously, ignoring competition for shared cards.
+  // Cards outside that union must remain deadwood in every legal solution.
+  let coverable=candidates.reduce((mask,meld)=>mask|meld,0);
+  for(const target of targets){
+    const expanded=[...target];let changed=true;
+    while(changed){changed=false;
+      for(const card of hand)if(!expanded.includes(card)&&validMeld([...expanded,card])){
+        expanded.push(card);coverable|=bits.get(card)!;changed=true;
+      }
+    }
+  }
+  const lowerBound=hand.reduce((sum,card,i)=>sum+(coverable&(1<<i)?0:value(card)),0);
   function layoffs(loose:Card[],board:Card[][],laid:{card:Card;target:number}[],own:Card[][]):void {
+    if(best.deadwood===lowerBound)return;
+    // The remaining cards and each target's attached cards determine the
+    // future search. Different attachment orders reach the same position.
+    // First visits preserve the original strict-improvement tie order.
+    const masks=Array<number>(targets.length).fill(0);
+    for(const x of laid)masks[x.target]|=bits.get(x.card)!;
+    const key=loose.reduce((mask,card)=>mask|bits.get(card)!,0)+':'+masks.join(',');
+    if(visited.has(key))return;visited.add(key);
     const deadwood=loose.reduce((a,c)=>a+value(c),0);
     if(deadwood<best.deadwood)best={deadwood,loose:[...loose],melds:own.map(m=>[...m]),laid:[...laid]};
+    if(best.deadwood===lowerBound)return;
     for(let i=0;i<loose.length;i++)for(let t=0;t<board.length;t++) {
       const extended=[...board[t],loose[i]];
       if(validMeld(extended))layoffs(loose.filter((_,j)=>i!==j),board.map((m,j)=>j===t?extended:m),[...laid,{card:loose[i],target:t}],own);
     }
   }
   function partitions(mask:number,loose:Card[],own:Card[][]):void {
+    if(best.deadwood===lowerBound)return;
     if(!mask){layoffs(loose,targets.map(m=>[...m]),[],own);return;}
     const bit=mask&-mask,i=31-Math.clz32(bit);
     partitions(mask^bit,[...loose,hand[i]],own);

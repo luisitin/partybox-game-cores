@@ -1,22 +1,22 @@
 # Resume G02
 
 Branch job/G02-gin-rummy; nickname codex-gin; PR#2 draft.
-Main contains CLAIMS changes only. Shared contract/other jobs stay untouched.
-The research blocker is resolved; historical failures are preserved.
+Main contains CLAIMS changes only; shared contract/other jobs untouched.
+Historical research blockers/failures retained; sources now actually read.
 
-Hosted CI1.0.0 actual SUCCESS run37717614222 at c0dabcfd;
-hosted CI1.1.0 actual SUCCESS run37719011330 at b82c0cbc.
-Version1.2.0 begins post-green round1: absent seat/empty-room handling fixed.
-13targeted tests PASS,1,000 drop/leave cases and120 whole matches PASS.
-All24 full node tests/matrices/leagues and25/25 mutants PASS. Full npm test
-then failed a desktop frame gate; fresh standalone browser/capture PASS.
-Failures and same-code diagnosis are retained. Current-head hosted run required.
+Actual hosted successes:1.0.0 run37717614222/c0dabcfd,
+1.1.0 run37719011330/b82c0cbc,round1 run37721051891/b096b6a.
+Post-green round1 fixes absent turns/empty rooms. Round2 fixes branching
+layoff latency:phone4x6813→11.3ms;all2,002 complete layouts unchanged,
+14 targeted tests,10,000 deadwood proofs,2,000 joint-layoff proofs,
+25/25 mutants and desktop/phone browser/capture PASS. Round2 CI pending.
 
-Next: round1 checks/evidence ready to push with refreshed claim. Then
-reread JOBS/RULES and rank the next five weaknesses. The
-branching-layoff witness currently takes1.5s locally /6.8s phone4x: fix it.
-Other real weaknesses: elapsed/visible clock, custom meld/reveal UX, per-event
-replay proof. Log every measured round and push; stop only after three
-consecutive rounds add no player-noticeable gain, then claim lowest eligible.
-No completion or post-green stop claimed yet. Same-author independent
-algorithms are disclosed; none is claimed as separate blind authorship.
+Next: push round2 with refreshed claim, inspect actual hosted result.
+Re-read JOBS and rank five remaining weaknesses. Repair elapsed/visible
+clock next: the20s-delayed callback witness currently advances no10s turn.
+Then repair custom-meld/reveal UX (including clearing private drafts across
+covers/handoffs). Strengthen per-event replay proof. Log measured rounds,
+push/refresh claim each; stop only after THREE consecutive rounds give no
+player-noticeable gain. Then claim lowest eligible job from fresh main.
+No completion/stop claimed yet. Independent algorithms share an author;
+no separate blind-authorship claim. Earlier browser failures stay recorded.
