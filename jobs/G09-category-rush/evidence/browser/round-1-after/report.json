@@ -1,7 +1,7 @@
 {
   "mode": "after",
   "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
-  "startedAt": "2026-10-08T10:47:42.467Z",
+  "startedAt": "2026-10-08T10:49:39.389Z",
   "checks": [
     {
       "name": "2 humans all blank: measured compulsory review actions",
@@ -13,8 +13,27 @@
     },
     {
       "name": "mixed empty, accepted, wrong-initial and duplicate categories retain every nonempty private ballot",
-      "passed": false,
-      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Invalid · 0/. Input:\n\n'04 · Something used to shape wet clay\\n' +\n  'A wrong-initial\\n' +\n  '\\n' +\n  'Alex\\n' +\n  '\\n' +\n  'Wrong initial · 0'\n"
+      "passed": true
+    },
+    {
+      "name": "host skip crosses an empty block and preserves the next nonempty private ballot",
+      "passed": true
+    },
+    {
+      "name": "paused blank handover stays paused; explicit host skip settles the blank round",
+      "passed": true
+    },
+    {
+      "name": "ending paused blank writing preserves completed-round scores",
+      "passed": true
+    },
+    {
+      "name": "two blank rounds settle independently and continue through the real next-round input",
+      "passed": true
+    },
+    {
+      "name": "offline runtime and exact tested HTML remain clean",
+      "passed": true
     }
   ],
   "blankProfiles": [
@@ -23,7 +42,7 @@
       "readyClicks": 0,
       "ballotLocks": 0,
       "reviewActionCount": 0,
-      "reviewElapsedMs": 115.45013100000051,
+      "reviewElapsedMs": 170.45015199999943,
       "categories": []
     },
     {
@@ -31,7 +50,7 @@
       "readyClicks": 0,
       "ballotLocks": 0,
       "reviewActionCount": 0,
-      "reviewElapsedMs": 87.65334599999915,
+      "reviewElapsedMs": 72.93976699999985,
       "categories": []
     }
   ],
@@ -40,8 +59,17 @@
     "networkRequests": [],
     "dialogs": []
   },
-  "passed": false,
+  "passed": true,
   "browser": "141.0.7390.37",
-  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Invalid · 0/. Input:\n\n'04 · Something used to shape wet clay\\n' +\n  'A wrong-initial\\n' +\n  '\\n' +\n  'Alex\\n' +\n  '\\n' +\n  'Wrong initial · 0'\n",
-  "finishedAt": "2026-10-08T10:48:03.817Z"
+  "mixed": {
+    "nonemptyCategories": [
+      2,
+      4,
+      8,
+      10
+    ],
+    "emptyCategoriesSkipped": 8,
+    "ballotLocks": 8
+  },
+  "finishedAt": "2026-10-08T10:50:22.806Z"
 }

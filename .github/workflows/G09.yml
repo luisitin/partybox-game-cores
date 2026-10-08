@@ -37,7 +37,10 @@ jobs:
       - name: Two thousand duels per adjacent bot skill
         run: npm run bots
       - name: Replayed eight-Strong-bot variety experiment
-        run: npx tsx scripts/breadth.ts --label=after
+        run: |
+          npx tsx scripts/breadth.ts --label=after
+          node scripts/regenerate-breadth.mjs --check
+          git diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json
       - name: Install development browser
         run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility

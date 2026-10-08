@@ -1,0 +1,29 @@
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (82.53236ms)
+✔ the emitted JSON Schema independently rejects malformed content (187.007809ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (13.427712ms)
+✔ original source regenerates generated content byte for byte (133.529565ms)
+✔ normalization: articles accents punctuation number words and plural matching (14.684035ms)
+✔ independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication (88218.828688ms)
+✔ score cancellation and group vote ties exclude author, numeric and article handling (1.617567ms)
+✔ settings clamp stale values and phases have sound timers (1.033437ms)
+✔ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (2.568473ms)
+✔ pause ignores an empty-review deadline until explicit resume at both roster extremes (1.90703ms)
+✔ unknown prototype seats never act; genuine prototype ids survive JSON and results (0.692198ms)
+✔ views never expose others answers, authors, votes or future review; own views roundtrip (1.429641ms)
+✔ reducer is total across every event in every phase, immutable and strict inputs (4.109193ms)
+✔ manifest exact types, JSON artifact and every phase fixture (19.712611ms)
+✔ all nine invariants: 1,000 restored-every-event bot games at each roster 2–8 (552012.564454ms)
+✔ property seeds 1,2,3 plus 1,000 reproducible random seeds; idle and gone seats finish (597.999175ms)
+✔ bot strategies cannot inspect private answers or ballots; skill controls coverage (1.94894ms)
+✔ event fuzz across every real phase and bot/view role preserves totality and JSON (2701.612535ms)
+✔ future own-repeat adjudication leaks neither a view flag nor bot ballot (1.138598ms)
+✔ pure core source has no random clock callback IO or runtime dependency beyond zod (3.295165ms)
+✔ done fixture is the played-out last scores fixture; every fixture reaches finite results (11.484765ms)
+ℹ tests 21
+ℹ suites 0
+ℹ pass 21
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 645857.936695

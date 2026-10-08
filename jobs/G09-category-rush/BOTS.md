@@ -7,9 +7,11 @@ so an unfamiliar human answer causes an abstention rather than an automatic veto
 
 Easy retrieves familiar examples from the first two available alternatives and
 fills approximately 55% of prompts. Medium retrieves from the first four and
-fills approximately 82%. Strong fills approximately 98%, prefers the later half
-of a bank as a heuristic for less obvious choices, and diversifies its pick with
-the seat, category and round letter. These authored orders are not measured word
+fills approximately 82%. Strong fills approximately 98%. At fewer than four
+present seats it prefers the later authored half as a less-obvious-choice
+heuristic. At larger tables it uses the full available bank; when the bank can
+cover the table, a public seat/category/letter/round rotation separates choices.
+Otherwise it samples the full bank with its seeded stream. These authored orders are not measured word
 frequencies. All skills avoid reusing an equivalent answer within their sheet.
 Their strategy balances retrieving a plausible example against colliding with
 another player's obvious choice. The fill rates model different retrieval speed
@@ -25,12 +27,12 @@ review flag or bot vote.
 Medium and another 2,000 for Medium versus Easy, alternating seats. It records
 wins, losses, ties and mean scores in `evidence/bot-matchups.jsonl` and fails if
 the better skill wins fewer than 60% of all games or fewer games than its rival.
-Measured with `npm run bots` on 2026-10-08; all 4,000 games passed the gate:
+Measured with `npm run bots` on 2026-10-08, final core `320c99f2…` and content `5ae665bb…`, two-player games; all 4,000 games passed the gate:
 
 | Matchup | Games | Better wins | Rival wins | Ties | Better mean | Rival mean |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Strong vs Medium | 2,000 | 1,970 (98.50%) | 10 | 20 | 9.9970 | 4.8465 |
-| Medium vs Easy | 2,000 | 1,981 (99.05%) | 12 | 7 | 14.9225 | 5.9485 |
+| Strong vs Medium | 2,000 | 1,970 (98.50%) | 11 | 19 | 10.8685 | 5.6735 |
+| Medium vs Easy | 2,000 | 1,981 (99.05%) | 11 | 8 | 15.4000 | 6.3795 |
 
 Both adjacent skills win clearly with the same public information and no private
 answer or ballot access. Raw deterministic counts are in the JSONL artifact.
@@ -38,3 +40,15 @@ answer or ballot access. Raw deterministic counts are in the JSONL artifact.
 Limit: some category/letter banks contain a single example. People may supply
 any valid creative answer, but bots have finite authored vocabulary. Bank breadth
 and collision frequency are explicit candidates for the KEEP GOING review.
+
+## Round 2 authored-bank causal evidence
+
+A separate eight-Strong-seat experiment uses seeds 1–200, one actual-core round per seed and an exact independent replay of every game. The bank-only layer retains the original bot implementation and all 200 layouts: 388 original alternatives in 32 categories raise unique awarded points from 61 to 85 (+39.34%); 21 rounds improve, 3 worsen and 176 tie. Duplicate-owner rate falls from 99.6588% to 99.5266%. This isolates vocabulary from the worker's subsequent public-seat strategy change.
+
+Raw reports are `evidence/breadth-baseline.json` and `evidence/breadth-bank-only.json`; the paired delta and changed-bank inventory are `evidence/breadth-comparison.json`. Reproduction, exact hashes, remaining narrow-bank limits and the thirty live two-source changed-row inspections are recorded in CONTENT-VERIFY.md and SPOTCHECKS-R2.md. The deck now has 4,155 examples; 1,589 of 2,565 supported banks remain singleton. Authored ordering is illustrative, not measured rarity.
+
+## Separate strategy causal layer
+
+On the same 200 eight-Strong rounds and corrected bank, changing only public-roster choice raises awarded unique points from 85 to 283. Original → bank-only → final is 61 → 85 → 283, with duplicate-owner rates 99.6588% → 99.5266% → 98.4227%. Every layout and deterministic replay remains identical; final own repeats are zero. The combined report records final core hash `320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1`. The baseline and bank-only report use archived original core `966bb2da…`, isolating both effects.
+
+The final mean is 1.415 points per eight-bot game (0.176875 per seat), so the 4.64× relative increase must not be mistaken for eliminating finite-bank collisions. Singleton banks remain unavoidable shared examples; humans can supply alternatives and receive honest group review. No private answer/ballot read, made-up vocabulary, response suppression or scoring change produced the gain. `npx tsx --test --test-name-pattern='bot strategies|views never|future' tests/core.test.ts` passes all three secrecy cases on this source.

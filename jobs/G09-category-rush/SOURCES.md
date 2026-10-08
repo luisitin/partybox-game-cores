@@ -84,3 +84,30 @@ Unsuccessful direct read attempts, not used as evidence: https://www.britannica.
 ## Bundled runtime dependency
 
 Zod 4.1.12 (https://www.npmjs.com/package/zod/v/4.1.12), MIT. The actual installed package LICENSE was read; its 2025 Colin McDonnell copyright and full MIT permission notice are preserved in THIRD_PARTY_NOTICES.txt and inline in every generated standalone play.html. Development tooling is not shipped as runtime code.
+
+## KEEP GOING round 2: authored breadth
+
+The 388 additions are original manually selected semantic examples across 32 existing prompts and 173 existing letter banks. All prompts, baseline example orders, category IDs and supported letters are retained. No published category deck, source prose, art, sound, brand term, logo or product identifier was copied into gameplay. Existing MIT authorship applies; only facts and ordinary names are used.
+
+The complete thirty seeded changed-row checks, exact two live-read URLs and observed limits are in [SPOTCHECKS-R2.md](SPOTCHECKS-R2.md). They were sampled after semantic cleanup from the frozen generated pack. Other additions are original curation **from knowledge, unverified**, not represented as exhaustively source-checked. Contextual examples are possibilities, not claims about every teacher, school laboratory, gallery or library.
+
+Additional live pages read for general curation, overlap review or discarded evidence:
+
+- https://en.wikipedia.org/wiki/List_of_culinary_herbs_and_spices — culinary names and aliases; removed cilantro/coriander, perilla/shiso and cassia/cinnamon padding.
+- https://www.fs.usda.gov/wildflowers/ethnobotany/food/spices.shtml — culinary herb/spice use only. Its seed-part list misclassifies several fruits/arils; not used as seed-anatomy evidence.
+- https://en.wikipedia.org/wiki/List_of_root_vegetables — root/rhizome/tuber names; no list text copied.
+- https://www.diy.com/ideas-advice/planting-digging-garden-hand-tools-buying-guide/PROD_npcart_100371.art — purposes of digging tools; auger/post-hole-digger overlap removed.
+- https://www.acousticslab.org/world/Ensembles/NearEast/Buzuq.htm — instrument description; not counted as an independent second source for MaqamWorld because a mechanism sentence closely matches.
+- https://www.britishmuseum.org/collection/object/E_Am1898-1 — extraction returned navigation only; discarded as evidence, replaced with V&A.
+- https://en.wikipedia.org/wiki/Cellulose_acetate — general polymer description; transparency not established in extracted passage, replaced with technical overview.
+- https://www.gardenweasel.com/products/weasel-scoop-hand-tool — soil scooping function.
+- https://www.dripworks.com/gardenbee-stainless-steel-scoop — soil transfer function.
+- https://www.bbcgoodfood.com/recipes/chocolate-cherry-porridge — cherries as a topping; insufficient alone for stirring claim.
+- https://pointedkitchen.com/cherry-porridge-weight-watchers/ — cherries as a topping; replaced with recipes that mix them into porridge.
+- https://p1sim.fr/products/usb-cable — wheel cable; replaced with explicit PC manuals.
+- https://www.cubecontrols.com/product/cube-controls-universal-usb-cable/ — wheel cable; replaced with explicit PC manuals.
+- https://www.tate.org.uk/art/art-terms/f/fumage — smoke in wet paint; paper-specific claim checked elsewhere.
+- https://www.britannica.com/art/collage — general found-material/fabric definition; replaced for the sampled fur check by an explicit independent university material-collage record.
+- https://www.ludwig-stiftung.at/collection-notes/an-ordinary-love-guelsuen-karamustafa — fur-pattern/textile collage, not evidence of actual animal fur.
+
+Source disagreements: Serious Eats calls asafoetida resin a tree product; Good Food identifies giant fennel, consistent with the culinary-herb reference. Only the agreed culinary seasoning fact is adopted. USDA plant-part inaccuracies likewise do not affect the broad seasoning prompt. Sources remain external research references and are not bundled as copied datasets or assets.

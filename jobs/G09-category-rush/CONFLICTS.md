@@ -16,3 +16,7 @@
 | Local naming and context | “Vegetable” is culinary, not a claim about botanical fruit; some tools or foods have regional names. | Prompts intentionally use ordinary culinary/contextual meanings, established names count, and groups may accept additional real examples. |
 
 Research hand checks also found two repairable authoring problems before acceptance: “badminton” was removed from the ball-and-net category because its projectile is a shuttlecock; a toy “dog” was made explicit as “pull-along dog.” Compact duplicates such as “potholder”/“pot holder” were corrected. These are content corrections, not rule conflicts.
+
+## Round-2 source accuracy
+
+Serious Eats calls asafoetida resin a tree product; Good Food describes its giant-fennel source. Only their agreed culinary-seasoning membership is used; the contradictory anatomy claim is not adopted. USDA's culinary spice plant-part list includes fruits/arils among its seed examples, so it supports culinary use only and is not treated as an authoritative botanical seed-classification dataset. Exact reads/URLs and limits are in SOURCES.md and SPOTCHECKS-R2.md.

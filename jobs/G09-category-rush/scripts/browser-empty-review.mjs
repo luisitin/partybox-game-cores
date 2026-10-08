@@ -73,7 +73,7 @@ try {
       assert.equal(ballotLocks,8);await assertScores(2,['2','0']);
       assert.equal(await page.locator('.receipt-category').count(),12);assert.equal(await page.locator('.receipt-answer').count(),4);
       await page.locator('.receipt-category').nth(3).locator('summary').click();await page.locator('.receipt-category').nth(7).locator('summary').click();
-      assert.match(await page.locator('.receipt-category').nth(3).innerText(),/Invalid · 0/);assert.match(await page.locator('.receipt-category').nth(7).innerText(),/Duplicate · 0/);
+      assert.match(await page.locator('.receipt-category').nth(3).innerText(),/Wrong initial · 0/);assert.match(await page.locator('.receipt-category').nth(7).innerText(),/Duplicate · 0/);
       report.mixed={nonemptyCategories:[2,4,8,10],emptyCategoriesSkipped:8,ballotLocks};
     });
     await fresh(true);await begin();

@@ -1,0 +1,45 @@
+{
+  "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+  "runnerSha256": "c484275e3d492701b698de6fe571a6f5c00ed75e5efccc4fcd2e64ba6c86cec6",
+  "mode": "after",
+  "checks": [
+    {
+      "name": "2 humans score five real rounds and measure completed-receipt access",
+      "passed": true
+    },
+    {
+      "name": "8 humans score five real rounds and measure completed-receipt access",
+      "passed": true
+    },
+    {
+      "name": "scored explanations distinguish wrong initial, own repeats and duplicates without future-row leakage",
+      "passed": true
+    },
+    {
+      "name": "current HTML remains frozen and actual file runtime is offline and error-free",
+      "passed": true
+    }
+  ],
+  "rosters": [
+    {
+      "count": 2,
+      "scoredRounds": 5,
+      "accessibleRoundReceipts": 5,
+      "historySelectorOptions": 5,
+      "finalScore": 5
+    },
+    {
+      "count": 8,
+      "scoredRounds": 5,
+      "accessibleRoundReceipts": 5,
+      "historySelectorOptions": 5,
+      "finalScore": 5
+    }
+  ],
+  "passed": true,
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  }
+}
