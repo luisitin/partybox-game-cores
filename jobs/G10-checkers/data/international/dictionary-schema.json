@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "format": {
+      "type": "string",
+      "minLength": 1
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceSha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceLicence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "licenceUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "licenceSha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "catalogues": {
+      "const": 50
+    },
+    "tokensPerCatalogue": {
+      "const": 256
+    },
+    "valueRunBytes": {
+      "const": 9877
+    },
+    "packedLayout": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tokenSemantics": {
+      "type": "string",
+      "minLength": 1
+    },
+    "packedBytes": {
+      "const": 61077
+    },
+    "packedSha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "jsonBytes": {
+      "const": 116193
+    },
+    "jsonSha256": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scope": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "format",
+    "author",
+    "sourceUrl",
+    "sourceSha256",
+    "sourceLicence",
+    "licenceUrl",
+    "licenceSha256",
+    "catalogues",
+    "tokensPerCatalogue",
+    "valueRunBytes",
+    "packedLayout",
+    "tokenSemantics",
+    "packedBytes",
+    "packedSha256",
+    "jsonBytes",
+    "jsonSha256",
+    "scope"
+  ],
+  "additionalProperties": false
+}

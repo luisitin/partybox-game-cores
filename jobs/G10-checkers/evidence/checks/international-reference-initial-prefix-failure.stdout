@@ -1,0 +1,34 @@
+✔ independent International rank has exact back-rank group boundaries (6.875357ms)
+✔ all two-piece material ranks are complete independent bijections (185.808852ms)
+✔ rotation and colour reversal preserve canonical location (3.069129ms)
+✔ six-piece ranks include 3v3 and 5v1 kings (0.393737ms)
+✔ invalid crowns, side, board and out-of-scope material do not produce ranks (0.282146ms)
+✔ synthetic token mapping and uniform slice decode without mutation (80.122016ms)
+✔ synthetic checkpoint changes catalogue at the physical block boundary (12.183752ms)
+✔ current captures are excluded but opponent-only threats are valid for v2 at <=6 (13.178005ms)
+✔ malformed dictionary, permutation and checkpoint are rejected (13.609692ms)
+✖ actual licensed two-piece sample agrees with exact corner and quiet-king cases (13.068899ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 9
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1041.913189
+
+✖ failing tests:
+
+test at tests/reference-international.test.mjs:135:1
+✖ actual licensed two-piece sample agrees with exact corner and quiet-king cases (13.068899ms)
+  Error: Invalid International run length
+      at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/reference-international.mjs:184:53
+      at Array.from (<anonymous>)
+      at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/reference-international.mjs:175:18
+      at Array.map (<anonymous>)
+      at readTables (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/reference-international.mjs:172:39)
+      at createReferenceInternational (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/reference-international.mjs:199:24)
+      at TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/reference-international.test.mjs:142:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)

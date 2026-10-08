@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { resolve } from 'node:path';
-import { createReferenceInternational, referenceInternationalRank } from './reference-international.mjs';
+import { createReferenceInternational, referenceInternationalRank, unpackReferenceInternationalDictionary } from './reference-international.mjs';
 
 function position(entries) {
   const board = Array(50).fill(0);
@@ -141,16 +141,21 @@ test('malformed dictionary, permutation and checkpoint are rejected', () => {
 
 const actualDirectory = process.env.G10_INTL_DB_DIR;
 const actualTables = process.env.G10_INTL_TABLES;
-test('actual licensed two-piece sample agrees with exact corner and quiet-king cases', {
-  skip: !actualDirectory || !actualTables
-}, () => {
-  const bytes = readFileSync(resolve(actualDirectory, 'db2.cpr1'));
-  const index = readFileSync(resolve(actualDirectory, 'db2.idx1'));
+test('actual licensed two-piece sample agrees with exact corner and quiet-king cases', () => {
+  const bytes = readFileSync(actualDirectory ? resolve(actualDirectory, 'db2.cpr1')
+    : new URL('../data/international/db2.bin', import.meta.url));
+  const index = readFileSync(actualDirectory ? resolve(actualDirectory, 'db2.idx1')
+    : new URL('../data/international/db2.idx', import.meta.url));
   assert.equal(createHash('sha256').update(bytes).digest('hex'), '305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed');
   assert.equal(createHash('sha256').update(index).digest('hex'), '9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2');
+  const packed = actualTables ? null : readFileSync(new URL('../data/international/tunstall-v2.bin', import.meta.url));
+  if (packed) assert.equal(createHash('sha256').update(packed).digest('hex'),
+    '92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9');
+  const tables = actualTables ? JSON.parse(readFileSync(actualTables, 'utf8'))
+    : unpackReferenceInternationalDictionary(new Uint8Array(packed));
   const reader = createReferenceInternational(new Map([['db2', {
     data: new Uint8Array(bytes), indexText: index.toString('ascii')
-  }]]), JSON.parse(readFileSync(actualTables, 'utf8')));
+  }]]), tables);
   assert.equal(reader.coverage.sliceCount, 4);
   assert.equal(reader.probe(position({ 0: -2, 49: 2 }), -1), 'draw');
   assert.equal(reader.probe(position({ 0: -2, 49: 2 }), 1), 'draw');

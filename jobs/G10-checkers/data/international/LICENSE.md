@@ -17,7 +17,7 @@ source/dictionary provenance. The position-data grant is separate from the
 driver/dictionary licence. Our production reader and independent tests are
 original MIT code; no original engine/driver source is bundled.
 
-Only the actual two-piece payload is installed at this checkpoint. The
-constructor/rank supports up to six; that is not a claim that missing
-three-to-six outcomes are present, or that board-only WLD proves a win
-under accumulated repetition and move-count history.
+Actual two-to-five-piece payloads are installed at this checkpoint. The
+constructor/rank supports up to six; quiet six-piece partition outcomes
+remain pending. Board-only WLD does not prove a win under accumulated
+repetition and move-count history.

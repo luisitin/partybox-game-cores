@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import {parentPort} from 'node:worker_threads';
 import {performance} from 'node:perf_hooks';
-import * as core from '../dist/core.mjs';
 assert(parentPort);
-parentPort.on('message',task=>{
+parentPort.on('message',async task=>{
+  const core=await import('../dist/core-'+task.variant+'.mjs');
   const beginning=performance.now(),records=[];let wins=0,draws=0,losses=0;
   const {variant,higher,lower,start,end}=task;
   for(let n=start;n<end;n++){

@@ -1,64 +1,61 @@
 # Resume G10
 
-Branch: job/G10-checkers-complete-20261008.
-Worktree: /workspace/game-cores-G10-audit-worker. Claim: codex-audit.
+Branch: job/G10-checkers-complete-20261008; nickname codex-audit.
+Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
-Original job/G10-checkers research history is preserved by a normal merge.
+Original research branch history is preserved by normal merge.
 
-Checkpoint2026-10-08T10:42UTC: strict build and focused core/draw/properties/
-endgame/actual-Chinook proof PASS27/27. Independent movement covers10k original
-boards plus rotated twins; all480 independent exhaustive bot minimax cases pass.
-Seven settings×1,000 games PASS7,000; mutations PASS25/25 assertion kills with
-baseline9/9. First mutation attempt/raw exceptions/survivor remain retained.
-Offline page PASS24/24 functional and unrecorded600RAF/profile: desktop60.0024FPS,
-phone4×59.9026FPS, p9916.8ms both. ActualStrongworker corpus use is checked.
-Same-source separate desktop/phone clips PASS24/24, each<10MB. Recorded phone
-frames under simultaneous league work are49.05FPS; they are retained, not used
-as acceptance measurements. HTML/source/runner were unchanged across both runs.
+Current milestone7 around2026-10-08T11:33UTC:
+- Strict integrated production build PASS, exit0.
+- Actual licensed International db2–5 installed and connected to Strong;
+  current-side captures use exact finite recursive resolution. Missing quiet6
+  partitions remain UNKNOWN. Full-six completion is REQUIRED and PENDING.
+- Original unchanged Boost C++ vs independent decoder PASS10k, all45 canonical
+  materials/all180 orientations. Production comparison PASS same10k records.
+  W2441/L2228/D5331. Tracked actual reference selftest PASS11/11, no skips.
+- Integrated focused tests PASS6/6, including immutable/corrupt metadata and
+  48 exact variant-bundle choices/reports/RNG plus4 complete transcripts.
+- General pure node bundle114,300,046 bytes; Intl-only49,161,443 bytes.
+  Shared source/search budgets are unchanged; unused opposite corpus omitted.
+- Original Chinook ZIP/native deflate bootstrap round-trips every fixed byte;
+  actual2–5 payloads likewise verified. HTML80,328,131 bytes, no runtime network.
+  Host shows bot preparation and retains a completed worker across bot turns;
+  pause/setup/state replacement terminate pending work. NEW browser proof PENDING.
+- Baseline league now PASS4,000/4,000, real exit0: American Strong/Medium
+  883W82D35L; Medium/Easy999W0D1L; Intl Strong/Medium928W61D11L;
+  Medium/Easy1000W0D0L. 37m15s wall includes actual documented holds.
+  Baseline precedes new Intl integration; it is not final-source acceptance.
+  All raw games/report/stdout preserved in league-baseline-pre-international/.
 
-Active fullleague: PGID115703, fourworkerthreads, session57163. It is SIGSTOPPED
-for consistent milestone hashing/staging; resume with kill -CONT -- -115703
-only after parent grants CPU. Default4,000 actual games =1,000 per variant for
-Strong/Medium and Medium/Easy,2,000 per required comparison. Every input/seed/
-result is retained per50-game shard; pervariant strength gates apply. This
-fullleague is RUNNING/PENDING, not accepted from smoke results.
+Prior passing proof: independent moves10k boards+twins; 7,000 matrix games;
+25/25 assertion mutation kills, 9/9 baseline; independent ending certificates;
+all9 contract invariants/1,003 seeds; old page24/24 browser+600 unrecorded RAF
+per desktop/phone4×, 60.0024/59.9026FPS, p9916.8ms. Same-source old clips<10MB.
+Those page/league/matrix proofs are baseline after the new behavior change.
+Do not substitute recorded phone49FPS or smoke results for acceptance.
 
-Remaining: finish fullleague, integrity/check wrapper/CI workflow, final current
-mutations/data schemas/2×source regeneration, manual30spot log, and complete
-International portable corpus/probe/offline packaging. The licensed fullIntl2–6
-source is AVAILABLE (~1.009GB compressed); selective acquisition is PROVEN.
-Read INTERNATIONAL-ENDGAME-HANDOFF.md. Its independent reference is authored,
-UNRUN; sample self-tests and production integration remain engineering work.
-No source/tool BLOCKED claim is justified. American corpus supports every2–6
-material tuple in quiet positions; exact closed capture components work;
-opponent-only threat closure and history-safe progress remain explicit limits.
-Generated29,286 rows alone are partial and never a full six-piece database.
+Next concrete work:
+1. Validate compressed offline worker startup, exact full-node choices/cursors,
+   reuse and cancellation on both variants; add strict browser cases/captures.
+2. Finish licensed International six-piece acquisition/portable packaging with
+   root helper at /tmp/g10-root-international-packaging. Actual source~1.009GB
+   compressed is AVAILABLE, selective ranges/extraction PROVEN, five6-piece
+   partition samples acquired. Engineering remains; no false BLOCKED.
+3. Final-source core/draw/property/mutations/matrix/full4k league, 2x corpus/data
+   regeneration, every data schema/manual30 spot log; demonstrate npm test fits
+   binding CI30min. Baseline fullleague37m includes holds, not a CI promise.
+4. Open PR after every required check passes; exact current head CI must be
+   green before ready. Then five weaknesses/fix/measure KEEP GOING until three
+   consecutive rounds have no player-visible gain. No G10 PR/ready claim yet.
 
-PR/CI/KEEP GOING have not started. Open PR only after required checks pass;
-require exact current CI green, then five weaknesses/fix/measure rounds until
-three consecutive rounds yield no player-visible gain. G10 is not completed.
-Coordinate heavy PGIDs/strict browser isolation with parent; no questions.
+No active owned heavy groups at11:33UTC; child artifact writes frozen11:32:32.
+Coordinate every strict browser quiet slot and report real process groups.
+Current code never claims theoretical WLD proves history-safe conversion.
+American corpus covers all2–6 materials in direct capture-free positions;
+opponent-only American threats remain UNKNOWN unless a complete closure exists.
 
-Cadence: origin branch reflog verifies09:49:08→10:19:38 successful pushes,
-30m30s: a30-second miss.09:49:23/~10:19:45 were observation times.
-This checkpoint staging began10:42UTC after actual browser/clip closure.
-Target next successful push10:44:38, hard10:49:38. Main claim times do not
-reset branch cadence. Log the actual successful push via reflog after push.
-
-Observed successful branch push: origin reflog update-by-push10:45:22UTC,
-headbf455bfd92333f8153715524afa7a8c1dc96a229, interval25m44s since10:19:38.
-Main claim363f2b3 at10:44:17. Early target10:44:38 missed44 seconds, binding
-hard10:49:38 met. Next stage/pack~11:05, targetpush11:10:22, hard11:15:22.
-Fullleague PGID115703 resumed after checkpoint under parent CPUrelease.
-
-Milestone6: AST source-boundary controls/schema PASS3/3; new standalone pure
-International v2 factory strict-typecheck and actual small WLD/rank/reference/
-corruption/purity PASS6/6. Binary61,077-byte Boost dictionary+actual db2 are
-installed with separate licence/provenance. Defaultgame/worker NOT integrated
-with that factory yet; existing generated small lookup remains unchanged.
-Full actual2–5 licensed payload is now privately acquired, SHA1/CRC/SHA256 verified;
-copy/integrate/10kactual3–5 probes next. Full6 source/packaging investigation
-continues in parallel. Complete currentIntl6 cannot be claimed yet.
-Fullleague is still RUNNING/PENDING; current partial shards retained, but stopped
-for milestonefreeze (exact timestamp in league-pauses.json). ResumePGID115703
-under parent's CPUrelease afterpush. New CI/check wrapper authored UNRUN.
+Cadence: actual origin push09:49:08→10:19:38 was30m30s, a30-second miss,
+recorded explicitly. Successful subsequent pushes10:45:22 and11:11:30 met30min.
+Last head8a395249999f1c159775519802b901f842c0c0b8, mainclaimc96633f11:10:48.
+Stage now~11:33, target successfulpush11:36:30, hard11:41:30. Main claim time
+never resets branch cadence. Record observed successful reflog time afterpush.

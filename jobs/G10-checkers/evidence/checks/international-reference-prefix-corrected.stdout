@@ -1,0 +1,18 @@
+✔ independent International rank has exact back-rank group boundaries (2.597532ms)
+✔ all two-piece material ranks are complete independent bijections (279.072768ms)
+✔ rotation and colour reversal preserve canonical location (4.723878ms)
+✔ six-piece ranks include 3v3 and 5v1 kings (0.243798ms)
+✔ invalid crowns, side, board and out-of-scope material do not produce ranks (0.204845ms)
+✔ synthetic token mapping and uniform slice decode without mutation (80.340131ms)
+✔ synthetic checkpoint changes catalogue at the physical block boundary (8.394811ms)
+✔ current captures are excluded but opponent-only threats are valid for v2 at <=6 (14.962169ms)
+✔ malformed dictionary, permutation and checkpoint are rejected (6.237497ms)
+✔ actual licensed two-piece sample agrees with exact corner and quiet-king cases (41.526456ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1515.638944

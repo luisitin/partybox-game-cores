@@ -48,5 +48,16 @@
     "Actual2\u20135integration/probes",
     "Current integrity/CI/checkwrapper/regeneration/30spots",
     "PR/exactheadCI/KEEPGOING"
-  ]
+  ],
+  "cadence": {
+    "observedSuccessfulUpdate": "2026-10-08T11:11:30Z",
+    "head": "8a395249999f1c159775519802b901f842c0c0b8",
+    "intervalSeconds": 1568,
+    "bindingLimitSeconds": 1800,
+    "bindingCadence": "PASS",
+    "earlyTargetMissSeconds": 68,
+    "nextStageTarget": "2026-10-08T11:30:00Z",
+    "nextPushTarget": "2026-10-08T11:36:30Z",
+    "nextHardDeadline": "2026-10-08T11:41:30Z"
+  }
 }

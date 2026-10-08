@@ -19,10 +19,11 @@ for(const phase of game.phases){
 }
 assert(z.fromJSONSchema(await json('data/schema.json')).safeParse(await json('data/endgames.json')).success);
 const corpus=await json('data/chinook/manifest.json');assert(z.fromJSONSchema(await json('data/chinook/schema.json')).safeParse(corpus).success);
-for(const [member,path] of [['DB6','data/chinook/DB6.bin'],['DB6.idx','data/chinook/DB6.idx']]){
+for(const [member,path] of [['DB6','data/chinook/DB6.bin'],['DB6.idx','data/chinook/DB6.idx'],['DB6.zip','data/chinook/DB6.zip']]){
   const bytes=await readFile(path);assert.equal(bytes.length,corpus.files[member].bytes);assert.equal(hash(bytes),corpus.files[member].sha256);
 }
 const international=await json('data/international/manifest.json');assert(z.fromJSONSchema(await json('data/international/schema.json')).safeParse(international).success);
+assert(z.fromJSONSchema(await json('data/international/dictionary-schema.json')).safeParse(await json('data/international/dictionary-manifest.json')).success);
 for(const [name,metadata] of Object.entries(international.files)){const bytes=await readFile('data/international/'+name);assert.equal(bytes.length,metadata.bytes);assert.equal(hash(bytes),metadata.sha256);}
 for(const name of await readdir('src')){
   if(!name.endsWith('.ts')||name.endsWith('.d.ts')||['browser.ts','bot-worker.ts'].includes(name))continue;

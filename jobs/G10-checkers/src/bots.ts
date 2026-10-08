@@ -43,7 +43,7 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
       const table=probeEndgame(current.board,current.variant,current.side);
       if(table){
         hits++;
-        if(table.source==='chinook')corpusHits++;
+        if(table.source==='chinook'||table.source==='kingsrow')corpusHits++;
         if(table.outcome===0)return 0;
         // WDL is board-only. A historical draw clock can change a game's result;
         // only a fresh position and a short proven line gets a decisive value.

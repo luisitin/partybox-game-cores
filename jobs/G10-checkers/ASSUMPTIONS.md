@@ -43,3 +43,11 @@ and selective installer extraction is still being investigated.
 - Full International corpus availability is confirmed; its1.009GB compressed
   payload exceeds GitHub's100MiB single-blob limit. This is portable-probe and
   offline-delivery engineering, not unavailable-source grounds for BLOCKED.
+
+- Updated International2–5 decisions invalidate older game/browser strength
+  acceptance for the final source; retain it as baseline and rerun real gates.
+- Native DecompressionStream provides local offline bootstrap; unsupported
+  browsers must receive a clear preparation error rather than hang silently.
+  Exact bytes and full-node choices/cursors still need browser proof.
+- A completed bot worker may be retained across bot moves; pause/setup/external
+  state replacement cancel it, and every response checks request/state identity.

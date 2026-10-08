@@ -6,6 +6,21 @@ import { referenceMoves } from './reference-moves.mjs';
 const BLOCK_BYTES = 4096;
 const SUBSLICE_POSITIONS = 2 ** 31;
 
+/** Original unpacker for the documented 50x256 LE length/offset transport. */
+export function unpackReferenceInternationalDictionary(bytes) {
+  const tableBytes = 50 * 256 * 2;
+  if (!(bytes instanceof Uint8Array) || bytes.byteLength <= tableBytes * 2) {
+    throw new Error('Invalid packed International dictionary');
+  }
+  const view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
+  const read = start => Array.from({ length: 50 }, (_, catalogue) =>
+    Array.from({ length: 256 }, (_, token) => view.getUint16(start + 2 * (catalogue * 256 + token), true)));
+  return {
+    lengths: read(0), offsets: read(tableBytes),
+    valueRuns: bytes.slice(tableBytes * 2)
+  };
+}
+
 function choose(n, k) {
   if (!Number.isInteger(n) || !Number.isInteger(k) || k < 0 || n < k) return 0;
   k = Math.min(k, n - k);

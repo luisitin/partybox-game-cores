@@ -72,8 +72,12 @@ innoextract --include app/db2.cpr1 --include app/db2.idx1 \
 ```
 
 The two extracted files match both the installer's SHA-1 entries and the
-original v2 driver's expected CRC-32. No full six-piece payload has been
-downloaded or decoded by this reference worker.
+original v2 driver's expected CRC-32. A later selective acquisition of the
+first 24,775,197 encrypted bytes succeeded in three HTTP 206 ranges and
+extracted every db2–5 file. Those eight actual files each match installer
+SHA-1 and original-driver CRC-32, with a generated SHA-256 manifest. The
+original single-range timeout is retained as acquisition history. It did
+not prevent successful bounded-range acquisition.
 
 | File | Bytes | CRC-32 | SHA-256 |
 | --- | ---: | --- | --- |
@@ -83,6 +87,25 @@ downloaded or decoded by this reference worker.
 The actual two-piece index has four canonical BASE records: K-vs-K
 black to move, K-vs-man both sides to move, and man-vs-man black to move.
 Other orientations are recovered by board rotation/colour reversal.
+
+Exact subsequently acquired lower-piece sizes:
+
+| File pair | Data bytes | Index bytes |
+| --- | ---: | ---: |
+| db2 | 404 | 111 |
+| db3 | 21,628 | 413 |
+| db4 | 1,176,396 | 4,729 |
+| db5 | 33,886,572 | 126,504 |
+
+The executable acquisition is `scripts/acquire-international-small.py`.
+The actual lower payloads and manifest are privately available under
+`/tmp/g10-rules-oracle-corpus/international-small/`. Separately coordinated
+root acquisition has produced five checksum-verified six-piece pairs:
+0303, 0312, 0501, 0510 and 2211. Five of 37 canonical six-piece partitions
+is partial coverage. The large 2211 pair is 176,862,535 bytes; its tested
+xz representation still exceeds GitHub's single-blob limit after base64.
+The full db2–6 Inno payload lies before byte 744,300,648 of the first
+installer bin, but unacquired sparse space remains scaffolding, not data.
 
 ## Portable format facts
 
@@ -108,12 +131,20 @@ There are 50 byte-token Tunstall catalogues, each with 256 token lengths
 and run offsets. The shared runs encode virtual value plus little-endian
 16-bit count; the block's four-value permutation maps to UNKNOWN/WIN/
 LOSS/DRAW. Sparse/missing entries are UNKNOWN, not assumed draws.
+Tokens use their declared-length prefix of a shared descriptor; a token
+may end inside that descriptor's last run. Requiring its whole descriptor
+to equal the token length rejects the actual dictionary incorrectly.
 
 The dictionary source text is 230,004 bytes, SHA-256
 `c000a78bbfdfc43f36779a0f1dc5ab529d597562003ed73f343ec83958a18401`.
 Its exact compact table payload is 61,077 bytes: two 50×256 unsigned
-16-bit tables plus 9,877 run bytes. Derived dictionary redistribution
-must preserve the Boost licence/provenance; none is committed here yet.
+16-bit tables plus 9,877 run bytes. The first 25,600 bytes hold lengths,
+the next 25,600 hold run offsets, and the remainder holds run bytes. Table
+integers are little endian. `scripts/pack-international-dictionary.py`
+regenerated binary and JSON twice byte-identically from pinned commit
+eacf10797e8f6c81d618caa7af1eba05df139ac7. The binary SHA-256 is
+`92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9`.
+Its separate Boost licence and provenance accompany the tracked binary.
 
 For v2 at <=6, current-side captures are excluded. Additional
 non-side-to-move capture exclusions apply from seven pieces, outside
@@ -129,13 +160,28 @@ resolution. A budget cutoff remains UNKNOWN.
    only db2–6 chunks, or acquire the first complete `.bin` and extract
    exactly the 82 needed files. Verify every file against the installer
    SHA-1 and the driver's CRC, then generate SHA-256 manifests twice.
-2. Regenerate dictionary arrays from the pinned source under the Boost
-   licence. Supply bytes/tables to an original pure in-memory reader.
-   `tests/reference-international.mjs` is independently authored and
-   currently UNRUN; it imports only the independent coordinate oracle.
+2. Preserve the completed dictionary regeneration proof. The original
+   in-memory `tests/reference-international.mjs` imports only the
+   independent coordinate oracle. Eleven reference tests passed against
+   synthetic cases and actual db2 bytes, including rank bijections,
+   prefix decoding and source capture-admissibility distinctions. The
+   retained TAP is `evidence/checks/international-reference-prefix-regression.tap`.
+   Its actual-sample test now defaults to tracked bin/idx/table bytes;
+   that default wiring passed 11/11 with zero skips, retained separately
+   as `evidence/checks/international-reference-tracked-default.tap`.
 3. Validate the portable reader against the original compiled driver
    and independently solved complete small material, followed by
-   10,000 original fixed-seed queries across every six-piece split.
+   10,000 original fixed-seed queries across every supplied 2–5 material,
+   then every six-piece split after complete acquisition. The independently
+   authored reproduction is `scripts/validate-international-original.py`;
+   it does not modify or redistribute the original source. Its new C++
+   execution passed with zero differences over actual db2–5: all 45
+   canonical material tuples and 180 side/colour orientations. It used
+   seed 443499273 and 14,170 candidates. Exact commands, raw compile,
+   input, output and transcript hashes are in
+   `evidence/checks/international-original/international-original-reference-report.json`.
+   Source bytes remained unchanged, with no ABI patch. This result does
+   not verify unsupplied six-piece partitions or draw-history conversion.
    Preserve source, input, output and transcript hashes.
 4. Coordinate complete corpus packaging before claiming delivery.
    A roughly 1 GB compressed payload cannot fit one ordinary GitHub

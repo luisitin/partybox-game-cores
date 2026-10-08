@@ -129,6 +129,44 @@ with capture threats, current draw history, or conversion-making play.
 Those checks remain separate. The parent production reader also needs
 its own comparison against these independently established results.
 
+### Independent International v2 reference
+
+The actual lower db2–5 corpus is acquired with original installer SHA-1,
+author-driver CRC-32 and generated SHA-256 checks. Eleven independent
+reference tests passed against synthetic cases and the actual small db2
+payload, including complete two-piece rank bijections, prefix token
+decoding and current-capture exclusion. Dictionary binary and JSON
+regeneration passed twice with byte-identical results. Retained reports
+keep acquisition, ranking and WDL execution scopes separate.
+
+`scripts/validate-international-original.py` is an original reproduction
+adapter for the pinned Boost C++ source. It writes that source into
+ignored/private work storage, without changing ranking or decoding, and
+compiles an original board-to-bitboard input wrapper. Its reference query
+generator cycles every supplied material tuple, piece count and colour
+orientation. The 10,000-query external-driver comparison passed with zero
+differences for actual db2–5: all 45 canonical material tuples and 180
+side/colour orientations are represented. Seed 443499273 produced 14,170
+candidates, with 2,441 WIN, 2,228 LOSS and 5,331 DRAW results. Source ranking,
+canonicalization and decompression were unchanged; no ABI patch was needed.
+The actual-sample selftest defaults to tracked db2/table bytes and passed
+11/11 with zero skips.
+
+Raw evidence is under `evidence/checks/international-original/`, including
+queries, independent expected records, C++ stdout/stderr, compile output,
+exact commands and the combined comparison. Query SHA-256:
+`fd80282f6806ee2d63767f67e63615ab9e5b9a62fc0b3e36308c258c082d7969`.
+Combined comparison SHA-256:
+`4aa8260f24306d6f28d2c81fd40b92285994f9c4b5ae1773135f4de6a463a49a`.
+`international-original-reference-report.json` records PASS. The original
+source remains private/ignored and separately Boost licensed.
+
+International v2 <=6 permits opponent-only capture threats in stored
+queries; only the current side's captures are excluded. The source's
+extra opponent-capture restriction starts at seven pieces. WDL omits
+25/16/5 and repetition histories. Direct proof is limited to acquired
+material, and five acquired six-piece partitions are not complete six.
+
 ## Required bot strength evidence
 
 Run 2,000 games Strong-vs-Medium and 2,000 Medium-vs-Easy, with paired seed
@@ -137,3 +175,14 @@ Report wins/losses/draws and score (win=1, draw=0.5), with paired uncertainty.
 Show a clear gain; many draws and no losses alone do not establish it.
 Keep tuning failures and use fresh confirmation seeds after tuning.
 Explicitly disclose variant and coverage limits rather than extrapolating.
+
+### Executed baseline full league and current scope
+
+The4,000-game baseline passed with American883/82/35 Strong/Medium and
+999/0/1 Medium/Easy; International928/61/11 Strong/Medium and1000/0/0
+Medium/Easy (W/D/L,1,000 each). Every exact game input/seed/result and
+pervariant Wilson interval is archived in league-baseline-pre-international.
+These results predate actual International2–5 integration and are retained
+as baseline evidence. Final-source strength leagues are still pending.
+The current Strong bot consults actual2–5 outcomes; missing quiet6 returns
+UNKNOWN. Full-six coverage and history-safe conversion are not implied.

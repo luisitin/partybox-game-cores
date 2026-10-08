@@ -16,6 +16,19 @@ const tables={lengths:Array.from({length:50},(_,row)=>Array.from({length:256},(_
 const reference=createReferenceInternational(new Map([['db2',{data,indexText}]]),tables);
 const outcome=value=>value==='win'?1:value==='loss'?-1:value==='draw'?0:null;
 
+test('production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries',()=>{
+  const files=[2,3,4,5].map(n=>({name:'db'+n,data:bytes('db'+n+'.bin'),indexText:readFileSync(new URL('../data/international/db'+n+'.idx',import.meta.url),'utf8')}));
+  const all=createInternationalDatabase(files,dictionary),raw=readFileSync(new URL('../evidence/checks/international-original/international-original-reference.jsonl',import.meta.url),'utf8');
+  assert.equal(createHash('sha256').update(raw).digest('hex'),'4aa8260f24306d6f28d2c81fd40b92285994f9c4b5ae1773135f4de6a463a49a');
+  const rows=raw.trim().split('\n').map(line=>JSON.parse(line));assert.equal(rows.length,10000);let wins=0,losses=0,draws=0;
+  for(const row of rows){const location=all.locate(row.board,row.side);assert(location);assert.equal(location.key,row.key);assert.equal(location.ordinal,row.ordinal);assert.equal(location.index,row.index);
+    const expected=outcome(row.value);assert.equal(all.probe(row.board,row.side),expected,JSON.stringify(row));assert.equal(row.originalCpp,expected===1?1:expected===-1?2:3);
+    if(expected===1)wins++;else if(expected===-1)losses++;else draws++;
+  }
+  assert.deepEqual({wins,losses,draws},{wins:2441,losses:2228,draws:5331});
+  evidence('international-production-original.json',{cases:10000,wins,losses,draws,inputSha256:createHash('sha256').update(raw).digest('hex'),scope:'Actual supplied2–5 theoretical WLD; original unchanged Boost C++, independent reference, and production all agree; quiet6 not supplied'});
+});
+
 test('actual International dictionary/data match pinned licensed-source hashes',()=>{
   assert.equal(createHash('sha256').update(dictionary).digest('hex'),'92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9');
   assert.equal(createHash('sha256').update(data).digest('hex'),'305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed');

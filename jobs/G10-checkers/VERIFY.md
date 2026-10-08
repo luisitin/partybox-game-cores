@@ -192,3 +192,43 @@ New source integrity is still pending the frozen snapshot execution below.
   raw integrity-milestone6.stdout. Verifies all listed checksums, schemas/
   manifest, AST source boundary and provenance/offline attributes. Explicitly
   excludes unfinished fullleague/Intl6 and final delivery execution gates.
+
+Milestone6 successful origin-reflog push11:11:30UTC,
+head8a395249999f1c159775519802b901f842c0c0b8. Previous10:45:22→11:11:30
+interval26m8s, binding30-minute cadence PASS. Earlytarget11:10:22 missed68s;
+hard11:15:22 met. Mainclaimc96633f at11:10:48. Next stage~11:30,
+targetsuccessfulpush11:36:30, hard11:41:30. Fullleague resumed afterpush;
+actualcheckpointhold start/resume are in league-pauses.json.
+
+## Milestone7 integrated data and baseline league around11:33UTC
+
+- `node scripts/league.mjs`: baseline PASS4,000/4,000, actual exit0. Required
+  2,000 games per comparison balanced1,000 per variant; every seed/move/result
+  retained. American Strong/Medium883W82D35L (score.924), Medium/Easy999W0D1L;
+  International Strong/Medium928W61D11L (score.9585), Medium/Easy1000W0D0L.
+  Each variant's decisive Wilson95 lower bound>.5. Wall2235.349s includes
+  all actual holds in league-pauses.json. Full raw/report/shards archived under
+  league-baseline-pre-international before new corpus behavior changes.
+- `npm run build`: integrated strict build PASS exit0, raw
+  international-integration-build.stdout. Adds actual db3–5, separate variant
+  bundles and native offline deflate bootstrap. Every packed payload round-trips
+  exact bytes; corpus-pack.json records raw/compressed sizes/hashes. American
+  uses the original audited ZIP deflate stream. HTML80,328,131 bytes.
+- `node --test --test-reporter=tap --test-concurrency=1 tests/international.test.mjs
+  tests/variant-bundles.test.mjs`: PASS6/6, exit0, raw international-integrated.tap.
+  Production equals all10,000 retained original C++/independent actual2–5 queries
+  (all45 material tuples/180 orientations); W2441/L2228/D5331. Variant-specific
+  node bundles preserve48 exact choices/reports/cursors, quiet/capture/draw-history
+  cases and4 complete full-state game transcripts; budgets are unchanged.
+- Original unchanged Boost C++ reproduction and independent tracked sample
+  selftest: PASS10k and11/11 zero skips; exact commands/hashes/raw original
+  outputs in international-original/. This is supplied2–5 theoretical WLD,
+  not complete six or draw-history conversion proof.
+- Newly integrated page startup/worker reuse/cancel/FPS/captures, final-source
+  full leagues/matrix/mutations/npm test/CI, complete Intl6 packaging, required
+  manual30 row log and KEEP GOING remain PENDING. No BLOCKED asserted.
+
+- `node scripts/integrity.mjs --sources`: milestone7 PASS exit0, raw
+  integrity-milestone7.stdout; authoritative metadata/dictionary schema, source
+  checksums/pure AST and original offline attributes pass. Final execution
+  gates are explicitly excluded until current game/browser proof is complete.
