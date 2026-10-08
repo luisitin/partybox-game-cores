@@ -1,0 +1,11 @@
+import { build } from 'esbuild';
+import { readFileSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { Script } from 'node:vm';
+const browser = await build({ entryPoints: ['src/browser.ts'], bundle: true, write: false, minify: true, target: 'es2022', platform: 'browser', format: 'iife', legalComments: 'none' });
+const js = browser.outputFiles[0].text.replaceAll('</script', '<\\/script');
+const notice = '<!-- Bundled dependency: zod 4.6.5\n' + readFileSync('node_modules/zod/LICENSE', 'utf8') + '\n-->\n';
+const html = readFileSync('web/template.html', 'utf8').replace('<html lang="en">', () => notice + '<html lang="en">').replace('/* INLINE_GAME */', () => js);
+new Script(html.match(/<script>([\s\S]*)<\/script>/)[1]);
+writeFileSync('play.html', html);
+await build({ entryPoints: ['../../contract/contract.ts'], bundle: true, outfile: '.build/contract-validation.mjs', platform: 'node', format: 'esm', target: 'es2022', alias: { zod: resolve('node_modules/zod/index.js') } });
