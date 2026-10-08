@@ -1,3 +1,3 @@
 # KEEP GOING
 
-No rounds: no implementation, PR or green CI yet.
+No post-green-PR rounds yet. Implementation/research milestones do not count.

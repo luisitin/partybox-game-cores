@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "repo": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "utc": {
+            "type": "string"
+          },
+          "exit": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "http": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "tls_verified": {
+            "type": "boolean",
+            "const": true
+          }
+        },
+        "required": [
+          "repo",
+          "commit",
+          "path",
+          "url",
+          "utc",
+          "exit",
+          "http",
+          "error",
+          "bytes",
+          "sha256",
+          "tls_verified"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "blockedCandidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "propertyNames": {
+          "type": "string"
+        },
+        "additionalProperties": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "sources",
+    "blockedCandidates"
+  ],
+  "additionalProperties": false
+}

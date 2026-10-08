@@ -1,0 +1,17 @@
+import type { GameManifest } from '../../../contract/contract.js';
+export const manifest: GameManifest = {
+  id: 'pack-the-hold', name: 'Pack the Hold', icon: '📦',
+  tagline: 'Find room for the most valuable cargo.',
+  description: 'A timed packing race. Everyone gets the same crates and hold. Rotate and fit cargo without overlaps; each round scores your value divided by the proven optimum.',
+  howToPlay: ['Drag crates into the hold; rotate them to fit.', 'Pack the most valuable cargo before your turn ends.', 'Your packed value divided by the best possible value is your score.'],
+  version: '1.0.0', minPlayers: 2, maxPlayers: 8, estimatedMinutes: 24,
+  estimate: { fixedSeconds: 0, perRoundSeconds: 120, perPlayerPerRoundSeconds: 45, roundsSetting: 'rounds' },
+  tags: ['strategy'], presence: { needs: 'anywhere' }, addedOn: '2026-10-08',
+  supportsBots: true, saveable: true, noCards: true,
+  settings: [
+    { key: 'rounds', label: 'Rounds', type: 'number', default: 3, min: 1, max: 3, step: 1 },
+    { key: 'turnSeconds', label: 'Seconds per player', type: 'number', default: 45, min: 20, max: 60, step: 5 },
+    { key: 'difficulty', label: 'Packing difficulty', type: 'number', default: 4, min: 1, max: 10, step: 1, description: 'Calibrated against a reproducible greedy packing policy, not human players.' },
+    { key: 'allowFlip', label: 'Allow mirrored crates', type: 'boolean', default: false },
+  ],
+};

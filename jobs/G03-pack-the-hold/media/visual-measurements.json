@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "chrome": "Chrome/151.0.7922.173",
+  "fileOpened": false,
+  "serving": "localhost HTTP; disk-open remains blocked by managed browser policy",
+  "desktop": {
+    "width": 1920,
+    "height": 1080,
+    "cpu": 1,
+    "warmupFrames": 60,
+    "interaction": "keyboard ghost movement at 10 Hz",
+    "frames": 180,
+    "meanMs": 16.665555555555557,
+    "p95Ms": 16.700000000000273,
+    "maxMs": 16.800000000000182,
+    "fps": 60.00400026668444,
+    "overflow": false
+  },
+  "phone": {
+    "width": 390,
+    "height": 844,
+    "cpu": 4,
+    "warmupFrames": 60,
+    "interaction": "keyboard ghost movement at 10 Hz",
+    "frames": 180,
+    "meanMs": 16.666111111111114,
+    "p95Ms": 16.700000000000728,
+    "maxMs": 16.800000000000182,
+    "fps": 60.00200006666888,
+    "overflow": false
+  },
+  "reducedMotion": true,
+  "externalRequests": 0,
+  "runtimeExceptions": 0,
+  "completedTwoPlayerGame": true,
+  "videoBytes": 85722
+}
