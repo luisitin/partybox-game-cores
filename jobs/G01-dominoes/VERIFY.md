@@ -263,3 +263,9 @@ Current-head CI confirmed: `gh run list --workflow G01.yml --json databaseId,hea
 Round16 `IMPROVEMENT_STUDY=depth4 node improvement-study.ts` underway; no result or no-gain round claimed until all2,000 matches finish.
 
 Round16 throughput: partial sequential study terminated before completion; no result counted. `IMPROVEMENT_STUDY=depth4 node parallel-improvement.ts` repeats the same complete2,000-seed comparison in four disjoint500-seed shards. Aggregation validates coverage and exact production source before publishing a result.
+
+Round16 `IMPROVEMENT_STUDY=depth4 node parallel-improvement.ts`:2,000 complete Block matches,926 wins/1,074 losses/0 ties(46.3%,95%44.11–48.49%),592,277 turns. All four shards pass10 focused privacy/determinism/search-rule regressions. Source SHA and contiguous1–2,000 coverage validated; report is improvement-depth4-report.json. Reject; production unchanged; no-gain streak1. `npm run check` and `FAST_TEST=1 node --test test.ts`:30/30 pass.
+
+Direct disk-navigation recheck: launch Playwright Chromium at /usr/bin/chromium, `await page.goto('file://'+resolve('play.html'),{timeout:15000})`. Result `net::ERR_BLOCKED_BY_ADMINISTRATOR`; source bytes still verified offline via setContent. This adds no direct-navigation claim.
+
+Round17 `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts` underway; do not count until all2,000 Draw matches finish.

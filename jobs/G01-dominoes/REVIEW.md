@@ -83,3 +83,7 @@ Five weaknesses: unmodeled Draw opener information while stock remains untouched
 ## Round 16
 
 Five weaknesses, ranked: the depth-three early-game horizon; finite 64-world sampling variance; coalition opponents in free-for-all; limited upstream reference scope; unavailable physical-phone evidence. Test depth four against exact current 0.2.7, retaining the new opener constraints, public standings, selected scoring and 64 samples. The older 16-sample rejection is not evidence for this changed baseline. Require a positive lower 95% win bound over 2,000 alternating-seat complete matches, then fresh-seed confirmation before acceptance. Production stays unchanged while measured.
+
+## Round 17
+
+Five weaknesses, ranked: forced Draw steps consume the shallow decision horizon; finite64-world variance; the leaf evaluator only measures remaining pips; coalition opponents in free-for-all; unavailable physical-phone evidence. Test retaining depth across forced draws, so the next play/pass decision remains visible. Stock strictly decreases on each draw, bounding recursion; fully searched small endgames retain their terminal values. General depth-four lost round16, so this isolates the mandatory-draw accounting rather than adopting a globally deeper search. Compare2,000 alternating-seat Draw matches against exact current0.2.7, with fresh-seed confirmation required for acceptance.
