@@ -1,15 +1,22 @@
 # Resume G07
 
-Branch: job/G07-liars-dice. Status: blocked at research; no game implemented.
-Read README.md, root RULES.md, JOBS.md, CLAIMS.md on main and this BLOCKED.md.
-Retry the exact source requests in VERIFY.md after environment policy changes.
-Finish independent Perudo rules including palifico and ones-wild options; record actual sources, variants, conflicts and assumptions.
-Implement the full G07 specification, exact contract, all valid player counts,
-three honest bot skills, isolated self-contained play.html and phase fixtures.
-Then run ALL binding checks, including independent 10,000-case differential
-validation, 25 mutations (>=24 killed), property seeds 1/2/3 and 1,000 others,
-1,000 bot games per valid count, secrecy diffs, 2,000-game bot leagues,
-job-specific checks and CI. Record real results; none have executed yet.
-Open a PR only after every check passes, then run KEEP GOING to its stated
-three-round stop condition. Keep NEXT.md current and refresh claims on pushes.
-Use the existing isolated checkout; do not create a Git worktree.
+Branch: job/G07-liars-dice; owner codex-dice. Research blocker resolved 2026-10-08.
+Read root README/RULES/JOBS and latest main CLAIMS before continuing. Historical
+blocked-at-research notes are under evidence/historical-blocker, not current state.
+
+Completed: ten source extractions, edition conflicts/settings, independent exact
+BigInt-convolution oracle with executable enumeration/identity checks.
+In progress: parent game core (primary binomial helper passed 20,000 comparisons), browser and checks agents.
+No playable build, matrix, leagues, mutants or CI pass is claimed at this milestone.
+
+Next: finish strict pure core and offline page, run probability differential,
+all nine contract invariants with 1,000 matches for each count 2–8 and every-event
+replays, property seeds 1/2/3 + 1,000, 25 singly compiled mutants, paired 2,000-game
+skill leagues, both 600-frame desktop/4x phone measurements, reduced motion and
+milestone capture. Generate per-phase fixtures twice identically, document actual
+results and hashes, push, then open PR only when all checks pass. Require exact
+pushed-head hosted CI success. Then mandatory KEEP GOING until three consecutive
+rounds have no player-noticeable gain; refresh main claim on every job push.
+
+Re-verify when web works: no current research-only blocker; partial Soar extraction
+is explicitly recorded and used only for model/heuristic concepts, not full-paper claims.

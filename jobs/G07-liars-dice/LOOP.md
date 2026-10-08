@@ -1,3 +1,3 @@
 # KEEP GOING
 
-No rounds: no implementation, PR or green CI yet.
+No rounds yet: this begins only after the delivered PR is green.

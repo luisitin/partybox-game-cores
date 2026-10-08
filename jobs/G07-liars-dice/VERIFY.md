@@ -1,14 +1,24 @@
-# Executed checks (2026-10-07T15:05:35Z)
+# Verification log
 
-From /workspace/partybox-game-cores, for each URL below:
-`curl --silent --show-error --fail --location --max-time 20 --output
-/tmp/G07-source-<index> <URL>`
+## Research milestone (2026-10-08)
+Four Exa searches returned 24 results; ten unique source extractions were read.
+Exact URLs, coverage, extraction hashes: evidence/research-sources.json.
+No origin HTTP status is inferred from Exa success. Full texts remain ignored.
+Historical 403 observations are preserved, not current blockers.
 
-- `https://en.wikipedia.org/wiki/Dudo`: curl exit 22; `curl: (22) The requested URL returned error: 403`.
-- `https://www.perudo.com/`: curl exit 22; `curl: (22) The requested URL returned error: 403`.
+`node tests/probability-reference.mjs`: PASS; 21 hand cases, 714 exhaustive cases
+(111,974 full rolls), 4,182 identity cases, 105,264 conditional comparisons
+(133,644 hidden completions), 13 invalid calls. This runs only the independent
+oracle, not a differential against the as-yet-unwritten primary implementation.
+`node --check tests/probability-reference.mjs`: PASS. Method and independent
+review scope are recorded in evidence/independent-reference.md.
 
-These checks catch inability to obtain source contents; they do not verify
-source rules, licences or factual claims. All candidates were denied.
-The claim push succeeded. No npm test suite exists for this job yet.
-Game tests, simulations, mutation testing, bot leagues, HTML validation,
-performance/captures, job-specific checks and CI are UNRUN (zero game tests).
+Core, fixtures, matrix, mutations, leagues, browser and hosted CI are pending.
+Actual commands/results will replace this pending section as they run.
+
+Primary milestone: esbuild-bundled src/probability.ts compared against the
+independently authored convolution reference using seed 1799. 10,000 direct
+and 10,000 own-cup-conditioned random cases passed with exact integer strings
+and floating ratios equal. The first inline runner failed before comparisons
+because G02 does not re-export createRng; bundling the unchanged shared RNG
+fixed the runner. The reproducible npm-test differential is being added.
