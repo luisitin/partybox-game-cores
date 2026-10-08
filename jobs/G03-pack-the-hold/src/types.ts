@@ -10,7 +10,7 @@ export interface Placement { crateId: string; x: number; y: number; rotation: nu
 export interface Solution { value: number; placements: Placement[]; nodes: number; pruned: number }
 export interface Template { cells: Cell[]; pieces: Cell[][]; anchors: Cell[] }
 export interface Tier {
-  difficulty: number; template: Template; trials: number; solved: number;
+  difficulty: number; templates: Template[]; trials: number; solved: number;
   solveRate: number; confidence95: readonly [number, number]; policy: string;
 }
 export interface Settings { rounds: number; turnSeconds: number; difficulty: number; allowFlip: boolean }

@@ -6,6 +6,10 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 
 const output = process.argv.includes('--record') ? 'media' : '.tmp/visual';
+const milestoneIndex = process.argv.indexOf('--milestone');
+const milestone = milestoneIndex >= 0 ? process.argv[milestoneIndex + 1] : '01';
+assert.match(milestone, /^\d{2}$/);
+const videoFile = `milestone-${milestone}.webm`;
 mkdirSync('.tmp', { recursive: true }); mkdirSync(output, { recursive: true });
 const userData = resolve('.tmp/chrome'); rmSync(userData, { recursive: true, force: true });
 const binary = process.env.G03_CHROME ?? ['/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium'].find(existsSync);
@@ -85,8 +89,8 @@ try {
     if (frame === 20) await evaluate('document.getElementById("board").focus();document.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}))');
     const shot = await send('Page.captureScreenshot', { format: 'png' }); writeFileSync(`${frameDir}/${String(frame).padStart(3, '0')}.png`, Buffer.from(shot.data, 'base64')); await delay(60);
   }
-  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '10', '-i', `${frameDir}/%03d.png`, '-c:v', 'libvpx-vp9', '-crf', '38', '-b:v', '0', '-an', `${output}/milestone-01.webm`]);
-  assert.ok(readFileSync(`${output}/milestone-01.webm`).length < 10_000_000);
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '10', '-i', `${frameDir}/%03d.png`, '-c:v', 'libvpx-vp9', '-crf', '38', '-b:v', '0', '-an', `${output}/${videoFile}`]);
+  assert.ok(readFileSync(`${output}/${videoFile}`).length < 10_000_000);
   await evaluate('document.getElementById("submit").click()');
   for (let i = 0; i < 100 && !(await evaluate('!document.getElementById("reveal-controls").hidden')); i++) await delay(50);
   assert.ok(await evaluate('!document.getElementById("reveal-controls").hidden'));
@@ -103,6 +107,6 @@ try {
     completedPlayerCounts.push(count);
   }
   assert.equal(requests.filter(url => /^https?:/.test(url) && url !== documentUrl && !url.endsWith('/favicon.ico')).length, 0); assert.deepEqual(errors, []);
-  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/milestone-01.webm`).length };
+  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/${videoFile}`).length };
   writeFileSync(`${output}/visual-measurements.json`, JSON.stringify(report, null, 2) + '\n'); console.log(JSON.stringify(report));
 } finally { socket?.close(); browser.kill('SIGTERM'); localServer?.close(); }

@@ -1,20 +1,23 @@
 # Resume G03
 
-Branch job/G03-pack-the-hold; claim codex-core. Full core and all required checks
-passed push CI37718745692 at commit8c383f3, including real disk opening and
-UI rosters2–8. Latest uncommitted documentation/source receipts must be
-regenerated/checked and committed, then open the PR. README has exact commands.
+PR: https://github.com/luisitin/partybox-game-cores/pull/3
+Branch job/G03-pack-the-hold; claim codex-core. Initial full implementation and
+PR CI are green at c2b21a2 (runs37719283425 and37719344618). Actual disk opening,
+all UI rosters, pointer/keyboard play and the complete suite passed.
 
-Next binding stage: wait for the PR to be green, then KEEP GOING. Re-read
-JOBS.md; list five weaknesses each round; fix the worst; measure and push with
-updated LOOP/NEXT and a refreshed main claim. Three consecutive rounds without
-player-noticeable gain are required before moving on.
+KEEP GOING round1 milestone: twelve original hold
+templates per tier instead of one, separately calibrated normal/mirror pools.
+Generator tests prove all240 templates against the independent grid checker
+and see all12 holds over200 seeds at each tier. Twenty-test full validation passed, with all25 mutations and data checks.
+The explicit HTTP browser check passed; check the new strict disk-mode CI.
 
-Review targets: limited seeded hold variety within a tier; touchscreen drag;
-keyboard focus and previews; clock fairness and hand-off; mirror calibration
-order. Core types/contract and other jobs must remain unchanged. No worktree.
+Next measured weakness:37 of200 three-round games repeated a hold. Prevent
+within-game repeats while retaining deterministic RNG and the measured pool.
+Then review touch capture, keyboard focus, clock fairness and the remaining
+five-weakness list. Continue until three consecutive rounds gain nothing a
+player would notice; zero such rounds yet. Maintain media, hashes and fixtures.
 
-Cloud Chrome's policy still blocks file:// locally. Explicit localhost-mode
-checks are partial; mandatory CI uses actual disk mode and forbids fallback.
-Historical academic403s do not block the two live packing sources. Wilson
-intervals were corroborated from live SciPy and Statsmodels formulas.
+No shared contract/other-job edits or worktree. The local browser blocks disk
+navigation; explicit HTTP checks are partial and CI must use actual disk mode.
+All required live research is accessible via GitHub; unread denied URLs are not
+cited as evidence. README contains exact commands and VERIFY.md actual results.

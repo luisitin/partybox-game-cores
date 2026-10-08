@@ -27,7 +27,7 @@ json('fixtures/reveal.json', s);
 s = game.reduce(s, { type: 'input', playerId: 'p0', input: { type: 'next' }, now: s.phase.startedAt + 1 });
 json('fixtures/done.json', s); json('manifest.json', game.manifest);
 const templateSchema = z.object({ cells: z.array(cellSchema), pieces: z.array(z.array(cellSchema)).length(4), anchors: z.array(cellSchema).length(4) }).strict();
-const tierSchema = z.object({ difficulty: z.number().int().min(1).max(10), template: templateSchema, trials: z.literal(2000), solved: z.number().int().min(0).max(2000), solveRate: z.number().min(0).max(1), confidence95: z.tuple([z.number(), z.number()]), policy: z.string() }).strict();
+const tierSchema = z.object({ difficulty: z.number().int().min(1).max(10), templates: z.array(templateSchema).length(12), trials: z.literal(2000), solved: z.number().int().min(0).max(2000), solveRate: z.number().min(0).max(1), confidence95: z.tuple([z.number(), z.number()]), policy: z.string() }).strict();
 const calibrationSchema = z.object({ schemaVersion: z.literal(1), humanRates: z.literal(false), policy: z.string(), candidateCount: z.literal(120), screeningTrials: z.literal(384), tiers: z.array(tierSchema).length(10), flip: z.array(tierSchema).length(10) }).strict();
 const receipt = JSON.parse(readFileSync('research-access.json', 'utf8'));
 // Research receipts are observations, preserved exactly rather than fabricated by re-fetching.

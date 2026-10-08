@@ -157,3 +157,25 @@ The successful disk-mode run reported Chrome154: desktop16.666ms mean
 exceptions/external requests, all seven roster sizes complete. Generated-level
 benchmark max4.621ms and max856 search nodes. Exact Actions-log command:
 `gh run view 37718745692 --repo luisitin/partybox-game-cores --log`.
+
+## KEEP GOING round1: varied calibrated holds
+
+After both PR checks passed, re-read G03. Baseline command: generate seeds0–199
+at difficulty4 and count serialized hold-cell sets:1 distinct hold. The revised
+bank contains12 templates per difficulty in both separately calibrated editions.
+`node --test tests/generator.test.mjs` passed: all240 template certificates agree
+with independent exhaustive grid optima;200 seeds at EACH tier/edition expose
+all12 distinct hold shapes. Normal-policy rates now range28.90% to0.45%; each
+tier has2,000 measurements and Wilson intervals. Previous narrower-bank rates
+above remain historical checkpoint results, not the current calibration.
+
+`node scripts/visual.mjs --http --record --milestone 03` passed pointer/keyboard,
+UI rosters2–8, reduced motion and zero exceptions/requests. Video98,228bytes.
+Raw local desktop sample included a133.3ms scheduling outlier:17.314ms mean,
+57.757fps,p95=16.8ms. Phone CPU4x:16.666ms mean,60.004fps,p95=16.8ms.
+The full default disk-mode CI must validate this milestone before final delivery.
+
+`G03_VISUAL_MODE=http npm test` passed all20 tests on the expanded pool,
+25/25 mutations,8 JSON files/seven schemas,19 hashes and two byte-identical
+regenerations. The explicitly partial HTTP browser run passed all interactions
+and roster sizes; current disk-mode CI remains the delivery gate.

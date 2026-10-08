@@ -33,35 +33,63 @@
             "minimum": 1,
             "maximum": 10
           },
-          "template": {
-            "type": "object",
-            "properties": {
-              "cells": {
-                "type": "array",
-                "items": {
+          "templates": {
+            "minItems": 12,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cells": {
                   "type": "array",
-                  "prefixItems": [
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    },
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "pieces": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "prefixItems": [
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        },
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        }
+                      ],
+                      "items": false,
+                      "minItems": 2,
+                      "maxItems": 2
                     }
-                  ],
-                  "items": false,
-                  "minItems": 2,
-                  "maxItems": 2
-                }
-              },
-              "pieces": {
-                "minItems": 4,
-                "maxItems": 4,
-                "type": "array",
-                "items": {
+                  }
+                },
+                "anchors": {
+                  "minItems": 4,
+                  "maxItems": 4,
                   "type": "array",
                   "items": {
                     "type": "array",
@@ -83,36 +111,13 @@
                   }
                 }
               },
-              "anchors": {
-                "minItems": 4,
-                "maxItems": 4,
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "prefixItems": [
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    },
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    }
-                  ],
-                  "items": false,
-                  "minItems": 2,
-                  "maxItems": 2
-                }
-              }
-            },
-            "required": [
-              "cells",
-              "pieces",
-              "anchors"
-            ],
-            "additionalProperties": false
+              "required": [
+                "cells",
+                "pieces",
+                "anchors"
+              ],
+              "additionalProperties": false
+            }
           },
           "trials": {
             "type": "number",
@@ -148,7 +153,7 @@
         },
         "required": [
           "difficulty",
-          "template",
+          "templates",
           "trials",
           "solved",
           "solveRate",
@@ -170,35 +175,63 @@
             "minimum": 1,
             "maximum": 10
           },
-          "template": {
-            "type": "object",
-            "properties": {
-              "cells": {
-                "type": "array",
-                "items": {
+          "templates": {
+            "minItems": 12,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "cells": {
                   "type": "array",
-                  "prefixItems": [
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    },
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
+                  "items": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      },
+                      {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 63
+                      }
+                    ],
+                    "items": false,
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "pieces": {
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "prefixItems": [
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        },
+                        {
+                          "type": "integer",
+                          "minimum": 0,
+                          "maximum": 63
+                        }
+                      ],
+                      "items": false,
+                      "minItems": 2,
+                      "maxItems": 2
                     }
-                  ],
-                  "items": false,
-                  "minItems": 2,
-                  "maxItems": 2
-                }
-              },
-              "pieces": {
-                "minItems": 4,
-                "maxItems": 4,
-                "type": "array",
-                "items": {
+                  }
+                },
+                "anchors": {
+                  "minItems": 4,
+                  "maxItems": 4,
                   "type": "array",
                   "items": {
                     "type": "array",
@@ -220,36 +253,13 @@
                   }
                 }
               },
-              "anchors": {
-                "minItems": 4,
-                "maxItems": 4,
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "prefixItems": [
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    },
-                    {
-                      "type": "integer",
-                      "minimum": 0,
-                      "maximum": 63
-                    }
-                  ],
-                  "items": false,
-                  "minItems": 2,
-                  "maxItems": 2
-                }
-              }
-            },
-            "required": [
-              "cells",
-              "pieces",
-              "anchors"
-            ],
-            "additionalProperties": false
+              "required": [
+                "cells",
+                "pieces",
+                "anchors"
+              ],
+              "additionalProperties": false
+            }
           },
           "trials": {
             "type": "number",
@@ -285,7 +295,7 @@
         },
         "required": [
           "difficulty",
-          "template",
+          "templates",
           "trials",
           "solved",
           "solveRate",

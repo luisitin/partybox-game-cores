@@ -35,12 +35,13 @@ export function generateLevel(rng: RngState, difficulty: number, allowFlip = fal
   const tier = (allowFlip ? FLIP_TIERS : TIERS)[Math.max(0, Math.min(9, Math.trunc(difficulty) - 1))] as Tier;
   let state = rng;
   const draw = (min: number, max: number): number => { const [value, next] = nextInt(state, min, max); state = next; return value; };
-  const level = templateLevel(tier.template, tier.difficulty, allowFlip);
+  const template = tier.templates[draw(0, tier.templates.length - 1)] as Template;
+  const level = templateLevel(template, tier.difficulty, allowFlip);
   const witness: Placement[] = [];
   for (let i = 0; i < 4; i++) {
     const rotation = draw(0, 3); const crate = level.crates[i] as typeof level.crates[number];
     crate.cells = orient(crate.cells, rotation);
-    const anchor = tier.template.anchors[i] as Cell;
+    const anchor = template.anchors[i] as Cell;
     witness.push({ crateId: crate.id, x: anchor[0], y: anchor[1], rotation: (4 - rotation) % 4 });
   }
   const crateCount = draw(6, 12);
