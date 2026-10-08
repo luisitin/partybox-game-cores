@@ -28,9 +28,10 @@ local validated factory, not an established cross-repository engine ABI.
 Rendering uses public/own-controller projections. Local devtools can
 inspect data; hot-seat privacy requires other people to look away.
 
-npm test covers contract invariants, 21,000 bot games, 1,003 exact replays,
-1,000 idle games, independent 10,000-case numeric and bluff comparisons,
-25 mutations, 12,000 skill comparisons, build identity, functional browser
-privacy/timers/controls, frame times, reduced motion, captures and checksums.
-VERIFY.md records actual outcomes and limits; BOTS.md scopes its benchmark.
-NEXT.md records PR/CI/KEEP GOING progress. Completion is not implied here.
+npm test covers contract invariants,21,000 bot games,1,000 presence-churn
+games,1,003 exact random-seed replays,1,000 idle games,two independent
+10,000-case scoring comparisons,25 mutations,24,000 skill matches,
+7,000 adversarial phase states,10,000 varied valid catalog rows,and three
+independent browser runs with privacy/timers/controls/frame times/reduced
+motion/captures/checksums. VERIFY records outcomes;BOTS scopes its benchmark.
+NEXT records PR/CI/KEEP GOING progress;completion requires actual hosted CI.

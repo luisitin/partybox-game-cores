@@ -83,3 +83,12 @@ the measurable variance gap with two independent full browser runs and
 retain each raw report/capture. All66 total scenarios,900 TV+900 phone
 intervals pass,60fps/p95≤16.8ms,zero errors/requests. No production change;
 player gain0,no-gain streak2. Unavailable physical hardware remains labeled.
+
+Round10 five weaknesses: presence-churn coverage (worst);factory-scale
+limits;phone approximation;future pack integration;editorial spacing.
+Fill the actionable churn gap with1,000 frozen-state12-round games,
+16,585 presence events,5,347 pauses and50 prototype-name rosters. All
+games finish,all seats survive into finite independently checked results,
+0 failures. Core/bots/UI unchanged;player gain0,no-gain streak3. Remaining
+limits are documented scope/hardware concerns or cosmetic wording,not
+measured defects;final combined checks/current-head CI remain the gate.

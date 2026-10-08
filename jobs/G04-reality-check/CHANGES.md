@@ -126,3 +126,10 @@ for two fresh browser process repeats;add both to npm test. Each uses the
 same exact standalone bytes,22 functional scenarios and600 total TV/phone
 frame intervals. Production core,UI and HTML are unchanged. This addresses
 frame-sample variance without relabeling the4×CPU approximation as a device.
+
+KEEP GOING10: add churn-probe.ts and npm test wiring for1,000 seeded
+games with disconnect/reconnect/permanent leave/pause/resume events,
+retained-seat results,independent score ranking,JSON round trips and
+50 prototype-named rosters. Freeze input states and check stale timers
+after drop-triggered transitions. No production change was needed.
+Update README/NEXT with the final validation scope and honest CI gate.

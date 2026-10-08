@@ -210,3 +210,37 @@ sample3 phone 60.0032fps/p9516.80ms.
 Separate browser-repeat-{2,3}.json,PNG and milestone9 captures retained
 under10MB. node checksums.ts/--check PASS41 files. No production change
 or player-visible defect found;player gain0,no-gain streak2.
+
+Round10 npm run check PASS;node churn-probe.ts PASS1,000 random-seed
+12-round games at2–8 seats (143 each2–7,142 at8),Quick334/Mixed333/Bluff333.
+42,227 accepted inputs,21,906 timer advances,5,347 pause/resume pairs,
+16,585 presence events,2,273 permanent-leave events,585 stale timer
+rejections after presence-triggered phase changes,50 prototype-name
+rosters,maximum153 steps;zero failures. Every result retains all initial
+seats and matches an independent sorted-score rank/winner reference.
+churn-report.json records counts. No production defect found;player gain0.
+Rounds8/9/10 are three consecutive no-gain reviews. Final combined npm test
+and actual final-head hosted CI still must pass before completion.
+
+Final Round10 combined command npm test:EXIT0.51/51 node tests,
+214,528.84ms;21,000 complete bot games,1,003 exact replays on the recorded
+random seed cohort,1,000 timer-only cases,both10,000-case differentials,
+9,000 bounds actions,300 style samples,7,000 phase states,10,000 catalog
+rows/30,000 accepted actions,1,000 presence-churn games,25/25 mutations,
+24,000 league matches,three complete browser runs/66 scenarios,42 hashes.
+Actual final frame measurements:
+run1 tv 60.0024fps/p9516.80ms;
+run1 phone 60.0024fps/p9516.70ms;
+run2 tv 60.0040fps/p9516.80ms;
+run2 phone 60.0032fps/p9516.80ms;
+run3 tv 60.0024fps/p9516.70ms;
+run3 phone 60.0028fps/p9516.70ms.
+Zero network/page errors and reduced motion honored;all captures<10MB.
+Log:/tmp/G04-final-round10-npm-test.log. Current-head hosted CI remains
+pending;its actual success is required before marking the job complete.
+
+Final onboarding validation:bash /workspace/.onboarding/install.sh EXIT0.
+Pinned shared/G04 installs,shared strict types/RNG/Zod loading,28 focused
+regressions,160-row schema/regeneration,493,491-byte build identity and
+42 checksums all PASS. Log:/tmp/G04-final-onboarding.log. No application
+service is required;configuration draft saving remains separate from publish.
