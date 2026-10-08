@@ -380,3 +380,26 @@ checked separately, never paired with host fullproof. Current CLI correctly
 has no complete localcurrentproof; fresh3fullCIruns/actualcliphashes must pass.
 Eight runtime/data files unchanged since deadlinefix; round12 player gain0,
 no-gain streak1 pending exact newhead CI.
+
+Exact5c45099 CI37783931074 SUCCESS; fullactual logs read,51tests/25base
+mutants/24kleagues/6deadlinecases/66legacy scenarios. Nativeartifact
+11553084981 archiveSHA0328f642c8260aaa6088379443226e71ffa0f5791e0a6b87bc1579197f46599e
+matches GitHub digest. Actual3clips read; allbytes/SHA match live reports.
+`node browser-proof.ts`: PASS locally on these actualdownloaded current
+reports/1800raw/16sourceguards/3clips. Oldcanonicallegacy reports preserved.
+Older7a artifact also nowread and hashes match; older unread status is historical.
+
+KEEP13 `node late-input.ts`: EXIT0,8/8 actualfile controls, sourceguards
+match, zeroerrors/HTTP; added exactly-at-deadline quickcorrect and bluffwrite
+closures with zero latecredit/truth-only menu. `python3 .work/deadline-equality-mutation.py`
+EXIT0,13:46:13.655→13:46:24.778: actual ui.ts now<deadline→now<=deadline
+compiled into realHTMLa92dec1. Old6 suite with only private guard/output path
+adaptations stillPASS6/6; new8 suiteEXIT1,catches BOTH exactboundary cases,
+other6pass. Exactrunners/raw/logs retained; finally restoresUI57b121/playe570.
+This is an additional actualhost mutant, separate from25required core mutants.
+`npm run check && node build.ts --check && node browser-proof.ts`: PASS.
+`node capture.ts --milestone=16`: PASS157763bytes/actualSHA/11guards/zeroerrors
+andnetwork, noFPSclaim. Player behavior unchanged; no-gain streak2. New
+exactheadCI pending. Latest successful push5c13:23:08; thischeckpointnormal
+push must finish before13:53:08. Early13:48:08target was missed;30minhard
+status requires actualremote timestamp, not assumed.

@@ -132,3 +132,16 @@ performance cause. Demonstrate an actual harmless current-page change that
 existing data/media integrity cannot detect; enforce fresh source and
 independently recomputed frame gates plus exact capture hashes. Preserve
 all local failed raw samples and do not infer a cause or player improvement.
+
+Round13 PRE-EDIT 2026-10-08T13:41:07.152169+00:00: exact5c45099
+CI37783931074 SUCCESS, actual full logs and nativeartifactbytes read,
+GitHub archiveSHA0328f642 matches; currentCLI independentlyPASS3fullruns/
+66scenarios/1800raw/16guards/3actualcapturehashes. RootREADME/RULES/JOBS
+and selectedRULES reread. Five ranked weaknesses: (1) exactdeadline equality
+is not in the6human/bot focused cases; (2) unexplained localframe variance;
+(3) compiledhost comparison mutation not isolated; (4) physicalphone limit;
+(5) source/handoff documentation clarity. Worst reproducible verification
+gap: actualinput exactlyatdeadline must dispatch matchingtimer and discard
+input. Add realquick/bluff exact-boundary cases and prove an actualcompiled
+now<=deadline hostmutation escapes old6 but is caught by newcontrols.
+Player behavior should remain unchanged; no FPS/cause improvement inferred.

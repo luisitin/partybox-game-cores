@@ -1,16 +1,16 @@
 {
-  "startedAt": "2026-10-08T13:44:22.476Z",
-  "passed": true,
+  "startedAt": "2026-10-08T13:46:19.177Z",
+  "passed": false,
   "navigationMode": "Actual self-contained play.html from disk via file://",
   "fixtureLimits": "Playwright timers are held. setSystemTime changes wall Date without delivering phase timers; human late cases advance100ms fake time, then150ms real Node time allows the pre-install native countdown interval to refresh. The actual bot case delivers its scheduled350ms callback. This proves overdue actions cannot beat timer delivery in this controlled fixture; physical-device race frequency and performance are not measured.",
   "contract": "contract/contract.ts PhaseInfo: engine fires exactly one timer event per(id,startedAt) once deadline reached. Selected RULES: quick50s/write40s/vote30s; pause shifts deadlines.",
-  "htmlSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+  "htmlSha256": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
   "inlineScriptSha256": [
-    "58ecb00f7f7d0337a8b9c816ef352353f537523a4438acfbcbb540cf8a4ebe8a"
+    "97b1c4fa2a41e1692b5d65673b034b2fc7896baf492b203e7207a0029f8f1a5e"
   ],
   "sourceHashesAtStart": {
-    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
-    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "play.html": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+    "ui.ts": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
     "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
     "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
     "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
@@ -1968,7 +1968,7 @@
     },
     {
       "name": "exact-deadline correct quick answer",
-      "status": "passed",
+      "status": "failed",
       "snapshots": [
         {
           "dateNow": 101000,
@@ -2075,12 +2075,12 @@
         {
           "dateNow": 151002,
           "performanceNow": 1000,
-          "phase": "reveal",
-          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
-          "privateText": "",
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "15 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2092,12 +2092,12 @@
         {
           "dateNow": 151002,
           "performanceNow": 1000,
-          "phase": "reveal",
-          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
-          "privateText": "",
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "15 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2131,12 +2131,12 @@
         "after": {
           "dateNow": 151002,
           "performanceNow": 1000,
-          "phase": "reveal",
-          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
-          "privateText": "",
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "15 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2366,12 +2366,12 @@
             "after": {
               "dateNow": 151002,
               "performanceNow": 1000,
-              "phase": "reveal",
-              "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
-              "privateText": "",
+              "phase": "answer",
+              "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
               "privateOpen": "false",
               "privateInputCount": 0,
-              "clock": "15 s",
+              "clock": "0 s",
               "controllerClock": null,
               "scores": [
                 0,
@@ -2382,11 +2382,12 @@
             }
           }
         ]
-      }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'answer' !== 'reveal'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2"
     },
     {
       "name": "exact-deadline human bluff write",
-      "status": "passed",
+      "status": "failed",
       "snapshots": [
         {
           "dateNow": 101000,
@@ -2493,12 +2494,12 @@
         {
           "dateNow": 141002,
           "performanceNow": 1000,
-          "phase": "vote",
-          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "30 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2510,12 +2511,12 @@
         {
           "dateNow": 141002,
           "performanceNow": 1000,
-          "phase": "vote",
-          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "30 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2527,24 +2528,18 @@
         {
           "dateNow": 141002,
           "performanceNow": 1000,
-          "phase": "vote",
-          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 20 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
           "privateOpen": "true",
-          "privateInputCount": 0,
-          "clock": "30 s",
-          "controllerClock": "30 s",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
           "scores": [
             0,
             0
           ],
-          "menu": [
-            {
-              "id": "o0",
-              "text": "Mallow Shore",
-              "disabled": false
-            }
-          ],
+          "menu": [],
           "skipDisabled": false
         }
       ],
@@ -2573,12 +2568,12 @@
         "after": {
           "dateNow": 141002,
           "performanceNow": 1000,
-          "phase": "vote",
-          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
           "privateOpen": "false",
           "privateInputCount": 0,
-          "clock": "30 s",
+          "clock": "0 s",
           "controllerClock": null,
           "scores": [
             0,
@@ -2590,24 +2585,18 @@
         "menu": {
           "dateNow": 141002,
           "performanceNow": 1000,
-          "phase": "vote",
-          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 20 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
           "privateOpen": "true",
-          "privateInputCount": 0,
-          "clock": "30 s",
-          "controllerClock": "30 s",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
           "scores": [
             0,
             0
           ],
-          "menu": [
-            {
-              "id": "o0",
-              "text": "Mallow Shore",
-              "disabled": false
-            }
-          ],
+          "menu": [],
           "skipDisabled": false
         },
         "expected": {
@@ -2802,12 +2791,12 @@
             "after": {
               "dateNow": 141002,
               "performanceNow": 1000,
-              "phase": "vote",
-              "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
-              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "phase": "write",
+              "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
               "privateOpen": "false",
               "privateInputCount": 0,
-              "clock": "30 s",
+              "clock": "0 s",
               "controllerClock": null,
               "scores": [
                 0,
@@ -2818,7 +2807,8 @@
             }
           }
         ]
-      }
+      },
+      "error": "AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'write' !== 'vote'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2"
     },
     {
       "name": "on-time deadline minus1ms control",
@@ -4092,11 +4082,14 @@
       }
     }
   ],
-  "failures": [],
-  "finishedAt": "2026-10-08T13:44:28.492Z",
+  "failures": [
+    "exact-deadline correct quick answer: AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'answer' !== 'reveal'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2",
+    "exact-deadline human bluff write: AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'write' !== 'vote'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2"
+  ],
+  "finishedAt": "2026-10-08T13:46:24.760Z",
   "sourceHashesAtEnd": {
-    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
-    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "play.html": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+    "ui.ts": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
     "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
     "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
     "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",

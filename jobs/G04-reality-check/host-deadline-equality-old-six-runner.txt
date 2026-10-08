@@ -11,7 +11,7 @@ type Snapshot={dateNow:number;performanceNow:number;phase:string|null;publicText
 type Step={selector:string;now:number;event?:ReplayEvent;before:Snapshot;after:Snapshot};
 type Fixture={context:BrowserContext;page:Page;seed:number;steps:Step[];readonly state:State;click(selector:string,event?:ReplayEvent):Promise<number>};
 type CaseReport={name:string;status:'pending'|'passed'|'failed';snapshots:Snapshot[];evidence?:unknown;error?:string};
-const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','samples.ts','scoring.ts','estimates.ts','browser.ts','late-input.ts','RULES.md','../../contract/contract.ts'];
+const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','samples.ts','scoring.ts','estimates.ts','browser.ts','.mutation-old-six.ts','RULES.md','../../contract/contract.ts'];
 const hash=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const sourceHashes=()=>Object.fromEntries(guardedFiles.map(file=>[file,hash(readFileSync(file))]));
 const html=readFileSync('play.html','utf8');
@@ -23,8 +23,7 @@ const report:{startedAt:string;finishedAt?:string;passed:boolean;navigationMode:
  contract:'contract/contract.ts PhaseInfo: engine fires exactly one timer event per(id,startedAt) once deadline reached. Selected RULES: quick50s/write40s/vote30s; pause shifts deadlines.',
  htmlSha256:initialHashes['play.html']!,inlineScriptSha256:[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>hash(m[1]!)),sourceHashesAtStart:initialHashes,externalRequests:[],errors:[],cases:[],failures:[]
 };
-const reportPath=process.env.G04_LATE_REPORT??'late-input-report.json';
-const save=()=>writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');
+const save=()=>writeFileSync('.work/deadline-mutation-old-six.json',JSON.stringify(report,null,2)+'\n');
 let activeCase:CaseReport|null=null;
 save();
 const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
@@ -107,16 +106,6 @@ try{
   try{await f.page.click('#reveal-private');const old=f.state,deadline=deadlineOf(old),before=await jumpPast(f,deadline,0);await f.page.clock.runFor(350);const afterBot=await snapshot(f.page);await f.page.click('#reveal-private');const menu=await snapshot(f.page);return {seed:f.seed,actor:'p1',skill:'sharp',scheduledDelayMs:350,deadline,before,afterBot,menu,expected:timerFirst(old,afterBot.dateNow),inputObservation:'Actual scheduled bot callback is delivered; menu/phase are observed. No private RNG assertion.',steps:f.steps};}finally{await f.context.close();}
  },e=>{assert.equal(e.before.clock,'0 s');assert(e.before.publicText.includes('0 of 2 answers locked in.'));assert(e.afterBot.dateNow>e.deadline);matchTimer(e.afterBot,e.expected);assert.equal(e.afterBot.phase,'vote');assert.equal(e.afterBot.privateOpen,'false');assert.equal(e.afterBot.privateInputCount,0);assert.deepEqual(e.menu.menu.map(o=>({id:o.id,text:o.text})),e.expected.options.map(o=>({id:o.id,text:o.text})));assert.equal(e.menu.menu.length,1,'expired bot must not add a fake');});
 
- await runCase('exact-deadline correct quick answer',async()=>{
-  const f=await fixture('quick','number');
-  try{await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));const old=f.state,deadline=deadlineOf(old);await f.page.clock.setSystemTime(deadline);await new Promise<void>(resolve=>setTimeout(resolve,150));const before=await snapshot(f.page),inputNow=await f.click('#lock-answer'),after=await snapshot(f.page);return {seed:f.seed,deadline,inputNow,before,after,expected:timerFirst(old,inputNow),steps:f.steps};}finally{await f.context.close();}
- },e=>{assert.equal(e.inputNow,e.deadline);assert.equal(e.before.clock,'0 s');matchTimer(e.after,e.expected);assert.equal(e.after.phase,'reveal');assert.deepEqual(e.after.scores,[0,0]);assert.equal(e.after.privateInputCount,0);});
-
- await runCase('exact-deadline human bluff write',async()=>{
-  const f=await fixture('bluff');
-  try{const fake='Exact boundary timber beacon';await f.page.click('#reveal-private');await f.page.fill('#fake',fake);const old=f.state,deadline=deadlineOf(old);await f.page.clock.setSystemTime(deadline);await new Promise<void>(resolve=>setTimeout(resolve,150));const before=await snapshot(f.page),inputNow=await f.click('#input-form button[type=submit]'),after=await snapshot(f.page);await f.page.click('#reveal-private');const menu=await snapshot(f.page);return {seed:f.seed,fake,deadline,inputNow,before,after,menu,expected:timerFirst(old,inputNow),steps:f.steps};}finally{await f.context.close();}
- },e=>{assert.equal(e.inputNow,e.deadline);assert.equal(e.before.clock,'0 s');matchTimer(e.after,e.expected);assert.equal(e.after.phase,'vote');assert.equal(e.after.privateInputCount,0);assert.deepEqual(e.menu.menu.map(o=>({id:o.id,text:o.text})),e.expected.options.map(o=>({id:o.id,text:o.text})));assert.equal(e.menu.menu.some(o=>o.text.includes(e.fake)),false);});
-
  await runCase('on-time deadline minus1ms control',async()=>{
   const f=await fixture('quick','number');
   try{const deadline=deadlineOf(f.state);await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));await f.page.clock.setSystemTime(deadline-1);await new Promise<void>(resolve=>setTimeout(resolve,150));const before=await snapshot(f.page),inputNow=await f.click('#lock-answer',{type:'input',playerId:'p0',input:{type:'answer',value:Number(f.state.question.correct)}}),after=await snapshot(f.page);await f.click('#skip',{type:'vip',action:'skip'});const reveal=await snapshot(f.page);return {seed:f.seed,deadline,inputNow,before,after,reveal,expected:f.state,steps:f.steps};}finally{await f.context.close();}
@@ -131,7 +120,7 @@ try{
  if(!report.sourceGuardsMatch)report.failures.push('Source files changed during the regression run');
  if(report.externalRequests.length)report.failures.push('External HTTP requests observed');
  if(report.errors.length)report.failures.push('Browser page errors observed');
- report.passed=report.failures.length===0&&report.cases.length===8&&report.cases.every(c=>c.status==='passed');save();
+ report.passed=report.failures.length===0&&report.cases.length===6&&report.cases.every(c=>c.status==='passed');save();
 }
 assert.equal(report.passed,true,report.failures.join('\n')||'Incomplete regression run; see late-input-report.json');
-console.log(`Late-input regression ${report.cases.length}/8 passed; actual file, covered handover, timer-first scores, offline and source guards verified`);
+console.log(`Late-input regression ${report.cases.length}/6 passed; actual file, covered handover, timer-first scores, offline and source guards verified`);

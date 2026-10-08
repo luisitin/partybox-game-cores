@@ -1,0 +1,35 @@
+{
+  "mutation": "actual compiled ui.ts expiry comparison now<deadline changed to now<=deadline",
+  "startedAt": "2026-10-08T13:46:13.655373+00:00",
+  "canonicalBefore": {
+    "uiSha256": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "htmlSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b"
+  },
+  "oldSuiteLimit": "Original six cases retained; private runner adapts only its own guard filename and output path",
+  "mutant": {
+    "uiSha256": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
+    "htmlSha256": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e"
+  },
+  "old-six": {
+    "command": "node .mutation-old-six.ts",
+    "exitCode": 0,
+    "passedCases": 6,
+    "failedCases": [],
+    "sourceGuardsMatch": true,
+    "htmlSha256": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e"
+  },
+  "new-eight": {
+    "command": "node late-input.ts",
+    "exitCode": 1,
+    "passedCases": 6,
+    "failedCases": [
+      "exact-deadline correct quick answer",
+      "exact-deadline human bluff write"
+    ],
+    "sourceGuardsMatch": true,
+    "htmlSha256": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e"
+  },
+  "canonicalRestored": true,
+  "finishedAt": "2026-10-08T13:46:24.778376+00:00",
+  "canonicalPlayerBehaviorChanged": false
+}
