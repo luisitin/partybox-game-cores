@@ -1,0 +1,34 @@
+[
+  {
+    "reason": "G09 isolated strict browser coordination",
+    "pgid": 115703,
+    "pausedObservedAt": "2026-10-08T10:54:13Z",
+    "resumeAppliedBetween": [
+      "2026-10-08T10:58:04.342642+00:00",
+      "2026-10-08T10:58:04.347937+00:00"
+    ],
+    "observedPauseSeconds": 231.342642,
+    "proposalWasSeconds": 45,
+    "wallTimeIncludesHolds": true
+  },
+  {
+    "reason": "Milestone stable artifact freeze",
+    "pgid": 115703,
+    "stopTimeNotExactlyRetained": true,
+    "stopObservationBounds": [
+      "2026-10-08T10:42:22Z running",
+      "2026-10-08T10:44:17Z stopped"
+    ],
+    "resumedBy": "2026-10-08T10:46:05Z",
+    "correction": "Earlier NEXT/report10:42 was intended freeze timing, not an exact observed stop timestamp. Exact bound retained without inventing a stop time."
+  },
+  {
+    "reason": "Milestone6 immutable proof/artifact snapshot",
+    "pgid": 115703,
+    "stopAppliedBetween": [
+      "2026-10-08T11:10:23.285977+00:00",
+      "2026-10-08T11:10:23.286096+00:00"
+    ],
+    "resumePending": true
+  }
+]

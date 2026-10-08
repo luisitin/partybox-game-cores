@@ -1,0 +1,52 @@
+{
+  "previousSuccessfulPush": "2026-10-08T10:45:22Z",
+  "targetSuccessfulPush": "2026-10-08T11:10:22Z",
+  "hardDeadline": "2026-10-08T11:15:22Z",
+  "inputSha256": {
+    "src/international.ts": "ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe",
+    "scripts/purity.mjs": "aa3f6b5223168183d9378ef70db52fcba29bb110a9189164958ebca2c662ce83",
+    "scripts/integrity.mjs": "799c5c3eb920540b94ce5c457e7bced5d009531b899de09089573f574869fe67",
+    "scripts/check.mjs": "b3f4668a2c16ae99df4fa10bfe515b83d092429da722abb79452a74cacd8260f",
+    "scripts/build.mjs": "012753cf9f4c2fab7f877bb155c10afd70a98b32d4d27f58c957bc053a894787",
+    "tests/international.test.mjs": "1dbf14a02ed70cd41ea53db69535aa07165e7708bbd9c14a622e3bbcafab24e7",
+    "tests/reference-international.mjs": "bed44fc9ce610ec15c11f376301549fb35252ecab5ed53329a227f516f75883c",
+    "data/international/manifest.json": "1287ca39114e0dc411ae6440c340042f2d244c6af48eea19b3215059787fbcba",
+    "data/international/tunstall-v2.bin": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9",
+    "data/international/db2.bin": "305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed",
+    "data/international/db2.idx": "9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2",
+    "play.html": "59779eae7dfb093c5451b5ccc1090179ad23646cb8f6328531263726d2046c43"
+  },
+  "commands": [
+    {
+      "command": "node --test --test-reporter=tap tests/purity.test.mjs tests/data.test.mjs",
+      "exitCode": 0,
+      "pass": 3,
+      "raw": "purity-data.tap"
+    },
+    {
+      "command": "node_modules/.bin/tsc --noEmit",
+      "exitCode": 0,
+      "raw": "international-production-typecheck.stdout"
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/international.test.mjs tests/purity.test.mjs",
+      "exitCode": 0,
+      "pass": 6,
+      "raw": "international-production.tap"
+    },
+    {
+      "command": "node scripts/integrity.mjs --sources",
+      "exitCode": 0,
+      "raw": "integrity-milestone6.stdout",
+      "scope": "Sources only; incomplete delivery execution gates excluded"
+    }
+  ],
+  "scope": "Standalone pure Intl reader, actual2-piece WLD;10k2\u20136 rank arithmetic; defaultgame/HTML unchanged; missing3\u20136/defaultworker integration pending",
+  "remaining": [
+    "Full4000league",
+    "BroaderIntl6/offlinepackaging",
+    "Actual2\u20135integration/probes",
+    "Current integrity/CI/checkwrapper/regeneration/30spots",
+    "PR/exactheadCI/KEEPGOING"
+  ]
+}

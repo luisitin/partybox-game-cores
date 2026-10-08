@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "format": "Kingsrow International WLD Tunstall v2",
+  "author": "Ed Gilbert; egdb_intl project contributors",
+  "sourceUrl": "https://raw.githubusercontent.com/eygilbert/egdb_intl/eacf10797e8f6c81d618caa7af1eba05df139ac7/egdb/tunstall_decompress_v2.txt",
+  "sourceSha256": "c000a78bbfdfc43f36779a0f1dc5ab529d597562003ed73f343ec83958a18401",
+  "sourceLicence": "Boost Software License 1.0",
+  "licenceUrl": "https://raw.githubusercontent.com/eygilbert/egdb_intl/eacf10797e8f6c81d618caa7af1eba05df139ac7/LICENSE_1_0.txt",
+  "licenceSha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+  "catalogues": 50,
+  "tokensPerCatalogue": 256,
+  "valueRunBytes": 9877,
+  "packedLayout": "50x256 little-endian uint16 lengths; 50x256 uint16 offsets; 9877 value-run bytes",
+  "tokenSemantics": "A token denotes its declared-length prefix of a potentially longer shared run descriptor.",
+  "packedBytes": 61077,
+  "packedSha256": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9",
+  "jsonBytes": 116193,
+  "jsonSha256": "dd63f8a5cbc508195a91d007f779e629fd9e4e77e1ac412f2184753fc2be55d2",
+  "scope": "Decompression dictionaries only; no position outcomes or complete-six coverage implied."
+}

@@ -5,6 +5,7 @@ import {resolve} from 'node:path';
 import {z} from 'zod';
 import {gameManifestSchema} from '../dist/contract.mjs';
 import {game,tvView,controllerView,results} from '../dist/core.mjs';
+import {scanPureSource} from './purity.mjs';
 const json=async path=>JSON.parse(await readFile(path,'utf8'));
 const hash=value=>createHash('sha256').update(value).digest('hex');
 for(const line of (await readFile('SHA256SUMS.txt','utf8')).trim().split('\n')){
@@ -21,10 +22,12 @@ const corpus=await json('data/chinook/manifest.json');assert(z.fromJSONSchema(aw
 for(const [member,path] of [['DB6','data/chinook/DB6.bin'],['DB6.idx','data/chinook/DB6.idx']]){
   const bytes=await readFile(path);assert.equal(bytes.length,corpus.files[member].bytes);assert.equal(hash(bytes),corpus.files[member].sha256);
 }
+const international=await json('data/international/manifest.json');assert(z.fromJSONSchema(await json('data/international/schema.json')).safeParse(international).success);
+for(const [name,metadata] of Object.entries(international.files)){const bytes=await readFile('data/international/'+name);assert.equal(bytes.length,metadata.bytes);assert.equal(hash(bytes),metadata.sha256);}
 for(const name of await readdir('src')){
   if(!name.endsWith('.ts')||name.endsWith('.d.ts')||['browser.ts','bot-worker.ts'].includes(name))continue;
   const source=await readFile('src/'+name,'utf8');
-  assert(!/Math\.random|Date\.now|\bset(?:Timeout|Interval)\s*\(|\bfetch\s*\(|\b(?:localStorage|sessionStorage|document|window)\b|node:|\blocaleCompare\s*\(|\bIntl\b/.test(source),'Forbidden nondeterministic or host operation: '+name);
+  assert.deepEqual(scanPureSource(source,name),[],'Forbidden nondeterministic or host operation: '+name);
 }
 const packageData=await json('package.json');assert.deepEqual(packageData.dependencies,{zod:'4.6.5'});
 const html=await readFile('play.html','utf8');assert(/<script>/.test(html));assert(!/\b(?:src|href)\s*=\s*['"](?:https?:|\/\/)/i.test(html));assert(!html.includes('<!--G10_SCRIPT-->'));

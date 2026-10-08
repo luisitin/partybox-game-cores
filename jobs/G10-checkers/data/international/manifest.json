@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "author": "Ed Gilbert / Kingsrow",
+  "grantUrl": "https://damforum.nl/bb3/viewtopic.php?t=8341",
+  "downloadUrl": "http://edgilbert.org/InternationalDraughts/endgame_database_downloads.htm",
+  "sourceFolderUrl": "https://mega.nz/folder/vRhFgSjR#bqlaniDcxC65fZWpnovROA",
+  "setupSha256": "7061f83d686cec8affff4d1fc69efbb7c2d6122615b3e723458db198c54f7b65",
+  "files": {
+    "db2.bin": {
+      "bytes": 404,
+      "sha256": "305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed"
+    },
+    "db2.idx": {
+      "bytes": 111,
+      "sha256": "9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2"
+    },
+    "tunstall-v2.bin": {
+      "bytes": 61077,
+      "sha256": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9"
+    },
+    "BOOST-LICENSE.txt": {
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    }
+  },
+  "coverage": {
+    "installed": [
+      "db2"
+    ],
+    "maximumInstalledPieces": 2,
+    "fullSixPieceCoverage": false,
+    "scope": "International theoretical board-only WLD v2; current-side capture queries excluded, opponent-only threats valid at <=6; broader payload and draw-history progress remain pending"
+  }
+}

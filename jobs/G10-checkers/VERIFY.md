@@ -150,3 +150,45 @@ refresh time does not reset the branch push cadence.
   retained per shard. Balanced1,000 games per variant gives2,000 per required
   skill comparison and keeps separate pervariant advantage gates. Smoke is not
   the full strength check. International corpus and CI/PR/KEEP GOING are pending.
+
+Observed successful branch push: origin reflog update-by-push10:45:22UTC,
+headbf455bfd92333f8153715524afa7a8c1dc96a229, interval25m44s since10:19:38.
+Main claim363f2b3 at10:44:17. Early target10:44:38 missed44 seconds, binding
+hard10:49:38 met. Next stage/pack~11:05, targetpush11:10:22, hard11:15:22.
+Fullleague PGID115703 resumed after checkpoint under parent CPUrelease.
+
+## Source boundary and International reader around11:05UTC
+
+- `node --test --test-reporter=tap tests/purity.test.mjs tests/data.test.mjs`:
+  PASS3/3, raw purity-data.tap. The earlier regex scanner mistook the local
+  draw-window callback identifier for a browser global; raw failure retained.
+  AST controls permit local parameters/comments/strings/property names and reject
+  actual unbound host/global operations, wall clock, unseeded random, I/O imports,
+  dynamic runtime imports, locale collation and module-level mutable bindings.
+  Production modules pass; host browser/worker adapters are explicit exclusions.
+- `node_modules/.bin/tsc --noEmit` plus standalone esbuild of src/international.ts:
+  PASS, exact stdout retained. This adds a separately callable pure constructor;
+  it does not connect missing Intl outcomes into current game/Strong worker.
+- `node --test --test-reporter=tap tests/international.test.mjs
+  tests/purity.test.mjs`: PASS6/6, raw international-production.tap. Actual licensed
+  two-piece bytes/dictionary are hash checked; every applicable complete small
+  WLD matches independent fixed-point and separate wire decoder.10k2–6piece ranks
+  agree across both orientations. Corrupt metadata/dictionaries and input alias
+  mutations are rejected; missing material slices stay UNKNOWN.
+- Current-side captures are excluded in original Intlv2<=6; opponent-only threats
+  remain valid. Additional opponent exclusions begin at7pieces. This materially
+  differs from the American Chinook contract. Scope and original format sources
+  are explicit in INTERNATIONAL-ENDGAME-HANDOFF.md.
+- G10 CI workflow/check wrapper are authored, UNRUN. Full strength league remains
+  RUNNING. Full International6/default-worker integration, corpus/data regeneration,
+  manual30spots, exact-head CI/PR/KEEP GOING still pending. No BLOCKED is justified.
+
+The actual eight International2–5 files have since been acquired privately,
+with every installer SHA1 and original-driver CRC matching. They are not yet
+installed/probed here beyond db2, and this does not change claimed scope.
+New source integrity is still pending the frozen snapshot execution below.
+
+- `node scripts/integrity.mjs --sources`: PASS on frozen milestone6 input;
+  raw integrity-milestone6.stdout. Verifies all listed checksums, schemas/
+  manifest, AST source boundary and provenance/offline attributes. Explicitly
+  excludes unfinished fullleague/Intl6 and final delivery execution gates.

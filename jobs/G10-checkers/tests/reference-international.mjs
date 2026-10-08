@@ -111,6 +111,7 @@ function parseFiles(files) {
       || typeof supplied.indexText !== 'string') throw new Error('Invalid International file input');
     const physical = [];
     let current = null;
+    let fileSlices = 0;
     for (const raw of supplied.indexText.split(/\r?\n/u)) {
       const line = raw.trim();
       if (!line) continue;
@@ -144,6 +145,7 @@ function parseFiles(files) {
           physical.push(current);
         }
         slices.set(key, current);
+        fileSlices++;
       } else {
         const next = /^(\d+),(\d+),(\d+)$/u.exec(line);
         if (!next || !current || current.uniform !== undefined) throw new Error('Unexpected International index record');
@@ -153,7 +155,7 @@ function parseFiles(files) {
         current.blocks.push({ ordinal, catalogue, mapping });
       }
     }
-    if (!slices.size) throw new Error('Empty International index');
+    if (!fileSlices) throw new Error('Empty International index');
     physical.sort((left, right) => left.start - right.start);
     physical.forEach((slice, index) => {
       slice.end = physical[index + 1]?.start ?? supplied.data.length;
@@ -178,15 +180,18 @@ function readTables(tables) {
         || offset < 0 || offset >= valueRuns.length) throw new Error('Invalid International dictionary entry');
       let cursor = offset, total = 0;
       const runs = [];
-      while (cursor < valueRuns.length && valueRuns[cursor] !== 6) {
+      // Several token lengths share one longer run descriptor. Each token
+      // means its declared-length prefix, not necessarily the whole record.
+      while (total < length && cursor < valueRuns.length && valueRuns[cursor] !== 6) {
         if (valueRuns[cursor] > 3 || cursor + 2 >= valueRuns.length) throw new Error('Invalid International virtual run');
         const count = valueRuns[cursor + 1] + 256 * valueRuns[cursor + 2];
-        if (!count || total + count > length) throw new Error('Invalid International run length');
-        runs.push({ value: valueRuns[cursor], count });
-        total += count;
+        if (!count) throw new Error('Invalid International run length');
+        const prefixCount = Math.min(count, length - total);
+        runs.push({ value: valueRuns[cursor], count: prefixCount });
+        total += prefixCount;
         cursor += 3;
       }
-      if (cursor >= valueRuns.length || total !== length) throw new Error('Unterminated/inconsistent International token');
+      if (total !== length) throw new Error('Unterminated/inconsistent International token');
       return { length, runs };
     });
   });

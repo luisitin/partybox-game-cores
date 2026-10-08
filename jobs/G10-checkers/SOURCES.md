@@ -103,3 +103,17 @@ provided source/license fallback; an npm package lead was reachable.
 Knowledge fallback was unnecessary for the critical rules. Unread URLs
 remain leads, never proof. Observed historical research blockers remain
 historical evidence and are not grounds to stop this implementation.
+
+## Actual International v2 implementation milestone
+
+The pinned Boost dictionary source and complete licence are tracked with
+source/hash provenance in data/international/dictionary-manifest.json. The
+61,077-byte table pack was regenerated twice byte-identically. Only actual
+404-byte db2.cpr1 and111-byte db2.idx1 are installed; original installer SHA-1,
+author-driver CRC and source SHA-256 were verified. The renamed bin/idx bytes
+are unchanged. Position-data permission is the separate author grant D11.
+No three-to-six payload completion is implied by a constructor accepting
+six-piece ranks. Production reader is original MIT, independent reader imports
+only the separately authored coordinate oracle. Actual two-piece WLD is compared
+against a fully closed independent retrograde, and10k2–6ranks are compared
+separately. These are different scopes; neither proves absent payloads.

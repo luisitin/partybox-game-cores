@@ -1,0 +1,35 @@
+name: G10 Checkers
+on:
+  pull_request:
+    paths:
+      - 'jobs/G10-checkers/**'
+      - 'contract/**'
+      - '.github/workflows/G10.yml'
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G10-checkers
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: jobs/G10-checkers/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm test > .work-npm-test.stdout 2>&1
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G10-check-evidence
+          path: |
+            jobs/G10-checkers/.work-npm-test.stdout
+            jobs/G10-checkers/.work/checks
+            jobs/G10-checkers/.work/browser
+            jobs/G10-checkers/.work/media

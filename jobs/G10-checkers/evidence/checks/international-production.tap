@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: actual International dictionary/data match pinned licensed-source hashes
+ok 1 - actual International dictionary/data match pinned licensed-source hashes
+  ---
+  duration_ms: 5.512444
+  type: 'test'
+  ...
+# Subtest: production/reference International probes agree with independently closed full two-piece WLD
+ok 2 - production/reference International probes agree with independently closed full two-piece WLD
+  ---
+  duration_ms: 2903.314695
+  type: 'test'
+  ...
+# Subtest: 10,000 International material/orientation ranks agree with separately authored reference
+ok 3 - 10,000 International material/orientation ranks agree with separately authored reference
+  ---
+  duration_ms: 306.375596
+  type: 'test'
+  ...
+# Subtest: International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+ok 4 - International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+  ---
+  duration_ms: 23.177297
+  type: 'test'
+  ...
+# Subtest: purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+ok 5 - purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+  ---
+  duration_ms: 110.846222
+  type: 'test'
+  ...
+# Subtest: all delivered pure production modules pass AST inspection; host adapters are explicit
+ok 6 - all delivered pure production modules pass AST inspection; host adapters are explicit
+  ---
+  duration_ms: 353.083935
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 8711.334654

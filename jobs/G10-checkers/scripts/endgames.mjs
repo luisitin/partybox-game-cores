@@ -34,6 +34,7 @@ const data={version:1,seed,coverage:{status:'generated',maximumPieces:6,
   fullSixPieceCoverage:false,drawHistoryIncluded:false,
   unresolved:'quiet positions with three through six pieces outside the generated rows return null and use bounded alpha-beta'},stats,rows};
 await mkdir('data',{recursive:true});await writeFile('data/endgames.json',JSON.stringify(data)+'\n');
-await mkdir('evidence/checks',{recursive:true});
-await writeFile('evidence/checks/endgame-generation.json',JSON.stringify({command:'node scripts/endgames.mjs',seed,coverage:data.coverage,stats,totalRows:rows.length},null,2)+'\n');
+const evidenceDirectory=process.env.G10_EVIDENCE_DIR??'evidence/checks';
+await mkdir(evidenceDirectory,{recursive:true});
+await writeFile(evidenceDirectory+'/endgame-generation.json',JSON.stringify({command:'node scripts/endgames.mjs',seed,coverage:data.coverage,stats,totalRows:rows.length},null,2)+'\n');
 process.stdout.write(JSON.stringify({suite:'endgame-generation',stats,totalRows:rows.length})+'\n');

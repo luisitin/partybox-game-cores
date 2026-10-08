@@ -1,0 +1,76 @@
+TAP version 13
+# Subtest: independent International rank has exact back-rank group boundaries
+ok 1 - independent International rank has exact back-rank group boundaries
+  ---
+  duration_ms: 2.530464
+  type: 'test'
+  ...
+# Subtest: all two-piece material ranks are complete independent bijections
+ok 2 - all two-piece material ranks are complete independent bijections
+  ---
+  duration_ms: 96.947908
+  type: 'test'
+  ...
+# Subtest: rotation and colour reversal preserve canonical location
+ok 3 - rotation and colour reversal preserve canonical location
+  ---
+  duration_ms: 0.752553
+  type: 'test'
+  ...
+# Subtest: six-piece ranks include 3v3 and 5v1 kings
+ok 4 - six-piece ranks include 3v3 and 5v1 kings
+  ---
+  duration_ms: 0.61436
+  type: 'test'
+  ...
+# Subtest: invalid crowns, side, board and out-of-scope material do not produce ranks
+ok 5 - invalid crowns, side, board and out-of-scope material do not produce ranks
+  ---
+  duration_ms: 0.267767
+  type: 'test'
+  ...
+# Subtest: synthetic token mapping and uniform slice decode without mutation
+ok 6 - synthetic token mapping and uniform slice decode without mutation
+  ---
+  duration_ms: 22.688481
+  type: 'test'
+  ...
+# Subtest: synthetic checkpoint changes catalogue at the physical block boundary
+ok 7 - synthetic checkpoint changes catalogue at the physical block boundary
+  ---
+  duration_ms: 4.470061
+  type: 'test'
+  ...
+# Subtest: a token uses a declared-length prefix of a longer shared run record
+ok 8 - a token uses a declared-length prefix of a longer shared run record
+  ---
+  duration_ms: 6.61307
+  type: 'test'
+  ...
+# Subtest: current captures are excluded but opponent-only threats are valid for v2 at <=6
+ok 9 - current captures are excluded but opponent-only threats are valid for v2 at <=6
+  ---
+  duration_ms: 5.824451
+  type: 'test'
+  ...
+# Subtest: malformed dictionary, permutation and checkpoint are rejected
+ok 10 - malformed dictionary, permutation and checkpoint are rejected
+  ---
+  duration_ms: 2.936048
+  type: 'test'
+  ...
+# Subtest: actual licensed two-piece sample agrees with exact corner and quiet-king cases
+ok 11 - actual licensed two-piece sample agrees with exact corner and quiet-king cases
+  ---
+  duration_ms: 16.857338
+  type: 'test'
+  ...
+1..11
+# tests 11
+# suites 0
+# pass 11
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 423.005934

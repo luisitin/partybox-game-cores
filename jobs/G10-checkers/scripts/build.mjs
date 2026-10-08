@@ -5,7 +5,7 @@ await mkdir('dist',{recursive:true});
 const alias={zod:resolve('node_modules/zod')};
 const loader={'.bin':'binary','.idx':'text'};
 const externalEndgame={name:'shared-node-endgame',setup(api){api.onResolve({filter:/endgame\.js$/},()=>({path:'./endgame.mjs',external:true}));}};
-for(const name of ['core','moves','draws','bots','endgame','retrograde','schema','chinook']){
+for(const name of ['core','moves','draws','bots','endgame','retrograde','schema','chinook','international']){
   await build({entryPoints:['src/'+name+'.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/'+name+'.mjs',alias,loader,define:{G10_CORPUS_ENABLED:'true'},plugins:name==='endgame'?[]:[externalEndgame]});
 }
 await build({entryPoints:['../../contract/contract.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/contract.mjs',alias});
