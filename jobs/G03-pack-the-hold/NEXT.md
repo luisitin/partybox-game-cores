@@ -1,25 +1,20 @@
 # Resume G03
 
-Branch job/G03-pack-the-hold; claim codex-core. Full implementation milestone.
-Pure strict TypeScript core, generic exact solver and independently written
-coordinate-grid oracle, certified seeded generator, measured difficulty bank,
-60/80/95% bots, hot-seat page, phase fixtures, schemas and job CI implemented.
+Branch job/G03-pack-the-hold; claim codex-core. Full core and all required checks
+passed push CI37718745692 at commit8c383f3, including real disk opening and
+UI rosters2–8. Latest uncommitted documentation/source receipts must be
+regenerated/checked and committed, then open the PR. README has exact commands.
 
-18 tests passed: 10,000 solver cases, 1,003 property seeds, 7,000 bot games,
-4,000 league games, contract invariants, secrecy and fixtures. All 25 planted
-mutations caught after strengthening disjoint-duplicate-crate coverage.
-Two data regenerations matched bytes. Subsequent change separates mirrored
-calibration and warms up the frame benchmark; rerun current checks/CI.
+Next binding stage: wait for the PR to be green, then KEEP GOING. Re-read
+JOBS.md; list five weaknesses each round; fix the worst; measure and push with
+updated LOOP/NEXT and a refreshed main claim. Three consecutive rounds without
+player-noticeable gain are required before moving on.
 
-Local Chrome blocks file:// with ERR_BLOCKED_BY_ADMINISTRATOR. Allowed localhost
-HTTP verified the page, reduced motion, no runtime requests and a full game;
-this is explicitly not the disk gate. Push CI runs npm test with actual disk
-navigation on a normal GitHub runner. Wait for all its checks to pass before PR.
-Then re-read JOBS.md and run KEEP GOING until three consecutive rounds gain
-nothing a player would notice. Current notable weakness: repeated hold geometry
-within a difficulty tier; improve seeded variation without weakening calibration.
-Other review targets: touchscreen drag, keyboard controls, clock fairness,
-mirrored difficulty order. Preserve contract and other jobs.
+Review targets: limited seeded hold variety within a tier; touchscreen drag;
+keyboard focus and previews; clock fairness and hand-off; mirror calibration
+order. Core types/contract and other jobs must remain unchanged. No worktree.
 
-Push milestones and at least every 30 minutes; refresh CLAIMS.md on main.
-No worktree needed. Never cite unread academic URLs; live GitHub sources suffice.
+Cloud Chrome's policy still blocks file:// locally. Explicit localhost-mode
+checks are partial; mandatory CI uses actual disk mode and forbids fallback.
+Historical academic403s do not block the two live packing sources. Wilson
+intervals were corroborated from live SciPy and Statsmodels formulas.

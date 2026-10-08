@@ -22,3 +22,20 @@ game's selected rules. All artwork is original CSS/SVG.
 ArXiv, Wikipedia and MathWorld candidates still returned 403 on 2026-10-08.
 They remain unread, never evidence. research-access.json records URLs, pinned
 commits, UTC, SHA-256, byte counts and HTTP outcomes for the actual requests.
+
+3. [SciPy Wilson interval](https://github.com/scipy/scipy/blob/ec1861fda2c65d4d4e92f15807f85bc595db7523/scipy/stats/_binomtest.py),
+   `_binom_wilson_conf_int`, lines153–179: uncorrected two-sided center/radius,
+   clamping the zero/all-success limits.
+4. [Statsmodels proportions](https://github.com/statsmodels/statsmodels/blob/8278e2d218cc85bac2c7af02feb9a19a0e499b04/statsmodels/stats/proportion.py),
+   `method == "wilson"`, lines296–313: independent corroboration of the same
+   center/radius and clipping. Read both formula implementations live. Our
+   algebraic implementation uses the standard two-sided95% normal quantile;
+   no SciPy/Statsmodels code or runtime dependency is included.
+
+Confidence intervals describe the named policy under the sampled levels.
+Adjacent intervals overlap; neither human difficulty nor statistically distinct
+human tiers is established by these measurements.
+
+5. [zod4.6.5 package](https://www.npmjs.com/package/zod/v/4.6.5), installed
+   from the live npm registry. Read its LICENSE; bundled MIT notice retained
+   in play.html and THIRD_PARTY_NOTICES.md. Used for contract input validation.

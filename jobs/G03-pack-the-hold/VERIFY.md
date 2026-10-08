@@ -136,3 +136,24 @@ sample: desktop59.343fps (16.851ms mean,16.8ms p95,33.4ms max); CPU4x phone
 frames, moving the preview at10Hz. Zero external requests or exceptions.
 Video milestone-02.webm is91,212bytes. This is still partial localhost testing,
 not a claimed successful disk-open check. All timing outliers are retained.
+
+## Full required CI gate passed
+
+[Push run37718745692](https://github.com/luisitin/partybox-game-cores/actions/runs/37718745692)
+completed successfully at2026-10-08T02:39:28Z on commit8c383f3. Its normal runner
+ran exact command `npm test` with no HTTP fallback: strict build,18 tests,
+10,000 solver differentials,1,003 property seeds,7,000 bot simulations,
+4,000 league games,25/25 mutations, JSON Schemas, hash checks, two byte-identical
+regenerations, actual file:// navigation, pointer drag, keyboard placement,
+played-out page rosters2–8, reduced motion and zero external runtime requests.
+`node scripts/benchmark.mjs` also passed on2,000 generated/certified levels.
+The Actions log is the authoritative remote result; optional artifact download
+was blocked at the Azure blob-storage host, so no inaccessible artifact is
+claimed to have been read. No credentials, signed download URLs or policy
+changes are stored in this repository.
+
+The successful disk-mode run reported Chrome154: desktop16.666ms mean
+(60.002fps), CPU4x phone16.666ms mean(60.004fps), p95≤16.8ms, zero
+exceptions/external requests, all seven roster sizes complete. Generated-level
+benchmark max4.621ms and max856 search nodes. Exact Actions-log command:
+`gh run view 37718745692 --repo luisitin/partybox-game-cores --log`.
