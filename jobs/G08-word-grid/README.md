@@ -1,6 +1,5 @@
-# G08 — blocked research checkpoint
+# Shake Up (G08)
 
-No game implementation or readiness claim yet.
-BLOCKED.md records actual failed source requests. NEXT.md records all resume
-requirements. VERIFY.md distinguishes executed connectivity checks from
-unrun game checks. No runtime application or assets are shipped.
+Verify and improve the owner's game in `start/`; [START-HERE](START-HERE.md) and the [owner spec](start/games/shake-up/README.md) bind this work.
+
+Research checkpoint only: no runnable offline page, checks, CI or PR are claimed yet. See [NEXT.md](NEXT.md) for outstanding gates and [SOURCES.md](SOURCES.md) / [CONFLICTS.md](CONFLICTS.md) for actual source findings.
