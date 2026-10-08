@@ -73,3 +73,31 @@ media/milestone-1.webm: 290,245 bytes (<10 MB), with TV/phone screenshots.
 Physical phone not available. Managed direct file:// navigation is blocked;
 the exact delivered HTML bytes are exercised through setContent instead.
 Current-head complete npm test and actual PR CI remain unverified.
+
+Final source verification, /tmp/G04-final-npm-test.log: npm test EXIT0,
+46/46 tests, zero failures/skips, node:test duration212,661.526 ms.
+All 21,000 count/mode games,1,003 exact replays and1,000 idle games pass
+with the BCE/CE fix. Both10,000-case differentials pass. All25 mutations
+are killed with actual23-test baseline. All six2,000-game leagues retain
+the documented conservative rates (ties count as no win).
+
+Heavier node browser.ts PASS19 scenarios: all eight wheel landings verified
+by an independent transformed-ray check; eight seats, an open human draft
+and seven bot submissions remain smooth. TV mean16.6660ms,p9516.70ms,
+60.0024fps; phone4× mean16.6659ms,p9516.80ms,60.0028fps. No requests,
+errors or reduced-motion animation. TV input fits1920×1080; phone has no
+horizontal overflow. media/milestone-2.webm286,613bytes; capture1 retained.
+Standalone HTML491,536bytes. node checksums.ts / --check PASS18 files.
+
+Independent idle timing command: node --input-type=module (init default
+Mixed with2 connected seats for seeds1–1000; advance only exact timer
+phaseId/startedAt/deadline until done; assert seen.length7 and startedAt
+694000). All1,000 matched: min=max694,000ms,11min34s,confirming the
+selected default pacing. This is a local derivation,not an external fact.
+
+Added checksum entry guard node checksums.ts --check:PASS before and after
+complete pipeline. bash /workspace/.onboarding/install.sh:EXIT0,shared
+strict types/RNG checks and pinned G04 install,23 focused tests,generated
+sample identity,standalone build identity and18 checksums all PASS.
+Cloud install_script/start_skill saved at draftrevision6 (unpublished).
+Current-head hosted PR CI and KEEP GOING remain pending.

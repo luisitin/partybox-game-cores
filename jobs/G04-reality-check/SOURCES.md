@@ -16,3 +16,9 @@ JSON ABI was found there. Samples will be entirely invented,not sourced real
 medical/people/patent/recall data. All prose,HTML,CSS/SVG and sample data original.
 Wikipedia research requests returned403; live GitHub sources suffice under the
 binding fallback. No denied source is claimed as read.
+
+Verification complete for the derivation: independent ratio/log implementations
+agree on 10,000 cases plus 14 boundaries. All 160 sample rows are original
+fictional data, not real-world facts. The BCE/CE and decade conventions are
+from knowledge, unverified externally; re-verification is in NEXT.md. CSS,
+SVG and captures are original. No external art, logos, contacts or assets.

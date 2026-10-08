@@ -19,7 +19,7 @@ async function freezeClock(p:Page){await p.clock.install({time:100000});await p.
 function initial(kind:string,mode='quick'){
  for(let seed=1;seed<1000;seed++){
   const state=game.init({players:[0,1,2].map(i=>({id:`p${i}`,name:`Player ${i+1}`,avatarId:'🙂',connected:true})),seed,now:100000,settings:{mode,rounds:4}});
-  if(state.question.kind===kind)return {seed,state};
+  if(state.question.kind===kind||state.question.realm===kind)return {seed,state};
  }throw new Error('No seed for '+kind);
 }
 async function start(p:Page,{seed=1,mode='quick',players=2,rounds=4}:{seed?:number;mode?:string;players?:number;rounds?:number}={}){
@@ -35,6 +35,17 @@ try {
  await timing.page.click('#pause');await timing.page.clock.runFor(49999);assert.equal(await phase(timing.page),'answer');await timing.page.clock.runFor(1);assert.equal(await phase(timing.page),'reveal');
  await timing.page.click('#end');assert.equal(await phase(timing.page),'done');await timing.page.click('#restart');assert(await timing.page.locator('#setup').isVisible());assert.equal(await timing.page.locator('#private input').count(),0);
  await timing.context.close();functional.push('3s wheel / 10s demo / exact pause-shifted deadline / end and restart');
+ const landing=await pageFor({width:1920,height:1080});await freezeClock(landing.page);
+ for(const realm of ['emergency-room','dead-or-alive','internet-famous','ancient-or-ikea','name-your-baby','real-town-or-fake','patent-pending','do-not-use']){
+  const {seed}=initial(realm,'mixed');await start(landing.page,{seed,mode:'mixed'});await landing.page.clock.runFor(3000);assert.equal(await phase(landing.page),'demo');
+  assert(await landing.page.evaluate(()=>{
+   const chosen=Array.from(document.querySelectorAll('#wheel-panel li')).findIndex(e=>e.classList.contains('chosen'));
+   const angle=(chosen+.5)*Math.PI/4-Math.PI/2,rotation=new DOMMatrix(getComputedStyle(document.querySelector('#wheel-panel svg')!).transform);
+   const x=rotation.a*Math.cos(angle)+rotation.c*Math.sin(angle),y=rotation.b*Math.cos(angle)+rotation.d*Math.sin(angle);
+   return chosen>=0&&Math.abs(x)<.00001&&y<-.99999;
+  }),'selected wedge must land under the pointer');await landing.page.click('#restart');
+ }
+ await landing.context.close();functional.push('all eight realm wedges land under the wheel pointer');
  // Every Quick controller is playable, concealed on handover and scores through the actual reducer.
  for(const kind of ['number','choice','century','decade']){
   const {seed,state}=initial(kind),match=await pageFor();await freezeClock(match.page);await start(match.page,{seed});await moveToInput(match.page);
@@ -87,19 +98,21 @@ try {
  }
  const performance=[];
  for(const [name,viewport,throttle] of [['tv',{width:1920,height:1080},1],['phone',{width:390,height:844},4]] as const){
-  const match=await pageFor(viewport),cdp=await match.context.newCDPSession(match.page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:throttle});await match.page.selectOption('#seat-0','sharp');await match.page.selectOption('#seat-1','normal');await start(match.page,{seed:42,mode:'mixed',rounds:8});
+  const match=await pageFor(viewport),cdp=await match.context.newCDPSession(match.page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:throttle});
+  await match.page.selectOption('#players','8');for(let i=1;i<8;i++)await match.page.selectOption(`#seat-${i}`,i%2?'sharp':'normal');
+  await start(match.page,{seed:bluffSeed,mode:'bluff',players:8,rounds:8});await moveToInput(match.page);await match.page.click('#reveal-private');await match.page.fill('#fake','My harbour bluff');
   const frames=await match.page.evaluate(()=>new Promise<number[]>(resolve=>{const deltas:number[]=[];let previous:number|null=null;function tick(now:number){if(previous!==null)deltas.push(now-previous);previous=now;if(deltas.length===300)resolve(deltas);else requestAnimationFrame(tick);}requestAnimationFrame(tick);}));
   const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((a,b)=>a+b,0)/frames.length;
-  const report={name,viewport,throttle,frames:frames.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)]!,p99Ms:sorted[Math.floor(sorted.length*.99)]!,fps:1000/mean};performance.push(report);console.log(report);assert(report.fps>=58,`${name} mean below 58 fps`);assert(report.p95Ms<=18,`${name} p95 misses 60-Hz budget`);
+  const report={name,viewport,throttle,scenario:'eight seats, open human controller, seven concurrent bot inputs',frames:frames.length,meanMs:mean,p95Ms:sorted[Math.floor(sorted.length*.95)]!,p99Ms:sorted[Math.floor(sorted.length*.99)]!,fps:1000/mean};performance.push(report);console.log(report);assert(report.fps>=58,`${name} mean below 58 fps`);assert(report.p95Ms<=18,`${name} p95 misses 60-Hz budget`);
   assert(await match.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));if(name==='tv')assert(await match.page.evaluate(()=>document.documentElement.scrollHeight<=innerHeight));
   await match.page.screenshot({path:`media/${name}.png`,fullPage:true});
   if(name==='tv'){
    const directory=mkdtempSync(join(tmpdir(),'G04-capture-'));
-   try{for(let i=0;i<36;i++){await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.png`)});await match.page.waitForTimeout(66);}const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(directory,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-1.webm'],{encoding:'utf8'});assert.equal(encode.status,0,encode.stderr||encode.error?.message);assert(statSync('media/milestone-1.webm').size<10*1024*1024);}finally{rmSync(directory,{recursive:true});}
+   try{for(let i=0;i<36;i++){await match.page.screenshot({path:join(directory,`${String(i).padStart(3,'0')}.png`)});await match.page.waitForTimeout(66);}const encode=spawnSync('ffmpeg',['-y','-loglevel','error','-framerate','12','-i',join(directory,'%03d.png'),'-c:v','libvpx-vp9','-b:v','700k','-an','media/milestone-2.webm'],{encoding:'utf8'});assert.equal(encode.status,0,encode.stderr||encode.error?.message);assert(statSync('media/milestone-2.webm').size<10*1024*1024);}finally{rmSync(directory,{recursive:true});}
   }
   await match.context.close();
  }
  const reduced=await pageFor({width:390,height:844},'reduce');await start(reduced.page);assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);await reduced.context.close();functional.push('reduced-motion disables wheel animation');
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- writeFileSync('browser-report.json',JSON.stringify({functional,navigationMode:'Exact play.html bytes via setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:'media/milestone-1.webm',captureBytes:statSync('media/milestone-1.webm').size},null,2)+'\n');console.log(`Browser ${functional.length} functional scenarios, offline, privacy, reduced-motion, frame times and capture passed`);
+ writeFileSync('browser-report.json',JSON.stringify({functional,navigationMode:'Exact play.html bytes via setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance,physicalPhone:'unavailable; 390×844 Chromium with 4× CPU is the measured approximation',capture:'media/milestone-2.webm',captureBytes:statSync('media/milestone-2.webm').size},null,2)+'\n');console.log(`Browser ${functional.length} functional scenarios, offline, privacy, reduced-motion, frame times and capture passed`);
 }finally{await browser.close();}

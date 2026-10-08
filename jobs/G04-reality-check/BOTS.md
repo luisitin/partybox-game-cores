@@ -13,7 +13,7 @@ clues, two-word fakes matching the realm's plant/harbour or material/
 machine/defect pattern, and candidate-text plausibility. All avoid self-votes.
 
 node league.ts: 2,000 matches per pair per mode, seeds 1–2,000, alternating
-seats; 12,000 total. Ties count as half a win. Approximate 95% intervals
+seats; 12,000 total. Ties conservatively count as no win. Approximate 95% intervals
 are declared before checking the lower bound.
 
 | Mode | Strong vs Medium | Medium vs Easy |

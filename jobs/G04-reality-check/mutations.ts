@@ -32,6 +32,8 @@ const bugs:[string,string,string][]=[
 assert.equal(bugs.length,25);
 function run(path?:string){return spawnSync(process.execPath,['--test','test.ts'],{encoding:'utf8',env:{...process.env,FAST_TEST:'1',...(path?{CORE_PATH:path}:{})},timeout:60000});}
 const baseline=run();assert.equal(baseline.status,0,baseline.stdout+baseline.stderr);
+const baselinePassed=Number(baseline.stdout.match(/ℹ pass (\d+)/)?.[1]);
+assert(baselinePassed>0,'baseline must execute actual passing tests');
 const report=[];
 for(let i=0;i<bugs.length;i++){
  const [name,from,to]=bugs[i]!;assert.equal(original.split(from).length,2,`${name}: mutation must target exactly once`);
@@ -42,5 +44,5 @@ for(let i=0;i<bugs.length;i++){
  }finally{unlinkSync(path);}
 }
 const killed=report.filter(r=>r.killed).length;
-writeFileSync('mutation-report.json',JSON.stringify({planted:25,killed,baseline:'22 focused tests passed',mutations:report},null,2)+'\n');
+writeFileSync('mutation-report.json',JSON.stringify({planted:25,killed,baseline:`${baselinePassed} focused tests passed`,mutations:report},null,2)+'\n');
 assert(killed>=24,`${killed}/25 killed; at least24 required`);

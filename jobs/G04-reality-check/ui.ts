@@ -8,7 +8,7 @@ const names=new Map<string,string>();
 let state:State|null=null;
 let kinds:Record<string,SeatKind>={},rngs:Record<string,Rng>={};
 let phaseTimer:ReturnType<typeof setTimeout>|null=null,botTimer:ReturnType<typeof setTimeout>|null=null;
-let viewer:string|null=null,open=false,visited:string[]=[],privateStamp='';
+let viewer:string|null=null,open=false,visited:string[]=[],privateStamp='',wheelStamp='';
 const value=<T extends HTMLInputElement|HTMLSelectElement>(id:string)=>$(id) as T;
 function seatFields(){
  const old=Array.from(document.querySelectorAll<HTMLSelectElement>('#seats select')).map(e=>e.value);
@@ -41,11 +41,16 @@ function schedule(){
 function dateLabel(q:QuestionView,n:number):string{return q.kind==='decade'?`${n}s`:`Century ${Math.abs(n)} ${n<0?'BCE':'CE'}`;}
 function displayAnswer(q:{kind:string;left?:string;right?:string},correct:string|number){return q.kind==='choice'?(Number(correct)===0?q.left:q.right)??String(correct):q.kind==='century'?`Century ${Math.abs(Number(correct))} ${Number(correct)<0?'BCE':'CE'}`:q.kind==='decade'?`${correct}s`:String(correct);}
 function wheel(v:ReturnType<typeof game.tvView>){
+ const stamp=`${phaseKey(state!)}:${v.realm}`;
+ const previous=$('wheel-panel').querySelector<SVGElement>('svg');
+ if(previous)previous.style.animationPlayState=v.paused?'paused':'running';
+ if(stamp===wheelStamp)return;wheelStamp=stamp;
+ const landing=1080-(v.realms.findIndex(r=>r.id===v.realm)+.5)*45;
  const wedges=v.realms.map((r,i)=>{
   const a=i*Math.PI/4-Math.PI/2,b=a+Math.PI/4,x=100+94*Math.cos(a),y=100+94*Math.sin(a),xx=100+94*Math.cos(b),yy=100+94*Math.sin(b),mid=(a+b)/2;
   return `<path d="M100 100 L${x} ${y} A94 94 0 0 1 ${xx} ${yy} Z" fill="${r.id===v.realm&&v.phaseId!=='wheel'?'#80e0d0':i%2?'#40617b':'#29485e'}" stroke="#101c29" stroke-width="2"/><text x="${100+68*Math.cos(mid)}" y="${106+68*Math.sin(mid)}" text-anchor="middle" fill="#fff" font-size="16">${i+1}</text>`;
  }).join('');
- $('wheel-panel').innerHTML=`<p class="kicker">Realm wheel</p><div class="wheel ${v.phaseId==='wheel'?'spin':''}" aria-label="${v.phaseId==='wheel'?'Spinning realm wheel':'Selected realm'}"><svg viewBox="0 0 200 200" aria-hidden="true">${wedges}</svg><span class="hub">✦</span></div><ol class="realm-list">${v.realms.map((r,i)=>`<li class="${r.id===v.realm&&v.phaseId!=='wheel'?'chosen':''}">${i+1}. ${h(r.name)}</li>`).join('')}</ol>`;
+ $('wheel-panel').innerHTML=`<p class="kicker">Realm wheel</p><div class="wheel ${v.phaseId==='wheel'?'spin':''}" style="--landing:${landing}deg" aria-label="${v.phaseId==='wheel'?'Spinning realm wheel':'Selected realm'}"><svg viewBox="0 0 200 200" style="animation-play-state:${v.paused?'paused':'running'}" aria-hidden="true">${wedges}</svg><span class="hub">✦</span></div><ol class="realm-list">${v.realms.map((r,i)=>`<li class="${r.id===v.realm&&v.phaseId!=='wheel'?'chosen':''}">${i+1}. ${h(r.name)}</li>`).join('')}</ol>`;
 }
 function renderPublic(v:ReturnType<typeof game.tvView>){
  let content='';

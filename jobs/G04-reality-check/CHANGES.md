@@ -47,3 +47,16 @@ Freeze the browser clock explicitly: install alone kept real time running,
 which the initial timing test correctly rejected. Build resource checks
 inspect resource tags/CSS; zod's documentation URLs are inert strings.
 Wire all checks into npm test.
+
+Wheel verification: point every selected wedge under the pointer, preserve
+its animation element during pause and same-phase inputs, and place the
+private controller beside the TV question at wide widths. New browser
+geometry checks cover all eight wedges; heavier frame sampling covers eight
+seats, an open human controller and seven bot submissions. Record capture2.
+Mutation reporting derives its baseline pass count instead of hardcoding22.
+Bot documentation now states the harness's actual conservative tie handling
+(no win), preserving the measured rates and intervals.
+
+Data integrity: run the committed checksums before any benchmark/capture
+regeneration in npm test, so modified input data cannot be silently
+re-blessed by the final checksum writer. The entry guard passed locally.
