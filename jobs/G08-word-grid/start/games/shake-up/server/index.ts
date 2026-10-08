@@ -129,7 +129,7 @@ const composedReduce = composeReduce<State, Input>({
 
 export function reduce(state: State, event: GameEvent<Input>): State {
   if (!event || typeof event !== 'object') return state;
-  if (event.type === 'input' && !inputSchema.safeParse(event.input).success) return state;
+  if (event.type === 'input' && (!hasPlayer(state.players, event.playerId) || !inputSchema.safeParse(event.input).success)) return state;
   return composedReduce(state, event);
 }
 

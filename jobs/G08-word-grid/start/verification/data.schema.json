@@ -470,6 +470,426 @@
           "const": "Shake Up"
         }
       }
+    },
+    "study": {
+      "type": "object",
+      "required": [
+        "version",
+        "differentialCases",
+        "pathsChecked",
+        "referenceSha256",
+        "results"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "differentialCases": {
+          "const": 10000
+        },
+        "pathsChecked": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "referenceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "results": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "items": {
+            "type": "object",
+            "required": [
+              "candidate",
+              "lang",
+              "size",
+              "grids",
+              "full",
+              "q",
+              "differentialCases"
+            ],
+            "properties": {
+              "grids": {
+                "const": 10000
+              },
+              "differentialCases": {
+                "const": 2000
+              },
+              "q": {
+                "type": "object",
+                "required": [
+                  "invalidQuPaths"
+                ],
+                "properties": {
+                  "invalidQuPaths": {
+                    "const": 0
+                  }
+                }
+              },
+              "full": {
+                "type": "object",
+                "required": [
+                  "mean",
+                  "standardDeviation",
+                  "min",
+                  "p05",
+                  "median",
+                  "p95",
+                  "max",
+                  "below60",
+                  "shareBelow60"
+                ],
+                "additionalProperties": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calibration": {
+      "type": "object",
+      "required": [
+        "version",
+        "calibrationGrids",
+        "leagueGames",
+        "calibration",
+        "leagues"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "calibrationGrids": {
+          "const": 2000
+        },
+        "leagueGames": {
+          "const": 4000
+        },
+        "calibration": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": [
+              "lang",
+              "grid",
+              "grids",
+              "clockSeconds",
+              "cadenceHz",
+              "sharpBelowFullSolver",
+              "levels"
+            ],
+            "properties": {
+              "grids": {
+                "const": 500
+              },
+              "clockSeconds": {
+                "const": 180
+              },
+              "levels": {
+                "type": "object",
+                "required": [
+                  "easy",
+                  "normal",
+                  "sharp"
+                ]
+              }
+            }
+          }
+        },
+        "leagues": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "required": [
+              "games",
+              "wins",
+              "losses",
+              "ties",
+              "winRate"
+            ],
+            "properties": {
+              "games": {
+                "const": 2000
+              },
+              "wins": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "losses": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "ties": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "winRate": {
+                "type": "number",
+                "minimum": 0.6,
+                "maximum": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "seeded": {
+      "type": "object",
+      "required": [
+        "version",
+        "propertySeeds",
+        "requiredSeeds",
+        "randomSeeds",
+        "propertyEvents",
+        "peakEventBytes",
+        "rosterGames",
+        "rosters",
+        "idleGames"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "propertySeeds": {
+          "const": 1003
+        },
+        "requiredSeeds": {
+          "const": [
+            1,
+            2,
+            3
+          ]
+        },
+        "randomSeeds": {
+          "type": "array",
+          "minItems": 1000,
+          "maxItems": 1000,
+          "items": {
+            "type": "integer",
+            "minimum": 4
+          }
+        },
+        "propertyEvents": {
+          "type": "integer",
+          "minimum": 1000
+        },
+        "peakEventBytes": {
+          "type": "integer",
+          "maximum": 262144
+        },
+        "rosterGames": {
+          "const": 16000
+        },
+        "rosters": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": {
+            "type": "object",
+            "required": [
+              "players",
+              "games",
+              "allFinished",
+              "maxMs",
+              "events"
+            ],
+            "properties": {
+              "players": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 16
+              },
+              "games": {
+                "const": 1000
+              },
+              "allFinished": {
+                "const": true
+              },
+              "events": {
+                "type": "integer",
+                "minimum": 1000
+              },
+              "maxMs": {
+                "type": "number",
+                "maximum": 2520000
+              }
+            }
+          }
+        },
+        "idleGames": {
+          "const": 4
+        }
+      }
+    },
+    "mutations": {
+      "type": "object",
+      "required": [
+        "version",
+        "mutations",
+        "killed",
+        "minimumRequired",
+        "results"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "mutations": {
+          "const": 25
+        },
+        "killed": {
+          "type": "integer",
+          "minimum": 24,
+          "maximum": 25
+        },
+        "minimumRequired": {
+          "const": 24
+        },
+        "results": {
+          "type": "array",
+          "minItems": 25,
+          "maxItems": 25,
+          "items": {
+            "type": "object",
+            "required": [
+              "number",
+              "name",
+              "file",
+              "killed",
+              "failedAssertions"
+            ],
+            "properties": {
+              "number": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 25
+              },
+              "killed": {
+                "type": "boolean"
+              },
+              "failedAssertions": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "rebuild": {
+      "type": "object",
+      "required": [
+        "version",
+        "runs",
+        "byteIdentical",
+        "matchesCommitted",
+        "files"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "runs": {
+          "const": 2
+        },
+        "byteIdentical": {
+          "const": true
+        },
+        "matchesCommitted": {
+          "const": true
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 7,
+          "maxProperties": 7,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    "spots": {
+      "type": "object",
+      "required": [
+        "version",
+        "rows"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "rows": {
+          "type": "array",
+          "minItems": 30,
+          "maxItems": 30,
+          "items": {
+            "type": "object",
+            "required": [
+              "number",
+              "candidate",
+              "row",
+              "faces",
+              "primary",
+              "second",
+              "result"
+            ],
+            "properties": {
+              "result": {
+                "const": "match"
+              },
+              "faces": {
+                "type": "string",
+                "pattern": "^[A-Z]{6}$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "fixtureRebuild": {
+      "type": "object",
+      "required": [
+        "version",
+        "runs",
+        "byteIdentical",
+        "matchesCommitted",
+        "files"
+      ],
+      "properties": {
+        "version": {
+          "const": 1
+        },
+        "runs": {
+          "const": 2
+        },
+        "byteIdentical": {
+          "const": true
+        },
+        "matchesCommitted": {
+          "const": true
+        },
+        "files": {
+          "type": "object",
+          "minProperties": 6,
+          "maxProperties": 6,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
     }
   }
 }

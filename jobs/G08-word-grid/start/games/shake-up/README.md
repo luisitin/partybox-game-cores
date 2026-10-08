@@ -9,7 +9,7 @@ Example: Cleo traces S-T-R-A-N-D-E-D (8 letters, +11). Ben and Eli both found TR
 
 ## Players
 1–16, best with 3–8. One player plays solo: nothing is crossed off. Bots welcome (`supportsBots: true`).
-Late joiners join the current round at once with score 0. Every input is on the phone.
+Late joiners join the current round at once with score 0 through the trusted host `joinPlayer(PlayerInfo)` adapter. Unknown socket ids remain spectators. Every input is on the phone.
 
 ## Phases
 | id | TV | Phone | Exit |
@@ -44,7 +44,8 @@ type Input =
 Free text never enters. Unchanged state for: a path that is not touching/repeats/out of range, fewer than
 `minLen` letters, a word already on my list, a word while I'm done, wrong phase, `counts` from a non-VIP or
 for a word not yet shown on the TV. Accepted but recorded as a verdict (no list change): a blocked word in
-family mode (`blocked`), a full list (`full`: 150 words, or 12 non-dictionary words).
+family mode (`blocked`), a full list (`full`: 150 words, or 12 non-dictionary words, or the round's conservative96KB serialized-submission allowance). Paths have at most25 cells; Qu allows26-letter words. Disconnected players cannot submit until reconnecting.
+Keyboard: arrows move the focused cube, Enter/Space adds it, Escape clears; Submit sends the traced path. Cancelled pointer gestures clear without submitting.
 
 ## Scoring
 - Points by letters: 3–4 → 1 · 5 → 2 · 6 → 3 · 7 → 5 · 8+ → 11. "Qu" is one cube and two letters.
@@ -62,7 +63,7 @@ family mode (`blocked`), a full list (`full`: 150 words, or 12 non-dictionary wo
 - One player: solo scoring; reveal shows the list and the best missed word.
 - Drop mid-hunt: words stay and count. "Everyone done" ignores away players and bots, so a drop can close the
   hunt. Back in the same round: carry on with the same list.
-- Late joiner: added on connect with score 0; can hunt at once; spectates reveal/tally until the next shake.
+- Late joiner: added by the trusted host with score0; can hunt at once; spectates reveal/tally until the next shake. Root connection events carry no names and cannot create seats.
 - Everyone idle: hunt ends at its deadline; reveal is one "No words this round" card + the missed word; the
   game still ends after the set rounds. Results still give 3 awards.
 - Ties: shared place, no tie-break. Same word by different paths: one entry, first path kept for the glow.
@@ -77,13 +78,18 @@ family mode (`blocked`), a full list (`full`: 150 words, or 12 non-dictionary wo
 | `rounds` | number | 3 | 1–5 |
 | `huntSeconds` | select | `180` | `90` · `120` · `180` · `240` |
 | `grid` | select | `4x4` | `4x4` (3+ letters) · `5x5` (4+ letters) |
-| `reader` | select | `host-hype` | every voice + `none` |
+| `reader` | select | `host-hype` (en), `dora` (es) | content-language voice + `none`; stale language choices fall back |
+| `dictionary` | select | `full` | full list or optional English SCOWL70 intersection; Spanish always full |
 | `spicy` | boolean | false | off: LDNOOBW words refused |
 
 ## Content
 - `cubes.en.json` / `cubes.es.json`: `{ lang, source, sets: { '4x4': 16 cubes, '5x5': 25 cubes } }`, cube =
-  `{ id, faces: [6] }` (capital letter, `Ñ` or `Qu`). Spanish sets are ours, tuned to ~166 solvable words/grid.
-- `words.<lang>.json`: sorted dictionary (en 273,511 · es 636,511 words, accents folded, ñ kept), binary search.
+  `{ id, faces: [6] }` (capital letter, `Ñ` or `Qu`). Spanish sets are original. 10000-grid means: en4=134.54, en5BIG=255.2593, es4=183.9479, es5=368.8508; edition/spread/lower-tail details in job research report.
+- `words.<lang>.json`: sorted dictionary (en274711 · es636513 words, accents folded, ñ kept), binary search. Common English105840 words; SCOWL70 still contains uncommon words, not a promise every word is familiar.
 - `blocked.<lang>.json`: LDNOOBW single words in the dictionary. `bot-words.<lang>.json`: `{ easy, normal, sharp }`.
-- Built by `content/build-words.ts` from MIT/CC lists (see `content/SOURCES.md`). Content never reaches phones.
+- Built only by `content/build-words.ts` from MIT/CC lists (see `content/SOURCES.md`). Production phones receive views; the self-contained offline host bundles the lists to run the same reducer locally.
 - No typed answers: the path is the answer and the dictionary is the judge (no matcher needed).
+
+## Standalone verification and offline host
+From `jobs/G08-word-grid`, `npm ci` then `npm test` runs the job gates. `play.html` opens from disk without a build/network. It wraps the existing phone/TV pieces and uses their authored flat fallback; models, film look and CSS are preserved. Each hot-seat human gets the same clock on the same board, with masked handoff. Bots play during the first turn; everyone else looks away while a person hunts. This local timing adaptation does not change the simultaneous production rules.
+The actual root contract is checked using explicitly test-only SDK/UI/speech/flat-table bindings. Production audio and3D SDK integration still requires its real runtime; those capabilities are not claimed by the offline host.

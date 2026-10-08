@@ -1,5 +1,7 @@
 # What this game assumes about the SDK (check on main before merging)
 
+G08 verification status: the original assumptions below are retained as integration history. Actual root `contract/` types now bind `game` directly: numeric seed, PlayerInfo avatarId/connected/bot, phase.paused/deadline|null, timer phaseId/startedAt without step, bot(state,id,Rng,skill), results scores/rank/playerId and envelopes. `nextStep` takes a change callback. Unknown player events cannot carry names; trusted `joinPlayer` restores late joins. Language-specific reader options are enforced. Test/offline SDK/UI/speech/table bindings live only in `start/test-support/`, and no original standin/harness folders are included. Missing production audio/3D/UI runtime is an explicit unverified integration point, not a fabricated successful check.
+
 Written without repo access. Every **name** below comes from the PartyBox context; every **signature** is a
 guess, implemented by the local stand-in in `standin/game-sdk/` so the game could be run, tested and
 screenshotted. Where main differs, adapt the call sites listed; the game logic does not change.

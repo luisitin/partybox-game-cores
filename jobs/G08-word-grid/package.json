@@ -4,11 +4,14 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
-    "test": "vitest run",
+    "test": "node start/verification/check-all.mjs",
     "typecheck": "tsc --noEmit",
     "build:words": "tsx start/games/shake-up/content/build-words.ts --es-freq start/research/inputs/es_50k.txt",
     "research": "tsx start/research/measure.ts",
-    "build:play": "node start/offline/build.mjs"
+    "build:play": "node start/offline/build.mjs",
+    "test:unit": "vitest run",
+    "test:browser": "tsx start/verification/browser.ts",
+    "test:mutations": "node start/verification/mutations.mjs"
   },
   "dependencies": {
     "zod": "3.25.76"

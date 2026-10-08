@@ -1,0 +1,322 @@
+{
+  "version": 1,
+  "mutations": 25,
+  "killed": 24,
+  "minimumRequired": 24,
+  "method": "One compilable behavioral change at a time, restored after targeted rule/flow/scoring/privacy/contract regression tests. Actual failed assertions required; startup/type failures cannot count. Crowded-state stress runs in full baseline suite, not repeated per unrelated mutant.",
+  "results": [
+    {
+      "number": 1,
+      "name": "diagonals excluded",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "actual nine root contract invariants trusted late join preserves the original rule without trusting unknown socket ids",
+        "actual nine root contract invariants prototype-like valid seats survive initialization, submissions, every view and final results",
+        "actual nine root contract invariants private words/plans/timestamps stay absent while own words and public counts stay correct",
+        "published rules: two independent pinned reports, conflicts recorded last cell and diagonals are usable, wrap-around and reuse are forbidden",
+        "published rules: two independent pinned reports, conflicts recorded the same valid word may score again next round and totals accumulate",
+        "published rules: two independent pinned reports, conflicts recorded accepting a shared unknown word still gives both players zero; dropped submissions still cancel",
+        "published rules: two independent pinned reports, conflicts recorded VIP rulings and views cannot reach another player’s dictionary miss before its reveal beat",
+        "card words a long list in a real room keeps its dictionary misses on the card",
+        "VIP rulings names who found each dictionary miss",
+        "the phone at the end of the game gets the headline, awards, longest word and best missed word in done, and only then",
+        "phase flow \"Keep hunting\" undoes done; a done player cannot add words",
+        "phase flow root events ignore unknown identities; a known player reconnects with their words and score",
+        "phase flow pause freezes the clock and word times exclude the pause",
+        "grid rules neighbours include diagonals and nothing else",
+        "grid rules a legal path touches, never repeats, stays in range",
+        "solver finds STRANDED and the longest missed word",
+        "scoring unique words score by length, shared words score zero, never negative",
+        "scoring solo play scores every valid word",
+        "scoring a non-dictionary word scores only after the VIP rules it counts, and only once revealed",
+        "scoring totals accumulate and ties share a place",
+        "results carries the outro detail: longest word, per player, missed",
+        "reveal glow glows the best scoring word, never a crossed-off one",
+        "reveal glow glows nothing when every word was shared (the card says +0)",
+        "reveal glow glows nothing for a list of dictionary misses until the VIP counts one",
+        "results text follows the room language a Spanish room reads its headline, note, place lines and awards in Spanish",
+        "results text follows the room language English stays English, with \"1 unique word\" singular",
+        "tally spotlight sends no tie list when one word is longest"
+      ]
+    },
+    {
+      "number": 2,
+      "name": "same cube adjacent to itself",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "grid rules neighbours include diagonals and nothing else"
+      ]
+    },
+    {
+      "number": 3,
+      "name": "reuse allowed",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded last cell and diagonals are usable, wrap-around and reuse are forbidden",
+        "grid rules a legal path touches, never repeats, stays in range"
+      ]
+    },
+    {
+      "number": 4,
+      "name": "last board cell rejected",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded last cell and diagonals are usable, wrap-around and reuse are forbidden"
+      ]
+    },
+    {
+      "number": 5,
+      "name": "5x5 three-letter minimum",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded minimum letters are3 on4x4 and4 on5x5, including Qu as two letters"
+      ]
+    },
+    {
+      "number": 6,
+      "name": "Qu loses u",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded minimum letters are3 on4x4 and4 on5x5, including Qu as two letters"
+      ]
+    },
+    {
+      "number": 7,
+      "name": "seven-letter score four",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "grid rules spells words from the grid; Qu is two letters"
+      ]
+    },
+    {
+      "number": 8,
+      "name": "long-word score ten",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded the same valid word may score again next round and totals accumulate",
+        "grid rules spells words from the grid; Qu is two letters",
+        "scoring unique words score by length, shared words score zero, never negative",
+        "scoring solo play scores every valid word",
+        "scoring totals accumulate and ties share a place"
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Spanish enye lost",
+      "file": "rules.ts",
+      "killed": true,
+      "failedAssertions": [
+        "grid rules folds accents and keeps ñ"
+      ]
+    },
+    {
+      "number": 10,
+      "name": "dictionary accepts all",
+      "file": "dict.ts",
+      "killed": true,
+      "failedAssertions": [
+        "actual nine root contract invariants matches root timer identity, rejects early/stale/duplicate beats, pauses input and clocks",
+        "actual nine root contract invariants trusted late join preserves the original rule without trusting unknown socket ids",
+        "actual nine root contract invariants prototype-like valid seats survive initialization, submissions, every view and final results",
+        "actual nine root contract invariants private words/plans/timestamps stay absent while own words and public counts stay correct",
+        "published rules: two independent pinned reports, conflicts recorded minimum letters are3 on4x4 and4 on5x5, including Qu as two letters",
+        "published rules: two independent pinned reports, conflicts recorded the same valid word may score again next round and totals accumulate",
+        "published rules: two independent pinned reports, conflicts recorded accepting a shared unknown word still gives both players zero; dropped submissions still cancel",
+        "published rules: two independent pinned reports, conflicts recorded VIP rulings and views cannot reach another player’s dictionary miss before its reveal beat",
+        "card words a long list in a real room keeps its dictionary misses on the card",
+        "VIP rulings names who found each dictionary miss",
+        "the phone at the end of the game gets the headline, awards, longest word and best missed word in done, and only then",
+        "the phone at the end of the game writes seconds in the room’s notation (0,5 s in Spanish)",
+        "phase flow \"Keep hunting\" undoes done; a done player cannot add words",
+        "phase flow root events ignore unknown identities; a known player reconnects with their words and score",
+        "phase flow pause freezes the clock and word times exclude the pause",
+        "phase flow invalid inputs change nothing",
+        "scoring unique words score by length, shared words score zero, never negative",
+        "scoring solo play scores every valid word",
+        "scoring a non-dictionary word scores only after the VIP rules it counts, and only once revealed",
+        "scoring totals accumulate and ties share a place",
+        "results carries the outro detail: longest word, per player, missed",
+        "reveal glow glows the best scoring word, never a crossed-off one",
+        "reveal glow glows nothing when every word was shared (the card says +0)",
+        "reveal glow glows nothing for a list of dictionary misses until the VIP counts one",
+        "results text follows the room language a Spanish room reads its headline, note, place lines and awards in Spanish",
+        "results text follows the room language English stays English, with \"1 unique word\" singular",
+        "tally spotlight names the others whose longest unique word is as long, in seat order",
+        "tally spotlight sends no tie list when one word is longest"
+      ]
+    },
+    {
+      "number": 11,
+      "name": "solver truncates full results",
+      "file": "solver.ts",
+      "killed": true,
+      "failedAssertions": [
+        "card words a long list in a real room keeps its dictionary misses on the card",
+        "solver finds STRANDED and the longest missed word",
+        "results text follows the room language a Spanish room reads its headline, note, place lines and awards in Spanish"
+      ]
+    },
+    {
+      "number": 12,
+      "name": "solver minimum becomes exclusive",
+      "file": "solver.ts",
+      "killed": false,
+      "failedAssertions": []
+    },
+    {
+      "number": 13,
+      "name": "shared words earn points",
+      "file": "scoring.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded accepting a shared unknown word still gives both players zero; dropped submissions still cancel",
+        "scoring unique words score by length, shared words score zero, never negative",
+        "reveal glow glows nothing when every word was shared (the card says +0)"
+      ]
+    },
+    {
+      "number": 14,
+      "name": "unknown words earn points",
+      "file": "scoring.ts",
+      "killed": true,
+      "failedAssertions": [
+        "scoring a non-dictionary word scores only after the VIP rules it counts, and only once revealed",
+        "scoring totals accumulate and ties share a place",
+        "reveal glow glows nothing for a list of dictionary misses until the VIP counts one"
+      ]
+    },
+    {
+      "number": 15,
+      "name": "round totals overwritten",
+      "file": "scoring.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded the same valid word may score again next round and totals accumulate"
+      ]
+    },
+    {
+      "number": 16,
+      "name": "duplicate submissions accepted",
+      "file": "phases/hunt.ts",
+      "killed": true,
+      "failedAssertions": [
+        "phase flow invalid inputs change nothing"
+      ]
+    },
+    {
+      "number": 17,
+      "name": "blocked words accepted",
+      "file": "phases/hunt.ts",
+      "killed": true,
+      "failedAssertions": [
+        "phase flow family mode refuses blocked words; spicy keeps them"
+      ]
+    },
+    {
+      "number": 18,
+      "name": "done players can submit",
+      "file": "phases/hunt.ts",
+      "killed": true,
+      "failedAssertions": [
+        "phase flow \"Keep hunting\" undoes done; a done player cannot add words"
+      ]
+    },
+    {
+      "number": 19,
+      "name": "any finished human closes hunt",
+      "file": "phases/hunt.ts",
+      "killed": true,
+      "failedAssertions": [
+        "phase flow the hunt closes when every connected human is done; bots and away players never block",
+        "phase flow a drop can close the hunt (the last undone player leaves)",
+        "phase flow \"Keep hunting\" undoes done; a done player cannot add words"
+      ]
+    },
+    {
+      "number": 20,
+      "name": "pause duration counted as word speed",
+      "file": "phases/hunt.ts",
+      "killed": true,
+      "failedAssertions": [
+        "phase flow pause freezes the clock and word times exclude the pause"
+      ]
+    },
+    {
+      "number": 21,
+      "name": "non-VIP can accept words",
+      "file": "phases/reveal.ts",
+      "killed": true,
+      "failedAssertions": [
+        "scoring a non-dictionary word scores only after the VIP rules it counts, and only once revealed"
+      ]
+    },
+    {
+      "number": 22,
+      "name": "unrevealed words rulable",
+      "file": "phases/reveal.ts",
+      "killed": true,
+      "failedAssertions": [
+        "published rules: two independent pinned reports, conflicts recorded VIP rulings and views cannot reach another player’s dictionary miss before its reveal beat"
+      ]
+    },
+    {
+      "number": 23,
+      "name": "other phone receives first seat words",
+      "file": "views.ts",
+      "killed": true,
+      "failedAssertions": [
+        "actual nine root contract invariants private words/plans/timestamps stay absent while own words and public counts stay correct"
+      ]
+    },
+    {
+      "number": 24,
+      "name": "early results exposed",
+      "file": "index.ts",
+      "killed": true,
+      "failedAssertions": [
+        "actual nine root contract invariants private words/plans/timestamps stay absent while own words and public counts stay correct"
+      ]
+    },
+    {
+      "number": 25,
+      "name": "hunt never leaves",
+      "file": "index.ts",
+      "killed": true,
+      "failedAssertions": [
+        "actual nine root contract invariants matches root timer identity, rejects early/stale/duplicate beats, pauses input and clocks",
+        "actual nine root contract invariants prototype-like valid seats survive initialization, submissions, every view and final results",
+        "published rules: two independent pinned reports, conflicts recorded the same valid word may score again next round and totals accumulate",
+        "published rules: two independent pinned reports, conflicts recorded accepting a shared unknown word still gives both players zero; dropped submissions still cancel",
+        "published rules: two independent pinned reports, conflicts recorded VIP rulings and views cannot reach another player’s dictionary miss before its reveal beat",
+        "card words a long list in a real room keeps its dictionary misses on the card",
+        "VIP rulings names who found each dictionary miss",
+        "the phone at the end of the game gets the headline, awards, longest word and best missed word in done, and only then",
+        "the phone at the end of the game writes seconds in the room’s notation (0,5 s in Spanish)",
+        "phase flow runs shake → hunt → reveal → tally per round, then done",
+        "phase flow VIP skip leaves every phase",
+        "phase flow the hunt closes when every connected human is done; bots and away players never block",
+        "phase flow a drop can close the hunt (the last undone player leaves)",
+        "scoring a non-dictionary word scores only after the VIP rules it counts, and only once revealed",
+        "scoring totals accumulate and ties share a place",
+        "results lists every player with finite scores and 3–5 awards, even when nobody played",
+        "results carries the outro detail: longest word, per player, missed",
+        "reveal glow glows the best scoring word, never a crossed-off one",
+        "reveal glow glows nothing when every word was shared (the card says +0)",
+        "reveal glow glows nothing for a list of dictionary misses until the VIP counts one",
+        "results text follows the room language a Spanish room reads its headline, note, place lines and awards in Spanish",
+        "results text follows the room language an idle Spanish game still has three Spanish awards",
+        "results text follows the room language English stays English, with \"1 unique word\" singular",
+        "tally spotlight names the others whose longest unique word is as long, in seat order",
+        "tally spotlight sends no tie list when one word is longest"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+const names=['shake','hunt','reveal','reveal-last','tally','done'];
+const hashes=()=>Object.fromEntries(names.map(name=>[name,createHash('sha256').update(readFileSync(`start/games/shake-up/fixtures/${name}.json`)).digest('hex')]));
+const before=hashes();execFileSync('npx',['tsx','start/verification/fixtures.ts'],{stdio:'pipe'});const first=hashes();execFileSync('npx',['tsx','start/verification/fixtures.ts'],{stdio:'pipe'});const second=hashes();
+assert.deepEqual(first,second);assert.deepEqual(before,second);
+writeFileSync('start/verification/fixture-rebuild-report.json',JSON.stringify({version:1,runs:2,byteIdentical:true,matchesCommitted:true,files:second},null,2)+'\n');
+console.log(JSON.stringify({fixtureRebuilds:2,fixtures:names.length,byteIdentical:true,matchesCommitted:true}));

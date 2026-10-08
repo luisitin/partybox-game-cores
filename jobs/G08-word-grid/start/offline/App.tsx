@@ -77,6 +77,7 @@ function App() {
     const changed = () => setMotion(!media.matches); media.addEventListener('change', changed);
     const timer = setInterval(() => {
       const r = session.current; if (!r) return;
+      const previousState = r.state;
       const wall = performance.now(), dt = Math.max(0, wall - r.lastWall); r.lastWall = wall;
       if (r.handoff || r.state.phase.paused || r.state.phase.id === 'done') return;
       if (r.state.phase.id === 'hunt') {
@@ -96,14 +97,14 @@ function App() {
       } else r.now += dt;
       if (r.state.phase.deadline !== null && r.now >= r.state.phase.deadline) {
         commit(game.reduce(r.state, { type: 'timer', now: r.state.phase.deadline, phaseId: r.state.phase.id, startedAt: r.state.phase.startedAt }));
-      } else update();
+      } else if (r.state !== previousState) update();
     }, 100);
     return () => { clearInterval(timer); media.removeEventListener('change', changed); };
   }, [seed]);
 
   const start = (e: React.FormEvent) => {
     e.preventDefault(); const roster = seats.slice(0, count).map((s, i) => ({ ...s, name: s.name.trim() || `Player ${i + 1}` }));
-    setLocale(lang, strings);
+    setLocale(lang, strings); document.documentElement.lang = lang;
     const state = game.init({ players: roster.map((s, i) => ({ id: `p${i + 1}`, name: s.name, avatarId: `face-${i}`, connected: true, bot: s.skill !== 'human' })), settings: { grid, dictionary, rounds: Number(rounds), huntSeconds: seconds, reader: 'none' }, contentLang: lang === 'es' ? 'es' : 'en', seed: Number(seed) >>> 0, now: 1000, presence: { mode: 'remote-text', phoneOnly: true } });
     session.current = { state, seats: roster, humans: state.order.filter(id => !state.players[id]!.bot), turn: 0, handoff: false, elapsed: 0, now: 1000, lastWall: performance.now(), botSecond: -1, pauseWall: 0 };
     setPublicStage(false); update();
@@ -114,14 +115,14 @@ function App() {
   const r = session.current;
   if (!r) return <main className="setup"><h1>Shake Up</h1><p>Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.</p>
     <form onSubmit={start}><div className="options">
-      <label>Players<select value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
-      <label>Words<select value={lang} onChange={e => setLang(e.target.value)}><option value="en">English</option><option value="es">Español</option></select></label>
-      <label>Grid<select value={grid} onChange={e => setGrid(e.target.value)}><option>4x4</option><option>5x5</option></select></label>
-      <label>Dictionary<select value={lang === 'es' ? 'full' : dictionary} disabled={lang === 'es'} onChange={e => setDictionary(e.target.value)}><option value="full">Full word list</option><option value="common">Common words (SCOWL 70)</option></select></label>
-      <label>Rounds<select value={rounds} onChange={e => setRounds(e.target.value)}>{[1, 2, 3, 4, 5].map(n => <option key={n}>{n}</option>)}</select></label>
-      <label>Seconds per person<select value={seconds} onChange={e => setSeconds(e.target.value)}>{[90, 120, 180, 240].map(n => <option key={n}>{n}</option>)}</select></label>
+      <label>Players<select aria-label="Players" value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
+      <label>Words<select aria-label="Words" value={lang} onChange={e => setLang(e.target.value)}><option value="en">English</option><option value="es">Español</option></select></label>
+      <label>Grid<select aria-label="Grid" value={grid} onChange={e => setGrid(e.target.value)}><option>4x4</option><option>5x5</option></select></label>
+      <label>Dictionary<select aria-label="Dictionary" value={lang === 'es' ? 'full' : dictionary} disabled={lang === 'es'} onChange={e => setDictionary(e.target.value)}><option value="full">Full word list</option><option value="common">Common words (SCOWL 70)</option></select></label>
+      <label>Rounds<select aria-label="Rounds" value={rounds} onChange={e => setRounds(e.target.value)}>{[1, 2, 3, 4, 5].map(n => <option key={n}>{n}</option>)}</select></label>
+      <label>Seconds per person<select aria-label="Seconds per person" value={seconds} onChange={e => setSeconds(e.target.value)}>{[90, 120, 180, 240].map(n => <option key={n}>{n}</option>)}</select></label>
       <label>Seed<input type="number" min="0" max="4294967295" value={seed} onChange={e => setSeed(e.target.value)} required /></label>
-    </div><fieldset><legend>Who is playing?</legend>{seats.slice(0, count).map((s, i) => <div className="seat" key={i}><label>Name {i + 1}<input maxLength={80} value={s.name} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, name: e.target.value } : v))} /></label><label>Player {i + 1}<select value={s.skill} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, skill: e.target.value as Skill } : v))}><option value="human">Person</option><option value="easy">Easy bot</option><option value="normal">Normal bot</option><option value="sharp">Sharp bot</option></select></label></div>)}</fieldset><button type="submit">Start Shake Up</button></form>
+    </div><fieldset><legend>Who is playing?</legend>{seats.slice(0, count).map((s, i) => <div className="seat" key={i}><label>Name {i + 1}<input maxLength={80} value={s.name} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, name: e.target.value } : v))} /></label><label>Player {i + 1}<select aria-label={`Player ${i + 1}`} value={s.skill} onChange={e => setSeats(all => all.map((v, j) => j === i ? { ...v, skill: e.target.value as Skill } : v))}><option value="human">Person</option><option value="easy">Easy bot</option><option value="normal">Normal bot</option><option value="sharp">Sharp bot</option></select></label></div>)}</fieldset><button type="submit">Start Shake Up</button></form>
     <details><summary>How to play</summary><p>Drag across cubes and lift, or tap letters and press Submit. Keyboard: arrow keys move, Enter or Space adds a cube, Escape clears. Diagonals count; use each cube once. Qu is one cube and two letters. Minimum: 3 letters on 4×4, 4 on 5×5. Length 3–4 scores 1, 5 scores 2, 6 scores 3, 7 scores 5, 8+ scores 11. Words found by two or more players score zero. Unknown words may be accepted together at the reveal.</p><p>During private turns, everyone else looks away. Handoff hides the previous list. Bots play the same board during the first turn. Public stage shows counts during the hunt.</p></details>
     <details><summary>Credits and word-list licences</summary><div dangerouslySetInnerHTML={{ __html: '__INLINE_LICENSES__' }} /></details>
   </main>;

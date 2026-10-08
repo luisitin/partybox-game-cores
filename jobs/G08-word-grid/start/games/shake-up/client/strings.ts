@@ -1,6 +1,8 @@
 // Latin-American Spanish for every visible string, keyed by the English.
 // Server-made result text (awards, headline) is listed at the end; see ASSUMED-SDK.md.
 export const strings: Record<string, string> = {
+  row: 'fila',
+  column: 'columna',
   // phone: hunt
   'Letter grid. Drag or tap touching letters to spell a word.': 'Cuadrícula de letras. Arrastra o toca letras vecinas para formar una palabra.',
   'Drag through touching letters, then lift.': 'Arrastra por letras vecinas y suelta.',

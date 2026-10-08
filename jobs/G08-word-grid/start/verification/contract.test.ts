@@ -5,6 +5,7 @@ import { createRng } from '../../../../contract/rng';
 import { game, joinPlayer } from '../games/shake-up/server';
 import { hasWord } from '../games/shake-up/server/dict';
 import { packFor } from '../games/shake-up/server/content';
+import { solve } from '../games/shake-up/server/solver';
 import { inputSchema, type State } from '../games/shake-up/server/types';
 import { GRID, STRANDED, fire, input, jsonSafe, room, until } from '../games/shake-up/__tests__/helpers';
 const timer=(s:State,now=s.phase.deadline!)=>({type:'timer' as const,now,phaseId:s.phase.id,startedAt:s.phase.startedAt});
@@ -79,6 +80,26 @@ describe('actual nine root contract invariants',()=>{
     expect(game.results(s)).toBeNull();
     const clone=JSON.parse(JSON.stringify(s)) as State;clone.words.p3=[{w:'secret',p:[0],t:0,ok:true}];
     for(const skill of ['easy','normal','sharp'] as const)expect(game.bot.sampleInput(clone,'p1',createRng(9),skill)).toEqual(game.bot.sampleInput(s,'p1',createRng(9),skill));
+  });
+  it('unknown VIP-stamped ids cannot accept a revealed word',()=>{
+    let s=until(room(2,{rounds:1}),'hunt');s={...s,grid:GRID.slice()};
+    s=game.reduce(s,input('p1',{t:'word',path:[1,5,4]},s.phase.startedAt+1));s=fire(s);
+    expect(game.reduce(s,input('spectator',{t:'counts',word:'tde',counts:true},s.phase.startedAt+1,true))).toBe(s);
+  });
+  it('sixteen maximum-length identities and five crowded rounds remain below 256 KB',()=>{
+    const ids=Array.from({length:16},(_,i)=>`seat${i}-`+'x'.repeat(120));
+    let s=game.init({players:ids.map(id=>({id,name:'N'.repeat(80),avatarId:'A'.repeat(128),connected:true})),settings:{rounds:5,grid:'5x5'},contentLang:'es',seed:17,now:1000});
+    let submissions=0,peak=0;
+    for(let round=0;round<5;round++){
+      s=fire(s);const available=solve(s.grid,5,packFor('es').words,4).filter(f=>!hasWord(packFor('es').blocked,f.w));
+      for(const f of available.slice(0,150))for(const id of ids){
+        s=game.reduce(s,input(id,{t:'word',path:f.path},s.phase.startedAt+1));
+        const bytes=Buffer.byteLength(JSON.stringify(s));peak=Math.max(peak,bytes);expect(bytes).toBeLessThanOrEqual(256*1024);submissions++;
+      }
+      s=until(fire(s),'tally');s=fire(s);expect(jsonSafe(s)).toBeNull();
+    }
+    expect(s.phase.id).toBe('done');expect(submissions).toBeGreaterThan(1000);expect(peak).toBeGreaterThan(40000);
+    console.log(JSON.stringify({crowdedRounds:5,attempts:submissions,peakBytes:peak}));
   });
   it('common is a strict subset, obscure words are optional, and Spanish ignores stale English common',()=>{
     const full=packFor('en'),common=packFor('en','common');expect(common.words.length).toBeLessThan(full.words.length);
