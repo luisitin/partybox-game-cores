@@ -137,3 +137,6 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 
 ## KEEP GOING round6
 - `npx tsx start/verification/data-check.ts`: PASS38JSONfiles. `sha256sum -c SHA256SUMS.txt`: PASS87files after documentation hashes refreshed. Python SHA256 of play.html equals863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9, unchanged from functional round5. Source documentation exposes19read/pinned references and2explicitly refused primary candidates without changing evidence. No extra gameplay tests for a documentation-only round.
+
+## KEEP GOING round7
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles/87hashes. Python SHA256 confirms play.html remains863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9. Bot documentation changes no sample sizes/results or runtime; no redundant gameplay suite rerun for wording.
