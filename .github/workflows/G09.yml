@@ -16,23 +16,62 @@ jobs:
         working-directory: jobs/G09-category-rush
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
           cache-dependency-path: jobs/G09-category-rush/package-lock.json
       - run: npm ci
-      - name: Strict core, independent oracle, all rosters and property seeds
-        run: npm test
       - name: Deterministic regeneration and JSON Schema
         run: |
+          npm run typecheck
           node scripts/generate-content.mjs --check
           npx tsx scripts/content-schema.ts --check
           npm run generate
           npm run build:play
           git diff --exit-code -- content/categories.json content/categories.ts content/categories.schema.json manifest.json fixtures play.html
           npx tsx scripts/checksums.ts --check
-      - name: Twenty-five real planted bugs
+      - name: Install pinned development browser and capture dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Genuine exact-head hosted strict frames and separate captures
+        env:
+          G09_EVIDENCE_HEAD: ${{ github.event.pull_request.head.sha }}
+          G09_EVIDENCE_RUN: ${{ github.run_id }}
+          G09_EVIDENCE_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          node --input-type=module - <<'JS'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          import {createHash} from 'node:crypto';
+          const hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
+          writeFileSync('evidence/browser/hosted-run.json',JSON.stringify({origin:'github-actions',headSha:process.env.G09_EVIDENCE_HEAD,runId:process.env.G09_EVIDENCE_RUN,attempt:process.env.G09_EVIDENCE_ATTEMPT,htmlSha256:hash('play.html'),runnerSha256:hash('scripts/browser-performance.mjs')},null,2)+'\n');
+          JS
+          node scripts/browser-performance.mjs
+      - name: Hash hosted evidence, retaining failed measurements too
+        if: always()
+        run: |
+          npx tsx scripts/checksums.ts
+          npx tsx scripts/checksums.ts --check
+      - name: Retain exact-head hosted visual evidence and raw intervals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G09-strict-${{ github.event.pull_request.head.sha }}-${{ github.run_id }}
+          compression-level: 0
+          retention-days: 14
+          path: |
+            jobs/G09-category-rush/evidence/browser/hosted-run.json
+            jobs/G09-category-rush/evidence/browser/performance-report.json
+            jobs/G09-category-rush/evidence/browser/desktop-frames.json
+            jobs/G09-category-rush/evidence/browser/phone4x-frames.json
+            jobs/G09-category-rush/media/delivery-final-desktop.webm
+            jobs/G09-category-rush/media/delivery-final-phone4x.webm
+            jobs/G09-category-rush/play.html
+            jobs/G09-category-rush/SHA256SUMS.txt
+      - name: Strict core, artifact binding, independent oracle, all rosters and property seeds
+        run: npm test
+      - name: Twenty-eight real planted bugs
         run: npm run mutations
       - name: Two thousand duels per adjacent bot skill
         run: npm run bots
@@ -47,8 +86,6 @@ jobs:
           npx tsx scripts/plural-protocol.ts
           npx tsx scripts/lexical-audit.ts
           git diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json evidence/lexical-audit-baseline.json evidence/lexical-audit-after.json evidence/lexical-audit.schema.json
-      - name: Install development browser
-        run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility
         run: node scripts/browser-check.mjs
       - name: Empty-review pacing, host controls and stepped review clock

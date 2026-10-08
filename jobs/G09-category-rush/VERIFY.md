@@ -351,3 +351,23 @@ Fresh`npm run mutations` afterglobalrelease completed28/28 genuinekills,
 includingnewM26/M27/M28, withfullsourcefingerprints andisolatedActualSource=true
 in evidence/mutations.json. No sourcechanged whilecurrentUIproof ran.
 The earlier heldpartialattempt remainsunaccepted; onlyfreshcomplete run counts.
+
+The unchanged local confirmation also FAILED: actual13:04:26.962–13:04:56.157,
+desktop59.213035fps/p9916.8/max133.3PASS; phone4x54.964615fps/p9950/max266.6FAIL.
+Both600raw series, exactpage/runner/report and343975-byte partialdesktopclip
+are retained under round-4-frame-confirmation. Independentmanualreadback
+13:07:07.821 verifies all sourcefingerprints/HTML match. No phoneclip collected.
+No further blind unchanged local samples or speculative runtimechanges are planned.
+
+The workflow now checks committed regeneration/hashes, installs the pinned
+Playwright browser/encoder, then executes the SAME unmodified 1ac72 strict
+600-frame/separate-capture runner on the actual GitHub host BEFORE the unchanged
+artifact pass requirement. Hosted evidence is separately labeled by exact PR
+head/run/attempt and source/runner hashes. Full original suites follow genuine
+capture; all600 raw intervals and partial/full clips are uploaded even when
+host capture fails. The artifact binder retains its passed=true and >=59fps/
+p99<=17 requirements, validates hosted metadata and exact PR head, and all
+local failures remain archived as failures. Fresh hosted evidence hashes are
+computed separately after capture; committed static hashes are validated first.
+This is a pending distinct-environment check, not a conversion of local failure
+into pass or a gate relaxation. PR8 is restored to draft while acceptance is unresolved.

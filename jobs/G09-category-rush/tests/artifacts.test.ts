@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync,statSync} from 'node:fs';
+import {readFileSync,statSync,existsSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const root=new URL('../',import.meta.url);
 const json=(path:string)=>JSON.parse(readFileSync(new URL(path,root),'utf8'));
@@ -10,6 +10,17 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert.equal(report.sourceSha256,digest);assert.equal(report.passed,true);
   assert.equal(report.recordingDuringMeasurement,false);
   assert.equal(report.sourceFingerprints['scripts/browser-performance.mjs'],sha('scripts/browser-performance.mjs'));
+  const hostedPath=new URL('evidence/browser/hosted-run.json',root);
+  if(process.env.GITHUB_ACTIONS==='true')assert(existsSync(hostedPath),'Fresh hosted evidence metadata is required');
+  if(existsSync(hostedPath)){
+    const origin=json('evidence/browser/hosted-run.json');assert.equal(origin.origin,'github-actions');
+    assert.match(origin.headSha,/^[a-f0-9]{40}$/);assert.match(origin.runId,/^[0-9]+$/);assert.match(origin.attempt,/^[0-9]+$/);
+    assert.equal(origin.htmlSha256,digest);assert.equal(origin.runnerSha256,sha('scripts/browser-performance.mjs'));
+    if(process.env.GITHUB_ACTIONS==='true'){
+      const event=JSON.parse(readFileSync(process.env.GITHUB_EVENT_PATH!,'utf8'));
+      assert.equal(origin.headSha,event.pull_request.head.sha);assert.equal(origin.runId,process.env.GITHUB_RUN_ID);
+    }
+  }
   assert.equal(report.profiles.length,2);assert(report.licenseChecks.LICENSE);
   assert(report.licenseChecks['node_modules/zod/LICENSE']);
   for(const [path,hash] of Object.entries(report.sourceFingerprints))assert.equal(sha(path),hash,path);
