@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "npm run check && node --test test.ts && node differential.ts && node mutations.ts && node league.ts && node build.ts --check && node browser.ts && node checksums.ts && node checksums.ts --check",
+    "test": "npm run check && node generate.ts --check && node --test test.ts && node differential.ts && node bluff-differential.ts && node mutations.ts && node league.ts && node build.ts --check && node browser.ts && node checksums.ts && node checksums.ts --check",
     "build": "node build.ts",
     "fixtures": "node fixtures.ts && node checksums.ts",
     "league": "node league.ts",

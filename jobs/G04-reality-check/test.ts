@@ -40,6 +40,12 @@ test('date and choice scoring use the declared exact/proximity units',()=>{
  const decade=sampleRows.find(r=>r.kind==='decade')!;assert.equal(quickScore(decade,Number(decade.correct)+10),750);
  const choice=sampleRows.find(r=>r.kind==='choice')!;assert.equal(quickScore(choice,Number(choice.correct)),1000);assert.equal(quickScore(choice,1-Number(choice.correct)),0);
 });
+test('BCE and CE centuries are adjacent without an imaginary century zero',()=>{
+ const row=sampleRows.find(r=>r.kind==='century')!;assert.equal(quickScore({...row,correct:-1} as State['question'],1),750);
+ assert.equal(quickScore({...row,correct:1} as State['question'],-1),750);
+ assert.equal(quickScore({...row,correct:1} as State['question'],0),0);
+ assert.equal(quickScore({...row,correct:-2} as State['question'],2),250);
+});
 test('schema rejects nonfinite, malformed, oversized and additional fields',()=>{
  for(const value of [{type:'answer',value:NaN},{type:'answer',value:Infinity},{type:'answer',value:1e13},{type:'write',text:'x'.repeat(161)},{type:'vote',choice:'correct'},{type:'vote',choice:'o100'},{type:'next',extra:1},{type:'other'},null])assert.equal(C.inputSchema.safeParse(value).success,false);
  for(const value of [{type:'answer',value:0},{type:'write',text:'fiction'},{type:'vote',choice:'o0'},{type:'next'}])assert(C.inputSchema.safeParse(value).success);

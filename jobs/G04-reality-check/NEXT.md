@@ -1,39 +1,35 @@
 # Resume G04
 
-Branch job/G04-reality-check-core,claimed main0d43479,chat codex-domino.
-Read main README.md/RULES.md/JOBS.md/CLAIMS.md first; preserve G02/G03.
-G01 is COMPLETE: PR1 final949c2e3 full CI37715456734 succeeded;
-rounds16–18 reached three no-gain rounds. Do not restart G01 experiments.
+Branch job/G04-reality-check-core; chat codex-domino. Read main
+README/RULES/JOBS/CLAIMS and preserve concurrent G02/G03 claims.
 
-G04 core0.1.0 implemented: all seven phases,160 fictional20-row realms,
-Quick/Mixed/Bluff modes,distinct10-second demos,last-round doubling,
-private views,public-clue bot policies,all fixtures and strict shared types.
-Focused tests22/22 pass; additive fooled/truth credit regression fixes
-1000→1500 seat-order bug. Numeric10,000 independent cases+14 edges pass.
-Samples regenerate identically; current data checksums pass.
+G01 COMPLETE: PR1 final 949c2e3, full CI37715456734 succeeded, rounds
+16–18 reached three consecutive no-gain rounds. Do not restart its studies.
 
-Full tests `node --test test.ts` running/log /tmp/G04-full-tests.log;
-includes21,000 matches(all2–8 counts × three modes ×1000),1,003 exact
-event replays and1,000 timer-only cases. League `node league.ts` running
-/log /tmp/G04-league.log; six2,000-match comparisons,one per skill pair
-and mode. Check local processes before restarting. Record actual results.
+G04 core 0.1.0 and offline UI exist: seven phases, 160 fictional rows,
+three modes, 4/8/12-round settings, distinct 10-second demos, private views,
+all control types and fixtures. Focused tests 23/23; prior full suite
+45/45 includes 21,000 matches, 1,003 replays and 1,000 idle games.
+Century BCE/CE adjacency regression added since that full run: rerun all.
 
-Remaining: mutation harness25 bugs(≥24 killed),offline hot-seat HTML,
-browser checks,captures,final full npm test,G04 CI,PR and KEEP GOING.
-SOURCES.md pins four live sources; assumptions/rules/conflicts record
-selected design choices. Source caches in /tmp/G04-research-notes.md.
+Independent numeric and bluff comparisons: 10,000 each, zero mismatches.
+25/25 mutations killed (baseline previously 22 focused tests).
+League: all six 2,000-game comparisons passed. Browser: 18 scenarios,
+nine full mode/roster UI matches, no network/errors, TV/phone both 60.00
+fps with p95 16.70 ms, reduced motion, 290,245-byte milestone-1.webm.
 
-Run browser TV1920x1080/phone390x8444xCPU,record frame times,
-reduced motion/privacy/offline checks and milestone capture<10MB.
-All game checks must be in npm test and30-minute/read-only/actions-only
-G04 workflow. PR only after checks pass;actual CI before done;then
-three consecutive no-gain KEEP GOING rounds. Push each milestone/update
-this file,and refresh ONLY own G04 line each push.
+Remaining: final npm test after all source changes, actual G04 PR/CI,
+then KEEP GOING until three no-gain rounds. No G04 PR/green CI yet.
+Keep this checkpoint current and refresh ONLY G04 on main after each push.
+Stage G04 and its workflow only; G01 node_modules are untracked local caches.
 
-Re-verify when web works: Wikipedia403 is optional corroboration only;
-no source-host blocker. There is no publisher's official Reality Check
-rulebook here; this original job adopts independently sourced genre mechanics.
-Preserve G08 owner's Shake Up; read START-HERE.md/start/HANDOFF.md if claimed.
-Stage G04 only; G01 node_modules are local untracked caches on this branch.
-Cloud setup is saved as an unpublished draft. Native Git/Node24/Chromium/
-ffmpeg ready; npm cache /workspace/.npm-cache.
+Re-verify when web works: century/date conventions are from knowledge,
+unverified externally; explicit selected rule and tests apply. Wikipedia403
+is optional corroboration; four pinned live GitHub sources are sufficient
+for the core. Managed Chromium blocks direct file:// navigation; exact
+standalone bytes via setContent are tested. No physical phone available;
+390×844/4× CPU is the measured approximation. No source blocker.
+
+Preserve G08 Shake Up. If claimed, read START-HERE.md and start/HANDOFF.md
+before code; never replace its name, art/models/films/word lists.
+Cloud draft remains unpublished; reusable G04 setup update is pending.

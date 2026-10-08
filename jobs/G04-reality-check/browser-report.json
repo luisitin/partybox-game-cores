@@ -1,0 +1,56 @@
+{
+  "functional": [
+    "3s wheel / 10s demo / exact pause-shifted deadline / end and restart",
+    "number control / private handover / exact score",
+    "choice control / private handover / exact score",
+    "century control / private handover / exact score",
+    "decade control / private handover / exact score",
+    "bluff write/vote/reveal / duplicates / own vote disabled / escaped user text",
+    "correct-write credit confirmation is private and concealed before handover",
+    "draft and keyboard focus survive another player’s input",
+    "full quick, 2 seats, eight rounds, finite results, no overflow",
+    "full quick, 4 seats, eight rounds, finite results, no overflow",
+    "full quick, 8 seats, eight rounds, finite results, no overflow",
+    "full mixed, 2 seats, eight rounds, finite results, no overflow",
+    "full mixed, 4 seats, eight rounds, finite results, no overflow",
+    "full mixed, 8 seats, eight rounds, finite results, no overflow",
+    "full bluff, 2 seats, eight rounds, finite results, no overflow",
+    "full bluff, 4 seats, eight rounds, finite results, no overflow",
+    "full bluff, 8 seats, eight rounds, finite results, no overflow",
+    "reduced-motion disables wheel animation"
+  ],
+  "navigationMode": "Exact play.html bytes via setContent; managed Chromium blocks file:// navigation",
+  "externalRequests": [],
+  "errors": [],
+  "performance": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "frames": 300,
+      "meanMs": 16.666006666666664,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "fps": 60.002376094093336
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "frames": 300,
+      "meanMs": 16.666006666666664,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "fps": 60.002376094093336
+    }
+  ],
+  "physicalPhone": "unavailable; 390×844 Chromium with 4× CPU is the measured approximation",
+  "capture": "media/milestone-1.webm",
+  "captureBytes": 290245
+}

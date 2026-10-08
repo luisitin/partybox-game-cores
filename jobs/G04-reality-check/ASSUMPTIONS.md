@@ -14,3 +14,8 @@
 - Shared contract and G08 owner's Shake Up assets are preserved.
 - Stage only G04 and its workflow; local G01 dependency caches remain outside
   this branch's tracked files. No source/API block currently prevents G04.
+
+- BCE/CE and decade conventions are from knowledge, unverified externally;
+  they are explicit house rules, not an uninspected source claim.
+- Local hot-seat concealment protects the screen, not developer tools.
+  Correct-writer handovers visit every human to avoid identity inference.

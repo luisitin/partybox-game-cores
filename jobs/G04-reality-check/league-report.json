@@ -1,0 +1,98 @@
+[
+  {
+    "mode": "quick",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "wins": 1790,
+    "losses": 210,
+    "ties": 0,
+    "winRate": 0.895,
+    "confidence95": [
+      0.8815647039481819,
+      0.9084352960518182
+    ],
+    "steps": 74000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "quick",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "wins": 1969,
+    "losses": 31,
+    "ties": 0,
+    "winRate": 0.9845,
+    "confidence95": [
+      0.9790860432399215,
+      0.9899139567600785
+    ],
+    "steps": 74000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "mixed",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "wins": 1981,
+    "losses": 14,
+    "ties": 5,
+    "winRate": 0.9905,
+    "confidence95": [
+      0.9862486181305369,
+      0.9947513818694632
+    ],
+    "steps": 93917,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "mixed",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "wins": 1984,
+    "losses": 16,
+    "ties": 0,
+    "winRate": 0.992,
+    "confidence95": [
+      0.9880957114860707,
+      0.9959042885139293
+    ],
+    "steps": 94000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "bluff",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "wins": 1992,
+    "losses": 0,
+    "ties": 8,
+    "winRate": 0.996,
+    "confidence95": [
+      0.9932336906897457,
+      0.9987663093102543
+    ],
+    "steps": 101864,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "bluff",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "wins": 1992,
+    "losses": 0,
+    "ties": 8,
+    "winRate": 0.996,
+    "confidence95": [
+      0.9932336906897457,
+      0.9987663093102543
+    ],
+    "steps": 102000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  }
+]

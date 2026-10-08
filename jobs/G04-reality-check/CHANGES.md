@@ -26,3 +26,24 @@ schema with esbuild because native Node cannot resolve its extensionless
 imports. Preserve shared files. A new order-invariance regression reproduced
 1,000 versus1,500 points when later truth credit overwrote earlier fooled
 credit. Change truth credit to addition; the regression now passes.
+
+Offline interface milestone: add shell.html/ui.ts/build.ts and play.html,
+inline the core/zod, escape every displayed name/fake/answer, render through
+public/own views and conceal controllers before each handover. Correct
+writers get the same public handover order. Retain unfinished drafts/focus
+during other inputs; give reveals 15 seconds instead of bot-triggered Next.
+Provide every setting, eight seats, four Quick controls, anonymous votes,
+results and host pause/skip/end/restart.
+
+Scoring boundary: contiguous BCE/CE century indices make opposite first
+centuries worth 750 rather than 500; reject century zero. New regression
+passes with all 23 focused tests.
+
+Add mutations.ts (25/25 genuine assertion kills), bluff-differential.ts
+(independent author-centric reference; 10,000 cases), browser.ts (18 real
+scenarios, exact timer boundaries, private handover, escaping, nine complete
+UI matches, TV/4× CPU phone frames, reduced motion/capture) and G04.yml.
+Freeze the browser clock explicitly: install alone kept real time running,
+which the initial timing test correctly rejected. Build resource checks
+inspect resource tags/CSS; zod's documentation URLs are inert strings.
+Wire all checks into npm test.
