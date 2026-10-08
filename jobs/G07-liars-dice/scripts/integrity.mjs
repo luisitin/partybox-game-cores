@@ -25,6 +25,22 @@ for(let run=0;run<2;run++) {
  for(const p of inputs)assert.equal(sum(await readFile(p)),before[p],'non-deterministic generated fixture '+p);
 }
 const html=await readFile('play.html','utf8');assert(!/<(?:script|link)[^>]+(?:src|href)=['"]https?:/i.test(html));
+const browserSnapshot=JSON.parse(await readFile('evidence/browser/report.json','utf8'));
+assert.equal(browserSnapshot.passed,true,'latest delivered browser snapshot must pass');
+assert.equal(browserSnapshot.htmlSha256,sum(Buffer.from(html)),'browser evidence must match delivered page');
+for(const p of browserSnapshot.profiles){
+ assert.equal(p.sampleCount,600,'snapshot must measure 600 frames');
+ const raw=JSON.parse(await readFile('evidence/browser/'+p.frameFile,'utf8'));
+ assert.equal(raw.timestampsMs.length,601,'raw frame timestamps omitted');
+ assert.equal(raw.intervalsMs.length,600,'raw frame intervals omitted');
+ assert(raw.intervalsMs.every(ms=>Number.isFinite(ms)&&ms>0),'invalid measured interval');
+ const mean=raw.intervalsMs.reduce((sum,ms)=>sum+ms,0)/600;
+ assert(Math.abs(1000/mean-p.fps)<1e-7,'snapshot FPS differs from all raw frames');
+ const p99=[...raw.intervalsMs].sort((a,b)=>a-b)[Math.ceil(600*.99)-1];
+ assert.equal(p.p99Ms,p99,'snapshot percentile differs from all raw frames');
+ for(let i=0;i<600;i++)assert(Math.abs(raw.timestampsMs[i+1]-raw.timestampsMs[i]-raw.intervalsMs[i])<1e-7,'interval does not match consecutive timestamps');
+ assert(p.fps>=59&&p.p99Ms<=17,'delivered browser measurement fails its unchanged gate');
+}
 const zodLicense=await readFile('node_modules/zod/LICENSE','utf8');
 assert((await readFile('THIRD-PARTY-LICENSES.txt','utf8')).includes(zodLicense),'Zod notice must match the pinned package');
 assert(html.includes(zodLicense),'standalone page must retain the bundled Zod permission/copyright notice');

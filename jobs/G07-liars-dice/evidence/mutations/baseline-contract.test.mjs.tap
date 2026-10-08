@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+ok 1 - contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+  ---
+  duration_ms: 16.619785
+  type: 'test'
+  ...
+# Subtest: contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+ok 2 - contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+  ---
+  duration_ms: 1.776246
+  type: 'test'
+  ...
+# Subtest: contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+ok 3 - contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+  ---
+  duration_ms: 1.987632
+  type: 'test'
+  ...
+# Subtest: empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+ok 4 - empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+  ---
+  duration_ms: 0.772623
+  type: 'test'
+  ...
+# Subtest: permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+ok 5 - permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+  ---
+  duration_ms: 0.947143
+  type: 'test'
+  ...
+# Subtest: legitimate empty-string and prototype-named seats remain playable and ranked
+ok 6 - legitimate empty-string and prototype-named seats remain playable and ranked
+  ---
+  duration_ms: 1.006021
+  type: 'test'
+  ...
+# Subtest: contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+ok 7 - contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+  ---
+  duration_ms: 2.063713
+  type: 'test'
+  ...
+# Subtest: contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+ok 8 - contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+  ---
+  duration_ms: 3.057169
+  type: 'test'
+  ...
+# Subtest: contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+ok 9 - contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+  ---
+  duration_ms: 2.166707
+  type: 'test'
+  ...
+# Subtest: contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+ok 10 - contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+  ---
+  duration_ms: 149.542861
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 370.026404

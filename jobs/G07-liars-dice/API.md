@@ -37,7 +37,7 @@ integer 0..120; no hidden fallback deadline). Calza is disabled in palifico
 and when only two players remain, and a correct caller gains at most five dice.
 Initial starter random; counts of remaining dice are public. 7–8-player owner
 extension. Permanently departed seats play automatically while remaining
-connected humans/bots are present; empty room pauses and resume does not
+connected humans/bots are present; timestamps finite 0..10^15 milliseconds (not negative zero); empty room pauses and resume does not
 override an intentional VIP hold.
 
 Probability exports `probability(n,needed,matchingFaces)` and
@@ -45,3 +45,10 @@ Probability exports `probability(n,needed,matchingFaces)` and
 reference's five-field exact integer-string API. `rules.ts` exports
 `isRaise(previous,next,wild,lockedFace:boolean,mayChange:boolean)` and
 `countMatches(dice,face,wild)` (each accepts a flat dice array).
+
+## Local browser verification hook
+The trusted offline host exposes window.__G07 for deterministic review: state(),
+view(), controller(), init({players,settings,mode,skill,seed}), act(input),
+event(fullEvent), setState(state), time(), tick(). Full state inspection/injection
+is intentionally browser-only; it is not a TV/controller privacy contract.
+Public game views and bot counterfactual secrecy are tested independently.

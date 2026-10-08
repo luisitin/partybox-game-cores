@@ -1,6 +1,6 @@
 # Sources and originality
 
-Research on 2026-10-08: four searches, 24 returned results reviewed, ten distinct
+Research on 2026-10-08: six searches, 36 returned results reviewed, twelve distinct
 URL extractions read. `evidence/research-sources.json` records extraction sizes
 and SHA-256 hashes. These are fetched text hashes, not origin HTTP responses;
 the Soar paper extraction was capped at 40,000 body characters. Full downloaded
@@ -18,10 +18,15 @@ copyrighted text stays in ignored `.work/`, never in the public delivery.
 | U | https://www.ucd.ie/mathstat/t4media/8.%20Liar's%20dice%20and%20binomial%20random%20variables.pdf | Independent binomial derivation and challenge examples; its spot-on rules differ. |
 | L | https://raw.githubusercontent.com/SoarGroup/website-downloads/main/pubs/aaai2011fss_dice.pdf | Probability, expected-count heuristics and opponent modeling; no claim to match the paper's agents. |
 | A | https://github.com/kamdolla/liars-dice | Readme of open-source student probability-agent project; approach reviewed, no code copied or dependency used. |
+| G | https://gamerules.com/rules/perudo/ | Independently authored strict palifico, calza exclusions, recovery cap and caller-start explanation; second corroboration. |
+| D | https://dudodice.com/rules | Independent implementation with conflicting ones-switch threshold and palifico/calza variants; differences rejected explicitly. |
 
 Independent corroboration: ordinary turns/counting/dudo use Z+B and Z+T;
 strict palifico uses B+T, with edition differences confirmed Z+P;
-conditional binomial probabilities use S+U, with independent executable oracle.
+conditional binomial probabilities use S+U, with independent executable oracle;
+calza exclusions/caller-start/recovery cap also use G+T/B. The optional
+experienced exemptions are edition-specific publisher wordings, not claimed
+independently corroborated universal rules; the chosen strict profile has B+T+G.
 P and Z are distinct editions of the same commercial rules, not independently
 authored corroboration. Other mirrors of P were excluded. T's quotation of W
 is not counted as independent evidence for that quotation.

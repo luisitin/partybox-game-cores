@@ -1,0 +1,93 @@
+{
+  "id": "liars-dice",
+  "name": "Liar's Dice",
+  "icon": "🎲",
+  "tagline": "Raise the bid. Read the bluff. Keep your dice.",
+  "description": "Private-cup Perudo for 2–8 players, wild ones, palifico and optional calza. Exact-odds bots with learned bluff tendencies.",
+  "howToPlay": [
+    "Look at your cup; bid how many of a face exist across all cups.",
+    "Raise the bid, or call dudo if you think it is too high.",
+    "A failed bid or challenge costs a die. The last player with dice wins."
+  ],
+  "version": "1.0.0",
+  "minPlayers": 2,
+  "maxPlayers": 8,
+  "estimatedMinutes": 15,
+  "unlimitedDuration": true,
+  "tags": [
+    "classic",
+    "strategy"
+  ],
+  "presence": {
+    "needs": "same-room"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "noCards": true,
+  "settings": [
+    {
+      "key": "onesWild",
+      "label": "Ones are wild",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "palificoEnabled",
+      "label": "Palifico at one die",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "palificoExemption",
+      "label": "Palifico face-change exception",
+      "type": "select",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "Nobody (strict)"
+        },
+        {
+          "value": "oneDie",
+          "label": "Experienced one-die players"
+        },
+        {
+          "value": "experienced",
+          "label": "Any experienced player"
+        }
+      ]
+    },
+    {
+      "key": "calzaEnabled",
+      "label": "Allow exact-count calza",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "calzaPolicy",
+      "label": "Who may call calza",
+      "type": "select",
+      "default": "anyOther",
+      "options": [
+        {
+          "value": "anyOther",
+          "label": "Anyone except bidder"
+        },
+        {
+          "value": "interruptOnly",
+          "label": "Neither bidder nor next player"
+        }
+      ]
+    },
+    {
+      "key": "turnSeconds",
+      "label": "Turn clock (0 is off)",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 120,
+      "step": 1
+    }
+  ]
+}

@@ -50,7 +50,7 @@ Calza means the bid is **exactly** correct. Disabled by default. When enabled,
 any surviving player except the bidder may call it, even out of turn. A correct
 caller recovers one die, at most five; an incorrect caller loses one. The caller
 starts the next round, or the next survivor if eliminated (Z/B). This selected
-profile disallows calza during palifico and in a two-player endgame (P/T).
+profile disallows calza during palifico and in a two-player endgame (P/T/G).
 The interrupt-only option additionally excludes the player whose turn is next
 (P). A caller already at five dice can still call and receive no extra die.
 The profile and its edition differences are explicit in CONFLICTS.md.
@@ -75,3 +75,8 @@ palociego blind bidding, special-hand passing, burning dice and push/reroll.
 Those folk alternatives were observed and are not selected: they change the
 information model or elimination rules and are not asserted official Perudo.
 No previously unseen variant is silently attributed to these sources.
+
+D also offers 1–7 starting dice, double-only exits from ones, calza during
+palifico and bidder-start after an eliminated calza caller. These were observed
+and rejected in favor of five dice and the selected corroborated Perudo profile.
+Its conflicting trigger wording is not used. CONFLICTS.md records these picks.

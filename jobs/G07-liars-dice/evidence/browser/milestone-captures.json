@@ -1,0 +1,40 @@
+{
+  "browser": "141.0.7390.37",
+  "htmlSha256": "baa65b3986220b57db34e7be274b8c56728ae23304e3c1aabbff2d118aae335e",
+  "passed": true,
+  "failure": null,
+  "captures": [
+    {
+      "path": "media/milestone-desktop.webm",
+      "bytes": 999161,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "networkRequests": 0,
+      "pageErrors": 0
+    },
+    {
+      "path": "media/milestone-phone4x.webm",
+      "bytes": 1017137,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "networkRequests": 0,
+      "pageErrors": 0
+    }
+  ]
+}

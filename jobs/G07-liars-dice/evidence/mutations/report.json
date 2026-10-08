@@ -1,0 +1,402 @@
+{
+  "compiler": "esbuild 0.25.10, actual individually mutated TypeScript source bundles, ES2022 ESM",
+  "sourceSha256": {
+    "core.ts": "db7373ae850fa2ae88ecea1cd873516034ce534daa9c7748729893c1c3ab5df3",
+    "rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0"
+  },
+  "minimumAssertionKills": 24,
+  "total": 25,
+  "results": [
+    {
+      "id": "R01",
+      "file": "src/rules.ts",
+      "description": "Allow an opening bid of wild ones",
+      "before": "return !wild || next.face !== 1;",
+      "after": "return true;",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions"
+      ],
+      "rawSha256": "e33d4393f1dd814ce4f59fe9327fe0164347a9f27457355cf6af62066c31983f"
+    },
+    {
+      "id": "R02",
+      "file": "src/rules.ts",
+      "description": "Round conversion to ones downward",
+      "before": "Math.ceil(previous.quantity / 2)",
+      "after": "Math.floor(previous.quantity / 2)",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions",
+        "counting ones distinguishes wild faces, literal ones, and palifico"
+      ],
+      "rawSha256": "72ef26dd2a9a5d58c5e6cffec95c28c30225adefd4f82a39507a778cf699b0ff"
+    },
+    {
+      "id": "R03",
+      "file": "src/rules.ts",
+      "description": "Permit an even conversion away from ones",
+      "before": "previous.quantity * 2 + 1",
+      "after": "previous.quantity * 2",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions",
+        "counting ones distinguishes wild faces, literal ones, and palifico"
+      ],
+      "rawSha256": "030d6b059799df9dabede3108fb8bd3e22384a066c5d4324c406ee54bbce09ee"
+    },
+    {
+      "id": "R04",
+      "file": "src/rules.ts",
+      "description": "Accept an unchanged bid",
+      "before": "(next.quantity === previous.quantity && next.face > previous.face)",
+      "after": "(next.quantity === previous.quantity && next.face >= previous.face)",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions"
+      ],
+      "rawSha256": "6bd260fcb12c1fbabd23a54dea3ce8157dbd94037a9f7a381182d9bdc5955e6c"
+    },
+    {
+      "id": "R05",
+      "file": "src/rules.ts",
+      "description": "Reverse the palifico face lock",
+      "before": "next.face === previous.face && next.quantity > previous.quantity",
+      "after": "next.face !== previous.face && next.quantity > previous.quantity",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions"
+      ],
+      "rawSha256": "5fbb850ded5427ac2f671a8933d34445560e359d47d131f06d4ecf94f07ac050"
+    },
+    {
+      "id": "R06",
+      "file": "src/rules.ts",
+      "description": "Permit zero quantity",
+      "before": "bid.quantity >= 1",
+      "after": "bid.quantity >= 0",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "raise legality exhaustively matches independently stated Perudo transitions"
+      ],
+      "rawSha256": "843e0ec6a80acef70aac33059040c8ab801f52e5ae4b362c085354a4017f1905"
+    },
+    {
+      "id": "R07",
+      "file": "src/rules.ts",
+      "description": "Make sixes wild instead of ones",
+      "before": "(wild && face !== 1 && die === 1)",
+      "after": "(wild && face !== 1 && die === 6)",
+      "compiled": true,
+      "suite": "tests/rules.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "counting ones distinguishes wild faces, literal ones, and palifico"
+      ],
+      "rawSha256": "35b3b42b6b94a64e88ddfb845c3d179d49de34b5555f8921967adc236ed7d229"
+    },
+    {
+      "id": "P01",
+      "file": "src/probability.ts",
+      "description": "Add an extra hit-face factor to each probability mass",
+      "before": "BigInt(matches) ** BigInt(k)",
+      "after": "BigInt(matches) ** BigInt(k + 1)",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "54e0082edfbc7020849af181a5df543ed4919c565fae08b55d5caa8eb9de304c"
+    },
+    {
+      "id": "P02",
+      "file": "src/probability.ts",
+      "description": "Corrupt binomial coefficients",
+      "before": "BigInt(n - k) / BigInt(k + 1)",
+      "after": "BigInt(n - k + 1) / BigInt(k + 1)",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "82534093a2c266461ee1ed2b51e537a501a2d1e635445a6b90fcc324021b0c20"
+    },
+    {
+      "id": "P03",
+      "file": "src/probability.ts",
+      "description": "Treat one required match as certain",
+      "before": "needed <= 0 ? row.total",
+      "after": "needed <= 1 ? row.total",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "e5d878526a57922ff6c8312de42be2850f408d1559e1088197046393c5d63528"
+    },
+    {
+      "id": "P04",
+      "file": "src/probability.ts",
+      "description": "Remove exact zero-match mass",
+      "before": "needed < 0 || needed > n ? 0n",
+      "after": "needed <= 0 || needed > n ? 0n",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "5d9c63c8eda9d65660fd79db2d833d10b3f1a302264f8b28a3a6dbcc92b850b1"
+    },
+    {
+      "id": "P05",
+      "file": "src/probability.ts",
+      "description": "Use a five-sided outcome denominator",
+      "before": "total: 6n ** BigInt(n)",
+      "after": "total: 5n ** BigInt(n)",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "8571a569283a736f9348003c0933e2ffb343e55f89e7e78aa8eb51ec8c919c33"
+    },
+    {
+      "id": "P06",
+      "file": "src/probability.ts",
+      "description": "Ignore the second matching face in wild rounds",
+      "before": "wild && face !== 1 ? 2 : 1",
+      "after": "wild && face !== 1 ? 1 : 1",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "3beda56a36f00b8c6bad6ddf90e7fe1f6e8f4a4b76c7a17036c68bff6fc121b5"
+    },
+    {
+      "id": "P07",
+      "file": "src/probability.ts",
+      "description": "Condition on one fewer hidden die",
+      "before": "probability(totalDice - ownDice.length, quantity - known, matchingFaces)",
+      "after": "probability(Math.max(0, totalDice - ownDice.length - 1), quantity - known, matchingFaces)",
+      "compiled": true,
+      "suite": "tests/probability.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
+        "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
+      ],
+      "rawSha256": "05355511b524b974f245f6322e7668e936f3eddbfd5933a25771c4e57c4ada8d"
+    },
+    {
+      "id": "C01",
+      "file": "src/core.ts",
+      "description": "Keep ones wild during palifico",
+      "before": "s.settings.onesWild&&!s.palifico",
+      "after": "s.settings.onesWild",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
+      ],
+      "rawSha256": "1e24a60d14d4f82a0ee630fafffdb9a48c651848401b8779db7231d7e6cab350"
+    },
+    {
+      "id": "C02",
+      "file": "src/core.ts",
+      "description": "Make exact-count dudo succeed",
+      "before": "kind==='dudo'?matches<bid.quantity",
+      "after": "kind==='dudo'?matches<=bid.quantity",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "dudo counts wild ones and assigns exactly one die loss to the right participant"
+      ],
+      "rawSha256": "c9b99822bf937f2536cf8594ffe02b5b188164264df61fb7dbb3176f000cfc7c"
+    },
+    {
+      "id": "C03",
+      "file": "src/core.ts",
+      "description": "Lose two dice for a challenge",
+      "before": "Math.max(0,before-1)",
+      "after": "Math.max(0,before-2)",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "dudo counts wild ones and assigns exactly one die loss to the right participant",
+        "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter",
+        "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
+      ],
+      "rawSha256": "8e5bb10bc28f592e068f1fa5fd3b814400cb86b03b9cf3cf461fd1f27ef71bfc"
+    },
+    {
+      "id": "C04",
+      "file": "src/core.ts",
+      "description": "Gain two dice for a correct calza",
+      "before": "diceCount[caller]++;gained=true;",
+      "after": "diceCount[caller]+=2;gained=true;",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
+      ],
+      "rawSha256": "44b50eadd2a1edd78c6dacd379d584192364e51a226aa112fe171b41a30c9979"
+    },
+    {
+      "id": "C05",
+      "file": "src/core.ts",
+      "description": "Keep the bidder on turn",
+      "before": "bidLog:[...s.bidLog,bid].slice(-128),turn:nextAlive(s,id)",
+      "after": "bidLog:[...s.bidLog,bid].slice(-128),turn:id",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "only the current connected active seat bids; bids must raise and preserve the old state"
+      ],
+      "rawSha256": "8b8af0de23f490792a6ec8e72d322065e32948a191ca522b9c60bf79bdd59101"
+    },
+    {
+      "id": "C06",
+      "file": "src/core.ts",
+      "description": "Suppress the two-to-one palifico trigger",
+      "before": "if(before===2&&diceCount[loser]===1",
+      "after": "if(before===3&&diceCount[loser]===1",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
+      ],
+      "rawSha256": "eedf462e6924ac0e3353b77c0b5ee5b3bb134f14ecacf1c983ede12bb8cce4c9"
+    },
+    {
+      "id": "C07",
+      "file": "src/core.ts",
+      "description": "Forget that the starter has used palifico",
+      "before": "[palificoStarter]:true",
+      "after": "[palificoStarter]:false",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
+      ],
+      "rawSha256": "aa45834dad7309e4546e2d110cc2f8f46f0fbce23078e509622bf212cea7a5f3"
+    },
+    {
+      "id": "C08",
+      "file": "src/core.ts",
+      "description": "Allow calza in a two-player duel",
+      "before": "alive(s).length>2&&",
+      "after": "alive(s).length>=2&&",
+      "compiled": true,
+      "suite": "tests/core.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
+      ],
+      "rawSha256": "26e55a0751be97941419ce0f21de62378d9b4bf14173a76e7238a1a1e2b744dc"
+    },
+    {
+      "id": "C09",
+      "file": "src/core.ts",
+      "description": "Accept stale timer instance stamps",
+      "before": "e.startedAt===s.phase.startedAt&&",
+      "after": "true&&",
+      "compiled": true,
+      "suite": "tests/contract.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior"
+      ],
+      "rawSha256": "66cfe8731f9467da2da8a6b7f3b11db108ca02854211266d727cd5b1a9666108"
+    },
+    {
+      "id": "C10",
+      "file": "src/core.ts",
+      "description": "Process input and timers during a hold",
+      "before": "if(s.phase.paused||s.phase.id==='done')return s;",
+      "after": "if(s.phase.id==='done')return s;",
+      "compiled": true,
+      "suite": "tests/contract.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior"
+      ],
+      "rawSha256": "5ca1bdf666680b326d9fd3caed660862f228e7078f446d7990f9c5520dd7b07d"
+    },
+    {
+      "id": "C11",
+      "file": "src/core.ts",
+      "description": "Show the first seat cup to every controller",
+      "before": "const ownDice=member?[...s.cups[id]]:[];",
+      "after": "const ownDice=member?[...s.cups[s.order[0]]]:[];",
+      "compiled": true,
+      "suite": "tests/contract.test.mjs",
+      "exitCode": 1,
+      "assertionKill": true,
+      "failedTests": [
+        "contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public"
+      ],
+      "rawSha256": "5e5da021f03f5ac52b6b681a7295218e2d47d04c635b2137c40a46386a0e3908"
+    }
+  ],
+  "compiled": 25,
+  "assertionKills": 25,
+  "survivors": [],
+  "result": "PASS"
+}

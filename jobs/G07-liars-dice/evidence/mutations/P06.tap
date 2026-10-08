@@ -1,0 +1,81 @@
+TAP version 13
+# Subtest: exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+not ok 1 - exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+  ---
+  duration_ms: 133.057533
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    conditional case 0
+    + actual - expected
+    
+      {
+    +   atLeast: 0.9874208847875248,
+    +   atLeastNumerator: '4678776693546226271',
+    +   exact: 0.06037975301988155,
+    +   exactNumerator: '286102294921875000',
+    -   atLeast: 0.9999405968079365,
+    -   atLeastNumerator: '4738099863344906240',
+    -   exact: 0.0007128383047625897,
+    -   exactNumerator: '3377699720527872',
+        total: '4738381338321616896'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    atLeastNumerator: '4738099863344906240'
+    exactNumerator: '3377699720527872'
+    total: '4738381338321616896'
+    atLeast: 0.9999405968079365
+    exact: 0.0007128383047625897
+  actual:
+    atLeastNumerator: '4678776693546226271'
+    exactNumerator: '286102294921875000'
+    total: '4738381338321616896'
+    atLeast: 0.9874208847875248
+    exact: 0.06037975301988155
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:22:12)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+not ok 2 - probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+  ---
+  duration_ms: 0.846777
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    '11' !== '20'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '20'
+  actual: '11'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:34:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 322.198304

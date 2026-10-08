@@ -21,3 +21,11 @@
 - No claims of Nash optimality, CFR implementation, or external AI champion parity.
 - All implementation choices are logged here; the user's instruction is to proceed
   without clarification. Actual failed checks remain visible in verification logs.
+
+- Host times are finite nonnegative milliseconds at most 10^15, excluding
+  negative zero; fractional times within this domain are supported. Malicious
+  out-of-domain reducer events are ignored unchanged. Init rejects those times.
+  This bound preserves distinct phase stamps, finite pause shifts and exact JSON
+  saves; normal Unix epoch and local-browser clocks fit comfortably.
+- Browser reveals require an explicit Next round acknowledgement, also when a
+  connected human has been eliminated. There is no unrequested reading timer.
