@@ -32,3 +32,12 @@
   No unread candidate is promoted to evidence. Source failures remain historical.
 - Desktop and 4x-throttled mobile browser performance will be measured locally
   rather than pretending this environment is a physical mid-range phone.
+
+- A disconnected or permanently departed seat is played with deterministic
+  medium-bot legal actions until the next present player or hand reveal. It
+  remains the original seat, with its original results entry; no computer
+  player is invented. A present waiting player may advance a revealed hand.
+  Empty rooms automatically pause; reconnecting resumes only that automatic
+  pause. VIP pauses require explicit resume, and permanent leaves stay final.
+  Version1.2.0 carries the empty-room pause marker. These lifecycle choices
+  are workshop behavior, not a claim that classic Gin specifies departures.

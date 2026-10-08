@@ -39,7 +39,8 @@ function start():void {
 function send(input:Input):void {
   if(!state)return;
   const before=state;
-  state=game.reduce(state,{type:'input',playerId:state.turn,input,now:++now});
+  const actor=state.phase.id==='round-end'?state.order.find(id=>state!.players[id].connected&&!state!.left.includes(id))??state.turn:state.turn;
+  state=game.reduce(state,{type:'input',playerId:actor,input,now:++now});
   if(state===before){$('notice').textContent='That move is not legal. Your hand is unchanged.';return;}
   if(state.turn!==before.turn||state.hand!==before.hand||state.phase.id==='done'){openFor=null;selected=null;}
   render();
@@ -73,7 +74,7 @@ function render():void {
   if(viewedState!==state){viewedState=state;cachedPrivateView=game.controllerView(state,state.turn);}
   const v:PrivateView=cachedPrivateView!,publicView=v;
   $('notice').textContent='';
-  $('scores').replaceChildren(...v.players.map(p=>{const d=document.createElement('div');d.className='score'+(p.id===v.turn?' current':'');d.textContent=`${p.name} · ${p.score} points${v.waiting.includes(p.id)?' · waiting':''}`;return d;}));
+  $('scores').replaceChildren(...v.players.map(p=>{const d=document.createElement('div');d.className='score'+(p.id===v.turn?' current':'');d.textContent=`${p.name} · ${p.score} points${state!.left.includes(p.id)?' · left; auto-playing':!p.connected?' · disconnected; auto-playing':v.waiting.includes(p.id)?' · waiting':''}`;return d;}));
   $('meta').textContent=`Hand ${v.hand} · Target ${v.target} · Knock at ${v.knockLimit} or less${v.multiplier===2?' · DOUBLE HAND':''}`;
   const name=state.players[state.turn].name;
   $('status').textContent=state.finished?game.results(state)!.winnerIds.map(id=>state!.players[id].name).join(' & ')+' wins':v.paused?'Paused':v.phaseId==='round-end'?'Hand complete':`${name} · ${v.phaseId==='upcard'?'accept the upcard or pass':v.phaseId==='draw'?'draw one card':v.phaseId==='discard'?'discard or knock':'resolve your best layoffs'}`;
@@ -115,6 +116,7 @@ function render():void {
   if(v.phaseId==='layoff')$('reveal').append(button('Use optimal melds and layoffs',()=>send({type:'finishLayoff'}),true));
   if(v.phaseId==='round-end')$('reveal').append(button('Next hand',()=>send({type:'next'}),true));
   $('bot-step').hidden=!bot||state.finished||v.paused;
+  $('leave-seat').hidden=bot||state.finished||v.paused||reveal;
   $('pause').textContent=v.paused?'Resume':'Pause';$('pause').hidden=state.finished;$('end').hidden=state.finished;
   $('log').replaceChildren(...v.log.map(x=>{const p=document.createElement('p');p.textContent=`${state!.players[x.player].name}: ${x.action}${x.card===null?'':' '+cardName(x.card)}`;return p;}));
 }
@@ -122,6 +124,7 @@ $('start').onclick=start;$('new-match').onclick=()=>{$('setup').hidden=false;$('
 $('bot-step').onclick=()=>{if(state){const input=game.bot.sampleInput(state,state.turn,rng,skill(state.turn));if(input)send(input);}};
 $('pause').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:state.phase.paused?'resume':'pause',now:++now});openFor=null;render();}};
 $('end').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:'end',now:++now});openFor=null;render();}};
+$('leave-seat').onclick=()=>{if(state){state=game.reduce(state,{type:'player',playerId:state.turn,connected:false,gone:'left',now:++now});openFor=null;selected=null;render();}};
 // The host page alone owns real time. The core receives explicit monotonic event timestamps.
 setInterval(()=>{if(!state||state.finished||state.phase.paused)return;now+=1000;
   if(state.phase.deadline!==null&&now>=state.phase.deadline){state=game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now});openFor=null;selected=null;render();}

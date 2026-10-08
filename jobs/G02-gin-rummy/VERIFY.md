@@ -66,3 +66,24 @@ c0dabcfd6b86fb096938bfb0ef7f0b714e998429, including all18 then-hosted tests,
 all required matrices/leagues,25 mutants and browser checks. Exact npm-test
 step output: evidence/ci-baseline-1.0.0-accepted.log. This does not verify
 1.1.0; its current-head hosted run remains required.
+
+Round1 version1.2.0 targeted command: `node --test tests/departure.test.mjs
+tests/rules.test.mjs tests/all-phases.test.mjs`:13PASS/exit0. This catches
+absent/disconnected turn blocks, permanent rejoin, empty versus intentional
+pause, preserved all-seat results and malformed VIP/player control events.
+1,000 initial cases +120 complete matches/17,184 events; max75 automated
+transitions. Full current acceptance pending. Hosted1.1.0 run37719011330
+at b82c0cbc actually passed; current1.2.0 has not been hosted yet.
+
+Round1 complete npm test exit1: all24 node tests/matrices/leagues and25/25
+mutants PASS; browser failed desktop mean58.381FPS/max83.4ms. Initial
+capture failed phone32.928FPS/p99250ms/max450ms. Raw failures retained.
+node .work/browser-diagnose.mjs compared unchanged1.1/1.2 offline pages:
+both profiles60.002–60.004FPS, current phone handler max2.1ms.
+node scripts/browser-check.mjs --capture fresh PASS: desktop59.672FPS
+(p9916.8/max33.3ms), phone4x60.002FPS(p99/max16.8ms),17 interaction/privacy
+checks per profile. Captures81KB/128KB explicitly use1x/4x CPU. Source and
+raw evidence: round-1-summary.json and related files. No cause of the
+earlier slow frames is established. Current hosted CI pending. Evidence/hash
+preparation initially used the wrong working directory and failed to locate
+job files; it was corrected and integrity re-run before this branch push.

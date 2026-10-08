@@ -27,7 +27,7 @@ export interface RoundResult {
   hands:Record<string,Card[]>;multiplier:number;
 }
 export interface State extends GameStateBase {
-  phaseClock:number;
+  phaseClock:number;roomEmpty:boolean;
   config:Config;order:string[];active:string[];waiting:string[];left:string[];
   scores:Record<string,number>;boxes:Record<string,number>;wins:Record<string,number>;
   dealer:string;turn:string;hand:number;hands:Record<string,Card[]>;
@@ -53,7 +53,7 @@ export const manifest:GameManifest={
   id:'gin-rummy',name:'Gin Rummy',icon:'🃏',tagline:'Build melds, keep your deadwood low.',
   description:'Standard or Oklahoma Gin, exact meld scoring, and an optional winner-stays rotation.',
   howToPlay:['Draw a card, then discard one.','Make sets and runs; knock with low deadwood.','Gin earns a bonus. First to the target ends the match.'],
-  version:'1.1.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
+  version:'1.2.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
   tags:['classic','strategy'],presence:{needs:'same-room'},addedOn:'2026-10-08',supportsBots:true,saveable:true,
   playerCounts:{setting:'mode',default:[2,2],overrides:{duel:[2,2],rotation:[3,4]}},
   settings:[
@@ -108,7 +108,7 @@ export function init(ctx:InitContext):State {
   if(order.length<(config.mode==='duel'?2:3)||order.length>(config.mode==='duel'?2:4)||new Set(order).size!==order.length)
     throw new Error('Roster must match duel 2 or rotation 3–4');
   const [dealerIndex,rng]=nextInt(seedRng(ctx.seed),0,1);
-  const state:State={phase:{id:'upcard',startedAt:ctx.now,deadline:null},phaseClock:ctx.now-1,rng,
+  const state:State={phase:{id:'upcard',startedAt:ctx.now,deadline:null},phaseClock:ctx.now-1,roomEmpty:false,rng,
     players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),config,order,active:order.slice(0,2),waiting:order.slice(2),left:[],
     scores:Object.fromEntries(order.map(id=>[id,0])),boxes:Object.fromEntries(order.map(id=>[id,0])),wins:Object.fromEntries(order.map(id=>[id,0])),
     dealer:order[dealerIndex],turn:order[1-dealerIndex],hand:0,hands:{},stock:[],discard:[],initialUpcard:0,
@@ -203,19 +203,20 @@ function phaseInput(state:State,id:string,input:Input,now:number):State {
 function advance(state:State,now:number):State {
   if(state.phase.id==='round-end')return nextHand(state,now);
   if(state.phase.id==='done')return state;
-  const automationState={...state,left:state.left.filter(id=>id!==state.turn)};
+  const automationState={...state,left:state.left.filter(id=>id!==state.turn),
+    players:{...state.players,[state.turn]:{...state.players[state.turn],connected:true}}};
   const input=sampleInput(automationState,state.turn,createRng((state.rng.seed+state.rng.step+state.hand)>>>0),'normal');
   return input?phaseInput(state,state.turn,input,now):state;
 }
 // Local contract adapter: player → speech → VIP → paused → live phase event.
 // The application SDK is not shipped in this workshop; its ordered semantics are reproduced here.
-export function reduce(state:State,event:GameEvent<Input>):State {
+function reduceEvent(state:State,event:GameEvent<Input>):State {
   if(!event||typeof event!=='object'||!Number.isFinite(event.now))return state;
   if(event.type==='player') {
-    if(!Object.hasOwn(state.players,event.playerId))return state;
+    if(!Object.hasOwn(state.players,event.playerId)||typeof event.connected!=='boolean'||
+      ![undefined,'left','kicked'].includes(event.gone))return state;
     const left=event.gone&&!state.left.includes(event.playerId)?[...state.left,event.playerId]:state.left;
-    const next={...state,left,players:{...state.players,[event.playerId]:{...state.players[event.playerId],connected:event.connected}}};
-    return !state.phase.paused&&left.includes(state.turn)?advance(next,event.now):next;
+    return {...state,left,players:{...state.players,[event.playerId]:{...state.players[event.playerId],connected:event.connected&&!left.includes(event.playerId)}}};
   }
   if(event.type==='speech'||event.type==='speechStart')return state;
   if(event.type==='vip') {
@@ -225,21 +226,47 @@ export function reduce(state:State,event:GameEvent<Input>):State {
       if(!state.phase.paused)return state;
       const delta=Math.max(0,event.now-state.phase.paused.at);
       const resumed={...state,phase:{id:state.phase.id,startedAt:state.phase.startedAt,deadline:state.phase.deadline===null?null:state.phase.deadline+delta}};
-      return state.left.includes(state.turn)?advance(resumed,event.now):resumed;
+      return resumed;
     }
-    return state.phase.paused?state:advance(state,event.now);
+    return event.action!=='skip'||state.phase.paused?state:advance(state,event.now);
   }
   if(state.phase.paused||state.finished)return state;
   if(event.type==='timer')return event.phaseId===state.phase.id&&event.startedAt===state.phase.startedAt&&state.phase.deadline!==null&&event.now>=state.phase.deadline?advance(state,event.now):state;
   if(event.type==='input') {
-    if(!Object.hasOwn(state.players,event.playerId)||state.left.includes(event.playerId))return state;
+    if(!Object.hasOwn(state.players,event.playerId)||state.left.includes(event.playerId)||!state.players[event.playerId].connected)return state;
     const parsed=inputSchema.safeParse(event.input);
     return parsed.success?phaseInput(state,event.playerId,parsed.data,event.now):state;
   }
   return state;
 }
+function available(state:State,id:string):boolean {
+  return state.players[id].connected&&!state.left.includes(id);
+}
+function continueAbsent(state:State,now:number):State {
+  if(state.finished)return state;
+  const occupied=state.order.some(id=>available(state,id));
+  if(!occupied)return state.phase.paused?state:{...state,roomEmpty:true,phase:{...state.phase,paused:{at:now}}};
+  let next=state;
+  if(next.roomEmpty){
+    const delta=next.phase.paused?Math.max(0,now-next.phase.paused.at):0;
+    next={...next,roomEmpty:false,phase:{id:next.phase.id,startedAt:next.phase.startedAt,
+      deadline:next.phase.deadline===null?null:next.phase.deadline+delta}};
+  }
+  if(next.phase.paused)return next;
+  // A normal bot strictly reduces deadwood on a discard pickup. A stock draw
+  // raises it by at most ten; at most 29 such draws remain. Even two absent
+  // active seats reach the hand reveal within 2*(200+29*10+29)+2 transitions.
+  for(let steps=0;steps<2048&&next.phase.id!=='round-end'&&!next.finished&&!available(next,next.turn);steps++){
+    const advanced=advance(next,now);if(advanced===next)return next;next=advanced;
+  }
+  return next;
+}
+export function reduce(state:State,event:GameEvent<Input>):State {
+  const next=reduceEvent(state,event);
+  return next===state?state:continueAbsent(next,event.now);
+}
 function legal(state:State,id:string):Input[] {
-  if(state.finished||state.phase.paused||!Object.hasOwn(state.players,id)||state.left.includes(id))return [];
+  if(state.finished||state.phase.paused||!Object.hasOwn(state.players,id)||!available(state,id))return [];
   if(state.phase.id==='round-end')return [{type:'next'}];
   if(id!==state.turn)return [];
   if(state.phase.id==='upcard')return [{type:'pass'},{type:'draw',source:'discard'}];
@@ -266,7 +293,7 @@ export function tvView(state:State):PublicView {
     log:state.publicLog.map(x=>({...x}))};
 }
 export function controllerView(state:State,id:string):PrivateView {
-  const player=Object.hasOwn(state.players,id),hand=player&&state.active.includes(id)?state.hands[id]:[];
+  const player=Object.hasOwn(state.players,id),hand=player&&available(state,id)&&state.active.includes(id)?state.hands[id]:[];
   return {...tvView(state),me:{id,role:player?'player':'spectator'},handCards:[...hand],
     deadwood:hand.length?minimizeDeadwood(hand).deadwood:null,legal:legal(state,id),
     canBigGin:state.phase.id==='discard'&&id===state.turn&&state.config.bigGin&&hand.length===11&&minimizeDeadwood(hand).deadwood===0,

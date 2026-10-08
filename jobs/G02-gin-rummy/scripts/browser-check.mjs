@@ -44,12 +44,14 @@ try {
   // Covers clear on pause and after early end; user strings render as text.
   await page.getByRole('button',{name:'Pause',exact:true}).click();assert.equal(await page.locator('#hand .card').count(),0);
   await page.getByRole('button',{name:'Resume',exact:true}).click();assert.equal(await page.locator('#hand .card').count(),0);
+  await page.getByRole('button',{name:'Leave this seat',exact:true}).click();assert((await page.locator('#scores').textContent()).includes('left; auto-playing'));
+  assert.equal(await page.locator('#hand .card').count(),0);
   await page.getByRole('button',{name:'End match',exact:true}).click();assert(await page.locator('#status').textContent());
   assert.equal(errors.length,0,errors.join('\n'));assert.deepEqual(requests,[]);
   await page.screenshot({path:`.work/browser/${label}.png`,fullPage:true});
   await ctx.close();
   rows.push({label,viewport:{width,height},cpuThrottle:throttle,frames,meanMs:mean,p99Ms:p99,maxMs:max,fps,
-    targetRefreshHz:60,measurementRoundingTolerance:'mean >=59 FPS; p99 <=17ms',interactionChecks:15,networkRequests:requests.length,pageErrors:errors.length,reducedMotion:reduced});
+    targetRefreshHz:60,measurementRoundingTolerance:'mean >=59 FPS; p99 <=17ms',interactionChecks:17,networkRequests:requests.length,pageErrors:errors.length,reducedMotion:reduced});
   console.log(JSON.stringify({label,fps,meanMs:mean,p99Ms:p99,maxMs:max,networkRequests:0,pageErrors:0}));
  }
  if(capture) {
@@ -57,7 +59,9 @@ try {
   // separate context; performance above measures normal play without recording.
   for(const [label,width,height]of [['desktop',1280,720],['phone4x',390,844]]){
    const context=await browser.newContext({viewport:{width,height},recordVideo:{dir:'.work/browser',size:{width,height}}});
-   const page=await context.newPage();await page.goto('file://'+resolve('play.html'));
+   const page=await context.newPage(),cd=await context.newCDPSession(page);
+   await cd.send('Emulation.setCPUThrottlingRate',{rate:label==='phone4x'?4:1});
+   await page.goto('file://'+resolve('play.html'));
    await page.locator('#start').click();
    for(let i=0;i<2;i++){await page.getByRole('button',{name:'Show my hand'}).click();await page.getByRole('button',{name:'Pass upcard'}).click();}
    await page.getByRole('button',{name:'Show my hand'}).click();await page.getByRole('button',{name:'Draw stock',exact:true}).click();
@@ -65,6 +69,8 @@ try {
    await page.getByRole('button',{name:'Show my hand'}).click();
    await page.screenshot({path:`.work/browser/${label}-active-hand.png`,fullPage:true});
    await page.getByRole('button',{name:'Pause',exact:true}).click();await page.getByRole('button',{name:'Resume',exact:true}).click();
+   await page.getByRole('button',{name:'Leave this seat',exact:true}).click();
+   await page.screenshot({path:`.work/browser/${label}-after-departure.png`,fullPage:true});
    const video=page.video();await context.close();await video.saveAs(`media/milestone-${label}.webm`);
   }
  }
