@@ -185,19 +185,13 @@ function sampleInput(s:State,id:string,rng:Rng,skill:BotSkill='normal'):Input|nu
       const source=CATEGORIES.find(c=>c.id===category.id)!;
       const bank=[...(source.answers[s.letter]??[])].filter(answer=>!used.some(old=>sameAnswer(answer,old)));
       if(bank.length===0||!rng.chance(skill==='easy'?0.55:skill==='normal'?0.82:0.98))return '';
-      // Small-table Strong play prefers less obvious examples. Larger tables
-      // need the full vocabulary: a narrow rare-only pool forces collisions.
-      // Public seat rotation separates choices when the bank can cover the table;
-      // no private answer or ballot is inspected to decide another seat's choice.
-      const table=s.order.filter(seat=>present(s,seat));
+      // Familiar options first. Strong samples less obvious members and diversifies
+      // by seat/category without ever reading private submissions or ballots.
       const common=bank.slice(0,skill==='easy'?Math.min(2,bank.length):Math.min(4,bank.length));
       const rare=bank.length>2?bank.slice(Math.floor(bank.length/2)):bank;
-      const choices=skill==='sharp'?(table.length>=4?bank:rare):common;
+      const choices=skill==='sharp'?rare:common;
       const offset=skill==='sharp'?(hashString(id+category.id+s.letter)%choices.length):0;
-      const index=skill==='sharp'&&table.length>=4&&choices.length>=table.length
-        ?(hashString(category.id+s.letter+s.round)+table.indexOf(id))%choices.length
-        :(rng.int(0,choices.length-1)+offset)%choices.length;
-      const answer=choices[index];used.push(answer);return answer;
+      const answer=choices[(rng.int(0,choices.length-1)+offset)%choices.length];used.push(answer);return answer;
     });
     return {type:'submit',answers};
   }

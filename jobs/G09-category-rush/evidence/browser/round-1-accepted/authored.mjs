@@ -14,17 +14,17 @@ A kitchen tool with a handle and blade|knife;cleaver;peeler;scissors;bread knife
 @pantry
 A food sold in a resealable jar|jam;honey;mustard;pickles;peanut butter;relish;salsa;chutney;mayonnaise;marmalade;olives;preserves
 A dry ingredient that absorbs cooking water|rice;pasta;lentils;beans;couscous;bulgur;oats;barley;noodles;semolina;chickpeas;polenta
-A seasoning kept near a stove|salt;pepper;paprika;cumin;cinnamon;basil;bay leaf;oregano;thyme;rosemary;dill;nutmeg;ginger;allspice;anise;asafoetida;ajwain;annatto;angelica;barberry;borage;burnet;bergamot;clove;caraway;cardamom;chervil;coriander;capers;curry leaf;dill seed;galangal;garlic;golpar;grains of paradise;parsley;pandan;poppy seed;saffron;sage;sumac;savory;sesame;star anise;tarragon;turmeric
+A seasoning kept near a stove|salt;pepper;paprika;cumin;cinnamon;basil;bay leaf;oregano;thyme;rosemary;dill;nutmeg;ginger;allspice
 An ingredient bought in bulk by a bakery|flour;sugar;oats;semolina;cornmeal;rice flour;bread flour;rye flour;starch;bran;cocoa powder;milk powder
 A food often sold in a tin|beans;tomatoes;peas;sardines;tuna;corn;peaches;pineapple;soup;chickpeas;salmon;lentils
 Something spread on toast with a knife|butter;jam;marmalade;honey;peanut butter;cream cheese;chocolate spread;almond butter;apple butter;relish;pate;ricotta
-An edible seed kept in a pantry|sesame;poppy seed;mustard seed;cumin;caraway;fennel seed;coriander seed;sunflower seed;pumpkin seed;chia;flaxseed;cardamom;celery seed;fenugreek;melon seed;corn;cucumber seed;millet;sorghum
+An edible seed kept in a pantry|sesame;poppy seed;mustard seed;cumin;caraway;fennel seed;coriander seed;sunflower seed;pumpkin seed;chia;flaxseed;cardamom
 An ingredient that sweetens cake batter|sugar;honey;molasses;maple syrup;agave syrup;brown sugar;date syrup;corn syrup;icing sugar;treacle;stevia;rice syrup
 A food that can be ground into flour|wheat;rice;corn;barley;oats;rye;chickpeas;almonds;buckwheat;lentils;millet;sorghum
 Something poured over a finished salad|oil;dressing;lemon juice;lime juice;balsamic vinegar;buttermilk;honey;mustard dressing;tahini;sesame oil;ranch dressing;salad cream
 @produce
-An edible leaf for a salad bowl|lettuce;spinach;arugula;watercress;endive;radicchio;rocket;chicory;sorrel;kale;mustard greens;beet greens;borage;chervil;claytonia;corn salad;cress;escarole;land cress;lovage;mizuna;radish greens;rapini;cabbage;chrysanthemum greens
-A vegetable grown for its underground part|carrot;potato;radish;beetroot;parsnip;turnip;rutabaga;ginger;sweet potato;cassava;taro;horseradish;burdock;celeriac;chicory root;Chinese artichoke;galangal;Hamburg parsley;pignut;salsify;scorzonera;skirret;tigernut;turmeric
+An edible leaf for a salad bowl|lettuce;spinach;arugula;watercress;endive;radicchio;rocket;chicory;sorrel;kale;mustard greens;beet greens
+A vegetable grown for its underground part|carrot;potato;radish;beetroot;parsnip;turnip;rutabaga;ginger;sweet potato;cassava;taro;horseradish
 A fruit with a peel usually removed by hand|banana;orange;mandarin;clementine;tangerine;satsuma;grapefruit;lychee;longan;rambutan;mangosteen;pomelo
 A fruit with a central stone or pit|peach;plum;apricot;cherry;mango;nectarine;date;olive;damson;greengage;avocado;sloe
 Something edible picked from a climbing plant|grape;pea;bean;cucumber;pumpkin;squash;passion fruit;kiwifruit;runner bean;snap pea;melon;blackberry
@@ -32,17 +32,17 @@ A green vegetable served cooked|broccoli;peas;spinach;kale;cabbage;green beans;a
 A vegetable commonly eaten as a raw snack|carrot;celery;cucumber;radish;bell pepper;snap pea;tomato;broccoli;cauliflower;kohlrabi;fennel;jicama
 A produce item containing many seeds|pomegranate;watermelon;melon;papaya;passion fruit;tomato;cucumber;pumpkin;fig;guava;kiwifruit;strawberry
 A produce item commonly squeezed for juice|orange;lemon;lime;grapefruit;apple;carrot;pomegranate;pineapple;beetroot;mandarin;grape;celery
-A plant whose leaves season dinner|basil;parsley;rosemary;thyme;sage;mint;oregano;dill;coriander;chives;tarragon;marjoram;bay leaf;lovage;borage;burnet;chervil;costmary;curry leaf;lemon balm;lemon verbena;lemongrass;pandan;perilla;purslane;savory;sorrel
+A plant whose leaves season dinner|basil;parsley;rosemary;thyme;sage;mint;oregano;dill;coriander;chives;tarragon;marjoram;bay leaf;lovage
 @breakfast
 A food served beside eggs on a breakfast plate|toast;bacon;sausage;beans;mushrooms;tomatoes;potatoes;hash browns;ham;spinach;bread;black pudding
 A breakfast food made from batter|pancake;waffle;muffin;crumpet;crepe;blini;drop scone;cornbread;popover;Dutch baby;buckwheat pancake;griddle cake
 A drink ordered with a morning meal|coffee;tea;milk;juice;hot chocolate;cappuccino;espresso;latte;smoothie;apple juice;orange juice;buttermilk
-Something stirred into porridge|honey;banana;raisins;milk;cream;cinnamon;apple;berries;nuts;peanut butter;maple syrup;dates;almonds;apricots;blackberries;blueberries;cherries;chia;coconut;cranberries;hazelnuts;hemp seed;peaches;pears;pecans;pistachios;plums;poppy seed;pumpkin seed;raspberries
+Something stirred into porridge|honey;banana;raisins;milk;cream;cinnamon;apple;berries;nuts;peanut butter;maple syrup;dates
 A breakfast food served in a bowl|porridge;cereal;muesli;granola;oatmeal;yogurt;congee;fruit salad;grits;rice pudding;cornflakes;bircher muesli
 A filling for a breakfast sandwich|egg;bacon;sausage;ham;cheese;tomato;avocado;butter;jam;mushroom;smoked salmon;peanut butter
 A food intended for a toaster|bread;bagel;muffin;crumpet;waffle;teacake;sourdough;rye bread;fruit bread;raisin bread;flatbread;toast
 A hotel breakfast food eaten with a spoon|yogurt;porridge;cereal;fruit salad;baked beans;jam;muesli;granola;congee;grits;rice pudding;compote
-A topping served with pancakes|syrup;honey;jam;butter;berries;cream;banana;chocolate;lemon;sugar;peaches;maple syrup;blackberries;blueberries;caramel;cherries;chocolate sauce;cranberries;custard;lemon curd;mango;marmalade;marshmallows;pears;plums;strawberries
+A topping served with pancakes|syrup;honey;jam;butter;berries;cream;banana;chocolate;lemon;sugar;peaches;maple syrup
 A food cooked in a breakfast frying pan|egg;bacon;sausage;mushroom;tomato;potato;pancake;hash brown;ham;black pudding;omelette;frittata
 @cooking
 A food preparation action that uses water|boiling;washing;rinsing;steaming;poaching;soaking;simmering;blanching;braising;deglazing;hydrating;scalding
@@ -50,7 +50,7 @@ A cooking action that makes smaller pieces|chopping;slicing;dicing;grating;minci
 A cooking method using an oven|baking;roasting;broiling;grilling;slow cooking;drying;toasting;braising;caramelizing;warming;crisping;reheating
 Something that helps bread dough rise|yeast;starter;sourdough;fermentation;baking powder;baking soda;carbon dioxide;leavening agent;air;steam;natural leaven;bicarbonate
 A food stirred while heating|porridge;risotto;sauce;custard;soup;polenta;gravy;scrambled eggs;stew;jam;chocolate;rice pudding
-A food commonly cooked on a skewer|kebab;chicken;beef;tofu;shrimp;mushrooms;pepper;halloumi;satay;lamb;marshmallow;pineapple;bacon;chipolata;cod;corn;courgette;cuttlefish;monkfish;pork;potato;salmon;sausage;scallop;seitan;strawberry;swordfish;tempeh;cauliflower;chorizo;crayfish;cobia
+A food commonly cooked on a skewer|kebab;chicken;beef;tofu;shrimp;mushrooms;pepper;halloumi;satay;lamb;marshmallow;pineapple
 A food rolled around a filling|burrito;spring roll;sushi;crepe;roulade;Swiss roll;tortilla;enchilada;rice-paper roll;pancake;cabbage roll;pinwheel
 A food commonly cut into wedges|potato;lemon;orange;melon;pizza;pie;cake;cheese;cabbage;tomato;apple;frittata
 Something removed before eating a food|peel;skin;shell;pit;stone;bone;seed;core;husk;stem;rind;wrapper
@@ -167,7 +167,7 @@ Something on a park information board|map;rule;opening hours;notice;warning;trai
 Something you take to walk a dog in a park|lead;leash;bag;water;ball;treat;collar;harness;bowl;toy;whistle;poop bag
 Something you might hear beside a park pond|duck;frog;bird;water;quacking;splash;wind;goose;insect;children;coot;heron
 @garden
-A tool used to move garden soil|spade;shovel;fork;trowel;hoe;rake;cultivator;digging fork;auger;mattock;pick;rotavator;dibber;hori hori;plow;soil scoop;trenching tool
+A tool used to move garden soil|spade;shovel;fork;trowel;hoe;rake;cultivator;digging fork;auger;mattock;pick;rotavator
 Something used to water growing plants|hose;watering can;bucket;sprinkler;drip line;pipe;jug;bottle;irrigation system;nozzle;mist sprayer;pump
 Something you might add to garden soil|compost;manure;mulch;fertilizer;sand;grit;lime;peat;leaf mold;loam;perlite;bone meal
 A garden plant grown for edible leaves|lettuce;spinach;kale;cabbage;basil;parsley;mint;chard;arugula;watercress;sorrel;oregano
@@ -176,15 +176,15 @@ Something that can damage a garden leaf|slug;snail;caterpillar;aphid;beetle;fros
 Something collected from a garden in autumn|leaf;apple;pear;seed;pumpkin;chestnut;walnut;acorn;grape;hazelnut;plum;fig
 Something that belongs in a compost heap|leaves;grass;peelings;coffee grounds;eggshell;straw;cardboard;paper;twigs;tea leaves;manure;fruit scraps
 Something a gardener wears for protection|gloves;boots;hat;goggles;apron;kneepads;mask;ear defenders;overalls;sunhat;coat;respirator
-Something grown in a pot on a windowsill|basil;mint;parsley;chives;cress;thyme;rosemary;aloe;cactus;geranium;orchid;begonia;amaryllis;azalea;anthurium;asparagus fern;African violet;bromeliad;chrysanthemum;cyclamen;coleus;chamomile;marjoram;oregano;oxalis;pansy;petunia;primrose;pilea;pothos;tarragon
+Something grown in a pot on a windowsill|basil;mint;parsley;chives;cress;thyme;rosemary;aloe;cactus;geranium;orchid;begonia
 
 
 @wildlife
-An animal that makes a home underground|rabbit;badger;mole;fox;ant;termite;prairie dog;groundhog;meerkat;gerbil;wombat;jerboa;armadillo;aardvark;beetle;gopher;mouse;puffin;rat;weasel
+An animal that makes a home underground|rabbit;badger;mole;fox;ant;termite;prairie dog;groundhog;meerkat;gerbil;wombat;jerboa
 An animal with an external shell|snail;tortoise;turtle;clam;mussel;oyster;crab;lobster;armadillo;hermit crab;conch;nautilus
 An animal you might see at a bird feeder|sparrow;robin;finch;tit;cardinal;jay;woodpecker;blackbird;chickadee;nuthatch;goldfinch;dove
 An animal that uses a tail for balance|cat;monkey;squirrel;kangaroo;lemur;cheetah;leopard;mouse;rat;opossum;gecko;wallaby
-An animal commonly active after dark|owl;bat;fox;badger;hedgehog;raccoon;moth;mouse;rat;firefly;opossum;jerboa;hamster;hyena
+An animal commonly active after dark|owl;bat;fox;badger;hedgehog;raccoon;moth;mouse;rat;firefly;opossum;jerboa
 An animal that builds a home with found materials|bird;beaver;ant;termite;wasp;bee;swallow;robin;magpie;weaverbird;stork;wren
 An animal that changes substantially as it grows|butterfly;moth;frog;toad;beetle;fly;mosquito;dragonfly;bee;ant;newt;ladybird
 An animal with a conspicuously striped body|tiger;zebra;chipmunk;skunk;wasp;bee;okapi;badger;bumblebee;tabby cat;ring-tailed lemur;striped hyena
@@ -192,8 +192,8 @@ An animal with a long flexible nose or snout|elephant;tapir;anteater;aardvark;sh
 An animal whose call people imitate|duck;owl;dog;cat;cow;sheep;goat;frog;rooster;lion;donkey;crow
 @water-world
 An animal that can live in a garden pond|frog;toad;newt;goldfish;carp;snail;dragonfly;water beetle;mosquito;duck;stickleback;tadpole
-An animal with fins that lives in the sea|shark;dolphin;tuna;salmon;cod;herring;mackerel;marlin;swordfish;orca;haddock;grouper;capelin;clownfish;coelacanth;conger;dogfish;garfish;goby;gurnard;halibut;hake;mullet;seahorse;sole;snapper;stingray;turbot;triggerfish
-A sea animal that is not a fish|octopus;squid;crab;lobster;dolphin;whale;jellyfish;starfish;seal;sea lion;shrimp;anemone;chiton;clam;cockle;comb jelly;conch;copepod;coral;cuttlefish;dugong;limpet;oyster;sea cucumber;sea hare;sea sponge;sea urchin;walrus;whelk;worm;salp;sea spider;sea pen
+An animal with fins that lives in the sea|shark;dolphin;tuna;salmon;cod;herring;mackerel;marlin;swordfish;orca;haddock;grouper
+A sea animal that is not a fish|octopus;squid;crab;lobster;dolphin;whale;jellyfish;starfish;seal;sea lion;shrimp;anemone
 Something washed onto a seashore|shell;seaweed;driftwood;stone;pebble;sand;glass;coral;feather;rope;buoy;jellyfish
 Something used by a person fishing|rod;line;hook;bait;net;float;reel;sinker;boat;creel;wader;lure
 Something a scuba diver wears or carries|mask;fins;tank;regulator;wetsuit;weight;gauge;computer;torch;snorkel;knife;buoy
@@ -224,25 +224,25 @@ Something marking the edge of a farm field|hedge;fence;ditch;wall;tree;gate;path
 Something that grows on a tree trunk|moss;lichen;ivy;fungus;fern;orchid;bark;branch;bud;leaf;epiphyte;mistletoe
 A natural place that can echo loudly|cave;canyon;valley;gorge;cliff;ravine;mountain;chasm;cavern;gully;crater;hollow
 @science
-Something visible through a basic microscope|cell;hair;pollen;insect;leaf;algae;crystal;fiber;bacteria;blood;spore;yeast;amoeba;chloroplast;cotton;feather;fungus;salt;sand;sperm;starch
-Something in a school science lab made of glass|beaker;flask;test tube;slide;pipette;thermometer;funnel;Petri dish;watch glass;measuring cylinder;burette;stirring rod;bottle;separating funnel;specimen tube
+Something visible through a basic microscope|cell;hair;pollen;insect;leaf;algae;crystal;fiber;bacteria;blood;spore;yeast
+Something in a school science lab made of glass|beaker;flask;test tube;slide;pipette;thermometer;funnel;Petri dish;watch glass;measuring cylinder;burette;stirring rod
 Something used to observe distant stars|telescope;camera;binoculars;observatory;lens;mirror;spectroscope;detector;radio telescope;satellite;interferometer;eyepiece
 Something that orbits a planet|moon;satellite;space station;ring;rock;dust;probe;orbiter;debris;ice;spacecraft;particle
 Something a magnet can attract|iron;steel;nickel;cobalt;nail;screw;pin;paperclip;bolt;washer;staple;tinplate
 A device that converts energy into light|lamp;bulb;LED;candle;torch;laser;lantern;flashlight;headlight;neon tube;fluorescent tube;glow stick
 Something measured with a scale or balance|mass;weight;flour;sugar;parcel;fruit;gold;powder;coffee;rice;sample;ingredient
 Something recorded in a science notebook|observation;measurement;result;hypothesis;date;diagram;method;data;temperature;calculation;conclusion;experiment
-A material through which light can pass|glass;water;air;plastic;crystal;ice;acrylic;quartz;diamond;resin;gelatin;cellophane;cellulose acetate;glycerin;polycarbonate;polystyrene
+A material through which light can pass|glass;water;air;plastic;crystal;ice;acrylic;quartz;diamond;resin;gelatin;cellophane
 Something that contains a rechargeable battery|phone;laptop;tablet;camera;drill;headphones;watch;toothbrush;car;speaker;torch;power bank
 @school
 Something written at the top of a worksheet|name;date;title;class;subject;question;instructions;heading;number;topic;teacher;lesson
 Something in a pencil case with a sharp edge or point|pencil;compass;scissors;sharpener;pen;crayon;mechanical pencil;divider;stylus;craft knife;graphite;fountain pen
 Something a student uses to organize papers|folder;binder;clip;staple;file;ring binder;divider;wallet;envelope;tray;portfolio;clipboard
-Something displayed on a classroom wall|map;clock;poster;alphabet;calendar;chart;artwork;notice;whiteboard;blackboard;rules;photograph;art;attendance chart;bar graph;birthday list;bulletin;certificate;class photo;noticeboard;number line;painting;periodic table;portrait;punctuation guide;word wall
+Something displayed on a classroom wall|map;clock;poster;alphabet;calendar;chart;artwork;notice;whiteboard;blackboard;rules;photograph
 Something students study using a map|country;river;mountain;city;continent;island;border;climate;population;route;distance;latitude
 Something you might borrow from a school library|book;dictionary;atlas;novel;magazine;encyclopedia;comic;biography;audiobook;poetry;manual;journal
 A subject taught using numbers|mathematics;physics;chemistry;economics;statistics;accounting;computing;geography;engineering;arithmetic;geometry;algebra
-Something on a teacher's desk|book;pen;computer;paper;register;planner;mug;marker;stapler;notebook;bell;clock;calculator;calendar;clipboard;paperclip;pencil;picture;plant;ruler;scissors;stamp;sticky note
+Something on a teacher's desk|book;pen;computer;paper;register;planner;mug;marker;stapler;notebook;bell;clock
 Something worn or carried for school sports|trainers;shorts;shirt;kit;water;ball;boots;cap;socks;helmet;goggles;jacket
 Something found in a school art cupboard|paint;brush;paper;clay;glue;scissors;chalk;crayon;ink;charcoal;canvas;pastel
 @paper
@@ -250,34 +250,34 @@ Something printed on an envelope|address;name;stamp;postcode;return address;zip 
 Something you can fold from a sheet of paper|plane;boat;fan;crane;box;hat;frog;flower;envelope;star;fortune teller;butterfly
 Something used to mark a page in a book|bookmark;card;ribbon;sticky note;receipt;paperclip;string;leaf;tab;ticket;index card;strip
 Something a librarian puts on a book|label;barcode;stamp;cover;tag;number;sticker;call number;date slip;security strip;bookplate;classification
-Something you write on a shopping list|milk;bread;eggs;butter;apples;rice;soap;cheese;coffee;tea;carrots;jam;almonds;avocado;baking powder;beans;broccoli;cabbage;chicken;chocolate;corn;jelly;juice;mushrooms;raisins;salmon;salt;spinach;sugar;tomatoes;tuna
+Something you write on a shopping list|milk;bread;eggs;butter;apples;rice;soap;cheese;coffee;tea;carrots;jam
 Something printed on a train ticket|destination;date;time;price;seat;platform;route;station;barcode;class;number;passenger
 A kind of book used to look something up|dictionary;atlas;encyclopedia;manual;guide;directory;handbook;catalog;almanac;index;gazetteer;thesaurus
 Something used to attach papers together|staple;clip;glue;tape;pin;fastener;binder;ring;string;ribbon;elastic;paperclip
 Something used to write a personal journal|pen;pencil;notebook;diary;paper;ink;tablet;laptop;keyboard;stylus;fountain pen;ballpoint
-Something that can leave a mark on paper|pen;pencil;crayon;chalk;ink;paint;charcoal;pastel;marker;stamp;brush;highlighter;ballpoint;chocolate;coffee;mud;paintbrush;printer;sauce;soil;soot
+Something that can leave a mark on paper|pen;pencil;crayon;chalk;ink;paint;charcoal;pastel;marker;stamp;brush;highlighter
 @art
 Something applied to a canvas with a brush|paint;ink;gesso;primer;varnish;glue;water;acrylic;oil paint;gouache;tempera;watercolor
-A material shaped into a sculpture|clay;stone;wood;metal;wax;ice;plaster;marble;bronze;paper;sand;glass;bone;cardboard;cement;ceramic;chalk;concrete;copper;coral;crystal;granite;iron;ivory;plastic;porcelain;steel
+A material shaped into a sculpture|clay;stone;wood;metal;wax;ice;plaster;marble;bronze;paper;sand;glass
 Something used to cut craft materials|scissors;knife;blade;scalpel;saw;chisel;wire cutter;punch;shears;craft knife;rotary cutter;snips
 Something an artist uses to mix colours|palette;brush;knife;cup;tray;bowl;plate;tile;spatula;jar;palette knife;mixer
 Something made by sewing pieces of fabric|quilt;bag;shirt;dress;curtain;cushion;blanket;patchwork;apron;coat;toy;flag
 Something that can be made from folded card|box;model;mask;card;house;hat;puppet;frame;decoration;cone;diorama;folder
-Something used in a collage|paper;photograph;fabric;leaf;card;magazine;newspaper;ribbon;foil;button;ticket;string;bead;beach glass;burlap;cotton;feather;felt;fur;lace;leather;map;mesh;paint chip;postage stamp;postcard;pressed flower;receipt;shell;straw;thread;twig
+Something used in a collage|paper;photograph;fabric;leaf;card;magazine;newspaper;ribbon;foil;button;ticket;string
 Something used to shape wet clay|hand;sponge;wire;knife;wheel;rib;paddle;tool;needle;stamp;roller;scraper
-Something displayed in a gallery|painting;sculpture;photograph;drawing;print;installation;ceramic;portrait;landscape;tapestry;etching;pottery;calligraphy;carving;collage;illustration;linocut;lithograph;pastel;textile
+Something displayed in a gallery|painting;sculpture;photograph;drawing;print;installation;ceramic;portrait;landscape;tapestry;etching;pottery
 Something worn to protect clothes during art|apron;smock;overalls;coat;shirt;coverall;gown;bib;painting shirt;workwear;lab coat;tabard
 
 
 @music
-An instrument played using keys|piano;organ;accordion;keyboard;synthesizer;harpsichord;clavichord;celesta;melodica;electric piano;harmonium;concertina;Ondes Martenot;carillon;hydraulophone
-An instrument played by striking it|drum;gong;cymbal;xylophone;marimba;bell;triangle;timpani;glockenspiel;tambourine;woodblock;vibraphone;bongo;cajon;castanets;cowbell;claves;conga;djembe;darbuka;tabla;tabor;taiko;temple block;tubular bells
-An instrument with strings you can pluck|guitar;harp;banjo;mandolin;lute;ukulele;sitar;lyre;zither;bass;balalaika;koto;baglama;bandura;berimbau;bouzouki;guqin;guzheng;kantele;kora;shamisen;surbahar;biwa;buzuq
+An instrument played using keys|piano;organ;accordion;keyboard;synthesizer;harpsichord;clavichord;celesta;melodica;electric piano;harmonium;concertina
+An instrument played by striking it|drum;gong;cymbal;xylophone;marimba;bell;triangle;timpani;glockenspiel;tambourine;woodblock;vibraphone
+An instrument with strings you can pluck|guitar;harp;banjo;mandolin;lute;ukulele;sitar;lyre;zither;bass;balalaika;koto
 Something a musician reads during a performance|score;music;lyrics;notation;chord chart;tablature;setlist;sheet music;part;lead sheet;cue;libretto
 Something used to make a musical instrument louder|amplifier;microphone;speaker;pickup;megaphone;horn;resonator;soundboard;cabinet;PA;preamp;soundbox
 Something used to keep musical time|metronome;drum;clap;conductor;baton;click track;beat;foot;percussion;hand;drum machine;count
 Something carried in a guitar case|guitar;pick;string;tuner;strap;capo;cloth;cable;plectrum;slide;winder;music
-Something found in a recording studio|microphone;headphones;mixer;computer;speaker;keyboard;cable;stand;monitor;console;preamp;recorder;compressor;metronome;music stand;piano;pop filter;patchbay;sequencer;synthesizer
+Something found in a recording studio|microphone;headphones;mixer;computer;speaker;keyboard;cable;stand;monitor;console;preamp;recorder
 A musical group with more than one performer|band;orchestra;choir;quartet;trio;duo;ensemble;quintet;sextet;octet;chorus;brass band
 Something that makes sound when blown into|flute;trumpet;clarinet;recorder;harmonica;whistle;horn;oboe;bagpipe;trombone;saxophone;ocarina
 @sports
@@ -303,7 +303,7 @@ Something that fits together in a construction toy|block;brick;rod;connector;til
 Something controlled with a joystick|drone;game;robot;helicopter;aircraft;crane;wheelchair;excavator;camera;submarine;simulator;arcade machine
 A game action that can end a player's turn|passing;drawing;discarding;folding;moving;rolling;placing;scoring;capturing;checking;calling;playing
 @jobs
-A worker whose job uses a sharp cutting tool|chef;butcher;barber;surgeon;carpenter;tailor;gardener;hairdresser;sculptor;baker;florist;fishmonger;bookbinder;carpet fitter;farrier;glazier;sailmaker;shoemaker;stone mason;taxidermist
+A worker whose job uses a sharp cutting tool|chef;butcher;barber;surgeon;carpenter;tailor;gardener;hairdresser;sculptor;baker;florist;fishmonger
 A worker who checks people's tickets|conductor;inspector;usher;attendant;guard;steward;collector;gate agent;ticket examiner;doorman;clerk;controller
 A worker who repairs mechanical equipment|mechanic;engineer;technician;fitter;machinist;millwright;plumber;electrician;repairer;maintenance worker;watchmaker;bike mechanic
 A worker whose job involves measuring buildings|surveyor;architect;builder;carpenter;engineer;inspector;quantity surveyor;appraiser;estimator;planner;valuer;draftsperson
@@ -311,7 +311,7 @@ A worker whose job commonly includes cooking|chef;cook;baker;grill cook;pastry c
 A worker who helps animals stay healthy|vet;nurse;farrier;groom;zookeeper;keeper;rehabilitator;technician;dentist;trainer;nutritionist;veterinary nurse
 A worker who makes or repairs things from wood|carpenter;joiner;cabinetmaker;woodworker;cooper;luthier;shipwright;turner;framer;furniture maker;carver;wheelwright
 A worker who helps people find information|librarian;teacher;researcher;archivist;guide;advisor;clerk;analyst;journalist;curator;receptionist;consultant
-A worker who performs for an audience|actor;singer;dancer;musician;comedian;magician;juggler;acrobat;mime;puppeteer;clown;storyteller;aerialist;cabaret artist;contortionist;DJ;performance artist;poet;stunt performer;mentalist
+A worker who performs for an audience|actor;singer;dancer;musician;comedian;magician;juggler;acrobat;mime;puppeteer;clown;storyteller
 A worker who makes or repairs jewelry|jeweler;goldsmith;silversmith;gem setter;engraver;lapidary;watchmaker;designer;bench jeweler;gemologist;craftsperson;polisher
 @events
 Something you hang up for a celebration|banner;flag;balloon;garland;light;streamer;bunting;decoration;ribbon;lantern;wreath;poster
@@ -325,7 +325,7 @@ Something a host checks before guests arrive|chairs;food;drinks;music;lighting;t
 Something you hear at a live concert|music;singing;applause;drum;guitar;cheering;bass;clapping;whistle;piano;feedback;announcement
 Something used to identify staff at an event|badge;lanyard;shirt;vest;wristband;uniform;cap;pass;name tag;jacket;armband;ID
 @digital
-Something connected to a computer by a cable|keyboard;mouse;printer;monitor;scanner;camera;speaker;microphone;drive;headphones;router;joystick;card reader;capture card;DAC;dongle;hub;modem;MIDI keyboard;plotter;projector;steering wheel
+Something connected to a computer by a cable|keyboard;mouse;printer;monitor;scanner;camera;speaker;microphone;drive;headphones;router;joystick
 Something shown on a computer desktop|icon;window;folder;file;cursor;wallpaper;taskbar;menu;clock;shortcut;button;notification
 Something you can attach to an email|document;photograph;file;spreadsheet;image;presentation;PDF;archive;audio;video;report;invoice
 Something entered into an online form|name;address;email;password;date;number;telephone;postcode;comment;message;username;answer
@@ -341,7 +341,7 @@ Something a volunteer might collect for donation|food;clothes;books;toys;blanket
 Something used to clean a shared public space|broom;bag;gloves;brush;mop;bin;grabber;rake;bucket;sponge;cloth;shovel
 Something shown on a town noticeboard|event;poster;notice;map;advertisement;timetable;warning;meeting;concert;fundraiser;announcement;class
 A place with an emergency exit sign|school;hospital;hotel;theater;cinema;office;library;station;shop;restaurant;mall;factory
-Something found in a public library besides books|chair;table;computer;magazine;newspaper;printer;scanner;map;catalog;desk;shelf;clock;coat rack;display;DVD;magazine rack;microfilm;noticeboard;pamphlet;photocopier;plant;poster;sign;stool;telephone
+Something found in a public library besides books|chair;table;computer;magazine;newspaper;printer;scanner;map;catalog;desk;shelf;clock
 Something used at a community repair session|tool;glue;screwdriver;needle;thread;pliers;hammer;solder;wire;tape;wrench;scissors
 A place people go to send a parcel|post office;shop;depot;counter;locker;mailroom;postal agency;courier office;shipping store;sorting office;newsagent;kiosk
 Something listed on a public meeting agenda|date;time;minutes;apologies;reports;discussion;vote;budget;proposal;motion;questions;chair

@@ -11,3 +11,4 @@
 - English content only. Proper names must be written with the chosen initial first. Extra proper-name alliteration points and automatic tie-break rounds are researched but not selected.
 
 - The offline page immediately settles a currently public review category with no answer groups by sending the real timer event at its real deadline. It advances at most twelve such steps, never while paused or while the host menu is open. The shared core and nonempty ballot deadlines are unchanged.
+- At four or more present seats Strong samples its full available bank, using a deterministic public-seat rotation when that bank can cover the table. This avoids unnecessary collisions caused by truncating the bank; it does not infer other players' answers or skill settings. Smaller tables retain the less-obvious authored-half heuristic. Completed scored history is public; the page reveals it only on scores/results.

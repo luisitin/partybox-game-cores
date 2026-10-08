@@ -391,42 +391,21 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "pantry",
     "answers": {
       "A": [
-        "allspice",
-        "anise",
-        "asafoetida",
-        "ajwain",
-        "annatto",
-        "angelica"
+        "allspice"
       ],
       "B": [
         "basil",
-        "bay leaf",
-        "barberry",
-        "borage",
-        "burnet",
-        "bergamot"
+        "bay leaf"
       ],
       "C": [
         "cumin",
-        "cinnamon",
-        "clove",
-        "caraway",
-        "cardamom",
-        "chervil",
-        "coriander",
-        "capers",
-        "curry leaf"
+        "cinnamon"
       ],
       "D": [
-        "dill",
-        "dill seed"
+        "dill"
       ],
       "G": [
-        "ginger",
-        "galangal",
-        "garlic",
-        "golpar",
-        "grains of paradise"
+        "ginger"
       ],
       "N": [
         "nutmeg"
@@ -436,27 +415,16 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "P": [
         "pepper",
-        "paprika",
-        "parsley",
-        "pandan",
-        "poppy seed"
+        "paprika"
       ],
       "R": [
         "rosemary"
       ],
       "S": [
-        "salt",
-        "saffron",
-        "sage",
-        "sumac",
-        "savory",
-        "sesame",
-        "star anise"
+        "salt"
       ],
       "T": [
-        "thyme",
-        "tarragon",
-        "turmeric"
+        "thyme"
       ]
     }
   },
@@ -573,20 +541,14 @@ export const CATEGORIES: readonly Category[] = [
         "caraway",
         "coriander seed",
         "chia",
-        "cardamom",
-        "celery seed",
-        "corn",
-        "cucumber seed"
+        "cardamom"
       ],
       "F": [
         "fennel seed",
-        "flaxseed",
-        "fenugreek"
+        "flaxseed"
       ],
       "M": [
-        "mustard seed",
-        "melon seed",
-        "millet"
+        "mustard seed"
       ],
       "P": [
         "poppy seed",
@@ -594,8 +556,7 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "S": [
         "sesame",
-        "sunflower seed",
-        "sorghum"
+        "sunflower seed"
       ]
     }
   },
@@ -725,39 +686,26 @@ export const CATEGORIES: readonly Category[] = [
         "arugula"
       ],
       "B": [
-        "beet greens",
-        "borage"
+        "beet greens"
       ],
       "C": [
-        "chicory",
-        "chervil",
-        "claytonia",
-        "corn salad",
-        "cress",
-        "cabbage",
-        "chrysanthemum greens"
+        "chicory"
       ],
       "E": [
-        "endive",
-        "escarole"
+        "endive"
       ],
       "K": [
         "kale"
       ],
       "L": [
-        "lettuce",
-        "land cress",
-        "lovage"
+        "lettuce"
       ],
       "M": [
-        "mustard greens",
-        "mizuna"
+        "mustard greens"
       ],
       "R": [
         "radicchio",
-        "rocket",
-        "radish greens",
-        "rapini"
+        "rocket"
       ],
       "S": [
         "spinach",
@@ -775,44 +723,32 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "produce",
     "answers": {
       "B": [
-        "beetroot",
-        "burdock"
+        "beetroot"
       ],
       "C": [
         "carrot",
-        "cassava",
-        "celeriac",
-        "chicory root",
-        "chinese artichoke"
+        "cassava"
       ],
       "G": [
-        "ginger",
-        "galangal"
+        "ginger"
       ],
       "H": [
-        "horseradish",
-        "hamburg parsley"
+        "horseradish"
       ],
       "P": [
         "potato",
-        "parsnip",
-        "pignut"
+        "parsnip"
       ],
       "R": [
         "radish",
         "rutabaga"
       ],
       "S": [
-        "sweet potato",
-        "salsify",
-        "scorzonera",
-        "skirret"
+        "sweet potato"
       ],
       "T": [
         "turnip",
-        "taro",
-        "tigernut",
-        "turmeric"
+        "taro"
       ]
     }
   },
@@ -1086,25 +1022,17 @@ export const CATEGORIES: readonly Category[] = [
     "answers": {
       "B": [
         "basil",
-        "bay leaf",
-        "borage",
-        "burnet"
+        "bay leaf"
       ],
       "C": [
         "coriander",
-        "chives",
-        "chervil",
-        "costmary",
-        "curry leaf"
+        "chives"
       ],
       "D": [
         "dill"
       ],
       "L": [
-        "lovage",
-        "lemon balm",
-        "lemon verbena",
-        "lemongrass"
+        "lovage"
       ],
       "M": [
         "mint",
@@ -1114,18 +1042,13 @@ export const CATEGORIES: readonly Category[] = [
         "oregano"
       ],
       "P": [
-        "parsley",
-        "pandan",
-        "perilla",
-        "purslane"
+        "parsley"
       ],
       "R": [
         "rosemary"
       ],
       "S": [
-        "sage",
-        "savory",
-        "sorrel"
+        "sage"
       ],
       "T": [
         "thyme",
@@ -1248,31 +1171,21 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "breakfast",
     "answers": {
       "A": [
-        "apple",
-        "almonds",
-        "apricots"
+        "apple"
       ],
       "B": [
         "banana",
-        "berries",
-        "blackberries",
-        "blueberries"
+        "berries"
       ],
       "C": [
         "cream",
-        "cinnamon",
-        "cherries",
-        "chia",
-        "coconut",
-        "cranberries"
+        "cinnamon"
       ],
       "D": [
         "dates"
       ],
       "H": [
-        "honey",
-        "hazelnuts",
-        "hemp seed"
+        "honey"
       ],
       "M": [
         "milk",
@@ -1282,18 +1195,10 @@ export const CATEGORIES: readonly Category[] = [
         "nuts"
       ],
       "P": [
-        "peanut butter",
-        "peaches",
-        "pears",
-        "pecans",
-        "pistachios",
-        "plums",
-        "poppy seed",
-        "pumpkin seed"
+        "peanut butter"
       ],
       "R": [
-        "raisins",
-        "raspberries"
+        "raisins"
       ]
     }
   },
@@ -1452,18 +1357,11 @@ export const CATEGORIES: readonly Category[] = [
       "B": [
         "butter",
         "berries",
-        "banana",
-        "blackberries",
-        "blueberries"
+        "banana"
       ],
       "C": [
         "cream",
-        "chocolate",
-        "caramel",
-        "cherries",
-        "chocolate sauce",
-        "cranberries",
-        "custard"
+        "chocolate"
       ],
       "H": [
         "honey"
@@ -1472,24 +1370,17 @@ export const CATEGORIES: readonly Category[] = [
         "jam"
       ],
       "L": [
-        "lemon",
-        "lemon curd"
+        "lemon"
       ],
       "M": [
-        "maple syrup",
-        "mango",
-        "marmalade",
-        "marshmallows"
+        "maple syrup"
       ],
       "P": [
-        "peaches",
-        "pears",
-        "plums"
+        "peaches"
       ],
       "S": [
         "syrup",
-        "sugar",
-        "strawberries"
+        "sugar"
       ]
     }
   },
@@ -1711,20 +1602,10 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "cooking",
     "answers": {
       "B": [
-        "beef",
-        "bacon"
+        "beef"
       ],
       "C": [
-        "chicken",
-        "chipolata",
-        "cod",
-        "corn",
-        "courgette",
-        "cuttlefish",
-        "cauliflower",
-        "chorizo",
-        "crayfish",
-        "cobia"
+        "chicken"
       ],
       "H": [
         "halloumi"
@@ -1737,28 +1618,18 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "M": [
         "mushrooms",
-        "marshmallow",
-        "monkfish"
+        "marshmallow"
       ],
       "P": [
         "pepper",
-        "pineapple",
-        "pork",
-        "potato"
+        "pineapple"
       ],
       "S": [
         "shrimp",
-        "satay",
-        "salmon",
-        "sausage",
-        "scallop",
-        "seitan",
-        "strawberry",
-        "swordfish"
+        "satay"
       ],
       "T": [
-        "tofu",
-        "tempeh"
+        "tofu"
       ]
     }
   },
@@ -5501,22 +5372,19 @@ export const CATEGORIES: readonly Category[] = [
         "cultivator"
       ],
       "D": [
-        "digging fork",
-        "dibber"
+        "digging fork"
       ],
       "F": [
         "fork"
       ],
       "H": [
-        "hoe",
-        "hori hori"
+        "hoe"
       ],
       "M": [
         "mattock"
       ],
       "P": [
-        "pick",
-        "plow"
+        "pick"
       ],
       "R": [
         "rake",
@@ -5524,12 +5392,10 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "S": [
         "spade",
-        "shovel",
-        "soil scoop"
+        "shovel"
       ],
       "T": [
-        "trowel",
-        "trenching tool"
+        "trowel"
       ]
     }
   },
@@ -5850,53 +5716,34 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "garden",
     "answers": {
       "A": [
-        "aloe",
-        "amaryllis",
-        "azalea",
-        "anthurium",
-        "asparagus fern",
-        "african violet"
+        "aloe"
       ],
       "B": [
         "basil",
-        "begonia",
-        "bromeliad"
+        "begonia"
       ],
       "C": [
         "chives",
         "cress",
-        "cactus",
-        "chrysanthemum",
-        "cyclamen",
-        "coleus",
-        "chamomile"
+        "cactus"
       ],
       "G": [
         "geranium"
       ],
       "M": [
-        "mint",
-        "marjoram"
+        "mint"
       ],
       "O": [
-        "orchid",
-        "oregano",
-        "oxalis"
+        "orchid"
       ],
       "P": [
-        "parsley",
-        "pansy",
-        "petunia",
-        "primrose",
-        "pilea",
-        "pothos"
+        "parsley"
       ],
       "R": [
         "rosemary"
       ],
       "T": [
-        "thyme",
-        "tarragon"
+        "thyme"
       ]
     }
   },
@@ -5907,44 +5754,36 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "wildlife",
     "answers": {
       "A": [
-        "ant",
-        "armadillo",
-        "aardvark"
+        "ant"
       ],
       "B": [
-        "badger",
-        "beetle"
+        "badger"
       ],
       "F": [
         "fox"
       ],
       "G": [
         "groundhog",
-        "gerbil",
-        "gopher"
+        "gerbil"
       ],
       "J": [
         "jerboa"
       ],
       "M": [
         "mole",
-        "meerkat",
-        "mouse"
+        "meerkat"
       ],
       "P": [
-        "prairie dog",
-        "puffin"
+        "prairie dog"
       ],
       "R": [
-        "rabbit",
-        "rat"
+        "rabbit"
       ],
       "T": [
         "termite"
       ],
       "W": [
-        "wombat",
-        "weasel"
+        "wombat"
       ]
     }
   },
@@ -6081,9 +5920,7 @@ export const CATEGORIES: readonly Category[] = [
         "firefly"
       ],
       "H": [
-        "hedgehog",
-        "hamster",
-        "hyena"
+        "hedgehog"
       ],
       "J": [
         "jerboa"
@@ -6322,32 +6159,21 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "water-world",
     "answers": {
       "C": [
-        "cod",
-        "capelin",
-        "clownfish",
-        "coelacanth",
-        "conger"
+        "cod"
       ],
       "D": [
-        "dolphin",
-        "dogfish"
+        "dolphin"
       ],
       "G": [
-        "grouper",
-        "garfish",
-        "goby",
-        "gurnard"
+        "grouper"
       ],
       "H": [
         "herring",
-        "haddock",
-        "halibut",
-        "hake"
+        "haddock"
       ],
       "M": [
         "mackerel",
-        "marlin",
-        "mullet"
+        "marlin"
       ],
       "O": [
         "orca"
@@ -6355,16 +6181,10 @@ export const CATEGORIES: readonly Category[] = [
       "S": [
         "shark",
         "salmon",
-        "swordfish",
-        "seahorse",
-        "sole",
-        "snapper",
-        "stingray"
+        "swordfish"
       ],
       "T": [
-        "tuna",
-        "turbot",
-        "triggerfish"
+        "tuna"
       ]
     }
   },
@@ -6378,50 +6198,29 @@ export const CATEGORIES: readonly Category[] = [
         "anemone"
       ],
       "C": [
-        "crab",
-        "chiton",
-        "clam",
-        "cockle",
-        "comb jelly",
-        "conch",
-        "copepod",
-        "coral",
-        "cuttlefish"
+        "crab"
       ],
       "D": [
-        "dolphin",
-        "dugong"
+        "dolphin"
       ],
       "J": [
         "jellyfish"
       ],
       "L": [
-        "lobster",
-        "limpet"
+        "lobster"
       ],
       "O": [
-        "octopus",
-        "oyster"
+        "octopus"
       ],
       "S": [
         "squid",
         "starfish",
         "seal",
         "sea lion",
-        "shrimp",
-        "sea cucumber",
-        "sea hare",
-        "sea sponge",
-        "sea urchin",
-        "salp",
-        "sea spider",
-        "sea pen"
+        "shrimp"
       ],
       "W": [
-        "whale",
-        "walrus",
-        "whelk",
-        "worm"
+        "whale"
       ]
     }
   },
@@ -7409,8 +7208,7 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "science",
     "answers": {
       "A": [
-        "algae",
-        "amoeba"
+        "algae"
       ],
       "B": [
         "bacteria",
@@ -7418,14 +7216,10 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "C": [
         "cell",
-        "crystal",
-        "chloroplast",
-        "cotton"
+        "crystal"
       ],
       "F": [
-        "fiber",
-        "feather",
-        "fungus"
+        "fiber"
       ],
       "H": [
         "hair"
@@ -7440,11 +7234,7 @@ export const CATEGORIES: readonly Category[] = [
         "pollen"
       ],
       "S": [
-        "spore",
-        "salt",
-        "sand",
-        "sperm",
-        "starch"
+        "spore"
       ]
     }
   },
@@ -7456,8 +7246,7 @@ export const CATEGORIES: readonly Category[] = [
     "answers": {
       "B": [
         "beaker",
-        "burette",
-        "bottle"
+        "burette"
       ],
       "F": [
         "flask",
@@ -7472,9 +7261,7 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "S": [
         "slide",
-        "stirring rod",
-        "separating funnel",
-        "specimen tube"
+        "stirring rod"
       ],
       "T": [
         "test tube",
@@ -7719,24 +7506,20 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "C": [
         "crystal",
-        "cellophane",
-        "cellulose acetate"
+        "cellophane"
       ],
       "D": [
         "diamond"
       ],
       "G": [
         "glass",
-        "gelatin",
-        "glycerin"
+        "gelatin"
       ],
       "I": [
         "ice"
       ],
       "P": [
-        "plastic",
-        "polycarbonate",
-        "polystyrene"
+        "plastic"
       ],
       "R": [
         "resin"
@@ -7899,45 +7682,31 @@ export const CATEGORIES: readonly Category[] = [
     "answers": {
       "A": [
         "alphabet",
-        "artwork",
-        "art",
-        "attendance chart"
+        "artwork"
       ],
       "B": [
-        "blackboard",
-        "bar graph",
-        "birthday list",
-        "bulletin"
+        "blackboard"
       ],
       "C": [
         "clock",
         "calendar",
-        "chart",
-        "certificate",
-        "class photo"
+        "chart"
       ],
       "M": [
         "map"
       ],
       "N": [
-        "notice",
-        "noticeboard",
-        "number line"
+        "notice"
       ],
       "P": [
         "poster",
-        "photograph",
-        "painting",
-        "periodic table",
-        "portrait",
-        "punctuation guide"
+        "photograph"
       ],
       "R": [
         "rules"
       ],
       "W": [
-        "whiteboard",
-        "word wall"
+        "whiteboard"
       ]
     }
   },
@@ -8061,10 +7830,7 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "C": [
         "computer",
-        "clock",
-        "calculator",
-        "calendar",
-        "clipboard"
+        "clock"
       ],
       "M": [
         "mug",
@@ -8076,21 +7842,13 @@ export const CATEGORIES: readonly Category[] = [
       "P": [
         "pen",
         "paper",
-        "planner",
-        "paperclip",
-        "pencil",
-        "picture",
-        "plant"
+        "planner"
       ],
       "R": [
-        "register",
-        "ruler"
+        "register"
       ],
       "S": [
-        "stapler",
-        "scissors",
-        "stamp",
-        "sticky note"
+        "stapler"
       ]
     }
   },
@@ -8308,53 +8066,34 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "paper",
     "answers": {
       "A": [
-        "apples",
-        "almonds",
-        "avocado"
+        "apples"
       ],
       "B": [
         "bread",
-        "butter",
-        "baking powder",
-        "beans",
-        "broccoli"
+        "butter"
       ],
       "C": [
         "cheese",
         "coffee",
-        "carrots",
-        "cabbage",
-        "chicken",
-        "chocolate",
-        "corn"
+        "carrots"
       ],
       "E": [
         "eggs"
       ],
       "J": [
-        "jam",
-        "jelly",
-        "juice"
+        "jam"
       ],
       "M": [
-        "milk",
-        "mushrooms"
+        "milk"
       ],
       "R": [
-        "rice",
-        "raisins"
+        "rice"
       ],
       "S": [
-        "soap",
-        "salmon",
-        "salt",
-        "spinach",
-        "sugar"
+        "soap"
       ],
       "T": [
-        "tea",
-        "tomatoes",
-        "tuna"
+        "tea"
       ]
     }
   },
@@ -8517,15 +8256,12 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "paper",
     "answers": {
       "B": [
-        "brush",
-        "ballpoint"
+        "brush"
       ],
       "C": [
         "crayon",
         "chalk",
-        "charcoal",
-        "chocolate",
-        "coffee"
+        "charcoal"
       ],
       "H": [
         "highlighter"
@@ -8534,22 +8270,16 @@ export const CATEGORIES: readonly Category[] = [
         "ink"
       ],
       "M": [
-        "marker",
-        "mud"
+        "marker"
       ],
       "P": [
         "pen",
         "pencil",
         "paint",
-        "pastel",
-        "paintbrush",
-        "printer"
+        "pastel"
       ],
       "S": [
-        "stamp",
-        "sauce",
-        "soil",
-        "soot"
+        "stamp"
       ]
     }
   },
@@ -8593,28 +8323,16 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "art",
     "answers": {
       "B": [
-        "bronze",
-        "bone"
+        "bronze"
       ],
       "C": [
-        "clay",
-        "cardboard",
-        "cement",
-        "ceramic",
-        "chalk",
-        "concrete",
-        "copper",
-        "coral",
-        "crystal"
+        "clay"
       ],
       "G": [
-        "glass",
-        "granite"
+        "glass"
       ],
       "I": [
-        "ice",
-        "iron",
-        "ivory"
+        "ice"
       ],
       "M": [
         "metal",
@@ -8622,14 +8340,11 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "P": [
         "plaster",
-        "paper",
-        "plastic",
-        "porcelain"
+        "paper"
       ],
       "S": [
         "stone",
-        "sand",
-        "steel"
+        "sand"
       ],
       "W": [
         "wood",
@@ -8783,56 +8498,36 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "art",
     "answers": {
       "B": [
-        "button",
-        "bead",
-        "beach glass",
-        "burlap"
+        "button"
       ],
       "C": [
-        "card",
-        "cotton"
+        "card"
       ],
       "F": [
         "fabric",
-        "foil",
-        "feather",
-        "felt",
-        "fur"
+        "foil"
       ],
       "L": [
-        "leaf",
-        "lace",
-        "leather"
+        "leaf"
       ],
       "M": [
-        "magazine",
-        "map",
-        "mesh"
+        "magazine"
       ],
       "N": [
         "newspaper"
       ],
       "P": [
         "paper",
-        "photograph",
-        "paint chip",
-        "postage stamp",
-        "postcard",
-        "pressed flower"
+        "photograph"
       ],
       "R": [
-        "ribbon",
-        "receipt"
+        "ribbon"
       ],
       "S": [
-        "string",
-        "shell",
-        "straw"
+        "string"
       ],
       "T": [
-        "ticket",
-        "thread",
-        "twig"
+        "ticket"
       ]
     }
   },
@@ -8879,10 +8574,7 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "art",
     "answers": {
       "C": [
-        "ceramic",
-        "calligraphy",
-        "carving",
-        "collage"
+        "ceramic"
       ],
       "D": [
         "drawing"
@@ -8891,28 +8583,23 @@ export const CATEGORIES: readonly Category[] = [
         "etching"
       ],
       "I": [
-        "installation",
-        "illustration"
+        "installation"
       ],
       "L": [
-        "landscape",
-        "linocut",
-        "lithograph"
+        "landscape"
       ],
       "P": [
         "painting",
         "photograph",
         "print",
         "portrait",
-        "pottery",
-        "pastel"
+        "pottery"
       ],
       "S": [
         "sculpture"
       ],
       "T": [
-        "tapestry",
-        "textile"
+        "tapestry"
       ]
     }
   },
@@ -8968,16 +8655,14 @@ export const CATEGORIES: readonly Category[] = [
       "C": [
         "clavichord",
         "celesta",
-        "concertina",
-        "carillon"
+        "concertina"
       ],
       "E": [
         "electric piano"
       ],
       "H": [
         "harpsichord",
-        "harmonium",
-        "hydraulophone"
+        "harmonium"
       ],
       "K": [
         "keyboard"
@@ -8986,8 +8671,7 @@ export const CATEGORIES: readonly Category[] = [
         "melodica"
       ],
       "O": [
-        "organ",
-        "ondes martenot"
+        "organ"
       ],
       "P": [
         "piano"
@@ -9004,21 +8688,13 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "music",
     "answers": {
       "B": [
-        "bell",
-        "bongo"
+        "bell"
       ],
       "C": [
-        "cymbal",
-        "cajon",
-        "castanets",
-        "cowbell",
-        "claves",
-        "conga"
+        "cymbal"
       ],
       "D": [
-        "drum",
-        "djembe",
-        "darbuka"
+        "drum"
       ],
       "G": [
         "gong",
@@ -9030,12 +8706,7 @@ export const CATEGORIES: readonly Category[] = [
       "T": [
         "triangle",
         "timpani",
-        "tambourine",
-        "tabla",
-        "tabor",
-        "taiko",
-        "temple block",
-        "tubular bells"
+        "tambourine"
       ],
       "W": [
         "woodblock"
@@ -9051,26 +8722,16 @@ export const CATEGORIES: readonly Category[] = [
       "B": [
         "banjo",
         "bass",
-        "balalaika",
-        "baglama",
-        "bandura",
-        "berimbau",
-        "bouzouki",
-        "biwa",
-        "buzuq"
+        "balalaika"
       ],
       "G": [
-        "guitar",
-        "guqin",
-        "guzheng"
+        "guitar"
       ],
       "H": [
         "harp"
       ],
       "K": [
-        "koto",
-        "kantele",
-        "kora"
+        "koto"
       ],
       "L": [
         "lute",
@@ -9080,9 +8741,7 @@ export const CATEGORIES: readonly Category[] = [
         "mandolin"
       ],
       "S": [
-        "sitar",
-        "shamisen",
-        "surbahar"
+        "sitar"
       ]
     }
   },
@@ -9231,8 +8890,7 @@ export const CATEGORIES: readonly Category[] = [
       "C": [
         "computer",
         "cable",
-        "console",
-        "compressor"
+        "console"
       ],
       "H": [
         "headphones"
@@ -9243,24 +8901,17 @@ export const CATEGORIES: readonly Category[] = [
       "M": [
         "microphone",
         "mixer",
-        "monitor",
-        "metronome",
-        "music stand"
+        "monitor"
       ],
       "P": [
-        "preamp",
-        "piano",
-        "pop filter",
-        "patchbay"
+        "preamp"
       ],
       "R": [
         "recorder"
       ],
       "S": [
         "speaker",
-        "stand",
-        "sequencer",
-        "synthesizer"
+        "stand"
       ]
     }
   },
@@ -10054,36 +9705,28 @@ export const CATEGORIES: readonly Category[] = [
       "B": [
         "butcher",
         "barber",
-        "baker",
-        "bookbinder"
+        "baker"
       ],
       "C": [
         "chef",
-        "carpenter",
-        "carpet fitter"
+        "carpenter"
       ],
       "F": [
         "florist",
-        "fishmonger",
-        "farrier"
+        "fishmonger"
       ],
       "G": [
-        "gardener",
-        "glazier"
+        "gardener"
       ],
       "H": [
         "hairdresser"
       ],
       "S": [
         "surgeon",
-        "sculptor",
-        "sailmaker",
-        "shoemaker",
-        "stone mason"
+        "sculptor"
       ],
       "T": [
-        "tailor",
-        "taxidermist"
+        "tailor"
       ]
     }
   },
@@ -10331,18 +9974,14 @@ export const CATEGORIES: readonly Category[] = [
     "answers": {
       "A": [
         "actor",
-        "acrobat",
-        "aerialist"
+        "acrobat"
       ],
       "C": [
         "comedian",
-        "clown",
-        "cabaret artist",
-        "contortionist"
+        "clown"
       ],
       "D": [
-        "dancer",
-        "dj"
+        "dancer"
       ],
       "J": [
         "juggler"
@@ -10350,18 +9989,14 @@ export const CATEGORIES: readonly Category[] = [
       "M": [
         "musician",
         "magician",
-        "mime",
-        "mentalist"
+        "mime"
       ],
       "P": [
-        "puppeteer",
-        "performance artist",
-        "poet"
+        "puppeteer"
       ],
       "S": [
         "singer",
-        "storyteller",
-        "stunt performer"
+        "storyteller"
       ]
     }
   },
@@ -10771,18 +10406,13 @@ export const CATEGORIES: readonly Category[] = [
     "theme": "digital",
     "answers": {
       "C": [
-        "camera",
-        "card reader",
-        "capture card"
+        "camera"
       ],
       "D": [
-        "drive",
-        "dac",
-        "dongle"
+        "drive"
       ],
       "H": [
-        "headphones",
-        "hub"
+        "headphones"
       ],
       "J": [
         "joystick"
@@ -10793,22 +10423,17 @@ export const CATEGORIES: readonly Category[] = [
       "M": [
         "mouse",
         "monitor",
-        "microphone",
-        "modem",
-        "midi keyboard"
+        "microphone"
       ],
       "P": [
-        "printer",
-        "plotter",
-        "projector"
+        "printer"
       ],
       "R": [
         "router"
       ],
       "S": [
         "scanner",
-        "speaker",
-        "steering wheel"
+        "speaker"
       ]
     }
   },
@@ -11313,40 +10938,27 @@ export const CATEGORIES: readonly Category[] = [
         "chair",
         "computer",
         "catalog",
-        "clock",
-        "coat rack"
+        "clock"
       ],
       "D": [
-        "desk",
-        "display",
-        "dvd"
+        "desk"
       ],
       "M": [
         "magazine",
-        "map",
-        "magazine rack",
-        "microfilm"
+        "map"
       ],
       "N": [
-        "newspaper",
-        "noticeboard"
+        "newspaper"
       ],
       "P": [
-        "printer",
-        "pamphlet",
-        "photocopier",
-        "plant",
-        "poster"
+        "printer"
       ],
       "S": [
         "scanner",
-        "shelf",
-        "sign",
-        "stool"
+        "shelf"
       ],
       "T": [
-        "table",
-        "telephone"
+        "table"
       ]
     }
   },

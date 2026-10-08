@@ -1,0 +1,41 @@
+{
+  "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+  "mode": "baseline",
+  "checks": [
+    {
+      "name": "2 humans can explain and revisit five real scored rounds",
+      "passed": true
+    },
+    {
+      "name": "8 humans can explain and revisit five real scored rounds",
+      "passed": true
+    },
+    {
+      "name": "current HTML remains frozen and actual file runtime is offline and error-free",
+      "passed": true
+    }
+  ],
+  "rosters": [
+    {
+      "count": 2,
+      "scoredRounds": 5,
+      "accessibleRoundReceipts": 1,
+      "historySelectorOptions": 0,
+      "finalScore": 5
+    },
+    {
+      "count": 8,
+      "scoredRounds": 5,
+      "accessibleRoundReceipts": 1,
+      "historySelectorOptions": 0,
+      "finalScore": 5
+    }
+  ],
+  "passed": true,
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  },
+  "runnerSha256": "014df7fc22f766aa2d5a4b2ab842853328fce4fcee13b41045f32bb665681d7f"
+}

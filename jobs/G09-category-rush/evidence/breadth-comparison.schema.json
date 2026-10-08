@@ -1,0 +1,138 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "const": "eight-sharp-one-round-200-v1"
+    },
+    "baselineCommit": {
+      "type": "string",
+      "const": "b1663d9"
+    },
+    "baselineReportHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "afterReportHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "baselineDataHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "afterDataHash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "matchingLayouts": {
+      "type": "number",
+      "const": 200
+    },
+    "matchingMechanics": {
+      "type": "boolean",
+      "const": true
+    },
+    "unchangedCategoryMetadata": {
+      "type": "boolean",
+      "const": true
+    },
+    "unchangedBankKeys": {
+      "type": "boolean",
+      "const": true
+    },
+    "additions": {
+      "type": "number"
+    },
+    "changedCategories": {
+      "type": "number"
+    },
+    "changedBanks": {
+      "type": "number"
+    },
+    "improvedGames": {
+      "type": "number"
+    },
+    "worsenedGames": {
+      "type": "number"
+    },
+    "tiedGames": {
+      "type": "number"
+    },
+    "baselineAwarded": {
+      "type": "number"
+    },
+    "afterAwarded": {
+      "type": "number"
+    },
+    "awardedGain": {
+      "type": "number"
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "letter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "before": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "after": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "added": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "letter",
+          "before",
+          "after",
+          "added"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "baselineCommit",
+    "baselineReportHash",
+    "afterReportHash",
+    "baselineDataHash",
+    "afterDataHash",
+    "matchingLayouts",
+    "matchingMechanics",
+    "unchangedCategoryMetadata",
+    "unchangedBankKeys",
+    "additions",
+    "changedCategories",
+    "changedBanks",
+    "improvedGames",
+    "worsenedGames",
+    "tiedGames",
+    "baselineAwarded",
+    "afterAwarded",
+    "awardedGain",
+    "changes"
+  ],
+  "additionalProperties": false
+}

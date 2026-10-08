@@ -36,6 +36,8 @@ jobs:
         run: npm run mutations
       - name: Two thousand duels per adjacent bot skill
         run: npm run bots
+      - name: Replayed eight-Strong-bot variety experiment
+        run: npx tsx scripts/breadth.ts --label=after
       - name: Install development browser
         run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility
@@ -44,3 +46,5 @@ jobs:
         run: |
           node scripts/browser-empty-review.mjs after
           node scripts/browser-clock.mjs
+      - name: Completed-round receipts, scored reasons and keyboard focus
+        run: node scripts/browser-receipts.mjs after

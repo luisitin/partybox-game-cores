@@ -42,6 +42,42 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   }
   assert.equal(after.mixed.ballotLocks,8);assert.equal(after.mixed.emptyCategoriesSkipped,8);
   for(const report of [before,after])for(const key of ['pageErrors','networkRequests','dialogs'])assert.equal(report.runtime[key].length,0);
+  const receiptBefore=json('evidence/browser/round-2-receipts-baseline/report.json');
+  const receiptAfter=json('evidence/browser/round-2-receipts-after/report.json');
+  assert.equal(receiptBefore.sourceSha256,sha('evidence/browser/round-1-accepted/play.html'));
+  assert.equal(receiptBefore.runnerSha256,sha('evidence/browser/round-2-receipts-baseline/runner.mjs'));
+  assert.equal(receiptAfter.sourceSha256,digest);assert.equal(receiptAfter.runnerSha256,sha('scripts/browser-receipts.mjs'));
+  for(const report of [receiptBefore,receiptAfter]){
+    assert.equal(report.passed,true);assert(report.checks.every((check:any)=>check.passed));
+    for(const key of ['errors','networkRequests','dialogs'])assert.equal(report.runtime[key].length,0);
+    for(const count of [2,8]){
+      const measured=report.rosters.find((roster:any)=>roster.count===count);assert(measured);
+      assert.equal(measured.scoredRounds,5);assert.equal(measured.finalScore,5);
+      assert.equal(measured.accessibleRoundReceipts,report===receiptBefore?1:5);
+      assert.equal(measured.historySelectorOptions,report===receiptBefore?0:5);
+    }
+  }
+  assert.equal(receiptAfter.checks.length,4);
+  const original=json('evidence/breadth-baseline.json'),bankOnly=json('evidence/breadth-bank-only.json'),strategy=json('evidence/breadth-after.json');
+  assert.equal(original.sourceHashes.data,sha('evidence/browser/round-1-accepted/categories.json'));
+  for(const report of [original,bankOnly])assert.equal(report.sourceHashes.core,sha('evidence/breadth-original-core.ts'));
+  for(const report of [bankOnly,strategy]){
+    assert.equal(report.sourceHashes.authored,sha('content/authored.mjs'));
+    assert.equal(report.sourceHashes.data,sha('content/categories.json'));
+    assert.equal(report.sourceHashes.generated,sha('content/categories.ts'));
+  }
+  assert.equal(strategy.sourceHashes.core,sha('src/index.ts'));
+  for(const report of [original,bankOnly,strategy]){
+    assert.equal(report.sourceHashes.experiment,sha('scripts/breadth.ts'));
+    assert.equal(report.sourceHashes.scoring,sha('src/scoring.ts'));assert.equal(report.sourceHashes.matcher,sha('src/match.ts'));
+    assert.equal(report.games,200);assert.equal(report.players,8);assert.equal(report.rows.length,200);
+    assert.equal(report.outcomes.replayMatches,200);assert.equal(report.outcomes.repeatedOwn,0);
+    assert.equal(report.outcomes.awarded,report.rows.reduce((sum:number,row:any)=>sum+row.awarded,0));
+    assert.deepEqual(report.rows.map((row:any)=>[row.seed,row.letter,row.layout]),original.rows.map((row:any)=>[row.seed,row.letter,row.layout]));
+  }
+  assert(bankOnly.outcomes.awarded>original.outcomes.awarded);
+  assert(strategy.outcomes.awarded>bankOnly.outcomes.awarded);
+  assert(strategy.outcomes.duplicateOwnerRate<bankOnly.outcomes.duplicateOwnerRate);
   const html=readFileSync(new URL('play.html',root),'utf8');
   assert.match(html,/^<!doctype html>\s*<!-- Original Category Rush code, data and CSS\/SVG[\s\S]*?-->\s*<html lang="en">/);
   for(const path of ['LICENSE','node_modules/zod/LICENSE'])assert(html.includes(readFileSync(new URL(path,root),'utf8').trim()));

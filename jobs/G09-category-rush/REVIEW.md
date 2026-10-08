@@ -19,3 +19,26 @@ keep virtual time monotonic, remain bounded to twelve review steps, and stop
 while paused or while the host menu is open. No private future answers may
 influence the decision. Baseline and after measurements are recorded by the
 actual-file browser regression; they are not inferred from a replacement game.
+
+## Round 2, after completed round-1 local proof and push
+
+Re-read the complete binding root RULES.md and the G09 job on 2026-10-08.
+Round-1 source-matched checks are complete and pushed at `b1663d9`; its CI is
+running. The parent permits further review while CI runs, with final exact-head
+green required before completion.
+
+| Rank | Weakness | Evidence and decision |
+| --- | --- | --- |
+| 1 | Many bot category/letter banks force the same answer at a large table. | 1,694 of 2,565 supported banks are singleton, median breadth one. Measure 200 seeded eight-Strong-bot rounds before/after substantive authored expansion; never treat dictionary absence as a human-answer veto. |
+| 2 | Earlier completed-round receipts are inaccessible from the page. | Public history exists, but current scoring renders only the latest result. A player cannot revisit a prior disputed answer. |
+| 3 | Zero-point explanations conflate wrong initials and own repeats. | Scored receipts expose sufficient public evidence to distinguish these reasons safely after scoring. |
+| 4 | Score transitions have no deliberate keyboard focus destination. | The locked form is removed and only an absent Ready button is searched. |
+| 5 | Round history does not expose its own letter in a browsable receipt. | Each public historical result stores its letter; the current page displays the latest letter only. This belongs with the receipt-access problem, not a new rule. |
+
+Fix the first issue with bounded, genuinely different authored examples in
+high-impact banks. Compare identical seeds, rosters and bot RNG streams against
+retained baseline source/data hashes. Reject equivalent-answer padding and
+arbitrary adjective alliteration. Regeneration, schema, authored semantic checks,
+bot skill separation and newly rebuilt-page proof remain required.
+
+Round-2 source changes also address the closely related scored-history, zero-point explanation and keyboard-focus weaknesses before one new source-matched page proof. Actual old five-round games at two/eight humans expose only one receipt. Content-only eight-bot awarded points rise 61→85; the separately measured strategy raises them to283 on identical layouts/seeds, all200 exact replays. New UI probes/full source-specific verification remain pending. Finite banks still leave a low absolute mean1.415 points per eight-bot game; this limitation remains an honest next-review candidate.

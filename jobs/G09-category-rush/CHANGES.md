@@ -9,3 +9,4 @@
 - Corrected generated HTML license-comment delimiters through the existing reproducible builder; fresh gameplay and frame evidence is required for the resulting file hash.
 
 - KEEP GOING round 1: removed empty-category handovers and ballot locks through bounded real timer events in the offline adapter; measured blank review actions 48/192 → 0/0 at two/eight humans, preserving all nonempty reviews and host controls.
+- Round 2 source work: expanded 32 original categories by 388 checked semantic alternatives, improved large-table Strong selection without private reads, and exposed completed-round receipts, exact scored zero-point reasons and keyboard focus. Local source-specific proof is pending.
