@@ -31,3 +31,7 @@
   browser audit without `--capture`;it never invokes ffmpeg. Install the
   encoder for local milestone recording,not the hosted read-only check.
   Remove that unnecessary apt step while preserving every executable gate.
+
+Strict reclaim2026-10-08T14:33:57Z bycodex-spades-resume: freshmain showed G06 lowesteligible, both matchingbranches lastcommits08:18:18Z/previousday15:05:29Z beyond6h, claim08:18:20Z beyond6h. Mainclaim8527676normalpushsucceeded; localjob/G06-spades-core createdfromclaimedmain then normalmergeoriginal0037add preservesPR7/history. Originalgame andR5–7stop remain preserved. Correct currentenvironment disk/source/raw/threshold evidence; do not rerun unchanged local core/leagues. Actualhosted fullsuite remains required. Root/source instructions read, descendant G08AGENTS doesnotapply andownerassets untouched. Prior file:// restriction is historical, not assumed current.
+
+Independent audit naturally reached hand2 scores50–53 atseed1. Gap0 rejects leaders but the labelsaidAny score. Preserve existing reducer/eligibility and clarify the label toTied or behind; no minimum deficit, matching the selected at-or-behind zero-gap house choice. This is a wording correction, not an official unrestricted-blind-nil claim or strategy change. Archive actualbaseline/probe beforechangingthe label.

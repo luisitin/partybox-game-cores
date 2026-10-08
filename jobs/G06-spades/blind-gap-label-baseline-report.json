@@ -1,0 +1,92 @@
+{
+  "claim": "The Any score label includes leaders in ordinary English, while unchanged gap0 eligibility only admits tied or trailing sides.",
+  "naturallyReached": true,
+  "reproduced": true,
+  "observations": [
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p2",
+      "leading": false,
+      "phase": "blind",
+      "looked": false,
+      "eligible": true,
+      "handVisible": 0
+    },
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p2",
+      "leading": false,
+      "phase": "bid",
+      "looked": true,
+      "eligible": true,
+      "handVisible": 13
+    },
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p3",
+      "leading": true,
+      "phase": "bid",
+      "looked": true,
+      "eligible": false,
+      "handVisible": 13
+    },
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p0",
+      "leading": false,
+      "phase": "blind",
+      "looked": false,
+      "eligible": true,
+      "handVisible": 0
+    },
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p0",
+      "leading": false,
+      "phase": "bid",
+      "looked": true,
+      "eligible": true,
+      "handVisible": 13
+    },
+    {
+      "seed": 1,
+      "hand": 2,
+      "scores": [
+        50,
+        53
+      ],
+      "actor": "p1",
+      "leading": true,
+      "phase": "bid",
+      "looked": true,
+      "eligible": false,
+      "handVisible": 13
+    }
+  ],
+  "durationMs": 23.017146000000025
+}

@@ -11,7 +11,8 @@ Zero is a separate Nil declaration. Both partners' normal bids combine;
 Nil is scored separately. Public bids are locked once declared.
 
 Blind Nil must be declared before seeing one's hand. Defaulteligibility:
-side at least100 behind the highest other side;optionalgap0. Choosing
+side at least100 behind the highest other side;optionalgap0 permits a
+tied or trailing side, with no minimum deficit;leaders remain ineligible. Choosing
 Look permanently prevents a late blind bid. A locked blind bidder can
 then see their cards. Bonuses defaultNil100/BlindNil200;optional50/100.
 

@@ -66,3 +66,5 @@ full MIT notice (`node_modules/zod/LICENSE`,copyright2025 Colin McDonnell)
 is delivered as THIRD-PARTY-LICENSES.txt and retained in the standalone
 script comment. Build checks compare installed/committed/embedded notices.
 This licensed runtime bundle is separate from the rules/strategy references.
+
+2026-10-08 corrective read: pinned Pagatmirror and independent HughesREADME above rereadlive throughnativeGitHub. Standard13cards/trump/follow-suit/contract±10/nil±100/blind±200/bags10→−100/target500 reconfirmed; originalpublisherpages not newlyclaimedread. Captureencoder helper reused from this same MIT repository G04 at https://github.com/luisitin/partybox-game-cores/blob/b18952bfca09a6e3b3e2647adc0ea5c327a99d73/jobs/G04-reality-check/capture-encoder.ts ; originalJPEG screenshots encode via pinnedPlaywrightffmpeg, no outsideart/assets.

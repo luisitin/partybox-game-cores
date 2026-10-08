@@ -31,3 +31,12 @@ jobs:
           npx playwright install --with-deps chromium
       - name: All core, data, mutation, bot and browser checks
         run: npm test
+      - name: Preserve actual browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G06-browser-evidence-${{ github.run_id }}
+          path: |
+            jobs/G06-spades/browser-report.json
+            jobs/G06-spades/browser-raw-1-*.json
+          if-no-files-found: warn
