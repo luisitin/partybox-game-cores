@@ -1,3 +1,7 @@
+# G08 — KEEP10 completed; two no-gain reviews remain
+
+Accepted baseline a96d1354a3ec89ef67fa8fdee2a55b1bb0e92387 has both full push/PR green and both actual artifacts independently accepted; see review/keep10/README.md. KEEP10 read/rank/fix/measure is documentation-only, no player gain, streak1. Current source/page/native sampler remain unchanged. Next: complete two further separate binding reviews/pushes, then both final exact-head full CI and genuine artifact acceptance before PR9 is ready. Do not repeat unchanged local FPS or erase any failed/interrupted attempt. Refresh only own G08 claim after each normal push. Prior local phone failure and restart exit unknown remain explicit.
+
 # G08 — native minimum-hold proof repaired, full acceptance pending
 
 Latest work reads main README/RULES/JOBS, START-HERE and original owner instructions. Canonical branch job/G08-word-grid-the-owner-s-shake-up, originalPR9 stays DRAFT. Current game/pageSHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e remains14,208,702bytes, owner assets/core/data unchanged. Resume clock gain is genuine; no-player-gain streak0 and the old stop3 is invalidated.

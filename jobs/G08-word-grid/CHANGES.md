@@ -54,3 +54,5 @@
 - Repair11 preserves actual current-page phoneFPS failure and SpanishNOTRUN evidence, and replaces CSP-incompatible string focus polling with direct bounded locator identity observation. Page3763/game/core/client/art/data remain unchanged. Source-bound native-only functional capture/18real corruptions pass; full current CI and KEEP stop3 remain pending.
 
 - Capture verifier waits against actual monotonic two-second deadline, rather than assuming a2000ms scheduled delay is at least2000ms. Existing heldMs>=2000 gate retained; add actual1999ms negative. Product/page/frame-sampler bytes unchanged. See review/repair12.
+
+- KEEP10 documentation review after actual current full green/artifact acceptance: README now links the immediate Resume behavior and paired evidence; correct historical round-stop text. Preserve original failed sibling raw/clip bytes and its rejected minimum-hold receipt. No player-visible gain; current source/page unchanged, streak1.

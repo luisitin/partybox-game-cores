@@ -29,3 +29,5 @@
 - Actual ca8 local phone speed failure is unresolved and is not attributed to the clock display or CSP checker. Hosted frame positives and local numeric failure remain distinct machine/time/source scopes. Poll actual heading identity from Node without unsafe-eval or weakening CSP; native-only recordings cannot substitute for full speed evidence.
 
 - Second workspace restart approximately20:31–20:40 interrupted capture-session observation. Persisted full report and real clips are validated independently; exact exit and termination time remain unknown. No recorded-session FPS claim.
+
+- KEEP10 archives the authentic failed 22f push native report byte-identically as text. The original accepted-report schema correctly rejects its 1999.752709 ms hold below2000; no positive schema/gate is relaxed to admit a failed historical receipt. Original raw native/frames/clips remain unfiltered.
