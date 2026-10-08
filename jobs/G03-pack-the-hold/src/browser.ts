@@ -9,6 +9,7 @@ const colors = ['#cf6742', '#276ca1', '#9c6330', '#56855c', '#86629b', '#b36e32'
 let state: HoldState | null = null;
 let selected: string | null = null; let rotation = 0; let x = 0; let y = 0; let dragging = false;
 let handoff = false; let lastClock = ''; let revealPlayer = ''; let showSolution = false;
+let boardKey = '';
 const skills = new Map<string, BotSkill>();
 const escapeHtml = (text: string): string => text.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c] as string);
 const selectedPlacement = (): Placement | null => selected ? { crateId: selected, x, y, rotation } : null;
@@ -28,7 +29,7 @@ function startGame(): void {
     rounds: Number($<HTMLSelectElement>('rounds').value), difficulty: Number($<HTMLInputElement>('difficulty').value),
     turnSeconds: Number($<HTMLSelectElement>('seconds').value), allowFlip: $<HTMLInputElement>('flip-setting').checked,
   }, seed: Number($<HTMLInputElement>('seed').value) >>> 0, now: Date.now() });
-  $('setup').hidden = true; $('game').hidden = false; selected = null; showSolution = false; revealPlayer = '';
+  $('setup').hidden = true; $('game').hidden = false; selected = null; showSolution = false; revealPlayer = ''; boardKey = '';
   enterSeat(); render();
 }
 function enterSeat(): void {
@@ -67,7 +68,11 @@ function renderBoard(): void {
     return placementCells(c, p).map(([a, b], i) => `<g data-crate="${c.id}"><rect x="${a + 0.045}" y="${b + 0.045}" width=".91" height=".91" rx=".12" fill="${colorFor(c.id)}"/>${i === 0 ? `<text x="${a + 0.5}" y="${b + 0.63}" text-anchor="middle" fill="white" font-size=".32" font-weight="700">${c.value}</text>` : ''}</g>`).join('');
   }).join('');
   const ghost = canEdit() && crate && preview ? placementCells(crate, preview).map(([a, b]) => `<rect x="${a + 0.045}" y="${b + 0.045}" width=".91" height=".91" rx=".12" fill="${candidate?.valid ? '#249574' : '#bd4551'}" opacity=".65" stroke="${candidate?.valid ? '#116451' : '#86212b'}" stroke-width=".045" stroke-dasharray=".12 .08"/>`).join('') : '';
-  $('board').innerHTML = `<svg id="hold-svg" viewBox="-.25 -.25 ${s.level.width + 0.5} ${s.level.height + 0.5}" role="img" aria-label="Ship hold: ${s.level.cells.length} cells. ${layouts.length} packed crates.">${tiles}${cargo}${ghost}</svg>`;
+  const key = `${s.round}/${s.seat}/${s.phase.id}/${showSolution}/${revealPlayer}/${JSON.stringify(placed)}`;
+  if (key !== boardKey || !document.getElementById('placement-ghost')) {
+    $('board').innerHTML = `<svg id="hold-svg" viewBox="-.25 -.25 ${s.level.width + 0.5} ${s.level.height + 0.5}" role="img" aria-label="Ship hold: ${s.level.cells.length} cells. ${layouts.length} packed crates.">${tiles}${cargo}<g id="placement-ghost">${ghost}</g></svg>`;
+    boardKey = key;
+  } else $('placement-ghost').innerHTML = ghost;
   $('place').textContent = candidate?.valid ? 'Place crate' : selected ? 'Does not fit here' : 'Select a crate';
   $<HTMLButtonElement>('place').disabled = !canEdit() || !candidate?.valid;
 }
@@ -95,6 +100,7 @@ function render(): void {
 }
 function selectCrate(id: string): void {
   if (!canEdit() || !state) return;
+  if (selected === id) { render(); return; }
   selected = id; const previous = own().find(p => p.crateId === id); rotation = previous?.rotation ?? 0; x = previous?.x ?? 0; y = previous?.y ?? 0;
   render();
 }

@@ -8,9 +8,9 @@ import { createServer } from 'node:http';
 const output = process.argv.includes('--record') ? 'media' : '.tmp/visual';
 mkdirSync('.tmp', { recursive: true }); mkdirSync(output, { recursive: true });
 const userData = resolve('.tmp/chrome'); rmSync(userData, { recursive: true, force: true });
-const binary = process.env.G03_CHROME ?? ['/usr/bin/chromium', '/usr/bin/google-chrome', '/usr/bin/google-chrome-stable'].find(existsSync);
+const binary = process.env.G03_CHROME ?? ['/usr/bin/google-chrome', '/usr/bin/google-chrome-stable', '/usr/bin/chromium'].find(existsSync);
 if (!binary) throw new Error('Chrome/Chromium executable unavailable');
-const browser = spawn(binary, ['--headless=new', '--no-sandbox', '--disable-dev-shm-usage', '--disable-background-networking', '--remote-debugging-port=0', `--user-data-dir=${userData}`, 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
+const browser = spawn(binary, ['--headless=new', '--no-sandbox', '--no-first-run', '--no-default-browser-check', '--disable-dev-shm-usage', '--disable-background-networking', '--remote-debugging-port=0', `--user-data-dir=${userData}`, 'about:blank'], { stdio: ['ignore', 'ignore', 'pipe'] });
 let stderr = ''; browser.stderr.on('data', chunk => { stderr += chunk; });
 const delay = ms => new Promise(r => setTimeout(r, ms));
 class Cdp {
@@ -22,7 +22,7 @@ class Cdp {
 let socket;
 let localServer;
 try {
-  for (let n = 0; n < 150 && !existsSync(`${userData}/DevToolsActivePort`); n++) { if (browser.exitCode !== null) throw Error(`Chrome exited ${browser.exitCode}: ${stderr.slice(0, 1500)}`); await delay(100); }
+  for (let n = 0; n < 450 && !existsSync(`${userData}/DevToolsActivePort`); n++) { if (browser.exitCode !== null) throw Error(`Chrome exited ${browser.exitCode}: ${stderr.slice(0, 1500)}`); await delay(100); }
   if (!existsSync(`${userData}/DevToolsActivePort`)) throw Error(`Chrome did not expose DevTools: ${stderr.slice(0, 1500)}`);
   const [port, path] = readFileSync(`${userData}/DevToolsActivePort`, 'utf8').split('\n');
   socket = new WebSocket(`ws://127.0.0.1:${port}${path}`); await new Promise((res, rej) => { socket.addEventListener('open', res, { once: true }); socket.addEventListener('error', rej, { once: true }); });
@@ -65,6 +65,17 @@ try {
   assert.equal(await evaluate('matchMedia("(prefers-reduced-motion: reduce)").matches'), true);
   const motion = await evaluate('getComputedStyle(document.getElementById("board")).animationName'); assert.equal(motion, 'none');
   await send('Emulation.setCPUThrottlingRate', { rate: 1 }); await send('Emulation.setDeviceMetricsOverride', { width: 1280, height: 900, deviceScaleFactor: 1, mobile: false });
+  const fixture = JSON.parse(readFileSync('fixtures/pack.json', 'utf8'));
+  const cargo = fixture.solution[0]; const cargoValue = fixture.level.crates.find(c => c.id === cargo.crateId).value;
+  await evaluate(`document.querySelector('[data-select="${cargo.crateId}"]').click();for(let i=0;i<${cargo.rotation};i++)document.getElementById('rotate').click()`);
+  const points = await evaluate(`(()=>{const b=document.querySelector('[data-select="${cargo.crateId}"]').getBoundingClientRect();const svg=document.getElementById('hold-svg');const p=new DOMPoint(${cargo.x + 0.5},${cargo.y + 0.5}).matrixTransform(svg.getScreenCTM());return{from:{x:b.x+b.width/2,y:b.y+b.height/2},to:{x:p.x,y:p.y}}})()`);
+  await send('Input.dispatchMouseEvent', { type: 'mouseMoved', ...points.from });
+  await send('Input.dispatchMouseEvent', { type: 'mousePressed', ...points.from, button: 'left', clickCount: 1 });
+  await send('Input.dispatchMouseEvent', { type: 'mouseMoved', ...points.to, buttons: 1 });
+  await send('Input.dispatchMouseEvent', { type: 'mouseReleased', ...points.to, button: 'left', clickCount: 1 });
+  assert.equal(await evaluate('parseInt(document.getElementById("value").textContent)'), cargoValue, 'real pointer drag must pack the selected crate');
+  await evaluate(`document.getElementById('clear').click();document.querySelector('[data-select="${cargo.crateId}"]').click();for(let i=0;i<${cargo.rotation};i++)document.getElementById('rotate').click();for(let i=0;i<${cargo.x};i++)document.getElementById('board').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));for(let i=0;i<${cargo.y};i++)document.getElementById('board').dispatchEvent(new KeyboardEvent('keydown',{key:'ArrowDown',bubbles:true}));document.getElementById('board').dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true}));`);
+  assert.equal(await evaluate('parseInt(document.getElementById("value").textContent)'), cargoValue, 'keyboard placement must pack the selected crate');
   const screenshot = await send('Page.captureScreenshot', { format: 'png' }); writeFileSync(`${output}/packing-desktop.png`, Buffer.from(screenshot.data, 'base64'));
   // Original UI screencast: repeated real frames captured while arranging the visible hold.
   const frameDir = resolve('.tmp/capture'); mkdirSync(frameDir, { recursive: true });
@@ -81,7 +92,17 @@ try {
   assert.ok(await evaluate('!document.getElementById("reveal-controls").hidden'));
   await evaluate('document.getElementById("solution").click();document.getElementById("next").click()');
   assert.equal(await evaluate('document.getElementById("result").hidden'), false);
+  const completedPlayerCounts = [];
+  for (let count = 2; count <= 8; count++) {
+    await evaluate(`(()=>{document.getElementById('next').click();const count=document.getElementById('player-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('rounds').value='1';for(let i=0;i<${count};i++)document.getElementById('skill-'+i).value=i===0?'sharp':'normal';document.getElementById('start').click()})()`);
+    for (let i = 0; i < 100 && !(await evaluate('!document.getElementById("reveal-controls").hidden')); i++) await delay(30);
+    assert.equal(await evaluate('document.querySelectorAll(".score-chip").length'), count);
+    await evaluate('document.getElementById("next").click()');
+    assert.equal(await evaluate('document.getElementById("result").hidden'), false);
+    assert.ok(await evaluate('document.getElementById("result").textContent.startsWith("Player 1 wins")'));
+    completedPlayerCounts.push(count);
+  }
   assert.equal(requests.filter(url => /^https?:/.test(url) && url !== documentUrl && !url.endsWith('/favicon.ico')).length, 0); assert.deepEqual(errors, []);
-  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, videoBytes: readFileSync(`${output}/milestone-01.webm`).length };
+  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/milestone-01.webm`).length };
   writeFileSync(`${output}/visual-measurements.json`, JSON.stringify(report, null, 2) + '\n'); console.log(JSON.stringify(report));
 } finally { socket?.close(); browser.kill('SIGTERM'); localServer?.close(); }

@@ -74,3 +74,65 @@ requests still returned403 with the normal proxy/TLS; none is cited as read.
 The managed Chrome URLBlocklist contains `*` and its allowlist permits HTTP(S),
 not file://. No policy, trust setting or proxy was altered. CI is the independent
 execution environment used to satisfy the real disk check.
+
+## Thirty manual original-shape spot checks
+
+Sampling command: seeded createRng(0x303), then 30 generated levels and one
+random optimum crate per level; alternating reflections. Each coordinate list
+was inspected for distinct edge-connected squares and its cell-count/value
+bound. The second implementation independently recomputed the four-premium
+optimum on a coordinate grid (200 in every row); the capacity proof extends
+that result to all low-value crates. These are original authored levels, not
+rows claimed to exist in an external published dataset. SOURCES.md separately
+corroborates rotation/translation/collision/search facts from two live authors.
+
+| Row | Seed | Difficulty / mirrors | Crate / value | Placed coordinates inspected | Grid optimum |
+| --- | ---: | --- | --- | --- | ---: |
+| 1 | 32646 | 7 / false | crate-4 / 10 | [[3,0],[4,0],[5,0],[3,1]] | 200 |
+| 2 | 87177 | 6 / true | crate-3 / 30 | [[0,1],[0,2],[0,3],[1,3],[0,4]] | 200 |
+| 3 | 66404 | 3 / false | crate-2 / 40 | [[4,1],[5,1],[4,2],[5,2],[5,3]] | 200 |
+| 4 | 21794 | 5 / true | crate-2 / 40 | [[4,1],[5,1],[4,2],[5,2],[5,3]] | 200 |
+| 5 | 46413 | 10 / false | crate-3 / 30 | [[1,3],[2,3]] | 200 |
+| 6 | 56733 | 10 / true | crate-3 / 30 | [[2,4],[3,4]] | 200 |
+| 7 | 87869 | 9 / false | crate-1 / 120 | [[2,1],[2,2],[3,2]] | 200 |
+| 8 | 94562 | 8 / true | crate-2 / 40 | [[2,1],[3,1]] | 200 |
+| 9 | 23550 | 3 / false | crate-1 / 120 | [[3,2],[3,3],[4,3],[2,4],[3,4]] | 200 |
+| 10 | 66552 | 3 / true | crate-3 / 30 | [[4,0],[4,1]] | 200 |
+| 11 | 44874 | 6 / false | crate-3 / 30 | [[1,3],[2,3],[3,3],[4,3],[2,4]] | 200 |
+| 12 | 86788 | 5 / true | crate-1 / 120 | [[3,2],[3,3],[4,3],[2,4],[3,4]] | 200 |
+| 13 | 1314 | 1 / false | crate-3 / 30 | [[0,3],[1,3],[2,3],[0,4]] | 200 |
+| 14 | 93227 | 10 / true | crate-3 / 30 | [[2,4],[3,4]] | 200 |
+| 15 | 81901 | 10 / false | crate-2 / 40 | [[1,2],[1,3],[2,3]] | 200 |
+| 16 | 27633 | 3 / true | crate-2 / 40 | [[0,0],[1,0]] | 200 |
+| 17 | 24119 | 1 / false | crate-3 / 30 | [[0,3],[1,3],[2,3],[0,4]] | 200 |
+| 18 | 2224 | 7 / true | crate-1 / 120 | [[3,2],[2,3],[3,3]] | 200 |
+| 19 | 42282 | 8 / false | crate-4 / 10 | [[0,0],[1,0],[0,1],[1,1]] | 200 |
+| 20 | 20734 | 2 / true | crate-1 / 120 | [[1,0],[2,0],[1,1]] | 200 |
+| 21 | 41152 | 4 / false | crate-2 / 40 | [[4,0],[4,1]] | 200 |
+| 22 | 11447 | 5 / true | crate-4 / 10 | [[1,2],[1,3],[0,4],[1,4],[0,5]] | 200 |
+| 23 | 6625 | 1 / false | crate-2 / 40 | [[0,5],[1,5],[2,5],[3,5]] | 200 |
+| 24 | 45569 | 8 / true | crate-3 / 30 | [[0,2],[1,2],[2,2],[3,2],[2,3]] | 200 |
+| 25 | 7728 | 2 / false | crate-1 / 120 | [[1,0],[2,0],[1,1]] | 200 |
+| 26 | 38844 | 2 / true | crate-1 / 120 | [[2,2],[2,3],[3,3]] | 200 |
+| 27 | 90888 | 3 / false | crate-3 / 30 | [[2,0],[3,0],[1,1],[2,1],[3,1]] | 200 |
+| 28 | 45780 | 5 / true | crate-4 / 10 | [[1,2],[1,3],[0,4],[1,4],[0,5]] | 200 |
+| 29 | 67662 | 1 / false | crate-1 / 120 | [[3,2],[4,2],[3,3],[2,4],[3,4]] | 200 |
+| 30 | 25771 | 5 / true | crate-4 / 10 | [[1,2],[1,3],[0,4],[1,4],[0,5]] | 200 |
+
+## CI and expanded browser checkpoint
+
+[Push CI 37718081335](https://github.com/luisitin/partybox-game-cores/actions/runs/37718081335),
+commit bc69b0d: logic18/18, mutations25/25, eight JSON files/seven schemas and
+17 hashes all passed. Its browser startup exceeded the original15-second limit;
+that is a failed run, not a green delivery gate. The launcher now prefers the
+runner's installed Google Chrome, skips first-run prompts and allows45 seconds.
+
+`npm run build && node scripts/visual.mjs --http --record` passed after adding
+real CDP mouse dragging, keyboard placement and played-out UI rosters2–8.
+The rotation-on-reselection bug was fixed. The board retains its static SVG
+while moving the preview rather than rebuilding every hold tile. Latest raw
+sample: desktop59.343fps (16.851ms mean,16.8ms p95,33.4ms max); CPU4x phone
+60.002fps (16.666ms mean,16.7ms p95,16.8ms max);180 frames each after60 warm-up
+frames, moving the preview at10Hz. Zero external requests or exceptions.
+Video milestone-02.webm is91,212bytes. This is still partial localhost testing,
+not a claimed successful disk-open check. All timing outliers are retained.

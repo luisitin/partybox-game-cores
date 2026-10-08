@@ -161,6 +161,22 @@
     "completedTwoPlayerGame": {
       "type": "boolean"
     },
+    "completedPlayerCounts": {
+      "minItems": 7,
+      "maxItems": 7,
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 8
+      }
+    },
+    "pointerDrag": {
+      "type": "boolean"
+    },
+    "keyboardPlacement": {
+      "type": "boolean"
+    },
     "videoBytes": {
       "type": "integer",
       "exclusiveMinimum": 0,
@@ -178,6 +194,9 @@
     "externalRequests",
     "runtimeExceptions",
     "completedTwoPlayerGame",
+    "completedPlayerCounts",
+    "pointerDrag",
+    "keyboardPlacement",
     "videoBytes"
   ],
   "additionalProperties": false
