@@ -1,0 +1,43 @@
+name: G05 Hearts
+on:
+  pull_request:
+    paths:
+      - 'jobs/G05-hearts/**'
+      - '.github/workflows/G05.yml'
+      - 'contract/**'
+  push:
+    branches: ['job/G05-*']
+    paths:
+      - 'jobs/G05-hearts/**'
+      - '.github/workflows/G05.yml'
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G05-hearts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: jobs/G05-hearts/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - name: Install capture tool
+        run: |
+          if ! command -v ffmpeg >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y ffmpeg
+          fi
+      - run: npm test
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G05-check-evidence
+          path: |
+            jobs/G05-hearts/.tmp/visual/
+            jobs/G05-hearts/.tmp/mutation-results.json

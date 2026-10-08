@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 27,
+      "items": {
+        "type": "object",
+        "properties": {
+          "repo": {
+            "type": "string"
+          },
+          "commit": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{40}$"
+          },
+          "path": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^https://raw[.]githubusercontent[.]com/"
+          },
+          "utc": {
+            "type": "string"
+          },
+          "exit": {
+            "const": 0
+          },
+          "http": {
+            "const": "200"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "error": {
+            "const": ""
+          },
+          "tls_verification_disabled": {
+            "const": false
+          }
+        },
+        "required": [
+          "repo",
+          "commit",
+          "path",
+          "url",
+          "utc",
+          "exit",
+          "http",
+          "bytes",
+          "sha256",
+          "error",
+          "tls_verification_disabled"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "blockedCandidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "result": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "url",
+          "result"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "sources",
+    "blockedCandidates"
+  ],
+  "additionalProperties": false
+}

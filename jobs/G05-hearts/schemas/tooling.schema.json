@@ -1,0 +1,227 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "const": "partybox-hearts"
+        },
+        "version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "private": {
+          "type": "boolean",
+          "const": true
+        },
+        "type": {
+          "type": "string",
+          "const": "module"
+        },
+        "scripts": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "dependencies": {
+          "type": "object",
+          "properties": {
+            "zod": {
+              "type": "string",
+              "const": "4.6.5"
+            }
+          },
+          "required": [
+            "zod"
+          ],
+          "additionalProperties": false
+        },
+        "devDependencies": {
+          "type": "object",
+          "properties": {
+            "typescript": {
+              "type": "string",
+              "const": "5.9.3"
+            },
+            "esbuild": {
+              "type": "string",
+              "const": "0.25.12"
+            },
+            "ajv": {
+              "type": "string",
+              "const": "8.17.1"
+            }
+          },
+          "required": [
+            "typescript",
+            "esbuild",
+            "ajv"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "private",
+        "type",
+        "scripts",
+        "dependencies",
+        "devDependencies"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "const": "partybox-hearts"
+        },
+        "version": {
+          "type": "string",
+          "const": "1.0.0"
+        },
+        "lockfileVersion": {
+          "type": "number",
+          "const": 3
+        },
+        "requires": {
+          "type": "boolean",
+          "const": true
+        },
+        "packages": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {}
+          }
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "lockfileVersion",
+        "requires",
+        "packages"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "compilerOptions": {
+          "type": "object",
+          "properties": {
+            "target": {
+              "type": "string",
+              "const": "ES2022"
+            },
+            "module": {
+              "type": "string",
+              "const": "ES2022"
+            },
+            "moduleResolution": {
+              "type": "string",
+              "const": "Bundler"
+            },
+            "strict": {
+              "type": "boolean",
+              "const": true
+            },
+            "noUncheckedIndexedAccess": {
+              "type": "boolean",
+              "const": true
+            },
+            "noUnusedLocals": {
+              "type": "boolean",
+              "const": true
+            },
+            "noUnusedParameters": {
+              "type": "boolean",
+              "const": true
+            },
+            "noEmitOnError": {
+              "type": "boolean",
+              "const": true
+            },
+            "skipLibCheck": {
+              "type": "boolean",
+              "const": true
+            },
+            "rootDir": {
+              "type": "string",
+              "const": "../.."
+            },
+            "outDir": {
+              "type": "string",
+              "const": ".build"
+            },
+            "lib": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "baseUrl": {
+              "type": "string",
+              "const": "."
+            },
+            "paths": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string"
+              },
+              "additionalProperties": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "required": [
+            "target",
+            "module",
+            "moduleResolution",
+            "strict",
+            "noUncheckedIndexedAccess",
+            "noUnusedLocals",
+            "noUnusedParameters",
+            "noEmitOnError",
+            "skipLibCheck",
+            "rootDir",
+            "outDir",
+            "lib",
+            "baseUrl",
+            "paths"
+          ],
+          "additionalProperties": false
+        },
+        "include": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "compilerOptions",
+        "include"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

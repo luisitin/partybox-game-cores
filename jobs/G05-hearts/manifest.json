@@ -1,0 +1,97 @@
+{
+  "id": "hearts",
+  "name": "Hearts",
+  "icon": "♥️",
+  "tagline": "Keep the points off your side of the table.",
+  "description": "Classic Hearts for three to six players: pass cards, follow suit and avoid hearts and the queen. Choose either moon score and optional Jack of Diamonds.",
+  "howToPlay": [
+    "Pass three cards in the shown direction, then follow the suit led.",
+    "Avoid hearts and the queen of spades; taking every penalty card shoots the moon.",
+    "Play to the chosen score limit. The lowest total wins."
+  ],
+  "version": "1.0.0",
+  "minPlayers": 3,
+  "maxPlayers": 6,
+  "estimatedMinutes": 30,
+  "unlimitedDuration": true,
+  "tags": [
+    "classic",
+    "strategy"
+  ],
+  "presence": {
+    "needs": "anywhere"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "settings": [
+    {
+      "key": "target",
+      "label": "Game ends at",
+      "type": "number",
+      "default": 100,
+      "min": 25,
+      "max": 200,
+      "step": 25
+    },
+    {
+      "key": "moon",
+      "label": "Shooting the moon",
+      "type": "select",
+      "default": "add",
+      "options": [
+        {
+          "value": "add",
+          "label": "Others gain 26"
+        },
+        {
+          "value": "subtract",
+          "label": "Shooter loses 26"
+        }
+      ]
+    },
+    {
+      "key": "jack",
+      "label": "Jack of Diamonds −10",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "noPass",
+      "label": "No passing",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "queenBreaks",
+      "label": "Queen of Spades breaks hearts",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "threeDeck",
+      "label": "Three-player removed card",
+      "type": "select",
+      "default": "diamonds",
+      "options": [
+        {
+          "value": "diamonds",
+          "label": "2 of Diamonds"
+        },
+        {
+          "value": "clubs",
+          "label": "2 of Clubs"
+        }
+      ]
+    },
+    {
+      "key": "turnSeconds",
+      "label": "Turn clock (0 is untimed)",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 60,
+      "step": 10
+    }
+  ]
+}
