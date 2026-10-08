@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "npm run check && node generate.ts --check && node fixtures.ts --check && node build.ts --check && node checksums.ts --check && node differential.ts && node --test test.ts && node mutations.ts && node league.ts && node league.ts --start=2001 && node browser.ts"
+    "test": "npm run check && node generate.ts --check && node fixtures.ts --check && node build.ts --check && node checksums.ts --check && node differential.ts && node --test test.ts && node mutations.ts && node churn.ts && node league.ts && node league.ts --start=2001 && node browser.ts"
   },
   "dependencies": { "zod": "4.6.5" },
   "devDependencies": {

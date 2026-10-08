@@ -214,3 +214,18 @@ KEEP GOING round5:
  99.85%. All eight outright/pair95% lower bounds above50%;zero pair ties.
  Largest final state5,643bytes. BOTS and the held-out JSON contain all
  counts/assumptions. Unchanged policy passes;no player-visible gain.
+
+KEEP GOING round6:
+- `npm run check; node churn.ts --write`:PASS1,003 cases/seeds1,2,3 plus
+ 1,000 unique random seeds;181,386 events,24,407.93ms,all seven phases.
+ Includes9,468 pauses/9,370 resumes,12,243 drops/9,623 reconnects,
+ 5,424 permanent-left/3,242 kicked events and145 prototype-name rosters.
+ Every event passes input immutability,restored deterministic replay,Zod,
+ conservation and256KB bounds;all initial seats retain finite results.
+ 45,036 hidden-hand/RNG view substitutions and135,108 all-skill bot
+ comparisons are identical. Maximum state5,650bytes. No core change needed.
+- `node churn.ts`:PASS read-only recomputation,24,210.28ms;all recorded
+ counts reproduce exactly. `node checksums.ts --check`:PASS39 paths.
+- `node /workspace/.onboarding/G06-qa-captures.mjs`:two independent8s
+ captures of the unchanged UI for QA rounds5/6,335,495/352,191bytes,
+ zero requests/errors. Both media files are hashed;no copied media.

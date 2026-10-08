@@ -16,7 +16,7 @@ Initial exact-head hosted gate badf4005bd3961764492a4f48f6047af3fa249cc /
 run37738084749 was SUCCESS at2026-10-08T06:46:28Z. Later R2 hosted gate
 58dd935ab10c831a3f46610735654bf46f8471be /37741463331 is also SUCCESS.
 
-KEEP GOING active, no-gain streak1. AUDIT lists five weaknesses each round.
+KEEP GOING active, no-gain streak2. AUDIT lists five weaknesses each round.
 R1:40-character names phone width830→390.
 R2:follow-suit handover focuses a legal card; native Enter plays it.
 R3:bots return null during reviews, holds8s/60–90s;31 full tests,25 kills,
@@ -29,7 +29,11 @@ R4 browser PASS13 groups,distinct handovers1→4/3,35 hashes,TV59.7368/
 4×phone59.8695fps,p95 16.8/16.7ms;capture under10MB.
 R5 held-out PASS8,000 matches,seeds2001–4000;all skill orderings and
 95% bounds pass with unchanged policy. Both seed ranges now run in npm test.
-Next:R6 presence churn,R7 final repeated browser frames. Three consecutive no-player-gain rounds
+R6 PASS1,003 cases/181,386 events,45,036 view/135,108 bot privacy checks,
+max state5,650bytes. Unchanged core;churn now runs in npm test.
+R6 read-only report reproduces exactly;39 hashes and separate8s QA-round
+captures under10MB pass. Next:R7 optimize only the test driver for review
+clocks and repeat final browser frames. No-gain streak2. Three consecutive no-player-gain rounds
 are required after the last improvement. Run final npm test and observe
 SUCCESS for the exact final PR head before claiming completion.
 

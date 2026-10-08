@@ -61,3 +61,16 @@ Check worst:run another2,000 full matches per comparison on held-out seeds
 2001–4000,unchanged policy/settings/seat rotation. Require both outright
 and direct-pair95% lower bounds above50%. Fix strategy only if evidence
 shows an actual weakness; don't claim outside expertise from local leagues.
+
+Round6, re-read JOBS;five largest remaining weaknesses:
+1. Presence churn combinations need wider seeded sampling across phases.
+2. Final presentation needs another independent browser-process sample.
+3. Full virtual-time UI games spend minutes executing unused review ticks.
+4. Physical phone behavior cannot be measured with the available hardware.
+5. Direct original-rule-site access remains blocked; mirrors are documented.
+
+Check worst:seeds1/2/3 plus1,000 unique random cases,180 mixed events each,
+including drops during pauses,permanent leave/reconnect,stale timers,three
+bot grades and explicit end. Check immutable inputs,byte-identical restored
+replays,schemas/conservation/storage/results every event;swap other hidden
+cards and engine RNG without changing any viewer or bot action.

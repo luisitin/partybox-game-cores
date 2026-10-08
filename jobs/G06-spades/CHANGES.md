@@ -118,3 +118,10 @@ KEEP GOING round5:
 - `package.json`:recompute/assert both original and held-out2,000-seed
   league reports in npm test,so the generalization evidence stays executable.
   No policy or scoring change; all four fresh skill orderings passed.
+
+KEEP GOING round6:
+- `churn.ts`:independent adversarial driver for1,003 seeded presence/pause
+  sequences,including legitimate prototype-name IDs and drops while paused.
+  Check every-event replay/immutability/schema/conservation/storage,all-seat
+  results and hidden-hand/RNG substitutions for every viewer and bot grade.
+- `package.json`:run/assert the deterministic churn report in npm test.

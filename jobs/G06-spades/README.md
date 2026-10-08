@@ -22,7 +22,8 @@ npm test
 Zod is the only runtime dependency. `npm test` runs strict contract types,
 exact data/fixture/page regeneration, hashes, two10,000-case differentials,
 focused invariants,1,003 complete seeded replays,1,000 bot games per roster,
-25 genuine mutations,16,000 skill matches and actual browser controls/frames.
+25 genuine mutations,1,003 presence-churn cases,16,000 skill matches and
+actual browser controls/frames.
 
 Regenerate with `node generate.ts`, `node fixtures.ts`, `node build.ts`;
 then `node checksums.ts`. Capture a new visual milestone with
