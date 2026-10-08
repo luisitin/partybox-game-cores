@@ -105,3 +105,12 @@ FPS, p99/max16.8ms, privacy/offline/reduced-motion checks and visible-clock
 captures. Exact reports: clock-before/after.json and round-3 logs. This
 round changes the host, with controlled test entropy and independent synthetic
 clock checks; game logic remains unchanged. Hosted current acceptance pending.
+
+Round4 exact commands: npm run build; node scripts/meld-check.mjs --capture;
+node scripts/browser-check.mjs (three executions, FAIL/FAIL/PASS).
+Results, failure causes not established, raw frames and fixture-injection limits
+are recorded in keep-going.md and evidence/round-4-* plus custom-meld-*.json.
+The production renderer now shows declared/resolved layouts; privacy covers
+remove named-card controls and deadwood text. The accepted strict browser run
+measured60.004FPS desktop and phone4x; captures143KB/232KB. The two prior
+hosted heads passed actual CI; current-head CI remains required.

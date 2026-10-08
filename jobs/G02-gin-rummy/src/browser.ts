@@ -1,10 +1,12 @@
 import {game,manifest} from './core';
 import type {State,Input,PrivateView} from './core';
-import {cardName,minimizeDeadwood,suit} from './cards';
+import {cardName,minimizeDeadwood,discardSolutions,declaredSolution,suit} from './cards';
+import type {MeldSolution} from './cards';
 import {createRng} from '../../../contract/rng';
 const $=(id:string)=>document.getElementById(id)!;
 let state:State|null=null,openFor:string|null=null,selected:number|null=null,now=0;
 let viewedState:State|null=null,cachedPrivateView:PrivateView|null=null;
+let discardLayouts=new Map<number,MeldSolution>(),meldGroups=new Map<number,number>(),draftFor:number|null=null;
 const rng=createRng(crypto.getRandomValues(new Uint32Array(1))[0]);
 function clockNow():number {now=Math.max(now,Math.floor(performance.now()));return now;}
 function renderClock():void {
@@ -58,7 +60,7 @@ function send(input:Input):void {
 function card(c:number,choose=false):HTMLElement {
   const b=choose?button(cardName(c),()=>selectCard(c)):document.createElement('div');
   b.textContent=cardName(c);b.className='card'+([1,2].includes(suit(c))?' red':'')+(c===selected?' selected':'');
-  b.setAttribute('aria-label',cardName(c)+(choose?`, card number ${c}`:''));
+  b.setAttribute('aria-label',cardName(c));
   if(choose)b.setAttribute('aria-pressed',String(c===selected));
   if(choose)b.dataset.card=String(c);
   return b;
@@ -69,19 +71,64 @@ function selectCard(c:number):void {
     const chosen=Number(card.dataset.card)===c;card.classList.toggle('selected',chosen);card.setAttribute('aria-pressed',String(chosen));
   }
   const v=cachedPrivateView;if(!v)return;
-  $('deadwood').textContent=`Minimum deadwood: ${v.deadwood}. Selected: ${cardName(c)} (card number ${c}).`;
+  $('deadwood').textContent=`Minimum deadwood: ${v.deadwood}. Selected: ${cardName(c)}.`;
   const discard=document.getElementById('discard-selected') as HTMLButtonElement|null;
   if(discard)discard.disabled=c===v.forbiddenDiscard;
   const knock=document.getElementById('knock-selected') as HTMLButtonElement|null;
   if(knock)knock.disabled=!v.legal.some(x=>x.type==='discard'&&x.card===c&&x.knock);
+  renderMeldChoice();
 }
-function displayLayout(cards:number[]):HTMLElement {
-  const d=document.createElement('div');d.className='layout';const sol=minimizeDeadwood(cards);
-  for(const group of [...sol.melds,...(sol.loose.length?[sol.loose]:[])]){const el=document.createElement('div');el.className='meld';el.textContent=group.map(cardName).join(' · ');d.append(el);}return d;
+function clearMeldDraft():void {
+  draftFor=null;meldGroups.clear();$('meld-builder').replaceChildren();$('meld-message').textContent='';
+  ($('meld-choice') as HTMLDetailsElement).open=false;
+}
+function chosenLayout():MeldSolution|null {
+  const v=cachedPrivateView;if(!v||selected===null||draftFor!==selected)return null;
+  const hand=v.handCards.filter(c=>c!==selected),melds=[1,2,3].map(group=>hand.filter(c=>meldGroups.get(c)===group)).filter(group=>group.length);
+  return declaredSolution(hand,melds);
+}
+function updateKnock():void {
+  const v=cachedPrivateView;if(!v)return;
+  const custom=($('meld-choice') as HTMLDetailsElement).open,layout=custom?chosenLayout():null;
+  const legal=selected!==null&&selected!==v.forbiddenDiscard&&(custom?!!layout&&layout.deadwood<=v.knockLimit:v.legal.some(x=>x.type==='discard'&&x.card===selected&&x.knock));
+  for(const id of ['knock-selected','knock-declared']){const b=document.getElementById(id) as HTMLButtonElement|null;if(b)b.disabled=!legal;}
+  if(custom)$('meld-message').textContent=layout?`Your chosen deadwood: ${layout.deadwood}. Knock limit: ${v.knockLimit}.${layout.deadwood>v.knockLimit?' This layout cannot knock.':''}`:'Each meld needs three/four equal ranks, or three or more consecutive cards of one suit.';
+}
+function renderMeldChoice():void {
+  const v=cachedPrivateView,details=$('meld-choice') as HTMLDetailsElement;
+  if(!v)return;
+  if(!details.open){updateKnock();return;}
+  if(v.phaseId!=='discard'||$('private').hidden)return;
+  if(selected===null){$('meld-builder').replaceChildren();$('meld-message').textContent='Select a discard card first.';return;}
+  if(draftFor!==selected){
+    draftFor=selected;meldGroups=new Map();
+    const automatic=discardLayouts.get(selected)!;
+    automatic.melds.forEach((group,i)=>group.forEach(c=>meldGroups.set(c,i+1)));
+    const labels=v.handCards.filter(c=>c!==selected).sort((a,b)=>a-b).map(c=>{
+      const label=document.createElement('label');label.textContent=cardName(c);
+      const control=document.createElement('select');control.setAttribute('aria-label','Group for '+cardName(c));
+      for(const [value,text]of [['0','Leave loose'],['1','Meld 1'],['2','Meld 2'],['3','Meld 3']])control.append(option(value,text));
+      control.value=String(meldGroups.get(c)??0);control.onchange=()=>{meldGroups.set(c,Number(control.value));updateKnock();};
+      label.append(control);return label;
+    });$('meld-builder').replaceChildren(...labels);
+  }
+  updateKnock();
+}
+function knockSelected():void {
+  if(selected===null)return;
+  const custom=($('meld-choice') as HTMLDetailsElement).open,layout=custom?chosenLayout():null;
+  if(custom&&!layout){$('notice').textContent='Choose valid meld groups before knocking.';return;}
+  send({type:'discard',card:selected,knock:true,...(custom?{melds:layout!.melds}:{})});
+}
+function displayLayout(sol:MeldSolution):HTMLElement {
+  const d=document.createElement('div');d.className='layout';
+  for(const [i,group]of sol.melds.entries()){const el=document.createElement('div');el.className='meld';el.textContent=`Meld ${i+1}: `+[...group].sort((a,b)=>a-b).map(cardName).join(' · ');d.append(el);}
+  const loose=document.createElement('div');loose.className='meld deadwood-summary';loose.textContent=`Deadwood ${sol.deadwood}: `+(sol.loose.map(cardName).join(' · ')||'none');d.append(loose);return d;
 }
 function render():void {
   if(!state)return;
-  if(viewedState!==state){viewedState=state;cachedPrivateView=game.controllerView(state,state.turn);}
+  if(viewedState!==state){viewedState=state;cachedPrivateView=game.controllerView(state,state.turn);clearMeldDraft();
+    discardLayouts=new Map(cachedPrivateView.phaseId==='discard'&&cachedPrivateView.handCards.length?discardSolutions(cachedPrivateView.handCards).map(x=>[x.card,x.solution]):[]);}
   const v:PrivateView=cachedPrivateView!,publicView=v;
   $('notice').textContent='';
   $('scores').replaceChildren(...v.players.map(p=>{const d=document.createElement('div');d.className='score'+(p.id===v.turn?' current':'');d.textContent=`${p.name} · ${p.score} points${state!.left.includes(p.id)?' · left; auto-playing':!p.connected?' · disconnected; auto-playing':v.waiting.includes(p.id)?' · waiting':''}`;return d;}));
@@ -95,7 +142,8 @@ function render():void {
   $('handoff').replaceChildren();
   if(!$('handoff').hidden){const h=document.createElement('h2');h.textContent=`Pass to ${name}`;const p=document.createElement('p');p.textContent='Other players: look away before the hand opens.';$('handoff').append(h,p,button('Show my hand',()=>{openFor=state!.turn;render();},true));}
   $('hand').replaceChildren(...(!$('private').hidden?v.handCards.slice().sort((a,b)=>a-b).map(c=>card(c,true)):[]));
-  $('deadwood').textContent=v.deadwood===null?'':`Minimum deadwood: ${v.deadwood}. Select a card to discard.${selected!==null?' Selected card number: '+selected+'.':''}`;
+  if($('private').hidden)clearMeldDraft();
+  $('deadwood').textContent=$('private').hidden||v.deadwood===null?'':`Minimum deadwood: ${v.deadwood}. Select a card to discard.${selected!==null?' Selected: '+cardName(selected)+'.':''}`;
   $('actions').replaceChildren();
   if(!$('private').hidden) {
     for(const input of v.legal) {
@@ -105,22 +153,21 @@ function render():void {
     if(v.phaseId==='discard') {
       const discard=button('Discard selected',()=>{if(selected!==null)send({type:'discard',card:selected});});discard.disabled=selected===null||selected===v.forbiddenDiscard;
       discard.id='discard-selected';
-      const knock=button('Knock / Gin',()=>{if(selected===null)return;let melds:number[][]|undefined;
-        const text=(document.getElementById('melds') as HTMLInputElement).value.trim();
-        if(text)melds=text.split(';').map(g=>g.split(',').map(x=>Number(x.trim())));
-        send({type:'discard',card:selected,knock:true,...(melds?{melds}:{})});},true);
+      const knock=button('Knock / Gin',knockSelected,true);
       knock.disabled=selected===null||!v.legal.some(x=>x.type==='discard'&&x.card===selected&&x.knock);
       knock.id='knock-selected';
       $('actions').append(discard,knock);
       if(v.canBigGin)$('actions').append(button('Big Gin',()=>send({type:'bigGin'}),true));
-      $('actions').append(button('Cover my hand',()=>{openFor=null;render();}));
+      $('actions').append(button('Cover my hand',()=>{openFor=null;selected=null;render();}));
     }
   }
   $('meld-choice').hidden=$('private').hidden||v.phaseId!=='discard';
   $('reveal').replaceChildren();
   if(reveal&&publicView.roundResult) {
     const r=publicView.roundResult;const heading=document.createElement('h2');heading.textContent=r.winner?`${state.players[r.winner].name}: ${r.kind} +${r.points}`:v.phaseId==='layoff'?'Both hands are now public':'Drawn hand';$('reveal').append(heading);
-    for(const [id,cards]of Object.entries(r.hands)){const p=document.createElement('p');p.textContent=state.players[id].name;$('reveal').append(p,displayLayout(cards));}
+    for(const [id,cards]of Object.entries(r.hands)){const p=document.createElement('p');p.textContent=state.players[id].name;
+      const layout=id===r.knocker&&r.knockerLayout?r.knockerLayout:id!==r.knocker&&r.defenderLayout?r.defenderLayout:minimizeDeadwood(cards);
+      const shown=displayLayout(layout);shown.dataset.player=id;$('reveal').append(p,shown);}
     if(r.defenderLayout){const p=document.createElement('p');p.textContent=`Defender's remaining deadwood: ${r.defenderLayout.deadwood}. Laid off: ${r.defenderLayout.laid.map(x=>cardName(x.card)).join(', ')||'none'}.`;$('reveal').append(p);}
   }
   if(v.phaseId==='layoff')$('reveal').append(button('Use optimal melds and layoffs',()=>send({type:'finishLayoff'}),true));
@@ -131,6 +178,8 @@ function render():void {
   $('log').replaceChildren(...v.log.map(x=>{const p=document.createElement('p');p.textContent=`${state!.players[x.player].name}: ${x.action}${x.card===null?'':' '+cardName(x.card)}`;return p;}));
   renderClock();
 }
+$('meld-choice').ontoggle=renderMeldChoice;
+$('knock-declared').onclick=knockSelected;
 $('start').onclick=start;$('new-match').onclick=()=>{$('setup').hidden=false;$('table').hidden=true;state=null;};
 $('bot-step').onclick=()=>{if(state){const input=game.bot.sampleInput(state,state.turn,rng,skill(state.turn));if(input)send(input);}};
 $('pause').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:state.phase.paused?'resume':'pause',now:clockNow()});openFor=null;render();}};

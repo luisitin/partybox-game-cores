@@ -82,3 +82,34 @@ Actual node scripts/browser-check.mjs --capture --clock-capture PASS/exit0:
 desktop60.003FPS/phone4x60.004FPS, p99/max16.8ms, offline/privacy/reduced
 motion checks and visible-clock videos PASS. Game logic unchanged this round;
 current-head hosted full checks remain required.
+
+Round4: G02 re-read. Five biggest remaining weaknesses:
+1. Custom melds use IDs, the reveal recomputes a different layout, and covers retain private drafts.
+2. Result winner versus target/bonus semantics need a box-heavy adversarial check.
+3. All valid string identifiers and malformed metadata need stronger boundary tests.
+4. Complete-match replay checks only final state equality.
+5. Third-party bundled license notice and raw timing retention deserve review.
+Actual pre-fix UI witness: cover retains private draft3,4,5; a valid chosen
+three-run knock is displayed as three sets. The fixture changes only the
+start state, leaving the production reducer/scoring/renderer unchanged.
+Repair underway: named card group controls, clear drafts on cover/handoff,
+and display the declared/resolved layouts with their actual deadwood.
+
+Round4 actual npm run build PASS; node scripts/meld-check.mjs --capture PASS
+on desktop1920x1080 and phone390x844/4x. Ten named-card group controls,
+invalid-group rejection, closed-controls automatic fallback, complete private
+DOM clearing, declared three-run reveal and resolved defender0/undercut11
+are verified. Only the fixture's initial state is injected; production scoring,
+solver and renderer execute unchanged. Phone screenshot inspected: no horizontal
+overflow, readable two-column controls and at least44px control height.
+New functional clips143,042/231,599 bytes, both below10MB.
+First strict browser run FAILed desktop58.699FPS; second FAILed phone37.114FPS.
+Both logs and raw failed frames are retained. The before/after comparison
+measured previous-page phone46.354FPS, current desktop55.961 and current
+phone60.004FPS; it does not establish a cause for the dropped frames.
+Third unchanged-source node scripts/browser-check.mjs PASS/exit0:
+both profiles60.004FPS, p99/max16.8ms, all offline/privacy/reduced-motion,
+clock and custom-meld regressions PASS. Accepted raw frames and ALL failures
+are delivered; no physical-phone or constant-zero-jank claim.
+Round2 CI37722950853/d32ca3b and round3 CI37725396032/c85b243 actually
+SUCCESS. Round4 current-head hosted full checks remain required.
