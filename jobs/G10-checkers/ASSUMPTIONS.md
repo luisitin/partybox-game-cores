@@ -35,4 +35,3 @@ positions return null. Full-six-piece coverage is still required before G10 can
 be marked complete. No external binary with unconfirmed data-use permission is
 redistributed. Kingsrow's original author statement is a live confirmed lead,
 and selective installer extraction is still being investigated.
-

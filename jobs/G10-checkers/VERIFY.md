@@ -57,3 +57,6 @@ performance/captures, job-specific checks and CI are UNRUN (zero game tests).
 - Full contract/properties/matrix, mutations, leagues, production table comparison,
   fixture/schema checks, disk browser/frames/clips, PR and exact-head CI: UNRUN.
 - Every executed command/result/input hash is also recorded in milestone2.json.
+
+- Milestone checksum regeneration twice and comparison: PASS47 files; all47
+  SHA256 checks pass. `git diff --check`: PASS after trimming one extra EOF line.
