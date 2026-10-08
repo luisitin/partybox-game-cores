@@ -1,5 +1,20 @@
 # Assumptions
 
+- 2026-10-08T16:58:56Z legal resumed claim: main CLAIMS row10:54:27 and both
+  G03 heads731b64b committed10:54:24 were older than6h. All18 current remote
+  heads and their commit dates were read; lower IDs had recent commits. Claim
+  main084d11e pushed16:58:58. A local branch was created from claimed main and
+  normally merged the original delivery to preserve PR3. No public PR merge.
+- R14 changes only verification, so the existing R10–12 player stop remains
+  met while all gameplay/data/bot/HTML bytes stay identical. New exact-head
+  full hosted CI and actual source-bound raw frame acceptance are still gates.
+- Native RAF timing remains real. A frozen Date.now in the browser harness
+  prevents quiet-window coordination from expiring a human's timed turn; it
+  does not replace requestAnimationFrame or its timestamp. Clock correctness
+  remains covered separately by the unchanged pure contract tests.
+- A 390px Chrome profile with4x CPU throttle is a phone approximation, not a
+  physical-phone measurement. Local HTTP never proves file:// loading.
+
 - G03 is original. The prompt defines its rules; two independent live sources
   substantiate geometry/search facts rather than purported official rules.
 - Hot-seat players get equal timed turns and the same puzzle. A hand-off

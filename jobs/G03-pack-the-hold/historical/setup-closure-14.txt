@@ -1,0 +1,27 @@
+{
+  "actualReady": {
+    "profile": "desktop",
+    "sourceSha256": "3147906fd5cc6454ea1fce7f6a79d58f0ba4b9d011ec27f351133107e20306a3",
+    "attemptNonce": "72bc079c-2007-43a4-921c-89d2d55ecbc4",
+    "utc": "2026-10-08T17:13:54.161Z",
+    "intervals": 900,
+    "minimumFps": 59,
+    "maximumP95Ms": 18,
+    "rawFiltering": "none",
+    "captureDuringSample": false
+  },
+  "actualClosed": {
+    "profile": "desktop",
+    "sourceSha256": "3147906fd5cc6454ea1fce7f6a79d58f0ba4b9d011ec27f351133107e20306a3",
+    "attemptNonce": "72bc079c-2007-43a4-921c-89d2d55ecbc4",
+    "status": "failed",
+    "reason": "matching grant not received within600s",
+    "utc": "2026-10-08T17:23:54.253Z"
+  },
+  "finalRunnerStatus": "failed",
+  "finishedAtUtc": "2026-10-08T17:23:54.351Z",
+  "failure": "Error: G03 matching frame grant timed out after600s",
+  "grantReceived": false,
+  "rawIntervals": 0,
+  "requestedCancellationSignalWasNotSent": true
+}

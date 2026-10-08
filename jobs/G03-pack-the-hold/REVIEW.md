@@ -1,5 +1,17 @@
 # G03 delivery reviews
 
+## Round14 resumed verification review, before edits
+
+Read current main README/RULES/JOBS and the original G03 rules. Five weaknesses,
+ranked: the frame gate accepts 17.5 ms (about57.14fps); one interval is removed;
+raw frame arrays are absent; browser evidence lacks current source fingerprints;
+the real phone and human difficulty rates remain unmeasured. Actual old hosted
+ZIP11545955223 was downloaded and digest-verified: seven files, zero raw frame
+sidecars. Its aggregates report about60fps, but missing intervals cannot be
+recreated. Repair the first four verification gaps without changing the game,
+data, bot strategy or delivered HTML. Retain all failed observations. Previous
+player-visible stop R10–12 remains applicable only while those bytes stay equal.
+
 ## Round9
 
 Re-read G03 and its selected rules. Five weaknesses ranked:malformed root/actor envelopes throw8 times in12 probes;invalid presence is accepted in3 probes;the original regressions omit malformed envelopes;test builds overwrite committed HTML before validating hashes;physical-phone and managed disk evidence are unavailable locally. Fix confirmed reducer totality and presence violations with deep-frozen all-phase/paused regressions. Preserve valid rules,state format,geometry,tiers and bots.12 probes now have0 exceptions/0 invalid presence updates;focused11/full22 tests and25 mutations pass. This player-visible reliability gain resets the no-gain streak0.

@@ -4,9 +4,16 @@ import { createHash } from 'node:crypto';
 import Ajv2020 from 'ajv/dist/2020.js';
 import assert from 'node:assert/strict';
 const ajv = new Ajv2020({ strict: false, allErrors: true });
+ajv.addFormat('date-time', value => typeof value === 'string' && Number.isFinite(Date.parse(value)) && new Date(value).toISOString() === value);
 const parse = path => JSON.parse(readFileSync(path, 'utf8'));
-const schemas = Object.fromEntries(['state', 'manifest', 'calibration', 'research', 'seeds', 'visual'].map(name => [name, ajv.compile(parse(`schemas/${name}.schema.json`))]));
+const schemas = Object.fromEntries(['state', 'manifest', 'calibration', 'research', 'seeds', 'visual', 'current-visual', 'capture', 'raw-frame'].map(name => [name, ajv.compile(parse(`schemas/${name}.schema.json`))]));
 const targets = [['manifest.json', 'manifest'], ['research-access.json', 'research'], ['data/calibration.json', 'calibration'], ['data/property-seeds.json', 'seeds'], ['media/visual-measurements.json', 'visual'], ...readdirSync('fixtures').map(file => [`fixtures/${file}`, 'state'])];
+targets.push(['historical/hosted-731b64b.json', 'visual']);
+for (const file of readdirSync('media')) {
+  if (/^capture-\d{2}-report\.json$/.test(file)) targets.push([`media/${file}`, 'capture']);
+  else if (/^visual-\d{2}-report\.json$/.test(file)) targets.push([`media/${file}`, 'current-visual']);
+  else if (/^visual-\d{2}-raw-(?:desktop|phone)\.json$/.test(file)) targets.push([`media/${file}`, 'raw-frame']);
+}
 for (const [path, name] of targets) assert.ok(schemas[name](parse(path)), `${path}: ${JSON.stringify(schemas[name].errors)}`);
 for (const file of readdirSync('schemas')) assert.ok(ajv.validateSchema(parse(`schemas/${file}`)), `invalid JSON Schema: ${file}`);
 for (const line of readFileSync('SHA256SUMS.txt', 'utf8').trim().split('\n')) {

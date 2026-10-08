@@ -8,6 +8,7 @@ for(const dir of ['data','fixtures','schemas','media'])for(const file of readdir
   if(dir==='media'?!/\.(json|png|webm|mp4)$/.test(file):!file.endsWith('.json'))continue;
   expected.push(`${dir}/${file}`);
 }
+for(const file of readdirSync('historical'))if(/\.(json|webm|txt)$/.test(file))expected.push(`historical/${file}`);
 const entries=readFileSync('SHA256SUMS.txt','utf8').trim().split('\n').map(line=>{
   const match=/^([a-f0-9]{64})  (.+)$/.exec(line);assert(match,`malformed checksum: ${line}`);return {hash:match[1],path:match[2]};
 });

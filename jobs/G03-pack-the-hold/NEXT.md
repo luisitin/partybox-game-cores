@@ -1,4 +1,36 @@
-# G03 completed implementation and final delivery gate
+# G03 resumed source-bound verification — round14 checkpoint
+
+Claim codex-pack-resume16:58:56Z on main084d11e, observed push16:58:58.
+Worktree /workspace/game-cores-G03-resume; original PR3/canonical branch
+job/G03-pack-the-hold are preserved. The resumed branch was created from
+claimed main, then normally merged731b64b. No public PR merge or force push.
+
+R14 verification changes are implemented:900 unfiltered native RAF intervals
+per profile,>=59fps/p95<=18ms, raw-before-assert,28 current source guards,
+separate recording, independent current-source/raw/clip validator and schemas.
+Strict ES2022 build PASS; original src/game/data/bot/HTML/template bytes stay
+equal to731b64b. Nonce temporary-file tests2/2 groups/10 corruption controls,
+9 JSON/10 schemas/2 byte-identical regenerations/37 prior hashes PASS.
+Old hosted ZIP11545955223 digest verified:188017bytes,seven actual files,zero
+raw sidecars. Its180-frame aggregates are historical,not new raw acceptance.
+
+The HTTP setup timed out before sampling; root had requested actual disk transport;
+no grant received and0 frames sampled. historical/setup-closure-14.txt
+records the actual coordination timeout/process closure. This is neither a frame failure
+nor an accepted frame attempt. No source or threshold was relaxed.
+
+Next: choose legitimate actual file:// launch transport, retain pinned runner
+identity, then fresh guard hashes/nonce/READY. Ask root for actual quiet grant;
+never retry unchanged frame failures. Run TV1920x1080 and phone390x844/CPU4x.
+Keep raw/error/source records even if the gate fails; release quiet on CLOSED.
+Record separate current milestone13 with an explicit unused number after timing
+profiles close; validate actual clip bytes/hash/schema/source independently.
+Run actual-current corruption controls and required full exact-head hosted CI.
+Only restore original PR3 to ready after actual green/current proof/nonempty
+uploaded artifact. Existing R10–12 player stop remains met while game bytes
+remain equal; round14 verification does not invent a new gameplay gain.
+
+## Preserved previous completion record (historical)
 
 Chat codex-domino;working job/G03-pack-the-hold-reverify reuses
 https://github.com/luisitin/partybox-game-cores/pull/3 on job/G03-pack-the-hold.

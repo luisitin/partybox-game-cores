@@ -1,5 +1,41 @@
 # Verification ledger
 
+## Resumed round14 checkpoint,2026-10-08
+
+Fresh main README/RULES/JOBS/CLAIMS and all18 refs/unique commit dates selected
+G03 as the lowest eligible job. Main claim084d11e pushed16:58:58; claim row
+16:58:56Z. Local merge614a4ab preserves the original731b64b delivery and PR3.
+
+Native hosted CI37766566457/job113275564436 actual91405-character log read:
+all24 tests/25 mutations/10k independent solver/1,003 properties/7k roster/
+4k leagues/data/disk checks passed at731b64b. Actual ZIP11545955223 fetched,
+SHA256 f24042a8630bbbfbda3ec776ba36580063012b9c08feb6e0f0fc5e8790ccdf82,
+188017bytes verified, safely extracted:seven files and zero raw sidecars.
+Historical source drops one interval and gates mean<=17.5ms(~57.14fps).
+Old aggregates about60.002fps cannot reconstruct absent raw intervals.
+The exact old report/runner/actual108387-byte clip are retained in historical/.
+
+`npm ci --ignore-scripts --no-audit --no-fund`:PASS9 packages.
+`npm run build`:PASS strict ES2022; `git diff --exit-code731b64b -- src
+play.html data fixtures manifest.json web`:PASS before/after generation.
+`node --test scripts/frame-coordination.test.mjs`:PASS2 groups,10 real-file
+corruption/replay/removal controls and two fresh sequential attempts.
+`node scripts/generate.mjs --fixtures-only; node scripts/check-hashes.mjs;
+node scripts/check-data.mjs`:PASS9 JSON/10 schemas/two byte-identical full
+regenerations/37 hashes before recording the cancellation receipt.
+`ffmpeg -v error -i historical/hosted-731b64b.webm -f null -` and `ffprobe`:
+PASS actual108387bytes,VP9,3.6s; separate encoded10fps UI video,not frame proof.
+
+The changed checker started an explicit HTTP setup and reached desktop READY
+17:13:54.161; no grant/sample occurred. Root requested actual disk transport.
+Own PGID172756/Node172757 had already closed after the600s coordination
+timeout before the cancellation command. No SIGTERM was sent. Actual
+READY/CLOSED identity/time and the final failed setup report are retained in
+historical/setup-closure-14.txt. The launcher had detached via setsid,
+so its parent's exit0 is NOT a browser/test exit or acceptance. No frame result
+is claimed. New actual raw/current frame proof,capture13 and exact-head full
+CI remain pending. Subsequent launches must use setsid --wait to retain exit.
+
 All commands below run from jobs/G03-pack-the-hold unless stated otherwise.
 No CI or disk-opening outcome is claimed before it actually passes.
 
