@@ -15,3 +15,7 @@ Re-read G03. Five weaknesses ranked:malformed-envelope coverage lacks1,003-seed/
 ## Round12
 
 Re-read G03. Five weaknesses ranked:browser evidence needs a fresh full interaction pass;managed local disk navigation unavailable;physical phone unavailable;finite calibrated hold pool;human solve-rate calibration unknown. Run existing browser audit without changing gameplay/UI,record milestone12,measure keyboard interaction at180 frames after60 warm-up frames each,TV and4×CPU phone. All2–8 rosters,touch/mouse/keyboard,private hand-off,long names,reduced motion and0 requests/exceptions pass;60.002/60.004fps,p9516.8/16.7ms.3.6-second VP9 clip decodes under10MB. No new player-visible gain;streak3,stop met. Full combined and exact-current-head CI remain required.
+
+## Round13 delivery audit
+
+Re-read G03. Five weaknesses ranked:successful CI uploaded0 audit artifacts;missing evidence is only warned;regression JSON lives in a hidden.tmp directory;managed local disk navigation unavailable;physical-phone/human calibration unmeasured. The official upload-artifact/v4 action schema confirms include-hidden-files defaults false. Set it true for the existing narrowly listed audit paths and fail when no files are found. Require a non-empty G03-check-evidence artifact in the final exact-head run. This repairs reviewable evidence delivery,with no runtime/player change;no-gain streak4,previous stop remains met.

@@ -39,3 +39,9 @@ human tiers is established by these measurements.
 5. [zod4.6.5 package](https://www.npmjs.com/package/zod/v/4.6.5), installed
    from the live npm registry. Read its LICENSE; bundled MIT notice retained
    in play.html and THIRD_PARTY_NOTICES.md. Used for contract input validation.
+
+6. https://raw.githubusercontent.com/actions/upload-artifact/v4/action.yml
+   Read live2026-10-08 for CI delivery configuration:include-hidden-files
+   defaults false; if-no-files-found accepts error. Used only to upload
+   already enumerated public audit evidence. Observed run37765943337 and
+   REST artifact_count0 independently confirm the prior skipped upload.

@@ -22,7 +22,12 @@ Milestone12 VP9/3.6s/104178bytes decodes;TV/4×CPU phone≈60fps.
 Hosted37765317624 SUCCESS for0153ad1 includes all new audits and actual
 disk navigation. Before declaring the final evidence commit delivered,
 verify SUCCESS for PR3's exact CURRENT head;the final prose commit starts
-a new hosted gate. On that SUCCESS,source/checks/stop are complete:
+a new hosted gate. R13 repaired a discovered artifact upload failure:
+34b073c CI was green but uploaded0 because.tmp was hidden. The final
+workflow enables hidden files for explicit audit paths and errors on empty
+evidence. Require SUCCESS AND one nonempty/unexpired G03-check-evidence
+artifact for the exact final head. R13 has no player gain(streak4).
+On those final gates,source/checks/stop/delivery are complete:
 update PR3 evidence externally and go to the queue,not rejected experiments.
 Current live CI/PR evidence is authoritative;do not repeat passing checks
 without new changes,failures or unresolved concerns.

@@ -15,3 +15,5 @@ R10:scripts/check-hashes.mjs verifies complete data/media coverage and committed
 R11:tests/total-events.test.mjs adds seeded malformed JSON across pack/paused/reveal/done. It rejects invalid root/actor/input/clock/presence/VIP/stale-timer data and checks frozen-state identity plus unchanged JSON. Actual evidence is printed and written to.tmp/total-envelopes.json;the existing npm test glob runs it. No game code changes.
 
 R12:retain fresh milestone12 browser evidence and hashes from the existing interaction audit;no runtime/UI change. G03.yml uploads.tmp/total-*.json alongside existing evidence so reviewers can inspect both new regression reports.
+
+R13:G03.yml enables include-hidden-files for the already explicit.tmp/visual,solve-time,mutation and total-event report paths;it errors when no files are found. Actual successful CI uploaded0 artifacts under the prior default,so its evidence delivery was incomplete. Game/build/test/data bytes remain unchanged.
