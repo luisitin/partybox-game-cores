@@ -14,4 +14,4 @@ for(const line of readFileSync('SHA256SUMS.txt','utf8').trim().split('\n')) {
  const [hash,path] = line.split('  ');
  assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'),hash,path);
 }
-console.log(JSON.stringify({sourceReceipts:parse('research-access.json').sources.length,schemaValid:true,referenceSealValid:true,hashesValid:true,fullJobChecks:false}));
+console.log(JSON.stringify({sourceReceipts:parse('research-access.json').sources.length,schemaValid:true,referenceSealValid:true,hashesValid:true,researchOnly:true}));

@@ -1,35 +1,25 @@
 # Resume G05
 
 Branch job/G05-hearts; claim codex-core. Read root README/RULES/JOBS first.
-G03 PR3 is complete, green, and left open; preserve its files/history.
+G03 PR3 complete/green/three cosmetic rounds; preserve its open PR.
 
-The pure strict ES2022 core implements pass/play/trick/hand/done,
-3–6 equal adjusted decks, whole-seat passing, both moons, separate J♦,
-VIP ordering/pause/skip/end, deterministic leaver takeover, own-hand views
-and three public-information bot levels. `npm test` passed13 tests, including
-10,000 sealed-reference scoring/legal/winner comparisons.29 pinned research
-receipts validate. Six-player cuts now have independent confirmation from
-BGA code and Arnold/Wikipedia; no source-related blocker remains.
+G05 core/page/research/fixtures/schemas are built. `G05_VISUAL_MODE=http npm test`
+PASSED:22 tests, nine invariants,1003 replay seeds,1000 full games at each3–6
+roster,10k independent comparisons,25/25 mutants,2x2000 held-out leagues,
+20 JSON validations/24 hashes, two byte-identical regenerations, real browser
+inputs/privacy/reduced-motion/phone layout checks. See VERIFY.md/BOTS.md.
+The original offline page123KB and milestone01 video136KB are included.
+Six-seat deck cuts have independent BGA/Arnold corroboration. Human public
+phases wait for Continue; private handoffs hold optional clocks.
 
-Pilot only: seeds0–199/four seats/100-point matches showed sharp>normal73%
-and normal>easy77.5% against a rotating rival. Run held-out2,000 matches per
-league, including first-place share and uncertainty, for BOTS.md.
+NEXT DELIVERY GATE: push, refresh main claim, inspect G05 CI. Default npm test
+must ACTUALLY open the HTML from disk; managed local Chrome blocks file://.
+No HTTP fallback in CI. Inspect frame reports/failures and fix until green.
+Then open PR, re-read the job/list five weaknesses, fix worst and measure each
+KEEP GOING round in LOOP.md. Record small visual milestones and push/refresh
+at each milestone, ≤30min. Three consecutive cosmetic rounds then next job.
+No PR or DONE is claimed before CI passes.
 
-Remaining:1003 property seeds,1000 bot games at EACH count3–6, exhaustive
-contract event/secret-view tests,25 individual valid mutants; real fixtures
-for five phases, manifest/schema/hash checks and two byte-identical regenerations.
-Check public reading pauses with long names/slow readers.
-
-Build original self-contained CSS/SVG play.html for3–6 humans/bots, private
-handoffs, pass selection, legal plays, settings, accessible focus/keyboard,
-full results. No hidden hands in a concealed DOM. Add short milestone videos.
-Managed local browser blocks file://; use explicit localhost HTTP for partial
-local testing only. Normal GitHub .github/workflows/G05.yml must open the file
-from disk, verify zero outgoing requests,60fps desktop/CPU4x phone and reduced
-motion. No full check or PR is claimed yet.
-
-Push after each milestone and ≤30min; refresh main CLAIMS with the clean-tree
-/workspace/g05-refresh-claim.py helper and await completion before editing.
-After all checks and CI are green, open PR, run KEEP GOING until three rounds
-have no meaningful player gain, then claim the next job.
-Research snapshots are /workspace/g05-research; provenance URLs are committed.
+Potential player weakness: mobile final-score winner panel follows a large
+last-trick table, placing the useful ranked result below the first screen.
+Research /workspace/g05-research; local log /workspace/g05-full-check.log.

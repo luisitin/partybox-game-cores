@@ -3,7 +3,7 @@ import type { BotSkill } from '../../../contract/constants.js';
 import type { Rng } from '../../../contract/rng.js';
 import { nextInt, seedRng, shuffle } from '../../../contract/rng.js';
 import { deckFor, legalCards, passingOffset, penalty, settleHand, suit, trickWinner } from './rules.js';
-import { inputSchema } from './schema.js';
+import { inputSchema } from './input.js';
 import { manifest } from './manifest.js';
 import { chooseBot } from './bot.js';
 import type { Card, HeartsController, HeartsState, HeartsTv, Input, Settings } from './types.js';
@@ -16,6 +16,7 @@ function phase(s: HeartsState, id: string, now: number, ms: number | null): Hear
   const startedAt = Math.max(now, s.phase.startedAt + 1);
   return { id, startedAt, deadline: ms === null ? null : startedAt + ms };
 }
+const hasHuman = (s: HeartsState): boolean => s.order.some(id => available(s,id) && !s.players[id]!.bot);
 const turnMs = (s: HeartsState): number | null => s.settings.turnSeconds ? s.settings.turnSeconds * 1000 : null;
 function beginPlay(s: HeartsState, now: number): HeartsState {
   const actor = s.order.find(id => s.hands[id]!.includes(s.opening))!;
@@ -77,8 +78,8 @@ function playCard(s: HeartsState, id: string, card: Card, now: number): HeartsSt
   }
   const winner = trickWinner(trick)!;
   const captured = { ...s.captured, [winner]: [...s.captured[winner]!, ...trick.map(p => p.card)] };
-  // A conservative reading pause; players can choose Next at their own pace.
-  return { ...s, hands, trick, played, heartsBroken, actor: winner, captured, lastTrick: trick, lastWinner: winner, phase: phase(s, 'trick', now, 12_000) };
+  // Human tables control reading pace explicitly; unattended bot tables have a data timer.
+  return { ...s, hands, trick, played, heartsBroken, actor: winner, captured, lastTrick: trick, lastWinner: winner, phase: phase(s, 'trick', now, hasHuman(s) ? null : 12_000) };
 }
 function scoreCurrent(s: HeartsState): HeartsState {
   if (s.handScored) return s;
@@ -96,7 +97,7 @@ function advanceOne(s: HeartsState, now: number): HeartsState {
   if (s.phase.id === 'trick') {
     if (s.order.every(id => s.hands[id]!.length === 0)) {
       const scored = scoreCurrent(s);
-      return { ...scored, phase: phase(scored, 'hand', now, 120_000) };
+      return { ...scored, phase: phase(scored, 'hand', now, hasHuman(s) ? null : 120_000) };
     }
     return { ...s, trick: [], trickNumber: s.trickNumber + 1, actor: s.lastWinner!, phase: phase(s, 'play', now, turnMs(s)) };
   }
@@ -182,6 +183,7 @@ export function results(s: HeartsState): GameResults | null {
 }
 export function sampleInput(s: HeartsState, id: string, rng: Rng, skill: BotSkill = 'normal'): Input | null {
   if (!has(s,id) || !available(s,id) || s.phase.paused) return null;
+  if (s.phase.id === 'trick' || s.phase.id === 'hand') return hasHuman(s) ? null : { type:'next' };
   return chooseBot(controllerView(s,id),rng,skill);
 }
 export const game: GameDefinition<HeartsState,Input,HeartsTv,HeartsController> = {manifest,phases:['pass','play','trick','hand','done'],inputSchema,init,reduce,tvView,controllerView,results,bot:{sampleInput}};

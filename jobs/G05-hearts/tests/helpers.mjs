@@ -12,7 +12,7 @@ export const start=(seed=1,count=4,settings={})=>game.init({players:players(coun
 export function timer(s) { return game.reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline ?? s.phase.startedAt+1}); }
 export function eventFor(s,skill='normal',salt=0) {
  if(s.phase.id==='done')return null;
- if(s.phase.id==='trick'||s.phase.id==='hand')return {type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline};
+ if(s.phase.id==='trick'||s.phase.id==='hand')return s.phase.deadline===null ? {type:'input',playerId:s.order.find(id=>!s.left.includes(id)&&s.players[id].connected),input:{type:'next'},now:s.phase.startedAt+1} : {type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline};
  const input=game.bot.sampleInput(s,s.actor,createRng((s.rng.seed ^ Math.imul(s.handNumber,65537) ^ Math.imul(s.played.length,31337) ^ salt)>>>0),skill);
  if(!input)throw new Error(`No bot input in ${s.phase.id} for ${s.actor}`);
  return {type:'input',playerId:s.actor,input,now:s.phase.startedAt+1};

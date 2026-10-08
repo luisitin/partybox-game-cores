@@ -71,3 +71,81 @@ The standalone page, phase fixtures, all roster/property runs,25 mutations,
 visual recordings, full JSON-schema coverage and GitHub CI are still pending.
 A documentation update used the repository root instead of the job cwd;
 `set -e` stopped on the missing file before any edit. It was rerun job-locally.
+
+Full local milestone: `G05_VISUAL_MODE=http npm test` PASSED. This explicit
+local mode uses HTTP because managed Chrome blocks disk; it is refused in CI.
+G05 CI must run default npm test and prove actual disk opening before delivery.
+
+Strict build/bundle equality and all22 tests pass: nine contract invariants,
+1003 property seeds (204,184 event-by-event replays, max state3898B),1000 full
+100-point bot games at EACH count3–6 (630414/774184/897675/997785 events),
+10,000 independent scoring/legal/winner comparisons, finite scores for leavers,
+JSON round trips, unmutated state/events, unknown input/stale timer/pause/ghost
+ordering, controller/TV secrets and alias safety, AST purity, real phase
+fixtures and exact manifest contract. Unlimited mode's longest active match
+140.43 simulated minutes, max1923 events; idle rooms persist until VIP end.
+
+Two held-out2000-game leagues PASSED and are detailed in BOTS.md: strong beat
+medium1422/2000 (71.10%,16ties, Wilson95%69.07–73.04%, first-place48.05%);
+medium beat easy1559/2000 (77.95%,10ties,76.08–79.71%, first-place57.325%).
+Default100-point/four-seat matches, rotating stronger seat/designated rival;
+no claim about expert-human or unmeasured variant win rates.
+
+`node scripts/mutations.mjs`: initially23/25 caught. An opening-turn test masked
+the out-of-turn mutation, and a sole safe card masked ignored suit-following.
+Added valid post-opening and mixed-safe-suit cases; final25/25 caught. Every
+individual mutant parses (`node --check`) and fails a named focused test:
+- M01: Hearts worth zero — caught.
+- M02: Queen worth one — caught.
+- M03: Wrong six-seat cut — caught.
+- M04: Wrong across recipient — caught.
+- M05: Unforced opening — caught.
+- M06: Ignore suit following — caught.
+- M07: Allow first-trick penalty when safe card exists — caught.
+- M08: Lead unbroken hearts — caught.
+- M09: Block all-heart exception — caught.
+- M10: Off-suit card wins — caught.
+- M11: Lowest led card wins — caught.
+- M12: Wrong moon qualification — caught.
+- M13: Reverse add-moon recipients — caught.
+- M14: Wrong subtract-moon sign — caught.
+- M15: Jack adds penalties — caught.
+- M16: Accept duplicate pass cards — caught.
+- M17: Reverse pass direction — caught.
+- M18: Allow out-of-turn play — caught.
+- M19: Allow unowned or illegal play — caught.
+- M20: Accept input during pause — caught.
+- M21: Accept stale timer instance — caught.
+- M22: Accept early timer — caught.
+- M23: Lose pause duration — caught.
+- M24: Double-count completed hand on end — caught.
+- M25: Collapse strong Jack strategy to medium — caught.
+
+`node scripts/generate.mjs` twice: byte-identical real fixtures/manifest/seeds/
+2000-game league results/schemas, all24 hashed files unchanged. Receipt UTCs
+are actual observations, deliberately preserved. All20 JSON files including
+metadata and schema documents validate; done is the final scored-hand fixture
+played out. Exact commands are in package.json and scripts/check-repro.mjs.
+
+`node scripts/visual.mjs --http --record --milestone 01` PASSED: real17-card
+pass selection at10Hz,1920×1080 mean16.6661ms/p9516.7/max16.8 (~60.002fps);
+390×844 CPU4 mean16.6656ms/p9516.8/max16.8 (~60.004fps). No horizontal overflow;
+reduced motion, native touch/mouse/Space, preserved focus, atomic passing,
+zero concealed-card DOM, complete hot-seat game and3–6 UI bot games,24-char
+six-seat names fit. Zero outgoing requests/exceptions. Original video136066B.
+The full-suite repeat measured phone59.018fps, p9516.8ms/max50ms; all other
+browser gates passed. Raw milestone observations/captures are in media/;
+repeat observations are in /workspace/g05-full-check.log and .tmp/visual/.
+
+Failures fixed: String.replace dollar-token expansion corrupted bundled JS;
+callback insertion and single-start-id/bundle drift checks now catch it.
+Initial full redraw phone performance55.386fps/p9533.3ms improved with retained
+card nodes. Named imports/separate input schema reduced500467→122792B. Strict
+browser DOM.Iterable/type errors were fixed. A missed scored-phase deadline
+anchor was caught by the human-reading wait test and corrected. The workflow
+directory was absent on this main-derived branch; set-e stopped the write,
+then mkdir created only the required G05 workflow. Doc writes with wrong cwd
+stopped before edits and were corrected with absolute job paths.
+
+CI actual disk status remains pending at this checkpoint. No source BLOCKED
+marker, PR or DONE claim. Full local log: /workspace/g05-full-check.log.

@@ -14,7 +14,7 @@ test('deck cuts, equal deals, and three/five/even-seat pass rotations',()=>{
 });
 test('atomic pass, exactly three unique owned cards, no early received/sent leakage',()=>{
  let s=start();const before=structuredClone(s);const chosen=Object.fromEntries(s.order.map(id=>[id,s.hands[id].slice(0,3)]));
- for(const cards of [[1,1,1],s.hands.p0.slice(0,2),[...s.hands.p1.slice(0,3)]])assert.equal(game.reduce(s,{type:'input',playerId:'p0',input:{type:'pass',cards},now:1001}),s);
+ for(const cards of [[s.hands.p0[0],s.hands.p0[0],s.hands.p0[0]],s.hands.p0.slice(0,2),[...s.hands.p1.slice(0,3)]])assert.equal(game.reduce(s,{type:'input',playerId:'p0',input:{type:'pass',cards},now:1001}),s);
  for(let i=0;i<4;i++){
   const id=s.order[i];s=game.reduce(s,{type:'input',playerId:id,input:{type:'pass',cards:chosen[id]},now:1002+i});
   if(i<3){assert.deepEqual(s.hands,before.hands);const cv=game.controllerView(s,'p0');assert.ok(!Object.hasOwn(cv,'sentCards'));assert.ok(!Object.hasOwn(cv,'receivedCards'));}
@@ -26,7 +26,7 @@ test('atomic pass, exactly three unique owned cards, no early received/sent leak
 test('suit-follow, point-free first trick with exception, unbroken heart leads, led-suit winner',()=>{
  const trick=[{playerId:'p0',card:0}];
  assert.deepEqual(rules.legalCards([0,12,36,39],[],true,false,0),[0]);
- assert.deepEqual(rules.legalCards([12,36,39],trick,true,false,0),[12]);
+ assert.deepEqual(rules.legalCards([12,13,36,39],trick,true,false,0),[12]);
  assert.deepEqual(rules.legalCards([13,36,39],trick,true,false,0),[13]);
  assert.deepEqual(rules.legalCards([36,39],trick,true,false,0),[36,39]);
  assert.deepEqual(rules.legalCards([13,39],[],false,false,0),[13]);assert.deepEqual(rules.legalCards([39,51],[],false,false,0),[39,51]);
@@ -83,4 +83,21 @@ test('complete seed-1 match and schema-valid bot inputs in every phase',()=>{
  const {state:d,events}=finish(start(1));assert.equal(d.phase.id,'done');assert.ok(d.handNumber>1);assert.equal(Object.keys(game.results(d).scores).length,4);
  assert.ok(events.length>100);for(const e of events)if(e.type==='input')assert.ok(game.inputSchema.safeParse(e.input).success);
  for(const phase of game.phases){const s=phase==='done'?d:toPhase(start(2),phase);for(const id of [...s.order,'spectator'])for(const skill of ['easy','normal','sharp']){const input=game.bot.sampleInput(s,id,createRng(1),skill);assert.ok(input===null||game.inputSchema.safeParse(input).success);}}
+});
+
+test('strong uses public Jack information to win a negative trick rather than duck it',()=>{
+ const base=start(1,4,{jack:true,noPass:true});
+ const s={...base,actor:'p3',trickNumber:1,trick:[{playerId:'p0',card:18},{playerId:'p1',card:22},{playerId:'p2',card:20}],played:[{playerId:'p0',card:18},{playerId:'p1',card:22},{playerId:'p2',card:20}],hands:{...base.hands,p3:[19,25]}};
+ assert.deepEqual(game.bot.sampleInput(s,'p3',createRng(1),'sharp'),{type:'play',card:25});assert.deepEqual(game.bot.sampleInput(s,'p3',createRng(1),'normal'),{type:'play',card:19});
+});
+
+test('nonactor may not play an otherwise legal owned card after the opening trick',()=>{
+ const base=start(1,4,{noPass:true});const s={...base,actor:'p0',trickNumber:1,heartsBroken:true,trick:[],hands:{...base.hands,p0:[1],p1:[2]}};
+ assert.equal(game.reduce(s,{type:'input',playerId:'p1',input:{type:'play',card:2},now:s.phase.startedAt+1}),s);
+});
+test('human public phases wait for explicit Continue; all-bot phases remain exitable',()=>{
+ const base=start(1,4,{target:25});const human={...base,players:Object.fromEntries(Object.entries(base.players).map(([id,p])=>[id,{...p,bot:false}]))};
+ const t=toPhase(human,'trick');assert.equal(t.phase.deadline,null);assert.equal(timer(t),t);assert.equal(game.bot.sampleInput(t,t.order[0],createRng(1),'sharp'),null);
+ const h=toPhase(t,'hand');assert.equal(h.phase.deadline,null);assert.equal(timer(h),h);
+ const bot=toPhase(base,'trick');assert.ok(bot.phase.deadline!==null);assert.deepEqual(game.bot.sampleInput(bot,bot.order[0],createRng(1),'normal'),{type:'next'});
 });

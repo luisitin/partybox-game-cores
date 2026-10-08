@@ -30,3 +30,8 @@
 - Explicit VIP end scores only completed tricks of the current hand. Pending cards
   and an unfinished trick are not silently awarded; completed hand scores are not
   counted twice. This administrative partial-hand policy is separate from normal play.
+
+- Human tables have no automatic public trick/score advance: the explicit Continue
+  control gives slow readers unlimited time. An unattended all-bot table has public
+  timers and schema-valid Next bot inputs; the standalone page separately paces
+  its display unless the user selects Fast. No private SDK reading helper is copied.

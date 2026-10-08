@@ -5,11 +5,7 @@ const recordCards = z.record(z.string(),z.array(card).max(52));
 const recordScores = z.record(z.string(),z.number().finite());
 const settings = z.object({target:z.number().int().min(25).max(200),moon:z.enum(['add','subtract']),jack:z.boolean(),noPass:z.boolean(),queenBreaks:z.boolean(),threeDeck:z.enum(['diamonds','clubs']),turnSeconds:z.number().int().min(0).max(60)}).strict();
 const handResult = z.object({hand:z.number().int().positive(),points:recordScores,moon:z.string().nullable()}).strict();
-export const inputSchema = z.discriminatedUnion('type',[
- z.object({type:z.literal('pass'),cards:z.array(card).length(3)}).strict(),
- z.object({type:z.literal('play'),card}).strict(),
- z.object({type:z.literal('next')}).strict(),
-]);
+export { inputSchema } from './input.js';
 export const stateSchema = z.object({
  phase:z.object({id:z.enum(['pass','play','trick','hand','done']),startedAt:z.number().finite(),deadline:z.number().finite().nullable(),paused:z.object({at:z.number().finite()}).strict().optional()}).strict(),
  rng:z.object({seed:z.number().int().min(0).max(0xffffffff),step:z.number().int().nonnegative()}).strict(),

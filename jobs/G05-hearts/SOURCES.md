@@ -47,9 +47,10 @@ Independent implementations inspected for mechanics/strategy:
   https://github.com/nathansttt/hearts/blob/6ba11548af49d3953f989f50b318ee4f4c1b91f7/Hearts.h
   Retrieved as a candidate strategy/API source; no code or gameplay claim taken.
 
-The public contract and G05 prompt define the deliverable. Original CSS/SVG,
-fixtures, generated seeds and code will be MIT. Third-party licences are
-recorded for research; copied runtime dependency notices will accompany zod.
+The public contract and G05 prompt define the deliverable. Original CSS/SVG, fixtures, generated seeds and code are MIT.
+The bundled zod4.6.5 MIT copyright/licence notice is embedded in play.html.
+Third-party source licences are research provenance only; no implementation
+or art from them is copied.
 
 - Toranpu (MIT), discovered through the live npm registry and then read at
   https://github.com/johnmorrisdotca/toranpu/tree/d54b1205915a2617076fa5a03b236487bbbe1140/src/games/hearts
