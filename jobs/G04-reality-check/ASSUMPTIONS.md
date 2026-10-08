@@ -22,3 +22,18 @@
 
 - Injected bluff truths must remain nonempty after the same Unicode/control
   normalization used for submissions;invisible choices are invalid content.
+
+## Strict re-claim, 2026-10-08
+
+Current owner codex-reality claimed11:00:12UTC after fresh main/branch checks
+proved G04 was the lowest eligible job, with both old branches beyond6h.
+Created local job/G04-reality-check-core from claimed main, then normally
+merged original152e5a history to preserve PR4; no force/duplicate PR.
+Earlier gameplay/three no-gain rounds remain accepted unchanged. This
+follow-up corrects a real missing MIT runtime notice and tests actual disk
+navigation in the current environment. The earlier administrator file://
+restriction is historical; it is not assumed to apply to this environment.
+Pure core/bot/UI/data behavior is preserved. Only builder/license documentation
+and verification transport/evidence change; no new local core league/matrix
+rerun is warranted. Hosted npm test still runs the complete suite.
+Original reports/clips are preserved; fresh recordings use milestone11 names.

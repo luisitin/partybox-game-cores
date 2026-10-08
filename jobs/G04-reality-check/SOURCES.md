@@ -22,3 +22,12 @@ agree on 10,000 cases plus 14 boundaries. All 160 sample rows are original
 fictional data, not real-world facts. The BCE/CE and decade conventions are
 from knowledge, unverified externally; re-verification is in NEXT.md. CSS,
 SVG and captures are original. No external art, logos, contacts or assets.
+
+2026-10-08 notice correction: actual pinned npm Zod4.6.5 LICENSE and
+https://github.com/colinhacks/zod/blob/main/LICENSE were read live; both carry
+Copyright(c)2025 Colin McDonnell and the same full MIT text (pinned package
+SHA2563f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8).
+https://opensource.org/license/mit was independently read live to corroborate
+the standard copyright/permission retention requirement. Complete notice is
+copied, as required, into THIRD-PARTY-LICENSES.md and the standalone page.
+No other third-party source implementation, content or assets were added.

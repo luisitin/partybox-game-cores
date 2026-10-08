@@ -244,3 +244,23 @@ Pinned shared/G04 installs,shared strict types/RNG/Zod loading,28 focused
 regressions,160-row schema/regeneration,493,491-byte build identity and
 42 checksums all PASS. Log:/tmp/G04-final-onboarding.log. No application
 service is required;configuration draft saving remains separate from publish.
+
+## Re-claim corrective milestone — proof pending
+
+Fresh main/branches verified G04 lowest eligible, claim11:00:12UTC.
+Normal new branch-from-main/original-history merge preserves PR4.
+`npm ci --ignore-scripts --no-audit --no-fund` and pinned contractZod install: PASS.
+Read original job rules/sources; actual pinnedZodLICENSE+liveupstream+OSI MIT
+corroborate fullnotice retention. `node build.ts`2x/`cmp`,
+`node build.ts --check`, `npm run check`: PASS;494642-byte page25e0b2.
+Python eight runtime hashes/inline scripts comparison: all exactly unchanged;
+fullMIT notice present0→1. Two managed `node browser.ts` actual-file attempts
+failedERR_BLOCKED_BY_ADMINISTRATOR; pinned Playwright direct-file probePASS.
+Actual-file22 functional scenarios passed; first coordinator barrier timedout.
+Next full run via `G04_FRAME_BARRIER=.work/frame-window node browser.ts`
+completed22 scenarios then phone framegateFAIL50.706750691FPS,p99166.6ms.
+No source/cause/performance improvement claimed. Original passing report
+retained for its original source; new snapshot remains pending.
+Failure log is preserved; console elided some intervals, so full first failed
+raw300 reconstruction is unavailable. Future raw retention must precede gates.
+Unchanged core/gameplay checks remain accepted; new full CI still required.
