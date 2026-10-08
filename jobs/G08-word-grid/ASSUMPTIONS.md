@@ -25,3 +25,5 @@
 
 - KEEP9: an actual temporary Resume countdown inflation is player-visible, so the old stop3 is invalidated. Root explicitly authorized the minimal test/offline clock repair; preserve owner client/core/assets and regenerate only the existing HTML. Every new-page performance claim needs current source-bound proof.
 - New-game focus is scheduled with requestAnimationFrame. A bounded wait for the actual focused setup heading is the correct observable check; keep the exact heading identity assertion. Do not add arbitrary benchmark settling/warmup or fake clocks.
+
+- Actual ca8 local phone speed failure is unresolved and is not attributed to the clock display or CSP checker. Hosted frame positives and local numeric failure remain distinct machine/time/source scopes. Poll actual heading identity from Node without unsafe-eval or weakening CSP; native-only recordings cannot substitute for full speed evidence.

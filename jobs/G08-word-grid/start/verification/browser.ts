@@ -128,7 +128,8 @@ restart.page.once('dialog',async dialog=>{assert.equal(dialog.type(),'confirm');
 await restart.page.getByRole('button',{name:'New game',exact:true}).click();await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).waitFor();
 const newSeed=await restart.page.getByLabel('Seed',{exact:true}).inputValue();assert.notEqual(newSeed,'17');assert(Number(newSeed)>=0&&Number(newSeed)<=4294967295);
 assert.equal(await restart.page.getByLabel('Players',{exact:true}).inputValue(),'2');assert.equal(await restart.page.getByLabel('Rounds',{exact:true}).inputValue(),'1');
-await restart.page.waitForFunction(`document.activeElement?.matches('main.setup > h1')===true`,null,{timeout:5000});
+const setupHeading=restart.page.getByRole('heading',{name:'Shake Up',exact:true}),focusDeadline=performance.now()+5000;
+while(!(await setupHeading.evaluate(el=>el===document.activeElement))){assert(performance.now()<focusDeadline,'New game must focus its actual setup heading within5seconds');await restart.page.waitForTimeout(20);}
 assert.equal(await restart.page.getByRole('heading',{name:'Shake Up',exact:true}).evaluate(el=>el===document.activeElement),true);
 await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).click();await restart.page.getByRole('button',{name:'Continue',exact:true}).click();await restart.page.getByRole('button',{name:'I’m ready'}).click();
 assert.notDeepEqual(await restart.page.getByRole('gridcell').allTextContents(),restartGrid,'fresh seed should make a fresh board');
