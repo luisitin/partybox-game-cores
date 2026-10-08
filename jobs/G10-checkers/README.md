@@ -1,51 +1,48 @@
 # G10 Checkers
 
-American 8×8 and International 10×10 Checkers for two seats.
+American 8×8 and International 10×10 Checkers for two seats, hot-seat or bots.
+The full licensed American and International 2–6-piece databases are included.
 
-Implementation checkpoint: licensed American2–6 and complete International2–6
-source are installed. The actual full offline game passed30 desktop/phone4×
-control checks and600 American-board strict frames per profile, including a
-Strong six-piece lookup. International-board frame checks remain pending.
-The complete-source7000-game matrix,25 real mutants and current91 combined
-unit checks and all4,000 final-source strength games pass. International strict
-desktop failed17.510FPS; phone not run. CI fit, public download/PR and KEEP GOING
-are pending; the league alone exceeded30minutes after recorded holds.
-An independent host verifier now requires every named check, current source
-guards, all four raw frame files, and actual decoded, hash-bound clips.
-Fourteen scoped positives and127 corruption controls pass; fresh full CI is pending.
-Two Human seats can now
-start while the database loads; actual phone4× controls appeared after2.398s
-and the first legal move finished after9.128s. Computer seats wait for data.
-This job is not completed. The earlier4000strength table remains historical.
+Exact historical head 6de661bc passed the complete hosted workflow: 91 tests,
+25 actual mutants, 7,000 configuration games, 4,000 strength games, all four
+600-frame desktop/phone-4× profiles and separate decoded gameplay captures.
+Independent readers checked all actual raw games, native frames and source hashes.
+The genuine earlier local International 17.510-FPS failure remains preserved;
+a different hosted environment does not establish its cause or a causal fix.
 
-Requires Node 22.16+; dependencies are pinned in package-lock.json.
-From this directory:
+The first uploaded full-page ZIP exceeded the connector's 512-MiB download
+limit. Current delivery publishes four bounded parts of the identical page.
+Fresh exact-head CI and actual downloaded-part verification remain pending.
+No PR or KEEP GOING completion is claimed; NEXT.md records the current state.
+
+Requires Node 22.16+ and pinned package-lock.json. From this directory:
 
 ```sh
 npm ci --ignore-scripts
 npm test
 ```
 
-The current complete standalone file is .work/play-full-guarded.html
-(1.390GB; full data load can exceed two minutes on the throttled phone).
-SHA256:5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801.
-Full artifact publication is pending;
-tracked play.html remains the earlier International2–5 baseline. Build the full
-file locally with G10_HTML_OUT=.work/play-full.html npm run build.
-One workflow runs complete Node, American league, International league and
-browser workloads on separate runners, with30-minute limits each. After every
-current stage and final combined validation pass, read-only Actions uploads
-the generated play.html and exact commit/digest receipt as a seven-day ZIP
-artifact. Actual upload/quota/download remain unproved; this temporary download
-is separate from a persistent Release, whose upload tool is currently unavailable.
-It opens directly from disk with no runtime network. The local window.__G10 hook supports
-deterministic host checks; game controller/TV views follow the shared contract.
-Chinook project, University of Alberta, provides the American endgame data;
-free distribution requires acknowledgement and prohibits database sale. Separate
-terms/provenance are attached in data/chinook and the page's license notice.
-Ed Gilbert permits unrestricted International database distribution; original
-source bytes and Boost dictionary/driver provenance are in data/international.
-Read NEXT.md for the actual resume checkpoint, VERIFY.md for executed checks,
-RULES.md for selected editions, and SOURCES.md/CONFLICTS.md for research.
-The original research-only blocker is retained under evidence/legacy/;
-current main RULES.md's source fallback supersedes that old stop.
+One workflow runs the complete Node, both 2,000-game leagues and browser checks
+on separate Ubuntu runners, each with a 30-minute timeout. Final validation
+requires all current stages, source hashes and all original workloads to pass.
+After success, download all four G10-standalone-part artifacts from that run
+and extract them into the same folder. Their identical source/part/whole SHA
+manifest and standard-library Python helper accompany every part. Then run:
+
+```sh
+python3 standalone-parts.py join standalone-parts.json play.html
+```
+
+Open the resulting single play.html from disk. It makes no runtime network calls.
+Full page: 1,390,845,993 bytes; SHA-256:
+5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801.
+Actions artifacts expire after seven days; they are not persistent Release assets.
+Tracked play.html is the older 2–5-piece baseline. Rebuild the full page with
+G10_HTML_OUT=.work/play-full.html npm run build. Full phone data load can exceed
+two minutes. Two Human seats may start earlier; bots wait for all required data.
+
+American database terms require Chinook/University of Alberta acknowledgement
+and prohibit database sale. Ed Gilbert permits International database distribution;
+original source bytes, terms and Boost notices accompany the data and page.
+Read RULES.md, SOURCES.md and CONFLICTS.md for research, VERIFY.md for checks,
+BOTS.md for actual strength results, and NEXT.md for the exact resume checkpoint.

@@ -1,0 +1,316 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-08T20:46:08.475Z",
+  "closedAt": "2026-10-08T20:52:16.590Z",
+  "head": "6de661bc96798b8c9ed146e7a6cafcfa37bca150",
+  "workflowRunId": "37837474779",
+  "workflowRunAttempt": "1",
+  "stageGuardCount": 348,
+  "gameInputCount": 127,
+  "htmlBytes": 1390845993,
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "stages": [
+    {
+      "stage": "node",
+      "elapsedSeconds": 182.828102708,
+      "startedAt": "2026-10-08T20:11:42.552Z",
+      "closedAt": "2026-10-08T20:14:45.380Z",
+      "commands": 13
+    },
+    {
+      "stage": "league-american",
+      "elapsedSeconds": 282.593517413,
+      "startedAt": "2026-10-08T20:11:13.066Z",
+      "closedAt": "2026-10-08T20:15:55.660Z",
+      "commands": 3
+    },
+    {
+      "stage": "league-international",
+      "elapsedSeconds": 1107.89871933,
+      "startedAt": "2026-10-08T20:11:20.424Z",
+      "closedAt": "2026-10-08T20:29:48.323Z",
+      "commands": 3
+    },
+    {
+      "stage": "browser",
+      "elapsedSeconds": 309.65595359499997,
+      "startedAt": "2026-10-08T20:11:52.089Z",
+      "closedAt": "2026-10-08T20:17:01.745Z",
+      "commands": 4
+    },
+    {
+      "stage": "final",
+      "elapsedSeconds": 58.281510089,
+      "startedAt": "2026-10-08T20:31:00.482Z",
+      "closedAt": "2026-10-08T20:31:58.764Z",
+      "commands": 4
+    }
+  ],
+  "historicalOriginalGitGuardFiles": 0,
+  "generatedRuntimeExactByteGuards": 348,
+  "league": {
+    "games": 4000,
+    "files": 80,
+    "audits": [
+      {
+        "variant": "american",
+        "higher": "sharp",
+        "lower": "normal",
+        "games": 1000,
+        "wins": 883,
+        "draws": 82,
+        "losses": 35,
+        "moves": 105277,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "american",
+        "higher": "normal",
+        "lower": "easy",
+        "games": 1000,
+        "wins": 999,
+        "draws": 0,
+        "losses": 1,
+        "moves": 50305,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "international",
+        "higher": "sharp",
+        "lower": "normal",
+        "games": 1000,
+        "wins": 930,
+        "draws": 65,
+        "losses": 5,
+        "moves": 112306,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "international",
+        "higher": "normal",
+        "lower": "easy",
+        "games": 1000,
+        "wins": 1000,
+        "draws": 0,
+        "losses": 0,
+        "moves": 75836,
+        "independentLegalMoveReplay": true
+      }
+    ]
+  },
+  "node": {
+    "tests": 91,
+    "passes": 91,
+    "failures": 0,
+    "mutants": 25,
+    "assertionKilled": 25,
+    "matrixGames": 7000,
+    "moveOracleRandomCases": 10000,
+    "propertyFixedSeeds": [
+      1,
+      2,
+      3
+    ],
+    "propertyRandomSeeds": 1000,
+    "hostControls": [
+      14,
+      127
+    ],
+    "partitionControls": [
+      10,
+      72
+    ]
+  },
+  "browser": {
+    "strictRunId": "05303bb5-8b94-4d9e-a639-5e51e868935d",
+    "captureRunId": "1b113f2d-fde5-49cd-bce5-6fbc1b033ed1",
+    "functionalChecks": 60,
+    "strictIntervals": 2400,
+    "nativeTimestamps": 2404,
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1920,
+        "height": 1080,
+        "throttle": 1,
+        "loadMs": 8490.029387999999,
+        "checks": 15,
+        "frameResults": [
+          {
+            "variant": "american",
+            "frames": 600,
+            "meanFps": 60.00240009600385,
+            "p99Ms": 16.799999999999272
+          },
+          {
+            "variant": "international",
+            "frames": 600,
+            "meanFps": 60.00300015000748,
+            "p99Ms": 16.80000000000291
+          }
+        ],
+        "pageErrorCount": 0,
+        "httpRequestCount": 0,
+        "pageErrors": [],
+        "httpRequests": []
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "height": 844,
+        "throttle": 4,
+        "loadMs": 37352.34207299999,
+        "checks": 15,
+        "frameResults": [
+          {
+            "variant": "american",
+            "frames": 600,
+            "meanFps": 60.00259211197924,
+            "p99Ms": 16.80000000000291
+          },
+          {
+            "variant": "international",
+            "frames": 600,
+            "meanFps": 60.00300015000751,
+            "p99Ms": 16.80000000000291
+          }
+        ],
+        "pageErrorCount": 0,
+        "httpRequestCount": 0,
+        "pageErrors": [],
+        "httpRequests": []
+      }
+    ],
+    "captures": [
+      {
+        "name": "desktop",
+        "gameplay": {
+          "variant": "international",
+          "startPly": 0,
+          "endPly": 24,
+          "elapsedMs": 10716.224889000005
+        },
+        "video": {
+          "file": "desktop.webm",
+          "bytes": 1180998,
+          "sha256": "410a6245d03b314b0bbef11234a63d1b5b63cd8cc19642e0549922e4d2cbc4fe",
+          "probe": {
+            "container": "matroska,webm",
+            "codec": "vp8",
+            "width": 1920,
+            "height": 1080,
+            "frameRate": "25/1",
+            "frames": 250,
+            "durationSeconds": 10
+          },
+          "original": {
+            "file": "desktop-original.webm",
+            "bytes": 5489801,
+            "sha256": "7726df31f65df76eeceed7dad52046962a87d87e3d631b6bab742177cd2dac29",
+            "probe": {
+              "container": "matroska,webm",
+              "codec": "vp8",
+              "width": 1920,
+              "height": 1080,
+              "frameRate": "25/1",
+              "frames": 1269,
+              "durationSeconds": 50.76
+            }
+          },
+          "sourceSeekSeconds": 40.76,
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-ss",
+            "40.76",
+            "-i",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop-original.webm",
+            "-t",
+            "10",
+            "-an",
+            "-c:v",
+            "libvpx",
+            "-deadline",
+            "realtime",
+            "-cpu-used",
+            "8",
+            "-threads",
+            "2",
+            "-b:v",
+            "900k",
+            "-y",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop.webm"
+          ],
+          "scope": "Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."
+        }
+      },
+      {
+        "name": "phone",
+        "gameplay": {
+          "variant": "international",
+          "startPly": 0,
+          "endPly": 22,
+          "elapsedMs": 10977.050088999997
+        },
+        "video": {
+          "file": "phone.webm",
+          "bytes": 598740,
+          "sha256": "1f7e0089e00b032a6d08fc0473f980da16156c0ce6a13f4c023da20e4054dce5",
+          "probe": {
+            "container": "matroska,webm",
+            "codec": "vp8",
+            "width": 390,
+            "height": 844,
+            "frameRate": "25/1",
+            "frames": 250,
+            "durationSeconds": 10
+          },
+          "original": {
+            "file": "phone-original.webm",
+            "bytes": 2951266,
+            "sha256": "834c321b7cab5a87825a0f1d31b6c63398bc5ff01d68503856303b5b01ce07ff",
+            "probe": {
+              "container": "matroska,webm",
+              "codec": "vp8",
+              "width": 390,
+              "height": 844,
+              "frameRate": "25/1",
+              "frames": 2073,
+              "durationSeconds": 82.92
+            }
+          },
+          "sourceSeekSeconds": 72.92,
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-ss",
+            "72.92",
+            "-i",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone-original.webm",
+            "-t",
+            "10",
+            "-an",
+            "-c:v",
+            "libvpx",
+            "-deadline",
+            "realtime",
+            "-cpu-used",
+            "8",
+            "-threads",
+            "2",
+            "-b:v",
+            "400k",
+            "-y",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone.webm"
+          ],
+          "scope": "Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."
+        }
+      }
+    ]
+  },
+  "scope": "Independent actual6de complete acceptance: all four stages/final exact guards/runtime/run/attempt/commands, all4000 true-terminal games/80 raw files equal original accepted gold, all2400 native intervals and current International clips/originals fully decoded. Full standalone ZIP download rejected by the connector512MiB limit; deliverable bytes remain pending. Historical local17.510FPS failure remains uncaused."
+}

@@ -24,6 +24,7 @@ export async function stageCommands(stage){
  const commands=[{command:'npm',args:['run','build']},{command:'node',args:['scripts/integrity.mjs','--sources']}];
  const node=(...args)=>commands.push({command:'node',args});
  if(stage==='node'||stage==='full'){
+  commands.push({command:'python3',args:['scripts/standalone-parts.py','controls']});
   node('scripts/browser-evidence-controls.mjs');node('scripts/league-partition-controls.mjs');
   for(let attempt=0;attempt<2;attempt++){node('scripts/endgames.mjs');node('scripts/fixtures.mjs');}
   for(let attempt=0;attempt<2;attempt++)commands.push({command:'python3',args:['scripts/acquire-chinook.py','--out','.work/chinook-regeneration']});

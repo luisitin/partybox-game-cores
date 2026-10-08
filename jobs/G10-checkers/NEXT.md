@@ -1,3 +1,17 @@
+# Bounded-delivery repair — 2026-10-08 around 20:56 UTC
+
+Last successful push: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79 at 20:42:24.619533501 UTC; main 524acb6 own claim refreshed 20:42:41. The restart caused an actual 31m42.328s branch-push gap; the missed 30-minute deadline is retained. Next early target 21:07:24 and hard 21:12:24 until the next successful push.
+
+The exact original 6de workflow 37837474779 is fully GREEN, including actual final delivery. Its complete evidence ZIP 11577710435 downloaded as 10,484,190 bytes with official SHA bac499e7f0d8ce2ce0db443aada0ecf3c011003d11c25f6fa6c76bcc92a48155, all 239 safe unique members/CRC PASS. Actual independent reader CLOSED PASS 20:52:16.590: all five current-6de stage receipts/runtime/run/attempt/commands, all 4,000 true-terminal games/80 gold-identical files, 91 tests/25 mutants/7,000 matrix/1,003 property seeds, all 2,400 native frame intervals/2,404 timestamps and fully decoded real captures. All 205 original tracked Git guard blobs independently verified against immutable 6de; remaining 143 generated/runtime hashes match exactly. The original auxiliary ENOENT, inadequate prefix check and zero-row cwd-relative Git inventory remain preserved with their corrections. Actual STOP 20:46:30.007694967 to CONT 20:51:10.597473 was only recorded decode/pure replay; elapsed includes the hold and is not a performance claim.
+
+Actual standalone ZIP 11576888627 is 968,040,269 bytes. The native tool refused it with its actual 536,870,912-byte limit before download; no downloaded full-page digest is inferred. Current repair splits the exact accepted full HTML into four parts of at most 384 MiB, each separately uploaded with identical source/part/whole SHA manifest, receipt and Python JOIN helper. No corpus, game/bot policy, runtime page or assertion/workload has changed. Four real boundary split/re-read/JOIN positives plus 21 meaningful corruption rejections pass; includes coherent forged whole-SHA sidecars and preserving existing output. Fresh current full CI and all four actual ZIP downloads with member/part/order/size/SHA plus streamed complete HTML SHA verification are required before PR.
+
+The documentation checkpoint 1c9 workflow 37841446160 actually FAILED all four stages before workloads: ASSUMPTIONS.md checksum mismatch because this chat omitted checksum regeneration after editing NEXT/ASSUMPTIONS. Complete original logs are preserved in evidence/checks/checkpoint-1c-failed. SHA256SUMS must be regenerated after every final edit; this is a concrete integrity repair, not a timing retry. The historical 6de full green is not transferred to 1c9 or the new layout head.
+
+After pushing this substantive repair, observe its exact new-head full workflow and actual bounded uploads/downloads. Only then open the original job PR and perform binding ranked-five KEEP GOING reviews until three consecutive no-player-gain rounds. The per-variant American startup candidate remains unprototyped. Local International 17.510 FPS/phone NOTRUN, missing ffprobe runs and cadence gaps remain explicit; no unchanged local frame rerun or causal claim.
+
+## Earlier checkpoint retained as history
+
 # Recovery checkpoint — 2026-10-08 20:42 UTC
 
 The previous successful push was 6de661bc96798b8c9ed146e7a6cafcfa37bca150 at 20:10:42.291192 UTC. A second workspace restart around 20:31–20:40 interrupted this chat. The hard 20:40:42.291192 push deadline was missed; no timestamp is backdated. The next observed successful push resets cadence.

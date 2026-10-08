@@ -100,12 +100,44 @@ jobs:
           set -o pipefail
           node scripts/check.mjs --stage final 2>&1 | tee .work-stage-final.stdout
       - run: node scripts/standalone-receipt.mjs
+      - name: Split and verify the exact accepted standalone page
+        run: python3 scripts/standalone-parts.py split .work/play.html .work/standalone-delivery.json .work/standalone-parts
       - uses: actions/upload-artifact@v4
         with:
-          name: G10-standalone-${{ github.event.pull_request.head.sha || github.sha }}
+          name: G10-standalone-part-00-${{ github.event.pull_request.head.sha || github.sha }}
           path: |
-            jobs/G10-checkers/.work/play.html
-            jobs/G10-checkers/.work/standalone-delivery.json
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-00
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-01-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-01
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-02-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-02
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-03-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-03
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
           if-no-files-found: error
           include-hidden-files: true
           compression-level: 1
