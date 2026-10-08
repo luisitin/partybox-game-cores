@@ -6,6 +6,6 @@ G04 2026-10-08T14:19:01Z codex-reality
 G05 2026-10-08T15:09:01Z codex-hearts-resume
 G06 2026-10-08T16:15:34Z codex-spades-resume
 G07 2026-10-08T17:36:46Z codex-dice-resume
-G08 2026-10-08T17:24:54Z codex-shake-resume
+G08 2026-10-08T17:54:00Z codex-shake-resume
 G09 2026-10-08T17:37:11Z codex-category
 G10 2026-10-08T17:43:26Z codex-audit
