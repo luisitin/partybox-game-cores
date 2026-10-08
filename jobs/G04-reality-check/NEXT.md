@@ -19,20 +19,21 @@ No network/errors. Wheel landing checks cover all eight realms; captures1/2
 are preserved under10MB. Native final pipeline log/tmp/G04-final-npm-test.log.
 
 PR4 is OPEN: https://github.com/luisitin/partybox-game-cores/pull/4
-Baseline and rounds1–4 all passed hosted CI;latest observed Round4
- dc0fb64/run37727596105 SUCCESS. Round5 follows public two-word bluff hints:
-0/300→300/300,0 invalid. Full npm test passed50 tests,21,000 bot games,
-1,003 exact replays,1,000 idle cases,two10,000-case differentials,25/25
-mutation kills,12,000 leagues(all lower bounds>50%),22 browser scenarios,
-27 hashes,HTML493,410bytes. TV60.0024fps,phone4×60.0028fps,p95≤16.8ms.
-Captures1–7 retained<10MB. Rounds1–5 showed player gains. Round6 phase audit/random replays pass:
-7,000 frozen states,zero failures,production unchanged;no-gain streak1.
-New-head hosted CI pending;job remains unfinished. Next worst:custom-catalog boundary stress,then held-out skill strength
-and independent phone/performance sampling. phase-audit.ts runs in npm test;
-property-seeds.json records1/2/3 plus1,000 random unique uint32 draws. Each round re-reads job,lists five weaknesses,
-fixes worst,measures/logs. Stop requires three no-gain rounds and actual
-final-head green CI. Refresh ONLY G04 claim on main after each push.
-Stage G04/workflow only;G01 dependency caches are untracked locally.
+Baseline and rounds1–4 passed hosted CI;last observed dc0fb64/run37727596105
+SUCCESS. Round5 full npm test passed50 tests and all required studies.
+Round6 audited7,000 frozen states with zero privacy/event failures and
+1,003 exact replays on1/2/3 plus1,000 random unique uint32 seeds.
+Round7 fixed invisible bluff truths:4/4 accepted→4/4 rejected;10,000 valid
+catalog rows,30,000 real bot submissions,7,500 defaults pass.28 focused
+tests,25/25 mutation kills,22 browser scenarios,TV/phone60fps,p95≤16.8ms,
+HTML493,491bytes,32 hashes. Default sample bytes and bot policies unchanged.
+Captures1–8 retained<10MB. Rounds1–5 and7 showed player gains;Round6 none;
+current no-gain streak0. New-head hosted CI pending;job remains unfinished.
+Next worst:held-out skill strength,then independent frame/performance
+sampling and presence-churn robustness. Each round re-reads job,lists five
+weaknesses,fixes worst,measures/logs. Stop requires three consecutive
+no-gain rounds and actual final-head green CI. Refresh ONLY G04 claim on
+main after each push. Stage G04/workflow only;G01 caches are untracked.
 
 Cloud install_script/start_skill tested and saved as unpublished draft.
 No service must stay running. A transient exec-server disconnect recovered

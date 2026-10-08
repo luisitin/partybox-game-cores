@@ -36,10 +36,10 @@
       "throttle": 1,
       "scenario": "eight seats, open human controller, seven concurrent bot inputs",
       "frames": 300,
-      "meanMs": 16.666,
+      "meanMs": 16.665893333333333,
       "p95Ms": 16.799999999999727,
       "p99Ms": 16.800000000000182,
-      "fps": 60.00240009600384
+      "fps": 60.002784129183595
     },
     {
       "name": "phone",
@@ -50,13 +50,13 @@
       "throttle": 4,
       "scenario": "eight seats, open human controller, seven concurrent bot inputs",
       "frames": 300,
-      "meanMs": 16.665893333333333,
-      "p95Ms": 16.700000000000728,
+      "meanMs": 16.666113333333332,
+      "p95Ms": 16.700000000000273,
       "p99Ms": 16.800000000000182,
-      "fps": 60.002784129183595
+      "fps": 60.0019920661366
     }
   ],
   "physicalPhone": "unavailable; 390×844 Chromium with 4× CPU is the measured approximation",
-  "capture": "media/milestone-7-bluff-style.webm",
-  "captureBytes": 325594
+  "capture": "media/milestone-8-catalog.webm",
+  "captureBytes": 324943
 }

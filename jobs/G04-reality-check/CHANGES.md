@@ -107,3 +107,10 @@ submissions/votes/authors and detached views. Wire the audit into npm test.
 Replace sequential replay seeds with1,000 unique uint32 PRNG draws plus
 1/2/3;verification-seeds.ts and property-seeds.json make them reproducible.
 Only verification changes;production core,bots and HTML are unchanged.
+
+KEEP GOING7: require a nonempty normalized bluff truth in rowSchema. Four
+whitespace/format-only truths previously validated and produced an invisible
+correct vote option. Reuse pure normalization; preserve all160 sample bytes.
+Add blank-truth factory regressions,catalog-probe.ts (10,000 valid varied
+rows/30,000 actual reducer submissions/7,500 defaults),before/after JSON
+and npm test wiring. Rebuild bundled HTML and record milestone8 capture.

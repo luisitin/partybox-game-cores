@@ -189,6 +189,13 @@ test('medium bluffs follow the public two-word hint in every bluff realm',()=>{
   }
  }
 });
+test('catalog rejects whitespace and format-only truths before a blank vote can be created',()=>{
+ for(const correct of [' ','\u200b','\n\t','\u3000']){
+  const rows=makeSamples().map(r=>r.kind==='bluff'?{...r,correct}:r);
+  assert.equal(catalogSchema.safeParse(rows).success,false);assert.throws(()=>C.createGame(rows));
+ }
+ assert(catalogSchema.safeParse(makeSamples().map(r=>r.kind==='bluff'?{...r,correct:' Ｃｏｐｐｅｒ\u200bCompass '}:r)).success);
+});
 test('manifest bytes and all seven phase fixtures use the contract and play to completion',()=>{
  assert.deepEqual(C.manifest,JSON.parse(readFileSync('manifest.json','utf8')));
  for(const phase of C.game.phases){let s:State=JSON.parse(readFileSync(`fixtures/${phase}.json`,'utf8'));assert.equal(s.phase.id,phase);let steps=0;

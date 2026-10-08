@@ -19,3 +19,6 @@
   they are explicit house rules, not an uninspected source claim.
 - Local hot-seat concealment protects the screen, not developer tools.
   Correct-writer handovers visit every human to avoid identity inference.
+
+- Injected bluff truths must remain nonempty after the same Unicode/control
+  normalization used for submissions;invisible choices are invalid content.

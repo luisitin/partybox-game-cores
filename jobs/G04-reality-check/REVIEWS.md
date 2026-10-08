@@ -62,3 +62,11 @@ sequential replay seeds; custom-catalog boundaries; held-out skill results;
 phone/performance variance. Fill the first two verification gaps with
 7,000 frozen phase states and1,003 exact replays using actual random draws.
 No invariant failure or production change;measured player gain0,streak1.
+
+Round7 five weaknesses: custom-catalog boundary validation (worst);held-out
+skill seeds;independent frame sampling;presence churn;factory-scale limits.
+Stress found4/4 invisible truths accepted and a blank correct vote option.
+Reject those values before init. After:4/4 rejected,10,000 valid rows,
+30,000 real reducer submissions and7,500 defaults all pass.28 focused tests,
+25 mutation kills and22 browser scenarios pass. Player gain for valid
+content selection;no-gain streak resets0. Default dataset/policies unchanged.

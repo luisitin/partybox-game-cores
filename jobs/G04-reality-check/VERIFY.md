@@ -171,3 +171,16 @@ streams,12,055.30ms. The1,000 additional seeds now are uniform unique
 uint32 draws with sampler0x6040006,not sequential integers;their exact
 values are in property-seeds.json. No game behavior changed or defect
 was found;player gain0,no-gain streak1. node checksums.ts/--check PASS.
+
+Round7 baseline node inline catalog/factory probe at65fe37c:all4 blank
+truth cases accepted and invisibleTruthOption=true;catalog-before.json.
+After schema refinement:all4 rejected before init/voting. npm run check and
+FAST_TEST=1 node --test test.ts PASS28/28;node catalog-probe.ts PASS10,000
+random valid rows (2,500 each number/choice/century/decade),30,000 bot
+actions accepted by the actual reducer,7,500 valid controller defaults,
+0 invalid. node generate.ts --check confirms160 sample bytes unchanged.
+node mutations.ts PASS25/25 with28 focused baseline. node build.ts/--check
+PASS493,491bytes;node browser.ts PASS22 scenarios,TV60.0028fps/p9516.80ms,
+phone4×60.0020fps/p9516.70ms,0 requests/errors,reduced motion honored.
+Capture8<10MB;node checksums.ts/--check PASS32 files. Valid injected-content
+play improves by excluding invisible truth;no-gain streak resets0.
