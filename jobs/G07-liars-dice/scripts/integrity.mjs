@@ -44,6 +44,7 @@ for(const p of browserSnapshot.profiles){
 const zodLicense=await readFile('node_modules/zod/LICENSE','utf8');
 assert((await readFile('THIRD-PARTY-LICENSES.txt','utf8')).includes(zodLicense),'Zod notice must match the pinned package');
 assert(html.includes(zodLicense),'standalone page must retain the bundled Zod permission/copyright notice');
+assert(html.includes(await readFile('LICENSE','utf8')),'standalone page must retain the original game license too');
 for(const file of await readdir('src'))if(file.endsWith('.ts')&&file!=='browser.ts') {
  const text=await readFile('src/'+file,'utf8');assert(!/Math\.random|Date\.now|setTimeout|setInterval|\bfetch\(|\bconsole\.|from ['"]node:/.test(text),'impure core '+file);
 }

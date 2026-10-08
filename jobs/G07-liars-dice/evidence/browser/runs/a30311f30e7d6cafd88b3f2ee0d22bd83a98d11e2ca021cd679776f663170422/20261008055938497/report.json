@@ -1,6 +1,6 @@
 {
-  "runId": "20261008061643288",
-  "htmlSha256": "f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8",
+  "runId": "20261008055938497",
+  "htmlSha256": "a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422",
   "browser": "141.0.7390.37",
   "physicalPhoneTested": false,
   "performanceWhileRecording": false,
@@ -28,13 +28,13 @@
       "height": 1080,
       "cpuThrottle": 1,
       "frameFile": "desktop-frames.json",
-      "totalMs": 9999.699999999999,
-      "archivedFrameFile": "runs/f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8/20261008061643288/desktop-frames.json",
-      "meanMs": 16.666166666666665,
-      "fps": 60.00180005400163,
+      "totalMs": 10066.3,
+      "archivedFrameFile": "runs/a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422/20261008055938497/desktop-frames.json",
+      "meanMs": 16.777166666666666,
+      "fps": 59.60482004311416,
       "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
-      "droppedIntervalsOver17Ms": 0,
+      "maxMs": 66.69999999999891,
+      "droppedIntervalsOver17Ms": 2,
       "sampleCount": 600
     },
     {
@@ -43,13 +43,13 @@
       "height": 844,
       "cpuThrottle": 4,
       "frameFile": "phone4x-frames.json",
-      "totalMs": 9999.6,
-      "archivedFrameFile": "runs/f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8/20261008061643288/phone4x-frames.json",
-      "meanMs": 16.666,
-      "fps": 60.00240009600384,
-      "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
-      "droppedIntervalsOver17Ms": 0,
+      "totalMs": 10482.9,
+      "archivedFrameFile": "runs/a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422/20261008055938497/phone4x-frames.json",
+      "meanMs": 17.4715,
+      "fps": 57.236070171422035,
+      "p99Ms": 33.40000000000009,
+      "maxMs": 133.29999999999973,
+      "droppedIntervalsOver17Ms": 12,
       "sampleCount": 600
     }
   ],
@@ -57,82 +57,194 @@
     {
       "profile": "desktop",
       "name": "lobby supports every roster from 2 through 8 and explicit settings",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "private cup disappears on hide, pass, pause and resume",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "changing the device holder clears private dice, odds and bid choices",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "legal bid selectors cover normal, wild-one and palifico raises",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "dudo reveals cups, applies loss and continues to a fresh round",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "optional calza is available only when legal and exact claims gain a die",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "final loss reaches a visible winner and a new game can start",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "bots automate turns for easy, normal and sharp skills",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "the manual bot-step control is reachable while a human holds the device",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "eligible bots make actual interrupt-only calza calls before the active turn",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "an all-bot table holds its reveal until explicitly acknowledged",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "an eliminated human can read and explicitly acknowledge the reveal",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "pause holds real deadlines and resume shifts by actual elapsed time",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "deadline catches up after a real main-thread stall",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "player names render as safe literal text",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
       "name": "reduced motion removes running animations and long transitions",
-      "passed": true
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "lobby supports every roster from 2 through 8 and explicit settings",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "private cup disappears on hide, pass, pause and resume",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "changing the device holder clears private dice, odds and bid choices",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "legal bid selectors cover normal, wild-one and palifico raises",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "dudo reveals cups, applies loss and continues to a fresh round",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "optional calza is available only when legal and exact claims gain a die",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "final loss reaches a visible winner and a new game can start",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "bots automate turns for easy, normal and sharp skills",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "the manual bot-step control is reachable while a human holds the device",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "an all-bot table holds its reveal until explicitly acknowledged",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "an eliminated human can read and explicitly acknowledge the reveal",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "deadline catches up after a real main-thread stall",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "player names render as safe literal text",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
+    },
+    {
+      "profile": "phone4x",
+      "name": "reduced motion removes running animations and long transitions",
+      "passed": true,
+      "reusedFromRunId": "20261008055513319"
     },
     {
       "profile": "desktop",
@@ -150,88 +262,9 @@
     },
     {
       "profile": "phone4x",
-      "name": "lobby supports every roster from 2 through 8 and explicit settings",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "private cup disappears on hide, pass, pause and resume",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "changing the device holder clears private dice, odds and bid choices",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "legal bid selectors cover normal, wild-one and palifico raises",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "dudo reveals cups, applies loss and continues to a fresh round",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "optional calza is available only when legal and exact claims gain a die",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "final loss reaches a visible winner and a new game can start",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "bots automate turns for easy, normal and sharp skills",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "the manual bot-step control is reachable while a human holds the device",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "an all-bot table holds its reveal until explicitly acknowledged",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "an eliminated human can read and explicitly acknowledge the reveal",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "deadline catches up after a real main-thread stall",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "player names render as safe literal text",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
-      "name": "reduced motion removes running animations and long transitions",
-      "passed": true
-    },
-    {
-      "profile": "phone4x",
       "name": "600 actual animation-frame intervals meet the strict refresh budget",
-      "passed": true
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: phone4x actual mean rate 57.236070171422035 FPS is below 59\n    at run.fresh (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:581:7)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:149:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:531:5"
     },
     {
       "profile": "phone4x",
@@ -246,10 +279,15 @@
       "profile": "runner",
       "name": "HTML source stayed unchanged throughout the run",
       "passed": true,
-      "initialHtmlSha256": "f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8",
-      "finalHtmlSha256": "f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8"
+      "initialHtmlSha256": "a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422",
+      "finalHtmlSha256": "a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422"
     }
   ],
-  "passed": true,
-  "scope": "full"
+  "passed": false,
+  "functionalProof": {
+    "htmlSha256": "a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422",
+    "runId": "20261008055513319",
+    "reportFile": "runs/a30311f30e7d6cafd88b3f2ee0d22bd83a98d11e2ca021cd679776f663170422/20261008055513319/report.json",
+    "reusedChecks": 32
+  }
 }

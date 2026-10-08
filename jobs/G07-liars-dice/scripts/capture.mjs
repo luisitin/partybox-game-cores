@@ -13,7 +13,7 @@ const html = resolve(root, 'play.html');
 const tag = process.argv[2] ?? 'milestone';
 assert(/^[a-z0-9-]+$/.test(tag), 'capture tag must contain only lowercase letters, digits and hyphens');
 const evidence = resolve(root, 'evidence/browser');
-const temporary = resolve(evidence, 'capture-temp');
+const temporary = resolve(root, '.work/capture-temp');
 await mkdir(temporary, {recursive: true});
 await mkdir(resolve(root, 'media'), {recursive: true});
 async function executablePath() {

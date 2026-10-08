@@ -1,40 +1,33 @@
 # Resume G07
 
-Branch: job/G07-liars-dice; owner codex-dice. Research blocker resolved 2026-10-08.
-Read root README/RULES/JOBS and latest main CLAIMS before continuing. Historical
-blocked-at-research notes are under evidence/historical-blocker, not current state.
+Branch: job/G07-liars-dice; owner codex-dice. Read root README/RULES/JOBS and
+latest main CLAIMS before continuing. Historical research blocker is resolved;
+old notes are under evidence/historical-blocker/, not current state.
 
-Completed: twelve fetched source extractions and documented edition choices;
-primary exact binomial helper matched the independently authored convolution
-reference on 10,000 direct + 10,000 conditioned cases; the reference's own
-exhaustive/identity checks pass. Core, offline page, three phase fixtures and
-workflow are authored. Targeted mechanics/contract checks pass, property seeds
-1/2/3 + 1,000 passed an initial run (78,297 events). Initial browser 26 checks
-passed, with raw 600-frame measurements and two ~1MB milestone captures.
+All local checks PASS at this delivery checkpoint:
 
-In progress: final 7,000-game restored replay matrix/property output and exact
-source-matched browser proof. Core timestamp guard rejects hostile huge clocks;
-new focused regressions are authored. Final required bot leagues PASS: Strong
-64.75%, Medium58.75%, 2,000 each. Fresh independent holdout64.1%/59.0%.
-25/25 individually compiled mutants assertion-killed; final property1,003 seeds
-passed80,158 events. Focused timestamp/metadata/view regressions6/6 passed. Browser35/36 harder
-live-bid checks found phone55.99FPS; controller-view caching added, same workload
-rerun pending. Frozen current page still failed phone26.67FPS; all functional
-checks pass. Cause unestablished, fresh-context investigation underway. All prior failures are retained. Latest public passing browser
-snapshot may still be baseline; require its hash to match final play.html before
-calling browser done. No PR or hosted CI success yet.
+- Twelve fetched source extractions; explicit edition/settings/owner extension.
+- Independent exact-probability oracle; 20,000 differential cases plus full boundaries.
+- 32 focused tests, all nine contract invariants; hostile timestamps, IDs and views.
+- 7,000 complete games (1,000 for each of 2–8 players), 1,698,274 every-event restored-twin replays,
+  12,277,985 bot samples, maximum state 3,859 bytes; 1,003 property seeds, 80,158 events.
+- 25/25 singly compiled mutants assertion-killed; 4,000 required league games:
+  Strong 64.75% / Medium 58.75%, both lower 95% bounds >50%; separate fresh holdout passes.
+- Exact manifest, phase fixtures and schema regenerate byte-identically.
+- Final default full browser 37/37; source f0559458…ecabb8; desktop 60.0018 FPS,
+  phone at 4× CPU slowdown 60.0024 FPS, both p99/max 16.8 ms, all 600 intervals retained.
+- Source-matched delivery-final videos under 10 MB; earlier failures preserved.
+- Final hashes and integrity passed; regenerate them whenever delivered files change.
 
-Only transient runtime outputs go under .work; passing public evidence snapshots
-are explicit. Browser page now requires manual reveal acknowledgement for all
-players/observers, including after human elimination; no hidden reading timer.
-Next: finish strict pure core and offline page, run probability differential,
-all nine contract invariants with 1,000 matches for each count 2–8 and every-event
-replays, property seeds 1/2/3 + 1,000, 25 singly compiled mutants, paired 2,000-game
-skill leagues, both 600-frame desktop/4x phone measurements, reduced motion and
-milestone capture. Generate per-phase fixtures twice identically, document actual
-results and hashes, push, then open PR only when all checks pass. Require exact
-pushed-head hosted CI success. Then mandatory KEEP GOING until three consecutive
-rounds have no player-noticeable gain; refresh main claim on every job push.
+Next: push verified delivery, refresh main G07 claim, then create/update the PR.
+Require exact current-head hosted G07 verify CI success. Do not infer green from
+another head. Only then start mandatory KEEP GOING: reread job, listfive biggest
+weaknesses, fix the worst, measure, one LOOP line/push/claim refresh. Stop only after
+three consecutive rounds gain nothing a player notices; then claim lowest
+eligible next job after fresh main CLAIMS/branch-commit checks. G08 START-HERE
+has been read as preparation; G08 has not been claimed or modified.
 
-Re-verify when web works: no current research-only blocker; partial Soar extraction
-is explicitly recorded and used only for model/heuristic concepts, not full-paper claims.
+Default tests write transient browser/mutation runs under ignored .work/. Publish
+passing snapshots explicitly; never overwrite archived failures or evidence with
+new timings before a deliberate checksum checkpoint. Re-verify when web works:
+no current research-only blocker; Soar extraction coverage limit is documented.

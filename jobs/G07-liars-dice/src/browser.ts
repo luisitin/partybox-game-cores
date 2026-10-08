@@ -22,6 +22,7 @@ let botRng = createRng(entropy());
 let cachedState: State | null = null;
 let cachedViewer: string | null = null;
 let cachedController: ReturnType<typeof game.controllerView> | null = null;
+let bidsByQuantity = new Map<number, {quantity: number; face: number}[]>();
 const firedTimers = new Set<string>();
 const skills = new Map<string, Skill>();
 const settingControls = new Map<string, HTMLInputElement | HTMLSelectElement>();
@@ -124,6 +125,11 @@ function privateView(): ReturnType<typeof game.controllerView> | null {
   if (cachedState !== state || cachedViewer !== viewer) {
     cachedState = state; cachedViewer = viewer;
     cachedController = game.controllerView(state, viewer);
+    bidsByQuantity = new Map();
+    for (const bid of cachedController.legalBids) {
+      const group = bidsByQuantity.get(bid.quantity);
+      if (group) group.push(bid); else bidsByQuantity.set(bid.quantity, [bid]);
+    }
   }
   return cachedController;
 }
@@ -174,11 +180,15 @@ function send(move: Input): void {
 function selectedBid(): void {
   if (!state || !viewer) return;
   const v = privateView()!;
-  const legal = v.legalBids.filter(b => b.quantity === Number(select('bid-quantity').value));
-  const previous = select('bid-face').value;
-  select('bid-face').replaceChildren(...legal.map(b => option(String(b.face), `${b.face}${b.face === 1 && v.wild ? ' · wild ones' : ''}`)));
-  if (legal.some(b => String(b.face) === previous)) select('bid-face').value = previous;
-  button('make-bid').disabled = !v.canBid || legal.length === 0;
+  const legal = bidsByQuantity.get(Number(select('bid-quantity').value)) ?? [];
+  const faces = select('bid-face'), previous = faces.value;
+  const unchanged = faces.options.length === legal.length && legal.every((bid, index) => faces.options.item(index)!.value === String(bid.face));
+  if (!unchanged) {
+    faces.replaceChildren(...legal.map(b => option(String(b.face), `${b.face}${b.face === 1 && v.wild ? ' · wild ones' : ''}`)));
+    if (faces.value !== previous && legal.some(b => String(b.face) === previous)) faces.value = previous;
+  }
+  const disabled = !v.canBid || legal.length === 0;
+  if (button('make-bid').disabled !== disabled) button('make-bid').disabled = disabled;
 }
 select('bid-quantity').onchange = selectedBid;
 select('viewer').onchange = () => { viewer = select('viewer').value || null; cover(); render(); };
@@ -358,6 +368,7 @@ button('bot-step').onclick = botMove;
 function newGame(): void {
   cover(); state = null; viewer = null; botDue = null; interruptDue = null; interruptSampled = null;
   cachedState = null; cachedViewer = null; cachedController = null;
+  bidsByQuantity.clear();
   firedTimers.clear();
   $('reveal-cups').replaceChildren(); $('players').replaceChildren(); $('log').replaceChildren();
   $('table').hidden = true; $('setup').hidden = false;

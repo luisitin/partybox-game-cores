@@ -33,6 +33,7 @@ is not counted as independent evidence for that quotation.
 
 All prose, CSS, dice SVG and application code are newly authored. No publisher
 text, artwork, logos, audio, or assets are embedded. Game facts are paraphrased.
-Code is MIT under the repository license. Bundled Zod's MIT notice is retained.
+Code and original CSS/SVG/fixture data are MIT under LICENSE. Both the original
+game notice and bundled Zod MIT notice are retained in standalone play.html.
 Historical research failures are preserved under `evidence/historical-blocker/`;
 they do not describe today's successful access. No game uses runtime networking.

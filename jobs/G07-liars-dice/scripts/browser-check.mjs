@@ -15,6 +15,9 @@ const evidence = resolve(root, 'evidence/browser');
 const work = resolve(root, '.work/browser');
 const snapshot = process.argv.includes('--snapshot');
 const performanceOnly = process.argv.includes('--performance-only');
+const functionalOnly = process.argv.includes('--functional-only');
+assert(!(performanceOnly && functionalOnly), 'choose only one partial-check mode');
+assert(!(functionalOnly && snapshot), 'functional-only mode cannot publish an incomplete snapshot');
 await mkdir(work, {recursive: true});
 const runId = new Date().toISOString().replace(/\D/g, '');
 const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
@@ -36,8 +39,9 @@ const report = {
     interaction: 'change quantity and face every 30 intervals, including exact controller odds',
     isolation: 'fresh browser context; functional test navigation history is not retained'},
   seed: 7199, profiles: rows, checks, passed: false,
+  scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
 };
-if (performanceOnly) {
+if (performanceOnly && snapshot) {
   const previous = JSON.parse(await readFile(resolve(work, 'report.json'), 'utf8'));
   assert.equal(previous.htmlSha256, htmlSha256, 'reused functional proof must match the exact current HTML');
   assert(previous.checks.some(check => check.name === 'HTML source stayed unchanged throughout the run' && check.passed), 'functional proof must certify stable source');
@@ -51,6 +55,7 @@ if (performanceOnly) {
   checks.push(...functional.map(check => ({...check, reusedFromRunId: previous.runId})));
   report.functionalProof = {htmlSha256, runId: previous.runId,
     reportFile: `runs/${htmlSha256}/${previous.runId}/report.json`, reusedChecks: functional.length};
+  report.scope = 'full: source-matched functional proof plus fresh performance measurements';
 }
 async function executablePath() {
   if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
@@ -129,6 +134,7 @@ try {
     await cdp.send('Emulation.setCPUThrottlingRate', {rate: profile.cpuThrottle});
     async function run(name, fn, {reduce = false, fresh = false} = {}) {
       if (performanceOnly && !fresh) return;
+      if (functionalOnly && fresh) return;
       const check = {profile: profile.label, name, passed: false};
       checks.push(check);
       try {
@@ -596,7 +602,7 @@ try {
   const finalHtmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
   checks.push({profile: 'runner', name: 'HTML source stayed unchanged throughout the run',
     passed: finalHtmlSha256 === htmlSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256});
-  report.passed = checks.length > 0 && checks.every(check => check.passed) && rows.length === profiles.length;
+  report.passed = checks.length > 0 && checks.every(check => check.passed) && rows.length === (functionalOnly ? 0 : profiles.length);
   const result = JSON.stringify(report, null, 2) + '\n';
   await writeFile(resolve(work, 'report.json'), result);
   await writeFile(resolve(archive, 'report.json'), result);
@@ -611,8 +617,13 @@ try {
       await copyFile(resolve(archive, file), resolve(publishedArchive, file));
     }
     for (const profile of profiles) await copyFile(resolve(work, `${profile.label}-active.png`), resolve(evidence, `${profile.label}-active.png`));
+    if (report.functionalProof) {
+      const destination = resolve(evidence, report.functionalProof.reportFile);
+      await mkdir(dirname(destination), {recursive: true});
+      await copyFile(resolve(work, report.functionalProof.reportFile), destination);
+    }
   }
 }
-console.log(JSON.stringify({passed: report.passed, report: `${snapshot && report.passed ? 'evidence/browser' : '.work/browser'}/report.json`, checks: checks.length,
+console.log(JSON.stringify({passed: report.passed, scope: report.scope, report: `${snapshot && report.passed ? 'evidence/browser' : '.work/browser'}/report.json`, checks: checks.length,
   failures: checks.filter(check => !check.passed).length}));
 if (!report.passed) process.exitCode = 1;

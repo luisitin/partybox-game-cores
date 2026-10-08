@@ -1,5 +1,9 @@
 # Verification log
 
+Current checkpoint: all local checks below passed against the final core/page.
+Hosted exact-head CI and the post-green KEEP GOING loop remain pending.
+Intermediate failures below are retained as history, not current blockers.
+
 ## Research milestone (2026-10-08)
 Four Exa searches returned 24 results; ten unique source extractions were read.
 Exact URLs, coverage, extraction hashes: evidence/research-sources.json.
@@ -109,3 +113,94 @@ All600 intervals are retained. Cause is unestablished; renderer/reload history
 is a hypothesis being investigated, not a proved explanation. An isolated fresh
 context will be measured with the same8-player live-bid workload and unchanged
 gates. At this playable checkpoint performance remains pending, not passed.
+
+## Final delivery checks (2026-10-08)
+
+`node --test tests/core.test.mjs tests/probability.test.mjs tests/rules.test.mjs
+tests/contract.test.mjs tests/timestamp-boundaries.test.mjs`: PASS32/32 focused
+tests, including all nine contract invariants; evidence/checks/targeted-final.tap.
+`node --test tests/bot-games.test.mjs tests/properties.test.mjs`: PASS2/2.
+7,000 complete games, exactly1,000 at EACH player count2–8,1,698,274 events;
+every event compares live vs JSON-restored twin SHA256 and exact bytes, checks
+previous-state immutability, JSON roundtrip and256KiB cap. Maxstate3,859 bytes;
+12,277,985 bot samples schema-checked across seats, interrupts and done.
+The1,003-seed property run adds80,158 events/max3,716 bytes. Matrix walltime
+19m29 included roughly10min deliberate process pauses while measuring browser
+frames; active CPUabout9min. Hosted CI runs without those manual pauses.
+
+`node scripts/fixtures.mjs`: final PASS, exact manifest and bid/reveal/done/schema
+regenerated twice byte-identically. Validators reject prototype-named unexpected
+properties rather than inheriting schema.properties entries.
+
+`node scripts/browser-check.mjs --snapshot`: final exact default full run PASS
+37/37. Single HTML sourcef0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8.
+Desktop1920×1080CPU1x60.0018FPS; phone390×844CPU4x60.0024FPS. Bothp99/max16.8ms,
+all600 consecutive intervals retained, zero above17ms. Same live8-player8×3bid,
+own cup open, nonnull exact odds, legal draft selector edits every30frames.
+Performance uses fresh contexts after functional checks, source-hash guarded at
+start/end; no reused proof in this final full run. Browser host caches controller
+views/groups and reuses unchanged option DOM. Latestreport and rawframes are
+evidence/browser/report.json and its frame files. Earlier successful and failed
+source snapshots remain archived; cause of prior stalls is unestablished.
+
+`node scripts/capture.mjs delivery-final`: PASS. Five real rounds each, pause,
+reveal and winner, zero pageerrors/network requests. Desktopvideo1280×720
+1,024,954bytes; phone390×844CPU4x910,384bytes. Capture is separate from FPS proof.
+All previous milestone recordings remain; each is below10MB. Temporary capture
+outputs moved into ignored.work rather than public evidence.
+
+`npm run build`: final PASS strictTypeScript/bundle; runtime core unchanged
+db7373ae850fa2ae88ecea1cd873516034ce534daa9c7748729893c1c3ab5df3.
+Both original MIT and actual pinned Zod MIT notices are embedded in play.html.
+`node scripts/hashes.mjs` twice + `cmp`: required identical checksum manifests.
+`sha256sum --check SHA256SUMS.txt`: required PASS for every delivered file.
+`node scripts/integrity.mjs`: validates hashes/coverage,2×fixture regeneration,
+source-matched600frame evidence/raw statistics, licenses,no runtime I/O/network
+and every media file below10MB. Its final run is recorded in the next entry.
+
+### All25 actual planted source bugs
+Each is compiled individually; exact selected baseline first passes. Mutated
+suite must fail with ERR_ASSERTION; syntax/import failures do not count. Actual
+command `node scripts/mutations.mjs`, PASS25/25; report and29 rawTAP files in
+evidence/mutations.
+
+| ID | Planted bug | Assertion kill |
+| --- | --- | --- |
+| R01 | Allow an opening bid of wild ones | Yes |
+| R02 | Round conversion to ones downward | Yes |
+| R03 | Permit an even conversion away from ones | Yes |
+| R04 | Accept an unchanged bid | Yes |
+| R05 | Reverse the palifico face lock | Yes |
+| R06 | Permit zero quantity | Yes |
+| R07 | Make sixes wild instead of ones | Yes |
+| P01 | Add an extra hit-face factor to each probability mass | Yes |
+| P02 | Corrupt binomial coefficients | Yes |
+| P03 | Treat one required match as certain | Yes |
+| P04 | Remove exact zero-match mass | Yes |
+| P05 | Use a five-sided outcome denominator | Yes |
+| P06 | Ignore the second matching face in wild rounds | Yes |
+| P07 | Condition on one fewer hidden die | Yes |
+| C01 | Keep ones wild during palifico | Yes |
+| C02 | Make exact-count dudo succeed | Yes |
+| C03 | Lose two dice for a challenge | Yes |
+| C04 | Gain two dice for a correct calza | Yes |
+| C05 | Keep the bidder on turn | Yes |
+| C06 | Suppress the two-to-one palifico trigger | Yes |
+| C07 | Forget that the starter has used palifico | Yes |
+| C08 | Allow calza in a two-player duel | Yes |
+| C09 | Accept stale timer instance stamps | Yes |
+| C10 | Process input and timers during a hold | Yes |
+| C11 | Show the first seat cup to every controller | Yes |
+
+## Limits and hosted delivery gate
+The full SDK is absent; the ordered local adapter is tested against the unchanged
+exact shared types/schemas, not claimed as SDK package integration. Publisher
+2–6 extends to owner's2–8; edition/house choices are explicit. Phone is CPU4x
+emulation, not physical hardware. Strong wins are against these bots under the
+default duel settings, not an external champion. Full matrix samples settings
+combinations and all counts; it is not an exhaustive proof of all event histories.
+
+CI is .github/workflows/G07.yml: pathsfilteredPR,Ubuntu,30min,read-onlypermissions,
+actions/* only, pinnedNode22.16.0, npmci, Playwright install, full npm test and
+rawbrowserartifact upload. Local component checks have passed; current pushed
+head hosted CI must succeed before delivery and KEEP GOING begins.

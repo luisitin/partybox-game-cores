@@ -11,6 +11,8 @@ const browser=await build({entryPoints:['src/browser.ts'],bundle:true,platform:'
 const template=await readFile('src/play.template.html','utf8');
 const script=browser.outputFiles[0].text.replaceAll('</script','<\\/script');
 const license=await readFile('node_modules/zod/LICENSE','utf8');
+const ownLicense=await readFile('LICENSE','utf8');
 const html=template.replace('<!--G07_SCRIPT-->',()=>'<script>'+script+'</script>');
-await writeFile('play.html',html.includes(license)?html:html+'\n<!-- Bundled Zod MIT license:\n'+license+'\n-->\n');
+const licensed=html.includes(license)?html:html+'\n<!-- Bundled Zod MIT license:\n'+license+'\n-->\n';
+await writeFile('play.html',licensed+'\n<!-- Original game code and CSS/SVG, MIT license:\n'+ownLicense+'\n-->\n');
 await writeFile('THIRD-PARTY-LICENSES.txt','Runtime bundle contains Zod 4.6.5, under the following MIT notice.\n\n'+license);
