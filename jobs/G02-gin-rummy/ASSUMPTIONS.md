@@ -72,3 +72,10 @@ is unchanged and baseline-checked before that mutant. Runtime and rules remain
 unchanged. Matching accepted 600-frame evidence is retained for cosmetic rounds;
 new source-guarded functional recordings and exact-head hosted full npm test are
 required. Repeating unchanged local core leagues/matrices adds no observed gain.
+
+Round 11 verification choice: the committed current-proof index identifies one
+complete accepted browser snapshot, both raw profiles and current functional
+recordings. Integrity compares them to actual production hashes and recomputes
+all intervals. Historical proof remains archived; a fresh file inventory does
+not make an old snapshot current. The isolated comment-only negative control
+proves that evidence-gate gap without claiming a player-visible defect.

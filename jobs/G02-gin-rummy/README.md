@@ -36,3 +36,5 @@ and hosted browser gates; new fixes restart the KEEP GOING streak at zero.
 Current exact-head CI must pass before delivery is complete: see
 https://github.com/luisitin/partybox-game-cores/pull/2/checks .
 VERIFY and NEXT distinguish current checks from historical evidence.
+Integrity checks the current proof index against the actual page/core, all
+1,200 raw frame intervals and guarded recording hashes.

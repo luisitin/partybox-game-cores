@@ -88,6 +88,38 @@ failure. No local failed measurement is silently relabeled as accepted.
 
 # Historical verification records
 
+## Resumed KEEP round 11 — verify current committed proof
+
+Round 10 head 82b0301 passed exact hosted CI 37777230686 at 12:35:16 UTC.
+The actually read complete log reports 35 tests, 26/26 real assertion-killed
+mutants, unchanged leagues, desktop/phone 60.001800 FPS with p99/max 16.8 ms,
+matching source guards and 271-file integrity. Artifact contents are not inferred.
+
+Re-read/rank five: round-11/review.md. Old integrity could accept a refreshed
+file inventory alongside stale browser proof. A harmless comment in an ignored
+copied page demonstrates that gate gap: old integrity exit 0, different actual
+HTML hash. The new gate rejects that same copy with the expected assertion,
+`accepted proof has stale source hashes`. No delivered-page or gameplay defect
+is claimed. Exact old/new scripts, logs, hashes and procedure are retained.
+
+`node --test tests/browser-proof.test.mjs`: PASS 8/8 groups, 20 corrupt-proof
+variants rejected. `node scripts/browser-proof.mjs`: PASS source match, 1,200
+raw intervals and two matching recordings. Integrity now checks the current
+proof index, actual production SHA256 guards, 600 finite raw intervals/profile,
+report/raw equality and recomputed mean/FPS/p99/max at the unchanged >=59 FPS/
+<=17 ms gates. It checks viewport/throttle, recording separation, matching
+recording bytes/hashes and the <10 MB cap. The existing 50 ms desktop interval
+is retained and accepted with its honest mean/p99; no filtering is introduced.
+
+`node scripts/capture.mjs round-11-proof-guard --public-history`: PASS fresh
+732,226/580,051-byte clips; independent start/end guards match unchanged
+production sources. No repeated unchanged local core matrix/leagues/full600
+run; exact-head hosted npm test includes all 43 tests and full browser gates.
+`node scripts/hashes.mjs` twice and byte comparison: PASS 293 files.
+`node scripts/integrity.mjs`: PASS 293 hashes, current-proof gate, two
+byte-identical fixture/manifest regenerations, purity/licenses/media checks.
+Player-noticeable gain: none; consecutive no-gain streak 2.
+
 ## Resumed KEEP round 10 — plant the observed Pass bug
 
 Round 9 exact head 575755491a5133e07d6d0527f5ca2b61d44dcb4e passed hosted
