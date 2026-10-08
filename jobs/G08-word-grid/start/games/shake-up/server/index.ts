@@ -14,6 +14,7 @@ import {
 } from '@partybox/game-sdk';
 import { gameManifestSchema } from '../../../../../../contract/contract';
 import manifestJson from '../manifest.json';
+import type { PlayerInfo } from '../../../../../../contract/contract';
 import { sampleInput } from './bot';
 import { asLang } from './content';
 import { enterHunt, allDone, reduceHunt } from './phases/hunt';
@@ -30,6 +31,7 @@ import { controllerView, tvView, type ControllerView, type TvView } from './view
 export const manifest: Manifest = gameManifestSchema.parse(manifestJson);
 
 export function init(ctx: InitCtx): State {
+  if (ctx.players.length < 1 || ctx.players.length > 16 || new Set(ctx.players.map(p => p.id)).size !== ctx.players.length || ctx.players.some(p => !p.id || p.id.length > 128 || p.name.length > 80 || p.avatarId.length > 128)) throw new RangeError('Expected 1–16 distinct seats with bounded identity fields.');
   const s = ctx.settings;
   const size = selectSetting(s, 'grid', ['4x4', '5x5'] as const, '4x4') === '5x5' ? 5 : 4;
   const players: Record<string, Player> = Object.fromEntries(ctx.players.map((p, seat) => [p.id, { id: p.id, name: p.name, avatarId: p.avatarId, connected: p.connected, bot: p.bot === true, away: !p.connected, seat }]));
@@ -45,7 +47,7 @@ export function init(ctx: InitCtx): State {
       spicy: boolSetting(s, 'spicy', false),
       lang: asLang(ctx.contentLang),
       dictionary: ctx.contentLang !== 'es' ? selectSetting(s, 'dictionary', ['full', 'common'] as const, 'full') : 'full',
-      reader: typeof s.reader === 'string' ? s.reader : 'host-hype',
+      reader: ctx.contentLang === 'es' ? selectSetting(s, 'reader', ['dora', 'none'] as const, 'dora') : selectSetting(s, 'reader', ['host-hype', 'none'] as const, 'host-hype'),
       mode: ctx.presence?.mode ?? 'together',
     },
     order: ctx.players.map((p) => p.id),
@@ -56,6 +58,7 @@ export function init(ctx: InitCtx): State {
     cubes: [],
     throwSeed: 0,
     words: {},
+    submissionBytes: 0,
     done: {},
     verdicts: {},
     seq: 0,
@@ -125,8 +128,17 @@ const composedReduce = composeReduce<State, Input>({
 });
 
 export function reduce(state: State, event: GameEvent<Input>): State {
+  if (!event || typeof event !== 'object') return state;
   if (event.type === 'input' && !inputSchema.safeParse(event.input).success) return state;
   return composedReduce(state, event);
+}
+
+/** Trusted host/offline roster adapter: root player events carry no names. Keep the owner's
+ * late-join rule without allowing an unknown socket id to fabricate a playing identity. */
+export function joinPlayer(state: State, player: PlayerInfo, now: number): State {
+  if (state.phase.id === 'done' || state.order.length >= 16 || Object.hasOwn(state.players, player.id) || !player.id || player.id.length > 128 || player.name.length > 80 || player.avatarId.length > 128 || !Number.isFinite(now) || now < state.phase.startedAt) return state;
+  const p: Player = { ...player, bot: player.bot === true, away: !player.connected, seat: state.order.length };
+  return { ...state, order: [...state.order, player.id], players: { ...state.players, [player.id]: p }, scores: { ...state.scores, [player.id]: 0 }, words: { ...state.words, [player.id]: [] } };
 }
 
 export const game = {

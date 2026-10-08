@@ -184,7 +184,7 @@ export function controllerView(state: State, playerId: string): ControllerView {
   const me: ControllerView['me'] = { id: playerId, role: playing ? 'player' : 'spectator', score: playing ? state.scores[playerId] ?? 0 : 0, done: playing && state.done[playerId] === true, words: words.slice().reverse() };
   const v: ControllerView = { ...common(state), me: verdict ? { ...me, verdict: { ...verdict, w: showWord(verdict.w) } } : me };
   if (state.phase.id === 'hunt') {
-    v.waitingOn = state.order.filter((id) => !state.players[id]?.bot && !state.players[id]?.away && !state.done[id]).length;
+    v.waitingOn = state.order.filter((id) => !state.players[id]?.bot && !state.players[id]?.away && state.done[id] !== true).length;
   }
   if (state.phase.id === 'reveal') {
     const step = state.phase.step ?? 0;

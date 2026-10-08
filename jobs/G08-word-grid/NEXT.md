@@ -1,13 +1,9 @@
-# G08 — research checkpoint
+# G08 — verification milestone 2
 
-Branch: job/G08-word-grid-the-owner-s-shake-up. Claimed 2026-10-08T07:45:50Z codex-core. Existing job/G08-word-grid history merged normally; its Oct7 research blocker is obsolete. No production source changes yet.
+Current branch job/G08-word-grid-the-owner-s-shake-up. Original151 tests and new9 contract tests pass. Strict/build pass. 50000 cubes,10000 sealed independent solver diffs/2383756 path checks; originalBIG retained. Two content rebuilds byte-identical. Bot2000-board calibration and4000 complete leagues finished. Preserve original116-file baseline, models/film/CSS/name, document every edit.
 
-Read root README/RULES/JOBS/CLAIMS and START-HERE, owner README/HANDOFF/ASSUMED-SDK/AGENTS first. 116 original files, including five GLBs, are hashed in start/research/original-files.json. Keep model/art/film/name unchanged and log every edit in CHANGES.md.
+Long-running `start/verification/seeded.ts` is checking1000 full games at EACH1–16 seats after1003 adversarial full-game replays. Inspect .tmp/seeded.log and poll active tools before modifying its logic. Data schemas initial manifest-name mismatch fixed; inspect .tmp/data-check.log. Offline original-client HTML builds and localHTTP smoke works; managed local fileURLs blocked. Milestone capture keyboard run active; inspect media/ and .tmp.
 
-Research and first implementation milestone complete locally: 50000 grids (10000per5candidates),10000 sealed reference diffs/2383756 valid paths, common105840, Englishfull274711/Spanish636513. Keep English BIG (better mean/lower tail), preserve Spanish faces and every original model/film/CSS. Root call sites adapted with test-only SDK/UI bindings; strict typecheck passed before latest edits. Original tests are adapting to real contract shapes; worker RPC errors fixed with inter-case yield and film tests restored to Vitest, clean full run still pending.
+Pending: improve/report bot calibration as justified; finish16000-roster gates; stress serialized state limits;30 manual second-source rows; strengthen schemas/report constraints;25 mutations >=24 kills; full native browser privacy/keyboard/gesture/pause/locale/reduced-motion/fps checks and milestone captures; npm test must include all mandatory gates; add one job CI workflow and actualfile browser check, green before PR; then KEEP GOING until3 consecutive cosmetic rounds. No PR, not delivered.
 
-Next: `npm test` full original suite; strict typecheck after current changes; complete prototype-id/state-budget/late-join tests and adapter, two content rebuilds/schemas/licences/30second-source row checks; bot2000-grid calibration and2x2000 full-game leagues; offline hot-seat shell from existing components/CSS. Preserve pending claims until validated, do not call this delivered.
-
-Outstanding all delivery gates: nine contract invariants; independent 10k comparisons; 25 mutations >=24 kills; property seeds1/2/3 +1000; 1000 bot games EACH valid roster; JSON schemas/rebuild twice/checksums; every-phase fixtures; self-contained disk browser checks/60fps desktop+CPU4x phone/reduced-motion/milestone captures; job CI green; then PR and KEEP GOING until three consecutive rounds lack meaningful player gains. Not delivered and no PR yet.
-
-Re-verify when web works: physical manufacturer edition labels and primary PDF wording. Secondary agreement is recorded, not falsely claimed as read primary manuals.
+Re-verify when web works: manufacturer primary edition labels/PDF wording and actual production SDK audio/3D bindings. Pinned secondary sources live-read; test/offline SDK bindings explicitly scoped.

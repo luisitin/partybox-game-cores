@@ -1,0 +1,14 @@
+import { build } from 'esbuild';
+import { readFile, mkdir, writeFile, readdir } from 'node:fs/promises';
+import { resolve } from 'node:path';
+const root = process.cwd();
+await mkdir('.build', { recursive: true });
+await build({ entryPoints: ['start/offline/App.tsx'], bundle: true, outfile: '.build/play.js', minify: true, target: 'es2022', format: 'iife', jsx: 'automatic', define: { 'process.env.NODE_ENV': '"production"' }, alias: { '@partybox/game-sdk/ui/table3d': resolve('start/test-support/table3d.tsx'), '@partybox/game-sdk/ui': resolve('start/test-support/ui.tsx'), '@partybox/game-sdk/speech': resolve('start/test-support/speech.ts'), '@partybox/game-sdk': resolve('start/test-support/sdk.ts'), zod: resolve('node_modules/zod') }, nodePaths: [resolve('node_modules')], legalComments: 'inline' });
+const escape = text => text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
+const names = (await readdir('start/research/licences')).sort();
+const credits = (await Promise.all(names.map(async name => `<h3>${escape(name)}</h3><pre>${escape(await readFile(`start/research/licences/${name}`, 'utf8'))}</pre>`))).join('');
+const js = (await readFile('.build/play.js', 'utf8')).replace('__INLINE_LICENSES__', JSON.stringify(credits).slice(1, -1)).replace(/<\/script/gi, '<\\/script');
+const css = await readFile('.build/play.css', 'utf8');
+const html = `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; media-src blob:; connect-src 'none'; font-src 'none'; base-uri 'none'; form-action 'none'"><title>Shake Up · offline hot-seat</title><style>${css}</style><body><div id="root"></div><script>${js}</script></body></html>\n`;
+await writeFile(resolve(root, 'play.html'), html);
+console.log(JSON.stringify({ file: 'play.html', bytes: Buffer.byteLength(html), bundled: true, externalRequests: 0, source: 'original owner server/client components' }));

@@ -28,6 +28,7 @@ export function enterShake(state: State, now: number): State {
     cubes,
     throwSeed,
     words,
+    submissionBytes: 0,
     done: {},
     verdicts: {},
     counted: [],

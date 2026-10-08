@@ -31,7 +31,7 @@ export function speech(state: State): SpeechRequest[] {
 }
 
 /** Fixed lines for `pnpm speech:warm` (both languages, every hunt length). */
-export function speechCatalog(): SpeechRequest[] {
+export function speechCatalog(opts: { voice?: string; contentLang?: 'en' | 'es' } = {}): SpeechRequest[] {
   const out: SpeechRequest[] = [];
   const fixed = [
     'Round one. Shake it up!', 'Round two. Shake it up!', 'Round three. Shake it up!', 'Round four. Shake it up!', 'Final round. Shake it up!',
@@ -41,6 +41,6 @@ export function speechCatalog(): SpeechRequest[] {
     'Noventa segundos. ¡Ya!', 'Dos minutos. ¡Ya!', 'Tres minutos. ¡Ya!', 'Cuatro minutos. ¡Ya!', '¡Treinta segundos!',
     'No hubo palabras esta ronda.', '¡Empate en la cima!', 'Todavía nada en el marcador.',
   ];
-  fixed.forEach((t, i) => out.push({ key: `su:catalog:${i}`, voice: 'host-hype', parts: [toSpeakable(t)] }));
-  return out;
+  fixed.slice(opts.contentLang === 'es' ? 14 : 0, opts.contentLang === 'es' ? undefined : 14).forEach((t, i) => out.push({ key: `su:catalog:${i}`, voice: opts.voice ?? (opts.contentLang === 'es' ? 'dora' : 'host-hype'), parts: [toSpeakable(t)] }));
+  return drainSpeech(out, 100);
 }

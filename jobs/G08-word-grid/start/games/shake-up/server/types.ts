@@ -12,11 +12,11 @@ export const SHAKE_MS = 4200;
 export const LAST_CALL_MS = 30_000;
 
 export const inputSchema = z.discriminatedUnion('t', [
-  // 3..17 cell indices; the server derives the word from the grid. Free text never enters.
+  // Up to 25 distinct cell indices; the server derives the word, including Qu's extra letter.
   z.object({ t: z.literal('word'), path: z.array(z.number().int().min(0).max(24)).min(1).max(25) }).strict(),
   z.object({ t: z.literal('done'), done: z.boolean() }).strict(),
   // VIP only (event.vip), reveal only: "✓ That counts" / "Leave it" for a non-dictionary word.
-  z.object({ t: z.literal('counts'), word: z.string().min(1).max(25), counts: z.boolean() }).strict(),
+  z.object({ t: z.literal('counts'), word: z.string().min(1).max(26), counts: z.boolean() }).strict(),
 ]);
 export type Input = z.infer<typeof inputSchema>;
 
@@ -80,6 +80,8 @@ export type State = BaseState & {
   /** Seed for the TV's throw animation only (landing layout is `grid`; physics never decides). */
   throwSeed: number;
   words: Record<string, Entry[]>;
+  /** Conservative serialized submission budget; protects the contract's total 256 KB limit. */
+  submissionBytes: number;
   done: Record<string, true>;
   verdicts: Record<string, Verdict>;
   seq: number;

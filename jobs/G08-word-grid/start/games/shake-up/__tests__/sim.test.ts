@@ -4,7 +4,7 @@ import { game } from '../server';
 import { inputSchema } from '../server/types';
 import { jsonSafe, room, simulate } from './helpers';
 
-const RUNS = Number(process.env.SIM_RUNS ?? 40);
+const RUNS = Number(process.env.SIM_RUNS ?? 200);
 
 describe('random play (bots + junk events)', () => {
   it(`${RUNS} games finish, never throw, keep views safe, never leak`, () => {
