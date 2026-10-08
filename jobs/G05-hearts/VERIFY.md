@@ -1,12 +1,15 @@
 # Verification record
 
-Current check scope:30 tests,25/25 mutations,10,000 independent comparisons,
-1003 property seeds,1000 full games at each3–6 count and2x2000 leagues. Head
-5509a20 passed push37741005827/PR37741010277. The exact public actual-disk
-report is media/visual-measurements-ci-37741010277.json: desktop60.002fps,
-CPU4x phone60.000fps,p9516.8ms,max16.8ms,all outcome/recovery/clock/native-input/
-privacy/roster gates true,0 outgoing requests/exceptions. Historical failures
-and smaller early-suite counts below are retained; they are not current counts.
+Final implementation/review scope:30 tests,25/25 mutation kills,10,000
+independent comparisons,1003 property seeds,1000 full games at each3–6 count
+and2x2000 leagues. Ten KEEP GOING rounds finish with three consecutive
+no-meaningful-player-gain rounds8–10. Head6cf9fee passed push37743746775/
+PR37743752330. The exact actual-disk report is preserved in
+media/visual-measurements-ci-37743752330.json: desktop60.004fps,CPU4x phone
+60.002fps,p9516.8ms,max16.8ms,all outcome/recovery/clock/native-input/privacy/
+roster gates true,0 requests/exceptions. Core/UI/check source is unchanged
+since5509a20. Historical failures/early smaller suites below remain visible.
+This final metadata/evidence commit must also receive green full CI.
 
 
 Core checkpoint; full contract, mutation, visual and CI gates remain pending.
@@ -344,3 +347,16 @@ PASS30 JSON/58 hashes. `git diff HEAD -- src ui play.html scripts` empty:
 product/check code unchanged from the actual-disk verified source. Three
 consecutive no-meaningful-gain rounds8–10 now complete locally. Updated-head
 full CI must be green before DONE/final PR delivery.
+
+Final seal: R10 head6cf9fee GREEN push37743746775/PR37743752330. `python
+/workspace/g05-read-ci-report.py 37743752330` retrieved the exact public browser
+report and full log; the report is unmodified. `git diff --exit-code 5509a20
+-- jobs/G05-hearts/src jobs/G05-hearts/ui jobs/G05-hearts/scripts
+jobs/G05-hearts/play.html` PASS byte-identical source after the last real fix.
+Shared contract files remain unchanged and independent reference seal is
+bba8c397fd1992273e0e14229d6955ad29062d36010d9327905e94866228f757.
+The research-check command attempted from repository root failed MODULE_NOT_FOUND
+before running; rerun in the actual job directory passes. This is a command
+path mistake, not a game-test result. Final JSON/hash checks follow below.
+
+Final metadata commands: `node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs` PASS31 schema-validated JSON files and59 checksums. README remains36 lines/7 valid relative links. Default full final-head CI is the remaining closeout gate.
