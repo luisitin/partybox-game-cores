@@ -47,3 +47,12 @@ century,and share safe controller defaults for fractional/one-sided ranges.
 After:0 invalid/9000.26 focused tests and12,000 unchanged-rate leagues pass.
 22 browser scenarios/capture6 pass at60fps. Player-visible valid-content
 input/score gain; no-gain streak0. Workspace restart preserved all changes.
+
+Round5 five weaknesses: Medium fake style (worst); phase-event/privacy
+matrix; sequential replay seed coverage; custom catalog extremes; held-out
+skill robustness. Two-word hints and long generic fakes made Medium
+answers visually distinguishable. Fix the public noun pattern:0/300→300/300
+two-word,0 invalid. Full50-test pipeline,all25 mutations,12,000 measured
+leagues and22 browser scenarios pass. Mixed/Bluff rates change as recorded
+in BOTS;all lower bounds remain above50%. Player-visible bluff plausibility
+gain;no-gain streak0.

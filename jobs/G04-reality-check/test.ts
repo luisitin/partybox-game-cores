@@ -179,6 +179,15 @@ test('controller defaults stay inside fractional and one-sided date bounds',()=>
  for(const [min,max] of [[-1,0],[-100,-80],[0,1],[95,100],[-1,1]])assert(C.validAnswer({...century,min,max} as State['question'],initialEstimate('century',min!,max!)));
  assert(C.validAnswer(decade,initialEstimate('decade',1900,2100)));
 });
+test('medium bluffs follow the public two-word hint in every bluff realm',()=>{
+ const s=toPhase('write',1,{mode:'bluff'});
+ for(const realm of ['real-town-or-fake','patent-pending','do-not-use']){
+  const row=sampleRows.find(r=>r.realm===realm)!;
+  for(let seed=1;seed<=100;seed++){
+   const action=C.game.bot.sampleInput({...s,question:row},'p0',createRng(seed),'normal');assert(action?.type==='write');assert.equal(action.text.trim().split(/\s+/).length,2);assert(C.inputSchema.safeParse(action).success);
+  }
+ }
+});
 test('manifest bytes and all seven phase fixtures use the contract and play to completion',()=>{
  assert.deepEqual(C.manifest,JSON.parse(readFileSync('manifest.json','utf8')));
  for(const phase of C.game.phases){let s:State=JSON.parse(readFileSync(`fixtures/${phase}.json`,'utf8'));assert.equal(s.phase.id,phase);let steps=0;

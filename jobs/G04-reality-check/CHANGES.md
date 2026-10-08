@@ -93,3 +93,10 @@ minimum. Add9000 contextual-action and fractional/one-sided default
 regressions; include the helper in the purity scan. bounds-probe.ts and
 before/after JSON record2674→0 invalid inputs and run in npm test. Default
 sample outcomes stay unchanged; regenerate HTML and milestone6 capture.
+
+KEEP GOING5: replace Medium's long generic fakes with two-word plant/harbour,
+material/machine and material/defect phrases from public hints. The earlier
+phrases were trivially distinguishable by length. Add300 style/schema
+regressions and style-probe.ts with before/after JSON,wire it into npm test,
+and regenerate affected fixtures/HTML plus milestone7 capture. No hidden
+answer is used. Re-measure all six leagues and update BOTS with actual rates.

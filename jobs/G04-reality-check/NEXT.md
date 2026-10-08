@@ -19,19 +19,19 @@ No network/errors. Wheel landing checks cover all eight realms; captures1/2
 are preserved under10MB. Native final pipeline log/tmp/G04-final-npm-test.log.
 
 PR4 is OPEN: https://github.com/luisitin/partybox-game-cores/pull/4
-Baseline f7ef26c and rounds1–3 all passed hosted CI;latest observed
-77f6f79/run37725962141 SUCCESS. Round4 fixes tiny-number/century-bound
-inputs and defaults:2674/9000 invalid→0,26 focused tests,unchanged12,000
-league results,22 browser scenarios/60fps,HTML493,330bytes,24 hashes.
-Captures1–6 are retained<10MB. Rounds1–4 all showed player gains;
-no-gain streak0. New-head CI pending; job remains unfinished.
-Workspace restart returned with source/artifacts intact and checksums valid.
-Next worst:Medium fakes do not match the two-word hint. Then phase/privacy
-matrix,actual random replay seeds,valid-catalog and held-out skill probes.
-Each round re-reads job,lists five weaknesses,fixes worst,measures/logs.
-Final stop requires three no-gain rounds and actual final-head green CI.
-Keep NEXT current and refresh ONLY G04 claim on main after each push.
-Stage G04/workflow only; G01 dependency caches are untracked locally.
+Baseline and rounds1–4 all passed hosted CI;latest observed Round4
+ dc0fb64/run37727596105 SUCCESS. Round5 follows public two-word bluff hints:
+0/300→300/300,0 invalid. Full npm test passed50 tests,21,000 bot games,
+1,003 exact replays,1,000 idle cases,two10,000-case differentials,25/25
+mutation kills,12,000 leagues(all lower bounds>50%),22 browser scenarios,
+27 hashes,HTML493,410bytes. TV60.0024fps,phone4×60.0028fps,p95≤16.8ms.
+Captures1–7 retained<10MB. Rounds1–5 all showed player gains;no-gain streak0.
+New-head hosted CI pending;job remains unfinished. Next worst:full phase/
+privacy matrix and actual random replay seeds;then custom catalog stress
+and held-out skill strength. Each round re-reads job,lists five weaknesses,
+fixes worst,measures/logs. Stop requires three no-gain rounds and actual
+final-head green CI. Refresh ONLY G04 claim on main after each push.
+Stage G04/workflow only;G01 dependency caches are untracked locally.
 
 Cloud install_script/start_skill tested and saved as unpublished draft.
 No service must stay running. A transient exec-server disconnect recovered

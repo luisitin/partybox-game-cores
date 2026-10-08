@@ -11,7 +11,7 @@ function dateAnswer(q:QuestionView):number{
 }
 function bluff(q:QuestionView,rng:Rng,skill:BotSkill):string{
  if(skill==='easy')return rng.pick(['A dancing spoon','A bucket of moonlight','The very surprising answer','A lost purple umbrella']);
- if(skill==='normal')return q.realm==='real-town-or-fake'?`Old ${rng.pick(plants)} Village`:q.realm==='patent-pending'?`The automatic ${rng.pick(machines)}`:`The ${rng.pick(materials).toLowerCase()} handle came loose`;
+ if(skill==='normal')return q.realm==='real-town-or-fake'?`${rng.pick(plants)} ${rng.pick(['Wharf','Marina','Anchorage'])}`:q.realm==='patent-pending'?`${rng.pick(materials)} ${rng.pick(['Winch','Lathe','Pulley'])}`:`${rng.pick(materials).toLowerCase()} ${rng.pick(['corrosion','cracking','loosening'])}`;
  return q.realm==='real-town-or-fake'?`${rng.pick(plants)} ${rng.pick(harbours)}`:q.realm==='patent-pending'?`${rng.pick(materials)} ${rng.pick(machines)}`:`${rng.pick(materials).toLowerCase()} ${rng.pick(defects)}`;
 }
 function plausibility(q:QuestionView,text:string):number{

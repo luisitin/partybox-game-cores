@@ -90,14 +90,14 @@
     "correct": "Copper Compass"
   },
   "responses": {
-    "p0": "The automatic Crank",
-    "p1": "The automatic Fan",
-    "p2": "The automatic Compass"
+    "p0": "Glass Pulley",
+    "p1": "Cork Winch",
+    "p2": "Copper Winch"
   },
   "options": [
     {
       "id": "o0",
-      "text": "The automatic Crank",
+      "text": "Glass Pulley",
       "owners": [
         "p0"
       ],
@@ -105,7 +105,7 @@
     },
     {
       "id": "o1",
-      "text": "The automatic Fan",
+      "text": "Cork Winch",
       "owners": [
         "p1"
       ],
@@ -113,7 +113,7 @@
     },
     {
       "id": "o2",
-      "text": "The automatic Compass",
+      "text": "Copper Winch",
       "owners": [
         "p2"
       ],
@@ -127,15 +127,15 @@
     }
   ],
   "votes": {
-    "p0": "o3",
-    "p1": "o3",
-    "p2": "o3"
+    "p0": "o1",
+    "p1": "o0",
+    "p2": "o0"
   },
   "knowledge": [],
   "scores": {
-    "p0": 6785,
-    "p1": 8035,
-    "p2": 7535
+    "p0": 4785,
+    "p1": 6535,
+    "p2": 5535
   },
   "history": [
     {
@@ -166,14 +166,14 @@
       "kind": "bluff",
       "correct": "Clover Quay",
       "awards": {
-        "p0": 1000,
-        "p1": 1000,
-        "p2": 1000
+        "p0": 500,
+        "p1": 0,
+        "p2": 1500
       },
       "answers": {
-        "p0": "Old Fern Village",
-        "p1": "Old Mallow Village",
-        "p2": "Old Sorrel Village"
+        "p0": "Fern Wharf",
+        "p1": "Mallow Wharf",
+        "p2": "Sorrel Anchorage"
       },
       "options": [
         {
@@ -184,7 +184,7 @@
         },
         {
           "id": "o1",
-          "text": "Old Mallow Village",
+          "text": "Mallow Wharf",
           "owners": [
             "p1"
           ],
@@ -192,7 +192,7 @@
         },
         {
           "id": "o2",
-          "text": "Old Sorrel Village",
+          "text": "Sorrel Anchorage",
           "owners": [
             "p2"
           ],
@@ -200,7 +200,7 @@
         },
         {
           "id": "o3",
-          "text": "Old Fern Village",
+          "text": "Fern Wharf",
           "owners": [
             "p0"
           ],
@@ -208,8 +208,8 @@
         }
       ],
       "votes": {
-        "p0": "o0",
-        "p1": "o0",
+        "p0": "o2",
+        "p1": "o3",
         "p2": "o0"
       },
       "multiplier": 1,
@@ -222,19 +222,19 @@
       "kind": "bluff",
       "correct": "cork leaking",
       "awards": {
-        "p0": 1000,
+        "p0": 0,
         "p1": 1000,
-        "p2": 1000
+        "p2": 1500
       },
       "answers": {
-        "p0": "The tin handle came loose",
-        "p1": "The silver handle came loose",
-        "p2": "The brass handle came loose"
+        "p0": "tin loosening",
+        "p1": "silver loosening",
+        "p2": "brass corrosion"
       },
       "options": [
         {
           "id": "o0",
-          "text": "The brass handle came loose",
+          "text": "brass corrosion",
           "owners": [
             "p2"
           ],
@@ -242,7 +242,7 @@
         },
         {
           "id": "o1",
-          "text": "The silver handle came loose",
+          "text": "silver loosening",
           "owners": [
             "p1"
           ],
@@ -256,7 +256,7 @@
         },
         {
           "id": "o3",
-          "text": "The tin handle came loose",
+          "text": "tin loosening",
           "owners": [
             "p0"
           ],
@@ -264,7 +264,7 @@
         }
       ],
       "votes": {
-        "p0": "o2",
+        "p0": "o0",
         "p1": "o2",
         "p2": "o2"
       },
@@ -341,19 +341,19 @@
       "kind": "bluff",
       "correct": "Brass Trolley",
       "awards": {
-        "p0": 1000,
-        "p1": 1000,
-        "p2": 1000
+        "p0": 500,
+        "p1": 1500,
+        "p2": 0
       },
       "answers": {
-        "p0": "The automatic Press",
-        "p1": "The automatic Lifter",
-        "p2": "The automatic Fan"
+        "p0": "Tin Pulley",
+        "p1": "Amber Pulley",
+        "p2": "Cork Lathe"
       },
       "options": [
         {
           "id": "o0",
-          "text": "The automatic Press",
+          "text": "Tin Pulley",
           "owners": [
             "p0"
           ],
@@ -361,7 +361,7 @@
         },
         {
           "id": "o1",
-          "text": "The automatic Lifter",
+          "text": "Amber Pulley",
           "owners": [
             "p1"
           ],
@@ -369,7 +369,7 @@
         },
         {
           "id": "o2",
-          "text": "The automatic Fan",
+          "text": "Cork Lathe",
           "owners": [
             "p2"
           ],
@@ -383,9 +383,9 @@
         }
       ],
       "votes": {
-        "p0": "o3",
+        "p0": "o1",
         "p1": "o3",
-        "p2": "o3"
+        "p2": "o0"
       },
       "multiplier": 1,
       "fact": "This is a made-up workshop story, not a claim about the real world."
@@ -398,18 +398,18 @@
       "correct": "Amber Bell",
       "awards": {
         "p0": 2000,
-        "p1": 2000,
-        "p2": 2000
+        "p1": 1000,
+        "p2": 0
       },
       "answers": {
-        "p0": "The automatic Crank",
-        "p1": "The automatic Fan",
-        "p2": "The automatic Compass"
+        "p0": "Glass Pulley",
+        "p1": "Cork Winch",
+        "p2": "Copper Winch"
       },
       "options": [
         {
           "id": "o0",
-          "text": "The automatic Crank",
+          "text": "Glass Pulley",
           "owners": [
             "p0"
           ],
@@ -417,7 +417,7 @@
         },
         {
           "id": "o1",
-          "text": "The automatic Fan",
+          "text": "Cork Winch",
           "owners": [
             "p1"
           ],
@@ -425,7 +425,7 @@
         },
         {
           "id": "o2",
-          "text": "The automatic Compass",
+          "text": "Copper Winch",
           "owners": [
             "p2"
           ],
@@ -439,9 +439,9 @@
         }
       ],
       "votes": {
-        "p0": "o3",
-        "p1": "o3",
-        "p2": "o3"
+        "p0": "o1",
+        "p1": "o0",
+        "p2": "o0"
       },
       "multiplier": 2,
       "fact": "This is a made-up workshop story, not a claim about the real world."
@@ -455,18 +455,18 @@
     "correct": "Amber Bell",
     "awards": {
       "p0": 2000,
-      "p1": 2000,
-      "p2": 2000
+      "p1": 1000,
+      "p2": 0
     },
     "answers": {
-      "p0": "The automatic Crank",
-      "p1": "The automatic Fan",
-      "p2": "The automatic Compass"
+      "p0": "Glass Pulley",
+      "p1": "Cork Winch",
+      "p2": "Copper Winch"
     },
     "options": [
       {
         "id": "o0",
-        "text": "The automatic Crank",
+        "text": "Glass Pulley",
         "owners": [
           "p0"
         ],
@@ -474,7 +474,7 @@
       },
       {
         "id": "o1",
-        "text": "The automatic Fan",
+        "text": "Cork Winch",
         "owners": [
           "p1"
         ],
@@ -482,7 +482,7 @@
       },
       {
         "id": "o2",
-        "text": "The automatic Compass",
+        "text": "Copper Winch",
         "owners": [
           "p2"
         ],
@@ -496,9 +496,9 @@
       }
     ],
     "votes": {
-      "p0": "o3",
-      "p1": "o3",
-      "p2": "o3"
+      "p0": "o1",
+      "p1": "o0",
+      "p2": "o0"
     },
     "multiplier": 2,
     "fact": "This is a made-up workshop story, not a claim about the real world."

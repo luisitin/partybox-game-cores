@@ -145,3 +145,18 @@ phone4×60.0036fps/p9516.80ms,no network/errors and reduced-motion honored.
 Capture6<10MB;24 data/media checksums PASS. Environment restarted/reconnected;
 post-return status/source/artifact inspection and24 checksums all matched.
 Hosted77f6f79 CI37725962141 SUCCESS;5e1d1d6 CI37725343643 SUCCESS.
+
+Round5 baseline node public-view probe atdc0fb64:0/300 Medium fakes followed
+the two-word hint,0 invalid. style-before.json records it. node style-probe.ts
+after fix:300/300 two-word,0 invalid. Full npm test completed successfully:
+50/50 tests (27 focused),21,000 bot games,1,003 exact replays,1,000 idle
+rosters,10,000 numeric and10,000 bluff differentials,25/25 mutation kills
+with a27-test baseline,9,000 bounds actions/0 invalid,12,000 league matches,
+22 browser scenarios and27 checksums. test.ts duration214214.99ms.
+Quick rates unchanged;Mixed Strong1971/2000(98.55%,lower98.03%),Medium
+1988/2000(99.40%,lower99.06%);Bluff Strong1987/2000(99.35%,lower99.00%),
+Medium1992/2000(99.60%,lower99.32%). Ties count as no win. Each lower bound
+exceeds50%. Build493,410bytes,TV60.0024fps/p9516.80ms,phone4×60.0028fps/
+p9516.70ms,no requests/errors and reduced motion honored,capture7<10MB.
+Hosted Round4 dc0fb6427f06a662ff20c6b971a99ffa1f8f1918 run37727596105
+SUCCESS observed04:36UTC. New-head hosted CI pending.
