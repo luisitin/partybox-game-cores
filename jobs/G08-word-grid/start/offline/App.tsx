@@ -26,7 +26,7 @@ function App() {
   const [seed, setSeed] = useState(freshSeed), [publicStage, setPublicStage] = useState(false);
   const session = useRef<Session | null>(null), [, render] = useState(0);
   const [motion, setMotion] = useState(!matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const heading = useRef<HTMLHeadingElement>(null);
+  const heading = useRef<HTMLHeadingElement>(null), ready = useRef<HTMLButtonElement>(null);
   const update = () => render(n => n + 1);
   const shell = useRef({ now: () => session.current?.now ?? 1000, play: (_s: string) => {}, say: (_s: unknown) => {}, motion });
   shell.current.motion = motion;
@@ -127,6 +127,11 @@ function App() {
     setCount(n); setSeats(previous => Array.from({ length: n }, (_, i) => previous[i] ?? { name: `Player ${i + 1}`, skill: 'human' }));
   };
   const r = session.current;
+  useEffect(() => {
+    if (r?.state.phase.id !== 'hunt') return;
+    if (r.handoff) ready.current?.focus();
+    else document.querySelector<HTMLElement>('.phone-owner [role="gridcell"][tabindex="0"]')?.focus();
+  }, [r?.state.phase.id, r?.state.round, r?.handoff, r?.turn]);
   if (!r) return <main className="setup"><h1 ref={heading} tabIndex={-1}>Shake Up</h1><p>Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.</p>
     <form onSubmit={start}><div className="options">
       <label>Players<select aria-label="Players" value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
@@ -146,7 +151,7 @@ function App() {
     <header className="host"><h1 ref={heading} tabIndex={-1}>Shake Up{state.phase.id === 'done' ? ' · Results' : ''}</h1><nav aria-label="Host controls">
       {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{state.phase.paused ? 'Resume' : 'Pause'}</button>{!r.handoff ? <button onClick={skip}>{isHunt ? 'Finish turn' : state.phase.id === 'reveal' ? 'Next card' : 'Continue'}</button> : null}<button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>Public stage</button></> : null}
       <button onClick={reset}>New game</button></nav></header>
-    {r.handoff ? <section className="handoff" aria-label="Pass the device"><h2>Pass to {me.name}</h2><p>Everyone else looks away. Your {state.cfg.huntMs / 1000}-second clock starts when you’re ready.</p><button onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>I’m ready</button></section>
+    {r.handoff ? <section className="handoff" aria-label="Pass the device"><h2 id="handoff-name">Pass to {me.name}</h2><p id="handoff-clock">Everyone else looks away. Your {state.cfg.huntMs / 1000}-second clock starts when you’re ready.</p><button ref={ready} aria-describedby="handoff-name handoff-clock" onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>I’m ready</button></section>
       : publicStage ? <div className="tv-owner"><Tv view={game.tvView(state)} /></div>
       : <div className="phone-owner" key={`${state.round}-${isHunt ? active : 'stage'}`}><p className="private-label">{isHunt ? `${me.name} · private turn` : `Round ${state.round} of ${state.cfg.rounds}`}</p>{isHunt ? <Controller view={game.controllerView(state, active)} send={send} me={me} skip={skip} /> : <PhoneStage view={game.controllerView(state, active)} send={send} me={me} skip={skip} />}</div>}
   </main></ShellProvider>;

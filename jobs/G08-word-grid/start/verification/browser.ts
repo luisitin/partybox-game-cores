@@ -30,7 +30,9 @@ async function setup(page:Page,n=2,grid='4x4',lang='en',ready=true){
   await page.getByLabel(/^Grid/).selectOption(grid);await page.getByLabel(/^Words/).selectOption(lang);
   await page.getByLabel(/^Rounds/).selectOption('1');await page.getByLabel(/^Seconds per person/).selectOption('90');
   await page.getByRole('button',{name:'Start Shake Up'}).click();assert.equal(await page.locator('main').getAttribute('data-phase'),'shake');
-  await page.getByRole('button',{name:'Continue',exact:true}).click();if(ready)await page.getByRole('button',{name:'I’m ready'}).click();
+  await page.getByRole('button',{name:'Continue',exact:true}).click();
+  await page.waitForFunction(`document.activeElement?.textContent==='I’m ready'`);
+  if(ready){await page.getByRole('button',{name:'I’m ready'}).click();await page.waitForFunction(`document.activeElement?.getAttribute('role')==='gridcell'`);}
   assert.equal(await page.locator('main').getAttribute('data-phase'),'hunt');
 }
 async function trace(page:Page,path:number[]){
@@ -75,7 +77,9 @@ await phone.page.screenshot({path:'.tmp/visual/native-traces.png'});
 await phone.page.getByRole('button',{name:'Public stage',exact:true}).click();assert(!(await phone.page.locator('body').innerText()).includes(word.toUpperCase()));
 await phone.page.getByRole('button',{name:'Public stage',exact:true}).click();await phone.page.getByRole('button',{name:'Finish turn',exact:true}).click();
 assert(!(await phone.page.locator('body').innerText()).includes(word.toUpperCase()),'handoff leaks prior list');assert.equal(await phone.page.getByRole('gridcell').count(),0);
-await phone.page.getByRole('button',{name:'I’m ready'}).click();assert(!(await phone.page.locator('body').innerText()).includes(word.toUpperCase()),'other phone leaks first list');
+await phone.page.waitForFunction(`document.activeElement?.textContent==='I’m ready'`);
+assert.equal(await phone.page.getByRole('button',{name:'I’m ready'}).getAttribute('aria-describedby'),'handoff-name handoff-clock');
+await phone.page.getByRole('button',{name:'I’m ready'}).click();await phone.page.waitForFunction(`document.activeElement?.getAttribute('role')==='gridcell'`);assert(!(await phone.page.locator('body').innerText()).includes(word.toUpperCase()),'other phone leaks first list');
 await phone.page.getByRole('button',{name:'Finish turn',exact:true}).click();assert.equal(await phone.page.locator('main').getAttribute('data-phase'),'reveal');
 let beats=0;while(await phone.page.locator('main').getAttribute('data-phase')==='reveal'){await phone.page.getByRole('button',{name:'Next card',exact:true}).first().click();assert(++beats<30);}
 assert.equal(await phone.page.locator('main').getAttribute('data-phase'),'tally');await phone.page.getByRole('button',{name:'Continue',exact:true}).click();
@@ -131,5 +135,5 @@ await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).click(
 assert.notDeepEqual(await restart.page.getByRole('gridcell').allTextContents(),restartGrid,'fresh seed should make a fresh board');
 const restartPath=await restart.page.video()!.path();await restart.context.close();const restartDestination='.tmp/visual/restart-preserves-progress.webm';renameSync(restartPath,restartDestination);assert(statSync(restartDestination).size<10*1024*1024);
 await browser.close();assert.deepEqual(errors,[]);assert.deepEqual(outgoing,[]);
-const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true,cancelRestartKeepsProgress:true,newGameFreshSeed:true},restartVideoBytes:statSync(restartDestination).size,layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
+const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true,cancelRestartKeepsProgress:true,newGameFreshSeed:true,handoffAndGridFocus:true},restartVideoBytes:statSync(restartDestination).size,layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
 writeFileSync('.tmp/visual/browser-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

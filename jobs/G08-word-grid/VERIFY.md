@@ -120,4 +120,8 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 
 ## KEEP GOING round2
 - `npm run typecheck`, `npm run build:play`: PASS;14204895bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallprior native gates + actual confirmation dismissal preserves hunt/grid/submitted word; confirmation retains2-player/1-round choices, chooses different uint32seed and board, focuses setup heading.0network/errors,285845-byte clip04. Explicit HTTP/native-only evidence; full disk/FPS CI is running on milestone heads.
-- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: rechecked after adding round2media;35JSONfiles and all79+file hashes expected; actual result printed by command. Owner protected originals unchanged.
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: rechecked after adding round2media;PASS35JSONfiles and all80file hashes. Owner protected originals unchanged.
+
+## KEEP GOING round3
+- `npm run typecheck`, `npm run build:play`: PASS,14205234bytes. `G08_BROWSER_URL=http://127.0.0.1:8768/play.html G08_NATIVE_ONLY=1 npm run test:browser`: PASSallnative/private/16-seat/restart gates plus explicit activeElement ready→grid checks and aria-describedby player/clock association. Before handoff focusBODY (round1diagnostic), now ready button then gridcell;0requests/errors,1009300-byte clip05. Report explicitly partial HTTP/native-only; full disk/FPS CI remains mandatory.
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS36JSONfiles and82file hashes after round3evidence addition.
