@@ -42,9 +42,7 @@ export function judgePlayer(state: State, id: string, finders = findersByWord(st
 
 export function roundPoints(state: State): Record<string, number> {
   const finders = findersByWord(state);
-  const pts: Record<string, number> = {};
-  for (const id of state.order) pts[id] = judgePlayer(state, id, finders).reduce((s, j) => s + j.pts, 0);
-  return pts;
+  return Object.fromEntries(state.order.map(id => [id, judgePlayer(state, id, finders).reduce((s, j) => s + j.pts, 0)]));
 }
 
 export function leaders(order: readonly string[], scores: Record<string, number>): string[] {
@@ -56,7 +54,7 @@ export function leaders(order: readonly string[], scores: Record<string, number>
 /** Scores the round into totals and the log. Called once, on entering tally. Scores never go down. */
 export function applyRound(state: State): State {
   const finders = findersByWord(state);
-  const log: RoundLog = { round: state.round, points: {}, unique: {}, shared: {}, counted: {}, best: {}, firstMs: {}, missed: state.missed?.w ?? null };
+  const log: RoundLog = { round: state.round, points: Object.fromEntries(state.order.map(id => [id, 0])), unique: Object.fromEntries(state.order.map(id => [id, 0])), shared: Object.fromEntries(state.order.map(id => [id, 0])), counted: Object.fromEntries(state.order.map(id => [id, 0])), best: Object.fromEntries(state.order.map(id => [id, ''])), firstMs: {}, missed: state.missed?.w ?? null };
   const scores = { ...state.scores };
   for (const id of state.order) {
     const judged = judgePlayer(state, id, finders);
@@ -68,7 +66,7 @@ export function applyRound(state: State): State {
     const best = judged.find((j) => j.pts > 0);
     if (best) log.best[id] = best.w;
     const firsts = (state.words[id] ?? []).filter((e) => e.ok).map((e) => e.t);
-    if (firsts.length) log.firstMs[id] = Math.min(...firsts);
+    if (firsts.length) Object.defineProperty(log.firstMs, id, { value: Math.min(...firsts), enumerable: true });
     scores[id] = (scores[id] ?? 0) + pts;
   }
   return { ...state, scores, log: [...state.log, log], leadersBefore: leaders(state.order, state.scores) };

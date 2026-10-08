@@ -12,8 +12,9 @@ import {
   type InitCtx,
   type Manifest,
 } from '@partybox/game-sdk';
+import { gameManifestSchema } from '../../../../../../contract/contract';
 import manifestJson from '../manifest.json';
-import { bot } from './bot';
+import { sampleInput } from './bot';
 import { asLang } from './content';
 import { enterHunt, allDone, reduceHunt } from './phases/hunt';
 import { enterReveal, reduceReveal } from './phases/reveal';
@@ -26,19 +27,15 @@ import { speech, speechCatalog } from './speech';
 import { PHASES, inputSchema, type Input, type Player, type State } from './types';
 import { controllerView, tvView, type ControllerView, type TvView } from './views';
 
-export const manifest = manifestJson as unknown as Manifest;
+export const manifest: Manifest = gameManifestSchema.parse(manifestJson);
 
 export function init(ctx: InitCtx): State {
   const s = ctx.settings;
   const size = selectSetting(s, 'grid', ['4x4', '5x5'] as const, '4x4') === '5x5' ? 5 : 4;
-  const players: Record<string, Player> = {};
-  const scores: Record<string, number> = {};
-  ctx.players.forEach((p, seat) => {
-    players[p.id] = { id: p.id, name: p.name, bot: p.isBot === true, away: false, seat };
-    scores[p.id] = 0;
-  });
+  const players: Record<string, Player> = Object.fromEntries(ctx.players.map((p, seat) => [p.id, { id: p.id, name: p.name, avatarId: p.avatarId, connected: p.connected, bot: p.bot === true, away: !p.connected, seat }]));
+  const scores: Record<string, number> = Object.fromEntries(ctx.players.map(p => [p.id, 0]));
   const base: State = {
-    phase: { id: 'shake', startedAt: ctx.now },
+    phase: { id: 'shake', startedAt: ctx.now, deadline: null },
     rng: seedRng(ctx.seed),
     cfg: {
       rounds: numberSetting(s, 'rounds', 3, 1, 5),
@@ -47,6 +44,7 @@ export function init(ctx: InitCtx): State {
       minLen: minLength(size),
       spicy: boolSetting(s, 'spicy', false),
       lang: asLang(ctx.contentLang),
+      dictionary: ctx.contentLang !== 'es' ? selectSetting(s, 'dictionary', ['full', 'common'] as const, 'full') : 'full',
       reader: typeof s.reader === 'string' ? s.reader : 'host-hype',
       mode: ctx.presence?.mode ?? 'together',
     },
@@ -54,6 +52,7 @@ export function init(ctx: InitCtx): State {
     players,
     round: 0,
     grid: [],
+    botPlans: { easy: [], normal: [], sharp: [] },
     cubes: [],
     throwSeed: 0,
     words: {},
@@ -82,7 +81,7 @@ export function advance(state: State, now: number): State {
 }
 
 function finish(state: State, now: number): State {
-  return { ...state, phase: { id: 'done', startedAt: now } };
+  return { ...state, phase: { id: 'done', startedAt: now, deadline: null } };
 }
 
 /** VIP end: a round already revealed still counts; then straight to results. */
@@ -96,39 +95,28 @@ type PlayerEv = Extract<GameEvent<Input>, { type: 'player' }>;
 
 export function onPlayer(state: State, ev: PlayerEv, next: (s: State) => State): State {
   const id = ev.playerId;
-  if (!hasPlayer(state.players, id)) {
-    if (!ev.connected || state.phase.id === 'done') return state;
-    // Late joiner: in at once with the grid and clock as they stand; score starts at 0.
-    const seat = state.order.length;
-    const p: Player = { id, name: ev.name ?? '', bot: false, away: false, seat };
-    return {
-      ...state,
-      order: [...state.order, id],
-      players: { ...state.players, [id]: p },
-      scores: { ...state.scores, [id]: 0 },
-      words: { ...state.words, [id]: [] },
-    };
-  }
+  // Root events carry no late-join identity. Unknown ids remain spectators.
+  if (!hasPlayer(state.players, id)) return state;
   const cur = state.players[id] as Player;
   const away = !ev.connected;
   if (cur.away === away) return state;
-  const s = { ...state, players: { ...state.players, [id]: { ...cur, away } } };
+  const s = { ...state, players: { ...state.players, [id]: { ...cur, away, connected: ev.connected } } };
   // "Everyone done" ignores away players, so a drop can close the hunt.
-  return s.phase.id === 'hunt' && !s.paused && allDone(s) ? next(s) : s;
+  return s.phase.id === 'hunt' && !s.phase.paused && allDone(s) ? next(s) : s;
 }
 
 type VipEv = Extract<GameEvent<Input>, { type: 'vip' }>;
 
 /** Pause bookkeeping for our own clock (word times exclude pauses), then recheck all-done. */
 export function afterVip(state: State, ev: VipEv, prev: State): State {
-  if (ev.action === 'resume' && prev.paused && state.phase.id === 'hunt') {
-    const s = { ...state, pausedMs: state.pausedMs + Math.max(0, ev.now - prev.paused.at) };
+  if (ev.action === 'resume' && prev.phase.paused && state.phase.id === 'hunt') {
+    const s = { ...state, pausedMs: state.pausedMs + Math.max(0, ev.now - prev.phase.paused.at) };
     return allDone(s) ? advance(s, ev.now) : s;
   }
   return state;
 }
 
-export const reduce = composeReduce<State, Input>({
+const composedReduce = composeReduce<State, Input>({
   phases: { shake: reduceShake, hunt: reduceHunt, reveal: reduceReveal, tally: reduceTally },
   advance,
   end,
@@ -136,7 +124,12 @@ export const reduce = composeReduce<State, Input>({
   afterVip,
 });
 
-export const game: GameDefinition<State, Input, TvView, ControllerView> = {
+export function reduce(state: State, event: GameEvent<Input>): State {
+  if (event.type === 'input' && !inputSchema.safeParse(event.input).success) return state;
+  return composedReduce(state, event);
+}
+
+export const game = {
   manifest,
   phases: PHASES,
   inputSchema,
@@ -144,12 +137,12 @@ export const game: GameDefinition<State, Input, TvView, ControllerView> = {
   reduce,
   tvView,
   controllerView,
-  results,
-  bot,
+  results: (state: State) => state.phase.id === 'done' ? results(state) : null,
+  bot: { sampleInput },
   speech,
   speechCatalog,
-  recap: (state) => {
+  recap: (state: State) => {
     const r = results(state);
-    return [r.headline ?? '', r.headlineNote ?? ''].filter(Boolean);
+    return { markdown: [r?.headline ?? '', r?.headlineNote ?? ''].filter(Boolean).join('\n\n') };
   },
-};
+} satisfies GameDefinition<State, Input, TvView, ControllerView>;

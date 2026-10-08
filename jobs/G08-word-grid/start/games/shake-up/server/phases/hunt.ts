@@ -26,7 +26,7 @@ function addWord(state: State, id: string, path: number[], now: number): State {
   const w = wordFromPath(grid, path);
   const mine = state.words[id] ?? [];
   if (letterCount(w) < cfg.minLen || mine.some((e) => e.w === w)) return state;
-  const pack = packFor(cfg.lang);
+  const pack = packFor(cfg.lang, cfg.dictionary);
   if (!cfg.spicy && hasWord(pack.blocked, w)) return verdict(state, id, w, 'blocked');
   const ok = hasWord(pack.words, w);
   if (mine.length >= MAX_ENTRIES || (!ok && mine.filter((e) => !e.ok).length >= MAX_UNKNOWN)) return verdict(state, id, w, 'full');

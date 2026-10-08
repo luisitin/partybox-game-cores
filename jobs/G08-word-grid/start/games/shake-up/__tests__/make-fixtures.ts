@@ -5,16 +5,16 @@
 import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { seedRng } from '@partybox/game-sdk';
+import { createRng, hashString } from '../../../../../../contract/rng';
 import { game } from '../server';
 import type { State } from '../server/types';
 
 const out = join(dirname(fileURLToPath(import.meta.url)), '..', 'fixtures');
 const names = ['Ana', 'Ben', 'Cleo', 'Dev', 'Eli', 'Priya'];
 let s = game.init({
-  players: names.map((name, i) => ({ id: name.toLowerCase(), name, isBot: name === 'Dev' })),
+  players: names.map((name, i) => ({ id: name.toLowerCase(), name, avatarId: 'face-'+i, connected: true, bot: name === 'Dev' })),
   settings: { rounds: 3 },
-  seed: 'fixtures-2026-10-05',
+  seed: hashString('fixtures-2026-10-05'),
   now: 1_000_000,
   contentLang: 'en',
 });
@@ -23,18 +23,18 @@ let now = 1_000_000;
 const skills = ['normal', 'sharp', 'normal', 'normal', 'easy', 'normal'] as const;
 for (let tick = 0; tick < 4000 && s.phase.id !== 'done'; tick++) {
   now += 1000;
-  if (s.phase.deadline !== undefined && now >= s.phase.deadline) {
-    s = game.reduce(s, { type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt, step: s.phase.step ?? 0 });
+  if (s.phase.deadline !== null && now >= s.phase.deadline) {
+    s = game.reduce(s, { type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt });
   } else {
     s.order.forEach((id, i) => {
-      const inp = game.bot.sampleInput(game.controllerView(s, id), { playerId: id, rng: seedRng(`${tick}:${id}`), skill: skills[i] ?? 'normal' });
+      const inp = game.bot.sampleInput(s, id, createRng(hashString(`${tick}:${id}`)), skills[i] ?? 'normal');
       if (inp) s = game.reduce(s, { type: 'input', playerId: id, input: inp, now });
     });
   }
   const p = s.phase;
   if (s.round === 2) {
     if (p.id === 'shake' && !keep.shake) keep.shake = s;
-    if (p.id === 'hunt' && p.deadline !== undefined && p.deadline - now <= 12_000 && !keep.hunt) keep.hunt = s;
+    if (p.id === 'hunt' && p.deadline !== null && p.deadline - now <= 12_000 && !keep.hunt) keep.hunt = s;
     if (p.id === 'reveal' && (p.step ?? 0) === 2 && !keep.reveal) keep.reveal = s;
     if (p.id === 'reveal' && (p.step ?? 0) === s.beats.length - 1) keep['reveal-last'] = s;
     if (p.id === 'tally' && !keep.tally) keep.tally = s;

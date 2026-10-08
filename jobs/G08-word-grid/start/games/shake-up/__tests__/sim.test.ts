@@ -1,3 +1,4 @@
+import { createRng } from '../../../../../../contract/rng';
 import { describe, expect, it } from 'vitest';
 import { game } from '../server';
 import { inputSchema } from '../server/types';
@@ -9,7 +10,7 @@ describe('random play (bots + junk events)', () => {
   it(`${RUNS} games finish, never throw, keep views safe, never leak`, () => {
     for (let seed = 1; seed <= RUNS; seed++) {
       const players = 1 + (seed % 8);
-      const settings = { rounds: 1 + (seed % 3), huntSeconds: ['90', '120', '180'][seed % 3], grid: seed % 5 === 0 ? '5x5' : '4x4', spicy: seed % 4 === 0 };
+      const settings = { rounds: 1 + (seed % 3), huntSeconds: ['90', '120', '180'][seed % 3]!, grid: seed % 5 === 0 ? '5x5' : '4x4', spicy: seed % 4 === 0 };
       const { state, events, ms } = simulate({ players, seed, settings, chaos: true, lang: seed % 3 === 0 ? 'es' : 'en', skill: (['easy', 'normal', 'sharp'] as const)[seed % 3] });
       expect(state.phase.id, `seed ${seed}`).toBe('done');
       expect(ms).toBeLessThan(game.manifest.estimatedMinutes * 3 * 60_000);
@@ -17,7 +18,7 @@ describe('random play (bots + junk events)', () => {
       let again = room(players, settings, seed, { lang: seed % 3 === 0 ? 'es' : 'en' });
       for (const ev of events) again = game.reduce(again, ev);
       expect(JSON.stringify(again)).toBe(JSON.stringify(state));
-      const r = game.results(state);
+      const r = game.results(state)!;
       expect(jsonSafe(r)).toBeNull();
       expect(r.ranking).toHaveLength(state.order.length);
       expect(r.awards.length).toBeGreaterThanOrEqual(3);
@@ -58,7 +59,7 @@ describe('random play (bots + junk events)', () => {
       s = game.reduce(s, ev);
       for (const id of s.order) {
         for (const skill of ['easy', 'normal', 'sharp'] as const) {
-          const inp = game.bot.sampleInput(game.controllerView(s, id), { playerId: id, rng: { s: events.indexOf(ev) }, skill });
+          const inp = game.bot.sampleInput(s, id, createRng(events.indexOf(ev)), skill);
           if (inp !== null) { expect(inputSchema.safeParse(inp).success).toBe(true); words++; }
         }
       }

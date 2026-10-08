@@ -4,15 +4,20 @@
 export type WordList = readonly string[];
 
 /** Index of the first entry ≥ key. */
-export function lowerBound(words: WordList, key: string): number {
-  let lo = 0;
-  let hi = words.length;
+export function lowerBound(words: WordList, key: string, lo = 0, hi = words.length): number {
   while (lo < hi) {
     const mid = (lo + hi) >>> 1;
     if ((words[mid] as string) < key) lo = mid + 1;
     else hi = mid;
   }
   return lo;
+}
+
+/** A child prefix can only occur inside its parent's sorted range. Still binary search,
+ * with no trie or mutable cache. The high sentinel is above all letters in these packs. */
+export function prefixRange(words: WordList, prefix: string, lo = 0, hi = words.length): [number, number] {
+  const start = lowerBound(words, prefix, lo, hi);
+  return [start, lowerBound(words, prefix + '\uffff', start, hi)];
 }
 
 export function hasWord(words: WordList, w: string): boolean {

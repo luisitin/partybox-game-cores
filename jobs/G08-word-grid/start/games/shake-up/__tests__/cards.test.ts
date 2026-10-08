@@ -51,7 +51,7 @@ describe('VIP rulings', () => {
     s = say(s, 'p3', [1, 5, 4]);
     s = say(s, 'p1', STRANDED);
     s = fire(s); // → reveal: p2 and p3 (0 pts) come first
-    s = fire(s, s.phase.deadline);
+    s = fire(s, s.phase.deadline!);
     expect(game.controllerView(s, 'p1').reveal?.rulable).toEqual([{ w: 'TDE', by: ['p2', 'p3'] }]);
   });
 });
@@ -66,7 +66,7 @@ describe('the phone at the end of the game', () => {
     expect(f?.headline).toBe('Ana out-spelled the room');
     expect(f?.longest).toEqual({ id: 'p1', w: 'STRANDED', len: 8 });
     expect(f?.awards.map((a) => a.id)).toContain('wordsmith');
-    expect(f?.awards).toEqual(game.results(done).awards);
+    expect(f?.awards).toEqual(game.results(done)!.awards);
     expect(game.controllerView(done, 'p2').tally?.rows.map((r) => r.id)).toEqual(['p1', 'p2']);
   });
   it('writes seconds in the room’s notation (0,5 s in Spanish)', () => {
@@ -75,7 +75,7 @@ describe('the phone at the end of the game', () => {
     let s = hunt(2, { rounds: 1 }, 'es');
     const w = solve(s.grid, 4, packFor('es').words, 3)[0]!;
     s = say(s, 'p1', w.path);
-    const quick = game.results(until(fire(s), 'done')).awards.find((a) => a.id === 'quick-draw');
+    const quick = game.results(until(fire(s), 'done'))!.awards.find((a) => a.id === 'quick-draw');
     expect(quick?.value).toMatch(/^primera palabra en \d+,\d s$/);
   });
 });

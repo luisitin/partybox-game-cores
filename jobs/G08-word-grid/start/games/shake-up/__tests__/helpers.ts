@@ -1,5 +1,6 @@
 // Test helpers: build a room, drive events, run whole games with bots.
-import { nextFloat, seedRng, type BotSkill, type GameEvent, type Rng, type Settings } from '@partybox/game-sdk';
+import { nextFloat, seedRng, type BotSkill, type GameEvent, type RngState, type Settings } from '@partybox/game-sdk';
+import { createRng, hashString } from '../../../../../../contract/rng';
 import { game } from '../server';
 import type { Input, State } from '../server/types';
 
@@ -11,11 +12,11 @@ export const STRANDED = [0, 1, 2, 3, 6, 5, 9, 10];
 
 export function room(n: number, settings: Settings = {}, seed: number | string = 1, opts: { lang?: string; bots?: number[] } = {}): State {
   return game.init({
-    players: NAMES.slice(0, n).map((name, i) => ({ id: `p${i + 1}`, name, isBot: opts.bots?.includes(i) === true })),
+    players: NAMES.slice(0, n).map((name, i) => ({ id: `p${i + 1}`, name, avatarId: 'face-'+i, connected: true, bot: opts.bots?.includes(i) === true })),
     settings,
-    seed,
+    seed: typeof seed === 'string' ? Number(seed) || 1 : seed,
     now: T0,
-    contentLang: opts.lang ?? 'en',
+    contentLang: opts.lang === 'es' ? 'es' : 'en',
   });
 }
 
@@ -23,7 +24,7 @@ export const input = (playerId: string, inp: Input, now: number, vip = false): G
   vip ? { type: 'input', playerId, input: inp, now, vip: true } : { type: 'input', playerId, input: inp, now };
 
 export function fire(s: State, now = s.phase.deadline ?? T0): State {
-  return game.reduce(s, { type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt, step: s.phase.step ?? 0 });
+  return game.reduce(s, { type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt });
 }
 
 export const skip = (s: State, now = s.phase.startedAt + 10): State => game.reduce(s, { type: 'vip', action: 'skip', now });
@@ -43,7 +44,7 @@ export type SimOpts = { players: number; seed: number; settings?: Settings; lang
 /** Whole game: every player driven by the bot (plus optional random junk), 1 s ticks. */
 export function simulate(o: SimOpts): { state: State; events: GameEvent<Input>[]; ms: number } {
   let s = room(o.players, o.settings ?? {}, o.seed, { lang: o.lang ?? 'en' });
-  let rng: Rng = seedRng(`sim:${o.seed}`);
+  let rng: RngState = seedRng(hashString(`sim:${o.seed}`));
   const rand = () => { const [v, r] = nextFloat(rng); rng = r; return v; };
   const events: GameEvent<Input>[] = [];
   const apply = (ev: GameEvent<Input>) => { events.push(ev); s = game.reduce(s, ev); };
@@ -51,15 +52,14 @@ export function simulate(o: SimOpts): { state: State; events: GameEvent<Input>[]
   for (let tick = 0; tick < 6000 && s.phase.id !== 'done'; tick++) {
     now += 1000;
     // The engine holds timers while paused; someone resumes eventually.
-    if (s.paused) { if (rand() < 0.15) apply({ type: 'vip', action: 'resume', now }); continue; }
-    if (s.phase.deadline !== undefined && now >= s.phase.deadline) {
-      apply({ type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt, step: s.phase.step ?? 0 });
+    if (s.phase.paused) { if (rand() < 0.15) apply({ type: 'vip', action: 'resume', now }); continue; }
+    if (s.phase.deadline !== null && now >= s.phase.deadline) {
+      apply({ type: 'timer', now, phaseId: s.phase.id, startedAt: s.phase.startedAt });
       continue;
     }
     if (o.idle) continue;
     for (const id of s.order) {
-      const view = game.controllerView(s, id);
-      const inp = game.bot.sampleInput(view, { playerId: id, rng: seedRng(`${o.seed}:${tick}:${id}`), skill: o.skill ?? 'normal' });
+      const inp = game.bot.sampleInput(s, id, createRng(hashString(`${o.seed}:${tick}:${id}`)), o.skill ?? 'normal');
       if (inp) apply(input(id, inp, now));
       if (o.chaos && rand() < 0.05) apply(junk(id, rand, now, s));
     }

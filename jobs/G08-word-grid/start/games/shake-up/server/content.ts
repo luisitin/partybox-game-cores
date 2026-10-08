@@ -1,6 +1,7 @@
 // Typed access to the packs. Content stays on the server; phones never import it.
 import cubesEn from '../content/cubes.en.json';
 import cubesEs from '../content/cubes.es.json';
+import commonEn from '../content/common-words.en.json';
 import wordsEn from '../content/words.en.json';
 import wordsEs from '../content/words.es.json';
 import blockedEn from '../content/blocked.en.json';
@@ -21,8 +22,9 @@ const PACKS: Readonly<Record<Lang, Pack>> = {
   es: { cubes: cubesEs as CubePack, words: wordsEs, blocked: blockedEs, bots: botEs },
 };
 
-export function packFor(lang: Lang): Pack {
-  return PACKS[lang];
+const COMMON_EN: Pack = { ...PACKS.en, words: commonEn };
+export function packFor(lang: Lang, dictionary: 'full' | 'common' = 'full'): Pack {
+  return lang === 'en' && dictionary === 'common' ? COMMON_EN : PACKS[lang];
 }
 
 export function asLang(raw: unknown): Lang {

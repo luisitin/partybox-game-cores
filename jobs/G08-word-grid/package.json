@@ -1,0 +1,35 @@
+{
+  "name": "g08-shake-up-verification",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build:words": "tsx start/games/shake-up/content/build-words.ts --es-freq start/research/inputs/es_50k.txt",
+    "research": "tsx start/research/measure.ts",
+    "build:play": "node start/offline/build.mjs"
+  },
+  "dependencies": {
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "tsx": "4.20.6",
+    "vitest": "3.2.4",
+    "esbuild": "0.25.11",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@types/react": "18.3.26",
+    "@types/react-dom": "18.3.7",
+    "@types/node": "24.7.2",
+    "ajv": "8.17.1",
+    "playwright-core": "1.56.0",
+    "an-array-of-english-words": "2.0.0",
+    "an-array-of-spanish-words": "2.0.0",
+    "wordlist-english": "1.2.1",
+    "naughty-words": "1.2.0",
+    "three": "0.171.0",
+    "@types/three": "0.171.0"
+  }
+}

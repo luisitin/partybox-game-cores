@@ -12,7 +12,7 @@ import type { ControllerView, PlayerRow } from '../client/types';
 
 const players: PlayerRow[] = ['Ana', 'Ben', 'Cleo'].map((name, seat) => ({ id: name.toLowerCase(), name, seat, bot: false, away: false, score: 0 }));
 const letters = 'STRAEDNIREDLOMQT'.split('');
-const base = { round: 1, rounds: 1, size: 4, minLen: 3, lang: 'en', grid: letters, players, paused: false, me: { id: 'ben', score: 0, done: false, words: [] } };
+const base = { round: 1, rounds: 1, size: 4, minLen: 3, lang: 'en', grid: letters, players, paused: false, me: { id: 'ben', role: 'player' as const, score: 0, done: false, words: [] } };
 const shell = { now: () => 0, play: () => {}, say: () => {}, motion: true };
 const me = (o: Partial<Me> = {}): Me => ({ id: 'ben', name: 'Ben', isVip: false, canSeeTv: true, ...o });
 const stage = (view: Partial<ControllerView>, m = me({ canSeeTv: false })) =>
@@ -31,7 +31,7 @@ const done: Partial<ControllerView> = {
   tally: { rows: [{ id: 'ana', before: 0, gained: 11, after: 11, place: 1 }, { id: 'ben', before: 0, gained: 3, after: 3, place: 2 }, { id: 'cleo', before: 0, gained: 0, after: 0, place: 3 }] },
   final: {
     headline: 'Ana out-spelled the room',
-    awards: [{ id: 'lone-wolf', icon: '🐺', title: 'Lone Wolf', description: 'Most words nobody else found.', playerIds: ['ben'], value: '3 unique words' }],
+    awards: [{ id: 'lone-wolf', playerId: 'ben', icon: '🐺', title: 'Lone Wolf', description: 'Most words nobody else found.', playerIds: ['ben'], value: '3 unique words' }],
     longest: { id: 'ana', w: 'STRANDED', len: 8 },
     missed: { w: 'TRADES', len: 6 },
   },
