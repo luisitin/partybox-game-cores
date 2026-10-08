@@ -10,8 +10,10 @@ leagues/solver/data/partial HTTP browser and2,000-level benchmark PASS.
 Milestone11 copied from the full-run capture,decodes under10MB;29 hashes.
 Real reliability gain resets the no-gain streak0.
 
-Next:push both branches,refresh G03 claim,observe exact-head hosted
-SUCCESS,then R10–12 renewed KEEP GOING:valid baseline compatibility,
+Next:push both branches,refresh G03 claim,R9 hosted37763715949/ca415c8 SUCCESS10:31:03UTC.
+R10 valid baseline compatibility PASS1,003 games/17,119 transitions/0
+differences;early30-hash validation rejects corrupted HTML before build.
+No-gain streak1. Next:R11–12 renewed KEEP GOING:
 malformed JSON breadth,and fresh browser audit. Three consecutive no
 player-visible gains are required after R9;do not use the previous stop.
 Reuse PR3;do not create a duplicate or merge/close any public PR.

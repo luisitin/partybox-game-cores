@@ -43,5 +43,5 @@ json('data/property-seeds.json', [...seeds]);
 json('schemas/seeds.schema.json', z.toJSONSchema(z.array(z.number().int().min(0).max(0xffffffff)).length(1003), { target: 'draft-2020-12' }));
 const dataFiles = ['research-access.json', 'manifest.json', ...readdirSync('data').filter(f => f.endsWith('.json')).map(f => `data/${f}`), ...readdirSync('fixtures').map(f => `fixtures/${f}`), ...readdirSync('schemas').map(f => `schemas/${f}`)];
 const media = (() => { try { return readdirSync('media').filter(f => /\.(?:webm|mp4|png|json)$/.test(f)).map(f => `media/${f}`); } catch { return []; } })();
-writeFileSync('SHA256SUMS.txt', ['play.html', 'src/tiers.ts', ...dataFiles, ...media].sort().map(f => `${createHash('sha256').update(readFileSync(f)).digest('hex')}  ${f}`).join('\n') + '\n');
+writeFileSync('SHA256SUMS.txt', ['play.html', 'src/tiers.ts', 'THIRD_PARTY_NOTICES.md', ...dataFiles, ...media].sort().map(f => `${createHash('sha256').update(readFileSync(f)).digest('hex')}  ${f}`).join('\n') + '\n');
 console.log(JSON.stringify({ generated: dataFiles.length, fixtures: game.phases }));
