@@ -1,3 +1,15 @@
+# Delivery-path correction —2026-10-08 around19:49UTC
+
+Last actual push a9c09a2dcef7fe8acf4014d879d87b550c99e9e4 at19:46:04.318355 UTC; main32c23a0 ownrow19:45:47. Previous push19:16:00.586934→19:46:04.318355 is30m03.731421s: hard30min missed3.731421s during genuine corrective controls/commit/push. No backdated timing. Next early20:11:04/hard20:16:04 until actual subsequent push.
+
+Actual corrected partition controls closed19:44:52.556511 exit0,42.045s/peak2,604,192KiB:10 positives/72 negatives. All4000 actual historical records independently replayed through coordinate oracle and current pure reducer to true terminal/winner/ending/results. Four coherently forged outcome+endReason+recomputedsummary/transcript rejected. Current helper bytes and guarded hashes match; source workflow snapshot a9 is historical after this artifact-path correction. Misnamed pre-terminal-controls.json actually contained that terminal receipt; renamed terminal-controls.json and actual resources/stdout/stderr added.
+
+First exact a9 hosted run37834410114 actually began19:46:06; all4 stages were in progress19:47:58 after successful exact checkout/dependency/runner-resource steps. Official actions/upload-artifact v4 README confirms hidden files excluded by default sincev4.4; all outputs are in .work, so upload steps now explicitly include hidden files only at declared public job output paths. A new exact-head complete hosted run is required; older a9 remains historical, never current-head acceptance. No PR or completed delivery/KEEP claim.
+
+Await all current native stages/30-minute per-job results and exact full standalone upload/download/source receipt. Current game/bot/data bytes unchanged. Preserve real CI failures. Local International17.510FPS failure remains unresolved and no unchanged local retry or cause was invented.
+
+## Earlier checkpoint/history
+
 # CI partition checkpoint —2026-10-08 around19:44UTC
 
 Last observed successful branch push2f821d157ee597494e38401d505cf2e337e23b94 at19:16:00.587/main52beb2b ownrow19:15:44. Target19:41 missed while correcting genuine outcome-forgery validation; hard19:46 remains. Next actual successful push resets cadence.

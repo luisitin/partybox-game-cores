@@ -56,6 +56,7 @@ jobs:
             jobs/G10-checkers/.work/browser
             jobs/G10-checkers/.work/media
           if-no-files-found: error
+          include-hidden-files: true
           retention-days: 7
   delivery:
     needs: checks
@@ -89,6 +90,7 @@ jobs:
             jobs/G10-checkers/.work/play.html
             jobs/G10-checkers/.work/standalone-delivery.json
           if-no-files-found: error
+          include-hidden-files: true
           compression-level: 1
           retention-days: 7
       - uses: actions/upload-artifact@v4
@@ -100,4 +102,5 @@ jobs:
             jobs/G10-checkers/.work/checks
             jobs/G10-checkers/.work/browser
             jobs/G10-checkers/.work/media
+          include-hidden-files: true
           retention-days: 7
