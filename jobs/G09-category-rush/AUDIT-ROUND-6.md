@@ -32,8 +32,10 @@ real public controls; it records all failures and exact source hashes. Its
 paused fake clock is a functional harness only, never a frame measurement.
 Warnings must disappear at handover, never depend on another locked sheet,
 never be included in anonymous review, and never disable Lock my answers.
-Equivalent-own-repeat advice must match the same transitive grouping used by
-scoring. No semantic fit, answer-bank membership or future ballot is a veto.
+Equivalent-own-repeat advice must use the same pairwise sameAnswer rule as
+own-repeat scoring. Cross-player groups are transitive; own-repeat scoring
+checks direct pairs. Report only the directly matching own category numbers.
+No semantic fit, answer-bank membership or future ballot is a veto.
 
 This is an in-progress review, not a completed LOOP6 or new gain. The current
 production page and its genuine hosted proof remain unchanged. Final changed-

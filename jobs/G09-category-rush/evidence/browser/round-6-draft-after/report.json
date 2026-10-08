@@ -1,0 +1,67 @@
+{
+  "mode": "after",
+  "sourceSha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
+  "runnerSha256": "a5e50fecb5570089bc84e2821c729c0ff69f4cd6a693bb6c69a86c71a6da64b1",
+  "startedAt": "2026-10-08T16:56:00.878Z",
+  "checks": [
+    {
+      "name": "2 people receive private, nonblocking feedback before locking",
+      "passed": true
+    },
+    {
+      "name": "8 people receive private, nonblocking feedback before locking",
+      "passed": true
+    },
+    {
+      "name": "actual offline file, errors and source identity",
+      "passed": true
+    }
+  ],
+  "rosters": [
+    {
+      "count": 2,
+      "letter": "S",
+      "mechanicallyIneligibleOwnRows": 3,
+      "privateWarningRows": 3,
+      "originalBadSubmissionAccepted": true,
+      "previousSheetDidNotAffectHints": true,
+      "restoredWarningRows": 3,
+      "restoredHandoverPrivate": true,
+      "remainingTimePreserved": true,
+      "finalScores": [
+        0,
+        0
+      ],
+      "privateBallots": 6
+    },
+    {
+      "count": 8,
+      "letter": "S",
+      "mechanicallyIneligibleOwnRows": 3,
+      "privateWarningRows": 3,
+      "originalBadSubmissionAccepted": true,
+      "previousSheetDidNotAffectHints": true,
+      "restoredWarningRows": 3,
+      "restoredHandoverPrivate": true,
+      "remainingTimePreserved": true,
+      "finalScores": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "privateBallots": 24
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  },
+  "passed": true,
+  "finishedAt": "2026-10-08T16:56:27.618Z"
+}

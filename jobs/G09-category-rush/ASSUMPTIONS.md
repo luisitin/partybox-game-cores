@@ -30,3 +30,18 @@
 - The paired-answer measurement uses unanimous actual ballots, without editing
   state letters/prompts, to isolate duplicate adjudication. It does not claim
   every randomly selected prompt semantically fits each chosen noun pair.
+
+- Private writing hints describe only wrong initials and directly equivalent
+  answers within the active person's own draft, using the existing scorer's
+  matcher. They do not judge category fit, predict another person's answer,
+  disable submission or promise points. Every locked answer and original ballot
+  still goes through the unchanged core. The current 0-to-3 warning comparison
+  measures visible feedback on deliberately constructed own drafts, not human
+  error rates or point gains in real play. The save format remains compatible;
+  restored warnings are derived again from the person's saved draft.
+- Optional local frame-window coordination is a host-only helper. One active
+  runner owns each profile in a fresh attempt directory. READY and CLOSED are
+  atomic receipts, and a grant must match profile, source hash and fresh nonce.
+  Uncoordinated CI skips the helper's file I/O and retains all600 native frames,
+  the original59FPS/p99<=17ms gates and separate recording contexts. Functional
+  paused clocks never feed that sampler.

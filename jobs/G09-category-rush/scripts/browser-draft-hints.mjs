@@ -31,14 +31,21 @@ try{
    await page.locator('#answer-1').fill(`The ${repeated.toLowerCase()}`);await page.locator('#answer-2').fill('Z wrong-initial-marker');
   }
   assert.equal(await page.getByRole('button',{name:'Lock my answers'}).isEnabled(),true,'warnings never veto a human answer');
-  await page.screenshot({path:resolve(output,`private-draft-${count}.png`),fullPage:true});await page.getByRole('button',{name:'Lock my answers'}).click();
+  await page.screenshot({path:resolve(output,`private-draft-${count}.png`),fullPage:true});
+  if(mode==='after'){
+   const remaining=await page.locator('#timer').innerText();await page.locator('#vip-button').click();await page.locator('[data-close]').click();
+   await page.reload();await page.locator('#resume-game').click();assert.equal(await page.locator('.draft-warning').count(),0,'saved private warnings stay behind the restored handover');assert(!(await page.locator('#main').innerText()).includes('private-marker'));
+   await page.locator('#ready').click();assert.equal((await page.locator('.draft-warning').allTextContents()).filter(Boolean).length,3,'warnings derive again from the restored own draft');assert.equal(await page.locator('#timer').innerText(),remaining,'advice/reload does not consume the paused functional turn');
+   assert.equal(await page.locator('#answer-0').inputValue(),repeated);assert.equal(await page.locator('#answer-2').inputValue(),'Z wrong-initial-marker');
+  }
+  await page.getByRole('button',{name:'Lock my answers'}).click();
   assert.equal(await page.locator('.draft-warning').count(),0,'private warnings disappear at handover');assert(!(await page.locator('#main').innerText()).includes('private-marker'));
   await page.locator('#ready').click();assert.equal((await page.locator('.draft-warning').allTextContents()).filter(Boolean).length,0,'previous player’s repeated sheet does not warn the next player');
   await page.locator('#answer-0').fill(repeated);assert.equal((await page.locator('.draft-warning').allTextContents()).filter(Boolean).length,0,'another player’s locked answer does not affect private hints');
   for(let seat=1;seat<count;seat++){if(seat>1)await page.locator('#ready').click();await page.getByRole('button',{name:'Lock my answers'}).click();}
   let ballots=0;while(await page.locator('.score-row').count()===0){assert(++ballots<=count*12);await page.locator('#ready').click();assert.equal(await page.locator('.draft-warning').count(),0,'private draft hints never appear in anonymous review');await page.getByRole('button',{name:'Lock my ballot'}).click();}
   assert.deepEqual(await page.locator('.score-row .points').allTextContents(),Array(count).fill('0'),'nonblocking original answers retain the same zero-point result');
-  report.rosters.push({count,letter,mechanicallyIneligibleOwnRows:3,privateWarningRows:visibleWarnings,originalBadSubmissionAccepted:true,previousSheetDidNotAffectHints:true,finalScores:Array(count).fill(0),privateBallots:ballots});
+  report.rosters.push({count,letter,mechanicallyIneligibleOwnRows:3,privateWarningRows:visibleWarnings,originalBadSubmissionAccepted:true,previousSheetDidNotAffectHints:true,...(mode==='after'?{restoredWarningRows:3,restoredHandoverPrivate:true,remainingTimePreserved:true}:{}),finalScores:Array(count).fill(0),privateBallots:ballots});
  });
  await check('actual offline file, errors and source identity',async()=>{assert.equal(hash(await readFile(htmlPath)),report.sourceSha256);assert.deepEqual(report.runtime,{errors:[],dialogs:[],networkRequests:[]});});report.passed=true;
 }catch(error){report.failure=String(error);process.exitCode=1;console.error(error);}

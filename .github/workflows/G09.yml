@@ -102,6 +102,8 @@ jobs:
         run: node scripts/browser-receipts.mjs after
       - name: Real human plural duplicate review and scored receipts
         run: node scripts/browser-plurals.mjs after
+      - name: Private nonblocking draft feedback and previous-sheet privacy
+        run: node scripts/browser-draft-hints.mjs after
       - name: Retain the complete recovery attempt even on failure
         if: always()
         uses: actions/upload-artifact@v4
