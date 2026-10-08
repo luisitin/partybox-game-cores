@@ -3,7 +3,7 @@
 American 8×8 and International 10×10 Checkers for two seats, hot-seat or bots.
 The full licensed American and International 2–6-piece databases are included.
 
-Exact historical head 6de661bc passed the complete hosted workflow: 91 tests,
+Exact historical head ae36b497 passed the complete hosted workflow: 91 tests,
 25 actual mutants, 7,000 configuration games, 4,000 strength games, all four
 600-frame desktop/phone-4× profiles and separate decoded gameplay captures.
 Independent readers checked all actual raw games, native frames and source hashes.
@@ -12,8 +12,8 @@ a different hosted environment does not establish its cause or a causal fix.
 
 The first uploaded full-page ZIP exceeded the connector's 512-MiB download
 limit. Current delivery publishes four bounded parts of the identical page.
-Fresh exact-head CI and actual downloaded-part verification remain pending.
-No PR or KEEP GOING completion is claimed; NEXT.md records the current state.
+All four actual downloads passed ZIP/part/whole-byte verification at that head.
+Draft PR #10 exists; fresh checkpoint CI and KEEP GOING remain pending.
 
 Requires Node 22.16+ and pinned package-lock.json. From this directory:
 
