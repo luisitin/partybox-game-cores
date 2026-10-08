@@ -100,3 +100,11 @@ The official Ubuntu mirror correction uses G08's actual timed-out Azure
 installer evidence. It changes only an existing runner mirror list and keeps
 Ubuntu signature checks, required tools and bounded setup. The reported
 live official HTTPS archive availability does not promise future bandwidth.
+
+Final verification handoff records the actual current full clip's decoder
+metadata and complete framehash output, separately from inherited positive
+media controls. Cross-host decoder versions/Node binaries are not claimed
+identical. Public independent reader uses actual immutable Git inputs and a
+pinned package license; all writes are private under repository .work.
+Complete successful65a push/PR artifacts are preserved before the final change;
+their old accepted head is not transferred to this new verifier checkpoint.

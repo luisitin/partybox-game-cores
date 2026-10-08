@@ -15,7 +15,7 @@ Defaults use fresh deals; enter a seed to reproduce one. The table saves locally
 and Resume restores progress after reload with every private hand concealed.
 Received cards are marked in your hand; mobile results appear above the table.
 
-For source checks use Node24, Chrome/Chromium and ffmpeg: `npm ci`, `npm test`.
+For source checks use Node24, Chrome/Chromium, ffmpeg and ffprobe: `npm ci`, `npm test`.
 `npm run generate` rebuilds the page, fixtures, schemas and reproducible leagues.
 The one G05 workflow runs the complete suite and actual disk browser gate.
 Managed system Chrome may block file://. Set `G05_CHROME` to an unrestricted
@@ -41,6 +41,7 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Historical exact3c28358 full CI passed. Its 60-frame warmup precedes all600
-retained intervals per profile. Local58.634/57.695fps failures remain unexplained.
-The verification update needs its own exact-head full CI; PR5 is draft.
+Both full65a310b hosted checks and their genuine artifacts are accepted.
+Original60-frame warmup precedes600 retained intervals; old local failures
+remain unexplained. Final verifier receipt/source changes need their own full
+CI and genuine artifact audit before PR5 Ready; see VERIFY.md for reproduction.

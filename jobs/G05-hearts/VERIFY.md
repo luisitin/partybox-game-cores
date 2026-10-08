@@ -1,34 +1,66 @@
 # Verification record
 
-Current scope: 36 node tests, 25 assertion-killed compiled mutants, 10,000
-independent comparisons, 1,003 property seeds, 1,000 complete games at each
-3–6-player count and two 2,000-game strength leagues. The strict browser gate
-retains 600 consecutive unfiltered intervals per desktop and CPU4x phone,
-requires at least 59 FPS/p95 at most 18 ms, and independently verifies all
-1,200 intervals, 20 functional flags, 26 current source hashes and actual clip
-bytes/SHA. Six focused checker groups cover 34 meaningful negative controls.
+Current verification scope is 37 node tests, 25 assertion-killed compiled
+mutants, 10,000 independent comparisons, 1,003 property seeds, 1,000 complete
+bot games at each 3–6-player count and two 2,000-game strength leagues.
+All 1,200 native intervals, 20 functional flags, 30 immutable inputs, clip
+bytes/SHA and full decoded frames are checked. The original native sampler
+has a 60-frame warmup followed by 600 consecutive unfiltered intervals per
+profile: desktop and CPU4x phone require ≥59 FPS and p95 ≤18 ms. This is a
+steady-state private pass-selection check, not a startup or physical-phone
+claim. The original runner has no per-frame native-API or phase witnesses.
 
-Latest fully read exact-head CI: 9ea8ed0 / PR run37796476539, SUCCESS. Its
-94,712-byte native job log verifies 36/36 tests, 25 mutants, both profiles
-60.0024 FPS, p95/p99/max 16.8 ms, zero network/errors and actual independent
-raw/source/capture acceptance. Logged 138,541-byte clip SHA is
-8cfe0c38a1d3919e64e24345990a4724eda89c07587238e9dfa0c95b6aad0837.
-Console summaries omit raw arrays and are metadata only. Artifact contents
-were not read; actual attempted byte retrieval returned HTTP403.
+Checkpoint65a310b passed BOTH complete hosted workflows: push37849100877
+and PR37849107557. Complete native logs were read independently. Both genuine
+artifacts11580777810/11580673108 passed 124 independent assertions each,
+30 actual source guards, 1,200 raw intervals, all 20 original functionals and
+full 36-frame VP9 decoding. The PR checkout is a merge commit: only the 30
+relevant inputs are proven byte-identical to65a310b, not its entire checkout.
+Actual ZIPs, official metadata, complete logs, executed reader and receipts
+are in media/accepted-checkpoint-65a310b-proof.zip. That acceptance remains
+historical after this final verifier change; final exact-head CI and actual
+artifact acceptance are required before PR5 Ready. Final run IDs and readiness
+are recorded in PR5 without another evidence-only source commit.
 
-Local failed raw timings remain public: latest desktop58.634/phone57.695 FPS,
-earlier phone55.047 FPS. Cause is unestablished; instrumented diagnostics and
-captures do not establish acceptance. CPU4x is an approximation, not a claim
-of testing a physical phone; the private SDK is unavailable.
+The final verifier also records .tmp/visual/current-capture-decoding.json for
+the actual current clip, host Node executable/version/SHA, ffprobe/FFmpeg
+executable/version/SHA/arguments, all decoded framehash bytes and current
+30-source maps. Decoder executables and source are checked again after decode.
+Independent audit compares every decoded frame with its own full decode;
+its decoder identity is separately recorded, never assumed equal to CI.
+Seven focused groups include 34 original proof controls and four genuine,
+coherently hashed damaged/substitute videos; all original gates remain.
 
-Reproducible nongating capture: set G05_CHROME to the browser executable and
-run `node scripts/capture.mjs --record --milestone NN` with an unused two-digit
-milestone. It checks all existing functionals, binds the actual helper in a
-27-file source map, and writes a clearly functional-only report. It never
-changes the current strict-attempt marker or supplies FPS acceptance. The full
-`npm test` gate runs the strict visual runner and independent checker; HTTP
-and partial evidence cannot substitute. Resumed reviews11–13 have no meaningful
-player gain; final exact-head CI remains required before PR readiness.
+Public audit: install the locked npm dependencies, Python3, ffprobe and FFmpeg.
+Under repository .work/audit, save the genuine native workflow-run.json,
+artifact-metadata.json and actual.zip (not substituted reports). Then run:
+`python3 jobs/G05-hearts/scripts/verify-ci-artifact.py --head FULL_COMMIT --run-id RUN_ID --evidence-dir ABSOLUTE_REPO/.work/audit`
+The complete metadata must identify the successful run and official ZIP digest.
+The reader extracts only checked safe entries there, reads immutable Git inputs
+and the pinned package license, recomputes every native interval, and fully
+decodes actual current media. It launches no browser and changes no tracked file.
+The public reader was actually exercised against a separate copy of genuine
+65a310b push evidence; its original historical receipt remains unchanged.
+
+Fresh nongating milestone18 closed22:06:19.483Z: all20 functionals, 3–6 rosters,
+real disk/native inputs/reload/privacy, zero external requests/errors and
+30 equal start/end hashes. The136379-byte VP9 clip SHA
+0791a34551f5e635bf70fc18206c2fc5ad355bc9945dddcdaae84a55748486e0
+and all36 decoded frames are recorded in its public functional/decoder receipt.
+This capture contains no FPS evidence and never updates strict attempt markers.
+Milestone17, its earlier workflow snapshot, and all old failures remain visible.
+The full exact local two-regeneration check passed with89 byte-identical hashes
+before the final additional evidence files; final CI regenerates its own full
+current set. Earlier publication-ordering failures remain in public media.
+
+Original3c28358 hosted artifact37798375447 was independently read and accepted
+against26 source guards, 1,200 raw intervals, all20 functionals and actual full
+36-frame VP9 media (109 assertions). Its genuine ZIP/log/reader/receipts and
+two auxiliary reader failures remain in original-artifact-37798375447-proof.zip.
+Local58.634/57.695/55.047 FPS failures have unknown cause and remain public.
+No unchanged local FPS retry, new warmup, filtered sample or fake clock was used.
+Player/HTML/art/data/native sampler remain unchanged, so original KEEP11–13's
+three-round no-player-gain stop remains valid. The private SDK is unavailable.
 
 ## Historical checkpoints
 

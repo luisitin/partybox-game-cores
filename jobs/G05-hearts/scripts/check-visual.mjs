@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import {decodeCapture} from './check-capture.mjs';
-import {readFileSync,existsSync} from 'node:fs';import {createHash} from 'node:crypto';import {pathToFileURL} from 'node:url';import {resolve} from 'node:path';
+import {readFileSync,existsSync,writeFileSync} from 'node:fs';import {createHash} from 'node:crypto';import {pathToFileURL} from 'node:url';import {resolve} from 'node:path';
 export const guardedFiles=['play.html','src/browser.ts','src/core.ts','src/rules.ts','src/bot.ts','src/save.ts','src/schema.ts','src/input.ts','src/types.ts','src/manifest.ts','ui/play.template.html','scripts/visual.mjs','scripts/check-visual.mjs','scripts/html.mjs','scripts/build.mjs','scripts/generate.mjs','scripts/check-data.mjs','scripts/check-repro.mjs','tests/visual-proof.test.mjs','package.json','package-lock.json','tsconfig.json','../../contract/contract.ts','../../contract/rng.ts','../../contract/constants.ts','node_modules/zod/LICENSE','scripts/check-capture.mjs','scripts/capture.mjs','tests/capture-decoding.test.mjs','../../.github/workflows/G05.yml'];
 const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
 export const sourceHashes=()=>Object.fromEntries(guardedFiles.map(p=>[p,hash(p)]));
@@ -26,4 +26,14 @@ export function validateReport(report,{sources=sourceHashes(),checkVideo=true,cu
  if(checkVideo)validateCapture(report);
  return {accepted:true,currentSource:true,rawFrames:1200,functionals:functionalFlags.length,sourceGuards:guardedFiles.length,captureBytes:report.videoBytes};
 }
-if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){const report=JSON.parse(readFileSync('.tmp/visual/current-report.json','utf8')),currentRun=JSON.parse(readFileSync('.tmp/visual/current-run.json','utf8'));console.log(JSON.stringify(validateReport(report,{currentRun})));}
+if(process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url){
+ const report=JSON.parse(readFileSync('.tmp/visual/current-report.json','utf8')),currentRun=JSON.parse(readFileSync('.tmp/visual/current-run.json','utf8'));
+ const accepted=validateReport(report,{currentRun});
+ const decoded=decodeCapture(report.videoPath,{strictMilestone:true});
+ assert.deepEqual(sourceHashes(),report.sourceEnd,'source changed during final capture decode');
+ const receipt={kind:'current-capture-decoding',runId:report.runId,sourceStart:report.sourceStart,sourceEnd:report.sourceEnd,
+  videoPath:report.videoPath,videoBytes:report.videoBytes,videoSha256:report.videoSha256,
+  recordedAt:new Date().toISOString(),node:{executable:process.execPath,version:process.version,sha256:hash(process.execPath)},decoded};
+ writeFileSync('.tmp/visual/current-capture-decoding.json',JSON.stringify(receipt,null,2)+'\n');
+ console.log(JSON.stringify({...accepted,currentCaptureReceipt:'.tmp/visual/current-capture-decoding.json'}));
+}

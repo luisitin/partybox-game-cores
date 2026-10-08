@@ -45,7 +45,9 @@ export function decodeCapture(videoPath, {strictMilestone=false}={}) {
     assert.equal(frames.length, 36, 'all 36 current capture frames must decode');
     assert.ok(Math.abs(duration-3.6)<0.001, 'current capture duration');
   }
+  assert.equal(sha256(readFileSync(probe.executable)),probe.sha256,'probe executable changed during decode');
+  assert.equal(sha256(readFileSync(decoder.executable)),decoder.sha256,'decoder executable changed during decode');
   return {videoPath, strictMilestone, codec:stream.codec_name, width:stream.width, height:stream.height, encodedFrameRate:stream.r_frame_rate,
-    durationSeconds:duration, decodedFrames:frames.length, frameHashSha256:sha256(Buffer.from(raw)),
+    durationSeconds:duration, decodedFrames:frames.length, frameHashOutput:raw, frameHashSha256:sha256(Buffer.from(raw)),
     probe:{...probe,args:probeArgs}, decoder:{...decoder,args:decodeArgs}};
 }

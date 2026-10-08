@@ -1,52 +1,45 @@
-# G05 verification recovery — 2026-10-08
+# G05 final verification handoff — 2026-10-08
 
 Owner codex-hearts-reverify lawfully claimed G05 on main at21:16:32Z,
-commit078c12af5a13263b3bb70019c0098aa95bfe49b7. Fresh main/all matching job refs
-and their committer times proved G05 alone eligible. A branch from that main
-normally merged original3c28358 into ba286373; no gameplay/history was removed.
-Canonical delivery remains job/G05-hearts / PR5; normal pushes only.
+commit078c12af5a13263b3bb70019c0098aa95bfe49b7. Fresh main and ALL matching
+job branch committer dates proved G05 alone eligible. The claim-main branch
+normally merged original3c28358 into ba286373; history/player source preserved.
+Canonical delivery remains job/G05-hearts / PR5. Normal pushes only.
 
-The verification change adds full real-video decoding and exact current
-36-frame/1920x1080/10-encoded-fps/3.6s capture checks. Encoded cadence is not
-browser performance evidence. Four genuine coherent-hash negative controls
-reject non-video, truncated video, a fully decoded one-frame substitute,
-and a fully decoded phone-shaped substitute. Seven focused groups pass.
-Source guards expand26→30, including decoder/helper/control test/workflow.
-All original functional, seed/oracle/mutation/bot/data/frame gates remain.
-The native RAF sampler, HTML, browser/core/bot/rules/save and artwork remain
-byte-identical. Its original60-frame warmup is disclosed; all subsequent600
-intervals per profile remain unfiltered. No new local FPS retry was run.
+Checkpoint65a310b was normally pushed21:46:28.573184Z, within the30-minute
+claim bound (29m56.573184s); the25-minute internal target missed4m56.573184s.
+Both complete required workflows37849100877/37849107557 passed, and both
+actual official artifacts passed independent30-source/1,200-raw/20-functional/
+36-frame VP9 validation (124 assertions each). Complete original evidence is
+public in media/accepted-checkpoint-65a310b-proof.zip; historical3c proof and
+all genuine old local/reproduction/auxiliary reader failures remain visible.
 
-Fresh milestone17 functional capture completed21:38:41.730Z: all20 controls,
-3–6 rosters, real disk/native mouse/touch/keyboard/reload/privacy, zero
-external requests/errors,30 identical start/end guards. Its136379-byte
-VP9 clip SHAe64288ab17af9e4a312629ea45d1eca4130ebafc66525454e6019794cc55a65b
-is separate from FPS acceptance. Workflow's later official-mirror correction
-does not retroactively change that recorded source snapshot.
+This final concrete handoff adds actual current-clip host decoder metadata,
+complete framehash output and post-decode tool/source guards, plus a public
+independent reader exercised on copied genuine65a evidence. All original
+functional/frame/data/seed/oracle/mutation/leagues/rebuild gates remain.
+Source player/HTML/assets/data/native RAF sampler are byte-identical to3c.
+The original60-frame warmup is explicit;600 subsequent intervals per profile
+remain unfiltered. No unchanged local FPS retry or fake clock was performed.
+Fresh milestone18 closed22:06:19.483Z with all20 native functional checks,
+3–6 rosters, zero requests/errors and30 identical start/end inputs. Its actual
+136379-byte VP9 clip and full36-frame component decode are protected in media.
+This is functional evidence only, never FPS or current strict-run acceptance.
 
-Historical original3c full CI37798375447 is genuine green. Its929011-byte
-artifact11560101856 has been downloaded with official SHA62d97e418d5e304b6c077f8113e2c22407cf5c1e93ae938e72505299806cdf14;
-independent immutable26-guard/1200-raw/20-functional/full36-frame VP9
-validation PASS at21:43:47.308654Z (109 assertions). Its actual138541-byte
-capture fully decodes; the original60-frame warmup scope and both auxiliary
-reader failures are archived in media/original-artifact-37798375447-proof.zip. This proof stays
-historical; the changed verifier needs its own complete exact-head green
-and genuine artifact/source/raw/capture validation before PR5 Ready.
+Remaining delivery work: read BOTH complete required final exact-head CI logs,
+download their actual official artifacts, execute public/independent readers
+against all30 immutable inputs, every raw interval and actual full video,
+and require the new current-clip receipt/tool/raw-decoded-frame equality.
+If all pass, rewrite PR5 body around final behavior/evidence and mark Ready.
+Record those final run IDs/readiness in PR metadata/private receipts, without
+another evidence-only source commit that invalidates the accepted final head.
+An actual failure stays visible and requires a concrete correction.
 
-Original KEEP11–13 already reached three consecutive no-player-gain rounds;
-the game has not changed, so that stop remains valid. Do not invent rounds
-or repeat unchanged failing local frame workloads. Preserve all old local
-58.634/57.695/55.047fps failures and unknown cause.
-
-Next: finish the immutable historical receipt, run/read complete required
-current CI, download its actual artifact, independently recompute all raw
-samples/current30 guards and fully decode actual current media. Record one
-concrete final handoff checkpoint if needed; after its own green/actual
-artifact, update PR5 metadata/Ready without another evidence-only commit.
-
-Initial25-minute publication target21:41:32Z/hard21:46:32Z is based on the
-actual claim. Root remained quiet for actual delegated G09 and B19 windows;
-their real closes/releases are preserved by their owners, never backdated.
-Each actual normal push refreshes only G05's claim and resets25/30-minute
-targets. Follow fresh main plus ALL matching branch committer dates before
-the next lowest eligible job. Never steal another fresh claim or merge PRs.
+Original KEEP11–13's three consecutive no-player-gain stop remains valid:
+no gameplay change or invented additional round. Local58.634/57.695/55.047
+failures have unknown cause and are not retried for luck. Completed means
+merged; this job remains Review only when its original PR is genuinely Ready.
+Each actual milestone push refreshes only the G05 main claim. Track actual
+push UTC with25-minute buffer/30-minute maximum. After acceptance, re-read
+fresh README/RULES/JOBS/main CLAIMS and ALL matching branch committer dates;
+claim the lowest eligible job exactly as instructed. Never steal or merge PRs.
