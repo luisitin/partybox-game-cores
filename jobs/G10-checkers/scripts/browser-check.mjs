@@ -11,14 +11,14 @@ const html=await readFile('play.html'),sourceSha256=createHash('sha256').update(
 const workerManifest=JSON.parse(await readFile('dist/corpus-pack.json','utf8'));
 await mkdir(browserDirectory,{recursive:true});await mkdir(mediaDirectory,{recursive:true});
 const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']}),report={command:'node scripts/browser-check.mjs'+(capturing?' --capture':functionalOnly?' --functional-only':''),sourceSha256,profiles:[],capture:capturing,functionalOnly};
-const checks=[];let sequence=0;
+const checks=[];let sequence=0,activePhase='launch';
 try{
  for(const profile of profiles){
   const directory=resolve('.work/video-'+profile.name);await mkdir(directory,{recursive:true});
   const context=await browser.newContext({viewport:{width:profile.width,height:profile.height},reducedMotion:'reduce',...(capturing?{recordVideo:{dir:directory,size:{width:profile.width,height:profile.height}}}:{})});
   const page=await context.newPage(),errors=[],requests=[];page.on('pageerror',error=>errors.push(String(error)));page.on('request',request=>{if(/^https?:/.test(request.url()))requests.push(request.url());});
   await context.route(/^https?:/,route=>route.abort());const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:profile.throttle});
-  async function check(name,fn){await fn();checks.push({profile:profile.name,name,pass:true});sequence++;}
+  async function check(name,fn){activePhase=profile.name+': '+name;await fn();checks.push({profile:profile.name,name,pass:true});sequence++;}
   const hook=(fn,arg)=>page.evaluate(fn,arg);
   const workerHash=variant=>hook(async variant=>{const bytes=await window.__G10.workerBlob(variant).arrayBuffer();return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),byte=>byte.toString(16).padStart(2,'0')).join('');},variant);
   const newTable=async(variant='american')=>{await hook(()=>window.__G10.setup());await page.selectOption('#variant',variant);await page.click('#start');};
@@ -27,7 +27,7 @@ try{
     window.__G10.setup();document.getElementById('variant').value=variant;window.__G10.start();const state=window.__G10.getState();state.board.fill(0);for(const [square,piece] of Object.entries(pieces))state.board[Number(square)]=piece;
     state.repetition={[variant+':1:'+state.board.map(piece=>piece+2).join('')]:1};state.drawWindows=[];window.__G10.setState(state,roles);
   },{variant,pieces,roles});
-  await page.goto(pathToFileURL(resolve('play.html')).href,{waitUntil:'load'});await page.waitForFunction(()=>!!window.__G10);
+  activePhase=profile.name+': disk load';const loadStart=performance.now();await page.goto(pathToFileURL(resolve('play.html')).href,{waitUntil:'load'});await page.waitForFunction(()=>!!window.__G10);const loadMs=performance.now()-loadStart;
   await check('disk load, no external assets and reduced motion',async()=>{assert.equal(await page.locator('#setup').isVisible(),true);assert.equal(await hook(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);assert.equal(await hook(()=>document.documentElement.scrollWidth<=innerWidth),true);assert.equal(requests.length,0);});
   await check('American standard board and complete hot-seat turn',async()=>{await newTable();assert.equal(await page.locator('[data-square]').count(),32);assert.equal(await page.locator('.piece').count(),24);await move();assert.equal(await hook(()=>window.__G10.getState().ply),1);assert.match(await page.locator('#status').innerText(),/Player 2/);});
   await check('multi-jump draft leaves the actual position unchanged',async()=>{await setPosition('american',{22:1,26:1,17:-1,9:-1});const board=await hook(()=>window.__G10.getState().board);await page.click('[data-square="22"]');await page.click('[data-square="13"]');assert.deepEqual(await hook(()=>window.__G10.getState().board),board);assert.equal(await hook(()=>window.__G10.getState().ply),0);assert.equal(await page.locator('[data-square="6"]').getAttribute('class').then(value=>value.includes('target')),true);await page.click('[data-square="6"]');assert.equal(await hook(()=>window.__G10.getState().ply),1);assert.equal(await hook(()=>window.__G10.getState().board.filter(piece=>piece<0).length),0);});
@@ -59,7 +59,7 @@ try{
   assert.equal(errors.length,0,errors.join('\n'));assert.equal(requests.length,0,JSON.stringify(requests));
   const video=page.video();await page.screenshot({path:mediaDirectory+'/'+profile.name+'.png',fullPage:true});await context.close();
   if(capturing){const old=await video.path(),next=resolve(mediaDirectory+'/'+profile.name+'.webm');await rename(old,next);assert((await stat(next)).size<10*1024*1024);}
-  report.profiles.push({name:profile.name,throttle:profile.throttle,checks:checks.filter(check=>check.profile===profile.name).length,meanFps:fps,p99Ms:p99});
+  report.profiles.push({name:profile.name,throttle:profile.throttle,loadMs,checks:checks.filter(check=>check.profile===profile.name).length,meanFps:fps,p99Ms:p99});
  }
-}finally{await browser.close();}
+}catch(error){report.failure={phase:activePhase,message:String(error)};report.checks=checks;report.totalChecks=sequence;await writeFile(browserDirectory+'/failure-'+(capturing?'capture':functionalOnly?'functional':'strict')+'.json',JSON.stringify(report,null,2)+'\n');throw error;}finally{await browser.close();}
 report.checks=checks;report.totalChecks=sequence;await writeFile(browserDirectory+'/'+(capturing?'capture':functionalOnly?'functional':'checks')+'.json',JSON.stringify(report,null,2)+'\n');process.stdout.write(JSON.stringify(report)+'\n');

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2026-10-08T12:25:30.617131+00:00",
+  "functionalBrowser": {
+    "passed": 28,
+    "exit": 0,
+    "raw": "browser-round8-functional.stdout",
+    "strictPending": true,
+    "matchingClipsPending": true
+  },
+  "completeSource": {
+    "files": 82,
+    "bytes": 1010554015,
+    "sixClasses": 37,
+    "regenerationByteIdentical": true,
+    "manifestSha256": "19be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627",
+    "publicAcquireModeExecuted": false,
+    "installedInGame": false
+  },
+  "completeSourceProductionComparison": {
+    "cases": 10000,
+    "exit": 0,
+    "wins": 2880,
+    "losses": 3106,
+    "draws": 4014,
+    "orientations": 148,
+    "secondSubsliceCases": 22,
+    "inputSha256": "b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167",
+    "transcriptSha256": "eceea444e925cc58f1d8ee5be13205f9bd548a5d1d2e2201b2cd31f9013ac9f1"
+  },
+  "inputSha256": {
+    "play.html": "d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e",
+    "scripts/browser-check.mjs": "6e4c520170d3e212c08185e4963bbc56a44cf38887d221b1ba66902953defed8",
+    "src/international.ts": "ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe",
+    "scripts/acquire-international-small.py": "ff65b26e8148b7841adbc7b24b5101aaaca43dba13ccf4fd2db88004f5672d0f"
+  },
+  "heavyGroupsClosed": true,
+  "childWritesFrozenAt": "2026-10-08T12:23:32Z"
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Acquire the fixed licensed Kingsrow International 2–5 files into private output.
+"""Acquire fixed licensed Kingsrow International 2–5 or complete2–6 privately.
 
 The first six-piece Inno chunk begins at 24775197, so this prefix excludes
 every six-piece payload. Sparse zeros never count as acquired database data.
@@ -20,6 +20,7 @@ PUBLIC_KEY = "bqlaniDcxC65fZWpnovROA"
 PUBLIC_URL = "https://mega.nz/folder/" + FOLDER + "#" + PUBLIC_KEY
 API_URL = "https://g.api.mega.co.nz/cs?n=" + FOLDER
 PREFIX_BYTES = 24775197
+COMPLETE_PREFIX_BYTES = 744300648
 SETUP_SHA = "7061f83d686cec8affff4d1fc69efbb7c2d6122615b3e723458db198c54f7b65"
 EXPECTED = {
     "db2.cpr1": ("283183260efd325b86a5a3f821f32a7f894d26fd", 0x0319ba8c),
@@ -88,7 +89,27 @@ def acquire(args):
     first = next(row for row in files if row["name"] == "Kingsrow_Intl_7pc_WLD_Setup-1.bin")
     if setup["bytes"] != 313345 or first["bytes"] != 2099686144:
         raise ValueError("Fixed public installer metadata changed")
-    for info, prefix in [(setup, None), (first, PREFIX_BYTES)]:
+    expected = EXPECTED
+    catalogue = None
+    prefix_bytes = PREFIX_BYTES
+    if args.max_pieces == 6:
+        catalogue = json.loads(args.source_manifest.read_text())
+        expected = {row['file']: (row['sha1'], int(row['crc32'], 16)) for row in catalogue}
+        canonical = []
+        for bm in range(6):
+            for bk in range(6 - bm):
+                for wm in range(6):
+                    wk = 6 - bm - bk - wm
+                    nb, nw = bm + bk, wm + wk
+                    if wk < 0 or not 1 <= nb <= 5 or not 1 <= nw <= 5 or nb < nw or (nb == nw and bk < wk):
+                        continue
+                    canonical.append(f'{bm}{bk}{wm}{wk}')
+        wanted = {f'db{n}.{ext}' for n in range(2, 6) for ext in ['cpr1', 'idx1']}
+        wanted.update(f'db6-{material}.{ext}' for material in canonical for ext in ['cpr1', 'idx1'])
+        if len(canonical) != 37 or len(catalogue) != 82 or set(expected) != wanted:
+            raise ValueError('Complete checksum catalogue must contain all37 canonical classes/82 files')
+        prefix_bytes = COMPLETE_PREFIX_BYTES
+    for info, prefix in [(setup, None), (first, prefix_bytes)]:
         key_file = installer / (info["name"] + ".public-key.json")
         key_file.write_text(json.dumps(info))
         key_file.chmod(0o600)
@@ -99,7 +120,7 @@ def acquire(args):
     if hashlib.sha256(executable.read_bytes()).hexdigest() != SETUP_SHA:
         raise ValueError("Original setup checksum differs")
     extraction = [str(args.extractor.resolve()), "--output-dir", str(destination)]
-    for name in EXPECTED:
+    for name in sorted(expected):
         extraction.extend(["--include", "app/" + name])
     extraction.append(str(executable))
     extracted = subprocess.run(extraction, text=True, capture_output=True)
@@ -108,23 +129,33 @@ def acquire(args):
     if extracted.returncode:
         raise RuntimeError("Private exact-file extraction failed; see sanitized logs")
     manifest_files = {}
-    for name, (sha1, crc) in EXPECTED.items():
+    for name, (sha1, crc) in sorted(expected.items()):
         data = (destination / "app" / name).read_bytes()
         if hashlib.sha1(data).hexdigest() != sha1 or zlib.crc32(data) != crc:
             raise ValueError("Acquired file fails original installer/driver checksum: " + name)
         manifest_files[name] = {"bytes": len(data), "sha1": sha1, "crc32": f"{crc:08x}",
                                 "sha256": hashlib.sha256(data).hexdigest()}
+    if catalogue:
+        regenerated = []
+        for reference in sorted(catalogue, key=lambda row: row['file']):
+            name = reference['file']; actual = manifest_files[name]
+            if actual['bytes'] != reference['bytes'] or actual['sha256'] != reference['sha256']:
+                raise ValueError('Complete source SHA256/size differs: ' + name)
+            regenerated.append({'file': name, 'bytes': actual['bytes'], 'sha1': actual['sha1'],
+                                'sha256': actual['sha256'], 'crc32': actual['crc32'],
+                                'installerSha1Matches': True, 'originalDriverCrcMatches': True})
+        (destination / 'file-manifest.json').write_text(json.dumps(regenerated, indent=2) + '\n')
     manifest = {
         "schemaVersion": 1, "author": "Ed Gilbert", "publicFolderUrl": PUBLIC_URL,
         "dataPermissionUrl": "https://damforum.nl/bb3/viewtopic.php?t=8341",
         "dataPermission": "Database author states these International databases are available without restrictions.",
         "driverSourceUrl": "https://github.com/eygilbert/egdb_intl",
-        "setupSha256": SETUP_SHA, "acquiredFirstBinPrefixBytes": PREFIX_BYTES,
+        "setupSha256": SETUP_SHA, "acquiredFirstBinPrefixBytes": prefix_bytes,
         "sparseInstallerScope": "Only prefix acquired; remaining zeros are not database bytes.",
-        "piecesAcquired": [2, 3, 4, 5], "sixPieceAcquired": False, "files": manifest_files,
+        "piecesAcquired": list(range(2, args.max_pieces + 1)), "sixPieceAcquired": args.max_pieces == 6, "files": manifest_files,
         "probeScope": "Theoretical International WLD v2, draw history absent; reader correctness separately verified.",
     }
-    (destination / "international-small-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n")
+    (destination / ("international-complete-manifest.json" if args.max_pieces == 6 else "international-small-manifest.json")).write_text(json.dumps(manifest, indent=2) + "\n")
     return manifest
 
 
@@ -133,6 +164,10 @@ if __name__ == "__main__":
     parser.add_argument("--out", required=True, type=Path)
     parser.add_argument("--extractor", required=True, type=Path)
     parser.add_argument("--metadata", type=Path, help="Optional already acquired public folder JSON response")
+    parser.add_argument("--max-pieces", type=int, choices=[5, 6], default=5)
+    parser.add_argument("--source-manifest", type=Path,
+                        default=Path(__file__).resolve().parent.parent / 'evidence/checks/international-complete/file-manifest.json',
+                        help="Fixed actual installer/driver-verified checksum catalogue for complete2–6 mode.")
     args = parser.parse_args()
     print(json.dumps({"phase": "start", "pid": os.getpid(), "pgid": os.getpgrp()}), flush=True)
     print(json.dumps(acquire(args)), flush=True)

@@ -262,3 +262,51 @@ targetsuccessfulpush12:02:15, hard12:07:15. Artifact writers were frozen.
   then default30sec page.goto timeout. Neither is accepted browser/FPS proof.
   Inline-data current page and28-case Blob/hash/corpus/reuse/cancel checks
   are authored but PENDING. No frame gates were relaxed.
+
+Milestone8 successful origin-reflog push2705a5f at12:05:07UTC.
+11:37:15→12:05:07 =27m52s, binding30min PASS; early12:02:15 missed2m52,
+hard12:07:15 met. Mainclaim327f13612:04:08. Next stage~12:23,
+targetsuccessfulpush12:30:07/hard12:35:07. Source diff-check flagged original
+stdout/TAP whitespace; raw evidence is retained byte-exactly, not edited.
+Complete82-file acquisition subsequently verified privately, exact1,010,554,015
+bytes/all37six classes; publication/memory/probe/full-page proof still pending.
+
+## Milestone9 complete-source proof and current startup
+
+- `G10_BROWSER_DIR=evidence/browser-round8 G10_MEDIA_DIR=media/round8
+  node scripts/browser-check.mjs --functional-only`: PASS28/28, actual exit0,
+  raw browser-round8-functional.stdout. Desktop disk load1741.396542ms,
+  phone4×12293.732259ms. Actual Blob hashes match native-tested worker bytes;
+  both corpus hits, queued startup, completed-worker reuse and cancellation
+  pass. Current strict600 frames and same-source clips remain PENDING.
+- Complete private International2–6 acquisition/extraction: PASS82 files,
+  exact1,010,554,015 bytes/all37six classes; all installer SHA1/driver CRC match.
+  Regeneration PASS82 byte-identical files and deterministic manifest. Raw
+  range/extraction/regeneration/pause/size metadata is retained in
+  international-complete/. The public --max-pieces6 adapter is authored UNRUN.
+- Original unchanged generic Boost driver and independent reference: PASS10k
+  spanning37classes/148 orientations, including22 actual >2^31 second-subslice
+  queries. W2880/L3106/D4014; exact queries/raw original outputs/commands/hashes
+  in international-original-complete/. Acquired source is complete; sampled
+  WLD agreement does not prove every position or current game installation.
+- `node scripts/validate-international-production.mjs --data
+  /tmp/g10-rules-oracle-corpus/international-complete/output/app --expected
+  /tmp/g10-rules-oracle-corpus/international-original-complete/international-original-reference.jsonl
+  --out evidence/checks/international-production-complete`: PASS10k, exit0,
+  raw international-production-complete.stdout. Input SHA256b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167,
+  production source SHA256ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe,
+  transcript SHA256eceea444e925cc58f1d8ee5be13205f9bd548a5d1d2e2201b2cd31f9013ac9f1.
+  The report's fullSixPieceCoverage:false refers to unfinished game delivery;
+  constructor sample inputs contain all41datafiles/156slices. Private payload
+  is not installed into node game/browser; current game still2–5.
+- No LFS config/upload/charges/publication. Local streamed full-six packaging
+  and memory/runtime engineering remain pending, with source availability
+  proved. Final current-source gameplay/matrix/leagues/CI/PR/KEEP GOING remain
+  pending; no source/tool BLOCKED claim.
+
+- Frozen milestone9 source integrity PASS, exit0, raw integrity-milestone9.stdout;
+  checksums, authoritative schemas, pure AST and current offline provenance.
+  Two checksum regenerations and comparison PASS before adding that raw proof;
+  final checksum manifest regenerated after it. Public acquire adapter Python
+  syntax PASS with ast.parse; acquisition itself explicitly UNRUN.
+  Source-only git diff --check PASS, excluding retained evidence/media.

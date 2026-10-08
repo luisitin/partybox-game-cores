@@ -3,99 +3,61 @@
 Branch: job/G10-checkers-complete-20261008; nickname codex-audit.
 Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
-Original research branch history is preserved by normal merge.
+The legacy research branch is preserved by normal merge.
 
-Current milestone7 around2026-10-08T11:33UTC:
-- Strict integrated production build PASS, exit0.
-- Actual licensed International db2–5 installed and connected to Strong;
-  current-side captures use exact finite recursive resolution. Missing quiet6
-  partitions remain UNKNOWN. Full-six completion is REQUIRED and PENDING.
-- Original unchanged Boost C++ vs independent decoder PASS10k, all45 canonical
-  materials/all180 orientations. Production comparison PASS same10k records.
-  W2441/L2228/D5331. Tracked actual reference selftest PASS11/11, no skips.
-- Integrated focused tests PASS6/6, including immutable/corrupt metadata and
-  48 exact variant-bundle choices/reports/RNG plus4 complete transcripts.
-- General pure node bundle114,300,046 bytes; Intl-only49,161,443 bytes.
-  Shared source/search budgets are unchanged; unused opposite corpus omitted.
-- Original Chinook ZIP/native deflate bootstrap round-trips every fixed byte;
-  actual2–5 payloads likewise verified. HTML80,328,131 bytes, no runtime network.
-  Host shows bot preparation and retains a completed worker across bot turns;
-  pause/setup/state replacement terminate pending work. NEW browser proof PENDING.
-- Baseline league now PASS4,000/4,000, real exit0: American Strong/Medium
-  883W82D35L; Medium/Easy999W0D1L; Intl Strong/Medium928W61D11L;
-  Medium/Easy1000W0D0L. 37m15s wall includes actual documented holds.
-  Baseline precedes new Intl integration; it is not final-source acceptance.
-  All raw games/report/stdout preserved in league-baseline-pre-international/.
-
-Prior passing proof: independent moves10k boards+twins; 7,000 matrix games;
-25/25 assertion mutation kills, 9/9 baseline; independent ending certificates;
-all9 contract invariants/1,003 seeds; old page24/24 browser+600 unrecorded RAF
-per desktop/phone4×, 60.0024/59.9026FPS, p9916.8ms. Same-source old clips<10MB.
-Those page/league/matrix proofs are baseline after the new behavior change.
-Do not substitute recorded phone49FPS or smoke results for acceptance.
+Current checkpoint, 2026-10-08 around12:26UTC:
+- Current strict-built offline page includes licensed American2–6/International2–5.
+  Full International six-piece game delivery is REQUIRED and PENDING.
+- Current page functional28/28 PASS, exit0; actual Strong worker Blob hashes,
+  both actual corpus uses, queued startup, reuse and pause cancellation pass.
+  Desktop disk load1.741s, phone4×12.294s. HTML SHA256d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e.
+  Current runner SHA2566e4c520170d3e212c08185e4963bbc56a44cf38887d221b1ba66902953defed8.
+  NEW strict600 each and matching clips are PENDING; old24-case frame proof is baseline.
+- Complete licensed International2–6 SOURCE is now acquired privately:
+  82 files/37 six-piece classes, exactly1,010,554,015 bytes; every installer
+  SHA1/original-driver CRC matches. Two independent extractions from the same
+  fixed acquired encrypted input are byte-identical for all82 files/manifests.
+  Deterministic manifest SHA25619be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627.
+- Original unchanged Boost generic driver, independent decoder, and production
+  reader all agree on10,000 six-piece queries spanning37 classes/148 side/colour
+  orientations, including22 second-subslice (>2^31) queries. W2880/L3106/D4014.
+  Evidence/checks/international-original-complete and international-production-complete
+  contain actual inputs/raw outputs/hashes. This is direct sampled theoretical
+  WLD over complete acquired source, not proof of every position or delivered game.
+- Full source remains private at /tmp/g10-rules-oracle-corpus/international-complete/output/app.
+  Public acquisition script --max-pieces6 is authored but UNRUN; its private
+  acquisition/extraction predecessor actually ran twice. No LFS configuration,
+  uploads, charges or publication occurred. Complete inline raw source/base64
+  budget is1,412,863,496 bytes before code, including American/dictionary.
+- Integrated reader/variant-bundle focused6/6 and native-worker2/2 pass.
+  Earlier failures are retained without editing raw stdout/TAP. Source-only
+  integrity checks do not replace final delivery gates.
 
 Next concrete work:
-1. Validate compressed offline worker startup, exact full-node choices/cursors,
-   reuse and cancellation on both variants; add strict browser cases/captures.
-2. Finish licensed International six-piece acquisition/portable packaging with
-   root helper at /tmp/g10-root-international-packaging. Actual source~1.009GB
-   compressed is AVAILABLE, selective ranges/extraction PROVEN, five6-piece
-   partition samples acquired. Engineering remains; no false BLOCKED.
-3. Final-source core/draw/property/mutations/matrix/full4k league, 2x corpus/data
-   regeneration, every data schema/manual30 spot log; demonstrate npm test fits
-   binding CI30min. Baseline fullleague37m includes holds, not a CI promise.
-4. Open PR after every required check passes; exact current head CI must be
-   green before ready. Then five weaknesses/fix/measure KEEP GOING until three
-   consecutive rounds have no player-visible gain. No G10 PR/ready claim yet.
+1. Run frozen current2–5 page strict28+600 desktop/phone4× in root-coordinated
+   quiet slot, then separate bounded same-source clips. Do not relax59FPS/17ms.
+2. Build private streamed complete-six single-page prototype and measure real
+   disk startup/memory/phone4×. Engineer immutable lazy block access if whole
+   corpus copies exceed memory. Strong must actually consume every partition,
+   with exact full-reader choices/RNG/reports/transcripts on declared controls.
+   Source unavailable/BLOCKED is not justified: full source is available.
+3. Finish final-source core/properties/mutations7k matrix/4k leagues, complete
+   metadata schemas/2x deterministic regeneration and manual30 spot log;
+   demonstrate whole npm test fits CI30min. Baseline league passed4,000 but
+   predates actual International2–5 integration and is not current acceptance.
+4. Open PR after all required checks pass; exact current head CI must be green
+   before ready. Then KEEP GOING: five weaknesses, fix worst, measure/log/push
+   until three consecutive rounds have no player-visible gain. No G10 PR yet.
 
-No active owned heavy groups at11:33UTC; child artifact writes frozen11:32:32.
-Coordinate every strict browser quiet slot and report real process groups.
-Current code never claims theoretical WLD proves history-safe conversion.
-American corpus covers all2–6 materials in direct capture-free positions;
-opponent-only American threats remain UNKNOWN unless a complete closure exists.
+All owned heavy groups CLOSED at12:23:35; child job writes FROZEN12:23:32.
+Root grants each strict quiet slot explicitly; report actual process groups.
+The complete production adapter's fullSixPieceCoverage:false field refers to
+unfinished GAME delivery, not acquired-source completeness. Missing game quiet6
+remains UNKNOWN; theoretical WLD is not history-safe conversion proof.
 
-Cadence: actual origin push09:49:08→10:19:38 was30m30s, a30-second miss,
-recorded explicitly. Successful subsequent pushes10:45:22 and11:11:30 met30min.
-Last head8a395249999f1c159775519802b901f842c0c0b8, mainclaimc96633f11:10:48.
-Stage now~11:33, target successfulpush11:36:30, hard11:41:30. Main claim time
-never resets branch cadence. Record observed successful reflog time afterpush.
-
-Milestone7 successful origin-reflog push de92e41 at11:37:15UTC.
-11:11:30→11:37:15 =25m45s, binding cadence PASS; early11:36:30 missed45s,
-hard11:41:30 met. Mainclaim1e94cfb at11:36:34. Next stage~11:55,
-targetsuccessfulpush12:02:15, hard12:07:15. Artifact writers were frozen.
-
-## Milestone8 around12:02UTC: startup and real six-class proof
-
-Native worker packing proof PASS2/2, actual exit0: every native decompressed
-byte matches source; queued initial request and both variants' full-node
-Strong report/cursor match. Unsupported native preparation reports an error.
-Initial harness JSON serialization collapsed -0 into0; raw failure retained,
-fixed with structuredClone; no bot runtime change was needed.
-
-Scoped real6 original unchanged Boost driver/independent reference and
-production comparison PASS10,000, W2672/L2800/D4528, five material classes
-(0303/0312/0501/0510/2211) and20 side/colour orientations. Original generic
-opener initially returned -2 because discovery expected missing3030; that
-control is retained. Explicit unchanged v2 constructor is reproducible.
-The private six data are NOT installed, and five classes are not full37.
-
-Current inline-data host strict build PASS. The prior guarded-page functional
-retry timed out on the runner's30sec page load deadline; another retained
-harness failure expected mixed case while CSS exposed uppercase preparation
-text. No browser/FPS acceptance claimed. Payloads now live in non-executable
-inline data tags; the host constructs only the selected worker, and start
-waits for complete DOM loading. Browser now hashes actual worker Blob bytes
-against the tested Node worker manifest. Current functional28/startup/reuse/
-cancel, strict600 desktop/phone and clips are PENDING after this change.
-
-Complete International acquisition is now privately activePGID129991, all82
-files/all37 classes intended; existing lower/root ranges reused. Root authorized
-local full-six/streamed-inline engineering only. No LFS configuration, uploads,
-charges or publication have occurred. GitHub live docs support2GB LFS/release
-file options; full browser memory/startup/representation remains unproven.
-Current gameplay stays licensed American2–6/Intl2–5; final-source leagues/
-matrix/mutations/fullnpmtest/currentCI/PR/KEEP GOING remain pending.
-
-Next cadence: previous actual push11:37:15, target12:02:15/hard12:07:15.
-Artifact writers except private acquisition are frozen for this checkpoint.
+Cadence: actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
+Subsequent pushes10:45:22/11:11:30/11:37:15/12:05:07 met30min.
+Last accepted head2705a5f at12:05:07UTC; mainclaim327f13612:04:08.
+Stage now~12:26, target successfulpush12:30:07/hard12:35:07.
+Main claim time never resets branch cadence. Record actual successful reflog
+push time after closure. Pending proofs are explicitly pending at checkpoints.

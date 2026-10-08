@@ -174,6 +174,25 @@ upload was performed by this research worker. The full-page size estimate
 and remaining browser/representation checks are in
 INTERNATIONAL-ENDGAME-HANDOFF.md. Complete-six remains pending.
 
+## Complete International source milestone
+
+The later bounded-range acquisition reused earlier proven caches and
+downloaded only the remaining 35 exact HTTP 206 ranges. The full original
+744,300,648-byte Inno prefix yielded all 82 db2–6 files, with all 37 six-piece
+classes. Each original installer SHA-1 and pinned-driver CRC matches;
+exact total 1,010,554,015 bytes. Two separate decrypt/extract runs gave
+byte-identical files and manifest. Full-source/native proof is retained
+under `evidence/checks/international-complete/` and
+`international-original-complete/`. No full payload or original external
+C++ source is copied by this research worker.
+
+Unchanged original generic-driver WDL agrees with the independent reader
+on 10,000 complete-six queries, all 37 classes/148 side-colour orientations,
+including 22 actual second-subslice cases. Offline full-page integration,
+excluded capture resolution and current draw history are separate checks.
+The new public complete-source acquisition mode is authored but UNRUN;
+the private original acquisition/regeneration actually passed twice.
+
 Milestone7 production update: unchanged actual db3–5 bin/idx bytes are now
 installed with per-file SHA/size metadata and separate D11 data permission.
 Production probes equal all10k original-C++/independent db2–5 records, including

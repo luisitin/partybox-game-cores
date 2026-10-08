@@ -192,6 +192,18 @@ of 37 canonical classes do not satisfy complete-six coverage.
 The tracked reproduction's exact commands/source/query/output hashes and
 raw evidence are under `evidence/checks/international-original-six/`.
 
+The subsequent complete-six acquisition covers all 37 classes, not only
+those five. All 82 db2–6 source files match installer SHA-1/driver CRC and
+regenerated twice byte-identically. The original generic driver now finds
+the actual discovery slice and agrees with the independent reference on
+10,000 six-piece queries over all 37 classes/148 orientations, with 22
+second-subslice db6-1212 queries. Seed 443499273, 22,286 candidates, outcomes
+2,880 WIN / 3,106 LOSS / 4,014 DRAW. Raw proof is under
+`evidence/checks/international-original-complete/`. It proves direct
+theoretical WDL sampling of the complete acquired corpus, while runtime
+page packaging, excluded-capture resolution and history-aware play remain
+separate gates. Complete source acquisition is not a delivered full page.
+
 ## Required bot strength evidence
 
 Run 2,000 games Strong-vs-Medium and 2,000 Medium-vs-Easy, with paired seed

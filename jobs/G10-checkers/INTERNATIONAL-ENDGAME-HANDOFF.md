@@ -5,6 +5,30 @@ unfinished. Source access and a separately established data grant are
 available; this is remaining engineering work, not a missing-source block.
 No bounded search or small tactical sample is called complete coverage.
 
+Later complete-source milestone: all 82 actual db2–6 files are privately
+acquired, including all 37 canonical six-piece classes. Total size is
+1,010,554,015 bytes. Every installer SHA-1 and original-driver CRC matches.
+Two separate decodes/extractions reproduce every file and the deterministic
+manifest byte for byte. The original generic C++ opener and independent JS
+reference agree over 10,000 complete-six queries, all 37 classes/148
+side-colour orientations, including 22 db6-1212 second-subslice queries.
+The full offline page/runtime integration remains unfinished.
+
+Proof: `evidence/checks/international-complete/` and
+`evidence/checks/international-original-complete/`. Actual manifest SHA-256:
+`19be4fa53a36a652bf3ceed9983f2fcee6dfdf5b163474d4b555cf0c501ce627`.
+Combined native/reference transcript SHA-256:
+`b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167`.
+The following earlier selective steps remain historical, scoped evidence.
+
+Public-source regeneration mode is authored in
+`scripts/acquire-international-small.py --max-pieces 6`. It fetches the
+public folder/keys and exact prefix, then checks every file against the
+fixed installer/driver-verified catalogue in the complete evidence folder.
+This new public mode is not yet executed; the separately retained private
+acquisition/regeneration script was actually run twice. Exact source
+payloads remain private, not copied into this research checkpoint.
+
 ## Permission and actual sources
 
 - Author Ed Gilbert's unrestricted-database statement:

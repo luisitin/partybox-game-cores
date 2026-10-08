@@ -51,3 +51,10 @@ and selective installer extraction is still being investigated.
   Exact bytes and full-node choices/cursors still need browser proof.
 - A completed bot worker may be retained across bot moves; pause/setup/external
   state replacement cancel it, and every response checks request/state identity.
+
+2026-10-08 around12:26UTC: complete-source acquisition, direct sampled WLD
+proof, and complete offline game delivery are separate obligations. The
+existing production adapter's fullSixPieceCoverage:false is conservatively
+about GAME installation, not the now-complete privately acquired source.
+A private streamed/LFS feasibility experiment does not authorize configuring
+LFS, charging the owner, uploading or publishing an unproved artifact.
