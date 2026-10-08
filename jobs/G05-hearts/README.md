@@ -21,6 +21,8 @@ The one G05 workflow runs the complete suite and actual disk browser gate.
 Managed system Chrome may block file://. Set `G05_CHROME` to an unrestricted
 Chrome/Chromium executable for the actual-disk check. HTTP mode is historical
 partial evidence and cannot satisfy the current delivery gate.
+For fresh nongating clips: `node scripts/capture.mjs --record --milestone NN`
+with an unused two-digit milestone. This checks functionals, not frame rate.
 
 Checks include1003 replay seeds,1000 full bot games per valid roster,
 10,000 independent comparisons,25 mutations,2000 games per strength league,
@@ -38,6 +40,6 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Exact e5f92a1 CI passed the strengthened current-source full gate. Latest local
+Exact9ea8ed0 CI passed the strengthened current-source full gate. Latest local
 desktop58.634/CPU4x phone57.695fps failed; raw evidence is preserved and the
 cause remains unresolved. PR5 remains draft; see NEXT.md for current status.

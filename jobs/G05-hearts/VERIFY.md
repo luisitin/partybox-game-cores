@@ -1,5 +1,37 @@
 # Verification record
 
+Current scope: 36 node tests, 25 assertion-killed compiled mutants, 10,000
+independent comparisons, 1,003 property seeds, 1,000 complete games at each
+3–6-player count and two 2,000-game strength leagues. The strict browser gate
+retains 600 consecutive unfiltered intervals per desktop and CPU4x phone,
+requires at least 59 FPS/p95 at most 18 ms, and independently verifies all
+1,200 intervals, 20 functional flags, 26 current source hashes and actual clip
+bytes/SHA. Six focused checker groups cover 34 meaningful negative controls.
+
+Latest fully read exact-head CI: 9ea8ed0 / PR run37796476539, SUCCESS. Its
+94,712-byte native job log verifies 36/36 tests, 25 mutants, both profiles
+60.0024 FPS, p95/p99/max 16.8 ms, zero network/errors and actual independent
+raw/source/capture acceptance. Logged 138,541-byte clip SHA is
+8cfe0c38a1d3919e64e24345990a4724eda89c07587238e9dfa0c95b6aad0837.
+Console summaries omit raw arrays and are metadata only. Artifact contents
+were not read; actual attempted byte retrieval returned HTTP403.
+
+Local failed raw timings remain public: latest desktop58.634/phone57.695 FPS,
+earlier phone55.047 FPS. Cause is unestablished; instrumented diagnostics and
+captures do not establish acceptance. CPU4x is an approximation, not a claim
+of testing a physical phone; the private SDK is unavailable.
+
+Reproducible nongating capture: set G05_CHROME to the browser executable and
+run `node scripts/capture.mjs --record --milestone NN` with an unused two-digit
+milestone. It checks all existing functionals, binds the actual helper in a
+27-file source map, and writes a clearly functional-only report. It never
+changes the current strict-attempt marker or supplies FPS acceptance. The full
+`npm test` gate runs the strict visual runner and independent checker; HTTP
+and partial evidence cannot substitute. Resumed reviews11–13 have no meaningful
+player gain; final exact-head CI remains required before PR readiness.
+
+## Historical checkpoints
+
 Final implementation/review scope:30 tests,25/25 mutation kills,10,000
 independent comparisons,1003 property seeds,1000 full games at each3–6 count
 and2x2000 leagues. Ten KEEP GOING rounds finish with three consecutive
@@ -520,3 +552,26 @@ media/milestone-15.webm 136324bytes SHA256
 
 Round12 final fixtures-only regeneration/check-data PASS37schemaJSON/77
 checksums; diff --check PASS. All failed reports/media remain preserved.
+
+Round13 after exact9ea8ed0 CI37796476539 green: re-read root/job docs and
+rank5 in REVIEW.md. Before: ignored .tmp/capture-only.mjs was not tracked
+(git ls-files --error-unmatch exit1). After: public scripts/capture.mjs is
+delivered with explicit functional-only purpose, real self-hash and unused
+milestone protection. `node --check scripts/capture.mjs` PASS. Actual command
+`G05_CHROME=/home/agent/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell node scripts/capture.mjs --record --milestone 16`
+completed2026-10-08T15:02:55.926Z, all20functionals/3–6rosters pass,0network/errors.
+Actual helper SHA a4fc2f8783c5b33113996de9f511c982c1f234096793538034b04cbab8c33ee6
+is included in27unchanged start/end guards. media/milestone-16.webm136324B
+SHA8187830b8936a6488d333008a343d652fbea360fed92240311bf844dc3ea868c.
+Independent validateCapture(report) reads actual bytes/SHA and passes;
+validateReport(report) rejects kind functional as partial/nonacceptance.
+Actual before/after current-run.json bytes compare equal, preserving the latest
+strict attempt. Report/harness/capture archive remains under ignored
+.tmp/visual/runs/29ca92ac…/2026-10-08T15-02-23-178Z. Encoding10fps is not FPS proof.
+No further local frame or unchanged core/leagues run. A documentation rewrite
+initially had a Python SyntaxError before any writes; corrected and checks rerun.
+
+Round13 final fixtures-only/check-data PASS38schemaJSON/81checksums;
+diff --check PASS and README45lines<60. Repeated existing-milestone command
+`node scripts/capture.mjs --record --milestone 16` is rejected before launch;
+real clip bytes and strict marker remain identical (explicit negative control).

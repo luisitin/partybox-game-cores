@@ -134,3 +134,22 @@ restored byte-for-byte; bundle equality153921B remains intact. The actual
 full-kind CI console summary is rejected specifically for absent raw intervals,
 even against its own historical source snapshot. No measured browser PASS
 is inferred from unit timing fixtures. Player-visible gain: none, streak2.
+
+Round13, after exact9ea8ed0 PR run37796476539 SUCCESS; the full94,712-byte
+native log verifies36tests/25mutants/1,200raw/current-source/actual-capture.
+Re-read root README/RULES/JOBS and Hearts README/RULES. Five remaining
+weaknesses: nongating capture commands use an ignored helper absent from a
+fresh checkout; the top verification summary retains the old30-test scope;
+unexplained local cadence variance; limited native boundary coverage; CPU4x
+phone/private SDK coverage limits. No concrete new player defect is proved.
+Select reproducible evidence: publish the proven functional capture helper
+with its actual self-hash, explicit nonacceptance purpose and a fresh unused
+milestone. Correct the stale verification header while preserving all history.
+Default strict runner/checker and gameplay stay unchanged; this is no player
+gain. The final exact-head workflow remains required before readiness.
+
+Round13 actual public helper command works,27source guards match and the
+136324B genuine clip passes independent byte/SHA checking. Current strict
+marker is unchanged; its functional-only report rejects full acceptance.
+README45lines remains under60; old verification history remains untouched
+below a corrected current36-test scope. No player gain, resumed streak3.

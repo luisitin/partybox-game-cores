@@ -76,3 +76,10 @@ The authorized fresh untraced confirmation again failed mean FPS (desktop58.634,
 CPU4x phone57.695) while exact-source hosted full acceptance passed. Preserve
 both rather than treating instrumentation, captures or metadata as performance
 proof. The local variance remains unexplained; no speculative runtime change.
+
+Nongating milestone captures now use the delivered scripts/capture.mjs rather
+than an ignored local helper. Its functional-only purpose/source self-hash is
+explicit; it neither supplies frame samples nor writes the current strict
+attempt/report markers. Require an unused explicit milestone to preserve
+historical clips. Full acceptance still comes from default npm test and its
+independent raw/current-source/actual-file checker.
