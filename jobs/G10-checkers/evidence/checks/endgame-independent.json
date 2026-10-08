@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "command": "node --test tests/endgame-reference.test.mjs",
+  "algorithms": "Independent coordinate move oracle plus synchronous whole-graph scans and regenerated-edge Bellman certificates.",
+  "referenceSourceSha256": "2f5da9086fc77f1e4e02f27d5fdc78d7be82ca427a277ef45ddca151744816f9",
+  "moveReferenceSha256": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+  "variants": [
+    {
+      "variant": "american",
+      "rootPositions": 6976,
+      "closedNodes": 7080,
+      "rounds": 13,
+      "scope": "theoretical board-plus-side WDL; no draw history",
+      "outcomes": {
+        "win": 1432,
+        "loss": 908,
+        "draw": 4740
+      },
+      "maximumDistance": 13,
+      "transcriptSha256": "d60cb0a40ce8b60d2c365fad408dea63f01a231cd0300a8a26d47dc42eb7680a"
+    },
+    {
+      "variant": "international",
+      "rootPositions": 17690,
+      "closedNodes": 17880,
+      "rounds": 17,
+      "scope": "theoretical board-plus-side WDL; no draw history",
+      "outcomes": {
+        "win": 6410,
+        "loss": 4114,
+        "draw": 7356
+      },
+      "maximumDistance": 17,
+      "transcriptSha256": "a915d0da5802bb91084a85c16c2927f37a30323e42c887735a1a8ae4cd67d15a"
+    }
+  ],
+  "sixPieceScope": "Two explicitly tested fully closed forced-capture roots; not global six-piece coverage."
+}

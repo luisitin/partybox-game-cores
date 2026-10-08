@@ -33,3 +33,27 @@ performance/captures, job-specific checks and CI are UNRUN (zero game tests).
 - `node scripts/hashes.mjs` twice plus `cmp`: PASS, byte-identical checksum
   manifest. `sha256sum -c SHA256SUMS.txt`: PASS, all21 delivered files.
   `git diff --check`: PASS. These are source/docs integrity checks only.
+
+## Source milestone 2026-10-08, approximately09:25UTC
+
+- `npm run build`: PASS (strict TypeScript and all node bundles, then original
+  standalone play.html including the inline bot worker). Exact raw stdout is
+  evidence/checks/build.stdout. The earlier successful node-only build explicitly
+  reported the browser as pending and was not standalone delivery.
+- `node --test tests/reference-moves.test.mjs tests/moves.test.mjs`: PASS24/24.
+  Includes10,000 independent original move comparisons plus10,000 color-rotated
+  twins and every resulting board. Unmodified raw stdout is moves.stdout; it is
+  Node's default reporter output, not invented TAP. Source/input hashes and
+  deterministic transcript are moves-reference.json.
+- `node scripts/endgames.mjs`: PASS.29,286 rows generated, complete legal one-vs-one
+  man/king domains for both variants plus4,000 partial tactical3–6 entries.
+  Regeneration followed by `cmp data/endgames.json /tmp/g10-endgames-baseline.json`:
+  PASS, byte-identical. This does not certify broader full-six-piece coverage.
+- `node --test --test-reporter=tap tests/endgame-reference.test.mjs`: PASS3/3;
+  unmodified TAP retained in endgame-reference.tap. Independent coordinate oracle
+  plus synchronous fixed-point WDL and regenerated-edge certificates fully close
+  both one-vs-one domains and two6-piece forced-capture roots. These reference
+  self-checks do not yet compare production probes to all independent entries.
+- Full contract/properties/matrix, mutations, leagues, production table comparison,
+  fixture/schema checks, disk browser/frames/clips, PR and exact-head CI: UNRUN.
+- Every executed command/result/input hash is also recorded in milestone2.json.

@@ -23,3 +23,16 @@
   coverage. Externally published data require an actual redistribution permission.
 - The shared SDK is absent; the local reducer adapter follows the exact contract's
   event order and retains shared contract types and seeded RNG helpers unchanged.
+# Implementation checkpoint assumptions
+
+The bot host runs its pure alpha-beta computation in an inline Blob worker so
+thinking does not block interaction. Worker construction is part of the local
+offline host, not network access. The bounded node search is not a tablebase.
+
+The generated database has complete one-vs-one material classes and exact closed
+forced-capture proofs containing up to six pieces. Unknown three-to-six quiet
+positions return null. Full-six-piece coverage is still required before G10 can
+be marked complete. No external binary with unconfirmed data-use permission is
+redistributed. Kingsrow's original author statement is a live confirmed lead,
+and selective installer extraction is still being investigated.
+

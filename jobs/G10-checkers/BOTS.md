@@ -17,12 +17,20 @@ conversion, or separate history-aware search, is required to avoid cycling.
 
 ## Six-piece feasibility and scope
 
-Full American raw state count is billions [D1/D2]. Cake's21.9MB5/6 corpus
-limits either side to3 and omits meaningful capture entries [D4]. Source
+Full American raw state count is billions [D1/D2]. Cake's 21.9 MB 5/6 corpus
+limits either side to 3 and omits meaningful capture entries [D4]. Source
 is Unlicense, but hosted data licence is not separately verified.
-International Scan2–6 is706MiB zipped/about2GiB RAM [D5/D6]; engine GPLv3
+International Scan 2–6 is 706 MiB zipped/about 2 GiB RAM [D5/D6]; engine GPLv3
 does not establish a separate data grant. Neither is bundled by research.
 Partial coverage must never be labeled a complete six-piece database.
+
+Later live evidence establishes a separate Kingsrow International data
+grant: the database author says his databases are available without
+restrictions [D11]. His download page groups WLD 2–7 in a Mega-hosted
+installer rather than a six-only browser package [D12]. The Boost-licensed
+driver's compressed Tunstall format still requires material indexing and
+recursive resolution of excluded captures. This is a possible licensed
+corpus route; no corpus acquisition or complete coverage is claimed here.
 
 An original exact on-demand design can certify closed <=6-piece components:
 
@@ -46,13 +54,13 @@ An original exact on-demand design can certify closed <=6-piece components:
 Exhaustive material/rank slices [D1/D4] are a stronger alternative: solve
 all-kings first; promotions feed those slices, captures feed smaller-piece
 tables. Missing lopsided classes cannot be assumed won without proof.
-Accepting a6-piece root is distinct from complete <=6-piece coverage.
+Accepting a 6-piece root is distinct from complete <=6-piece coverage.
 
 ## Independently authored validation
 
 The coordinate oracle imports no production helper and copies a matrix
 at every jump. Compare full paths, capture order and promotion flags over
-at least10,000 seeded positions across both variants, plus hostile cases:
+at least 10,000 seeded positions across both variants, plus hostile cases:
 promotion-row visits, blockers, return to origin, global maximum routes
 and equal-length choices. Freeze source before production comparison.
 
@@ -67,9 +75,9 @@ draw counters and repetition. Truncation is UNKNOWN in both solvers.
 
 ## Required bot strength evidence
 
-Run2,000 games Strong-vs-Medium and2,000 Medium-vs-Easy, with paired seed
+Run 2,000 games Strong-vs-Medium and 2,000 Medium-vs-Easy, with paired seed
 and both seat orders. Retain seed/rules/moves/result for every game.
-Report wins/losses/draws and score(win1,draw0.5), with paired uncertainty.
+Report wins/losses/draws and score (win=1, draw=0.5), with paired uncertainty.
 Show a clear gain; many draws and no losses alone do not establish it.
 Keep tuning failures and use fresh confirmation seeds after tuning.
 Explicitly disclose variant and coverage limits rather than extrapolating.

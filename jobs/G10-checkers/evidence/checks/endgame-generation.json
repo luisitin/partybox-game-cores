@@ -1,0 +1,47 @@
+{
+  "command": "node scripts/endgames.mjs",
+  "seed": 3238862886,
+  "coverage": {
+    "status": "generated",
+    "maximumPieces": 6,
+    "completeMaterialClasses": [
+      "one piece",
+      "one piece per side: every valid man/king arrangement for both variants"
+    ],
+    "partialMaterialClasses": [
+      "three through six pieces: generated forced final-capture positions and exact closed capture-only proof graphs"
+    ],
+    "fullSixPieceCoverage": false,
+    "drawHistoryIncluded": false,
+    "unresolved": "quiet positions with three through six pieces outside the generated rows return null and use bounded alpha-beta"
+  },
+  "stats": {
+    "american": {
+      "positions": 7216,
+      "edges": 16138,
+      "wins": 1552,
+      "losses": 924,
+      "draws": 4740,
+      "maximumDtm": 13,
+      "tacticalThreeToSix": {
+        "candidates": 10931,
+        "accepted": 2000,
+        "definition": "every legal forced capture removes the sole opposing piece"
+      }
+    },
+    "international": {
+      "positions": 18070,
+      "edges": 105140,
+      "wins": 6600,
+      "losses": 4114,
+      "draws": 7356,
+      "maximumDtm": 17,
+      "tacticalThreeToSix": {
+        "candidates": 5892,
+        "accepted": 2000,
+        "definition": "every legal forced capture removes the sole opposing piece"
+      }
+    }
+  },
+  "totalRows": 29286
+}
