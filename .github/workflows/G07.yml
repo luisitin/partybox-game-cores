@@ -28,6 +28,19 @@ jobs:
         if: always()
         with:
           name: G07-browser-evidence
-          path: jobs/G07-liars-dice/.work/browser/
-          if-no-files-found: warn
+          path: |
+            jobs/G07-liars-dice/.work/browser/
+            jobs/G07-liars-dice/play.html
+            jobs/G07-liars-dice/manifest.json
+            jobs/G07-liars-dice/src/
+            jobs/G07-liars-dice/scripts/
+            jobs/G07-liars-dice/tests/
+            jobs/G07-liars-dice/package.json
+            jobs/G07-liars-dice/package-lock.json
+            jobs/G07-liars-dice/dist/
+            jobs/G07-liars-dice/evidence/browser/required-check-names.json
+            contract/
+            .github/workflows/G07.yml
+          include-hidden-files: true
+          if-no-files-found: error
           retention-days: 14

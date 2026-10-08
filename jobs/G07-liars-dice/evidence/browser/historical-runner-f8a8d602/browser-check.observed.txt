@@ -7,8 +7,6 @@ import {fileURLToPath, pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
 import {game,canChangePalificoFace} from '../dist/core.mjs';
 import {encodeSession,createResumableRng} from '../dist/session.mjs';
-import {readSourceGuards} from './browser-evidence.mjs';
-import {waitForFrameGrant,closeFrameGrant} from './frame-coordination.mjs';
 
 // This is an integration test of the standalone, offline browser adapter. The
 // browser-only __G07 hook intentionally exposes state to deterministic tests;
@@ -28,10 +26,8 @@ const functionalOnly = process.argv.includes('--functional-only');
 assert(!(performanceOnly && functionalOnly), 'choose only one partial-check mode');
 assert(!(snapshot && (functionalOnly || performanceOnly)), 'only a fresh default full run can publish a snapshot');
 await mkdir(work, {recursive: true});
-const startedAt = new Date().toISOString();
-const runId = startedAt.replace(/\D/g, '');
+const runId = new Date().toISOString().replace(/\D/g, '');
 const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
-const sourceGuardHashes = await readSourceGuards();
 const archive = resolve(work, 'runs', htmlSha256, runId);
 await mkdir(archive, {recursive: true});
 const profiles = [
@@ -43,7 +39,7 @@ const checks = [];
 const pacingMeasurements = [];
 const standingsComparisons = [];
 const report = {
-  runId, startedAt, sourceGuardHashes,
+  runId,
   htmlSha256, coreModuleSha256, sessionModuleSha256,
   browser: '', physicalPhoneTested: false, performanceWhileRecording: false,
   performanceRequirements: {intervals: 600, minimumMeanFps: 59, maximumP99Ms: 17},
@@ -1323,10 +1319,7 @@ try {
       await show(page);
       assert.equal(await page.locator('#cup .die').count(), 5);
       assert((await control(page)).odds !== null, 'sample must include exact odds for a real existing bid');
-      const grant = await waitForFrameGrant({directory:process.env.G07_FRAME_BARRIER_DIR,
-        profile:profile.label,sourceSha256:htmlSha256});
-      let sample;
-      try { sample = await page.evaluate(async () => {
+      const sample = await page.evaluate(async () => {
         const timestamps = [], intervals = [];
         return new Promise(resolve => {
           const frame = time => {
@@ -1351,10 +1344,7 @@ try {
           };
           requestAnimationFrame(frame);
         });
-      }); } catch(error) {
-        await closeFrameGrant(grant,{sampled:false,passed:false,reason:String(error)});
-        throw error;
-      }
+      });
       assert.equal(sample.intervalsMs.length, 600);
       assert.equal(sample.timestampsMs.length, 601);
       const sorted = [...sample.intervalsMs].sort((a, b) => a - b);
@@ -1365,12 +1355,6 @@ try {
         droppedIntervalsOver17Ms: sample.intervalsMs.filter(value => value > 17).length,
         sampleCount: 600, filtering: 'none', recordedVideo: false,
       };
-      // Release the shared timing window before hashing, screenshots or writes.
-      await closeFrameGrant(grant,{sampled:true,passed:measurement.fps>=59&&measurement.p99Ms<=17,
-        intervals:600,fps:measurement.fps,p99Ms:measurement.p99Ms,maxMs:measurement.maxMs,
-        recordedVideo:false});
-      Object.assign(measurement,{runId,htmlSha256,sourceGuardHashes,
-        sourceGuardHashesAfter:await readSourceGuards()});
       const raw = JSON.stringify(measurement, null, 2) + '\n';
       await writeFile(resolve(work, `${profile.label}-frames.json`), raw);
       await writeFile(resolve(archive, `${profile.label}-frames.json`), raw);
@@ -1396,11 +1380,8 @@ try {
   const finalHtmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
   const finalCoreModuleSha256 = createHash('sha256').update(await readFile(coreModule)).digest('hex');
   const finalSessionModuleSha256 = createHash('sha256').update(await readFile(sessionModule)).digest('hex');
-  report.sourceGuardHashesAfter = await readSourceGuards();
-  report.finishedAt = new Date().toISOString();
-  const guardsUnchanged = Object.keys(sourceGuardHashes).every(path => sourceGuardHashes[path] === report.sourceGuardHashesAfter[path]);
   checks.push({profile: 'runner', name: 'HTML source stayed unchanged throughout the run',
-    passed: guardsUnchanged && finalHtmlSha256 === htmlSha256 && finalCoreModuleSha256 === coreModuleSha256 && finalSessionModuleSha256 === sessionModuleSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256, initialCoreModuleSha256: coreModuleSha256, finalCoreModuleSha256, initialSessionModuleSha256: sessionModuleSha256, finalSessionModuleSha256});
+    passed: finalHtmlSha256 === htmlSha256 && finalCoreModuleSha256 === coreModuleSha256 && finalSessionModuleSha256 === sessionModuleSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256, initialCoreModuleSha256: coreModuleSha256, finalCoreModuleSha256, initialSessionModuleSha256: sessionModuleSha256, finalSessionModuleSha256});
   report.passed = checks.length > 0 && checks.every(check => check.passed) && rows.length === (functionalOnly ? 0 : profiles.length);
   const result = JSON.stringify(report, null, 2) + '\n';
   await writeFile(resolve(work, 'report.json'), result);

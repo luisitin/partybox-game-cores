@@ -86,3 +86,32 @@ Ordinary generated p0–p7 IDs follow the same handoff. Test-oracle state transp
 uses JSON text because Playwright drops own '__proto__' properties from object
 returns. Parsing that text preserves the exact original JSON and independent
 core comparison; this does not change game state or relax privacy assertions.
+
+## Reclaimed verification audit — 2026-10-08
+
+Fresh main instructions and all matching Git refs/committer dates made G07 the
+lowest eligible job at17:12:07UTC. Main claim b6da434 preserves every other row;
+the claimed-main branch normally merges original ad83cdc history. PR6 remains
+the delivery PR and is draft while the exact new checker head is unverified.
+Only this repository explicitly authorizes main CLAIMS writes; the original
+partybox-gpt-drops README's main-write prohibition remains respected.
+
+The game, bot, session, page and existing tests are unchanged. KEEP rounds6–8
+remain valid three no-player-gain reviews; checker coverage is a verification
+gain, not a player-visible game improvement or a timing performance gain.
+The original browser runner's genuine94-check positive is archived by its
+actual f8a8d602 SHA. It is historical only, never current-checker fallback.
+New positive evidence must come from a fresh native browser run. No synthetic
+positive frame samples, warm-up exclusion, outlier trimming or relaxed gates.
+
+Shared-host frame coordination uses an attempt-specific directory and one
+runner per profile: fresh UUID nonce, exact profile/source/nonce grant, default
+600-second wait, then CLOSED immediately after all600 native intervals. A
+missing grant is an unsampled failure. CI omits this local coordination only;
+its original >=59 mean FPS and <=17ms p99 gates remain identical.
+
+Live publisher PDF URL returned404 at17:20UTC; its older bounded extraction
+remains historical. Tally24 returned200 with actual30,027 bytes/SHA d6565872;
+GitHub kamdolla/liars-dice's live README corroborates dice/wild-one/binomial
+basics. Quoted Wikipedia text in Tally is not an independent source, and this
+limited refresh does not replace the original12-source Perudo research.

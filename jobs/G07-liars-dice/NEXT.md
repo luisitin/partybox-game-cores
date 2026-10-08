@@ -1,59 +1,59 @@
-# Resume G07
+# Resume G07 — verification audit
 
-Branch job/G07-liars-dice, owner codex-dice, PR6. Before any continuation,
-read root README.md/RULES.md/JOBS.md and fresh main CLAIMS.md. Read the actual
-branch head with `git rev-parse HEAD`; never treat a historical hash as current.
+Branch job/G07-liars-dice; owner codex-dice-resume; existing PR6 is DRAFT.
+Read root README.md/RULES.md/JOBS.md, fresh main CLAIMS and actual remote head
+before resuming. Claim b6da434 at17:12:07UTC was the lowest eligible job after
+checking every matching branch committer date. Claimed-main branch normally
+merged original ad83cdc; no history rewrite or duplicate PR.
 
-Gameplay is complete on page33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a.
-Core source5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18
-and session0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30
-are unchanged. EVIDENCE.md indexes current proof, historical failures and
-nongating diagnostics; VERIFY.md has exact commands/results/limits.
+Gameplay remains complete and byte-identical:
+page33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a;
+core5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18;
+session0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30.
+Compiled core947f4f6f/sessiond636bfba are unchanged. Prior7,000 complete games,
+20k independent probability cases,25 actual mutant kills,46 node tests and
+required/fresh default-duel leagues remain historical valid gameplay evidence.
+Physical-phone/full-SDK coverage and multiplayer strategy remain unproved.
 
-Current local acceptance: full94/94 run20261008100423816, all600 raw intervals
-each; desktop60.002400FPS/phone4x59.803247FPS,p9916.8ms. Fresh final round8
-clips PASS: two actual five-round games, source-matched, zero errors/network;
-see round-8-captures.json. Recordings are separate from FPS measurement.
-46 node tests include8 recovery tests;7,000 complete games (1,000 each2–8),
-1,698,452 restored events,12,279,033 bot samples,1,003 property seeds,20,000
-probability differentials,25/25 compiled mutation assertion kills pass.
-Required4,000 default-duel games: Strong64.70%/Medium58.90%; fresh independent
-4,000-game holdout66.8%/57.0%. Multiplayer/variant strength is unproved.
-Physical phones/fullSDK remain untested; unchanged shared contract is used.
+Original ad83cdc hosted run37765397301SUCCESS10:54:17UTC is historical.
+Original f8a8d602 runner full94 positive is archived in
+ evidence/browser/historical-runner-f8a8d602 with actual runner/checker bytes.
+The old frame-validation block accepted12 invalid report variants; the public
+counterexample receipt explicitly limits its claim to that exact block.
 
-Latest completed hosted acceptance: exactcc0e1aa run37762109046SUCCESS
-10:23:34UTC,46 node/full94 browser/integrity334. New documentation heads
-require their own green run. Preserve all failed local/cadence runs.
+New verification-only repair: current-only scripts/browser-evidence.mjs needs
+all94 exact original checks,two distinct exact desktop/phone profiles,600
+consecutive intervals each,recomputed actual metrics,offline/error arrays,
+30 actual start/end source guards and unchanged>=59FPS/<=17ms p99 gates.
+70 targeted corruption/coordination tests PASS17:33UTC. Local grants require
+exact UUID nonce/profile/source with600-second wait and immediate CLOSED.
+CI uploads genuine raw reports and guarded sources,including hidden .work.
+It never falls back to historical positive evidence.
 
-KEEP GOING rounds1–5 yielded measured player-visible gains. Round6 updated
-current results/scope; round7 fixed calibration provenance/evidence navigation.
-Round8 documents trusted raw setState versus complete valid recovery metadata
-and updates this handoff. All ten runtime/runner/manifest hashes are exactly
-unchanged; fresh round8 clips/hash/integrity PASS and one LOOP8 line is present.
-Rounds6–8 establish three consecutive no-player-gain rounds. Final checkpoint
-acceptance remains the exact current-head GitHub run, checked via PR metadata.
+Current audit acceptance PENDING: fresh full browser and exact new-head hosted
+npm test have not completed. Fresh resume-audit-9 clips PASS: both actual
+five-round games,source-matched,zero network/errors,1,251,873/1,165,745 bytes.
+Recording is separate from strict timing. Preserve any genuine failed runs;
+never retry an unchanged strict frame sample merely to seek luck.
 
-Final delivery sequence:
-1. Stop all artifact writers; hashes2x/cmp, sha256sum --check, integrity and
-   git diff --check must pass. Refresh own main G07 claim and normally commit/
-   merge fresh main/push checkpoint if still unpushed. No force push.
-2. Read PR6's exact current head and matching G07 CI. If queued/running, wait
-   while doing independent queue work. If failed, inspect recorded failure
-   and fix/recheck the affected scope; keep PR draft until exact-head green.
-3. With exact-final-head CI green and LOOP6–8 measured no-gain, update PR body
-   with final evidence and mark ready. This needs no further game-code edit.
-4. Re-read fresh main claims and all candidate branches; claim the lowest
-   eligible unfinished job using the literal user rule, preserving ready PRs.
+KEEP rounds6–8 established three consecutive zero-player-gain reviews. This
+repair changes verification only; unchanged runtime does not reset that stop
+or establish a player-visible/timing performance improvement. LOOP9 records
+this milestone without claiming new full acceptance.
 
-G03 is freshly claimed by codex-domino; earlier stale audit is no longer valid.
-G04's earlier audit found a bundled Zod notice gap; eligibility earliest AFTER
-10:58:26UTC only if no newer claim/branch commit. G01/G08 have other owners.
-Parallel G09/G10 own separate branches and main-claims clones; do not mutate
-those claims. Coordinate short isolated browser FPS windows and stop owned
-process groups before delivery. Root main clone contains CLAIMS edits only.
+Next concrete actions:
+1. Freeze guarded files and run one fresh full94 browser attempt. Coordinate
+   each actual strict600-sample READY with the parent and its matching grant.
+   Preserve actual failures and raw/source metadata.
+2. Refresh only own main G07 claim at each normal milestone push,preserve other
+   rows,then normal FF canonical branch push. No force or PR merge.
+3. Inspect exact new-head hosted G07 CI and actual uploaded raw/source bytes.
+   Keep PR6 draft until every current check passes. Historical green is not
+   new-head acceptance. Add honest actual local outcome to the next checkpoint.
+4. With exact-head green and unchanged gameplay stop valid,update PR6 body,
+   mark ready,then fresh-read main/all matching refs and claim the lowest
+   eligible next job. Parent owns G03; do not steal active jobs.
 
-No current BLOCKED.md; historical research blocker is resolved. Default
-checks have no ignored scratch/old-git dependency. Fixture/manifest regeneration
-is2x byte-identical; every delivered file is covered except SHA256SUMS itself.
-Re-verify when web works: no unresolved research-only blocker; retain bounded
-source extraction, variant strategy, device and SDK coverage limits.
+No new BLOCKED condition. Publisher URL404 and live fallback scope are logged
+in ASSUMPTIONS. The original partybox-gpt-drops main-write prohibition does not
+apply to this repository's explicitly authorized CLAIMS-only main updates.

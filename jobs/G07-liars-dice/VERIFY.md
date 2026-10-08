@@ -583,3 +583,33 @@ core/full94/strict600 local tests; full hosted npm test still runs each head.
 source-matched full94 raw proof, original/Zod notices and all clips under10MB.
 Rounds6–8 now establish three consecutive0-player-gain stopping rounds.
 Exact-final-head CI green is still required before calling PR6 ready.
+
+
+## Reclaimed checker audit — milestone9
+
+Original f8a8d602 browser runner retained genuine600 consecutive intervals
+and correct>=59FPS/<=17ms gates. Its integrity frame-validation block omitted
+complete report/profile/source binding. Twelve counterexamples accepted by
+that exact block are public; raw positive arrays are genuine and unaltered.
+This receipt does not claim the entire SHA-manifest integrity CLI accepted a
+stale delivery manifest. Exact original checker/runner bytes are archived.
+
+`node --check scripts/browser-check.mjs` and
+`node --test tests/browser-evidence.test.mjs tests/frame-coordination.test.mjs`:
+PASS70/70 at17:33UTC. Fifty-six corrupted historical reports/raw sets reject;
+one genuine historical positive is explicitly bound to the actual f8a8d602
+runner,with historical/current separation and wrong-runner rejection. Eleven
+nonce-coordination checks test actual filesystem grants,not browser frames.
+Current-run positive/source-guard controls will run only on genuine fresh data.
+
+`readSourceGuards`: PASS30 actual paths,including current checker/runner,
+package/workflow,new tests,shared contract and actual compiled modules. Fresh
+current-only CLI requires both profiles/all94 checks/all1200 raw intervals;
+source/run/viewport/CPU/offline/recording/fullness/metrics/gates are bound.
+Current full browser and exact-head hosted acceptance are still PENDING.
+
+`node scripts/capture.mjs resume-audit-9`: PASS two actual five-round games,
+HTML33f5e801 start/end equal,zero errors/network. Desktop1,251,873B and
+phone4x1,165,745B,both<10MB. Capture is functional evidence,not frame acceptance.
+Existing game/core/session/HTML bytes and three prior no-player-gain rounds
+remain unchanged; this verification gain does not assert a performance gain.
