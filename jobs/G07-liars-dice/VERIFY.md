@@ -1,11 +1,12 @@
 # Verification log
 
-Current checkpoint: round5 local proof is complete at33f5e801 HTML: full94/94,
-both strict600-frame gates and matching desktop/phone clips pass. Core/session
-source is unchanged. Round4 exact445cf47 passed GitHub37755395776; the round5
-cadence passed all94 hosted browser checks, then rejected its old snapshot.
-The completed new-source evidence is published; final-head CI must pass.
-Intermediate failures below are retained as history, not current blockers.
+Current gameplay checkpoint: round5 source33f5e801 has full94/94, both
+strict600-frame gates and matching clips. Exactcc0e1aa GitHub37762109046
+SUCCESS10:23:34 passed46 node/94 browser/integrity334. Core/session unchanged.
+Round6/7 documentation reviews retain that local source-matched acceptance;
+each final head still needs green CI. EVIDENCE.md indexes current evidence,
+historical timing/failures and nongating diagnostics. Earlier logs below
+remain historical records, not current blockers.
 
 ## Research milestone (2026-10-08)
 Four Exa searches returned 24 results; ten unique source extractions were read.
@@ -538,3 +539,20 @@ Round6 `node scripts/hashes.mjs` twice plus `cmp`,
 `sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs` and
 `git diff --check`: PASS; final checksum count is printed by the exact
 commands and includes this log. No fixture/manifest byte drift.
+
+## KEEP GOING round7 — provenance and evidence index
+
+Re-read root README/RULES/JOBS; exact hashes unchanged. Python hashlib
+before/after the ten implementation paths: PASS all identical; report
+`evidence/checks/round-7-review.json`,0 implementation changes/player gain,
+no-gain streak2. Python regex relative-link existence audit on EVIDENCE.md
+and README.md: PASS; catches missing public evidence pointers. Historical
+calibration now explicitly distinguishes initial-core/private scratch, early
+league100-pair reuse and current public fresh holdout; old outcomes preserved.
+`node scripts/capture.mjs round-7`: PASS two actual five-round games on
+unchanged33f5 HTML/core/session; zero requests/errors, desktop961,911B/
+phone958,039B, both under10MB. Functional recording, no FPS claim.
+Passed unchanged core/full94/strict600 tests are retained, not rerun locally.
+`node scripts/hashes.mjs`2x/`cmp`, `sha256sum --check SHA256SUMS.txt`,
+`node scripts/integrity.mjs`, `git diff --check`: PASS; catches stale files,
+fixture/manifest drift and source-mismatch evidence.

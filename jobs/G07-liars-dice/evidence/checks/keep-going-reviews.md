@@ -208,3 +208,26 @@ are exactly unchanged, measured player-visible gain0. Fresh source-matched
 desktop906,218B/phone883,460B clips each play five actual rounds with zero
 requests/errors. No-gain streak1. Exact round5 cc0e1aa hosted run37762109046
 also passed46 node/full94 browser/integrity334; artifact not downloaded.
+
+## Round7 — historical calibration and current evidence navigation
+
+Re-read root README/RULES/JOBS after round6 push92a6321; exact hashes
+e4b24b68/4149f36b/20d45e05 unchanged. No new runtime defect surfaced.
+Five remaining actionable documentation weaknesses, ranked before editing:
+
+1. Initial calibration describes a private-only holdout command and an untouched league salt, whereas the current public BOTS account correctly discloses early100-pair diagnostic reuse. Label original evidence and correct the scope/provenance description.
+2. Current browser snapshot, original round1 pacing, retained failures and nongating diagnostics lack a compact public index. Add direct pointers and source/run distinctions.
+3. Trusted-host raw setState injection lacks an explicit distinction from metadata-complete recoverable checkpoint input.
+4. NEXT contains checkpoint-specific pre-push phrasing rather than a stable final-review handoff.
+5. Current verification header still mentions round4 acceptance; point it to verified round5 CI while retaining historical failures below.
+
+Selected fix: historical calibration provenance/current public reproduction
+and evidence navigation. All ten runtime/runner/manifest hashes are saved
+before edits; measure exact identity and fresh actual milestone clips.
+
+Round7 complete: historical calibration is explicitly original-core evidence,
+corrects pilot reuse and gives the current public independent holdout command.
+Compact evidence index links current/source-matched/historical/nongating proof;
+all relative index/README links exist. Ten hashes identical, measured player
+gain0, no-gain streak2. Fresh actual5-round clips each pass, desktop961,911B/
+phone958,039B, zero requests/errors; recording is not FPS measurement.

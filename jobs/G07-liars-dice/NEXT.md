@@ -29,20 +29,21 @@ Latest complete hosted acceptance: round5 exactcc0e1aa, run37762109046
 SUCCESS10:23:34 UTC;46 node/full94 browser/integrity334,2x identical.
 Round5 cadence failure remains preserved as an evidence-snapshot failure.
 
-Round6 completed: entry summary now reports current checks and default-duel/
-emulated-phone scope;41 lines. Ten implementation/runner/manifest hashes
-unchanged, player-visible gain0, fresh five-round desktop/phone clips PASS.
-Evidence: checks/round-6-review.json and browser/round-6-captures.json.
-Rounds1–5 have measured player-visible gains; current no-gain streak1.
-Round6 is prepared for immediate normal claim/commit/push. Root owns docs/
-claims; no helper writers are active. Do not repeat passed unchanged tests.
+Round6 published at92a63218 after main claim10:33:06 UTC; current README
+reports current checks and bounded duel/emulated-phone scope. Round7 complete:
+historical calibration corrected/labeled; EVIDENCE.md links current/raw/
+historical/nongating proof, all local links valid. Ten implementation/runner/
+manifest hashes unchanged; fresh two actual five-round clips PASS. Current
+no-gain streak2 after measured player-visible gains in rounds1–5.
 
-Next review: re-read job, rank five weaknesses; clarify initial calibration
-provenance and public reproduction/current evidence index. Fix worst, measure
-hash identity/fresh clips, log one line and push. Three consecutive no-player-
-gain rounds plus exact-final-head CI green are required before PR ready.
-Completed local milestones may proceed while hosted CI runs; keep PR draft.
-Then take the fresh lowest eligible queue job.
+Next review: re-read job, rank five weaknesses; document raw trusted-host
+setState versus complete recovery metadata and finalize handoff. Fix worst,
+measure hash identity/fresh clips, log one line and push. Three consecutive
+no-player-gain rounds plus exact-final-head CI green are required before PR
+ready. Completed local milestones may proceed while hosted CI runs; keep PR
+draft. Root owns docs/claims; helpers stop writers before integrity/claim/push.
+Then take the fresh lowest eligible queue job. G03 is now freshly claimed by
+another chat (10:28:35 codex-domino); do not use the earlier stale audit to claim.
 
 Preserve failures, raw frames and original/licensed sources. The old research
 blocker is resolved under evidence/historical-blocker; no current BLOCKED.md.
