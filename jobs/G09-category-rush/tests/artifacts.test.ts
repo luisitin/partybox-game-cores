@@ -40,6 +40,10 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
     assert.equal(summary.clipContext.cpuThrottle,raw.cpuThrottle);assert.deepEqual(summary.clipContext.viewport,raw.viewport);
     assert.equal(summary.clipContext.pageErrors.length,0);assert(summary.clipContext.networkRequests.every((url:string)=>url.startsWith('file:')));
     assert.equal(summary.clipContext.privateWarningRows,3,'current milestone captures must show the real private feedback');
+    const paste=summary.clipContext.nativePasteWordBoundary;
+    assert.equal(paste.method,'native Chromium clipboard');assert.equal(paste.pasted,`The\t${paste.noun}`);assert.equal(paste.visible,`The ${paste.noun}`);
+    const category=json('content/categories.json').categories.find((row:{id:string})=>row.id===paste.categoryId);
+    assert(category);assert.equal(category.prompt,paste.prompt);assert(category.answers[paste.letter].includes(paste.noun));
   }
   const functional=json('evidence/browser/functional-report.json');assert.equal(functional.sourceSha256,digest);
   assert.equal(functional.passed,true);assert(functional.checks.length>=28&&functional.checks.every((c:any)=>c.passed));

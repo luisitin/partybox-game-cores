@@ -1,8 +1,8 @@
 {
   "mode": "after",
-  "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+  "sourceSha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
   "runnerSha256": "e006063592f45019d4f322fd28183e64343a5c54dc478e9c3174d6f86577cae0",
-  "startedAt": "2026-10-08T17:59:42.309Z",
+  "startedAt": "2026-10-08T16:53:27.630Z",
   "checks": [
     {
       "name": "2 humans reload during answer",
@@ -10449,7 +10449,7 @@
       "observations": [
         {
           "label": "before first reload",
-          "performanceNow": 10005,
+          "performanceNow": 10001,
           "timeOrigin": 1791417600000,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
@@ -10668,7 +10668,7 @@
         },
         {
           "label": "after first reload",
-          "performanceNow": 10005,
+          "performanceNow": 10001,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
@@ -10887,7 +10887,7 @@
         },
         {
           "label": "after first Resume",
-          "performanceNow": 10005,
+          "performanceNow": 10001,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "Saved on this device.",
@@ -11106,7 +11106,7 @@
         },
         {
           "label": "after second reload",
-          "performanceNow": 10005,
+          "performanceNow": 10001,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
@@ -11325,7 +11325,7 @@
         },
         {
           "label": "after closed-time wait",
-          "performanceNow": 130005,
+          "performanceNow": 130001,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
@@ -11544,7 +11544,7 @@
         },
         {
           "label": "after second Resume",
-          "performanceNow": 130005,
+          "performanceNow": 130001,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "Saved on this device.",
@@ -11763,7 +11763,7 @@
         },
         {
           "label": "after Ready",
-          "performanceNow": 130005,
+          "performanceNow": 130001,
           "timeOrigin": 1791417600000,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
@@ -11990,7 +11990,7 @@
       "observations": [
         {
           "label": "before pause",
-          "performanceNow": 10005,
+          "performanceNow": 10002,
           "timeOrigin": 1791417600000,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
@@ -12209,7 +12209,7 @@
         },
         {
           "label": "after pause",
-          "performanceNow": 10005,
+          "performanceNow": 10002,
           "timeOrigin": 1791417600000,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
@@ -12431,7 +12431,7 @@
         },
         {
           "label": "after reload",
-          "performanceNow": 10005,
+          "performanceNow": 10002,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
@@ -12653,7 +12653,7 @@
         },
         {
           "label": "after closed-time wait",
-          "performanceNow": 130005,
+          "performanceNow": 130002,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
@@ -12875,7 +12875,7 @@
         },
         {
           "label": "after Resume",
-          "performanceNow": 130005,
+          "performanceNow": 130002,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "Saved on this device.",
@@ -13097,7 +13097,7 @@
         },
         {
           "label": "after paused wait",
-          "performanceNow": 250005,
+          "performanceNow": 250002,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "Saved on this device.",
@@ -13319,7 +13319,7 @@
         },
         {
           "label": "after close",
-          "performanceNow": 250005,
+          "performanceNow": 250002,
           "timeOrigin": 1791417600000,
           "timer": null,
           "saveStatus": "Saved on this device.",
@@ -13538,7 +13538,7 @@
         },
         {
           "label": "after Ready",
-          "performanceNow": 250005,
+          "performanceNow": 250002,
           "timeOrigin": 1791417600000,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
@@ -13917,5 +13917,5 @@
   },
   "passed": true,
   "browser": "141.0.7390.37",
-  "finishedAt": "2026-10-08T18:01:21.883Z"
+  "finishedAt": "2026-10-08T16:54:32.285Z"
 }

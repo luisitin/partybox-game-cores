@@ -17,10 +17,12 @@ const sourceSha256=digest(await readFile(htmlPath));
 const sourcePaths=['client-save.ts','client-draft.ts','client.ts','build-play.ts','src/play.template.html','src/index.ts','src/model.ts','src/scoring.ts','src/match.ts','src/select.ts','content/categories.ts','package-lock.json','LICENSE','THIRD_PARTY_NOTICES.txt','node_modules/zod/LICENSE','../../contract/rng.ts','scripts/browser-performance.mjs','scripts/frame-window.mjs'];
 const fingerprint=async()=>Object.fromEntries(await Promise.all(sourcePaths.map(async path=>[path,digest(await readFile(resolve(root,path)))])));
 const sourceFingerprints=await fingerprint();
+const frameWindowTimeoutMs=process.env.G09_FRAME_WAIT_MS===undefined?180000:Number(process.env.G09_FRAME_WAIT_MS);
+assert(Number.isFinite(frameWindowTimeoutMs)&&frameWindowTimeoutMs>0&&frameWindowTimeoutMs<=600000,'Frame-window wait must be between0 and600000ms');
 const htmlText=await readFile(htmlPath,'utf8');
 const licenseChecks={};
 for(const path of ['LICENSE','node_modules/zod/LICENSE']){const license=(await readFile(resolve(root,path),'utf8')).replace(/--/g,'- -').trim();licenseChecks[path]=htmlText.includes(license);assert(licenseChecks[path],`Full license missing from standalone HTML: ${path}`);}
-const report={sourceSha256,sourceFingerprints,licenseChecks,samplingRecording:false,recordingDuringMeasurement:false,browser:'',startedAt:new Date().toISOString(),profiles:[],passed:false};
+const report={sourceSha256,sourceFingerprints,licenseChecks,samplingRecording:false,recordingDuringMeasurement:false,frameWindowTimeoutMs:process.env.G09_FRAME_BARRIER_DIR?frameWindowTimeoutMs:null,browser:'',startedAt:new Date().toISOString(),profiles:[],passed:false};
 console.log(JSON.stringify({pid:process.pid,sourceSha256,action:'600 consecutive RAF samples and recording per profile'}));
 const browser=await chromium.launch({headless:true,...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:{}),args:['--no-sandbox']});
 report.browser=browser.version();
@@ -39,7 +41,7 @@ try {
     await page.getByRole('button',{name:'Let’s play'}).click();
     await page.locator('#ready').click();
     await page.waitForTimeout(250);
-    const frameWindow=await waitForFrameWindow(process.env.G09_FRAME_BARRIER_DIR,label,sourceSha256);
+    const frameWindow=await waitForFrameWindow(process.env.G09_FRAME_BARRIER_DIR,label,sourceSha256,frameWindowTimeoutMs);
     let frames;
     try{frames=await page.evaluate(async()=>{
       const times=[];
@@ -68,7 +70,7 @@ try {
     await context.close();
     assert(item.passed,`${label}: strict frame or offline runtime check failed`);
     // Video encoding is isolated from all measured RAF frames.
-    const clipContext=await browser.newContext({viewport:{width,height},offline:true,recordVideo:{dir:media,size:{width:Math.min(width,1280),height:Math.min(height,720)}}});
+    const clipContext=await browser.newContext({viewport:{width,height},offline:true,permissions:['clipboard-read','clipboard-write'],recordVideo:{dir:media,size:{width:Math.min(width,1280),height:Math.min(height,720)}}});
     const clipPage=await clipContext.newPage();
     const clipPageErrors=[],clipNetworkRequests=[];
     clipPage.on('pageerror',error=>clipPageErrors.push(String(error)));
@@ -84,6 +86,15 @@ try {
     await clipPage.locator('#answer-0').fill(`${clipLetter} private-example`);
     await clipPage.locator('#answer-1').fill(`The ${clipLetter.toLowerCase()} private-example`);
     await clipPage.locator('#answer-2').fill('Z wrong-initial-example');
+    const clipPrompt=await clipPage.locator('label[for="answer-3"]').innerText();
+    const clipPack=JSON.parse(await readFile(resolve(root,'content/categories.json'),'utf8'));
+    const clipCategory=clipPack.categories.find(category=>category.prompt===clipPrompt);
+    const clipNoun=clipCategory?.answers[clipLetter]?.[0];assert(clipNoun,'recording uses an actual authored noun for its public prompt');
+    const pastedWordBoundary=`The\t${clipNoun}`;
+    await clipPage.evaluate(text=>navigator.clipboard.writeText(text),pastedWordBoundary);
+    await clipPage.locator('#answer-3').focus();await clipPage.keyboard.press('Control+V');
+    const visibleWordBoundary=await clipPage.locator('#answer-3').inputValue();
+    assert.equal(visibleWordBoundary,`The ${clipNoun}`,'milestone recording shows the real native pasted word boundary');
     assert.equal((await clipPage.locator('.draft-warning').allTextContents()).filter(Boolean).length,3,'milestone recording shows actual nonblocking private hints');
     await clipPage.locator('#answer-0').scrollIntoViewIfNeeded();
     await clipPage.waitForTimeout(3000);
@@ -94,7 +105,7 @@ try {
     await unlink(await video.path());
     const {frames:raw,...summary}=item;
     summary.video=`media/${videoName}`;
-    summary.clipContext={separateFromSampling:true,viewport:{width,height},cpuThrottle,sourceSha256,activeRecordingMs:3000,workload:'same offline 12-category answer screen with active timer and three nonblocking own-draft warnings; recording only',privateWarningRows:3,pageErrors:clipPageErrors,networkRequests:clipNetworkRequests};
+    summary.clipContext={separateFromSampling:true,viewport:{width,height},cpuThrottle,sourceSha256,activeRecordingMs:3000,workload:'offline 12-category answer screen with active timer, three private warnings and a real native article-tab paste retained as separate words; recording only',privateWarningRows:3,nativePasteWordBoundary:{method:'native Chromium clipboard',letter:clipLetter,categoryId:clipCategory.id,prompt:clipPrompt,noun:clipNoun,pasted:pastedWordBoundary,visible:visibleWordBoundary},pageErrors:clipPageErrors,networkRequests:clipNetworkRequests};
     summary.videoBytes=(await stat(resolve(media,videoName))).size;
     report.profiles.push(summary);
     console.log(JSON.stringify(summary));

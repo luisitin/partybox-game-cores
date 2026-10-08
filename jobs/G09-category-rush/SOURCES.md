@@ -138,3 +138,23 @@ is bundled. The production matcher and independent family oracle remain offline.
 
 - https://www.npmjs.com/package/playwright/v/1.56.0 and https://github.com/microsoft/playwright/tree/v1.56.0 — provenance for the exact installed development dependency. Locally read the actual Playwright1.56.0 server clock wrapper, generated injected ClockController and typed API guidance; hashes and original independent diagnostics are retained under evidence/browser/round-4-clock-control. The dependency itself is unchanged and no full source prose/code is copied into public research evidence. The shipped runtime and strict RAF sampler do not use the functional-test fake clock.
 - The scheduler mechanism is reproduced against the installed code with controlled continuations, and the independent actual empty-page auto/paused comparison retains every sample. These observations support the explicit paused recovery harness; they are not outside factual claims about old unseen failures.
+
+## Round7 text-input boundaries (live read2026-10-08)
+
+- WHATWG HTML Living Standard, text/search input and common APIs:
+  https://html.spec.whatwg.org/multipage/input.html#text-(type=text)-state-and-search-state-(type=search)
+  Text input is a single-line control; LF/CR are forbidden in its value and
+  value sanitization strips newlines. Selection start/end/direction and
+  setSelectionRange apply. This does not specify how native paste transforms
+  clipboard line breaks before setting the value.
+- MDN, HTMLInputElement.setSelectionRange:
+  https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
+  A text input supports restoring start/end/direction immediately after changing
+  its value; indexes beyond the value clamp. Together with the independent HTML
+  specification this supports preserving the player's caret and selection.
+- Native Chromium observations, not a universal-browser claim:
+  evidence/browser/round-7-paste-baseline/report.json. Fourteen real clipboard
+  cases on the unchanged page: newline/CRLF become spaces; tab/vertical-tab/DEL
+  remain in the DOM, then the reducer removes them and joins article/noun.
+  Authored stapler for actual S/teacher's desk loses one point in those six
+  two/eight-seat cases while its own private initial advice shows no warning.

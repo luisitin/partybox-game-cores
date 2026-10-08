@@ -1,7 +1,9 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {draftWarnings} from '../client-draft';
+import {draftWarnings,normalizeDraftAnswer} from '../client-draft';
 import {referenceSame} from './reference';
+import {game} from '../src/index';
+import {scoreCategory} from '../src/scoring';
 
 test('writing hints distinguish blanks, initial articles, accents and numeric initials',()=>{
   assert.deepEqual(draftWarnings(['',' ','The Éclair','an eagle','eagle creative example'],'E'),['','','','','']);
@@ -44,4 +46,35 @@ test('bounded own-draft advice is pure and matches independently enumerated pair
       if(expected.length)assert(warnings[n].includes(`${expected.length===1?'category':'categories'} ${expected.join(', ')};`));
     }
   }
+});
+
+test('offline input preserves article boundaries through the unchanged reducer and actual scored groups',()=>{
+  for(const count of [2,8])for(const separator of [' ','\t','\n','\r\n','\v','\x7f']){
+    const players=Array.from({length:count},(_,n)=>({id:`p${n+1}`,name:`Person${n+1}`,avatarId:'',connected:true}));
+    const initial=game.init({players,settings:{rounds:1,roundSeconds:180},seed:42,now:1000});
+    assert.equal(initial.letter,'S');assert.equal(initial.categories[0].id,'school-08');
+    const pasted=`The${separator}stapler`,answers=[normalizeDraftAnswer(pasted),...Array<string>(11).fill('')];
+    const submitted=game.reduce(initial,{type:'input',now:1001,playerId:'p1',input:{type:'submit',answers}});
+    assert.equal(scoreCategory(submitted,0).groups[0].points,1,'an unchallenged authored unique S answer retains its point');
+    assert.equal(draftWarnings(answers,'S')[0],'');
+    if(['\t','\v','\x7f'].includes(separator)){
+      const old=game.reduce(initial,{type:'input',now:1001,playerId:'p1',input:{type:'submit',answers:[pasted,...Array<string>(11).fill('')]}});
+      assert.equal(old.answers.p1[0],'Thestapler');assert.equal(scoreCategory(old,0).groups[0].points,0,'baseline defect remains reproducible in the untouched core');
+    }
+    const repeated=answers.map((value,n)=>n===1?'stapler':value),own=game.reduce(initial,{type:'input',now:1001,playerId:'p1',input:{type:'submit',answers:repeated}});
+    assert.equal(scoreCategory(own,0).groups[0].points,0,'input cleanup cannot defeat own-repeat scoring');
+    assert.match(draftWarnings(repeated,'S')[0],/category 2;/);assert.match(draftWarnings(repeated,'S')[1],/category 1;/);
+  }
+});
+
+test('bounded input and advice agree on what is submitted without changing ordinary or creative text',()=>{
+  for(const text of ['stapler','The stapler','  The café  ','S creative example','shelf','shell','news','new'])assert.equal(normalizeDraftAnswer(text),text);
+  assert.equal(normalizeDraftAnswer('The\u0000stapler'),'The stapler');
+  assert.equal(normalizeDraftAnswer(' \t\v\x7f '),'     ');
+  assert.equal(draftWarnings([' \t\v\x7f '],'S')[0],'');
+  assert.match(draftWarnings(['The\tzebra'],'S')[0],/Start with S/);
+  const prefix='M'+ 'x'.repeat(79);assert.equal(normalizeDraftAnswer(prefix+'different suffix'),prefix);
+  const hints=draftWarnings([prefix+'suffix1',prefix+'suffix2'],'M');
+  assert.match(hints[0],/category 2;/);assert.match(hints[1],/category 1;/);
+  assert(!draftWarnings(['news','new'],'N').some(text=>text.includes('Also used')));
 });
