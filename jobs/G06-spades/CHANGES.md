@@ -113,3 +113,8 @@ KEEP GOING round4:
   that already look like a generated label. Core names/IDs stay unchanged.
 - `browser.ts`:both editions exercise all-Alex bid handovers, expected
   owner cards, concealed transitions and mixed names resembling seat labels.
+
+KEEP GOING round5:
+- `package.json`:recompute/assert both original and held-out2,000-seed
+  league reports in npm test,so the generalization evidence stays executable.
+  No policy or scoring change; all four fresh skill orderings passed.

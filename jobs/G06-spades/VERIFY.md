@@ -206,3 +206,11 @@ KEEP GOING round4:
   variant games pass;zero errors/external requests;reduced motion honored.
  900frames each:TV59.7368fps,mean16.7401ms,p95 16.8/max50.0ms;
  4×phone59.8695fps,mean16.7030ms,p95 16.7/max50.1ms.8s capture<10MB.
+
+KEEP GOING round5:
+- `node league.ts --write --start=2001`:PASS8,000 fresh full matches,
+ 221,792.38ms,2,000 per comparison/seeds2001–4000. Outright wins3p
+ strong1497/74.85%,medium1780/89.00%;4pstrong1521/76.05%,medium1997/
+ 99.85%. All eight outright/pair95% lower bounds above50%;zero pair ties.
+ Largest final state5,643bytes. BOTS and the held-out JSON contain all
+ counts/assumptions. Unchanged policy passes;no player-visible gain.

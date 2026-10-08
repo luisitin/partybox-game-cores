@@ -49,3 +49,15 @@ Fix worst:when any names repeat, append each public roster seat number to
 every label. This also prevents a third name resembling a generated label
 from colliding. Baseline:all-Alex handovers have only1 distinct label in
 both editions. Check actual revealed cards against each expected seat.
+
+Round5, re-read JOBS;five largest remaining weaknesses:
+1. Skill ordering has only been measured on the first2,000 seeds.
+2. Disconnect/permanent-leave/pause combinations need wider sampling.
+3. Final presentation needs another independent browser-process sample.
+4. No physical phone is available;4×CPU remains an approximation.
+5. Bot policy is heuristic; strength against outside expert AIs is unknown.
+
+Check worst:run another2,000 full matches per comparison on held-out seeds
+2001–4000,unchanged policy/settings/seat rotation. Require both outright
+and direct-pair95% lower bounds above50%. Fix strategy only if evidence
+shows an actual weakness; don't claim outside expertise from local leagues.
