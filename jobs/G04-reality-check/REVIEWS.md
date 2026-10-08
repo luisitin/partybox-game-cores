@@ -56,3 +56,9 @@ two-word,0 invalid. Full50-test pipeline,all25 mutations,12,000 measured
 leagues and22 browser scenarios pass. Mixed/Bluff rates change as recorded
 in BOTS;all lower bounds remain above50%. Player-visible bluff plausibility
 gain;no-gain streak0.
+
+Round6 five weaknesses: all-phase adversarial/privacy coverage (worst);
+sequential replay seeds; custom-catalog boundaries; held-out skill results;
+phone/performance variance. Fill the first two verification gaps with
+7,000 frozen phase states and1,003 exact replays using actual random draws.
+No invariant failure or production change;measured player gain0,streak1.

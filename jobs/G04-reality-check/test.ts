@@ -6,6 +6,7 @@ import {manifestSchema} from './preflight.ts';
 import {sampleRows,makeSamples,catalogSchema,realms} from './samples.ts';
 import {numberScore,quickScore,normalize} from './scoring.ts';
 import {numberMidpoint,initialEstimate} from './estimates.ts';
+import {replaySeeds,replaySamplerSeed} from './verification-seeds.ts';
 import type {State,Input} from './core.ts';
 const C:typeof import('./core.ts')=await import(process.env.CORE_PATH??'./core.ts');
 export const context=(n=2,seed=1,settings:Record<string,string|boolean|number>={})=>({players:Array.from({length:n},(_,i)=>({id:`p${i}`,name:`Seat ${i+1}`,avatarId:'🙂',connected:true,bot:true})),seed,now:0,settings});
@@ -210,7 +211,11 @@ export function simulate(n:number,seed:number,mode='mixed',replay=false):State{
  assert.equal(s.phase.id,'done');assert(Buffer.byteLength(JSON.stringify(s))<=256*1024);const r=C.results(s)!;assert.deepEqual(Object.keys(r.scores),s.seats);assert.equal(r.ranking.length,n);return s;
 }
 if(!process.env.FAST_TEST){
- test('property replay seeds 1/2/3 plus 1000 seeded event streams',()=>{for(const seed of [1,2,3,...Array.from({length:1000},(_,i)=>i+10001)])simulate(2+seed%7,seed,['quick','mixed','bluff'][seed%3],true);});
+ test('property replay seeds 1/2/3 plus 1000 random seeded event streams',()=>{
+  const seeds=replaySeeds();assert.equal(seeds.length,1003);assert.equal(new Set(seeds).size,1003);
+  assert.deepEqual(JSON.parse(readFileSync('property-seeds.json','utf8')),{samplerSeed:replaySamplerSeed,seeds});
+  for(const seed of seeds)simulate(2+seed%7,seed,['quick','mixed','bluff'][seed%3],true);
+ });
  for(const mode of ['quick','mixed','bluff'])for(let n=2;n<=8;n++)test(`1000 complete bot games: ${n} seats ${mode}`,()=>{for(let seed=1;seed<=1000;seed++)simulate(n,seed,mode);});
  test('1000 timer-only rosters finish inside estimatedMinutes × 3',()=>{
   for(let seed=1;seed<=1000;seed++){let s=C.init(context(2+seed%7,seed,{mode:['quick','mixed','bluff'][seed%3],rounds:12}));let steps=0;while(s.phase.id!=='done'&&steps++<200)s=C.reduce(s,timer(s));assert.equal(s.phase.id,'done');assert(s.phase.startedAt<=C.manifest.estimatedMinutes*3*60000);for(const score of Object.values(s.scores))assert.equal(score,0);}

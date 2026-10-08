@@ -160,3 +160,14 @@ exceeds50%. Build493,410bytes,TV60.0024fps/p9516.80ms,phone4×60.0028fps/
 p9516.70ms,no requests/errors and reduced motion honored,capture7<10MB.
 Hosted Round4 dc0fb6427f06a662ff20c6b971a99ffa1f8f1918 run37727596105
 SUCCESS observed04:36UTC. New-head hosted CI pending.
+
+Round6 npm run check PASS;node phase-audit.ts PASS on7,000 frozen states:
+195,000 ignored malformed/stale/spectator events,30,000 paused events,
+60,000 private projection comparisons,90,000 bot noninterference comparisons,
+36,000 accepted bot actions and49,000 detached-view checks;zero failures.
+phase-report.json contains the per-phase counts. node --test
+--test-name-pattern='property replay' test.ts PASS1 test/1,003 exact replay
+streams,12,055.30ms. The1,000 additional seeds now are uniform unique
+uint32 draws with sampler0x6040006,not sequential integers;their exact
+values are in property-seeds.json. No game behavior changed or defect
+was found;player gain0,no-gain streak1. node checksums.ts/--check PASS.

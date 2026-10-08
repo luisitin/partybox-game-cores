@@ -25,10 +25,11 @@ Baseline and rounds1–4 all passed hosted CI;latest observed Round4
 1,003 exact replays,1,000 idle cases,two10,000-case differentials,25/25
 mutation kills,12,000 leagues(all lower bounds>50%),22 browser scenarios,
 27 hashes,HTML493,410bytes. TV60.0024fps,phone4×60.0028fps,p95≤16.8ms.
-Captures1–7 retained<10MB. Rounds1–5 all showed player gains;no-gain streak0.
-New-head hosted CI pending;job remains unfinished. Next worst:full phase/
-privacy matrix and actual random replay seeds;then custom catalog stress
-and held-out skill strength. Each round re-reads job,lists five weaknesses,
+Captures1–7 retained<10MB. Rounds1–5 showed player gains. Round6 phase audit/random replays pass:
+7,000 frozen states,zero failures,production unchanged;no-gain streak1.
+New-head hosted CI pending;job remains unfinished. Next worst:custom-catalog boundary stress,then held-out skill strength
+and independent phone/performance sampling. phase-audit.ts runs in npm test;
+property-seeds.json records1/2/3 plus1,000 random unique uint32 draws. Each round re-reads job,lists five weaknesses,
 fixes worst,measures/logs. Stop requires three no-gain rounds and actual
 final-head green CI. Refresh ONLY G04 claim on main after each push.
 Stage G04/workflow only;G01 dependency caches are untracked locally.

@@ -100,3 +100,10 @@ phrases were trivially distinguishable by length. Add300 style/schema
 regressions and style-probe.ts with before/after JSON,wire it into npm test,
 and regenerate affected fixtures/HTML plus milestone7 capture. No hidden
 answer is used. Re-measure all six leagues and update BOTS with actual rates.
+
+KEEP GOING6: add phase-audit.ts to check frozen states in every phase
+against malformed/stale/spectator events,paused play,hidden truth/other
+submissions/votes/authors and detached views. Wire the audit into npm test.
+Replace sequential replay seeds with1,000 unique uint32 PRNG draws plus
+1/2/3;verification-seeds.ts and property-seeds.json make them reproducible.
+Only verification changes;production core,bots and HTML are unchanged.
