@@ -63,7 +63,7 @@ try {
     await send('Emulation.setDeviceMetricsOverride', { width, height, deviceScaleFactor: 1, mobile: width < 700 });
     await send('Emulation.setCPUThrottlingRate', { rate: cpu });
     await evaluate('new Promise(resolve=>{let n=0;function warm(){if(++n<60)requestAnimationFrame(warm);else resolve()}requestAnimationFrame(warm)})');
-    return evaluate(`new Promise(resolve=>{let previous=0;const dt=[];let n=0;function frame(t){if(previous)dt.push(t-previous);previous=t;n++;if(n%6===0)document.dispatchEvent(new KeyboardEvent('keydown',{key:n%12===0?'ArrowLeft':'ArrowRight',bubbles:true}));if(n<182)requestAnimationFrame(frame);else{dt.shift();const sorted=[...dt].sort((a,b)=>a-b);resolve({width:${width},height:${height},cpu:${cpu},warmupFrames:60,interaction:'keyboard ghost movement at 10 Hz',frames:dt.length,meanMs:dt.reduce((a,b)=>a+b)/dt.length,p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:Math.max(...dt),fps:1000/(dt.reduce((a,b)=>a+b)/dt.length),overflow:document.documentElement.scrollWidth>innerWidth})}}requestAnimationFrame(frame)})`);
+    return evaluate(`new Promise(resolve=>{let previous=0;const dt=[];let n=0;function frame(t){if(previous)dt.push(t-previous);previous=t;n++;if(n%6===0)document.dispatchEvent(new KeyboardEvent('keydown',{key:n%12===0?'ArrowLeft':'ArrowRight',bubbles:true}));if(n<182)requestAnimationFrame(frame);else{dt.shift();const sorted=[...dt].sort((a,b)=>a-b);resolve({width:${width},height:${height},cpu:${cpu},warmupFrames:60,interaction:'keyboard ghost movement at 10 Hz',frames:dt.length,meanMs:dt.reduce((a,b)=>a+b)/dt.length,p95Ms:sorted[Math.floor(sorted.length*.95)],maxMs:Math.max(...dt),fps:1000/(dt.reduce((a,b)=>a+b)/dt.length),overflow:document.documentElement.scrollWidth>${width}})}}requestAnimationFrame(frame)})`);
   }
   await evaluate('document.querySelector("[data-select]").click()');
   const desktop = await measure(1920, 1080, 1); const phone = await measure(390, 844, 4);
@@ -121,7 +121,24 @@ try {
     assert.ok(await evaluate('document.getElementById("result").textContent.startsWith("Player 1 wins")'));
     completedPlayerCounts.push(count);
   }
+  // Mobile layout must remain within the emulated width, even when a name
+  // would otherwise expand the layout viewport and hide an overflow defect.
+  await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true });
+  await evaluate("document.getElementById('next').click();const count=document.getElementById('player-count');count.value='2';count.dispatchEvent(new Event('change'));document.getElementById('name-0').value='W'.repeat(24);document.getElementById('name-1').value='W'.repeat(24);document.getElementById('skill-0').value='human';document.getElementById('rounds').value='1';document.getElementById('start').click()");
+  async function assertPhoneLayout(phase) {
+    const size = await evaluate('({innerWidth,scrollWidth:document.documentElement.scrollWidth})');
+    assert.equal(size.innerWidth, 390, `${phase}: long names must not expand the mobile viewport`);
+    assert.ok(size.scrollWidth <= 390, `${phase}: long names must fit the phone`);
+  }
+  await assertPhoneLayout('handoff');
+  await evaluate("document.getElementById('start-turn').click()");
+  await assertPhoneLayout('packing');
+  await evaluate("document.getElementById('submit').click()");
+  for (let i = 0; i < 100 && !(await evaluate('!document.getElementById("reveal-controls").hidden')); i++) await delay(30);
+  await assertPhoneLayout('inspection');
+  await evaluate("document.getElementById('next').click()");
+  await assertPhoneLayout('results');
   assert.equal(requests.filter(url => /^https?:/.test(url) && url !== documentUrl && !url.endsWith('/favicon.ico')).length, 0); assert.deepEqual(errors, []);
-  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, touchDrag: true, keyboardFocus: true, keyboardPlacement: true, videoBytes: readFileSync(`${output}/${videoFile}`).length };
+  const report = { schemaVersion: 1, chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; disk-open remains blocked by managed browser policy' : 'disk', desktop, phone, reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, touchDrag: true, keyboardFocus: true, keyboardPlacement: true, longNamesFit: true, videoBytes: readFileSync(`${output}/${videoFile}`).length };
   writeFileSync(`${output}/visual-measurements.json`, JSON.stringify(report, null, 2) + '\n'); console.log(JSON.stringify(report));
 } finally { socket?.close(); browser.kill('SIGTERM'); localServer?.close(); }

@@ -243,3 +243,33 @@ secret-key omission,25/25 mutations,8 JSON files/seven schemas,22 hashes and
 two byte-identical regenerations. Browser checks passed: all roster sizes,
 focus, touch/mouse/keyboard, zero exceptions/requests. Raw latest sample:
 desktop60.004fps,CPU4x phone59.343fps,p95≤16.8ms.
+
+## KEEP GOING round5: phone layout with maximum-length names
+
+Round4 passed both CI checks at822ac1e (runs37722828512 and37722825705).
+The strict disk browser report measured60.004fps desktop and60.002fps phone,
+p95=16.7ms, no external requests/exceptions and all roster sizes. The2,000
+generated-level benchmark had max2.663ms, maximum tier p95=1.300ms.
+
+`node .tmp/long-name-baseline.mjs --http` before the fix:24 unbroken W's
+expanded innerWidth/scrollWidth to609px despite a390px device/client width;
+the turn heading and clock went off-screen. After CSS wrapping/shrink fixes:
+innerWidth=scrollWidth=390px, no off-screen elements. The temporary diagnostic
+uses the existing CDP harness and a390×844 emulated device.
+
+`npm run build` passed. `node scripts/visual.mjs --http --record --milestone 07`
+passed maximum-name hand-off, packing, inspection and results checks; real
+touch/mouse/keyboard controls, all2–8-player rosters, reduced motion and zero
+requests/exceptions. Report now includes longNamesFit; overflow compares the
+emulated width rather than the possibly expanded layout viewport.
+Video103,327bytes; local HTTP desktop60.002fps and CPU4x phone59.343fps,
+p95≤16.8ms. Managed disk policy remains unchanged; CI supplies the disk gate.
+
+`node scripts/generate.mjs --fixtures-only` updates the report schema and hashes;
+`node scripts/check-data.mjs` validates every JSON/schema/hash and runs the full
+generator twice to check byte identity. The current push runs all core checks
+and the new layout regression in strict disk mode.
+
+Round5 data checks completed:8 JSON files,7 schemas,23 hashes and two full
+byte-identical regenerations passed. Core code was unchanged in this CSS fix;
+CI runs the complete21-test suite and25 mutations on the pushed head.

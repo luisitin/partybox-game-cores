@@ -10,10 +10,10 @@
     "warmupFrames": 60,
     "interaction": "keyboard ghost movement at 10 Hz",
     "frames": 180,
-    "meanMs": 16.75888888888889,
-    "p95Ms": 16.700000000000728,
-    "maxMs": 33.40000000000009,
-    "fps": 59.66982695750182,
+    "meanMs": 16.66611111111111,
+    "p95Ms": 16.799999999999727,
+    "maxMs": 16.800000000000182,
+    "fps": 60.00200006666889,
     "overflow": false
   },
   "phone": {
@@ -23,10 +23,10 @@
     "warmupFrames": 60,
     "interaction": "keyboard ghost movement at 10 Hz",
     "frames": 180,
-    "meanMs": 16.66611111111111,
-    "p95Ms": 16.700000000000728,
-    "maxMs": 16.800000000000182,
-    "fps": 60.00200006666889,
+    "meanMs": 16.85111111111111,
+    "p95Ms": 16.799999999999272,
+    "maxMs": 33.400000000000546,
+    "fps": 59.343267835948836,
     "overflow": false
   },
   "reducedMotion": true,
@@ -46,5 +46,6 @@
   "touchDrag": true,
   "keyboardFocus": true,
   "keyboardPlacement": true,
-  "videoBytes": 103400
+  "longNamesFit": true,
+  "videoBytes": 103327
 }

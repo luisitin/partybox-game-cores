@@ -2,20 +2,19 @@
 
 PR https://github.com/luisitin/partybox-game-cores/pull/3
 Branch job/G03-pack-the-hold; claim codex-core.
-Rounds1–3 are implemented and green. Latest green basea5eecdf has independent
-proofs for all240 templates, twelve distinct holds per tier, no repeats across
-three rounds, stable keyboard focus and real phone touch dragging.21 tests,
-25/25 mutations, data checks and actual disk-mode CI passed.
 
-Round4 is local: hand-off pause uses phase.startedAt, so setup work consumes
-none of the allotted human time; simulated200ms setup leaves45,000ms instead
-of44,800ms. Optimum/solution keys are fully absent from packing views, as the
-contract requires. Explicit omission tests added. Full21-test validation passed, with all25 mutations and data checks.
-The partial browser checks passed; verify this push in strict disk CI.
+Rounds1–4 are green through822ac1e, including21 tests,25/25 mutations,
+10,000 independent solver comparisons,7,000 bot games,4,000 league games,
+all data checks, actual disk opening and60fps on desktop/CPU4x phone.
+Round5 fixes maximum-length names overflowing the phone;390px stays390px
+in hand-off, packing, inspection and results. Local build/browser checks pass.
+Check both current CI runs before recording this round green.
 
-Next review: long player names on phones, timer alignment, font/border weight,
-help wording and minor spacing. No-gain streak remains0; need three consecutive
-rounds without meaningful player gain before moving to the next eligible job.
-Maintain media, fixtures and hashes. No shared-contract changes or worktree.
-The managed cloud browser blocks local disk navigation; CI uses actual disk
-mode, forbids HTTP fallback, and has passed every pushed milestone so far.
+Continue KEEP GOING: review timer alignment, help phrasing, border/font weight,
+value alignment and spacing; fix the worst, measure and log each round.
+No-gain streak0; need three consecutive rounds with only cosmetic gains.
+Refresh the claim on main after every push. Do not alter the shared contract
+or other jobs. Runtime uses inline original CSS/SVG and zod's embedded licence.
+
+Managed cloud Chromium blocks file://; explicit localhost HTTP checks are
+partial. CI uses real disk mode, forbids fallback, and is the delivery gate.

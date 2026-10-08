@@ -183,6 +183,9 @@
     "keyboardPlacement": {
       "type": "boolean"
     },
+    "longNamesFit": {
+      "type": "boolean"
+    },
     "videoBytes": {
       "type": "integer",
       "exclusiveMinimum": 0,
@@ -205,6 +208,7 @@
     "touchDrag",
     "keyboardFocus",
     "keyboardPlacement",
+    "longNamesFit",
     "videoBytes"
   ],
   "additionalProperties": false
