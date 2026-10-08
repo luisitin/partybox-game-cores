@@ -1,0 +1,33 @@
+{
+  "command": "node scripts/browser-check.mjs --international-frames-only",
+  "htmlPath": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/play-full-guarded.html",
+  "htmlBytes": 1390845993,
+  "loadTimeoutMs": 300000,
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "profiles": [
+    {
+      "name": "desktop",
+      "throttle": 1,
+      "loadMs": 24656.503056999998,
+      "checks": 0,
+      "frameResults": [
+        {
+          "variant": "international",
+          "frames": 200,
+          "meanFps": 60.002400096003825,
+          "p99Ms": 16.799999999999272
+        }
+      ]
+    }
+  ],
+  "capture": false,
+  "functionalOnly": false,
+  "frameVariants": [
+    "international"
+  ],
+  "skipPrefix": true,
+  "workerEvents": [],
+  "scope": "NON-GATING instrumented200RAF International desktop diagnostic; unchanged15functionalprefix; phone not run; no acceptance or causal gain",
+  "checks": [],
+  "totalChecks": 0
+}
