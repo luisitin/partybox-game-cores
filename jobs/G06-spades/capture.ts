@@ -1,5 +1,5 @@
 import {chromium} from 'playwright';
-import {mkdirSync,mkdtempSync,readFileSync,rmSync,statSync,writeFileSync} from 'node:fs';
+import {existsSync,mkdirSync,mkdtempSync,readFileSync,rmSync,statSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {join,resolve} from 'node:path';
 import {tmpdir} from 'node:os';
@@ -7,8 +7,10 @@ import {pathToFileURL} from 'node:url';
 import assert from 'node:assert/strict';
 import {encodeCapture} from './capture-encoder.ts';
 
-const milestone=process.argv.find(a=>/^--milestone=[1-9]\d{0,3}$/.test(a))?.split('=')[1]??'9';
-const output=`media/milestone-${milestone}-pinned-encoder.webm`;
+const arguments_=process.argv.slice(2);assert.equal(arguments_.length,1,'supply exactly one --milestone=<1..9999> argument');
+const milestoneMatch=arguments_[0]?.match(/^--milestone=([1-9]\d{0,3})$/);assert(milestoneMatch,'valid --milestone=<1..9999> required');const milestone=milestoneMatch[1]!;
+const output=`media/milestone-${milestone}-pinned-encoder.webm`,reportPath=`capture-milestone-${milestone}-report.json`;
+assert(!existsSync(output)&&!existsSync(reportPath),'refusing to overwrite an existing capture milestone; use a new number');
 const files=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','deck.json','manifest.json','capture.ts','capture-encoder.ts'];
 const hash=(b:Uint8Array)=>createHash('sha256').update(b).digest('hex');
 const hashes=()=>Object.fromEntries(files.map(f=>[f,hash(readFileSync(f))]));
@@ -45,6 +47,6 @@ try{
  encodeCapture(directory,output);await context.close();
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert.deepEqual(hashes(),before);
  assert(statSync(output).size<10*1024*1024);
- writeFileSync(`capture-milestone-${milestone}-report.json`,JSON.stringify({startedAt,finishedAt:new Date().toISOString(),command:`node capture.ts --milestone=${milestone}`,scope:'Actual-file functional/source-bound short capture only; not FPS acceptance',output,bytes:statSync(output).size,sha256:hash(readFileSync(output)),frameCount:18,encodedFps:12,sourceHashesAtStart:before,sourceHashesAtEnd:hashes(),sourceUnchanged:true,functional,errors,externalRequests:requests},null,2)+'\n');
+ writeFileSync(reportPath,JSON.stringify({startedAt,finishedAt:new Date().toISOString(),command:`node capture.ts --milestone=${milestone}`,scope:'Actual-file functional/source-bound short capture only; not FPS acceptance',output,bytes:statSync(output).size,sha256:hash(readFileSync(output)),frameCount:18,encodedFps:12,sourceHashesAtStart:before,sourceHashesAtEnd:hashes(),sourceUnchanged:true,functional,errors,externalRequests:requests},null,2)+'\n');
  console.log(`G06 separate actual-file capture PASS ${statSync(output).size} bytes, source unchanged, zero network/errors; no FPS claim`);
 }finally{await browser.close();rmSync(directory,{recursive:true,force:true});}
