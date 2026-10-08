@@ -8,8 +8,9 @@ type Schema = boolean | {
   additionalProperties?: Schema; propertyNames?: Schema;
   items?: Schema; prefixItems?: Schema[]; minItems?: number; maxItems?: number;
   minLength?: number; maxLength?: number; pattern?: string;
+  minimum?: number; maximum?: number; exclusiveMinimum?: number; exclusiveMaximum?: number; anyOf?: Schema[];
 };
-const keywords = new Set(['$schema','title','description','type','const','enum','properties','required','additionalProperties','propertyNames','items','prefixItems','minItems','maxItems','minLength','maxLength','pattern']);
+const keywords = new Set(['$schema','title','description','type','const','enum','properties','required','additionalProperties','propertyNames','items','prefixItems','minItems','maxItems','minLength','maxLength','pattern','minimum','maximum','exclusiveMinimum','exclusiveMaximum','anyOf']);
 
 export function validateJsonSchema(rawSchema: unknown, value: unknown, path = '$'): string[] {
   if (rawSchema === true) return [];
@@ -19,9 +20,21 @@ export function validateJsonSchema(rawSchema: unknown, value: unknown, path = '$
   for (const key of Object.keys(schema)) if (!keywords.has(key)) throw new Error(`Unsupported JSON Schema keyword: ${key}`);
   const errors: string[] = [];
   const kind = Array.isArray(value) ? 'array' : value === null ? 'null' : typeof value;
-  if (schema.type && kind !== schema.type) return [`${path}: expected ${schema.type}`];
+  const typeMatches=schema.type==='integer'?typeof value==='number'&&Number.isFinite(value)&&Number.isInteger(value):
+    schema.type==='number'?typeof value==='number'&&Number.isFinite(value):kind===schema.type;
+  if (schema.type && !typeMatches) return [`${path}: expected ${schema.type}`];
+  if(schema.anyOf){
+    const alternatives=schema.anyOf.map(branch=>validateJsonSchema(branch,value,path));
+    if(!alternatives.some(branch=>branch.length===0))errors.push(`${path}: outside anyOf`);
+  }
   if (Object.hasOwn(schema, 'const') && JSON.stringify(value) !== JSON.stringify(schema.const)) errors.push(`${path}: wrong constant`);
   if (schema.enum && !schema.enum.some(item => JSON.stringify(item) === JSON.stringify(value))) errors.push(`${path}: outside enum`);
+  if(typeof value==='number'){
+    if(schema.minimum!==undefined&&value<schema.minimum)errors.push(`${path}: below minimum`);
+    if(schema.maximum!==undefined&&value>schema.maximum)errors.push(`${path}: above maximum`);
+    if(schema.exclusiveMinimum!==undefined&&value<=schema.exclusiveMinimum)errors.push(`${path}: at or below exclusive minimum`);
+    if(schema.exclusiveMaximum!==undefined&&value>=schema.exclusiveMaximum)errors.push(`${path}: at or above exclusive maximum`);
+  }
   if (typeof value === 'string') {
     const length = [...value].length;
     if (schema.minLength !== undefined && length < schema.minLength) errors.push(`${path}: too short`);

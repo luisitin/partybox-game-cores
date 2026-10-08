@@ -1,0 +1,71 @@
+{
+  "label": "baseline",
+  "cases": 18,
+  "matched": 0,
+  "awarded": 36,
+  "replayMatches": 18,
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+    "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+  }
+}
+{
+  "label": "baseline",
+  "cases": 18,
+  "matched": 0,
+  "awarded": 36,
+  "replayMatches": 18,
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+    "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+  }
+}
+evidence/lexical-audit-after.json: OK
+evidence/lexical-audit.schema.json: OK
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (47.43133ms)
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (5.663006ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 0
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 763.82228
+
+✖ failing tests:
+
+test at tests/plural-protocol.test.ts:1:679
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (47.43133ms)
+  Error: Unsupported JSON Schema keyword: anyOf
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:19:72)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:44:56)
+      at <anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:36:52)
+      at Array.forEach (<anonymous>)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:34:11)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:44:56)
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:14:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+
+test at tests/plural-protocol.test.ts:1:2640
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (5.663006ms)
+  Error: Unsupported JSON Schema keyword: minimum
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:19:72)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:44:56)
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:32:54)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

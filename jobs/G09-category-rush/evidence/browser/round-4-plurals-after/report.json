@@ -1,0 +1,169 @@
+{
+  "mode": "after",
+  "sourceSha256": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613",
+  "runnerSha256": "4b9dc9452e93a7c3e1b7f3894ab067b3e65ce8f0a67c3cbb0ddfbcda1d273c89",
+  "fixture": {
+    "seed": 159,
+    "letter": "M",
+    "categoryIndex": 9,
+    "categoryId": "wildlife-01",
+    "prompt": "An animal that makes a home underground",
+    "singular": "mouse",
+    "plural": "mice"
+  },
+  "startedAt": "2026-10-08T12:29:10.233Z",
+  "checks": [
+    {
+      "name": "2 people review and score a real mouse/mice duplicate",
+      "passed": true
+    },
+    {
+      "name": "8 people review and score a real mouse/mice duplicate",
+      "passed": true
+    },
+    {
+      "name": "the actual file stayed byte-identical, offline and error-free",
+      "passed": true
+    }
+  ],
+  "rosters": [
+    {
+      "count": 2,
+      "letter": "M",
+      "categoryIndex": 9,
+      "categoryPrompt": "An animal that makes a home underground",
+      "answers": [
+        "mouse",
+        "mice"
+      ],
+      "reviews": [
+        {
+          "voter": 1,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 2,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        }
+      ],
+      "reviewGroupCount": 1,
+      "scoreTotals": [
+        0,
+        0
+      ],
+      "awardedPoints": 0,
+      "receiptText": "10 · An animal that makes a home underground\nmouse\n\nCase Alpha, Case Beta\n\nDuplicate · 0",
+      "verdicts": [
+        "Duplicate · 0"
+      ]
+    },
+    {
+      "count": 8,
+      "letter": "M",
+      "categoryIndex": 9,
+      "categoryPrompt": "An animal that makes a home underground",
+      "answers": [
+        "mouse",
+        "mice"
+      ],
+      "reviews": [
+        {
+          "voter": 1,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 2,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 3,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 4,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 5,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 6,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 7,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 8,
+          "groups": 1,
+          "text": [
+            "mouse\n\nShared answer (2) · scores zero\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        }
+      ],
+      "reviewGroupCount": 1,
+      "scoreTotals": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "awardedPoints": 0,
+      "receiptText": "10 · An animal that makes a home underground\nmouse\n\nCase Alpha, Case Beta\n\nDuplicate · 0",
+      "verdicts": [
+        "Duplicate · 0"
+      ]
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  },
+  "passed": true,
+  "browser": "141.0.7390.37",
+  "finishedAt": "2026-10-08T12:29:25.746Z"
+}

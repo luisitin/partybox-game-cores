@@ -95,6 +95,26 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert.deepEqual(selectedGain.currentTotals,['3','0']);
   const invalidFocus=resumeAfter.details.find((row:any)=>row.case==='invalid review focus');
   assert(invalidFocus);assert.equal(invalidFocus.enabledVotes,0);assert.equal(invalidFocus.focusedText,'Lock my ballot →');
+  const pluralBefore=json('evidence/browser/round-4-plurals-baseline/report.json'),pluralAfter=json('evidence/browser/round-4-plurals-after/report.json');
+  assert.equal(pluralBefore.sourceSha256,sha('evidence/browser/round-3-accepted/play.html'));
+  assert.equal(pluralAfter.sourceSha256,digest);
+  for(const report of [pluralBefore,pluralAfter]){
+    assert.equal(report.runnerSha256,sha('scripts/browser-plurals.mjs'));assert.equal(report.passed,true);
+    assert.equal(report.checks.length,3);assert(report.checks.every((row:any)=>row.passed));
+    assert.equal(report.fixture.categoryId,'wildlife-01');assert.equal(report.fixture.letter,'M');
+    for(const key of ['errors','dialogs','networkRequests'])assert.equal(report.runtime[key].length,0);
+    for(const count of [2,8]){
+      const row=report.rosters.find((row:any)=>row.count===count);assert(row);
+      assert.equal(row.reviewGroupCount,report===pluralBefore?2:1);assert.equal(row.awardedPoints,report===pluralBefore?2:0);
+      assert.equal(row.reviews.length,count);assert(row.reviews.every((review:any)=>review.authorsHidden));
+      assert(row.receiptText.includes('Case Alpha, Case Beta')||report===pluralBefore);
+      if(report===pluralAfter)assert.deepEqual(row.verdicts,['Duplicate · 0']);
+    }
+  }
+  const mutation=json('evidence/mutations.json');assert.equal(mutation.total,28);assert(mutation.killed>=27);
+  assert.equal(mutation.isolatedActualSource,true);
+  for(const [path,hash] of Object.entries(mutation.sourceHashes))assert.equal(sha(path),hash,path);
+  for(const prefix of ['M26','M27','M28'])assert(mutation.mutations.find((row:any)=>row.id.startsWith(prefix))?.killed);
   const original=json('evidence/breadth-baseline.json'),bankOnly=json('evidence/breadth-bank-only.json'),strategy=json('evidence/breadth-after.json');
   assert.equal(original.sourceHashes.data,sha('evidence/browser/round-1-accepted/categories.json'));
   for(const report of [original,bankOnly])assert.equal(report.sourceHashes.core,sha('evidence/breadth-original-core.ts'));

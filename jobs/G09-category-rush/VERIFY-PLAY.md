@@ -1,6 +1,14 @@
 # Offline play verification
 
-## Current round-3 acceptance
+## Round-4 candidate; source-matched verification pending
+
+The new bounded noun matcher is bundled into byte-reproducible HTML `be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613` (456,288 bytes). Two builds are identical. Matcher source is `74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b`; client, codec, builder, template and acceptance sampler remain unchanged. New 28 gameplay, eight pacing, clock, four receipt and 17 resume checks all pass on this exact file, with zero runtime errors, dialogs or network calls. The 17-check resume suite closed at 12:31:27.308 UTC. New strict frame proof has not run yet; earlier accepted measurements below do not verify this changed HTML.
+
+The new actual-file plural regression uses public seed 159, letter M and the selected category “An animal that makes a home underground.” Two/eight humans type mouse and mice on separate private sheets, keep every anonymous ballot group, then inspect revealed owners and points. It compares the exact archived accepted round-3 file with the new file. The first baseline fixture timed out trying to fill the closed seed disclosure; its original report and runner are retained under `round-4-plurals-fixture-first`, then the fixture was corrected to open the disclosure with a normal UI click. No runtime or scoring change followed that fixture failure. The corrected baseline and after each pass three checks. Both actual two/eight-human rosters improve from two anonymous unique groups and two points to one shared group and zero points. All voters keep the answer, both authors remain hidden throughout private review, and the scored duplicate receipt reveals both names. Reports are `evidence/browser/round-4-plurals-{baseline,after}/report.json`, with exact HTML/driver hashes, all group observations, totals, receipt text and screenshots. The driver compares archived `084962…` against current `be311b…` and never injects game state.
+
+## Historical accepted round-3 verification
+
+Accepted round-3 HTML, sources, reports and raw frames are preserved under `evidence/browser/round-3-accepted/`. Stable clips are `media/round-3-delivery-final-desktop.webm` and `media/round-3-delivery-final-phone4x.webm`; the original report stays byte-identical, while the separately derived `retained-media.md` maps original destinations to these archived paths and checks bytes/SHA-256. Its exact-head CI passed at 87eb68c (run 37773541708). The following descriptions refer to that accepted earlier source.
 
 The saved-game adapter is verified on reproducible HTML `084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa` (455,505 bytes), built twice identically after strict TypeScript passed. All 17 resume/UI checks passed in a fresh uninterrupted run from 11:47:48 to 11:48:51.250 UTC; fresh strict frame acceptance also passed both profiles. Earlier accepted proofs below do not verify this changed source.
 
@@ -17,7 +25,7 @@ Strict acceptance ran 11:53:50.399–11:54:22.786 UTC inside the coordinated qui
 | Desktop | 1920×1080 | 1× | 600 | 59.903005 | 16.8 ms | 33.4 ms | 346,184 |
 | Mid-phone profile | 390×844 | 4× | 600 | 59.902957 | 16.8 ms | 33.4 ms | 262,539 |
 
-Current frame report/raw arrays are `evidence/browser/performance-report.json`, `desktop-frames.json` and `phone4x-frames.json`; clips are `media/delivery-final-desktop.webm` and `media/delivery-final-phone4x.webm`. Resume proof is `evidence/browser/round-3-resume-after/report.json`. The sampler is `1ac72aab8370ea041a065df798493252efcc63ec3a2dd262a8c986ef0e427729`; its only method-independent change from round 2 is adding `client-save.ts` to source fingerprints. Current fingerprints are client `9426215a59608ca221b44517671fb1c28a4856eda2ddd3b53969d34baf339ea3`, codec `3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff`, and resume driver `1a4c44e34ae7b24f94dc6475b74cc52f29e445d40f4368d9d704ee2d5b5170ff`. The exact HTML, core, data, builder, template, codec, runner and both license fingerprints matched throughout sampling. Parent-owned artifact checks and exact-head CI follow this evidence; this document does not claim their completion before they run.
+Round-3 frame report/raw arrays and resume report are archived under `evidence/browser/round-3-accepted/`; clips use the stable round-3 paths above. The sampler is `1ac72aab8370ea041a065df798493252efcc63ec3a2dd262a8c986ef0e427729`; its only method-independent change from round 2 is adding `client-save.ts` to source fingerprints. Current fingerprints are client `9426215a59608ca221b44517671fb1c28a4856eda2ddd3b53969d34baf339ea3`, codec `3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff`, and resume driver `1a4c44e34ae7b24f94dc6475b74cc52f29e445d40f4368d9d704ee2d5b5170ff`. The exact HTML, core, data, builder, template, codec, runner and both license fingerprints matched throughout sampling. Parent-owned artifact checks and exact-head CI follow this evidence; this document does not claim their completion before they run.
 
 ## Historical accepted round-2 verification
 
@@ -114,3 +122,13 @@ Baseline HTML SHA-256: `3ce64d2667bc19f930cd6ea8902106e444b4fe61c34e5616dd6b6086
 Both profiles passed, made zero runtime network requests, and raised zero page errors. This initial proof is archived in `evidence/browser/milestone-initial/`; recordings are `media/milestone-desktop.webm` and `media/milestone-phone4x.webm`. The report includes the HTML hash so a later rebuilt file cannot accidentally claim this measurement.
 
 All illustration is original CSS or inline SVG, using system fonts. `prefers-reduced-motion` removes animation. Browser screenshots cover setup, answering, anonymous review, round scoring, and final results.
+
+Round4 strict first attempt12:39:55.643–12:40:22.683 UTC: frozenbe311 /
+sampler1ac72, desktop59.8036169fps p9916.8/max50PASS; phone4x58.4443516fps
+p9916.8/max133.3FAIL. All600intervals retained; onlythreephonegaps exceed25ms
+atindices406/433/439 (83.3/99.9/133.3ms), sampleelapsed6.766/7.283/7.466s.
+Desktopseparateclip301876B captured, phoneclipnotcollected. Actualfailedpage/
+runner/raw/report/partialclip preserved under round-4-frame-first. Sampler exits
+before its finalsourceguards onfailure; independentmanualreadback12:41:58.445
+verified everyHTML/sourcefingerprint stillmatched. No errors/nonfilecalls.
+This is failureevidence, notacceptance or a causaldiagnosis.

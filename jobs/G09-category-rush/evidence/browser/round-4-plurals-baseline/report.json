@@ -1,0 +1,181 @@
+{
+  "mode": "baseline",
+  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
+  "runnerSha256": "4b9dc9452e93a7c3e1b7f3894ab067b3e65ce8f0a67c3cbb0ddfbcda1d273c89",
+  "fixture": {
+    "seed": 159,
+    "letter": "M",
+    "categoryIndex": 9,
+    "categoryId": "wildlife-01",
+    "prompt": "An animal that makes a home underground",
+    "singular": "mouse",
+    "plural": "mice"
+  },
+  "startedAt": "2026-10-08T12:28:49.607Z",
+  "checks": [
+    {
+      "name": "2 people review and score a real mouse/mice duplicate",
+      "passed": true
+    },
+    {
+      "name": "8 people review and score a real mouse/mice duplicate",
+      "passed": true
+    },
+    {
+      "name": "the actual file stayed byte-identical, offline and error-free",
+      "passed": true
+    }
+  ],
+  "rosters": [
+    {
+      "count": 2,
+      "letter": "M",
+      "categoryIndex": 9,
+      "categoryPrompt": "An animal that makes a home underground",
+      "answers": [
+        "mouse",
+        "mice"
+      ],
+      "reviews": [
+        {
+          "voter": 1,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 2,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        }
+      ],
+      "reviewGroupCount": 2,
+      "scoreTotals": [
+        1,
+        1
+      ],
+      "awardedPoints": 2,
+      "receiptText": "10 · An animal that makes a home underground\nmouse\n\nCase Alpha\n\n+1 point\nmice\n\nCase Beta\n\n+1 point",
+      "verdicts": [
+        "+1 point",
+        "+1 point"
+      ]
+    },
+    {
+      "count": 8,
+      "letter": "M",
+      "categoryIndex": 9,
+      "categoryPrompt": "An animal that makes a home underground",
+      "answers": [
+        "mouse",
+        "mice"
+      ],
+      "reviews": [
+        {
+          "voter": 1,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 2,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 3,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 4,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 5,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 6,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 7,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        },
+        {
+          "voter": 8,
+          "groups": 2,
+          "text": [
+            "mouse\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain",
+            "mice\n\nUnique answer · up to 1 point if accepted\n\nKeep\nReject\nAbstain"
+          ],
+          "authorsHidden": true
+        }
+      ],
+      "reviewGroupCount": 2,
+      "scoreTotals": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "awardedPoints": 2,
+      "receiptText": "10 · An animal that makes a home underground\nmouse\n\nCase Alpha\n\n+1 point\nmice\n\nCase Beta\n\n+1 point",
+      "verdicts": [
+        "+1 point",
+        "+1 point"
+      ]
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  },
+  "passed": true,
+  "browser": "141.0.7390.37",
+  "finishedAt": "2026-10-08T12:29:09.399Z"
+}

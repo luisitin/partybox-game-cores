@@ -127,3 +127,9 @@ The repository contract's `Typed answers` section requires a stem key where
 singular and plural meet. The current standalone adapter documents its limited
 regular coverage. The audit distinguishes that observed limitation from proof
 of behavior in an unavailable full SDK.
+
+Round-4 matching facts and ambiguity decisions are individually supported by
+two independent publishers in [SOURCES-MATCHER.md](SOURCES-MATCHER.md). The
+38-token noun table and 47 original fixture cases are small factual spelling
+selections; no source prose, definitions, illustrations or complete dictionary
+is bundled. The production matcher and independent family oracle remain offline.

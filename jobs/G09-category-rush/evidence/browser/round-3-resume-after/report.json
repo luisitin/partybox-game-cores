@@ -1,8 +1,8 @@
 {
   "mode": "after",
-  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
+  "sourceSha256": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613",
   "runnerSha256": "1a4c44e34ae7b24f94dc6475b74cc52f29e445d40f4368d9d704ee2d5b5170ff",
-  "startedAt": "2026-10-08T11:47:48.365Z",
+  "startedAt": "2026-10-08T12:30:27.373Z",
   "checks": [
     {
       "name": "2 humans reload during answer",
@@ -89,7 +89,7 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -281,10 +281,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10040,
+        "coreNow": 10044,
         "phaseBase": 0,
-        "phaseElapsed": 10040,
-        "seatElapsed": 10040,
+        "phaseElapsed": 10044,
+        "seatElapsed": 10044,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -299,7 +299,7 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -491,10 +491,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10075,
+        "coreNow": 10089,
         "phaseBase": 0,
-        "phaseElapsed": 10075,
-        "seatElapsed": 10075,
+        "phaseElapsed": 10089,
+        "seatElapsed": 10089,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -509,7 +509,7 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -701,10 +701,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10075,
+        "coreNow": 10089,
         "phaseBase": 0,
-        "phaseElapsed": 10075,
-        "seatElapsed": 10075,
+        "phaseElapsed": 10089,
+        "seatElapsed": 10089,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -729,7 +729,7 @@
       "privateHandover": true,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -921,10 +921,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10078,
+        "coreNow": 10092,
         "phaseBase": 0,
-        "phaseElapsed": 10078,
-        "seatElapsed": 10078,
+        "phaseElapsed": 10092,
+        "seatElapsed": 10092,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -953,14 +953,14 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 320,
-            "deadline": 20046
+            "startedAt": 348,
+            "deadline": 20074
           },
-          "phaseClock": 320,
+          "phaseClock": 348,
           "rng": {
             "seed": 42,
             "step": 265
@@ -1147,10 +1147,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 566,
-        "phaseBase": 320,
-        "phaseElapsed": 246,
-        "seatElapsed": 246,
+        "coreNow": 596,
+        "phaseBase": 348,
+        "phaseElapsed": 248,
+        "seatElapsed": 248,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1165,14 +1165,14 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 320,
-            "deadline": 20046
+            "startedAt": 348,
+            "deadline": 20074
           },
-          "phaseClock": 320,
+          "phaseClock": 348,
           "rng": {
             "seed": 42,
             "step": 265
@@ -1360,9 +1360,9 @@
           true
         ],
         "coreNow": 2636,
-        "phaseBase": 320,
-        "phaseElapsed": 2316,
-        "seatElapsed": 2316,
+        "phaseBase": 348,
+        "phaseElapsed": 2288,
+        "seatElapsed": 2288,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1377,12 +1377,12 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 320,
-            "deadline": 20046
+            "startedAt": 348,
+            "deadline": 20074
           },
           "rng": {
             "seed": 42,
@@ -1533,7 +1533,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 320
+          "phaseClock": 348
         },
         "seats": [
           {
@@ -1572,9 +1572,9 @@
           true
         ],
         "coreNow": 2636,
-        "phaseBase": 320,
-        "phaseElapsed": 2316,
-        "seatElapsed": 2316,
+        "phaseBase": 348,
+        "phaseElapsed": 2288,
+        "seatElapsed": 2288,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1599,12 +1599,12 @@
       "privateHandover": true,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 320,
-            "deadline": 20046
+            "startedAt": 348,
+            "deadline": 20074
           },
           "rng": {
             "seed": 42,
@@ -1755,7 +1755,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 320
+          "phaseClock": 348
         },
         "seats": [
           {
@@ -1793,10 +1793,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2640,
-        "phaseBase": 320,
-        "phaseElapsed": 2320,
-        "seatElapsed": 2320,
+        "coreNow": 2638,
+        "phaseBase": 348,
+        "phaseElapsed": 2290,
+        "seatElapsed": 2290,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1828,14 +1828,14 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217562,
-            "deadline": 262562
+            "startedAt": 217496,
+            "deadline": 262496
           },
-          "phaseClock": 217562,
+          "phaseClock": 217496,
           "rng": {
             "seed": 42,
             "step": 265
@@ -2369,8 +2369,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217562,
-        "phaseBase": 217562,
+        "coreNow": 217496,
+        "phaseBase": 217496,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -2387,14 +2387,14 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217562,
-            "deadline": 262562
+            "startedAt": 217496,
+            "deadline": 262496
           },
-          "phaseClock": 217562,
+          "phaseClock": 217496,
           "rng": {
             "seed": 42,
             "step": 265
@@ -2928,8 +2928,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217562,
-        "phaseBase": 217562,
+        "coreNow": 217496,
+        "phaseBase": 217496,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -2946,12 +2946,12 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217562,
-            "deadline": 262562
+            "startedAt": 217496,
+            "deadline": 262496
           },
           "rng": {
             "seed": 42,
@@ -3451,7 +3451,7 @@
               ]
             }
           ],
-          "phaseClock": 217562
+          "phaseClock": 217496
         },
         "seats": [
           {
@@ -3487,8 +3487,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217562,
-        "phaseBase": 217562,
+        "coreNow": 217496,
+        "phaseBase": 217496,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -3518,12 +3518,12 @@
       "privateHandover": false,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217562,
-            "deadline": 262562
+            "startedAt": 217496,
+            "deadline": 262496
           },
           "rng": {
             "seed": 42,
@@ -4023,7 +4023,7 @@
               ]
             }
           ],
-          "phaseClock": 217562
+          "phaseClock": 217496
         },
         "seats": [
           {
@@ -4059,8 +4059,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217562,
-        "phaseBase": 217562,
+        "coreNow": 217496,
+        "phaseBase": 217496,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -4091,7 +4091,7 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -4451,10 +4451,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10053,
+        "coreNow": 10037,
         "phaseBase": 0,
-        "phaseElapsed": 10053,
-        "seatElapsed": 10053,
+        "phaseElapsed": 10037,
+        "seatElapsed": 10037,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -4493,7 +4493,7 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -4853,10 +4853,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10068,
+        "coreNow": 10044,
         "phaseBase": 0,
-        "phaseElapsed": 10068,
-        "seatElapsed": 10068,
+        "phaseElapsed": 10044,
+        "seatElapsed": 10044,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -4895,7 +4895,7 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -5255,10 +5255,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10068,
+        "coreNow": 10044,
         "phaseBase": 0,
-        "phaseElapsed": 10068,
-        "seatElapsed": 10068,
+        "phaseElapsed": 10044,
+        "seatElapsed": 10044,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -5307,7 +5307,7 @@
       "privateHandover": true,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "answer",
@@ -5667,10 +5667,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10071,
+        "coreNow": 10047,
         "phaseBase": 0,
-        "phaseElapsed": 10071,
-        "seatElapsed": 10071,
+        "phaseElapsed": 10047,
+        "seatElapsed": 10047,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -5723,14 +5723,14 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 307,
-            "deadline": 20033
+            "startedAt": 266,
+            "deadline": 19992
           },
-          "phaseClock": 307,
+          "phaseClock": 266,
           "rng": {
             "seed": 42,
             "step": 265
@@ -6085,10 +6085,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 555,
-        "phaseBase": 307,
-        "phaseElapsed": 248,
-        "seatElapsed": 248,
+        "coreNow": 515,
+        "phaseBase": 266,
+        "phaseElapsed": 249,
+        "seatElapsed": 249,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6127,14 +6127,14 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 307,
-            "deadline": 20033
+            "startedAt": 266,
+            "deadline": 19992
           },
-          "phaseClock": 307,
+          "phaseClock": 266,
           "rng": {
             "seed": 42,
             "step": 265
@@ -6489,10 +6489,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2622,
-        "phaseBase": 307,
-        "phaseElapsed": 2315,
-        "seatElapsed": 2315,
+        "coreNow": 2564,
+        "phaseBase": 266,
+        "phaseElapsed": 2298,
+        "seatElapsed": 2299,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6531,12 +6531,12 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 307,
-            "deadline": 20033
+            "startedAt": 266,
+            "deadline": 19992
           },
           "rng": {
             "seed": 42,
@@ -6825,7 +6825,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 307
+          "phaseClock": 266
         },
         "seats": [
           {
@@ -6893,10 +6893,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2622,
-        "phaseBase": 307,
-        "phaseElapsed": 2315,
-        "seatElapsed": 2315,
+        "coreNow": 2564,
+        "phaseBase": 266,
+        "phaseElapsed": 2298,
+        "seatElapsed": 2299,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6945,12 +6945,12 @@
       "privateHandover": true,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 307,
-            "deadline": 20033
+            "startedAt": 266,
+            "deadline": 19992
           },
           "rng": {
             "seed": 42,
@@ -7239,7 +7239,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 307
+          "phaseClock": 266
         },
         "seats": [
           {
@@ -7307,10 +7307,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2625,
-        "phaseBase": 307,
-        "phaseElapsed": 2318,
-        "seatElapsed": 2318,
+        "coreNow": 2568,
+        "phaseBase": 266,
+        "phaseElapsed": 2302,
+        "seatElapsed": 2302,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -7372,14 +7372,14 @@
       "restored": true,
       "savedBeforeReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217560,
-            "deadline": 267545
+            "startedAt": 217515,
+            "deadline": 267500
           },
-          "phaseClock": 217560,
+          "phaseClock": 217515,
           "rng": {
             "seed": 42,
             "step": 265
@@ -8093,8 +8093,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217560,
-        "phaseBase": 217560,
+        "coreNow": 217515,
+        "phaseBase": 217515,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -8135,14 +8135,14 @@
       },
       "savedAfterReload": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217560,
-            "deadline": 267545
+            "startedAt": 217515,
+            "deadline": 267500
           },
-          "phaseClock": 217560,
+          "phaseClock": 217515,
           "rng": {
             "seed": 42,
             "step": 265
@@ -8856,8 +8856,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217560,
-        "phaseBase": 217560,
+        "coreNow": 217515,
+        "phaseBase": 217515,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -8898,12 +8898,12 @@
       },
       "savedAfterResume": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217560,
-            "deadline": 267545
+            "startedAt": 217515,
+            "deadline": 267500
           },
           "rng": {
             "seed": 42,
@@ -9553,7 +9553,7 @@
               ]
             }
           ],
-          "phaseClock": 217560
+          "phaseClock": 217515
         },
         "seats": [
           {
@@ -9619,8 +9619,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217560,
-        "phaseBase": 217560,
+        "coreNow": 217515,
+        "phaseBase": 217515,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -9680,12 +9680,12 @@
       "privateHandover": false,
       "savedAfterReady": {
         "version": 1,
-        "compat": "d9362e36905556879cbbdf147c621abd3cb77a43cd836a4c951dcdf9f70c8447",
+        "compat": "ba9fd01ac86fb437869ee95a8744faa14431d53b63f7b3e3ed7d772f3fa70c74",
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 217560,
-            "deadline": 267545
+            "startedAt": 217515,
+            "deadline": 267500
           },
           "rng": {
             "seed": 42,
@@ -10335,7 +10335,7 @@
               ]
             }
           ],
-          "phaseClock": 217560
+          "phaseClock": 217515
         },
         "seats": [
           {
@@ -10401,8 +10401,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 217560,
-        "phaseBase": 217560,
+        "coreNow": 217515,
+        "phaseBase": 217515,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -10607,5 +10607,5 @@
   },
   "passed": true,
   "browser": "141.0.7390.37",
-  "finishedAt": "2026-10-08T11:48:51.250Z"
+  "finishedAt": "2026-10-08T12:31:27.308Z"
 }

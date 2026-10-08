@@ -294,3 +294,60 @@ under round-3-accepted and breadth-original-*; old three-layer bank/strategy
 reports retain their actual matching semantics, with a separate lexical layer.
 This is not a completed LOOP round and its pending CI may be red until the new
 source-matched acceptance artifacts are collected.
+
+Old 10,000-case differential now passed (86.596807s actual test body) on the
+retained pre-fix matcher/reference. `node scripts/regenerate-breadth.mjs --check`
+ran twice and reproduced all three historical 200-game reports byte-identically.
+`npx tsx scripts/breadth.ts --label=after --output=lexical` runs the same actual
+200 eight-Strong rounds on the new matcher and awards 283 points, with the same
+98.422695% duplicate-owner rate; no inflated variety gain is attributed to the
+lexical correction. `npm run bots` completed 4,000 new-source two-player games:
+Strong/Medium 1,970 wins / 11 losses / 19 ties, means 10.866 / 5.6745;
+Medium/Easy 1,981 / 11 / 8, means 15.397 / 6.379. This is adjacent-skill
+separation at two seats, not an eight-player claim. Matcher SHA74827b3d…06e4b
+was frozen throughout; exact raw outcomes are evidence/bot-matchups.jsonl.
+The old three-layer reports keep matcher122be109…d78a7 and old experiment
+source hashes, explicitly bound to retained breadth-original source files.
+
+The full changed-source batch closed with 34/35 passes: all 10,000 hardest-
+function comparisons, 7,000 restored games/all nine invariants, 1,003 properties,
+2,000 fuzz cases, secrecy, codec and seven lexical tests passed. Only the new
+independent JSON Schema evaluation failed on unsupported anyOf/minimum. Its
+complete output is retained in evidence/core-round4-first.txt. The evaluator
+was extended for unions and numeric/integer bounds; a second affected-schema
+attempt exposed exclusiveMinimum, also retained in lexical-schema-second.txt.
+The final evaluator handles emitted inclusive/exclusive bounds and integer
+types, with negative/fraction/overflow/zero-event/invalid-roster malformed data
+checks. All eight affected content/breadth/protocol/audit tests now pass; the
+pure game and passed expensive comparisons were unchanged and not repeated.
+The 62-case before/after audit and schemas regenerate twice byte-identically,
+fixing 33 scored equivalent-pair failures and all 37 failed stem equalities;
+news/new stays separate, with ambiguities and intentional fuzzy cases retained.
+`npm run mutations` adds three genuine planted lexical defects (alias omission,
+news protection omission, possessive composition omission) to the original 25.
+Mutants execute isolated copies of the actual source/tests/contract, so their
+patches cannot race the browser's frozen real source. Completion is pending.
+
+Two builds of the corrected matcher produce the same be311b9653a3ad4b295745f
+00d37dc5c3a72426480a51979459b410850985613 HTML, 456,288 bytes. Fresh real-page
+28 gameplay, eight empty-review, clock, four receipt and 17 recovery cases pass.
+`node scripts/browser-plurals.mjs baseline` and `... after` each pass 3/3: actual
+public setup seed159 selects M/underground animal; two/eight humans keep the
+mouse/mice answers through private ballots. Old two anonymous groups/two total
+points become one shared group/zero points, revealing authors only in the scored
+receipt. The initial closed-seed-details fixture error is preserved under
+round-4-plurals-fixture-first; normal UI disclosure corrected the fixture only.
+The accepted old report remains byte-identical, with retained-media.md mapping
+its old video paths to exact round-3 archived clips. Strict600/clips pending.
+
+Mutant group138607 reached five genuine kills, then was SIGSTOP for the
+coordinated G04/G10 strict window. Because its 120-second child timeout includes
+held walltime, the unfinished attempt was terminated while held at12:37:12;
+all members became zombies. Partial output is preserved in
+evidence/mutations-round4-cpu-hold.txt and is not counted as a completed suite
+or a timeout-killed bug. A fresh actual 28-mutant run remains pending release.
+
+Fresh`npm run mutations` afterglobalrelease completed28/28 genuinekills,
+includingnewM26/M27/M28, withfullsourcefingerprints andisolatedActualSource=true
+in evidence/mutations.json. No sourcechanged whilecurrentUIproof ran.
+The earlier heldpartialattempt remainsunaccepted; onlyfreshcomplete run counts.

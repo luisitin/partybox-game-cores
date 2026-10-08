@@ -45,7 +45,8 @@ jobs:
         run: |
           node scripts/regenerate-plural-baseline.mjs --check
           npx tsx scripts/plural-protocol.ts
-          git diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json
+          npx tsx scripts/lexical-audit.ts
+          git diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json evidence/lexical-audit-baseline.json evidence/lexical-audit-after.json evidence/lexical-audit.schema.json
       - name: Install development browser
         run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility
@@ -58,3 +59,5 @@ jobs:
         run: node scripts/browser-receipts.mjs after
       - name: Real offline reload recovery, privacy and storage failures
         run: node scripts/browser-resume.mjs after
+      - name: Real human plural duplicate review and scored receipts
+        run: node scripts/browser-plurals.mjs after

@@ -1,5 +1,9 @@
-import {readFileSync,writeFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdtempSync,cpSync,mkdirSync,symlinkSync,rmSync} from 'node:fs';
 import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {fileURLToPath} from 'node:url';
 type Mutation={id:string;file:string;before:string;after:string};
 const mutations:Mutation[]=[
   {id:'M01 retain leading articles',file:'match.ts',before:".replace(/^(a|an|the)\\s+/,'')",after:".replace(/^(a|an|the)\\s+/,'the ')"},
@@ -27,21 +31,35 @@ const mutations:Mutation[]=[
   {id:'M23 fail totality on malformed input',file:'index.ts',before:'const parsed=inputSchema.safeParse(event.input);if(!parsed.success)return s;',after:'const parsed={success:true,data:event.input};'},
   {id:'M24 ignore explicit VIP end',file:'index.ts',before:"if(event.action==='end')return finish(s,event.now);",after:"if(event.action==='end')return s;"},
   {id:'M25 omit initialized seat from results',file:'index.ts',before:'scores:{...s.scores},ranking',after:'scores:Object.fromEntries(Object.entries(s.scores).slice(1)),ranking'},
+  {id:'M26 omit sourced plural aliases',file:'match.ts',before:'word=PLURAL_NOUNS.get(word)??word;',after:''},
+  {id:'M27 merge news with new',file:'match.ts',before:"if(word==='news')return word;",after:''},
+  {id:'M28 break plural possessive composition',file:'match.ts',before:'base=PLURAL_NOUNS.get(base)??base;',after:''},
 ];
 const report:unknown[]=[];
-const pattern='normalization:|score cancellation|settings clamp|pause ignores|unknown prototype|views never|reducer is total|manifest exact|bot strategies';
+const pattern='normalization:|score cancellation|settings clamp|pause ignores|unknown prototype|views never|reducer is total|manifest exact|bot strategies|47 independently sourced|noun exceptions|bounded noun facts';
+// Actual source mutations in isolated copies avoid races with real-page proof.
+const job=fileURLToPath(new URL('../',import.meta.url)),temporary=mkdtempSync(join(tmpdir(),'g09-mutants-')),isolated=join(temporary,'jobs','current');
+mkdirSync(isolated,{recursive:true});
+cpSync(new URL('../../../contract/',import.meta.url),join(temporary,'contract'),{recursive:true});
+symlinkSync(join(job,'node_modules'),join(temporary,'node_modules'),'dir');
+for(const name of ['src','tests','content','fixtures'])cpSync(join(job,name),join(isolated,name),{recursive:true});
+for(const name of ['package.json','manifest.json'])cpSync(join(job,name),join(isolated,name));
+symlinkSync(join(job,'node_modules'),join(isolated,'node_modules'),'dir');
+try{
 for(const mutation of mutations){
-  const path=new URL(`../src/${mutation.file}`,import.meta.url),original=readFileSync(path,'utf8');
+  const path=join(isolated,'src',mutation.file),original=readFileSync(path,'utf8');
   if(!original.includes(mutation.before))throw new Error(`Mutation anchor unavailable: ${mutation.id}`);
   let result:ReturnType<typeof spawnSync>;
   try{
     writeFileSync(path,original.replace(mutation.before,mutation.after));
-    result=spawnSync(process.execPath,['--import','tsx','--test',`--test-name-pattern=${pattern}`,'tests/core.test.ts'],{encoding:'utf8',timeout:120000});
+    result=spawnSync(process.execPath,['--import','tsx','--test',`--test-name-pattern=${pattern}`,'tests/core.test.ts','tests/plurals.test.ts'],{cwd:isolated,encoding:'utf8',timeout:120000});
   }finally{writeFileSync(path,original);}
   const killed=result!.status!==0&&!result!.error;
   const failures=(result!.stdout+'\n'+result!.stderr).split('\n').filter(line=>line.includes('not ok')||line.startsWith('✖')).slice(0,3);
   report.push({id:mutation.id,killed,exitCode:result!.status,failures});console.log(`${killed?'KILLED':'SURVIVED'} ${mutation.id}`);
 }
+}finally{rmSync(temporary,{recursive:true,force:true});}
 const killed=report.filter((row:any)=>row.killed).length;
-writeFileSync(new URL('../evidence/mutations.json',import.meta.url),JSON.stringify({total:mutations.length,killed,mutations:report},null,2)+'\n');
-if(killed<24)throw new Error(`Only ${killed}/25 real mutations killed`);
+const sourceHashes=Object.fromEntries(['src/index.ts','src/match.ts','src/scoring.ts','tests/core.test.ts','tests/plurals.test.ts','tests/reference.ts','scripts/mutations.ts'].map(name=>[name,createHash('sha256').update(readFileSync(join(job,name))).digest('hex')]));
+writeFileSync(new URL('../evidence/mutations.json',import.meta.url),JSON.stringify({total:mutations.length,killed,isolatedActualSource:true,sourceHashes,mutations:report},null,2)+'\n');
+if(killed<mutations.length-1)throw new Error(`Only ${killed}/${mutations.length} real mutations killed`);

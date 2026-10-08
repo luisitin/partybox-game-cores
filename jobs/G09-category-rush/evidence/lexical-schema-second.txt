@@ -1,0 +1,49 @@
+
+> category-rush-core@1.0.0 typecheck
+> tsc --noEmit
+
+✔ retained content experiment files obey independent emitted JSON schemas (191.063527ms)
+✔ expanded banks preserve support/layouts and add no core-equivalent answers (646.967687ms)
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (60.103732ms)
+✔ the emitted JSON Schema independently rejects malformed content (102.467754ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (10.371446ms)
+✔ original source regenerates generated content byte for byte (79.230737ms)
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (24.377425ms)
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (10.438391ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 6
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1411.814821
+
+✖ failing tests:
+
+test at tests/plural-protocol.test.ts:1:679
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (24.377425ms)
+  Error: Unsupported JSON Schema keyword: exclusiveMinimum
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:20:72)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:55:56)
+      at <anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:47:52)
+      at Array.forEach (<anonymous>)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:45:11)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:55:56)
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:14:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+
+test at tests/plural-protocol.test.ts:1:2868
+✖ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (10.438391ms)
+  Error: Unsupported JSON Schema keyword: exclusiveMinimum
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:20:72)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:55:56)
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:35:54)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)

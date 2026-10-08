@@ -1,15 +1,25 @@
 {
-  "total": 25,
-  "killed": 25,
+  "total": 28,
+  "killed": 28,
+  "isolatedActualSource": true,
+  "sourceHashes": {
+    "src/index.ts": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "src/match.ts": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "tests/core.test.ts": "da051e666b5d2acbd9da3e6b66f93cdc862cb283599ad29f8473baf59128611d",
+    "tests/plurals.test.ts": "2683f8668c5ef3a9bef2f7d908ad8015a537639a574c6f4928f8376710e27f39",
+    "tests/reference.ts": "e8f4eb9d111b30bba12b9ef5121a1d9ec39ff76278afe0b5557c51f934c531be",
+    "scripts/mutations.ts": "27deb5a6f047ec0f85528785a29141ddc41c3bce2b0c9ed02777c50ba0f87f0d"
+  },
   "mutations": [
     {
       "id": "M01 retain leading articles",
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (38.116511ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.819806ms)",
-        "✖ failing tests:"
+        "✖ normalization: articles accents punctuation number words and plural matching (10.37907ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (3.310698ms)",
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (4.424414ms)"
       ]
     },
     {
@@ -17,9 +27,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (6.086131ms)",
+        "✖ normalization: articles accents punctuation number words and plural matching (6.248729ms)",
         "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (6.086131ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (6.248729ms)"
       ]
     },
     {
@@ -27,9 +37,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (17.235426ms)",
+        "✖ normalization: articles accents punctuation number words and plural matching (10.3378ms)",
         "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (17.235426ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (10.3378ms)"
       ]
     },
     {
@@ -37,9 +47,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (34.614566ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.735512ms)",
-        "✖ failing tests:"
+        "✖ normalization: articles accents punctuation number words and plural matching (17.285136ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.649967ms)",
+        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (14.184262ms)"
       ]
     },
     {
@@ -47,9 +57,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (29.345721ms)",
-        "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (29.345721ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (21.61287ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (15.936719ms)",
+        "✖ failing tests:"
       ]
     },
     {
@@ -57,9 +67,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (42.035852ms)",
-        "✖ failing tests:",
-        "✖ normalization: articles accents punctuation number words and plural matching (42.035852ms)"
+        "✖ normalization: articles accents punctuation number words and plural matching (20.716875ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (5.935317ms)",
+        "✖ failing tests:"
       ]
     },
     {
@@ -67,9 +77,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ normalization: articles accents punctuation number words and plural matching (110.701848ms)",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (2.428022ms)",
-        "✖ failing tests:"
+        "✖ normalization: articles accents punctuation number words and plural matching (15.657399ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (2.18226ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (11.216443ms)"
       ]
     },
     {
@@ -77,9 +87,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.563964ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.773402ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.563964ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (13.773402ms)"
       ]
     },
     {
@@ -87,9 +97,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.91311ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.392273ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.91311ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.392273ms)"
       ]
     },
     {
@@ -97,9 +107,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.234953ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.170169ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.234953ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.170169ms)"
       ]
     },
     {
@@ -107,9 +117,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.035019ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.532714ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.035019ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.532714ms)"
       ]
     },
     {
@@ -117,9 +127,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.573084ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.149801ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.573084ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.149801ms)"
       ]
     },
     {
@@ -127,9 +137,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.771273ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.065604ms)",
         "✖ failing tests:",
-        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.771273ms)"
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.065604ms)"
       ]
     },
     {
@@ -137,9 +147,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (14.99523ms)",
+        "✖ settings clamp stale values and phases have sound timers (19.614766ms)",
         "✖ failing tests:",
-        "✖ settings clamp stale values and phases have sound timers (14.99523ms)"
+        "✖ settings clamp stale values and phases have sound timers (19.614766ms)"
       ]
     },
     {
@@ -147,8 +157,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (8.509863ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (1.896174ms)",
+        "✖ settings clamp stale values and phases have sound timers (12.978658ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (6.201096ms)",
         "✖ failing tests:"
       ]
     },
@@ -157,9 +167,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ settings clamp stale values and phases have sound timers (34.070206ms)",
+        "✖ settings clamp stale values and phases have sound timers (19.738808ms)",
         "✖ failing tests:",
-        "✖ settings clamp stale values and phases have sound timers (34.070206ms)"
+        "✖ settings clamp stale values and phases have sound timers (19.738808ms)"
       ]
     },
     {
@@ -167,9 +177,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (11.596684ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (14.079615ms)",
         "✖ failing tests:",
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (11.596684ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (14.079615ms)"
       ]
     },
     {
@@ -177,8 +187,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.399236ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (4.554966ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (10.935786ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (6.048102ms)",
         "✖ failing tests:"
       ]
     },
@@ -187,9 +197,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (36.969635ms)",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.967849ms)",
         "✖ failing tests:",
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (36.969635ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.967849ms)"
       ]
     },
     {
@@ -197,8 +207,8 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (1.241872ms)",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (2.80279ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (0.730943ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (2.877465ms)",
         "✖ failing tests:"
       ]
     },
@@ -207,9 +217,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (13.841383ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (14.645336ms)",
         "✖ failing tests:",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (13.841383ms)"
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (14.645336ms)"
       ]
     },
     {
@@ -217,9 +227,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (28.608606ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (8.917273ms)",
         "✖ failing tests:",
-        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (28.608606ms)"
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (8.917273ms)"
       ]
     },
     {
@@ -227,9 +237,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ reducer is total across every event in every phase, immutable and strict inputs (6.361654ms)",
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (7.527274ms)",
         "✖ failing tests:",
-        "✖ reducer is total across every event in every phase, immutable and strict inputs (6.361654ms)"
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (7.527274ms)"
       ]
     },
     {
@@ -237,9 +247,9 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (25.560834ms)",
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (2.208788ms)",
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (6.910726ms)"
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.542649ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (1.464875ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (1.652589ms)"
       ]
     },
     {
@@ -247,8 +257,38 @@
       "killed": true,
       "exitCode": 1,
       "failures": [
-        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (10.988855ms)",
-        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (3.029925ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (8.78907ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (3.277286ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M26 omit sourced plural aliases",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ 47 independently sourced singular/plural facts meet in stems and sameAnswer (15.803495ms)",
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (0.818012ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M27 merge news with new",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (4.936708ms)",
+        "✖ failing tests:",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (4.936708ms)"
+      ]
+    },
+    {
+      "id": "M28 break plural possessive composition",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ noun exceptions compose with normalization, compound words and existing possessives (5.191582ms)",
+        "✖ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (5.093518ms)",
         "✖ failing tests:"
       ]
     }

@@ -1,0 +1,330 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "sourceHashes": {
+      "type": "object",
+      "properties": {
+        "match": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "core": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "scoring": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "data": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "match",
+        "core",
+        "scoring",
+        "data"
+      ],
+      "additionalProperties": false
+    },
+    "cases": {
+      "type": "number",
+      "const": 62
+    },
+    "positive": {
+      "type": "number",
+      "const": 46
+    },
+    "positiveSame": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 46
+    },
+    "positiveFailures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative",
+              "ambiguous",
+              "nonselected-variant",
+              "semantic-fuzzy-guard"
+            ]
+          },
+          "same": {
+            "type": "boolean"
+          },
+          "stemA": {
+            "type": "string"
+          },
+          "stemB": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "awarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "ownAwarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "a",
+          "b",
+          "kind",
+          "same",
+          "stemA",
+          "stemB",
+          "groups",
+          "awarded",
+          "ownAwarded"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "stemFailures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative",
+              "ambiguous",
+              "nonselected-variant",
+              "semantic-fuzzy-guard"
+            ]
+          },
+          "same": {
+            "type": "boolean"
+          },
+          "stemA": {
+            "type": "string"
+          },
+          "stemB": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "awarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "ownAwarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "a",
+          "b",
+          "kind",
+          "same",
+          "stemA",
+          "stemB",
+          "groups",
+          "awarded",
+          "ownAwarded"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "negative": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "negativeFalseMerges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative",
+              "ambiguous",
+              "nonselected-variant",
+              "semantic-fuzzy-guard"
+            ]
+          },
+          "same": {
+            "type": "boolean"
+          },
+          "stemA": {
+            "type": "string"
+          },
+          "stemB": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "awarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "ownAwarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "a",
+          "b",
+          "kind",
+          "same",
+          "stemA",
+          "stemB",
+          "groups",
+          "awarded",
+          "ownAwarded"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "rows": {
+      "minItems": 62,
+      "maxItems": 62,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "a": {
+            "type": "string"
+          },
+          "b": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "positive",
+              "negative",
+              "ambiguous",
+              "nonselected-variant",
+              "semantic-fuzzy-guard"
+            ]
+          },
+          "same": {
+            "type": "boolean"
+          },
+          "stemA": {
+            "type": "string"
+          },
+          "stemB": {
+            "type": "string"
+          },
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            }
+          },
+          "awarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          },
+          "ownAwarded": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 2
+          }
+        },
+        "required": [
+          "a",
+          "b",
+          "kind",
+          "same",
+          "stemA",
+          "stemB",
+          "groups",
+          "awarded",
+          "ownAwarded"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "sourceHashes",
+    "cases",
+    "positive",
+    "positiveSame",
+    "positiveFailures",
+    "stemFailures",
+    "negative",
+    "negativeFalseMerges",
+    "rows"
+  ],
+  "additionalProperties": false
+}

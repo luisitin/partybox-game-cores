@@ -21,3 +21,12 @@
   not protection against a person editing their own local storage. Browsers
   that deny storage can still play while the page stays open and receive an
   accurate warning. No network or server persistence is involved.
+
+- The bounded English matcher now includes 38 explicitly sourced common noun
+  plural tokens and protects singular news. Ambiguous axes/bases are not merged
+  into their scientific homographs, since transitive grouping would then join
+  unrelated axe/axis and base/basis answers. This is not a complete English
+  morphology or word-sense model; existing contract fuzzy matching is retained.
+- The paired-answer measurement uses unanimous actual ballots, without editing
+  state letters/prompts, to isolate duplicate adjudication. It does not claim
+  every randomly selected prompt semantically fits each chosen noun pair.
