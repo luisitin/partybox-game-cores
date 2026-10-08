@@ -273,3 +273,27 @@ and the new layout regression in strict disk mode.
 Round5 data checks completed:8 JSON files,7 schemas,23 hashes and two full
 byte-identical regenerations passed. Core code was unchanged in this CSS fix;
 CI runs the complete21-test suite and25 mutations on the pushed head.
+
+## KEEP GOING round6: cargo-number typography (cosmetic)
+
+Round5 is green atc57d714 in runs37723377564 and37723373268. Re-read the job
+and reviewed number alignment, border weight, eyebrow spacing, footer spacing
+and icon baseline. The only change requests tabular numerals for crate values.
+`node .tmp/numeric-baseline.mjs --http` measured computed normal→tabular-nums,
+width25.75→25.75px (0px change in the available system font). No gameplay or
+meaningful player gain; first consecutive no-gain round.
+
+`npm run build` passed. The first `node scripts/visual.mjs --http --record
+--milestone 08` failed its frame gate: desktop49.316fps with a200ms sample;
+phone57.145fps. No relaxation was applied. A repeat justified by that failure
+passed: desktop60.002fps, phone59.670fps, p95≤16.8ms, video103,462bytes.
+All interaction, maximum-name, roster, reduced-motion and runtime-isolation
+checks passed. These are explicit partial HTTP samples; strict CI stays the
+delivery gate, and the failed sample is retained here.
+
+`node scripts/generate.mjs --fixtures-only` refreshes hashes;
+`node scripts/check-data.mjs` runs schemas/hashes and two complete regenerations.
+
+Round6 data gates passed:8 JSON files,7 schemas,24 hashes, two byte-identical
+regenerations. `git diff --check` passed; the sealed independent reference
+remains c944077d28097f377fdac1dba088cf4eec2aa44a970096e9181d562497e1cc74.
