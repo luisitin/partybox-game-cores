@@ -1,31 +1,33 @@
-# G06 verification handoff
+# G06 current handoff
 
-Ownercodex-spades-resume; branchjob/G06-spades-core; originalPR7DRAFT.
-Frozen2026-10-08T15:23:31.595728+00:00; mostrecent successfulbranchpush14:59:44UTC.
-Next earlytarget15:24:44/hard15:29:44; refreshonlyownmainclaimonpush.
+Ownercodex-spades-resume; job/G06-spades-core; originalPR7DRAFT.
+Frozen2026-10-08T15:48:38.099245+00:00; lastsuccessfulpush40eb223 at15:24:25UTC.
+Nexttarget15:49:25/hard15:54:25; refreshonlyownmainrowandrecordactualnextpush.
 
-Originalc60923dd80e357b29196133caddf3d5ccb5c7fd2 fullCI37797062112GREEN;
-actualnativefulllog/8,220-byteZIPdigest checked, all1,800raw independently
-recomputed beforeedits TV60.0024/phone60.0027FPS,17guards/13groups/3games.
-Historicalraw/report/runner snapshots delivered and explicitlyhistorical.
+Exact40eb223 CI37800519599GREEN15:36:35; actual97,619charlogread;31core,
+25realmutants,1003presence,16kskills,13UIgroups/exact3scores,hostCLI all1800
+raw both60.0024FPS/17guards/actual95,268Bclip+55negativecontrols PASS.
+Receipt historicaloncecurrentrunner changes. Originalc6098,220byteZIP
+actualdigest/rawindependentread remains. LocalTV58.381FPS FAIL retained;
+phoneNOTRUNafterthatfailure; causeunresolved; no unchangedlocalretry.
 
-Current gameHTML81acc8a73244a8df72f34cfda1d6dbedc4ac2cfd9e075c1ee2ce88ec09161e41
-490342B unchanged; reducer/UI/scoring/botpolicy/frame59-18gates unchanged.
-Corrective10 adds verification.ts/test.ts current CLI to npmtest;55negative
-controls/8groupsPASS; exactthreecore scorechecks; currentcapture1195268B
-actualbytes/hash/10guards/zeroHTTP-errorsPASS. Initial TS2769 recorded, fixed
-strictTSC PASS. New exactheadfullCI PENDING before KEEPnext.
+R11 currentcodeusesfreshnonce atomicREADY/grant; exactthreegrantfields
+profile/sourceSha256/attemptNonce mustcopycurrentREADY andatomicpublish.
+Currentbrowser+CLI18guardsincludeframe-coordination.ts. Historicalc609
+17guardreportallowedonlyinexplicitnamedhistoricaltestvalidator.
+Actual18focusedgroupsPASS (9nonce+9verification),56historical controls;
+hostcurrent18guardmode adds2missinghelpercontrols (58total) PENDING.
+StricttypesPASS/currentcapture1295304B actualSHA/10guards/zeroerrors-HTTP
+PASS. Runtimepage81acc8a73244a8df72f34cfda1d6dbedc4ac2cfd9e075c1ee2ce88ec09161e41
+490342B/game/UI/botpolicy/scoring/frame59-18unchanged. NewexactCIpending.
 
-Gap0 visiblelabelclarification conservatively resets resumedsequence at
-Corrective9; Corrective10 no player gain/streak1. HistoricalR5–7retained
-withoutusingthem to skip three rounds afterthe visiblewordingcorrection.
-Afternewexactgreen reread/rank5. Concrete nextgap: reusedframebarrier
-directory can accept anold same-source grant; use anattemptnonce and
-focused realtemporary-file replay controls. No runtime/policy changes
-withoutmeasured meaningfulgain. Third no-player-gain round afterthat must
-be actualaudit, not invented gameplaywork. Do notmarkready beforethree
-post-correctionrounds and finalexactCIgreen.
-
-Actuallocal900TV58.381FPS FAIL,phoneNOTRUN; allraw/guardsretained/nocause.
-No unchangedblindlocalframe retry. Physicalphone unavailable, CPU4only.
-NativeGitHub API/log/artifacttools work; shellghREST401, normalGitworks.
+Corrective9visiblegap0label reset resumedstreak0; R10/R11 no-player-gain
+streak2. Afternewexactgreen reread/rank5 andcompleteoneactualno-player-gain
+round beforefinalready. Concrete nextremaininggap: capture.ts silently
+overwrites existingmilestone; requireexplicitvalidnewnumber andrefuse
+existingclip/reportbeforebrowserlaunch, measureactualexistingbytesunchanged
+andinvalidargs controls. Privateignored draftalreadyprovesexisting11refusal
+withoutnewbrowser. Freshactualcaptureafterfinaltoolchange willbeboundto
+newcapture.ts; updateCLIcurrentcapturepath andkeepallhistoryunchanged.
+No inventedgameplaywork, gateweakening, luckretry or physicalphoneclaim.
+NormalGit/nativeGitHubtoolswork; shellghREST401 remainsnoblocker.

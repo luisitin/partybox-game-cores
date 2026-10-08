@@ -9,6 +9,7 @@ import {spawnSync} from 'node:child_process';
 import {game} from './core.ts';
 import {context,simulate} from './runner.ts';
 import {winningPlay} from './cards.ts';
+import {waitForFrameGrant,type FrameProfile} from './frame-coordination.ts';
 const auditStarted=performance.now(),html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[],completeGames:{mode:string;deck:string;clockSteps:number;durationMs:number;scores:number[]}[]=[];
 const executablePath=process.env.CHROMIUM_PATH;
 const browser=await chromium.launch({headless:true,executablePath,args:['--no-sandbox']});
@@ -16,7 +17,7 @@ const capture=process.argv.includes('--capture'),write=process.argv.includes('--
 const capturePath=`media/milestone-${repeat}-offline.webm`,reportPath=repeat===1?'browser-report.json':`browser-repeat-${repeat}.json`;
 const temp=mkdtempSync(join(tmpdir(),'g06-browser-'));
 const fileUrl=pathToFileURL(resolve('play.html')).href;
-const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','pilot.ts','runner.ts','preflight.ts','deck.json','manifest.json','shell.html','build.ts','browser.ts','THIRD-PARTY-LICENSES.txt','../../contract/contract.ts','../../contract/rng.ts'];
+const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','pilot.ts','runner.ts','preflight.ts','deck.json','manifest.json','shell.html','build.ts','browser.ts','THIRD-PARTY-LICENSES.txt','../../contract/contract.ts','../../contract/rng.ts','frame-coordination.ts'];
 const hash=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
 const sourceHashes=()=>Object.fromEntries(guardedFiles.map(f=>[f,hash(readFileSync(f))]));
 const initialHashes=sourceHashes();
@@ -25,14 +26,9 @@ const performanceResults:Profile[]=[];
 const evidence:{startedAt:string;finishedAt?:string;passed:boolean;navigationMode:string;htmlSha256:string;sourceHashesAtStart:Record<string,string>;sourceHashesAtEnd?:Record<string,string>;sourceUnchanged?:boolean;functional:string[];completeGames:typeof completeGames;errors:string[];externalRequests:string[];performance:Profile[];failures:string[];capture:string|null;captureBytes?:number;captureSha256?:string;phoneLimitation:string}={startedAt:new Date().toISOString(),passed:false,navigationMode:'Actual self-contained play.html from disk via file:// for every functional and frame case',htmlSha256:initialHashes['play.html']!,sourceHashesAtStart:initialHashes,functional,completeGames,errors,externalRequests:requests,performance:performanceResults,failures:[],capture:null,phoneLimitation:'390x844 and four-times CPU throttle; no physical phone available'};
 const save=()=>writeFileSync(reportPath,JSON.stringify(evidence,null,2)+'\n');
 save();
-async function frameBarrier(label:string){
+async function frameBarrier(label:FrameProfile){
  const directory=process.env.G06_FRAME_BARRIER_DIR;if(!directory)return;
- mkdirSync(directory,{recursive:true});
- writeFileSync(join(directory,`${label}-ready.json`),JSON.stringify({profile:label,readyAt:new Date().toISOString(),sourceSha256:initialHashes['play.html'],frames:900,meanFpsMinimum:59,p95MsMaximum:18})+'\n');
- const grant=join(directory,`${label}-grant.json`),limit=Date.now()+10*60*1000;
- while(!existsSync(grant)){assert(Date.now()<limit,'frame coordination timed out');await new Promise<void>(done=>setTimeout(done,100));}
- const value=JSON.parse(readFileSync(grant,'utf8')) as {profile:string;sourceSha256:string};
- assert.equal(value.profile,label);assert.equal(value.sourceSha256,initialHashes['play.html']);
+ return await waitForFrameGrant({directory,profile:label,sourceSha256:initialHashes['play.html']!});
 }
 async function pageFor(viewport={width:390,height:844},record=false,virtual=true){
  const ctx=await browser.newContext({viewport,...record&&capture?{recordVideo:{dir:temp,size:{width:960,height:540}}}:{}}),page=await ctx.newPage();
@@ -109,12 +105,12 @@ try{
  }
  for(const [label,viewport,rate] of [['TV',{width:1920,height:1080},1],['phone-4x',{width:390,height:844},4]] as const){
   const sample=await pageFor(viewport,false,false),cdp=await sample.ctx.newCDPSession(sample.page);await cdp.send('Emulation.setCPUThrottlingRate',{rate});await start(sample.page,'partnership',37,true);
-  await frameBarrier(label);
+  const coordinated=await frameBarrier(label);
   const frames=await sample.page.evaluate(async()=>{const times:number[]=[];let previous:number|null=null;return await new Promise<number[]>(resolve=>{const tick=(now:number)=>{if(previous!==null)times.push(now-previous);previous=now;if(times.length>=900)resolve(times);else requestAnimationFrame(tick);};requestAnimationFrame(tick);});});
   const sorted=[...frames].sort((a,b)=>a-b),average=frames.reduce((n,v)=>n+v,0)/frames.length,fps=1000/average,p95=sorted[Math.floor(.95*sorted.length)]!,p99=sorted[Math.floor(.99*sorted.length)]!,max=sorted.at(-1)!;
   const rawFile=`browser-raw-${repeat}-${label}.json`,profile:Profile={label,viewport,cpuThrottle:rate,frames:frames.length,intervalsMs:frames,averageMs:average,fps,p95Ms:p95,p99Ms:p99,maxMs:max,frameFiltering:'none',rawFile};
   performanceResults.push(profile);writeFileSync(rawFile,JSON.stringify({profile,sourceHashesAtStart:initialHashes,sourceHashesAtEnd:sourceHashes()},null,2)+'\n');save();
-  const barrier=process.env.G06_FRAME_BARRIER_DIR;if(barrier)writeFileSync(join(barrier,`${label}-closed.json`),JSON.stringify({profile:label,closedAt:new Date().toISOString(),frames:frames.length,fps,p95Ms:p95,sourceSha256:initialHashes['play.html'],capturing:false})+'\n');
+  const barrier=process.env.G06_FRAME_BARRIER_DIR;if(barrier)writeFileSync(join(barrier,`${label}-closed.json`),JSON.stringify({profile:label,closedAt:new Date().toISOString(),frames:frames.length,fps,p95Ms:p95,sourceSha256:initialHashes['play.html'],attemptNonce:coordinated?.attemptNonce??null,capturing:false})+'\n');
   assert.equal(frames.length,900);assert(frames.every(n=>Number.isFinite(n)&&n>0));
   assert(fps>=59&&p95<=18,`${label}: ${fps} fps p95 ${p95}`);assert(await sample.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
   if(write){mkdirSync('media',{recursive:true});await sample.page.screenshot({path:`media/milestone-${repeat}-${label}.png`,fullPage:true});}

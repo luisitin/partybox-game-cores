@@ -4,7 +4,8 @@ import {readFileSync} from 'node:fs';
 import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 
-export const browserGuardFiles=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','pilot.ts','runner.ts','preflight.ts','deck.json','manifest.json','shell.html','build.ts','browser.ts','THIRD-PARTY-LICENSES.txt','../../contract/contract.ts','../../contract/rng.ts'] as const;
+const historicalC609GuardFiles=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','pilot.ts','runner.ts','preflight.ts','deck.json','manifest.json','shell.html','build.ts','browser.ts','THIRD-PARTY-LICENSES.txt','../../contract/contract.ts','../../contract/rng.ts'] as const;
+export const browserGuardFiles=[...historicalC609GuardFiles,'frame-coordination.ts'] as const;
 export const captureGuardFiles=['play.html','ui.ts','core.ts','bots.ts','cards.ts','scoring.ts','deck.json','manifest.json','capture.ts','capture-encoder.ts'] as const;
 export const sha256=(bytes:Uint8Array)=>createHash('sha256').update(bytes).digest('hex');
 type ReadArtifact=(file:string)=>Uint8Array;
@@ -29,11 +30,11 @@ export function recomputeFrames(value:unknown){
  return {frames:900,averageMs,fps:1000/averageMs,p95Ms:sorted[Math.floor(.95*sorted.length)]!,p99Ms:sorted[Math.floor(.99*sorted.length)]!,maxMs:sorted.at(-1)!};
 }
 const metric=(profile:JsonObject,key:string,expected:number)=>assert(Math.abs(finite(profile[key],key)-expected)<1e-8,`${key}: recorded metric differs from all raw intervals`);
-export function validateBrowserReport(value:unknown,read:ReadArtifact=readFileSync){
+function validateBrowserAgainstSources(value:unknown,read:ReadArtifact,guardFiles:readonly string[]){
  const report=object(value,'browser report');assert.equal(report.passed,true,'passing complete report required');
  assert(time(report.finishedAt,'browser finish')>=time(report.startedAt,'browser start'),'report finish precedes start');
  assert.equal(report.navigationMode,'Actual self-contained play.html from disk via file:// for every functional and frame case','actual disk transport required');
- const guards=sourceIdentity(report,browserGuardFiles,read,'browser');assert.equal(report.htmlSha256,guards['play.html'],'HTML identity required');
+ const guards=sourceIdentity(report,guardFiles,read,'browser');assert.equal(report.htmlSha256,guards['play.html'],'HTML identity required');
  assert.deepEqual(list(report.errors,'browser errors'),[],'application errors must be empty');assert.deepEqual(list(report.externalRequests,'browser requests'),[],'network requests must be empty');assert.deepEqual(list(report.failures,'browser failures'),[],'failure list must be empty');
  assert(typeof report.phoneLimitation==='string'&&report.phoneLimitation.includes('no physical phone available'),'phone approximation must be disclosed');
  const functional=list(report.functional,'browser functional').map(v=>{assert.equal(typeof v,'string');return v as string;});
@@ -69,8 +70,11 @@ export function validateBrowserReport(value:unknown,read:ReadArtifact=readFileSy
   const raw=object(json(read,profile.rawFile),'raw frame artifact');assert.deepEqual(raw.profile,profile,'raw artifact and report profiles must match');assert.deepEqual(raw.sourceHashesAtStart,guards,'raw start identity');assert.deepEqual(raw.sourceHashesAtEnd,guards,'raw end identity');
   return {profile:expected.label,...recomputed};
  });
- return {htmlSha256:guards['play.html'],sourceGuards:browserGuardFiles.length,rawIntervals:1800,metrics};
+ return {htmlSha256:guards['play.html'],sourceGuards:guardFiles.length,rawIntervals:1800,metrics};
 }
+export function validateBrowserReport(value:unknown,read:ReadArtifact=readFileSync){return validateBrowserAgainstSources(value,read,browserGuardFiles);}
+/** Only the genuine archived c609 test fixture; this cannot satisfy current CLI acceptance. */
+export function validateHistoricalC609BrowserReportForTests(value:unknown,read:ReadArtifact){return {...validateBrowserAgainstSources(value,read,historicalC609GuardFiles),scope:'historical c609 fixture only; not current-run acceptance'};}
 export function validateCaptureReport(value:unknown,read:ReadArtifact=readFileSync){
  const report=object(value,'capture report');assert(time(report.finishedAt,'capture finish')>=time(report.startedAt,'capture start'),'capture chronology');
  assert.equal(report.scope,'Actual-file functional/source-bound short capture only; not FPS acceptance','capture must remain separate from speed acceptance');
