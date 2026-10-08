@@ -12,9 +12,12 @@ improvement studies satisfy KEEP GOING. Review19's five weaknesses are
 in REVIEW. Delivery edits retain the full Zod MIT notice,hash HTML/notice,
 check committed hashes before regeneration and permit a separate clip path.
 Strict/build/notice/hash checks pass,HTML478,126bytes/63 paths.
-Full production recheck is NEXT:run the verified installer then
-`G01_CAPTURE_PATH=media/milestone-12-license.webm npm test`;logs
-`/tmp/G01-recheck-install.log`,`/tmp/G01-recheck-npm-test.log`.
+R19 full pipeline EXIT0,40 tests/25 kills/leagues/upstream/browser pass.
+R20 fixes malformed-envelope TypeErrors:7/9→0/9,30 focused tests and
+25 mutations pass. Reliability gain resets no-gain streak0.
+Full new-code recheck plus three no-player-gain reviews are NEXT:run the verified installer then
+`G01_CAPTURE_PATH=media/milestone-13-total-events.webm npm test`;logs
+`/tmp/G01-recheck-install.log`,`/tmp/G01-total-npm-test.log`.
 Do not claim this new recheck passed until the commands finish.
 
 After success,record actual counts/capture/hash results,push this branch

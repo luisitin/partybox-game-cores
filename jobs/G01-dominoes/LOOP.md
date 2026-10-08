@@ -24,3 +24,6 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 17. Test preserving decision depth across forced Draw steps:initial1,050/2,000 wins(52.5%,lower95%50.31%);fresh1,041/2,000(52.05%,95%49.86–54.24%) fails predeclared independent bound. Reject unconfirmed gain; all focused regressions pass, production unchanged; no-gain streak2.
 
 18. Test relative tile-count leaf evaluation:1,017/2,000 wins(50.85%,95%48.66–53.04%),594,954 turns;10 focused regressions pass in every shard. Reject unsupported gain; production unchanged; no-gain streak3. Required KEEP GOING stop criterion reached.
+
+19. Stale-claim recheck:full40-test pipeline,25 kills,all probes,Block71.9%/Draw84.2%,upstream132/200 and fresh capture pass;retain/hash MIT notice and HTML with early hash validation,no player gain,prior streak4.
+20. Re-read G01/five weaknesses in REVIEW;malformed events7/9 throws→0/9,30 focused regressions/25 mutations pass;reliability gain,no-gain streak0.

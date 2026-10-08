@@ -77,6 +77,14 @@ test('unexpected events, spectators, wrong turns and stale/early timers preserve
  for(const e of [{type:'speech',now:1,key:'unused',ms:100},{type:'speechStart',now:1,key:'unused'},{type:'player',now:1,playerId:'__proto__',connected:false},{type:'timer',now:100000,phaseId:'stale',startedAt:s.phase.startedAt},{type:'timer',now:100000,phaseId:s.phase.id,startedAt:s.phase.startedAt-1},{type:'timer',now:1,phaseId:s.phase.id,startedAt:s.phase.startedAt}] as const)assert.equal(reduce(s,e),s);
  const n=reduce(s,{type:'timer',now:s.phase.deadline!,phaseId:s.phase.id,startedAt:s.phase.startedAt});assert.notEqual(n,s);assert(n.phase.startedAt>s.phase.startedAt);
  assert.equal(reduce(n,{type:'timer',now:100000,phaseId:s.phase.id,startedAt:s.phase.startedAt}),n);
+ for(const phase of ['play','round-end','done']){
+  const state=freeze(JSON.parse(readFileSync(`fixtures/${phase}.json`,'utf8')) as State),actor=state.seats[state.turn]!,action=legal(state)[0]??{type:'next' as const};
+  for(const event of [null,{},[],false,{type:'input',playerId:{toString:null,valueOf:null},input:{type:'pass'},now:1},{type:'player',playerId:{toString:null},connected:false,now:1}])assert.equal(reduce(state,event as never),state);
+  for(const value of [null,{},[],false,0,'pass',{type:'next',extra:true},{type:'play',tile:NaN,side:'left'}])assert.equal(reduce(state,{type:'input',playerId:actor,input:value as never,now:state.phase.startedAt+1}),state);
+  for(const now of [NaN,Infinity,-Infinity,null,'1'])for(const event of [{type:'input',playerId:actor,input:action,now},{type:'vip',action:'end',now},{type:'player',playerId:actor,connected:false,now},{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now}])assert.equal(reduce(state,event as never),state);
+  for(const connected of [null,0,'false',{},[]])assert.equal(reduce(state,{type:'player',playerId:actor,connected:connected as never,now:1}),state);
+  assert.equal(reduce(state,{type:'player',playerId:actor,connected:false,gone:'unknown' as never,now:1}),state);
+ }
 });
 test('VIP pause/resume clock shifts, disconnected seats and end are total',()=>{
  const s=freeze(init(context()));let n=reduce(s,{type:'vip',action:'pause',now:100});assert(n.phase.paused);assert.equal(reduce(n,{type:'vip',action:'pause',now:120}),n);assert.equal(reduce(n,{type:'vip',action:'skip',now:120}),n);

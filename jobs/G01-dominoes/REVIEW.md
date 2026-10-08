@@ -103,3 +103,7 @@ validate committed hashes before generation,and allow a separate capture
 path for this milestone. Preserve the verified0.2.7 strategy and three
 rejected improvement studies;these delivery changes have no player-visible
 gain. Re-run the full production pipeline and final-head CI.
+
+## Round20
+
+Re-read G01. Five weaknesses:7/9 malformed-event probes throw;nonfinite clocks can corrupt state;presence fields lack validation;payload schemas are not enforced at reduce;the existing fuzz cases omit malformed envelopes. Guard these cases and extend the all-phase test. Actual probes7→0 exceptions;30 focused tests and25 mutations pass. This robustness gain resets the no-gain streak.

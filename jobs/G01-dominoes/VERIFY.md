@@ -308,3 +308,5 @@ Stale-claim delivery recheck19,2026-10-08:
   --check`:PASS after the notice/hash edits,HTML478,126bytes,63 hashed paths.
   Build asserts full installed/committed/embedded notice equality and parses
   the script. Full production recheck and current-head CI are pending.
+
+R19 full `G01_CAPTURE_PATH=media/milestone-12-license.webm npm test`:EXIT0,40 tests/127643.79ms,25 kills,all production probes and leagues(71.9%/84.2% strong),132/200 upstream;64 hashes. Additional nine malformed-envelope probes found7 TypeErrors. R20 `npm run check; FAST_TEST=1 node --test test.ts; node fixtures.ts; node build.ts; node mutations.ts`:PASS30/30(547.94ms),25/25 kills,all9 probes now throw0. Full new-code recheck and three no-gain reviews remain required.

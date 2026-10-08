@@ -41,7 +41,7 @@ export const manifest:GameManifest={
  ]
 };
 export function team(s:Pick<State,'settings'>,seat:number):number{return s.settings.partners?seat%2:seat;}
-const own=(s:State,id:string):boolean=>Object.hasOwn(s.players,id);
+const own=(s:State,id:string):boolean=>typeof id==='string'&&Object.hasOwn(s.players,id);
 function phase(s:State,id:string,now:number):State['phase']{return {id,startedAt:Math.max(now,s.phase.startedAt+1),deadline:id==='done'?null:Math.max(now,s.phase.startedAt+1)+(id==='round-end'?5000:(s.idleTurns>=2?1000:30000))};}
 export function legal(s:State,seat=s.turn):Input[]{
  if(s.phase.id==='round-end')return [{type:'next'}];
@@ -118,7 +118,8 @@ export function apply(s:State,i:Input,now:number):State{
 function submitted(s:State,i:Input,now:number,playerId:string):State {const idleTurns=s.players[playerId]?.bot===true?s.idleTurns:0;return legal(s).some(x=>sameInput(x,i))?apply({...s,idleTurns},i,now):s;}
 function automatic(s:State,now:number):State {return apply({...s,idleTurns:Math.min(2,s.idleTurns+1)},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
 export function reduce(s:State,e:GameEvent<Input>):State{
- if(e.type==='player')return own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
+ if(!e||typeof e!=='object'||!Number.isFinite(e.now))return s;
+ if(e.type==='player')return typeof e.connected==='boolean'&&(e.gone===undefined||['left','kicked'].includes(e.gone))&&own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
  if(e.type==='vip'){
   if(e.action==='end')return {...s,phase:phase(s,'done',e.now)};
   if(s.phase.id==='done')return s;
@@ -136,9 +137,10 @@ export function reduce(s:State,e:GameEvent<Input>):State{
   return automatic(s,e.now);
  }
  if(e.type!=='input'||!own(s,e.playerId))return s;
- if(s.phase.id==='round-end'){return e.input.type==='next'?submitted(s,e.input,e.now,e.playerId):s;}
+ const parsed=inputSchema.safeParse(e.input);if(!parsed.success)return s;const value=parsed.data;
+ if(s.phase.id==='round-end'){return value.type==='next'?submitted(s,value,e.now,e.playerId):s;}
  if(s.seats[s.turn]!==e.playerId)return s;
- return submitted(s,e.input,e.now,e.playerId);
+ return submitted(s,value,e.now,e.playerId);
 }
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,

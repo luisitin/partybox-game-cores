@@ -112,3 +112,5 @@ Stale-claim delivery review19:
   them;the existing final generator/check records fresh test outputs.
 - browser.ts accepts G01_CAPTURE_PATH so a new milestone clip can be saved
   separately from the previous draw-opener recording.
+
+Round20:core.ts rejects null/nonobject events,nonfinite clocks,nonstrings actor IDs,malformed presence and schema-invalid inputs before dispatch. test.ts extends all-phase identity regressions;state format/strategy stay0.2.7.
