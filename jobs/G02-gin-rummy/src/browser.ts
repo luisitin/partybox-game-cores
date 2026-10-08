@@ -50,12 +50,29 @@ function start():void {
 }
 function send(input:Input):void {
   if(!state)return;
+  const at=clockNow();
+  // A delayed click belongs to the expired phase. Consume its deadline first
+  // and never replay that click into the phase the timer just created.
+  if(deliverDueTimer(at))return;
   const before=state;
   const actor=state.phase.id==='round-end'?state.order.find(id=>state!.players[id].connected&&!state!.left.includes(id))??state.turn:state.turn;
-  state=game.reduce(state,{type:'input',playerId:actor,input,now:clockNow()});
+  state=game.reduce(state,{type:'input',playerId:actor,input,now:at});
   if(state===before){$('notice').textContent='That move is not legal. Your hand is unchanged.';return;}
   if(state.turn!==before.turn||state.hand!==before.hand||state.phase.id==='done'){openFor=null;selected=null;}
   render();
+}
+function deliverDueTimer(at=clockNow()):boolean {
+  if(!state||state.finished||state.phase.paused||state.phase.deadline===null||at<state.phase.deadline)return false;
+  state=game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now:at});
+  openFor=null;selected=null;render();$('notice').textContent='Time ran out. The game made a legal move.';
+  return true;
+}
+function newMatch():void {
+  state=null;openFor=null;selected=null;viewedState=null;cachedPrivateView=null;discardLayouts.clear();clearMeldDraft();
+  for(const id of ['hand','actions','handoff','reveal','log','scores','piles'])$(id).replaceChildren();
+  for(const id of ['deadwood','notice','result-note','status','meta','clock'])$(id).textContent='';
+  for(const id of ['private','meld-choice','result-note','clock'])$(id).hidden=true;
+  $('setup').hidden=false;$('table').hidden=true;
 }
 function card(c:number,choose=false):HTMLElement {
   const b=choose?button(cardName(c),()=>selectCard(c)):document.createElement('div');
@@ -182,13 +199,10 @@ function render():void {
 }
 $('meld-choice').ontoggle=renderMeldChoice;
 $('knock-declared').onclick=knockSelected;
-$('start').onclick=start;$('new-match').onclick=()=>{$('setup').hidden=false;$('table').hidden=true;state=null;};
-$('bot-step').onclick=()=>{if(state){const input=game.bot.sampleInput(state,state.turn,rng,skill(state.turn));if(input)send(input);}};
+$('start').onclick=start;$('new-match').onclick=newMatch;
+$('bot-step').onclick=()=>{if(state&&!deliverDueTimer()){const input=game.bot.sampleInput(state,state.turn,rng,skill(state.turn));if(input)send(input);}};
 $('pause').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:state.phase.paused?'resume':'pause',now:clockNow()});openFor=null;render();}};
 $('end').onclick=()=>{if(state){state=game.reduce(state,{type:'vip',action:'end',now:clockNow()});openFor=null;render();}};
 $('leave-seat').onclick=()=>{if(state){state=game.reduce(state,{type:'player',playerId:state.turn,connected:false,gone:'left',now:clockNow()});openFor=null;selected=null;render();}};
 // The host page alone owns real time. The core receives explicit monotonic event timestamps.
-setInterval(()=>{if(!state||state.finished)return;renderClock();if(state.phase.paused)return;
-  const at=clockNow();
-  if(state.phase.deadline!==null&&at>=state.phase.deadline){state=game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now:at});openFor=null;selected=null;render();$('notice').textContent='Time ran out. The game made a legal move.';}
-},250);
+setInterval(()=>{if(!state||state.finished)return;renderClock();deliverDueTimer();},250);

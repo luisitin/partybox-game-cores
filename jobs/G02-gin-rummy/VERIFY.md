@@ -1,8 +1,54 @@
 # Verification — version1.2.1
 
-Latest production/page build passed hosted npm test at round7 headb4b52f0,
-run37729356667. Final round8 head has NOT been hosted at this commit;
-PR#2 stays draft until its exact-head checks actually pass.
+Original final delivery passed exact-head hosted CI37730486159 at
+723bfa77ce91482f4084bbc195c117fa8d71480b; PR#2 was ready. The following original
+table and records describe historical checks. They do not accept the resumed
+host repair, whose current-head hosted result is pending.
+
+## Resumed host repair, 2026-10-08
+
+`npm ci --ignore-scripts --no-audit --no-fund`: PASS. `npm run build`: PASS.
+`node --check .work/reclaim-before.mjs && node .work/reclaim-before.mjs`: PASS
+as a negative-control diagnostic, not an acceptance test or FPS measurement.
+Actual file navigation/real clicks with controlled entropy 7 showed human click
+30.8 ms overdue and Easy-bot click 30.1 ms overdue applied Pass instead of the
+unchanged core timer's Take-discard. Actual New match retained11 hand cards,
+10 meld selectors and deadwood/actions inside the hidden table; no visual
+exposure is claimed. Exact original page/harness/measurements: before-* and
+before.json in evidence/resume-20261008.
+
+`npm run build` after the host patch: PASS; script syntax checks PASS.
+`node scripts/real-host-check.mjs`: first attempt failed while observing the
+queued details-toggle render before its 10 selectors existed; its exact harness
+and failure are retained. The corrected harness waits for the actual fixture
+without weakening assertions: PASS. Both actual-file real clicks 30.6 ms overdue
+apply only the timer's Take-discard 6♥ and leave 0 private cards in DOM. New match
+clears11→0 cards,10→0 selectors, deadwood and actions. after.json/after-* bind
+the unchanged core/cards and generated HTML796f66c6 to these measurements.
+
+`node scripts/browser-check.mjs --snapshot`: FAIL strict desktop mean58.730056
+FPS (p99 16.8 ms/max 100 ms), phone4x PASS 60.001800 FPS (p99/max 16.8 ms).
+All 34 original interaction checks, clock/meld/results/name suites and five new
+host regressions PASS, including five subsequent unchanged-RNG Easy-bot moves.
+Both profiles retain 600 consecutive intervals; no samples are dropped. Exact
+runner/helper/report/raw frames/log are in attempts/2026-10-08T11-27-10-248Z.
+Desktop intervals above 17 ms are55=100, 523=83.3, 544=50, 545=50 ms; their cause is
+unestablished. A failed run never replaces an accepted snapshot.
+
+`node scripts/capture.mjs resume-host`: PASS. Separate source-guarded functional
+clips show private cleanup and real 10-second timeout coverage: desktop 596,569
+bytes; phone4x 593,936 bytes. Independent start/end HTML/core/cards/host/template
+guards match. Captures/report/log remain in media and resume evidence. Frame
+acceptance and current-head hosted CI remain pending; recording is not FPS proof.
+No unchanged local core matrices/leagues/mutations were repeated for host-only
+edits; hosted npm test continues to run the entire required suite.
+
+`node scripts/hashes.mjs` twice plus byte comparison: PASS,208 delivered files
+at the first verification snapshot. `node scripts/integrity.mjs`: PASS,208
+hashes, two byte-identical fixture/manifest regenerations, pure core scan,
+exact pinned Zod notice and all videos under10MB. Evidence/doc additions are
+rehash-checked before the milestone push. This integrity result accepts the
+file inventory/licensing/regeneration, not the failed desktop frame rate.
 
 | Check | Latest actual evidence | Limit |
 |---|---|---|

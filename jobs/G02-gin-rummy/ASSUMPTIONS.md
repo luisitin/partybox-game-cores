@@ -53,3 +53,11 @@ spectator envelope but never gain the registered empty-ID player's cards.
 A game's target winner and final settlement leader can differ; target winner
 ranks first, remaining seats rank by final points. Early end reports current
 raw standings and earns no game/line bonuses.
+
+The resumed offline host consumes an expired turn before a human click or
+manual bot step. It drops the stale click rather than applying it to the new
+turn, and checks before sampling a bot to preserve the external RNG cursor.
+VIP pause/end retain their existing ordering. New match destroys private hand
+and draft DOM/cache; previous hidden-DOM retention was not a visual/core leak.
+Real-click evidence uses actual file navigation and elapsed time; separate
+deterministic regressions use controlled host time and withheld timer callbacks.
