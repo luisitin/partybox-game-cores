@@ -723,5 +723,15 @@ five-round games,same33f5 page,zero errors/network. Actual935764B SHA2b37fd77
 and956240B SHA75416945 recordings are under10MB. `ffprobe -count_frames ...`
 and `ffmpeg -v error -threads 1 -i <actual clip> -f null -`:both actual VP8
 decodes PASS,1280x720/390x844,264/310 encoded frames,10.56/12.4s. Encoded25FPS
-is a recording property,not game refresh proof. Final checkpoint's new-head CI
+is a recording property,not game refresh proof.
+
+The actual commands above, run from jobs/G07-liars-dice, were:
+```sh
+ffprobe -v error -count_frames -show_entries stream=codec_name,width,height,r_frame_rate,nb_read_frames -show_entries format=duration,size -of json media/resume-audit-13-desktop.webm
+ffprobe -v error -count_frames -show_entries stream=codec_name,width,height,r_frame_rate,nb_read_frames -show_entries format=duration,size -of json media/resume-audit-13-phone4x.webm
+ffmpeg -v error -threads 1 -i media/resume-audit-13-desktop.webm -f null -
+ffmpeg -v error -threads 1 -i media/resume-audit-13-phone4x.webm -f null -
+```
+The receipt also records each actual argv array; adding this command record
+does not rerun or change the clips or measured results. Final checkpoint's new-head CI
 still must pass before ready;prior source-specific green remains explicit.

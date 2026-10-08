@@ -14,7 +14,32 @@
       "encodedFps": "25/1",
       "decodedFrames": 264,
       "durationSeconds": 10.56,
-      "decodeExitCode": 0
+      "decodeExitCode": 0,
+      "actualFfprobeArgv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "media/resume-audit-13-desktop.webm"
+      ],
+      "actualFfmpegArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "media/resume-audit-13-desktop.webm",
+        "-f",
+        "null",
+        "-"
+      ]
     },
     {
       "path": "media/resume-audit-13-phone4x.webm",
@@ -26,7 +51,32 @@
       "encodedFps": "25/1",
       "decodedFrames": 310,
       "durationSeconds": 12.4,
-      "decodeExitCode": 0
+      "decodeExitCode": 0,
+      "actualFfprobeArgv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "media/resume-audit-13-phone4x.webm"
+      ],
+      "actualFfmpegArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "media/resume-audit-13-phone4x.webm",
+        "-f",
+        "null",
+        "-"
+      ]
     }
   ]
 }
