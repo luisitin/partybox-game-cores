@@ -118,3 +118,5 @@ Round20:core.ts rejects null/nonobject events,nonfinite clocks,nonstrings actor 
 R21:study-total-baseline.ts freezes exact949c2e3 core;total-compatibility.ts/report compare every state and final result with new guards over1,003 seeded mixed-setting games. Wire assertion mode into npm test so valid gameplay regressions fail CI. G01.yml adds per-PR cancellation of obsolete runs;all required checks remain. No production strategy/state changes.
 
 R22:total-envelopes.ts/report exercise invalid actors/payloads/clocks/presence/timer/VIP envelopes against3,012 deep-frozen states from1,003 seeds and three phase fixtures. Assertion mode runs in npm test;the report records actual234,936 probes. This regression coverage targets the R20 contract failure without changing production behavior.
+
+Final R23 verification refresh:commit the full-pipeline browser report,TV screenshot,capture and their hashes so the delivered evidence matches the guarded reducer's full production run. No source change follows the passing full pipeline.

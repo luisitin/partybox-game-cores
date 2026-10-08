@@ -1,30 +1,37 @@
-# G01 delivery recheck
+# G01 completed implementation and final delivery gate
 
-Chat codex-domino;working branch job/G01-dominoes-reverify. Existing PR1
-https://github.com/luisitin/partybox-game-cores/pull/1 uses job/G01-dominoes.
-Push BOTH branches non-force;refresh only G01 on main. No duplicate PR.
+Chat codex-domino;working branch job/G01-dominoes-reverify reuses
+https://github.com/luisitin/partybox-game-cores/pull/1 on job/G01-dominoes.
+Both branches are pushed to the same commit,non-force;only own G01 claim
+is refreshed on main. No duplicate PR and no public PR merge/closure.
 
-Core0.2.7 retains strategy/state format. R19 full local pipeline PASS.
-R20 malformed events7/9 exceptions→0/9;30 focused tests/25 mutations PASS.
-Exactc19e580 hosted run37755885752 SUCCESS2026-10-08T09:35:55Z runs
-the entire npm test. Real reliability gain resets the old stop.
-R21 1,003 games/378,899 valid transitions against exact949c2e3:0 differences.
-R22 malformed JSON sweep234,936 probes/0 failures;no-gain streak2.
-R23 browser PASS60.0036/59.6054fps,p9516.7/16.8ms;no-gain streak3.
-Stop met. Remaining:full local npm test and final-current-head hosted CI
-before DONE. Run `G01_CAPTURE_PATH=media/milestone-13-total-events.webm
-npm test > /tmp/G01-total-npm-test.log 2>&1` after installer passes.
-If resuming,check the log/process before restarting a running pipeline.
-Commands/report counts and five weaknesses are in VERIFY/REVIEW/LOOP.
+Core0.2.7 strategy/state format retained. R20 fixes malformed envelopes:
+7/9 exceptions→0/9. R21–23 have three consecutive no-player-gain rounds:
+1,003 valid games/378,899 transitions/0 differences;234,936 invalid JSON
+probes/3,012 frozen states/0 failures;fresh browser/privacy/offline audit.
+The renewed KEEP GOING stop is met. All rejected strategy studies stay out
+of production. VERIFY/CHANGES/REVIEW/LOOP record reasons and actual counts.
 
-Run browser with G01_CAPTURE_PATH=media/milestone-13-total-events.webm;
-refresh hashes after any generated artifacts. Do not edit code or switch
-branches while full local npm test runs. Push each milestone≤30min.
-Update PR1 evidence after final CI green,then inspect main queue/allrefs.
-G04 PR4/head152e5a0 and G06 PR7/head0037add/run37748960265 are complete.
-Do not merge or close public PRs. G08 Shake Up has another fresh owner.
+Final installer plus full local npm test EXIT0 on2026-10-08:
+logs /tmp/G01-total-install.log and /tmp/G01-total-npm-test.log.
+40 tests/9,003 games,25 mutation kills,independent solver/count/probe
+checks,leagues71.9%/84.2% strong,upstream132/200,67 hashes and browser PASS.
+Final TV60.0036fps,phone59.4095fps at4×CPU;p9516.7ms both.
+Milestone13 VP9 clip decodes,3seconds,under10MB.
 
-Re-verify when web works:regional opening/tied-round lead conventions are
-labelled house choices;old Bicycle404/Masters403 gaps use live alternatives.
+Before declaring delivery DONE,read PR1's actual head and check CI SUCCESS
+for that exact head. The committed full suite has already passed locally;
+only that hosted final gate remains until SUCCESS is observed. On success,
+update PR1's final evidence externally,then advance to the lowest eligible
+job after reading main README/RULES/JOBS/CLAIMS and fetching ALL refs.
+A continuing chat that sees current-head SUCCESS should go to the queue,
+not restart completed strategy experiments or these checks.
+
+G04 PR4/head152e5a0 and G06 PR7/head0037add/CI37748960265 are complete.
+G08 Shake Up has another fresh owner. If selected later,FIRST read
+START-HERE/start-HANDOFF,preserve its assets/name and perform the7 tasks.
+
+Re-verify when web works:regional opening/tied-round lead house choices;
+old Bicycle404/Masters403 gaps use live alternatives,not blockers.
 Managed file:// is blocked;exact-byte setContent fallback is disclosed.
-Phone390×844/4×CPU is emulation. Cloud draft12 is saved,unpublished.
+Phone390×844/4×CPU is emulation. Cloud draft13 is saved,unpublished.
