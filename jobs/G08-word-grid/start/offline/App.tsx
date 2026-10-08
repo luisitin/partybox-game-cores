@@ -109,11 +109,25 @@ function App() {
     session.current = { state, seats: roster, humans: state.order.filter(id => !state.players[id]!.bot), turn: 0, handoff: false, elapsed: 0, now: 1000, lastWall: performance.now(), botSecond: -1, pauseWall: 0 };
     setPublicStage(false); update();
   };
+  const reset = () => {
+    const running = session.current;
+    if (running && running.state.phase.id !== 'done') {
+      const discard = window.confirm('End this game and return to setup? Current scores will be lost.');
+      // Native confirmation blocks callbacks. Cancellation preserves the private clock too.
+      running.lastWall = performance.now();
+      if (!discard) return;
+    }
+    session.current = null;
+    const candidate = freshSeed();
+    setSeed(candidate === seed ? String((Number(seed) + 1) >>> 0) : candidate);
+    setPublicStage(false); update();
+    requestAnimationFrame(() => heading.current?.focus());
+  };
   const resize = (n: number) => {
     setCount(n); setSeats(previous => Array.from({ length: n }, (_, i) => previous[i] ?? { name: `Player ${i + 1}`, skill: 'human' }));
   };
   const r = session.current;
-  if (!r) return <main className="setup"><h1>Shake Up</h1><p>Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.</p>
+  if (!r) return <main className="setup"><h1 ref={heading} tabIndex={-1}>Shake Up</h1><p>Trace touching cubes. Shared words cancel. Each person gets the same private clock; pass the device between turns.</p>
     <form onSubmit={start}><div className="options">
       <label>Players<select aria-label="Players" value={count} onChange={e => resize(Number(e.target.value))}>{Array.from({ length: 16 }, (_, i) => <option key={i + 1}>{i + 1}</option>)}</select></label>
       <label>Words<select aria-label="Words" value={lang} onChange={e => setLang(e.target.value)}><option value="en">English</option><option value="es">Español</option></select></label>
@@ -131,7 +145,7 @@ function App() {
   return <ShellProvider value={shell.current}><main className={publicStage ? 'room television' : 'room'} data-phase={state.phase.id} data-round={state.round} data-turn={r.turn}>
     <header className="host"><h1 ref={heading} tabIndex={-1}>Shake Up{state.phase.id === 'done' ? ' · Results' : ''}</h1><nav aria-label="Host controls">
       {state.phase.id !== 'done' ? <><button onClick={pause} disabled={r.handoff}>{state.phase.paused ? 'Resume' : 'Pause'}</button>{!r.handoff ? <button onClick={skip}>{isHunt ? 'Finish turn' : state.phase.id === 'reveal' ? 'Next card' : 'Continue'}</button> : null}<button aria-pressed={publicStage} disabled={r.handoff} onClick={() => setPublicStage(v => !v)}>Public stage</button></> : null}
-      <button onClick={() => { session.current = null; update(); }}>New game</button></nav></header>
+      <button onClick={reset}>New game</button></nav></header>
     {r.handoff ? <section className="handoff" aria-label="Pass the device"><h2>Pass to {me.name}</h2><p>Everyone else looks away. Your {state.cfg.huntMs / 1000}-second clock starts when you’re ready.</p><button onClick={() => { r.handoff = false; r.lastWall = performance.now(); update(); }}>I’m ready</button></section>
       : publicStage ? <div className="tv-owner"><Tv view={game.tvView(state)} /></div>
       : <div className="phone-owner" key={`${state.round}-${isHunt ? active : 'stage'}`}><p className="private-label">{isHunt ? `${me.name} · private turn` : `Round ${state.round} of ${state.cfg.rounds}`}</p>{isHunt ? <Controller view={game.controllerView(state, active)} send={send} me={me} skip={skip} /> : <PhoneStage view={game.controllerView(state, active)} send={send} me={me} skip={skip} />}</div>}

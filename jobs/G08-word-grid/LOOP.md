@@ -1,3 +1,4 @@
 # KEEP GOING
 
 1. Re-read G08/START-HERE after PR9 push+PR CI green; five weaknesses: long-name/tied-winner clipping, accidental restart, repeated new-game seed, lost handoff focus, mixed Spanish/English host. Fix worst with host-only wrapping/bounds;80-character name handoff1889→390px and hunt962→390px;16positive tied avatars964→369.22px, score right edges<=390. Full16-seat native game PASS; meaningful player gain, cosmetic streak0.
+2. Re-read G08/START-HERE; five weaknesses: accidental restart, same-seed New game, lost handoff focus, mixed-language host, bot-only observer controls. Fix worst restart path with native confirmation/fresh seed: cancellation preserves phase+board+submitted word, confirmation retains2players/1round settings and changes seed/board; native regression PASS,285845-byte clip04. Meaningful gain, cosmetic streak0.

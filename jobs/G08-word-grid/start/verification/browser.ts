@@ -114,6 +114,22 @@ assert.deepEqual(await layout.page.locator('.pb-screen-body ol').last().locator(
 const crowned=layout.page.locator('.pb-screen-body span').filter({has:layout.page.locator(':scope > .pb-avatar')});assert.equal(await crowned.locator(':scope > .pb-avatar').count(),16);
 await layout.page.screenshot({path:'.tmp/visual/max-roster-long-names.png'});
 const layoutVideo=await layout.page.video()!.path();await layout.context.close();const layoutDestination='.tmp/visual/max-roster-long-names.webm';renameSync(layoutVideo,layoutDestination);assert(statSync(layoutDestination).size<10*1024*1024);
+// Native cancellation preserves submissions and board; confirmation starts fresh.
+const restart=await open(390,844,true,true);await setup(restart.page);
+const restartGrid=await restart.page.getByRole('gridcell').allTextContents();await trace(restart.page,path);
+restart.page.once('dialog',async dialog=>{assert.equal(dialog.type(),'confirm');await dialog.dismiss();});
+await restart.page.getByRole('button',{name:'New game',exact:true}).click();
+assert.equal(await restart.page.locator('main').getAttribute('data-phase'),'hunt');
+assert.deepEqual(await restart.page.getByRole('gridcell').allTextContents(),restartGrid);
+await restart.page.getByText(word.toUpperCase(),{exact:true}).last().waitFor();
+restart.page.once('dialog',async dialog=>{assert.equal(dialog.type(),'confirm');await dialog.accept();});
+await restart.page.getByRole('button',{name:'New game',exact:true}).click();await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).waitFor();
+const newSeed=await restart.page.getByLabel('Seed',{exact:true}).inputValue();assert.notEqual(newSeed,'17');assert(Number(newSeed)>=0&&Number(newSeed)<=4294967295);
+assert.equal(await restart.page.getByLabel('Players',{exact:true}).inputValue(),'2');assert.equal(await restart.page.getByLabel('Rounds',{exact:true}).inputValue(),'1');
+assert.equal(await restart.page.getByRole('heading',{name:'Shake Up',exact:true}).evaluate(el=>el===document.activeElement),true);
+await restart.page.getByRole('button',{name:'Start Shake Up',exact:true}).click();await restart.page.getByRole('button',{name:'Continue',exact:true}).click();await restart.page.getByRole('button',{name:'I’m ready'}).click();
+assert.notDeepEqual(await restart.page.getByRole('gridcell').allTextContents(),restartGrid,'fresh seed should make a fresh board');
+const restartPath=await restart.page.video()!.path();await restart.context.close();const restartDestination='.tmp/visual/restart-preserves-progress.webm';renameSync(restartPath,restartDestination);assert(statSync(restartDestination).size<10*1024*1024);
 await browser.close();assert.deepEqual(errors,[]);assert.deepEqual(outgoing,[]);
-const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true},layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
+const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true,cancelRestartKeepsProgress:true,newGameFreshSeed:true},restartVideoBytes:statSync(restartDestination).size,layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
 writeFileSync('.tmp/visual/browser-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));

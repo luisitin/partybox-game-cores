@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "fileOpened": false,
+  "urlMode": "local HTTP partial",
+  "nativeOnly": true,
+  "browser": "/usr/bin/chromium",
+  "desktop": null,
+  "phone": null,
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true,
+    "longNamesFit": true,
+    "fullSixteenSeatHotseat": true,
+    "sixteenTiedWinnersFit": true,
+    "cancelRestartKeepsProgress": true,
+    "newGameFreshSeed": true
+  },
+  "restartVideoBytes": 285845,
+  "layoutVideoBytes": 1380889,
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 1032074,
+  "provenance": {
+    "keepGoingRound": 2,
+    "parentCommit": "f29fa08bd1ea79a005da73fea559ca064a2bb9fb",
+    "playSha256": "ac14fc8263b6f2ef3b61cf62e1ec94732373f41aba8022615cd9236814ed5b41",
+    "capture": "04-restart-preserves-progress.webm"
+  }
+}

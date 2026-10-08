@@ -55,3 +55,5 @@ The offline page uses the same reducer and existing client pieces. Its explicit 
 - Stanford's classroom uses length-minus-three scoring; Megulus describes all-word/simple-score and wagering alternatives. Taylor adds invalid-word penalties and underlined-letter multipliers. None replaces the owner's cancellation/length table or nondecreasing totals.
 - WordCube uses120seconds; source editions also report3-minute hunts. Keep180default with the owner's existing90/120/180/240choices. Boggle Party exposes additional minimum-length/time settings; these are not imported.
 - Permissive/full and common English dictionaries, Spanish accent folding, family/spicy, VIP word acceptance, rounds, pause/skip/end and equal-time offline hot-seat are clearly identified software/owner choices rather than unread manufacturer promises. No commercial SOWPODS corpus, game artwork or implementation was copied from the comparison projects.
+
+Offline New game confirms before abandoning live progress, preserves setup choices and selects a fresh seed. Cancelling keeps the game and its private clock; enter a previous seed to replay deliberately.
