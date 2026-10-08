@@ -231,3 +231,28 @@ Compact evidence index links current/source-matched/historical/nongating proof;
 all relative index/README links exist. Ten hashes identical, measured player
 gain0, no-gain streak2. Fresh actual5-round clips each pass, desktop961,911B/
 phone958,039B, zero requests/errors; recording is not FPS measurement.
+
+## Round8 — trusted review API and stable handoff
+
+Re-read root README/RULES/JOBS after round7 pushdc0f454; exact hashes
+e4b24b68/4149f36b/20d45e05 unchanged. Fresh independent audit found no
+additional proven player defect; remaining gameplay strength/device/SDK
+coverage limits remain disclosed. Five presentation weaknesses ranked:
+
+1. API describes raw setState alongside recovery without saying it retains host skill/RNG metadata and is trusted rather than validated input. Document its exact boundary and complete checkpoint path.
+2. NEXT has changing pre-push instructions and older queue ownership; make final acceptance/resume steps stable and require fresh main/branch ownership.
+3. Evidence index currently ends at round7; add final milestone pointers only after matching actual captures finish.
+4. Historical VERIFY section headings can be mistaken for current unfinished checks; current header/index explicitly overrides historical status.
+5. Default-duel strength, Chrome phone emulation and missing fullSDK are bounded limits; retain them, without a speculative retune or unverified device claim.
+
+Selected fix: trusted-host API boundary and stable final acceptance/handoff.
+Ten runtime/runner/manifest hashes saved before edits; final measure includes
+unchanged identity and fresh actual milestone recordings after G10 quiet slot.
+
+Round8 complete: API precisely labels raw trusted-state injection and retained
+metadata, and gives the validated complete-save/explicit-recovery path. NEXT
+uses stable final acceptance and fresh ownership instructions. Ten implementation
+hashes unchanged,0 player-visible gain; no-gain streak3. Fresh desktop1,153,462B
+and phone1,537,017B recordings each complete five actual rounds, matching33f5
+source/core/session, zero network/errors. All delivery writers stopped10:41:54.
+Final exact-current-head hosted green remains required before PR readiness.

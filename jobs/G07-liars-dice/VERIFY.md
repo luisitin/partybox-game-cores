@@ -556,3 +556,30 @@ Passed unchanged core/full94/strict600 tests are retained, not rerun locally.
 `node scripts/hashes.mjs`2x/`cmp`, `sha256sum --check SHA256SUMS.txt`,
 `node scripts/integrity.mjs`, `git diff --check`: PASS; catches stale files,
 fixture/manifest drift and source-mismatch evidence.
+
+## KEEP GOING round8 — trusted API and final handoff
+
+Re-read root README/RULES/JOBS byte-for-byte; hashes remain
+e4b24b68/4149f36b/20d45e05. Source inspection `rg -n`/`sed` on browser/session
+confirms raw trusted setState clones valid core state while retaining host
+skills/RNG/pace; complete encodeSession validates matching recovery metadata.
+Documented exact boundary and public validated checkpoint path. No runtime
+behavior changed and no new gameplay defect was established by independent
+source audits. Stable NEXT instructions require exact current branch-head
+CI and fresh ownership, avoiding stale completed-claim assumptions.
+
+Python hashlib before/after ten implementation/runner/manifest paths: PASS
+all identical; `evidence/checks/round-8-review.json`,0 changes/player gain.
+Python regex relative-link audit on EVIDENCE.md/README.md: PASS.
+`node scripts/capture.mjs round-8`: PASS two actual five-round games, unchanged
+33f5 HTML/core/session guards, zero network/errors; desktop1,153,462B and
+phone1,537,017B, under10MB. Captures are not FPS measurements.
+All artifact writers/groups stopped10:41:54 UTC. No repeat of unchanged passed
+core/full94/strict600 local tests; full hosted npm test still runs each head.
+
+`node scripts/hashes.mjs` twice plus `cmp`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs` and
+`git diff --check`: PASS354 delivered files,2x byte-identical fixtures/manifest,
+source-matched full94 raw proof, original/Zod notices and all clips under10MB.
+Rounds6–8 now establish three consecutive0-player-gain stopping rounds.
+Exact-final-head CI green is still required before calling PR6 ready.

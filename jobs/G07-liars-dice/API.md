@@ -53,6 +53,24 @@ event(fullEvent), setState(state), time(), tick(). Full state inspection/injecti
 is intentionally browser-only; it is not a TV/controller privacy contract.
 Public game views and bot counterfactual secrecy are tested independently.
 
+`state()` returns a structured clone. `setState(value)` is raw **trusted**
+review injection: it clones the supplied valid core state, covers private dice,
+selects the viewer, clears current presentation/timer markers and renders. It
+does not decode/validate untrusted input or rebuild the existing host's skill
+map, bot RNG cursor or pace. It tries to save using that existing metadata.
+Changing player IDs without matching host metadata can therefore prevent a
+valid recovery save; the ordinary game remains playable and reports this.
+Use this hook for controlled core/UI probes, not as a checkpoint import API.
+
+For an actual recoverable custom-ID checkpoint, construct a `SavedSession`
+with the same valid core state, matching unique `[id,skill]` tuple for every
+original seat, actual external bot RNG cursor, finite saved host time, pace
+and current timer/bid markers. `encodeSession` validates the complete envelope
+and returns a string or null. Store a valid string under `SAVE_KEY` in this
+tab's sessionStorage and reload; the explicit Resume gate performs validated
+recovery. This is the path used by the actual saved-seat browser probes.
+Ordinary UI games generate p0–p7 and maintain all metadata automatically.
+
 Host init also accepts pace ('fast'|'normal'|'slow'|'manual'); pace() reports the
 current presentation setting. This host control is separate from core settings.
 
