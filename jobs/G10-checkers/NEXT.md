@@ -1,3 +1,15 @@
+# Execute the new required delivery controls — 2026-10-08 around 21:11 UTC
+
+Last successful push 8d097fa5e45316c85ca83785c854464153b09a60 at 20:58:02.768988413 UTC, own main claim 3072b46 at 20:58:12. Next early target 21:23:02 and hard 21:28:02 until next successful push. Both actual root quiet holds were honored; no local native timing test was launched.
+
+Exact8d workflow 37843367603: American 2,000-game job SUCCESS 21:03:23; full four-profile browser/capture job SUCCESS 21:05:00; Node FAILURE 21:06:42 after all 91 tests, 25 actual mutants and 7,000 configuration games passed. The binding final command-inventory assertion correctly rejected omission of the newly expected `python3 scripts/standalone-parts.py controls` call. This chat had added its expected entry but missed adding its actual invocation. International was still running at this checkpoint; complete acceptance and bounded delivery have not run. Do not transfer successful old8d components into a new workflow.
+
+Current genuine integration fix adds the exact Python invocation before the existing Node control workloads, preserving all original commands, counts, strict assertions and source/run identities. Syntax and actual4-positive/21-rejection delivery controls pass. Full original151,061-character Node log, official failed artifact11578867085 (105,670 bytes, SHA21f0562f7d2104064c1062116026812d1b5653036e9be93e5116227b86f5ae54), original metadata and independent real-artifact checks are archived in evidence/checks/parts-integration-8d-failed. The missing final Node stage receipt remains absent; no full Node PASS is fabricated.
+
+After final checksum regeneration, push this real source correction and require a fresh exact-head all-stage/final workflow. Download all four official bounded page ZIPs, check their actual official bytes/digests and every unique safe member, identical source/whole/part manifest/helper, exact part order/size/SHA and the streamed complete1,390,845,993-byte5ed HTML SHA without duplicate extraction. Only after all checks and actual download verification, open the original job PR and execute the binding ranked-five KEEP GOING loop. No PR/KEEP round or player gain is claimed yet. Original6de complete green remains historical; localInternational17.510FPS and phoneNOTRUN stay preserved without causal or unchanged-retry claims.
+
+## Earlier checkpoint retained as history
+
 # Bounded-delivery repair — 2026-10-08 around 20:56 UTC
 
 Last successful push: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79 at 20:42:24.619533501 UTC; main 524acb6 own claim refreshed 20:42:41. The restart caused an actual 31m42.328s branch-push gap; the missed 30-minute deadline is retained. Next early target 21:07:24 and hard 21:12:24 until the next successful push.

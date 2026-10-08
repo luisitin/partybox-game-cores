@@ -24,6 +24,7 @@ await run('npm',['run','build']);
 await node('scripts/integrity.mjs','--sources');
 const before=await stageGuards(),htmlSha256=await hashFile(htmlOutput),htmlBytes=(await stat(htmlOutput)).size;
 if(stage==='node'||stage==='full'){
+await run('python3',['scripts/standalone-parts.py','controls']);
 await node('scripts/browser-evidence-controls.mjs');
 await node('scripts/league-partition-controls.mjs');
 const files=['manifest.json','data/endgames.json','data/schema.json','fixtures/schema.json','fixtures/move.json','fixtures/done.json','fixtures/move.views.json','fixtures/done.views.json'];
