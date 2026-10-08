@@ -83,3 +83,20 @@ explicit; it neither supplies frame samples nor writes the current strict
 attempt/report markers. Require an unused explicit milestone to preserve
 historical clips. Full acceptance still comes from default npm test and its
 independent raw/current-source/actual-file checker.
+
+2026-10-08 recovery: the lowest legally eligible job was G05, established
+from fresh main and all matching job-branch committer dates before claim078c12af.
+Original player/game sources are untouched. KEEP11–13's stop stays valid;
+this repairs verification and delivery evidence rather than inventing a gain.
+The original sampler already declares60 warmup frames; its retained600
+intervals describe that steady-state workload, not the first native frame.
+No added settling, filtered samples, fake clocks or unchanged local FPS retry.
+New full capture decoding requires36 genuine1920x1080 frames encoded at10fps;
+these are separate from the native desktop/CPU4x-phone frame measurements.
+Four actual negative videos carry coherent byte/SHA receipts and still fail.
+Actual FFmpeg/ffprobe executable identities and command args are recorded.
+The explicit system tools are supported; their versions may differ by host.
+The official Ubuntu mirror correction uses G08's actual timed-out Azure
+installer evidence. It changes only an existing runner mirror list and keeps
+Ubuntu signature checks, required tools and bounded setup. The reported
+live official HTTPS archive availability does not promise future bandwidth.

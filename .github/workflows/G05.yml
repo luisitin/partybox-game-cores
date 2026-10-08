@@ -27,17 +27,26 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G05-hearts/package-lock.json
       - run: npm ci --no-audit --no-fund
-      - name: Install capture tool
+      - name: Use the official Ubuntu archive for the existing runner mirror list
         run: |
-          if ! command -v ffmpeg >/dev/null; then
-            sudo apt-get update
-            sudo apt-get install -y ffmpeg
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
           fi
+      - name: Install capture tool
+        timeout-minutes: 5
+        run: |
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            timeout 120 sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 update
+            timeout 120 sudo apt-get -o Acquire::Retries=0 -o Acquire::http::Timeout=30 -o Acquire::https::Timeout=30 install -y --no-install-recommends ffmpeg
+          fi
+          ffmpeg -version
+          ffprobe -version
       - run: npm test
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: G05-check-evidence
+          include-hidden-files: true
           path: |
             jobs/G05-hearts/.tmp/visual/
             jobs/G05-hearts/.tmp/mutation-results.json

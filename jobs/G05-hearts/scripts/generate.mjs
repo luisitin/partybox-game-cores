@@ -31,6 +31,6 @@ for(const [name,schema]of Object.entries({save:saveSchema,tooling,state:stateSch
 // Source receipts are actual observations and must remain unchanged by regeneration.
 const files=['package.json','package-lock.json','tsconfig.json','research-access.json','manifest.json',...readdirSync('data').filter(f=>f.endsWith('.json')).map(f=>'data/'+f),...readdirSync('fixtures').map(f=>'fixtures/'+f),...readdirSync('schemas').map(f=>'schemas/'+f)];
 if(existsSync('play.html'))files.push('play.html');
-if(existsSync('media'))files.push(...readdirSync('media').filter(f=>/\.(webm|mp4|png|json)$/.test(f)).map(f=>'media/'+f));
+if(existsSync('media'))files.push(...readdirSync('media',{withFileTypes:true}).filter(entry=>entry.isFile()).map(entry=>'media/'+entry.name));
 writeFileSync('SHA256SUMS.txt',files.sort().map(f=>`${createHash('sha256').update(readFileSync(f)).digest('hex')}  ${f}`).join('\n')+'\n');
 console.log(JSON.stringify({generated:files.length,phases:game.phases,fixtureSeed:103,propertySeeds:1003}));

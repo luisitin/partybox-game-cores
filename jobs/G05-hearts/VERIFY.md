@@ -575,3 +575,39 @@ Round13 final fixtures-only/check-data PASS38schemaJSON/81checksums;
 diff --check PASS and README45lines<60. Repeated existing-milestone command
 `node scripts/capture.mjs --record --milestone 16` is rejected before launch;
 real clip bytes and strict marker remain identical (explicit negative control).
+
+## Recovery after the six-hour lease — 2026-10-08
+
+Fresh README/RULES/JOBS/main claims and all matching branch committer dates
+proved G05 alone eligible. Claim078c12af at21:16:32Z on main was normally
+pushed; original3c history was normally merged into the claimed branch.
+
+Executed `npm ci --no-audit --no-fund` and `npm run build`: PASS, strict
+ES2022 unchanged. `node --test --test-concurrency=1 tests/capture-decoding.test.mjs tests/visual-proof.test.mjs`:
+7/7 groups PASS, including all original34 negatives and four actual coherent
+video receipts. The genuine inherited milestone16 fully decodes36 frames;
+non-video and a half-truncated original fail, a real complete one-frame
+video and real complete390x844/36-frame video decode but fail the current
+milestone's count/viewport requirements. Negative decoder stderr is expected.
+The test records actual resolved tool paths/versions/binary hashes/commands
+in .tmp/visual/capture-controls.json, separate from browser evidence.
+
+Executed `G05_CHROME=/home/agent/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell node scripts/capture.mjs --record --milestone 17`:
+PASS, completed21:38:41.730Z, all20 functionals,3–6 seats, real disk/native
+controls/reload/private handoffs, zero external requests/exceptions, all30
+source start/end identities equal. Actual136379-byte VP9 clip and snapshots
+are delivered. This functional report has no FPS arrays and cannot satisfy
+current full acceptance. The later official mirror edit changes the workflow
+identity; this recorded pre-edit source snapshot is retained accurately.
+
+The production HTML29ca92ac/browser2e83f1ac/coree0e10b9a and actual native
+samplerf554ecf3 remain byte-identical to3c. Original60-frame warmup is
+explicit; all600 retained positive intervals per profile remain unchanged
+and unfiltered. Old local58.634/57.695/55.047 FPS failures are still retained
+with unknown cause. Original KEEP11–13 remains a valid no-player-gain stop.
+The changed decoder requires fresh exact-head full CI and actual artifacts;
+PR5 is draft until every required check and independent receipt passes.
+
+Historical original3c artifact independently accepted21:43:47.308654Z: actual929011 bytes/official SHA,13 safe CRC members,109 assertions/original26 identities/all1200 unfiltered raw/20 flags, real138541B VP9 capture fully decoded36 frames. The full94817-character native job log and exact immutable reader/receipt/two preserved auxiliary-reader failures are in media/original-artifact-37798375447-proof.zip. This historical acceptance cannot accept the changed verifier head.
+
+The initial data/repro checks caught a local receipt-writing order mistake; see media/first-local-publication-ordering-failure.txt. Corrected schema/hash check passed38 JSON/87 entries before the historical archive was added. Final full repro and exact-head CI remain required.

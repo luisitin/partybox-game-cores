@@ -1,44 +1,52 @@
-# G05 — final verification
+# G05 verification recovery — 2026-10-08
 
-Owner codex-hearts-resume lawfully claimed 2026-10-08T13:39:37Z/maincfe1d2a
-only after fresh main/all17 job heads showed G05 alone eligible (>6h claim
-and latest branch commit). The job branch starts from claimed main and
-normally merges original678d077; original PR5/history/other owners remain.
+Owner codex-hearts-reverify lawfully claimed G05 on main at21:16:32Z,
+commit078c12af5a13263b3bb70019c0098aa95bfe49b7. Fresh main/all matching job refs
+and their committer times proved G05 alone eligible. A branch from that main
+normally merged original3c28358 into ba286373; no gameplay/history was removed.
+Canonical delivery remains job/G05-hearts / PR5; normal pushes only.
 
-Resumed reviews11–13: stronger raw/source/media acceptance, real HTML-byte
-and missing-raw negatives, then a publicly reproducible nongating capture
-helper/current verification index. No player-visible gain in all three;
-no further gameplay change is justified. Final exact-head CI must pass before
-marking PR5 ready. Readiness is updated on the PR after that success; no
-additional source commit is required merely to record the run number.
+The verification change adds full real-video decoding and exact current
+36-frame/1920x1080/10-encoded-fps/3.6s capture checks. Encoded cadence is not
+browser performance evidence. Four genuine coherent-hash negative controls
+reject non-video, truncated video, a fully decoded one-frame substitute,
+and a fully decoded phone-shaped substitute. Seven focused groups pass.
+Source guards expand26→30, including decoder/helper/control test/workflow.
+All original functional, seed/oracle/mutation/bot/data/frame gates remain.
+The native RAF sampler, HTML, browser/core/bot/rules/save and artwork remain
+byte-identical. Its original60-frame warmup is disclosed; all subsequent600
+intervals per profile remain unfiltered. No new local FPS retry was run.
 
-Runtime remains byte-identical: HTML29ca92ac,coree0e10b9a,browser2e83f1ac.
-Default strict runner f554ecf3/checker7cece098 retains600 unfiltered intervals
-per profile,≥59FPS/p95≤18ms,20functionals/26current source guards/actual clip.
-Six focused checker groups/34 negative controls pass; actual harmless HTML
-change is rejected, then exact bytes/all guards are restored.
+Fresh milestone17 functional capture completed21:38:41.730Z: all20 controls,
+3–6 rosters, real disk/native mouse/touch/keyboard/reload/privacy, zero
+external requests/errors,30 identical start/end guards. Its136379-byte
+VP9 clip SHAe64288ab17af9e4a312629ea45d1eca4130ebafc66525454e6019794cc55a65b
+is separate from FPS acceptance. Workflow's later official-mirror correction
+does not retroactively change that recorded source snapshot.
 
-Latest fully read exact9ea8ed0 CI37796476539 SUCCESS:36/36tests,25mutants,
-two byte-identical regenerations,37schemaJSON/77hashes; desktop/CPU4x phone
-60.0024FPS,p95/p99/max16.8ms,0errors/network. Executed independent checker
-accepts1,200raw/current sources/real138541B clip. Console metadata omits raw;
-artifact bytes were not read (attempted earlier download HTTP403).
+Historical original3c full CI37798375447 is genuine green. Its929011-byte
+artifact11560101856 has been downloaded with official SHA62d97e418d5e304b6c077f8113e2c22407cf5c1e93ae938e72505299806cdf14;
+independent immutable26-guard/1200-raw/20-functional/full36-frame VP9
+validation PASS at21:43:47.308654Z (109 assertions). Its actual138541-byte
+capture fully decodes; the original60-frame warmup scope and both auxiliary
+reader failures are archived in media/original-artifact-37798375447-proof.zip. This proof stays
+historical; the changed verifier needs its own complete exact-head green
+and genuine artifact/source/raw/capture validation before PR5 Ready.
 
-Retained local failed raw: desktop58.634/phone57.695FPS, earlier phone55.047.
-No cause, physical phone test or private SDK coverage is inferred. No further
-blind frame retry, weakened threshold or unchanged local leagues/matrix.
-Fresh milestone16 uses delivered scripts/capture.mjs, functional-only with
-actual self-guard:136324B/27matching hashes/all20functionals/zeroerrors-network.
-Its real bytes/SHA verify independently; current strict marker is unchanged,
-and the full validator rejects this partial report. Exact command in VERIFY.
+Original KEEP11–13 already reached three consecutive no-player-gain rounds;
+the game has not changed, so that stop remains valid. Do not invent rounds
+or repeat unchanged failing local frame workloads. Preserve all old local
+58.634/57.695/55.047fps failures and unknown cause.
 
-Last checkpoint9ea8ed0 push confirmation14:55:31Z; early target15:20:31Z,
-hard15:25:31Z. Each normal push refreshes only G05's claim, resets targets to
-actual confirmation+25/+30min, and preserves other owners. First e6bfdc8
-confirmation14:10:16Z missed requested14:09:39Z by37s after a wrong-cwd
-regeneration command; actual claim14:09:29Z is retained, never backdated.
+Next: finish the immutable historical receipt, run/read complete required
+current CI, download its actual artifact, independently recompute all raw
+samples/current30 guards and fully decode actual current media. Record one
+concrete final handoff checkpoint if needed; after its own green/actual
+artifact, update PR5 metadata/Ready without another evidence-only commit.
 
-After final exact-head green/readiness: fresh main and ALL matching remote
-job-branch committer times decide the lowest eligible next job; both six-hour
-conditions must hold. Never reclaim another fresh owner or one's own fresh
-completed job. No PR merge or force push. If none eligible, remain read-only.
+Initial25-minute publication target21:41:32Z/hard21:46:32Z is based on the
+actual claim. Root remained quiet for actual delegated G09 and B19 windows;
+their real closes/releases are preserved by their owners, never backdated.
+Each actual normal push refreshes only G05's claim and resets25/30-minute
+targets. Follow fresh main plus ALL matching branch committer dates before
+the next lowest eligible job. Never steal another fresh claim or merge PRs.

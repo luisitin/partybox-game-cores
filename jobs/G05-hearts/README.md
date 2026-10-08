@@ -29,7 +29,8 @@ Checks include1003 replay seeds,1000 full bot games per valid roster,
 all JSON schemas/hashes, two identical regenerations and600 consecutive
 frames per desktop/CPU4x phone profile (≥59fps,p95≤18ms), plus reduced motion.
 The current proof binds raw timings, every functional gate and the actual clip
-to26 source hashes; historical summaries are retained separately. See VERIFY.md/BOTS.md for measured results.
+to30 source hashes. Clips must fully decode; four real damaged/substitute-media
+controls run in the suite. See VERIFY.md/BOTS.md for evidence and scope.
 
 Core entry: [src/core.ts](src/core.ts); shared contract types are unchanged.
 Cards0–12 are clubs,13–25 diamonds,26–38 spades,39–51 hearts; each suit is2–A.
@@ -40,6 +41,6 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Exact9ea8ed0 CI passed the strengthened current-source full gate. Latest local
-desktop58.634/CPU4x phone57.695fps failed; raw evidence is preserved and the
-cause remains unresolved. PR5 remains draft; see NEXT.md for current status.
+Historical exact3c28358 full CI passed. Its 60-frame warmup precedes all600
+retained intervals per profile. Local58.634/57.695fps failures remain unexplained.
+The verification update needs its own exact-head full CI; PR5 is draft.
