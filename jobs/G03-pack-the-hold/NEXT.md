@@ -1,27 +1,24 @@
-# G03 completed checkpoint
+# G03 stale delivery recheck
 
-PR https://github.com/luisitin/partybox-game-cores/pull/3
-Branch job/G03-pack-the-hold; claim codex-core.
+Chat codex-domino;working job/G03-pack-the-hold-reverify from claimed main.
+Exact prior delivery2a9c5e1 locally merged;PR3 remains on
+job/G03-pack-the-hold. Preserve original game/content/rules/bots/research.
+Original final CI37724395966/37724392755 passed;R6–8 stop was satisfied.
+R9 confirmed8/12 exceptions and3 invalid presence updates;guards now
+produce0/0.11 focused/22 full tests,25 mutations,all properties/games/
+leagues/solver/data/partial HTTP browser and2,000-level benchmark PASS.
+Milestone11 copied from the full-run capture,decodes under10MB;29 hashes.
+Real reliability gain resets the no-gain streak0.
 
-The complete implementation is verified at8fb4327, with both CI checks green:
-37724082944 and37724078943. Eight KEEP GOING rounds are recorded; rounds6–8
-changed only presentation, completing the three-round no-meaningful-gain streak.
-There is no remaining implementation or research blocker.
-
-Strict CI passed21 tests,25 mutations,10,000 independent solver comparisons,
-7,000 bot games,4,000 league games, schemas and two regenerations. Disk opening,
-all UI rosters, mouse/touch/keyboard input, maximum-length names, reduced motion
-and zero runtime requests passed. The runner measured60.002fps desktop and
-CPU4x phone;2,000 generated/certified levels took at most1.815ms.
-Human difficulty rates remain untested, as explicitly documented.
-
-The final metadata revision adds checksums for the delivered HTML and generated
-template source; local checks passed28 hashes and two byte-identical HTML builds.
-It reruns the full strict CI suite. To resume, check the current PR head:
-    gh pr view 3 --json headRefOid,statusCheckRollup
-If both checks are SUCCESS, claim the next eligible queue job on main. Keep
-this PR open for owner review. Do not change the shared contract or other jobs.
-
-Managed cloud Chromium blocks file://; partial HTTP observations are labelled.
-The normal GitHub runner performs the required disk test without changing that
-policy. VERIFY.md contains exact commands, failures and observed results.
+Next:push both branches,refresh G03 claim,observe exact-head hosted
+SUCCESS,then R10–12 renewed KEEP GOING:valid baseline compatibility,
+malformed JSON breadth,and fresh browser audit. Three consecutive no
+player-visible gains are required after R9;do not use the previous stop.
+Reuse PR3;do not create a duplicate or merge/close any public PR.
+Managed file navigation is blocked:local G03_VISUAL_MODE=http is labelled
+partial HTTP;actual disk test remains mandatory in exact-head hosted CI.
+Re-verify when web works:human solve-rate calibration is unmeasured;
+ArXiv/Wikipedia/MathWorld403s are not evidence or research blockers.
+G01 PR1/head0428793/run37760799157 SUCCESS and G04/G06 are complete.
+G08 belongs to its current worker;preserve Shake Up and follow START-HERE
+if it is ever selected. Keep each milestone push≤30min.

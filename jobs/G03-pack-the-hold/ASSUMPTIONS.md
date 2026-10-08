@@ -18,3 +18,11 @@
   fallback and an explicit Next control, rather than duplicating that SDK helper.
 - The local managed file-navigation restriction is checked separately from
   allowed HTTP; a normal GitHub runner performs the mandatory actual disk test.
+
+- 2026-10-08 stale recheck:main claim03:47:56UTC and all G03 branch
+  commits older than6h. Reuse PR3 and exact delivered2a9c5e1 code/research,
+  creating job/G03-pack-the-hold-reverify from claimed main and locally
+  merging the delivery. Preserve original rules,geometry,tiers,art and bots.
+  This local source merge does not merge or close the public PR.
+- G01 final04287939ef188cc65928b387522e840ac7e2a0b2 passed hosted
+  run37760799157 at10:17:11UTC with its renewed three-round stop met.

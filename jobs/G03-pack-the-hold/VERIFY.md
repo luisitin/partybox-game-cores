@@ -368,3 +368,215 @@ Final scope inspection using the GitHub PR-files API and
 `git diff --name-only origin/main...HEAD` found only this job and its workflow.
 `git diff --check` passed. All ten captures are under105KB; the largest is
 104,489bytes. The independent reference seal remains unchanged.
+
+## Stale-claim recheck,2026-10-08
+
+Fresh main claims/all remote branch logs select G03 alone:claim03:47:56UTC and latest branch03:47:28UTC older than6h. Exact prior2a9c5e1 source locally merged from claimed main;`git diff --exit-code origin/job/G03-pack-the-hold HEAD -- jobs/G03-pack-the-hold .github/workflows/G03.yml contract` passed before edits. Existing PR3 reused.
+
+- `npm ci --ignore-scripts --no-audit --no-fund; npm run build; G03_VISUAL_MODE=http npm test > /tmp/G03-baseline-npm-test.log 2>&1`:EXIT0,21 tests/47608.179348ms,25 kills,schemas/two regenerations/28 hashes,partial HTTP UI audit.12 additional probes found8 exceptions and3 accepted invalid presence updates.
+- R9 `npm run build && node --test tests/focused.test.mjs`:11/11 PASS,644.937016ms;new deep-frozen malformed-event regression covers all3 phases plus paused play. Same12 original probes now have0 exceptions/0 accepted invalid presence updates.
+- `G03_VISUAL_MODE=http npm test > /tmp/G03-total-npm-test.log 2>&1`:EXIT0,22/22 tests,46900.839173ms;property seeds1/2/3+1,000,7,000 bot games across2–8,4,000 league games,10,000 independent solver comparisons,25/25 real mutations,eight data files/seven schemas,two byte-identical regenerations,privacy/JSON/purity/phase/idle/UI checks PASS.
+- `node scripts/benchmark.mjs`:PASS,2,000 generated levels independently certified/exact-solved;actual report `[
+  {
+    "difficulty": 1,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.20363600000000304,
+    "medianMs": 0.4403329999999954,
+    "p95Ms": 0.9668350000000032,
+    "maxMs": 2.8089070000000014,
+    "maxNodes": 86
+  },
+  {
+    "difficulty": 2,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.17266999999999655,
+    "medianMs": 0.4248099999999937,
+    "p95Ms": 0.9689070000000015,
+    "maxMs": 2.1643159999999995,
+    "maxNodes": 438
+  },
+  {
+    "difficulty": 3,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.13909900000001585,
+    "medianMs": 0.3197020000000066,
+    "p95Ms": 0.601664999999997,
+    "maxMs": 0.9927239999999813,
+    "maxNodes": 362
+  },
+  {
+    "difficulty": 4,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.12892400000001203,
+    "medianMs": 0.3005820000000199,
+    "p95Ms": 0.5167370000000062,
+    "maxMs": 0.6463420000000042,
+    "maxNodes": 219
+  },
+  {
+    "difficulty": 5,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.17724599999999668,
+    "medianMs": 0.34937600000000657,
+    "p95Ms": 0.6205340000000206,
+    "maxMs": 0.7672739999999862,
+    "maxNodes": 337
+  },
+  {
+    "difficulty": 6,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.1731800000000021,
+    "medianMs": 0.3530010000000061,
+    "p95Ms": 0.7064829999999915,
+    "maxMs": 2.0748119999999517,
+    "maxNodes": 449
+  },
+  {
+    "difficulty": 7,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.18459699999999657,
+    "medianMs": 0.4091449999999668,
+    "p95Ms": 0.6155460000000517,
+    "maxMs": 1.307548000000054,
+    "maxNodes": 470
+  },
+  {
+    "difficulty": 8,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.16850399999998444,
+    "medianMs": 0.3938330000000292,
+    "p95Ms": 0.841606000000013,
+    "maxMs": 1.0876870000000167,
+    "maxNodes": 644
+  },
+  {
+    "difficulty": 9,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.20568900000000667,
+    "medianMs": 0.4265720000000215,
+    "p95Ms": 0.749588000000017,
+    "maxMs": 0.8278960000000097,
+    "maxNodes": 802
+  },
+  {
+    "difficulty": 10,
+    "allowFlip": false,
+    "levels": 100,
+    "minMs": 0.2137519999999995,
+    "medianMs": 0.3871620000000462,
+    "p95Ms": 0.6570590000000038,
+    "maxMs": 0.8640100000000075,
+    "maxNodes": 795
+  },
+  {
+    "difficulty": 1,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.18098200000002862,
+    "medianMs": 0.43236100000001443,
+    "p95Ms": 1.1961900000000014,
+    "maxMs": 1.442910999999981,
+    "maxNodes": 67
+  },
+  {
+    "difficulty": 2,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.1493950000000268,
+    "medianMs": 0.36947600000007697,
+    "p95Ms": 0.63653800000003,
+    "maxMs": 0.7766990000000078,
+    "maxNodes": 332
+  },
+  {
+    "difficulty": 3,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.18383700000003955,
+    "medianMs": 0.3521900000000642,
+    "p95Ms": 0.6927319999999781,
+    "maxMs": 0.7873349999999846,
+    "maxNodes": 242
+  },
+  {
+    "difficulty": 4,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.21350200000006225,
+    "medianMs": 0.4405730000000858,
+    "p95Ms": 0.8532840000000306,
+    "maxMs": 1.02933900000005,
+    "maxNodes": 303
+  },
+  {
+    "difficulty": 5,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.20581900000001951,
+    "medianMs": 0.4550850000000537,
+    "p95Ms": 0.7838989999999058,
+    "maxMs": 1.1088290000000143,
+    "maxNodes": 455
+  },
+  {
+    "difficulty": 6,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.2176279999999906,
+    "medianMs": 0.48791400000004614,
+    "p95Ms": 0.9173799999999801,
+    "maxMs": 1.1200159999999642,
+    "maxNodes": 615
+  },
+  {
+    "difficulty": 7,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.21999100000005,
+    "medianMs": 0.49915200000009463,
+    "p95Ms": 0.8716719999999896,
+    "maxMs": 1.232503999999949,
+    "maxNodes": 513
+  },
+  {
+    "difficulty": 8,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.21274000000005344,
+    "medianMs": 0.5386609999999337,
+    "p95Ms": 0.9045210000000452,
+    "maxMs": 1.1411070000000336,
+    "maxNodes": 435
+  },
+  {
+    "difficulty": 9,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.2216040000000703,
+    "medianMs": 0.5740729999999985,
+    "p95Ms": 1.183351000000016,
+    "maxMs": 1.3371319999999969,
+    "maxNodes": 699
+  },
+  {
+    "difficulty": 10,
+    "allowFlip": true,
+    "levels": 100,
+    "minMs": 0.2495250000000624,
+    "medianMs": 0.558860999999979,
+    "p95Ms": 0.9243809999999257,
+    "maxMs": 2.445789999999988,
+    "maxNodes": 802
+  }
+]`.
+- Full-run partial HTTP browser evidence copied from.tmp/visual to media/milestone-11.webm,packing-desktop.png and visual-measurements.json. TV/phone4×CPU60.002fps,p9516.8/16.7ms,180 measured frames each after60 warm-up frames;all2–8 UI rosters,real pointer/touch drag,keyboard,reduced motion,long names,0 runtime requests/exceptions PASS. `ffprobe ... media/milestone-11.webm` and `ffmpeg -v error -i media/milestone-11.webm -f null -`:PASS,104278bytes,under10MB. Managed file navigation remains blocked;actual disk-open still requires exact-head hosted CI.
+- `node scripts/generate.mjs --fixtures-only; sha256sum --check --status SHA256SUMS.txt`:PASS after fresh capture;29 hashes. Source and regression fix are ready;hosted current-head gate and renewed no-gain reviews remain pending.

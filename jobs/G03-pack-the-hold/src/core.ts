@@ -9,7 +9,7 @@ import { inputSchema } from './schema.js';
 import { manifest } from './manifest.js';
 import type { HoldState, HoldTvView, HoldControllerView, Input, Placement, Settings } from './types.js';
 
-const has = (s: HoldState, id: string): boolean => Object.hasOwn(s.players, id);
+const has = (s: HoldState, id: string): boolean => typeof id === 'string' && Object.hasOwn(s.players, id);
 const active = (s: HoldState): string => s.order[s.seat] as string;
 const available = (s: HoldState, id: string): boolean => !s.left.includes(id) && s.players[id]?.connected === true;
 const clamp = (value: unknown, fallback: number, min: number, max: number): number => typeof value === 'number' && Number.isFinite(value) ? Math.max(min, Math.min(max, Math.trunc(value))) : fallback;
@@ -70,9 +70,9 @@ export function advance(s: HoldState, now: number): HoldState {
 }
 /** Contract event order: player -> speech -> VIP -> paused -> live phase. */
 export function reduce(s: HoldState, event: GameEvent<Input>): HoldState {
-  if (!Number.isFinite(event.now)) return s;
+  if (!event || typeof event !== 'object' || !Number.isFinite(event.now)) return s;
   if (event.type === 'player') {
-    if (!has(s, event.playerId)) return s;
+    if (typeof event.connected !== 'boolean' || (event.gone !== undefined && event.gone !== 'left' && event.gone !== 'kicked') || !has(s, event.playerId)) return s;
     const left = event.gone && !s.left.includes(event.playerId) ? [...s.left, event.playerId] : s.left;
     const next = { ...s, left, players: { ...s.players, [event.playerId]: { ...s.players[event.playerId]!, connected: event.gone ? false : event.connected } } };
     if (s.phase.id === 'pack' && !s.phase.paused && !available(next, active(next))) return finishSeat(next, event.now);

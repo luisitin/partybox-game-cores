@@ -5,13 +5,11 @@ on:
       - 'jobs/G03-pack-the-hold/**'
       - '.github/workflows/G03.yml'
       - 'contract/**'
-  push:
-    branches: ['job/G03-*']
-    paths:
-      - 'jobs/G03-pack-the-hold/**'
-      - '.github/workflows/G03.yml'
 permissions:
   contents: read
+concurrency:
+  group: G03-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   checks:
     runs-on: ubuntu-latest

@@ -121,3 +121,20 @@ test('prototype-like actual player IDs remain valid own properties', () => {
   const done = finish(s).state; assert.deepEqual(Object.keys(game.results(done).scores), ['__proto__', 'constructor']);
   assert.equal(game.controllerView(s, '__proto__').me.role, 'player');
 });
+
+test('malformed event envelopes are total and preserve all-phase state identity', () => {
+  const states = [start(), timer(timer(start())), finish(start()).state];
+  states.push(game.reduce(states[0], { type: 'vip', action: 'pause', now: 2000 }));
+  function freeze(value) { if (value && typeof value === 'object') { Object.freeze(value); for (const child of Object.values(value)) freeze(child); } return value; }
+  for (const s of states) {
+    freeze(s); const before = JSON.stringify(s); const playerId = s.order[s.seat]; const now = s.phase.startedAt + 1;
+    const events = [null, false, 0, 'input', [], {}, { type: 'unknown', now }];
+    for (const actor of [null, false, 0, [], [playerId], { toString: null, valueOf: null }]) {
+      events.push({ type: 'input', playerId: actor, input: { type: 'clear' }, now }, { type: 'player', playerId: actor, connected: false, now });
+    }
+    for (const connected of [null, 0, 'false', {}, []]) events.push({ type: 'player', playerId, connected, now });
+    for (const gone of [null, false, 0, 'unknown', {}, []]) events.push({ type: 'player', playerId, connected: false, gone, now });
+    for (const clock of [NaN, Infinity, -Infinity, null, '1', undefined]) events.push({ type: 'vip', action: 'end', now: clock });
+    for (const event of events) { assert.equal(game.reduce(s, event), s); assert.equal(JSON.stringify(s), before); }
+  }
+});
