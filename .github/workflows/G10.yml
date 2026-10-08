@@ -24,6 +24,18 @@ jobs:
       - run: npm ci --ignore-scripts --no-audit --no-fund
       - run: npx playwright install --with-deps chromium
       - run: npm test > .work-npm-test.stdout 2>&1
+      - run: node scripts/standalone-receipt.mjs
+        env:
+          G10_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-${{ github.event.pull_request.head.sha }}
+          path: |
+            jobs/G10-checkers/.work/play.html
+            jobs/G10-checkers/.work/standalone-delivery.json
+          if-no-files-found: error
+          compression-level: 1
+          retention-days: 7
       - uses: actions/upload-artifact@v4
         if: always()
         with:

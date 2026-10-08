@@ -74,3 +74,5 @@ reduced database coverage or search budget is used during startup.
 Private compact JSON proofs concern Node memory only; current public build
 has not adopted them. Node22.16 compatibility and full single-page publication/
 strict frame acceptance remain separately pending.
+
+2026-10-08 resumed at16:38UTC: prior guarded full-page1200RAF proof sampled American only. International frame acceptance is a distinct missing gate. New default runner measures bothboards; explicit localInternational-only mode avoids an unchangedAmerican rerun. Source6coverage and functional30PASS do not substitute for International frames. Private four-International allocation observed>8GiB and is rejected for7GiB CI planning. Prepared Actions standalone publication stays pending until an actual successful upload and validated download. Current combined91unitPASS and4000strength remain pending; prior90PASS plus correctedfocused1PASS is not an uninterrupted full91 result.

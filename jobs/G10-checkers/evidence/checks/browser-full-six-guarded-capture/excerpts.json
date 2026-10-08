@@ -1,0 +1,106 @@
+{
+  "scope": "Actual separately recorded same-source American-board gameplay excerpts. Re-encoded10s from originals; not an FPS acceptance test. Full recordings/raw retained. Phone recorded50.994FPS/p9983.3ms is diagnostic, not accepted. The separate unrecorded American-board acceptance passed. International unrecorded acceptance remains pending.",
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "clips": [
+    {
+      "profile": "desktop",
+      "original": "evidence/checks/browser-full-six-guarded-capture/desktop-original.webm",
+      "originalBytes": 3647426,
+      "originalSha256": "76692afd00b77f73347d847fd2e22b819489b6586108318711d2a011227b9b71",
+      "excerpt": "media/milestone-19/desktop.webm",
+      "excerptBytes": 1083604,
+      "excerptSha256": "703d9ecea421287a595841768f7f93e2d68944857134703433e162b350ea12d7",
+      "sourceSeekSeconds": 29.84,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1920,
+            "height": 1080,
+            "nb_read_frames": "250"
+          }
+        ],
+        "format": {
+          "duration": "10.000000"
+        }
+      },
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-ss",
+        "29.84",
+        "-i",
+        ".work/media-full-six-guarded-capture/desktop.webm",
+        "-t",
+        "10",
+        "-an",
+        "-c:v",
+        "libvpx",
+        "-deadline",
+        "realtime",
+        "-cpu-used",
+        "8",
+        "-threads",
+        "2",
+        "-b:v",
+        "900k",
+        "-y",
+        "media/milestone-19/desktop.webm"
+      ]
+    },
+    {
+      "profile": "phone",
+      "original": "evidence/checks/browser-full-six-guarded-capture/phone-original.webm",
+      "originalBytes": 3199005,
+      "originalSha256": "c9a996f44ac3b7bed70a70523e1a531b48e8a8b18860976ecb82ba4af09d1a6e",
+      "excerpt": "media/milestone-19/phone.webm",
+      "excerptBytes": 476747,
+      "excerptSha256": "d0417b9d190526c76f92eafd58a5a181a58a4c6c1480ba5c0bf2c14a4ecae540",
+      "sourceSeekSeconds": 149.72,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844,
+            "nb_read_frames": "250"
+          }
+        ],
+        "format": {
+          "duration": "10.000000"
+        }
+      },
+      "command": [
+        "ffmpeg",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-ss",
+        "149.72",
+        "-i",
+        ".work/media-full-six-guarded-capture/phone.webm",
+        "-t",
+        "10",
+        "-an",
+        "-c:v",
+        "libvpx",
+        "-deadline",
+        "realtime",
+        "-cpu-used",
+        "8",
+        "-threads",
+        "2",
+        "-b:v",
+        "400k",
+        "-y",
+        "media/milestone-19/phone.webm"
+      ]
+    }
+  ]
+}

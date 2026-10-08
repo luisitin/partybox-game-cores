@@ -680,3 +680,17 @@ Successful396da2515:51:42 follows35fa86915:28:19 by23m23s, bindingcadence PASS,
 early15:53:19/hard15:58:19 met; mainclaim897fc42 row15:51:30Z. Currenttarget
 16:16:42/hard16:21:42. Source/runtime stays frozen through this checkpoint;
 pending private memo will not be represented as current game validation.
+
+## Milestone19 resumed acceptance scope and actual capture
+
+Recovered session inspected all processes at16:38:32UTC; no live G10/child Node/browser processes remained. Binding rootREADME/RULES/JOBS/NEXT and current environment/network policy were re-read. The installed complete licensed sources remain available.
+
+Correction: archived browser-full-six-guarded accepted600 consecutive American-board frames per desktop/phone profile. The old runner called newTable() with its default American variant before sampling. International functionals and original-six Strong lookup passed, but International RAF acceptance was not measured. Current browser-check now defaults to both variants600 each/profile; explicit --international-frames-only supports completing the missing local scope without repeating unchanged American acceptance. Independent final integrity verifies four raw arrays, positive finite intervals, dimensions/CPU/source/variant, recomputed means/p99 and unchanged59FPS/17ms gates. Current node --check scripts/browser-check.mjs and scripts/integrity.mjs PASS. New International attempt remains pending; no accepted2400frame claim.
+
+Actual separate same-source recording node scripts/browser-check.mjs --capture closed16:25:35.070200Z/exit0, all30functionals/zero HTTP/page errors. Original desktop3647426B SHA76692afd00b77f73347d847fd2e22b819489b6586108318711d2a011227b9b71,39.84s; phone3199005B SHAc9a996f44ac3b7bed70a70523e1a531b48e8a8b18860976ecb82ba4af09d1a6e,159.72s. These full recordings and recorded raw frames/resources/actual runner are preserved under browser-full-six-guarded-capture/. Recorded phone50.994FPS/p9983.3ms is diagnostic, not acceptance.10-second re-encoded actual final gameplay excerpts and exactffmpeg commands/hashes/probes are recorded in excerpts.json/media/milestone-19; no extra recording was attempted. These clips contain American gameplay; International-specific capture remains pending.
+
+Private four-International pool trial finished16:35:33.488821Z/exit0 onNode22.16.0 with eight exact complete game records byte-identical to archived public-pool gold and all inputs unchanged. ActualmaxRSS8421232KiB (>8GiB) disproves nominal7GiB memory fit of this allocation. Raw94.727s instrumented probe /99.959s wrapper timings are not projected4k strength performance. No public pool adoption; public2Intl+2American remains unchanged. Current4000games/current91combinedPASS/CI≤30minutes remain pending. Private legal-move memo exact proof passed but only2.3% uncontrolled diagnostic improvement; rejected, bot source unchanged.
+
+Prepared read-only Actions standalone upload step and source/checkout/SHA receipt are recovered. The complete1.39GB HTML cannot be a normal Git blob. Actual upload/quota/download is not yet proved; the seven-day Actions artifact is not a durableRelease. No extra credentials, login, LFS or billing setup was invented. node --check scripts/standalone-receipt.mjs PASS.
+
+Last public3143dec successfulpush16:17:05; current nexttarget16:42:05/hard16:47:05. Subsequent checkpoint time is read from actual remote reflog and not backdated.

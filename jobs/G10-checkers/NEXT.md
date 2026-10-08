@@ -1,89 +1,19 @@
 # Resume G10
 
 Branch: job/G10-checkers-complete-20261008; nickname codex-audit.
-Worktree: /workspace/game-cores-G10-audit-worker.
-Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
-The legacy research branch is preserved by normal merge.
+Worktree: /workspace/game-cores-G10-audit-worker. Claims clone: /workspace/game-cores-audit-main-claims. Read fresh mainREADME/RULES/JOBS/CLAIMS before queue actions. Existing claim handed off; do not steal another active claim.
 
-Current checkpoint, 2026-10-08 around16:14UTC:
-- Complete licensed American/International2–6 source is installed. The actual
-  default10k native/reference probes cover all37six classes/148 orientations.
-  Forty-eight exact full/block SearchReports+cursors and3 complete game
-  transcripts PASS_COMBINED. Initial -0 assertion failure/test-only focused
-  correction/raw TAP remain retained. Thirty agent-reviewed comparisons are
-  labelled accurately; final broader source gates remain pending.
-- Full actual offline browser functional30/30 PASS. Earlier2f5ca133 full page
-  is1,390,845,425B, desktopload24.461s/phone4×99.217s. First strict desktop600
-  FAIL56.5176FPS/p9933.3ms; allraw retained, phone NOT RUN. No cause established
-  or unchanged acceptance retry. Nongating CDP profile is not acceptance.
-- NEW early-human host source built separately to .work/play-full-early.html,
-  SHA256edc476ee9a9bb9b3acbd3ff0efd631814f079a1f6a29cd88a1c188f6b17ca101.
-  Actual-file desktop controls0.776s/firstlegalAmerican1.902s/Intl2.550s;
-  phone4× controls2.398s/firstAmerican9.128s/Intl12.116s while document still
-  loading (fullparse22.574s/103.650s). Strong/Medium starts correctly rejected,
-  no worker/RNG consumption before corpus ready, zero runtimeHTTP/page errors.
-  This is a player startup gain. Newedc desktop600 FAIL57.2363FPS/p9933.4ms;
-  all15 desktop controls PASS/all600raw retained, phone NOT RUN. No cause
-  established or unchanged retry. NEW guarded host source avoids equal
-  hidden/disabled/aria-label writes. Actual200 selections/cancellations preserve
-  complete DOM/accessibility/state while reducing mutations16400→2800American,
-  24400→4000International. Actual current-source rebuilt5ed2173b/1390845993B
-  full page now PASS30functionals plus1200strict frames: desktop59.8038FPS,
-  phone4×59.5070FPS, p9916.8ms both. Allraw/source/ready/grant/closed receipts
-  retained. No controlled causal FPS claim. Same-source clips still pending.
-- Private static-JSON Node representation PASS unchanged10k/48reports+cursors/
-  missing-block totals/3complete games on actualNode24.19. Matched10k maxRSS
-  original3,246,584KiB, JSON1,969,664KiB; full48/3 JSON2,860,060KiB. Separate
-  sequential runs are not a causal startup/FPS claim. Node22.16 compatibility
-  PASS on actualNode22.16 as well. Node build now uses the proved JSON wrappers;
-  four game/search compiled module hashes remain byte-identical. Whole shared
-  unit peak4,514,896KiB is the larger relevant measurement.
-- Trackedplay.html remains earlier accepted2–5 baseline. Complete single-page
-  publication is pending; no LFS configuration/upload/charges/publication claim.
-  No source-unavailable/BLOCKED claim: complete source is acquired and licensed.
+Current16:42UTC checkpoint:
+- Complete licensed American/International2–6 source installed; exact10k original/native checks cover37sixclasses/148orientations,48 SearchReports+cursors and3games match. Current7000matrix and25realmutants PASS. Actual91combined had90PASS/1staleUNKNOWNexpectation; independently corrected testfocused1PASS, full91current run still pending.
+- Full private .work/play-full-guarded.html SHA5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801/1390845993B. Actual30functional checks PASS includingoriginalsix Strong lookup. Accepted1200raw from browser-full-six-guarded is American-board only: desktop59.8037837854/phone4×59.5070082395FPS/p9916.8ms. International RAF acceptance was not sampled and remains pending. Old strict failures remain retained; no unchanged retries or causal FPS claims.
+- Current runner default measures American+International600 each/profile. Run missing-scope local attempt with G10_HTML_PATH=.work/play-full-guarded.html G10_BROWSER_DIR=.work/browser-full-six-international G10_MEDIA_DIR=.work/media-full-six-international G10_FRAME_BARRIER_DIR=.work/international-frame-barrier node scripts/browser-check.mjs --international-frames-only. READY/grant/CLOSED names aredesktop-international andphone-international, profile fieldsame; grants match exactsourceSha256+profile. Request rootquiet only after READY, release immediatelyCLOSED. Do not redo acceptedAmerican locally. Final hosted default must pass2400current frames; integrity independentlyrecomputes all four.
+- Actual separate same-source original captures closed16:25:35/exit0,30functionals,zeroHTTP/errors; raw recordedphone50.994FPS/p9983.3ms is diagnostic. Originals/resources/raw/runner and10s actual gameplay excerpts/commands/hashes are under evidence/checks/browser-full-six-guarded-capture and media/milestone-19. No newrecording. Excerpts areAmerican only; International-specific clip remains pending.
+- Four-International private resource trialclosed16:35:33/exit0:8 complete pilot records byte-identical, all inputguards unchanged, peak8421232KiB (>8GiB). Rejected for7GiB CI fit; public2Intl+2American stays unchanged. Privatememo exact proof passed but only2.3%uncontrolled benefit; rejected/publicbotsunchanged. No live oldprocess atsessionrecovery16:38:32.
+- Full page is still private; trackedplay.html remains earlier2–5baseline. Prepared readonlyactions/* upload-artifactv4 afterfullnpmtest includes generatedplay.html+exactSHA/source/checkoutreceipt, seven-day temporarydownload. Actualquota/upload/download unproved; durableRelease tool unavailable. All licensed sources available: noBLOCKED claim.
 
-Next concrete work:
-1. Core/unit combined current91cases PASS (initial90PASS/1legacytestFAIL,
-   independently strengthened test-only focused1PASS; rawfailure retained).
-   Actual25/25mutants all9callbacks each PASS; no assertion/gate removed.
-   Dedicated2Intl+2American sequential-prewarm implementation passed16games
-   with every complete game record identical to the original pool. Actual
-   maxRSS5,341,180KiB exceeds earlier4.406GiB; no CI memory/time guarantee.
-   Profile actual Strong costs before any local pure memo optimization, then
-   run actual4000 strength. Preserve all choices/cursors/reports/budgets.
-2. Private template-fragment byte/control proof PASS41files/2647windows each
-   desktop/phone4× plus genuineStrong6. Matched traced600-frame A/B cost proof
-   is complete: document nodes4282→366 but layout0 both, TaskDuration higher
-   and diagnostic FPS lower in fragment variant. No causal/frame gain or
-   adoption. Raw profiles/traces retained; productionhost unchanged. Preserve
-   early-human exact-source
-   functional proof and obtain fresh actual
-   strict600 desktop/phone4× gates with per-profile readiness barriers granted
-   by root. Startup/functionals run outside CPU quiet. Separate clips follow.
-3. Current full-source7000matrix PASS119.987s/maxRSS2823640KiB, no holds;
-   allseven configs1000actual terminal games each. Current91unit/25mutant proof
-   remains applicable to unchanged game code. Private stage1 per-search legal
-   move memo is RUNNING; source/runtime stays unchanged until exact48reports/
-   cursors/block totals/3games/pilot comparisons pass. Its actual236.004177s
-   pure-group hold is recorded, not omitted. Do not count it as adopted.
-   Finish final-source properties/25 real mutations/7000 matrix/4000 strength,
-   schemas/regeneration and CI30min fit. Baseline7k/25/4k pass predates actual
-   full-six source and is not final acceptance. Investigate actual repeated
-   cold-import/resource cost without skipping assertions or weakening gates.
-4. Prepare concrete complete-page publication compatible with GitHub's actual
-   blob limits, then open PR after required checks pass. Exact current-head CI
-   must be green before ready. Then KEEP GOING: list five weaknesses/fix worst/
-   measure/log/push until three consecutive player-no-gain rounds. No G10PR yet.
+Next:
+1. MissingIntl actual600frames bothprofiles with rootquiet onlyatREADY; retain rawfailure beforeassert. Current runner source is different fromoldarchive, hostpageidentical.
+2. Final91 currentunitPASS andactual4000 canonicalstrength/publicpool: use unchanged seeds,budgets, complete game records; clear advantagepervariant required. Measure actualmemory/time; do not project30min fit frompilot. Core/data/schema/determinism/mutations unchanged proof retained; run fullmandatory currentCI.
+3. Finaldefault2400unrecordedframes/currentbothvariantclips/source hashes; integrate actualfullHTML temporaryartifact delivery, validate realdownloadbytes. OpenPR onlyafterrequiredchecks; exacthead readonlyActions30min CI green; then KEEP GOING fiveweaknesses/fixworst/measure/log/push until3 consecutive no-player-gainrounds. NoG10PR yet.
 
-Cadence:
-- Actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
-- Last successful396da2515:51:42 follows35fa86915:28:19 by23m23s: PASS30min,
-  early15:53:19/hard15:58:19 met. Mainclaim897fc42 row15:51:30Z.
-- Next targetsuccessfulpush16:16:42/hard16:21:42.
-  Main claim time never resets branch cadence. Record observed successful
-  origin-reflog push time after closure; pending proofs stay explicitly pending.
-
-Executed commands/historical milestones/raw failures are in VERIFY.md and
- evidence/checks/milestone*.json. Root grants strict CPU quiet slots explicitly;
-report actual owned/child process groups. Pause pure groups only; native-wall
-functional checks must finish naturally for timing results to remain valid.
+Cadence: last successful3143dec push16:17:05/main51dead6 row16:17:01; currenttarget16:42:05/hard16:47:05. Claimrefresh cannotreset branchcadence. Read subsequent successful originreflog push actualtime, maintain NEXT/docs everymilestone atmost30min. Historical30-secondmiss remains inVERIFY.

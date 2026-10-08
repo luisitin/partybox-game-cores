@@ -68,8 +68,21 @@ if(!process.argv.includes('--sources')){
   assert.deepEqual(league.gameInputHashes,await gameInputHashes(),'League evidence must match every current pure game/data input');
   const browser=await json(browserDirectory+'/checks.json');assert.equal(browser.sourceSha256,htmlSha256);assert.equal(browser.totalChecks,30);assert(browser.checks.every(row=>row.pass));
   const capture=await json(browserDirectory+'/capture.json');assert.equal(capture.sourceSha256,browser.sourceSha256);assert.equal(capture.totalChecks,30);
+  assert.deepEqual(browser.frameVariants,['american','international']);assert.equal(browser.capture,false);assert.equal(browser.functionalOnly,false);
+  assert.deepEqual(browser.profiles.map(profile=>profile.name),['desktop','phone']);
   for(const name of ['desktop','phone']){
-    const frames=await json(browserDirectory+'/'+name+'-frames.json');assert.equal(frames.sourceSha256,browser.sourceSha256);assert.equal(frames.frames.length,600);assert.equal(frames.capturing,false);assert(frames.meanFps>=59&&frames.p99Ms<=17);
+    const profile=browser.profiles.find(profile=>profile.name===name);
+    assert.deepEqual(profile.frameResults.map(result=>result.variant),['american','international']);
+    for(const variant of ['american','international']){
+      const raw=await json(browserDirectory+'/'+name+'-'+variant+'-frames.json');
+      assert.equal(raw.sourceSha256,browser.sourceSha256);assert.equal(raw.name,name);assert.equal(raw.variant,variant);
+      assert.equal(raw.width,name==='desktop'?1920:390);assert.equal(raw.height,name==='desktop'?1080:844);assert.equal(raw.throttle,name==='desktop'?1:4);
+      assert.equal(raw.frames.length,600);assert(raw.frames.every(value=>Number.isFinite(value)&&value>0));assert.equal(raw.capturing,false);
+      const sorted=[...raw.frames].sort((a,b)=>a-b),mean=raw.frames.reduce((sum,value)=>sum+value,0)/600,p99=sorted[Math.ceil(.99*600)-1],fps=1000/mean;
+      for(const [reported,actual] of [[raw.meanMs,mean],[raw.meanFps,fps],[raw.p99Ms,p99]])assert(Number.isFinite(reported)&&Math.abs(reported-actual)<1e-8);
+      assert(fps>=59&&p99<=17,JSON.stringify({name,variant,fps,p99}));
+      assert.deepEqual(profile.frameResults.find(result=>result.variant===variant),{variant,frames:600,meanFps:fps,p99Ms:p99});
+    }
     assert((await stat(mediaDirectory+'/'+name+'.webm')).size<10*1024*1024);
   }
 }

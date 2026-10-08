@@ -1,0 +1,3 @@
+# Rejected private four-International pool
+
+Actual Node22.16.0 trial closed16:35:33.488821Z/exit0 with eight exact complete pilot records byte-identical to the independently archived public-pool records. All game/module/data/script guards remained unchanged. Sequential warmup and four unchanged International workers peaked8,421,232KiB (over8GiB), exceeding a nominal7GiB hosted runner before other job costs. This is a local16GiB resource trial, not a production adoption, projected4k result, speed claim, or CI-fit proof. The public2International+2American pool stays unchanged. All original resource/probe/stdout/RSS/cgroup reports remain preserved; historical cgroup OOM counters are raw snapshots, not an OOM attributed to this successful process.

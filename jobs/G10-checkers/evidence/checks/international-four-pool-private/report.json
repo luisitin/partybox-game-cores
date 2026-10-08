@@ -1,0 +1,335 @@
+{
+  "status": "PASS_LOCAL_EXACT_RECORDS",
+  "startedAt": "2026-10-08T16:33:56.417Z",
+  "runtime": "v22.16.0",
+  "command": [
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/international-four-pool-private/probe.mjs"
+  ],
+  "guards": {
+    "maximumProcessRssBytes": 9663676416,
+    "minimumHostMemAvailableBytes": 1610612736,
+    "minimumCgroupReclaimAwareHeadroomBytes": 1610612736,
+    "samplingIntervalMs": 100
+  },
+  "scope": "Private local 16GiB resource trial: four unchanged public International league-worker isolates; sequential prewarm and eight exact pilot records. No public pool adoption, performance or CI-fit claim.",
+  "warmups": [
+    {
+      "index": 0,
+      "kind": "ready",
+      "variant": "international",
+      "importSeconds": 25.108423559,
+      "memory": {
+        "rssBytes": 1952673792,
+        "kernelProcessPeakRssBytes": 3335061504,
+        "hostMemAvailableBytes": 14351294464,
+        "cgroup": {
+          "currentBytes": 14263853056,
+          "limitBytes": 17179869184,
+          "anonBytes": 1952829440,
+          "fileBytes": 11866025984,
+          "shmemBytes": 1464471552,
+          "activeFileBytes": 9383194624,
+          "inactiveFileBytes": 1018359808,
+          "ordinaryFileLruBytes": 10401554432,
+          "nonreclaimableEstimateBytes": 3862298624,
+          "reclaimAwareHeadroomBytes": 13317570560,
+          "events": "low 0\nhigh 0\nmax 113146\noom 1\noom_kill 1\noom_group_kill 0\n"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "kind": "ready",
+      "variant": "international",
+      "importSeconds": 16.641210585,
+      "memory": {
+        "rssBytes": 3880722432,
+        "kernelProcessPeakRssBytes": 4987420672,
+        "hostMemAvailableBytes": 12196356096,
+        "cgroup": {
+          "currentBytes": 16069918720,
+          "limitBytes": 17179869184,
+          "anonBytes": 3878998016,
+          "fileBytes": 11749122048,
+          "shmemBytes": 1464471552,
+          "activeFileBytes": 9348939776,
+          "inactiveFileBytes": 935710720,
+          "ordinaryFileLruBytes": 10284650496,
+          "nonreclaimableEstimateBytes": 5785268224,
+          "reclaimAwareHeadroomBytes": 11394600960,
+          "events": "low 0\nhigh 0\nmax 113409\noom 1\noom_kill 1\noom_group_kill 0\n"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "kind": "ready",
+      "variant": "international",
+      "importSeconds": 23.916411094000004,
+      "memory": {
+        "rssBytes": 5778141184,
+        "kernelProcessPeakRssBytes": 6732783616,
+        "hostMemAvailableBytes": 10210205696,
+        "cgroup": {
+          "currentBytes": 16223936512,
+          "limitBytes": 17179869184,
+          "anonBytes": 5754425344,
+          "fileBytes": 10013282304,
+          "shmemBytes": 1464471552,
+          "activeFileBytes": 8010067968,
+          "inactiveFileBytes": 538742784,
+          "ordinaryFileLruBytes": 8548810752,
+          "nonreclaimableEstimateBytes": 7675125760,
+          "reclaimAwareHeadroomBytes": 9504743424,
+          "events": "low 0\nhigh 0\nmax 119751\noom 1\noom_kill 1\noom_group_kill 0\n"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "kind": "ready",
+      "variant": "international",
+      "importSeconds": 21.470078276999992,
+      "memory": {
+        "rssBytes": 7714598912,
+        "kernelProcessPeakRssBytes": 8623341568,
+        "hostMemAvailableBytes": 8126701568,
+        "cgroup": {
+          "currentBytes": 16269983744,
+          "limitBytes": 17179869184,
+          "anonBytes": 7709261824,
+          "fileBytes": 8161058816,
+          "shmemBytes": 1464471552,
+          "activeFileBytes": 6119038976,
+          "inactiveFileBytes": 577548288,
+          "ordinaryFileLruBytes": 6696587264,
+          "nonreclaimableEstimateBytes": 9573396480,
+          "reclaimAwareHeadroomBytes": 7606472704,
+          "events": "low 0\nhigh 0\nmax 128022\noom 1\noom_kill 1\noom_group_kill 0\n"
+        }
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "index": 0,
+      "task": {
+        "variant": "international",
+        "higher": "sharp",
+        "lower": "normal",
+        "start": 0,
+        "end": 2
+      },
+      "records": 2,
+      "byteIdenticalGold": true,
+      "recordSha256": "ef7c2f91dee0af7bd4a1a883c7324a0fde2aedc9acb9242e3fe9d238f6d700ac",
+      "plies": [
+        150,
+        96
+      ],
+      "rawInstrumentedWallSeconds": 6.483412766000009
+    },
+    {
+      "index": 1,
+      "task": {
+        "variant": "international",
+        "higher": "sharp",
+        "lower": "normal",
+        "start": 2,
+        "end": 4
+      },
+      "records": 2,
+      "byteIdenticalGold": true,
+      "recordSha256": "71ee25dee79adb02dc5194d5acd9091f41dfedbaa6f5840a62896d17cf0bb5b2",
+      "plies": [
+        113,
+        98
+      ],
+      "rawInstrumentedWallSeconds": 6.333803952000002
+    },
+    {
+      "index": 2,
+      "task": {
+        "variant": "international",
+        "higher": "normal",
+        "lower": "easy",
+        "start": 0,
+        "end": 2
+      },
+      "records": 2,
+      "byteIdenticalGold": true,
+      "recordSha256": "0d51bd5153e566cf98c3a45f85a94fccc0edc0d2bfac7fd9ec5cc64ed4426975",
+      "plies": [
+        87,
+        84
+      ],
+      "rawInstrumentedWallSeconds": 0.2648728140000021
+    },
+    {
+      "index": 3,
+      "task": {
+        "variant": "international",
+        "higher": "normal",
+        "lower": "easy",
+        "start": 2,
+        "end": 4
+      },
+      "records": 2,
+      "byteIdenticalGold": true,
+      "recordSha256": "72b64672ffda76da95685c6d0bf41504ebfb4fe84ac570ecb98b22a9b4bc7060",
+      "plies": [
+        69,
+        64
+      ],
+      "rawInstrumentedWallSeconds": 0.3850609939999995
+    }
+  ],
+  "inputsBefore": [
+    {
+      "path": ".work/international-four-pool-private/probe.mjs",
+      "sha256": "172d0fceabc5d30cd85f615538b581acc8dfee7d81db31b7ae7a50dbba5dfa9a"
+    },
+    {
+      "path": "scripts/league-worker.mjs",
+      "sha256": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557"
+    },
+    {
+      "path": "dist/core-international.mjs",
+      "sha256": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691"
+    },
+    {
+      "path": "dist/bots-international.mjs",
+      "sha256": "644eabaf8a0dfb26c43a05626d03303fd56b281bf69b184aebfdf479512d2869"
+    },
+    {
+      "path": "dist/endgame-international.mjs",
+      "sha256": "3bed3f4fedd4d67dd700d4a43bab3ad0b27dfccf9bf01435929ee390cc5f0e5f"
+    },
+    {
+      "path": "data/international/manifest.json",
+      "sha256": "6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04"
+    },
+    {
+      "path": "data/international/six/manifest.json",
+      "sha256": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-sharp-normal-0000.jsonl",
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-normal-easy-0000.jsonl",
+      "sha256": "0509eec9c5581ac97e2a94586ed959dfe942f2aebd5183d1b96ad3cb343fa216"
+    },
+    {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+      "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+    }
+  ],
+  "initialMemory": {
+    "rssBytes": 80101376,
+    "kernelProcessPeakRssBytes": 80101376,
+    "hostMemAvailableBytes": 16540450816,
+    "cgroup": {
+      "currentBytes": 12387713024,
+      "limitBytes": 17179869184,
+      "anonBytes": 83693568,
+      "fileBytes": 11866025984,
+      "shmemBytes": 1464471552,
+      "activeFileBytes": 9383186432,
+      "inactiveFileBytes": 1018368000,
+      "ordinaryFileLruBytes": 10401554432,
+      "nonreclaimableEstimateBytes": 1986158592,
+      "reclaimAwareHeadroomBytes": 15193710592,
+      "events": "low 0\nhigh 0\nmax 113146\noom 1\noom_kill 1\noom_group_kill 0\n"
+    }
+  },
+  "beforeTerminationMemory": {
+    "rssBytes": 8007942144,
+    "kernelProcessPeakRssBytes": 8623341568,
+    "hostMemAvailableBytes": 7990091776,
+    "cgroup": {
+      "currentBytes": 16572223488,
+      "limitBytes": 17179869184,
+      "anonBytes": 8002224128,
+      "fileBytes": 8161103872,
+      "shmemBytes": 1464471552,
+      "activeFileBytes": 6119038976,
+      "inactiveFileBytes": 577589248,
+      "ordinaryFileLruBytes": 6696628224,
+      "nonreclaimableEstimateBytes": 9875595264,
+      "reclaimAwareHeadroomBytes": 7304273920,
+      "events": "low 0\nhigh 0\nmax 128022\noom 1\noom_kill 1\noom_group_kill 0\n"
+    }
+  },
+  "guardFired": null,
+  "finalMemory": {
+    "rssBytes": 397312000,
+    "kernelProcessPeakRssBytes": 8623341568,
+    "hostMemAvailableBytes": 15637053440,
+    "cgroup": {
+      "currentBytes": 8937385984,
+      "limitBytes": 17179869184,
+      "anonBytes": 691445760,
+      "fileBytes": 8161103872,
+      "shmemBytes": 1464471552,
+      "activeFileBytes": 6119055360,
+      "inactiveFileBytes": 577572864,
+      "ordinaryFileLruBytes": 6696628224,
+      "nonreclaimableEstimateBytes": 2240757760,
+      "reclaimAwareHeadroomBytes": 14939111424,
+      "events": "low 0\nhigh 0\nmax 128022\noom 1\noom_kill 1\noom_group_kill 0\n"
+    }
+  },
+  "wholeProcessPeakRssKiB": 8421232,
+  "sampledProcessPeakRssBytes": 8612085760,
+  "rssSampleCount": 949,
+  "closedAt": "2026-10-08T16:35:32.662Z",
+  "elapsedSeconds": 94.726829476,
+  "inputsAfter": [
+    {
+      "path": ".work/international-four-pool-private/probe.mjs",
+      "sha256": "172d0fceabc5d30cd85f615538b581acc8dfee7d81db31b7ae7a50dbba5dfa9a"
+    },
+    {
+      "path": "scripts/league-worker.mjs",
+      "sha256": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557"
+    },
+    {
+      "path": "dist/core-international.mjs",
+      "sha256": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691"
+    },
+    {
+      "path": "dist/bots-international.mjs",
+      "sha256": "644eabaf8a0dfb26c43a05626d03303fd56b281bf69b184aebfdf479512d2869"
+    },
+    {
+      "path": "dist/endgame-international.mjs",
+      "sha256": "3bed3f4fedd4d67dd700d4a43bab3ad0b27dfccf9bf01435929ee390cc5f0e5f"
+    },
+    {
+      "path": "data/international/manifest.json",
+      "sha256": "6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04"
+    },
+    {
+      "path": "data/international/six/manifest.json",
+      "sha256": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-sharp-normal-0000.jsonl",
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-normal-easy-0000.jsonl",
+      "sha256": "0509eec9c5581ac97e2a94586ed959dfe942f2aebd5183d1b96ad3cb343fa216"
+    },
+    {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+      "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+    }
+  ],
+  "allInputsUnchanged": true,
+  "nominal7GiBNote": "Observed process peak alone exceeds 7 GiB; this trial does not support a 7 GiB CI host.",
+  "guardNotes": "Cgroup current is retained raw. Reclaim-aware headroom subtracts only ordinary active/inactive file LRU, never shmem; reclaimability is an estimate. A guard firing is INCOMPLETE, never a projection-based PASS. Sampling can miss brief transients; kernel/process-resource peak is retained."
+}
