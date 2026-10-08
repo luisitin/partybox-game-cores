@@ -1,0 +1,11 @@
+{
+  "name":"partybox-g10-checkers","version":"1.0.0","private":true,"type":"module",
+  "scripts":{
+    "build":"tsc --noEmit && node scripts/build.mjs",
+    "test":"npm run build && node --test tests/*.test.mjs && node scripts/mutations.mjs && node scripts/browser-check.mjs && node scripts/integrity.mjs",
+    "fixtures":"npm run build && node scripts/fixtures.mjs",
+    "league":"npm run build && node scripts/league.mjs"
+  },
+  "dependencies":{"zod":"4.6.5"},
+  "devDependencies":{"esbuild":"0.25.10","playwright":"1.56.0","typescript":"5.9.3"}
+}

@@ -12,3 +12,24 @@ source rules, licences or factual claims. All candidates were denied.
 The claim push succeeded. No npm test suite exists for this job yet.
 Game tests, simulations, mutation testing, bot leagues, HTML validation,
 performance/captures, job-specific checks and CI are UNRUN (zero game tests).
+
+## Resume checkpoint (2026-10-08)
+
+- Read live main README.md, RULES.md, JOBS.md and CLAIMS.md: PASS. G01 was
+  refreshed by its original owner before our claim attempt, so the stale-claim
+  assertion refused it without a commit. Fresh lowest eligible G10 was claimed.
+- `git push origin main`: PASS, exact commit0be4588, message `claim G10`,
+  claim2026-10-08T08:40:21Z codex-audit.
+- Created job/G10-checkers-complete-20261008 FROM claimed main, then normal-merged
+  origin/job/G10-checkers: PASS. Original research history remains reachable.
+- `npm install --ignore-scripts --no-audit --no-fund`: PASS, six pinned packages
+  installed in10 seconds. This verifies dependency installation only.
+- Independent reference-moves.mjs was authored from rule sources and coordinate
+  matrix copies without reading production movement code. No differential run
+  has executed yet. Original2-source rules research is recorded in SOURCES.md.
+- Types/build, gameplay/property/replay, mutations, bot leagues, tablebase,
+  offline page, frame proof/captures, PR and CI: NOT RUN at this checkpoint.
+
+- `node scripts/hashes.mjs` twice plus `cmp`: PASS, byte-identical checksum
+  manifest. `sha256sum -c SHA256SUMS.txt`: PASS, all21 delivered files.
+  `git diff --check`: PASS. These are source/docs integrity checks only.

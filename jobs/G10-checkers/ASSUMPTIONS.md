@@ -6,3 +6,20 @@
 - Preserve the shared contract and unrelated repositories.
 - No credentials are needed for public source pages. Do not request tokens
   merely because gh reports an unusable token; native Git access works.
+
+## Resumed implementation (2026-10-08)
+
+- Prior research-only stopping assumptions are historical. Current main's
+  GitHub→registry→knowledge fallback governs; no current BLOCKED.md is asserted.
+- Both requested official games use exactly two seats. The test matrix will cover
+  seven1,000-game rules/settings configurations at that valid player count.
+- FMJD2024 International draw allowances are the default; a selectable forty-move
+  house option is distinct from the official twenty-five-move/ending rules.
+- Preserve activated ending allowances across captures/promotions; when a new
+  shorter allowance applies, intersect its expiry with older active allowances.
+  Long-diagonal withdrawal/reentry behavior is explicitly a documented assumption.
+- A bounded bot search is approximate. Database coverage/provenance and unresolved
+  material classes will be disclosed rather than represented as global six-piece
+  coverage. Externally published data require an actual redistribution permission.
+- The shared SDK is absent; the local reducer adapter follows the exact contract's
+  event order and retains shared contract types and seeded RNG helpers unchanged.

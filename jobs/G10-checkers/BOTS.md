@@ -1,0 +1,75 @@
+# Bot research and endgame proof limits
+
+Initial research design only. Implementation, leagues, endgame coverage,
+and performance are UNRUN here; later evidence must record actual results.
+
+Easy: seeded legal choices with simple material/capture/promotion cues.
+Medium: search several complete turns, score material/kings, advancement,
+mobility and safe center. Strong: deterministic-budget iterative alpha-beta,
+capture quiescence, move ordering, transpositions and exact endgame probes.
+These choices are informed by D1/D6/D7; no engine-strength equivalence is
+claimed. Search uses the reducer's actual draw policy and history.
+
+A board-only transposition value cannot be reused as exact for different
+quiet counters, ending allowances or repetition histories. Bare WDL WIN
+alone does not choose progress-making moves: proven distance to win or
+conversion, or separate history-aware search, is required to avoid cycling.
+
+## Six-piece feasibility and scope
+
+Full American raw state count is billions [D1/D2]. Cake's21.9MB5/6 corpus
+limits either side to3 and omits meaningful capture entries [D4]. Source
+is Unlicense, but hosted data licence is not separately verified.
+International Scan2–6 is706MiB zipped/about2GiB RAM [D5/D6]; engine GPLv3
+does not establish a separate data grant. Neither is bundled by research.
+Partial coverage must never be labeled a complete six-piece database.
+
+An original exact on-demand design can certify closed <=6-piece components:
+
+1. Validate root and enumerate every reachable board+side successor under
+   exact variant rules, including captures/promotions. Reuse only proven
+   entries. Any budget-excluded successor makes the component unclosed;
+   its root remains UNKNOWN, never a synthetic draw.
+2. Record full successor outdegrees/reverse edges. Seed no-legal-move
+   terminals as LOSS. WIN requires an opponent-LOSS child; LOSS requires
+   every legal child be opponent-WIN. Propagate to fixed point.
+3. Only an entirely closed graph allows remaining unknowns to become
+   DRAW. Save proven WDL, distance, legal path, variant/key and proof
+   provenance. Heuristic alpha-beta values are not database records.
+4. This result is theoretical board-only WDL. Current game outcomes need
+   a graph augmented with counters/repetition, or separate exact finite
+   history-aware search. A winning theoretical value can become a draw
+   under current limits; mark scope explicitly.
+5. Generate sorted deterministic data twice and byte-compare; schema-check
+   every file. Report solved roots/material classes and misses honestly.
+
+Exhaustive material/rank slices [D1/D4] are a stronger alternative: solve
+all-kings first; promotions feed those slices, captures feed smaller-piece
+tables. Missing lopsided classes cannot be assumed won without proof.
+Accepting a6-piece root is distinct from complete <=6-piece coverage.
+
+## Independently authored validation
+
+The coordinate oracle imports no production helper and copies a matrix
+at every jump. Compare full paths, capture order and promotion flags over
+at least10,000 seeded positions across both variants, plus hostile cases:
+promotion-row visits, blockers, return to origin, global maximum routes
+and equal-length choices. Freeze source before production comparison.
+
+An independent endgame solver should use oracle moves and whole-graph
+repeated fixed-point scanning, unlike a reverse-edge production queue.
+Compare complete small material/king slices and fully closed tactical
+six-piece components. Enumerate every legal edge and verify Bellman
+conditions. A DRAW node must have no opponent-LOSS successor and at
+least one DRAW continuation after terminal losses are excluded. Compare
+small history-aware endings with exhaustive finite minimax, keeping all
+draw counters and repetition. Truncation is UNKNOWN in both solvers.
+
+## Required bot strength evidence
+
+Run2,000 games Strong-vs-Medium and2,000 Medium-vs-Easy, with paired seed
+and both seat orders. Retain seed/rules/moves/result for every game.
+Report wins/losses/draws and score(win1,draw0.5), with paired uncertainty.
+Show a clear gain; many draws and no losses alone do not establish it.
+Keep tuning failures and use fresh confirmation seeds after tuning.
+Explicitly disclose variant and coverage limits rather than extrapolating.
