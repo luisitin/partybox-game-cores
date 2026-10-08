@@ -1,9 +1,10 @@
 {
-  "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
   "sourceFingerprints": {
-    "client.ts": "7a11c9e64a0ae085101aa32d4af5ca51affdefb61444c57d296fa943ca9344b1",
-    "build-play.ts": "4f8a9b8c0b42d23de11e609c210a9ad0c0c79a5275ef7d77dded268cb646d609",
-    "src/play.template.html": "b913dc187eca239fb65acbffde3b2b05fe8dfa3d6ff395a3418b01717a1f519e",
+    "client-save.ts": "3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff",
+    "client.ts": "9426215a59608ca221b44517671fb1c28a4856eda2ddd3b53969d34baf339ea3",
+    "build-play.ts": "a613d2a61c6c66e06afc55afbf28d6cc613b22a45fd109d4cf547f3d3f6814e6",
+    "src/play.template.html": "c570fa36c6dd537473bc125566a648a6131fb719be1a270a116317b323d069c0",
     "src/index.ts": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
     "src/model.ts": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4",
     "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
@@ -14,7 +15,7 @@
     "THIRD_PARTY_NOTICES.txt": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164",
     "node_modules/zod/LICENSE": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
     "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
-    "scripts/browser-performance.mjs": "274a54ce91f1dc173e094b06af713e8cc945e75983985ca8623d4cd5a018720a"
+    "scripts/browser-performance.mjs": "1ac72aab8370ea041a065df798493252efcc63ec3a2dd262a8c986ef0e427729"
   },
   "licenseChecks": {
     "LICENSE": true,
@@ -23,7 +24,7 @@
   "samplingRecording": false,
   "recordingDuringMeasurement": false,
   "browser": "141.0.7390.37",
-  "startedAt": "2026-10-08T10:55:31.746Z",
+  "startedAt": "2026-10-08T11:53:50.399Z",
   "profiles": [
     {
       "profile": "desktop",
@@ -32,17 +33,17 @@
         "height": 1080
       },
       "cpuThrottle": 1,
-      "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+      "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
       "count": 600,
-      "totalMs": 9999.6,
-      "meanMs": 16.666,
-      "fps": 60.00240009600384,
-      "p95Ms": 16.700000000000728,
-      "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
+      "totalMs": 10016.192000000001,
+      "meanMs": 16.693653333333334,
+      "fps": 59.90300505421621,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 16.80000000000109,
+      "maxMs": 33.40000000000009,
       "networkRequests": [
         "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
       ],
@@ -56,7 +57,7 @@
           "height": 1080
         },
         "cpuThrottle": 1,
-        "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+        "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
         "activeRecordingMs": 3000,
         "workload": "same 12-category answer screen with active timer",
         "pageErrors": [],
@@ -64,7 +65,7 @@
           "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 296924
+      "videoBytes": 346184
     },
     {
       "profile": "phone4x",
@@ -73,17 +74,17 @@
         "height": 844
       },
       "cpuThrottle": 4,
-      "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+      "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
       "count": 600,
-      "totalMs": 9999.599999999999,
-      "meanMs": 16.665999999999997,
-      "fps": 60.002400096003846,
-      "p95Ms": 16.700000000000728,
+      "totalMs": 10016.199999999999,
+      "meanMs": 16.693666666666665,
+      "fps": 59.90295720932091,
+      "p95Ms": 16.799999999999272,
       "p99Ms": 16.800000000000182,
-      "maxMs": 16.80000000000109,
+      "maxMs": 33.399999999999636,
       "networkRequests": [
         "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
       ],
@@ -97,7 +98,7 @@
           "height": 844
         },
         "cpuThrottle": 4,
-        "sourceSha256": "0f4e64e9b2aeb3dc834dd0851bb303339c3930384300486fe45ab0ce4213b5f9",
+        "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
         "activeRecordingMs": 3000,
         "workload": "same 12-category answer screen with active timer",
         "pageErrors": [],
@@ -105,9 +106,9 @@
           "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 198176
+      "videoBytes": 262539
     }
   ],
   "passed": true,
-  "finishedAt": "2026-10-08T10:56:02.839Z"
+  "finishedAt": "2026-10-08T11:54:22.786Z"
 }

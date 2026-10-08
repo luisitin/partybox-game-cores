@@ -31,6 +31,10 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   }
   const functional=json('evidence/browser/functional-report.json');assert.equal(functional.sourceSha256,digest);
   assert.equal(functional.passed,true);assert(functional.checks.length>=28&&functional.checks.every((c:any)=>c.passed));
+  const clock=json('evidence/browser/review-clock-report.json');
+  assert.equal(clock.sourceSha256,digest);assert.equal(clock.passed,true);
+  assert.equal(clock.firstDisplayedMs,Math.ceil(clock.firstBudgetMs/1000)*1000);
+  assert.equal(clock.nextDisplayedMs,Math.ceil(clock.expectedNextBudgetMs/1000)*1000);
   const before=json('evidence/browser/round-1-baseline/report.json'),after=json('evidence/browser/round-1-after/report.json');
   assert.equal(before.passed,true);assert.equal(before.sourceSha256,sha('evidence/browser/round-0-accepted/play.html'));
   assert.equal(after.passed,true);assert.equal(after.sourceSha256,digest);assert.equal(after.checks.length,8);
@@ -72,8 +76,25 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
       const measured=savedReport.cases.find((row:any)=>row.count===count&&row.phase===phase);
       assert(measured);assert.equal(measured.resumeAvailable,savedReport===resumeAfter);
       assert.equal(measured.restored,savedReport===resumeAfter);
+      if(savedReport===resumeAfter){
+        assert.equal(measured.hiddenBeforeResume,true);
+        assert.equal(measured.privateHandover,phase!=='scores');
+        assert.deepEqual(measured.after,measured.before);
+        if(phase==='scores')assert.equal(measured.after.receiptCount,12);
+      }
     }
   }
+  assert(resumeAfter.checks.length>=17);
+  assert(resumeAfter.details.some((row:any)=>row.case==='mixed bot continuation'));
+  assert(resumeAfter.details.some((row:any)=>row.case==='double handover reload'));
+  assert(resumeAfter.details.some((row:any)=>row.case==='near expiry'&&row.submitted===true));
+  assert.equal(resumeAfter.details.filter((row:any)=>row.case==='storage failure').length,2);
+  assert.equal(resumeAfter.details.filter((row:any)=>row.case==='invalid save').length,2);
+  const selectedGain=resumeAfter.details.find((row:any)=>row.case==='historical gains');
+  assert(selectedGain);assert.deepEqual(selectedGain.gains,['+1 in round 1','+0 in round 1']);
+  assert.deepEqual(selectedGain.currentTotals,['3','0']);
+  const invalidFocus=resumeAfter.details.find((row:any)=>row.case==='invalid review focus');
+  assert(invalidFocus);assert.equal(invalidFocus.enabledVotes,0);assert.equal(invalidFocus.focusedText,'Lock my ballot →');
   const original=json('evidence/breadth-baseline.json'),bankOnly=json('evidence/breadth-bank-only.json'),strategy=json('evidence/breadth-after.json');
   assert.equal(original.sourceHashes.data,sha('evidence/browser/round-1-accepted/categories.json'));
   for(const report of [original,bankOnly])assert.equal(report.sourceHashes.core,sha('evidence/breadth-original-core.ts'));

@@ -12,3 +12,12 @@
 
 - The offline page immediately settles a currently public review category with no answer groups by sending the real timer event at its real deadline. It advances at most twelve such steps, never while paused or while the host menu is open. The shared core and nonempty ballot deadlines are unchanged.
 - At four or more present seats Strong samples its full available bank, using a deterministic public-seat rotation when that bank can cover the table. This avoids unnecessary collisions caused by truncating the bank; it does not infer other players' answers or skill settings. Smaller tables retain the less-obvious authored-half heuristic. Completed scored history is public; the page reveals it only on scores/results.
+- The offline client stores a versioned local snapshot only on this device.
+  Resume/Discard is explicit, private turns return to handover, and time while
+  the page is closed does not consume a turn. Recovery restores the actual
+  contract RNG counters and remaining active time. Snapshots are bounded to
+  500,000 UTF-8 bytes/code units and validated before use; incompatible core,
+  data or save formats are rejected. This is recovery from accidental reload,
+  not protection against a person editing their own local storage. Browsers
+  that deny storage can still play while the page stays open and receive an
+  accurate warning. No network or server persistence is involved.

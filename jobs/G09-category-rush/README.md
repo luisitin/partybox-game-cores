@@ -8,6 +8,8 @@ Open `play.html` directly from disk to play privately in hot-seat mode or agains
 easy, medium and strong bots. The entire page is inline and makes no network calls.
 Each person gets a private writing turn with the same full timer; pass the screen
 at the handover. Host controls pause, skip and end. Equal final scores share a win.
+Local saves offer explicit Resume/Discard after reload, with private handover
+and remaining time preserved. If the browser denies storage, keep the page open.
 
 ```sh
 cd jobs/G09-category-rush
@@ -18,6 +20,7 @@ npm run build:play
 npm run mutations
 npm run bots
 node scripts/browser-check.mjs
+node scripts/browser-resume.mjs after
 node scripts/browser-performance.mjs
 ```
 

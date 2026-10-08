@@ -205,3 +205,67 @@ target is 11:30:03 and the hard 30-minute limit is 11:35:03.
   Client integration and all new-source checks are pending; no completed round-3
   LOOP entry is recorded. Global quiet holds allowed light source/docs only.
   The accepted round-2 file and its complete proof remain separately archived.
+- Partial checkpoint `1d6ec75` pushed at 11:29:48 UTC (actual origin reflog);
+  main claim `b1e27a4` refreshed at 11:29:57. All 164 then-current data/media
+  hashes and `git diff --check` passed after every writer froze. It intentionally
+  does not claim complete new-page proof.
+- `npm run typecheck && npx tsx --test tests/client-save.test.ts`: PASS after
+  release, 3/3 independent tests, 2.415 s test-process duration. Eight actual
+  two/eight-seat two-round protocols retain each phase, drafts and paused state;
+  malformed/stale/oversized/cross-reference saves are rejected, including unknown
+  owners in reviewed entries. Thirty-six seed/counter combinations continue
+  exactly through the real contract RNG. Raw output is retained in
+  `evidence/client-save-tests-round-3.txt`. Owned group 123848 was naturally
+  closed when observed at 11:30:20; no global frame run overlapped it.
+- The added real five-round/eight-seat maximum-length Unicode regression
+  exposed a valid-game rejection at the first 200,000-byte save ceiling.
+  `npx tsx --test --test-name-pattern="maximum-length Unicode" tests/client-save.test.ts`
+  failed in 0.659 s with `Saved game failed bounded validation`; owned group
+  124746 was naturally closed by 11:35:06. The exact old codec, test, command,
+  source hashes and raw failure are retained in `evidence/save-limit-first/`.
+  A larger still-bounded ceiling and a passing full protocol are pending.
+- Final bounded codec `3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff`
+  uses at most 500,000 UTF-8 bytes and 500,000 UTF-16 code units.
+  `npx tsx --test tests/client-save.test.ts`: 4/4 PASS, 2.491 s process
+  duration. The legal five-round/eight-seat history stores distinct 80-code-unit
+  Unicode answers in every category, awards all eight players 60 points and
+  measures a largest save of **246,896 UTF-8 bytes**. Every scored snapshot and
+  final state roundtrips. The initial 200,000-byte ceiling failure remains
+  preserved; the final passing raw output is `evidence/client-save-tests-round-3.txt`,
+  with the earlier three-test output kept separately. Group 125219 was naturally
+  closed when observed at 11:36:52. Pure core and authored data hashes remain
+  unchanged from accepted round 2.
+- Candidate `084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa`
+  (455,505 bytes) passed strict TypeScript and two byte-identical builds.
+  `node scripts/browser-check.mjs`, `node scripts/browser-empty-review.mjs after`,
+  `node scripts/browser-clock.mjs` and `node scripts/browser-receipts.mjs after`
+  pass 28/28, 8/8, the independent clock probe and 4/4 respectively.
+- `node scripts/browser-resume.mjs after`: final uninterrupted 17/17 PASS,
+  11:47:48.365–11:48:51.250 UTC, 62.885 s. Six two/eight-human writing,
+  review and score cases retain exact before/after values and four lifecycle
+  snapshots each. Private handovers, repeated reload, saved pause, near-expiry
+  real submission, host controls/replay/discard, denied/quota/corrupt/stale
+  storage, exact future mixed-bot RNG/output, selected-round gains and ballot
+  keyboard focus pass. All errors/nonfile requests/dialogs are zero; groups
+  127924/127936 closed naturally.
+- Earlier runs retain two fixture-only whitespace/casing failures, one real
+  intermittent 0:18→0:20 review-time discrepancy and interrupted native-time
+  runs. Diagnostic repeats preserved time but did not establish a cause;
+  no lifecycle workaround or runtime patch is attributed to those diagnostics.
+  Exact reports/runners/HTML and hold metadata remain under the round-3 browser
+  archives. Strict source-matched frame and clip proof is still pending.
+- `node scripts/browser-performance.mjs`: PASS on frozen 084962…,
+  actual 11:53:50.399–11:54:22.786 UTC, 32.387 s after explicit global grant.
+  Desktop 59.903005 fps and phone 4× 59.902957 fps; both p99 16.8 ms and
+  max 33.4 ms. All 600 actual intervals per profile are retained. Separate
+  346,184/262,539-byte clips have independent clean request/error streams.
+  Source, codec, builder, licenses and sampler hashes match before/after.
+  Sampler `1ac72aab…` adds only the codec to source fingerprints; thresholds,
+  consecutive sampling, workload and unrecorded measurements are unchanged.
+  Node 128643/Chromium 128655 closed; only zombies remained at readback.
+- Final `npm run typecheck && npx tsx --test tests/artifacts.test.ts`: PASS,
+  artifact body 147.705 ms. It independently binds the new HTML/source/license,
+  600-frame/clip, 28/8/clock/4/17 UI evidence, six exact restoration comparisons,
+  privacy flags and measured gains. Pure core/data are unchanged from the full
+  accepted round-2 21-test/oracle/7,000-game/property/secrecy, 25-mutation and
+  4,000-duel proof; no unchanged expensive local checks were repeated.

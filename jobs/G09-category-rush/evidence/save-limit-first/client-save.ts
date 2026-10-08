@@ -8,8 +8,8 @@ import {groupsFor} from './src/scoring';
 import type {State} from './src/model';
 
 export const SAVE_KEY='category-rush.saved-game.v1';
-export const MAX_SAVE_CHARS=500_000;
-export const MAX_SAVE_BYTES=500_000;
+export const MAX_SAVE_CHARS=200_000;
+export const MAX_SAVE_BYTES=200_000;
 const utf8=new TextEncoder();
 export type SavedSeat={id:string;name:string;kind:'human'|BotSkill};
 export interface SavedGame {

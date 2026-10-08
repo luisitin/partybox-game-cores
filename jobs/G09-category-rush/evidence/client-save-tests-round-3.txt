@@ -1,0 +1,13 @@
+Measured largest legal five-round Unicode save: 246896 UTF-8 bytes
+✔ bounded local snapshots retain actual played two/eight-seat states, private draft and pause (1625.229688ms)
+✔ corrupt, oversized, stale and inconsistent local saves are rejected before reducer use (26.248987ms)
+✔ restored actual contract RNG continues exactly through all supported saved counters (10.432017ms)
+✔ a legal five-round eight-seat maximum-length Unicode history remains saveable (294.815431ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2490.69615

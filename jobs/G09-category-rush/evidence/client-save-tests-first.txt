@@ -1,0 +1,15 @@
+
+> category-rush-core@1.0.0 typecheck
+> tsc --noEmit
+
+✔ bounded local snapshots retain actual played two/eight-seat states, private draft and pause (1682.014877ms)
+✔ corrupt, oversized, stale and inconsistent local saves are rejected before reducer use (12.209667ms)
+✔ restored actual contract RNG continues exactly through all supported saved counters (5.87587ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2415.038815

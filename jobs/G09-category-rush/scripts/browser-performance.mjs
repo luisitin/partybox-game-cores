@@ -13,7 +13,7 @@ await mkdir(media,{recursive:true});
 const htmlPath=resolve(root,'play.html');
 const digest=data=>createHash('sha256').update(data).digest('hex');
 const sourceSha256=digest(await readFile(htmlPath));
-const sourcePaths=['client.ts','build-play.ts','src/play.template.html','src/index.ts','src/model.ts','src/scoring.ts','src/match.ts','content/categories.ts','package-lock.json','LICENSE','THIRD_PARTY_NOTICES.txt','node_modules/zod/LICENSE','../../contract/rng.ts','scripts/browser-performance.mjs'];
+const sourcePaths=['client-save.ts','client.ts','build-play.ts','src/play.template.html','src/index.ts','src/model.ts','src/scoring.ts','src/match.ts','content/categories.ts','package-lock.json','LICENSE','THIRD_PARTY_NOTICES.txt','node_modules/zod/LICENSE','../../contract/rng.ts','scripts/browser-performance.mjs'];
 const fingerprint=async()=>Object.fromEntries(await Promise.all(sourcePaths.map(async path=>[path,digest(await readFile(resolve(root,path)))])));
 const sourceFingerprints=await fingerprint();
 const htmlText=await readFile(htmlPath,'utf8');
