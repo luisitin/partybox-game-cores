@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { referenceWdl, referenceTwoPieceRoots, referenceCertificateErrors, referencePositionKey } from './reference-endgame.mjs';
 import { sparseBoard } from './reference-rule-cases.mjs';
 
@@ -56,7 +58,8 @@ test('independent complete one-vs-one man/king domains have valid WDL and distan
     variants: reports,
     sixPieceScope: 'Two explicitly tested fully closed forced-capture roots; not global six-piece coverage.'
   };
-  const destination = new URL('../evidence/checks/endgame-independent.json', import.meta.url);
-  mkdirSync(new URL('.', destination), { recursive: true });
-  writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
+  const evidenceDirectory = process.env.G10_EVIDENCE_DIR ? resolve(process.env.G10_EVIDENCE_DIR) :
+    fileURLToPath(new URL('../evidence/checks/', import.meta.url));
+  mkdirSync(evidenceDirectory, { recursive: true });
+  writeFileSync(resolve(evidenceDirectory, 'endgame-independent.json'), JSON.stringify(report, null, 2) + '\n');
 });

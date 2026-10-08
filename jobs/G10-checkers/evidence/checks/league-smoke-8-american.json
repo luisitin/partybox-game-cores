@@ -1,0 +1,47 @@
+{
+  "command": "node scripts/league.mjs --games 8 --variant american",
+  "gamesPerComparison": 8,
+  "opening": "Standard starting board; paired identical seed with stronger side alternated. No outcome-based opening selection.",
+  "startAt": "2026-10-08T10:12:17.119Z",
+  "comparisons": [
+    {
+      "variant": "american",
+      "higher": "sharp",
+      "lower": "normal",
+      "games": 8,
+      "wins": 7,
+      "draws": 1,
+      "losses": 0,
+      "scoreShare": 0.9375,
+      "decisiveWinRate": 1,
+      "decisiveWilson95": [
+        0.6456611570247934,
+        1
+      ],
+      "moves": 921,
+      "maximumPlies": 302,
+      "elapsedSeconds": 5.0803534820000005,
+      "transcriptSha256": "f52551d47f50089c86174a60612137a9e8750e178c4832b1bf4cf331e3d7dac1"
+    },
+    {
+      "variant": "american",
+      "higher": "normal",
+      "lower": "easy",
+      "games": 8,
+      "wins": 8,
+      "draws": 0,
+      "losses": 0,
+      "scoreShare": 1,
+      "decisiveWinRate": 1,
+      "decisiveWilson95": [
+        0.6755843804891231,
+        1
+      ],
+      "moves": 422,
+      "maximumPlies": 77,
+      "elapsedSeconds": 0.16548140199999944,
+      "transcriptSha256": "aeca48361c863a4b0454aab351fb10f70a73bf09f06905cfaefa2d436bddfdf7"
+    }
+  ],
+  "botSourceSha256": "dd83dfcb1ac418c353c0f471cdbcb42ee1d27c997161b5e208d0c389e132cae2"
+}

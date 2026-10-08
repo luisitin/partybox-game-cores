@@ -113,7 +113,8 @@ export function createReferenceChinook(data, indexText) {
 
   function pawnPrefix(slice, blackMen) {
     if (!slice.bp) return 0;
-    let lookup = pawnPrefixes.get(slice.key);
+    const cacheKey = `${slice.bp}:${slice.wp}:${slice.br}:${slice.wr}`;
+    let lookup = pawnPrefixes.get(cacheKey);
     if (!lookup) {
       lookup = new Map();
       let precedingWhitePositions = 0;
@@ -128,7 +129,7 @@ export function createReferenceChinook(data, indexText) {
           precedingWhitePositions += binomial(broadSquares, slice.wp) - binomial(narrowSquares, slice.wp);
         }
       }
-      pawnPrefixes.set(slice.key, lookup);
+      pawnPrefixes.set(cacheKey, lookup);
     }
     return lookup.get(blackMen.join(','));
   }

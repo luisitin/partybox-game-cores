@@ -12,10 +12,11 @@ test('contract manifest/counts/settings and deterministic initial boards',()=>{
   assert.equal(manifest.minPlayers,2);assert.equal(manifest.maxPlayers,2);assert.equal(manifest.unlimitedDuration,true);assert.equal(manifest.supportsBots,true);
   assert.throws(()=>init({...context(),players:[]}),RangeError);assert.throws(()=>init(context({},1,['same','same'])),RangeError);
   for(const now of [NaN,Infinity,-1,-0,1e15+1])assert.throws(()=>init({...context(),now}));
-  const first=init(context());assert.deepEqual(first,init(context()));assert.equal(first.board.filter(value=>value===1).length,12);assert.equal(first.board.filter(value=>value===-1).length,12);assert.equal(first.phase.deadline,null);
+  const first=init(context());assert.deepEqual(first,init(context()));assert.deepEqual(first.rng,{seed:1,step:0});assert.equal(first.board.filter(value=>value===1).length,12);assert.equal(first.board.filter(value=>value===-1).length,12);assert.equal(first.phase.deadline,null);assert.equal(init({...context(),now:0}).phase.startedAt,0);
   const international=init(context({variant:'international'}));assert.equal(international.board.length,50);assert.equal(international.board.filter(value=>value===1).length,20);
   const normalized=init(context({variant:'oops',drawPolicy:'oops',turnSeconds:400,repetition:false}));assert.equal(normalized.settings.turnSeconds,300);assert.equal(normalized.settings.variant,'american');assert.equal(normalized.settings.drawPolicy,'official');assert.equal(normalized.settings.repetition,false);
   assert.equal(init(context({turnSeconds:NaN})).settings.turnSeconds,0);assert.equal(init(context({turnSeconds:-10})).settings.turnSeconds,0);assert.equal(init(context({turnSeconds:1.7})).settings.turnSeconds,2);
+  assert.equal(init(context({drawPolicy:'fortyMove'})).settings.drawPolicy,'fortyMove');
 });
 
 test('contract total immutable reducer ignores malformed/unknown events in both phases',()=>{

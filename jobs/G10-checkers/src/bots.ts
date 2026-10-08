@@ -1,11 +1,11 @@
 import type {BotSkill} from '../../../contract/constants';
 import type {Rng} from '../../../contract/rng';
 import type {Config,Move,Piece,Position,Side} from './types.js';
-import {geometry,legalMoves,moveKey} from './moves.js';
+import {geometry,legalMoves,moveKey,positionKey} from './moves.js';
 import {nextPosition,drawReason} from './draws.js';
 import {probeEndgame} from './endgame.js';
 const WIN=100_000;
-export interface SearchReport {move:Move|null;score:number;nodes:number;completedDepth:number;budgetExhausted:boolean;databaseHits:number}
+export interface SearchReport {move:Move|null;score:number;nodes:number;completedDepth:number;budgetExhausted:boolean;databaseHits:number;corpusHits:number}
 export function evaluate(board:readonly Piece[],variant:Config['variant'],side:Side):number{
   const g=geometry(variant);let value=0;
   for(let square=0;square<board.length;square++){
@@ -20,15 +20,22 @@ export function evaluate(board:readonly Piece[],variant:Config['variant'],side:S
 }
 export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkill):SearchReport{
   const rootMoves=legalMoves(position.board,position.variant,position.side);
-  if(!rootMoves.length)return {move:null,score:-WIN,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0};
-  if(skill==='easy')return {move:rootMoves[rng.int(0,rootMoves.length-1)],score:0,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0};
+  if(!rootMoves.length)return {move:null,score:-WIN,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0,corpusHits:0};
+  if(skill==='easy')return {move:rootMoves[rng.int(0,rootMoves.length-1)],score:0,nodes:0,completedDepth:0,budgetExhausted:false,databaseHits:0,corpusHits:0};
   const maximum=skill==='sharp'?5:2,budget=skill==='sharp'?6000:800;
-  let nodes=0,hits=0,exhausted=false,best=rootMoves[0],bestScore=-Infinity,completed=0;
+  let nodes=0,hits=0,corpusHits=0,exhausted=false,best=rootMoves[0],bestScore=-Infinity,completed=0;
+  const table=new Map<string,{depth:number;score:number;bound:'exact'|'lower'|'upper';move:string|null}>();
   const ordered=(moves:Move[],preferred:string|null)=>[...moves].sort((a,b)=>
     Number(moveKey(b)===preferred)-Number(moveKey(a)===preferred)||Number(b.promotes)-Number(a.promotes)||
     b.captures.length-a.captures.length||(moveKey(a)<moveKey(b)?-1:moveKey(a)>moveKey(b)?1:0));
   function visit(current:Position,depth:number,alpha:number,beta:number,ply:number):number{
     nodes++;if(nodes>budget){exhausted=true;return evaluate(current.board,current.variant,current.side);}
+    const originalAlpha=alpha,originalBeta=beta,level=Math.max(0,depth);
+    const key=positionKey(current.board,current.side,current.variant)+'|'+current.quietPlies+'|'+ply+'|'+
+      JSON.stringify(current.drawWindows.map(window=>[window.kind,window.weak,current.ply-window.started,window.limit]))+'|'+
+      JSON.stringify(Object.entries(current.repetition).sort((a,b)=>a[0]<b[0]?-1:a[0]>b[0]?1:0));
+    const cached=table.get(key);
+    if(cached&&cached.depth>=level){if(cached.bound==='exact')return cached.score;if(cached.bound==='lower')alpha=Math.max(alpha,cached.score);else beta=Math.min(beta,cached.score);if(alpha>=beta)return cached.score;}
     const moves=legalMoves(current.board,current.variant,current.side);
     if(!moves.length)return -WIN+ply;
     if(drawReason(current,config))return 0;
@@ -36,6 +43,7 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
       const table=probeEndgame(current.board,current.variant,current.side);
       if(table){
         hits++;
+        if(table.source==='chinook')corpusHits++;
         if(table.outcome===0)return 0;
         // WDL is board-only. A historical draw clock can change a game's result;
         // only a fresh position and a short proven line gets a decisive value.
@@ -43,24 +51,32 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
         const remaining=current.drawWindows.reduce((left,window)=>Math.min(left,window.limit-(current.ply-window.started)),limit-current.quietPlies);
         const fresh=Object.values(current.repetition).every(value=>value===1);
         if(table.dtm!==null&&table.dtm<=remaining&&fresh)return table.outcome*(WIN-1000-table.dtm-ply);
+        // A board-only WDL without distance is strategic guidance; history and
+        // limited draw allowances prevent treating it as a proved game win.
+        if(table.dtm===null&&remaining>6&&fresh)return table.outcome*(20_000-ply)+evaluate(current.board,current.variant,current.side);
       }
     }
     // Finish forced-capture lines at the horizon instead of evaluating a piece
     // before the obligatory reply. Captures strictly lower material.
     if(depth<=0&&!moves[0].captures.length)return evaluate(current.board,current.variant,current.side);
-    let value=-Infinity;
-    for(const move of ordered(moves,null)){
-      value=Math.max(value,-visit(nextPosition(current,move,config),depth-1,-beta,-alpha,ply+1));
+    let value=-Infinity,chosen:string|null=null;
+    for(const move of ordered(moves,cached?.move??null)){
+      const result=-visit(nextPosition(current,move,config),depth-1,-beta,-alpha,ply+1);
+      if(result>value){value=result;chosen=moveKey(move);}
       alpha=Math.max(alpha,value);if(alpha>=beta||exhausted)break;
     }
+    if(!exhausted)table.set(key,{depth:level,score:value,bound:value<=originalAlpha?'upper':value>=originalBeta?'lower':'exact',move:chosen});
     return value;
   }
   for(let depth=1;depth<=maximum;depth++){
-    const scores:{move:Move;score:number}[]=[],preferred=moveKey(best);
+    const scores:{move:Move;score:number}[]=[],preferred=moveKey(best);let iterationBest=-Infinity;
     for(const move of ordered(rootMoves,preferred)){
-      // Full root windows make equal scores genuine ties rather than cut-off
-      // bounds; randomized ties must never select a hidden inferior move.
-      const score=-visit(nextPosition(position,move,config),depth-1,-Infinity,Infinity,1);
+      // A scout window prunes inferior roots. Any apparent tie or improvement
+      // is re-searched with a full window before randomized ties are admitted.
+      const child=nextPosition(position,move,config);
+      let score=-visit(child,depth-1,scores.length?-iterationBest-1:-Infinity,scores.length?-iterationBest:Infinity,1);
+      if(scores.length&&score>=iterationBest&&!exhausted)score=-visit(child,depth-1,-Infinity,Infinity,1);
+      iterationBest=Math.max(iterationBest,score);
       scores.push({move,score});if(exhausted)break;
     }
     if(exhausted)break;
@@ -69,6 +85,6 @@ export function searchMove(position:Position,config:Config,rng:Rng,skill:BotSkil
     best=ties[rng.int(0,ties.length-1)].move;bestScore=value;completed=depth;
   }
   return {move:best,score:Number.isFinite(bestScore)?bestScore:evaluate(position.board,position.variant,position.side),
-    nodes,completedDepth:completed,budgetExhausted:exhausted,databaseHits:hits};
+    nodes,completedDepth:completed,budgetExhausted:exhausted,databaseHits:hits,corpusHits};
 }
 export const chooseMove=(position:Position,config:Config,rng:Rng,skill:BotSkill):Move|null=>searchMove(position,config,rng,skill).move;

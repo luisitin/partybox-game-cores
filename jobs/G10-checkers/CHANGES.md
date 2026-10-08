@@ -18,3 +18,9 @@ independent Chinook format readers. Research verified a free-use American full
 material corpus; raw data is private and probes are unrun/disconnected. Shared
 isolated browser windows held builds/tests, so previous proof remains attributed
 to its exact earlier inputs. No readiness claim.
+
+10:15 checkpoint: licensed48MiB American Chinook corpus embedded once in Strong
+worker/shared node module. Independent10k/2-piece corpus checks and original author
+reader corroboration pass. Current core/draw/reference/properties suite25/25passes.
+PVS/history-aware cache reduces8-game Strong smoke14.26s→5.08s. Full remaining
+checks and International corpus are pending; no ready/completed claim.

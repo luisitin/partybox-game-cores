@@ -16,6 +16,7 @@ let legal:ReturnType<typeof controllerView>['legalMoves']=[],squares:HTMLButtonE
 let worker:Worker|null=null,workerUrl:string|null=null,pending:{id:number;state:State}|null=null,requestId=0;
 let botCursor:RngState={seed:20261008,step:0},botDue=Infinity,forcedStep=false,virtualNow:number|null=null;
 let pace='1500',notice='',timerKey='';
+let lastBotReport:SearchReport|null=null;
 const now=()=>virtualNow??performance.now();
 const crown='<svg aria-hidden="true" viewBox="0 0 40 32"><path d="M4 9 12 16 20 4 28 16 36 9 31 27H9Z"/><path d="M9 29H31V32H9Z"/></svg>';
 function stopWorker(){if(worker)worker.terminate();worker=null;pending=null;if(workerUrl)URL.revokeObjectURL(workerUrl);workerUrl=null;}
@@ -35,7 +36,7 @@ function setup(){stopWorker();state=null;cachedState=null;draft=[];notice='';sho
 function start(){
   const players=[0,1].map(index=>({id:'seat-'+index,name:el<HTMLInputElement>('name-'+index).value.trim()||'Player '+(index+1),avatarId:'checkers-'+index,connected:true}));
   controllers=Object.fromEntries(players.map((player,index)=>[player.id,select('seat-'+index) as Controller]));
-  pace=select('pace-setup');el<HTMLSelectElement>('pace').value=pace;botCursor={seed:20261008,step:0};
+  pace=select('pace-setup');el<HTMLSelectElement>('pace').value=pace;botCursor={seed:20261008,step:0};lastBotReport=null;
   install(init({players,seed:20261008,now:now(),settings:{variant:select('variant'),drawPolicy:select('draw-policy'),repetition:true,turnSeconds:Number(el<HTMLInputElement>('turn-seconds').value)}}));
 }
 function ensureBoard(){
@@ -119,7 +120,7 @@ function askBot(){
     if(!worker){workerUrl=URL.createObjectURL(new Blob([G10_WORKER_SOURCE],{type:'text/javascript'}));worker=new Worker(workerUrl);}
     pending={id,state:snapshot};worker.onmessage=(message:MessageEvent<{id:number;report?:SearchReport;cursor?:RngState;error?:string}>)=>{
       const data=message.data;if(!pending||data.id!==pending.id||state!==pending.state)return;
-      pending=null;if(data.report?.move&&data.cursor){botCursor={...data.cursor};act({type:'move',path:[...data.report.move.path]});}
+      pending=null;if(data.report?.move&&data.cursor){lastBotReport=structuredClone(data.report);botCursor={...data.cursor};act({type:'move',path:[...data.report.move.path]});}
       else{stopWorker();notice=data.error??'This bot could not find a move. Pause or end the table.';botDue=Infinity;render();}
     };
     worker.onerror=()=>{stopWorker();notice='The bot could not finish. Pause or end the table.';botDue=Infinity;render();};
@@ -145,5 +146,5 @@ setInterval(tick,100);
   setState:(next:State,roles?:Record<string,Controller>)=>{if(roles)controllers={...roles};else controllers=Object.fromEntries(next.order.map(id=>[id,'human']));install(structuredClone(next));},
   setTime:(value:number|null)=>{virtualNow=value;},event:(value:GameEvent<Input>)=>event(value),act,
   tick,start,setup,setPace:(value:string)=>{pace=value;el<HTMLSelectElement>('pace').value=value;schedule();renderControls();},
-  chooseSquare,host:()=>({thinking:!!pending,botCursor:{...botCursor},pace,now:now()}),
+  chooseSquare,host:()=>({thinking:!!pending,botCursor:{...botCursor},pace,now:now(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
 };

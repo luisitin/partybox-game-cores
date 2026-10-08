@@ -71,6 +71,7 @@ Audited Chinook corpus SHA-256 values:
 - Author ZIP: `35835dae65a962eafdf5cde290bce380117445acb21819dd0e266b3b0efab3b3`.
 - DB6: `baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f`.
 - DB6.idx: `10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd`.
+- Audited D15 access-code source: `50853f33909f5cb2b525d437cedcaad1dc52e24106c0215b6f327668a36a02ab` (72,380 bytes).
 
 `scripts/acquire-chinook.py` validates those fixed bytes and regenerates
 material/provenance metadata into a caller-selected private directory. The
@@ -78,13 +79,23 @@ data terms, capture exclusions and theoretical scope must accompany any
 later distribution. American complete-material acquisition is now real;
 International full-six acquisition/probing remains unresolved.
 
+Original-driver validation is reproducible with
+`scripts/validate-chinook-original.py`. It fetches the fixed D15 source
+into ignored `.work`, applies disclosed LP64/allocation repairs only,
+compiles it, and checks 10,000 fixed-seed original reference queries.
+The tracked script was executed successfully; raw proof and source,
+adapter, binary, query and output hashes are retained in
+`evidence/checks/chinook-original-*`. No author C source is committed.
+See BOTS.md for the exact coverage and proof limitations.
+
 ## Original independent oracle
 
 tests/reference-moves.mjs was authored from rule sources before reading
 future production move code. It clones full coordinate matrices per jump
 and imports no production helper, adjacency, bitboard, apply or search.
 Input/output indexing was agreed in advance. BOTS.md records independent
-endgame validation design; no execution is claimed until it runs.
+endgame validation design and the scoped original-driver result. Other
+execution results belong in their retained reports and VERIFY.md.
 
 No source art, book passage, paid content, secret, signed download link,
 tracking asset or runtime network dependency is bundled here. GitHub

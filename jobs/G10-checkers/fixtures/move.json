@@ -1,0 +1,86 @@
+{
+  "phase": {
+    "id": "move",
+    "startedAt": 1000,
+    "deadline": null
+  },
+  "phaseClock": 1000,
+  "rng": {
+    "seed": 1,
+    "step": 0
+  },
+  "players": {
+    "light": {
+      "id": "light",
+      "name": "Light",
+      "avatarId": "light",
+      "connected": true
+    },
+    "dark": {
+      "id": "dark",
+      "name": "Dark",
+      "avatarId": "dark",
+      "connected": true
+    }
+  },
+  "order": [
+    "light",
+    "dark"
+  ],
+  "settings": {
+    "variant": "american",
+    "drawPolicy": "official",
+    "repetition": true,
+    "turnSeconds": 0
+  },
+  "board": [
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    -1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "variant": "american",
+  "side": 1,
+  "ply": 0,
+  "quietPlies": 0,
+  "repetition": {
+    "american:1:11111111111122222222333333333333": 1
+  },
+  "drawWindows": [],
+  "lastMove": null,
+  "moveLog": [],
+  "left": [],
+  "autoPaused": false,
+  "winner": null,
+  "endReason": null,
+  "contentLang": "en",
+  "phoneOnly": false
+}

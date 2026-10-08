@@ -1,0 +1,54 @@
+import assert from 'node:assert/strict';
+import {mkdir,writeFile,readFile,stat,rename} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+import {chromium} from 'playwright';
+const capturing=process.argv.includes('--capture'),profiles=[{name:'desktop',width:1920,height:1080,throttle:1},{name:'phone',width:390,height:844,throttle:4}];
+const html=await readFile('play.html'),sourceSha256=createHash('sha256').update(html).digest('hex');
+await mkdir('evidence/browser',{recursive:true});await mkdir('media',{recursive:true});
+const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']}),report={command:'node scripts/browser-check.mjs'+(capturing?' --capture':''),sourceSha256,profiles:[],capture:capturing};
+const checks=[];let sequence=0;
+try{
+ for(const profile of profiles){
+  const directory=resolve('.work/video-'+profile.name);await mkdir(directory,{recursive:true});
+  const context=await browser.newContext({viewport:{width:profile.width,height:profile.height},reducedMotion:'reduce',...(capturing?{recordVideo:{dir:directory,size:{width:profile.width,height:profile.height}}}:{})});
+  const page=await context.newPage(),errors=[],requests=[];page.on('pageerror',error=>errors.push(String(error)));page.on('request',request=>{if(/^https?:/.test(request.url()))requests.push(request.url());});
+  await context.route(/^https?:/,route=>route.abort());const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:profile.throttle});
+  async function check(name,fn){await fn();checks.push({profile:profile.name,name,pass:true});sequence++;}
+  const hook=(fn,arg)=>page.evaluate(fn,arg);
+  const newTable=async(variant='american')=>{await hook(()=>window.__G10.setup());await page.selectOption('#variant',variant);await page.click('#start');};
+  const move=async()=>{const legal=await hook(()=>window.__G10.getController(window.__G10.getView().turn).legalMoves);assert(legal.length);for(const square of legal[0].path)await page.click('[data-square="'+square+'"]');};
+  const setPosition=async(variant,pieces,roles)=>hook(({variant,pieces,roles})=>{
+    window.__G10.setup();document.getElementById('variant').value=variant;window.__G10.start();const state=window.__G10.getState();state.board.fill(0);for(const [square,piece] of Object.entries(pieces))state.board[Number(square)]=piece;
+    state.repetition={[variant+':1:'+state.board.map(piece=>piece+2).join('')]:1};state.drawWindows=[];window.__G10.setState(state,roles);
+  },{variant,pieces,roles});
+  await page.goto(pathToFileURL(resolve('play.html')).href,{waitUntil:'load'});await page.waitForFunction(()=>!!window.__G10);
+  await check('disk load, no external assets and reduced motion',async()=>{assert.equal(await page.locator('#setup').isVisible(),true);assert.equal(await hook(()=>matchMedia('(prefers-reduced-motion: reduce)').matches),true);assert.equal(await hook(()=>document.documentElement.scrollWidth<=innerWidth),true);assert.equal(requests.length,0);});
+  await check('American standard board and complete hot-seat turn',async()=>{await newTable();assert.equal(await page.locator('[data-square]').count(),32);assert.equal(await page.locator('.piece').count(),24);await move();assert.equal(await hook(()=>window.__G10.getState().ply),1);assert.match(await page.locator('#status').innerText(),/Player 2/);});
+  await check('multi-jump draft leaves the actual position unchanged',async()=>{await setPosition('american',{22:1,26:1,17:-1,9:-1});const board=await hook(()=>window.__G10.getState().board);await page.click('[data-square="22"]');await page.click('[data-square="13"]');assert.deepEqual(await hook(()=>window.__G10.getState().board),board);assert.equal(await hook(()=>window.__G10.getState().ply),0);assert.equal(await page.locator('[data-square="6"]').getAttribute('class').then(value=>value.includes('target')),true);await page.click('[data-square="6"]');assert.equal(await hook(()=>window.__G10.getState().ply),1);assert.equal(await hook(()=>window.__G10.getState().board.filter(piece=>piece<0).length),0);});
+  await check('American crown ends the capture turn',async()=>{await setPosition('american',{10:1,6:-1,5:-1});await page.click('[data-square="10"]');await page.click('[data-square="1"]');assert.equal(await hook(()=>window.__G10.getState().board[1]),2);assert.equal(await hook(()=>window.__G10.getState().board[5]),-1);assert.equal(await page.locator('[data-square="1"] svg').count(),1);});
+  await check('International full maximum capture and promotion',async()=>{await setPosition('international',{20:1,24:1,16:-1,7:-1,19:-1});assert.equal(await page.locator('[data-square]').count(),50);await page.click('[data-square="24"]');assert.deepEqual(await hook(()=>window.__G10.getDraft()),[]);for(const square of [20,11,2])await page.click('[data-square="'+square+'"]');assert.equal(await hook(()=>window.__G10.getState().board[2]),2);assert.equal(await hook(()=>window.__G10.getState().board[19]),-1);});
+  await check('International crown transit stays a man',async()=>{await setPosition('international',{12:1,7:-1,6:-1});for(const square of [12,1,10])await page.click('[data-square="'+square+'"]');assert.equal(await hook(()=>window.__G10.getState().board[10]),1);});
+  await check('pause/resume and optional exact deadline forfeit',async()=>{await hook(()=>window.__G10.setTime(1000));await hook(()=>window.__G10.setup());await page.fill('#turn-seconds','2');await page.click('#start');await hook(()=>window.__G10.setTime(1500));await page.click('#pause');await hook(()=>{window.__G10.setTime(4500);window.__G10.tick();});assert.equal(await hook(()=>window.__G10.getState().phase.id),'move');await page.click('#resume');assert.equal(await hook(()=>window.__G10.getState().phase.deadline),6000);await hook(()=>{window.__G10.setTime(6000);window.__G10.tick();});assert.equal(await hook(()=>window.__G10.getState().winner),'seat-1');assert.match(await page.locator('#winner-copy').innerText(),/ran out of time/);await hook(()=>window.__G10.setTime(null));await hook(()=>window.__G10.setup());await page.fill('#turn-seconds','0');});
+  await check('winner/results and explicit next table',async()=>{await setPosition('american',{10:1,6:-1});await move();assert.equal(await page.locator('#result').isVisible(),true);assert.equal(await page.locator('.result-row').count(),2);assert.match(await page.locator('#winner-title').innerText(),/Player 1/);await page.click('#play-again');assert.equal(await page.locator('#setup').isVisible(),true);});
+  await check('manual Strong move uses local full-corpus worker and preserves legal core choice',async()=>{await setPosition('american',{0:-2,2:-2,25:2,31:2},{'seat-0':'sharp','seat-1':'human'});await hook(()=>window.__G10.setPace('manual'));await page.click('#bot-step');await page.waitForFunction(()=>window.__G10.getState().ply===1,null,{timeout:30000});assert.equal(await hook(()=>window.__G10.host().botCursor.step>0),true);assert.equal(await hook(()=>window.__G10.host().lastBotReport.corpusHits>0),true);assert.equal(await hook(()=>window.__G10.host().thinking),false);});
+  await check('pause cancels worker before it can apply an old move',async()=>{await setPosition('international',{0:-2,2:-2,45:2,49:2},{'seat-0':'sharp','seat-1':'human'});await hook(()=>{window.__G10.setPace('manual');document.getElementById('bot-step').click();document.getElementById('pause').click();});assert.equal(await hook(()=>window.__G10.getState().ply),0);assert.equal(await hook(()=>window.__G10.host().thinking),false);assert.equal(await hook(()=>!!window.__G10.getState().phase.paused),true);});
+  await check('names remain text and hostile original IDs have finite public results',async()=>{await newTable();await hook(()=>{const state=window.__G10.getState();const old=state.order;state.order=['__proto__',''];state.players=Object.fromEntries(old.map((id,index)=>[state.order[index],{...state.players[id],id:state.order[index],name:index?'Dark':'<img src="https://invalid.invalid/tracker">'}]));window.__G10.setState(state);window.__G10.act({type:'resign'});});assert.equal(await page.locator('img').count(),0);assert.match(await page.locator('#seats').innerText(),/<img/);assert.equal(await page.locator('.result-row').count(),2);});
+  await check('viewport fits both boards and all controls',async()=>{for(const variant of ['american','international']){await newTable(variant);assert.equal(await hook(()=>document.documentElement.scrollWidth<=innerWidth),true);const box=await page.locator('#board').boundingBox();assert(box.x>=0&&box.x+box.width<=profile.width);assert(box.width>250);}});
+  await newTable();
+  const frames=await hook(async()=>{
+    const intervals=[];let previous;const controller=window.__G10.getController(window.__G10.getView().turn),move=controller.legalMoves[0];
+    await new Promise(resolve=>{function frame(timestamp){if(previous!==undefined)intervals.push(timestamp-previous);previous=timestamp;window.__G10.chooseSquare(move.path[0]);document.getElementById('undo-draft').click();if(intervals.length<600)requestAnimationFrame(frame);else resolve();}requestAnimationFrame(frame);});return intervals;
+  });
+  const sorted=[...frames].sort((a,b)=>a-b),mean=frames.reduce((sum,value)=>sum+value,0)/frames.length,p99=sorted[Math.ceil(.99*frames.length)-1],fps=1000/mean;
+  const raw={...profile,frames,meanMs:mean,p99Ms:p99,meanFps:fps,sourceSha256,workload:'600 consecutive RAF intervals with real board selection/cancel each callback; no filtering; acceptance measurements run separately from recorded clips',capturing};
+  await writeFile('evidence/browser/'+profile.name+(capturing?'-capture':'')+'-frames.json',JSON.stringify(raw,null,2)+'\n');
+  if(!capturing){assert.equal(frames.length,600);assert(fps>=59,JSON.stringify({profile:profile.name,fps,p99}));assert(p99<=17,JSON.stringify({profile:profile.name,fps,p99}));}
+  assert.equal(errors.length,0,errors.join('\n'));assert.equal(requests.length,0,JSON.stringify(requests));
+  const video=page.video();await page.screenshot({path:'media/'+profile.name+'.png',fullPage:true});await context.close();
+  if(capturing){const old=await video.path(),next=resolve('media/'+profile.name+'.webm');await rename(old,next);assert((await stat(next)).size<10*1024*1024);}
+  report.profiles.push({name:profile.name,throttle:profile.throttle,checks:checks.filter(check=>check.profile===profile.name).length,meanFps:fps,p99Ms:p99});
+ }
+}finally{await browser.close();}
+report.checks=checks;report.totalChecks=sequence;await writeFile('evidence/browser/'+(capturing?'capture':'checks')+'.json',JSON.stringify(report,null,2)+'\n');process.stdout.write(JSON.stringify(report)+'\n');

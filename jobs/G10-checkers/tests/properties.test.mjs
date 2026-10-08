@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash,randomBytes} from 'node:crypto';
-import {mkdirSync,writeFileSync} from 'node:fs';
+import {evidence} from './evidence.mjs';
 import * as core from '../dist/core.mjs';
 import {legalMoves,applyMove,positionKey,geometry} from '../dist/moves.mjs';
 import {context,freeze,assertJson} from './helpers.mjs';
@@ -21,5 +21,5 @@ test('property seeds1,2,3 plus1,000 recorded random seeds conserve material and 
       const view=core.tvView(a);assert.deepEqual(view.board,a.board);assert.equal(Object.hasOwn(view,'repetition'),false);assert.equal(Object.hasOwn(view,'rng'),false);state=a;
     }
   }
-  mkdirSync(new URL('../evidence/checks/',import.meta.url),{recursive:true});writeFileSync(new URL('../evidence/checks/properties.json',import.meta.url),JSON.stringify({command:'node --test tests/properties.test.mjs',fixedSeeds:[1,2,3],randomSeeds:supplied,seeds:seeds.length,movesChecked,transcriptSha256:hash.digest('hex')},null,2)+'\n');
+  evidence('properties.json',{command:'node --test tests/properties.test.mjs',fixedSeeds:[1,2,3],randomSeeds:supplied,seeds:seeds.length,movesChecked,transcriptSha256:hash.digest('hex')});
 });

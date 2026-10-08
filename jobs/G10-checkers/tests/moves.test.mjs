@@ -2,6 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync, mkdirSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { legalMoves, applyMove } from '../dist/moves.mjs';
 import { referenceMoves, referenceAfter, referenceMoveKey } from './reference-moves.mjs';
 import { REFERENCE_RULE_CASES, sparseBoard } from './reference-rule-cases.mjs';
@@ -76,9 +78,10 @@ test('10,000 independent move differentials plus color-rotated twins and every r
     referenceSourceSha256: createHash('sha256').update(readFileSync(new URL('./reference-moves.mjs', import.meta.url))).digest('hex'),
     productionModuleSha256: createHash('sha256').update(readFileSync(new URL('../dist/moves.mjs', import.meta.url))).digest('hex')
   };
-  const destination = new URL('../evidence/checks/moves-reference.json', import.meta.url);
-  mkdirSync(new URL('.', destination), { recursive: true });
-  writeFileSync(destination, JSON.stringify(report, null, 2) + '\n');
+  const evidenceDirectory = process.env.G10_EVIDENCE_DIR ? resolve(process.env.G10_EVIDENCE_DIR) :
+    fileURLToPath(new URL('../evidence/checks/', import.meta.url));
+  mkdirSync(evidenceDirectory, { recursive: true });
+  writeFileSync(resolve(evidenceDirectory, 'moves-reference.json'), JSON.stringify(report, null, 2) + '\n');
   assert.equal(americanCases, 5000);
   assert.equal(internationalCases, 5000);
 });

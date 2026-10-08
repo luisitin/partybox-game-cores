@@ -50,7 +50,7 @@ export function createChinookDatabase(source:Readonly<Uint8Array>,indexText:stri
     const endpoint=/^([SE])\s*(\d+)\s+(\d+)\/(\d+)$/.exec(line.trim()),block=/^\.\s*(\d+)\s+(\d+)$/.exec(line.trim());
     if(endpoint){const ordinal=Number(endpoint[2]),byte=Number(endpoint[3])*1024+Number(endpoint[4]);if(!Number.isSafeInteger(ordinal)||!Number.isSafeInteger(byte)||Number(endpoint[4])>=1024||byte>bytes.length)throw new RangeError('Invalid database endpoint');
       if(endpoint[1]==='S'){if(current.markers.length||ordinal!==0||byte>=bytes.length)throw new RangeError('Invalid database start');current.markers.push({ordinal,byte});}
-      else{const previous=current.markers.at(-1);if(!previous||current.endByte>=0||byte<=previous.byte||ordinal<=previous.ordinal)throw new RangeError('Invalid database end');current.endByte=byte;current.endOrdinal=ordinal;}
+      else{const previous=current.markers.at(-1),first=current.markers[0];if(!previous||current.endByte>=0||byte<previous.byte||ordinal<previous.ordinal||byte<=first.byte||ordinal<=first.ordinal)throw new RangeError('Invalid database end');current.endByte=byte;current.endOrdinal=ordinal;}
     }else if(block){const ordinal=Number(block[1]),byte=Number(block[2])*1024,previous=current.markers.at(-1);if(!previous||current.endByte>=0||!Number.isSafeInteger(ordinal)||ordinal<=previous.ordinal||byte<=previous.byte||byte>=bytes.length)throw new RangeError('Invalid database block');current.markers.push({ordinal,byte});}
     else throw new RangeError('Invalid database index syntax');
   }

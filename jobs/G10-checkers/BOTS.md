@@ -97,6 +97,38 @@ least one DRAW continuation after terminal losses are excluded. Compare
 small history-aware endings with exhaustive finite minimax, keeping all
 draw counters and repetition. Truncation is UNKNOWN in both solvers.
 
+### Original Chinook driver comparison
+
+`scripts/validate-chinook-original.py` was executed against the audited
+author DB6 bytes. All 10,000 independently generated quiet 3–6-piece
+queries agree between the original C driver and the independent JS
+reference. The seed is 1329832729, with 14,613 candidate positions and
+2,500 accepted queries at each piece count. Both seat orientations and
+all possible material splits are represented, including 5v1 and 4v2.
+The outcome counts are 4,243 wins, 4,038 losses and 1,719 draws.
+
+The author source is downloaded into ignored `.work` and checked against
+its fixed SHA-256. For this LP64 machine, the private compilation widens
+three return casts and five arrays passed to `long*` functions, initializes
+an otherwise uninitialized buffer counter, and adds an original input
+adapter with system prototypes. Ranking, side normalization and byte
+decoding remain the author's code. That source is not redistributed.
+
+Raw queries, expected records, C stdout/stderr, compile output, source and
+binary hashes, exact commands and the combined comparison are retained
+under `evidence/checks/chinook-original-*`. The combined JSONL SHA-256 is
+`02d4ad2ac2a186c78603faaf85774e2bcd8c44a5530206e3354205babca0d236`;
+the query SHA-256 is
+`1f6505955a8c225bdcda313a871c597b66ad11e546a2bf19bb32c96d3284e2e2`.
+`chinook-original-reference-report.json` records PASS. The tracked
+reproduction regenerates these same fixed inputs and comparison bytes.
+
+This comparison covers direct stored American theoretical WDL queries.
+It does not validate International data, every American rank, positions
+with capture threats, current draw history, or conversion-making play.
+Those checks remain separate. The parent production reader also needs
+its own comparison against these independently established results.
+
 ## Required bot strength evidence
 
 Run 2,000 games Strong-vs-Medium and 2,000 Medium-vs-Easy, with paired seed

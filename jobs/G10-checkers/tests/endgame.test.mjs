@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync,mkdirSync,writeFileSync} from 'node:fs';
+import {readFileSync} from 'node:fs';
+import {evidence} from './evidence.mjs';
 import {createHash} from 'node:crypto';
 import {probeEndgame,databaseCoverage} from '../dist/endgame.mjs';
 import {referenceWdl,referenceTwoPieceRoots} from './reference-endgame.mjs';
@@ -16,7 +17,7 @@ test('production complete one-vs-one lookup matches independent WDL AND distance
     for(const entry of solved.entries){const hit=probeEndgame(entry.board,variant,entry.side);assert(hit,entry.key);const outcome={win:1,draw:0,loss:-1}[entry.value];assert.equal(hit.outcome,outcome,entry.key);assert.equal(hit.dtm,entry.distance,entry.key);transcript.update(JSON.stringify([entry.key,hit.outcome,hit.dtm]));}
     reports.push({variant,compared:solved.entries.length});
   }
-  mkdirSync(new URL('../evidence/checks/',import.meta.url),{recursive:true});writeFileSync(new URL('../evidence/checks/endgame-differential.json',import.meta.url),JSON.stringify({command:'node --test tests/endgame.test.mjs',reports,transcriptSha256:transcript.digest('hex'),datasetSha256:createHash('sha256').update(readFileSync(new URL('../data/endgames.json',import.meta.url))).digest('hex'),scope:'Complete one-vs-one legal domain and terminal successors, not full six-piece coverage'},null,2)+'\n');
+  evidence('endgame-differential.json',{command:'node --test tests/endgame.test.mjs',reports,transcriptSha256:transcript.digest('hex'),datasetSha256:createHash('sha256').update(readFileSync(new URL('../data/endgames.json',import.meta.url))).digest('hex'),scope:'Complete one-vs-one legal domain and terminal successors, not full six-piece coverage'});
 });
 
 test('every generated three-to-six witness is independently one-turn terminal win',()=>{
@@ -26,7 +27,7 @@ test('every generated three-to-six witness is independently one-turn terminal wi
 
 test('six-piece full multi-jumps are proved and unresolved quiet material remains honest',()=>{
   for(const [variant,pieces] of [['american',{17:2,31:1,14:-1,15:-1,23:-1,22:-1}],['international',{40:1,49:1,36:-1,27:-1,18:-1,9:-1}]]){const board=sparseBoard(variant,pieces),hit=probeEndgame(board,variant,1);assert(hit);assert.equal(hit.outcome,1);assert.equal(hit.dtm,1);}
-  const unknown=sparseBoard('american',{0:-2,2:-2,25:2,31:2});assert.equal(probeEndgame(unknown,'american',1),null);
+  const unknown=sparseBoard('international',{0:-2,2:-2,45:2,49:2});assert.equal(probeEndgame(unknown,'international',1),null);
   const above=sparseBoard('american',{0:-2,2:-2,4:-2,6:-2,25:2,29:2,31:2});assert.equal(probeEndgame(above,'american',1),null);
   assert.equal(databaseCoverage().fullSixPieceCoverage,false);
   for(let i=1;i<dataset.rows.length;i++)assert(dataset.rows[i-1][0]<dataset.rows[i][0]);

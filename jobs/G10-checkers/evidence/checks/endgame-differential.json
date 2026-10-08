@@ -1,0 +1,16 @@
+{
+  "command": "node --test tests/endgame.test.mjs",
+  "reports": [
+    {
+      "variant": "american",
+      "compared": 7080
+    },
+    {
+      "variant": "international",
+      "compared": 17880
+    }
+  ],
+  "transcriptSha256": "bba86553dc4d255f5d8b6fbd4706233fe33157e76f5e1bf2b2eb98c3bb3be6b2",
+  "datasetSha256": "edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d",
+  "scope": "Complete one-vs-one legal domain and terminal successors, not full six-piece coverage"
+}

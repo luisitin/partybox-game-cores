@@ -71,3 +71,33 @@ The original weighted-combination Chinook reader and separately authored referen
 reader are UNRUN and disconnected from the game. Corpus index/permission facts
 are live-read research; corpus correctness and broad probe coverage are not yet
 accepted. Source/checksum checks do not substitute for these obligations.
+
+## American corpus integration around10:15UTC
+
+- `npm run build`: PASS strict TS/node and full-corpus offline67MiB HTML;
+  raw build-full-corpus.stdout. Human host omits unused large data; Strong worker
+  and shared immutable node endgame module include it. Browser proof UNRUN.
+- `python3 scripts/acquire-chinook.py --out /tmp/g10-chinook-acquisition`: PASS
+  original archive/member hashes/all2–6 material tuples; raw acquisition.stdout.
+  Separate acknowledgement/no-sale terms and provenance are attached.
+- Private input `G10_CHINOOK_BYTES=/tmp/g10-rules-oracle-corpus/chinook-DB6
+  G10_CHINOOK_INDEX=/tmp/g10-rules-oracle-corpus/chinook-DB6.idx node --test
+  --test-reporter=tap tests/chinook.test.mjs`: initial metadata check FAILED on a
+  legitimate slice end at a block boundary, raw chinook-production.tap retained.
+  Corrected boundary check preserving positive extent; PASS4/4, raw
+  chinook-production-fixed.tap. Includes10k independent ranks/decodes, complete
+  capture-free2-piece WDL, hostile metadata, immutable input snapshot and30spots.
+- `node --test --test-reporter=tap tests/core.test.mjs tests/draws.test.mjs
+  tests/endgame.test.mjs tests/properties.test.mjs tests/data.test.mjs
+  tests/chinook-reference.test.mjs`: PASS27/27, core-property.tap (before corpus/PVS).
+- `node --test --test-reporter=tap --test-concurrency=1 tests/core.test.mjs
+  tests/draws.test.mjs tests/endgame.test.mjs tests/properties.test.mjs
+  tests/chinook.test.mjs`: current full-corpus/PVS PASS25/25, full-corpus-core.tap.
+  Covers all9 contract cases, official replay,1/2/3+1,000 recorded random seeds.
+- `node scripts/league.mjs --games 8 --variant american`: smoke only. Before
+  PVS/history-aware cache, Strong8W0D0L14.26s; after, Strong7W1D0L5.08s over identical
+  paired seeds. Medium8W0D0L0.17s. Both raw stdout files retained; this does not
+  replace2,000-game strength leagues. Original C corroboration is in BOTS/SOURCES.
+- Full International corpus/unresolved threats, matrix/leagues/mutations/browser,
+  PR/CI/KEEP GOING still pending. Unknown-distance WDL is strategic guidance,
+  not proof against accumulated repetition/move-count draw history.

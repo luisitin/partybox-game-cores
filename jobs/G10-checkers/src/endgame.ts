@@ -1,10 +1,11 @@
 import database from '../data/endgames.json';
 import type {Piece,Side,Variant} from './types.js';
 import {legalMoves,applyMove,positionKey} from './moves.js';
-export interface TablebaseHit {outcome:-1|0|1;dtm:number|null;source:'generated-table'|'closed-captures'|'terminal';pieceCount:number}
+import {chinookCorpus} from './chinook-corpus.js';
+export interface TablebaseHit {outcome:-1|0|1;dtm:number|null;source:'generated-table'|'closed-captures'|'terminal'|'chinook';pieceCount:number}
 export type TableRow=[string,-1|0|1,number|null];
 const rows=database.rows as unknown as readonly TableRow[];
-export const databaseCoverage=()=>JSON.parse(JSON.stringify(database.coverage)) as unknown;
+export const databaseCoverage=()=>({...JSON.parse(JSON.stringify(database.coverage)),byVariant:{american:{fullQuietSixPieceCorpus:!!chinookCorpus,corpus:chinookCorpus?.coverage()??null},international:{fullQuietSixPieceCorpus:false,scope:'Exact one-vs-one and finite closed capture components; broader6-piece corpus remains pending'}}}) as unknown;
 function lookup(key:string):TableRow|null{
   let low=0,high=rows.length;
   while(low<high){const mid=(low+high)>>>1;if(rows[mid][0]<key)low=mid+1;else high=mid;}
@@ -22,6 +23,7 @@ export function probeEndgame(board:readonly Piece[],variant:Variant,side:Side):T
     if(!own||!other){const outcome=own?1:other?-1:0;return {outcome,dtm:outcome===0?null:0,source:'terminal',pieceCount:pieces};}
     const found=lookup(key);
     if(found)return {outcome:found[1],dtm:found[2],source:'generated-table',pieceCount:pieces};
+    if(variant==='american'&&chinookCorpus){const outcome=chinookCorpus.probe(current,turn);if(outcome!==null)return {outcome,dtm:null,source:'chinook',pieceCount:pieces};}
     const moves=legalMoves(current,variant,turn);
     if(!moves.length)return {outcome:-1,dtm:0,source:'terminal',pieceCount:pieces};
     if(!moves[0].captures.length){cache.set(key,null);return null;}
@@ -31,9 +33,9 @@ export function probeEndgame(board:readonly Piece[],variant:Variant,side:Side):T
     const known=children as TablebaseHit[];
     const losing=known.filter(child=>child.outcome===-1);
     let hit:TablebaseHit;
-    if(losing.length)hit={outcome:1,dtm:1+losing.reduce((best,child)=>Math.min(best,child.dtm!),Infinity),source:'closed-captures',pieceCount:pieces};
+    if(losing.length)hit={outcome:1,dtm:losing.some(child=>child.dtm===null)?null:1+losing.reduce((best,child)=>Math.min(best,child.dtm!),Infinity),source:'closed-captures',pieceCount:pieces};
     else if(known.some(child=>child.outcome===0))hit={outcome:0,dtm:null,source:'closed-captures',pieceCount:pieces};
-    else hit={outcome:-1,dtm:1+known.reduce((best,child)=>Math.max(best,child.dtm!),0),source:'closed-captures',pieceCount:pieces};
+    else hit={outcome:-1,dtm:known.some(child=>child.dtm===null)?null:1+known.reduce((best,child)=>Math.max(best,child.dtm!),0),source:'closed-captures',pieceCount:pieces};
     cache.set(key,hit);return hit;
   }
   return solve(board,side);
