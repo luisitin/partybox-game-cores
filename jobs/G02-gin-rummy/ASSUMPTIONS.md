@@ -65,3 +65,10 @@ deterministic regressions use controlled host time and withheld timer callbacks.
 Opening-pass history records the actor before the turn changes. The correction
 changes each new Pass entry's player field; existing state schemas remain
 compatible and already stored historical entries keep their recorded values.
+
+Round 10 verification choice: keep the existing 25 real rules mutations and add
+one source mutation for the proven Pass actor bug. The focused 603-case suite
+is unchanged and baseline-checked before that mutant. Runtime and rules remain
+unchanged. Matching accepted 600-frame evidence is retained for cosmetic rounds;
+new source-guarded functional recordings and exact-head hosted full npm test are
+required. Repeating unchanged local core leagues/matrices adds no observed gain.

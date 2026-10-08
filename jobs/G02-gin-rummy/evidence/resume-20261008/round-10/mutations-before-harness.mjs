@@ -28,17 +28,16 @@ const cases=[
  ['M22','core','state.config.aceGin?0:value(initialUpcard)','state.config.aceGin?1:value(initialUpcard)','Oklahoma ace wrong limit'],
  ['M23','core','suit(initialUpcard)===3','suit(initialUpcard)===2','double hearts instead of spades'],
  ['M24','core','event.startedAt===state.phase.startedAt','true','accept stale timer'],
- ['M25','core','state.phase.deadline+delta','state.phase.deadline','resume omits pause duration'],
- ['M26','core',"...appendLog(state,'pass'),turn:other(state),openingPasses:passes,mustStock:passes===2","...appendLog({...state,turn:other(state),openingPasses:passes,mustStock:passes===2},'pass')",'attribute opening Pass to next player']
+ ['M25','core','state.phase.deadline+delta','state.phase.deadline','resume omits pause duration']
 ];
-const baseline=spawnSync(process.execPath,['--test','tests/rules.test.mjs','tests/public-log.test.mjs'],{encoding:'utf8'});
+const baseline=spawnSync(process.execPath,['--test','tests/rules.test.mjs'],{encoding:'utf8'});
 assert.equal(baseline.status,0,baseline.stdout+baseline.stderr);
 const originals={cards:await readFile('src/cards.ts','utf8'),core:await readFile('src/core.ts','utf8')};
 await mkdir('.work/mutants',{recursive:true});const reports=[];
 for(const [id,file,from,to,description]of cases){
  assert.notEqual(from,to);assert(originals[file].includes(from),id+' source target missing');
  const folder=resolve('.work/mutants/'+id);await mkdir(folder+'/tests',{recursive:true});await mkdir(folder+'/dist',{recursive:true});
- for(const name of ['helpers.mjs','rules.test.mjs','public-log.test.mjs'])await copyFile('tests/'+name,folder+'/tests/'+name);
+ for(const name of ['helpers.mjs','rules.test.mjs'])await copyFile('tests/'+name,folder+'/tests/'+name);
  const mutated=originals[file].replace(from,to);
  const plugin={name:'one-real-source-mutation',setup(b){b.onLoad({filter:new RegExp('/src/'+file+'\\.ts$')},()=>({contents:mutated,loader:'ts'}));}};
  const alias={zod:resolve('node_modules/zod')};
@@ -49,7 +48,7 @@ for(const [id,file,from,to,description]of cases){
   await copyFile('dist/contract.mjs',folder+'/dist/contract.mjs');
  }catch(e){compiled=false;error=String(e);}
  let killed=false,output='';
- if(compiled){const run=spawnSync(process.execPath,['--test',folder+'/tests/rules.test.mjs',...(id==='M26'?[folder+'/tests/public-log.test.mjs']:[])],{encoding:'utf8',timeout:30000});
+ if(compiled){const run=spawnSync(process.execPath,['--test',folder+'/tests/rules.test.mjs'],{encoding:'utf8',timeout:30000});
   output=run.stdout+run.stderr;
   killed=run.status!==0&&/AssertionError|ERR_ASSERTION/.test(output)&&!/SyntaxError|ERR_MODULE_NOT_FOUND/.test(output);
  }
@@ -57,5 +56,5 @@ for(const [id,file,from,to,description]of cases){
  reports.push({id,file,from,to,description,compiled,killed,error,actualAssertionFailure:killed});
  console.log(id+' '+(killed?'caught':compiled?'SURVIVED':'COMPILE FAILURE')+' '+description);
 }
-await writeFile('evidence/mutations.json',JSON.stringify({method:'one real source edit, compile, execute unchanged baseline-passing rules tests and focused Pass tests for M26',planted:cases.length,caught:reports.filter(r=>r.killed).length,cases:reports},null,2)+'\n');
-assert.equal(reports.length,26);assert(reports.find(r=>r.id==='M26').killed,'Pass-attribution mutation survived');assert(reports.every(r=>r.compiled),'compile failures are not kills');assert(reports.filter(r=>r.killed).length>=24);
+await writeFile('evidence/mutations.json',JSON.stringify({method:'one real source edit, compile, execute unchanged baseline-passing rules tests',planted:25,caught:reports.filter(r=>r.killed).length,cases:reports},null,2)+'\n');
+assert.equal(reports.length,25);assert(reports.every(r=>r.compiled),'compile failures are not kills');assert(reports.filter(r=>r.killed).length>=24);

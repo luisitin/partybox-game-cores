@@ -1,0 +1,11 @@
+# KEEP GOING round 10 review
+
+Round 9 head 575755491a5133e07d6d0527f5ca2b61d44dcb4e passed exact hosted CI 37776058436 at 12:24:52 UTC. The log was actually read: 35 node tests, unchanged 57.6%/87.15% leagues, 25 compiled assertion kills, desktop 60.002796/phone 60.003000 FPS, both p99 16.8 ms, matching a5a56d6a/59bd5055 guards and 254-file integrity. Artifact contents are not claimed. Re-read root README/RULES/JOBS, the contract and current G02 README/RULES/NEXT/LOOP, source and complete proof.
+
+1. The real Pass-attribution bug was not among the 25 planted mutations. The new 603-case test already catches the old core, but the recurring mutation harness runs only rules.test.mjs. Add a 26th real source mutation that reinstates logging after the turn switch, execute the unchanged baseline-passing Pass test against it, and count only compiled assertion failures. This strengthens future regression detection and changes no player behavior.
+2. Source freshness of committed browser evidence is currently a manual source-guard review, rather than an integrity assertion. The present snapshot does match current production sources; no false current acceptance exists. Consider a separate proof gate next round so a stale accepted snapshot cannot silently accompany a future build.
+3. Shared-machine frame variance and physical-device coverage remain limits: the earlier 58.730 FPS failure is retained, while fresh same-source local and hosted gates passed. No cause is established; the phone is Chrome 4x, not a tested physical handset.
+4. The application SDK is absent. The exact supplied contract and ordered local adapter are exercised. Inventing an import or repeating unchanged local simulations cannot establish integration with an unavailable package.
+5. Outside bot competition is unmeasured. Actual requested adjacent 2,000-game leagues separate the skills clearly; no elite or external-baseline claim is made.
+
+Worst actionable verification gap is 1. Current core/browser/template/card sources and play.html remain unchanged. There is no further proven player-visible defect from this read-only review. New controls, recovery features or scoring changes are not proposed as cosmetic gains. Round 9 reset the streak to zero; this round can earn no-player-gain streak 1 only after its actual checks complete.

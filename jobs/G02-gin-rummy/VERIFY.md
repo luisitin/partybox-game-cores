@@ -88,6 +88,33 @@ failure. No local failed measurement is silently relabeled as accepted.
 
 # Historical verification records
 
+## Resumed KEEP round 10 — plant the observed Pass bug
+
+Round 9 exact head 575755491a5133e07d6d0527f5ca2b61d44dcb4e passed hosted
+CI 37776058436 at 12:24:52 UTC. The archived, actually read log reports 35/35
+node tests, unchanged 57.6%/87.15% leagues, 25 assertion-killed mutants,
+desktop 60.002796/phone 60.003000 FPS with p99/max 16.8 ms, matching source
+guards and 254-file integrity. Artifact contents were not read or inferred.
+
+Re-read and rank five: round-10/review.md. The old mutation harness did not
+plant the proven Pass-label defect. `node scripts/mutations.mjs`: PASS 26/26
+compiled actual assertion kills. M26 restores the old next-player attribution
+and is killed by the unchanged 603-case Pass suite; both rule and Pass suites
+first pass on the baseline. Exact old/new harnesses, reports and actual M26
+assertion output are retained. The first passing iteration is also retained;
+the final harness explicitly asserts the M26 kill and checks both baseline suites.
+
+Core/browser/cards/template/play.html stay unchanged. The current accepted
+600 raw intervals/profile remain source-matched; no duplicate unchanged local
+core matrix, league or full browser run was performed for this verification-only
+round. New-head hosted npm test still runs every required check.
+`node scripts/capture.mjs round-10-pass-regression --public-history`: PASS;
+fresh guarded desktop/phone clips 728,017/582,959 bytes. No FPS claim is made
+from recording. Player-noticeable gain: none; consecutive no-gain streak 1.
+`node scripts/hashes.mjs` twice and byte compare: PASS 271 delivered files.
+`node scripts/integrity.mjs`: PASS 271 hashes, two byte-identical fixture/manifest
+regenerations, exact licenses, pure-core scan and videos under 10 MB.
+
 ## Resumed KEEP round 9 — correct opening-pass attribution
 
 Verified host checkpoint 11150c8 passed exact CI 37772625259 at 11:55:13 UTC.

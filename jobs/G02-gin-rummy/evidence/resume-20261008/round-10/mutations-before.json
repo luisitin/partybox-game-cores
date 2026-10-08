@@ -1,7 +1,7 @@
 {
-  "method": "one real source edit, compile, execute unchanged baseline-passing rules tests and focused Pass tests for M26",
-  "planted": 26,
-  "caught": 26,
+  "method": "one real source edit, compile, execute unchanged baseline-passing rules tests",
+  "planted": 25,
+  "caught": 25,
   "cases": [
     {
       "id": "M01",
@@ -273,17 +273,6 @@
       "from": "state.phase.deadline+delta",
       "to": "state.phase.deadline",
       "description": "resume omits pause duration",
-      "compiled": true,
-      "killed": true,
-      "error": null,
-      "actualAssertionFailure": true
-    },
-    {
-      "id": "M26",
-      "file": "core",
-      "from": "...appendLog(state,'pass'),turn:other(state),openingPasses:passes,mustStock:passes===2",
-      "to": "...appendLog({...state,turn:other(state),openingPasses:passes,mustStock:passes===2},'pass')",
-      "description": "attribute opening Pass to next player",
       "compiled": true,
       "killed": true,
       "error": null,
