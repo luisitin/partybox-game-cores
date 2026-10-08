@@ -115,3 +115,22 @@ new hand. Thus the programmatic ordering probe is not a reproduced native
 player defect; no speculative gameplay fix was made. The core already rejects
 inputs at/after deadline. New-table explicitly clears private DOM, and the
 full original Zod MIT notice is bundled.
+
+Round12, after exact e5f92a1 PR run37795105831 SUCCESS; the complete native
+job log was read. Re-read root README/RULES/JOBS and Hearts README/RULES.
+Five remaining weaknesses: source-binding unit cases use mocked hashes;
+the top verification summary still describes the original30-test scope;
+unexplained local cadence varies despite repeated hosted60.0024fps passes;
+native deadline-boundary coverage is limited; physical phone/private SDK
+coverage remains unavailable. The latter three do not establish a new player
+defect. Select source-binding coverage: test a real harmless HTML-byte change
+with guaranteed restoration, and reject the actual full-kind logged CI
+summary that omits raw arrays. Synthetic timing fixtures remain explicitly
+unit data, never a claimed browser measurement. No runtime/core/UI changes.
+
+Round12 focused checks pass6/6 groups/34 negative controls. The actual HTML
+comment changed the real source hash, rejected the stale unit report and was
+restored byte-for-byte; bundle equality153921B remains intact. The actual
+full-kind CI console summary is rejected specifically for absent raw intervals,
+even against its own historical source snapshot. No measured browser PASS
+is inferred from unit timing fixtures. Player-visible gain: none, streak2.

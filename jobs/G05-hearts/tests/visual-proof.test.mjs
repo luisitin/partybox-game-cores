@@ -1,7 +1,7 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
-import {readFileSync} from 'node:fs';
-import {guardedFiles,functionalFlags,validateReport,validateFrames,validateCapture} from '../scripts/check-visual.mjs';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {guardedFiles,functionalFlags,sourceHashes,validateReport,validateFrames,validateCapture} from '../scripts/check-visual.mjs';
 // Synthetic checker unit data only: these tests never assert that a browser was measured.
 const sources=Object.fromEntries(guardedFiles.map(p=>[p,'0'.repeat(64)]));
 const profile=(width,height,cpu)=>({width,height,cpu,warmupFrames:60,interaction:'17-card private pass selection at10Hz; retained card controls',frames:600,rawIntervals:Array(600).fill(1000/60),meanMs:1000/60,p95Ms:1000/60,p99Ms:1000/60,maxMs:1000/60,fps:60,overflow:false});
@@ -24,4 +24,27 @@ test('original summary-only Hearts report remains historical, never current acce
 test('capture-only verifier rejects byte/SHA/missing mismatches against a genuine inherited clip (not current browser acceptance)',()=>{
  const videoPath='media/milestone-11.webm',bytes=readFileSync(videoPath),report={videoPath,videoBytes:bytes.length,videoSha256:createHash('sha256').update(bytes).digest('hex')};assert.equal(validateCapture(report),true);
  assert.throws(()=>validateCapture({...report,videoBytes:report.videoBytes+1}),/byte mismatch/);assert.throws(()=>validateCapture({...report,videoSha256:'1'.repeat(64)}),/SHA mismatch/);assert.throws(()=>validateCapture({...report,videoPath:'media/nonexistent-checker-only.webm'}),/capture missing/);
+});
+
+test('actual harmless HTML edit invalidates a source-bound unit report and restores exact bytes',()=>{
+ const original=readFileSync('play.html'),before=sourceHashes(),r=fixture();
+ r.sourceStart=structuredClone(before);r.sourceEnd=structuredClone(before);
+ assert.equal(validateReport(r,{sources:before,checkVideo:false}).accepted,true,'synthetic checker baseline only');
+ try{
+  writeFileSync('play.html',Buffer.concat([original,Buffer.from('\n<!-- G05 checker unit: harmless source-byte change -->\n')]));
+  assert.notEqual(sourceHashes()['play.html'],before['play.html']);
+  assert.throws(()=>validateReport(r,{checkVideo:false}),/stale\/missing start source guards/);
+ }finally{writeFileSync('play.html',original);}
+ assert.deepEqual(readFileSync('play.html'),original);
+ assert.deepEqual(sourceHashes(),before,'all actual guarded files restored');
+});
+
+test('actual full-kind CI console summary without raw intervals remains metadata only',()=>{
+ const summary=JSON.parse(readFileSync('media/visual-measurements-ci-37793907360.json','utf8'));
+ assert.equal(summary.kind,'full');assert.equal(summary.passed,true);
+ assert.equal(summary.desktop.frames,600);assert.equal(summary.phone.frames,600);
+ assert.equal(Object.hasOwn(summary.desktop,'rawIntervals'),false);
+ assert.equal(Object.hasOwn(summary.phone,'rawIntervals'),false);
+ // Its historic hash snapshot isolates the missing-raw check; it is not current acceptance.
+ assert.throws(()=>validateReport(summary,{sources:summary.sourceStart,checkVideo:false}),/raw intervals missing/);
 });

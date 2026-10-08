@@ -38,6 +38,6 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Exact1fb4f21 CI passed the strengthened current-source full gate. Latest local
+Exact e5f92a1 CI passed the strengthened current-source full gate. Latest local
 desktop58.634/CPU4x phone57.695fps failed; raw evidence is preserved and the
 cause remains unresolved. PR5 remains draft; see NEXT.md for current status.

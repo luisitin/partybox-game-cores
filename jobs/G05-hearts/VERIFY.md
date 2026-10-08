@@ -493,3 +493,30 @@ No additional local frame or unchanged core/leagues run.
 Review11 final fixtures-only/check-data:36schemaJSON/73checksums PASS;
 full-data and media hashes include the new source-bound summary and fresh
 clip/PNGs. git diff --check PASS. No runtime/runner/checker change.
+
+Round12 follows exact e5f92a1 CI37795105831 SUCCESS. Full native job log
+113372400955 read94,460 bytes; .tmp/ci-e5f-pr.log stores it.34/34tests and
+25/25mutant catches pass; actual600/profile60.0024fps,p9516.7ms,p99/max16.8ms,
+all20functionals/26same-source guards,0errors/network. Independent CLI accepts
+1,200raw and138541B real clip SHA d3b50a4edc3aedf9d71a80789651e54500dc78ea8f79eac378de0401cfb22291.
+Console summary preserved in media/visual-measurements-ci-37795105831.json;
+no artifact/raw/clip-byte readback claimed.
+
+`node --test tests/visual-proof.test.mjs` PASS6/6 groups,34 meaningful
+negative controls. New actual play.html comment changes its true hash and
+rejects stale unit evidence; finally restores exact original bytes/all26hashes.
+New actual full-kind CI summary without raw arrays rejects for that specific
+reason against its own historical hash snapshot. Synthetic timing fixtures
+remain unit-only, not browser measurements. `node scripts/html.mjs --check`
+PASS153921B; actual HTML/core/browser SHA remains29ca92ac/e0e10b9a/2e83f1ac.
+No gameplay change or further local frame/core/leagues run.
+
+Round12 fresh capture-only command: G05_CHROME=pinned headless_shell
+`node .tmp/capture-only.mjs --record --milestone 15` completed2026-10-08T14:53:36.180Z;
+all20functionals/3–6rosters pass,0network/errors,27matching actual source
+guards (including updated test source and cf34289e capture helper).
+media/milestone-15.webm 136324bytes SHA256
+43255d977dae74b2a7c16c9f0a96711aa04d84e70d7491955265a397cc4be160; encoding10fps is nongating.
+
+Round12 final fixtures-only regeneration/check-data PASS37schemaJSON/77
+checksums; diff --check PASS. All failed reports/media remain preserved.
