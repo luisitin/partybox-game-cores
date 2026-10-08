@@ -1,6 +1,7 @@
 import {game,type State,type Input,type PhoneView,type QuestionView} from './core.ts';
 import {createRng,type Rng} from '../../contract/rng.ts';
 import type {BotSkill} from '../../contract/constants.ts';
+import {initialEstimate} from './estimates.ts';
 type SeatKind='human'|BotSkill;
 const $=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const h=(value:unknown)=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
@@ -94,7 +95,7 @@ function renderPrivate(){
  if(v.inputType==='vote')form=`<p class="hint">Choose the real answer. Your own bluff is marked and cannot be chosen.</p><div class="option-grid">${v.menu.map(o=>`<button data-choice="${o.id}" ${o.mine?'disabled':''}>${h(o.text)}${o.mine?' · Your bluff':''}</button>`).join('')}</div>`;
  if(v.inputType==='answer'){
   if(q.kind==='choice')form=`<div class="option-grid"><button data-value="0">${h(q.left)}</button><button data-value="1">${h(q.right)}</button></div>`;
-  else {const min=q.min!,max=q.max!,initial=q.kind==='century'?1:q.kind==='decade'?Math.floor((min+max)/20)*10:Math.round(Math.sqrt(min*max));
+  else {const min=q.min!,max=q.max!,initial=initialEstimate(q.kind,min,max);
    const raw=draft?.answer??String(initial),n=Number(raw),zero=q.kind==='century'&&n===0;
    form=`<form id="input-form"><label for="answer">${q.kind==='number'?`Estimate between ${min} and ${max}`:q.kind==='century'?'Century slider · negative values are BCE':'Decade dial · labelled by its starting year'}</label><input id="answer" type="${q.kind==='number'?'number':'range'}" min="${min}" max="${max}" step="${q.kind==='decade'?10:q.kind==='century'?1:'any'}" value="${h(raw)}" required><output id="answer-readout" for="answer" class="answer-readout">${h(q.kind==='number'?raw:zero?'No century zero':dateLabel(q,n))}</output><div class="actions"><button id="lock-answer" type="submit" ${zero?'disabled':''}>Lock in estimate</button></div></form>`;
   }

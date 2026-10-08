@@ -37,3 +37,13 @@ including1CE,9BCE,lowercase23bce,101CE/2001CE with another numeric ID,
 preserves hidden-truth independence.24 focused tests and all12,000 default
 league matches pass with identical old win counts. Observable valid-content
 bot gain; no-gain streak0. Default corpus and core are unchanged.
+
+Round4 five weaknesses: valid-range bot/controller safety (new worst);
+Medium fake style; phase-event/privacy matrix; actual random replay seeds;
+held-out skill robustness. A public-bounds probe found2674 invalid/9000
+inputs:2000 Sharp underflows and674 Easy/Medium zero-century corrections
+outside[-1,0]. Fix bounded log fallback for underflow,choose a legal signed
+century,and share safe controller defaults for fractional/one-sided ranges.
+After:0 invalid/9000.26 focused tests and12,000 unchanged-rate leagues pass.
+22 browser scenarios/capture6 pass at60fps. Player-visible valid-content
+input/score gain; no-gain streak0. Workspace restart preserved all changes.

@@ -19,15 +19,17 @@ No network/errors. Wheel landing checks cover all eight realms; captures1/2
 are preserved under10MB. Native final pipeline log/tmp/G04-final-npm-test.log.
 
 PR4 is OPEN: https://github.com/luisitin/partybox-game-cores/pull/4
-Baseline f7ef26c passed hosted CI37723786704;round1 head15b5290 also
-passed CI37724762955. Rounds1–3 fixed draft retention,phone play and
-public year parsing. Each showed player gains; no-gain streak0.
-24 focused tests,12,000 unchanged-rate league matches,22 browser scenarios,
-HTML492,898bytes and21 hashes pass; captures1–5 are retained<10MB.
-Latest-head CI pending. Next worst:Medium fakes ignore the two-word clue.
-Then probe phase-event/privacy matrix,custom-catalog edges and fresh seeds.
-Each round re-reads the job,lists five weaknesses,fixes worst,measures/logs.
-Stop after three consecutive no-gain rounds and actual final-head green CI.
+Baseline f7ef26c and rounds1–3 all passed hosted CI;latest observed
+77f6f79/run37725962141 SUCCESS. Round4 fixes tiny-number/century-bound
+inputs and defaults:2674/9000 invalid→0,26 focused tests,unchanged12,000
+league results,22 browser scenarios/60fps,HTML493,330bytes,24 hashes.
+Captures1–6 are retained<10MB. Rounds1–4 all showed player gains;
+no-gain streak0. New-head CI pending; job remains unfinished.
+Workspace restart returned with source/artifacts intact and checksums valid.
+Next worst:Medium fakes do not match the two-word hint. Then phase/privacy
+matrix,actual random replay seeds,valid-catalog and held-out skill probes.
+Each round re-reads job,lists five weaknesses,fixes worst,measures/logs.
+Final stop requires three no-gain rounds and actual final-head green CI.
 Keep NEXT current and refresh ONLY G04 claim on main after each push.
 Stage G04/workflow only; G01 dependency caches are untracked locally.
 

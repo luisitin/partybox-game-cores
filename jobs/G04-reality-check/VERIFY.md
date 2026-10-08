@@ -132,3 +132,16 @@ node league.ts:12,000 matches PASS, exact win counts unchanged. node
 build.ts/--check PASS492,898bytes. node browser.ts PASS22 scenarios;
 TV/phone60fps,p95≤16.8ms,no network/errors,reduced-motion honored.
 Capture5<10MB; node checksums.ts/--check PASS21 data/media files.
+
+Round4 baseline inline node public-bounds probe:9000 actions,2674 invalid
+(2000 Sharp underflows,510 Easy and164 Medium out-of-range centuries).
+Raw baseline is bounds-before.json at sourcehead77f6f79. node bounds-probe.ts
+after fix:9000 actions,ZERO invalid; bounds-report.json. npm run check and
+FAST_TEST=1 node --test test.ts PASS26/26,including real reducer acceptance
+for all9000 and fractional/one-sided controller defaults. node league.ts
+PASS12,000 matches,all default win counts unchanged. node build.ts/--check
+PASS493,330bytes. node browser.ts PASS22 scenarios,TV60.0024fps/p9516.80ms,
+phone4×60.0036fps/p9516.80ms,no network/errors and reduced-motion honored.
+Capture6<10MB;24 data/media checksums PASS. Environment restarted/reconnected;
+post-return status/source/artifact inspection and24 checksums all matched.
+Hosted77f6f79 CI37725962141 SUCCESS;5e1d1d6 CI37725343643 SUCCESS.

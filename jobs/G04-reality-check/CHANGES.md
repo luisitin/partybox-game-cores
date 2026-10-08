@@ -84,3 +84,12 @@ as years. Add eight supported-clue regressions and hidden-answer substitution
 checks. Default samples/fixtures/policies outside date parsing are unchanged.
 Regenerate bundled HTML and capture5; all six2,000-game leagues retain
 identical measured counts, and22 browser scenarios pass.
+
+KEEP GOING4: add pure estimates.ts,using the original sqrt result on normal
+products and logarithms on subnormal/overflow products,then clamp to bounds.
+Select a nonzero century within the actual range. Share those rules with
+controller defaults,retaining fractional values instead of rounding below
+minimum. Add9000 contextual-action and fractional/one-sided default
+regressions; include the helper in the purity scan. bounds-probe.ts and
+before/after JSON record2674→0 invalid inputs and run in npm test. Default
+sample outcomes stay unchanged; regenerate HTML and milestone6 capture.

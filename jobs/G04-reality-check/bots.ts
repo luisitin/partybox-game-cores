@@ -2,6 +2,7 @@ import type {Rng} from '../../contract/rng.ts';
 import type {BotSkill} from '../../contract/constants.ts';
 import type {PhoneView,Input,QuestionView} from './core.ts';
 import {plants,harbours,materials,machines,defects} from './samples.ts';
+import {numberMidpoint,centuryWithinBounds} from './estimates.ts';
 function dateAnswer(q:QuestionView):number{
  const era=q.prompt.match(/\b(\d{1,5})\s*(BCE|CE)\b/i);
  const year=Number(era?.[1]??q.prompt.match(/\b\d{1,4}\b/)?.[0]??2000);
@@ -36,12 +37,12 @@ export function fromView(v:PhoneView,rng:Rng,skill:BotSkill='normal'):Input|null
   value=skill==='easy'?rng.int(0,1):skill==='normal'&&rng.chance(.3)?1-best:best;
  }else if(q.kind==='number'){
   const min=q.min!,max=q.max!;
-  value=skill==='easy'?min+rng.float()*(max-min):skill==='normal'?(min+max)/2:min>0?Math.sqrt(min*max):max/10;
+  value=skill==='easy'?min+rng.float()*(max-min):skill==='normal'?(min+max)/2:numberMidpoint(min,max);
  }else {
   const min=q.min!,max=q.max!,step=q.kind==='decade'?10:1;
   value=skill==='easy'?rng.int(min/step,max/step)*step:dateAnswer(q);
   if(skill==='normal'&&rng.chance(.3))value+=rng.pick([-1,1])*step;
-  value=Math.max(min,Math.min(max,value));if(q.kind==='century'&&value===0)value=1;
+  value=q.kind==='century'?centuryWithinBounds(value,min,max):Math.max(min,Math.min(max,value));
  }
  return {type:'answer',value};
 }

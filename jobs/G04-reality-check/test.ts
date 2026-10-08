@@ -5,6 +5,7 @@ import {createRng} from '../../contract/rng.ts';
 import {manifestSchema} from './preflight.ts';
 import {sampleRows,makeSamples,catalogSchema,realms} from './samples.ts';
 import {numberScore,quickScore,normalize} from './scoring.ts';
+import {numberMidpoint,initialEstimate} from './estimates.ts';
 import type {State,Input} from './core.ts';
 const C:typeof import('./core.ts')=await import(process.env.CORE_PATH??'./core.ts');
 export const context=(n=2,seed=1,settings:Record<string,string|boolean|number>={})=>({players:Array.from({length:n},(_,i)=>({id:`p${i}`,name:`Seat ${i+1}`,avatarId:'🙂',connected:true,bot:true})),seed,now:0,settings});
@@ -149,7 +150,7 @@ test('bots use only public/own data, remain deterministic, and distinguish real 
  for(const phase of C.game.phases){const p=toPhase(phase);for(const id of [...p.seats,'unknown'])for(const skill of ['easy','normal','sharp'] as const){const action=C.game.bot.sampleInput(freeze(p),id,createRng(17),skill);if(action)assert(C.inputSchema.safeParse(action).success);}}
 });
 test('game modules contain no host entropy, clock, timers, network or I/O',()=>{
- for(const name of ['core.ts','bots.ts','scoring.ts','samples.ts'])assert(!/Math\.random|Date\.now|setTimeout\(|setInterval\(|fetch\(|node:fs|node:child_process/.test(readFileSync(name,'utf8')),name);
+ for(const name of ['core.ts','bots.ts','scoring.ts','samples.ts','estimates.ts'])assert(!/Math\.random|Date\.now|setTimeout\(|setInterval\(|fetch\(|node:fs|node:child_process/.test(readFileSync(name,'utf8')),name);
  assert(manifestSchema.safeParse(C.manifest).success);
 });
 test('strong bots read short public years and explicit eras without seeing the answer',()=>{
@@ -160,6 +161,23 @@ test('strong bots read short public years and explicit eras without seeing the a
   const action=C.game.bot.sampleInput(n,'p0',createRng(1),'sharp');assert(action?.type==='answer');assert.equal(action.value,expected,prompt);
   const changed={...n,question:{...n.question,correct:kind==='century'?99:2900} as State['question']};assert.deepEqual(C.game.bot.sampleInput(changed,'p0',createRng(1),'sharp'),action,'live truth must not affect the public-clue answer');
  }
+});
+test('all bot skills submit legal answers on tiny numbers and negative-only century ranges',()=>{
+ const base=toPhase('answer',1,{mode:'quick'});
+ const cases=[{kind:'number',min:1e-200,max:1e-180,correct:1e-190,prompt:'Estimate within the shown bounds.'},{kind:'number',min:Number.MIN_VALUE,max:1e-310,correct:1e-317,prompt:'Estimate within the shown bounds.'},{kind:'century',min:-1,max:0,correct:-1,prompt:'Label: 9 BCE'}];
+ for(const data of cases){const row={...sampleRows.find(r=>r.kind===data.kind)!,...data} as State['question'],s={...base,question:row};
+  for(const skill of ['easy','normal','sharp'] as const)for(let seed=1;seed<=1000;seed++){
+   const action=C.game.bot.sampleInput(s,'p0',createRng(seed),skill);assert(action?.type==='answer');assert(C.validAnswer(row,action.value),`${data.kind}/${skill}/${seed}`);assert.notEqual(input(s,'p0',action),s);
+  }
+ }
+});
+test('controller defaults stay inside fractional and one-sided date bounds',()=>{
+ const number=sampleRows.find(r=>r.kind==='number')!,century=sampleRows.find(r=>r.kind==='century')!,decade=sampleRows.find(r=>r.kind==='decade')!;
+ for(const [min,max] of [[.01,.02],[1e-200,1e-180],[Number.MIN_VALUE,1e-310],[0,Number.MIN_VALUE],[999999999999,1e12]]){
+  const row={...number,min,max,correct:min} as State['question'];assert(C.validAnswer(row,initialEstimate('number',min!,max!)));const middle=numberMidpoint(min!,max!);assert(Number.isFinite(middle)&&middle>=min!&&middle<=max!);
+ }
+ for(const [min,max] of [[-1,0],[-100,-80],[0,1],[95,100],[-1,1]])assert(C.validAnswer({...century,min,max} as State['question'],initialEstimate('century',min!,max!)));
+ assert(C.validAnswer(decade,initialEstimate('decade',1900,2100)));
 });
 test('manifest bytes and all seven phase fixtures use the contract and play to completion',()=>{
  assert.deepEqual(C.manifest,JSON.parse(readFileSync('manifest.json','utf8')));
