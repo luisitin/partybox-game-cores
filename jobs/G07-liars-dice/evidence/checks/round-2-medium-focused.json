@@ -1,0 +1,17 @@
+{
+  "current": {
+    "command": "node --test tests/medium-certainty.test.mjs",
+    "exitCode": 0,
+    "stdout": "✔ Medium raises the sole positive alternative to an own-cup-guaranteed bid after 27 accepted actual-init inputs (9.827155ms)\n✔ Medium keeps its uncertain dudo behavior for every other two-die cup in the same public information set (4.753542ms)\n✔ a supported near-certain bid remains uncertain by exact integer counts and keeps the prior legal raise (1.589609ms)\nℹ tests 3\nℹ suites 0\nℹ pass 3\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 249.626049\n",
+    "stderr": "",
+    "result": "PASS:3 tests"
+  },
+  "old": {
+    "command": "CORE_DIR=.work/mixed-table-holdout/frozen-dist node --test tests/medium-certainty.test.mjs",
+    "expectedExitCode": 1,
+    "exitCode": 1,
+    "stdout": "✖ Medium raises the sole positive alternative to an own-cup-guaranteed bid after 27 accepted actual-init inputs (9.90382ms)\n✔ Medium keeps its uncertain dudo behavior for every other two-die cup in the same public information set (3.753378ms)\n✔ a supported near-certain bid remains uncertain by exact integer counts and keeps the prior legal raise (1.542267ms)\nℹ tests 3\nℹ suites 0\nℹ pass 2\nℹ fail 1\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 238.335204\n\n✖ failing tests:\n\ntest at tests/medium-certainty.test.mjs:6:1\n✖ Medium raises the sole positive alternative to an own-cup-guaranteed bid after 27 accepted actual-init inputs (9.90382ms)\n  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n  + actual - expected\n  \n    {\n  +   type: 'dudo'\n  -   face: 1,\n  -   quantity: 3,\n  -   type: 'bid'\n    }\n  \n      at TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/medium-certainty.test.mjs:20:12)\n      at Test.runInAsyncScope (node:async_hooks:227:14)\n      at Test.run (node:internal/test_runner/test:1382:25)\n      at Test.start (node:internal/test_runner/test:1242:17)\n      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {\n    generatedMessage: true,\n    code: 'ERR_ASSERTION',\n    actual: { type: 'dudo' },\n    expected: { type: 'bid', quantity: 3, face: 1 },\n    operator: 'deepStrictEqual',\n    diff: 'simple'\n  }\n",
+    "stderr": "",
+    "result": "Expected original-defect failure:1 failure,2 unchanged controls pass"
+  }
+}

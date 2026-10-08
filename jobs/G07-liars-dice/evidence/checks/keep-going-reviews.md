@@ -37,4 +37,25 @@ Five biggest remaining weaknesses, ranked:
 
 Selected correction: an exact-integer certainty guard for Medium, with no
 threshold retuning and no Easy/Strong policy change. Regression and required
-new-source checks are pending; no completed round or gain is recorded yet.
+new-source checks were pending at the cadence checkpoint.
+
+Completed local round 2 proof: the new 3-test regression passes; the old frozen
+core fails exactly the original defect and passes both unchanged controls.
+All six compatible opposing dice change a certain-loss challenge to three
+ones, the sole positive raw1/6 raise. Immediate opposing dudo still loses a die
+in five worlds and preserves both dice in one; no general survival claim.
+All 35 uncertain own cups and the near-certain exact-numerator control remain
+unchanged, with opposing-cup/game-RNG read traps passing.
+
+Required new-source checks pass:38/38 node tests,7,000 complete games,
+1,698,452 every-event restored comparisons,12,279,033 bot samples,1,003 property
+seeds,20,000 probability differentials,25/25 compiled assertion mutation kills,
+required Strong 64.70%/Medium 58.90% league and fresh 66.8%/57.0% holdout. The
+page passes 52/52, both 600-frame gates and source-matched round 2 clips. Details:
+evidence/checks/round-2/verification.json and VERIFY.md. This is a player-visible
+decision correction; consecutive no-gain count remains zero.
+
+Interim cadence run 37744597968 correctly rejected the stale initial matrix
+report after all 38 node and 52 browser checks passed. The finished local matrix
+report hash 455532eb…dc093 exactly matches the hosted regenerated hash. Publish
+this report with refreshed hashes; exact new-head green is required before round 3.

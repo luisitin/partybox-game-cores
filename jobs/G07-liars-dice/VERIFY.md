@@ -117,10 +117,10 @@ gates. At this playable checkpoint performance remains pending, not passed.
 ## Final delivery checks (2026-10-08)
 
 `node --test tests/core.test.mjs tests/probability.test.mjs tests/rules.test.mjs
-tests/contract.test.mjs tests/timestamp-boundaries.test.mjs`: PASS32/32 focused
+tests/contract.test.mjs tests/timestamp-boundaries.test.mjs`: PASS 32/32 focused
 tests, including all nine contract invariants; evidence/checks/targeted-final.tap.
 `node --test tests/bot-games.test.mjs tests/properties.test.mjs`: PASS2/2.
-7,000 complete games, exactly1,000 at EACH player count2–8,1,698,274 events;
+7,000 complete games, exactly 1,000 at EACH player count2–8,1,698,274 events;
 every event compares live vs JSON-restored twin SHA256 and exact bytes, checks
 previous-state immutability, JSON roundtrip and256KiB cap. Maxstate3,859 bytes;
 12,277,985 bot samples schema-checked across seats, interrupts and done.
@@ -135,7 +135,7 @@ properties rather than inheriting schema.properties entries.
 `node scripts/browser-check.mjs --snapshot`: final exact default full run PASS
 37/37. Single HTML sourcef0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8.
 Desktop1920×1080CPU1x60.0018FPS; phone390×844CPU4x60.0024FPS. Bothp99/max16.8ms,
-all600 consecutive intervals retained, zero above17ms. Same live8-player8×3bid,
+all600 consecutive intervals retained, zero above 17ms. Same live8-player8×3bid,
 own cup open, nonnull exact odds, legal draft selector edits every30frames.
 Performance uses fresh contexts after functional checks, source-hash guarded at
 start/end; no reused proof in this final full run. Browser host caches controller
@@ -146,7 +146,7 @@ source snapshots remain archived; cause of prior stalls is unestablished.
 `node scripts/capture.mjs delivery-final`: PASS. Five real rounds each, pause,
 reveal and winner, zero pageerrors/network requests. Desktopvideo1280×720
 1,024,954bytes; phone390×844CPU4x910,384bytes. Capture is separate from FPS proof.
-All previous milestone recordings remain; each is below10MB. Temporary capture
+All previous milestone recordings remain; each is below 10MB. Temporary capture
 outputs moved into ignored.work rather than public evidence.
 
 `npm run build`: final PASS strictTypeScript/bundle; runtime core unchanged
@@ -156,12 +156,12 @@ Both original MIT and actual pinned Zod MIT notices are embedded in play.html.
 `sha256sum --check SHA256SUMS.txt`: required PASS for every delivered file.
 `node scripts/integrity.mjs`: validates hashes/coverage,2×fixture regeneration,
 source-matched600frame evidence/raw statistics, licenses,no runtime I/O/network
-and every media file below10MB. Its final run is recorded in the next entry.
+and every media file below 10MB. Its final run is recorded in the next entry.
 
 ### All25 actual planted source bugs
 Each is compiled individually; exact selected baseline first passes. Mutated
 suite must fail with ERR_ASSERTION; syntax/import failures do not count. Actual
-command `node scripts/mutations.mjs`, PASS25/25; report and29 rawTAP files in
+command `node scripts/mutations.mjs`, PASS 25/25; report and29 rawTAP files in
 evidence/mutations.
 
 | ID | Planted bug | Assertion kill |
@@ -228,4 +228,28 @@ Round 1 hosted acceptance: `gh run view 37741554805 --repo luisitin/partybox-gam
 
 `npm run build`: PASS, frozen core source 5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18 and HTML e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3. The sole core change guards Medium's dudo with exact numerator/denominator certainty; no threshold, Easy or Strong policy changed.
 `node scripts/fixtures.mjs`: PASS, two byte-identical generations. Historical initial-core fixtures/checks are preserved under evidence/checks/initial-core with hashes and provenance.
-`node scripts/browser-check.mjs --snapshot`: PASS 52/52, exact default full run 20261008073119716. Desktop1920×1080CPU1x and phone390×844CPU4x each retained all600 intervals: 59.803247 FPS, p99 16.8ms, max50ms, one interval above17ms. Unchanged mean/p99 gates pass; equal totals are measured, not substituted. The archived reports/raw frames identify the frozen HTML. Clips, focused regression, complete matrix, properties, leagues and mutations are recorded after execution below; no completed round2 or full-core acceptance is claimed at this cadence checkpoint.
+`node scripts/browser-check.mjs --snapshot`: PASS 52/52, exact default full run 20261008073119716. Desktop1920×1080CPU1x and phone390×844CPU4x each retained all600 intervals: 59.803247 FPS, p99 16.8ms, max50ms, one interval above 17ms. Unchanged mean/p99 gates pass; equal totals are measured, not substituted. The archived reports/raw frames identify the frozen HTML. Clips, focused regression, complete matrix, properties, leagues and mutations are recorded after execution below; no completed round 2 or full-core acceptance is claimed at this cadence checkpoint.
+
+`node scripts/capture.mjs round-2 --pace-demo`: PASS, same HTML. Desktop1,338,915bytes/phone1,213,399bytes, Normal actions2036/2071ms, Manual holds2337/2338ms then actual step; five real rounds, pause/resume/winner, zero network/page errors. Metadata: evidence/browser/round-2-captures.json. This is separate from frame measurement.
+`node scripts/hashes.mjs` twice + `cmp`, `sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: cadence PASS,238 files. Committed7b00866, fresh main claim724d106 merged into58cca15; run 37744597968 is pending. Regenerate hashes after remaining evidence writes.
+`node --test tests/medium-certainty.test.mjs`: PASS 3/3. The SHA-verified initial-core negative control fails exactly the original defect with ERR_ASSERTION and passes both unchanged controls. `G07_MEDIUM_BASELINE_CORE=.work/mixed-table-holdout/frozen-dist/core.mjs node scripts/medium-certainty.mjs`: PASS, actual-init27-event replay; old dudo loses a die6/6, new legal raise is accepted6/6. If that raise is immediately challenged, five worlds still lose a die and one preserves both dice. All 35 uncertain cups, supported near-certainty and opposing-cup/game-RNG read traps pass. Evidence: round-2-medium-focused.json/report.json/transcript.json and round-2-medium.md. This establishes the concrete decision correction, not a general survival guarantee.
+
+The original completed round1 pacing report remains in evidence/browser/runs/aa9d7b31f323703fb4fb8fb4e735b7058aa9098ca78ccc9a373024b8ac66f825/20261008070041971/round-1-pacing.json. The top-level pacing filename is the latest rerun of that feature probe, now matched to e17275c6; historical round1 timings refer to the archived original.
+
+Cadence hosted run 37744597968 FAILED at58cca15: 38/38 node tests and 52/52 browser checks passed, then integrity correctly rejected `evidence/checks/bot-games.json` because the new-core matrix regenerated it with SHA256455532eb…dc093 while the interim manifest still described the initial-core report8b3603f7…b655f. The local new-core matrix was explicitly pending when this cadence checkpoint shipped. Exact assertion/hashes: evidence/checks/ci-round-2-cadence.json. Preserve the failure and publish completed new-core evidence with regenerated hashes; no gate is relaxed. A later exact head must be green before round 3.
+
+## Round 2 — completed local verification
+
+`node tests/probability-reference.mjs`: PASS, 21 hand/714 exhaustive/111,974 rolls,4,182 identities,105,264 conditioned comparisons/133,644 completions and13 invalid cases.
+`node --test --test-reporter=tap tests/*.test.mjs`: PASS 38/38,zero failures/skips,489.197s with no pauses. Includes 20,000 random probability differentials/4,182 boundary cases and 483,840 independent raise cases; all nine contract invariants. Full7,000 games,exactly 1,000 each2–8,1,698,452 every-event restored-twin SHA/exact-byte/previous-state-immutability/JSON/256KiB comparisons,12,279,033 schema-checked bot samples,max3,859bytes. Matrix hash 39f8b3e0a3eb0e9a4ec18be8f04d7414e80555b0186b4ea78d45047c50875d1c; events by count45,906/96,581/155,976/224,054/302,594/389,440/483,901. The local bot-games.json hash 455532eb…dc093 matches the hosted regeneration exactly.
+Properties: seeds 1/2/3 plus 1,000 seeded random cases,80,156 events,max3,716bytes,restored twin after every event; hash 40cf781f32634aa21f7213262eb5e579afedcf611c3516a386c02db474fcb5d9.
+Required 4,000-game league (included once in all-node tests): Strong 1294/2000=64.70%,Medium 1178/2000=58.90%; all Wilson/paired lower95>50%.
+`node scripts/mutations.mjs`: PASS 25/25 individually compiled assertion kills; four unmutated baselines pass. Same planted list above; new report/rawTAP in evidence/mutations,old source proof preserved in initial-core/mutations.
+`node tests/strategy-holdout.mjs`: PASS 4,000 fresh default-duel games,predeclared salt 0x8c42f5d1 with zero overlap against 18,000 prior seeds. Strong 1336/2000=66.8%,Medium 1140/2000=57.0%,all lower95bounds>50%. All per-seed outcomes retained. Different fresh seed sets are not a before/after win-rate estimate.
+All input source,bundle,test,fixture hashes were unchanged at completion. Final source 5d10032d…edb18,bundle 947f4f6f…5c076,HTML e17275c6…ba50c3; all writers stopped. Exact commands/status/input hashes/summaries: evidence/checks/round-2/verification.json and companion files. Fresh final hashes/integrity and exact new-head CI remain the delivery gate; no further test repetition is needed without a new change or failure.
+
+Final round 2 checksum/integrity command: `node scripts/hashes.mjs` twice,
+`cmp SHA256SUMS.txt .work/round-2-final-hashes.txt`,
+`sha256sum --check SHA256SUMS.txt`, `node scripts/integrity.mjs`: PASS,
+256 delivered files, byte-identical manifests/fixtures, matching passing raw
+browser frames, media below 10 MB, original/Zod licenses and pure core scan.

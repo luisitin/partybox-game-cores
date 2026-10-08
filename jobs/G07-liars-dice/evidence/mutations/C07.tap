@@ -2,43 +2,43 @@ TAP version 13
 # Subtest: initial rolls, defaults, finite deadlines and starting seats are deterministic
 ok 1 - initial rolls, defaults, finite deadlines and starting seats are deterministic
   ---
-  duration_ms: 3.140742
+  duration_ms: 7.660518
   type: 'test'
   ...
 # Subtest: only the current connected active seat bids; bids must raise and preserve the old state
 ok 2 - only the current connected active seat bids; bids must raise and preserve the old state
   ---
-  duration_ms: 3.514423
+  duration_ms: 5.507245
   type: 'test'
   ...
 # Subtest: impossible bluff quantities remain finite and a bot can challenge them without an unbounded legal-bid list
 ok 3 - impossible bluff quantities remain finite and a bot can challenge them without an unbounded legal-bid list
   ---
-  duration_ms: 2.373215
+  duration_ms: 3.868593
   type: 'test'
   ...
 # Subtest: dudo counts wild ones and assigns exactly one die loss to the right participant
 ok 4 - dudo counts wild ones and assigns exactly one die loss to the right participant
   ---
-  duration_ms: 0.765866
+  duration_ms: 1.790267
   type: 'test'
   ...
 # Subtest: reveal continuation rerolls the public new counts, clears the bid, and advances the round
 ok 5 - reveal continuation rerolls the public new counts, clears the bid, and advances the round
   ---
-  duration_ms: 0.662991
+  duration_ms: 1.202068
   type: 'test'
   ...
 # Subtest: elimination removes a seat from turn rotation, clockwise survivor starts, and all original players stay in results
 ok 6 - elimination removes a seat from turn rotation, clockwise survivor starts, and all original players stay in results
   ---
-  duration_ms: 0.949432
+  duration_ms: 1.357274
   type: 'test'
   ...
 # Subtest: first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter
 not ok 7 - first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter
   ---
-  duration_ms: 1.28516
+  duration_ms: 1.987661
   type: 'test'
   location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/core.test.mjs:131:1'
   failureType: 'testCodeFailure'
@@ -64,31 +64,31 @@ not ok 7 - first one-die loss triggers one palifico round, locks face, disables 
 # Subtest: calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind
 ok 8 - calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind
   ---
-  duration_ms: 1.202683
+  duration_ms: 1.714404
   type: 'test'
   ...
 # Subtest: controller odds are exact raw conditional probabilities; model learning uses revealed public truth
 ok 9 - controller odds are exact raw conditional probabilities; model learning uses revealed public truth
   ---
-  duration_ms: 0.997287
+  duration_ms: 1.153524
   type: 'test'
   ...
 # Subtest: sharp bots can call an eligible out-of-turn calza; interrupted caller conditions on only its own cup
 ok 10 - sharp bots can call an eligible out-of-turn calza; interrupted caller conditions on only its own cup
   ---
-  duration_ms: 0.786845
+  duration_ms: 4.436292
   type: 'test'
   ...
 # Subtest: all skills are deterministic and ignore counterfactual unseen cups, hidden PRNG and future starter
 ok 11 - all skills are deterministic and ignore counterfactual unseen cups, hidden PRNG and future starter
   ---
-  duration_ms: 28.140218
+  duration_ms: 63.527285
   type: 'test'
   ...
 # Subtest: sharp decisions adapt to publicly learned truthful and bluffing histories
 ok 12 - sharp decisions adapt to publicly learned truthful and bluffing histories
   ---
-  duration_ms: 0.525099
+  duration_ms: 2.678112
   type: 'test'
   ...
 1..12
@@ -99,4 +99,4 @@ ok 12 - sharp decisions adapt to publicly learned truthful and bluffing historie
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 237.284003
+# duration_ms 394.234612

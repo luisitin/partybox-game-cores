@@ -11,12 +11,12 @@ Easy, Strong, thresholds and the probability implementation are unchanged.
 
 | Work | Current status |
 | --- | --- |
-| Minimal core correction | Saved; new-source checks pending |
-| Natural 27-event/six-hidden-die regression | Authored; focused execution pending |
+| Minimal core correction | Saved; all required new-source local checks PASS |
+| Natural 27-event/six-hidden-die regression | PASS 3/3; old core fails original defect; six-case before/after proof passes |
 | Standalone build and 52 browser checks | PASS, source-matched e17275c6; all 600 intervals per profile |
-| Round-2 desktop/phone clips | Recording after browser pass |
-| Full matrix, properties, leagues and mutations | Waiting for browser CPU isolation to end |
-| GitHub CI | Previous head 6387696 is green; cadence push of guard pending |
+| Round-2 desktop/phone clips | PASS, matching source, five actual rounds each, below 10MB |
+| Full matrix, properties, leagues and mutations | PASS 38/38;7,000 games/1,698,452 restored events;25/25 mutants;both leagues clear |
+| GitHub CI | Cadence 58cca15 failed stale evidence; completed round 2 proof/checksum push pending |
 | Browser recovery, standings and rule help | Read-only preparation; no later-round edits |
 
 Initial delivery checks PASS (historical core, unchanged through round 1):
@@ -47,10 +47,15 @@ Round 1 is pushed at 6387696 and accepted by exact-head run 37741554805:
 35/35 node tests, 52/52 browser checks, 25/25 mutation kills and 174-file
 integrity. Public metadata: evidence/checks/ci-round-1.json.
 Round 2 began after that green run: Medium's exact-certainty guard and a
-naturally rolled 27-event regression are in progress. Re-run all required core
-checks, regenerate fixtures twice, obtain fresh source-matched browser proof
-and clips, then regenerate hashes, refresh main claim and push. No round-2
-completion or new-source pass is claimed before verification.
+naturally rolled 27-event regression are implemented. The cadence milestone
+58cca15 is pushed with refreshed main claim, 238-file hashes/integrity, byte-
+identical fixtures, 52 browser checks and source-matched clips. The three new
+regressions, before/after proof, all 38 node tests,7,000 games/1,698,452 restored
+events,1,003 property seeds,25 mutation kills and both leagues subsequently
+passed. The actual matrix report matches the hosted regenerated hash; its old
+interim checksum correctly failed. Publish completed round 2 evidence with new
+hashes and refreshed main claim; require exact-head CI green before round 3.
+LOOP round 2 records the concrete decision correction; no-gain streak is zero.
 Recovery remains read-only preparation, followed by final standings, palifico
 help and mixed-table evidence limits. The diagnostic transcripts/recovery
 design are in ignored .work and agent messages.

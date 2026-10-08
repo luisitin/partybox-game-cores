@@ -2,7 +2,7 @@ TAP version 13
 # Subtest: exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
 not ok 1 - exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
   ---
-  duration_ms: 128.849761
+  duration_ms: 147.415757
   type: 'test'
   location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:6:1'
   failureType: 'testCodeFailure'
@@ -48,7 +48,7 @@ not ok 1 - exact probability matches independent outcome-convolution oracle over
 # Subtest: probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
 not ok 2 - probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
   ---
-  duration_ms: 0.632735
+  duration_ms: 0.492409
   type: 'test'
   location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:28:1'
   failureType: 'testCodeFailure'
@@ -79,4 +79,4 @@ not ok 2 - probability handles certainty, impossible bids, ones, raw exact mass 
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 339.542375
+# duration_ms 388.485524

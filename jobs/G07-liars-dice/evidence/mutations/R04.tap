@@ -2,7 +2,7 @@ TAP version 13
 # Subtest: raise legality exhaustively matches independently stated Perudo transitions
 not ok 1 - raise legality exhaustively matches independently stated Perudo transitions
   ---
-  duration_ms: 1.612268
+  duration_ms: 4.354856
   type: 'test'
   location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/rules.test.mjs:15:1'
   failureType: 'testCodeFailure'
@@ -26,7 +26,7 @@ not ok 1 - raise legality exhaustively matches independently stated Perudo trans
 # Subtest: counting ones distinguishes wild faces, literal ones, and palifico
 ok 2 - counting ones distinguishes wild faces, literal ones, and palifico
   ---
-  duration_ms: 0.333493
+  duration_ms: 0.703156
   type: 'test'
   ...
 1..2
@@ -37,4 +37,4 @@ ok 2 - counting ones distinguishes wild faces, literal ones, and palifico
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 183.964631
+# duration_ms 402.279347

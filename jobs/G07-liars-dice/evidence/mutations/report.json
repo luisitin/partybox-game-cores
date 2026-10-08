@@ -1,7 +1,7 @@
 {
   "compiler": "esbuild 0.25.10, actual individually mutated TypeScript source bundles, ES2022 ESM",
   "sourceSha256": {
-    "core.ts": "db7373ae850fa2ae88ecea1cd873516034ce534daa9c7748729893c1c3ab5df3",
+    "core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
     "rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
     "probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0"
   },
@@ -21,7 +21,7 @@
       "failedTests": [
         "raise legality exhaustively matches independently stated Perudo transitions"
       ],
-      "rawSha256": "e33d4393f1dd814ce4f59fe9327fe0164347a9f27457355cf6af62066c31983f"
+      "rawSha256": "e6e2e4e19cf6feb02e63cbd16634e21133af45ac7cbac13312cbc9b92d97039d"
     },
     {
       "id": "R02",
@@ -37,7 +37,7 @@
         "raise legality exhaustively matches independently stated Perudo transitions",
         "counting ones distinguishes wild faces, literal ones, and palifico"
       ],
-      "rawSha256": "72ef26dd2a9a5d58c5e6cffec95c28c30225adefd4f82a39507a778cf699b0ff"
+      "rawSha256": "92844e03e11d0f79fcfceabed5f3828fb25077bc1cf1af9e76646196231a3f83"
     },
     {
       "id": "R03",
@@ -53,7 +53,7 @@
         "raise legality exhaustively matches independently stated Perudo transitions",
         "counting ones distinguishes wild faces, literal ones, and palifico"
       ],
-      "rawSha256": "030d6b059799df9dabede3108fb8bd3e22384a066c5d4324c406ee54bbce09ee"
+      "rawSha256": "5830fafcefd11b45f604f04283c6130232a57ac1d6e25553bfcdc4bd56a4cfee"
     },
     {
       "id": "R04",
@@ -68,7 +68,7 @@
       "failedTests": [
         "raise legality exhaustively matches independently stated Perudo transitions"
       ],
-      "rawSha256": "6bd260fcb12c1fbabd23a54dea3ce8157dbd94037a9f7a381182d9bdc5955e6c"
+      "rawSha256": "2f73beff98b867bcfae4f6d1143de2757579076ec5d29562e8abef791445c885"
     },
     {
       "id": "R05",
@@ -83,7 +83,7 @@
       "failedTests": [
         "raise legality exhaustively matches independently stated Perudo transitions"
       ],
-      "rawSha256": "5fbb850ded5427ac2f671a8933d34445560e359d47d131f06d4ecf94f07ac050"
+      "rawSha256": "f29c8a3f250bdf227023734a7fdca7336e472a162cdb9457f90cad249a281e9b"
     },
     {
       "id": "R06",
@@ -98,7 +98,7 @@
       "failedTests": [
         "raise legality exhaustively matches independently stated Perudo transitions"
       ],
-      "rawSha256": "843e0ec6a80acef70aac33059040c8ab801f52e5ae4b362c085354a4017f1905"
+      "rawSha256": "0876ea0718ebf3a72118675f1c2c535b18664cfeaed82bb1f5d197750ddc4337"
     },
     {
       "id": "R07",
@@ -113,7 +113,7 @@
       "failedTests": [
         "counting ones distinguishes wild faces, literal ones, and palifico"
       ],
-      "rawSha256": "35b3b42b6b94a64e88ddfb845c3d179d49de34b5555f8921967adc236ed7d229"
+      "rawSha256": "fdbf489e3dfcd3dc4021767a208ab0c652ff6490825c3fbe75c0c2f49d939207"
     },
     {
       "id": "P01",
@@ -129,7 +129,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "54e0082edfbc7020849af181a5df543ed4919c565fae08b55d5caa8eb9de304c"
+      "rawSha256": "3078047bb51daac6b2c24c62471e2d21bdf58e990953a77ba2c222a1cbb47dc9"
     },
     {
       "id": "P02",
@@ -145,7 +145,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "82534093a2c266461ee1ed2b51e537a501a2d1e635445a6b90fcc324021b0c20"
+      "rawSha256": "d93de5a6d13d84028305bf0d68d1fc7e9489d37154f80fcb0a26a561c1fd9e0a"
     },
     {
       "id": "P03",
@@ -161,7 +161,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "e5d878526a57922ff6c8312de42be2850f408d1559e1088197046393c5d63528"
+      "rawSha256": "cb8edacd9262f5725212f60379393b7f0f40f0ab46ecaf3038f776dd39b96f68"
     },
     {
       "id": "P04",
@@ -177,7 +177,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "5d9c63c8eda9d65660fd79db2d833d10b3f1a302264f8b28a3a6dbcc92b850b1"
+      "rawSha256": "bd172c3311a09db49c6fa1ec7708ac9cd442a25479d6434d58a8ca6d46d3cb53"
     },
     {
       "id": "P05",
@@ -193,7 +193,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "8571a569283a736f9348003c0933e2ffb343e55f89e7e78aa8eb51ec8c919c33"
+      "rawSha256": "e23e1bd16f238c6965135f125347afae988cbb7d0b647c9196094c58bc2f8a9e"
     },
     {
       "id": "P06",
@@ -209,7 +209,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "3beda56a36f00b8c6bad6ddf90e7fe1f6e8f4a4b76c7a17036c68bff6fc121b5"
+      "rawSha256": "57a9f151549159293e1fea75836623ee07cb09f4147203aebd5a591598cffc81"
     },
     {
       "id": "P07",
@@ -225,7 +225,7 @@
         "exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases",
         "probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments"
       ],
-      "rawSha256": "05355511b524b974f245f6322e7668e936f3eddbfd5933a25771c4e57c4ada8d"
+      "rawSha256": "a785a25765f04553db8c5135f572f62dd3146d589b7880954dda494439f9013b"
     },
     {
       "id": "C01",
@@ -240,7 +240,7 @@
       "failedTests": [
         "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
       ],
-      "rawSha256": "1e24a60d14d4f82a0ee630fafffdb9a48c651848401b8779db7231d7e6cab350"
+      "rawSha256": "0adc0d74eb4515f7080eb07d29a368ed62c2f67bf2f95dbb147246b58c9b8a07"
     },
     {
       "id": "C02",
@@ -255,7 +255,7 @@
       "failedTests": [
         "dudo counts wild ones and assigns exactly one die loss to the right participant"
       ],
-      "rawSha256": "c9b99822bf937f2536cf8594ffe02b5b188164264df61fb7dbb3176f000cfc7c"
+      "rawSha256": "c329b7de829de7d762903e7dd495cc8e1ac2b5786f7bc561422204aac55e2cef"
     },
     {
       "id": "C03",
@@ -272,7 +272,7 @@
         "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter",
         "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
       ],
-      "rawSha256": "8e5bb10bc28f592e068f1fa5fd3b814400cb86b03b9cf3cf461fd1f27ef71bfc"
+      "rawSha256": "6c778c7305d171f320953b6b1528cba568f00da0438be39c4c13900bb4ff876d"
     },
     {
       "id": "C04",
@@ -287,7 +287,7 @@
       "failedTests": [
         "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
       ],
-      "rawSha256": "44b50eadd2a1edd78c6dacd379d584192364e51a226aa112fe171b41a30c9979"
+      "rawSha256": "b413d59fef533f9a5ee805ca8ab8223b2e68f284cf5362c235ae0a9225d4abff"
     },
     {
       "id": "C05",
@@ -302,7 +302,7 @@
       "failedTests": [
         "only the current connected active seat bids; bids must raise and preserve the old state"
       ],
-      "rawSha256": "8b8af0de23f490792a6ec8e72d322065e32948a191ca522b9c60bf79bdd59101"
+      "rawSha256": "430163983c7e895cd21905cd0f73ef367a140d3ecf011afd68b1144e8c6572f0"
     },
     {
       "id": "C06",
@@ -317,7 +317,7 @@
       "failedTests": [
         "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
       ],
-      "rawSha256": "eedf462e6924ac0e3353b77c0b5ee5b3bb134f14ecacf1c983ede12bb8cce4c9"
+      "rawSha256": "60b15159bb61d0a063b08b7957f92a61be4aff6f579f763fa46611e69f2f027f"
     },
     {
       "id": "C07",
@@ -332,7 +332,7 @@
       "failedTests": [
         "first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter"
       ],
-      "rawSha256": "aa45834dad7309e4546e2d110cc2f8f46f0fbce23078e509622bf212cea7a5f3"
+      "rawSha256": "28bc830e189e05201f5fd5cf7da69290e2c7d7d2cbf6dcfa8bd8b26c5841f658"
     },
     {
       "id": "C08",
@@ -347,7 +347,7 @@
       "failedTests": [
         "calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind"
       ],
-      "rawSha256": "26e55a0751be97941419ce0f21de62378d9b4bf14173a76e7238a1a1e2b744dc"
+      "rawSha256": "a30b459d5c9a9067e32a60d3e616b7b39f5412b889daac174f89dd8ab767d4e8"
     },
     {
       "id": "C09",
@@ -362,7 +362,7 @@
       "failedTests": [
         "contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior"
       ],
-      "rawSha256": "66cfe8731f9467da2da8a6b7f3b11db108ca02854211266d727cd5b1a9666108"
+      "rawSha256": "0876f15ae621ac4358e95365b2d3ff5726c4fc9d9172092d32471d8e448f46cc"
     },
     {
       "id": "C10",
@@ -377,7 +377,7 @@
       "failedTests": [
         "contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior"
       ],
-      "rawSha256": "5ca1bdf666680b326d9fd3caed660862f228e7078f446d7990f9c5520dd7b07d"
+      "rawSha256": "65ec88412d3dd4d5dddabec5bd44b386c1e7f4fefd9c01b415cdde6391897b08"
     },
     {
       "id": "C11",
@@ -392,7 +392,7 @@
       "failedTests": [
         "contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public"
       ],
-      "rawSha256": "5e5da021f03f5ac52b6b681a7295218e2d47d04c635b2137c40a46386a0e3908"
+      "rawSha256": "4669525324260372e4024222006b40bdc0d5619cab51f08d7a74617bce91af1f"
     }
   ],
   "compiled": 25,

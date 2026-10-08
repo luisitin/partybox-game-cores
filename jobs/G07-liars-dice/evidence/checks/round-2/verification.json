@@ -1,0 +1,229 @@
+{
+  "formatVersion": 1,
+  "result": "PASS",
+  "completedAt": "2026-10-08T07:50:53.173947+00:00",
+  "sourceSha256": {
+    "core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0"
+  },
+  "coreBundleSha256": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+  "htmlSha256": "e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3",
+  "commands": [
+    {
+      "command": "node scripts/fixtures.mjs",
+      "result": "PASS",
+      "detail": "Two exact byte-identical generations of manifest, all phase fixtures and schema."
+    },
+    {
+      "command": "node tests/probability-reference.mjs",
+      "result": "PASS",
+      "detail": {
+        "result": "PASS",
+        "handCases": 21,
+        "exhaustiveCases": 714,
+        "fullRolls": 111974,
+        "domainCases": 4182,
+        "conditionalCases": 105264,
+        "hiddenCompletions": 133644,
+        "invalidCalls": 13
+      }
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/*.test.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-08T07:39:57.175571+00:00",
+      "finishedAt": "2026-10-08T07:48:06.372109+00:00",
+      "elapsedWallSeconds": 489.1967694759951,
+      "inputsUnchanged": true
+    },
+    {
+      "command": "node scripts/mutations.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-08T07:39:57.147415+00:00",
+      "finishedAt": "2026-10-08T07:40:23.001942+00:00",
+      "elapsedWallSeconds": 25.854722761985613,
+      "inputsUnchanged": true
+    },
+    {
+      "command": "node tests/strategy-holdout.mjs",
+      "status": "PASS",
+      "exitCode": 0,
+      "startedAt": "2026-10-08T07:39:57.188269+00:00",
+      "finishedAt": "2026-10-08T07:40:11.671260+00:00",
+      "elapsedWallSeconds": 14.483107382999151,
+      "inputsUnchanged": true
+    }
+  ],
+  "nodeTests": {
+    "tests": 38,
+    "pass": 38,
+    "fail": 0,
+    "cancelled": 0,
+    "skipped": 0
+  },
+  "matrix": {
+    "result": "PASS",
+    "completedGames": 7000,
+    "byCount": [
+      {
+        "players": 2,
+        "games": 1000,
+        "events": 45906
+      },
+      {
+        "players": 3,
+        "games": 1000,
+        "events": 96581
+      },
+      {
+        "players": 4,
+        "games": 1000,
+        "events": 155976
+      },
+      {
+        "players": 5,
+        "games": 1000,
+        "events": 224054
+      },
+      {
+        "players": 6,
+        "games": 1000,
+        "events": 302594
+      },
+      {
+        "players": 7,
+        "games": 1000,
+        "events": 389440
+      },
+      {
+        "players": 8,
+        "games": 1000,
+        "events": 483901
+      }
+    ],
+    "events": 1698452,
+    "botSamples": 12279033,
+    "maxStateBytes": 3859,
+    "replay": "Twin reduction, previous-state immutability, SHA-256 and exact bytes, JSON roundtrip, \u2264256 KiB after every event",
+    "everyEventReplaySha256": "39f8b3e0a3eb0e9a4ec18be8f04d7414e80555b0186b4ea78d45047c50875d1c"
+  },
+  "properties": {
+    "result": "PASS",
+    "explicitSeeds": [
+      1,
+      2,
+      3
+    ],
+    "randomSeeds": 1000,
+    "randomSeedGenerator": 26375,
+    "events": 80156,
+    "maxStateBytes": 3716,
+    "everyEventReplaySha256": "40cf781f32634aa21f7213262eb5e579afedcf611c3516a386c02db474fcb5d9"
+  },
+  "requiredLeague": {
+    "matchups": [
+      {
+        "stronger": "sharp",
+        "weaker": "normal",
+        "games": 2000,
+        "pairedSeeds": 1000,
+        "wins": 1294,
+        "winRate": 0.647,
+        "wilson95": [
+          0.6257917571764973,
+          0.6676446309228143
+        ],
+        "pairedSeedCluster95": [
+          0.6270608465884543,
+          0.6669391534115457
+        ]
+      },
+      {
+        "stronger": "normal",
+        "weaker": "easy",
+        "games": 2000,
+        "pairedSeeds": 1000,
+        "wins": 1178,
+        "winRate": 0.589,
+        "wilson95": [
+          0.5672862632632163,
+          0.6103725023207207
+        ],
+        "pairedSeedCluster95": [
+          0.5695798150560271,
+          0.6084201849439729
+        ]
+      }
+    ],
+    "method": "Same seed and swapped seats for every pair; independent bot random streams derived from seed and event index; two-sided 95% Wilson interval and paired-seed cluster normal interval"
+  },
+  "freshHoldout": {
+    "seedIndependence": {
+      "priorSalts": [
+        101175758,
+        2066847458,
+        2292506887,
+        2876125503,
+        207162093,
+        168103391
+      ],
+      "priorSeeds": 18000,
+      "priorOverlap": 0,
+      "duplicateFresh": 0,
+      "coverage": "First 1,000 seeds from each recorded duel/calibration salt (a superset of pilots), plus all 12,000 completed 3\u20138-player diagnostic seeds."
+    },
+    "salt": 2353198545,
+    "saltHex": "0x8c42f5d1",
+    "matchups": [
+      {
+        "stronger": "sharp",
+        "weaker": "normal",
+        "games": 2000,
+        "pairedSeeds": 1000,
+        "wins": 1336,
+        "winRate": 0.668,
+        "wilson95": [
+          0.6470561319884656,
+          0.6882997401250335
+        ],
+        "pairedSeedCluster95": [
+          0.6486594776687421,
+          0.687340522331258
+        ]
+      },
+      {
+        "stronger": "normal",
+        "weaker": "easy",
+        "games": 2000,
+        "pairedSeeds": 1000,
+        "wins": 1140,
+        "winRate": 0.57,
+        "wilson95": [
+          0.5481889458364095,
+          0.591542667544215
+        ],
+        "pairedSeedCluster95": [
+          0.5505777361091776,
+          0.5894222638908223
+        ]
+      }
+    ]
+  },
+  "mutations": {
+    "result": "PASS",
+    "compiled": 25,
+    "assertionKills": 25,
+    "survivors": []
+  },
+  "historicalArchive": "evidence/checks/initial-core/index.json",
+  "limits": [
+    "These component commands deliberately did not rebuild or run browser/capture/hash/integrity gates, which are coordinated by the parent agent.",
+    "Hosted current-head CI is a separate acceptance gate; no hosted result is claimed by this local report.",
+    "The full matrix samples settings and finite seeded games; it is not an exhaustive proof of every possible history.",
+    "Bot comparison confidence bounds apply to these implementations under default duel rules, not multiplayer, humans or external champions.",
+    "The seed holdout is a separate fresh strength check, not a before/after improvement estimate."
+  ]
+}
