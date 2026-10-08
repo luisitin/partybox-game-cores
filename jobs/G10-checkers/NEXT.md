@@ -59,3 +59,43 @@ recorded explicitly. Successful subsequent pushes10:45:22 and11:11:30 met30min.
 Last head8a395249999f1c159775519802b901f842c0c0b8, mainclaimc96633f11:10:48.
 Stage now~11:33, target successfulpush11:36:30, hard11:41:30. Main claim time
 never resets branch cadence. Record observed successful reflog time afterpush.
+
+Milestone7 successful origin-reflog push de92e41 at11:37:15UTC.
+11:11:30→11:37:15 =25m45s, binding cadence PASS; early11:36:30 missed45s,
+hard11:41:30 met. Mainclaim1e94cfb at11:36:34. Next stage~11:55,
+targetsuccessfulpush12:02:15, hard12:07:15. Artifact writers were frozen.
+
+## Milestone8 around12:02UTC: startup and real six-class proof
+
+Native worker packing proof PASS2/2, actual exit0: every native decompressed
+byte matches source; queued initial request and both variants' full-node
+Strong report/cursor match. Unsupported native preparation reports an error.
+Initial harness JSON serialization collapsed -0 into0; raw failure retained,
+fixed with structuredClone; no bot runtime change was needed.
+
+Scoped real6 original unchanged Boost driver/independent reference and
+production comparison PASS10,000, W2672/L2800/D4528, five material classes
+(0303/0312/0501/0510/2211) and20 side/colour orientations. Original generic
+opener initially returned -2 because discovery expected missing3030; that
+control is retained. Explicit unchanged v2 constructor is reproducible.
+The private six data are NOT installed, and five classes are not full37.
+
+Current inline-data host strict build PASS. The prior guarded-page functional
+retry timed out on the runner's30sec page load deadline; another retained
+harness failure expected mixed case while CSS exposed uppercase preparation
+text. No browser/FPS acceptance claimed. Payloads now live in non-executable
+inline data tags; the host constructs only the selected worker, and start
+waits for complete DOM loading. Browser now hashes actual worker Blob bytes
+against the tested Node worker manifest. Current functional28/startup/reuse/
+cancel, strict600 desktop/phone and clips are PENDING after this change.
+
+Complete International acquisition is now privately activePGID129991, all82
+files/all37 classes intended; existing lower/root ranges reused. Root authorized
+local full-six/streamed-inline engineering only. No LFS configuration, uploads,
+charges or publication have occurred. GitHub live docs support2GB LFS/release
+file options; full browser memory/startup/representation remains unproven.
+Current gameplay stays licensed American2–6/Intl2–5; final-source leagues/
+matrix/mutations/fullnpmtest/currentCI/PR/KEEP GOING remain pending.
+
+Next cadence: previous actual push11:37:15, target12:02:15/hard12:07:15.
+Artifact writers except private acquisition are frozen for this checkpoint.

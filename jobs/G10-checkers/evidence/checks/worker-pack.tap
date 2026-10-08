@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: native decompression reproduces exact installed corpora and preserves queued first requests
+ok 1 - native decompression reproduces exact installed corpora and preserves queued first requests
+  ---
+  duration_ms: 19438.188992
+  type: 'test'
+  ...
+# Subtest: bootstrap reports unsupported native decompression without losing a pending caller silently
+ok 2 - bootstrap reports unsupported native decompression without losing a pending caller silently
+  ---
+  duration_ms: 5.620014
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 22953.369486

@@ -1,0 +1,43 @@
+{
+  "timestamp": "2026-10-08T12:03:30.882510+00:00",
+  "buildExit": 0,
+  "rawBuild": "inline-data-host-build.stdout",
+  "nativeWorkerProof": {
+    "passed": 2,
+    "exit": 0,
+    "raw": "worker-pack.tap",
+    "currentGeneratedWorkerHashEqualsPreviouslyTested": {
+      "american": true,
+      "international": true
+    }
+  },
+  "actualSixProduction": {
+    "cases": 10000,
+    "exit": 0,
+    "installed": false,
+    "classes": 5,
+    "completeRequiredClasses": 37,
+    "fullSixCoverage": false
+  },
+  "browser": {
+    "accepted": false,
+    "currentChecksPending": true,
+    "previousFailuresRetained": true
+  },
+  "privateAcquisition": {
+    "pgid": 129991,
+    "complete": false,
+    "jobWrites": false
+  },
+  "inputSha256": {
+    "play.html": "d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e",
+    "src/browser.ts": "d4c8b69b06f8c4655e9eea73cb67ce6c906fa3b0a36a1d5a080b125124adecb6",
+    "scripts/build.mjs": "d41fee578d553b10377bcf89789b963d75d6bfceaf77801a4ed4ead20c957f43",
+    "scripts/corpus-pack.mjs": "e5f4915f6bb14b3c6d437276091203557efff8df13caeee85970a45e38392cba",
+    "scripts/browser-check.mjs": "ad6ac27b603a53a9c6ddcb72b5b6467c194eda1edbdf6263df0e5b52fa7c8f5d",
+    "scripts/game-inputs.mjs": "e2647ad3de772102da9bb0cc18a26d1c5b4ecbf2d2e6bf277e29083fb76116bd",
+    "scripts/league.mjs": "9525d33061f6c57f7dc4c467149fe020faa34fbcef125360b1e26e9d45a50532",
+    "scripts/integrity.mjs": "df1b1e6a220bbcda02801346938afa7c47e1521f3a09bdc0caff51f0b32dba86",
+    "src/international.ts": "ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe"
+  }
+}

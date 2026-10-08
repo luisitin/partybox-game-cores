@@ -232,3 +232,33 @@ actualcheckpointhold start/resume are in league-pauses.json.
   integrity-milestone7.stdout; authoritative metadata/dictionary schema, source
   checksums/pure AST and original offline attributes pass. Final execution
   gates are explicitly excluded until current game/browser proof is complete.
+
+Milestone7 successful origin-reflog push de92e41 at11:37:15UTC.
+11:11:30→11:37:15 =25m45s, binding cadence PASS; early11:36:30 missed45s,
+hard11:41:30 met. Mainclaim1e94cfb at11:36:34. Next stage~11:55,
+targetsuccessfulpush12:02:15, hard12:07:15. Artifact writers were frozen.
+
+## Milestone8 native worker and scoped six-piece comparison
+
+- `node --test --test-reporter=tap tests/worker-pack.test.mjs`: PASS2/2, exit0,
+  raw worker-pack.tap; native byte identity, queued first actual input, both
+  full-node Strong reports/cursors, input immutability and bootstrap failure
+  status. Initial signed-zero harness failure retained in worker-pack-initial.tap.
+- `node scripts/validate-international-production.mjs --data
+  /tmp/g10-root-international-packaging/output/app --expected
+  evidence/checks/international-original-six/international-original-reference.jsonl
+  --out evidence/checks/international-production-six`: PASS10k, exit0, raw
+  international-production-six.stdout/report; original/independent/production
+  W2672/L2800/D4528, five real classes/20 orientations, not all37. No data installed.
+- Tracked explicit `--direct-v2 --pieces 6` original reproduction PASS10k,
+  identical input/transcript hashes to its first private success; original
+  generic-discovery -2 control and exact commands/source hashes retained.
+- `npm run build`: guarded host PASS, then inline-data host PASS, both exit0;
+  guarded-host-build.stdout/inline-data-host-build.stdout. Actual build hold
+ 11:46:06.598953→11:47:56.140066 (~109.54s) retained in runtime-holds.json.
+- `G10_BROWSER_DIR=evidence/browser-round7 G10_MEDIA_DIR=media/round7
+  node scripts/browser-check.mjs --functional-only`: both earlier attempts
+  failed and raw stdout retained: uppercase CSS status mismatch (harness fixed),
+  then default30sec page.goto timeout. Neither is accepted browser/FPS proof.
+  Inline-data current page and28-case Blob/hash/corpus/reuse/cancel checks
+  are authored but PENDING. No frame gates were relaxed.

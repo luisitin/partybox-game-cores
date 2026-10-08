@@ -83,7 +83,13 @@ def validate(args):
     evidence.mkdir(parents=True, exist_ok=True)
     source = checked_source(work, args.source_archive)
     wrapper = work / "international-original-adapter.cpp"
-    wrapper.write_text(WRAPPER, encoding="ascii")
+    wrapper_text = WRAPPER
+    if args.direct_v2:
+        wrapper_text = wrapper_text.replace("using namespace egdb_interface;",
+            "namespace egdb_interface { EGDB_DRIVER *egdb_open_wld_tun_v2(int, int, char const*, void (*)(char const*), EGDB_TYPE); }\nusing namespace egdb_interface;")
+        wrapper_text = wrapper_text.replace('egdb_open("maxpieces=6", 64, argv[1], report)',
+            "egdb_open_wld_tun_v2(6, 64, argv[1], report, EGDB_WLD_TUN_V2)")
+    wrapper.write_text(wrapper_text, encoding="ascii")
     database = work / "database"
     database.mkdir(exist_ok=True)
     for directory in args.database:
@@ -143,12 +149,14 @@ def validate(args):
     report.update({
         "status": "FAIL" if disagreements else "PASS", "disagreements": len(disagreements),
         "sourceUrl": SOURCE_URL, "sourceRevision": REVISION, "sourceArchiveSha256": SOURCE_SHA,
-        "wrapperSha256": digest(WRAPPER.encode("ascii")), "compiledBinarySha256": digest(executable.read_bytes()),
+        "wrapperSha256": digest(wrapper_text.encode("ascii")), "compiledBinarySha256": digest(executable.read_bytes()),
         "compileCommand": compile_command, "caseCommand": case_command, "queryCommand": query_command,
         "transcriptSha256": digest(transcript), "stdoutSha256": digest(executed.stdout),
         "stderrSha256": digest(executed.stderr), "stderrBytes": len(executed.stderr),
         "compatibilityNotes": "Compile the exact original sources directly with the source folders from example/CMakeLists.txt; root CMake names absent example directories. Original source bytes unchanged.",
         "sourceLicense": "Boost Software License 1.0; separate original-author data grant recorded in SOURCES.md.",
+        "driverConstructor": "egdb_open_wld_tun_v2(6,64,directory,callback,EGDB_WLD_TUN_V2)" if args.direct_v2 else "egdb_open(maxpieces=6,64,directory,callback)",
+        "discoveryHandling": "Explicit original v2 constructor bypasses generic discovery requiring the specific db6-3030.idx1 file. Partial acquired material only; no missing slice is synthesized." if args.direct_v2 else "Original generic discovery unmodified; its detected maximum may be lower than requested if the fixed discovery slice is absent.",
         "algorithmChanges": "None: original ranking, canonical orientation and decoding are unchanged."
     })
     (evidence / "international-original-reference-report.json").write_text(json.dumps(report, indent=2) + "\n")
@@ -165,6 +173,8 @@ if __name__ == "__main__":
     parser.add_argument("--pieces", default="2,3,4,5")
     parser.add_argument("--cases", default=10000, type=int)
     parser.add_argument("--source-archive", type=Path)
+    parser.add_argument("--direct-v2", action="store_true",
+                        help="Call the unchanged specific v2 constructor for a known partial corpus lacking the generic discovery file.")
     parser.add_argument("--work-dir", type=Path, default=Path(".work/international-original"))
     parser.add_argument("--evidence-dir", type=Path,
                         default=Path(os.environ["G10_EVIDENCE_DIR"]) if os.environ.get("G10_EVIDENCE_DIR")

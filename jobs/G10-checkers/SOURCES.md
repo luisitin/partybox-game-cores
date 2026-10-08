@@ -140,6 +140,40 @@ skips. Full six-piece validation, excluded capture resolution and
 draw-history conversion remain separate gates. The exact driver/source,
 query and transcript proof is in `evidence/checks/international-original/`.
 
+Five separately acquired actual six-piece classes also passed a private
+10,000-query comparison, using the original specific v2 constructor. The
+generic opener identified maxpieces5 because its six-piece discovery file
+db6-3030.idx1 was absent. That initial -2 unavailable-slice attempt is
+preserved separately; it is not a decoder correctness result. The original
+source algorithms remain unchanged. Retained discovery/success evidence
+is under `evidence/checks/international-original-six-discovery/` and
+`international-original-six-direct/`. The tracked `--direct-v2` reproduction
+option passed all 10,000 queries, reproducing the first successful input
+and combined comparison byte for byte. Its retained raw/hash report is
+under `evidence/checks/international-original-six/`.
+This reference worker has not copied the six-piece database into the repo.
+The absent 32 canonical six-piece classes and draw-history proof remain
+outside this successful five-class comparison.
+
+## Large-artifact platform research
+
+Live GitHub platform pages were read on 2026-10-08:
+
+- https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
+  gives per-file LFS limits: Free/Pro 2 GB, Team 4 GB, Enterprise Cloud 5 GB.
+- https://docs.github.com/en/billing/concepts/product-billing/git-lfs
+  lists included Free/Pro 10 GiB storage and 10 GiB monthly download
+  bandwidth; this account's remaining quota is unverified.
+- https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+  gives up to 1,000 release assets, each under 2 GiB, with no documented
+  release-total/bandwidth limit.
+
+These are primary platform facts, not independent rule corroboration or
+proof of an uploaded artifact. No LFS configuration, purchase, release or
+upload was performed by this research worker. The full-page size estimate
+and remaining browser/representation checks are in
+INTERNATIONAL-ENDGAME-HANDOFF.md. Complete-six remains pending.
+
 Milestone7 production update: unchanged actual db3–5 bin/idx bytes are now
 installed with per-file SHA/size metadata and separate D11 data permission.
 Production probes equal all10k original-C++/independent db2–5 records, including

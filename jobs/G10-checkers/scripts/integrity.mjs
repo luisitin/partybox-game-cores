@@ -6,6 +6,7 @@ import {z} from 'zod';
 import {gameManifestSchema} from '../dist/contract.mjs';
 import {game,tvView,controllerView,results} from '../dist/core.mjs';
 import {scanPureSource} from './purity.mjs';
+import {gameInputHashes} from './game-inputs.mjs';
 const json=async path=>JSON.parse(await readFile(path,'utf8'));
 const hash=value=>createHash('sha256').update(value).digest('hex');
 for(const line of (await readFile('SHA256SUMS.txt','utf8')).trim().split('\n')){
@@ -39,8 +40,9 @@ if(!process.argv.includes('--sources')){
   const mutations=await json(checksDirectory+'/mutations.json');assert.equal(mutations.total,25);assert(mutations.assertionKilled>=24);
   const league=await json(checksDirectory+'/league.json');assert.equal(league.totalGames,4000);assert.equal(league.gamesPerComparison,2000);
   assert.equal(league.botSourceSha256,hash(await readFile('src/bots.ts')));assert(league.comparisons.every(row=>row.games===1000&&row.scoreShare>.55&&row.decisiveWilson95[0]>.5));
-  const browser=await json(browserDirectory+'/checks.json');assert.equal(browser.sourceSha256,hash(html));assert.equal(browser.totalChecks,24);assert(browser.checks.every(row=>row.pass));
-  const capture=await json(browserDirectory+'/capture.json');assert.equal(capture.sourceSha256,browser.sourceSha256);assert.equal(capture.totalChecks,24);
+  assert.deepEqual(league.gameInputHashes,await gameInputHashes(),'League evidence must match every current pure game/data input');
+  const browser=await json(browserDirectory+'/checks.json');assert.equal(browser.sourceSha256,hash(html));assert.equal(browser.totalChecks,28);assert(browser.checks.every(row=>row.pass));
+  const capture=await json(browserDirectory+'/capture.json');assert.equal(capture.sourceSha256,browser.sourceSha256);assert.equal(capture.totalChecks,28);
   for(const name of ['desktop','phone']){
     const frames=await json(browserDirectory+'/'+name+'-frames.json');assert.equal(frames.sourceSha256,browser.sourceSha256);assert.equal(frames.frames.length,600);assert.equal(frames.capturing,false);assert(frames.meanFps>=59&&frames.p99Ms<=17);
     assert((await stat(mediaDirectory+'/'+name+'.webm')).size<10*1024*1024);

@@ -3,9 +3,9 @@
 Research design and corpus audit. Execution results are recorded in VERIFY.md
 and evidence/checks; source availability alone is not a passed delivery check.
 
-Easy: seeded legal choices with simple material/capture/promotion cues.
-Medium: search several complete turns, score material/kings, advancement,
-mobility and safe center. Strong: deterministic-budget iterative alpha-beta,
+Easy: seeded uniform legal choices. Medium: two complete search plies with
+an800-node budget, scoring material/kings, advancement and center.
+Strong: five-ply iterative alpha-beta with a6,000-node budget,
 capture quiescence, move ordering, transpositions and exact endgame probes.
 These choices are informed by D1/D6/D7; no engine-strength equivalence is
 claimed. Search uses the reducer's actual draw policy and history.
@@ -166,6 +166,31 @@ queries; only the current side's captures are excluded. The source's
 extra opponent-capture restriction starts at seven pieces. WDL omits
 25/16/5 and repetition histories. Direct proof is limited to acquired
 material, and five acquired six-piece partitions are not complete six.
+
+A further private 10,000-query comparison passed for the five actual
+six-piece classes 0303, 0312, 0501, 0510 and 2211, including mixed 4v2.
+All 20 side/colour orientations are represented. The first generic-opener
+attempt returned 10,000 unavailable-slice responses (-2): the original
+opener discovers six pieces using the specific db6-3030.idx1 file, absent
+from this partial acquisition. This is retained as a failure and discovery
+constraint, not called a decoder comparison.
+
+The successful adapter calls the author's unchanged specific v2 constructor
+directly with six pieces. No original ranking or decoding source changed.
+`--direct-v2 --pieces 6` makes that constructor selection reproducible in
+`scripts/validate-international-original.py`. The tracked option was
+executed and passed all 10,000 queries. Its input and combined comparison
+bytes match the first successful private adapter exactly. Outcomes were
+2,672 WIN, 2,800 LOSS and 4,528 DRAW from 27,297 candidates.
+Initial discovery evidence is under
+`evidence/checks/international-original-six-discovery/`; the successful
+private-adapter raw proof is under
+`evidence/checks/international-original-six-direct/`. Combined comparison
+SHA-256: `e814bb1b8db4b1cd14805e906ce142368339de019fe1bff80f3b9470fc291e2f`.
+The six-piece database files are not copied by this research worker. Five
+of 37 canonical classes do not satisfy complete-six coverage.
+The tracked reproduction's exact commands/source/query/output hashes and
+raw evidence are under `evidence/checks/international-original-six/`.
 
 ## Required bot strength evidence
 

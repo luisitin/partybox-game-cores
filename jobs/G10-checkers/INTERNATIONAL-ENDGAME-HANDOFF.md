@@ -183,6 +183,16 @@ resolution. A budget cutoff remains UNKNOWN.
    Source bytes remained unchanged, with no ABI patch. This result does
    not verify unsupplied six-piece partitions or draw-history conversion.
    Preserve source, input, output and transcript hashes.
+   Five real six-piece classes also passed a private 10,000-query native
+   comparison, retained under `evidence/checks/international-original-six-direct/`.
+   The original generic opener requires db6-3030.idx1 for six-piece
+   discovery; the prior unavailable-slice run is preserved under
+   `international-original-six-discovery/`. The successful original adapter
+   calls `egdb_open_wld_tun_v2(6,...)` directly without changing source
+   algorithms. The tracked reproduction exposes explicit `--direct-v2`;
+   its tracked rerun passed 10,000/10,000 with identical input/combined
+   bytes, retained under `evidence/checks/international-original-six/`.
+   This remains five of 37.
 4. Coordinate complete corpus packaging before claiming delivery.
    A roughly 1 GB compressed payload cannot fit one ordinary GitHub
    blob (100 MB limit), and base64/worker/browser copies materially
@@ -194,3 +204,38 @@ Private current research assets are under
 `international-selective/output/app/`, setup/file-list/public metadata,
 and parsed tables in `egdb-intl-format/tunstall-v2-tables-private.json`.
 Private sparse installer files are scaffolding, not acquired corpus.
+
+## Concrete large-artifact delivery alternatives
+
+Live GitHub platform documentation was read on 2026-10-08, separately
+from database permissions:
+
+- https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage
+  permits Git LFS files up to 2 GB on Free/Pro, 4 GB on Team and 5 GB on
+  Enterprise Cloud. The ordinary Git blob limit is not the LFS limit.
+  `git-lfs/3.6.1` is installed locally; no LFS configuration was changed.
+- https://docs.github.com/en/billing/concepts/product-billing/git-lfs
+  lists 10 GiB storage and 10 GiB monthly download bandwidth included
+  for Free/Pro. This repository owner's current plan/remaining quota
+  has not been inspected, and no purchase/upload was performed.
+- https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases
+  allows up to 1,000 release assets, each under 2 GiB, with no documented
+  total-release or bandwidth limit.
+
+Using the explicitly approximate installer totals, uncompressed binary
+base64 for complete International db2–6 is about 1.35 GB. Adding the
+actual American corpus/index and code gives roughly 1.41 GB before any
+further compression. That estimate fits the documented 2 GB/2 GiB
+channels; it is not a measured complete page or a browser PASS. A large
+LFS-backed play.html would have to be obtained as the actual object rather
+than its pointer. A release download can deliver the actual single file.
+Both routes preserve the possibility of disk-open, inline, zero-network
+gameplay; multi-file runtime fetches do not satisfy that requirement.
+
+Full-core and page engineering still needs a complete acquired 37-class
+payload, exact regenerated hashes/schema/spot checks, partitioned inline
+transport rather than one giant aggregate string, and actual browser
+startup/memory/frame measurements. Worker-only decoding can isolate
+gameplay from the UI but has not been demonstrated for this full corpus.
+These are concrete alternatives to an ordinary-blob size constraint,
+not source availability blockers and not claimed complete delivery.

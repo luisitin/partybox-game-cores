@@ -6,7 +6,7 @@ import type {RngState} from '../../../contract/rng';
 import type {SearchReport} from './bots.js';
 import {geometry} from './moves.js';
 import type {Variant} from './types.js';
-declare const G10_WORKER_SOURCES:Record<Variant,string>;
+declare const G10_WORKER_PARTS:Record<Variant,{prefix:string;suffix:string;payloads:{name:string;before:string;after:string}[]}>;
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const text=(id:string,value:string)=>{const node=el(id);if(node.textContent!==value)node.textContent=value;};
 const show=(id:string,visible:boolean)=>{el(id).hidden=!visible;};
@@ -22,6 +22,11 @@ let lastBotReport:SearchReport|null=null;
 const now=()=>virtualNow??performance.now();
 const crown='<svg aria-hidden="true" viewBox="0 0 40 32"><path d="M4 9 12 16 20 4 28 16 36 9 31 27H9Z"/><path d="M9 29H31V32H9Z"/></svg>';
 function stopWorker(){if(worker)worker.terminate();worker=null;pending=null;workerVariant=null;workerReady=false;if(workerUrl)URL.revokeObjectURL(workerUrl);workerUrl=null;}
+function workerBlob(variant:Variant){
+  const definition=G10_WORKER_PARTS[variant],parts:BlobPart[]=[definition.prefix];
+  for(const payload of definition.payloads){const encoded=el<HTMLScriptElement>('g10-corpus-'+payload.name).textContent;if(!encoded)throw new Error('Offline bot data missing');parts.push(payload.before,encoded,payload.after);}
+  parts.push(definition.suffix);return new Blob(parts,{type:'text/javascript'});
+}
 function humanTurn(){return !!state&&controllers[turnId(state)]==='human';}
 function currentLegal(){
   if(state!==cachedState){cachedState=state;legal=state?controllerView(state,turnId(state)).legalMoves:[];}
@@ -120,8 +125,10 @@ function askBot(){
   const snapshot=state,id=++requestId,skill=controllers[turnId(state)] as BotSkill;
   try{
     if(worker&&workerVariant!==state.variant)stopWorker();
-    if(!worker){workerVariant=state.variant;workerUrl=URL.createObjectURL(new Blob([G10_WORKER_SOURCES[state.variant]],{type:'text/javascript'}));worker=new Worker(workerUrl);workerStarts++;}
+    if(!worker){workerVariant=state.variant;workerUrl=URL.createObjectURL(workerBlob(state.variant));worker=new Worker(workerUrl);workerStarts++;}
+    const activeWorker=worker;
     pending={id,state:snapshot};worker.onmessage=(message:MessageEvent<{id?:number;ready?:boolean;report?:SearchReport;cursor?:RngState;error?:string}>)=>{
+      if(worker!==activeWorker)return;
       const data=message.data;if(data.ready){workerReady=true;render();return;}
       if(data.id===undefined&&data.error){stopWorker();notice=data.error;botDue=Infinity;render();return;}
       if(!pending||data.id!==pending.id||state!==pending.state)return;
@@ -139,6 +146,8 @@ function tick(){
   renderClock();if(!humanTurn()&&!pending&&(forcedStep||time>=botDue)){forcedStep=false;askBot();}
 }
 el('start').addEventListener('click',start);['new-game','play-again'].forEach(id=>el(id).addEventListener('click',setup));
+el<HTMLButtonElement>('start').disabled=document.readyState==='loading';
+document.addEventListener('DOMContentLoaded',()=>{el<HTMLButtonElement>('start').disabled=false;},{once:true});
 ['pause','resume','end'].forEach(action=>el(action).addEventListener('click',()=>event({type:'vip',action:action as 'pause'|'resume'|'end',now:now()})));
 el('resign').addEventListener('click',()=>{if(humanTurn())act({type:'resign'});});
 el('undo-draft').addEventListener('click',()=>{draft=[];notice='';renderBoard();renderControls();});
@@ -151,5 +160,5 @@ setInterval(tick,100);
   setState:(next:State,roles?:Record<string,Controller>)=>{if(roles)controllers={...roles};else controllers=Object.fromEntries(next.order.map(id=>[id,'human']));install(structuredClone(next));},
   setTime:(value:number|null)=>{virtualNow=value;},event:(value:GameEvent<Input>)=>event(value),act,
   tick,start,setup,setPace:(value:string)=>{pace=value;el<HTMLSelectElement>('pace').value=value;schedule();renderControls();},
-  chooseSquare,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botCursor:{...botCursor},pace,now:now(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
+  workerBlob,chooseSquare,host:()=>({thinking:!!pending,workerReady,workerStarts,workerVariant,botCursor:{...botCursor},pace,now:now(),lastBotReport:lastBotReport?structuredClone(lastBotReport):null}),
 };

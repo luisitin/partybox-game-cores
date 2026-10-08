@@ -26,10 +26,15 @@ export function pack(bytes,precompressed=null){
   assert(inflateRawSync(compressed).equals(bytes),'Compression changed source bytes');
   return {compressed,report:{rawBytes:bytes.length,compressedBytes:compressed.length,rawSha256:sha256(bytes),compressedSha256:sha256(compressed)}};
 }
-export function workerBootstrap(script,payloads){
-  const source=payloads.map(({name,compressed})=>'G10_DATABASE_BYTES['+JSON.stringify(name)+']=await unpack('+JSON.stringify(compressed.toString('base64'))+');').join('\n');
-  return 'const queued=[];self.onmessage=event=>queued.push(event);\n'+
+export function workerParts(script,names){
+  const prefix='const queued=[];self.onmessage=event=>queued.push(event);\n'+
     '(async()=>{const G10_DATABASE_BYTES=Object.create(null);\n'+
-    'async function unpack(encoded){const bytes=Uint8Array.from(atob(encoded),value=>value.charCodeAt(0));const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));return new Uint8Array(await new Response(stream).arrayBuffer());}\n'+source+'\n'+script+'\n'+
+    'async function unpack(encoded){const bytes=Uint8Array.from(atob(encoded),value=>value.charCodeAt(0));const stream=new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));return new Uint8Array(await new Response(stream).arrayBuffer());}\n';
+  const suffix=script+'\n'+
     'self.postMessage({ready:true});for(const event of queued)self.onmessage(event);})().catch(()=>self.postMessage({error:"The offline endgame database could not be prepared in this browser."}));\n';
+  return {prefix,suffix,payloads:names.map(name=>({name,before:'G10_DATABASE_BYTES['+JSON.stringify(name)+']=await unpack("',after:'");\n'}))};
+}
+export function workerBootstrap(script,payloads){
+  const parts=workerParts(script,payloads.map(value=>value.name));
+  return parts.prefix+parts.payloads.map((value,index)=>value.before+payloads[index].compressed.toString('base64')+value.after).join('')+parts.suffix;
 }

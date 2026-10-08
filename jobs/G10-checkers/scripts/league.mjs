@@ -4,6 +4,7 @@ import {resolve} from 'node:path';
 import {createHash} from 'node:crypto';
 import {performance} from 'node:perf_hooks';
 import {Worker} from 'node:worker_threads';
+import {gameInputHashes} from './game-inputs.mjs';
 const arg=name=>{const index=process.argv.indexOf(name);return index>=0?process.argv[index+1]:null;};
 const games=Number(arg('--games')??1000),selected=arg('--variant'),variants=selected?[selected]:['american','international'];
 const workers=Number(arg('--workers')??4),canonical=games===1000&&variants.length===2;
@@ -13,7 +14,7 @@ const directory=resolve(process.env.G10_EVIDENCE_DIR??'evidence/checks'),label=c
 await mkdir(directory+'/'+label+'-games',{recursive:true});
 const report={command:'node scripts/league.mjs'+process.argv.slice(2).map(value=>' '+value).join(''),gamesPerVariantComparison:games,gamesPerComparison:games*variants.length,workers,
   opening:'Standard starting board; paired identical seed with stronger side alternated. No outcome-based opening selection.',startAt:new Date().toISOString(),comparisons:[],
-  botSourceSha256:createHash('sha256').update(await readFile('src/bots.ts')).digest('hex')};
+  botSourceSha256:createHash('sha256').update(await readFile('src/bots.ts')).digest('hex'),gameInputHashes:await gameInputHashes()};
 const tasks=[];
 for(const [higher,lower] of [['sharp','normal'],['normal','easy']])for(const variant of [...variants].reverse())for(let start=0;start<games;start+=50){
   tasks.push({variant,higher,lower,start,end:Math.min(start+50,games)});
