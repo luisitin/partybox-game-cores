@@ -24,3 +24,5 @@
 - A temporary offline word-JSON loading experiment failed localFPS and was reverted before commit. No game/client/host behavior changes since the measured5d24187 head; unchanged29visual files remain protected.
 
 - Add the required job-level RULES.md: full cross-sourced mechanics, all researched variants, choices and owner/offline house rules; manufacturer manuals remain explicitly unread. Existing code/client/HTML unchanged.
+
+- State-size hardening: a manual16-seat/five-round Spanish stress probe measured374030bytes with120 escaped control characters per id, exceeding the256KB contract despite128-code-unit bounds. Add pure serialized-byte validation (130UTF-8 JSON bytes) to init and trusted joins; new regression covers maximal ASCII/Unicode/escaped/lone-surrogate identities through five rounds, with peaks79758–82238bytes and rejects over-budget ids. Original clients/assets and state shape retained.

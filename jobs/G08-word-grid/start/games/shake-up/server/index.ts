@@ -30,8 +30,21 @@ import { controllerView, tvView, type ControllerView, type TvView } from './view
 
 export const manifest: Manifest = gameManifestSchema.parse(manifestJson);
 
+/** IDs repeat as JSON object keys in every round log. Bound their serialized UTF-8
+ * cost, not just code units: a control character occupies six escaped bytes. */
+export function validIdentityId(id: string): boolean {
+  if (!id || id.length > 128) return false;
+  let bytes = 0;
+  for (const ch of JSON.stringify(id)) {
+    const n = ch.codePointAt(0) ?? 0;
+    bytes += n < 0x80 ? 1 : n < 0x800 ? 2 : n < 0x10000 ? 3 : 4;
+    if (bytes > 130) return false; // 128 payload bytes plus the two quotes
+  }
+  return true;
+}
+
 export function init(ctx: InitCtx): State {
-  if (ctx.players.length < 1 || ctx.players.length > 16 || new Set(ctx.players.map(p => p.id)).size !== ctx.players.length || ctx.players.some(p => !p.id || p.id.length > 128 || p.name.length > 80 || p.avatarId.length > 128)) throw new RangeError('Expected 1–16 distinct seats with bounded identity fields.');
+  if (ctx.players.length < 1 || ctx.players.length > 16 || new Set(ctx.players.map(p => p.id)).size !== ctx.players.length || ctx.players.some(p => !validIdentityId(p.id) || p.name.length > 80 || p.avatarId.length > 128)) throw new RangeError('Expected 1–16 distinct seats; ids at most128 JSON-encoded UTF-8 bytes, names80 and avatarIds128 code units.');
   const s = ctx.settings;
   const size = selectSetting(s, 'grid', ['4x4', '5x5'] as const, '4x4') === '5x5' ? 5 : 4;
   const players: Record<string, Player> = Object.fromEntries(ctx.players.map((p, seat) => [p.id, { id: p.id, name: p.name, avatarId: p.avatarId, connected: p.connected, bot: p.bot === true, away: !p.connected, seat }]));
@@ -136,7 +149,7 @@ export function reduce(state: State, event: GameEvent<Input>): State {
 /** Trusted host/offline roster adapter: root player events carry no names. Keep the owner's
  * late-join rule without allowing an unknown socket id to fabricate a playing identity. */
 export function joinPlayer(state: State, player: PlayerInfo, now: number): State {
-  if (state.phase.id === 'done' || state.order.length >= 16 || Object.hasOwn(state.players, player.id) || !player.id || player.id.length > 128 || player.name.length > 80 || player.avatarId.length > 128 || !Number.isFinite(now) || now < state.phase.startedAt) return state;
+  if (state.phase.id === 'done' || state.order.length >= 16 || Object.hasOwn(state.players, player.id) || !validIdentityId(player.id) || player.name.length > 80 || player.avatarId.length > 128 || !Number.isFinite(now) || now < state.phase.startedAt) return state;
   const p: Player = { ...player, bot: player.bot === true, away: !player.connected, seat: state.order.length };
   return { ...state, order: [...state.order, player.id], players: { ...state.players, [player.id]: p }, scores: { ...state.scores, [player.id]: 0 }, words: { ...state.words, [player.id]: [] } };
 }

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { createRng } from '../../../../contract/rng';
-import { game, joinPlayer } from '../games/shake-up/server';
+import { game, joinPlayer, validIdentityId } from '../games/shake-up/server';
 import { hasWord } from '../games/shake-up/server/dict';
 import { packFor } from '../games/shake-up/server/content';
 import { solve } from '../games/shake-up/server/solver';
@@ -100,6 +100,24 @@ describe('actual nine root contract invariants',()=>{
     }
     expect(s.phase.id).toBe('done');expect(submissions).toBeGreaterThan(1000);expect(peak).toBeGreaterThan(40000);
     console.log(JSON.stringify({crowdedRounds:5,attempts:submissions,peakBytes:peak}));
+  });
+  it('serialized identity limits include Unicode, control escapes and lone surrogates across five rounds',()=>{
+    for(const id of ['x'.repeat(129),'\u0001'.repeat(22),'界'.repeat(44),'😀'.repeat(33)])expect(validIdentityId(id)).toBe(false);
+    const peaks:Record<string,number>={};
+    for(const [kind,letter,count] of [['ascii','x',125],['unicode','界',41],['escaped','\u0001',20],['surrogate','\ud800',20]] as const){
+      const ids=Array.from({length:16},(_,i)=>`p${i}${letter.repeat(count)}`);
+      expect(ids.every(validIdentityId)).toBe(true);
+      let s=game.init({players:ids.map(id=>({id,name:'界'.repeat(80),avatarId:'😀'.repeat(64),connected:true})),settings:{rounds:5,grid:'5x5'},contentLang:'es',seed:17,now:1000});
+      let peak=0;
+      for(let step=0;step<150&&s.phase.id!=='done';step++){
+        const bytes=Buffer.byteLength(JSON.stringify(s));peak=Math.max(peak,bytes);expect(bytes).toBeLessThanOrEqual(256*1024);expect(jsonSafe(s)).toBeNull();s=fire(s);
+      }
+      expect(s.phase.id).toBe('done');expect(Buffer.byteLength(JSON.stringify(s))).toBeLessThanOrEqual(256*1024);peaks[kind]=peak;
+    }
+    const player={id:'\u0001'.repeat(120),name:'Synthetic',avatarId:'x',connected:true};
+    expect(()=>game.init({players:[player],settings:{},seed:1,now:1000})).toThrow(RangeError);
+    const roomState=room(2);expect(joinPlayer(roomState,player,roomState.phase.startedAt+1)).toBe(roomState);
+    console.log(JSON.stringify({boundedIdentityPeaks:peaks}));
   });
   it('common is a strict subset, obscure words are optional, and Spanish ignores stale English common',()=>{
     const full=packFor('en'),common=packFor('en','common');expect(common.words.length).toBeLessThan(full.words.length);

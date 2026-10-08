@@ -93,3 +93,5 @@ Keyboard: arrows move the focused cube, Enter/Space adds it, Escape clears; Subm
 ## Standalone verification and offline host
 From `jobs/G08-word-grid`, `npm ci` then `npm test` runs the job gates. `play.html` opens from disk without a build/network. It wraps the existing phone/TV pieces and uses their authored flat fallback; models, film look and CSS are preserved. Each hot-seat human gets the same clock on the same board, with masked handoff. Bots play during the first turn; everyone else looks away while a person hunts. This local timing adaptation does not change the simultaneous production rules.
 The actual root contract is checked using explicitly test-only SDK/UI/speech/flat-table bindings. Production audio and3D SDK integration still requires its real runtime; those capabilities are not claimed by the offline host.
+
+Initial/trusted-join ids are bounded by both128 code units and130 UTF-8 bytes in JSON (including quotes and escaping); names allow80 and avatarIds128 code units. This keeps repeated round-log keys inside the256KB contract even for Unicode/control/surrogate inputs. Invalid initial context throws; an invalid trusted join preserves state.

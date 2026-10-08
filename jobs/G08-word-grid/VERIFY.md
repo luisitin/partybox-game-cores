@@ -105,3 +105,9 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 |23|other phone receives first seat words|caught by 1 failed assertions|
 |24|early results exposed|caught by 1 failed assertions|
 |25|hunt never leaves|caught by 25 failed assertions|
+
+## Serialized-identity regression
+- `npx tsx .tmp/identity-pressure.ts`: original128-code-unit bound FAIL;16seats/five idle Spanish5×5 rounds measured ASCII76430, CJK195470 and escaped-control374030bytes (>262144). Temporary diagnostic is not a delivered gate.
+- `npx vitest run start/verification/contract.test.ts`: PASS12/12; new encoded-id stress covers16maximal ASCII/Unicode/control/lone-surrogate ids with long Unicode names/avatars across five rounds. Peaks82238/81246/79758/79758bytes. Initial/late-join over-budget identities are rejected. Existing12000-submission stress peak86534 remains passing. Full total becomes168assertions (151original+12contract+5published rules); exact-head full CI pending.
+- `npm run typecheck`, `npm run build:play`, `npx tsx start/verification/data-check.ts`: PASS;14204355-byte page and32JSONschemas. Isolated mutation rerun PASS24/25,26failed assertions for the never-exit-hunt mutant; report/hash updated.
+- Prior candidateaa065338fa2bfc7ffe530190b900e0ae6e9e7f95: entire pushCI37759859764 SUCCESS, including realfile browser and final hashes. Serialized-id fix requires a new complete CI run before PR.
