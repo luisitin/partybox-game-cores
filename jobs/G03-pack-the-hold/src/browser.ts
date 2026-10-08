@@ -36,7 +36,9 @@ function enterSeat(): void {
   if (!state || state.phase.id !== 'pack') { handoff = false; return; }
   const id = state.order[state.seat] as string;
   handoff = !skills.has(id);
-  if (handoff) state = game.reduce(state, { type: 'vip', action: 'pause', now: Date.now() });
+  // Hand-off begins when the pack phase begins, so generation/rendering costs
+  // cannot consume a human's allotted time before they press Start.
+  if (handoff) state = game.reduce(state, { type: 'vip', action: 'pause', now: state.phase.startedAt });
 }
 function dispatch(input: Parameters<typeof game.reduce>[1]): void {
   if (!state) return;
@@ -59,7 +61,7 @@ function svgShape(cells: readonly (readonly [number, number])[], color: string):
 function renderBoard(): void {
   if (!state) return;
   const s = state; const preview = selectedPlacement(); const crate = s.level.crates.find(c => c.id === selected);
-  const layouts = s.phase.id === 'pack' ? own() : showSolution ? game.tvView(s).solution : game.tvView(s).revealed[revealPlayer] ?? [];
+  const layouts = s.phase.id === 'pack' ? own() : showSolution ? game.tvView(s).solution ?? [] : game.tvView(s).revealed[revealPlayer] ?? [];
   const candidate = preview ? evaluateLayout(s.level, [...layouts.filter(p => p.crateId !== selected), preview]) : null;
   const placed = layouts.filter(p => !(canEdit() && p.crateId === selected));
   const tiles = s.level.cells.map(([a, b]) => `<rect x="${a}" y="${b}" width="1" height="1" rx=".055" fill="#e8edf0" stroke="#cad5dc" stroke-width=".025"/>`).join('');

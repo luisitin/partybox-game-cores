@@ -127,7 +127,7 @@ export function tvView(s: HoldState): HoldTvView {
     level: { ...s.level, cells: s.level.cells.map(c => [...c]), crates: s.level.crates.map(c => ({ ...c, cells: c.cells.map(cell => [...cell]) })) },
     revealed: reveal ? Object.fromEntries(s.order.map(id => [id, (s.layouts[id] ?? []).map(p => ({ ...p }))])) : {},
     roundScores: reveal ? Object.fromEntries(s.order.map(id => [id, { ...(s.history[id]?.[s.history[id]!.length - 1] ?? { value: 0, optimum: s.optimum, ratio: 0 }) }])) : {},
-    optimum: reveal ? s.optimum : null, solution: reveal ? s.solution.map(p => ({ ...p })) : [],
+    ...(reveal ? { optimum: s.optimum, solution: s.solution.map(p => ({ ...p })) } : {}),
   };
 }
 export function controllerView(s: HoldState, playerId: string): HoldControllerView {

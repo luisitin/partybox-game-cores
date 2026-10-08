@@ -31,7 +31,7 @@ export type Input =
 export interface HoldTvView extends TvView {
   round: number; rounds: number; seatId: string | null; level: Level;
   revealed: Record<string, Placement[]>; roundScores: Record<string, RoundScore>;
-  optimum: number | null; solution: Placement[];
+  optimum?: number; solution?: Placement[];
 }
 export interface HoldControllerView extends HoldTvView, ControllerView {
   ownLayout: Placement[]; ownValue: number; canPack: boolean;

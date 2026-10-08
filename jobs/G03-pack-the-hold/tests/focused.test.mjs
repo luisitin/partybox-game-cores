@@ -80,6 +80,10 @@ test('timers, repeated packing instances, pause/resume and deadlines resist stal
 });
 test('private layouts and optimum witnesses are hidden until reveal; view mutation is harmless', () => {
   const s = start(); const placement = s.solution[0];
+  for (const view of [game.tvView(s), ...s.order.map(id => game.controllerView(s, id)), game.controllerView(s, 'spectator')]) {
+    assert.equal(Object.hasOwn(view, 'optimum'), false);
+    assert.equal(Object.hasOwn(view, 'solution'), false);
+  }
   const altered = { ...s, layouts: { ...s.layouts, p1: [placement] }, solution: [], optimum: 999 };
   assert.deepEqual(game.tvView(s), game.tvView(altered));
   assert.deepEqual(game.controllerView(s, 'p0'), game.controllerView(altered, 'p0'));

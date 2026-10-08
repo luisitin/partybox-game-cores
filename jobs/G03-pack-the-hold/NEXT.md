@@ -2,21 +2,20 @@
 
 PR https://github.com/luisitin/partybox-game-cores/pull/3
 Branch job/G03-pack-the-hold; claim codex-core.
-Rounds1/2 green: twelve distinct holds per tier, independent proofs for all240
-calibrated templates, no repeated hold within a voyage.21 logic tests,25/25
-mutations, full data checks and actual disk-mode CI passed. Latest green base
-is d1e073e (runs37721189901 and37721185632).
+Rounds1–3 are implemented and green. Latest green basea5eecdf has independent
+proofs for all240 templates, twelve distinct holds per tier, no repeats across
+three rounds, stable keyboard focus and real phone touch dragging.21 tests,
+25/25 mutations, data checks and actual disk-mode CI passed.
 
-Round3 keyboard/touch improvement: focused selection no longer falls to BODY;
-R/F previews and Escape deselection update the tray; coordinates are announced;
-stable pointer capture verified with a real phone touch drag. Updated browser
-record/script passed over explicit localhost HTTP; regenerate/hash/schema checks
-and strict disk CI validate this push. No new core change in round3.
+Round4 is local: hand-off pause uses phase.startedAt, so setup work consumes
+none of the allotted human time; simulated200ms setup leaves45,000ms instead
+of44,800ms. Optimum/solution keys are fully absent from packing views, as the
+contract requires. Explicit omission tests added. Full21-test validation passed, with all25 mutations and data checks.
+The partial browser checks passed; verify this push in strict disk CI.
 
-Continue KEEP GOING: re-read G03, list five remaining weaknesses, fix the worst
-if meaningful, measure/log/push. Three consecutive rounds without a
-player-noticeable gain are required. Current no-gain streak:0. Next review:
-clock precision, typography, alignment, crate border weight, help phrasing.
-Keep media/fixtures/hashes current and refresh the main claim on every push.
-No contract/other-job changes or worktree. Cloud disk navigation remains blocked;
-mandatory CI uses actual disk mode, forbids HTTP fallback, and has passed.
+Next review: long player names on phones, timer alignment, font/border weight,
+help wording and minor spacing. No-gain streak remains0; need three consecutive
+rounds without meaningful player gain before moving to the next eligible job.
+Maintain media, fixtures and hashes. No shared-contract changes or worktree.
+The managed cloud browser blocks local disk navigation; CI uses actual disk
+mode, forbids HTTP fallback, and has passed every pushed milestone so far.

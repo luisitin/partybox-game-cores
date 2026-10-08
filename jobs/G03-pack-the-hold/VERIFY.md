@@ -218,3 +218,28 @@ real touch dragging on390×844, mouse dragging, keyboard placement, UI rosters
 2–8, reduced motion, zero exceptions/requests. Video103,401bytes. Raw samples:
 desktop60.000fps,16.667ms mean,p95=16.8ms; CPU4x phone58.379fps,17.129ms mean,
 p95=16.8ms,max50.1ms. Normal-runner disk/frame checks remain the final gate.
+
+## KEEP GOING round4: full human clock and secret-key omission
+
+Round3 passed both PR checks at a5eecdf (runs37721993907 and37721997692).
+Using the real pure reducer with a simulated200ms setup delay: pause at the
+post-setup timestamp then resume gives44,800ms; pause at phase.startedAt then
+resume gives the full45,000ms. The adapter now timestamps hand-off at entry.
+
+A fresh contract review found that numeric secret keys must be omitted, not
+included with empty placeholders. tvView/controllerView now omit optimum and
+solution entirely during packing and reveal them only at inspection/results.
+The focused secrecy test explicitly asserts key absence for TV, every player
+and a spectator. Existing opponent-layout diff tests remain.
+
+`npm run build && node scripts/visual.mjs --http --record --milestone 06`
+passed all interaction/roster checks, including touch and focus, before the
+key-omission tightening (the visible UI is unchanged). Video103,400bytes;
+desktop59.670fps,phone60.002fps,p95≤16.8ms. Full current checks are running;
+only their actual completion and strict CI can certify this milestone.
+
+Current `G03_VISUAL_MODE=http npm test` passed21/21 tests including explicit
+secret-key omission,25/25 mutations,8 JSON files/seven schemas,22 hashes and
+two byte-identical regenerations. Browser checks passed: all roster sizes,
+focus, touch/mouse/keyboard, zero exceptions/requests. Raw latest sample:
+desktop60.004fps,CPU4x phone59.343fps,p95≤16.8ms.
