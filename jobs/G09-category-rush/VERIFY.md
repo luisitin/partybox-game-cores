@@ -446,3 +446,29 @@ and Chrome 147646 closed; only zombies remain. No runtime defect or variance
 fix is claimed, no extra LOOP line is logged, and exact current-head CI must
 still pass before formal round 5. The workflow always uploads complete future
 recovery attempts, including failures.
+
+
+Exact e364a1b / run 37787335656 FAILED recovery case 8, saved host pause:
+expected 0:50, observed 1:00. All seven preceding cases passed, including
+double handover. Native GitHub artifact 11555756175 supplies the complete
+failed report and exact e5fec44 runner, now archived under
+round-4-hosted-recovery-second. ZIP bytes 371,694 and SHA256
+2cab92babb5be8bf908041a17ff00dcd8c56baca19d87b5322d1febcfeca9a69
+are recorded in the retrieval receipt. HTML and runner hashes match the actual
+source. Double-handover observations preserve 10,018 ms across both reloads,
+offline advance and both resumes; Ready saves 10,020 ms and displays 0:50.
+The failed host-pause case had no boundary observations, so its earliest
+divergence and cause remain unknown. This failure stays red and formal round 5
+is deferred. A transient shell 401 reading the failed log did not block the
+supported native artifact retrieval; no login or credential change was made.
+
+The shared observation helper now also captures timer/save/state/clock/modal
+boundaries for the exact host-pause case. Every original public action and
+equality/privacy assertion is unchanged. The workflow runs actual fresh
+recovery before the existing artifact binder, then all original suites, and
+always uploads its complete report/runner. This allows current metadata to
+bind to genuine current host evidence; no cached pass, skipped suite or relaxed
+assertion is used. Runtime be311 and strict sampler 1ac remain unchanged.
+No new local recovery run is claimed during the coordinator's G05 hold.
+This is an honest observability/proof-pending checkpoint, not a runtime fix or
+a new KEEP round.

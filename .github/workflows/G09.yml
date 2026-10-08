@@ -48,6 +48,8 @@ jobs:
           writeFileSync('evidence/browser/hosted-run.json',JSON.stringify({origin:'github-actions',headSha:process.env.G09_EVIDENCE_HEAD,runId:process.env.G09_EVIDENCE_RUN,attempt:process.env.G09_EVIDENCE_ATTEMPT,htmlSha256:hash('play.html'),runnerSha256:hash('scripts/browser-performance.mjs')},null,2)+'\n');
           JS
           node scripts/browser-performance.mjs
+      - name: Fresh exact-head recovery, privacy and storage failures before artifact binding
+        run: node scripts/browser-resume.mjs after
       - name: Hash hosted evidence, retaining failed measurements too
         if: always()
         run: |
@@ -94,8 +96,6 @@ jobs:
           node scripts/browser-clock.mjs
       - name: Completed-round receipts, scored reasons and keyboard focus
         run: node scripts/browser-receipts.mjs after
-      - name: Real offline reload recovery, privacy and storage failures
-        run: node scripts/browser-resume.mjs after
       - name: Real human plural duplicate review and scored receipts
         run: node scripts/browser-plurals.mjs after
       - name: Retain the complete recovery attempt even on failure
