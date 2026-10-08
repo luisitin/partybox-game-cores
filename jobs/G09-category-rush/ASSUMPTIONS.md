@@ -45,3 +45,10 @@
   Uncoordinated CI skips the helper's file I/O and retains all600 native frames,
   the original59FPS/p99<=17ms gates and separate recording contexts. Functional
   paused clocks never feed that sampler.
+- Seventh-round clipboard tests grant permissions only to their isolated local
+  Playwright context; production never requests clipboard access. Native paste
+  preserves tabs/vertical tabs/DEL but converts newline/CRLF to spaces in the
+  tested Chromium version. These are observed browser behaviors, not a promise
+  about every browser. A real authored answer loses a point after controls join
+  its initial article to its noun; no player improvement is claimed before a
+  measured correction and all current-source checks.

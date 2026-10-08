@@ -37,7 +37,8 @@ own-repeat scoring. Cross-player groups are transitive; own-repeat scoring
 checks direct pairs. Report only the directly matching own category numbers.
 No semantic fit, answer-bank membership or future ballot is a veto.
 
-This is an in-progress review, not a completed LOOP6 or new gain. The current
-production page and its genuine hosted proof remain unchanged. Final changed-
-source functional/privacy checks, all binding checks, strict native frames,
-separate milestone clip and exact-head CI remain required after any edit.
+This pre-edit ranking is preserved. Round6 subsequently completed on exact
+head79e9c90/run37814161304/job113438358747, green17:21:43UTC. LOOP6 and VERIFY.md
+record the actual measured feedback gain, complete functional/privacy checks,
+native frames and separate local/hosted clips. Round7 starts only after that
+full exact-head green; no-gain streak remains zero.
