@@ -141,3 +141,16 @@ Selection: Python 3 `random.Random(909).sample(pack['categories'], 30)`, followe
 | 30 | produce-06 | cabbage | RHS explicitly identifies green varieties and cooking; Wikipedia independently describes common green cabbage and cooked consumption. Pass. |
 
 Additional manual deck review corrected a shuttlecock sport in a ball-and-net prompt (`badminton` → `pickleball`) and removed a brand-like lip-care answer. Compact duplicate detection found `potholder`/`pot holder`; one was replaced. The seeded check sample is not a claim to have externally verified every answer.
+
+## KEEP GOING round 1 acceptance
+
+Initial PR head `b389ce4b1d312936588880c412b2bc885649db24` passed exact-head CI https://github.com/luisitin/partybox-game-cores/actions/runs/37758960937 at 09:53:09 UTC. Every job step passed, including 21 tests, full core/oracle/roster/property checks, mutations, duels, offline gameplay and regeneration. The next head contains 22 tests because a real-core paused-empty regression was added.
+
+- `node scripts/browser-empty-review.mjs baseline`: PASS on archived round-0 HTML, actual review clicks 48/192 at two/eight humans. `node scripts/browser-empty-review.mjs after`: eight checks PASS on current `0a9940c5…`, zero clicks at both rosters; mixed nonempty categories retain eight private ballots, and pause/skip/end/two-round behavior remains correct. Fixture-only failures and the original available reports/output are disclosed in VERIFY-PLAY.md. After elapsed numbers measure score readback, not human time saved.
+- `npx tsx --test --test-name-pattern='pause ignores an empty-review' tests/core.test.ts`: PASS for paused deadlines at both roster extremes, explicit resume deadline shift, stale timer rejection and VIP completion.
+- `npm run typecheck`: PASS after the erased State annotation and artifact assertions. `npm run build:play` twice: byte-identical current SHA `0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3`, 439,850 bytes. Core/content unchanged.
+- `node scripts/browser-check.mjs` and `node scripts/browser-clock.mjs`: 28/28 and independent stepped deadline PASS on the current source.
+- `node scripts/browser-performance.mjs`: PASS at 10:16:48.265–10:17:19.487 UTC, sampler `274a54ce…` unchanged, exact source hashes match. All 600 raw consecutive deltas retained per profile; desktop 59.311184 fps/p99 16.8 ms/max 50.1 ms, phone 4× 60.003180 fps/p99/max 16.8 ms. Separate 320,822/213,656-byte clips, all measurement/clip error and network streams checked independently. Processes closed at completion.
+- `npx tsx --test tests/artifacts.test.ts`: 1/1 PASS, 21.074 ms body; binds current frame/source/license/clip/28-check evidence and both actual 48/192→0 action reports, retained mixed ballots and zero runtime errors/network/dialogs. Workflow also runs the new eight-check pacing probe and independent clock.
+- One checksum invocation was mistakenly run from repository root, where its relative script was absent; it failed with MODULE_NOT_FOUND and transient npx cache installation. Re-running from the job folder used pinned tsx 4.20.6 and passed. No repository dependency changed.
+- `npx tsx scripts/checksums.ts && npx tsx scripts/checksums.ts --check`: all 102 data/media files PASS; `git diff --check`: PASS.

@@ -1,7 +1,7 @@
 {
-  "sourceSha256": "a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08",
+  "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
   "sourceFingerprints": {
-    "client.ts": "a0f1233169c1957fdb583f0f28f3f4ba4e21712551453545cd5178d3bba44eec",
+    "client.ts": "a220085b5a5bb0f2b8bc264d3913e0c15a03aebb2d2347fc20c58ade464f6431",
     "build-play.ts": "4f8a9b8c0b42d23de11e609c210a9ad0c0c79a5275ef7d77dded268cb646d609",
     "src/play.template.html": "b913dc187eca239fb65acbffde3b2b05fe8dfa3d6ff395a3418b01717a1f519e",
     "src/index.ts": "966bb2da3500e5adfdd556e9f830c4acb9e14b80c6b347b4db4f5e2e9f9dab66",
@@ -23,7 +23,7 @@
   "samplingRecording": false,
   "recordingDuringMeasurement": false,
   "browser": "141.0.7390.37",
-  "startedAt": "2026-10-08T09:41:53.562Z",
+  "startedAt": "2026-10-08T10:16:48.265Z",
   "profiles": [
     {
       "profile": "desktop",
@@ -32,17 +32,17 @@
         "height": 1080
       },
       "cpuThrottle": 1,
-      "sourceSha256": "a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08",
+      "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
       "count": 600,
-      "totalMs": 10082.802,
-      "meanMs": 16.804669999999998,
-      "fps": 59.50726792016743,
+      "totalMs": 10116.136,
+      "meanMs": 16.860226666666666,
+      "fps": 59.31118363770514,
       "p95Ms": 16.700000000000728,
       "p99Ms": 16.800000000000182,
-      "maxMs": 83.30000000000018,
+      "maxMs": 50.100000000000364,
       "networkRequests": [
         "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
       ],
@@ -56,7 +56,7 @@
           "height": 1080
         },
         "cpuThrottle": 1,
-        "sourceSha256": "a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08",
+        "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
         "activeRecordingMs": 3000,
         "workload": "same 12-category answer screen with active timer",
         "pageErrors": [],
@@ -64,7 +64,7 @@
           "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 303055
+      "videoBytes": 320822
     },
     {
       "profile": "phone4x",
@@ -73,16 +73,16 @@
         "height": 844
       },
       "cpuThrottle": 4,
-      "sourceSha256": "a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08",
+      "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
       "samplingRecording": false,
       "recordingDuringMeasurement": false,
       "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
       "count": 600,
-      "totalMs": 9999.536,
-      "meanMs": 16.665893333333333,
-      "fps": 60.002784129183595,
+      "totalMs": 9999.47,
+      "meanMs": 16.665783333333334,
+      "fps": 60.00318016854894,
       "p95Ms": 16.700000000000728,
-      "p99Ms": 16.80000000000109,
+      "p99Ms": 16.800000000000182,
       "maxMs": 16.80000000000109,
       "networkRequests": [
         "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
@@ -97,7 +97,7 @@
           "height": 844
         },
         "cpuThrottle": 4,
-        "sourceSha256": "a209acd1d603518be5dd5d7bb9395423578bd10de75a7eb2122c506028526e08",
+        "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
         "activeRecordingMs": 3000,
         "workload": "same 12-category answer screen with active timer",
         "pageErrors": [],
@@ -105,9 +105,9 @@
           "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
         ]
       },
-      "videoBytes": 233152
+      "videoBytes": 213656
     }
   ],
   "passed": true,
-  "finishedAt": "2026-10-08T09:42:24.762Z"
+  "finishedAt": "2026-10-08T10:17:19.487Z"
 }

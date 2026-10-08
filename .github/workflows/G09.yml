@@ -40,3 +40,7 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Real offline file gameplay and accessibility
         run: node scripts/browser-check.mjs
+      - name: Empty-review pacing, host controls and stepped review clock
+        run: |
+          node scripts/browser-empty-review.mjs after
+          node scripts/browser-clock.mjs

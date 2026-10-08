@@ -1,7 +1,7 @@
 {
   "mode": "after",
   "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
-  "startedAt": "2026-10-08T10:12:17.509Z",
+  "startedAt": "2026-10-08T10:11:16.520Z",
   "checks": [
     {
       "name": "2 humans all blank: measured compulsory review actions",
@@ -29,11 +29,8 @@
     },
     {
       "name": "two blank rounds settle independently and continue through the real next-round input",
-      "passed": true
-    },
-    {
-      "name": "offline runtime and exact tested HTML remain clean",
-      "passed": true
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /round 2/. Input:\n\n'PRIVATE ANSWER TIME · ROUND 2'\n"
     }
   ],
   "blankProfiles": [
@@ -42,7 +39,7 @@
       "readyClicks": 0,
       "ballotLocks": 0,
       "reviewActionCount": 0,
-      "reviewElapsedMs": 47.12057499999992,
+      "reviewElapsedMs": 36.95335699999987,
       "categories": []
     },
     {
@@ -50,7 +47,7 @@
       "readyClicks": 0,
       "ballotLocks": 0,
       "reviewActionCount": 0,
-      "reviewElapsedMs": 36.00779700000021,
+      "reviewElapsedMs": 31.96918100000039,
       "categories": []
     }
   ],
@@ -59,7 +56,7 @@
     "networkRequests": [],
     "dialogs": []
   },
-  "passed": true,
+  "passed": false,
   "browser": "141.0.7390.37",
   "mixed": {
     "nonemptyCategories": [
@@ -71,5 +68,6 @@
     "emptyCategoriesSkipped": 8,
     "ballotLocks": 8
   },
-  "finishedAt": "2026-10-08T10:12:41.035Z"
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /round 2/. Input:\n\n'PRIVATE ANSWER TIME · ROUND 2'\n",
+  "finishedAt": "2026-10-08T10:11:38.586Z"
 }

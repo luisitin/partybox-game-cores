@@ -97,7 +97,7 @@ try {
     });
     await fresh();await begin(2,2);
     await check('two blank rounds settle independently and continue through the real next-round input',async()=>{
-      await submitBlankSheets(2);await assertScores(2,['0','0']);await page.locator('#next-round').click();assert.match(await page.locator('.handover .eyebrow').innerText(),/round 2/);
+      await submitBlankSheets(2);await assertScores(2,['0','0']);await page.locator('#next-round').click();assert.match(await page.locator('.handover .eyebrow').innerText(),/round 2/i);
       await submitBlankSheets(2);await assertScores(2,['0','0']);await page.locator('#next-round').click();assert.match(await page.locator('.session-top .eyebrow').innerText(),/final results/i);assert.match(await page.locator('.session-top h2').innerText(),/tie!/);
     });
   }

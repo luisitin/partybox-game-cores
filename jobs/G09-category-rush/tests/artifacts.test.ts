@@ -31,6 +31,17 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   }
   const functional=json('evidence/browser/functional-report.json');assert.equal(functional.sourceSha256,digest);
   assert.equal(functional.passed,true);assert(functional.checks.length>=28&&functional.checks.every((c:any)=>c.passed));
+  const before=json('evidence/browser/round-1-baseline/report.json'),after=json('evidence/browser/round-1-after/report.json');
+  assert.equal(before.passed,true);assert.equal(before.sourceSha256,sha('evidence/browser/round-0-accepted/play.html'));
+  assert.equal(after.passed,true);assert.equal(after.sourceSha256,digest);assert.equal(after.checks.length,8);
+  assert(after.checks.every((c:any)=>c.passed));
+  for(const count of [2,8]){
+    const old=before.blankProfiles.find((p:any)=>p.humans===count),now=after.blankProfiles.find((p:any)=>p.humans===count);
+    assert.equal(old.ballotLocks,count*12);assert.equal(old.readyClicks,count*12);assert.equal(old.reviewActionCount,count*24);
+    assert.equal(now.ballotLocks,0);assert.equal(now.readyClicks,0);assert.equal(now.reviewActionCount,0);
+  }
+  assert.equal(after.mixed.ballotLocks,8);assert.equal(after.mixed.emptyCategoriesSkipped,8);
+  for(const report of [before,after])for(const key of ['pageErrors','networkRequests','dialogs'])assert.equal(report.runtime[key].length,0);
   const html=readFileSync(new URL('play.html',root),'utf8');
   assert.match(html,/^<!doctype html>\s*<!-- Original Category Rush code, data and CSS\/SVG[\s\S]*?-->\s*<html lang="en">/);
   for(const path of ['LICENSE','node_modules/zod/LICENSE'])assert(html.includes(readFileSync(new URL(path,root),'utf8').trim()));

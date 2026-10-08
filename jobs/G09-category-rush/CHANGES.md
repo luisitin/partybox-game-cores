@@ -7,3 +7,5 @@
 - Fixed numeric-word initial-letter eligibility, detached public receipt objects, sized score deadlines for slow reading, and prevented future private self-repeats from influencing public review flags or bot ballots.
 - Preserved failed and superseded browser proofs, separated unrecorded frame measurements from recorded clips, and bound the final raw samples, HTML, sources, licenses and media to the exact job head through an artifact-integrity test.
 - Corrected generated HTML license-comment delimiters through the existing reproducible builder; fresh gameplay and frame evidence is required for the resulting file hash.
+
+- KEEP GOING round 1: removed empty-category handovers and ballot locks through bounded real timer events in the offline adapter; measured blank review actions 48/192 → 0/0 at two/eight humans, preserving all nonempty reviews and host controls.

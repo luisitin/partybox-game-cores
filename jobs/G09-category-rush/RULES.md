@@ -42,3 +42,8 @@ The exact twenty-letter alphabet is corroborated by Wikipedia [R5] and Game Room
 | Cactus licensed Bible edition [R9] | Two points for a correct-letter unique answer, one for a different-letter unique answer; wild-star letter choice; Bible-limited answers, optional broader answers; doubled/tripled proper-name bonuses. | Separate themed edition; not implemented or used for content. |
 
 See SOURCES.md for source identifiers, exact URLs, read dates and licensing. No commercial example answers or category lists were copied into the shipped deck.
+
+
+## Offline pacing
+
+A review category with no answers requires no decision. The hot-seat adapter immediately advances that public empty category through its real core deadline event. Any nonempty group keeps the normal private ballots, including wrong-initial and duplicate answers. Pause/menu guards and explicit score advancement remain available.
