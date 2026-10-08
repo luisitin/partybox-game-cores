@@ -1,8 +1,8 @@
 {
   "mode": "after",
   "sourceSha256": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613",
-  "runnerSha256": "e006063592f45019d4f322fd28183e64343a5c54dc478e9c3174d6f86577cae0",
-  "startedAt": "2026-10-08T14:32:43.602Z",
+  "runnerSha256": "3034f76530cc49f203006e5331375d192089fead549c0f8cab5373d9f081f256",
+  "startedAt": "2026-10-08T14:12:57.560Z",
   "checks": [
     {
       "name": "2 humans reload during answer",
@@ -34,43 +34,8 @@
     },
     {
       "name": "saved host pause restores controls and waits before private Ready",
-      "passed": true
-    },
-    {
-      "name": "near-expiry restore times out through the real submit flow",
-      "passed": true
-    },
-    {
-      "name": "host skip and end remain available after resume with settled scores",
-      "passed": true
-    },
-    {
-      "name": "discard removes the saved game without starting or exposing its draft",
-      "passed": true
-    },
-    {
-      "name": "storage denial and quota failure never claim the game was saved",
-      "passed": true
-    },
-    {
-      "name": "corrupt and stale local saves offer discard and a clean new game",
-      "passed": true
-    },
-    {
-      "name": "mixed-roster resume preserves exact future bot output and RNG counters",
-      "passed": true
-    },
-    {
-      "name": "selected historical gains describe that round while totals remain current",
-      "passed": true
-    },
-    {
-      "name": "Ready focuses Lock my ballot when every answer has the wrong initial",
-      "passed": true
-    },
-    {
-      "name": "exact HTML and offline runtime stayed clean",
-      "passed": true
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'1:00' !== '0:50'\n"
     }
   ],
   "cases": [
@@ -281,10 +246,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10018,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10018,
+        "seatElapsed": 10018,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -491,10 +456,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10038,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10038,
+        "seatElapsed": 10038,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -701,10 +666,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10038,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10038,
+        "seatElapsed": 10038,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -921,10 +886,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10040,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10040,
+        "seatElapsed": 10040,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -957,10 +922,10 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 250,
+            "deadline": 19976
           },
-          "phaseClock": 1,
+          "phaseClock": 250,
           "rng": {
             "seed": 42,
             "step": 265
@@ -1147,10 +1112,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 1,
-        "phaseBase": 1,
-        "phaseElapsed": 0,
-        "seatElapsed": 0,
+        "coreNow": 501,
+        "phaseBase": 250,
+        "phaseElapsed": 251,
+        "seatElapsed": 251,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1169,10 +1134,10 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 250,
+            "deadline": 19976
           },
-          "phaseClock": 1,
+          "phaseClock": 250,
           "rng": {
             "seed": 42,
             "step": 265
@@ -1359,10 +1324,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2536,
+        "phaseBase": 250,
+        "phaseElapsed": 2286,
+        "seatElapsed": 2286,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1381,8 +1346,8 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 250,
+            "deadline": 19976
           },
           "rng": {
             "seed": 42,
@@ -1533,7 +1498,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 1
+          "phaseClock": 250
         },
         "seats": [
           {
@@ -1571,10 +1536,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2536,
+        "phaseBase": 250,
+        "phaseElapsed": 2286,
+        "seatElapsed": 2286,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1603,8 +1568,8 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 250,
+            "deadline": 19976
           },
           "rng": {
             "seed": 42,
@@ -1755,7 +1720,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 1
+          "phaseClock": 250
         },
         "seats": [
           {
@@ -1793,10 +1758,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2538,
+        "phaseBase": 250,
+        "phaseElapsed": 2288,
+        "seatElapsed": 2288,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -1832,10 +1797,10 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 261986
+            "startedAt": 217485,
+            "deadline": 262485
           },
-          "phaseClock": 216986,
+          "phaseClock": 217485,
           "rng": {
             "seed": 42,
             "step": 265
@@ -2369,8 +2334,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217485,
+        "phaseBase": 217485,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -2391,10 +2356,10 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 261986
+            "startedAt": 217485,
+            "deadline": 262485
           },
-          "phaseClock": 216986,
+          "phaseClock": 217485,
           "rng": {
             "seed": 42,
             "step": 265
@@ -2928,8 +2893,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217485,
+        "phaseBase": 217485,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -2950,8 +2915,8 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 261986
+            "startedAt": 217485,
+            "deadline": 262485
           },
           "rng": {
             "seed": 42,
@@ -3451,7 +3416,7 @@
               ]
             }
           ],
-          "phaseClock": 216986
+          "phaseClock": 217485
         },
         "seats": [
           {
@@ -3487,8 +3452,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217485,
+        "phaseBase": 217485,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -3522,8 +3487,8 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 261986
+            "startedAt": 217485,
+            "deadline": 262485
           },
           "rng": {
             "seed": 42,
@@ -4023,7 +3988,7 @@
               ]
             }
           ],
-          "phaseClock": 216986
+          "phaseClock": 217485
         },
         "seats": [
           {
@@ -4059,8 +4024,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217485,
+        "phaseBase": 217485,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -4451,10 +4416,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10009,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10009,
+        "seatElapsed": 10009,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -4853,10 +4818,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10027,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10027,
+        "seatElapsed": 10027,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -5255,10 +5220,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10027,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10027,
+        "seatElapsed": 10027,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -5667,10 +5632,10 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 10000,
+        "coreNow": 10030,
         "phaseBase": 0,
-        "phaseElapsed": 10000,
-        "seatElapsed": 10000,
+        "phaseElapsed": 10030,
+        "seatElapsed": 10030,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -5727,10 +5692,10 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 251,
+            "deadline": 19977
           },
-          "phaseClock": 1,
+          "phaseClock": 251,
           "rng": {
             "seed": 42,
             "step": 265
@@ -6085,10 +6050,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 1,
-        "phaseBase": 1,
-        "phaseElapsed": 0,
-        "seatElapsed": 0,
+        "coreNow": 501,
+        "phaseBase": 251,
+        "phaseElapsed": 250,
+        "seatElapsed": 250,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6131,10 +6096,10 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 251,
+            "deadline": 19977
           },
-          "phaseClock": 1,
+          "phaseClock": 251,
           "rng": {
             "seed": 42,
             "step": 265
@@ -6489,10 +6454,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2538,
+        "phaseBase": 251,
+        "phaseElapsed": 2287,
+        "seatElapsed": 2287,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6535,8 +6500,8 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 251,
+            "deadline": 19977
           },
           "rng": {
             "seed": 42,
@@ -6825,7 +6790,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 1
+          "phaseClock": 251
         },
         "seats": [
           {
@@ -6893,10 +6858,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2538,
+        "phaseBase": 251,
+        "phaseElapsed": 2287,
+        "seatElapsed": 2287,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -6949,8 +6914,8 @@
         "state": {
           "phase": {
             "id": "review",
-            "startedAt": 1,
-            "deadline": 19727
+            "startedAt": 251,
+            "deadline": 19977
           },
           "rng": {
             "seed": 42,
@@ -7239,7 +7204,7 @@
           },
           "roundResult": null,
           "history": [],
-          "phaseClock": 1
+          "phaseClock": 251
         },
         "seats": [
           {
@@ -7307,10 +7272,10 @@
         "ballot": [
           true
         ],
-        "coreNow": 2001,
-        "phaseBase": 1,
-        "phaseElapsed": 2000,
-        "seatElapsed": 2000,
+        "coreNow": 2540,
+        "phaseBase": 251,
+        "phaseElapsed": 2289,
+        "seatElapsed": 2289,
         "botRngs": {
           "p1": {
             "seed": 42,
@@ -7376,10 +7341,10 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 266971
+            "startedAt": 217486,
+            "deadline": 267471
           },
-          "phaseClock": 216986,
+          "phaseClock": 217486,
           "rng": {
             "seed": 42,
             "step": 265
@@ -8093,8 +8058,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217486,
+        "phaseBase": 217486,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -8139,10 +8104,10 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 266971
+            "startedAt": 217486,
+            "deadline": 267471
           },
-          "phaseClock": 216986,
+          "phaseClock": 217486,
           "rng": {
             "seed": 42,
             "step": 265
@@ -8856,8 +8821,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217486,
+        "phaseBase": 217486,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -8902,8 +8867,8 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 266971
+            "startedAt": 217486,
+            "deadline": 267471
           },
           "rng": {
             "seed": 42,
@@ -9553,7 +9518,7 @@
               ]
             }
           ],
-          "phaseClock": 216986
+          "phaseClock": 217486
         },
         "seats": [
           {
@@ -9619,8 +9584,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217486,
+        "phaseBase": 217486,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -9684,8 +9649,8 @@
         "state": {
           "phase": {
             "id": "scores",
-            "startedAt": 216986,
-            "deadline": 266971
+            "startedAt": 217486,
+            "deadline": 267471
           },
           "rng": {
             "seed": 42,
@@ -10335,7 +10300,7 @@
               ]
             }
           ],
-          "phaseClock": 216986
+          "phaseClock": 217486
         },
         "seats": [
           {
@@ -10401,8 +10366,8 @@
           ""
         ],
         "ballot": [],
-        "coreNow": 216986,
-        "phaseBase": 216986,
+        "coreNow": 217486,
+        "phaseBase": 217486,
         "phaseElapsed": 0,
         "seatElapsed": 0,
         "botRngs": {
@@ -10449,8 +10414,8 @@
       "observations": [
         {
           "label": "before first reload",
-          "performanceNow": 10001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 10695,
+          "timeOrigin": 1791468803100,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
           "handover": false,
@@ -10649,10 +10614,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 10013,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -10668,8 +10633,8 @@
         },
         {
           "label": "after first reload",
-          "performanceNow": 10001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 10711,
+          "timeOrigin": 1791468803100,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
           "handover": false,
@@ -10868,10 +10833,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10022,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10022,
+            "seatElapsed": 10022,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -10887,8 +10852,8 @@
         },
         {
           "label": "after first Resume",
-          "performanceNow": 10001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 10769,
+          "timeOrigin": 1791468803100,
           "timer": null,
           "saveStatus": "Saved on this device.",
           "handover": true,
@@ -11087,10 +11052,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10022,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10022,
+            "seatElapsed": 10022,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -11106,8 +11071,8 @@
         },
         {
           "label": "after second reload",
-          "performanceNow": 10001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 10812,
+          "timeOrigin": 1791468803100,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
           "handover": false,
@@ -11306,10 +11271,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10022,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10022,
+            "seatElapsed": 10022,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -11325,8 +11290,8 @@
         },
         {
           "label": "after closed-time wait",
-          "performanceNow": 130001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 130816,
+          "timeOrigin": 1791468803100,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
           "handover": false,
@@ -11525,10 +11490,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10022,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10022,
+            "seatElapsed": 10022,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -11544,8 +11509,8 @@
         },
         {
           "label": "after second Resume",
-          "performanceNow": 130001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 130855,
+          "timeOrigin": 1791468803100,
           "timer": null,
           "saveStatus": "Saved on this device.",
           "handover": true,
@@ -11744,10 +11709,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10022,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10022,
+            "seatElapsed": 10022,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -11763,8 +11728,8 @@
         },
         {
           "label": "after Ready",
-          "performanceNow": 130001,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 131103,
+          "timeOrigin": 1791468803100,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
           "handover": false,
@@ -11963,10 +11928,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10024,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10024,
+            "seatElapsed": 10024,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -11990,8 +11955,8 @@
       "observations": [
         {
           "label": "before pause",
-          "performanceNow": 10004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 679,
+          "timeOrigin": 1791468804226,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
           "handover": false,
@@ -12190,10 +12155,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 10013,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -12209,8 +12174,8 @@
         },
         {
           "label": "after pause",
-          "performanceNow": 10004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 716,
+          "timeOrigin": 1791468804226,
           "timer": "0:50",
           "saveStatus": "Saved on this device.",
           "handover": false,
@@ -12224,7 +12189,7 @@
                 "startedAt": 0,
                 "deadline": 60000,
                 "paused": {
-                  "at": 10000
+                  "at": 10013
                 }
               },
               "phaseClock": 0,
@@ -12412,10 +12377,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -12431,8 +12396,8 @@
         },
         {
           "label": "after reload",
-          "performanceNow": 10004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 10745,
+          "timeOrigin": 1791468804226,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
           "handover": false,
@@ -12446,7 +12411,7 @@
                 "startedAt": 0,
                 "deadline": 60000,
                 "paused": {
-                  "at": 10000
+                  "at": 10013
                 }
               },
               "phaseClock": 0,
@@ -12634,10 +12599,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -12653,8 +12618,8 @@
         },
         {
           "label": "after closed-time wait",
-          "performanceNow": 130004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 130755,
+          "timeOrigin": 1791468804226,
           "timer": null,
           "saveStatus": "A saved game is ready to resume.",
           "handover": false,
@@ -12668,7 +12633,7 @@
                 "startedAt": 0,
                 "deadline": 60000,
                 "paused": {
-                  "at": 10000
+                  "at": 10013
                 }
               },
               "phaseClock": 0,
@@ -12856,10 +12821,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -12875,8 +12840,8 @@
         },
         {
           "label": "after Resume",
-          "performanceNow": 130004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 130800,
+          "timeOrigin": 1791468804226,
           "timer": null,
           "saveStatus": "Saved on this device.",
           "handover": true,
@@ -12890,7 +12855,7 @@
                 "startedAt": 0,
                 "deadline": 60000,
                 "paused": {
-                  "at": 10000
+                  "at": 10013
                 }
               },
               "rng": {
@@ -13078,10 +13043,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -13097,8 +13062,8 @@
         },
         {
           "label": "after paused wait",
-          "performanceNow": 250004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 250807,
+          "timeOrigin": 1791468804226,
           "timer": null,
           "saveStatus": "Saved on this device.",
           "handover": true,
@@ -13112,7 +13077,7 @@
                 "startedAt": 0,
                 "deadline": 60000,
                 "paused": {
-                  "at": 10000
+                  "at": 10013
                 }
               },
               "rng": {
@@ -13300,10 +13265,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -13319,8 +13284,8 @@
         },
         {
           "label": "after close",
-          "performanceNow": 250004,
-          "timeOrigin": 1791417600000,
+          "performanceNow": 250846,
+          "timeOrigin": 1791468804226,
           "timer": null,
           "saveStatus": "Saved on this device.",
           "handover": true,
@@ -13519,10 +13484,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 39,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -13538,9 +13503,9 @@
         },
         {
           "label": "after Ready",
-          "performanceNow": 250004,
-          "timeOrigin": 1791417600000,
-          "timer": "0:50",
+          "performanceNow": 251081,
+          "timeOrigin": 1791468804226,
+          "timer": "1:00",
           "saveStatus": "Saved on this device.",
           "handover": false,
           "modalTitle": null,
@@ -13738,10 +13703,10 @@
               ""
             ],
             "ballot": [],
-            "coreNow": 10000,
+            "coreNow": 10013,
             "phaseBase": 0,
-            "phaseElapsed": 10000,
-            "seatElapsed": 10000,
+            "phaseElapsed": 10013,
+            "seatElapsed": 42,
             "botRngs": {
               "p1": {
                 "seed": 42,
@@ -13755,153 +13720,7 @@
             "receiptRound": null
           }
         }
-      ],
-      "pausedSave": null
-    },
-    {
-      "case": "near expiry",
-      "submitted": true,
-      "answer": "Near expiry draft",
-      "next": "p2"
-    },
-    {
-      "case": "storage failure",
-      "storage": "denied",
-      "status": "Game could not be saved. Keep this page open."
-    },
-    {
-      "case": "storage failure",
-      "storage": "quota",
-      "status": "Game could not be saved. Keep this page open."
-    },
-    {
-      "case": "invalid save",
-      "kind": "corrupt"
-    },
-    {
-      "case": "invalid save",
-      "kind": "stale"
-    },
-    {
-      "case": "mixed bot continuation",
-      "seed": 42,
-      "beforeRng": {
-        "p1": {
-          "seed": 42,
-          "step": 0
-        },
-        "p2": {
-          "seed": 7961,
-          "step": 20
-        },
-        "p3": {
-          "seed": 15880,
-          "step": 22
-        },
-        "p4": {
-          "seed": 23799,
-          "step": 23
-        }
-      },
-      "afterRng": {
-        "p1": {
-          "seed": 42,
-          "step": 0
-        },
-        "p2": {
-          "seed": 7961,
-          "step": 40
-        },
-        "p3": {
-          "seed": 15880,
-          "step": 45
-        },
-        "p4": {
-          "seed": 23799,
-          "step": 46
-        }
-      },
-      "answers": {
-        "p1": [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          ""
-        ],
-        "p2": [
-          "drop scone",
-          "date",
-          "dam",
-          "drying",
-          "",
-          "darkness",
-          "",
-          "directions",
-          "",
-          "drawstring",
-          "",
-          "dog lead"
-        ],
-        "p3": [
-          "dutch baby",
-          "date",
-          "dam",
-          "drying",
-          "decoration",
-          "darkness",
-          "dice",
-          "directions",
-          "dew",
-          "drawstring",
-          "dog",
-          ""
-        ],
-        "p4": [
-          "dutch baby",
-          "discussion",
-          "dam",
-          "dusting",
-          "",
-          "darkness",
-          "die",
-          "directions",
-          "dew",
-          "drawstring",
-          "dog",
-          "dog lead"
-        ]
-      },
-      "scores": {
-        "p1": 0,
-        "p2": 2,
-        "p3": 4,
-        "p4": 6
-      }
-    },
-    {
-      "case": "historical gains",
-      "selectedRound": 1,
-      "gains": [
-        "+1 in round 1",
-        "+0 in round 1"
-      ],
-      "currentTotals": [
-        "3",
-        "0"
       ]
-    },
-    {
-      "case": "invalid review focus",
-      "enabledVotes": 0,
-      "focusedText": "Lock my ballot →"
     }
   ],
   "runtime": {
@@ -13909,13 +13728,8 @@
     "requests": [],
     "dialogs": []
   },
-  "clock": {
-    "mode": "paused-manual-advances",
-    "epoch": 1791417600000,
-    "pauseOffsetMs": 1000,
-    "playwrightVersion": "1.56.0"
-  },
-  "passed": true,
+  "passed": false,
   "browser": "141.0.7390.37",
-  "finishedAt": "2026-10-08T14:33:46.152Z"
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'1:00' !== '0:50'\n",
+  "finishedAt": "2026-10-08T14:13:25.283Z"
 }

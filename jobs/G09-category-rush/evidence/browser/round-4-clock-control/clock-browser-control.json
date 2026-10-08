@@ -1,0 +1,2730 @@
+{
+  "diagnostic": true,
+  "acceptance": false,
+  "startedAt": "2026-10-08T14:25:45.102Z",
+  "pid": 152279,
+  "dependencySha256": "e6dc352ceb479c45c1872b36796d55b6544fd545034129c9fec00e5fff1c05b3",
+  "htmlSha256": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613",
+  "runnerSha256": "f014e043a654a50a84aad8998950a83467702f5380168b2b332ca797b93ff07a",
+  "method": "Actual empty about:blank pages, unmodified Playwright1.56.0. Compare default auto clock with clock explicitly paused before app timers. Each runs40 awaited fastForward(10000) calls with native Node25ms scheduling gaps; retain every100ms interval callback and before/after performance sample. No game scripts, FPS, recording, tracing or dependency patch. This is a browser control, not proof of the schedule in past hosted failures.",
+  "profiles": [
+    {
+      "mode": "auto",
+      "iterations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "samples": [
+        {
+          "sequence": 0,
+          "label": "initial",
+          "performanceNow": 81,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417600081
+        },
+        {
+          "sequence": 1,
+          "label": "beforeFastForward0",
+          "performanceNow": 87,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417600087
+        },
+        {
+          "sequence": 2,
+          "label": "interval",
+          "performanceNow": 10091,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417610091
+        },
+        {
+          "sequence": 3,
+          "label": "afterFastForward0",
+          "performanceNow": 10091,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417610091
+        },
+        {
+          "sequence": 4,
+          "label": "afterNativeGap0",
+          "performanceNow": 10121,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417610121
+        },
+        {
+          "sequence": 5,
+          "label": "beforeFastForward1",
+          "performanceNow": 10122,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417610122
+        },
+        {
+          "sequence": 6,
+          "label": "interval",
+          "performanceNow": 20125,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417620125
+        },
+        {
+          "sequence": 7,
+          "label": "afterFastForward1",
+          "performanceNow": 20124,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417620124
+        },
+        {
+          "sequence": 8,
+          "label": "afterNativeGap1",
+          "performanceNow": 20153,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417620153
+        },
+        {
+          "sequence": 9,
+          "label": "beforeFastForward2",
+          "performanceNow": 20156,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417620156
+        },
+        {
+          "sequence": 10,
+          "label": "interval",
+          "performanceNow": 30158,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417630158
+        },
+        {
+          "sequence": 11,
+          "label": "afterFastForward2",
+          "performanceNow": 30158,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417630158
+        },
+        {
+          "sequence": 12,
+          "label": "afterNativeGap2",
+          "performanceNow": 30185,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417630185
+        },
+        {
+          "sequence": 13,
+          "label": "beforeFastForward3",
+          "performanceNow": 30186,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417630186
+        },
+        {
+          "sequence": 14,
+          "label": "interval",
+          "performanceNow": 40188,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417640188
+        },
+        {
+          "sequence": 15,
+          "label": "afterFastForward3",
+          "performanceNow": 40188,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417640188
+        },
+        {
+          "sequence": 16,
+          "label": "afterNativeGap3",
+          "performanceNow": 40215,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417640215
+        },
+        {
+          "sequence": 17,
+          "label": "beforeFastForward4",
+          "performanceNow": 40216,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417640216
+        },
+        {
+          "sequence": 18,
+          "label": "interval",
+          "performanceNow": 50219,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417650219
+        },
+        {
+          "sequence": 19,
+          "label": "afterFastForward4",
+          "performanceNow": 50219,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417650219
+        },
+        {
+          "sequence": 20,
+          "label": "afterNativeGap4",
+          "performanceNow": 50245,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417650245
+        },
+        {
+          "sequence": 21,
+          "label": "beforeFastForward5",
+          "performanceNow": 50247,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417650247
+        },
+        {
+          "sequence": 22,
+          "label": "interval",
+          "performanceNow": 60250,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417660250
+        },
+        {
+          "sequence": 23,
+          "label": "afterFastForward5",
+          "performanceNow": 60248,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417660248
+        },
+        {
+          "sequence": 24,
+          "label": "afterNativeGap5",
+          "performanceNow": 60275,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417660275
+        },
+        {
+          "sequence": 25,
+          "label": "beforeFastForward6",
+          "performanceNow": 60277,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417660277
+        },
+        {
+          "sequence": 26,
+          "label": "interval",
+          "performanceNow": 70278,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417670278
+        },
+        {
+          "sequence": 27,
+          "label": "afterFastForward6",
+          "performanceNow": 70279,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417670279
+        },
+        {
+          "sequence": 28,
+          "label": "afterNativeGap6",
+          "performanceNow": 70306,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417670306
+        },
+        {
+          "sequence": 29,
+          "label": "beforeFastForward7",
+          "performanceNow": 70308,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417670308
+        },
+        {
+          "sequence": 30,
+          "label": "interval",
+          "performanceNow": 80310,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417680310
+        },
+        {
+          "sequence": 31,
+          "label": "afterFastForward7",
+          "performanceNow": 80310,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417680310
+        },
+        {
+          "sequence": 32,
+          "label": "afterNativeGap7",
+          "performanceNow": 80336,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417680336
+        },
+        {
+          "sequence": 33,
+          "label": "beforeFastForward8",
+          "performanceNow": 80339,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417680339
+        },
+        {
+          "sequence": 34,
+          "label": "interval",
+          "performanceNow": 90341,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417690341
+        },
+        {
+          "sequence": 35,
+          "label": "afterFastForward8",
+          "performanceNow": 90340,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417690340
+        },
+        {
+          "sequence": 36,
+          "label": "afterNativeGap8",
+          "performanceNow": 90367,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417690367
+        },
+        {
+          "sequence": 37,
+          "label": "beforeFastForward9",
+          "performanceNow": 90369,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417690369
+        },
+        {
+          "sequence": 38,
+          "label": "interval",
+          "performanceNow": 100372,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417700372
+        },
+        {
+          "sequence": 39,
+          "label": "afterFastForward9",
+          "performanceNow": 100370,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417700370
+        },
+        {
+          "sequence": 40,
+          "label": "afterNativeGap9",
+          "performanceNow": 100397,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417700397
+        },
+        {
+          "sequence": 41,
+          "label": "beforeFastForward10",
+          "performanceNow": 100399,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417700399
+        },
+        {
+          "sequence": 42,
+          "label": "interval",
+          "performanceNow": 110405,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417710405
+        },
+        {
+          "sequence": 43,
+          "label": "afterFastForward10",
+          "performanceNow": 110400,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417710400
+        },
+        {
+          "sequence": 44,
+          "label": "afterNativeGap10",
+          "performanceNow": 110427,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417710427
+        },
+        {
+          "sequence": 45,
+          "label": "beforeFastForward11",
+          "performanceNow": 110429,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417710429
+        },
+        {
+          "sequence": 46,
+          "label": "interval",
+          "performanceNow": 120431,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417720431
+        },
+        {
+          "sequence": 47,
+          "label": "afterFastForward11",
+          "performanceNow": 120431,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417720431
+        },
+        {
+          "sequence": 48,
+          "label": "afterNativeGap11",
+          "performanceNow": 120460,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417720460
+        },
+        {
+          "sequence": 49,
+          "label": "beforeFastForward12",
+          "performanceNow": 120462,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417720462
+        },
+        {
+          "sequence": 50,
+          "label": "interval",
+          "performanceNow": 130464,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417730464
+        },
+        {
+          "sequence": 51,
+          "label": "afterFastForward12",
+          "performanceNow": 130464,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417730464
+        },
+        {
+          "sequence": 52,
+          "label": "afterNativeGap12",
+          "performanceNow": 130491,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417730491
+        },
+        {
+          "sequence": 53,
+          "label": "beforeFastForward13",
+          "performanceNow": 130492,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417730492
+        },
+        {
+          "sequence": 54,
+          "label": "interval",
+          "performanceNow": 140494,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417740494
+        },
+        {
+          "sequence": 55,
+          "label": "afterFastForward13",
+          "performanceNow": 140494,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417740494
+        },
+        {
+          "sequence": 56,
+          "label": "afterNativeGap13",
+          "performanceNow": 140522,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417740522
+        },
+        {
+          "sequence": 57,
+          "label": "beforeFastForward14",
+          "performanceNow": 140525,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417740525
+        },
+        {
+          "sequence": 58,
+          "label": "interval",
+          "performanceNow": 150528,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417750528
+        },
+        {
+          "sequence": 59,
+          "label": "afterFastForward14",
+          "performanceNow": 150527,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417750527
+        },
+        {
+          "sequence": 60,
+          "label": "afterNativeGap14",
+          "performanceNow": 150554,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417750554
+        },
+        {
+          "sequence": 61,
+          "label": "beforeFastForward15",
+          "performanceNow": 150555,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417750555
+        },
+        {
+          "sequence": 62,
+          "label": "interval",
+          "performanceNow": 160557,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417760557
+        },
+        {
+          "sequence": 63,
+          "label": "afterFastForward15",
+          "performanceNow": 160557,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417760557
+        },
+        {
+          "sequence": 64,
+          "label": "afterNativeGap15",
+          "performanceNow": 160587,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417760587
+        },
+        {
+          "sequence": 65,
+          "label": "beforeFastForward16",
+          "performanceNow": 160589,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417760589
+        },
+        {
+          "sequence": 66,
+          "label": "interval",
+          "performanceNow": 170591,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417770591
+        },
+        {
+          "sequence": 67,
+          "label": "afterFastForward16",
+          "performanceNow": 170594,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417770594
+        },
+        {
+          "sequence": 68,
+          "label": "afterNativeGap16",
+          "performanceNow": 170621,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417770621
+        },
+        {
+          "sequence": 69,
+          "label": "beforeFastForward17",
+          "performanceNow": 170622,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417770622
+        },
+        {
+          "sequence": 70,
+          "label": "interval",
+          "performanceNow": 180624,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417780624
+        },
+        {
+          "sequence": 71,
+          "label": "afterFastForward17",
+          "performanceNow": 180626,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417780626
+        },
+        {
+          "sequence": 72,
+          "label": "afterNativeGap17",
+          "performanceNow": 180654,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417780654
+        },
+        {
+          "sequence": 73,
+          "label": "beforeFastForward18",
+          "performanceNow": 180655,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417780655
+        },
+        {
+          "sequence": 74,
+          "label": "interval",
+          "performanceNow": 190657,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417790657
+        },
+        {
+          "sequence": 75,
+          "label": "afterFastForward18",
+          "performanceNow": 190657,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417790657
+        },
+        {
+          "sequence": 76,
+          "label": "afterNativeGap18",
+          "performanceNow": 190683,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417790683
+        },
+        {
+          "sequence": 77,
+          "label": "beforeFastForward19",
+          "performanceNow": 190685,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417790685
+        },
+        {
+          "sequence": 78,
+          "label": "interval",
+          "performanceNow": 200686,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417800686
+        },
+        {
+          "sequence": 79,
+          "label": "afterFastForward19",
+          "performanceNow": 200687,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417800687
+        },
+        {
+          "sequence": 80,
+          "label": "afterNativeGap19",
+          "performanceNow": 200714,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417800714
+        },
+        {
+          "sequence": 81,
+          "label": "beforeFastForward20",
+          "performanceNow": 200716,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417800716
+        },
+        {
+          "sequence": 82,
+          "label": "interval",
+          "performanceNow": 210718,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417810718
+        },
+        {
+          "sequence": 83,
+          "label": "afterFastForward20",
+          "performanceNow": 210717,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417810717
+        },
+        {
+          "sequence": 84,
+          "label": "afterNativeGap20",
+          "performanceNow": 210744,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417810744
+        },
+        {
+          "sequence": 85,
+          "label": "beforeFastForward21",
+          "performanceNow": 210745,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417810745
+        },
+        {
+          "sequence": 86,
+          "label": "interval",
+          "performanceNow": 220748,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417820748
+        },
+        {
+          "sequence": 87,
+          "label": "afterFastForward21",
+          "performanceNow": 220746,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417820746
+        },
+        {
+          "sequence": 88,
+          "label": "afterNativeGap21",
+          "performanceNow": 220773,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417820773
+        },
+        {
+          "sequence": 89,
+          "label": "beforeFastForward22",
+          "performanceNow": 220774,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417820774
+        },
+        {
+          "sequence": 90,
+          "label": "interval",
+          "performanceNow": 230777,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417830777
+        },
+        {
+          "sequence": 91,
+          "label": "afterFastForward22",
+          "performanceNow": 230775,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417830775
+        },
+        {
+          "sequence": 92,
+          "label": "afterNativeGap22",
+          "performanceNow": 230801,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417830801
+        },
+        {
+          "sequence": 93,
+          "label": "beforeFastForward23",
+          "performanceNow": 230802,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417830802
+        },
+        {
+          "sequence": 94,
+          "label": "interval",
+          "performanceNow": 240804,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417840804
+        },
+        {
+          "sequence": 95,
+          "label": "afterFastForward23",
+          "performanceNow": 240803,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417840803
+        },
+        {
+          "sequence": 96,
+          "label": "afterNativeGap23",
+          "performanceNow": 240830,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417840830
+        },
+        {
+          "sequence": 97,
+          "label": "beforeFastForward24",
+          "performanceNow": 240831,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417840831
+        },
+        {
+          "sequence": 98,
+          "label": "interval",
+          "performanceNow": 250833,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417850833
+        },
+        {
+          "sequence": 99,
+          "label": "afterFastForward24",
+          "performanceNow": 250832,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417850832
+        },
+        {
+          "sequence": 100,
+          "label": "afterNativeGap24",
+          "performanceNow": 250859,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417850859
+        },
+        {
+          "sequence": 101,
+          "label": "beforeFastForward25",
+          "performanceNow": 250860,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417850860
+        },
+        {
+          "sequence": 102,
+          "label": "interval",
+          "performanceNow": 260862,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417860862
+        },
+        {
+          "sequence": 103,
+          "label": "afterFastForward25",
+          "performanceNow": 260861,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417860861
+        },
+        {
+          "sequence": 104,
+          "label": "afterNativeGap25",
+          "performanceNow": 260888,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417860888
+        },
+        {
+          "sequence": 105,
+          "label": "beforeFastForward26",
+          "performanceNow": 260889,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417860889
+        },
+        {
+          "sequence": 106,
+          "label": "interval",
+          "performanceNow": 270900,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417870900
+        },
+        {
+          "sequence": 107,
+          "label": "afterFastForward26",
+          "performanceNow": 270900,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417870900
+        },
+        {
+          "sequence": 108,
+          "label": "afterNativeGap26",
+          "performanceNow": 270926,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417870926
+        },
+        {
+          "sequence": 109,
+          "label": "beforeFastForward27",
+          "performanceNow": 270928,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417870928
+        },
+        {
+          "sequence": 110,
+          "label": "interval",
+          "performanceNow": 280939,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417880939
+        },
+        {
+          "sequence": 111,
+          "label": "afterFastForward27",
+          "performanceNow": 280931,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417880931
+        },
+        {
+          "sequence": 112,
+          "label": "afterNativeGap27",
+          "performanceNow": 280958,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417880958
+        },
+        {
+          "sequence": 113,
+          "label": "beforeFastForward28",
+          "performanceNow": 280961,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417880961
+        },
+        {
+          "sequence": 114,
+          "label": "interval",
+          "performanceNow": 290964,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417890964
+        },
+        {
+          "sequence": 115,
+          "label": "afterFastForward28",
+          "performanceNow": 290963,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417890963
+        },
+        {
+          "sequence": 116,
+          "label": "afterNativeGap28",
+          "performanceNow": 290990,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417890990
+        },
+        {
+          "sequence": 117,
+          "label": "beforeFastForward29",
+          "performanceNow": 291073,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891073
+        },
+        {
+          "sequence": 118,
+          "label": "interval",
+          "performanceNow": 291062,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891062
+        },
+        {
+          "sequence": 119,
+          "label": "interval",
+          "performanceNow": 301066,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901066
+        },
+        {
+          "sequence": 120,
+          "label": "afterFastForward29",
+          "performanceNow": 291075,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891075
+        },
+        {
+          "sequence": 121,
+          "label": "afterNativeGap29",
+          "performanceNow": 291110,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891110
+        },
+        {
+          "sequence": 122,
+          "label": "beforeFastForward30",
+          "performanceNow": 291112,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891112
+        },
+        {
+          "sequence": 123,
+          "label": "afterFastForward30",
+          "performanceNow": 301114,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901114
+        },
+        {
+          "sequence": 124,
+          "label": "afterNativeGap30",
+          "performanceNow": 301141,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901141
+        },
+        {
+          "sequence": 125,
+          "label": "beforeFastForward31",
+          "performanceNow": 301142,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901142
+        },
+        {
+          "sequence": 126,
+          "label": "interval",
+          "performanceNow": 311144,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911144
+        },
+        {
+          "sequence": 127,
+          "label": "afterFastForward31",
+          "performanceNow": 311144,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911144
+        },
+        {
+          "sequence": 128,
+          "label": "afterNativeGap31",
+          "performanceNow": 311170,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911170
+        },
+        {
+          "sequence": 129,
+          "label": "beforeFastForward32",
+          "performanceNow": 311171,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911171
+        },
+        {
+          "sequence": 130,
+          "label": "interval",
+          "performanceNow": 321173,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921173
+        },
+        {
+          "sequence": 131,
+          "label": "afterFastForward32",
+          "performanceNow": 321174,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921174
+        },
+        {
+          "sequence": 132,
+          "label": "afterNativeGap32",
+          "performanceNow": 321201,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921201
+        },
+        {
+          "sequence": 133,
+          "label": "beforeFastForward33",
+          "performanceNow": 321202,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921202
+        },
+        {
+          "sequence": 134,
+          "label": "interval",
+          "performanceNow": 331249,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931249
+        },
+        {
+          "sequence": 135,
+          "label": "afterFastForward33",
+          "performanceNow": 331251,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931251
+        },
+        {
+          "sequence": 136,
+          "label": "afterNativeGap33",
+          "performanceNow": 331279,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931279
+        },
+        {
+          "sequence": 137,
+          "label": "beforeFastForward34",
+          "performanceNow": 331282,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931282
+        },
+        {
+          "sequence": 138,
+          "label": "interval",
+          "performanceNow": 341285,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941285
+        },
+        {
+          "sequence": 139,
+          "label": "afterFastForward34",
+          "performanceNow": 341283,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941283
+        },
+        {
+          "sequence": 140,
+          "label": "afterNativeGap34",
+          "performanceNow": 341315,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941315
+        },
+        {
+          "sequence": 141,
+          "label": "beforeFastForward35",
+          "performanceNow": 341325,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941325
+        },
+        {
+          "sequence": 142,
+          "label": "interval",
+          "performanceNow": 351330,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951330
+        },
+        {
+          "sequence": 143,
+          "label": "afterFastForward35",
+          "performanceNow": 351331,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951331
+        },
+        {
+          "sequence": 144,
+          "label": "afterNativeGap35",
+          "performanceNow": 351358,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951358
+        },
+        {
+          "sequence": 145,
+          "label": "beforeFastForward36",
+          "performanceNow": 351359,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951359
+        },
+        {
+          "sequence": 146,
+          "label": "interval",
+          "performanceNow": 361361,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961361
+        },
+        {
+          "sequence": 147,
+          "label": "afterFastForward36",
+          "performanceNow": 361360,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961360
+        },
+        {
+          "sequence": 148,
+          "label": "afterNativeGap36",
+          "performanceNow": 361412,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961412
+        },
+        {
+          "sequence": 149,
+          "label": "beforeFastForward37",
+          "performanceNow": 361432,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961432
+        },
+        {
+          "sequence": 150,
+          "label": "interval",
+          "performanceNow": 371434,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971434
+        },
+        {
+          "sequence": 151,
+          "label": "afterFastForward37",
+          "performanceNow": 371433,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971433
+        },
+        {
+          "sequence": 152,
+          "label": "afterNativeGap37",
+          "performanceNow": 371487,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971487
+        },
+        {
+          "sequence": 153,
+          "label": "beforeFastForward38",
+          "performanceNow": 371489,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971489
+        },
+        {
+          "sequence": 154,
+          "label": "interval",
+          "performanceNow": 381491,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981491
+        },
+        {
+          "sequence": 155,
+          "label": "afterFastForward38",
+          "performanceNow": 381490,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981490
+        },
+        {
+          "sequence": 156,
+          "label": "afterNativeGap38",
+          "performanceNow": 381517,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981517
+        },
+        {
+          "sequence": 157,
+          "label": "beforeFastForward39",
+          "performanceNow": 381519,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981519
+        },
+        {
+          "sequence": 158,
+          "label": "interval",
+          "performanceNow": 391522,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991522
+        },
+        {
+          "sequence": 159,
+          "label": "afterFastForward39",
+          "performanceNow": 391520,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991520
+        },
+        {
+          "sequence": 160,
+          "label": "afterNativeGap39",
+          "performanceNow": 391548,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991548
+        }
+      ],
+      "rollbacks": [
+        {
+          "previous": {
+            "sequence": 6,
+            "label": "interval",
+            "performanceNow": 20125,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417620125
+          },
+          "current": {
+            "sequence": 7,
+            "label": "afterFastForward1",
+            "performanceNow": 20124,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417620124
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 22,
+            "label": "interval",
+            "performanceNow": 60250,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417660250
+          },
+          "current": {
+            "sequence": 23,
+            "label": "afterFastForward5",
+            "performanceNow": 60248,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417660248
+          },
+          "difference": -2
+        },
+        {
+          "previous": {
+            "sequence": 34,
+            "label": "interval",
+            "performanceNow": 90341,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417690341
+          },
+          "current": {
+            "sequence": 35,
+            "label": "afterFastForward8",
+            "performanceNow": 90340,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417690340
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 38,
+            "label": "interval",
+            "performanceNow": 100372,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417700372
+          },
+          "current": {
+            "sequence": 39,
+            "label": "afterFastForward9",
+            "performanceNow": 100370,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417700370
+          },
+          "difference": -2
+        },
+        {
+          "previous": {
+            "sequence": 42,
+            "label": "interval",
+            "performanceNow": 110405,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417710405
+          },
+          "current": {
+            "sequence": 43,
+            "label": "afterFastForward10",
+            "performanceNow": 110400,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417710400
+          },
+          "difference": -5
+        },
+        {
+          "previous": {
+            "sequence": 58,
+            "label": "interval",
+            "performanceNow": 150528,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417750528
+          },
+          "current": {
+            "sequence": 59,
+            "label": "afterFastForward14",
+            "performanceNow": 150527,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417750527
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 82,
+            "label": "interval",
+            "performanceNow": 210718,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417810718
+          },
+          "current": {
+            "sequence": 83,
+            "label": "afterFastForward20",
+            "performanceNow": 210717,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417810717
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 86,
+            "label": "interval",
+            "performanceNow": 220748,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417820748
+          },
+          "current": {
+            "sequence": 87,
+            "label": "afterFastForward21",
+            "performanceNow": 220746,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417820746
+          },
+          "difference": -2
+        },
+        {
+          "previous": {
+            "sequence": 90,
+            "label": "interval",
+            "performanceNow": 230777,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417830777
+          },
+          "current": {
+            "sequence": 91,
+            "label": "afterFastForward22",
+            "performanceNow": 230775,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417830775
+          },
+          "difference": -2
+        },
+        {
+          "previous": {
+            "sequence": 94,
+            "label": "interval",
+            "performanceNow": 240804,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417840804
+          },
+          "current": {
+            "sequence": 95,
+            "label": "afterFastForward23",
+            "performanceNow": 240803,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417840803
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 98,
+            "label": "interval",
+            "performanceNow": 250833,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417850833
+          },
+          "current": {
+            "sequence": 99,
+            "label": "afterFastForward24",
+            "performanceNow": 250832,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417850832
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 102,
+            "label": "interval",
+            "performanceNow": 260862,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417860862
+          },
+          "current": {
+            "sequence": 103,
+            "label": "afterFastForward25",
+            "performanceNow": 260861,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417860861
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 110,
+            "label": "interval",
+            "performanceNow": 280939,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417880939
+          },
+          "current": {
+            "sequence": 111,
+            "label": "afterFastForward27",
+            "performanceNow": 280931,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417880931
+          },
+          "difference": -8
+        },
+        {
+          "previous": {
+            "sequence": 114,
+            "label": "interval",
+            "performanceNow": 290964,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417890964
+          },
+          "current": {
+            "sequence": 115,
+            "label": "afterFastForward28",
+            "performanceNow": 290963,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417890963
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 117,
+            "label": "beforeFastForward29",
+            "performanceNow": 291073,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417891073
+          },
+          "current": {
+            "sequence": 118,
+            "label": "interval",
+            "performanceNow": 291062,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417891062
+          },
+          "difference": -11
+        },
+        {
+          "previous": {
+            "sequence": 119,
+            "label": "interval",
+            "performanceNow": 301066,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417901066
+          },
+          "current": {
+            "sequence": 120,
+            "label": "afterFastForward29",
+            "performanceNow": 291075,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417891075
+          },
+          "difference": -9991
+        },
+        {
+          "previous": {
+            "sequence": 138,
+            "label": "interval",
+            "performanceNow": 341285,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417941285
+          },
+          "current": {
+            "sequence": 139,
+            "label": "afterFastForward34",
+            "performanceNow": 341283,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417941283
+          },
+          "difference": -2
+        },
+        {
+          "previous": {
+            "sequence": 146,
+            "label": "interval",
+            "performanceNow": 361361,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417961361
+          },
+          "current": {
+            "sequence": 147,
+            "label": "afterFastForward36",
+            "performanceNow": 361360,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417961360
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 150,
+            "label": "interval",
+            "performanceNow": 371434,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417971434
+          },
+          "current": {
+            "sequence": 151,
+            "label": "afterFastForward37",
+            "performanceNow": 371433,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417971433
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 154,
+            "label": "interval",
+            "performanceNow": 381491,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417981491
+          },
+          "current": {
+            "sequence": 155,
+            "label": "afterFastForward38",
+            "performanceNow": 381490,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417981490
+          },
+          "difference": -1
+        },
+        {
+          "previous": {
+            "sequence": 158,
+            "label": "interval",
+            "performanceNow": 391522,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417991522
+          },
+          "current": {
+            "sequence": 159,
+            "label": "afterFastForward39",
+            "performanceNow": 391520,
+            "timeOrigin": 1791417600000,
+            "dateNow": 1791417991520
+          },
+          "difference": -2
+        }
+      ]
+    },
+    {
+      "mode": "paused",
+      "iterations": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "samples": [
+        {
+          "sequence": 0,
+          "label": "initial",
+          "performanceNow": 3,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417601000
+        },
+        {
+          "sequence": 1,
+          "label": "beforeFastForward0",
+          "performanceNow": 3,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417601000
+        },
+        {
+          "sequence": 2,
+          "label": "interval",
+          "performanceNow": 10003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417611000
+        },
+        {
+          "sequence": 3,
+          "label": "afterFastForward0",
+          "performanceNow": 10003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417611000
+        },
+        {
+          "sequence": 4,
+          "label": "afterNativeGap0",
+          "performanceNow": 10003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417611000
+        },
+        {
+          "sequence": 5,
+          "label": "beforeFastForward1",
+          "performanceNow": 10003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417611000
+        },
+        {
+          "sequence": 6,
+          "label": "interval",
+          "performanceNow": 20003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417621000
+        },
+        {
+          "sequence": 7,
+          "label": "afterFastForward1",
+          "performanceNow": 20003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417621000
+        },
+        {
+          "sequence": 8,
+          "label": "afterNativeGap1",
+          "performanceNow": 20003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417621000
+        },
+        {
+          "sequence": 9,
+          "label": "beforeFastForward2",
+          "performanceNow": 20003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417621000
+        },
+        {
+          "sequence": 10,
+          "label": "interval",
+          "performanceNow": 30003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417631000
+        },
+        {
+          "sequence": 11,
+          "label": "afterFastForward2",
+          "performanceNow": 30003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417631000
+        },
+        {
+          "sequence": 12,
+          "label": "afterNativeGap2",
+          "performanceNow": 30003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417631000
+        },
+        {
+          "sequence": 13,
+          "label": "beforeFastForward3",
+          "performanceNow": 30003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417631000
+        },
+        {
+          "sequence": 14,
+          "label": "interval",
+          "performanceNow": 40003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417641000
+        },
+        {
+          "sequence": 15,
+          "label": "afterFastForward3",
+          "performanceNow": 40003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417641000
+        },
+        {
+          "sequence": 16,
+          "label": "afterNativeGap3",
+          "performanceNow": 40003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417641000
+        },
+        {
+          "sequence": 17,
+          "label": "beforeFastForward4",
+          "performanceNow": 40003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417641000
+        },
+        {
+          "sequence": 18,
+          "label": "interval",
+          "performanceNow": 50003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417651000
+        },
+        {
+          "sequence": 19,
+          "label": "afterFastForward4",
+          "performanceNow": 50003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417651000
+        },
+        {
+          "sequence": 20,
+          "label": "afterNativeGap4",
+          "performanceNow": 50003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417651000
+        },
+        {
+          "sequence": 21,
+          "label": "beforeFastForward5",
+          "performanceNow": 50003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417651000
+        },
+        {
+          "sequence": 22,
+          "label": "interval",
+          "performanceNow": 60003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417661000
+        },
+        {
+          "sequence": 23,
+          "label": "afterFastForward5",
+          "performanceNow": 60003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417661000
+        },
+        {
+          "sequence": 24,
+          "label": "afterNativeGap5",
+          "performanceNow": 60003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417661000
+        },
+        {
+          "sequence": 25,
+          "label": "beforeFastForward6",
+          "performanceNow": 60003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417661000
+        },
+        {
+          "sequence": 26,
+          "label": "interval",
+          "performanceNow": 70003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417671000
+        },
+        {
+          "sequence": 27,
+          "label": "afterFastForward6",
+          "performanceNow": 70003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417671000
+        },
+        {
+          "sequence": 28,
+          "label": "afterNativeGap6",
+          "performanceNow": 70003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417671000
+        },
+        {
+          "sequence": 29,
+          "label": "beforeFastForward7",
+          "performanceNow": 70003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417671000
+        },
+        {
+          "sequence": 30,
+          "label": "interval",
+          "performanceNow": 80003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417681000
+        },
+        {
+          "sequence": 31,
+          "label": "afterFastForward7",
+          "performanceNow": 80003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417681000
+        },
+        {
+          "sequence": 32,
+          "label": "afterNativeGap7",
+          "performanceNow": 80003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417681000
+        },
+        {
+          "sequence": 33,
+          "label": "beforeFastForward8",
+          "performanceNow": 80003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417681000
+        },
+        {
+          "sequence": 34,
+          "label": "interval",
+          "performanceNow": 90003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417691000
+        },
+        {
+          "sequence": 35,
+          "label": "afterFastForward8",
+          "performanceNow": 90003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417691000
+        },
+        {
+          "sequence": 36,
+          "label": "afterNativeGap8",
+          "performanceNow": 90003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417691000
+        },
+        {
+          "sequence": 37,
+          "label": "beforeFastForward9",
+          "performanceNow": 90003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417691000
+        },
+        {
+          "sequence": 38,
+          "label": "interval",
+          "performanceNow": 100003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417701000
+        },
+        {
+          "sequence": 39,
+          "label": "afterFastForward9",
+          "performanceNow": 100003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417701000
+        },
+        {
+          "sequence": 40,
+          "label": "afterNativeGap9",
+          "performanceNow": 100003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417701000
+        },
+        {
+          "sequence": 41,
+          "label": "beforeFastForward10",
+          "performanceNow": 100003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417701000
+        },
+        {
+          "sequence": 42,
+          "label": "interval",
+          "performanceNow": 110003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417711000
+        },
+        {
+          "sequence": 43,
+          "label": "afterFastForward10",
+          "performanceNow": 110003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417711000
+        },
+        {
+          "sequence": 44,
+          "label": "afterNativeGap10",
+          "performanceNow": 110003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417711000
+        },
+        {
+          "sequence": 45,
+          "label": "beforeFastForward11",
+          "performanceNow": 110003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417711000
+        },
+        {
+          "sequence": 46,
+          "label": "interval",
+          "performanceNow": 120003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417721000
+        },
+        {
+          "sequence": 47,
+          "label": "afterFastForward11",
+          "performanceNow": 120003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417721000
+        },
+        {
+          "sequence": 48,
+          "label": "afterNativeGap11",
+          "performanceNow": 120003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417721000
+        },
+        {
+          "sequence": 49,
+          "label": "beforeFastForward12",
+          "performanceNow": 120003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417721000
+        },
+        {
+          "sequence": 50,
+          "label": "interval",
+          "performanceNow": 130003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417731000
+        },
+        {
+          "sequence": 51,
+          "label": "afterFastForward12",
+          "performanceNow": 130003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417731000
+        },
+        {
+          "sequence": 52,
+          "label": "afterNativeGap12",
+          "performanceNow": 130003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417731000
+        },
+        {
+          "sequence": 53,
+          "label": "beforeFastForward13",
+          "performanceNow": 130003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417731000
+        },
+        {
+          "sequence": 54,
+          "label": "interval",
+          "performanceNow": 140003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417741000
+        },
+        {
+          "sequence": 55,
+          "label": "afterFastForward13",
+          "performanceNow": 140003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417741000
+        },
+        {
+          "sequence": 56,
+          "label": "afterNativeGap13",
+          "performanceNow": 140003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417741000
+        },
+        {
+          "sequence": 57,
+          "label": "beforeFastForward14",
+          "performanceNow": 140003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417741000
+        },
+        {
+          "sequence": 58,
+          "label": "interval",
+          "performanceNow": 150003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417751000
+        },
+        {
+          "sequence": 59,
+          "label": "afterFastForward14",
+          "performanceNow": 150003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417751000
+        },
+        {
+          "sequence": 60,
+          "label": "afterNativeGap14",
+          "performanceNow": 150003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417751000
+        },
+        {
+          "sequence": 61,
+          "label": "beforeFastForward15",
+          "performanceNow": 150003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417751000
+        },
+        {
+          "sequence": 62,
+          "label": "interval",
+          "performanceNow": 160003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417761000
+        },
+        {
+          "sequence": 63,
+          "label": "afterFastForward15",
+          "performanceNow": 160003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417761000
+        },
+        {
+          "sequence": 64,
+          "label": "afterNativeGap15",
+          "performanceNow": 160003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417761000
+        },
+        {
+          "sequence": 65,
+          "label": "beforeFastForward16",
+          "performanceNow": 160003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417761000
+        },
+        {
+          "sequence": 66,
+          "label": "interval",
+          "performanceNow": 170003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417771000
+        },
+        {
+          "sequence": 67,
+          "label": "afterFastForward16",
+          "performanceNow": 170003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417771000
+        },
+        {
+          "sequence": 68,
+          "label": "afterNativeGap16",
+          "performanceNow": 170003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417771000
+        },
+        {
+          "sequence": 69,
+          "label": "beforeFastForward17",
+          "performanceNow": 170003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417771000
+        },
+        {
+          "sequence": 70,
+          "label": "interval",
+          "performanceNow": 180003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417781000
+        },
+        {
+          "sequence": 71,
+          "label": "afterFastForward17",
+          "performanceNow": 180003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417781000
+        },
+        {
+          "sequence": 72,
+          "label": "afterNativeGap17",
+          "performanceNow": 180003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417781000
+        },
+        {
+          "sequence": 73,
+          "label": "beforeFastForward18",
+          "performanceNow": 180003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417781000
+        },
+        {
+          "sequence": 74,
+          "label": "interval",
+          "performanceNow": 190003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417791000
+        },
+        {
+          "sequence": 75,
+          "label": "afterFastForward18",
+          "performanceNow": 190003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417791000
+        },
+        {
+          "sequence": 76,
+          "label": "afterNativeGap18",
+          "performanceNow": 190003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417791000
+        },
+        {
+          "sequence": 77,
+          "label": "beforeFastForward19",
+          "performanceNow": 190003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417791000
+        },
+        {
+          "sequence": 78,
+          "label": "interval",
+          "performanceNow": 200003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417801000
+        },
+        {
+          "sequence": 79,
+          "label": "afterFastForward19",
+          "performanceNow": 200003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417801000
+        },
+        {
+          "sequence": 80,
+          "label": "afterNativeGap19",
+          "performanceNow": 200003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417801000
+        },
+        {
+          "sequence": 81,
+          "label": "beforeFastForward20",
+          "performanceNow": 200003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417801000
+        },
+        {
+          "sequence": 82,
+          "label": "interval",
+          "performanceNow": 210003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417811000
+        },
+        {
+          "sequence": 83,
+          "label": "afterFastForward20",
+          "performanceNow": 210003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417811000
+        },
+        {
+          "sequence": 84,
+          "label": "afterNativeGap20",
+          "performanceNow": 210003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417811000
+        },
+        {
+          "sequence": 85,
+          "label": "beforeFastForward21",
+          "performanceNow": 210003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417811000
+        },
+        {
+          "sequence": 86,
+          "label": "interval",
+          "performanceNow": 220003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417821000
+        },
+        {
+          "sequence": 87,
+          "label": "afterFastForward21",
+          "performanceNow": 220003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417821000
+        },
+        {
+          "sequence": 88,
+          "label": "afterNativeGap21",
+          "performanceNow": 220003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417821000
+        },
+        {
+          "sequence": 89,
+          "label": "beforeFastForward22",
+          "performanceNow": 220003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417821000
+        },
+        {
+          "sequence": 90,
+          "label": "interval",
+          "performanceNow": 230003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417831000
+        },
+        {
+          "sequence": 91,
+          "label": "afterFastForward22",
+          "performanceNow": 230003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417831000
+        },
+        {
+          "sequence": 92,
+          "label": "afterNativeGap22",
+          "performanceNow": 230003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417831000
+        },
+        {
+          "sequence": 93,
+          "label": "beforeFastForward23",
+          "performanceNow": 230003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417831000
+        },
+        {
+          "sequence": 94,
+          "label": "interval",
+          "performanceNow": 240003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417841000
+        },
+        {
+          "sequence": 95,
+          "label": "afterFastForward23",
+          "performanceNow": 240003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417841000
+        },
+        {
+          "sequence": 96,
+          "label": "afterNativeGap23",
+          "performanceNow": 240003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417841000
+        },
+        {
+          "sequence": 97,
+          "label": "beforeFastForward24",
+          "performanceNow": 240003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417841000
+        },
+        {
+          "sequence": 98,
+          "label": "interval",
+          "performanceNow": 250003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417851000
+        },
+        {
+          "sequence": 99,
+          "label": "afterFastForward24",
+          "performanceNow": 250003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417851000
+        },
+        {
+          "sequence": 100,
+          "label": "afterNativeGap24",
+          "performanceNow": 250003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417851000
+        },
+        {
+          "sequence": 101,
+          "label": "beforeFastForward25",
+          "performanceNow": 250003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417851000
+        },
+        {
+          "sequence": 102,
+          "label": "interval",
+          "performanceNow": 260003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417861000
+        },
+        {
+          "sequence": 103,
+          "label": "afterFastForward25",
+          "performanceNow": 260003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417861000
+        },
+        {
+          "sequence": 104,
+          "label": "afterNativeGap25",
+          "performanceNow": 260003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417861000
+        },
+        {
+          "sequence": 105,
+          "label": "beforeFastForward26",
+          "performanceNow": 260003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417861000
+        },
+        {
+          "sequence": 106,
+          "label": "interval",
+          "performanceNow": 270003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417871000
+        },
+        {
+          "sequence": 107,
+          "label": "afterFastForward26",
+          "performanceNow": 270003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417871000
+        },
+        {
+          "sequence": 108,
+          "label": "afterNativeGap26",
+          "performanceNow": 270003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417871000
+        },
+        {
+          "sequence": 109,
+          "label": "beforeFastForward27",
+          "performanceNow": 270003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417871000
+        },
+        {
+          "sequence": 110,
+          "label": "interval",
+          "performanceNow": 280003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417881000
+        },
+        {
+          "sequence": 111,
+          "label": "afterFastForward27",
+          "performanceNow": 280003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417881000
+        },
+        {
+          "sequence": 112,
+          "label": "afterNativeGap27",
+          "performanceNow": 280003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417881000
+        },
+        {
+          "sequence": 113,
+          "label": "beforeFastForward28",
+          "performanceNow": 280003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417881000
+        },
+        {
+          "sequence": 114,
+          "label": "interval",
+          "performanceNow": 290003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891000
+        },
+        {
+          "sequence": 115,
+          "label": "afterFastForward28",
+          "performanceNow": 290003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891000
+        },
+        {
+          "sequence": 116,
+          "label": "afterNativeGap28",
+          "performanceNow": 290003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891000
+        },
+        {
+          "sequence": 117,
+          "label": "beforeFastForward29",
+          "performanceNow": 290003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417891000
+        },
+        {
+          "sequence": 118,
+          "label": "interval",
+          "performanceNow": 300003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901000
+        },
+        {
+          "sequence": 119,
+          "label": "afterFastForward29",
+          "performanceNow": 300003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901000
+        },
+        {
+          "sequence": 120,
+          "label": "afterNativeGap29",
+          "performanceNow": 300003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901000
+        },
+        {
+          "sequence": 121,
+          "label": "beforeFastForward30",
+          "performanceNow": 300003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417901000
+        },
+        {
+          "sequence": 122,
+          "label": "interval",
+          "performanceNow": 310003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911000
+        },
+        {
+          "sequence": 123,
+          "label": "afterFastForward30",
+          "performanceNow": 310003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911000
+        },
+        {
+          "sequence": 124,
+          "label": "afterNativeGap30",
+          "performanceNow": 310003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911000
+        },
+        {
+          "sequence": 125,
+          "label": "beforeFastForward31",
+          "performanceNow": 310003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417911000
+        },
+        {
+          "sequence": 126,
+          "label": "interval",
+          "performanceNow": 320003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921000
+        },
+        {
+          "sequence": 127,
+          "label": "afterFastForward31",
+          "performanceNow": 320003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921000
+        },
+        {
+          "sequence": 128,
+          "label": "afterNativeGap31",
+          "performanceNow": 320003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921000
+        },
+        {
+          "sequence": 129,
+          "label": "beforeFastForward32",
+          "performanceNow": 320003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417921000
+        },
+        {
+          "sequence": 130,
+          "label": "interval",
+          "performanceNow": 330003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931000
+        },
+        {
+          "sequence": 131,
+          "label": "afterFastForward32",
+          "performanceNow": 330003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931000
+        },
+        {
+          "sequence": 132,
+          "label": "afterNativeGap32",
+          "performanceNow": 330003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931000
+        },
+        {
+          "sequence": 133,
+          "label": "beforeFastForward33",
+          "performanceNow": 330003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417931000
+        },
+        {
+          "sequence": 134,
+          "label": "interval",
+          "performanceNow": 340003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941000
+        },
+        {
+          "sequence": 135,
+          "label": "afterFastForward33",
+          "performanceNow": 340003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941000
+        },
+        {
+          "sequence": 136,
+          "label": "afterNativeGap33",
+          "performanceNow": 340003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941000
+        },
+        {
+          "sequence": 137,
+          "label": "beforeFastForward34",
+          "performanceNow": 340003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417941000
+        },
+        {
+          "sequence": 138,
+          "label": "interval",
+          "performanceNow": 350003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951000
+        },
+        {
+          "sequence": 139,
+          "label": "afterFastForward34",
+          "performanceNow": 350003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951000
+        },
+        {
+          "sequence": 140,
+          "label": "afterNativeGap34",
+          "performanceNow": 350003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951000
+        },
+        {
+          "sequence": 141,
+          "label": "beforeFastForward35",
+          "performanceNow": 350003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417951000
+        },
+        {
+          "sequence": 142,
+          "label": "interval",
+          "performanceNow": 360003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961000
+        },
+        {
+          "sequence": 143,
+          "label": "afterFastForward35",
+          "performanceNow": 360003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961000
+        },
+        {
+          "sequence": 144,
+          "label": "afterNativeGap35",
+          "performanceNow": 360003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961000
+        },
+        {
+          "sequence": 145,
+          "label": "beforeFastForward36",
+          "performanceNow": 360003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417961000
+        },
+        {
+          "sequence": 146,
+          "label": "interval",
+          "performanceNow": 370003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971000
+        },
+        {
+          "sequence": 147,
+          "label": "afterFastForward36",
+          "performanceNow": 370003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971000
+        },
+        {
+          "sequence": 148,
+          "label": "afterNativeGap36",
+          "performanceNow": 370003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971000
+        },
+        {
+          "sequence": 149,
+          "label": "beforeFastForward37",
+          "performanceNow": 370003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417971000
+        },
+        {
+          "sequence": 150,
+          "label": "interval",
+          "performanceNow": 380003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981000
+        },
+        {
+          "sequence": 151,
+          "label": "afterFastForward37",
+          "performanceNow": 380003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981000
+        },
+        {
+          "sequence": 152,
+          "label": "afterNativeGap37",
+          "performanceNow": 380003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981000
+        },
+        {
+          "sequence": 153,
+          "label": "beforeFastForward38",
+          "performanceNow": 380003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417981000
+        },
+        {
+          "sequence": 154,
+          "label": "interval",
+          "performanceNow": 390003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991000
+        },
+        {
+          "sequence": 155,
+          "label": "afterFastForward38",
+          "performanceNow": 390003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991000
+        },
+        {
+          "sequence": 156,
+          "label": "afterNativeGap38",
+          "performanceNow": 390003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991000
+        },
+        {
+          "sequence": 157,
+          "label": "beforeFastForward39",
+          "performanceNow": 390003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791417991000
+        },
+        {
+          "sequence": 158,
+          "label": "interval",
+          "performanceNow": 400003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791418001000
+        },
+        {
+          "sequence": 159,
+          "label": "afterFastForward39",
+          "performanceNow": 400003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791418001000
+        },
+        {
+          "sequence": 160,
+          "label": "afterNativeGap39",
+          "performanceNow": 400003,
+          "timeOrigin": 1791417600000,
+          "dateNow": 1791418001000
+        }
+      ],
+      "rollbacks": []
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "requests": []
+  },
+  "complete": true,
+  "browser": "141.0.7390.37",
+  "finishedAt": "2026-10-08T14:25:48.779Z",
+  "wallDurationMs": 3362.2633370000003,
+  "dependencySha256After": "e6dc352ceb479c45c1872b36796d55b6544fd545034129c9fec00e5fff1c05b3",
+  "htmlSha256After": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613"
+}

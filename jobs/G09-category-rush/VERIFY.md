@@ -472,3 +472,67 @@ assertion is used. Runtime be311 and strict sampler 1ac remain unchanged.
 No new local recovery run is claimed during the coordinator's G05 hold.
 This is an honest observability/proof-pending checkpoint, not a runtime fix or
 a new KEEP round.
+
+Exact 709fa78036bbfa127f913ffb0308b70be01f12e8 / run 37790431928 FAILED
+fresh recovery case 8, saved host pause: expected 0:50, observed 1:00.
+The unchanged strict host runner passed before recovery. No later core suites
+are claimed from this run because recovery deliberately precedes the artifact
+binder. Native artifact 11555624087 supplies the complete failed report and
+3034f765 runner, archived under round-4-hosted-recovery-third with retrieval
+receipt. ZIP 431,501 bytes, SHA256 a59031771903f1eec527427b705089b6fe4a08279a65325864fc49388b696906.
+Actual recovery ran 14:12:57.560–14:13:25.283 UTC. Atomic observations show
+fake performance.now() 679 ms while saved elapsed/phaseElapsed/coreNow and
+DOM timer represent 10,013 ms; public pause saves only 39 ms at fake clock
+716 ms. Same timeOrigin/draft/game persist through all eight boundaries.
+This is observed test-clock discontinuity for this exact attempt, not a
+claim about older unobserved failures or local FPS variance. Production and
+strict sampler remain frozen. An independent pinned scheduler and empty-page
+control must support any harness correction; original actions and assertions
+will remain required. No additional LOOP round or runtime fix is claimed.
+
+Independent pinned-clock controls (diagnostic, not acceptance):
+`node .work/clock-overlap-diagnostic.mjs` ran 14:25:43.616–14:25:43.622 UTC.
+It evaluates the actual unchanged shipped ClockController in a VM; queued
+embedder continuations force newer completion before older completion.
+Callbacks observe 100 and 10,100 ms, then older completion rewinds 10,100 to
+100 ms. Sequential nonoverlap ends at 10,100 ms. This demonstrates a possible
+scheduler mechanism, not the schedule in every historical failure.
+`node .work/clock-browser-control.mjs` ran 14:25:45.102–14:25:48.779 UTC,
+3.362263 seconds excluding browser launch. Actual empty Chromium pages each
+run 40 awaited 10,000 ms advances with native Node 25 ms scheduling gaps.
+Both complete 161 unfiltered callback/before/after samples; default auto clock
+has 21 backward steps (largest 9,991 ms), explicitly paused clock has zero.
+No errors or requests; dependency and HTML hashes stay unchanged. Scripts and
+full reports are archived under evidence/browser/round-4-clock-control.
+Pinned generated source SHA256 e6dc352ceb479c45c1872b36796d55b6544fd545034129c9fec00e5fff1c05b3,
+Playwright1.56.0/Chromium141.0.7390.37. No third-party full source is copied.
+VM report SHA256 9bb116922ea4850c8f19d287abe5a3017bb2c43c41fba1ecb299b3d06ad666fd;
+browser report SHA256 b8f281785aff975f2f159d8bd0fe1117d90a152595758041fabf1e469995b1e6.
+
+Only after those controls supported the method, the recovery harness installs
+a fixed epoch and explicitly pauses its clock before app timers exist. Original
+17 public-action sequences, fastForward amounts, exact elapsed/draft/ballot/
+privacy assertions remain unchanged. Binder requires matching clock metadata.
+Production HTML and strict frame sampler remain untouched. Current recovery
+runner e006063592f45019d4f322fd28183e64343a5c54dc478e9c3174d6f86577cae0
+is authored but its full acceptance/typecheck are pending the coordinator's
+short G05 CPU window. No fake-clock patch affects native-wall gameplay or RAF
+measurement. No runtime correction or new LOOP round is claimed.
+
+Fresh corrected acceptance: `node scripts/browser-resume.mjs after` ran
+2026-10-08T14:32:43.602Z–2026-10-08T14:33:46.152Z, 62.550 seconds,
+and passed all 17 original checks on unchanged be311 HTML. NodePGID152626
+and ChromiumPGID152638 closed normally, EXIT0; active processes are absent.
+Double-handover and host-pause observations preserve exactly10,000ms elapsed
+and0:50 before/after, with nondecreasing fake clock through all reloads and
+120,000ms advances. Private drafts, ballots, scored receipts, storage-failure
+behavior, near-expiry submission and future bot RNG/output all remain checked.
+Errors, requests and dialogs are empty. `npm run typecheck && npx tsx --test
+tests/artifacts.test.ts && npx tsx scripts/checksums.ts && npx tsx
+scripts/checksums.ts --check` passes; artifact body109.331439ms, 279 files.
+The binder now independently checks all eight host-pause boundaries, exact
+frozen elapsed/draft/RNG, same timeOrigin and monotonicity for both observed
+recovery sequences. Every prior failed report/runner remains archived.
+No runtime change, strict FPS rerun, relaxed original assertion or additional
+formal KEEP round is claimed. Genuine exact-head hosted strict600, fresh17
+and all original core/data/mutation/league/UI suites remain required.

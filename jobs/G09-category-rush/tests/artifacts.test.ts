@@ -79,6 +79,7 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   assert.equal(resumeBefore.runnerSha256,sha('evidence/browser/round-3-resume-baseline/runner.mjs'));
   assert.equal(resumeAfter.sourceSha256,digest);
   assert.equal(resumeAfter.runnerSha256,sha('scripts/browser-resume.mjs'));
+  assert.deepEqual(resumeAfter.clock,{mode:'paused-manual-advances',epoch:Date.UTC(2026,9,8),pauseOffsetMs:1000,playwrightVersion:'1.56.0'});
   for(const savedReport of [resumeBefore,resumeAfter]){
     assert.equal(savedReport.passed,true);
     assert(savedReport.checks.length>=7&&savedReport.checks.every((check:any)=>check.passed));
@@ -112,6 +113,19 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
   for(const observation of doubleReload.observations.slice(3,6)){
     assert.equal(observation.saved.seatElapsed,restoredBoundary.saved.seatElapsed);
     assert.equal(observation.saved.handover,true);
+  }
+  const hostPause=resumeAfter.details.find((row:any)=>row.case==='host pause');assert(hostPause);
+  assert.deepEqual(hostPause.observations.map((row:any)=>row.label),['before pause','after pause','after reload','after closed-time wait','after Resume','after paused wait','after close','after Ready']);
+  assert.equal(hostPause.observations[0].timer,hostPause.timer);
+  assert.equal(hostPause.observations.at(-1).timer,hostPause.timer);
+  for(const observation of hostPause.observations){
+    assert.equal(observation.saved.draft[0],'Paused draft');
+    assert.equal(observation.saved.seatElapsed,hostPause.observations[0].saved.seatElapsed);
+    assert.deepEqual(observation.saved.botRngs,hostPause.observations[0].saved.botRngs);
+  }
+  for(const detail of [doubleReload,hostPause])for(let i=1;i<detail.observations.length;i++){
+    assert.equal(detail.observations[i].timeOrigin,detail.observations[0].timeOrigin);
+    assert(detail.observations[i].performanceNow>=detail.observations[i-1].performanceNow,'Paused functional clock must remain monotonic');
   }
   assert(resumeAfter.details.some((row:any)=>row.case==='near expiry'&&row.submitted===true));
   assert.equal(resumeAfter.details.filter((row:any)=>row.case==='storage failure').length,2);

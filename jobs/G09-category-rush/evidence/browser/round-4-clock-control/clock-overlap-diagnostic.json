@@ -1,0 +1,167 @@
+{
+  "diagnostic": true,
+  "acceptance": false,
+  "forcedSchedule": true,
+  "startedAt": "2026-10-08T14:25:43.616Z",
+  "pid": 152266,
+  "dependency": {
+    "name": "playwright-core",
+    "version": "1.56.0",
+    "path": "/workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/playwright-core/lib/generated/clockSource.js",
+    "generatedSha256": "e6dc352ceb479c45c1872b36796d55b6544fd545034129c9fec00e5fff1c05b3",
+    "embeddedSourceSha256": "1313153fe9e8fe963f5bc4a91694791e0f726fccc3ff47b43644dde926878085"
+  },
+  "diagnosticRunnerSha256": "32fd9455dc4ac1d5783c45c030baa2d37c40105645b6aebef23d31c40e5610fb",
+  "method": "Evaluate the pinned dependency generated file and its embedded source unchanged in VMs. Supply an embedder whose timeout queue exposes continuation resolvers. Force overlapping public runFor(100) and fastForward(10000) operations, then compare sequential nonoverlap. This shows a possible scheduler mechanism; it does not prove the schedule in every hosted browser failure and is not game acceptance.",
+  "cases": [
+    {
+      "label": "forced overlap; newer completion before older completion",
+      "callbacks": [
+        100,
+        10100
+      ],
+      "afterNewer": {
+        "event": "observation",
+        "stage": "newer run complete",
+        "performanceNow": 10100,
+        "wallTime": 10100
+      },
+      "afterOlder": {
+        "event": "observation",
+        "stage": "older run complete",
+        "performanceNow": 100,
+        "wallTime": 100
+      },
+      "rollbackMs": 10000,
+      "events": [
+        {
+          "event": "observation",
+          "stage": "initial",
+          "performanceNow": 0,
+          "wallTime": 0
+        },
+        {
+          "event": "intervalCallback",
+          "performanceNow": 100,
+          "wallTime": 100
+        },
+        {
+          "event": "continuationQueued",
+          "id": 1,
+          "delay": null
+        },
+        {
+          "event": "observation",
+          "stage": "older callback at100 yielded",
+          "performanceNow": 100,
+          "wallTime": 100
+        },
+        {
+          "event": "intervalCallback",
+          "performanceNow": 10100,
+          "wallTime": 10100
+        },
+        {
+          "event": "continuationQueued",
+          "id": 2,
+          "delay": null
+        },
+        {
+          "event": "observation",
+          "stage": "newer callback at10100 yielded",
+          "performanceNow": 10100,
+          "wallTime": 10100
+        },
+        {
+          "event": "continuationReleased",
+          "id": 2,
+          "performanceNow": 10100
+        },
+        {
+          "event": "observation",
+          "stage": "newer run complete",
+          "performanceNow": 10100,
+          "wallTime": 10100
+        },
+        {
+          "event": "continuationReleased",
+          "id": 1,
+          "performanceNow": 10100
+        },
+        {
+          "event": "observation",
+          "stage": "older run complete",
+          "performanceNow": 100,
+          "wallTime": 100
+        }
+      ],
+      "expectedMechanismObserved": true
+    },
+    {
+      "label": "sequential nonoverlap control",
+      "callbacks": [
+        100,
+        10100
+      ],
+      "final": {
+        "event": "observation",
+        "stage": "second run complete",
+        "performanceNow": 10100,
+        "wallTime": 10100
+      },
+      "events": [
+        {
+          "event": "observation",
+          "stage": "initial",
+          "performanceNow": 0,
+          "wallTime": 0
+        },
+        {
+          "event": "intervalCallback",
+          "performanceNow": 100,
+          "wallTime": 100
+        },
+        {
+          "event": "continuationQueued",
+          "id": 1,
+          "delay": null
+        },
+        {
+          "event": "continuationReleased",
+          "id": 1,
+          "performanceNow": 100
+        },
+        {
+          "event": "observation",
+          "stage": "first run complete",
+          "performanceNow": 100,
+          "wallTime": 100
+        },
+        {
+          "event": "intervalCallback",
+          "performanceNow": 10100,
+          "wallTime": 10100
+        },
+        {
+          "event": "continuationQueued",
+          "id": 2,
+          "delay": null
+        },
+        {
+          "event": "continuationReleased",
+          "id": 2,
+          "performanceNow": 10100
+        },
+        {
+          "event": "observation",
+          "stage": "second run complete",
+          "performanceNow": 10100,
+          "wallTime": 10100
+        }
+      ],
+      "controlPreservedTime": true
+    }
+  ],
+  "complete": true,
+  "finishedAt": "2026-10-08T14:25:43.622Z"
+}
