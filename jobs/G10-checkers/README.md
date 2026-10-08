@@ -7,14 +7,16 @@ source are installed. The actual full offline game passed30 desktop/phone4×
 control checks and600 American-board strict frames per profile, including a
 Strong six-piece lookup. International-board frame checks remain pending.
 The complete-source7000-game matrix,25 real mutants and current91 combined
-unit checks pass. International strict desktop failed17.510FPS; phone not run. Final4000strength/CI fit, public download/PR and KEEP GOING are pending.
+unit checks and all4,000 final-source strength games pass. International strict
+desktop failed17.510FPS; phone not run. CI fit, public download/PR and KEEP GOING
+are pending; the league alone exceeded30minutes after recorded holds.
 An independent host verifier now requires every named check, current source
 guards, all four raw frame files, and actual decoded, hash-bound clips.
-Seven scoped positives and 71 corruption controls pass; fresh full CI is pending.
+Fourteen scoped positives and127 corruption controls pass; fresh full CI is pending.
 Two Human seats can now
 start while the database loads; actual phone4× controls appeared after2.398s
 and the first legal move finished after9.128s. Computer seats wait for data.
-This job is not completed. The earlier4000strength table remains a baseline.
+This job is not completed. The earlier4000strength table remains historical.
 
 Requires Node 22.16+; dependencies are pinned in package-lock.json.
 From this directory:

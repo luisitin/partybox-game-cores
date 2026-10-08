@@ -1,0 +1,3 @@
+Final actual host-validator component-control invocation closed2026-10-08T18:17:11.991497Z, exit0:14 scoped positives and127 actual rejected corruptions. All recorded sourceGuards still match at recovery19:11UTC.
+
+Controls use genuine historical game reports, intervals, diagnostic states and decoded WebM clips. Relative coordinates, identity/telemetry unit fixtures and threshold counterfactuals have explicit component-only labels. They are never fresh browser acceptance. Earlier fixture failure remains retained. Current active endpoint checks require full initial human boards, no timer/deadline/pause, empty drafts, unchanged state and no thinking worker. Current four-profile/variant native acceptance is still absent.

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-08T18:19:16.623Z",
+  "gameInputs": 127,
+  "completeGames": 4000,
+  "rawFiles": 80,
+  "rows": [
+    {
+      "variant": "american",
+      "higher": "sharp",
+      "lower": "normal",
+      "games": 1000,
+      "wins": 883,
+      "draws": 82,
+      "losses": 35,
+      "scoreShare": 0.924,
+      "decisiveWilson95": [
+        0.9474376150738386,
+        0.9724601200685112
+      ]
+    },
+    {
+      "variant": "american",
+      "higher": "normal",
+      "lower": "easy",
+      "games": 1000,
+      "wins": 999,
+      "draws": 0,
+      "losses": 1,
+      "scoreShare": 0.999,
+      "decisiveWilson95": [
+        0.9943572970398398,
+        0.9998234581709429
+      ]
+    },
+    {
+      "variant": "international",
+      "higher": "sharp",
+      "lower": "normal",
+      "games": 1000,
+      "wins": 930,
+      "draws": 65,
+      "losses": 5,
+      "scoreShare": 0.9625,
+      "decisiveWilson95": [
+        0.9875429620800624,
+        0.9977137628030275
+      ]
+    },
+    {
+      "variant": "international",
+      "higher": "normal",
+      "lower": "easy",
+      "games": 1000,
+      "wins": 1000,
+      "draws": 0,
+      "losses": 0,
+      "scoreShare": 1,
+      "decisiveWilson95": [
+        0.9961731014136095,
+        1
+      ]
+    }
+  ],
+  "actualCommand": [
+    ".work/memory-json-private/node22/runtime/bin/node",
+    ".work/league-phase-private/league.mjs"
+  ],
+  "reportCommandLabel": "Copied private runner retained static public command label; actual resource command is authoritative.",
+  "elapsedIncludingHolds": 2827.6871858090162,
+  "heldSeconds": 737.2893514479802,
+  "elapsedExcludingRecordedHolds": 2090.397834361036,
+  "peakRssKiB": 12215940,
+  "scope": "Current-input and all raw record/seed/summary/strength consistency audit; unchanged pure core executed in original worker. No independent 4000-game replay or CI-fit inference."
+}

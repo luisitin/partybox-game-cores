@@ -230,6 +230,35 @@ The4,000-game baseline passed with American883/82/35 Strong/Medium and
 Medium/Easy (W/D/L,1,000 each). Every exact game input/seed/result and
 pervariant Wilson interval is archived in league-baseline-pre-international.
 These results predate actual International2–5 integration and are retained
-as baseline evidence. Final-source strength leagues are still pending.
-The current Strong bot consults actual2–5 outcomes; missing quiet6 returns
-UNKNOWN. Full-six coverage and history-safe conversion are not implied.
+as historical baseline evidence. That source then consulted actual2–5 outcomes;
+missing quiet6 returned UNKNOWN. Those old results do not prove the current
+full-six source or history-safe conversion.
+
+### Complete current-source league, recovered 2026-10-08
+
+The actual sequential four-worker International/four-worker American run
+completed all4,000 games at18:17:33.427UTC. Each comparison uses1,000 games
+per variant, paired seeds and alternating stronger seats, standard initial
+boards, unchanged search budgets and the complete installed original corpus.
+
+| Variant | Comparison | Wins | Draws | Losses | Score share | Decisive Wilson95 lower |
+| --- | --- | ---: | ---: | ---: | ---: | ---: |
+| American | Strong / Medium | 883 | 82 | 35 | .9240 | .94744 |
+| American | Medium / Easy | 999 | 0 | 1 | .9990 | .99436 |
+| International | Strong / Medium | 930 | 65 | 5 | .9625 | .98754 |
+| International | Medium / Easy | 1000 | 0 | 0 | 1.0000 | .99617 |
+
+All80 raw batches/4,000 move lists, seeds, terminal results, final boards,
+source guards, worker stdout, resource receipt and three actual hold pairs
+are retained under evidence/checks/league-phase-full. An independent Python
+recovery audit rehashed127 current game/data inputs and recomputed every
+count, interval and transcript digest at19:12:04UTC. It checks records and
+summary consistency; it does not independently repeat the bot search.
+The16-game pilot separately proved exact scheduling equivalence against the
+original allocation. Public scheduling now adopts this verified sequential
+allocation; every game body, bot policy, data byte and search budget is unchanged.
+
+Actual peak RSS12,215,940KiB; wall2,827.687s includes737.289s of documented
+pure-simulation holds. Subtracting only those recorded holds leaves2,090.398s
+(34m50.398s), exceeding the workflow's30minutes before other checks or upload.
+No CI-fit or full-delivery claim follows from this successful strength result.

@@ -1,3 +1,26 @@
+# Current recovery checkpoint — 2026-10-08 around19:15UTC
+
+Existing branch job/G10-checkers-complete-20261008, nick codex-audit; worktree /workspace/game-cores-G10-audit-worker, claims clone /workspace/game-cores-audit-main-claims. Do not reclaim another job. Read fresh rootREADME/RULES/JOBS and claims before queue actions.
+
+The complete4,000-game phase league finished18:17:33.427 exit0. Independent recovered Python reader PASS19:12:04 for all80 raw files/4,000 records/all127 current source hashes/counts/seeds/transcripts/strength gates. See BOTS.md and evidence/checks/league-phase-full. Sequential four International workers fully terminate before four American workers; public runner now exactly adopts this proven scheduling without changing game bodies, data, bot policy or budgets.
+
+Actual wall2,827.687s includes737.289s documented holds; excluding only holds2,090.398s exceeds30minutes. This is not CI fit. Current91 uninterrupted tests,7,000 matrix and25 actual mutant kills remain accepted for unchanged game/data/assertion bytes; no replay is justified solely by evidence-host or scheduling edits.
+
+Final host-validator component controls closed18:17:11.991 exit0,14 scoped positives/127 meaningful negatives, source guards rehashed unchanged after restart. Current checker requires exact30 named PASS checks, all current runtime/build/contract/license/source maps, active full-board/no-timer/no-worker endpoints,600 raw intervals/601 native timestamps each American/International on desktop/phone, run UUID/nonces/source fingerprints, zero explicit errors/HTTP, separate actual decoded/digest/dimension-bound10s clips. These component controls do not substitute for fresh acceptance.
+
+Full private offline page remains .work/play-full-guarded.html,1,390,845,993B SHA5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801. Tracked play.html is older2–5-piece baseline. Historical American desktop59.8038/phone59.5070FPS pass; International desktop17.510456661FPS/p99799.9ms/max1683.3 failed and phoneNOTRUN. No cause/causal fix is established; no unchanged acceptance retry/filter/delay. Preserve failed raw evidence.
+
+Remaining work:
+1. Diagnose/optimize full CI elapsed and memory substantially while preserving all workloads, original search budgets, source semantics and assertions. League alone exceeded30min, so scheduling promotion is insufficient. Official public runner advertises4CPU/16GB/14GBdisk; final actual resources and30min required, never a projected-fit claim.
+2. Explain International full-prefix/frame cost using meaningful controlled native diagnostics; obtain genuine source-changing improvement before fresh strict acceptance. Root coordinates exclusive READY/grant/CLOSED windows. Do not pause native wall-timed tests or fake/filter RAF.
+3. Run full current check pipeline and all four current600-frame profiles/variants plus separate actual International gameplay captures. Final strict and capture reports must use different current run UUIDs and exactly frozen source guards. Historical proofs retain explicit older scope.
+4. Deliver full standalone HTML via prepared read-only actions/upload-artifact v4 after successful npm test, verify actual upload/quota/download ZIP and exact >1GB file/receipt bytes. Seven-day artifact is temporary, not a durable Release. Never invent LFS, paid setup or credentials. No current PR/green CI exists.
+5. Only when every binding check passes, open original job PR; confirm exact-head full30-minute hosted green and actual artifact download, then three consecutive player-no-gain KEEP rounds after green.
+
+Cadence: last successful historical push aa46f4b at18:01:17/main40782c row18:01:13. Workspace interruption missed hard18:31:17; actual recovery19:10. Record next observed successful push and refresh only own main G10 row, preserving others. Subsequent target25min/hard30min; no backdated receipt. No live groups survived recovery.
+
+## Previous checkpoint retained as history
+
 # Resume G10
 
 Branch: `job/G10-checkers-complete-20261008`. Nickname: `codex-audit`.
