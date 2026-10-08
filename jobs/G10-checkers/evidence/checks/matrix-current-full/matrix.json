@@ -1,0 +1,90 @@
+{
+  "command": "node scripts/matrix.mjs",
+  "games": 7000,
+  "skills": "easy seeded legal play for exhaustive contract matrix; all3levels separately tested and compared in leagues",
+  "reports": [
+    {
+      "settings": {
+        "variant": "american"
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 954,
+      "draws": 46,
+      "moves": 70215,
+      "maximumPlies": 219
+    },
+    {
+      "settings": {
+        "variant": "american",
+        "drawPolicy": "fortyMove"
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 964,
+      "draws": 36,
+      "moves": 69087,
+      "maximumPlies": 221
+    },
+    {
+      "settings": {
+        "variant": "american",
+        "repetition": false
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 993,
+      "draws": 7,
+      "moves": 72973,
+      "maximumPlies": 230
+    },
+    {
+      "settings": {
+        "variant": "american",
+        "turnSeconds": 20
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 964,
+      "draws": 36,
+      "moves": 69907,
+      "maximumPlies": 205
+    },
+    {
+      "settings": {
+        "variant": "international"
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 972,
+      "draws": 28,
+      "moves": 92727,
+      "maximumPlies": 152
+    },
+    {
+      "settings": {
+        "variant": "international",
+        "drawPolicy": "fortyMove"
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 1000,
+      "draws": 0,
+      "moves": 91599,
+      "maximumPlies": 166
+    },
+    {
+      "settings": {
+        "variant": "international",
+        "repetition": false
+      },
+      "playerCount": 2,
+      "games": 1000,
+      "wins": 973,
+      "draws": 27,
+      "moves": 91917,
+      "maximumPlies": 165
+    }
+  ],
+  "transcriptSha256": "b93862468cb046f454abc5a3cec8f1205bcdec2cfe4d113c269d7d3193f05a92"
+}

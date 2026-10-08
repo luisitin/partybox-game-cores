@@ -1,0 +1,809 @@
+{
+  "method": "Self sample durations grouped by exact function/source position. Inclusive durations count a function at most once per sample stack, avoiding recursive double counting. Inclusive rows overlap and must not be added. Source positions are zero-based inspector coordinates.",
+  "holds": [],
+  "confirmedHoldSeconds": 0,
+  "topSelf": [
+    {
+      "functionName": "positionKey",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23407,
+      "columnNumber": 18,
+      "selfMs": 2151.829000000001,
+      "inclusiveMs": 2443.6760000000004
+    },
+    {
+      "functionName": "legalMoves",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23332,
+      "columnNumber": 19,
+      "selfMs": 2019.4119999999987,
+      "inclusiveMs": 2834.887999999994
+    },
+    {
+      "functionName": "visit",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23497,
+      "columnNumber": 16,
+      "selfMs": 1942.888999999998,
+      "inclusiveMs": 10231.717999999992
+    },
+    {
+      "functionName": "nextPosition",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23447,
+      "columnNumber": 21,
+      "selfMs": 1530.7570000000017,
+      "inclusiveMs": 2505.1889999999958
+    },
+    {
+      "functionName": "(garbage collector)",
+      "url": "",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 1153.4439999999993,
+      "inclusiveMs": 1153.4439999999993
+    },
+    {
+      "functionName": "walk2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23337,
+      "columnNumber": 24,
+      "selfMs": 684.8549999999999,
+      "inclusiveMs": 774.8090000000005
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23407,
+      "columnNumber": 76,
+      "selfMs": 291.84699999999987,
+      "inclusiveMs": 291.84699999999987
+    },
+    {
+      "functionName": "probeEndgame",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 673,
+      "columnNumber": 21,
+      "selfMs": 264.71200000000005,
+      "inclusiveMs": 600.2039999999994
+    },
+    {
+      "functionName": "evaluate",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23475,
+      "columnNumber": 17,
+      "selfMs": 252.05700000000013,
+      "inclusiveMs": 252.05700000000013
+    },
+    {
+      "functionName": "drawReason",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23463,
+      "columnNumber": 19,
+      "selfMs": 247.14999999999998,
+      "inclusiveMs": 1065.3990000000013
+    },
+    {
+      "functionName": "post",
+      "url": "node:inspector",
+      "lineNumber": 114,
+      "columnNumber": 6,
+      "selfMs": 215.87,
+      "inclusiveMs": 216.93800000000002
+    },
+    {
+      "functionName": "moveKey",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23406,
+      "columnNumber": 14,
+      "selfMs": 167.07900000000012,
+      "inclusiveMs": 167.07900000000012
+    },
+    {
+      "functionName": "endingWindows",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23410,
+      "columnNumber": 22,
+      "selfMs": 141.589,
+      "inclusiveMs": 141.589
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 675,
+      "columnNumber": 29,
+      "selfMs": 110.69399999999996,
+      "inclusiveMs": 110.69399999999996
+    },
+    {
+      "functionName": "ordered",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23496,
+      "columnNumber": 18,
+      "selfMs": 87.31,
+      "inclusiveMs": 224.00300000000016
+    },
+    {
+      "functionName": "jump2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23360,
+      "columnNumber": 23,
+      "selfMs": 83.139,
+      "inclusiveMs": 181.73999999999995
+    },
+    {
+      "functionName": "range",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 225,
+      "columnNumber": 85,
+      "selfMs": 63.12700000000002,
+      "inclusiveMs": 63.12700000000002
+    },
+    {
+      "functionName": "probe",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 319,
+      "columnNumber": 16,
+      "selfMs": 56.42599999999998,
+      "inclusiveMs": 163.9540000000001
+    },
+    {
+      "functionName": "isCrown",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23321,
+      "columnNumber": 14,
+      "selfMs": 34.06699999999999,
+      "inclusiveMs": 34.06699999999999
+    },
+    {
+      "functionName": "comparePath",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23324,
+      "columnNumber": 18,
+      "selfMs": 28.467999999999996,
+      "inclusiveMs": 28.467999999999996
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23496,
+      "columnNumber": 97,
+      "selfMs": 26.531,
+      "inclusiveMs": 26.531
+    },
+    {
+      "functionName": "searchMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23489,
+      "columnNumber": 19,
+      "selfMs": 24.358,
+      "inclusiveMs": 10341.501999999993
+    },
+    {
+      "functionName": "applyMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23398,
+      "columnNumber": 18,
+      "selfMs": 23.762,
+      "inclusiveMs": 23.762
+    },
+    {
+      "functionName": "(idle)",
+      "url": "",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 18.240000000000002,
+      "inclusiveMs": 18.240000000000002
+    },
+    {
+      "functionName": "inst._zod.run",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 2431,
+      "columnNumber": 24,
+      "selfMs": 17.539,
+      "inclusiveMs": 20.994000000000003
+    },
+    {
+      "functionName": "legalMoves",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 25,
+      "columnNumber": 19,
+      "selfMs": 16.771,
+      "inclusiveMs": 33.899
+    },
+    {
+      "functionName": "internationalRank",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 174,
+      "columnNumber": 26,
+      "selfMs": 13.628,
+      "inclusiveMs": 25.494000000000003
+    },
+    {
+      "functionName": "walk2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 30,
+      "columnNumber": 24,
+      "selfMs": 12.942,
+      "inclusiveMs": 15.967
+    },
+    {
+      "functionName": "probe",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 653,
+      "columnNumber": 9,
+      "selfMs": 10.911999999999999,
+      "inclusiveMs": 174.8900000000001
+    },
+    {
+      "functionName": "chooseMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23570,
+      "columnNumber": 17,
+      "selfMs": 10.219999999999999,
+      "inclusiveMs": 10354.311999999994
+    },
+    {
+      "functionName": "lookup",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 664,
+      "columnNumber": 15,
+      "selfMs": 10.213000000000001,
+      "inclusiveMs": 10.213000000000001
+    },
+    {
+      "functionName": "solve",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 678,
+      "columnNumber": 16,
+      "selfMs": 9.608,
+      "inclusiveMs": 223.67600000000002
+    },
+    {
+      "functionName": "positionKey",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 99,
+      "columnNumber": 18,
+      "selfMs": 9.342,
+      "inclusiveMs": 9.376000000000001
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/league-worker.mjs",
+      "lineNumber": 7,
+      "columnNumber": 24,
+      "selfMs": 7.833,
+      "inclusiveMs": 10414.810999999989
+    },
+    {
+      "functionName": "nextFloat",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23254,
+      "columnNumber": 18,
+      "selfMs": 6.788,
+      "inclusiveMs": 7.904999999999999
+    },
+    {
+      "functionName": "nextInt",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23257,
+      "columnNumber": 16,
+      "selfMs": 5.728999999999999,
+      "inclusiveMs": 13.634000000000002
+    },
+    {
+      "functionName": "reduceEvent",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23694,
+      "columnNumber": 20,
+      "selfMs": 4.3309999999999995,
+      "inclusiveMs": 21.685
+    },
+    {
+      "functionName": "applyMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 91,
+      "columnNumber": 18,
+      "selfMs": 3.455,
+      "inclusiveMs": 3.455
+    },
+    {
+      "functionName": "valid",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 171,
+      "columnNumber": 14,
+      "selfMs": 2.527,
+      "inclusiveMs": 3.785
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 195,
+      "columnNumber": 33,
+      "selfMs": 2.355,
+      "inclusiveMs": 2.355
+    },
+    {
+      "functionName": "inst._zod.parse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3119,
+      "columnNumber": 24,
+      "selfMs": 2.327,
+      "inclusiveMs": 18.981
+    },
+    {
+      "functionName": "parts",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 155,
+      "columnNumber": 12,
+      "selfMs": 2.306,
+      "inclusiveMs": 2.306
+    },
+    {
+      "functionName": "",
+      "url": "node:internal/event_target",
+      "lineNumber": 766,
+      "columnNumber": 19,
+      "selfMs": 2.2750000000000004,
+      "inclusiveMs": 10418.15399999999
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 1354,
+      "columnNumber": 31,
+      "selfMs": 2.274,
+      "inclusiveMs": 32.283
+    },
+    {
+      "functionName": "enemy",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 20,
+      "columnNumber": 12,
+      "selfMs": 2.2729999999999997,
+      "inclusiveMs": 2.2729999999999997
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 190,
+      "columnNumber": 31,
+      "selfMs": 2.26,
+      "inclusiveMs": 2.26
+    },
+    {
+      "functionName": "inst._zod.parse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3436,
+      "columnNumber": 24,
+      "selfMs": 2.225,
+      "inclusiveMs": 26.679000000000002
+    },
+    {
+      "functionName": "drainAbsent",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23672,
+      "columnNumber": 20,
+      "selfMs": 1.292,
+      "inclusiveMs": 1.292
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 172,
+      "columnNumber": 99,
+      "selfMs": 1.258,
+      "inclusiveMs": 1.258
+    },
+    {
+      "functionName": "handleCatchall",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3206,
+      "columnNumber": 27,
+      "selfMs": 1.203,
+      "inclusiveMs": 1.203
+    }
+  ],
+  "topInclusive": [
+    {
+      "functionName": "(root)",
+      "url": "",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 0.0,
+      "inclusiveMs": 11805.735000000019
+    },
+    {
+      "functionName": "",
+      "url": "node:internal/event_target",
+      "lineNumber": 766,
+      "columnNumber": 19,
+      "selfMs": 2.2750000000000004,
+      "inclusiveMs": 10418.15399999999
+    },
+    {
+      "functionName": "",
+      "url": "node:internal/per_context/messageport",
+      "lineNumber": 18,
+      "columnNumber": 30,
+      "selfMs": 0.0,
+      "inclusiveMs": 10418.15399999999
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/league-worker.mjs",
+      "lineNumber": 7,
+      "columnNumber": 24,
+      "selfMs": 7.833,
+      "inclusiveMs": 10414.810999999989
+    },
+    {
+      "functionName": "sampleInput",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23785,
+      "columnNumber": 20,
+      "selfMs": 1.126,
+      "inclusiveMs": 10355.437999999995
+    },
+    {
+      "functionName": "chooseMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23570,
+      "columnNumber": 17,
+      "selfMs": 10.219999999999999,
+      "inclusiveMs": 10354.311999999994
+    },
+    {
+      "functionName": "searchMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23489,
+      "columnNumber": 19,
+      "selfMs": 24.358,
+      "inclusiveMs": 10341.501999999993
+    },
+    {
+      "functionName": "visit",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23497,
+      "columnNumber": 16,
+      "selfMs": 1942.888999999998,
+      "inclusiveMs": 10231.717999999992
+    },
+    {
+      "functionName": "legalMoves",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23332,
+      "columnNumber": 19,
+      "selfMs": 2019.4119999999987,
+      "inclusiveMs": 2834.887999999994
+    },
+    {
+      "functionName": "nextPosition",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23447,
+      "columnNumber": 21,
+      "selfMs": 1530.7570000000017,
+      "inclusiveMs": 2505.1889999999958
+    },
+    {
+      "functionName": "positionKey",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23407,
+      "columnNumber": 18,
+      "selfMs": 2151.829000000001,
+      "inclusiveMs": 2443.6760000000004
+    },
+    {
+      "functionName": "(garbage collector)",
+      "url": "",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 1153.4439999999993,
+      "inclusiveMs": 1153.4439999999993
+    },
+    {
+      "functionName": "drawReason",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23463,
+      "columnNumber": 19,
+      "selfMs": 247.14999999999998,
+      "inclusiveMs": 1065.3990000000013
+    },
+    {
+      "functionName": "walk2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23337,
+      "columnNumber": 24,
+      "selfMs": 684.8549999999999,
+      "inclusiveMs": 774.8090000000005
+    },
+    {
+      "functionName": "probeEndgame",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 673,
+      "columnNumber": 21,
+      "selfMs": 264.71200000000005,
+      "inclusiveMs": 600.2039999999994
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23407,
+      "columnNumber": 76,
+      "selfMs": 291.84699999999987,
+      "inclusiveMs": 291.84699999999987
+    },
+    {
+      "functionName": "evaluate",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23475,
+      "columnNumber": 17,
+      "selfMs": 252.05700000000013,
+      "inclusiveMs": 252.05700000000013
+    },
+    {
+      "functionName": "ordered",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23496,
+      "columnNumber": 18,
+      "selfMs": 87.31,
+      "inclusiveMs": 224.00300000000016
+    },
+    {
+      "functionName": "solve",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 678,
+      "columnNumber": 16,
+      "selfMs": 9.608,
+      "inclusiveMs": 223.67600000000002
+    },
+    {
+      "functionName": "post",
+      "url": "node:inspector",
+      "lineNumber": 114,
+      "columnNumber": 6,
+      "selfMs": 215.87,
+      "inclusiveMs": 216.93800000000002
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+      "lineNumber": 9,
+      "columnNumber": 45,
+      "selfMs": 0.0,
+      "inclusiveMs": 216.93800000000002
+    },
+    {
+      "functionName": "post",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+      "lineNumber": 9,
+      "columnNumber": 11,
+      "selfMs": 0.0,
+      "inclusiveMs": 216.93800000000002
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 0.0,
+      "inclusiveMs": 215.87
+    },
+    {
+      "functionName": "jump2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23360,
+      "columnNumber": 23,
+      "selfMs": 83.139,
+      "inclusiveMs": 181.73999999999995
+    },
+    {
+      "functionName": "probe",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 653,
+      "columnNumber": 9,
+      "selfMs": 10.911999999999999,
+      "inclusiveMs": 174.8900000000001
+    },
+    {
+      "functionName": "moveKey",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23406,
+      "columnNumber": 14,
+      "selfMs": 167.07900000000012,
+      "inclusiveMs": 167.07900000000012
+    },
+    {
+      "functionName": "probe",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 319,
+      "columnNumber": 16,
+      "selfMs": 56.42599999999998,
+      "inclusiveMs": 163.9540000000001
+    },
+    {
+      "functionName": "endingWindows",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23410,
+      "columnNumber": 22,
+      "selfMs": 141.589,
+      "inclusiveMs": 141.589
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 675,
+      "columnNumber": 29,
+      "selfMs": 110.69399999999996,
+      "inclusiveMs": 110.69399999999996
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23496,
+      "columnNumber": 50,
+      "selfMs": 0.0,
+      "inclusiveMs": 110.16199999999999
+    },
+    {
+      "functionName": "range",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 225,
+      "columnNumber": 85,
+      "selfMs": 63.12700000000002,
+      "inclusiveMs": 63.12700000000002
+    },
+    {
+      "functionName": "isCrown",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23321,
+      "columnNumber": 14,
+      "selfMs": 34.06699999999999,
+      "inclusiveMs": 34.06699999999999
+    },
+    {
+      "functionName": "legalMoves",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 25,
+      "columnNumber": 19,
+      "selfMs": 16.771,
+      "inclusiveMs": 33.899
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 1354,
+      "columnNumber": 31,
+      "selfMs": 2.274,
+      "inclusiveMs": 32.283
+    },
+    {
+      "functionName": "safeParse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 20272,
+      "columnNumber": 15,
+      "selfMs": 0.0,
+      "inclusiveMs": 32.283
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 703,
+      "columnNumber": 31,
+      "selfMs": 0.0,
+      "inclusiveMs": 30.987
+    },
+    {
+      "functionName": "inst._zod.parse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3645,
+      "columnNumber": 24,
+      "selfMs": 1.095,
+      "inclusiveMs": 30.009000000000004
+    },
+    {
+      "functionName": "comparePath",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23324,
+      "columnNumber": 18,
+      "selfMs": 28.467999999999996,
+      "inclusiveMs": 28.467999999999996
+    },
+    {
+      "functionName": "inst._zod.parse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3436,
+      "columnNumber": 24,
+      "selfMs": 2.225,
+      "inclusiveMs": 26.679000000000002
+    },
+    {
+      "functionName": "",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23496,
+      "columnNumber": 97,
+      "selfMs": 26.531,
+      "inclusiveMs": 26.531
+    },
+    {
+      "functionName": "internationalRank",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 174,
+      "columnNumber": 26,
+      "selfMs": 13.628,
+      "inclusiveMs": 25.494000000000003
+    },
+    {
+      "functionName": "applyMove",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23398,
+      "columnNumber": 18,
+      "selfMs": 23.762,
+      "inclusiveMs": 23.762
+    },
+    {
+      "functionName": "",
+      "url": "",
+      "lineNumber": 2,
+      "columnNumber": 16,
+      "selfMs": 0.0,
+      "inclusiveMs": 22.088000000000005
+    },
+    {
+      "functionName": "reduceEvent",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23694,
+      "columnNumber": 20,
+      "selfMs": 4.3309999999999995,
+      "inclusiveMs": 21.685
+    },
+    {
+      "functionName": "reduce",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23726,
+      "columnNumber": 15,
+      "selfMs": 0.0,
+      "inclusiveMs": 21.685
+    },
+    {
+      "functionName": "inst._zod.run",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 2431,
+      "columnNumber": 24,
+      "selfMs": 17.539,
+      "inclusiveMs": 20.994000000000003
+    },
+    {
+      "functionName": "inst._zod.parse",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 3119,
+      "columnNumber": 24,
+      "selfMs": 2.327,
+      "inclusiveMs": 18.981
+    },
+    {
+      "functionName": "(idle)",
+      "url": "",
+      "lineNumber": -1,
+      "columnNumber": -1,
+      "selfMs": 18.240000000000002,
+      "inclusiveMs": 18.240000000000002
+    },
+    {
+      "functionName": "walk2",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+      "lineNumber": 30,
+      "columnNumber": 24,
+      "selfMs": 12.942,
+      "inclusiveMs": 15.967
+    },
+    {
+      "functionName": "nextInt",
+      "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+      "lineNumber": 23257,
+      "columnNumber": 16,
+      "selfMs": 5.728999999999999,
+      "inclusiveMs": 13.634000000000002
+    }
+  ]
+}

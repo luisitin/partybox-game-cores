@@ -1,0 +1,1268 @@
+{
+  "status": "PASS_EXACT_RECORDS_PROFILE",
+  "startedAt": "2026-10-08T15:54:58.313Z",
+  "runtime": "v22.16.0",
+  "command": [
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/profile.mjs"
+  ],
+  "scope": "Private 1ms inspector CPU sampling of four exact International Strong/Medium pilot games using the unchanged existing league-worker game body. Profiler starts after full corpus import; no performance, CI or canonical-league claim.",
+  "inputsBefore": [
+    {
+      "path": ".work/strong-cost-profile-private/profile.mjs",
+      "sha256": "a1082ccd77f0eaa18c097197869114aeafafc9596e1346b25a0af96f93c63133"
+    },
+    {
+      "path": ".work/strong-cost-profile-private/worker.mjs",
+      "sha256": "0255408da66fe5c9701d2026798c6927f84cdd531b1e52caec15e97b5c9f7b97"
+    },
+    {
+      "path": "scripts/league-worker.mjs",
+      "sha256": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557"
+    },
+    {
+      "path": "src/bots.ts",
+      "sha256": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219"
+    },
+    {
+      "path": "src/moves.ts",
+      "sha256": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1"
+    },
+    {
+      "path": "src/core.ts",
+      "sha256": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b"
+    },
+    {
+      "path": "dist/core-international.mjs",
+      "sha256": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691"
+    },
+    {
+      "path": "dist/bots-international.mjs",
+      "sha256": "644eabaf8a0dfb26c43a05626d03303fd56b281bf69b184aebfdf479512d2869"
+    },
+    {
+      "path": "dist/endgame-international.mjs",
+      "sha256": "3bed3f4fedd4d67dd700d4a43bab3ad0b27dfccf9bf01435929ee390cc5f0e5f"
+    },
+    {
+      "path": "dist/core.mjs",
+      "sha256": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a"
+    },
+    {
+      "path": "dist/bots.mjs",
+      "sha256": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c"
+    },
+    {
+      "path": "dist/endgame.mjs",
+      "sha256": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a"
+    },
+    {
+      "path": "data/international/manifest.json",
+      "sha256": "6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04"
+    },
+    {
+      "path": "data/international/six/manifest.json",
+      "sha256": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-sharp-normal-0000.jsonl",
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c"
+    },
+    {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+      "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+    }
+  ],
+  "profileReady": {
+    "kind": "profile-ready",
+    "importSeconds": 21.877417128999998,
+    "startedAt": "2026-10-08T15:55:21.482Z"
+  },
+  "gameStartedAt": "2026-10-08T15:55:21.484Z",
+  "gameClosedAt": "2026-10-08T15:55:33.058Z",
+  "parentObservedGameWallSeconds": 11.573789744,
+  "exactGameRecordsMatch": true,
+  "gameRecordsSha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+  "profile": {
+    "kind": "profile-finished",
+    "startedAt": "2026-10-08T15:55:21.482Z",
+    "closedAt": "2026-10-08T15:55:33.080Z",
+    "samples": 9759
+  },
+  "topSelf": [
+    {
+      "id": 29,
+      "milliseconds": 1153.4439999999993,
+      "callFrame": {
+        "functionName": "(garbage collector)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "id": 45,
+      "milliseconds": 710.7119999999995,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 31,
+      "milliseconds": 609.1200000000002,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 41,
+      "milliseconds": 552.9480000000005,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 30,
+      "milliseconds": 422.65600000000046,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 47,
+      "milliseconds": 419.0910000000002,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 40,
+      "milliseconds": 368.25500000000005,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 24,
+      "milliseconds": 302.32700000000006,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 48,
+      "milliseconds": 280.6090000000003,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 109,
+      "milliseconds": 267.59599999999995,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 59,
+      "milliseconds": 267.53299999999984,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 51,
+      "milliseconds": 262.51099999999997,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 32,
+      "milliseconds": 238.29500000000013,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 25,
+      "milliseconds": 227.22600000000003,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 5,
+      "milliseconds": 215.87,
+      "callFrame": {
+        "functionName": "post",
+        "scriptId": "192",
+        "url": "node:inspector",
+        "lineNumber": 114,
+        "columnNumber": 6
+      }
+    },
+    {
+      "id": 46,
+      "milliseconds": 205.1910000000001,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 52,
+      "milliseconds": 191.21099999999998,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 68,
+      "milliseconds": 161.18999999999997,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 117,
+      "milliseconds": 155.14700000000005,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 39,
+      "milliseconds": 136.62700000000004,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 119,
+      "milliseconds": 135.476,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 21,
+      "milliseconds": 135.26699999999997,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 104,
+      "milliseconds": 126.72999999999996,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 23,
+      "milliseconds": 125.252,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 34,
+      "milliseconds": 122.97199999999998,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 114,
+      "milliseconds": 115.42400000000004,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 73,
+      "milliseconds": 106.837,
+      "callFrame": {
+        "functionName": "probeEndgame",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 673,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 78,
+      "milliseconds": 106.32799999999997,
+      "callFrame": {
+        "functionName": "evaluate",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23475,
+        "columnNumber": 17
+      }
+    },
+    {
+      "id": 33,
+      "milliseconds": 101.15799999999997,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 36,
+      "milliseconds": 96.47299999999998,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 57,
+      "milliseconds": 95.06999999999998,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 164,
+      "milliseconds": 88.989,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 49,
+      "milliseconds": 88.41700000000003,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 108,
+      "milliseconds": 85.91200000000003,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 66,
+      "milliseconds": 85.612,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 169,
+      "milliseconds": 75.82499999999999,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 106,
+      "milliseconds": 74.81200000000001,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 15,
+      "milliseconds": 74.77499999999999,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 170,
+      "milliseconds": 70.277,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 35,
+      "milliseconds": 64.349,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 26,
+      "milliseconds": 56.295000000000016,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 168,
+      "milliseconds": 51.846999999999994,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 70,
+      "milliseconds": 51.62199999999999,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 131,
+      "milliseconds": 50.94200000000001,
+      "callFrame": {
+        "functionName": "evaluate",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23475,
+        "columnNumber": 17
+      }
+    },
+    {
+      "id": 37,
+      "milliseconds": 46.52200000000001,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 115,
+      "milliseconds": 46.16499999999999,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 324,
+      "milliseconds": 46.102,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 675,
+        "columnNumber": 29
+      }
+    },
+    {
+      "id": 58,
+      "milliseconds": 44.56100000000001,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 56,
+      "milliseconds": 43.892999999999994,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 79,
+      "milliseconds": 43.76099999999999,
+      "callFrame": {
+        "functionName": "probeEndgame",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 673,
+        "columnNumber": 21
+      }
+    }
+  ],
+  "topCumulative": [
+    {
+      "id": 1,
+      "milliseconds": 11805.734999999997,
+      "callFrame": {
+        "functionName": "(root)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "id": 8,
+      "milliseconds": 10418.153999999997,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "130",
+        "url": "node:internal/event_target",
+        "lineNumber": 766,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 7,
+      "milliseconds": 10418.153999999997,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "77",
+        "url": "node:internal/per_context/messageport",
+        "lineNumber": 18,
+        "columnNumber": 30
+      }
+    },
+    {
+      "id": 9,
+      "milliseconds": 10414.810999999998,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "269",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/league-worker.mjs",
+        "lineNumber": 7,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 12,
+      "milliseconds": 10355.437999999998,
+      "callFrame": {
+        "functionName": "sampleInput",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23785,
+        "columnNumber": 20
+      }
+    },
+    {
+      "id": 13,
+      "milliseconds": 10354.311999999998,
+      "callFrame": {
+        "functionName": "chooseMove",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23570,
+        "columnNumber": 17
+      }
+    },
+    {
+      "id": 14,
+      "milliseconds": 10341.501999999999,
+      "callFrame": {
+        "functionName": "searchMove",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23489,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 15,
+      "milliseconds": 10230.251999999999,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 21,
+      "milliseconds": 9713.304,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 24,
+      "milliseconds": 8924.883000000002,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 30,
+      "milliseconds": 7335.316000000002,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 31,
+      "milliseconds": 4835.612,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 32,
+      "milliseconds": 1920.3100000000006,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 29,
+      "milliseconds": 1153.4439999999993,
+      "callFrame": {
+        "functionName": "(garbage collector)",
+        "scriptId": "0",
+        "url": "",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "id": 45,
+      "milliseconds": 993.9729999999996,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 41,
+      "milliseconds": 899.4000000000003,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 33,
+      "milliseconds": 758.6080000000001,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 47,
+      "milliseconds": 603.8180000000001,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 40,
+      "milliseconds": 590.142,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 108,
+      "milliseconds": 392.70799999999997,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 48,
+      "milliseconds": 386.75200000000035,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 25,
+      "milliseconds": 316.0210000000001,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 52,
+      "milliseconds": 311.87199999999996,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 109,
+      "milliseconds": 306.79599999999994,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 59,
+      "milliseconds": 297.11299999999983,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 51,
+      "milliseconds": 296.772,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 68,
+      "milliseconds": 271.22999999999996,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 46,
+      "milliseconds": 270.8110000000001,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 54,
+      "milliseconds": 267.769,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 5,
+      "milliseconds": 215.87,
+      "callFrame": {
+        "functionName": "post",
+        "scriptId": "192",
+        "url": "node:inspector",
+        "lineNumber": 114,
+        "columnNumber": 6
+      }
+    },
+    {
+      "id": 4,
+      "milliseconds": 215.87,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "191",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+        "lineNumber": 9,
+        "columnNumber": 45
+      }
+    },
+    {
+      "id": 3,
+      "milliseconds": 215.87,
+      "callFrame": {
+        "functionName": "post",
+        "scriptId": "191",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+        "lineNumber": 9,
+        "columnNumber": 11
+      }
+    },
+    {
+      "id": 2,
+      "milliseconds": 215.87,
+      "callFrame": {
+        "functionName": "",
+        "scriptId": "191",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/strong-cost-profile-private/worker.mjs",
+        "lineNumber": -1,
+        "columnNumber": -1
+      }
+    },
+    {
+      "id": 38,
+      "milliseconds": 196.55500000000004,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 117,
+      "milliseconds": 189.28100000000003,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 23,
+      "milliseconds": 177.84,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 34,
+      "milliseconds": 177.649,
+      "callFrame": {
+        "functionName": "legalMoves",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23332,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 73,
+      "milliseconds": 176.304,
+      "callFrame": {
+        "functionName": "probeEndgame",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 673,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 104,
+      "milliseconds": 167.74999999999994,
+      "callFrame": {
+        "functionName": "walk2",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23337,
+        "columnNumber": 24
+      }
+    },
+    {
+      "id": 36,
+      "milliseconds": 158.272,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 39,
+      "milliseconds": 155.48400000000004,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 119,
+      "milliseconds": 154.492,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 56,
+      "milliseconds": 147.02899999999997,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 49,
+      "milliseconds": 141.60000000000002,
+      "callFrame": {
+        "functionName": "nextPosition",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23447,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 114,
+      "milliseconds": 125.67200000000004,
+      "callFrame": {
+        "functionName": "positionKey",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23407,
+        "columnNumber": 18
+      }
+    },
+    {
+      "id": 258,
+      "milliseconds": 120.13199999999998,
+      "callFrame": {
+        "functionName": "probeEndgame",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 673,
+        "columnNumber": 21
+      }
+    },
+    {
+      "id": 162,
+      "milliseconds": 117.14399999999999,
+      "callFrame": {
+        "functionName": "drawReason",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23463,
+        "columnNumber": 19
+      }
+    },
+    {
+      "id": 259,
+      "milliseconds": 114.13299999999998,
+      "callFrame": {
+        "functionName": "solve",
+        "scriptId": "205",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/endgame-international.mjs",
+        "lineNumber": 678,
+        "columnNumber": 16
+      }
+    },
+    {
+      "id": 78,
+      "milliseconds": 106.32799999999997,
+      "callFrame": {
+        "functionName": "evaluate",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23475,
+        "columnNumber": 17
+      }
+    },
+    {
+      "id": 63,
+      "milliseconds": 105.94300000000001,
+      "callFrame": {
+        "functionName": "visit",
+        "scriptId": "204",
+        "url": "file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/dist/core-international.mjs",
+        "lineNumber": 23497,
+        "columnNumber": 16
+      }
+    }
+  ],
+  "cpuSampleCount": 9759,
+  "profileDurationMs": 11806.211,
+  "nodeHitBudgetCursorNote": "Inspector observes execution only. The existing game body, game/RNG modules and fixed-budget bot source are unmodified. The league records do not contain search node/hit totals or final cursor steps; those quantities are not invented here.",
+  "timingNote": "Original game-result elapsedSeconds is raw instrumented wall time. Any actual whole-group holds are separately retained and subtracted only in a derived receipt.",
+  "inputsAfter": [
+    {
+      "path": ".work/strong-cost-profile-private/profile.mjs",
+      "sha256": "a1082ccd77f0eaa18c097197869114aeafafc9596e1346b25a0af96f93c63133"
+    },
+    {
+      "path": ".work/strong-cost-profile-private/worker.mjs",
+      "sha256": "0255408da66fe5c9701d2026798c6927f84cdd531b1e52caec15e97b5c9f7b97"
+    },
+    {
+      "path": "scripts/league-worker.mjs",
+      "sha256": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557"
+    },
+    {
+      "path": "src/bots.ts",
+      "sha256": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219"
+    },
+    {
+      "path": "src/moves.ts",
+      "sha256": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1"
+    },
+    {
+      "path": "src/core.ts",
+      "sha256": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b"
+    },
+    {
+      "path": "dist/core-international.mjs",
+      "sha256": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691"
+    },
+    {
+      "path": "dist/bots-international.mjs",
+      "sha256": "644eabaf8a0dfb26c43a05626d03303fd56b281bf69b184aebfdf479512d2869"
+    },
+    {
+      "path": "dist/endgame-international.mjs",
+      "sha256": "3bed3f4fedd4d67dd700d4a43bab3ad0b27dfccf9bf01435929ee390cc5f0e5f"
+    },
+    {
+      "path": "dist/core.mjs",
+      "sha256": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a"
+    },
+    {
+      "path": "dist/bots.mjs",
+      "sha256": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c"
+    },
+    {
+      "path": "dist/endgame.mjs",
+      "sha256": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a"
+    },
+    {
+      "path": "data/international/manifest.json",
+      "sha256": "6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04"
+    },
+    {
+      "path": "data/international/six/manifest.json",
+      "sha256": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c"
+    },
+    {
+      "path": "evidence/checks/league-dedicated-pool-pilot/international-sharp-normal-0000.jsonl",
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c"
+    },
+    {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+      "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+    }
+  ],
+  "allInputsUnchanged": true,
+  "closedAt": "2026-10-08T15:55:33.860Z"
+}

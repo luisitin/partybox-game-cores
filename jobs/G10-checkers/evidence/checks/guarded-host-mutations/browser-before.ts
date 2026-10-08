@@ -12,7 +12,7 @@ interface OfflineBlockNeed {file:string;offset:number;length:number}
 declare const G10_INTERNATIONAL_PARTS:Record<string,OfflineFile>;
 const el=<T extends HTMLElement=HTMLElement>(id:string)=>document.getElementById(id) as T;
 const text=(id:string,value:string)=>{const node=el(id);if(node.textContent!==value)node.textContent=value;};
-const show=(id:string,visible:boolean)=>{const node=el(id);if(node.hidden!==!visible)node.hidden=!visible;};
+const show=(id:string,visible:boolean)=>{el(id).hidden=!visible;};
 const select=(id:string)=>el<HTMLSelectElement>(id).value;
 type Controller='human'|BotSkill;
 let state:State|null=null,controllers:Record<string,Controller>={},draft:number[]=[],cachedState:State|null=null;
@@ -127,7 +127,7 @@ function renderBoard(){
       const label=document.createElement('span');label.className='number';label.textContent=String(index+1);button.append(label);
       if(piece){const chip=document.createElement('span');chip.className='piece '+(piece>0?'white':'black');if(Math.abs(piece)===2)chip.innerHTML=crown;button.append(chip);}
     }
-    if(button.disabled!==!enabled)button.disabled=!enabled;const label='Square '+(index+1)+(piece?' · '+(piece>0?'light':'dark')+' '+(Math.abs(piece)===2?'king':'man'):' · empty')+(targets.has(index)?' · legal landing':'');if(button.getAttribute('aria-label')!==label)button.setAttribute('aria-label',label);
+    button.disabled=!enabled;button.setAttribute('aria-label','Square '+(index+1)+(piece?' · '+(piece>0?'light':'dark')+' '+(Math.abs(piece)===2?'king':'man'):' · empty')+(targets.has(index)?' · legal landing':''));
   }
 }
 function renderClock(){

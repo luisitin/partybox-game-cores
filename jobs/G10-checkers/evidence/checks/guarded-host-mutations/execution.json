@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "recordedAt": "2026-10-08T16:06:42.875547+00:00",
+  "actualBuildCommand": "G10_BUILD_BROWSER_ONLY=1 G10_HTML_OUT=.work/play-full-guarded.html npm run build",
+  "actualBuildExitCode": 0,
+  "actualSourceBuildIdenticalToCandidate": true,
+  "pageSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "pageBytes": 1390845993,
+  "sourceBeforeSha256": "7c97da816495d2859dc1d16ac6e43cbaffefbdbfde13604f03093d32d69ce272",
+  "sourceAfterSha256": "dc29bcf9d10189bf92983344854970dcfb54b3366c25558d695d04e72e39dcdf",
+  "compiledWorkerSha256": {
+    "american": "950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175",
+    "international": "31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2"
+  },
+  "scope": "Private mutation proof + adopted identical host source. Actual full600-frame proof is separately preserved; desktop passed, phone still pending. No controlled FPS-cause claim."
+}

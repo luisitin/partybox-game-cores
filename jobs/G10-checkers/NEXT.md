@@ -5,7 +5,7 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around15:50UTC:
+Current checkpoint, 2026-10-08 around16:14UTC:
 - Complete licensed American/International2–6 source is installed. The actual
   default10k native/reference probes cover all37six classes/148 orientations.
   Forty-eight exact full/block SearchReports+cursors and3 complete game
@@ -24,7 +24,13 @@ Current checkpoint, 2026-10-08 around15:50UTC:
   no worker/RNG consumption before corpus ready, zero runtimeHTTP/page errors.
   This is a player startup gain. Newedc desktop600 FAIL57.2363FPS/p9933.4ms;
   all15 desktop controls PASS/all600raw retained, phone NOT RUN. No cause
-  established or unchanged retry. Full frame/phone/clips remain pending.
+  established or unchanged retry. NEW guarded host source avoids equal
+  hidden/disabled/aria-label writes. Actual200 selections/cancellations preserve
+  complete DOM/accessibility/state while reducing mutations16400→2800American,
+  24400→4000International. Actual current-source rebuilt5ed2173b/1390845993B
+  full page now PASS30functionals plus1200strict frames: desktop59.8038FPS,
+  phone4×59.5070FPS, p9916.8ms both. Allraw/source/ready/grant/closed receipts
+  retained. No controlled causal FPS claim. Same-source clips still pending.
 - Private static-JSON Node representation PASS unchanged10k/48reports+cursors/
   missing-block totals/3complete games on actualNode24.19. Matched10k maxRSS
   original3,246,584KiB, JSON1,969,664KiB; full48/3 JSON2,860,060KiB. Separate
@@ -54,7 +60,13 @@ Next concrete work:
    functional proof and obtain fresh actual
    strict600 desktop/phone4× gates with per-profile readiness barriers granted
    by root. Startup/functionals run outside CPU quiet. Separate clips follow.
-3. Finish final-source properties/25 real mutations/7000 matrix/4000 strength,
+3. Current full-source7000matrix PASS119.987s/maxRSS2823640KiB, no holds;
+   allseven configs1000actual terminal games each. Current91unit/25mutant proof
+   remains applicable to unchanged game code. Private stage1 per-search legal
+   move memo is RUNNING; source/runtime stays unchanged until exact48reports/
+   cursors/block totals/3games/pilot comparisons pass. Its actual236.004177s
+   pure-group hold is recorded, not omitted. Do not count it as adopted.
+   Finish final-source properties/25 real mutations/7000 matrix/4000 strength,
    schemas/regeneration and CI30min fit. Baseline7k/25/4k pass predates actual
    full-six source and is not final acceptance. Investigate actual repeated
    cold-import/resource cost without skipping assertions or weakening gates.
@@ -65,9 +77,9 @@ Next concrete work:
 
 Cadence:
 - Actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
-- Last successful35fa86915:28:19 follows7fcb56b14:59:33 by28m46s: PASS30min,
-  early15:24:33 missed3m46s/hard15:29:33 met. Mainclaim631f472 row15:28:08Z.
-- Next targetsuccessfulpush15:53:19/hard15:58:19.
+- Last successful396da2515:51:42 follows35fa86915:28:19 by23m23s: PASS30min,
+  early15:53:19/hard15:58:19 met. Mainclaim897fc42 row15:51:30Z.
+- Next targetsuccessfulpush16:16:42/hard16:21:42.
   Main claim time never resets branch cadence. Record observed successful
   origin-reflog push time after closure; pending proofs stay explicitly pending.
 

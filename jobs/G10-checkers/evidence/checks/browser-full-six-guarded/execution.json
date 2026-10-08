@@ -1,0 +1,100 @@
+{
+  "status": "PASS",
+  "command": "G10_HTML_PATH=.work/play-full-guarded.html G10_BROWSER_DIR=.work/browser-full-six-guarded G10_MEDIA_DIR=.work/media-full-six-guarded G10_FRAME_BARRIER_DIR=.work/guarded-frame-barrier python3 .work/run-resource.py .work/browser-full-six-guarded/resources.json node scripts/browser-check.mjs",
+  "profiles": [
+    {
+      "name": "desktop",
+      "throttle": 1,
+      "loadMs": 19163.259708,
+      "checks": 15,
+      "meanFps": 59.803783785400114,
+      "p99Ms": 16.800000000017462
+    },
+    {
+      "name": "phone",
+      "throttle": 4,
+      "loadMs": 138193.736663,
+      "checks": 15,
+      "meanFps": 59.5070082395386,
+      "p99Ms": 16.79999999998836
+    }
+  ],
+  "allActualFrames": 1200,
+  "functionalChecks": 30,
+  "capturing": false,
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "htmlBytes": 1390845993,
+  "inputSha256": {
+    "src/browser.ts": "dc29bcf9d10189bf92983344854970dcfb54b3366c25558d695d04e72e39dcdf",
+    "src/bot-worker.ts": "eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653",
+    "src/play.template.html": "2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef",
+    "scripts/browser-check.mjs": "3c4d586ad61c6ff175d21bff5e2910f50117e5e9d89364fa03a36a5930989b27",
+    "scripts/build.mjs": "d6ab129ec1f993805226a13a23bed6186c82c1047f4049fea2886a9207048c43",
+    "dist/worker-american.mjs": "950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175",
+    "dist/worker-international.mjs": "31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2",
+    "dist/corpus-pack.json": "6d570320bbb75d898f29cf6fe6c93faef556899cfa0be0a6a33e8cdd862b4cb9"
+  },
+  "markers": {
+    "desktop-closed.json": {
+      "json": {
+        "profile": "desktop",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+        "closedAt": "2026-10-08T16:05:12.459Z",
+        "frames": 600,
+        "meanFps": 59.803783785400114,
+        "p99Ms": 16.800000000017462,
+        "capturing": false
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:05:12.454583+00:00"
+    },
+    "phone-grant.json": {
+      "json": {
+        "profile": "phone",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801"
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:12:01.651542+00:00"
+    },
+    "phone-closed.json": {
+      "json": {
+        "profile": "phone",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+        "closedAt": "2026-10-08T16:12:12.090Z",
+        "frames": 600,
+        "meanFps": 59.5070082395386,
+        "p99Ms": 16.79999999998836,
+        "capturing": false
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:12:12.086242+00:00"
+    },
+    "desktop-ready.json": {
+      "json": {
+        "profile": "desktop",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+        "readyAt": "2026-10-08T16:03:13.840Z",
+        "frames": 600,
+        "meanFpsMinimum": 59,
+        "p99MsMaximum": 17
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:03:13.844342+00:00"
+    },
+    "desktop-grant.json": {
+      "json": {
+        "profile": "desktop",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801"
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:05:02.349780+00:00"
+    },
+    "phone-ready.json": {
+      "json": {
+        "profile": "phone",
+        "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+        "readyAt": "2026-10-08T16:08:01.708Z",
+        "frames": 600,
+        "meanFpsMinimum": 59,
+        "p99MsMaximum": 17
+      },
+      "sourceFileModifiedAt": "2026-10-08T16:08:01.706368+00:00"
+    }
+  },
+  "scope": "Full original six-piece page; actual standalone file; no runtime HTTP; no filtering or gate relaxation; coordinated grants separate from full payload load/functionals. Actual wrapper elapsed includes coordination waiting and is not a CI duration. Separate same-source clips remain pending."
+}

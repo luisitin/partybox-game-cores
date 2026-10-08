@@ -640,3 +640,43 @@ Prior successful35fa869 at15:28:19 follows7fcb56b14:59:33 by28m46s: binding
 30min PASS, early15:24:33 missed3m46s/hard15:29:33 met. Nexttarget15:53:19/
 hard15:58:19. Full final4000/7000/frame/phone/clips/CI/publication/PR/KEEP GOING
 remain pending. Complete licensed sources are available; no BLOCKED claim.
+
+## Milestone18 full browser pair and current7000 matrix
+
+Actual pinnedNode22 matrix PASS7000 terminal games/seven configs×1000,
+exit0 closed15:55:58.724118Z,119.987395652s/maxRSS2,823,640KiB/no holds.
+All seeded replay/immutability/privacy/phase/pause/result/state-bound assertions
+remain intact. Raw/script/input hashes/resources are under matrix-current-full/.
+Four exact Strong pilot games CPU profile passed unchanged raw records:
+positionKey2.152s self, legalMoves2.019s self/2.835s inclusive, nextPosition1.531s,
+GC1.153s. This supports investigating pure local reuse, not a performance claim.
+Allraw/script/positions/resources/hash guards under strong-cost-profile-private/.
+Private stage1 legalMoves memo remains RUNNING/unadopted; exact48reports/cursors/
+block totals/3games/pilot checks are pending. Actual confirmed pure-group hold
+16:09:57.393002→16:13:53.397179 is236.004177s, retained in derived timing.
+
+Guarded host private actual-file diagnostic PASS: all selected/cancelled DOM,
+labels and game states identical. Two hundred cycles emitAmerican16400→2800
+andInternational24400→4000 mutations. No runtime/FPS cause assumed. Only equal
+hidden/disabled/aria-label writes were guarded in production; strictTypeScript/
+ordinarybrowser build PASS and exactly reproduced private candidate5ed2173b
+(1390845993B). All original payload/worker/licence/template suffix bytes match.
+Raw/script/source snapshots/resources are under guarded-host-mutations/.
+
+Current actual full-page strict runner PASS/exit0:30functionals,600unfiltered
+frames eachdesktop1920×1080 andphone390×844 at4×CPU. Desktop59.8037837854FPS/
+p9916.8ms closed16:05:12.459Z; phone59.5070082395FPS/p9916.8ms closed16:12:12.090Z.
+No video during gating. Zero HTTP/page errors; actual full original Strong
+worker/data checks included. Exact frozen source5ed2173b/input hashes and all
+1200raw/ready/grant/closed receipts are under browser-full-six-guarded/.
+Wholewrapper580.996829s includes coordinator waiting, not projected CI duration.
+Previous failed attempts remain retained; no controlled causal gain claim.
+Separate same-source clips, current4000strength, CI30-minute fit/currentheadgreen,
+complete-page publication/PR/KEEP GOING remain pending. Trackedplay.html still
+contains accepted earlier2–5baseline; full standalone is private pending actual
+download publication. Complete licensed sources exist, no BLOCKED claim.
+
+Successful396da2515:51:42 follows35fa86915:28:19 by23m23s, bindingcadence PASS,
+early15:53:19/hard15:58:19 met; mainclaim897fc42 row15:51:30Z. Currenttarget
+16:16:42/hard16:21:42. Source/runtime stays frozen through this checkpoint;
+pending private memo will not be represented as current game validation.
