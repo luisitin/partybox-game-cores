@@ -10,10 +10,11 @@ installation exit124 does not establish a game regression.
 
 KEEP GOING rounds1–16 recorded. Round16 depth-four lost926/2,000
 (46.3%, upper95%48.49%); rejected, no-gain streak ONE.
-Round17 forced-draw horizon study against exact0.2.7 underway:
-`IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts`. Check local
-process and /tmp/G01-round17.log first; completed report is
-improvement-draw-depth-report.json. Never count partial results.
+Round17 initial forced-draw study wins1,050/2,000(52.5%,lower95%50.31%).
+Not yet accepted. Fresh2001–4000 confirmation against exact0.2.7 underway:
+`IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts`. Check local
+process and /tmp/G01-round17-confirmation.log first; completed report is
+improvement-draw-depth-confirmation-report.json. Never count partial results.
 Require positive lower95% bound plus fresh seeds2001–4000 for adoption.
 If rejected, record no-gain round2, then do a new five-weakness review
 and substantive candidate. THREE consecutive no-gain rounds plus actual

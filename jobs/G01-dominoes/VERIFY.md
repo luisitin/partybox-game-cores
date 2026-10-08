@@ -269,3 +269,5 @@ Round16 `IMPROVEMENT_STUDY=depth4 node parallel-improvement.ts`:2,000 complete B
 Direct disk-navigation recheck: launch Playwright Chromium at /usr/bin/chromium, `await page.goto('file://'+resolve('play.html'),{timeout:15000})`. Result `net::ERR_BLOCKED_BY_ADMINISTRATOR`; source bytes still verified offline via setContent. This adds no direct-navigation claim.
 
 Round17 `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts` underway; do not count until all2,000 Draw matches finish.
+
+Round17 initial `IMPROVEMENT_STUDY=draw-depth node parallel-improvement.ts`:1,050/2,000 wins(52.5%,95%50.31–54.69%),0 ties,556,571 turns. Every shard passes10 focused regressions and exact0.2.7/seed coverage checks. Initial positive signal only; production unchanged and no-gain streak remains1 pending independent confirmation. `IMPROVEMENT_STUDY=draw-depth IMPROVEMENT_SEED_START=2001 node parallel-improvement.ts` underway on fresh seeds2001–4000.
