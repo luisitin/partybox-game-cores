@@ -1,0 +1,16 @@
+{
+  "recordedAt": "2026-10-08T02:31:30.183421+00:00",
+  "baselineHead": "c0dabcfd6b86fb096938bfb0ef7f0b714e998429",
+  "version": "1.1.0",
+  "counterexample": {
+    "twoDrawPhasesAtEventNow": 0,
+    "oldStartedAt": 0,
+    "newStartedAt": 0,
+    "staleTimerIgnoredBefore": false
+  },
+  "repair": "monotonic per-state logical phase instance stamp; deadline still supplied event time",
+  "actualTargetedTestsPassed": 12,
+  "actualBatchOutcomes": 10500,
+  "fullCurrentAcceptance": "pending",
+  "postGreenRoundsStarted": false
+}

@@ -3,7 +3,7 @@ import type {GameDefinition,GameEvent,InitContext,GameStateBase,GameResults,TvVi
 import type {BotSkill} from '../../../contract/constants';
 import {shuffle,seedRng,nextInt,createRng} from '../../../contract/rng';
 import type {Rng} from '../../../contract/rng';
-import {minimizeDeadwood,declaredSolution,optimalDefense,value,rank,suit} from './cards';
+import {minimizeDeadwood,declaredSolution,optimalDefense,discardSolutions,value,rank,suit} from './cards';
 import type {Card,MeldSolution,Defense} from './cards';
 
 export const inputSchema=z.discriminatedUnion('type',[
@@ -27,6 +27,7 @@ export interface RoundResult {
   hands:Record<string,Card[]>;multiplier:number;
 }
 export interface State extends GameStateBase {
+  phaseClock:number;
   config:Config;order:string[];active:string[];waiting:string[];left:string[];
   scores:Record<string,number>;boxes:Record<string,number>;wins:Record<string,number>;
   dealer:string;turn:string;hand:number;hands:Record<string,Card[]>;
@@ -52,7 +53,7 @@ export const manifest:GameManifest={
   id:'gin-rummy',name:'Gin Rummy',icon:'🃏',tagline:'Build melds, keep your deadwood low.',
   description:'Standard or Oklahoma Gin, exact meld scoring, and an optional winner-stays rotation.',
   howToPlay:['Draw a card, then discard one.','Make sets and runs; knock with low deadwood.','Gin earns a bonus. First to the target ends the match.'],
-  version:'1.0.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
+  version:'1.1.0',minPlayers:2,maxPlayers:4,estimatedMinutes:20,unlimitedDuration:true,
   tags:['classic','strategy'],presence:{needs:'same-room'},addedOn:'2026-10-08',supportsBots:true,saveable:true,
   playerCounts:{setting:'mode',default:[2,2],overrides:{duel:[2,2],rotation:[3,4]}},
   settings:[
@@ -84,7 +85,8 @@ export function configuration(settings:InitContext['settings']):Config {
     shutout:s('shutout',['gameBonus','handPoints','wholeScore','none'],'gameBonus') as Config['shutout'],turnSeconds:seconds};
 }
 function phase(state:State,id:string,now:number):State {
-  return {...state,phase:{id,startedAt:now,deadline:['round-end','done'].includes(id)||!state.config.turnSeconds?null:now+state.config.turnSeconds*1000}};
+  const startedAt=Math.max(now,state.phaseClock+1);
+  return {...state,phaseClock:startedAt,phase:{id,startedAt,deadline:['round-end','done'].includes(id)||!state.config.turnSeconds?null:now+state.config.turnSeconds*1000}};
 }
 function other(state:State,id=state.turn):string {return state.active.find(x=>x!==id)!;}
 function appendLog(state:State,action:string,card:Card|null=null):State {
@@ -106,7 +108,7 @@ export function init(ctx:InitContext):State {
   if(order.length<(config.mode==='duel'?2:3)||order.length>(config.mode==='duel'?2:4)||new Set(order).size!==order.length)
     throw new Error('Roster must match duel 2 or rotation 3–4');
   const [dealerIndex,rng]=nextInt(seedRng(ctx.seed),0,1);
-  const state:State={phase:{id:'upcard',startedAt:ctx.now,deadline:null},rng,
+  const state:State={phase:{id:'upcard',startedAt:ctx.now,deadline:null},phaseClock:ctx.now-1,rng,
     players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),config,order,active:order.slice(0,2),waiting:order.slice(2),left:[],
     scores:Object.fromEntries(order.map(id=>[id,0])),boxes:Object.fromEntries(order.map(id=>[id,0])),wins:Object.fromEntries(order.map(id=>[id,0])),
     dealer:order[dealerIndex],turn:order[1-dealerIndex],hand:0,hands:{},stock:[],discard:[],initialUpcard:0,
@@ -243,9 +245,9 @@ function legal(state:State,id:string):Input[] {
   if(state.phase.id==='upcard')return [{type:'pass'},{type:'draw',source:'discard'}];
   if(state.phase.id==='draw')return state.mustStock?[{type:'draw',source:'stock'}]:[{type:'draw',source:'stock'},...(state.discard.length?[{type:'draw' as const,source:'discard' as const}]:[])];
   if(state.phase.id==='layoff')return [{type:'finishLayoff'}];
-  if(state.phase.id==='discard')return state.hands[id].filter(c=>c!==state.drawnDiscard).flatMap(card=>{
+  if(state.phase.id==='discard')return discardSolutions(state.hands[id]).filter(x=>x.card!==state.drawnDiscard).flatMap(({card,solution})=>{
     const choices:Input[]=[{type:'discard',card}];
-    if(minimizeDeadwood(state.hands[id].filter(c=>c!==card)).deadwood<=state.knockLimit)choices.push({type:'discard',card,knock:true});
+    if(solution.deadwood<=state.knockLimit)choices.push({type:'discard',card,knock:true});
     return choices;
   });
   return [];
@@ -306,8 +308,7 @@ export function sampleInput(state:State,id:string,rng:Rng,skill:BotSkill='normal
 }
 function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkill):{card:Card;deadwood:number} {
   let best={card:hand.find(c=>c!==forbidden)!,deadwood:999},bestScore=Infinity;
-  for(const card of hand)if(card!==forbidden) {
-    const rest=hand.filter(c=>c!==card),solution=minimizeDeadwood(rest);
+  for(const {card,solution} of discardSolutions(hand))if(card!==forbidden) {
     let score=solution.deadwood;
     if(skill==='sharp') {
       let potential=0;

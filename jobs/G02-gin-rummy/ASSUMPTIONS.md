@@ -25,6 +25,9 @@
   for actual hidden-state independence; the active player's own hand is private.
 - Turn clock is optional/off by default. Idle matches persist until VIP end,
   as the classic-board-game contract permits. Timed play uses event timestamps.
+  A monotonic logical phase stamp disambiguates multiple transitions in one
+  event millisecond; deadlines still use the supplied actual event time. State
+  version1.1.0 carries this stamp so older1.0.0 saves are not falsely compatible.
 - Full source extractions were read via Exa; origin HTTP codes are unobserved.
   No unread candidate is promoted to evidence. Source failures remain historical.
 - Desktop and 4x-throttled mobile browser performance will be measured locally

@@ -33,7 +33,7 @@ export function meldCandidates(hand:readonly Card[]):number[] {
   return result.sort((a,b)=>a-b);
 }
 // Weighted exact cover: the first remaining card is deadwood or lies in one legal meld.
-export function minimizeDeadwood(hand:readonly Card[]):MeldSolution {
+function handAnalyzer(hand:readonly Card[]):(mask:number)=>MeldSolution {
   if(hand.length>11||new Set(hand).size!==hand.length||hand.some(c=>!Number.isInteger(c)||c<0||c>51))
     throw new Error('Expected distinct cards, maximum eleven');
   const candidates=meldCandidates(hand), size=1<<hand.length;
@@ -49,14 +49,24 @@ export function minimizeDeadwood(hand:readonly Card[]):MeldSolution {
     }
     cost[mask]=best;choice[mask]=selected;return best;
   }
-  let mask=size-1;
-  const deadwood=solve(mask),melds:Card[][]=[],loose:Card[]=[];
-  while(mask) {
-    const meld=choice[mask];
-    if(meld){melds.push(hand.filter((_,i)=>Boolean(meld&(1<<i))));mask^=meld;}
-    else {const bit=mask&-mask;loose.push(hand[31-Math.clz32(bit)]);mask^=bit;}
-  }
-  return {deadwood,melds,loose};
+  return (mask:number):MeldSolution=>{
+    const deadwood=solve(mask),melds:Card[][]=[],loose:Card[]=[];
+    while(mask) {
+      const meld=choice[mask];
+      if(meld){melds.push(hand.filter((_,i)=>Boolean(meld&(1<<i))));mask^=meld;}
+      else {const bit=mask&-mask;loose.push(hand[31-Math.clz32(bit)]);mask^=bit;}
+    }
+    return {deadwood,melds,loose};
+  };
+}
+export function minimizeDeadwood(hand:readonly Card[]):MeldSolution {
+  return handAnalyzer(hand)((1<<hand.length)-1);
+}
+// All legal ten-card outcomes share one call-local candidate/memo table.
+// No persistent cache, no caller mutation and no dependence on prior calls.
+export function discardSolutions(hand:readonly Card[]):{card:Card;solution:MeldSolution}[] {
+  const analyze=handAnalyzer(hand),full=(1<<hand.length)-1;
+  return hand.map((card,i)=>({card,solution:analyze(full^(1<<i))}));
 }
 export function declaredSolution(hand:readonly Card[],melds:readonly Card[][]):MeldSolution|null {
   const used=melds.flat();

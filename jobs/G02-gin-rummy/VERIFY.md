@@ -1,4 +1,4 @@
-# Verification — local full acceptance passed, hosted CI pending
+# Verification — 1.1.0 full local acceptance passed, current CI pending
 
 Nine actually read Exa extractions, exact extraction hashes and all short quote
 matches are recorded in evidence/research-sources.json. Origin HTTP unobserved.
@@ -38,3 +38,31 @@ as though the earlier glob had included them. Hosted npm test includes all18.
 
 Final exact-head PR CI is still pending. No READY claim until the actual
 hosted result is green. Post-green KEEP GOING remains required.
+
+Version 1.1.0 pre-green repairs: the original same-timestamp draw timer was
+incorrectly accepted on a subsequent draw phase. A logical phase stamp fixes
+that exact counterexample without changing event-time deadlines. Command
+`node --test tests/rules.test.mjs tests/ends.test.mjs
+tests/timer-instance.test.mjs tests/batch-discard.test.mjs` passes 12 tests,
+including 10,500 exact-layout/independent-minimum discard comparisons.
+The current full acceptance is pending; earlier full logs are baseline evidence.
+
+`node scripts/profile-bots.mjs` before/after batching: 1,000 identical fixed
+discard states per skill, both decision hashes unchanged. Medium wall time
+386.956→94.894ms; strong 253.104→71.336ms. Raw samples/source hashes are in
+evidence/bot-profile-before.json and bot-profile-after.json. These are local
+microbenchmarks with shared-machine noise, not physical-phone measurements.
+
+Actual version 1.1.0 `npm test`: exit0, all20 tests and both full leagues
+passed, 25/25 compiled mutants caught, all75 then-delivered hashes and both
+regenerations passed. Raw output: evidence/full-local-1.1.0-accepted.log;
+source-bound summary: acceptance-1.1.0.json. Desktop mean60.004FPS; phone4x
+mean59.343FPS/p9916.8ms/max49.9ms (one outlier). The same-code capture run
+measured60.003/60.002FPS with max16.8ms; both raw runs are retained. No
+claim of constant zero-jank frame timing or physical-phone testing.
+
+Hosted baseline 1.0.0 CI 37717614222 actually finished SUCCESS at head
+c0dabcfd6b86fb096938bfb0ef7f0b714e998429, including all18 then-hosted tests,
+all required matrices/leagues,25 mutants and browser checks. Exact npm-test
+step output: evidence/ci-baseline-1.0.0-accepted.log. This does not verify
+1.1.0; its current-head hosted run remains required.
