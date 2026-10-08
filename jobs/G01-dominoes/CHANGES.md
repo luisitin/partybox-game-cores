@@ -103,3 +103,12 @@ Round17 isolated candidate: improvement-study.ts supports draw-depth, preserving
 Round17 confirmation fails the predeclared strength bound; the forced-draw depth candidate is not shipped. Round18 uses the already isolated leaf-count candidate, adding a five-point relative tile-count term to the shallow pip evaluation while preserving terminal rules. No production change.
 
 Final review: reject the tile-count candidate after its2,000-match interval crosses50%, completing three no-gain rounds. Correct stale documentation that still described Draw lookahead as blocked play or the selectable7/7/6 deal as future work; restore precise remaining research limitations in NEXT.md. Production, existing tests, HTML and archived media remain byte-identical to the green0.2.7 delivery.
+
+Stale-claim delivery review19:
+- build.ts embeds the complete pinned Zod MIT notice and asserts installed/
+  committed/embedded equality;the standalone file retains its licence.
+- checksums.ts hashes play.html and THIRD-PARTY-LICENSES.txt.
+- package.json validates committed hashes before any generator can replace
+  them;the existing final generator/check records fresh test outputs.
+- browser.ts accepts G01_CAPTURE_PATH so a new milestone clip can be saved
+  separately from the previous draw-opener recording.

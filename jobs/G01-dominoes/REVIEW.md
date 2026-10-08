@@ -91,3 +91,15 @@ Five weaknesses, ranked: forced Draw steps consume the shallow decision horizon;
 ## Round 18
 
 Five weaknesses, ranked: shallow evaluation ignores remaining tile count; finite64-world variance; coalition opponents in free-for-all; incomplete Draw action-history inference; unavailable physical-phone evidence. Test adding five points per relative remaining tile to the leaf pip heuristic. This can distinguish blocking an opponent from merely shedding high pips and reduce the risk of stranding low-pip tiles. Keep terminal rewards, all64 worlds, depth-three and exact endgame thresholds unchanged. Compare2,000 alternating-seat Block matches to exact0.2.7; fresh-seed confirmation is required if the initial lower95% bound exceeds50%.
+
+## Stale-claim delivery review19
+
+Re-read root RULES/JOBS and G01's selected rules. Five largest remaining
+weaknesses:bundled Zod's full MIT notice is absent;HTML is omitted from the
+hash set;the pipeline regenerates hashes before validating committed bytes;
+the capture path is fixed to an earlier milestone;physical phone evidence
+is unavailable. Retain/hash the exact installed dependency notice and HTML,
+validate committed hashes before generation,and allow a separate capture
+path for this milestone. Preserve the verified0.2.7 strategy and three
+rejected improvement studies;these delivery changes have no player-visible
+gain. Re-run the full production pipeline and final-head CI.

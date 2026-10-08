@@ -7,9 +7,12 @@ const contract=await build({entryPoints:['../../contract/contract.ts'],bundle:tr
 const {gameManifestSchema}=await import('data:text/javascript;base64,'+Buffer.from(contract.outputFiles[0]!.text).toString('base64'));
 gameManifestSchema.parse(manifest);
 const output=await build({entryPoints:['ui.ts'],bundle:true,write:false,format:'iife',target:'es2022',minify:true,legalComments:'inline'});
-const js=output.outputFiles[0]!.text.replaceAll('</script','<\\/script');
+const license=readFileSync('THIRD-PARTY-LICENSES.txt','utf8');
+assert.equal(license,readFileSync('node_modules/zod/LICENSE','utf8'),'delivered notice must match pinned Zod');
+const js=(`/* Bundled Zod 4.6.5 — full MIT notice\n${license}*/\n`+output.outputFiles[0]!.text).replaceAll('</script','<\\/script');
 new Script(js);
 const html=readFileSync('shell.html','utf8').replace('/* INLINE_GAME */',()=>js);
+assert(html.includes(license),'standalone HTML must preserve the complete dependency notice');
 assert(!/<(?:script|link)[^>]+(?:src|href)=/i.test(html));
 assert(!/\b(?:fetch|XMLHttpRequest)\s*\(/.test(js));
 if(process.argv.includes('--check'))assert.equal(readFileSync('play.html','utf8'),html);else writeFileSync('play.html',html);

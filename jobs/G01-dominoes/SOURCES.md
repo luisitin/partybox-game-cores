@@ -68,3 +68,10 @@ Bicycle's previously attempted URL now returns 404 rather than proxy denial;
 no content was read. Masters of Games remains proxy-denied (403). Source access
 has recovered for Pagat/Wikipedia, not necessarily every requested hostname.
 No history/materials/art facts or source-owned assets are included in this game.
+
+Runtime dependency:Zod4.6.5,https://www.npmjs.com/package/zod/v/4.6.5,
+from the pinned installed npm package. Its full MIT notice(copyright2025
+Colin McDonnell) is copied to THIRD-PARTY-LICENSES.txt and retained in the
+standalone script. Build checks compare installed/committed/embedded copies.
+Rules/strategy reference code and assets above were not copied;this allowed
+licensed dependency is bundled separately.

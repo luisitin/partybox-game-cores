@@ -26,3 +26,11 @@ First-round highest-double Block inference: no initially held tile can outrank t
 Untouched-stock Draw: public hand count plus played count conserves all28 tiles, so stock size is inferable. Stock never increases within a round. Equality with the initial deal stock proves no tile was drawn; then the original highest opener remains the maximum ranked played tile. After any draw, disable the inference for all seats rather than guess which hands can contain newly introduced higher tiles. This remains a partial-history Draw model.
 
 For improvement studies, alternate candidate seats on the same 2,000 deal seeds and preserve both policies' public observations. A positive lower approximate95% bound is only an initial signal; fresh2001–4000 seeds must confirm it before adoption. Failed candidates remain isolated and are not shipped merely to satisfy the KEEP GOING count.
+
+- The literal six-hour queue rule selects previously completed G01 again:
+  claim02:21:33UTC and branch commit01:57:07UTC are both stale. Reclaim on
+  main,create job/G01-dominoes-reverify from main and merge the existing
+  verified delivery locally;reuse PR1 with non-force history-preserving
+  updates. This local source merge is separate from merging a public PR.
+  Existing strategy experiments remain rejected;three no-gain rounds16–18
+  stay satisfied because the delivery follow-up changes no player behavior.

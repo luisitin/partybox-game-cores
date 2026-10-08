@@ -1,48 +1,39 @@
-# Resume G01
+# G01 stale-claim delivery recheck
 
-Branch job/G01-dominoes; PR https://github.com/luisitin/partybox-game-cores/pull/1.
-Read current main README.md, RULES.md, JOBS.md and CLAIMS.md first.
+Working branch job/G01-dominoes-reverify,chat codex-domino.
+Existing delivery PR1 https://github.com/luisitin/partybox-game-cores/pull/1
+uses job/G01-dominoes. Preserve that PR;do not create a duplicate.
+The six-hour rule selected G01 again after G06 completed. Main claim is
+renewed;the new branch starts at main and locally merges the exact delivered
+G01 source. Old head949c2e3/run37715456734 remains verified SUCCESS.
 
-Delivery is ready; KEEP GOING stop criterion is SATISFIED. Rounds16–18
-are three consecutive rejected, substantive improvement attempts:
-- Depth-four:926/2,000 wins(46.3%,upper95%48.49%).
-- Draw decision-depth:1,050 initial,1,041 fresh/2,000; fresh lower95%49.86%.
-- Tile-count leaf:1,017/2,000(50.85%,lower95%48.66%).
-No candidates shipped. Exact0.2.7 frozen baseline and all reports retained.
+Production0.2.7 strategy/core is retained;rounds16–18's three rejected
+improvement studies satisfy KEEP GOING. Review19's five weaknesses are
+in REVIEW. Delivery edits retain the full Zod MIT notice,hash HTML/notice,
+check committed hashes before regeneration and permit a separate clip path.
+Strict/build/notice/hash checks pass,HTML478,126bytes/63 paths.
+Full production recheck is NEXT:run the verified installer then
+`G01_CAPTURE_PATH=media/milestone-12-license.webm npm test`;logs
+`/tmp/G01-recheck-install.log`,`/tmp/G01-recheck-npm-test.log`.
+Do not claim this new recheck passed until the commands finish.
 
-FINAL-HEAD CI STILL MUST PASS before calling G01 complete/claiming next.
-Use `git rev-parse HEAD`, `gh pr view 1 --json headRefOid` and
-`gh run list --workflow G01.yml --json databaseId,headSha,status,conclusion`.
-Observe SUCCESS for the actual final branch/PR head, not only an older run.
-If success: G01 is complete, do not restart the improvement experiments;
-claim the lowest eligible main job. G02/G03 currently have other workers.
-If failure: inspect actual failed step/annotations, fix within scope, push,
-refresh claim and verify new CI. Do not infer a game failure from installation.
+After success,record actual counts/capture/hash results,push this branch
+and fast-forward existing job/G01-dominoes to the same commit(non-force),
+refresh ONLY own G01 main claim and observe SUCCESS for PR1's current head.
+A metadata-only round has no player-visible gain;prior stop remains met.
+If exact-current-head CI is green,advance to the lowest eligible main job.
+Do not restart rejected strategy experiments without new evidence.
 
-Production0.2.7:40 tests/9,003 games,25 mutants,solver20,000 cases,
-conditional counts10,000 and both opener probes10,000 pass. Block
-strong1,438/2,000(71.9%);Draw1,684/2,000(84.2%);bounded upstream132/200.
-Current game/UI/test/pipeline bytes equal bedf43a, whose full GitHub
-run37681790311 passed. New tooling/types,30 focused production tests,
-build freshness and all checksums pass locally. SHA covers new study reports.
-PR body records the actual latest observed CI without another branch push.
+Read main README/RULES/JOBS/CLAIMS before selecting another job,preserve
+concurrent claims,push milestones≤30min. No public PR merge/closure.
+G04 PR4/head152e5a0 and G06 PR7/head0037add/CI37748960265 SUCCESS
+2026-10-08T08:34:16Z have their final gates/stops satisfied.
+G08 Shake Up is another worker's current claim;its assets are untouched.
+If selected later,read START-HERE/start-HANDOFF before anything else.
 
-Refresh ONLY own main G01 line each job push; preserve concurrent claims.
-Native Git works; remote500 fallback /workspace/.onboarding/publish-commit.py
-verifies single-parent objects and advances force:false.
-
-G08 is owner's Shake Up. Read START-HERE.md and start/HANDOFF.md first;
-preserve name/art/models/films/word lists and seven ordered verification items.
-Research403 never stops work. Future G04 read-only source caches are in /tmp:
-G04-balderdash-source1/2.md,G04-log-metric-source.md,
-G04-sklearn-metrics-source.rst. No future job is claimed by this chat yet.
-
-Re-verify when web works: exact regional opening tie break/tied-round lead
-are selected house conventions, not universally official rules. Bicycle's
-old URL404 and Masters403 are optional corroboration gaps, not blockers.
-
-Cloud setup is tested and saved as an unpublished draft. Node24/Chromium/
-ffmpeg/Python baseline ready; npm cache /workspace/.npm-cache.
-No services/runtime network. Managed policy still blocks file navigation;
-exact standalone bytes pass setContent/offline/privacy/reduced-motion.
-Phone performance is Chromium390x844 at4xCPU, not physical hardware.
+Re-verify when web works:regional opening ties/tied-round lead conventions
+are selected house choices;old Bicycle404/Masters403 are corroboration
+gaps handled by live alternate sources,not research blockers.
+Managed file:// uses exact-byte setContent fallback;phone390×844/4×CPU
+is emulation. Node24/Chromium/ffmpeg/Python baseline tools are ready.
+Cloud setup draft11 is tested and saved for review,unpublished.

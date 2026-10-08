@@ -295,3 +295,16 @@ try {
 JS
 ```
 The managed policy rejects the navigation with ERR_BLOCKED_BY_ADMINISTRATOR. No policy bypass was attempted; the existing exact-byte setContent tests exercise the standalone game, with zero network requests.
+
+Stale-claim delivery recheck19,2026-10-08:
+- Fresh main claims and all remote refs confirm G01 is the lowest eligible
+  stale job;claim02:21:33UTC/branch01:57:07UTC both older than6h.
+- GitHub REST:PR1 current head949c2e3de79c4665ea18145fe62bf5b908a77472
+  matches SUCCESS run37715456734. Initial three-round stop remains met.
+- `git diff --exit-code origin/job/G01-dominoes HEAD -- jobs/G01-dominoes
+  .github/workflows/G01.yml contract`:EXIT0 after the local source merge;
+  the working branch starts with the exact delivered implementation.
+- `npm run check; node build.ts; node build.ts --check; node checksums.ts
+  --check`:PASS after the notice/hash edits,HTML478,126bytes,63 hashed paths.
+  Build asserts full installed/committed/embedded notice equality and parses
+  the script. Full production recheck and current-head CI are pending.
