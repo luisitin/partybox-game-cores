@@ -315,3 +315,23 @@ Full strict disk CI is triggered for the new push.
 
 Round7 data gates completed:8 JSON files,7 schemas,25 hashes, two byte-identical
 regenerations. The pure core, solver, generator and bot code are unchanged.
+
+## KEEP GOING round8: uppercase label spacing (cosmetic)
+
+Round6 passed both CI runs37723660674 and37723656899 at8a76188. Re-read the
+job and reviewed eyebrow tracking, footer spacing, icon baseline, corner radius
+and clock padding. `node .tmp/tracking-baseline.mjs --http` measured the round
+label at213.641px with1.5px tracking and210.938px with1.4px tracking. The only
+change tightens that style. No meaningful gameplay gain; third consecutive
+cosmetic-only round.
+
+`npm run build` and `node scripts/visual.mjs --http --record --milestone 10`
+passed all roster, name, mouse/touch/keyboard, motion and isolation checks.
+Desktop60.002fps and CPU4x phone60.000fps, p95=16.8ms, max16.8ms; video
+104,347bytes. `node scripts/generate.mjs --fixtures-only` refreshes hashes;
+`node scripts/check-data.mjs` checks all schemas/hashes and two regenerations.
+Completion still requires both strict disk CI checks on the final pushed head.
+
+Round7 is green at13c79b2 in runs37723852339 and37723847188. Round8 data
+gates passed:8 JSON files,7 schemas,26 hashes and two byte-identical
+regenerations. `git diff --check` passed.

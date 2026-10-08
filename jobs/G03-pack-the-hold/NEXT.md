@@ -3,21 +3,20 @@
 PR https://github.com/luisitin/partybox-game-cores/pull/3
 Branch job/G03-pack-the-hold; claim codex-core.
 
-Rounds1–5 are green throughc57d714, including21 tests,25/25 mutations,
-10,000 independent solver comparisons,7,000 bot games,4,000 league games,
-all data checks, actual disk opening and60fps on desktop/CPU4x phone.
-Round5 fixes maximum-length names overflowing the phone;390px stays390px
-in hand-off, packing, inspection and results. Local build/browser checks pass.
-Round6 is a cosmetic numeral-font request:0px measured width change; local
-browser checks passed after one recorded frame-gate failure. Check current CI.
+Implementation and eight KEEP GOING rounds are delivered. Rounds6–8 changed
+only presentation; the no-meaningful-gain streak is3. The independent solver
+reference is unchanged. All local build/data gates pass; the last partial
+HTTP browser run reports60.002fps desktop and60.000fps CPU4x phone.
 
-Continue KEEP GOING: review timer alignment, help phrasing, border/font weight,
-value alignment and spacing; fix the worst, measure and log each round.
-No-gain streak2; need one more consecutive round with only cosmetic gains.
-Round7 keeps the active score badge size consistent; browser/name checks pass.
-Record current CI conclusions before calling the job complete.
-Refresh the claim on main after every push. Do not alter the shared contract
-or other jobs. Runtime uses inline original CSS/SVG and zod's embedded licence.
+Before moving on, verify both checks on the current PR head are SUCCESS:
+    gh pr view 3 --json headRefOid,statusCheckRollup
+Strict CI runs all21 tests,25 mutations,10,000 independent solver comparisons,
+7,000 bot games,4,000 league games, schemas/hashes, two regenerations, actual
+disk opening, every UI roster and real touch/keyboard/mouse interaction.
+Check the final run's frame/benchmark logs; update VERIFY with observations.
+When green, mark the checkpoint complete and claim the next eligible job on
+main. Preserve this open PR; opening it was authorized, merging was not.
 
 Managed cloud Chromium blocks file://; explicit localhost HTTP checks are
-partial. CI uses real disk mode, forbids fallback, and is the delivery gate.
+partial. CI uses real disk mode and forbids fallback. Shared contract and
+unrelated job files remain unchanged. Claims are refreshed after each push.
