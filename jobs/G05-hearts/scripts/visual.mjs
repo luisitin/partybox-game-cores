@@ -52,8 +52,8 @@ try {
   const nav=await send('Page.navigate',{url:documentUrl});if(nav.errorText)throw Error(`Disk navigation failed: ${nav.errorText}`);
   for(let i=0;i<100&&!(await evaluate('!!window.__hearts'));i++)await delay(50);
   assert.ok(await evaluate('!!window.__hearts'),'standalone page did not initialize: '+JSON.stringify(errors));
-  async function chooseTable(count,mode='human',long=false,target=25,fresh=false){
-    await evaluate(`(()=>{if(window.__hearts.snapshot()){(document.getElementById('new-table')??document.getElementById('reset')).click()}const count=document.getElementById('seat-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('target').value='${target}';document.getElementById('seed').value=${fresh?'""':'"103"'};for(let i=0;i<${count};i++){const mode=document.getElementById('mode-'+i);mode.value='${mode}';mode.dispatchEvent(new Event('change',{bubbles:true}));if(${long}){const name=document.getElementById('name-'+i);name.value=String(i+1)+'W'.repeat(23);name.dispatchEvent(new Event('input',{bubbles:true}));}}document.getElementById('start-table').click();})()`);
+  async function chooseTable(count,mode='human',long=false,target=25,fresh=false,clock=0){
+    await evaluate(`(()=>{if(window.__hearts.snapshot()){(document.getElementById('new-table')??document.getElementById('reset')).click()}const count=document.getElementById('seat-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('target').value='${target}';document.getElementById('clock-setting').value='${clock}';document.getElementById('seed').value=${fresh?'""':'"103"'};for(let i=0;i<${count};i++){const mode=document.getElementById('mode-'+i);mode.value='${mode}';mode.dispatchEvent(new Event('change',{bubbles:true}));if(${long}){const name=document.getElementById('name-'+i);name.value=String(i+1)+'W'.repeat(23);name.dispatchEvent(new Event('input',{bubbles:true}));}}document.getElementById('start-table').click();})()`);
   }
   const privateHand=()=>evaluate("[...document.querySelectorAll('.hand-card')].map(b=>Number(b.dataset.card))");
   await chooseTable(3,'human',false,25,true);await evaluate('document.getElementById("start-turn").click()');const fresh1=await privateHand();
@@ -67,6 +67,40 @@ try {
   const restored=await evaluate('window.__hearts.snapshot().view');assert.deepEqual(restored,beforeReload,'scored hand/actor/cards/counts/clock survive reload');
   await evaluate('document.getElementById("reset").click();localStorage.setItem("partybox-hearts-save-v1","{broken")');await send('Page.reload');for(let k=0;k<100&&!(await evaluate('!!window.__hearts'));k++)await delay(50);
   assert.ok(await evaluate('document.getElementById("resume-saved").disabled'));await evaluate('document.getElementById("discard-saved").click()');
+  await chooseTable(3,'human',false,25,false,10);
+  const recipient=await evaluate('window.__hearts.snapshot().view.players.find(p=>p.id===window.__hearts.snapshot().view.actor).name');
+  assert.equal(await evaluate('document.getElementById("start-turn").getAttribute("aria-label")'),`Show hand for ${recipient}`,'handoff speaks its actual recipient');
+  assert.ok((await evaluate('document.getElementById("turn-announcement").textContent')).includes(recipient));
+  await evaluate('document.querySelector(".manage").open=true');await delay(50);
+  await evaluate('document.getElementById("start-turn").click();document.querySelector(".hand-card").click()');
+  assert.equal(await evaluate('document.querySelector(".manage").open'),false,'revealing a held handoff closes its old management menu');
+  assert.equal(await evaluate('document.getElementById("turn-announcement").textContent'),'1 of 3 cards selected. Choose 2 more.');
+  await evaluate('while(window.__hearts.snapshot().selected.length<3)document.querySelector(".hand-card[aria-pressed=false]:not([disabled])").click()');
+  const timedBefore=await evaluate('({snap:window.__hearts.snapshot(),remaining:window.__hearts.snapshot().view.deadline-Date.now()})');
+  async function manageClick(){
+    const point=await evaluate('(()=>{const e=document.querySelector(".manage summary");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})()');
+    await send('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});await send('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
+  }
+  await manageClick();for(let k=0;k<40&&!(await evaluate('window.__hearts.snapshot().view.paused'));k++)await delay(25);
+  assert.equal(await evaluate('window.__hearts.snapshot().view.paused'),true,'native Manage opening must hold a running clock');
+  assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'management conceals private cards');
+  assert.equal(await evaluate('document.getElementById("pause").textContent'),'Pause','temporary menu hold is distinct from explicit Pause');
+  await delay(1200);assert.equal(await evaluate('window.__hearts.snapshot().view.deadline'),timedBefore.snap.view.deadline);
+  assert.equal(await evaluate('window.__hearts.snapshot().view.actor'),timedBefore.snap.view.actor);
+  await manageClick();for(let k=0;k<40&&(await evaluate('window.__hearts.snapshot().view.paused'));k++)await delay(25);
+  const timedAfter=await evaluate('({snap:window.__hearts.snapshot(),remaining:window.__hearts.snapshot().view.deadline-Date.now()})');
+  assert.equal(timedAfter.snap.view.paused,false);assert.equal(timedAfter.snap.revealed,timedBefore.snap.revealed);
+  assert.deepEqual(timedAfter.snap.selected,timedBefore.snap.selected);assert.equal(timedAfter.snap.privateCards,17);
+  assert.ok(Math.abs(timedAfter.remaining-timedBefore.remaining)<300,'1.2s spent in Manage must not consume turn time');
+  assert.equal(await evaluate('document.getElementById("pass-confirm").disabled'),false,'selected pass remains ready after closing Manage');
+  await manageClick();await delay(50);await evaluate('document.getElementById("pause").click()');
+  assert.equal(await evaluate('window.__hearts.snapshot().view.paused'),true,'explicit Pause stays held after closing Manage');
+  assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0);
+  await evaluate('document.getElementById("start-turn").click()');await manageClick();await delay(50);await evaluate('document.getElementById("skip").click()');
+  assert.notEqual(await evaluate('window.__hearts.snapshot().view.actor'),timedBefore.snap.view.actor,'Skip advances exactly one private pass');
+  assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'Skip returns to a concealed handoff');
+  await manageClick();await delay(50);await evaluate('document.getElementById("end").click()');
+  assert.equal(await evaluate('window.__hearts.snapshot().view.phaseId'),'done','End remains available during a handoff');
   await chooseTable(3);
   assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'concealed hand must have no card controls in DOM');
   assert.equal(await evaluate('window.__hearts.snapshot().view.paused'),true,'handoff holds the clock');
@@ -123,6 +157,6 @@ try {
   const resultOrder=await evaluate('({result:document.querySelector(".private-panel").getBoundingClientRect().top,table:document.querySelector(".felt").getBoundingClientRect().top})');assert.ok(resultOrder.result<resultOrder.table,'mobile ranked results must precede the last-trick table');
   await evaluate('window.scrollTo(0,0)');const mobileShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${output}/hearts-phone-${milestone}.png`,Buffer.from(mobileShot.data,'base64'));
   assert.equal(requests.filter(url=>/^https?:/.test(url)&&url!==documentUrl).length,0,'zero network requests after document load');assert.deepEqual(errors,[]);
-  const report={receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
+  const report={manageClock:true,selectionAnnouncements:true,handoffAnnouncements:true,receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
   writeFileSync(`${output}/visual-measurements-${milestone}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }finally{socket?.close();browser.kill('SIGTERM');localServer?.close();}

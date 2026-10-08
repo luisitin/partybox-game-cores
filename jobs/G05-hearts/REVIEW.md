@@ -17,3 +17,12 @@ recipient; saved private passing memory can be incomplete. Fix result priority,
 private received markers/spoken labels and the reproduced save-memory crash.
 Also make exported saves independent so callers cannot mutate the live match.
 Remaining timed-menu/announcement issues are next after updated CI is green.
+
+Round3, after1843eb2 GREEN runs37736496412/37736500158. Re-read G05/RULES.
+Five remaining weaknesses: timed Manage continues the clock; handoff button
+accessible name lacks the recipient; pass selection changes lack live spoken
+feedback; secondary-label contrast needs an audit; six-seat mobile score-card
+spacing is crowded. Fix the timed management lifecycle and spoken guidance.
+Pause through the pure reducer while Manage owns a running clock, conceal the
+hand, then restore the same actor's selection and remaining time on close.
+Explicit Pause remains paused; Skip/End release the temporary hold first.

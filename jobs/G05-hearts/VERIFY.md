@@ -202,3 +202,21 @@ HTTP run remains partial; full updated default-disk CI is required.
 `node scripts/generate.mjs --fixtures-only`, `node scripts/check-data.mjs`
 PASS24 JSON files validated and34 checksums; browser bundle151948B. Independent
 reference seal and core/bot fixture/league results are unchanged.
+
+KEEP GOING3, after1843eb2 GREEN push37736496412 and PR37736500158. The public
+push log at /workspace/g05-ci-round2.log records actual disk opening, desktop
+60.002fps/CPU4x phone60.004fps,p9516.7/16.8ms,zero outgoing requests/exceptions
+and all previous browser gates. `gh run view 37736496412 --log` read it.
+`npm run build`, `node scripts/html.mjs` and `node scripts/visual.mjs --http
+--record --milestone 04` PASS. Native mouse opens/closes Manage on a10s human
+turn:1.2s held does not consume time (remaining-time difference <300ms), actor
+unchanged,0 private DOM while held,17 cards and3 selected cards restored with
+Pass enabled. Manual Pause stays held; Skip advances one pass and conceals;
+End completes even at handoff. Showing a hand closes an old handoff menu.
+Recipient-specific button/live announcement and1-of-3 live selection feedback
+pass. All prior browser/roster/reload/corruption/input/privacy gates pass.
+Local desktop60.002fps,CPU4x phone59.672fps,p9516.8ms/max33.3ms,video135356B.
+A second browser run followed the added menu-close-on-reveal/input guard.
+`node scripts/generate.mjs --fixtures-only` and `node scripts/check-data.mjs`
+PASS25 JSON/38 checksums. The bundle is153632B. No pure-core/bot changes;
+updated full30-test default disk CI remains required.

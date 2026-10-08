@@ -44,3 +44,8 @@
   Reload starts concealed and holds the saved clock until Resume/hand reveal.
   Save failure is shown only if the browser actually refuses storage. A malformed
   stored table is rejected without deleting it until Discard/new-table is chosen.
+
+Manage temporarily owns a running optional clock. Closing it restores the same
+actor's revealed hand and selected pass, while explicit Pause still conceals.
+The UI uses existing pure VIP pause/resume; browser wall time stays outside core.
+Starting a reveal or submitting input closes an old management menu.

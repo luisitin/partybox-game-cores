@@ -8,6 +8,7 @@ Open play.html directly in Chrome; everything is inline and offline. Pick
 human/bot seats, names, finish score and house rules. Reveal only your own
 hand, select three cards to pass, or click a legal card. Human tables wait
 for Continue at public tricks/scores; the handoff holds optional turn clocks.
+Manage holds optional clocks and preserves your selection when closed.
 All-bot tables have an optional Fast mode. Keyboard Tab/Space/Enter works.
 Defaults use fresh deals; enter a seed to reproduce one. The table saves locally
 and Resume restores progress after reload with every private hand concealed.
