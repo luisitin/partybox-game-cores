@@ -102,8 +102,11 @@ captures have no report-bound actual SHA; boundary-test coverage is limited;
 mid-phone CPU4x and absent private SDK remain approximations. Select the
 verification gap:600 consecutive unfiltered intervals,≥59fps/p95≤18,26
 source start/end hashes and independently checked real clip size/SHA.
-No game/core/UI/bot change, and no player-visible gain is claimed. Full proof
-and exact new-head CI remain pending before completing this review.
+No game/core/UI/bot change or player-visible gain. Exact head1fb4f21 now has
+SUCCESS PR run37793907360 with the complete strengthened gate; all1,200 raw
+intervals/current guards/actual clip were verified by the executed CLI. Local
+failures are retained separately and remain unexplained. Review11 completes
+as verification-only, beginning a new no-player-gain streak of1.
 
 A synchronous programmatic Manage toggle at real deadline+30ms held the old
 actor in the actual file. A native mouse click delayed by a capture listener

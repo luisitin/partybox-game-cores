@@ -465,3 +465,31 @@ strict run remains latest; this clip cannot replace it.
 Checkpoint checks: fixtures-only regeneration and check-data PASS35 schema
 JSON/69 exact checksums; git diff --check PASS. No unchanged core/leagues
 were repeated locally; exact-head hosted npm test runs the entire suite.
+
+Exact1fb4f21 PR run37793907360 SUCCESS. Native GitHub fetch_workflow_job_logs
+(job113368219300) actually read94,476 bytes; ignored .tmp/ci-1fb-pr.log stores
+the full log.34/34tests,25/25compiled mutant catches, two byte-identical
+regenerations and35schemaJSON/69checksums pass. Actual-file run
+2026-10-08T14-39-59-913Z: desktop/CPU4x phone60.002400096fps,p95
+16.7/16.8ms,p99/max16.8ms. All20functionals/3–6rosters pass,0network/errors,
+26actual current start/end guards match. Executed independent CLI accepts
+1,200 raw intervals and the real138541B clip SHA256
+e48e3f06139d0aa79789e966f500ee1bdb38ebfa997d55bdfa372d1f055aa77f.
+Its preserved console summary media/visual-measurements-ci-37793907360.json
+omits raw arrays and is metadata only. Artifact11557034426 metadata is
+929023bytes/digest dfe30c970384b74cbf23c2fb46aca5ada57704c02c6492d3d652145683372b1e;
+bytes were not read. Earlier artifact11556531451 returned a native file reference
+but actual byte retrieval returned HTTP403; no ZIP/raw/clip readback inferred.
+Review11 is verification-only with no player-visible gain; gameplay unchanged.
+
+Review11 fresh actual-file capture-only command:
+`G05_CHROME=/home/agent/.cache/ms-playwright/chromium_headless_shell-1194/chrome-linux/headless_shell node .tmp/capture-only.mjs --record --milestone 14`
+completed2026-10-08T14:44:26.265Z, all20functionals/3–6rosters pass,0errors/network,
+27matching source guards including actual cf34289e capture helper.
+media/milestone-14.webm 136379bytes SHA256
+1cea469a3c7896a5a6ca14998eeb35ff80b12b00cb58fa27f045d1685523b480; encoding10fps is nongating.
+No additional local frame or unchanged core/leagues run.
+
+Review11 final fixtures-only/check-data:36schemaJSON/73checksums PASS;
+full-data and media hashes include the new source-bound summary and fresh
+clip/PNGs. git diff --check PASS. No runtime/runner/checker change.

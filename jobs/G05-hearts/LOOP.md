@@ -19,3 +19,5 @@
 9 | Replace stale README status and link fixtures/rules/sources/bots/current checkpoint;7 relative links resolve,36 lines<60; game/UI/test source unchanged, fresh140221B capture is not a benchmark,30 JSON/57 hashes pass. Player gain: none meaningful; cosmetic streak2.
 
 10 | Correct notes to7 audited README links and add delivered-material licence index; UI/core/browser checks byte-identical to5509a20,all player behavior unchanged; fresh140221B capture (not benchmark),30 JSON/58 hashes pass. Player gain: none meaningful; cosmetic streak3.
+
+11 | Strengthen historical180-frame tolerance to600 consecutive unfiltered intervals per profile,≥59fps/p95≤18ms; all1,200 raw timings,20 functional gates,26 actual source start/end hashes and real clip bytes/SHA are independently checked;32 negative controls pass. Exact1fb4f21 CI37793907360 passes34tests/25mutants and desktop/CPU4x phone60.0024fps,p9516.7/16.8ms. Local58.634/57.695fps failures retained without a causal claim; runtime/UI/core/bots unchanged. Fresh milestone14 clip 136379bytes,27matching guards, all20functionals passes separately (not FPS proof). Player gain: none meaningful; resumed cosmetic streak1.
