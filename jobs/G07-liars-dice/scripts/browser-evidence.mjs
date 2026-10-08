@@ -8,6 +8,7 @@ export const GUARD_PATHS = Object.freeze([
   'play.html','manifest.json','src/core.ts','src/rules.ts','src/probability.ts',
   'src/session.ts','src/browser.ts','src/play.template.html','scripts/build.mjs',
   'scripts/browser-check.mjs','scripts/browser-evidence.mjs','scripts/frame-coordination.mjs',
+  'scripts/clock-observation.mjs','scripts/clock-observation-diagnostic.mjs',
   'package.json','package-lock.json','evidence/browser/required-check-names.json',
   'scripts/integrity.mjs','tests/browser-evidence.test.mjs','tests/frame-coordination.test.mjs',
   '../../contract/constants.ts','../../contract/contract.ts','../../contract/minigame-schema.ts',
@@ -87,6 +88,25 @@ function validate(report, rawByProfile, expected, legacy) {
     guards(report.sourceGuardHashesAfter,expected,'finished guards');
     assert.equal(report.runId,report.startedAt.replace(/\D/g,''),'actual start/run ID');
     assert(Number.isFinite(Date.parse(report.startedAt)) && Number.isFinite(Date.parse(report.finishedAt)) && Date.parse(report.finishedAt)>=Date.parse(report.startedAt),'final completion timestamp');
+    assert(Array.isArray(report.clockObservations)&&report.clockObservations.length===4,'four actual clock observations');
+    for(const profile of PROFILES)for(const kind of ['pause-resume','saved-resume']) {
+      const records=report.clockObservations.filter(o=>o.profile===profile.label&&o.kind===kind);
+      assert.equal(records.length,1,'distinct actual clock observation '+profile.label+' '+kind);
+      const o=records[0];assert.equal(o.eventTrusted,true);
+      assert.equal(o.selector,kind==='pause-resume'?'#resume':'#resume-saved');
+      for(const key of ['clickHostBefore','clickHostAfter','nativeBeforeMs','nativeAfterMs','nativeEventTimeStampMs','afterDeadline'])assert(Number.isFinite(o[key])&&o[key]>=0,'real click clock '+key);
+      assert(o.clickHostAfter>=o.clickHostBefore&&o.nativeAfterMs>=o.nativeBeforeMs,'actual click task ordering');
+      if(kind==='pause-resume') {
+        assert.equal(o.limitMs,200);assert(Number.isFinite(o.beforeDeadline)&&Number.isFinite(o.pausedAt)&&o.clickHostBefore>=o.pausedAt);
+        assert(Math.abs((o.afterDeadline-o.beforeDeadline)-(o.clickHostBefore-o.pausedAt))<200,'unchanged actual pause-clock criterion');
+      } else {
+        assert.equal(o.limitMs,250);assert.equal(o.fullClockMs,3000);
+        assert(Number.isFinite(o.savedDeadline)&&Number.isFinite(o.savedHostNow)&&Number.isFinite(o.elapsedBeforeCheckpointMs)&&o.elapsedBeforeCheckpointMs>=600);
+        const remaining=o.savedDeadline-o.savedHostNow;assert(remaining>0&&remaining<=2400,'genuine clock consumption before checkpoint');
+        assert(Math.abs(remaining+o.elapsedBeforeCheckpointMs-3000)<1e-7,'actual original three-second saved fixture');
+        assert(Math.abs((o.afterDeadline-o.clickHostBefore)-remaining)<250,'unchanged actual saved-clock criterion');
+      }
+    }
   }
   const metrics=[];
   for(const profile of PROFILES) {
@@ -111,6 +131,17 @@ function validate(report, rawByProfile, expected, legacy) {
     if(!legacy) {
       assert.equal(raw.runId,report.runId,'raw run identity');
       assert.equal(raw.htmlSha256,report.htmlSha256,'raw page identity');
+      object(raw.workload,'actual sampled workload');assert.deepEqual(row.workload,raw.workload);
+      assert.deepEqual(Object.keys(raw.workload).sort(),['atEnd','atStart','beforeReady']);
+      for(const observation of Object.values(raw.workload)) {
+        object(observation,'actual benchmark boundary');
+        assert.equal(observation.phase,'bid');assert.equal(observation.deadline,null);assert.equal(observation.turnSeconds,0);
+        assert.equal(observation.players,8);assert.equal(observation.totalDice,40);assert.equal(observation.openPrivateDice,5);
+        assert.deepEqual(observation.bid,{quantity:8,face:3});assert.equal(observation.oddsAvailable,true);
+        assert(/^[0-9a-f]{64}$/.test(observation.stateSha256),'actual benchmark state digest');
+      }
+      assert.deepEqual(raw.workload.beforeReady,raw.workload.atStart,'grant wait preserves the original fixture');
+      assert.deepEqual(raw.workload.atStart,raw.workload.atEnd,'sample preserves the original fixture');
       guards(raw.sourceGuardHashes,expected,'raw start guards '+profile.label);
       guards(raw.sourceGuardHashesAfter,expected,'raw finished guards '+profile.label);
     }

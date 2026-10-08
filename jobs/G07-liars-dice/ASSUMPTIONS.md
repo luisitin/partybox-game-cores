@@ -115,3 +115,23 @@ remains historical. Tally24 returned200 with actual30,027 bytes/SHA d6565872;
 GitHub kamdolla/liars-dice's live README corroborates dice/wild-one/binomial
 basics. Quoted Wikipedia text in Tally is not an independent source, and this
 limited refresh does not replace the original12-source Perudo research.
+
+## Recovered trusted-click observation repair
+
+A real click-capture observer records the host epoch before the existing onclick;
+a later bubble observer records resulting state within the same task. Native
+event timestamps are diagnostic only because recovered host epochs may rebase.
+No Date/performance/RAF override, tolerance change or product edit is involved.
+Real delayed-observation countercontrols establish an observation vulnerability
+without proving the cause of the historical phone failures. The650ms save-fixture
+consumption strengthens the existing250ms reset detection.
+
+The original native frame fixture explicitly has turnSeconds0 and hot-seat
+humans. Core deadline is null; no timer can expire during a grant wait. Real
+boundary workload snapshots now verify that fact and the complete active fixture
+before/after all600 unfiltered native intervals. Release markers precede hashing,
+screenshots and artifact writes.
+
+The environment reset interrupted a functional-only run and exceeded the30-minute
+branch-push rule. Recovery preserves the elapsed gap and partial output; no pass
+is inferred from a launcher exiting or missing final report. No BLOCKED condition.

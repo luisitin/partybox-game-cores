@@ -9,6 +9,7 @@ import {game,canChangePalificoFace} from '../dist/core.mjs';
 import {encodeSession,createResumableRng} from '../dist/session.mjs';
 import {readSourceGuards} from './browser-evidence.mjs';
 import {waitForFrameGrant,closeFrameGrant} from './frame-coordination.mjs';
+import {observeClockClick} from './clock-observation.mjs';
 
 // This is an integration test of the standalone, offline browser adapter. The
 // browser-only __G07 hook intentionally exposes state to deterministic tests;
@@ -53,6 +54,7 @@ const report = {
     isolation: 'fresh browser context; functional test navigation history is not retained'},
   recoveryStorage: {key: saveKey, scope: 'same-tab sessionStorage', ordinaryChecks: 'remove only this key before each document', recoveryChecks: 'fresh isolated contexts preserve this key across actual reloads'},
   seed: 7199, profiles: rows, checks, pacingMeasurements, standingsComparisons, passed: false,
+  clockObservations: [],
   scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
 };
 async function executablePath() {
@@ -64,6 +66,23 @@ const browser = await chromium.launch({headless: true, executablePath: await exe
 report.browser = browser.version();
 
 async function state(page) { return JSON.parse(await page.evaluate(() => JSON.stringify(window.__G07.state()))); }
+async function benchmarkWorkload(page) {
+  const observed=await page.evaluate(()=>{
+    const s=window.__G07.state(),controller=window.__G07.controller();
+    return {phase:s.phase.id,deadline:s.phase.deadline,turnSeconds:s.settings.turnSeconds,
+      players:s.players.length,totalDice:Object.values(s.diceCount).reduce((a,b)=>a+b,0),
+      openPrivateDice:document.querySelectorAll('#cup .die').length,
+      bid:{quantity:s.bid?.quantity,face:s.bid?.face},oddsAvailable:controller.odds!==null,
+      stateJson:JSON.stringify(s)};
+  });
+  const stateSha256=createHash('sha256').update(observed.stateJson).digest('hex');delete observed.stateJson;
+  return {...observed,stateSha256};
+}
+function assertBenchmarkWorkload(observed) {
+  assert.equal(observed.phase,'bid');assert.equal(observed.deadline,null);assert.equal(observed.turnSeconds,0);
+  assert.equal(observed.players,8);assert.equal(observed.totalDice,40);assert.equal(observed.openPrivateDice,5);
+  assert.deepEqual(observed.bid,{quantity:8,face:3});assert.equal(observed.oddsAvailable,true);
+}
 async function control(page) { return page.evaluate(() => window.__G07.controller()); }
 async function init(page, options = {}) {
   await page.evaluate(options => window.__G07.init({players: 3, mode: 'hotseat', seed: 7199, ...options}), options);
@@ -943,13 +962,15 @@ try {
       assert.equal(held.phase.deadline, paused.phase.deadline);
       assert((await page.evaluate(() => window.__G07.time())) - pausedAt >= 1200);
       await privateGone(page, 'deadline paused');
-      await page.locator('#resume').click();
-      const resumed = await state(page);
-      const reading = await page.evaluate(() => window.__G07.time());
+      const observation = await observeClockClick(page,'#resume');
+      const resumed = observation.state;
+      const reading = observation.record.clickHostBefore;
       assert(!resumed.phase.paused);
       const shiftedBy = resumed.phase.deadline - paused.phase.deadline;
       assert(shiftedBy >= 1200, `resume shift was only ${shiftedBy}ms`);
       assert(Math.abs(shiftedBy - (reading - pausedAt)) < 200, 'deadline shift must use elapsed clock time');
+      report.clockObservations.push({...observation.record,profile:profile.label,kind:'pause-resume',
+        beforeDeadline:paused.phase.deadline,pausedAt,afterDeadline:resumed.phase.deadline,limitMs:200});
       await privateGone(page, 'deadline resumed');
       await page.waitForTimeout(100);
       assert.equal((await state(page)).turn, resumed.turn, 'paused time must not cause an immediate timeout');
@@ -1072,17 +1093,25 @@ try {
 
     await run('pending time and a second reload preserve the original remaining turn clock', async () => {
       await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 3}});
+      // A reset-to-full clock must differ by more than the original250ms gate.
+      await page.waitForTimeout(650);
       const before = await checkpoint();
+      const savedRemainingMs=before.saved.state.phase.deadline-before.saved.savedHostNow;
+      const elapsedBeforeCheckpointMs=before.saved.savedHostNow-before.saved.state.phase.startedAt;
+      assert(elapsedBeforeCheckpointMs>=600&&savedRemainingMs>0&&savedRemainingMs<=2400);
       await reloadRecovery(); await assertPending();
       const first = await page.evaluate(key => sessionStorage.getItem(key), saveKey);
       await page.waitForTimeout(1250);
       await reloadRecovery(); await assertPending();
       assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), first, 'pending reload must not rewrite the candidate');
       await page.waitForTimeout(500);
-      await page.locator('#resume-saved').click();
-      const after = await state(page), at = await page.evaluate(() => window.__G07.time());
+      const observation=await observeClockClick(page,'#resume-saved');
+      const after=observation.state,at=observation.record.clickHostBefore;
       equivalentRecovered(after, before.state);
       assert(Math.abs((after.phase.deadline - at) - (before.saved.state.phase.deadline - before.saved.savedHostNow)) < 250);
+      report.clockObservations.push({...observation.record,profile:profile.label,kind:'saved-resume',
+        savedDeadline:before.saved.state.phase.deadline,savedHostNow:before.saved.savedHostNow,
+        afterDeadline:after.phase.deadline,elapsedBeforeCheckpointMs,fullClockMs:3000,limitMs:250});
       assert.equal(after.bid, null, 'time spent deciding whether to resume cannot take a turn');
       await privateGone(page, 'clock recovery');
     }, {recovery: true});
@@ -1323,10 +1352,16 @@ try {
       await show(page);
       assert.equal(await page.locator('#cup .die').count(), 5);
       assert((await control(page)).odds !== null, 'sample must include exact odds for a real existing bid');
+      const workloadBeforeReady=await benchmarkWorkload(page);
+      assertBenchmarkWorkload(workloadBeforeReady);
       const grant = await waitForFrameGrant({directory:process.env.G07_FRAME_BARRIER_DIR,
         profile:profile.label,sourceSha256:htmlSha256});
       let sample;
-      try { sample = await page.evaluate(async () => {
+      let workloadAtStart;
+      try { workloadAtStart=await benchmarkWorkload(page);
+        assertBenchmarkWorkload(workloadAtStart);
+        assert.deepEqual(workloadAtStart,workloadBeforeReady,'grant wait must retain the actual active benchmark');
+        sample = await page.evaluate(async () => {
         const timestamps = [], intervals = [];
         return new Promise(resolve => {
           const frame = time => {
@@ -1369,15 +1404,20 @@ try {
       await closeFrameGrant(grant,{sampled:true,passed:measurement.fps>=59&&measurement.p99Ms<=17,
         intervals:600,fps:measurement.fps,p99Ms:measurement.p99Ms,maxMs:measurement.maxMs,
         recordedVideo:false});
+      const workloadAtEnd=await benchmarkWorkload(page);
+      measurement.workload={beforeReady:workloadBeforeReady,atStart:workloadAtStart,atEnd:workloadAtEnd};
       Object.assign(measurement,{runId,htmlSha256,sourceGuardHashes,
         sourceGuardHashesAfter:await readSourceGuards()});
       const raw = JSON.stringify(measurement, null, 2) + '\n';
       await writeFile(resolve(work, `${profile.label}-frames.json`), raw);
       await writeFile(resolve(archive, `${profile.label}-frames.json`), raw);
       rows.push({...profile, frameFile: `${profile.label}-frames.json`, totalMs,
+        workload:measurement.workload,
         archivedFrameFile: `runs/${htmlSha256}/${runId}/${profile.label}-frames.json`,
         meanMs: measurement.meanMs, fps: measurement.fps, p99Ms: measurement.p99Ms, maxMs: measurement.maxMs,
         droppedIntervalsOver17Ms: measurement.droppedIntervalsOver17Ms, sampleCount: 600});
+      assertBenchmarkWorkload(workloadAtEnd);
+      assert.deepEqual(workloadAtEnd,workloadAtStart,'all600 native intervals must retain the actual active benchmark');
       assert(measurement.fps >= 59, `${profile.label} actual mean rate ${measurement.fps} FPS is below 59`);
       assert(measurement.p99Ms <= 17, `${profile.label} actual p99 ${measurement.p99Ms}ms exceeds 17ms`);
       await page.screenshot({path: resolve(work, `${profile.label}-active.png`), fullPage: true});

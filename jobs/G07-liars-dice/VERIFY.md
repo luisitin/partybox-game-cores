@@ -642,3 +642,35 @@ The current-head PR remains draft pending actual clock-boundary review.
 
 Fresh resume-audit-proof-10 clips PASS two actual five-round games,unchanged
 page hash and zero errors/network. No unchanged strict frame retry occurred.
+
+## Recovered clock-observer checkpoint11
+
+`node scripts/clock-observation-diagnostic.mjs` actual final run18:18:35.602UTC:
+PASS four trusted ordinary clicks (desktop plus4x phone), original200/250ms gates,
+32 then-current source guards unchanged, zero errors/network. Event errors
+0/15/1/84ms; deliberately delayed425ms real RPC errors451/478/527/635ms fail old
+formulas;12 copied wrong-deadline controls reject. Public diagnostic explicitly
+identifies its earlier source scope. This is neither FPS acceptance nor a proven
+historical cause. `--functional-only` interrupted run20261008181959035: INCOMPLETE,
+no final report, no phone/FPS acceptance; partial original log retained.
+
+Recovered `node --check` on browser-check, browser-evidence and both clock modules:
+PASS. `node --test tests/browser-evidence.test.mjs tests/frame-coordination.test.mjs`:
+70/70 PASS at recovery. Current-source positive and extra current-only controls
+require the upcoming genuine fresh full report; no synthetic positive is used.
+SHA256 on actual page/core/session/browser and compiled core/session matches all
+prior gameplay bytes. The actual600-interval callback is unchanged. New outside-
+sample workload guards verify active phase/no deadline/8 seats/40dice/5private
+dice/existing8x3 bid/exact odds and identical real state throughout grant+sample.
+
+Exact prior32ea5f0 hosted run37821793551 SUCCESS18:14:34UTC, actual job113464397503
+full130717-character log read. Its current checks pass116 tests,25 actual mutants,
+full94 browser,1200 intervals/30 guarded sources,68 current corruption controls,
+392 hashes and2x byte-identical regeneration. Actual artifact11568859865 metadata
+1220656B/SHAf101111a6b19294146b3f0d9a2bdd7c4d013e713fc4c4127f066d14becb5fa02
+is observed but not yet independently downloaded for that exact run.
+That green head and prior a490 independently verified artifact remain historical
+for the newly repaired observer/checker. PR6 remains draft pending exact fresh CI.
+
+Prior push completion observed18:07:04UTC (hosted creation18:07:01), recovery
+19:11:49UTC: cadence exceeded30minutes during interruption. No backdate or waiver.

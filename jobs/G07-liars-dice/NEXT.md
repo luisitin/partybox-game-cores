@@ -1,3 +1,50 @@
+# Recovered observer repair — 2026-10-08 19:15 UTC
+
+Current unmodified game/core/session/page remain the hashes listed below.
+The reset interrupted local work and the 30-minute push rule: previous public
+push completion was observed18:07:04UTC (hosted run created18:07:01UTC); recovery
+began19:11:49UTC, already more than64minutes later. This gap is retained, not
+backdated or described as compliant. Main claim refresh and this normal branch
+checkpoint preserve every other owner.
+
+Exact previous public32ea5f0 run37821793551 SUCCESS18:14:34UTC; actual job
+113464397503 full130717-character log read,116 tests/25 mutant kills/full94
+browser/current30 guards/1200 raw/68 current controls/392-file integrity PASS.
+Its actual artifact metadata is11568859865 ZIP1220656B/SHA
+f101111a6b19294146b3f0d9a2bdd7c4d013e713fc4c4127f066d14becb5fa02;
+not yet downloaded or independently validated for that exact run. Prior a490
+artifact independently proved below remains historical, not new-head proof.
+
+Focused corrected observer diagnostic completed18:18:35.602UTC:4 real trusted
+clicks PASS200/250ms original gates; errors0/15/1/84ms. Real425ms later RPCs
+produce451/478/527/635ms errors in the old formula;12 copied wrong deadlines
+reject. This demonstrates observer vulnerability, not historical failure cause.
+The interrupted functional-only run20261008181959035 has no final report and
+no complete phone/frame acceptance. Its partial log is archived as INCOMPLETE.
+
+Current checker observes host time before the real trusted handler and state
+immediately afterward, within that click task. It consumes650ms of the actual
+3s clock before saving, so a reset-to-full negative control exceeds250ms.
+Neither production code, timers, clock functions nor criteria changed. New
+32-source checker includes the two observer modules. Sampling now verifies the
+actual active eight-seat/forty-die/no-timer/existing-bid/open-cup/odds workload
+before READY, after grant, and after600 native callbacks. Native timed callback
+is unchanged; all native raw intervals are written before timing assertions.
+
+Recovered syntax plus70 focused historical/corruption/nonce controls PASS.
+Current fresh94/1200/32-source validation, extra actual-current corruption
+controls, new short clips and exact new-head hosted acceptance are PENDING.
+PR6 stays DRAFT. Historical local91/94 failures remain preserved and unwaived.
+Gameplay unchanged: existing KEEP6–8 no-player-gain stopping rounds remain valid.
+
+Next: launch one coordinated full current-source browser run; disclose actual
+READY/nonce/ownedPGID to parent and take no frames before matching grant. Preserve
+all failures; no unchanged timing retries. Read exact new CI/full log/actual
+artifact and decode actual new clip before marking original PR6 ready. Parent
+owns fresh queue eligibility; do not claim an active lower job.
+
+---
+
 # Resume G07 — verification audit
 
 Branch job/G07-liars-dice; owner codex-dice-resume; existing PR6 is DRAFT.
