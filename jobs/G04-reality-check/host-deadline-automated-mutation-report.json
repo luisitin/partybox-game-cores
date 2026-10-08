@@ -1,0 +1,48 @@
+{
+  "startedAt": "2026-10-08T14:16:09.845Z",
+  "finishedAt": "2026-10-08T14:16:22.031Z",
+  "command": "node host-deadline-mutation.ts",
+  "scope": "Actual compiled host comparator mutant, actual file:// controls; verification only, no FPS or player-gain claim",
+  "mutation": "now < deadline changed to now <= deadline",
+  "mutantHtmlSha": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+  "mutantUiSha": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
+  "oldExit": 0,
+  "oldCases": 6,
+  "newExit": 1,
+  "newCases": 8,
+  "killedBy": [
+    "exact-deadline correct quick answer",
+    "exact-deadline human bluff write"
+  ],
+  "restored": true,
+  "sourceHashesAtStart": {
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "samples.json": "2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d",
+    "manifest.json": "cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "late-input.ts": "a2605f7fc590e1893ba5f95bf357c539cd6bb81ddea937030169ed2a8aeb56a4",
+    "build.ts": "7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4",
+    "host-deadline-equality-old-six-runner.txt": "4eef3a481f2083d71abfc94b156b394ef359a739e1091c7df22f54e5c730dbae",
+    "host-deadline-mutation.ts": "110661f1fa123bdfae365650f043a1f64d8d113cf1e35bd11a17504e33ba6d4b"
+  },
+  "sourceHashesAtEnd": {
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "samples.json": "2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d",
+    "manifest.json": "cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "late-input.ts": "a2605f7fc590e1893ba5f95bf357c539cd6bb81ddea937030169ed2a8aeb56a4",
+    "build.ts": "7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4",
+    "host-deadline-equality-old-six-runner.txt": "4eef3a481f2083d71abfc94b156b394ef359a739e1091c7df22f54e5c730dbae",
+    "host-deadline-mutation.ts": "110661f1fa123bdfae365650f043a1f64d8d113cf1e35bd11a17504e33ba6d4b"
+  }
+}

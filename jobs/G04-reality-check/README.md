@@ -35,3 +35,5 @@ games,1,003 exact random-seed replays,1,000 idle games,two independent
 independent browser runs with privacy/timers/controls/frame times/reduced
 motion/captures/checksums. VERIFY records outcomes;BOTS scopes its benchmark.
 NEXT records PR/CI/KEEP GOING progress;completion requires actual hosted CI.
+node host-deadline-mutation.ts also proves the real compiled deadline bug
+is caught by current actual-file controls and restores the original page.

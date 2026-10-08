@@ -1,0 +1,51 @@
+{"startedAt":"2026-10-08T14:16:16.175Z","pid":151145,"htmlSha256":"a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e"}
+
+AssertionError [ERR_ASSERTION]: expired timer must advance before the input
+
+'answer' !== 'reveal'
+
+    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79
+    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)
+    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2
+AssertionError [ERR_ASSERTION]: expired timer must advance before the input
+
+'write' !== 'vote'
+
+    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79
+    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)
+    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: exact-deadline correct quick answer: AssertionError [ERR_ASSERTION]: expired timer must advance before the input
+
+'answer' !== 'reveal'
+
+    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79
+    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)
+    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2
+exact-deadline human bluff write: AssertionError [ERR_ASSERTION]: expired timer must advance before the input
+
+'write' !== 'vote'
+
+    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79
+    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)
+    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2
+
+false !== true
+
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:136:8 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

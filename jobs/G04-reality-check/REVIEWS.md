@@ -145,3 +145,5 @@ gap: actualinput exactlyatdeadline must dispatch matchingtimer and discard
 input. Add realquick/bluff exact-boundary cases and prove an actualcompiled
 now<=deadline hostmutation escapes old6 but is caught by newcontrols.
 Player behavior should remain unchanged; no FPS/cause improvement inferred.
+
+Round14 PRE-EDIT 2026-10-08T14:16:03.638295+00:00: exact5b99dae CI37787851588 SUCCESS; actual225231-byte full logs read,51 tests/8 actualdeadlinecases/current proof3runs66scenarios1800raw16guards3capture hashes PASS. Root README/RULES/JOBS and selected RULES reread in full. Five ranked weaknesses: (1) compiled host mutation relies on an ignored private manual reproducer; (2) unexplained local phone frame variance; (3) physical phone approximation; (4) source/handoff navigation; (5) future real-content integration. Automate the actual compiled comparator mutation with the archived original six-case runner and current eight-case runner; require old6 PASS and exactly the two new boundary cases FAIL, then restore original UI/HTML in finally. Keep all runtime and thresholds unchanged. Player gain expected0; no completed round claimed before measurement.

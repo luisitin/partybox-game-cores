@@ -53,3 +53,5 @@ The observed second30-minute checkpoint miss is retained; no retroactive
 claim adjustment or passing cadence assertion. Full CI JSON logging and
 artifact retention are round11 evidence wrap-up, with no player gain or
 additional KEEP streak count. Unexplained local frame failures remain public.
+
+Round14 compiled host comparator mutation is verification-only. The test temporarily mutates only its own job UI/page, reconstructs the archived6-case runner with private guard/report paths, preserves both actual outcomes, and restores exact source buffers in finally. It supplements the25 independent pure-core mutants. Local speed variance and physical-phone approximation remain unresolved; no FPS or gameplay improvement is claimed.
