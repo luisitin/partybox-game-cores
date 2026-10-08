@@ -1,5 +1,22 @@
 # Verification — version1.2.1
 
+## Verification-only revalidation19:16 UTC
+
+Read/ranked gaps/limits: evidence/reverify-1900/REVIEW.md.
+`npm ci --ignore-scripts --no-audit --no-fund && npm run build`: PASS,
+strict ES2022/production unchanged. Actual old full CI37780918144 read.
+`node --test tests/strict-browser-proof.test.mjs tests/browser-proof.test.mjs`:
+14PASS incl175 source corruptions. `node --test tests/frame-coordination.test.mjs`:
+2PASS/10 actual bad-grant/replay controls+timeout CLOSED. `node --test
+tests/capture-refusal.test.mjs`:1PASS/reject before launch/old bytes intact.
+`G02_FRAME_BARRIER_DIR=... timeout1300 node scripts/browser-check.mjs`:
+FIRST desktop FAIL40.725456FPS/p99150/max2083.3; phone FPS NOT RUN. All
+600/601native/active witnesses/35 exact sources/nonce/hold/grant/CLOSED/log
+in failed-first-desktop/. `timeout180 node scripts/capture.mjs
+strict-reverify-1900 --public-history`:actual EXIT0, separate functional
+clips. No synthetic fixture is actual FPS evidence. New live integrity
+requires its own fresh hosted raw+clips. Current CI/actual artifact pending.
+
 Original final delivery passed exact-head hosted CI37730486159 at
 723bfa77ce91482f4084bbc195c117fa8d71480b; PR#2 was ready. The following original
 table and records describe historical checks. They do not accept the resumed

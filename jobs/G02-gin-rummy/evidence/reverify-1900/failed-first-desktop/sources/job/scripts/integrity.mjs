@@ -4,7 +4,7 @@ import {spawnSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {checkBrowserProof} from './browser-proof.mjs';
 import {checkEvidenceLinks} from './check-evidence-links.mjs';
-import {checkLiveStrictBrowserProof} from './strict-browser-proof.mjs';
+import {checkStrictBrowserProof} from './strict-browser-proof.mjs';
 const sum=b=>createHash('sha256').update(b).digest('hex');
 const manifest=await readFile('SHA256SUMS.txt','utf8'),covered=new Set();
 for(const line of manifest.trim().split('\n')){
@@ -22,6 +22,7 @@ async function walk(dir='.') {
  }
 }await walk();
 console.log(JSON.stringify(await checkBrowserProof()));
+console.log(JSON.stringify(await checkStrictBrowserProof()));
 console.log(JSON.stringify(await checkEvidenceLinks()));
 const inputs=['manifest.json',...(await readdir('fixtures')).map(p=>'fixtures/'+p)];
 const before=Object.fromEntries(await Promise.all(inputs.map(async p=>[p,sum(await readFile(p))])));
@@ -37,6 +38,3 @@ for(const file of await readdir('src'))if(file.endsWith('.ts')&&file!=='browser.
  const text=await readFile('src/'+file,'utf8');assert(!/Math\.random|Date\.now|setTimeout|setInterval|\bfetch\(|\bconsole\.|from ['"]node:/.test(text),'impure core '+file);
 }
 console.log(JSON.stringify({suite:'integrity',fileHashes:covered.size,regenerationRuns:2,byteIdentical:true,coreNoIo:true,mediaUnder10MB:true}));
-// Every npm test validates its own fresh native report/raw and separate clips.
-// A historical committed snapshot cannot satisfy the current run's gate.
-console.log(JSON.stringify(await checkLiveStrictBrowserProof()));

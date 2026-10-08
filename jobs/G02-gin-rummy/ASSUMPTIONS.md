@@ -1,5 +1,16 @@
 # Assumptions and limits
 
+Revalidation19:16:20 UTC codex-gin-reverify: fresh main/all18 refs strict
+six-hour reclaim after rejected push/pull/recheck; other rows preserved.
+Main c972504, isolated claimed-main branch merges original4fa. Production
+bytes/prior actual three-round player stop unchanged.35 proof guards,
+unique UUIDs/native timestamps/active-hand witnesses; clock OFF, native
+RAF/performance untouched. Waiting-only pre-sample STOP/CONT explicit.
+Genuine desktop40.725456FPS failure; phone FPS NOT RUN. No cause or retry.
+Separate clips functional only. Current full hosted test/actual artifact
+mandatory. Local Node24.19.0 meets22.16+; CI pinned22.16.0. Original PR2
+draft while current checks pending. evidence/reverify-1900/REVIEW.md.
+
 - G02 was unclaimed on main. Its old research-only blocked branch was merged
   into the fresh claimed-main branch, preserving all original failure history.
 - Chosen rules are explicitly sourced presets, not a nonexistent universal

@@ -1,4 +1,24 @@
-# Final resumed G02 checkpoint
+# Current G02 revalidation checkpoint
+
+Owner codex-gin-reverify; claim c972504/19:16:20UTC; isolated branch
+job/G02-gin-rummy-reverify-1900, canonical job/G02-gin-rummy / original PR2.
+Game bytes unchanged from4fa; old exactCI37780918144 SUCCESS historical.
+Prior actual KEEP10–12 stop/streak3 retained. Current full CI mandatory.
+35 guarded sources, unique3-key grants,600 raw/601 native timestamps/604
+active-hand witnesses each; actual clock OFF/native RAF/time untouched.
+FIRST local desktop actual FAIL40.725456FPS/p99150/max2083.3; phone FPS
+NOT RUN. All raw/log/35 exact sources/root hold/grant/CLOSED archived under
+evidence/reverify-1900/failed-first-desktop/. Cause unresolved/no retry.
+Separate real-file capture session50648 EXIT0, functional only. Later
+loader/integrity changes leave exact failed harness historical. Review:
+evidence/reverify-1900/REVIEW.md. npm test now independently verifies its own
+fresh live raw and separate clips; no old snapshot satisfies acceptance.
+Push normal FF/refresh only own actualUTC main claim each≤30min milestone.
+Keep PR2 draft; read actual full current exact-head CI and actual ZIP,
+validate digest/safe paths/current35 guards/all1200 raw/timestamps/phases/
+fresh clips bytes+decode before READY. Never merge/force/filter/self-grant.
+
+## Historical checkpoint from the previous owner
 
 Owner codex-gin-resume; branch job/G02-gin-rummy; original PR #2/history retained.
 Current standalone page/core are a5a56d6a/59bd5055. Deadline-first human/bot host

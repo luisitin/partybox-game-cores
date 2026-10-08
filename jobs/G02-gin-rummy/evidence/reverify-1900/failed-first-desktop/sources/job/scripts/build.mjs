@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {resolve} from 'node:path';
+await mkdir('dist',{recursive:true});
+const alias={zod:resolve('node_modules/zod')};
+await build({entryPoints:['src/core.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/core.mjs',alias});
+await build({entryPoints:['../../contract/contract.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/contract.mjs',alias});
+await build({entryPoints:['src/cards.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:'dist/cards.mjs'});
+const browser=await build({entryPoints:['src/browser.ts'],bundle:true,platform:'browser',format:'iife',target:'es2022',minify:true,write:false,alias});
+const template=await readFile('src/play.template.html','utf8');
+const html=template.replace('/* INLINE_CORE */',()=>browser.outputFiles[0].text.replaceAll('</script','<\\/script'));
+await writeFile('play.html',html);

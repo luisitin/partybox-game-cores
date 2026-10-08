@@ -40,3 +40,8 @@ raw samples, source guards and retained historical failures.
 Resumed rounds 10–12 add no player-visible gain (streak 3); final CI is required.
 Integrity checks the current proof index against the actual page/core, all
 1,200 raw frame intervals and guarded recording hashes.
+
+[Revalidation review](evidence/reverify-1900/REVIEW.md) preserves game bytes and
+the player stop. New35-source/unique-attempt/native/active-hand gates retain
+a genuine desktop failure; phone timing NOT RUN. npm test verifies its own
+fresh raw and separate clips. Current hosted full CI/actual artifact required.

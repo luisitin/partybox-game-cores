@@ -1,5 +1,13 @@
 # KEEP GOING
 
+Revalidation2026-10-08: actual4fa/CI37780918144 SUCCESS read; five weaknesses
+ranked in evidence/reverify-1900/REVIEW.md. Proof-only5→35 guards, unique
+attempt/grants/native timestamps/active-hand witnesses/current live integrity
+and fresh hosted clips. Focused controls PASS; first desktop600 actual FAIL
+40.725456FPS/p99150/max2083.3, phone FPS NOT RUN; complete evidence retained.
+Product unchanged; prior actual KEEP10–12 stop/streak3 retained. Current
+exact-head full CI/actual artifact required; no invented player gain/round.
+
 Initial PR CI gate: run37717614222, headc0dabcfd, actual SUCCESS.
 Version1.1.0 also passed hosted run37719011330 at headb82c0cbc.
 Timer/batch repairs before these rounds are separately recorded, not counted.
