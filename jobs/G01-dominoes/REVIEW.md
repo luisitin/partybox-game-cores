@@ -79,3 +79,7 @@ Five weaknesses: unmodeled public Block opener constraint (highest, measured2,31
 ## Round15
 
 Five weaknesses: unmodeled Draw opener information while stock remains untouched(highest newly testable); coalition model; depth-three horizon; finite sampling variance; physical-phone evidence unavailable. Before anyone draws, public stock size equals its initial value, so the Block opener deduction remains valid. Measure before changing eligibility; disable immediately when stock shrinks to avoid inferring an original opener from newly introduced higher tiles.
+
+## Round 16
+
+Five weaknesses, ranked: the depth-three early-game horizon; finite 64-world sampling variance; coalition opponents in free-for-all; limited upstream reference scope; unavailable physical-phone evidence. Test depth four against exact current 0.2.7, retaining the new opener constraints, public standings, selected scoring and 64 samples. The older 16-sample rejection is not evidence for this changed baseline. Require a positive lower 95% win bound over 2,000 alternating-seat complete matches, then fresh-seed confirmation before acceptance. Production stays unchanged while measured.

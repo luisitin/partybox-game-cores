@@ -257,3 +257,7 @@ Round15:0.2.7 Draw public-opener probe10,000:2,315 impossible sampled hands befo
 CI diagnosis:run37673184073 cancelled during `npx playwright install --with-deps chromium` (19:21:50–19:46:27 UTC), verification step skipped. This is installation evidence, not a measured game regression. Later843cab0 run37676347377 passed the entire workflow. Currentecbbb34 run37681469962 pending.
 
 Round15 Block parity complete:strong1,438/2,000 (71.9%),medium1,619/2,000 (80.95%); all win/loss/step totals identical to0.2.6. Draw totals likewise identical. No league-strength gain claimed.
+
+Current-head CI confirmed: `gh run list --workflow G01.yml --json databaseId,headSha,status,conclusion` and `gh api repos/luisitin/partybox-game-cores/actions/runs/37681790311/jobs` show SUCCESS for bedf43ae6bcf968e5fc844dc804686d0b43c4279, including full npm test. Previous ecbbb34 run37681469962 failed in encoder installation with exit124 (`gh api .../check-runs/112998327209/annotations`), before verification; no game failure inferred. Block parity and Draw leagues are complete.
+
+Round16 `IMPROVEMENT_STUDY=depth4 node improvement-study.ts` underway; no result or no-gain round claimed until all2,000 matches finish.
