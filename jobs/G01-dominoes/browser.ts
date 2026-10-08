@@ -8,7 +8,7 @@ const executable=process.env.CHROMIUM_PATH??(existsSync('/usr/bin/chromium')?'/u
 const browser=await chromium.launch({headless:true,executablePath:executable,args:['--no-sandbox']});
 mkdirSync('media',{recursive:true});const url='file://'+resolve('play.html');
 const errors:string[]=[],requests:string[]=[];
-const capturePath=process.env.G01_CAPTURE_PATH??'media/milestone-11-draw-opener.webm';
+const capturePath=process.env.G01_CAPTURE_PATH??'media/milestone-14-presentation.webm';
 async function pageFor(viewport:{width:number;height:number},reducedMotion:'reduce'|'no-preference'='no-preference'){
  const context=await browser.newContext({viewport,reducedMotion});const page=await context.newPage();
  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
@@ -17,18 +17,24 @@ async function pageFor(viewport:{width:number;height:number},reducedMotion:'redu
 }
 try {
  const {page,context}=await pageFor({width:390,height:844});
- await page.selectOption('#opening','rotating');await page.selectOption('#seat-1','human');await page.click('#start');
+ await page.click('#houseRules summary');await page.selectOption('#opening','rotating');await page.selectOption('#seat-1','human');await page.click('#start');
  assert.equal(await page.locator('#hand .hand-tile').count(),0,'human hand must start hidden');
  await page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await page.locator('#hand .hand-tile').count(),7);
- await page.getByRole('button',{name:'Right →',exact:true}).first().click();assert.equal(await page.locator('#hand .hand-tile').count(),0,'next player hand must stay hidden');
- assert.match(await page.locator('#status').innerText(),/Seat 2/);await page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await page.locator('#hand .hand-tile').count(),7);
- await page.screenshot({path:'media/phone.png',fullPage:true});await page.click('#end');assert.equal(await page.locator('#status').innerText(),'Match complete');await context.close();
+ assert(await page.locator('#hand .hand-tile.playable').count()>0,'the opener lights playable tiles');
+ await page.locator('#hand .hand-tile.playable').first().click();assert.equal(await page.locator('#hand .hand-tile').count(),0,'next player hand must stay hidden');
+ assert.equal(await page.locator('#boardLayer .tile').count(),1,'the played tile lands on the table');
+ assert.match(await page.locator('#status').innerText(),/Player 2/);await page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await page.locator('#hand .hand-tile').count(),7);
+ assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'phone table must not scroll sideways');
+ await page.waitForTimeout(900);await page.screenshot({path:'media/phone.png',fullPage:true});await page.click('#end');assert.equal(await page.locator('#status').innerText(),'Match complete');
+ await page.getByRole('button',{name:'Rematch'}).waitFor();await context.close();
  const automated=await pageFor({width:1920,height:1080});await automated.page.clock.install({time:new Date('2026-01-01T00:00:00Z')});
- await automated.page.selectOption('#players','4');await automated.page.check('#partners');await automated.page.selectOption('#mode','block');
+ await automated.page.check('#players-4');await automated.page.check('#partners');await automated.page.check('#mode-block');
  for(let i=0;i<4;i++)await automated.page.selectOption(`#seat-${i}`,'normal');await automated.page.click('#start');
- await automated.page.clock.runFor(300000);assert.equal(await automated.page.locator('#status').innerText(),'Match complete','full browser bot match must terminate');await automated.context.close();
+ // Bots move at a watchable pace (0.82s, 1.3s to open, 4.6s between rounds), so the budget is simulated time, stepped.
+ const until=async(p:typeof automated.page,limit:number)=>{let ms=0;while(ms<limit&&await p.locator('#status').innerText()!=='Match complete'){await p.clock.runFor(10000);ms+=10000;}return ms;};
+ const automatedMs=await until(automated.page,1_200_000);assert.equal(await automated.page.locator('#status').innerText(),'Match complete','full browser bot match must terminate');await automated.context.close();
  const mixed=await pageFor({width:390,height:844});await mixed.page.clock.install({time:new Date('2026-01-01T00:00:00Z')});
- await mixed.page.click('#start');await mixed.page.clock.runFor(3600000);
+ await mixed.page.click('#start');const mixedMs=await until(mixed.page,3_600_000);
  assert.equal(await mixed.page.locator('#status').innerText(),'Match complete','mixed idle-human/computer page must honor automatic round exits');
  assert.equal(await mixed.page.locator('#hand .hand-tile').count(),0,'automatic progression must never reveal an idle human hand');
  await mixed.context.close();
@@ -51,6 +57,6 @@ try {
  const reduced=await pageFor({width:390,height:844},'reduce');assert(await reduced.page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches));
  await reduced.page.click('#start');await reduced.page.getByRole('button',{name:/reveal hand/}).click();assert.equal(await reduced.page.locator('#hand .hand-tile').count(),7);assert.equal(await reduced.page.evaluate(()=>document.getAnimations().length),0);
  await reduced.context.close();assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
- writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',mixedUnattended:'passed within 3600000ms with private hands hidden',capture:capturePath},null,2)+'\n');
+ writeFileSync('browser-report.json',JSON.stringify({functional:'passed',navigationMode:'setContent; managed Chromium blocks file:// navigation',externalRequests:requests,errors,performance:performanceReports,reducedMotion:'passed',automatedBotMatchMs:automatedMs,mixedUnattended:'passed within 3600000ms with private hands hidden',mixedUnattendedMs:mixedMs,capture:capturePath},null,2)+'\n');
  console.log('Browser functional, hot-seat privacy, offline, frame-time and reduced-motion checks pass');
 } finally {await browser.close();}
