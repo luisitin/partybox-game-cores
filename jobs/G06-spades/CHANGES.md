@@ -125,3 +125,15 @@ KEEP GOING round6:
   Check every-event replay/immutability/schema/conservation/storage,all-seat
   results and hidden-hand/RNG substitutions for every viewer and bot grade.
 - `package.json`:run/assert the deterministic churn report in npm test.
+
+KEEP GOING round7:
+- `browser.ts`:skip redundant test-clock review ticks with Playwright
+  fastForward only while a review is already on screen. Interactive bot
+  ticks still run normally;the7.9s reader hold assertion remains. This
+  reduces CI cost without touching application timers or game behavior.
+  Assert exact final UI/core scores for all three complete variants;record
+  per-game steps/duration and total audit duration. Correct the partnership
+  report's deck label to52-card(the Cutthroat control is disabled there).
+- `.github/workflows/G06.yml`:remove unnecessary ffmpeg apt installation.
+  Read-only npm test never records/transcodes;it hashes committed captures
+  and exercises every browser check. Local recording retains its encoder.

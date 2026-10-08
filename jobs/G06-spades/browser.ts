@@ -5,9 +5,9 @@ import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {spawnSync} from 'node:child_process';
 import {game} from './core.ts';
-import {context} from './runner.ts';
+import {context,simulate} from './runner.ts';
 import {winningPlay} from './cards.ts';
-const html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[];
+const auditStarted=performance.now(),html=readFileSync('play.html','utf8'),errors:string[]=[],requests:string[]=[],functional:string[]=[],completeGames:{mode:string;deck:string;clockSteps:number;durationMs:number;scores:number[]}[]=[];
 const executablePath=process.env.CHROMIUM_PATH??(existsSync('/usr/bin/chromium')?'/usr/bin/chromium':undefined);
 const browser=await chromium.launch({headless:true,executablePath,args:['--no-sandbox']});
 const capture=process.argv.includes('--capture'),write=process.argv.includes('--write'),repeat=Number(process.argv.find(v=>v.startsWith('--repeat='))?.slice(9)??1);
@@ -73,12 +73,18 @@ try{
  for(let i=0;i<4;i++){assert.equal(await phase(both.page),'exchange');await both.page.click('#show-hand');const cards=await both.page.locator('[data-card]').all().then(a=>a.slice(0,2));for(const card of cards)await card.click();await both.page.click('#send-cards');}
  assert.equal(await phase(both.page),'play');await both.ctx.close();functional.push('four blind bids / both pairs exchange once / all four sequential transfers complete');
  for(const mode of ['partnership','cutthroat'])for(const deck of mode==='partnership'?['low-club']:['low-club','stock']){
-  const full=await pageFor();await freeze(full.page);await full.page.selectOption('#mode',mode);await house(full.page);
+  const completeStarted=performance.now(),full=await pageFor();await freeze(full.page);await full.page.selectOption('#mode',mode);await house(full.page);
   if(mode==='cutthroat'){await full.page.selectOption('#setting-cutDeck',deck);await full.page.selectOption('#setting-cutLead','club');assert(await full.page.locator('#setting-exchange').isDisabled());}
   else assert(await full.page.locator('#setting-cutDeck').isDisabled());
   await full.page.selectOption('#setting-nilValue','50');await full.page.check('#setting-failedNilCounts');await full.page.uncheck('#setting-mercy');await full.page.uncheck('#setting-blind');if(mode==='partnership')await full.page.uncheck('#setting-exchange');await start(full.page,mode,44,true);
-  for(let i=0;i<80&&(await phase(full.page))!=='done';i++)await full.page.clock.runFor(300000);
-  assert.equal(await phase(full.page),'done');assert.equal(await full.page.locator('.score').count(),mode==='cutthroat'?3:2);assert.equal(await full.page.locator('[data-card]').count(),0);assert(!(await full.page.locator('#clock').innerText()));assert(await full.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await full.page.locator('#match summary').click();assert((await full.page.locator('#rules').innerText()).includes('±50'));await full.ctx.close();functional.push(`complete UI ${mode}/${deck} / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides`);
+  let clockSteps=0;
+  for(;clockSteps<5000;clockSteps++){
+   const current=await phase(full.page);if(current==='done')break;
+   if(current==='trick'||current==='hand')await full.page.clock.fastForward(current==='trick'?8150:mode==='cutthroat'?90150:60150);
+   else await full.page.clock.runFor(750);
+  }
+  const n=mode==='cutthroat'?3:4,expected=simulate(n,44,{skills:(['sharp','normal','easy','sharp'] as const).slice(0,n),settings:{nilValue:50,failedNilCounts:true,mercy:false,blind:false,exchange:false,cutDeck:deck,cutLead:mode==='cutthroat'?'club':'dealer'}}).state,scores=(await full.page.locator('.score strong').allTextContents()).map(Number);
+  assert.equal(await phase(full.page),'done');assert.deepEqual(scores,expected.scores,'UI match must agree with the core despite accelerated test review clocks');assert.equal(await full.page.locator('.score').count(),mode==='cutthroat'?3:2);assert.equal(await full.page.locator('[data-card]').count(),0);assert(!(await full.page.locator('#clock').innerText()));assert(await full.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await full.page.locator('#match summary').click();assert((await full.page.locator('#rules').innerText()).includes('±50'));await full.ctx.close();completeGames.push({mode,deck:mode==='partnership'?'52-card':deck,clockSteps,durationMs:performance.now()-completeStarted,scores});functional.push(`complete UI ${mode}/${mode==='partnership'?'52-card':deck} / exact core scores / half nil / contribution / no mercy / no blind-exchange / ${mode==='cutthroat'?'lowest club / ':''}no overflow / finite final sides`);
  }
  const performanceResults=[];
  for(const [label,viewport,rate] of [['TV',{width:1920,height:1080},1],['phone-4x',{width:390,height:844},4]] as const){
@@ -93,6 +99,6 @@ try{
  }
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
  if(capture&&video){mkdirSync('media',{recursive:true});const encoded=spawnSync('ffmpeg',['-y','-i',video,'-t','8','-vf','scale=960:-2','-c:v','libvpx-vp9','-b:v','450k','-an',capturePath],{encoding:'utf8',timeout:120000});assert.equal(encoded.status,0,encoded.stderr);assert(statSync(capturePath).size<10*1024*1024);}
- const report={fileOpen,functional,scenarios:functional.length,errors:0,externalRequests:0,performance:performanceResults,phoneLimitation:'390x844 and four-times CPU throttle; no physical phone available',capture:video?capturePath:null};
+ const report={fileOpen,functional,scenarios:functional.length,completeGames,errors:0,externalRequests:0,performance:performanceResults,phoneLimitation:'390x844 and four-times CPU throttle; no physical phone available',capture:video?capturePath:null,durationMs:performance.now()-auditStarted};
  if(write)writeFileSync(reportPath,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
 }finally{await browser.close();rmSync(temp,{recursive:true,force:true});}

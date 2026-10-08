@@ -16,7 +16,7 @@ Initial exact-head hosted gate badf4005bd3961764492a4f48f6047af3fa249cc /
 run37738084749 was SUCCESS at2026-10-08T06:46:28Z. Later R2 hosted gate
 58dd935ab10c831a3f46610735654bf46f8471be /37741463331 is also SUCCESS.
 
-KEEP GOING active, no-gain streak2. AUDIT lists five weaknesses each round.
+KEEP GOING stop satisfied after R5–7, no-gain streak3; final CI pending. AUDIT lists five weaknesses each round.
 R1:40-character names phone width830→390.
 R2:follow-suit handover focuses a legal card; native Enter plays it.
 R3:bots return null during reviews, holds8s/60–90s;31 full tests,25 kills,
@@ -31,9 +31,15 @@ R5 held-out PASS8,000 matches,seeds2001–4000;all skill orderings and
 95% bounds pass with unchanged policy. Both seed ranges now run in npm test.
 R6 PASS1,003 cases/181,386 events,45,036 view/135,108 bot privacy checks,
 max state5,650bytes. Unchanged core;churn now runs in npm test.
-R6 read-only report reproduces exactly;39 hashes and separate8s QA-round
-captures under10MB pass. Next:R7 optimize only the test driver for review
-clocks and repeat final browser frames. No-gain streak2. Three consecutive no-player-gain rounds
+R6 read-only report reproduces exactly;separate8s QA-round captures pass.
+R7 PASS13 browser groups,exact full UI/core scores in all three variants;
+408.87→55.26s test-only clock optimization.43 hashes,TV59.4739/4×phone
+60.0028fps,p95 16.8/16.7ms. Product behavior unchanged. Streak3 satisfied.
+Installer and final npm test EXIT0:31 core tests/25 kills/1,003 churn
+cases/both8,000-match reports/13 browser groups;data/artifact hashes stable.
+Logs `/tmp/G06-final-onboarding.log`,`/tmp/G06-final-npm-test.log`.
+One delivery metadata follow-up remains:embed/hash the pinned Zod MIT
+notice,recheck the artifact/browser,then observe exact-head hosted CI. Three consecutive no-player-gain rounds
 are required after the last improvement. Run final npm test and observe
 SUCCESS for the exact final PR head before claiming completion.
 

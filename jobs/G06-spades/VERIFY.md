@@ -229,3 +229,23 @@ KEEP GOING round6:
 - `node /workspace/.onboarding/G06-qa-captures.mjs`:two independent8s
  captures of the unchanged UI for QA rounds5/6,335,495/352,191bytes,
  zero requests/errors. Both media files are hashed;no copied media.
+
+KEEP GOING round7:
+- `stat -c '%W %Y %w %y' /tmp/G06-round4-browser.log`:prior audit start/
+ finish07:35:08.58/07:41:57.45UTC,408.87s. `npm run check` passes.
+- `node browser.ts --write --capture --repeat=6`:PASS13 groups,55.2595s,
+ 86.5% shorter;product timers/policy/layout unchanged. Exact final UI/core
+ scores agree in all3 full variants;7.9s reader hold assertion still passes.
+ Zero errors/requests;all controls/privacy/name/keyboard/reduced-motion
+ regressions pass.900frames each:TV59.4739fps,mean16.8141ms,p95 16.8/
+ max83.3ms;4×phone60.0028fps,mean16.6659ms,p95 16.7/max16.8ms.
+ Separate8s capture<10MB. Third consecutive no-player-gain round.
+
+Final full behavioral snapshot, before the dependency-notice-only follow-up:
+- `bash /workspace/.onboarding/install.sh`:PASS shared strict/RNG/Zod,
+ pinned npm ci,28 focused tests(346.90ms),all regeneration and43 hashes.
+- `npm test`:EXIT0,31/31 core tests(162,501.19ms),20,000 independent
+ cases/zero mismatches,25/25 genuine kills,1,003 churn cases/exact report
+ (23,315.94ms),both8,000-game league reports/exact counts(226,887.39/
+ 219,010.66ms),13 read-only browser groups(49,793.64ms). Generated
+ data/fixtures/page and43 hashes are unchanged. No failing check remains.

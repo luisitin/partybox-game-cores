@@ -27,3 +27,7 @@
   Use conservative fixed data holds:8s for a completed trick,60s for two
   side ledgers/90s for three, with explicit human Next/VIP skip available.
   Bots leave reviews to the engine timer so they cannot override a reader.
+- Hosted npm test verifies captured media hashes and runs a read-only
+  browser audit without `--capture`;it never invokes ffmpeg. Install the
+  encoder for local milestone recording,not the hosted read-only check.
+  Remove that unnecessary apt step while preserving every executable gate.

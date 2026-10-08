@@ -74,3 +74,16 @@ including drops during pauses,permanent leave/reconnect,stale timers,three
 bot grades and explicit end. Check immutable inputs,byte-identical restored
 replays,schemas/conservation/storage/results every event;swap other hidden
 cards and engine RNG without changing any viewer or bot action.
+
+Round7, re-read JOBS;five largest remaining weaknesses:
+1. Full browser audit takes408.87s,largely redundant virtual review ticks.
+2. UI final scores have been checked for finiteness,but not exact core parity.
+3. Final UI needs another independent browser-process frame sample.
+4. Physical phone measurements remain unavailable,explicitly disclosed.
+5. Outside expert-AI strength/original blocked-site provenance is unverified.
+
+Fix worst in verification:accelerate only test-clock review waits;retain
+the explicit7.9s hold check,actual application timer events and every UI
+action. Compare each complete UI match's final scores with the pure core.
+Measure full audit duration and fresh real-time frames in a new process.
+No gameplay,policy,rule,layout or product timer change is proposed.
