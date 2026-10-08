@@ -1,0 +1,19 @@
+from pathlib import Path
+import json,subprocess,hashlib,os,datetime
+p=Path('.'); ui=p/'ui.ts';html=p/'play.html';before_ui=ui.read_bytes();before_html=html.read_bytes();sha=lambda b:hashlib.sha256(b).hexdigest()
+positive=json.loads((p/'late-input-report.json').read_text());assert positive['passed'] and len(positive['cases'])==8 and positive['sourceGuardsMatch'];(p/'late-input-round-13-positive.json').write_bytes((p/'late-input-report.json').read_bytes())
+result={'mutation':'actual compiled ui.ts expiry comparison now<deadline changed to now<=deadline','startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'canonicalBefore':{'uiSha256':sha(before_ui),'htmlSha256':sha(before_html)},'oldSuiteLimit':'Original six cases retained; private runner adapts only its own guard filename and output path','playerBehaviorChanged':False}
+try:
+ s=before_ui.decode();assert s.count('now<state.phase.deadline')==1;ui.write_text(s.replace('now<state.phase.deadline','now<=state.phase.deadline'));build=subprocess.run(['node','build.ts'],capture_output=True,text=True,timeout=30);(p/'.work/deadline-mutation-build.log').write_text(build.stdout+build.stderr);assert build.returncode==0
+ result['mutant']={'uiSha256':sha(ui.read_bytes()),'htmlSha256':sha(html.read_bytes())}
+ for label,command,reportfile,expectedcode in [('old-six',['node','.mutation-old-six.ts'],'.work/deadline-mutation-old-six.json',0),('new-eight',['node','late-input.ts'],'.work/deadline-mutation-new-eight.json',1)]:
+  env=dict(os.environ)
+  if label=='new-eight':env['G04_LATE_REPORT']=reportfile
+  r=subprocess.run(command,env=env,capture_output=True,text=True,timeout=90);(p/f'.work/deadline-mutation-{label}.log').write_text(r.stdout+r.stderr);data=json.loads((p/reportfile).read_text());assert r.returncode==expectedcode;assert data['sourceGuardsMatch']
+  failures=[c['name'] for c in data['cases'] if c['status']=='failed'];result[label]={'command':' '.join(command),'exitCode':r.returncode,'passedCases':sum(c['status']=='passed' for c in data['cases']),'failedCases':failures,'sourceGuardsMatch':data['sourceGuardsMatch'],'htmlSha256':data['htmlSha256']}
+  if label=='old-six':assert data['passed'] and len(data['cases'])==6
+  else:assert failures==['exact-deadline correct quick answer','exact-deadline human bluff write'] and len(data['cases'])==8
+finally:
+ ui.write_bytes(before_ui);html.write_bytes(before_html);assert sha(ui.read_bytes())==sha(before_ui) and sha(html.read_bytes())==sha(before_html);(p/'.mutation-old-six.ts').unlink(missing_ok=True)
+ result['canonicalRestored']=True;result['finishedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat();(p/'.work/deadline-equality-mutation-report.json').write_text(json.dumps(result,indent=2)+'\n')
+print(json.dumps(result))

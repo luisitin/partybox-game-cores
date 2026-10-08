@@ -1,0 +1,66 @@
+{
+  "head": "499ae3e110533f7f0399777feec0b1e27ffd8993",
+  "runId": 37773774295,
+  "url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37773774295",
+  "conclusion": "success",
+  "observedGreenUtc": "2026-10-08T12:08:17Z",
+  "logsRead": true,
+  "nodeTests": {
+    "passed": 51,
+    "failed": 0
+  },
+  "completeBotGames": 21000,
+  "independentComparisons": {
+    "scoring": 10000,
+    "bluff": 10000
+  },
+  "actualMutationsKilled": 25,
+  "leagueMatches": 24000,
+  "browserFunctionalScenarios": 66,
+  "performanceProfiles": [
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.0019920661366,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.00240009600385,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.00360021601296,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.00199206613659,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "rawHostedArtifacts": "No download artifact configured on this head; complete raw JSON exists only in the hosted workspace. This evidence retains the logged aggregate metrics, not raw intervals.",
+  "newUiFix": "e5701ea6 is later uncommitted runtime and is not covered by this historical green head."
+}
