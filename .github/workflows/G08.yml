@@ -30,6 +30,8 @@ jobs:
           cache: npm
           cache-dependency-path: jobs/G08-word-grid/package-lock.json
       - run: npm ci --no-audit --no-fund
+      - name: Install locked Playwright disk browser
+        run: npx playwright-core install chromium --only-shell --with-deps
       - name: Install capture tool
         run: |
           if ! command -v ffmpeg >/dev/null; then
@@ -41,6 +43,8 @@ jobs:
         if: always()
         with:
           name: G08-check-evidence
+          include-hidden-files: true
+          if-no-files-found: error
           path: |
             jobs/G08-word-grid/.tmp/visual/
             jobs/G08-word-grid/.tmp/check-*.log

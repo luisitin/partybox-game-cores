@@ -29,6 +29,9 @@ console.log(JSON.stringify({originalVisualFilesPreserved:preserved}));
 await run('build-play','npm',['run','build:play']);
 await run('data','npx',['tsx','start/verification/data-check.ts']);
 // Run the benchmark after every CPU-heavy check, separate from video encoding.
+await run('frames','npx',['tsx','start/verification/frames.ts']);
+await run('frame-integrity','node',['start/verification/verify-browser.mjs']);
+await run('frame-negative-controls','node',['start/verification/verify-browser-negatives.mjs']);
 await run('browser','npx',['tsx','start/verification/browser.ts']);
 execFileSync('sha256sum',['-c','SHA256SUMS.txt'],{stdio:'pipe'});
 console.log('All Shake Up gates passed, including checksums and actual browser mode reported above.');

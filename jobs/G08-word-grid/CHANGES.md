@@ -1,5 +1,7 @@
 # G08 change log
 
+- Resume verification repair09: lawfully reclaim G08, preserve canonical history through normal merge, return PR9 to draft pending new exact-head proof. Preserve ALL owner game/art/data/offline bytes. Add four actual-disk600-unfiltered-interval profiles, complete current source guards, independent digest/raw/profile CLI, actual nonce controls and real-baseline negatives. Keep every native/research assertion; separate recording from timing; refuse existing output and validate actual positive bounded decoded clip bytes/SHA. Repair hidden artifact upload. No new player-visible gain/FPS improvement claimed.
+
 - Research milestone: preserve and hash all 116 supplied files; merge prior blocked branch history; add pinned live source receipts, independent candidate face tables, conflict/assumption/resume documents. Remove obsolete BLOCKED.md because GitHub/npm sources and GitHub delivery access now work. No game, asset, dictionary, CSS or film source changed.
 
 - Add locked standalone build/test tools and explicitly test-only SDK/UI/table/reader bindings. Exact root state, envelopes, event and bot/result/recap types replace guessed call sites; phase.deadline is null at done, phase.paused controls pauses, timers no longer carry step, unknown identities stay spectators. Known-player reconnection retained; trusted late-join adapter still pending.

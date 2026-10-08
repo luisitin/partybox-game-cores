@@ -1,5 +1,9 @@
 # G08 assumptions
 
+- Resume17:24:54Z: G08 was the lowest eligible job after BOTH claim and every matching branch age exceeded6h. G01 had a fresh canonical commit and stayed protected. Only own main claim was changed.
+- Repair09 modifies host verification only. Existing game/assets/data/HTML stay unchanged, preserving prior player KEEP6–8 stop3. Current new verification head still requires full exact-head CI before PR9 leaves draft.
+- Locked Playwright headless shell is a tool choice, not proof that earlier local failures would pass. Each actual source/machine/profile/time remains separate. Spanish5×5 needs its own TV/CPU4phone proof; no transfer from English4×4. Original59FPS/p95≤20ms gates retained.
+
 - The current G08 START-HERE overrides the obsolete Oct7 blocker/instructions: improve Shake Up inside start/, preserve originals, never build a second game or commit the original standin/harness folders.
 - Preserve owner's 1–16 roster (including solo); hot-seat shell must at least support 2–8. Root invariants are actually nine; verify all nine.
 - Job permits test-only SDK stubs. Exact root contract types take precedence over guessed SDK signatures; unknown root player events cannot supply a trustworthy late-join name.

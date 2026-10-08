@@ -1,0 +1,26 @@
+// Independent CLI: recompute every source digest and raw statistic without importing the sampler.
+import assert from 'node:assert/strict';
+import {readFileSync,readdirSync} from 'node:fs';
+import {resolve,dirname,join} from 'node:path';
+import {createHash} from 'node:crypto';
+const digest=data=>createHash('sha256').update(data).digest('hex');
+const walk=p=>readdirSync(p,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(p,e.name)):[join(p,e.name)]);
+const equalNumber=(a,b,label)=>assert(Number.isFinite(a)&&Math.abs(a-b)<=1e-8*Math.max(1,Math.abs(b)),label);
+try{
+ const path=resolve(process.argv[2]??readFileSync('.tmp/visual/browser-frames-current-path.txt','utf8').trim()),report=JSON.parse(readFileSync(path,'utf8'));
+ assert.equal(report.version,2);assert.equal(report.kind,'actual-disk-frames');assert.equal(report.passed,true);assert.equal(report.target,`file://${resolve('play.html')}`);assert.equal(report.fileOpened,true);assert.equal(report.sampleCount,600);assert.equal(report.frameFiltering,'none');assert.equal(report.capturing,false);assert.equal(report.meanFpsMinimum,59);assert.equal(report.p95MsMaximum,20);
+ assert(Number.isFinite(Date.parse(report.startedAt))&&Date.parse(report.finishedAt)>=Date.parse(report.startedAt));
+ assert.deepEqual(report.failures,[]);assert.deepEqual(report.pageErrors,[]);assert.deepEqual(report.outgoingRequests,[]);
+ const paths=[...walk('start'),...walk('../../contract'),'play.html','package.json','package-lock.json','tsconfig.json','vitest.config.ts'].sort();
+ const current=Object.fromEntries(paths.map(p=>[p.replaceAll('\\','/'),digest(readFileSync(p))]));assert.deepEqual(report.startHashes,current,'incomplete/stale source guards');assert.deepEqual(report.endHashes,current);assert.equal(report.sourceSha256,current['play.html']);
+ const expected=['en-4x4-TV','en-4x4-phone-4x','es-5x5-TV','es-5x5-phone-4x'];assert(Array.isArray(report.profiles));assert.deepEqual(report.profiles.map(r=>r.profile).sort(),expected.sort());
+ for(const row of report.profiles){
+  assert.equal(row.rawFile,`${row.profile}-raw.json`);const bytes=readFileSync(join(dirname(path),row.rawFile));assert.equal(row.rawSha256,digest(bytes));const raw=JSON.parse(bytes);
+  const {rawSha256,...metadata}=row;assert.deepEqual(metadata,raw,'raw and report disagree');assert.deepEqual(raw.startHashes,current);assert.deepEqual(raw.endHashes,current);
+  const spanish=raw.profile.startsWith('es'),phone=raw.profile.includes('phone');assert.equal(raw.lang,spanish?'es':'en');assert.equal(raw.grid,spanish?'5x5':'4x4');assert.equal(raw.width,phone?390:1920);assert.equal(raw.height,phone?844:1080);assert.equal(raw.cpuThrottle,phone?4:1);assert.equal(raw.capturing,false);assert.equal(raw.frameFiltering,'none');assert.equal(raw.frames,600);
+  assert(raw.attemptNonce===null||/^[0-9a-f-]{36}$/.test(raw.attemptNonce));assert(Date.parse(raw.sampleStartedAt)>=Date.parse(report.startedAt));assert(Date.parse(raw.sampleClosedAt)>=Date.parse(raw.sampleStartedAt));assert(Date.parse(raw.sampleClosedAt)<=Date.parse(report.finishedAt));
+  assert(Array.isArray(raw.intervalsMs)&&raw.intervalsMs.length===600);assert(raw.intervalsMs.every(n=>typeof n==='number'&&Number.isFinite(n)&&n>0),'nonpositive/nonfinite raw interval');
+  const sorted=[...raw.intervalsMs].sort((a,b)=>a-b),total=raw.intervalsMs.reduce((a,b)=>a+b,0),mean=total/600,computed={milliseconds:total,meanMs:mean,fps:1000/mean,p95Ms:sorted[569],p99Ms:sorted[593],maxMs:sorted[599]};for(const [key,value]of Object.entries(computed))equalNumber(raw[key],value,key);assert(computed.fps>=59,`${raw.profile} FPS failed`);assert(computed.p95Ms<=20,`${raw.profile} p95 failed`);
+ }
+ console.log(JSON.stringify({verified:true,profiles:4,rawIntervals:2400,sourceGuards:paths.length,reportPath:path}));
+}catch(error){console.error(String(error));process.exitCode=1;}

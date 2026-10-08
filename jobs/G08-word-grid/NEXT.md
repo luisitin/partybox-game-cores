@@ -1,3 +1,23 @@
+# G08 — current browser-proof repair pending
+
+Actual first local attempt CLOSED by17:51:59Z with runnerexit1/no grant/no sampled frames. Exact failed report and READY retained in review/repair09. No FPS result or acceptance claimed; original120s window was too short for shared coordination. Parent directs a future NEW changed-harness>=600s wait; do not silently retry. Native milestone09 recording, full current four-profile acceptance/fullCI still pending. Firstcheckpoint is a progress publication, not a completion milestone.
+
+Resume2026-10-08T17:48:38Z. G08 lawfully claimed17:24:54Z/mainaf37417178d2e84013f9221dcdf8fa51bdd6169a, push17:24:56Z; all17 matching branch commit times were checked. Isolated worktree `/workspace/game-cores-G08-resume`, canonical branch `job/G08-word-grid-the-owner-s-shake-up` normally merged oldcd4 from claimed main. OriginalPR9 is DRAFT until fresh full exact-head acceptance. Only own G08 claim was edited.
+
+Existing Shake Up, owner art/assets/core/client/dictionaries/offline sources and play.html remain unchanged. Page14,208,697bytes/SHA863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9. Preserve all151 supplied/168 gameplay assertions,29 protected visuals, full16-seat native controls and every research gate. Prior player KEEP6–8 stop3 remains applicable to unchanged game bytes. This host-only verification repair claims no new player-visible gain.
+
+Audit: old sampler had no raw intervals/complete source guards, filtered nonpositive intervals and included a partial first interval, covered English4×4 only, saved report after acceptance, and omitted hidden uploaded files. Actual native artifact listing for oldPR run37768048402 returned[]. Historical old English metrics/local failures stay historical; they do not cover Spanish5×5.
+
+Current tools: `frames.ts` opens actualfile:// via locked Playwright headless shell, retains600 unfiltered RAF intervals after an anchor frame for EACH English4×4 and Spanish5×5 TV1920×1080/phone390×844CPU4. Raw persists before threshold assertions; complete current start/end guards cover all start/ plus actual root contract and tool manifests. Original59FPS/p95≤20ms gates retained. Independent `verify-browser.mjs` recomputes current digests/statistics/four exact profiles; negative CLI mutates only real accepted evidence. Seven actual temp-file source/profile/nonce/grant controls PASS; corrected full strict typecheck PASS. Initial pointer-before-directory error was caught/fixed before publication.
+
+Pending: current local four-profile raw acceptance, real-baseline negative CLI, separately recorded current native milestone09 clip, fresh full npm test/exact-head push+PR green, actual downloaded artifact byte verification. Do not transfer old CI green to the repair head. Historical partial HTTP/native-only and failed FPS attempts remain retained.
+
+Run npm ci, `npx playwright-core install chromium --only-shell`, then npm test for all required gates. Local actual sample MUST use G08_FRAME_BARRIER_DIR and root grant. Set G08_FRAME_OUTPUT to a fresh nonexisting output; send actual READY tuple/path after all owned tests/builds/writers are zero. Root grants exact nonce/source/profile, then sampler writes CLOSED before processing. Never silently retry failed samples. Native captures follow timingCLOSED, use fresh nonexisting G08_NATIVE_OUTPUT directories and decoded positive<10MBVP8 bytes/SHA. CI rejects partial mode and uploads hidden files with no-file error.
+
+Claim clone `/workspace/game-cores-G08-claims`: pull main, refresh ONLY ownG08 row, commit `claim G08`, normal push after EACH job push. Firsttarget17:49:56Z/hard17:54:56Z. No force/PRmerge/owner asset changes/otherclaims/Site or original-repo main writes.
+
+Historical cd4 handoff follows; its completion status is superseded by the pending repair above.
+
 # G08 — implementation and KEEP GOING complete
 
 PR: https://github.com/luisitin/partybox-game-cores/pull/9 (open, never merged). Branch: job/G08-word-grid-the-owner-s-shake-up. Five meaningful rounds fixed phone bounds/16 tied winners, restart protection/fresh seed, keyboard handoff/grid focus, Spanish host controls/help and bot-only observation/full final awards. Rounds 6–8 only clarify documentation; page SHA256863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9 is unchanged. Three consecutive rounds with no player-visible gain satisfy KEEP GOING; no further rounds unless a new defect appears.

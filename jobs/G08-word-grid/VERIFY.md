@@ -1,5 +1,17 @@
 # G08 verification log
 
+Actual first local attempt CLOSED by17:51:59Z with runnerexit1/no grant/no sampled frames. Exact failed report and READY retained in review/repair09. No FPS result or acceptance claimed; original120s window was too short for shared coordination. Parent directs a future NEW changed-harness>=600s wait; do not silently retry. Native milestone09 recording, full current four-profile acceptance/fullCI still pending. Firstcheckpoint is a progress publication, not a completion milestone.
+
+## Resume2026-10-08 proof audit/repair09 — current acceptance pending
+
+Read main README/RULES/JOBS/CLAIMS and all17 matching refs/committer times17:23:55Z. OnlyG08 eligible; mainaf37417178d2e84013f9221dcdf8fa51bdd6169a contains only own claim17:24:54Z. PR9 converted DRAFT17:26:12Z. START-HERE and nested owner AGENTS/README/HANDOFF/ASSUMED-SDK read before work. Existing page remains14,208,697B/SHA863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9; ALL existing game/assets/data/offline sources unchanged.
+
+OldPR run37768048402 has ZERO downloadable artifacts according to actual native API. Old sampler omitted raw intervals/current guards, filtered nonpositive frames, included a partial first interval, measured onlyEnglish4×4 and saved reports only after assertions. New scope is four separate English4×4/Spanish5×5 TV/CPU4phone actualfile://600 raw interval profiles; original59FPS/p95≤20ms retained. Independent current guard/raw/digest/statistic verifier and real-baseline-only negative suite added. No new current raw acceptance is yet claimed.
+
+Seven actual nonce/grant tests PASS17:46:45Z; corrected full strict TypeScript PASS17:48:38Z. Initial pointer-before-directory integration error was caught and fixed before publication. All168 gameplay assertions/full studies/mutations/rebuilds/native16-seat controls remain unchanged and await full exact-head CI rerun. Every old failure remains retained; old English FPS does not cover Spanish. New current four-profile acceptance, independent negative suite, genuine milestone09 native clip, full CI and downloaded artifact verification remain pending.
+
+Native captures run AFTER timing windows close, use fresh refused-if-existing output, require positive<10MB decodedVP8 bytes/duration/SHA and zero allHTTP/page errors. Workflow installs locked headless shell, uploads hidden evidence and errors on empty upload. No native-only/HTTP fallback is allowed for CI. Prior player KEEP6–8 stop3 applies because no player code changed, while verification head stays draft until all new full checks pass.
+
 ## 2026-10-08 research checkpoint
 - `git clone --depth 1 https://github.com/<repo>.git /workspace/g08-research/repos/<name>`: read the pinned repositories recorded in source-receipts.json. Catches unread/incorrect cube and rules assumptions; no borrowed implementations or assets are delivered.
 - `gh api repos/<repo>/contents/<path> -f ref=<commit> --method GET`: pinned source contents read, decoded and SHA-256 recorded. Native Git and GitHub REST work.
