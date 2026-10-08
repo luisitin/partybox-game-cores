@@ -1004,6 +1004,332 @@
           "maximum": 10485760
         }
       }
+    },
+    "frameReady": {
+      "type": "object",
+      "required": [
+        "profile",
+        "sourceSha256",
+        "attemptNonce",
+        "readyAt",
+        "frames",
+        "meanFpsMinimum",
+        "p95MsMaximum",
+        "capturing"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "profile": {
+          "enum": [
+            "en-4x4-TV",
+            "en-4x4-phone-4x",
+            "es-5x5-TV",
+            "es-5x5-phone-4x"
+          ]
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "attemptNonce": {
+          "type": "string",
+          "pattern": "^[0-9a-f-]{36}$"
+        },
+        "readyAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"
+        },
+        "grantTimeoutMs": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "frames": {
+          "const": 600
+        },
+        "meanFpsMinimum": {
+          "const": 59
+        },
+        "p95MsMaximum": {
+          "const": 20
+        },
+        "capturing": {
+          "const": false
+        }
+      }
+    },
+    "diskFramesRaw": {
+      "type": "object",
+      "required": [
+        "profile",
+        "lang",
+        "grid",
+        "width",
+        "height",
+        "cpuThrottle",
+        "frames",
+        "intervalsMs",
+        "milliseconds",
+        "fps",
+        "meanMs",
+        "p95Ms",
+        "p99Ms",
+        "maxMs",
+        "frameFiltering",
+        "rawFile",
+        "attemptNonce",
+        "capturing",
+        "sampleStartedAt",
+        "sampleClosedAt",
+        "startHashes",
+        "endHashes"
+      ],
+      "properties": {
+        "profile": {
+          "enum": [
+            "en-4x4-TV",
+            "en-4x4-phone-4x",
+            "es-5x5-TV",
+            "es-5x5-phone-4x"
+          ]
+        },
+        "lang": {
+          "enum": [
+            "en",
+            "es"
+          ]
+        },
+        "grid": {
+          "enum": [
+            "4x4",
+            "5x5"
+          ]
+        },
+        "width": {
+          "enum": [
+            390,
+            1920
+          ]
+        },
+        "height": {
+          "enum": [
+            844,
+            1080
+          ]
+        },
+        "cpuThrottle": {
+          "enum": [
+            1,
+            4
+          ]
+        },
+        "frames": {
+          "const": 600
+        },
+        "intervalsMs": {
+          "type": "array",
+          "minItems": 600,
+          "maxItems": 600,
+          "items": {
+            "type": "number"
+          }
+        },
+        "frameFiltering": {
+          "const": "none"
+        },
+        "rawFile": {
+          "type": "string",
+          "pattern": "^(en-4x4|es-5x5)-(TV|phone-4x)-raw\\.json$"
+        },
+        "attemptNonce": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "capturing": {
+          "const": false
+        },
+        "sampleStartedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"
+        },
+        "sampleClosedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"
+        },
+        "startHashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "endHashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "milliseconds": {
+          "type": "number"
+        },
+        "fps": {
+          "type": "number"
+        },
+        "meanMs": {
+          "type": "number"
+        },
+        "p95Ms": {
+          "type": "number"
+        },
+        "p99Ms": {
+          "type": "number"
+        },
+        "maxMs": {
+          "type": "number"
+        }
+      }
+    },
+    "diskFrames": {
+      "type": "object",
+      "required": [
+        "version",
+        "kind",
+        "target",
+        "fileOpened",
+        "startedAt",
+        "finishedAt",
+        "sampleCount",
+        "meanFpsMinimum",
+        "p95MsMaximum",
+        "frameFiltering",
+        "capturing",
+        "sourceSha256",
+        "startHashes",
+        "endHashes",
+        "profiles",
+        "pageErrors",
+        "outgoingRequests",
+        "failures",
+        "passed"
+      ],
+      "properties": {
+        "version": {
+          "const": 2
+        },
+        "kind": {
+          "const": "actual-disk-frames"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^file:///"
+        },
+        "fileOpened": {
+          "const": true
+        },
+        "startedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"
+        },
+        "finishedAt": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T"
+        },
+        "sampleCount": {
+          "const": 600
+        },
+        "meanFpsMinimum": {
+          "const": 59
+        },
+        "p95MsMaximum": {
+          "const": 20
+        },
+        "frameFiltering": {
+          "const": "none"
+        },
+        "capturing": {
+          "const": false
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "startHashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "endHashes": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "profiles": {
+          "type": "array",
+          "maxItems": 4,
+          "items": {
+            "$ref": "#/definitions/diskFramesRaw"
+          }
+        },
+        "pageErrors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "outgoingRequests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "failures": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "passed": {
+          "type": "boolean"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "passed": {
+                "const": true
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "profiles": {
+                "minItems": 4,
+                "maxItems": 4
+              },
+              "failures": {
+                "maxItems": 0
+              },
+              "pageErrors": {
+                "maxItems": 0
+              },
+              "outgoingRequests": {
+                "maxItems": 0
+              }
+            }
+          }
+        }
+      ]
     }
   }
 }

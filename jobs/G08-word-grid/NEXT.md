@@ -1,3 +1,15 @@
+# G08 — recovered verification repair pending
+
+Read review/repair09/RECOVERY.md for the actual interruption and evidence boundaries. The 18:18 paused attempt has READY only and no surviving process, grant, CLOSED, raw sample or final report; termination time/result are unknown. It contributes no FPS claim. The interruption since the 17:53:50 branch push exceeded 30 minutes.
+
+Published 1d2c470 has both exact-head full CI runs green (37820082838/37820089198) and an independently checked actual 2,400-interval/180-guard artifact. Newer private host verifiers are a new proof scope and remain pending. Game/client/art/data/play.html are unchanged, so the prior player KEEP6–8 stop3 is retained.
+
+Next actual work: strict typecheck and coordination tests; a fresh 600-second namespace with real owner Pause before READY and Resume after an exact root grant; all four English4×4/Spanish5×5 TV1920×1080/phone390×844 CPU4 profiles; 600 unfiltered intervals each, >=59FPS and p95<=20ms, advancing hunt-clock/runtime endpoint assertions; independent current raw/source checks and real-baseline negatives; separate native capture/full decode and 14 actual capture-corruption controls. Use no warmup/filter/fake clock or threshold relaxation. Notify root before browser/heavy work and require root grants.
+
+After every branch push refresh only G08 in /workspace/game-cores-G08-claims main using a normal claim commit/push. PR9 stays draft until all required gates pass on the exact new head, both full CI events are green and the downloaded actual current artifact is independently verified. No owner assets rebuilt/replaced, force push, PR merge, or other claim/Site edits.
+
+Historical handoff (retained):
+
 # G08 — current browser-proof repair pending
 
 Actual first local attempt CLOSED by17:51:59Z with runnerexit1/no grant/no sampled frames. Exact failed report and READY retained in review/repair09. No FPS result or acceptance claimed; original120s window was too short for shared coordination. Parent directs a future NEW changed-harness>=600s wait; do not silently retry. Native milestone09 recording, full current four-profile acceptance/fullCI still pending. Firstcheckpoint is a progress publication, not a completion milestone.

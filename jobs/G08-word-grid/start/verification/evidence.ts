@@ -5,7 +5,7 @@ import {join} from 'node:path';
 export const sha256=(data:Uint8Array|string)=>createHash('sha256').update(data).digest('hex');
 const walk=(path:string):string[]=>readdirSync(path,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(join(path,e.name)):[join(path,e.name)]);
 export function sourceHashes():Record<string,string>{
- const paths=[...walk('start'),...walk('../../contract'),'play.html','package.json','package-lock.json','tsconfig.json','vitest.config.ts'].sort();
+ const paths=[...walk('start'),...walk('../../contract'),'../../.github/workflows/G08.yml','play.html','package.json','package-lock.json','tsconfig.json','vitest.config.ts'].sort();
  return Object.fromEntries(paths.map(path=>[path.replaceAll('\\','/'),sha256(readFileSync(path))]));
 }
 export interface FrameResult {profile:string;lang:string;grid:string;width:number;height:number;cpuThrottle:number;frames:number;intervalsMs:number[];milliseconds:number;fps:number;meanMs:number;p95Ms:number;p99Ms:number;maxMs:number;frameFiltering:'none';rawFile:string;attemptNonce:string|null;capturing:false;}

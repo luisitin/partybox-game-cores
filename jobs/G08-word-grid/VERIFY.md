@@ -156,3 +156,11 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 ## KEEP GOING round8 and final candidate
 - `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles/87hashes. Python SHA256 confirms page863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9 is unchanged through all three cosmetic rounds. No gameplay/core/client/style/report/media change after functional round5.
 - Full exact-head push and PR CI must both finish SUCCESS. `python /workspace/partybox-ci-head.py G08 --watch` reads exact git HEAD via REST and requires both events; this candidate is not called delivered until that returns green. Each full run repeats168assertions, all mandatory independent/mutation/property/roster/bot/rebuild/schema/preserved-visual/file-browser/FPS/checksum gates. Superseded workflow cancellations are not called test failures or passes.
+
+## Recovery checkpoint 2026-10-08T19:13:52Z
+- Read current managed-runtime instructions/status/network policy, main README/RULES/JOBS, START-HERE, nested owner AGENTS and original handoff/spec/SDK/film references. Network is observed enforced/unrestricted; proxy/CA retained; no authentication changes.
+- Actual process/file inspection: no active Node/Chrome/timeout; the 18:18 attempt has READY only, no grant/CLOSED/raw/report. Termination time and exit result are unknown; no FPS acceptance. Full retained details in review/repair09/RECOVERY.md.
+- The branch publication gap from confirmed 17:53:50Z to this recovery exceeds 30 minutes because work was interrupted.
+- Existing game/HTML bytes remain unchanged. Published 1d full CI/artifact proof remains distinct from current host-only verification changes. Current type/coordination/native/frame/capture/full CI acceptance is pending at checkpoint creation.
+
+- Recovery quick checks: `npm run typecheck` PASS with current strict TypeScript; `npx vitest run start/verification/frame-coordination.test.ts` PASS17/17 (19:14:06Z, 1.17s), including the exact fresh grant and five actual rejection cases, timeout receipt, minimum600-second production default and invalid timeout inputs. Full unit total for current harness is expected185; that full exact-head acceptance is still pending.

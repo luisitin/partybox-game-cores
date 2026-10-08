@@ -7,12 +7,17 @@ import {performance} from 'node:perf_hooks';
 import {setTimeout as delay} from 'node:timers/promises';
 export const frameProfiles=['en-4x4-TV','en-4x4-phone-4x','es-5x5-TV','es-5x5-phone-4x'] as const;
 export type FrameProfile=typeof frameProfiles[number];
-export async function waitForFrameGrant(directory:string,profile:FrameProfile,sourceSha256:string,timeoutMs=120000){
- assert(frameProfiles.includes(profile));assert(/^[0-9a-f]{64}$/.test(sourceSha256));assert(timeoutMs>0);
+export function parseFrameGrantTimeout(value:string|undefined){
+ if(value===undefined)return 600000;
+ assert(/^[0-9]+$/.test(value),'grant timeout must be an integer in milliseconds');const parsed=Number(value);
+ assert(Number.isSafeInteger(parsed)&&parsed>=600000&&parsed<=3600000,'grant timeout must be 600000..3600000ms');return parsed;
+}
+export async function waitForFrameGrant(directory:string,profile:FrameProfile,sourceSha256:string,timeoutMs=600000){
+ assert(frameProfiles.includes(profile));assert(/^[0-9a-f]{64}$/.test(sourceSha256));assert(Number.isFinite(timeoutMs)&&timeoutMs>0);
  const attemptNonce=randomUUID(),readyPath=join(directory,`${profile}-ready.json`),grantPath=join(directory,`${profile}-grant.json`);
  await mkdir(directory,{recursive:true});
  await Promise.all([readyPath,grantPath,join(directory,`${profile}-closed.json`)].map(p=>rm(p,{force:true})));
- const ready={profile,sourceSha256,attemptNonce,readyAt:new Date().toISOString(),frames:600,meanFpsMinimum:59,p95MsMaximum:20,capturing:false};
+ const ready={profile,sourceSha256,attemptNonce,readyAt:new Date().toISOString(),grantTimeoutMs:timeoutMs,frames:600,meanFpsMinimum:59,p95MsMaximum:20,capturing:false};
  const temporary=join(directory,`${profile}-${attemptNonce}.tmp`);await writeFile(temporary,JSON.stringify(ready)+'\n',{flag:'wx'});await rename(temporary,readyPath);
  const started=performance.now();
  for(;;){

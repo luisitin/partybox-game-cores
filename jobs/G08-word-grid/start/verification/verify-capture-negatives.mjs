@@ -1,0 +1,11 @@
+// Reject mutations of actual current recordings, including empty/foreign bytes and missing coverage.
+import assert from 'node:assert/strict';
+import {readFileSync,writeFileSync,mkdtempSync,cpSync,rmSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join,dirname,basename} from 'node:path';
+import {spawnSync} from 'node:child_process';
+const path=readFileSync('.tmp/visual/browser-native-current-path.txt','utf8').trim(),partial=process.argv.includes('--allow-partial'),check=p=>spawnSync(process.execPath,['start/verification/verify-capture.mjs',p,...(partial?['--allow-partial']:[])],{encoding:'utf8'});
+assert.equal(check(path).status,0,'real captured baseline must pass');const original=JSON.parse(readFileSync(path,'utf8'));let count=0;
+const cases=[['empty-clips',r=>r.videos=[]],['missing-gate',r=>delete r.gates.nativeDrag],['empty-gates',r=>r.gates={}],['wrong-rosters',r=>r.gates.rosters=[2,8]],['duplicate-clip',r=>r.videos[4]=r.videos[0]],['wrong-clip-hash',r=>r.videos[0].sha256='0'.repeat(64)],['wrong-byte-count',r=>r.videos[0].bytes++],['changed-source',r=>r.endHashes['play.html']='0'.repeat(64)],['missing-checker',r=>delete r.startHashes['start/verification/verify-capture.mjs']],['outgoing-request',r=>r.outgoingRequestsObserved=['https://example.invalid']],['page-error',r=>r.pageErrorsObserved=['error']],['wrong-duration',r=>r.videos[0].metadata.format.duration='999999'],['wrong-codec',r=>r.videos[0].metadata.streams[0].codec_name='h264'],['empty-file',()=>{},'empty'],['foreign-file',()=>{},'foreign'],['missing-file',()=>{},'missing']];
+for(const [name,mutate,fileDefect]of cases){const temp=mkdtempSync(join(tmpdir(),'g08-capture-negative-'));try{cpSync(dirname(path),temp,{recursive:true});const r=structuredClone(original);mutate(r);if(fileDefect){const clip=join(temp,basename(original.videos[0].path));if(fileDefect==='missing')rmSync(clip);else writeFileSync(clip,fileDefect==='empty'?'':'unrelated bytes');}const candidate=join(temp,'browser-report.json');writeFileSync(candidate,JSON.stringify(r));assert.notEqual(check(candidate).status,0,name);count++;}finally{rmSync(temp,{recursive:true,force:true});}}
+console.log(JSON.stringify({actualCapturedBaseline:true,negativeCases:count}));

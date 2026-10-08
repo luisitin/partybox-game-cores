@@ -33,5 +33,7 @@ await run('frames','npx',['tsx','start/verification/frames.ts']);
 await run('frame-integrity','node',['start/verification/verify-browser.mjs']);
 await run('frame-negative-controls','node',['start/verification/verify-browser-negatives.mjs']);
 await run('browser','npx',['tsx','start/verification/browser.ts']);
+await run('capture-integrity','node',['start/verification/verify-capture.mjs']);
+await run('capture-negative-controls','node',['start/verification/verify-capture-negatives.mjs']);
 execFileSync('sha256sum',['-c','SHA256SUMS.txt'],{stdio:'pipe'});
 console.log('All Shake Up gates passed, including checksums and actual browser mode reported above.');

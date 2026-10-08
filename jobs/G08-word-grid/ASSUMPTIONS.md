@@ -19,3 +19,6 @@
 - Offline New game asks before discarding live progress; cancelling does not consume private clock time. Returning to setup retains names/bot skills/options and selects a fresh seed; a manually re-entered seed still replays the same board. This is host behavior, not a scoring/rules change.
 
 - The offline host’s interface follows its English/Spanish word-list selection, as its existing owner client already does. Host translations are authored here; legal notices and user-entered names retain their original text. This does not claim a new published Spanish physical-cube edition.
+
+- Recovery after the environment interruption: absent old processes and missing completion files do not establish a precise exit time/result. The surviving 18:18 READY is retained; no FPS claim. A new namespace/nonce is justified by loss of the old process and current resumed environment. Preserve published historical evidence and game bytes.
+- ffprobe may add harmless empty stream_groups/programs arrays between versions. Independent capture validation compares all requested codec, dimensions and duration fields and fully decodes actual bytes; it never rewrites original metadata, clips or thresholds.
