@@ -2,6 +2,21 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "accessibleControls": {
+      "type": "boolean"
+    },
+    "minimumTapHeight": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "controlBoundaryContrast": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "footerContrast": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
     "manageClock": {
       "type": "boolean"
     },

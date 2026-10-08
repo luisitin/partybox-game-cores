@@ -220,3 +220,18 @@ A second browser run followed the added menu-close-on-reveal/input guard.
 `node scripts/generate.mjs --fixtures-only` and `node scripts/check-data.mjs`
 PASS25 JSON/38 checksums. The bundle is153632B. No pure-core/bot changes;
 updated full30-test default disk CI remains required.
+
+KEEP GOING4, after457a122 GREEN push37737233240/PR37737238135. Source-color
+relative-luminance audit via Python measured old input boundary1.619:1,muted
+text7.064:1,bot marker4.760:1 and footer4.429:1 at brightest felt. The browser
+then measures actual computed input/button colors and rendered rectangles.
+`npm run build`, `node scripts/html.mjs`, `node scripts/visual.mjs --http
+--record --milestone 05` PASS. Minimum audited target height44px (house-rule
+labels/settings summary,Manage,pass-memory and Fast label); native touch near
+the enlarged label's far lower edge toggles J♦ twice and native mobile touch
+opens Manage. Minimum input/button border contrast3.490512:1; footer contrast
+5.066486:1 at brightest felt. Previous recovery/menu/privacy/input/roster gates
+remain true. Desktop60.002fps,CPU4x phone59.018fps,p9516.8ms/max33.4ms;
+video135598B. Local HTTP remains partial. `node scripts/generate.mjs
+--fixtures-only`, `node scripts/check-data.mjs` PASS26 JSON/42 hashes,
+standalone153660B. Updated full30-test default disk CI remains required.

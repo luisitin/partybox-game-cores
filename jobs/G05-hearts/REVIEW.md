@@ -26,3 +26,11 @@ spacing is crowded. Fix the timed management lifecycle and spoken guidance.
 Pause through the pure reducer while Manage owns a running clock, conceal the
 hand, then restore the same actor's selection and remaining time on close.
 Explicit Pause remains paused; Skip/End release the temporary hold first.
+
+Round4, after457a122 GREEN push37737233240 and PR37737238135. Re-read G05.
+Five audit findings: control boundaries only1.619:1; mobile Manage only28px;
+checkbox and Fast labels below44px; pass-memory summary only36px; felt-footer
+text4.429:1 against the brightest felt color. Worst: small/hard-to-distinguish
+controls. Raise control borders above3:1, these label/summary targets to44px,
+and footer text above4.5:1 against the conservative brightest surface. Muted
+text already7.064:1 and bot marker4.760:1; those remain adequate.

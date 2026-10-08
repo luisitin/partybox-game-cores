@@ -56,6 +56,23 @@ try {
     await evaluate(`(()=>{if(window.__hearts.snapshot()){(document.getElementById('new-table')??document.getElementById('reset')).click()}const count=document.getElementById('seat-count');count.value='${count}';count.dispatchEvent(new Event('change'));document.getElementById('target').value='${target}';document.getElementById('clock-setting').value='${clock}';document.getElementById('seed').value=${fresh?'""':'"103"'};for(let i=0;i<${count};i++){const mode=document.getElementById('mode-'+i);mode.value='${mode}';mode.dispatchEvent(new Event('change',{bubbles:true}));if(${long}){const name=document.getElementById('name-'+i);name.value=String(i+1)+'W'.repeat(23);name.dispatchEvent(new Event('input',{bubbles:true}));}}document.getElementById('start-table').click();})()`);
   }
   const privateHand=()=>evaluate("[...document.querySelectorAll('.hand-card')].map(b=>Number(b.dataset.card))");
+  const luminance=rgb=>rgb.match(/\d+/g).slice(0,3).map(v=>Number(v)/255).map(v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0);
+  const contrast=(a,b)=>{const values=[luminance(a),luminance(b)].sort((x,y)=>x-y);return(values[1]+.05)/(values[0]+.05);};
+  const tapHeights=[];
+  await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});
+  await evaluate('document.querySelector(".settings").open=true');await delay(50);
+  const initialControls=await evaluate('(()=>{const input=getComputedStyle(document.getElementById("name-0"));return{border:input.borderColor,background:input.backgroundColor,targets:[...document.querySelectorAll(".check,.settings summary")].map(e=>e.getBoundingClientRect().height)}})()');
+  tapHeights.push(...initialControls.targets);assert.ok(initialControls.targets.every(h=>h>=44),'house-rule labels must be at least44px high');
+  const inputContrast=contrast(initialControls.border,initialControls.background);assert.ok(inputContrast>=3,'inputs need distinguishable boundaries');
+  await send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
+  for(let k=0;k<2;k++){
+    const point=await evaluate('(()=>{const e=document.getElementById("jack").closest("label");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return{x:r.right-8,y:r.bottom-8}})()');
+    await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...point,id:1}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+    assert.equal(await evaluate('document.getElementById("jack").checked'),k===0,'the whole enlarged label is a native touch target');
+  }
+  await send('Emulation.setTouchEmulationEnabled',{enabled:false});await evaluate('document.querySelector(".settings").open=false;window.scrollTo(0,0)');
+  await send('Emulation.setDeviceMetricsOverride',{width:1920,height:1080,deviceScaleFactor:1,mobile:false});
+
   await chooseTable(3,'human',false,25,true);await evaluate('document.getElementById("start-turn").click()');const fresh1=await privateHand();
   await chooseTable(3,'human',false,25,true);await evaluate('document.getElementById("start-turn").click()');const fresh2=await privateHand();assert.notDeepEqual(fresh1,fresh2,'default tables must deal fresh hands');
   await chooseTable(3,'human',false,100);
@@ -68,6 +85,10 @@ try {
   await evaluate('document.getElementById("reset").click();localStorage.setItem("partybox-hearts-save-v1","{broken")');await send('Page.reload');for(let k=0;k<100&&!(await evaluate('!!window.__hearts'));k++)await delay(50);
   assert.ok(await evaluate('document.getElementById("resume-saved").disabled'));await evaluate('document.getElementById("discard-saved").click()');
   await chooseTable(3,'human',false,25,false,10);
+  const activeControls=await evaluate('(()=>{const button=getComputedStyle(document.getElementById("pause"));return{border:button.borderColor,background:button.backgroundColor,footer:getComputedStyle(document.querySelector(".felt-bottom")).color}})()');
+  const controlBoundaryContrast=Math.min(inputContrast,contrast(activeControls.border,activeControls.background));
+  const footerContrast=contrast(activeControls.footer,'rgb(35,79,83)');
+  assert.ok(controlBoundaryContrast>=3);assert.ok(footerContrast>=4.5,'footer text must contrast against the brightest felt color');
   const recipient=await evaluate('window.__hearts.snapshot().view.players.find(p=>p.id===window.__hearts.snapshot().view.actor).name');
   assert.equal(await evaluate('document.getElementById("start-turn").getAttribute("aria-label")'),`Show hand for ${recipient}`,'handoff speaks its actual recipient');
   assert.ok((await evaluate('document.getElementById("turn-announcement").textContent')).includes(recipient));
@@ -142,21 +163,28 @@ try {
     assert.ok(result&&Object.values(result.scores).every(Number.isFinite));return result;
   }
   await evaluate(`(()=>{for(let k=0;window.__hearts.snapshot().view.phaseId==='pass'&&k<6;k++){document.getElementById('start-turn')?.click();while(window.__hearts.snapshot().selected.length<3)document.querySelector('.hand-card:not([disabled])[aria-pressed=false]').click();document.getElementById('pass-confirm').click();}document.getElementById('start-turn')?.click()})()`);
+  const memoryHeight=await evaluate('document.querySelector(".pass-memory summary").getBoundingClientRect().height');tapHeights.push(memoryHeight);assert.ok(memoryHeight>=44);
   assert.equal(await evaluate('document.querySelectorAll(".hand-card .new-card").length'),3,'all three received cards must be marked privately');
   assert.equal(await evaluate('[...document.querySelectorAll(".hand-card")].filter(b=>b.getAttribute("aria-label").includes("received this hand")).length'),3,'received markers must be spoken');
   await playHuman();assert.equal(await evaluate('window.__hearts.snapshot().privateCards'),0,'results contain no private controls');
   const completedPlayerCounts=[];
   for(const count of [3,4,5,6]){
-    await chooseTable(count,'normal');await evaluate('document.getElementById("fast-bots").click()');
+    await chooseTable(count,'normal');const fastHeight=await evaluate('document.querySelector(".fast-option").getBoundingClientRect().height');tapHeights.push(fastHeight);assert.ok(fastHeight>=44);await evaluate('document.getElementById("fast-bots").click()');
     for(let k=0;k<600&&!(await evaluate('window.__hearts.snapshot().view.phaseId==="done"'));k++)await delay(30);
     assert.equal(await evaluate('window.__hearts.snapshot().view.phaseId'),'done',`${count}-seat UI bot match stalled`);assert.equal(await evaluate('Object.keys(window.__hearts.snapshot().result.scores).length'),count);completedPlayerCounts.push(count);
   }
   await send('Emulation.setDeviceMetricsOverride',{width:390,height:844,deviceScaleFactor:1,mobile:true});await chooseTable(6,'human',true);
   async function assertFit(phase){const sizes=await evaluate('({innerWidth,scrollWidth:document.documentElement.scrollWidth,names:[...document.querySelectorAll(".score-name")].map(e=>({right:e.getBoundingClientRect().right,width:e.scrollWidth,client:e.clientWidth}))})');assert.equal(sizes.innerWidth,390,`${phase}: no viewport expansion`);assert.ok(sizes.scrollWidth<=390,`${phase}: no horizontal scroll`);assert.ok(sizes.names.every(n=>n.right<=391&&n.width<=n.client+1),`${phase}: every full name fits`);}
-  await assertFit('handoff');await evaluate('document.getElementById("start-turn").click()');await assertFit('private hand');await playHuman();await assertFit('full results');
+  await assertFit('handoff');
+  const manageHeight=await evaluate('document.querySelector(".manage summary").getBoundingClientRect().height');tapHeights.push(manageHeight);assert.ok(manageHeight>=44,'mobile Manage needs a44px target');
+  await send('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:1});
+  const mobileManage=await evaluate('(()=>{const e=document.querySelector(".manage summary");e.scrollIntoView({block:"center"});const r=e.getBoundingClientRect();return{x:r.x+r.width/2,y:r.y+r.height/2}})()');
+  await send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{...mobileManage,id:1}]});await send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});assert.ok(await evaluate('document.querySelector(".manage").open'),'native mobile touch opens Manage');
+  await send('Emulation.setTouchEmulationEnabled',{enabled:false});await evaluate('document.querySelector(".manage").open=false');await delay(50);
+  await evaluate('document.getElementById("start-turn").click()');await assertFit('private hand');await playHuman();await assertFit('full results');
   const resultOrder=await evaluate('({result:document.querySelector(".private-panel").getBoundingClientRect().top,table:document.querySelector(".felt").getBoundingClientRect().top})');assert.ok(resultOrder.result<resultOrder.table,'mobile ranked results must precede the last-trick table');
   await evaluate('window.scrollTo(0,0)');const mobileShot=await send('Page.captureScreenshot',{format:'png'});writeFileSync(`${output}/hearts-phone-${milestone}.png`,Buffer.from(mobileShot.data,'base64'));
   assert.equal(requests.filter(url=>/^https?:/.test(url)&&url!==documentUrl).length,0,'zero network requests after document load');assert.deepEqual(errors,[]);
-  const report={manageClock:true,selectionAnnouncements:true,handoffAnnouncements:true,receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
+  const report={accessibleControls:true,minimumTapHeight:Math.min(...tapHeights),controlBoundaryContrast,footerContrast,manageClock:true,selectionAnnouncements:true,handoffAnnouncements:true,receivedMarked:true,mobileResultPriority:true,freshDeals:true,resumedSavedGame:true,corruptSaveRejected:true,schemaVersion:1,chrome:(await cdp.send('Browser.getVersion')).product,fileOpened:!httpMode,serving:httpMode?'localhost HTTP; managed file:// remains blocked':'disk',desktop,phone,reducedMotion:true,externalRequests:0,runtimeExceptions:0,completedPlayerCounts,privateHandoff:true,passing:true,mouseCard:true,touchCard:true,keyboardCard:true,keyboardFocus:true,longNamesFit:true,videoBytes:readFileSync(`${output}/${videoFile}`).length};
   writeFileSync(`${output}/visual-measurements-${milestone}.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
 }finally{socket?.close();browser.kill('SIGTERM');localServer?.close();}
