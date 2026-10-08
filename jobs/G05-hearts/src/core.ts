@@ -170,7 +170,7 @@ export function controllerView(s: HeartsState, playerId: string): HeartsControll
     ...tvView(s), me: { id: playerId, role: player ? 'player' : 'spectator' }, hand,
     legal: player && available(s, playerId) && s.phase.id === 'play' && s.actor === playerId && !s.phase.paused ? legalCards(hand, s.trick, s.trickNumber === 0, s.heartsBroken, s.opening) : [],
     canPass: player && available(s, playerId) && s.phase.id === 'pass' && !Object.hasOwn(s.passes, playerId) && !s.phase.paused,
-    ownPass: player ? [...(s.passes[playerId] ?? [])] : [],
+    ownPass: player && Object.hasOwn(s.passes,playerId) ? [...s.passes[playerId]!] : [],
     ...(passed ? { sentTo: s.order[(i+s.passOffset+s.order.length)%s.order.length]!, sentCards: [...s.sent[playerId]!], receivedCards: [...s.received[playerId]!] } : {}),
   };
 }

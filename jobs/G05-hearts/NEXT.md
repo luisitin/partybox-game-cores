@@ -26,6 +26,7 @@ Research /workspace/g05-research; local log /workspace/g05-full-check.log.
 
 Baseline head100dfb1 CI37731301909 is GREEN with actual disk +60fps proof.
 The numeric audit adds two tests (25 now) and canonical−0/undefined-field fixes;
-focused/differential/mutations pass. Wait for the new head's full G05 CI to go
+The legitimate prototype-seat test initially failed and is now fixed with
+an own-property guard; rerun focused/differential/mutations and wait for CI to go
 green, then open PR and run KEEP GOING. Future major weaknesses include the
 standalone page's repeated default seed103 and loss of a match on reload.

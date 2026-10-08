@@ -161,7 +161,16 @@ local milestone01. `gh run view 37731301909 --log` retrieved the exact report.
 A later audit demonstrated−0 survived in paused.at and trick.card, violating
 JSON round trips; optional player flags explicitly set to undefined could
 also disappear on serialization. Normalize zero ids/timestamps and copy only
-known, defined optional booleans. Two added focused tests cover these real
-failures and legitimate __proto__/constructor/toString seats. Focused/reference
-and25/25 mutations pass; ordinary seeded state/league hashes are unchanged.
+known, defined optional booleans. The numeric focused test passed. The additional legitimate prototype-seat
+test FAILED: ownPass read an inherited property from the empty passes object.
+The prior checkpoint prematurely stated all focused checks passed; that was
+incorrect. Add an Object.hasOwn guard, then rerun focused/differential and
+mutations before relying on the updated full CI. Normal seeded data are unchanged.
 Full suite now contains25 tests. Run default CI on the updated head before PR.
+
+After the own-property fix: `npm run build`, `node scripts/html.mjs`,
+`node --test tests/focused.test.mjs tests/differential.test.mjs` PASS15 checks;
+`node scripts/mutations.mjs` PASS25/25; `node scripts/generate.mjs --fixtures-only`
+and `node scripts/check-data.mjs` PASS21 JSON/25 hashes. Prototype-shaped real
+seats now play a full match and retain finite original-player scores. The new
+head still needs full CI; the incorrect prior audit-pass note is corrected above.
