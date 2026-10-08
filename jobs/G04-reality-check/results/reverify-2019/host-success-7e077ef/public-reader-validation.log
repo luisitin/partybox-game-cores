@@ -1,0 +1,169 @@
+{
+  "observedUtc": "2026-10-08T21:24:51.312059+00:00",
+  "sourceCommit": "7e077efa11354e5f19f981b26975b7dcff1eae18",
+  "runId": 37845083064,
+  "artifactId": 11579627268,
+  "artifactBytes": 1428663,
+  "artifactSha256": "2bc3f3d7e5d5b40f3ac3f2487b8a46394a5429ccfa7f77d68cc31f1b7fc81fa1",
+  "safeEntries": 20,
+  "independentAssertions": 10862,
+  "sourceGuards": 1034,
+  "nativeRawIntervals": 1200,
+  "nativeTimestamps": 1202,
+  "activeFrameWitnesses": 1202,
+  "originalRawIntervals": 1800,
+  "originalFunctionalControls": 66,
+  "runtimeIdentity": {
+    "versions": {
+      "zod": "4.6.5",
+      "playwright": "1.56.1",
+      "playwright-core": "1.56.1"
+    },
+    "nodeVersion": "v24.21.0",
+    "v8Version": "13.6.233.17-node.53",
+    "zodModule": "node_modules/zod/index.js",
+    "zodModuleSha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505",
+    "captureEncoder": {
+      "registryPath": "/home/runner/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux",
+      "realPath": "/home/runner/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux",
+      "sha256": "460d44f3416005662f528d4b92e7b94ace924e8a0288106d3803b73c56eaadc8"
+    },
+    "captureDecoder": {
+      "path": "/usr/bin/ffmpeg",
+      "realPath": "/usr/bin/ffmpeg",
+      "sha256": "ed16af623947494a72e284b6eb8ff225f2da22b38b5d5069c2fd4b4ba3384e41",
+      "version": "ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers"
+    }
+  },
+  "strictProfiles": [
+    {
+      "profile": "tv",
+      "meanMs": 16.666,
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "attemptNonce": "8cb6d2b2-05c4-498f-ae78-1119572ed606"
+    },
+    {
+      "profile": "phone",
+      "meanMs": 16.66589,
+      "fps": 60.00279613029967,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "attemptNonce": "22829b03-bd3a-4e68-a81e-13ea95c55191"
+    }
+  ],
+  "originalProfiles": [
+    {
+      "sample": 1,
+      "profile": "tv",
+      "fps": 60.00360021601296,
+      "p95Ms": 16.700000000000273,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "sample": 1,
+      "profile": "phone",
+      "fps": 60.00360021601296,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "sample": 2,
+      "profile": "tv",
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "sample": 2,
+      "profile": "phone",
+      "fps": 60.00319216982343,
+      "p95Ms": 16.799999999999955,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "sample": 3,
+      "profile": "tv",
+      "fps": 60.0019920661366,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "sample": 3,
+      "profile": "phone",
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "actualCurrentDecodedClips": [
+    {
+      "profile": "tv",
+      "path": "media/strict-reverify-2019-tv.webm",
+      "bytes": 183578,
+      "sha256": "563936942557f2f721e69562303c9455b303a4405af58562b953fe65fdb49532",
+      "stream": {
+        "codec_name": "vp8",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "12/1",
+        "nb_read_frames": "24"
+      }
+    },
+    {
+      "profile": "phone",
+      "path": "media/strict-reverify-2019-phone.webm",
+      "bytes": 151646,
+      "sha256": "c4ff5f1a3fda5c1f13339ac424da04ef394104669c10468a45ee1c5bf07384a7",
+      "stream": {
+        "codec_name": "vp8",
+        "width": 390,
+        "height": 844,
+        "r_frame_rate": "12/1",
+        "nb_read_frames": "24"
+      }
+    },
+    {
+      "sample": 1,
+      "path": "media/milestone-15-browser.webm",
+      "bytes": 214161,
+      "sha256": "35887be3925e0ee5476d679a1ed72fb39b77279a3ba5c1bf95db5dbe86be0726",
+      "stream": {
+        "codec_name": "vp8",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "36"
+      }
+    },
+    {
+      "sample": 2,
+      "path": "media/milestone-15-browser-repeat-2.webm",
+      "bytes": 214161,
+      "sha256": "2b65077c346ae6eb2e1fafc0b0b123e924fd950ea9b5f1987094e8202954c5fe",
+      "stream": {
+        "codec_name": "vp8",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "36"
+      }
+    },
+    {
+      "sample": 3,
+      "path": "media/milestone-15-browser-repeat-3.webm",
+      "bytes": 211667,
+      "sha256": "4d84ad92c223b6523e7306b045a1f662623fbc043a077c03084541be387548d9",
+      "stream": {
+        "codec_name": "vp8",
+        "width": 1920,
+        "height": 1080,
+        "nb_read_frames": "36"
+      }
+    }
+  ],
+  "physicalPhoneTested": false,
+  "readerSha256": "32db337f565c453723b4b0dcad8f190b8460f17cc1006a9ba2f08e5591bc01b7",
+  "passed": true
+}

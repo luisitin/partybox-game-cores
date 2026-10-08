@@ -34,7 +34,7 @@ games,1,003 exact random-seed replays,1,000 idle games,two independent
 7,000 adversarial phase states,10,000 varied valid catalog rows,and three
 independent browser runs with privacy/timers/controls/frame times/reduced
 motion/captures/checksums. VERIFY records outcomes;BOTS scopes its benchmark.
-The additional strict proof binds every checker and loaded schema dependency,
+The additional strict proof binds every loaded Node checker and schema dependency,
 retains 600 native frames and active timers per profile, and decodes both clips.
 NEXT records PR/CI/KEEP GOING progress;completion requires actual hosted CI.
 node host-deadline-mutation.ts also proves the real compiled deadline bug

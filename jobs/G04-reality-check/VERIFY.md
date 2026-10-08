@@ -499,3 +499,48 @@ as actual-wrong-working-directory-command.log; the corrected job-directory
 strict check passed. The G09 quiet hold was active21:08:57 and released
 21:10:08.170786Z, causing the conservative21:09:18 buffered publication
 target miss. Hard21:14:18 remains until actual push; no backdated cadence.
+
+## Accepted exact runtime-source head and final handoff, 2026-10-08
+
+Exact7e077efa11354e5f19f981b26975b7dcff1eae18 full CI37845083064
+succeeded21:19:52Z. Actual full230849-character log read: every51 core
+test,25 real mutants,1003 seeds,21000 bot roster games,1000 idle games,
+20000 independent scoring comparisons,24000 skill matches,eight compiled
+deadline controls,66 functional controls,1800 original frames,1200 strict
+frames,1202 strict native/active witnesses,all18 real capture controls,
+and147 final generated data/media/archive checksums passed.
+
+Genuine artifact11579627268 is1428663bytes,
+SHA2bc3f3d7e5d5b40f3ac3f2487b8a46394a5429ccfa7f77d68cc31f1b7fc81fa1.
+Actual bytes were downloaded,all20 safe entries/CRCs checked.
+`python verify-hosted-artifact.py --head 7e077efa11354e5f19f981b26975b7dcff1eae18
+--run-id 37845083064 --evidence-dir .work/reverify-2019/host-7e077ef`
+passed10862 independent assertions with its actual reader checksum
+recorded in the public receipt. It derives all1034 current source identities
+from exact Git bytes and independently archived public module bytes, checks
+all native timestamps/differences/current phase/private draft/live timers,
+recalculates all3000 unfiltered original+strict intervals, and fully decodes
+allfive actual clips. ZIP/log/metadata/receipt/reader output are public in
+results/reverify-2019/host-success-7e077ef.
+The reader performs no browser launch or new FPS sample. It requires a
+genuine actual.zip and artifact-metadata.json in its evidence directory.
+
+Actual strict TV60.002400096FPS, phone60.002796130,allp99/max16.8ms.
+The three originals span60.001992–60.003600FPS. Allfive decoded clips:
+currentTV183578bytes/24frames1920x1080,phone151646/24frames390x844;
+three originalTVclips214161/214161/211667bytes,36frames1920x1080.
+All are real VP8;12encodedFPS functional footage stays separate from FPS.
+Actual hosted Node24.21.0/V8 13.6.233.17-node.53,pinned capture encoder
+SHA460d44f3416005662f528d4b92e7b94ace924e8a0288106d3803b73c56eaadc8,
+actual decoder/usr/bin/ffmpeg6.1.1-3ubuntu5,
+SHAed16af623947494a72e284b6eb8ff225f2da22b38b5d5069c2fd4b4ba3384e41.
+These differ honestly from local Node24.19/systemFFmpeg7.1.5; no identity
+equivalence is invented. Shared package bytes now equal exact Git bytes.
+
+This last handoff records already accepted evidence and adds the independent
+manual post-run reader; it leaves all1034 loaded runtime inputs and every
+game/sampler byte unchanged. The manual reader is independently bound by
+its own source checksum and does not run inside the sampled browser.
+This documentation/evidence commit still requires its own exact-head full
+CI and genuine artifact validation before original PR4 Ready. Subsequent
+current proof belongs in the PR body without another publication cycle.
