@@ -22,13 +22,13 @@ export interface State extends GameStateBase {
  scores:number[]; missed:number[]; history:{round:number;winner:number|null;points:number;blocked:boolean}[];
  last:{winner:number|null;points:number;blocked:boolean}|null;
 }
-export interface PublicView extends TvView {board:State['board'];ends:Tile|null;turn:string;counts:number[];stockCount:number;round:number;target:number;teams:number[];last:State['last'];}
+export interface PublicView extends TvView {board:State['board'];ends:Tile|null;turn:string;counts:number[];stockCount:number;round:number;target:number;teams:number[];last:State['last'];reveal:{hands:number[][];pips:number[]}|null;}
 export interface PhoneView extends PublicView,ControllerView {hand:number[];legal:Input[];}
 export const manifest:GameManifest={
  id:'dominoes',name:'Dominoes',icon:'🁣',tagline:'Match the ends. Read the table. Empty your hand.',
  description:'Double-six Draw or Block dominoes with individual or four-seat partnership scoring.',
  howToPlay:['Play a tile matching either open end.','If stuck, draw in Draw mode or pass in Block mode.','Empty your hand or win a blocked board; reach the target score.'],
- version:'0.2.7',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
+ version:'0.2.8',minPlayers:2,maxPlayers:4,estimatedMinutes:20,tags:['classic','strategy'],presence:{needs:'anywhere'},addedOn:'2026-10-07',supportsBots:true,saveable:true,noCards:true,
  settings:[
  {key:'mode',label:'Game',type:'select',default:'draw',options:[{value:'draw',label:'Draw'},{value:'block',label:'Block'}]},
  {key:'deal',label:'Draw hand sizes',type:'select',default:'block-sized',options:[{value:'block-sized',label:'House deal: 7/5/5'},{value:'traditional',label:'Pagat Draw: 7/7/6'}]},
@@ -42,7 +42,7 @@ export const manifest:GameManifest={
 };
 export function team(s:Pick<State,'settings'>,seat:number):number{return s.settings.partners?seat%2:seat;}
 const own=(s:State,id:string):boolean=>typeof id==='string'&&Object.hasOwn(s.players,id);
-function phase(s:State,id:string,now:number):State['phase']{return {id,startedAt:Math.max(now,s.phase.startedAt+1),deadline:id==='done'?null:Math.max(now,s.phase.startedAt+1)+(id==='round-end'?5000:(s.idleTurns>=2?1000:30000))};}
+function phase(s:State,id:string,now:number):State['phase']{return {id,startedAt:Math.max(now,s.phase.startedAt+1),deadline:id==='done'?null:Math.max(now,s.phase.startedAt+1)+(id==='round-end'?5000:(s.idleTurns>=s.seats.length?1000:30000))};}
 export function legal(s:State,seat=s.turn):Input[]{
  if(s.phase.id==='round-end')return [{type:'next'}];
  if(s.phase.id!=='play'||seat!==s.turn)return [];
@@ -116,7 +116,9 @@ export function apply(s:State,i:Input,now:number):State{
  return hands[s.turn]!.length===0?finishRound(next,s.turn,now):next;
 }
 function submitted(s:State,i:Input,now:number,playerId:string):State {const idleTurns=s.players[playerId]?.bot===true?s.idleTurns:0;return legal(s).some(x=>sameInput(x,i))?apply({...s,idleTurns},i,now):s;}
-function automatic(s:State,now:number):State {return apply({...s,idleTurns:Math.min(2,s.idleTurns+1)},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
+// A full cycle of automatic turns (one per seat) with no human input speeds the table up; the
+// round-end countdown is not a missed turn, so a present player never inherits a one-second window.
+function automatic(s:State,now:number):State {return apply({...s,idleTurns:s.phase.id==='play'?Math.min(s.seats.length,s.idleTurns+1):s.idleTurns},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
 export function reduce(s:State,e:GameEvent<Input>):State{
  if(!e||typeof e!=='object'||!Number.isFinite(e.now))return s;
  if(e.type==='player')return typeof e.connected==='boolean'&&(e.gone===undefined||['left','kicked'].includes(e.gone))&&own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
@@ -145,7 +147,9 @@ export function reduce(s:State,e:GameEvent<Input>):State{
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,
  players:s.seats.map((id,i)=>({...s.players[id]!,status:i===s.turn&&s.phase.id==='play'?'active':'waiting',score:s.scores[i]})),
- board:s.board.map(t=>({...t})),ends:s.ends===null?null:[...s.ends],turn:s.seats[s.turn]!,counts:s.hands.map(h=>h.length),stockCount:s.stock.length,round:s.round,target:s.settings.target,teams:s.seats.map((_,i)=>team(s,i)),last:s.last===null?null:{...s.last}};
+ board:s.board.map(t=>({...t})),ends:s.ends===null?null:[...s.ends],turn:s.seats[s.turn]!,counts:s.hands.map(h=>h.length),stockCount:s.stock.length,round:s.round,target:s.settings.target,teams:s.seats.map((_,i)=>team(s,i)),last:s.last===null?null:{...s.last},
+ // Hands are turned face up once a round is over (counting is public); never during play.
+ reveal:s.phase.id==='play'?null:{hands:s.hands.map(h=>[...h]),pips:s.hands.map(handPips)}};
 }
 export function controllerView(s:State,id:string):PhoneView{
  const seat=s.seats.indexOf(id);return {...tvView(s),me:{id,role:seat<0?'spectator':'player'},hand:seat<0?[]:[...s.hands[seat]!],legal:seat<0?[]:legal(s,seat)};

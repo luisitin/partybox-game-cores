@@ -215,6 +215,27 @@ test('round-end activity follows the sender rather than the next-turn seat',()=>
  const humanNext=reduce(s,{type:'input',playerId:'p0',input:{type:'next'},now:1});assert.equal(humanNext.idleTurns,0);assert.equal(humanNext.phase.deadline!-humanNext.phase.startedAt,30000);
  const botNext=reduce({...s,turn:0},{type:'input',playerId:'p1',input:{type:'next'},now:1});assert.equal(botNext.idleTurns,2);assert.equal(botNext.phase.deadline!-botNext.phase.startedAt,1000);
 });
+test('a present player never inherits a one-second window from other idle seats or the round-end countdown',()=>{
+ const timer=(s:State)=>reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now:s.phase.deadline!});
+ let s=init(context(3,5,{opening:'rotating'}));assert.equal(s.turn,0);
+ s=timer(s);s=timer(s);assert.equal(s.turn,2);assert.equal(s.idleTurns,2);assert.equal(s.phase.deadline!-s.phase.startedAt,30000,'third seat keeps its full turn');
+ s=timer(s);assert.equal(s.idleTurns,3);assert.equal(s.phase.deadline!-s.phase.startedAt,1000,'a whole idle cycle speeds the table up');
+ let t=init(context(2,3,{opening:'rotating'}));let steps=0;
+ while(t.phase.id==='play'&&steps++<500)t=reduce(t,{type:'input',playerId:t.seats[t.turn]!,input:legal(t)[0]!,now:t.phase.startedAt+10});
+ assert.equal(t.phase.id,'round-end');assert.equal(t.idleTurns,0);
+ t=timer(t);assert.equal(t.phase.id,'play');assert.equal(t.idleTurns,0,'the round-end countdown is not a missed turn');
+ t=timer(t);assert.equal(t.idleTurns,1);assert.equal(t.phase.deadline!-t.phase.startedAt,30000,'one slow turn never shortens the next player');
+ const idle={...t,idleTurns:2,phase:{...t.phase,id:'round-end',deadline:t.phase.startedAt+5000}};
+ assert.equal(timer(idle).idleTurns,2,'an idle table stays fast across rounds');
+});
+test('remaining hands are public only once a round is over',()=>{
+ let s=init(context(3,8,{opening:'rotating'}));assert.equal(tvView(s).reveal,null);assert.equal(controllerView(s,'p0').reveal,null);
+ let steps=0;while(s.phase.id==='play'&&steps++<500)s=reduce(s,{type:'input',playerId:s.seats[s.turn]!,input:legal(s)[0]!,now:s.phase.startedAt+10});
+ assert.equal(s.phase.id,'round-end');const v=tvView(s);assert.deepEqual(v.reveal!.hands,s.hands);assert.deepEqual(v.reveal!.pips,s.hands.map(h=>h.reduce((n,t)=>n+pips(t),0)));
+ v.reveal!.hands[0]!.push(99);assert(!s.hands[0]!.includes(99));
+ const next=reduce(s,{type:'input',playerId:'p0',input:{type:'next'},now:s.phase.startedAt+10});assert.equal(next.phase.id,'play');assert.equal(tvView(next).reveal,null);
+ const ended=reduce(next,{type:'vip',action:'end',now:next.phase.startedAt+10});assert.deepEqual(tvView(ended).reveal!.hands,ended.hands);
+});
 
 test('tile-level conditional restrictions keep excluded tiles in the stock bin',()=>{
  const low=id(5,5),high=id(6,6);const sampler=C.conditionalDeals([low,high],[1,1],[0,0],createRng(5),[[high],[]]);assert.equal(sampler.ways,1);
