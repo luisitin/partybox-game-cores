@@ -5,7 +5,7 @@ Worktree: /workspace/game-cores-G10-audit-worker.
 Read fresh main README.md/RULES.md/JOBS.md/CLAIMS.md before queue actions.
 The legacy research branch is preserved by normal merge.
 
-Current checkpoint, 2026-10-08 around15:23UTC:
+Current checkpoint, 2026-10-08 around15:50UTC:
 - Complete licensed American/International2–6 source is installed. The actual
   default10k native/reference probes cover all37six classes/148 orientations.
   Forty-eight exact full/block SearchReports+cursors and3 complete game
@@ -40,11 +40,17 @@ Next concrete work:
 1. Core/unit combined current91cases PASS (initial90PASS/1legacytestFAIL,
    independently strengthened test-only focused1PASS; rawfailure retained).
    Actual25/25mutants all9callbacks each PASS; no assertion/gate removed.
-   Adopt measured dedicated2Intl+2American pool with sequentialprewarm, then
-   run actual4000 strength;16game proof peak4.406GiB is not CI guarantee.
+   Dedicated2Intl+2American sequential-prewarm implementation passed16games
+   with every complete game record identical to the original pool. Actual
+   maxRSS5,341,180KiB exceeds earlier4.406GiB; no CI memory/time guarantee.
+   Profile actual Strong costs before any local pure memo optimization, then
+   run actual4000 strength. Preserve all choices/cursors/reports/budgets.
 2. Private template-fragment byte/control proof PASS41files/2647windows each
-   desktop/phone4× plus genuineStrong6. Matched actual runtimecost remains
-   pending; productionhost is unchanged. Preserve early-human exact-source
+   desktop/phone4× plus genuineStrong6. Matched traced600-frame A/B cost proof
+   is complete: document nodes4282→366 but layout0 both, TaskDuration higher
+   and diagnostic FPS lower in fragment variant. No causal/frame gain or
+   adoption. Raw profiles/traces retained; productionhost unchanged. Preserve
+   early-human exact-source
    functional proof and obtain fresh actual
    strict600 desktop/phone4× gates with per-profile readiness barriers granted
    by root. Startup/functionals run outside CPU quiet. Separate clips follow.
@@ -59,9 +65,9 @@ Next concrete work:
 
 Cadence:
 - Actual09:49:08→10:19:38 was30m30s, a30-second miss recorded explicitly.
-- Last successful7fcb56b14:59:33 follows812f24714:35:25 by24m08s: PASS30min,
-  early15:00:25/hard15:05:25 met. Mainclaim0bcc9fd row14:59:29Z.
-- Next targetsuccessfulpush15:24:33/hard15:29:33.
+- Last successful35fa86915:28:19 follows7fcb56b14:59:33 by28m46s: PASS30min,
+  early15:24:33 missed3m46s/hard15:29:33 met. Mainclaim631f472 row15:28:08Z.
+- Next targetsuccessfulpush15:53:19/hard15:58:19.
   Main claim time never resets branch cadence. Record observed successful
   origin-reflog push time after closure; pending proofs stay explicitly pending.
 

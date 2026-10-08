@@ -1,0 +1,16 @@
+{
+  "command": [
+    "node",
+    ".work/template-cost-private/profile.mjs",
+    ".work/play-full-early.html",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/template-cost-private/outside-body",
+    "outside-body"
+  ],
+  "startedAt": "2026-10-08T15:42:49.416989+00:00",
+  "closedAt": "2026-10-08T15:43:35.126317+00:00",
+  "exitCode": 0,
+  "elapsedSeconds": 45.70925273699686,
+  "ownedTreePeakRssSumKiB": 3942140,
+  "ownedTreePeakNote": "250ms sum of RSS of active Node/Chromium descendant processes. Shared pages may be counted more than once; not PSS or exclusive physical memory.",
+  "sampleCount": 145
+}

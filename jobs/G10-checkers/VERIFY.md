@@ -609,3 +609,34 @@ not a controlled speed comparison. Private pagef91e333e/1,390,846,045B and
 exact transformation/check scripts/raw/window hashes are retained under
 template-fragment-private/. Production browser/source template remains unchanged.
 Matched runtime cost/FPS investigation remains pending; no improvement claim.
+
+## Milestone17 dedicated pool and measured private browser costs
+
+PinnedNode22 actual dedicated2International+2American pool: sixteen terminal
+games PASS/exit0, closed15:35:32.911711Z, wrapper91.019671s, maxRSS5,341,180KiB.
+The complete-record comparison against the original archived sixteen games
+PASS: all seeds/skills/every move/results/plies/final boards unchanged. No new
+cursor observation was invented; exact variant-cursor proof remains separate.
+Runner allocation/import readiness changed, original game bodies and all
+gameplay/search budgets remain unchanged. Raw report/stdout/records/resources/
+exact sources/comparison are under league-dedicated-pool-pilot/. This larger
+measured peak replaces smaller pilot figures for planning. Final4000 strength
+and CI30-minute fit remain pending; actual Strong cost profiling is next.
+
+Private matched DocumentFragment diagnostic: A+B exit0, finalclose15:44:13.191Z,
+no pause/interruption. All1306 payload tags/1,378,509,420 encoded bytes, workers
+and metadata identical; only the92-byte asset lookup insertion differs in
+executable host. Live document nodes4282→366, B fragment retains3920nodes.
+LayoutDuration0 both; style0.180986→0.141852s, script0.211812→0.175014s,
+TaskDuration1.098059→1.195389s, sampledGC35.298→52.334ms. Instrumented600-frame
+means59.506→58.539FPS, p9916.8both are diagnostic, not acceptance. Owned RSS
+sum peaks3,942,140/3,919,100KiB can double-count shared pages. Load26.876/19.855s
+has uncontrolled order/cache. No clear frame/cost gain, no causal claim and no
+production adoption. All raw traces/profiles/frames/resource/identity/source
+receipts are under template-fragment-cost-private/. Production browser source
+and both retained strict failures remain unchanged; phone strict NOTRUN.
+
+Prior successful35fa869 at15:28:19 follows7fcb56b14:59:33 by28m46s: binding
+30min PASS, early15:24:33 missed3m46s/hard15:29:33 met. Nexttarget15:53:19/
+hard15:58:19. Full final4000/7000/frame/phone/clips/CI/publication/PR/KEEP GOING
+remain pending. Complete licensed sources are available; no BLOCKED claim.
