@@ -1,0 +1,506 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Seat 1",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Seat 2",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Seat 3",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "phase": {
+    "id": "done",
+    "startedAt": 94020,
+    "deadline": null
+  },
+  "rng": {
+    "seed": 1,
+    "step": 33
+  },
+  "settings": {
+    "mode": "mixed",
+    "rounds": 8
+  },
+  "order": [
+    "ancient-or-ikea",
+    "real-town-or-fake",
+    "do-not-use",
+    "name-your-baby",
+    "internet-famous",
+    "emergency-room",
+    "patent-pending",
+    "patent-pending"
+  ],
+  "round": 8,
+  "seen": [
+    "ancient-or-ikea",
+    "real-town-or-fake",
+    "do-not-use",
+    "name-your-baby",
+    "internet-famous",
+    "emergency-room",
+    "patent-pending"
+  ],
+  "used": [
+    "ancient-or-ikea-19",
+    "real-town-or-fake-2",
+    "do-not-use-8",
+    "name-your-baby-3",
+    "internet-famous-9",
+    "emergency-room-3",
+    "patent-pending-4",
+    "patent-pending-9"
+  ],
+  "question": {
+    "id": "patent-pending-9",
+    "realm": "patent-pending",
+    "prompt": "What was the two-word title of imaginary workshop patent 9?",
+    "hint": "This fictional archive uses two-word titles: a material and a machine.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "bluff",
+    "correct": "Amber Bell"
+  },
+  "example": {
+    "id": "patent-pending-1",
+    "realm": "patent-pending",
+    "prompt": "What was the two-word title of imaginary workshop patent 1?",
+    "hint": "This fictional archive uses two-word titles: a material and a machine.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "bluff",
+    "correct": "Copper Compass"
+  },
+  "responses": {
+    "p0": "The automatic Crank",
+    "p1": "The automatic Fan",
+    "p2": "The automatic Compass"
+  },
+  "options": [
+    {
+      "id": "o0",
+      "text": "The automatic Crank",
+      "owners": [
+        "p0"
+      ],
+      "correct": false
+    },
+    {
+      "id": "o1",
+      "text": "The automatic Fan",
+      "owners": [
+        "p1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "o2",
+      "text": "The automatic Compass",
+      "owners": [
+        "p2"
+      ],
+      "correct": false
+    },
+    {
+      "id": "o3",
+      "text": "Amber Bell",
+      "owners": [],
+      "correct": true
+    }
+  ],
+  "votes": {
+    "p0": "o3",
+    "p1": "o3",
+    "p2": "o3"
+  },
+  "knowledge": [],
+  "scores": {
+    "p0": 6785,
+    "p1": 8035,
+    "p2": 7535
+  },
+  "history": [
+    {
+      "round": 1,
+      "realm": "ancient-or-ikea",
+      "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+      "kind": "century",
+      "correct": 22,
+      "awards": {
+        "p0": 750,
+        "p1": 1000,
+        "p2": 750
+      },
+      "answers": {
+        "p0": 23,
+        "p1": 22,
+        "p2": 21
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 2,
+      "realm": "real-town-or-fake",
+      "prompt": "Which two-word place is in chapter 2 of the imaginary harbour gazette?",
+      "kind": "bluff",
+      "correct": "Clover Quay",
+      "awards": {
+        "p0": 1000,
+        "p1": 1000,
+        "p2": 1000
+      },
+      "answers": {
+        "p0": "Old Fern Village",
+        "p1": "Old Mallow Village",
+        "p2": "Old Sorrel Village"
+      },
+      "options": [
+        {
+          "id": "o0",
+          "text": "Clover Quay",
+          "owners": [],
+          "correct": true
+        },
+        {
+          "id": "o1",
+          "text": "Old Mallow Village",
+          "owners": [
+            "p1"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o2",
+          "text": "Old Sorrel Village",
+          "owners": [
+            "p2"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o3",
+          "text": "Old Fern Village",
+          "owners": [
+            "p0"
+          ],
+          "correct": false
+        }
+      ],
+      "votes": {
+        "p0": "o0",
+        "p1": "o0",
+        "p2": "o0"
+      },
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 3,
+      "realm": "do-not-use",
+      "prompt": "What was the two-word recall reason for imaginary workshop batch 8?",
+      "kind": "bluff",
+      "correct": "cork leaking",
+      "awards": {
+        "p0": 1000,
+        "p1": 1000,
+        "p2": 1000
+      },
+      "answers": {
+        "p0": "The tin handle came loose",
+        "p1": "The silver handle came loose",
+        "p2": "The brass handle came loose"
+      },
+      "options": [
+        {
+          "id": "o0",
+          "text": "The brass handle came loose",
+          "owners": [
+            "p2"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o1",
+          "text": "The silver handle came loose",
+          "owners": [
+            "p1"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o2",
+          "text": "cork leaking",
+          "owners": [],
+          "correct": true
+        },
+        {
+          "id": "o3",
+          "text": "The tin handle came loose",
+          "owners": [
+            "p0"
+          ],
+          "correct": false
+        }
+      ],
+      "votes": {
+        "p0": "o2",
+        "p1": "o2",
+        "p2": "o2"
+      },
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 4,
+      "realm": "name-your-baby",
+      "prompt": "The invented name Mossmere peaked in 1917. Choose its decade.",
+      "kind": "decade",
+      "correct": 1910,
+      "awards": {
+        "p0": 1000,
+        "p1": 1000,
+        "p2": 750
+      },
+      "answers": {
+        "p0": 1910,
+        "p1": 1910,
+        "p2": 1900
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 5,
+      "realm": "internet-famous",
+      "prompt": "Which fictional headline spread further: Lanternstead (58 shares) or Featherford (74 shares)?",
+      "kind": "choice",
+      "correct": 1,
+      "awards": {
+        "p0": 0,
+        "p1": 1000,
+        "p2": 1000
+      },
+      "answers": {
+        "p0": 0,
+        "p1": 1,
+        "p2": 1
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 6,
+      "realm": "emergency-room",
+      "prompt": "How many paper kites visited the imaginary Mossmere repair clinic?",
+      "kind": "number",
+      "correct": 1778,
+      "awards": {
+        "p0": 35,
+        "p1": 35,
+        "p2": 35
+      },
+      "answers": {
+        "p0": 50500,
+        "p1": 50500,
+        "p2": 50500
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 7,
+      "realm": "patent-pending",
+      "prompt": "What was the two-word title of imaginary workshop patent 4?",
+      "kind": "bluff",
+      "correct": "Brass Trolley",
+      "awards": {
+        "p0": 1000,
+        "p1": 1000,
+        "p2": 1000
+      },
+      "answers": {
+        "p0": "The automatic Press",
+        "p1": "The automatic Lifter",
+        "p2": "The automatic Fan"
+      },
+      "options": [
+        {
+          "id": "o0",
+          "text": "The automatic Press",
+          "owners": [
+            "p0"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o1",
+          "text": "The automatic Lifter",
+          "owners": [
+            "p1"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o2",
+          "text": "The automatic Fan",
+          "owners": [
+            "p2"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o3",
+          "text": "Brass Trolley",
+          "owners": [],
+          "correct": true
+        }
+      ],
+      "votes": {
+        "p0": "o3",
+        "p1": "o3",
+        "p2": "o3"
+      },
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    },
+    {
+      "round": 8,
+      "realm": "patent-pending",
+      "prompt": "What was the two-word title of imaginary workshop patent 9?",
+      "kind": "bluff",
+      "correct": "Amber Bell",
+      "awards": {
+        "p0": 2000,
+        "p1": 2000,
+        "p2": 2000
+      },
+      "answers": {
+        "p0": "The automatic Crank",
+        "p1": "The automatic Fan",
+        "p2": "The automatic Compass"
+      },
+      "options": [
+        {
+          "id": "o0",
+          "text": "The automatic Crank",
+          "owners": [
+            "p0"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o1",
+          "text": "The automatic Fan",
+          "owners": [
+            "p1"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o2",
+          "text": "The automatic Compass",
+          "owners": [
+            "p2"
+          ],
+          "correct": false
+        },
+        {
+          "id": "o3",
+          "text": "Amber Bell",
+          "owners": [],
+          "correct": true
+        }
+      ],
+      "votes": {
+        "p0": "o3",
+        "p1": "o3",
+        "p2": "o3"
+      },
+      "multiplier": 2,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    }
+  ],
+  "last": {
+    "round": 8,
+    "realm": "patent-pending",
+    "prompt": "What was the two-word title of imaginary workshop patent 9?",
+    "kind": "bluff",
+    "correct": "Amber Bell",
+    "awards": {
+      "p0": 2000,
+      "p1": 2000,
+      "p2": 2000
+    },
+    "answers": {
+      "p0": "The automatic Crank",
+      "p1": "The automatic Fan",
+      "p2": "The automatic Compass"
+    },
+    "options": [
+      {
+        "id": "o0",
+        "text": "The automatic Crank",
+        "owners": [
+          "p0"
+        ],
+        "correct": false
+      },
+      {
+        "id": "o1",
+        "text": "The automatic Fan",
+        "owners": [
+          "p1"
+        ],
+        "correct": false
+      },
+      {
+        "id": "o2",
+        "text": "The automatic Compass",
+        "owners": [
+          "p2"
+        ],
+        "correct": false
+      },
+      {
+        "id": "o3",
+        "text": "Amber Bell",
+        "owners": [],
+        "correct": true
+      }
+    ],
+    "votes": {
+      "p0": "o3",
+      "p1": "o3",
+      "p2": "o3"
+    },
+    "multiplier": 2,
+    "fact": "This is a made-up workshop story, not a claim about the real world."
+  }
+}

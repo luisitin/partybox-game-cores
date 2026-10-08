@@ -5,17 +5,24 @@ Read main README.md/RULES.md/JOBS.md/CLAIMS.md first; preserve G02/G03.
 G01 is COMPLETE: PR1 final949c2e3 full CI37715456734 succeeded;
 rounds16–18 reached three no-gain rounds. Do not restart G01 experiments.
 
-G04 research/bootstrap complete; no game implementation or checks yet.
-SOURCES.md pins four actually read sources; assumptions/rules/conflicts
-record the selected original game conventions. Source caches and further
-notes in /tmp/G04-research-notes.md and /tmp/G04-*.md/.rst.
+G04 core0.1.0 implemented: all seven phases,160 fictional20-row realms,
+Quick/Mixed/Bluff modes,distinct10-second demos,last-round doubling,
+private views,public-clue bot policies,all fixtures and strict shared types.
+Focused tests22/22 pass; additive fooled/truth credit regression fixes
+1000→1500 seat-order bug. Numeric10,000 independent cases+14 edges pass.
+Samples regenerate identically; current data checksums pass.
 
-Implement the pure shared-contract core,8 fictional20-row realms,
-Quick/Mixed/Bluff modes,first-appearance10-second demos,last round double,
-private views,public-observation bot strategies,all fixtures and offline
-hot-seat HTML. Prove log-vs-ratio scoring on10,000 seeded cases plus edges;
-property seeds1/2/3+1000,and1000 bot matches at each2–8 count.
-Kill≥24/25 mutations;measure strong/medium and medium/easy2,000 each.
+Full tests `node --test test.ts` running/log /tmp/G04-full-tests.log;
+includes21,000 matches(all2–8 counts × three modes ×1000),1,003 exact
+event replays and1,000 timer-only cases. League `node league.ts` running
+/log /tmp/G04-league.log; six2,000-match comparisons,one per skill pair
+and mode. Check local processes before restarting. Record actual results.
+
+Remaining: mutation harness25 bugs(≥24 killed),offline hot-seat HTML,
+browser checks,captures,final full npm test,G04 CI,PR and KEEP GOING.
+SOURCES.md pins four live sources; assumptions/rules/conflicts record
+selected design choices. Source caches in /tmp/G04-research-notes.md.
+
 Run browser TV1920x1080/phone390x8444xCPU,record frame times,
 reduced motion/privacy/offline checks and milestone capture<10MB.
 All game checks must be in npm test and30-minute/read-only/actions-only

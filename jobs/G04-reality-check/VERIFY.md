@@ -15,3 +15,18 @@ checksums,actual current-head green CI,PR and KEEP GOING.
 Initial `npm ci --ignore-scripts --no-audit --no-fund --cache /workspace/.npm-cache`
 at repo root failed EUSAGE: the workshop root has no package lock. Re-run
 from jobs/G04-reality-check uses its pinned lock; no root manifest invented.
+
+Job-directory npm ci:PASS,eight pinned packages installed. `npm run check`:PASS.
+`node generate.ts` then `node generate.ts --check`:160 rows,20/realm,valid
+schema,byte-identical regeneration. `node differential.ts`:10,000 seeded
+cases plus14 edges,ZERO mismatches; unit scale/reciprocal/zero/overflow pass.
+Initial native schema import in tests failed ERR_MODULE_NOT_FOUND at shared
+minigame-schema; resolved by bundling the actual schema in preflight.ts.
+
+`FAST_TEST=1 node --test --test-name-pattern='fooled-vote credit is independent'
+test.ts`:before correction FAIL(actual1000,expected1500). After additive
+truth awards, `FAST_TEST=1 node --test test.ts`:22/22 PASS.
+`node fixtures.ts`:all seven phases plus matching manifest generated.
+`node checksums.ts` / `node checksums.ts --check`:PASS.
+Full property/21,000 count-and-mode games and12,000 league matches underway;
+no result presumed. Browser,mutations,full npm test and CI remain unfinished.

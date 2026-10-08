@@ -1,0 +1,169 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Seat 1",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Seat 2",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Seat 3",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "phase": {
+    "id": "vote",
+    "startedAt": 26003,
+    "deadline": 56003
+  },
+  "rng": {
+    "seed": 1,
+    "step": 18
+  },
+  "settings": {
+    "mode": "mixed",
+    "rounds": 8
+  },
+  "order": [
+    "ancient-or-ikea",
+    "real-town-or-fake",
+    "do-not-use",
+    "name-your-baby",
+    "internet-famous",
+    "emergency-room",
+    "patent-pending",
+    "patent-pending"
+  ],
+  "round": 2,
+  "seen": [
+    "ancient-or-ikea",
+    "real-town-or-fake"
+  ],
+  "used": [
+    "ancient-or-ikea-19",
+    "real-town-or-fake-2"
+  ],
+  "question": {
+    "id": "real-town-or-fake-2",
+    "realm": "real-town-or-fake",
+    "prompt": "Which two-word place is in chapter 2 of the imaginary harbour gazette?",
+    "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "bluff",
+    "correct": "Clover Quay"
+  },
+  "example": {
+    "id": "real-town-or-fake-1",
+    "realm": "real-town-or-fake",
+    "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+    "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "bluff",
+    "correct": "Yarrow Quay"
+  },
+  "responses": {
+    "p0": "Old Fern Village",
+    "p1": "Old Mallow Village",
+    "p2": "Old Sorrel Village"
+  },
+  "options": [
+    {
+      "id": "o0",
+      "text": "Clover Quay",
+      "owners": [],
+      "correct": true
+    },
+    {
+      "id": "o1",
+      "text": "Old Mallow Village",
+      "owners": [
+        "p1"
+      ],
+      "correct": false
+    },
+    {
+      "id": "o2",
+      "text": "Old Sorrel Village",
+      "owners": [
+        "p2"
+      ],
+      "correct": false
+    },
+    {
+      "id": "o3",
+      "text": "Old Fern Village",
+      "owners": [
+        "p0"
+      ],
+      "correct": false
+    }
+  ],
+  "votes": {},
+  "knowledge": [],
+  "scores": {
+    "p0": 750,
+    "p1": 1000,
+    "p2": 750
+  },
+  "history": [
+    {
+      "round": 1,
+      "realm": "ancient-or-ikea",
+      "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+      "kind": "century",
+      "correct": 22,
+      "awards": {
+        "p0": 750,
+        "p1": 1000,
+        "p2": 750
+      },
+      "answers": {
+        "p0": 23,
+        "p1": 22,
+        "p2": 21
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    }
+  ],
+  "last": {
+    "round": 1,
+    "realm": "ancient-or-ikea",
+    "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+    "kind": "century",
+    "correct": 22,
+    "awards": {
+      "p0": 750,
+      "p1": 1000,
+      "p2": 750
+    },
+    "answers": {
+      "p0": 23,
+      "p1": 22,
+      "p2": 21
+    },
+    "options": [],
+    "votes": {},
+    "multiplier": 1,
+    "fact": "This is a made-up workshop story, not a claim about the real world."
+  }
+}
