@@ -536,3 +536,17 @@ recovery sequences. Every prior failed report/runner remains archived.
 No runtime change, strict FPS rerun, relaxed original assertion or additional
 formal KEEP round is claimed. Genuine exact-head hosted strict600, fresh17
 and all original core/data/mutation/league/UI suites remain required.
+
+Clock checkpoint be02436467f78709bcf39d7a8437d2a10afe3778 pushed at
+actual origin reflog14:36:23 UTC, 25m01s after709. The25min target was missed
+by1second; the30min rule was met. Main-only claim push first rejected because
+another main claim advanced; normal pull --rebase origin main preserved every
+other line, then unpublished G09 claim timestamp amended and pushed normally.
+Claim753dc54: G09 2026-10-08T14:37:13Z codex-category, transport14:37:14.
+Exact run37793856539 is in progress. PR8 remains draft. Formalround5 remains
+deferred until full exact-head green. Next checkpoint target15:01:23/hard15:06:23.
+
+FormalR5 begins only after exactbe024/run37793856539 fullSUCCESS; actual logs verify37/37tests, independent10koracle61.287730s,7krestored/all9invariants195.522898s,1003properties,28actualmutants,4kduels,28+8+clock+4+17+3actual-pagechecks. Genuine hoststrictartifact11558310806 (ZIP1,044,403bytes SHA d3df8341a4d1f52c349061a1d14a35eb2f7571a49396191fb72487a5bb861d5e) independently matches everyoriginalmanifest/currentfingerprint, raw600summaries and validVP8clips; archive round-4-hosted-37793856539 retainsuploadedmanifest andreceipt.
+R5 registered plan `node --import tsx scripts/selection-experiment.ts plan` freezes800 heldoutseeds40eachallowedletter selectedonlybyfirstletter, fixtureSHA d2857a0b8965729acb2d065468922e903d44a9cafad5a863c15c049e5ef64e25, baselinecore320. Actual `... baseline` completed3000games plus3000independent restoredreplays, EXIT0, beforelivecore changes. Allsixcohorts arepresent; pilot totals748/750/283 andheldout3102/2978/1093. ParentPGID155985 wasalreadyabsent whencheckpoint SIGSTOPwasattempted; no pausedtime isclaimed. No candidateiswired yet. Unusedselector andindependent fixture/oracle source areauthored, testsPENDING. ChildpureCPU selectororacle PGID156056/156067 isSTOPPEDforcheckpoint writerfreeze; itselapsedwalltime includeshold and no partialresult isaccepted. Baselineclosedwithoutahold. NoLOOP5 gainclaim or staleproof reuse.
+
+Checkpoint strictTS first failed TS7034/TS7005 on the experiment's untyped rows accumulator. Added its explicit ReturnType<typeof play>[] annotation; this is an erased type-only correction. The actual already-completed baseline's original b34a3905 experiment source is preserved verbatim as evidence/selection-baseline-experiment.ts, so its measured sourcehash staystruthful. Current baseline will be regenerated twice with the strict typed script before candidate wiring; schema/byteidentity and selectororacle remainPENDING. No row or result was manually rewritten.

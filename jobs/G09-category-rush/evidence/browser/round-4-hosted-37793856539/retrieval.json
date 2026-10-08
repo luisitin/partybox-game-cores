@@ -1,0 +1,44 @@
+{
+  "origin": "github-actions",
+  "headSha": "be02436467f78709bcf39d7a8437d2a10afe3778",
+  "runId": "37793856539",
+  "artifactId": 11558310806,
+  "zipBytes": 1044403,
+  "zipSha256": "d3df8341a4d1f52c349061a1d14a35eb2f7571a49396191fb72487a5bb861d5e",
+  "retrievedAt": "2026-10-08T14:47:24.318304+00:00",
+  "uploadedFiles": {
+    "SHA256SUMS.txt": "ac0b303d11b461a38f6c7adaa6451c7ac012085ac8e42eb9ee606aa97883c819",
+    "evidence/browser/desktop-frames.json": "3926816f26dcd285921e6edfb32d46af201bb28aacfb5db4ff2cb1867cae3175",
+    "evidence/browser/hosted-run.json": "535a9e98dfc4c18b09040c78ced5237fff5ebe787f43845840b029fbae439c92",
+    "evidence/browser/performance-report.json": "46d59037834f7c43aad74e5cea7081d604e83e46c14a8715f163446668e93f53",
+    "evidence/browser/phone4x-frames.json": "046864d29510f2eb05932ef2b980fdaa83270c61abd319e6c5f726c5b43b1cb6",
+    "media/delivery-final-desktop.webm": "e4dbfcaee90a0bbfe5499bdf8a56d7bc468d4808e0214a6faa1307b438355ec0",
+    "media/delivery-final-phone4x.webm": "020c6b0e99481c4d3a70d0581e47f846323246261755816c2a7d865c21767d43",
+    "play.html": "be311b9653a3ad4b295745f00d37dc5c3a72426480a51979459b410850985613"
+  },
+  "verifiedOriginalManifest": true,
+  "recomputedAllRawIntervals": true,
+  "sourceFingerprintsMatchFrozenLocal": true,
+  "runnerCopiedFromVerifiedLocal": {
+    "path": "runner.mjs",
+    "sha256": "1ac72aab8370ea041a065df798493252efcc63ec3a2dd262a8c986ef0e427729"
+  },
+  "videoProbe": [
+    {
+      "profile": "desktop",
+      "codec": "vp8",
+      "width": 1280,
+      "height": 720,
+      "durationSeconds": 3.76,
+      "bytes": 301884
+    },
+    {
+      "profile": "phone4x",
+      "codec": "vp8",
+      "width": 390,
+      "height": 720,
+      "durationSeconds": 4.36,
+      "bytes": 217674
+    }
+  ]
+}

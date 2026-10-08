@@ -133,3 +133,8 @@ two independent publishers in [SOURCES-MATCHER.md](SOURCES-MATCHER.md). The
 38-token noun table and 47 original fixture cases are small factual spelling
 selections; no source prose, definitions, illustrations or complete dictionary
 is bundled. The production matcher and independent family oracle remain offline.
+
+## Pinned development-clock investigation
+
+- https://www.npmjs.com/package/playwright/v/1.56.0 and https://github.com/microsoft/playwright/tree/v1.56.0 — provenance for the exact installed development dependency. Locally read the actual Playwright1.56.0 server clock wrapper, generated injected ClockController and typed API guidance; hashes and original independent diagnostics are retained under evidence/browser/round-4-clock-control. The dependency itself is unchanged and no full source prose/code is copied into public research evidence. The shipped runtime and strict RAF sampler do not use the functional-test fake clock.
+- The scheduler mechanism is reproduced against the installed code with controlled continuations, and the independent actual empty-page auto/paused comparison retains every sample. These observations support the explicit paused recovery harness; they are not outside factual claims about old unseen failures.
