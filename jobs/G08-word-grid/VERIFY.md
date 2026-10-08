@@ -140,3 +140,7 @@ All implementation, measurement, schema, bot, mutation, browser and CI checks re
 
 ## KEEP GOING round7
 - `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles/87hashes. Python SHA256 confirms play.html remains863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9. Bot documentation changes no sample sizes/results or runtime; no redundant gameplay suite rerun for wording.
+
+## KEEP GOING round8 and final candidate
+- `npx tsx start/verification/data-check.ts`, `sha256sum -c SHA256SUMS.txt`: PASS38JSONfiles/87hashes. Python SHA256 confirms page863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9 is unchanged through all three cosmetic rounds. No gameplay/core/client/style/report/media change after functional round5.
+- Full exact-head push and PR CI must both finish SUCCESS. `python /workspace/partybox-ci-head.py G08 --watch` reads exact git HEAD via REST and requires both events; this candidate is not called delivered until that returns green. Each full run repeats168assertions, all mandatory independent/mutation/property/roster/bot/rebuild/schema/preserved-visual/file-browser/FPS/checksum gates. Superseded workflow cancellations are not called test failures or passes.

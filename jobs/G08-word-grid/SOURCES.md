@@ -38,3 +38,10 @@ Canonical Hasbro and Winning Moves requests were denied by the managed HTTPS pro
 - [naughty-words — 1.2.0](https://registry.npmjs.org/naughty-words/-/naughty-words-1.2.0.tgz): Existing family filter word list; CC-BY-4.0 attribution retained.
 
 Denied primary candidates, never cited as read: [hasbro](https://www.hasbro.com/common/instruct/Boggle.pdf), [winning-moves](https://winning-moves.com/images/bigboggle_rules.pdf). Independent read fallback evidence above is permitted by root RULES.
+
+Pinned installed runtime/build-package notices were inspected locally and included in HTML credits:
+
+- [react@18.3.1](https://registry.npmjs.org/react/-/react-18.3.1.tgz): installed MIT notice retained in start/research/licences and the standalone page.
+- [react-dom@18.3.1](https://registry.npmjs.org/react-dom/-/react-dom-18.3.1.tgz): installed MIT notice retained in start/research/licences and the standalone page.
+- [zod@3.25.76](https://registry.npmjs.org/zod/-/zod-3.25.76.tgz): installed MIT notice retained in start/research/licences and the standalone page.
+- [three@0.171.0](https://registry.npmjs.org/three/-/three-0.171.0.tgz): installed MIT notice retained in start/research/licences and the standalone page.

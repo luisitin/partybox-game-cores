@@ -40,3 +40,5 @@
 - KEEP round6: source links/uses are visible directly in SOURCES.md as well as hashed receipts. Denied manufacturer URLs are expressly unread. Documentation only; compiled game/page and all data/media unchanged.
 
 - KEEP round7: BOTS level-name mapping, spacing and links make distinct calibration/league/roster scopes explicit. No report values, core/client code, compiled play or media changed.
+
+- KEEP round8: concise resume/delivery/readme navigation and direct installed dependency source URLs. Five functional rounds then three documentation-only rounds; compiled page/source/data/visual/media remain unchanged through the cosmetic streak. No gameplay gain in rounds6–8, stop per root RULES; final exact-head CI gates pending.
