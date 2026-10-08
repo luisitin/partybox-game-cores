@@ -177,3 +177,31 @@ Round 1 exact-head CI run 37763189188 was GREEN on `b1663d9a513174780d1a7f171dbb
 - `npm run generate` twice and `sha256sum -c .work/round-2-fixtures-first.sha256`: manifest and four actual fixtures byte-identical. `npx tsx --test tests/source.test.ts`: 2/2 PASS after fixture update. Seven content/archive/comparison/schema outputs regenerate twice identically; commands/hashes are in CONTENT-VERIFY.md. Two tracked `node scripts/regenerate-breadth.mjs --check` invocations exit 0 and reproduce both historical 200-round reports byte-identically in isolated trees.
 - Thirty actually read two-source changed-row observations are in SPOTCHECKS-R2.md; source conflicts are in CONFLICTS.md. Unsampled additions are candidly marked from knowledge, unverified.
 - `npx tsx scripts/checksums.ts && npx tsx scripts/checksums.ts --check`: all final data/media hashes PASS; `git diff --check`: PASS. CI replays the final eight-bot experiment and both historical layers, then rejects report drift.
+
+Round-2 proof head `c623ee98a9bbf1a88c1c30fb7c76c5cd53fdbce5` passed every
+exact-head CI step in run https://github.com/luisitin/partybox-game-cores/actions/runs/37767733344 .
+Its commit time was 11:04:58 UTC; the origin reflog records actual push at
+11:05:03. Main claim `cc20ab1` was refreshed at 11:06:44. The next checkpoint
+target is 11:30:03 and the hard 30-minute limit is 11:35:03.
+
+## KEEP GOING round 3, baseline and pending work
+
+- Re-read binding root RULES.md and JOBS.md G09; REVIEW.md ranks five remaining
+  player weaknesses. The pure core/data remain unchanged while the offline
+  adapter adds bounded explicit resume support.
+- `node scripts/browser-resume.mjs baseline`: 7/7 PASS, closed
+  11:19:04.185 UTC. Each actual two/eight-human answer, review and score session
+  loses its game after reload, exposes no Resume and resets names to Alex.
+  Scored sessions lose their actual one-point total and twelve category receipts.
+  Exact accepted round-2 HTML and runner are retained with the baseline report;
+  error, nonfile-request and dialog streams are empty. This records the old
+  defect, not new-source acceptance.
+- The read-only lexical probe used `sameAnswer` directly on nine irregular pairs
+  recorded in REVIEW.md; all returned false. Contract and independent live
+  grammar reads are documented in SOURCES.md. This is future audit evidence;
+  no matcher change or broader SDK integration is claimed for round 3.
+- The round-3 source/proof checkpoint includes the versioned bounded local
+  save codec, independent real-reducer save/RNG tests and actual reload baseline.
+  Client integration and all new-source checks are pending; no completed round-3
+  LOOP entry is recorded. Global quiet holds allowed light source/docs only.
+  The accepted round-2 file and its complete proof remain separately archived.

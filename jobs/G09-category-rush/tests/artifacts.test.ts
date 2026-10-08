@@ -58,6 +58,22 @@ test('final offline proof is complete and bound to the exact HTML, sources, lice
     }
   }
   assert.equal(receiptAfter.checks.length,4);
+  const resumeBefore=json('evidence/browser/round-3-resume-baseline/report.json');
+  const resumeAfter=json('evidence/browser/round-3-resume-after/report.json');
+  assert.equal(resumeBefore.sourceSha256,sha('evidence/browser/round-2-accepted/play.html'));
+  assert.equal(resumeBefore.runnerSha256,sha('evidence/browser/round-3-resume-baseline/runner.mjs'));
+  assert.equal(resumeAfter.sourceSha256,digest);
+  assert.equal(resumeAfter.runnerSha256,sha('scripts/browser-resume.mjs'));
+  for(const savedReport of [resumeBefore,resumeAfter]){
+    assert.equal(savedReport.passed,true);
+    assert(savedReport.checks.length>=7&&savedReport.checks.every((check:any)=>check.passed));
+    for(const stream of ['errors','requests','dialogs'])assert.equal(savedReport.runtime[stream].length,0);
+    for(const count of [2,8])for(const phase of ['answer','review','scores']){
+      const measured=savedReport.cases.find((row:any)=>row.count===count&&row.phase===phase);
+      assert(measured);assert.equal(measured.resumeAvailable,savedReport===resumeAfter);
+      assert.equal(measured.restored,savedReport===resumeAfter);
+    }
+  }
   const original=json('evidence/breadth-baseline.json'),bankOnly=json('evidence/breadth-bank-only.json'),strategy=json('evidence/breadth-after.json');
   assert.equal(original.sourceHashes.data,sha('evidence/browser/round-1-accepted/categories.json'));
   for(const report of [original,bankOnly])assert.equal(report.sourceHashes.core,sha('evidence/breadth-original-core.ts'));

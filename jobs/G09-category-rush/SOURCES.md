@@ -111,3 +111,19 @@ Additional live pages read for general curation, overlap review or discarded evi
 - https://www.ludwig-stiftung.at/collection-notes/an-ordinary-love-guelsuen-karamustafa — fur-pattern/textile collage, not evidence of actual animal fur.
 
 Source disagreements: Serious Eats calls asafoetida resin a tree product; Good Food identifies giant fennel, consistent with the culinary-herb reference. Only the agreed culinary seasoning fact is adopted. USDA plant-part inaccuracies likewise do not affect the broad seasoning prompt. Sources remain external research references and are not bundled as copied datasets or assets.
+
+## Read-only follow-up: singular/plural matching
+
+Direct reads on 2026-10-08 identify a later matcher audit; no lexical dataset or
+source prose is bundled, and no core change is part of round 3:
+
+- https://www.ef.edu/english-resources/english-grammar/singular-and-plural-nouns/ — independently confirms child/children, tooth/teeth, foot/feet, person/people, leaf/leaves, mouse/mice, goose/geese and knife/knives, among other forms.
+- https://dictionaryblog.cambridge.org/2017/10/18/feet-knives-and-sheep-forming-plurals-in-english-1/ — Liz Walter independently confirms child, tooth, foot, person, knife, leaf and shelf forms. It warns that roofs is an exception; a universal f→ves rule is inappropriate. The article, not reader comments, supplies these facts.
+- https://grammarist.com/grammar/irregular-plural-nouns/ — independently confirms mouse/mice and goose/geese alongside knife/knives, leaf/leaves and shelf/shelves, with explicit cautions about irregular forms.
+- https://dictionary.cambridge.org/grammar/british-grammar/nouns-singular-and-plural — the extracted page covered fixed singular/plural and collective nouns only; it does not independently establish the nine irregular pairs above.
+- https://www.britannica.com/dictionary/eb/qa/Irregular-Plural-Nouns — extraction stopped before the central-vowel examples, so it is not claimed as corroboration of those pairs.
+
+The repository contract's `Typed answers` section requires a stem key where
+singular and plural meet. The current standalone adapter documents its limited
+regular coverage. The audit distinguishes that observed limitation from proof
+of behavior in an unavailable full SDK.

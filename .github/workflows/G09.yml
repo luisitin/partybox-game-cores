@@ -51,3 +51,5 @@ jobs:
           node scripts/browser-clock.mjs
       - name: Completed-round receipts, scored reasons and keyboard focus
         run: node scripts/browser-receipts.mjs after
+      - name: Real offline reload recovery, privacy and storage failures
+        run: node scripts/browser-resume.mjs after
