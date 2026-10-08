@@ -216,7 +216,7 @@ function interruptKey(): string | null {
   return state ? currentBidKey(state) : null;
 }
 function privateView(): ReturnType<typeof game.controllerView> | null {
-  if (!state || !viewer) return null;
+  if (!state || viewer === null) return null;
   // Exact odds and legal raises depend on immutable state + viewer, not the
   // draft quantity/face selection. Reuse that result while editing a bid.
   if (cachedState !== state || cachedViewer !== viewer) {
@@ -233,7 +233,7 @@ function privateView(): ReturnType<typeof game.controllerView> | null {
 function chooseViewer(): void {
   if (!state) { viewer = null; return; }
   const humans = activeHumans();
-  viewer = humans.includes(state.turn) ? state.turn : humans.includes(viewer ?? '') ? viewer : humans[0] ?? null;
+  viewer = humans.includes(state.turn) ? state.turn : viewer !== null && humans.includes(viewer) ? viewer : humans[0] ?? null;
 }
 function cover(): void {
   openFor = null;
@@ -281,14 +281,14 @@ function apply(event: Event): void {
   state = next; cover(); chooseViewer(); botDue = null; interruptDue = null; render(); saveSession();
 }
 function send(move: Input): void {
-  if (!state || !viewer) return;
+  if (!state || viewer === null) return;
   if (deliverDueTimer()) return;
   const before = state;
   apply({type: 'input', now: clockNow(), playerId: viewer, input: move});
   if (state === before) $('notice').textContent = 'That move is unavailable. Choose one of the legal options.';
 }
 function selectedBid(): void {
-  if (!state || !viewer) return;
+  if (!state || viewer === null) return;
   const v = privateView()!;
   const legal = bidsByQuantity.get(Number(select('bid-quantity').value)) ?? [];
   const faces = select('bid-face'), previous = faces.value;
@@ -301,7 +301,11 @@ function selectedBid(): void {
   if (button('make-bid').disabled !== disabled) button('make-bid').disabled = disabled;
 }
 select('bid-quantity').onchange = selectedBid;
-select('viewer').onchange = () => { viewer = select('viewer').value || null; cover(); render(); };
+select('viewer').onchange = () => {
+  const control = select('viewer');
+  viewer = control.selectedIndex >= 0 && activeHumans().includes(control.value) ? control.value : null;
+  cover(); render();
+};
 
 function renderClock(): void {
   if (!state) return;
@@ -319,7 +323,7 @@ function render(): void {
   const paused = !!state.phase.paused, done = state.phase.id === 'done', revealed = state.phase.id === 'reveal';
   const bot = isBotTurn();
   $('round-label').textContent = `Round ${publicView.round} · ${publicView.totalDice} dice at the table`;
-  $('status').textContent = done ? publicView.winner ? `${name(publicView.winner)} wins` : 'Game ended' : paused ? 'The table is paused' : revealed ? 'The truth is out' : bot ? `${name(publicView.turn)} ${botPace === 'manual' ? 'is waiting' : 'is thinking'}` : `${name(publicView.turn)}, your move`;
+  $('status').textContent = done ? publicView.winner !== null ? `${name(publicView.winner)} wins` : 'Game ended' : paused ? 'The table is paused' : revealed ? 'The truth is out' : bot ? `${name(publicView.turn)} ${botPace === 'manual' ? 'is waiting' : 'is thinking'}` : `${name(publicView.turn)}, your move`;
   $('meta').replaceChildren(tag(publicView.wild ? 'Ones are wild' : 'Ones count as ones'), ...(publicView.palifico ? [tag('Palifico round', true), tag(publicView.bid === null ? 'Opening face is free' : canChangePalificoFace(state, state.turn) ? 'This seat may change face' : 'Keep the bid face')] : []), ...(publicView.settings.calzaEnabled ? [tag('Calza enabled')] : []));
   button('pause').hidden = paused || done; button('resume').hidden = !paused || done; button('end-game').hidden = done;
   $('players').replaceChildren(...state.order.map((id, index) => {
@@ -354,14 +358,15 @@ function render(): void {
   }));
   if (publicView.bidLog.length === 0) { const text = document.createElement('p'); text.className = 'muted'; text.textContent = 'No bids yet. Make the first one.'; $('log').append(text); }
   select('viewer').replaceChildren(...activeHumans().map(id => option(id, name(id))));
-  select('viewer').value = viewer ?? ''; select('viewer').disabled = paused || revealed || done;
-  const isOpen = !!cv && openFor === viewer && !paused && !revealed && !done;
-  const canOpen = !!viewer && !paused && !revealed && !done;
+  if (viewer === null) select('viewer').selectedIndex = -1; else select('viewer').value = viewer;
+  select('viewer').disabled = paused || revealed || done;
+  const isOpen = viewer !== null && cv !== null && openFor === viewer && !paused && !revealed && !done;
+  const canOpen = viewer !== null && !paused && !revealed && !done;
   $('handoff').hidden = !canOpen || isOpen;
   $('private').hidden = !isOpen;
   $('waiting').hidden = canOpen || revealed || done;
   $('private-panel').hidden = revealed || done;
-  $('handoff-title').textContent = viewer ? `Pass to ${name(viewer)}` : 'Cups covered';
+  $('handoff-title').textContent = viewer !== null ? `Pass to ${name(viewer)}` : 'Cups covered';
   $('handoff-copy').textContent = viewer === state.turn ? 'Everyone else: look away. Open your cup when the device is safely yours.' : `Waiting for ${name(state.turn)}. You can inspect your own cup${cv?.canCalza ? ' or call calza' : ''}.`;
   $('waiting-title').textContent = paused ? 'Cups covered' : botPace === 'manual' ? 'The bots are waiting' : 'The bots are thinking';
   $('waiting-copy').textContent = paused ? 'Resume when everyone is ready. All private dice have been removed from the screen.' : botPace === 'manual' ? 'Use Play next bot action when you are ready. Turn clocks keep running.' : 'They use their own dice, public bids, and exact probabilities.';
@@ -389,7 +394,7 @@ function render(): void {
   if (publicView.reveal) {
     const r = publicView.reveal;
     $('verdict-title').textContent = `${name(r.caller)} called ${r.kind === 'dudo' ? 'dudo' : 'calza'} · ${r.correct ? 'correct' : 'incorrect'}`;
-    $('verdict-copy').textContent = `${r.matches} matching dice for a bid of ${r.bid.quantity} ${r.bid.face}s. ${r.gained ? `${name(r.caller)} gains one die.` : r.loser ? `${name(r.loser)} loses one die${publicView.diceCount[r.loser] === 0 ? ' and is out' : ''}.` : 'No die was gained.'}`;
+    $('verdict-copy').textContent = `${r.matches} matching dice for a bid of ${r.bid.quantity} ${r.bid.face}s. ${r.gained ? `${name(r.caller)} gains one die.` : r.loser !== null ? `${name(r.loser)} loses one die${publicView.diceCount[r.loser] === 0 ? ' and is out' : ''}.` : 'No die was gained.'}`;
     for (const id of state.order) {
       const dice = r.dice[id]; if (!dice?.length) continue;
       const el = document.createElement('div'); el.className = 'revealed-seat';
@@ -460,7 +465,7 @@ function tick(): void {
 
 button('start').onclick = () => start();
 button('show-cup').onclick = () => {
-  if (viewer && state && !state.phase.paused) {
+  if (viewer !== null && state && !state.phase.paused) {
     openFor = viewer; render();
     if (!$('bid-controls').hidden) select('bid-quantity').focus();
     else button('hide-cup').focus();
@@ -474,7 +479,7 @@ button('next-round').onclick = () => {
   if (!state) return;
   const present = (id: string): boolean => state!.players[id]!.connected && !state!.left.includes(id);
   const id = viewer ?? state.order.find(id => present(id) && !state!.players[id]!.bot) ?? state.order.find(present);
-  if (id) {
+  if (id !== undefined) {
     // Reveals remain on screen until the person holding this device advances.
     // Eliminated humans can acknowledge; an all-bot table uses its real adapter.
     const move = state.players[id]!.bot ? game.bot.sampleInput(state, id, botRng, skills.get(id) ?? 'normal') : {type: 'continue'} as const;

@@ -1,0 +1,92 @@
+{"profile":"desktop","name":"lobby supports every roster from 2 through 8 and explicit settings","passed":true}
+{"profile":"desktop","name":"private cup disappears on hide, pass, pause and resume","passed":true}
+{"profile":"desktop","name":"changing the device holder clears private dice, odds and bid choices","passed":true}
+{"profile":"desktop","name":"legal bid selectors cover normal, wild-one and palifico raises","passed":true}
+{"profile":"desktop","name":"palifico help matches first-loss, once-only and survivor conditions in actual play","passed":true}
+{"profile":"desktop","name":"palifico exceptions require prior own experience and preserve wild-off face locking","passed":true}
+{"profile":"desktop","name":"dudo reveals cups, applies loss and continues to a fresh round","passed":true}
+{"profile":"desktop","name":"optional calza is available only when legal and exact claims gain a die","passed":true}
+{"profile":"desktop","name":"final loss reaches a visible winner and a new game can start","passed":true}
+{"profile":"desktop","name":"natural last-die standings agree with the real core results","passed":true}
+{"profile":"desktop","name":"early host-end standings include all eight seats and unequal remaining dice","passed":true}
+{"profile":"desktop","name":"early tied standings retain competition places and safe long player names","passed":true}
+{"profile":"desktop","name":"bots automate turns for easy, normal and sharp skills","passed":true}
+{"profile":"desktop","name":"the manual bot-step control is reachable while a human holds the device","passed":true}
+{"profile":"desktop","name":"eligible bots make actual interrupt-only calza calls before the active turn","passed":true}
+{"profile":"desktop","name":"an all-bot table holds its reveal until explicitly acknowledged","passed":true}
+{"profile":"desktop","name":"an eliminated human can read and explicitly acknowledge the reveal","passed":true}
+{"profile":"desktop","name":"normal, fast and slow bot pacing use actual selected delays","passed":true}
+{"profile":"desktop","name":"manual pacing holds regular bot actions until one explicit step","passed":true}
+{"profile":"desktop","name":"manual pacing exposes an eligible bot calza even during a human turn","passed":true}
+{"profile":"desktop","name":"live pace changes synchronize controls, cover the cup and restart scheduling","passed":true}
+{"profile":"desktop","name":"pause holds bot actions and resume starts a fresh selected wait","passed":true}
+{"profile":"desktop","name":"a human can call calza after reading for over 900ms at normal pace","passed":true}
+{"profile":"desktop","name":"a visible one-second core clock takes priority over normal and manual pacing","passed":true}
+{"profile":"desktop","name":"normal pacing extends the measured eight-seat public bid window","passed":true}
+{"profile":"desktop","name":"pause holds real deadlines and resume shifts by actual elapsed time","passed":true}
+{"profile":"desktop","name":"deadline catches up after a real main-thread stall","passed":true}
+{"profile":"desktop","name":"player names render as safe literal text","passed":true}
+{"profile":"desktop","name":"reduced motion removes running animations and long transitions","passed":true}
+{"profile":"desktop","name":"reload hides an open cup behind an explicit saved-game gate","passed":true}
+{"profile":"desktop","name":"pending time and a second reload preserve the original remaining turn clock","passed":true}
+{"profile":"desktop","name":"an already-expired saved turn is consumed once after explicit resume","passed":true}
+{"profile":"desktop","name":"intentional and empty-room pauses survive saved-game recovery","passed":true}
+{"profile":"desktop","name":"reveal and winner phases survive recovery without automatic acknowledgement","passed":true}
+{"profile":"desktop","name":"saved manual bot cursor, mixed skills and phase markers continue deterministically","passed":true}
+{"profile":"desktop","name":"saved automatic pacing restarts a full presentation wait after resume","passed":true}
+{"profile":"desktop","name":"corrupt, incompatible and invalid own-leaf saves are rejected safely","passed":true}
+{"profile":"desktop","name":"Discard and New game remove only the session checkpoint","passed":true}
+{"profile":"desktop","name":"blocked storage reads keep the game playable with a visible notice","passed":true}
+{"profile":"desktop","name":"blocked storage writes keep ordinary play and explicit pause working","passed":true}
+{"profile":"desktop","name":"blocked removal uses a tombstone without trapping the table","passed":true}
+{"profile":"desktop","name":"recovered standings use the core results and Discard clears prior results","passed":true}
+{"profile":"desktop","name":"recovered empty and prototype-named seats can open, bid and hand off privately","passed":false,"error":"AssertionError [ERR_ASSERTION]: resumption must preserve the complete game state\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    bid: null,\n    bidLog: [],\n    contentLang: 'en',\n...\n      ],\n-     ['__proto__']: [\n-       6,\n-       2,\n-       1,\n-       6,\n-       5\n-     ],\n      constructor: [\n        1,\n        1,\n        6,\n        1,\n...\n      '': 5,\n-     ['__proto__']: 5,\n      constructor: 5\n    },\n    eliminated: [],\n    endReason: null,\n    left: [],\n...\n      },\n-     ['__proto__']: {\n-       false: 2,\n-       truth: 3\n-     },\n      constructor: {\n        false: 2,\n        truth: 3\n      }\n    },\n...\n      },\n-     ['__proto__']: {\n-       avatarId: 'face-1',\n-       bot: false,\n-       connected: true,\n-       id: '__proto__',\n-       name: 'Prototype seat'\n-     },\n      constructor: {\n        avatarId: 'face-2',\n        bot: false,\n        connected: true,\n        id: 'constructor',\n...\n      '': false,\n-     ['__proto__']: false,\n      constructor: false\n    },\n    settings: {\n      calzaEnabled: false,\n      calzaPolicy: 'anyOther',\n\n    at equivalentRecovered (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1042:14)\n    at run.recovery (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1245:7)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:286:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1242:5"}
+{"profile":"desktop","name":"an eliminated connected empty-ID human can explicitly acknowledge a reveal","passed":true}
+{"profile":"desktop","name":"a natural empty-ID winner remains identified after saved-game recovery","passed":false,"error":"AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   6\n+ ]\n- []\n\n    at ownCupMatchesCore (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:170:10)\n    at async run.recovery (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1300:52)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:286:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1297:5"}
+{"profile":"desktop","name":"600 actual animation-frame intervals meet the strict refresh budget","passed":false,"error":"AssertionError [ERR_ASSERTION]: desktop actual mean rate 58.53886980955354 FPS is below 59\n    at run.fresh (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1360:7)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:286:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1310:5"}
+{"profile":"phone4x","name":"lobby supports every roster from 2 through 8 and explicit settings","passed":true}
+{"profile":"phone4x","name":"private cup disappears on hide, pass, pause and resume","passed":true}
+{"profile":"phone4x","name":"changing the device holder clears private dice, odds and bid choices","passed":true}
+{"profile":"phone4x","name":"legal bid selectors cover normal, wild-one and palifico raises","passed":true}
+{"profile":"phone4x","name":"palifico help matches first-loss, once-only and survivor conditions in actual play","passed":true}
+{"profile":"phone4x","name":"palifico exceptions require prior own experience and preserve wild-off face locking","passed":true}
+{"profile":"phone4x","name":"dudo reveals cups, applies loss and continues to a fresh round","passed":true}
+{"profile":"phone4x","name":"optional calza is available only when legal and exact claims gain a die","passed":true}
+{"profile":"phone4x","name":"final loss reaches a visible winner and a new game can start","passed":true}
+{"profile":"phone4x","name":"natural last-die standings agree with the real core results","passed":true}
+{"profile":"phone4x","name":"early host-end standings include all eight seats and unequal remaining dice","passed":true}
+{"profile":"phone4x","name":"early tied standings retain competition places and safe long player names","passed":true}
+{"profile":"phone4x","name":"bots automate turns for easy, normal and sharp skills","passed":true}
+{"profile":"phone4x","name":"the manual bot-step control is reachable while a human holds the device","passed":true}
+{"profile":"phone4x","name":"eligible bots make actual interrupt-only calza calls before the active turn","passed":true}
+{"profile":"phone4x","name":"an all-bot table holds its reveal until explicitly acknowledged","passed":true}
+{"profile":"phone4x","name":"an eliminated human can read and explicitly acknowledge the reveal","passed":true}
+{"profile":"phone4x","name":"normal, fast and slow bot pacing use actual selected delays","passed":true}
+{"profile":"phone4x","name":"manual pacing holds regular bot actions until one explicit step","passed":true}
+{"profile":"phone4x","name":"manual pacing exposes an eligible bot calza even during a human turn","passed":true}
+{"profile":"phone4x","name":"live pace changes synchronize controls, cover the cup and restart scheduling","passed":true}
+{"profile":"phone4x","name":"pause holds bot actions and resume starts a fresh selected wait","passed":true}
+{"profile":"phone4x","name":"a human can call calza after reading for over 900ms at normal pace","passed":true}
+{"profile":"phone4x","name":"a visible one-second core clock takes priority over normal and manual pacing","passed":true}
+{"profile":"phone4x","name":"pause holds real deadlines and resume shifts by actual elapsed time","passed":true}
+{"profile":"phone4x","name":"deadline catches up after a real main-thread stall","passed":true}
+{"profile":"phone4x","name":"player names render as safe literal text","passed":true}
+{"profile":"phone4x","name":"reduced motion removes running animations and long transitions","passed":true}
+{"profile":"phone4x","name":"reload hides an open cup behind an explicit saved-game gate","passed":true}
+{"profile":"phone4x","name":"pending time and a second reload preserve the original remaining turn clock","passed":true}
+{"profile":"phone4x","name":"an already-expired saved turn is consumed once after explicit resume","passed":true}
+{"profile":"phone4x","name":"intentional and empty-room pauses survive saved-game recovery","passed":true}
+{"profile":"phone4x","name":"reveal and winner phases survive recovery without automatic acknowledgement","passed":true}
+{"profile":"phone4x","name":"saved manual bot cursor, mixed skills and phase markers continue deterministically","passed":true}
+{"profile":"phone4x","name":"saved automatic pacing restarts a full presentation wait after resume","passed":true}
+{"profile":"phone4x","name":"corrupt, incompatible and invalid own-leaf saves are rejected safely","passed":true}
+{"profile":"phone4x","name":"Discard and New game remove only the session checkpoint","passed":true}
+{"profile":"phone4x","name":"blocked storage reads keep the game playable with a visible notice","passed":true}
+{"profile":"phone4x","name":"blocked storage writes keep ordinary play and explicit pause working","passed":true}
+{"profile":"phone4x","name":"blocked removal uses a tombstone without trapping the table","passed":true}
+{"profile":"phone4x","name":"recovered standings use the core results and Discard clears prior results","passed":true}
+{"profile":"phone4x","name":"recovered empty and prototype-named seats can open, bid and hand off privately","passed":false,"error":"AssertionError [ERR_ASSERTION]: resumption must preserve the complete game state\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    bid: null,\n    bidLog: [],\n    contentLang: 'en',\n...\n      ],\n-     ['__proto__']: [\n-       6,\n-       2,\n-       1,\n-       6,\n-       5\n-     ],\n      constructor: [\n        1,\n        1,\n        6,\n        1,\n...\n      '': 5,\n-     ['__proto__']: 5,\n      constructor: 5\n    },\n    eliminated: [],\n    endReason: null,\n    left: [],\n...\n      },\n-     ['__proto__']: {\n-       false: 2,\n-       truth: 3\n-     },\n      constructor: {\n        false: 2,\n        truth: 3\n      }\n    },\n...\n      },\n-     ['__proto__']: {\n-       avatarId: 'face-1',\n-       bot: false,\n-       connected: true,\n-       id: '__proto__',\n-       name: 'Prototype seat'\n-     },\n      constructor: {\n        avatarId: 'face-2',\n        bot: false,\n        connected: true,\n        id: 'constructor',\n...\n      '': false,\n-     ['__proto__']: false,\n      constructor: false\n    },\n    settings: {\n      calzaEnabled: false,\n      calzaPolicy: 'anyOther',\n\n    at equivalentRecovered (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1042:14)\n    at run.recovery (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1245:7)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:286:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1242:5"}
+{"profile":"phone4x","name":"an eliminated connected empty-ID human can explicitly acknowledge a reveal","passed":true}
+{"profile":"phone4x","name":"a natural empty-ID winner remains identified after saved-game recovery","passed":false,"error":"AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ [\n+   6\n+ ]\n- []\n\n    at ownCupMatchesCore (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:170:10)\n    at async run.recovery (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1300:52)\n    at async run (file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:286:9)\n    at async file:///workspace/game-cores-G07/jobs/G07-liars-dice/scripts/browser-check.mjs:1297:5"}
+{"profile":"phone4x","name":"600 actual animation-frame intervals meet the strict refresh budget","passed":true}
+{"passed":false,"scope":"full","report":".work/browser/report.json","checks":94,"failures":5}

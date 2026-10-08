@@ -6,12 +6,14 @@ import {dirname, resolve} from 'node:path';
 import {fileURLToPath, pathToFileURL} from 'node:url';
 import {chromium} from 'playwright';
 import {game} from '../dist/core.mjs';
+import {encodeSession,createResumableRng} from '../dist/session.mjs';
 
 // Encoding runs separately from browser-check.mjs: its overhead must not be
 // confused with the strict unrecorded requestAnimationFrame measurements.
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const html = resolve(root, 'play.html');
 const paceDemo = process.argv.includes('--pace-demo');
+const customIdsDemo = process.argv.includes('--custom-id-demo') || process.argv.includes('round-5');
 const standingsDemo = process.argv.includes('--standings-demo') || process.argv.includes('round-4');
 const recoveryDemo = process.argv.includes('--recovery-demo') || process.argv.includes('round-3');
 const saveKey = 'partybox.g07.session.v1';
@@ -44,6 +46,40 @@ try {
     await cdp.send('Emulation.setCPUThrottlingRate', {rate});
     await page.goto(pathToFileURL(html).href);
     await page.waitForFunction(() => Boolean(window.__G07));
+    let customRoster = null;
+    if (customIdsDemo) {
+      await page.locator('details.rules summary').click();
+      await page.locator('#palifico-help').scrollIntoViewIfNeeded(); await page.waitForTimeout(1300);
+      const helpText = (await page.locator('#palifico-help').textContent()).replace(/\s+/g, ' ').trim();
+      await page.screenshot({path: resolve(evidence, `${tag}-${label}-help.png`), fullPage: true});
+      const ids = ['', '__proto__', 'constructor'], players = ids.map((id,index) => ({id,
+        name: ['Empty seat', 'Prototype seat', 'Constructor seat'][index], avatarId: `face-${index}`, connected: true, bot: false}));
+      let seed = 1, initial;
+      for (; seed <= 1000; seed++) { initial = game.init({players, settings: {turnSeconds: 0, calzaEnabled: false, palificoEnabled: false}, seed, now: 100}); if (initial.turn === '') break; }
+      assert(seed <= 1000);
+      const saved = {version:1,gameId:game.manifest.id,gameVersion:game.manifest.version,state:initial,savedHostNow:100,
+        botRng:createResumableRng(seed^0xc3a5c85c).state(),skills:ids.map(id=>[id,'normal']),pace:'manual',currentTimerConsumed:false,sampledCurrentBid:false};
+      const raw = encodeSession(saved); assert(raw);
+      await page.evaluate(({key,raw})=>{document.querySelector('#new-game').click();sessionStorage.setItem(key,raw);},{key:saveKey,raw});
+      await page.reload(); await page.waitForFunction(()=>Boolean(window.__G07));
+      assert.equal(await page.evaluate(()=>window.__G07.state()),null); assert(await page.locator('#recovery').isVisible());
+      await page.waitForTimeout(650); await page.locator('#resume-saved').click();
+      assert.equal(await page.locator('#cup .die').count(),0);
+      assert.equal(await page.evaluate(()=>window.__G07.controller().me.id),'');
+      await page.locator('#show-cup').click(); assert.equal(await page.locator('#cup .die').count(),5); await page.waitForTimeout(700);
+      const bid = await page.evaluate(()=>window.__G07.controller().legalBids[0]);
+      await page.locator('#bid-quantity').selectOption(String(bid.quantity)); await page.locator('#bid-face').selectOption(String(bid.face));
+      await page.locator('#make-bid').click(); assert.equal(await page.evaluate(()=>window.__G07.state().bid.playerId),'');
+      assert.equal(await page.locator('#cup .die').count(),0); await page.waitForTimeout(500);
+      await page.locator('#show-cup').click(); assert.equal(await page.evaluate(()=>window.__G07.controller().me.id),'__proto__');
+      await page.waitForTimeout(550); await page.locator('#dudo').click();
+      assert.equal(await page.evaluate(()=>window.__G07.state().phase.id),'reveal'); await page.waitForTimeout(900);
+      await page.locator('#next-round').click(); assert.equal(await page.evaluate(()=>window.__G07.state().phase.id),'bid');
+      assert.equal(await page.locator('#cup .die').count(),0); await page.waitForTimeout(450);
+      customRoster = {fixtureScope:'genuine seeded core-init roster encoded with actual session codec; no turn, dice or cups were edited',
+        ids,seed,helpText,actualResume:true,coveredOnResume:true,emptySeatCupDice:5,actualEmptyIdBid:true,prototypeSeatChallenge:true,explicitRevealAcknowledgement:true};
+      await page.locator('#new-game').click();
+    }
     let recovery = null;
     if (recoveryDemo) {
       // A real reload keeps the checkpoint in this exact browser tab. No
@@ -201,7 +237,7 @@ try {
     assert(bytes < 10_000_000, `${path} exceeds the 10MB capture budget`);
     const capture = {path: `media/${tag}-${label}.webm`, bytes, sha256: createHash('sha256').update(await readFile(path)).digest('hex'), viewport: {width, height}, videoSize, cpuThrottle: rate,
       seed: 7199, rounds, winner: final.winner, initialRoster: initial.order.length,
-      recordingMeasuresPerformance: false, pacingDemo, recoveryDemo: recovery, standingsDemo: standings, networkRequests: network.length, pageErrors: errors.length};
+      recordingMeasuresPerformance: false, pacingDemo, recoveryDemo: recovery, standingsDemo: standings, customIdsDemo: customRoster, networkRequests: network.length, pageErrors: errors.length};
     captures.push(capture);
     console.log(JSON.stringify(capture));
   }

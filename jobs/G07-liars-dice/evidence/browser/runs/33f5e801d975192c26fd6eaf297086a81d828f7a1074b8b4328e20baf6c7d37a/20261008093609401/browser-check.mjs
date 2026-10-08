@@ -59,7 +59,7 @@ async function executablePath() {
 const browser = await chromium.launch({headless: true, executablePath: await executablePath(), args: ['--no-sandbox']});
 report.browser = browser.version();
 
-async function state(page) { return JSON.parse(await page.evaluate(() => JSON.stringify(window.__G07.state()))); }
+async function state(page) { return page.evaluate(() => window.__G07.state()); }
 async function control(page) { return page.evaluate(() => window.__G07.controller()); }
 async function init(page, options = {}) {
   await page.evaluate(options => window.__G07.init({players: 3, mode: 'hotseat', seed: 7199, ...options}), options);

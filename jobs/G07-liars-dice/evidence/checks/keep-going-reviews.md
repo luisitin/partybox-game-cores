@@ -136,3 +136,31 @@ whole84-check browser run pass. Both unfiltered600-frame gates and source-
 matched desktop/phone recordings pass; New Game/Discard cleanup and safe
 long/markup-like names also pass. Core/session source remains unchanged.
 This is a player-visible result-screen improvement; no-gain streak stays0.
+
+Round4 hosted acceptance: exact445cf47 passed37755395776 at09:25:32 UTC;
+46 node tests,25 compiled assertion-killed mutants,84 browser checks (both
+strict frame gates) and293-file integrity passed. The hosted artifact is
+source-bound; metadata is in evidence/checks/ci-round-4.json. It has not been
+downloaded, so no hosted FPS values are asserted.
+
+## Round 5 — accurate palifico help and supported seat IDs
+
+Root README.md, RULES.md and JOBS.md were re-read after round4 completed local
+proof was pushed at445cf47. Round4 exact-head CI subsequently passed;
+metadata is retained in evidence/checks/ci-round-4.json.
+
+Five biggest remaining weaknesses, ranked:
+
+1. On-page palifico help omits the two-survivor exclusion and suggests a one-die exception without the required prior palifico experience. Full RULES.md/core are correct.
+2. A valid same-tab save with an empty-string seat ID passes the core/session contract but browser truthiness checks prevent that seat from opening its cup or acting. Browser-generated IDs are unaffected, but valid recovery should work.
+3. Default-duel strategy strength is certified; larger-table and optional-variant superiority remains an explicit evidence limit. There is no justified strength retuning target from the existing inconclusive diagnostic.
+4. Current verification status is obscured by preserved historical pending checkpoints. NEXT now has a current summary; VERIFY's top summary still needs later cleanup.
+5. The pacing evidence filename names round1 even when it contains the latest source-matched rerun. Its original archive is retained, but the distinction requires explanation.
+
+Selected fixes: correct the concise palifico explanation against existing
+source-backed rules; replace viewer/winner ID truthiness with explicit null
+checks where valid empty IDs must be accepted. Preserve ordinary handoff,
+covered-cup privacy and unknown-seat behavior. Add actual UI/core comparisons
+for rule conditions and a genuine valid empty-ID saved-game recovery/move/
+acknowledgement, including prototype-named seats. Core/session/strategy source
+remain unchanged; require strict build, full browser and source-matched clips.

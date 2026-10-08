@@ -1,8 +1,10 @@
 # Verification log
 
-Current checkpoint: round 2 passed exact-head GitHub run 37746548680 at
-2ba462691ea3bbecf8607f0737b3287cc8909af7. Round 3 session recovery is in
-progress: focused tests pass; new browser proof and hosted acceptance are pending.
+Current checkpoint: round4 passed exact-head GitHub run37755395776 at
+445cf47c54df697e1b70e3b3214f550fe646ce12 (46 node/25 mutations/84 browser,
+293-file integrity). Round5's help/seat-ID source builds, but browser proof is
+pending: the first full run failed89/94; its complete raw evidence is retained.
+The corrected JSON-only test transport is syntax-checked and not yet rerun.
 Intermediate failures below are retained as history, not current blockers.
 
 ## Research milestone (2026-10-08)
@@ -408,3 +410,55 @@ Final round4 `node scripts/hashes.mjs` twice + `cmp`,
 293 delivered files, byte-identical fixture/manifest regeneration, source-
 matched passing raw600-frame snapshot and recordings below10MB, purity and
 original/Zod license checks. Manifest regenerated for the final docs commit.
+
+Round4 hosted acceptance: `gh run view 37755395776 --repo
+luisitin/partybox-game-cores --json status,conclusion,headSha,jobs` and
+`gh run view 37755395776 --repo luisitin/partybox-game-cores --log`: PASS at
+exact445cf47, completed09:25:32 UTC. Full npm test passed46/46 node,
+25/25 compiled assertion kills,84/84 browser checks and293-file integrity.
+Artifact11539579811 is unexpired and matches that head; it was not downloaded.
+Metadata: evidence/checks/ci-round-4.json. No hosted FPS values are inferred.
+
+## Round5 cadence checkpoint — source complete, browser proof pending
+
+`npm run build`: PASS strict TypeScript/bundling at HTML
+33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a.
+Core5d10032d and session0538ddf are unchanged. The on-page palifico help now
+states the actual trigger/duel/prior-experience/current-count/starter rules.
+Explicit null/undefined checks support a valid empty seat through selection,
+private cup, input, reveal acknowledgement, winner and loss messages.
+
+The actual old09f9 page, genuine seeded core-init roster
+['','__proto__','constructor'] and correctly encoded saved metadata reproduce
+the previous hidden cup/null-controller problem. Public source-bound baseline:
+evidence/browser/round-5-before-host.json and round-5-before-empty-seat.png.
+The optional programmatic hidden-button probe is explicitly identified; it
+does not pretend a person can click a hidden button.
+
+`node scripts/browser-check.mjs --snapshot`: first full run FAIL89/94,
+run20261008093609401. Four new comparisons failed because Playwright's
+object serializer drops own '__proto__' entries during state transport; the
+actual browser cup DOM worked. The independent oracle now receives JSON text
+and parses it in Node, preserving original own entries. This correction keeps
+the genuine roster and every assertion. The corrected runner5839e1cc is
+syntax-checked but its full verification is pending at this checkpoint.
+
+The same first run independently failed desktop mean58.538870FPS; p99 16.8ms,
+max166.6ms, five of600 intervals above17ms. Phone4x passed60.002400FPS,
+p99/max16.8ms, all600 retained. No causal performance defect is established;
+no runtime optimization or gate relaxation is claimed. Exact failing runner,
+report, log and both raw frame files remain under
+evidence/browser/runs/33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a/20261008093609401/.
+
+All first-run processes closed09:39:53; corrected test writer stopped09:40:23.
+Prior source-bound passing snapshot is retained for its09f9 HTML. This cadence
+commit does not claim new-source browser acceptance, recordings, integrity or
+a completed fifth KEEP GOING round. Required unchanged-core results already
+pass; GitHub will rerun the aggregate suite after the checkpoint push.
+
+Cadence file checks: `git diff --check`, `node scripts/hashes.mjs` twice plus
+`cmp`, and `sha256sum --check SHA256SUMS.txt`: PASS304 delivered files.
+`node scripts/integrity.mjs`: FAIL as expected because the preserved09f9
+browser snapshot does not match the new33f5 page. Exact stderr is retained
+under ignored .work/round-5-cadence-integrity.log. The guard remains required;
+new passing source-matched proof must replace the top snapshot before acceptance.

@@ -77,3 +77,12 @@ Final standings come directly from game.results, including competition ranks
 and all original seats. The existing composite score remains internal; the
 page shows actual remaining dice and elimination order. Early host endings
 retain the core's tie/winner semantics and explicit headline explanation.
+
+## KEEP GOING round5
+
+The valid contract can contain empty and prototype-named player IDs; the host
+uses explicit null/undefined checks and verifies active-human membership.
+Ordinary generated p0–p7 IDs follow the same handoff. Test-oracle state transport
+uses JSON text because Playwright drops own '__proto__' properties from object
+returns. Parsing that text preserves the exact original JSON and independent
+core comparison; this does not change game state or relax privacy assertions.
