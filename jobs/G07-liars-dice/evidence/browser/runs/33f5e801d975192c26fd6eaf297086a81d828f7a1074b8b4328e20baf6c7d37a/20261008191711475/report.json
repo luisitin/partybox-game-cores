@@ -1,0 +1,2572 @@
+{
+  "runId": "20261008191711475",
+  "startedAt": "2026-10-08T19:17:11.475Z",
+  "sourceGuardHashes": {
+    "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "manifest.json": "4d4831f00da81ff0832bacd8b6589ea38affe1c7d348a0f6573095e5a7f14c4c",
+    "src/core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "src/rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "src/probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0",
+    "src/session.ts": "0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30",
+    "src/browser.ts": "137c5fbe410014fca97f78b2603ee94ecbae9e5ad98f8a14a77f18b5c60b51a0",
+    "src/play.template.html": "90792c1fe2e95049a81fb3cc0ef0cc553351bdcc2d3a197ec192e9d6796e9f72",
+    "scripts/build.mjs": "c08db5217362b4d321ec7ccd08ad31294b938282f2d53c6c47ab793b369839ec",
+    "scripts/browser-check.mjs": "f12e9e82d19a4a1aefe182e23fe74fd17c217c33b985912d5a1a31c7ab61c474",
+    "scripts/browser-evidence.mjs": "e653d3f10c1825ea5fd81903a40f1c46338a13e229cbf54ac88d11a9bca8f0f5",
+    "scripts/frame-coordination.mjs": "3b30bcd89bace6b71403065666264567c28e0aa4ebf1cd4c336d205803132e8b",
+    "scripts/clock-observation.mjs": "0aec74a286c7c13375ac51ca814998ed367b74fc18a80f9a684efe16cb949c55",
+    "scripts/clock-observation-diagnostic.mjs": "53b515c113039d34ee8a414b120467a2e1d954483c8e472722296d9ebb037168",
+    "package.json": "1c11a3c1692f2bdf929ff0b87844fd5a63a73e198a9102320ebcc550c11c92a6",
+    "package-lock.json": "db722fbc9efb2faa40e82ea0d773370015480bbb602fc09529e8f8499ec4eef3",
+    "evidence/browser/required-check-names.json": "a20ed00ea0f50ae799098520b71d7bf71474e50b0c87b7993c88296a341fa17d",
+    "scripts/integrity.mjs": "887700429545883382c2134ca65d755a9a68e7269b057bb66b12bc2164226b16",
+    "tests/browser-evidence.test.mjs": "e5c1df5f320a3ff27442bb64463548c6a0d2f6cdc970a215337c3f6316e68a1f",
+    "tests/frame-coordination.test.mjs": "689c91216aee2eb43f3fd31ffa59e8ed75046f7c231e96529720c3d8d06e3afe",
+    "../../contract/constants.ts": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5",
+    "../../contract/minigame-schema.ts": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb",
+    "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+    "../../contract/player-count-schema.ts": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189",
+    "../../contract/package.json": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495",
+    "dist/core.mjs": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+    "dist/session.mjs": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8",
+    "dist/probability.mjs": "1aebecdec1172d7e6a49895129de2d18ac48302b79d9e81ecb9286b525db1083",
+    "dist/rules.mjs": "6dfebfd1d1bbe93b740feb17263ad3b8cc089c68d47f6516f73344fe0cede1e1",
+    "dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "../../.github/workflows/G07.yml": "6be4602ad47134629eaa231a3e905e9f72c046a245e8f200809918baa08f7ddd"
+  },
+  "htmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "coreModuleSha256": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+  "sessionModuleSha256": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8",
+  "browser": "141.0.7390.37",
+  "physicalPhoneTested": false,
+  "performanceWhileRecording": false,
+  "performanceRequirements": {
+    "intervals": 600,
+    "minimumMeanFps": 59,
+    "maximumP99Ms": 17
+  },
+  "frameFiltering": "none: all 600 consecutive requestAnimationFrame intervals retained",
+  "benchmark": {
+    "players": 8,
+    "existingBid": {
+      "quantity": 8,
+      "face": 3
+    },
+    "openPrivateDice": 5,
+    "interaction": "change quantity and face every 30 intervals, including exact controller odds",
+    "isolation": "fresh browser context; functional test navigation history is not retained"
+  },
+  "recoveryStorage": {
+    "key": "partybox.g07.session.v1",
+    "scope": "same-tab sessionStorage",
+    "ordinaryChecks": "remove only this key before each document",
+    "recoveryChecks": "fresh isolated contexts preserve this key across actual reloads"
+  },
+  "seed": 7199,
+  "profiles": [],
+  "checks": [
+    {
+      "profile": "desktop",
+      "name": "lobby supports every roster from 2 through 8 and explicit settings",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "private cup disappears on hide, pass, pause and resume",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "changing the device holder clears private dice, odds and bid choices",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "legal bid selectors cover normal, wild-one and palifico raises",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "palifico help matches first-loss, once-only and survivor conditions in actual play",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "palifico exceptions require prior own experience and preserve wild-off face locking",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "dudo reveals cups, applies loss and continues to a fresh round",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "optional calza is available only when legal and exact claims gain a die",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "final loss reaches a visible winner and a new game can start",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "natural last-die standings agree with the real core results",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "early host-end standings include all eight seats and unequal remaining dice",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "early tied standings retain competition places and safe long player names",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "bots automate turns for easy, normal and sharp skills",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "the manual bot-step control is reachable while a human holds the device",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an all-bot table holds its reveal until explicitly acknowledged",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an eliminated human can read and explicitly acknowledge the reveal",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "normal, fast and slow bot pacing use actual selected delays",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual pacing holds regular bot actions until one explicit step",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual pacing exposes an eligible bot calza even during a human turn",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "live pace changes synchronize controls, cover the cup and restart scheduling",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause holds bot actions and resume starts a fresh selected wait",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "a human can call calza after reading for over 900ms at normal pace",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "a visible one-second core clock takes priority over normal and manual pacing",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "normal pacing extends the measured eight-seat public bid window",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "deadline catches up after a real main-thread stall",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "player names render as safe literal text",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "reduced motion removes running animations and long transitions",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "reload hides an open cup behind an explicit saved-game gate",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pending time and a second reload preserve the original remaining turn clock",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an already-expired saved turn is consumed once after explicit resume",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "intentional and empty-room pauses survive saved-game recovery",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "reveal and winner phases survive recovery without automatic acknowledgement",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "saved manual bot cursor, mixed skills and phase markers continue deterministically",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "saved automatic pacing restarts a full presentation wait after resume",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "corrupt, incompatible and invalid own-leaf saves are rejected safely",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "Discard and New game remove only the session checkpoint",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "blocked storage reads keep the game playable with a visible notice",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "blocked storage writes keep ordinary play and explicit pause working",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "blocked removal uses a tombstone without trapping the table",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "recovered standings use the core results and Discard clears prior results",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "recovered empty and prototype-named seats can open, bid and hand off privately",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an eliminated connected empty-ID human can explicitly acknowledge a reveal",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "a natural empty-ID winner remains identified after saved-game recovery",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "600 actual animation-frame intervals meet the strict refresh budget",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nundefined !== 8\n\n    at assertBenchmarkWorkload (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:83:10)\n    at run.fresh (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:1356:7)\n    at async run (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:309:9)\n    at async file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:1348:5"
+    },
+    {
+      "profile": "desktop",
+      "name": "self-contained file works offline without network, external resources, errors or dialogs",
+      "passed": true,
+      "networkRequests": [],
+      "additionalResources": [],
+      "pageErrors": [],
+      "dialogs": []
+    },
+    {
+      "profile": "phone4x",
+      "name": "lobby supports every roster from 2 through 8 and explicit settings",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "private cup disappears on hide, pass, pause and resume",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "changing the device holder clears private dice, odds and bid choices",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "legal bid selectors cover normal, wild-one and palifico raises",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "palifico help matches first-loss, once-only and survivor conditions in actual play",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "palifico exceptions require prior own experience and preserve wild-off face locking",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "dudo reveals cups, applies loss and continues to a fresh round",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "optional calza is available only when legal and exact claims gain a die",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "final loss reaches a visible winner and a new game can start",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "natural last-die standings agree with the real core results",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "early host-end standings include all eight seats and unequal remaining dice",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "early tied standings retain competition places and safe long player names",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "bots automate turns for easy, normal and sharp skills",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "the manual bot-step control is reachable while a human holds the device",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an all-bot table holds its reveal until explicitly acknowledged",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an eliminated human can read and explicitly acknowledge the reveal",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "normal, fast and slow bot pacing use actual selected delays",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "manual pacing holds regular bot actions until one explicit step",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "manual pacing exposes an eligible bot calza even during a human turn",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "live pace changes synchronize controls, cover the cup and restart scheduling",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "pause holds bot actions and resume starts a fresh selected wait",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "a human can call calza after reading for over 900ms at normal pace",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "a visible one-second core clock takes priority over normal and manual pacing",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "deadline catches up after a real main-thread stall",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "player names render as safe literal text",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "reduced motion removes running animations and long transitions",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "reload hides an open cup behind an explicit saved-game gate",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "pending time and a second reload preserve the original remaining turn clock",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an already-expired saved turn is consumed once after explicit resume",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "intentional and empty-room pauses survive saved-game recovery",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "reveal and winner phases survive recovery without automatic acknowledgement",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "saved manual bot cursor, mixed skills and phase markers continue deterministically",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "saved automatic pacing restarts a full presentation wait after resume",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "corrupt, incompatible and invalid own-leaf saves are rejected safely",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "Discard and New game remove only the session checkpoint",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "blocked storage reads keep the game playable with a visible notice",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "blocked storage writes keep ordinary play and explicit pause working",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "blocked removal uses a tombstone without trapping the table",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "recovered standings use the core results and Discard clears prior results",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "recovered empty and prototype-named seats can open, bid and hand off privately",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an eliminated connected empty-ID human can explicitly acknowledge a reveal",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "a natural empty-ID winner remains identified after saved-game recovery",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "600 actual animation-frame intervals meet the strict refresh budget",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nundefined !== 8\n\n    at assertBenchmarkWorkload (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:83:10)\n    at run.fresh (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:1356:7)\n    at async run (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:309:9)\n    at async file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:1348:5"
+    },
+    {
+      "profile": "phone4x",
+      "name": "self-contained file works offline without network, external resources, errors or dialogs",
+      "passed": true,
+      "networkRequests": [],
+      "additionalResources": [],
+      "pageErrors": [],
+      "dialogs": []
+    },
+    {
+      "profile": "runner",
+      "name": "HTML source stayed unchanged throughout the run",
+      "passed": true,
+      "initialHtmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+      "finalHtmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+      "initialCoreModuleSha256": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+      "finalCoreModuleSha256": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+      "initialSessionModuleSha256": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8",
+      "finalSessionModuleSha256": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8"
+    }
+  ],
+  "pacingMeasurements": [
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "normal",
+      "armedAt": 125,
+      "observedAt": 2158,
+      "elapsedMs": 2033,
+      "lastUnchangedMs": 2014,
+      "phaseStartedAt": 2153,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "fast",
+      "armedAt": 2174,
+      "observedAt": 2957,
+      "elapsedMs": 783,
+      "lastUnchangedMs": 765,
+      "phaseStartedAt": 2953,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "slow",
+      "armedAt": 2981,
+      "observedAt": 7057,
+      "elapsedMs": 4076,
+      "lastUnchangedMs": 4058,
+      "phaseStartedAt": 7053,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "fast",
+      "armedAt": 7075,
+      "observedAt": 7565,
+      "elapsedMs": 490,
+      "lastUnchangedMs": 463,
+      "phaseStartedAt": 7553,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "normal",
+      "armedAt": 7590,
+      "observedAt": 9256,
+      "elapsedMs": 1666,
+      "lastUnchangedMs": 1648,
+      "phaseStartedAt": 9254,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "slow",
+      "armedAt": 9274,
+      "observedAt": 12955,
+      "elapsedMs": 3681,
+      "lastUnchangedMs": 3664,
+      "phaseStartedAt": 12953,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "manual-regular",
+      "pace": "manual",
+      "heldMs": 2319
+    },
+    {
+      "profile": "desktop",
+      "kind": "manual-interrupt",
+      "pace": "manual",
+      "heldMs": 2297
+    },
+    {
+      "profile": "desktop",
+      "kind": "pace-change",
+      "pace": "fast",
+      "armedAt": 2725,
+      "observedAt": 3541,
+      "elapsedMs": 816,
+      "lastUnchangedMs": 797,
+      "phaseStartedAt": 3536,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "resume",
+      "pace": "normal",
+      "pauseAcceptedAfterArmMs": 883,
+      "armedAt": 3288,
+      "observedAt": 5355,
+      "elapsedMs": 2067,
+      "lastUnchangedMs": 2050,
+      "phaseStartedAt": 5347,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "human-calza",
+      "pace": "normal",
+      "elapsedMs": 1127,
+      "requestedAt": 1241
+    },
+    {
+      "profile": "desktop",
+      "kind": "core-clock",
+      "pace": "normal",
+      "armedAt": 93,
+      "observedAt": 1158,
+      "elapsedMs": 1065,
+      "lastUnchangedMs": 1048,
+      "phaseStartedAt": 1142,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "core-clock",
+      "pace": "manual",
+      "armedAt": 1190,
+      "observedAt": 2258,
+      "elapsedMs": 1068,
+      "lastUnchangedMs": 1051,
+      "phaseStartedAt": 2242,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "overdue-clock-manual-step",
+      "pace": "manual",
+      "armedAt": 2281,
+      "clickedAt": 3294,
+      "deadline": 3281,
+      "expected": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      },
+      "actual": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "overdue-clock-human-input",
+      "pace": "manual",
+      "armedAt": 3306,
+      "clickedAt": 4332,
+      "deadline": 4306,
+      "late": {
+        "quantity": 1,
+        "face": 2
+      },
+      "expected": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      },
+      "actual": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "saved-game-resume",
+      "pace": "normal",
+      "armedAt": 1922,
+      "observedAt": 3940,
+      "elapsedMs": 2018,
+      "lastUnchangedMs": 1986,
+      "phaseStartedAt": 3914,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "normal",
+      "armedAt": 383,
+      "observedAt": 2453,
+      "elapsedMs": 2070,
+      "lastUnchangedMs": 2035,
+      "phaseStartedAt": 2431,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "fast",
+      "armedAt": 2503,
+      "observedAt": 3337,
+      "elapsedMs": 834,
+      "lastUnchangedMs": 814,
+      "phaseStartedAt": 3329,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "slow",
+      "armedAt": 3399,
+      "observedAt": 7444,
+      "elapsedMs": 4045,
+      "lastUnchangedMs": 4019,
+      "phaseStartedAt": 7429,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "fast",
+      "armedAt": 7644,
+      "observedAt": 8167,
+      "elapsedMs": 523,
+      "lastUnchangedMs": 474,
+      "phaseStartedAt": 8129,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "normal",
+      "armedAt": 8242,
+      "observedAt": 9954,
+      "elapsedMs": 1712,
+      "lastUnchangedMs": 1675,
+      "phaseStartedAt": 9930,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "slow",
+      "armedAt": 10029,
+      "observedAt": 13754,
+      "elapsedMs": 3725,
+      "lastUnchangedMs": 3692,
+      "phaseStartedAt": 13731,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-regular",
+      "pace": "manual",
+      "heldMs": 2443
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-interrupt",
+      "pace": "manual",
+      "heldMs": 2353
+    },
+    {
+      "profile": "phone4x",
+      "kind": "pace-change",
+      "pace": "fast",
+      "armedAt": 3188,
+      "observedAt": 3934,
+      "elapsedMs": 746,
+      "lastUnchangedMs": 711,
+      "phaseStartedAt": 3913,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "resume",
+      "pace": "normal",
+      "pauseAcceptedAfterArmMs": 942,
+      "armedAt": 3950,
+      "observedAt": 5996,
+      "elapsedMs": 2046,
+      "lastUnchangedMs": 2017,
+      "phaseStartedAt": 5973,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "human-calza",
+      "pace": "normal",
+      "elapsedMs": 1195,
+      "requestedAt": 1506
+    },
+    {
+      "profile": "phone4x",
+      "kind": "core-clock",
+      "pace": "normal",
+      "armedAt": 309,
+      "observedAt": 1418,
+      "elapsedMs": 1109,
+      "lastUnchangedMs": 989,
+      "phaseStartedAt": 1312,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "core-clock",
+      "pace": "manual",
+      "armedAt": 1773,
+      "observedAt": 2780,
+      "elapsedMs": 1007,
+      "lastUnchangedMs": 991,
+      "phaseStartedAt": 2767,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "overdue-clock-manual-step",
+      "pace": "manual",
+      "armedAt": 2851,
+      "clickedAt": 3964,
+      "deadline": 3851,
+      "expected": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      },
+      "actual": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "overdue-clock-human-input",
+      "pace": "manual",
+      "armedAt": 4041,
+      "clickedAt": 5093,
+      "deadline": 5041,
+      "late": {
+        "quantity": 1,
+        "face": 2
+      },
+      "expected": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      },
+      "actual": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "saved-game-resume",
+      "pace": "normal",
+      "armedAt": 2167,
+      "observedAt": 4149,
+      "elapsedMs": 1982,
+      "lastUnchangedMs": 1938,
+      "phaseStartedAt": 4123,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    }
+  ],
+  "standingsComparisons": [
+    {
+      "profile": "desktop",
+      "reason": "natural last-die finish",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "p0": 3.1,
+          "p1": 1,
+          "p2": 2
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 3.1,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 2,
+            "rank": 2
+          },
+          {
+            "playerId": "p1",
+            "score": 1,
+            "rank": 3
+          }
+        ],
+        "winnerIds": [
+          "p0"
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "Player 1",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 2,
+          "name": "Player 3",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p1",
+          "rank": 3,
+          "name": "Player 2",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "unequal eight-seat host end",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.4,
+          "p2": 8.3,
+          "p3": 8.3,
+          "p4": 8.2,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.4,
+            "rank": 2
+          },
+          {
+            "playerId": "p2",
+            "score": 8.3,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 3
+          },
+          {
+            "playerId": "p4",
+            "score": 8.2,
+            "rank": 5
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 2,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 3,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 5,
+          "name": "Player five",
+          "dice": 2,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "tied eight-seat host end",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "saved tied finish",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "resumed tied finish",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "natural empty-ID winner",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "": 2.1,
+          "__proto__": 1
+        },
+        "ranking": [
+          {
+            "playerId": "",
+            "score": 2.1,
+            "rank": 1
+          },
+          {
+            "playerId": "__proto__",
+            "score": 1,
+            "rank": 2
+          }
+        ],
+        "winnerIds": [
+          ""
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "",
+          "rank": 1,
+          "name": "Empty seat",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "__proto__",
+          "rank": 2,
+          "name": "Prototype seat",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "reason": "recovered empty-ID winner",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "": 2.1,
+          "__proto__": 1
+        },
+        "ranking": [
+          {
+            "playerId": "",
+            "score": 2.1,
+            "rank": 1
+          },
+          {
+            "playerId": "__proto__",
+            "score": 1,
+            "rank": 2
+          }
+        ],
+        "winnerIds": [
+          ""
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "",
+          "rank": 1,
+          "name": "Empty seat",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "__proto__",
+          "rank": 2,
+          "name": "Prototype seat",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "natural last-die finish",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "p0": 3.1,
+          "p1": 1,
+          "p2": 2
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 3.1,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 2,
+            "rank": 2
+          },
+          {
+            "playerId": "p1",
+            "score": 1,
+            "rank": 3
+          }
+        ],
+        "winnerIds": [
+          "p0"
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "Player 1",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 2,
+          "name": "Player 3",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p1",
+          "rank": 3,
+          "name": "Player 2",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "unequal eight-seat host end",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.4,
+          "p2": 8.3,
+          "p3": 8.3,
+          "p4": 8.2,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.4,
+            "rank": 2
+          },
+          {
+            "playerId": "p2",
+            "score": 8.3,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 3
+          },
+          {
+            "playerId": "p4",
+            "score": 8.2,
+            "rank": 5
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 2,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 3,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 5,
+          "name": "Player five",
+          "dice": 2,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "tied eight-seat host end",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "saved tied finish",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "resumed tied finish",
+      "endReason": "vip-end",
+      "expected": {
+        "scores": {
+          "p0": 8.5,
+          "p1": 8.5,
+          "p2": 8.4,
+          "p3": 8.3,
+          "p4": 8.3,
+          "p5": 8.1,
+          "p6": 2,
+          "p7": 1
+        },
+        "ranking": [
+          {
+            "playerId": "p0",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p1",
+            "score": 8.5,
+            "rank": 1
+          },
+          {
+            "playerId": "p2",
+            "score": 8.4,
+            "rank": 3
+          },
+          {
+            "playerId": "p3",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p4",
+            "score": 8.3,
+            "rank": 4
+          },
+          {
+            "playerId": "p5",
+            "score": 8.1,
+            "rank": 6
+          },
+          {
+            "playerId": "p6",
+            "score": 2,
+            "rank": 7
+          },
+          {
+            "playerId": "p7",
+            "score": 1,
+            "rank": 8
+          }
+        ],
+        "winnerIds": [
+          "p0",
+          "p1"
+        ],
+        "awards": [],
+        "headlineNote": "Ended by the host; remaining dice decide the standings."
+      },
+      "actual": [
+        {
+          "playerId": "p0",
+          "rank": 1,
+          "name": "<img src=x onerror=alert(1)>",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p1",
+          "rank": 1,
+          "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+          "dice": 5,
+          "status": "Tied winner"
+        },
+        {
+          "playerId": "p2",
+          "rank": 3,
+          "name": "A<&\"quote\">",
+          "dice": 4,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p3",
+          "rank": 4,
+          "name": "Player four",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p4",
+          "rank": 4,
+          "name": "Player five",
+          "dice": 3,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p5",
+          "rank": 6,
+          "name": "Player six",
+          "dice": 1,
+          "status": "At host end"
+        },
+        {
+          "playerId": "p6",
+          "rank": 7,
+          "name": "Player seven",
+          "dice": 0,
+          "status": "2nd out"
+        },
+        {
+          "playerId": "p7",
+          "rank": 8,
+          "name": "Player eight",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "natural empty-ID winner",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "": 2.1,
+          "__proto__": 1
+        },
+        "ranking": [
+          {
+            "playerId": "",
+            "score": 2.1,
+            "rank": 1
+          },
+          {
+            "playerId": "__proto__",
+            "score": 1,
+            "rank": 2
+          }
+        ],
+        "winnerIds": [
+          ""
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "",
+          "rank": 1,
+          "name": "Empty seat",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "__proto__",
+          "rank": 2,
+          "name": "Prototype seat",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    },
+    {
+      "profile": "phone4x",
+      "reason": "recovered empty-ID winner",
+      "endReason": "last-die",
+      "expected": {
+        "scores": {
+          "": 2.1,
+          "__proto__": 1
+        },
+        "ranking": [
+          {
+            "playerId": "",
+            "score": 2.1,
+            "rank": 1
+          },
+          {
+            "playerId": "__proto__",
+            "score": 1,
+            "rank": 2
+          }
+        ],
+        "winnerIds": [
+          ""
+        ],
+        "awards": [],
+        "headlineNote": "Last player with dice."
+      },
+      "actual": [
+        {
+          "playerId": "",
+          "rank": 1,
+          "name": "Empty seat",
+          "dice": 1,
+          "status": "Winner"
+        },
+        {
+          "playerId": "__proto__",
+          "rank": 2,
+          "name": "Prototype seat",
+          "dice": 0,
+          "status": "1st out"
+        }
+      ]
+    }
+  ],
+  "passed": false,
+  "clockObservations": [
+    {
+      "selector": "#resume",
+      "eventTrusted": true,
+      "clickHostBefore": 1765,
+      "nativeBeforeMs": 1765.7999999821186,
+      "nativeEventTimeStampMs": 1759.3999999761581,
+      "clickHostAfter": 1773,
+      "nativeAfterMs": 1773.699999988079,
+      "profile": "desktop",
+      "kind": "pause-resume",
+      "beforeDeadline": 1171,
+      "pausedAt": 429,
+      "afterDeadline": 2507,
+      "limitMs": 200
+    },
+    {
+      "selector": "#resume-saved",
+      "eventTrusted": true,
+      "clickHostBefore": 1488,
+      "nativeBeforeMs": 745.8000000119209,
+      "nativeEventTimeStampMs": 743.7000000178814,
+      "clickHostAfter": 1491,
+      "nativeAfterMs": 748.3000000119209,
+      "profile": "desktop",
+      "kind": "saved-resume",
+      "savedDeadline": 3146,
+      "savedHostNow": 826,
+      "afterDeadline": 3791,
+      "elapsedBeforeCheckpointMs": 680,
+      "fullClockMs": 3000,
+      "limitMs": 250
+    },
+    {
+      "selector": "#resume",
+      "eventTrusted": true,
+      "clickHostBefore": 1987,
+      "nativeBeforeMs": 1987.7999999821186,
+      "nativeEventTimeStampMs": 1980.2999999821186,
+      "clickHostAfter": 2001,
+      "nativeAfterMs": 2001.0999999940395,
+      "profile": "phone4x",
+      "kind": "pause-resume",
+      "beforeDeadline": 1251,
+      "pausedAt": 655,
+      "afterDeadline": 2583,
+      "limitMs": 200
+    },
+    {
+      "selector": "#resume-saved",
+      "eventTrusted": true,
+      "clickHostBefore": 2811,
+      "nativeBeforeMs": 1044.6000000238419,
+      "nativeEventTimeStampMs": 1035.300000011921,
+      "clickHostAfter": 2819,
+      "nativeAfterMs": 1052,
+      "profile": "phone4x",
+      "kind": "saved-resume",
+      "savedDeadline": 4226,
+      "savedHostNow": 2031,
+      "afterDeadline": 4946,
+      "elapsedBeforeCheckpointMs": 805,
+      "fullClockMs": 3000,
+      "limitMs": 250
+    }
+  ],
+  "scope": "full",
+  "standingsProbeFile": "round-4-standings.json",
+  "pacingProbeFile": "round-1-pacing.json",
+  "hostIdsProbeFile": "round-5-host.json",
+  "sourceGuardHashesAfter": {
+    "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "manifest.json": "4d4831f00da81ff0832bacd8b6589ea38affe1c7d348a0f6573095e5a7f14c4c",
+    "src/core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "src/rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "src/probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0",
+    "src/session.ts": "0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30",
+    "src/browser.ts": "137c5fbe410014fca97f78b2603ee94ecbae9e5ad98f8a14a77f18b5c60b51a0",
+    "src/play.template.html": "90792c1fe2e95049a81fb3cc0ef0cc553351bdcc2d3a197ec192e9d6796e9f72",
+    "scripts/build.mjs": "c08db5217362b4d321ec7ccd08ad31294b938282f2d53c6c47ab793b369839ec",
+    "scripts/browser-check.mjs": "f12e9e82d19a4a1aefe182e23fe74fd17c217c33b985912d5a1a31c7ab61c474",
+    "scripts/browser-evidence.mjs": "e653d3f10c1825ea5fd81903a40f1c46338a13e229cbf54ac88d11a9bca8f0f5",
+    "scripts/frame-coordination.mjs": "3b30bcd89bace6b71403065666264567c28e0aa4ebf1cd4c336d205803132e8b",
+    "scripts/clock-observation.mjs": "0aec74a286c7c13375ac51ca814998ed367b74fc18a80f9a684efe16cb949c55",
+    "scripts/clock-observation-diagnostic.mjs": "53b515c113039d34ee8a414b120467a2e1d954483c8e472722296d9ebb037168",
+    "package.json": "1c11a3c1692f2bdf929ff0b87844fd5a63a73e198a9102320ebcc550c11c92a6",
+    "package-lock.json": "db722fbc9efb2faa40e82ea0d773370015480bbb602fc09529e8f8499ec4eef3",
+    "evidence/browser/required-check-names.json": "a20ed00ea0f50ae799098520b71d7bf71474e50b0c87b7993c88296a341fa17d",
+    "scripts/integrity.mjs": "887700429545883382c2134ca65d755a9a68e7269b057bb66b12bc2164226b16",
+    "tests/browser-evidence.test.mjs": "e5c1df5f320a3ff27442bb64463548c6a0d2f6cdc970a215337c3f6316e68a1f",
+    "tests/frame-coordination.test.mjs": "689c91216aee2eb43f3fd31ffa59e8ed75046f7c231e96529720c3d8d06e3afe",
+    "../../contract/constants.ts": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5",
+    "../../contract/minigame-schema.ts": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb",
+    "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+    "../../contract/player-count-schema.ts": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189",
+    "../../contract/package.json": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495",
+    "dist/core.mjs": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+    "dist/session.mjs": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8",
+    "dist/probability.mjs": "1aebecdec1172d7e6a49895129de2d18ac48302b79d9e81ecb9286b525db1083",
+    "dist/rules.mjs": "6dfebfd1d1bbe93b740feb17263ad3b8cc089c68d47f6516f73344fe0cede1e1",
+    "dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "../../.github/workflows/G07.yml": "6be4602ad47134629eaa231a3e905e9f72c046a245e8f200809918baa08f7ddd"
+  },
+  "finishedAt": "2026-10-08T19:21:04.769Z"
+}

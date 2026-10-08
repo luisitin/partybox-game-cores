@@ -10,6 +10,10 @@ import {readReportAndRaw,readSourceGuards,validateBrowserEvidence,validateHistor
 const historical=await readReportAndRaw('evidence/browser/historical-runner-f8a8d602/report.json');
 const expected={'play.html':historical.report.htmlSha256,'dist/core.mjs':historical.report.coreModuleSha256,'dist/session.mjs':historical.report.sessionModuleSha256};
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
+const changeBothWorkloads=mutate=>(report,raw)=>{
+  mutate(report.profiles.find(p=>p.label==='desktop').workload);
+  mutate(raw.desktop.workload);
+};
 test('historical positive is bound to the actual identified old runner',async()=>{
   assert.equal(sha(await readFile('evidence/browser/historical-runner-f8a8d602/browser-check.observed.txt')),LEGACY_RUNNER_SHA256);
   const result=validateHistoricalBrowserEvidence(historical.report,historical.raw,expected,LEGACY_RUNNER_SHA256);
@@ -98,13 +102,13 @@ if(process.env.G07_CURRENT_BROWSER_REPORT){
   ['reset-to-full saved turn',r=>{const o=r.clockObservations.find(o=>o.kind==='saved-resume');o.afterDeadline=o.clickHostBefore+3000;}],
   ['relaxed saved-clock allowance',r=>r.clockObservations.find(o=>o.kind==='saved-resume').limitMs=600],
   ['missing actual sampling workload',(_,raw)=>delete raw.desktop.workload],
-  ['sampling fixture already finished',(_,raw)=>raw.desktop.workload.atStart.phase='done'],
-  ['sampling fixture timer enabled',(_,raw)=>raw.desktop.workload.atStart.turnSeconds=1],
-  ['sampling fixture deadline changed',(_,raw)=>raw.desktop.workload.atStart.deadline=1000],
-  ['sampling fixture cup closed',(_,raw)=>raw.desktop.workload.atEnd.openPrivateDice=0],
-  ['sampling fixture exact odds absent',(_,raw)=>raw.desktop.workload.atStart.oddsAvailable=false],
-  ['sampling fixture bid changed',(_,raw)=>raw.desktop.workload.atEnd.bid.quantity=9],
-  ['sampling fixture lost dice',(_,raw)=>raw.desktop.workload.atEnd.totalDice=39],
-  ['sampling fixture state changed during grant',(_,raw)=>raw.desktop.workload.atStart.stateSha256='0'.repeat(64)],
+  ['sampling fixture already finished',changeBothWorkloads(w=>{for(const o of Object.values(w))o.phase='done';})],
+  ['sampling fixture timer enabled',changeBothWorkloads(w=>{for(const o of Object.values(w))o.turnSeconds=1;})],
+  ['sampling fixture deadline changed',changeBothWorkloads(w=>{for(const o of Object.values(w))o.deadline=1000;})],
+  ['sampling fixture cup closed',changeBothWorkloads(w=>{for(const o of Object.values(w))o.openPrivateDice=0;})],
+  ['sampling fixture exact odds absent',changeBothWorkloads(w=>{for(const o of Object.values(w))o.oddsAvailable=false;})],
+  ['sampling fixture bid changed',changeBothWorkloads(w=>{for(const o of Object.values(w))o.bid.quantity=9;})],
+  ['sampling fixture lost dice',changeBothWorkloads(w=>{for(const o of Object.values(w))o.totalDice=39;})],
+  ['sampling fixture state changed during grant',changeBothWorkloads(w=>w.atStart.stateSha256='0'.repeat(64))],
  ])test('current reject '+name,()=>{const {report,raw}=structuredClone(current);corrupt(report,raw);assert.throws(()=>validateBrowserEvidence(report,raw,guards));});
 }

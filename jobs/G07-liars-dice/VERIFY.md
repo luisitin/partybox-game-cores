@@ -674,3 +674,20 @@ for the newly repaired observer/checker. PR6 remains draft pending exact fresh C
 
 Prior push completion observed18:07:04UTC (hosted creation18:07:01), recovery
 19:11:49UTC: cadence exceeded30minutes during interruption. No backdate or waiver.
+
+## Actual unsampled checker failure and correction12
+
+Full run20261008191711475 completed all94 checks:92 PASS, two strict setup
+failures on undefined !==8 because the new observer used array.length for the
+contract player map. Both failures preceded READY; zero frame intervals were
+collected. Both owned Node/browser groups closed before correction. All four
+actual clock observations passed unchanged200/250ms gates (errors0/17/0/60ms).
+The complete failed report, exact32 source maps and original log are preserved.
+This is a checker error, not a gameplay or FPS failure. Corrected count uses
+Object.keys(state.players).length; no production/timer/native callback changed.
+Native samples now also save an explicitly incomplete sidecar immediately after
+CLOSED, before endpoint verification; it can never substitute for complete raw
+acceptance. Workload corruption controls alter BOTH report/raw boundaries, so
+finished/timed/closed-cup/missing-odds/changed-bid/dice fixtures cannot merely
+fail because two copied reports differ. Current full/CI acceptance remains
+PENDING; no unchanged strict timing retry occurred.

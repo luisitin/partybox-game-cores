@@ -70,7 +70,7 @@ async function benchmarkWorkload(page) {
   const observed=await page.evaluate(()=>{
     const s=window.__G07.state(),controller=window.__G07.controller();
     return {phase:s.phase.id,deadline:s.phase.deadline,turnSeconds:s.settings.turnSeconds,
-      players:s.players.length,totalDice:Object.values(s.diceCount).reduce((a,b)=>a+b,0),
+      players:Object.keys(s.players).length,totalDice:Object.values(s.diceCount).reduce((a,b)=>a+b,0),
       openPrivateDice:document.querySelectorAll('#cup .die').length,
       bid:{quantity:s.bid?.quantity,face:s.bid?.face},oddsAvailable:controller.odds!==null,
       stateJson:JSON.stringify(s)};
@@ -1404,6 +1404,12 @@ try {
       await closeFrameGrant(grant,{sampled:true,passed:measurement.fps>=59&&measurement.p99Ms<=17,
         intervals:600,fps:measurement.fps,p99Ms:measurement.p99Ms,maxMs:measurement.maxMs,
         recordedVideo:false});
+      // Preserve native samples even if a later endpoint/source observation
+      // fails. This sidecar is incomplete and is never acceptance fallback.
+      const nativeSample=JSON.stringify({...measurement,runId,htmlSha256,sourceGuardHashes,
+        scope:'native sample retained before endpoint verification; not complete acceptance'},null,2)+'\n';
+      await writeFile(resolve(work,`${profile.label}-native-sample.json`),nativeSample);
+      await writeFile(resolve(archive,`${profile.label}-native-sample.json`),nativeSample);
       const workloadAtEnd=await benchmarkWorkload(page);
       measurement.workload={beforeReady:workloadBeforeReady,atStart:workloadAtStart,atEnd:workloadAtEnd};
       Object.assign(measurement,{runId,htmlSha256,sourceGuardHashes,

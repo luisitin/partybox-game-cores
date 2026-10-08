@@ -135,3 +135,20 @@ screenshots and artifact writes.
 The environment reset interrupted a functional-only run and exceeded the30-minute
 branch-push rule. Recovery preserves the elapsed gap and partial output; no pass
 is inferred from a launcher exiting or missing final report. No BLOCKED condition.
+
+## Actual unsampled checker failure and correction12
+
+Full run20261008191711475 completed all94 checks:92 PASS, two strict setup
+failures on undefined !==8 because the new observer used array.length for the
+contract player map. Both failures preceded READY; zero frame intervals were
+collected. Both owned Node/browser groups closed before correction. All four
+actual clock observations passed unchanged200/250ms gates (errors0/17/0/60ms).
+The complete failed report, exact32 source maps and original log are preserved.
+This is a checker error, not a gameplay or FPS failure. Corrected count uses
+Object.keys(state.players).length; no production/timer/native callback changed.
+Native samples now also save an explicitly incomplete sidecar immediately after
+CLOSED, before endpoint verification; it can never substitute for complete raw
+acceptance. Workload corruption controls alter BOTH report/raw boundaries, so
+finished/timed/closed-cup/missing-odds/changed-bid/dice fixtures cannot merely
+fail because two copied reports differ. Current full/CI acceptance remains
+PENDING; no unchanged strict timing retry occurred.
