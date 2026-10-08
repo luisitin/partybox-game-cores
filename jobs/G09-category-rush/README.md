@@ -24,6 +24,7 @@ npm run bots
 node scripts/browser-check.mjs
 node scripts/browser-resume.mjs after
 node scripts/browser-performance.mjs
+node scripts/browser-late-save.mjs
 ```
 
 Development tools are build/test dependencies. Zod is the only runtime dependency

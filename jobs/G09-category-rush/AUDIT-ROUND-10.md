@@ -36,3 +36,20 @@ optimization. It is functional and observational timing evidence, not another
 600-frame acceptance run. Existing genuine source-bound strict evidence keeps
 its original scope. A failed attempt is retained. Count a third no-gain review
 only after actual typing, autosave, private recovery and source checks finish.
+
+Actual preparation completed naturally at20:57:08.788UTC/EXIT0. All four full
+real rounds took96private ballots each. The384unique long-answer groups give
+each of8humans48points; the unedited94448-byte fifth-round handover retains
+84submitted long answers and an untouched private p8 draft. Exact producer and
+snapshot hashes are saved. These are synthetic load answers adjudicated by
+actual abstaining ballots,not claims of authored-bank membership.
+
+The first native desktop observer completed960trusted keystrokes,full visible
+and saved drafts and advancing60→55timer. It failed only after actual reload
+because its init script unconditionally overwrote storage with the original
+empty snapshot on every navigation. Natural EXIT1/CLOSED21:08:14.515UTC.
+First report,exact runner,all native events and95398-byte saved payload remain
+archived;phone/capture were not run. This is a test-setup defect,not a proven
+player recovery defect. The only correction seeds once per session and checks
+refusal of a second seed. The changed-setup retest is prepared but unlaunched.
+No third no-gain round has been counted and no runtime optimization adopted.

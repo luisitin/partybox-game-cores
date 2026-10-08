@@ -1,0 +1,111 @@
+{
+  "startedAt": "2026-10-08T20:53:15.693Z",
+  "mode": "prepare",
+  "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+  "runnerSha256": "1d6eb6c643e0706811403ea83e9e0cf9962bfbd4fd4a5405336aed4704800b25",
+  "sourceFingerprints": {
+    "client-save.ts": "3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff",
+    "client-draft.ts": "9a5acea792abf2bcb6e727c4b8e69e0e26e8b337463108042ee312fa03af526a",
+    "client.ts": "73a9e39fb2753185fe2bad12156e99fbc414a272230f33dc5540f64223530167",
+    "build-play.ts": "ab3b89a8289f52a8914202b89b3746ed85cd2cdb31cb926276b8c749b05eb12a",
+    "src/play.template.html": "2b89c3dbeb69326a4c6a29bc84882ae25dd3462c502142ccb70359a1a288a501",
+    "src/index.ts": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+    "src/model.ts": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4",
+    "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "src/match.ts": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "src/select.ts": "1fe2cfaf8bfdb4ab3de945bbb31ce61a124f34fee80963821178800112ae1c07",
+    "content/categories.ts": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851",
+    "package-lock.json": "0da98f3882641b8411cfa4137b5533f9f7e5944d5f99101e59a979e9e372da38",
+    "LICENSE": "17936c55642f589858b3023756fc8c73706f0d4118be9d23cf174b1e485d627e",
+    "THIRD_PARTY_NOTICES.txt": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164",
+    "node_modules/zod/LICENSE": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+    "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+    "scripts/browser-performance.mjs": "885572efb3144dfa5bbaecc6ec252f952277031ec7b693c266d5b9f435138aee",
+    "scripts/frame-window.mjs": "e18637a05e8f1fc1fb5bd9b74392c87fa09bc5ec29f4579713a6cdc311ba2a8d",
+    "scripts/browser-late-save.mjs": "1d6eb6c643e0706811403ea83e9e0cf9962bfbd4fd4a5405336aed4704800b25"
+  },
+  "scope": "Authentic maximum roster/round/answer-length private writing and autosave coverage; native clocks and observed input-handler timings, no FPS acceptance or physical-device claim",
+  "profiles": [],
+  "runtime": {
+    "errors": [],
+    "requests": [],
+    "dialogs": []
+  },
+  "passed": true,
+  "browser": "141.0.7390.37",
+  "prepare": {
+    "passed": true,
+    "authenticSnapshotSha256": "2566e0245ac55382354457130f24e1c330c9d19c5211a7deb0c62263b822ba4b",
+    "authenticSnapshotBytes": 94448,
+    "round": 5,
+    "completedRounds": 4,
+    "humans": 8,
+    "completedGroups": 384,
+    "currentSubmittedAnswers": 84,
+    "answerLength": 80,
+    "nameLength": 24,
+    "played": [
+      {
+        "round": 1,
+        "ballots": 96,
+        "historyGroups": 96,
+        "scores": {
+          "p1": 12,
+          "p2": 12,
+          "p3": 12,
+          "p4": 12,
+          "p5": 12,
+          "p6": 12,
+          "p7": 12,
+          "p8": 12
+        }
+      },
+      {
+        "round": 2,
+        "ballots": 96,
+        "historyGroups": 96,
+        "scores": {
+          "p1": 24,
+          "p2": 24,
+          "p3": 24,
+          "p4": 24,
+          "p5": 24,
+          "p6": 24,
+          "p7": 24,
+          "p8": 24
+        }
+      },
+      {
+        "round": 3,
+        "ballots": 96,
+        "historyGroups": 96,
+        "scores": {
+          "p1": 36,
+          "p2": 36,
+          "p3": 36,
+          "p4": 36,
+          "p5": 36,
+          "p6": 36,
+          "p7": 36,
+          "p8": 36
+        }
+      },
+      {
+        "round": 4,
+        "ballots": 96,
+        "historyGroups": 96,
+        "scores": {
+          "p1": 48,
+          "p2": 48,
+          "p3": 48,
+          "p4": 48,
+          "p5": 48,
+          "p6": 48,
+          "p7": 48,
+          "p8": 48
+        }
+      }
+    ]
+  },
+  "finishedAt": "2026-10-08T20:57:08.788Z"
+}

@@ -89,6 +89,22 @@ Round10 probes maximum configured roster/round count and80-character ASCII
 answers through actually played browser turns. It never manufactures history
 or edits a saved payload. Distinct long tokens avoid the existing one-edit
 matcher grouping near-identical artificial answers. Native trusted input event
-capture/microtask timings observe handler work,not physical keyboard latency,
+ capture and later bubble-listener timings observe handler work,not physical keyboard latency,
 paint latency or an FPS guarantee. The existing genuine strict sampler remains
 unchanged. No third no-gain review is counted before actual coverage completes.
+
+The completed authentic preparation is retained with its exact original runner.
+Before any timing probe, the observer was corrected to timestamp a bubble
+listener registered after the existing production handler; a capture-listener
+microtask could execute before another listener. No timing sample had run.
+The producer and observer hashes are recorded separately. Every runtime/page
+fingerprint stays identical and the authentic snapshot is reused byte-for-byte.
+
+The first actual late-sheet reload exposed a test-initializer defect: every
+navigation rewrote the original empty save despite a newly typed correct save.
+Its complete first failure stays archived. The correction uses isolated native
+sessionStorage to seed only the first file navigation,then measures two actual
+initializer attempts with one write and inspects the saved draft after reload.
+It never changes production storage or an existing acceptance threshold.
+Synthetic stress answers use distinct long tokens and real abstaining ballots;
+their mechanical load/scoring coverage does not establish category membership.

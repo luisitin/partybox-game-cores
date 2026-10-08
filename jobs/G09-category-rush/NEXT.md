@@ -72,3 +72,35 @@ characters,not a theoretical maximum UTF8-storage claim. Finish actual measured
 coverage,bind raw payload/events/source,capture,log actual R10 result,publish,
 refresh only G09 claim,then require final exacthead green and genuine artifacts
 before PR8Ready. Derive25/30-minute deadlines from the actual new normal push.
+
+Prepared checkpoint5a71e62b158b1930f7fb552c3a8df8447fa315a2 was normally pushed
+20:52:39.442958999UTC;only G09 claim2064006 row20:52:51 pushed20:52:53.
+26m02s gap passes30-minute rule;25-minute target missed1m02s after the actual
+G04 hold. Its full run37842715617/job113535836969 is now SUCCESS;actual complete
+144297-character log read,68tests/pass68/0fail and12fresh legacy cases.
+
+Actual R10 preparation EXIT0 naturally CLOSED20:57:08.788UTC(start20:53:15.693).
+Four real full rounds each require96private ballots;384unique80-character
+groups score48for each of8humans. Authentic94448-byte final handover snapshot
+SHA2562566e0245ac55382354457130f24e1c330c9d19c5211a7deb0c62263b822ba4b
+has84submitted80-character answers and private p8,elapsed0. Exact producer
+runner1d6eb6c6 and completed preparation are preserved byte-for-byte.
+
+First native observer grant21:07:40.674185UTC;actual EXIT1/CLOSED21:08:14.515UTC.
+All960trusted desktop inputs,visible80-character sheets and actual95398-byte
+typed payload passed,timer60→55. Failure occurs after reload: the test's
+unconditional init script reseeds the empty original snapshot on every
+navigation. Complete first runner/report/observations/payload remain in
+round-10-late-save-first. Phone and capture were NOT RUN. No recovery bug or
+player gain is established; no third no-gain review is counted.
+The corrected CLI seeds once per isolated session and checks two attempts but
+one seed write,actual new payload preservation and elapsed time on reload.
+Only test setup changed;production files and original FPS sampler are unchanged.
+New strict-TS artifact checker and G09-only CI integration are prepared but
+WITHHELD until the actual changed-setup retest passes. No fake clocks,STOP,new
+FPS sampler or hard handler-latency gate. Await root's fresh coordinated grant
+before node scripts/browser-late-save.mjs probe;preserve every failed attempt.
+After real pass,decode the actual clip,run the new checker,log the actual review
+outcome,enable the prepared CI integration and require final exacthead fullgreen
+plus genuine artifact validation before PR8Ready. Derive deadlines from this
+checkpoint's ACTUAL successful new push,not from planned or old times.

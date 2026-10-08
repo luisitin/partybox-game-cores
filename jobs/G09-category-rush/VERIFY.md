@@ -1,5 +1,27 @@
 # Verification
 
+## Tenth review actual preparation and preserved first observer failure
+
+`timeout 600s node scripts/browser-late-save.mjs prepare > .work/round-10-prepare-first.log 2>&1`
+EXIT0,natural CLOSED20:57:08.788UTC. Four full real8-human rounds each complete
+96private ballots;384unique80-character groups give48points per player.
+Actual94448-byte fifth-round handover has84locked long answers and private p8,
+elapsed0;SHA2562566e0245ac55382354457130f24e1c330c9d19c5211a7deb0c62263b822ba4b.
+Exact producer script/preparation report/full log/snapshot are preserved.
+
+`timeout 300s node scripts/browser-late-save.mjs probe > .work/round-10-probe-first.log 2>&1`
+Actual root grant21:07:40.674185UTC;EXIT1,natural CLOSED21:08:14.515UTC.
+Desktop960trusted native inputs and full visible/stored drafts pass;actual95398B
+save retains12full answers/history/RNG,timer60→55. Original input-handler
+observations:p994.6ms/max11ms,one57ms long task,no hard latency gate/FPS claim.
+After reload the test initializer incorrectly reseeds the original empty draft.
+This is confirmed by its unconditional every-navigation init script and the
+exact failure stage. Complete first runner/report/native events/saved payload
+remain in round-10-late-save-first;phone and capture NOT RUN. No game recovery
+defect or player gain is established. The seed-once setup and actual second-seed
+refusal/payload checks are syntax/strict-TS checked;retest remains unlaunched.
+New artifact test/CI integration will be published after its actual report passes.
+
 ## Exact 5f46 full green and tenth-review preparation
 
 Native full run37839490435/job113524945991 at exact5f46cddfbedd9e59cccc86927b9369db94826340

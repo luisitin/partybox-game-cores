@@ -24,14 +24,7 @@ let context,page;
 async function fresh({raw,width=1920,height=1080,rate=1,recording=false}={}){
  if(context)await context.close();
  context=await browser.newContext({offline:true,viewport:{width,height},...(recording?{recordVideo:{dir:output,size:{width:Math.min(width,1280),height:Math.min(height,720)}}}:{})});
- if(raw!==undefined)await context.addInitScript(({key,raw})=>{
-  const marker=key+'.late-probe-seeded';
-  sessionStorage.setItem(marker+'.attempts',String(Number(sessionStorage.getItem(marker+'.attempts')??0)+1));
-  if(sessionStorage.getItem(marker)!=='done'){
-   localStorage.setItem(key,raw);sessionStorage.setItem(marker,'done');
-   sessionStorage.setItem(marker+'.writes',String(Number(sessionStorage.getItem(marker+'.writes')??0)+1));
-  }
- },{key,raw});
+ if(raw!==undefined)await context.addInitScript(({key,raw})=>localStorage.setItem(key,raw),{key,raw});
  page=await context.newPage();
  page.on('pageerror',e=>report.runtime.errors.push(String(e)));
  page.on('request',r=>{if(!r.url().startsWith('file:'))report.runtime.requests.push(r.url());});
@@ -79,17 +72,12 @@ try{
   assert(snapshot.draft.every(text=>text===''));assert.equal(snapshot.seatElapsed,0);
   await writeFile(resolve(output,'authentic-late-handover-save.json'),raw);
   report.prepare={passed:true,authenticSnapshotSha256:digest(raw),authenticSnapshotBytes:Buffer.byteLength(raw),round:5,completedRounds:4,humans:8,completedGroups:384,currentSubmittedAnswers:84,answerLength:80,nameLength:24,played};
-  await writeFile(resolve(output,'prepare.json'),JSON.stringify({sourceSha256,runnerSha256,sourceFingerprints,...report.prepare},null,2)+'\n');
-  await copyFile(new URL(import.meta.url),resolve(output,'prepare-runner.mjs'));
+  await writeFile(resolve(output,'prepare.json'),JSON.stringify({sourceSha256,runnerSha256,...report.prepare},null,2)+'\n');
   console.log(JSON.stringify({phase:'prepared',...report.prepare}));
  }
  if(mode!=='prepare'){
   const prepare=JSON.parse(await readFile(resolve(output,'prepare.json'),'utf8'));
-  assert.equal(prepare.sourceSha256,sourceSha256);
-  assert.equal(prepare.runnerSha256,digest(await readFile(resolve(output,'prepare-runner.mjs'))));
-  const producerFingerprints=prepare.sourceFingerprints??JSON.parse(await readFile(resolve(output,'prepare-attempt-report.json'),'utf8')).sourceFingerprints;
-  for(const [path,hash] of Object.entries(producerFingerprints))assert.equal(hash,path==='scripts/browser-late-save.mjs'?prepare.runnerSha256:sourceFingerprints[path]);
-  report.prepare=prepare;report.prepareProducer={runnerSha256:prepare.runnerSha256,sourceSha256:prepare.sourceSha256,sourceFingerprints:producerFingerprints,sameRuntimeFingerprints:true};
+  assert.equal(prepare.sourceSha256,sourceSha256);assert.equal(prepare.runnerSha256,runnerSha256);report.prepare=prepare;
   const raw=await readFile(resolve(output,'authentic-late-handover-save.json'),'utf8');assert.equal(digest(raw),prepare.authenticSnapshotSha256);
   for(const [profile,width,height,rate] of [['desktop',1920,1080,1],['phone4x',390,844,4]]){
    const row={profile,viewport:{width,height},cpuThrottle:rate,passed:false};report.profiles.push(row);
@@ -99,18 +87,11 @@ try{
    await page.locator('#ready').click();
    await page.evaluate(()=>{
     const observations={inputs:[],saveStatus:[],longTasks:[],nativeDate:Function.prototype.toString.call(Date.now).includes('[native code]'),nativePerformanceNow:Function.prototype.toString.call(performance.now).includes('[native code]')};
-    const begins=new WeakMap();
     document.addEventListener('input',event=>{
      if(!(event.target instanceof HTMLInputElement)||!event.target.matches('.answer-input'))return;
-     begins.set(event,{startedPerformanceMs:performance.now(),wallMs:Date.now()});
+     const started=performance.now(),target=event.target,wallMs=Date.now(),trusted=event.isTrusted;
+     queueMicrotask(()=>observations.inputs.push({id:target.id,trusted,wallMs,startedPerformanceMs:started,finishedPerformanceMs:performance.now(),value:target.value}));
     },true);
-    // This bubble listener was added after the production document listener.
-    // Its timestamp includes the actual existing synchronous input handler.
-    // A microtask in a capture listener could run before a later listener.
-    document.addEventListener('input',event=>{
-     const start=begins.get(event);if(!start)return;const target=event.target;
-     observations.inputs.push({id:target.id,trusted:event.isTrusted,...start,finishedPerformanceMs:performance.now(),value:target.value});
-    });
     const status=document.getElementById('save-status');
     new MutationObserver(()=>observations.saveStatus.push({wallMs:Date.now(),performanceMs:performance.now(),text:status.textContent})).observe(status,{childList:true,characterData:true,subtree:true});
     new PerformanceObserver(list=>{for(const entry of list.getEntries())observations.longTasks.push({startTime:entry.startTime,duration:entry.duration,name:entry.name});}).observe({type:'longtask',buffered:false});
@@ -136,18 +117,10 @@ try{
    assert.deepEqual(saved.state.rng,JSON.parse(raw).state.rng);assert.deepEqual(saved.botRngs,JSON.parse(raw).botRngs);
    assert.equal(await page.locator('#answer-form').count(),1);assert.equal(await page.locator('[role=dialog]').count(),0);
    assert(timerSeconds(row.timerAfter)>0&&timerSeconds(row.timerAfter)<=timerSeconds(row.timerBefore));
-   row.initialSeed=await page.evaluate(key=>({attempts:Number(sessionStorage.getItem(key+'.late-probe-seeded.attempts')),writes:Number(sessionStorage.getItem(key+'.late-probe-seeded.writes'))}),key);
-   assert.deepEqual(row.initialSeed,{attempts:1,writes:1});
    await page.reload();assert.equal(await page.locator('#resume-game').count(),1);assert.equal(await page.locator('.answer-input').count(),0);
-   row.afterReloadSeed=await page.evaluate(key=>({attempts:Number(sessionStorage.getItem(key+'.late-probe-seeded.attempts')),writes:Number(sessionStorage.getItem(key+'.late-probe-seeded.writes'))}),key);
-   assert.deepEqual(row.afterReloadSeed,{attempts:2,writes:1},'the initializer must refuse its second navigation seed');
-   const afterReloadRaw=await stored();await writeFile(resolve(output,`${profile}-after-reload-save.json`),afterReloadRaw);
-   row.afterReloadSaveSha256=digest(afterReloadRaw);assert.deepEqual(JSON.parse(afterReloadRaw).draft,expected);
    await page.locator('#resume-game').click();assert.equal(await page.locator('.answer-input').count(),0);
    await page.locator('#ready').click();assert.deepEqual(await page.locator('.answer-input').evaluateAll(inputs=>inputs.map(input=>input.value)),expected);
    const resumed=JSON.parse(await stored());assert.deepEqual(resumed.state.history,saved.state.history);assert.deepEqual(resumed.state.scores,saved.state.scores);
-   assert(resumed.seatElapsed>=saved.seatElapsed&&resumed.seatElapsed<60000,'actual reload preserves elapsed writing time');
-   row.restoredTimer=await page.locator('#timer').innerText();row.restoredElapsedMs=resumed.seatElapsed;
    row.privateReload=true;row.fullDraftRecovered=true;row.historyAndScoresPreserved=true;row.passed=true;
    await page.screenshot({path:resolve(output,`${profile}-late-draft.png`),fullPage:true});
    await writeFile(resolve(output,`${profile}-input-observations.json`),JSON.stringify(row,null,2)+'\n');
@@ -159,8 +132,7 @@ try{
   await awaitSaved();await page.locator('#answer-0').scrollIntoViewIfNeeded();await page.waitForTimeout(1500);
   const video=page.video();await context.close();context=null;
   const videoPath=resolve(output,'late-save-phone4x.webm');await video.saveAs(videoPath);await unlink(await video.path());
-  await copyFile(videoPath,resolve(root,'media/round-10-late-save-phone4x.webm'));
-  report.capture={path:'late-save-phone4x.webm',canonicalPath:'media/round-10-late-save-phone4x.webm',bytes:(await stat(videoPath)).size,sha256:digest(await readFile(videoPath)),sourceSha256,separateFromObservationalTyping:true,scope:'Actual native private typing and save-status recording, no FPS measurement'};
+  report.capture={path:'late-save-phone4x.webm',bytes:(await stat(videoPath)).size,sha256:digest(await readFile(videoPath)),sourceSha256,separateFromObservationalTyping:true,scope:'Actual native private typing and save-status recording, no FPS measurement'};
   assert(report.capture.bytes>0&&report.capture.bytes<10000000);
  }
  assert.equal(digest(await readFile(html)),sourceSha256);assert.deepEqual(await fingerprints(),sourceFingerprints);

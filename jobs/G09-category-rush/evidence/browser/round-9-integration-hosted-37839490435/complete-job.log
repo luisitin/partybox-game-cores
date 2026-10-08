@@ -1,0 +1,1915 @@
+﻿2026-10-08T20:26:47.3506681Z Current runner version: '2.337.0'
+2026-10-08T20:26:47.3533754Z ##[group]Runner Image Provisioner
+2026-10-08T20:26:47.3534681Z Hosted Compute Agent
+2026-10-08T20:26:47.3535299Z Version: 20261002.596
+2026-10-08T20:26:47.3535931Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T20:26:47.3536735Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T20:26:47.3537488Z Worker ID: {b6113685-113c-4e0f-9876-577695323e64}
+2026-10-08T20:26:47.3538180Z Region: canadacentral
+2026-10-08T20:26:47.3538862Z Cloud: Azure
+2026-10-08T20:26:47.3539405Z ##[endgroup]
+2026-10-08T20:26:47.3541321Z ##[group]Operating System
+2026-10-08T20:26:47.3542020Z Ubuntu
+2026-10-08T20:26:47.3542527Z 24.04.5
+2026-10-08T20:26:47.3543104Z LTS
+2026-10-08T20:26:47.3543618Z ##[endgroup]
+2026-10-08T20:26:47.3544192Z ##[group]Runner Image
+2026-10-08T20:26:47.3544821Z Image: ubuntu-24.04
+2026-10-08T20:26:47.3545388Z Version: 20261004.327.1
+2026-10-08T20:26:47.3546680Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T20:26:47.3548367Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T20:26:47.3549416Z ##[endgroup]
+2026-10-08T20:26:47.3550914Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T20:26:47.3552820Z Contents: read
+2026-10-08T20:26:47.3553468Z Metadata: read
+2026-10-08T20:26:47.3554173Z ##[endgroup]
+2026-10-08T20:26:47.3556297Z Secret source: Actions
+2026-10-08T20:26:47.3557326Z Cache mode: write
+2026-10-08T20:26:47.3558022Z Prepare workflow directory
+2026-10-08T20:26:47.4115453Z Prepare all required actions
+2026-10-08T20:26:47.4186056Z Getting action download info
+2026-10-08T20:26:47.6821150Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T20:26:47.7865682Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T20:26:47.8796458Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T20:26:48.0856201Z Complete job name: verify
+2026-10-08T20:26:48.1700461Z ##[group]Run actions/checkout@v4
+2026-10-08T20:26:48.1701474Z with:
+2026-10-08T20:26:48.1701964Z   ref: 5f46cddfbedd9e59cccc86927b9369db94826340
+2026-10-08T20:26:48.1702612Z   repository: luisitin/partybox-game-cores
+2026-10-08T20:26:48.1706606Z   token: ***
+2026-10-08T20:26:48.1707030Z   ssh-strict: true
+2026-10-08T20:26:48.1707450Z   ssh-user: git
+2026-10-08T20:26:48.1707887Z   persist-credentials: true
+2026-10-08T20:26:48.1708377Z   clean: true
+2026-10-08T20:26:48.1708818Z   sparse-checkout-cone-mode: true
+2026-10-08T20:26:48.1709334Z   fetch-depth: 1
+2026-10-08T20:26:48.1709754Z   fetch-tags: false
+2026-10-08T20:26:48.1710406Z   show-progress: true
+2026-10-08T20:26:48.1710840Z   lfs: false
+2026-10-08T20:26:48.1711240Z   submodules: false
+2026-10-08T20:26:48.1711683Z   set-safe-directory: true
+2026-10-08T20:26:48.1712177Z   allow-unsafe-pr-checkout: false
+2026-10-08T20:26:48.1712949Z ##[endgroup]
+2026-10-08T20:26:48.2806157Z Syncing repository: luisitin/partybox-game-cores
+2026-10-08T20:26:48.2808917Z ##[group]Getting Git version info
+2026-10-08T20:26:48.2810485Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:26:48.2812349Z [command]/usr/bin/git version
+2026-10-08T20:26:48.2893281Z git version 2.55.0
+2026-10-08T20:26:48.2916733Z ##[endgroup]
+2026-10-08T20:26:48.2932693Z Temporarily overriding HOME='/home/runner/work/_temp/c6d8ac85-3d50-4b5f-b7a9-22f400d9e827' before making global git config changes
+2026-10-08T20:26:48.2935281Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:26:48.2938486Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:26:48.2996603Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:26:48.3001225Z ##[group]Initializing the repository
+2026-10-08T20:26:48.3005209Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:26:48.3151382Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T20:26:48.3181191Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T20:26:48.3183413Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T20:26:48.3211170Z hint: call:
+2026-10-08T20:26:48.3212467Z hint:
+2026-10-08T20:26:48.3213863Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T20:26:48.3215447Z hint:
+2026-10-08T20:26:48.3216908Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T20:26:48.3218881Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T20:26:48.3220895Z hint:
+2026-10-08T20:26:48.3222092Z hint: 	git branch -m <name>
+2026-10-08T20:26:48.3223455Z hint:
+2026-10-08T20:26:48.3224977Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T20:26:48.3227392Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-08T20:26:48.3231650Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:26:48.3233884Z ##[endgroup]
+2026-10-08T20:26:48.3234839Z ##[group]Disabling automatic garbage collection
+2026-10-08T20:26:48.3235696Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T20:26:48.3281838Z ##[endgroup]
+2026-10-08T20:26:48.3283210Z ##[group]Setting up auth
+2026-10-08T20:26:48.3290566Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:26:48.3326434Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:26:48.3833688Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:26:48.3882923Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:26:48.4218204Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:26:48.4268884Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:26:48.4515488Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T20:26:48.4559616Z ##[endgroup]
+2026-10-08T20:26:48.4560946Z ##[group]Fetching the repository
+2026-10-08T20:26:48.4569273Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 5f46cddfbedd9e59cccc86927b9369db94826340
+2026-10-08T20:26:51.2952422Z From https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:26:51.2956037Z  * branch            5f46cddfbedd9e59cccc86927b9369db94826340 -> FETCH_HEAD
+2026-10-08T20:26:51.2960834Z ##[endgroup]
+2026-10-08T20:26:51.2962904Z ##[group]Determining the checkout info
+2026-10-08T20:26:51.2965075Z ##[endgroup]
+2026-10-08T20:26:51.2980675Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T20:26:51.3071093Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T20:26:51.3107296Z ##[group]Checking out the ref
+2026-10-08T20:26:51.3120943Z [command]/usr/bin/git checkout --progress --force 5f46cddfbedd9e59cccc86927b9369db94826340
+2026-10-08T20:26:51.5708496Z Note: switching to '5f46cddfbedd9e59cccc86927b9369db94826340'.
+2026-10-08T20:26:51.5710124Z 
+2026-10-08T20:26:51.5711088Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T20:26:51.5713183Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T20:26:51.5715255Z state without impacting any branches by switching back to a branch.
+2026-10-08T20:26:51.5716759Z 
+2026-10-08T20:26:51.5717625Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T20:26:51.5719724Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T20:26:51.5721168Z 
+2026-10-08T20:26:51.5721722Z   git switch -c <new-branch-name>
+2026-10-08T20:26:51.5722594Z 
+2026-10-08T20:26:51.5723143Z Or undo this operation with:
+2026-10-08T20:26:51.5723952Z 
+2026-10-08T20:26:51.5724444Z   git switch -
+2026-10-08T20:26:51.5725109Z 
+2026-10-08T20:26:51.5726177Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T20:26:51.5727758Z 
+2026-10-08T20:26:51.5729017Z HEAD is now at 5f46cdd G09 run authentic legacy-save checks in CI and retain failed evidence
+2026-10-08T20:26:51.5742625Z ##[endgroup]
+2026-10-08T20:26:51.5813542Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T20:26:51.5849277Z 5f46cddfbedd9e59cccc86927b9369db94826340
+2026-10-08T20:26:51.6181388Z ##[group]Run actions/setup-node@v4
+2026-10-08T20:26:51.6182391Z with:
+2026-10-08T20:26:51.6183207Z   node-version: 24
+2026-10-08T20:26:51.6184044Z   cache: npm
+2026-10-08T20:26:51.6185024Z   cache-dependency-path: jobs/G09-category-rush/package-lock.json
+2026-10-08T20:26:51.6186072Z   always-auth: false
+2026-10-08T20:26:51.6186915Z   check-latest: false
+2026-10-08T20:26:51.6191033Z   token: ***
+2026-10-08T20:26:51.6191906Z ##[endgroup]
+2026-10-08T20:26:51.7950526Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-08T20:26:51.7953123Z (node:2293) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:26:51.7955395Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:26:51.7963354Z ##[group]Environment details
+2026-10-08T20:26:52.2662167Z node: v24.21.0
+2026-10-08T20:26:52.2663085Z npm: 11.19.0
+2026-10-08T20:26:52.2663740Z yarn: 1.22.22
+2026-10-08T20:26:52.2665243Z ##[endgroup]
+2026-10-08T20:26:52.2685153Z [command]/opt/hostedtoolcache/node/24.21.0/x64/bin/npm config get cache
+2026-10-08T20:26:52.3819685Z /home/runner/.npm
+2026-10-08T20:26:52.5093972Z Cache hit for: node-cache-Linux-x64-npm-884fa1d35540dcd96226e498a099abd1be43932f14f8f1ff2bf0256737eb891c
+2026-10-08T20:26:52.5207862Z (node:2293) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:26:55.3155255Z Received 12958172 of 12958172 (100.0%), 33.0 MBs/sec
+2026-10-08T20:26:55.3156490Z Cache Size: ~12 MB (12958172 B)
+2026-10-08T20:26:55.3187529Z [command]/usr/bin/tar -xf /home/runner/work/_temp/ff90e6c6-0b88-4db8-9acf-4b37e0a19956/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-08T20:26:55.3476970Z Cache restored successfully
+2026-10-08T20:26:55.3486842Z Cache restored from key: node-cache-Linux-x64-npm-884fa1d35540dcd96226e498a099abd1be43932f14f8f1ff2bf0256737eb891c
+2026-10-08T20:26:55.3659314Z ##[group]Run npm ci
+2026-10-08T20:26:55.3659650Z [36;1mnpm ci[0m
+2026-10-08T20:26:55.3944188Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:26:55.3944502Z ##[endgroup]
+2026-10-08T20:26:56.8334181Z 
+2026-10-08T20:26:56.8341474Z added 11 packages, and audited 12 packages in 1s
+2026-10-08T20:26:56.8341964Z 
+2026-10-08T20:26:56.8342189Z 3 packages are looking for funding
+2026-10-08T20:26:56.8342557Z   run `npm fund` for details
+2026-10-08T20:26:56.8345794Z 
+2026-10-08T20:26:56.8346011Z found 0 vulnerabilities
+2026-10-08T20:26:56.8355983Z npm warn install-scripts 1 package has install scripts not yet covered by allowScripts:
+2026-10-08T20:26:56.8356922Z npm warn install-scripts   esbuild@0.25.10 (postinstall: node install.js)
+2026-10-08T20:26:56.8357416Z npm warn install-scripts
+2026-10-08T20:26:56.8358118Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-10-08T20:26:56.8829498Z ##[group]Run npm run typecheck
+2026-10-08T20:26:56.8830382Z [36;1mnpm run typecheck[0m
+2026-10-08T20:26:56.8830724Z [36;1mnode scripts/generate-content.mjs --check[0m
+2026-10-08T20:26:56.8831119Z [36;1mnpx tsx scripts/content-schema.ts --check[0m
+2026-10-08T20:26:56.8831450Z [36;1mnpm run generate[0m
+2026-10-08T20:26:56.8831860Z [36;1mnpm run build:play[0m
+2026-10-08T20:26:56.8832510Z [36;1mgit diff --exit-code -- content/categories.json content/categories.ts content/categories.schema.json manifest.json fixtures play.html[0m
+2026-10-08T20:26:56.8833180Z [36;1mnpx tsx scripts/checksums.ts --check[0m
+2026-10-08T20:26:56.8899080Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:26:56.8899359Z ##[endgroup]
+2026-10-08T20:26:56.9912402Z 
+2026-10-08T20:26:56.9913158Z > category-rush-core@1.0.0 typecheck
+2026-10-08T20:26:56.9913589Z > tsc --noEmit
+2026-10-08T20:26:56.9913749Z 
+2026-10-08T20:26:59.9562978Z 320 original categories; 20 letters; 4155 curated examples
+2026-10-08T20:27:00.6351885Z Draft 2020-12 JSON Schema regenerated and authored category pack validated.
+2026-10-08T20:27:00.7639270Z 
+2026-10-08T20:27:00.7640190Z > category-rush-core@1.0.0 generate
+2026-10-08T20:27:00.7640809Z > tsx scripts/generate.ts
+2026-10-08T20:27:00.7641088Z 
+2026-10-08T20:27:01.2097584Z Generated manifest and 4 actual-core fixtures.
+2026-10-08T20:27:01.3338238Z 
+2026-10-08T20:27:01.3339327Z > category-rush-core@1.0.0 build:play
+2026-10-08T20:27:01.3340524Z > tsx build-play.ts
+2026-10-08T20:27:01.3340988Z 
+2026-10-08T20:27:01.6679331Z Built self-contained play.html (457688 bytes).
+2026-10-08T20:27:02.5292295Z Checksummed 534 data/media files
+2026-10-08T20:27:02.5601814Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-08T20:27:02.5602521Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-08T20:27:02.5685777Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:27:02.5686186Z ##[endgroup]
+2026-10-08T20:27:03.4342738Z Installing dependencies...
+2026-10-08T20:27:03.4412077Z Switching to root user to install dependencies...
+2026-10-08T20:27:03.5721721Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-08T20:27:03.6076282Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-08T20:27:03.6222050Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-08T20:27:03.6236299Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-08T20:27:03.6284587Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-08T20:27:03.6331629Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-08T20:27:03.6860804Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-08T20:27:03.6991168Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-08T20:27:03.7061166Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [474 kB]
+2026-10-08T20:27:03.7131908Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-08T20:27:03.7960316Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-08T20:27:03.8048571Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-08T20:27:03.8056696Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-08T20:27:03.8143392Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-08T20:27:03.8166927Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-08T20:27:03.8253349Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-08T20:27:03.8281082Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-08T20:27:03.8294631Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-08T20:27:03.9053538Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1115 kB]
+2026-10-08T20:27:03.9123658Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [227 kB]
+2026-10-08T20:27:03.9563583Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1218 kB]
+2026-10-08T20:27:03.9633143Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-08T20:27:03.9654644Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1632 kB]
+2026-10-08T20:27:03.9735889Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [376 kB]
+2026-10-08T20:27:03.9760631Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.6 kB]
+2026-10-08T20:27:06.7828293Z Fetched 12.2 MB in 1s (9606 kB/s)
+2026-10-08T20:27:07.6328774Z Reading package lists...
+2026-10-08T20:27:07.6564942Z Reading package lists...
+2026-10-08T20:27:07.8424462Z Building dependency tree...
+2026-10-08T20:27:07.8432121Z Reading state information...
+2026-10-08T20:27:07.9810535Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-08T20:27:07.9811544Z libasound2t64 set to manually installed.
+2026-10-08T20:27:07.9812506Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:27:07.9813366Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-08T20:27:07.9814112Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:27:07.9815444Z libatk1.0-0t64 set to manually installed.
+2026-10-08T20:27:07.9816005Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:27:07.9816494Z libatspi2.0-0t64 set to manually installed.
+2026-10-08T20:27:07.9816972Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-08T20:27:07.9817415Z libcairo2 set to manually installed.
+2026-10-08T20:27:07.9817898Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-08T20:27:07.9818380Z libcups2t64 set to manually installed.
+2026-10-08T20:27:07.9818859Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-08T20:27:07.9819320Z libdbus-1-3 set to manually installed.
+2026-10-08T20:27:07.9819801Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-08T20:27:07.9820592Z libdrm2 set to manually installed.
+2026-10-08T20:27:07.9821054Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-08T20:27:07.9821495Z libgbm1 set to manually installed.
+2026-10-08T20:27:07.9822039Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-08T20:27:07.9822514Z libglib2.0-0t64 set to manually installed.
+2026-10-08T20:27:07.9822995Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-08T20:27:07.9823441Z libnspr4 set to manually installed.
+2026-10-08T20:27:07.9823847Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-08T20:27:07.9824217Z libnss3 set to manually installed.
+2026-10-08T20:27:07.9824630Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-08T20:27:07.9825039Z libpango-1.0-0 set to manually installed.
+2026-10-08T20:27:07.9825436Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-10-08T20:27:07.9825810Z libx11-6 set to manually installed.
+2026-10-08T20:27:07.9826180Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-08T20:27:07.9826535Z libxcb1 set to manually installed.
+2026-10-08T20:27:07.9826941Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-08T20:27:07.9827362Z libxcomposite1 set to manually installed.
+2026-10-08T20:27:07.9827772Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-08T20:27:07.9828158Z libxdamage1 set to manually installed.
+2026-10-08T20:27:07.9828547Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-08T20:27:07.9828912Z libxext6 set to manually installed.
+2026-10-08T20:27:07.9829295Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-08T20:27:07.9830000Z libxfixes3 set to manually installed.
+2026-10-08T20:27:07.9830408Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-08T20:27:07.9830803Z libxkbcommon0 set to manually installed.
+2026-10-08T20:27:07.9831215Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-08T20:27:07.9831598Z libxrandr2 set to manually installed.
+2026-10-08T20:27:07.9831985Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-08T20:27:07.9832517Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-08T20:27:07.9833092Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-08T20:27:07.9833504Z libfontconfig1 set to manually installed.
+2026-10-08T20:27:07.9833912Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-08T20:27:07.9834319Z fonts-liberation set to manually installed.
+2026-10-08T20:27:07.9834713Z The following additional packages will be installed:
+2026-10-08T20:27:07.9835068Z   xfonts-encodings xfonts-utils
+2026-10-08T20:27:07.9835355Z Recommended packages:
+2026-10-08T20:27:07.9835629Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-08T20:27:08.0011187Z The following NEW packages will be installed:
+2026-10-08T20:27:08.0012087Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-08T20:27:08.0017580Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-08T20:27:08.0018211Z   xfonts-utils
+2026-10-08T20:27:08.0021815Z The following packages will be upgraded:
+2026-10-08T20:27:08.0026165Z   libfreetype6
+2026-10-08T20:27:08.0193205Z 1 upgraded, 9 newly installed, 0 to remove and 22 not upgraded.
+2026-10-08T20:27:08.0193725Z Need to get 21.5 MB of archives.
+2026-10-08T20:27:08.0194174Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-08T20:27:08.0194684Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-08T20:27:08.0632940Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-08T20:27:08.1297270Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-08T20:27:08.2293952Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-08T20:27:08.2553581Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-08T20:27:08.3081654Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-08T20:27:08.4243996Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+2026-10-08T20:27:08.4555763Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-08T20:27:08.4884031Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-08T20:27:08.5153729Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-08T20:27:08.5450223Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-08T20:27:08.8054754Z Fetched 21.5 MB in 1s (39.8 MB/s)
+2026-10-08T20:27:08.8289428Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-08T20:27:08.8624567Z (Reading database ... 
+2026-10-08T20:27:08.8625221Z (Reading database ... 5%
+2026-10-08T20:27:08.8625821Z (Reading database ... 10%
+2026-10-08T20:27:08.8626253Z (Reading database ... 15%
+2026-10-08T20:27:08.8626628Z (Reading database ... 20%
+2026-10-08T20:27:08.8627019Z (Reading database ... 25%
+2026-10-08T20:27:08.8627383Z (Reading database ... 30%
+2026-10-08T20:27:08.8627758Z (Reading database ... 35%
+2026-10-08T20:27:08.8628122Z (Reading database ... 40%
+2026-10-08T20:27:08.8628489Z (Reading database ... 45%
+2026-10-08T20:27:08.8628858Z (Reading database ... 50%
+2026-10-08T20:27:08.8681170Z (Reading database ... 55%
+2026-10-08T20:27:08.9884886Z (Reading database ... 60%
+2026-10-08T20:27:09.1807162Z (Reading database ... 65%
+2026-10-08T20:27:09.3832984Z (Reading database ... 70%
+2026-10-08T20:27:09.5498154Z (Reading database ... 75%
+2026-10-08T20:27:09.6938809Z (Reading database ... 80%
+2026-10-08T20:27:09.8879517Z (Reading database ... 85%
+2026-10-08T20:27:10.0433817Z (Reading database ... 90%
+2026-10-08T20:27:10.1616495Z (Reading database ... 95%
+2026-10-08T20:27:10.1617038Z (Reading database ... 100%
+2026-10-08T20:27:10.1617824Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-08T20:27:10.1661955Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-08T20:27:10.1759714Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-08T20:27:10.4065202Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-08T20:27:10.4193127Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-08T20:27:10.4202562Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-08T20:27:10.5005633Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-08T20:27:10.5131622Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-08T20:27:10.5140874Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-08T20:27:10.5355304Z Selecting previously unselected package fonts-unifont.
+2026-10-08T20:27:10.5480275Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-08T20:27:10.5489515Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-08T20:27:10.6537018Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-08T20:27:10.6684792Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-08T20:27:10.6804081Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-08T20:27:11.1507416Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+2026-10-08T20:27:11.1544779Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+2026-10-08T20:27:11.1796466Z Selecting previously unselected package xfonts-encodings.
+2026-10-08T20:27:11.1921594Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-08T20:27:11.1930978Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-08T20:27:11.2217333Z Selecting previously unselected package xfonts-utils.
+2026-10-08T20:27:11.2340780Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-08T20:27:11.2350220Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-08T20:27:11.2732694Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-08T20:27:11.2855106Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-08T20:27:11.2864531Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-08T20:27:11.3206259Z Selecting previously unselected package xfonts-scalable.
+2026-10-08T20:27:11.3328792Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-08T20:27:11.3337383Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-08T20:27:11.3761471Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-08T20:27:11.3883653Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-08T20:27:11.3907794Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-08T20:27:11.3931335Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+2026-10-08T20:27:11.3954037Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-08T20:27:11.3982841Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-08T20:27:11.4054897Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-08T20:27:11.4072461Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-08T20:27:11.4093763Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-08T20:27:11.4137786Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-08T20:27:11.5387968Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-08T20:27:11.5728816Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-08T20:27:11.6071780Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-08T20:27:11.6094925Z Not building database; man-db/auto-update is not 'true'.
+2026-10-08T20:27:11.6108787Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-08T20:27:12.3437809Z 
+2026-10-08T20:27:12.3438391Z Running kernel seems to be up-to-date.
+2026-10-08T20:27:12.3438737Z 
+2026-10-08T20:27:12.3438870Z Restarting services...
+2026-10-08T20:27:12.3512969Z  systemctl restart php8.3-fpm.service
+2026-10-08T20:27:12.4667111Z 
+2026-10-08T20:27:12.4668464Z No containers need to be restarted.
+2026-10-08T20:27:12.4668849Z 
+2026-10-08T20:27:12.4669308Z No user sessions are running outdated binaries.
+2026-10-08T20:27:12.4669787Z 
+2026-10-08T20:27:12.4670793Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-08T20:27:13.3190731Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+2026-10-08T20:27:13.5251447Z |                                                                                |   0% of 173.9 MiB
+2026-10-08T20:27:13.7624788Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+2026-10-08T20:27:13.8622807Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+2026-10-08T20:27:14.0275971Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+2026-10-08T20:27:14.1397850Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+2026-10-08T20:27:14.3212311Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+2026-10-08T20:27:14.4648577Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+2026-10-08T20:27:14.5900517Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+2026-10-08T20:27:14.7084461Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+2026-10-08T20:27:14.8070080Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+2026-10-08T20:27:14.9321501Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+2026-10-08T20:27:18.5664109Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+2026-10-08T20:27:18.5667663Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-08T20:27:18.7017361Z |                                                                                |   0% of 2.3 MiB
+2026-10-08T20:27:18.7048708Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-08T20:27:18.7074351Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-08T20:27:18.7101122Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-08T20:27:18.7362877Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-08T20:27:18.7424514Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-08T20:27:18.7594815Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-08T20:27:18.7624728Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-08T20:27:18.7682993Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-08T20:27:18.7700258Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-08T20:27:18.7709674Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-08T20:27:18.8352863Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-08T20:27:18.8356643Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+2026-10-08T20:27:18.9632165Z |                                                                                |   0% of 104.3 MiB
+2026-10-08T20:27:19.0401854Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-10-08T20:27:19.1089098Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-10-08T20:27:19.1733335Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-10-08T20:27:19.2450923Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-10-08T20:27:19.3271539Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-10-08T20:27:19.3835288Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-10-08T20:27:19.4388670Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-10-08T20:27:19.4878160Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-10-08T20:27:19.5427450Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-10-08T20:27:19.5895594Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-10-08T20:27:21.4795201Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+2026-10-08T20:27:21.5874258Z ##[group]Run node --input-type=module - <<'JS'
+2026-10-08T20:27:21.5874692Z [36;1mnode --input-type=module - <<'JS'[0m
+2026-10-08T20:27:21.5875070Z [36;1mimport {readFileSync,writeFileSync} from 'node:fs';[0m
+2026-10-08T20:27:21.5875461Z [36;1mimport {createHash} from 'node:crypto';[0m
+2026-10-08T20:27:21.5875929Z [36;1mconst hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');[0m
+2026-10-08T20:27:21.5877291Z [36;1mwriteFileSync('evidence/browser/hosted-run.json',JSON.stringify({origin:'github-actions',headSha:process.env.G09_EVIDENCE_HEAD,runId:process.env.G09_EVIDENCE_RUN,attempt:process.env.G09_EVIDENCE_ATTEMPT,htmlSha256:hash('play.html'),runnerSha256:hash('scripts/browser-performance.mjs')},null,2)+'\n');[0m
+2026-10-08T20:27:21.5878462Z [36;1mJS[0m
+2026-10-08T20:27:21.5878704Z [36;1mnode scripts/browser-performance.mjs[0m
+2026-10-08T20:27:21.5942648Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:27:21.5942908Z env:
+2026-10-08T20:27:21.5943232Z   G09_EVIDENCE_HEAD: 5f46cddfbedd9e59cccc86927b9369db94826340
+2026-10-08T20:27:21.5943595Z   G09_EVIDENCE_RUN: 37839490435
+2026-10-08T20:27:21.5943852Z   G09_EVIDENCE_ATTEMPT: 1
+2026-10-08T20:27:21.5944083Z ##[endgroup]
+2026-10-08T20:27:21.9238601Z {"pid":3394,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","action":"600 consecutive RAF samples and recording per profile"}
+2026-10-08T20:27:37.0992155Z {"profile":"desktop","viewport":{"width":1920,"height":1080},"cpuThrottle":1,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","samplingRecording":false,"recordingDuringMeasurement":false,"sampleMethod":"601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps","nativeDate":true,"workload":{"passed":true,"method":"Visible answer form, no modal and native Date.now/timer on every601 real RAF callback; checked after all600 unfiltered deltas","nativeDate":true,"witnessCount":601,"validWalls":true,"visibleAnswerEveryCallback":true,"liveTimerEveryCallback":true,"timerAdvanced":true,"deadlineConsistent":true,"wallElapsedMs":10000,"firstWallMs":1791491243038,"lastWallMs":1791491253038,"timerStartSeconds":60,"timerEndSeconds":50,"deadlineUpperMs":1791491303038},"count":600,"totalMs":9999.601999999999,"meanMs":16.666003333333332,"fps":60.002388095046186,"p95Ms":16.799999999999727,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":["file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"],"pageErrors":[],"passed":true,"video":"media/delivery-final-desktop.webm","clipContext":{"separateFromSampling":true,"viewport":{"width":1920,"height":1080},"cpuThrottle":1,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","activeRecordingMs":3000,"workload":"offline 12-category answer screen with active timer, three private warnings and a real native article-tab paste retained as separate words; recording only","privateWarningRows":3,"nativePasteWordBoundary":{"method":"native Chromium clipboard","letter":"S","categoryId":"art-08","prompt":"Something used to shape wet clay","noun":"sponge","pasted":"The\tsponge","visible":"The sponge"},"pageErrors":[],"networkRequests":["file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"]},"videoBytes":330240}
+2026-10-08T20:27:52.7061217Z {"profile":"phone4x","viewport":{"width":390,"height":844},"cpuThrottle":4,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","samplingRecording":false,"recordingDuringMeasurement":false,"sampleMethod":"601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps","nativeDate":true,"workload":{"passed":true,"method":"Visible answer form, no modal and native Date.now/timer on every601 real RAF callback; checked after all600 unfiltered deltas","nativeDate":true,"witnessCount":601,"validWalls":true,"visibleAnswerEveryCallback":true,"liveTimerEveryCallback":true,"timerAdvanced":true,"deadlineConsistent":true,"wallElapsedMs":10000,"firstWallMs":1791491258287,"lastWallMs":1791491268287,"timerStartSeconds":60,"timerEndSeconds":50,"deadlineUpperMs":1791491318287},"count":600,"totalMs":9999.499999999998,"meanMs":16.66583333333333,"fps":60.00300015000751,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":["file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"],"pageErrors":[],"passed":true,"video":"media/delivery-final-phone4x.webm","clipContext":{"separateFromSampling":true,"viewport":{"width":390,"height":844},"cpuThrottle":4,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","activeRecordingMs":3000,"workload":"offline 12-category answer screen with active timer, three private warnings and a real native article-tab paste retained as separate words; recording only","privateWarningRows":3,"nativePasteWordBoundary":{"method":"native Chromium clipboard","letter":"S","categoryId":"art-08","prompt":"Something used to shape wet clay","noun":"sponge","pasted":"The\tsponge","visible":"The sponge"},"pageErrors":[],"networkRequests":["file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush/play.html"]},"videoBytes":237929}
+2026-10-08T20:27:52.7661593Z ##[group]Run node scripts/browser-resume.mjs after
+2026-10-08T20:27:52.7662235Z [36;1mnode scripts/browser-resume.mjs after[0m
+2026-10-08T20:27:52.7743676Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:27:52.7744089Z ##[endgroup]
+2026-10-08T20:27:53.0575639Z {"pid":3508,"mode":"after","sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"}
+2026-10-08T20:27:54.2639234Z {"name":"2 humans reload during answer","passed":true}
+2026-10-08T20:27:56.5587669Z {"name":"2 humans reload during review","passed":true}
+2026-10-08T20:27:59.0957991Z {"name":"2 humans reload during scores","passed":true}
+2026-10-08T20:28:01.6611700Z {"name":"8 humans reload during answer","passed":true}
+2026-10-08T20:28:08.4581448Z {"name":"8 humans reload during review","passed":true}
+2026-10-08T20:28:18.5141360Z {"name":"8 humans reload during scores","passed":true}
+2026-10-08T20:28:19.6513665Z {"name":"reloading twice on a restored handover keeps draft private and timer frozen","passed":true}
+2026-10-08T20:28:20.7490063Z {"name":"saved host pause restores controls and waits before private Ready","passed":true}
+2026-10-08T20:28:21.7742785Z {"name":"near-expiry restore times out through the real submit flow","passed":true}
+2026-10-08T20:28:23.0231527Z {"name":"host skip and end remain available after resume with settled scores","passed":true}
+2026-10-08T20:28:23.7993542Z {"name":"discard removes the saved game without starting or exposing its draft","passed":true}
+2026-10-08T20:28:25.6470649Z {"name":"storage denial and quota failure never claim the game was saved","passed":true}
+2026-10-08T20:28:26.9657948Z {"name":"corrupt and stale local saves offer discard and a clean new game","passed":true}
+2026-10-08T20:28:41.5630233Z {"name":"mixed-roster resume preserves exact future bot output and RNG counters","passed":true}
+2026-10-08T20:28:47.3448175Z {"name":"selected historical gains describe that round while totals remain current","passed":true}
+2026-10-08T20:28:49.0122774Z {"name":"Ready focuses Lock my ballot when every answer has the wrong initial","passed":true}
+2026-10-08T20:28:49.0130728Z {"name":"exact HTML and offline runtime stayed clean","passed":true}
+2026-10-08T20:28:49.0468536Z {"passed":true,"checks":17,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","closedAt":"2026-10-08T20:28:49.013Z"}
+2026-10-08T20:28:49.0644408Z ##[group]Run npx tsx scripts/checksums.ts
+2026-10-08T20:28:49.0644774Z [36;1mnpx tsx scripts/checksums.ts[0m
+2026-10-08T20:28:49.0645087Z [36;1mnpx tsx scripts/checksums.ts --check[0m
+2026-10-08T20:28:49.0708300Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:28:49.0708613Z ##[endgroup]
+2026-10-08T20:28:49.6410647Z Checksummed 534 data/media files
+2026-10-08T20:28:50.2306653Z Checksummed 534 data/media files
+2026-10-08T20:28:50.2663624Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T20:28:50.2663941Z with:
+2026-10-08T20:28:50.2664256Z   name: G09-strict-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435
+2026-10-08T20:28:50.2664653Z   compression-level: 0
+2026-10-08T20:28:50.2664885Z   retention-days: 14
+2026-10-08T20:28:50.2666512Z   path: jobs/G09-category-rush/evidence/browser/hosted-run.json
+jobs/G09-category-rush/evidence/browser/performance-report.json
+jobs/G09-category-rush/evidence/browser/desktop-frames.json
+jobs/G09-category-rush/evidence/browser/phone4x-frames.json
+jobs/G09-category-rush/media/delivery-final-desktop.webm
+jobs/G09-category-rush/media/delivery-final-phone4x.webm
+jobs/G09-category-rush/play.html
+jobs/G09-category-rush/SHA256SUMS.txt
+
+2026-10-08T20:28:50.2668204Z   if-no-files-found: warn
+2026-10-08T20:28:50.2668433Z   overwrite: false
+2026-10-08T20:28:50.2668663Z   include-hidden-files: false
+2026-10-08T20:28:50.2668904Z ##[endgroup]
+2026-10-08T20:28:50.4363456Z (node:3836) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:28:50.4364295Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:28:50.4449116Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T20:28:50.4460427Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush. This will be the root directory of the artifact
+2026-10-08T20:28:50.4462112Z With the provided path, there will be 8 files uploaded
+2026-10-08T20:28:50.4463212Z Artifact name is valid!
+2026-10-08T20:28:50.4463905Z Root directory input is valid!
+2026-10-08T20:28:50.6994570Z Beginning upload of artifact content to blob storage
+2026-10-08T20:28:50.7375937Z (node:3836) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:28:50.9623375Z Uploaded bytes 1287235
+2026-10-08T20:28:50.9904277Z Finished uploading artifact content to blob storage!
+2026-10-08T20:28:50.9905402Z SHA256 digest of uploaded artifact zip is 88f480923f3eef6ee08a37918f8eb430749a9bc43e4e03c62e45c975024dc74d
+2026-10-08T20:28:50.9907154Z Finalizing artifact upload
+2026-10-08T20:28:51.2220595Z Artifact G09-strict-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435.zip successfully finalized. Artifact ID 11576154813
+2026-10-08T20:28:51.2223444Z Artifact G09-strict-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435 has been successfully uploaded! Final size is 1287235 bytes. Artifact ID is 11576154813
+2026-10-08T20:28:51.2228439Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37839490435/artifacts/11576154813
+2026-10-08T20:28:51.2365832Z ##[group]Run npm test
+2026-10-08T20:28:51.2366258Z [36;1mnpm test[0m
+2026-10-08T20:28:51.2429304Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:28:51.2429685Z ##[endgroup]
+2026-10-08T20:28:51.3468037Z 
+2026-10-08T20:28:51.3468631Z > category-rush-core@1.0.0 test
+2026-10-08T20:28:51.3469485Z > npm run typecheck && tsx --test tests/*.test.ts
+2026-10-08T20:28:51.3469802Z 
+2026-10-08T20:28:51.4506370Z 
+2026-10-08T20:28:51.4506960Z > category-rush-core@1.0.0 typecheck
+2026-10-08T20:28:51.4507596Z > tsc --noEmit
+2026-10-08T20:28:51.4507759Z 
+2026-10-08T20:28:54.7202321Z ✔ final offline proof is complete and bound to the exact HTML, sources, licenses and videos (57.327338ms)
+2026-10-08T20:28:55.8713915Z ✔ retained content experiment files obey independent emitted JSON schemas (277.084114ms)
+2026-10-08T20:28:55.8731852Z ✔ expanded banks preserve support/layouts and add no core-equivalent answers (758.857761ms)
+2026-10-08T20:28:58.9157337Z ✔ writing hints distinguish blanks, initial articles, accents and numeric initials (6.513439ms)
+2026-10-08T20:28:58.9181569Z ✔ every directly equivalent own row warns with exact category numbers and no semantic veto (7.850884ms)
+2026-10-08T20:28:58.9200510Z ✔ a fuzzy chain lists direct scoring pairs rather than inventing endpoint matches (1.502262ms)
+2026-10-08T20:28:58.9202812Z ✔ bounded own-draft advice is pure and matches independently enumerated pairs on varied full sheets (3865.916394ms)
+2026-10-08T20:28:58.9205160Z ✔ offline input preserves article boundaries through the unchanged reducer and actual scored groups (19.857779ms)
+2026-10-08T20:28:58.9207300Z ✔ bounded input and advice agree on what is submitted without changing ordinary or creative text (0.373497ms)
+2026-10-08T20:28:58.9578459Z Measured largest legal five-round Unicode save: 246937 UTF-8 bytes
+2026-10-08T20:28:58.9581232Z ✔ bounded local snapshots retain actual played two/eight-seat states, private draft and pause (1707.12992ms)
+2026-10-08T20:28:58.9583506Z ✔ corrupt, oversized, stale and inconsistent local saves are rejected before reducer use (17.232814ms)
+2026-10-08T20:28:58.9585542Z ✔ restored actual contract RNG continues exactly through all supported saved counters (9.950821ms)
+2026-10-08T20:28:58.9587293Z ✔ a legal five-round eight-seat maximum-length Unicode history remains saveable (324.702879ms)
+2026-10-08T20:28:58.9589094Z ✔ original category content obeys the authoritative schema and JSON Schema has no drift (65.973031ms)
+2026-10-08T20:28:58.9591014Z ✔ the emitted JSON Schema independently rejects malformed content (140.443642ms)
+2026-10-08T20:28:58.9592641Z ✔ prompts and IDs are unique and every allowed letter has twelve playable categories (18.651687ms)
+2026-10-08T20:28:58.9594183Z ✔ original source regenerates generated content byte for byte (93.435706ms)
+2026-10-08T20:33:36.0137696Z ✔ normalization: articles accents punctuation number words and plural matching (4.274633ms)
+2026-10-08T20:33:36.0140151Z ✔ independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication (64942.321899ms)
+2026-10-08T20:33:36.0143877Z ✔ score cancellation and group vote ties exclude author, numeric and article handling (0.630366ms)
+2026-10-08T20:33:36.0145678Z ✔ settings clamp stale values and phases have sound timers (0.982232ms)
+2026-10-08T20:33:36.0153139Z ✔ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (2.485626ms)
+2026-10-08T20:33:36.0155063Z ✔ pause ignores an empty-review deadline until explicit resume at both roster extremes (3.174842ms)
+2026-10-08T20:33:36.0157295Z ✔ unknown prototype seats never act; genuine prototype ids survive JSON and results (0.764125ms)
+2026-10-08T20:33:36.0160329Z ✔ views never expose others answers, authors, votes or future review; own views roundtrip (1.505478ms)
+2026-10-08T20:33:36.0163594Z ✔ reducer is total across every event in every phase, immutable and strict inputs (2.959079ms)
+2026-10-08T20:33:36.0165992Z ✔ manifest exact types, JSON artifact and every phase fixture (14.273663ms)
+2026-10-08T20:33:36.0180131Z ✔ all nine invariants: 1,000 restored-every-event bot games at each roster 2–8 (211081.944149ms)
+2026-10-08T20:33:36.0181879Z ✔ property seeds 1,2,3 plus 1,000 reproducible random seeds; idle and gone seats finish (538.564881ms)
+2026-10-08T20:33:36.0186492Z ✔ bot strategies cannot inspect private answers or ballots; skill controls coverage (1.824173ms)
+2026-10-08T20:33:36.0188457Z ✔ event fuzz across every real phase and bot/view role preserves totality and JSON (2247.69142ms)
+2026-10-08T20:33:36.0190587Z ✔ future own-repeat adjudication leaks neither a view flag nor bot ballot (0.617652ms)
+2026-10-08T20:33:36.0600983Z ✔ private draft gain is bound to actual before/current files and preserves submissions, score and secrecy (7.52168ms)
+2026-10-08T20:33:36.0602819Z ✔ only an exact fresh grant authorizes a frame window; closure preserves actual summary (479.656099ms)
+2026-10-08T20:33:36.0604301Z ✔ CI without local coordination performs no waits or disk marker work (0.399025ms)
+2026-10-08T20:33:36.0606500Z ✔ every native callback must retain a visible private answer form and an advancing real timer (34.29643ms)
+2026-10-08T20:33:36.0608360Z ✔ authentic legacy autosaves bind to old/current pages, private migration, clock and scored negative controls (45.798383ms)
+2026-10-08T20:33:36.0610745Z ✔ native paste gain is bound to frozen before/current files, actual cases, scored results and private input controls (7.322258ms)
+2026-10-08T20:33:36.0612813Z ✔ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (47.943216ms)
+2026-10-08T20:33:36.0614838Z ✔ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (15.654409ms)
+2026-10-08T20:33:36.0616548Z ✔ 47 independently sourced singular/plural facts meet in stems and sameAnswer (17.418369ms)
+2026-10-08T20:33:36.0618170Z ✔ noun exceptions compose with normalization, compound words and existing possessives (3.13095ms)
+2026-10-08T20:33:36.0620130Z ✔ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (7.756287ms)
+2026-10-08T20:33:36.0621686Z ✔ sourced plural duplicates cancel actual two-seat and eight-seat scores (771.10342ms)
+2026-10-08T20:33:36.0623074Z ✔ using singular and plural in separate rows cancels both own scores (137.57045ms)
+2026-10-08T20:33:36.0624694Z ✔ 750 seeded lexical, spelling, numeric and ballot cases agree with the independent graph oracle (8472.785377ms)
+2026-10-08T20:33:36.0626424Z ✔ the bounded fix introduces no new equivalent options within the 2,565 frozen banks (14.606404ms)
+2026-10-08T20:33:36.0628358Z ✔ selection artifacts: complete canonical rows schema source hashes independent statistics and exact paired guards (1353.896661ms)
+2026-10-08T20:33:36.0630452Z ✔ selector fixtures: fourth same-theme candidate is outside the bounded window (4.128922ms)
+2026-10-08T20:33:36.0631801Z ✔ selector fixtures: earliest equal-quality candidate wins (0.62695ms)
+2026-10-08T20:33:36.0633225Z ✔ selector fixtures: roster cap preserves equally adequate earlier candidates (1.123505ms)
+2026-10-08T20:33:36.0634875Z ✔ selector fixtures: slots zero three six and nine retain exploration and original theme order (2.007183ms)
+2026-10-08T20:33:36.0636420Z ✔ selector fixtures: semantic width counts plural families instead of raw examples (0.625296ms)
+2026-10-08T20:33:36.0637761Z ✔ selector fixtures: transitive fuzzy chains and numeric no-fuzz determine width (0.650293ms)
+2026-10-08T20:33:36.0639328Z ✔ selector fixtures: empty banks have zero quality and still occupy the candidate window (0.340035ms)
+2026-10-08T20:33:36.0641570Z ✔ selector fixtures: below four present seats retains exact old selection (0.673366ms)
+2026-10-08T20:33:36.0643258Z ✔ selector fixtures: scarce-theme fallback is entirely the original leaders then fill order (0.752354ms)
+2026-10-08T20:33:36.0644998Z ✔ selector fixtures: input arrays and cards stay immutable and returned references stay original (0.712038ms)
+2026-10-08T20:33:36.0647072Z ✔ selector fixtures: hostile theme property names remain ordinary distinct themes (0.313736ms)
+2026-10-08T20:33:36.0648674Z ✔ selector fixtures: exhaustive four-candidate orders respect bounds and earliest ties (5.11038ms)
+2026-10-08T20:33:36.0650724Z ✔ independent selection oracle: 10,000 varied synthetic and actual decks agree on exact ordered IDs (19826.881845ms)
+2026-10-08T20:33:36.0652737Z ✔ selector integration: actual one-to-five-round rosters preserve exact letter RNG theme schedules and restored events (547.226555ms)
+2026-10-08T20:33:36.0654583Z ✔ selector integration: all twenty seeded letters retain a supported distinct-theme pool (43.803746ms)
+2026-10-08T20:33:36.0656377Z ✔ selector integration: absent seats count by public presence and human bot flags do not affect prompts (31.023999ms)
+2026-10-08T20:33:36.0658373Z ✔ selector integration: actual departure and reconnection events change next-round present count without extra RNG (21.062207ms)
+2026-10-08T20:33:36.0660981Z ✔ selector integration: controlled private answer ballot and submission perturbations cannot affect the next round (19.682473ms)
+2026-10-08T20:33:36.0662785Z ✔ pure core source has no random clock callback IO or runtime dependency beyond zod (2.292366ms)
+2026-10-08T20:33:36.0664346Z ✔ done fixture is the played-out last scores fixture; every fixture reaches finite results (11.619824ms)
+2026-10-08T20:33:36.0665246Z ℹ tests 68
+2026-10-08T20:33:36.0665611Z ℹ suites 0
+2026-10-08T20:33:36.0665996Z ℹ pass 68
+2026-10-08T20:33:36.0666401Z ℹ fail 0
+2026-10-08T20:33:36.0666639Z ℹ cancelled 0
+2026-10-08T20:33:36.0666895Z ℹ skipped 0
+2026-10-08T20:33:36.0667213Z ℹ todo 0
+2026-10-08T20:33:36.0667751Z ℹ duration_ms 281709.818736
+2026-10-08T20:33:36.0838484Z ##[group]Run npm run mutations
+2026-10-08T20:33:36.0838802Z [36;1mnpm run mutations[0m
+2026-10-08T20:33:36.0900919Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:33:36.0901233Z ##[endgroup]
+2026-10-08T20:33:36.1954211Z 
+2026-10-08T20:33:36.1954814Z > category-rush-core@1.0.0 mutations
+2026-10-08T20:33:36.1955439Z > tsx scripts/mutations.ts
+2026-10-08T20:33:36.1955741Z 
+2026-10-08T20:33:39.3664874Z KILLED M01 retain leading articles
+2026-10-08T20:33:40.7203219Z KILLED M02 do not decompose accents
+2026-10-08T20:33:42.0080444Z KILLED M03 omit number-word conversion
+2026-10-08T20:33:43.3435040Z KILLED M04 disable plural stemming
+2026-10-08T20:33:44.6991104Z KILLED M05 disable long-answer typo matching
+2026-10-08T20:33:46.0272801Z KILLED M06 fuzzy-match numerical answers
+2026-10-08T20:33:47.3556973Z KILLED M07 do not group duplicates
+2026-10-08T20:33:48.7034651Z KILLED M08 allow repeated own answer across categories
+2026-10-08T20:33:50.0213587Z KILLED M09 allow wrong initial
+2026-10-08T20:33:51.3444710Z KILLED M10 award duplicate groups
+2026-10-08T20:33:52.6967937Z KILLED M11 always accept group vote
+2026-10-08T20:33:54.0067513Z KILLED M12 keep author vote on tie
+2026-10-08T20:33:55.3407906Z KILLED M13 reject unchallenged answers
+2026-10-08T20:33:56.6923231Z KILLED M14 accept stale startedAt
+2026-10-08T20:33:58.0266388Z KILLED M15 fire timer before deadline
+2026-10-08T20:33:59.3950990Z KILLED M16 stepped review never re-arms later
+2026-10-08T20:34:00.7378514Z KILLED M17 allow inputs while paused
+2026-10-08T20:34:02.1116161Z KILLED M18 fail to shift deadline on resume
+2026-10-08T20:34:03.4275668Z KILLED M19 put an active deadline on done
+2026-10-08T20:34:04.7547292Z KILLED M20 trust inherited prototype player keys
+2026-10-08T20:34:06.0636770Z KILLED M21 expose another player own answers
+2026-10-08T20:34:07.4164939Z KILLED M22 leak all private answers in TV envelope
+2026-10-08T20:34:08.7791105Z KILLED M23 fail totality on malformed input
+2026-10-08T20:34:10.1207182Z KILLED M24 ignore explicit VIP end
+2026-10-08T20:34:11.4525654Z KILLED M25 omit initialized seat from results
+2026-10-08T20:34:12.7827749Z KILLED M26 omit sourced plural aliases
+2026-10-08T20:34:14.0842966Z KILLED M27 merge news with new
+2026-10-08T20:34:15.4193625Z KILLED M28 break plural possessive composition
+2026-10-08T20:34:16.2789403Z KILLED M29 exceed three-candidate window
+2026-10-08T20:34:17.0452243Z KILLED M30 replace earliest equal-quality candidate
+2026-10-08T20:34:18.3927351Z KILLED M31 ignore public roster cap
+2026-10-08T20:34:19.1813678Z KILLED M32 remove exploration positions
+2026-10-08T20:34:19.9874655Z KILLED M33 keep legacy selection at four seats
+2026-10-08T20:34:21.2828330Z KILLED M34 count surface forms as semantic choices
+2026-10-08T20:34:22.5989101Z KILLED M35 ignore empty banks inside candidate window
+2026-10-08T20:34:23.2476516Z KILLED M36 reverse caller-owned shuffled deck
+2026-10-08T20:34:24.5387872Z KILLED M37 remove scarce-theme whole fallback
+2026-10-08T20:34:25.8157127Z KILLED M38 count absent initialized seats
+2026-10-08T20:34:26.6177878Z KILLED M39 use bot flags to choose prompts
+2026-10-08T20:34:27.3676937Z KILLED M40 use private submissions to choose prompts
+2026-10-08T20:34:28.0221110Z KILLED M41 consume extra core RNG after shuffle
+2026-10-08T20:34:28.8063434Z KILLED M42 retain rejected exploration positions
+2026-10-08T20:34:29.5980458Z KILLED M43 accidentally combine old and new exploration sets
+2026-10-08T20:34:29.6276163Z ##[group]Run npm run bots
+2026-10-08T20:34:29.6276481Z [36;1mnpm run bots[0m
+2026-10-08T20:34:29.6338231Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:34:29.6338502Z ##[endgroup]
+2026-10-08T20:34:29.7361797Z 
+2026-10-08T20:34:29.7362391Z > category-rush-core@1.0.0 bots
+2026-10-08T20:34:29.7363018Z > tsx scripts/bots.ts
+2026-10-08T20:34:29.7363298Z 
+2026-10-08T20:34:37.6619227Z {
+2026-10-08T20:34:37.6619620Z   matchup: 'sharp vs normal',
+2026-10-08T20:34:37.6620472Z   games: 2000,
+2026-10-08T20:34:37.6620815Z   firstWins: 1970,
+2026-10-08T20:34:37.6621257Z   secondWins: 11,
+2026-10-08T20:34:37.6621737Z   ties: 19,
+2026-10-08T20:34:37.6622216Z   firstMean: 10.866,
+2026-10-08T20:34:37.6622774Z   secondMean: 5.6745
+2026-10-08T20:34:37.6623233Z }
+2026-10-08T20:34:43.3148660Z {
+2026-10-08T20:34:43.3149213Z   matchup: 'normal vs easy',
+2026-10-08T20:34:43.3150103Z   games: 2000,
+2026-10-08T20:34:43.3150594Z   firstWins: 1981,
+2026-10-08T20:34:43.3151080Z   secondWins: 11,
+2026-10-08T20:34:43.3151600Z   ties: 8,
+2026-10-08T20:34:43.3151954Z   firstMean: 15.397,
+2026-10-08T20:34:43.3152347Z   secondMean: 6.379
+2026-10-08T20:34:43.3152705Z }
+2026-10-08T20:34:43.3521973Z ##[group]Run node scripts/regenerate-breadth.mjs --check
+2026-10-08T20:34:43.3522457Z [36;1mnode scripts/regenerate-breadth.mjs --check[0m
+2026-10-08T20:34:43.3523218Z [36;1mgit diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json evidence/breadth-lexical.json[0m
+2026-10-08T20:34:43.3585496Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:34:43.3585846Z ##[endgroup]
+2026-10-08T20:34:48.9218147Z baseline: 200 actual-core rounds reproduced byte-identically
+2026-10-08T20:34:54.3969167Z bank-only: 200 actual-core rounds reproduced byte-identically
+2026-10-08T20:34:59.9297556Z after: 200 actual-core rounds reproduced byte-identically
+2026-10-08T20:35:05.5935286Z lexical: 200 actual-core rounds reproduced byte-identically
+2026-10-08T20:35:05.6076190Z ##[group]Run node scripts/regenerate-selection.mjs --check
+2026-10-08T20:35:05.6076667Z [36;1mnode scripts/regenerate-selection.mjs --check[0m
+2026-10-08T20:35:05.6077044Z [36;1mnode scripts/compare-selection.mjs --check[0m
+2026-10-08T20:35:05.6077965Z [36;1mgit diff --exit-code -- evidence/selection-revision-baseline.json evidence/selection-revision-candidate.json evidence/selection-revision-comparison.json evidence/selection-revision-seeds.json[0m
+2026-10-08T20:35:05.6140719Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:35:05.6140992Z ##[endgroup]
+2026-10-08T20:35:57.4288787Z baseline: 3,000 actual games and 3,000 restored replays reproduced byte-identically
+2026-10-08T20:36:53.1250972Z candidate: 3,000 actual games and 3,000 restored replays reproduced byte-identically
+2026-10-08T20:36:53.2307626Z {"pilotGuardsPass":true,"deliveryComplete":false,"comparisons":[{"cohort":"pilot","players":2,"meanGain":0,"bankCoverageRelativeLoss":0,"worsened":0},{"cohort":"pilot","players":4,"meanGain":2.62,"bankCoverageRelativeLoss":0.08882720333102012,"worsened":1},{"cohort":"pilot","players":8,"meanGain":1.005,"bankCoverageRelativeLoss":0.08952116585704371,"worsened":6},{"cohort":"heldout","players":2,"meanGain":0,"bankCoverageRelativeLoss":0,"worsened":0},{"cohort":"heldout","players":4,"meanGain":2.6137499999999996,"bankCoverageRelativeLoss":0.07450816241105065,"worsened":13},{"cohort":"heldout","players":8,"meanGain":1.1062500000000002,"bankCoverageRelativeLoss":0.07450816241105065,"worsened":17}]}
+2026-10-08T20:36:53.2463097Z ##[group]Run node scripts/regenerate-plural-baseline.mjs --check
+2026-10-08T20:36:53.2463633Z [36;1mnode scripts/regenerate-plural-baseline.mjs --check[0m
+2026-10-08T20:36:53.2464025Z [36;1mnpx tsx scripts/plural-protocol.ts[0m
+2026-10-08T20:36:53.2464349Z [36;1mnpx tsx scripts/lexical-audit.ts[0m
+2026-10-08T20:36:53.2465437Z [36;1mgit diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json evidence/lexical-audit-baseline.json evidence/lexical-audit-after.json evidence/lexical-audit.schema.json[0m
+2026-10-08T20:36:53.2528281Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:36:53.2528556Z ##[endgroup]
+2026-10-08T20:36:53.8358539Z {
+2026-10-08T20:36:53.8359019Z   "label": "baseline",
+2026-10-08T20:36:53.8359481Z   "cases": 18,
+2026-10-08T20:36:53.8360137Z   "matched": 0,
+2026-10-08T20:36:53.8360544Z   "awarded": 36,
+2026-10-08T20:36:53.8360952Z   "replayMatches": 18,
+2026-10-08T20:36:53.8361445Z   "sourceHashes": {
+2026-10-08T20:36:53.8362169Z     "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+2026-10-08T20:36:53.8363276Z     "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+2026-10-08T20:36:53.8364384Z     "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+2026-10-08T20:36:53.8365511Z     "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+2026-10-08T20:36:53.8366550Z     "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+2026-10-08T20:36:53.8367589Z     "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+2026-10-08T20:36:53.8368288Z   }
+2026-10-08T20:36:53.8368584Z }
+2026-10-08T20:36:54.9966974Z {
+2026-10-08T20:36:54.9967393Z   "label": "after",
+2026-10-08T20:36:54.9967803Z   "cases": 18,
+2026-10-08T20:36:54.9968189Z   "matched": 18,
+2026-10-08T20:36:54.9968555Z   "awarded": 0,
+2026-10-08T20:36:54.9968930Z   "replayMatches": 18,
+2026-10-08T20:36:54.9969378Z   "sourceHashes": {
+2026-10-08T20:36:54.9970305Z     "core": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+2026-10-08T20:36:54.9971270Z     "matcher": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+2026-10-08T20:36:54.9972399Z     "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+2026-10-08T20:36:54.9973528Z     "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+2026-10-08T20:36:54.9974272Z     "reference": "e8f4eb9d111b30bba12b9ef5121a1d9ec39ff76278afe0b5557c51f934c531be",
+2026-10-08T20:36:54.9975013Z     "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+2026-10-08T20:36:54.9975573Z   }
+2026-10-08T20:36:54.9975960Z }
+2026-10-08T20:36:55.6465494Z {
+2026-10-08T20:36:55.6466007Z   "sourceHashes": {
+2026-10-08T20:36:55.6466767Z     "match": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+2026-10-08T20:36:55.6467838Z     "core": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+2026-10-08T20:36:55.6468869Z     "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+2026-10-08T20:36:55.6470121Z     "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea"
+2026-10-08T20:36:55.6470831Z   },
+2026-10-08T20:36:55.6471165Z   "cases": 62,
+2026-10-08T20:36:55.6471540Z   "positive": 46,
+2026-10-08T20:36:55.6471935Z   "positiveSame": 46,
+2026-10-08T20:36:55.6472400Z   "positiveFailures": [],
+2026-10-08T20:36:55.6472851Z   "stemFailures": [],
+2026-10-08T20:36:55.6473268Z   "negative": 9,
+2026-10-08T20:36:55.6473695Z   "negativeFalseMerges": [],
+2026-10-08T20:36:55.6474135Z   "rows": [
+2026-10-08T20:36:55.6474494Z     {
+2026-10-08T20:36:55.6474836Z       "a": "child",
+2026-10-08T20:36:55.6475271Z       "b": "children",
+2026-10-08T20:36:55.6475669Z       "kind": "positive",
+2026-10-08T20:36:55.6476067Z       "same": true,
+2026-10-08T20:36:55.6476423Z       "stemA": "child",
+2026-10-08T20:36:55.6477139Z       "stemB": "child",
+2026-10-08T20:36:55.6477540Z       "groups": [
+2026-10-08T20:36:55.6477903Z         [
+2026-10-08T20:36:55.6478265Z           0,
+2026-10-08T20:36:55.6478589Z           1
+2026-10-08T20:36:55.6478910Z         ]
+2026-10-08T20:36:55.6479219Z       ],
+2026-10-08T20:36:55.6479540Z       "awarded": 0,
+2026-10-08T20:36:55.6480146Z       "ownAwarded": 0
+2026-10-08T20:36:55.6480595Z     },
+2026-10-08T20:36:55.6480908Z     {
+2026-10-08T20:36:55.6481473Z       "a": "foot",
+2026-10-08T20:36:55.6482016Z       "b": "feet",
+2026-10-08T20:36:55.6482375Z       "kind": "positive",
+2026-10-08T20:36:55.6482801Z       "same": true,
+2026-10-08T20:36:55.6483080Z       "stemA": "foot",
+2026-10-08T20:36:55.6483314Z       "stemB": "foot",
+2026-10-08T20:36:55.6483562Z       "groups": [
+2026-10-08T20:36:55.6483773Z         [
+2026-10-08T20:36:55.6483968Z           0,
+2026-10-08T20:36:55.6484159Z           1
+2026-10-08T20:36:55.6484365Z         ]
+2026-10-08T20:36:55.6484549Z       ],
+2026-10-08T20:36:55.6484748Z       "awarded": 0,
+2026-10-08T20:36:55.6484962Z       "ownAwarded": 0
+2026-10-08T20:36:55.6485176Z     },
+2026-10-08T20:36:55.6485352Z     {
+2026-10-08T20:36:55.6485539Z       "a": "tooth",
+2026-10-08T20:36:55.6485737Z       "b": "teeth",
+2026-10-08T20:36:55.6485948Z       "kind": "positive",
+2026-10-08T20:36:55.6486185Z       "same": true,
+2026-10-08T20:36:55.6486392Z       "stemA": "tooth",
+2026-10-08T20:36:55.6486619Z       "stemB": "tooth",
+2026-10-08T20:36:55.6486838Z       "groups": [
+2026-10-08T20:36:55.6487063Z         [
+2026-10-08T20:36:55.6487248Z           0,
+2026-10-08T20:36:55.6487435Z           1
+2026-10-08T20:36:55.6487621Z         ]
+2026-10-08T20:36:55.6487985Z       ],
+2026-10-08T20:36:55.6488192Z       "awarded": 0,
+2026-10-08T20:36:55.6488413Z       "ownAwarded": 0
+2026-10-08T20:36:55.6488635Z     },
+2026-10-08T20:36:55.6488814Z     {
+2026-10-08T20:36:55.6489006Z       "a": "person",
+2026-10-08T20:36:55.6489414Z       "b": "people",
+2026-10-08T20:36:55.6489683Z       "kind": "positive",
+2026-10-08T20:36:55.6490389Z       "same": true,
+2026-10-08T20:36:55.6518498Z       "stemA": "person",
+2026-10-08T20:36:55.6518857Z       "stemB": "person",
+2026-10-08T20:36:55.6519380Z       "groups": [
+2026-10-08T20:36:55.6519787Z         [
+2026-10-08T20:36:55.6520382Z           0,
+2026-10-08T20:36:55.6520789Z           1
+2026-10-08T20:36:55.6521215Z         ]
+2026-10-08T20:36:55.6521592Z       ],
+2026-10-08T20:36:55.6521956Z       "awarded": 0,
+2026-10-08T20:36:55.6522240Z       "ownAwarded": 0
+2026-10-08T20:36:55.6522495Z     },
+2026-10-08T20:36:55.6522727Z     {
+2026-10-08T20:36:55.6522969Z       "a": "mouse",
+2026-10-08T20:36:55.6523216Z       "b": "mice",
+2026-10-08T20:36:55.6523464Z       "kind": "positive",
+2026-10-08T20:36:55.6523732Z       "same": true,
+2026-10-08T20:36:55.6523997Z       "stemA": "mouse",
+2026-10-08T20:36:55.6524248Z       "stemB": "mouse",
+2026-10-08T20:36:55.6524506Z       "groups": [
+2026-10-08T20:36:55.6524741Z         [
+2026-10-08T20:36:55.6524959Z           0,
+2026-10-08T20:36:55.6525160Z           1
+2026-10-08T20:36:55.6525375Z         ]
+2026-10-08T20:36:55.6525585Z       ],
+2026-10-08T20:36:55.6525798Z       "awarded": 0,
+2026-10-08T20:36:55.6526046Z       "ownAwarded": 0
+2026-10-08T20:36:55.6526268Z     },
+2026-10-08T20:36:55.6526479Z     {
+2026-10-08T20:36:55.6526687Z       "a": "goose",
+2026-10-08T20:36:55.6526921Z       "b": "geese",
+2026-10-08T20:36:55.6527158Z       "kind": "positive",
+2026-10-08T20:36:55.6527463Z       "same": true,
+2026-10-08T20:36:55.6527696Z       "stemA": "goose",
+2026-10-08T20:36:55.6527938Z       "stemB": "goose",
+2026-10-08T20:36:55.6528175Z       "groups": [
+2026-10-08T20:36:55.6528396Z         [
+2026-10-08T20:36:55.6528590Z           0,
+2026-10-08T20:36:55.6528802Z           1
+2026-10-08T20:36:55.6529009Z         ]
+2026-10-08T20:36:55.6529230Z       ],
+2026-10-08T20:36:55.6529468Z       "awarded": 0,
+2026-10-08T20:36:55.6529931Z       "ownAwarded": 0
+2026-10-08T20:36:55.6530313Z     },
+2026-10-08T20:36:55.6530541Z     {
+2026-10-08T20:36:55.6531134Z       "a": "man",
+2026-10-08T20:36:55.6531413Z       "b": "men",
+2026-10-08T20:36:55.6531667Z       "kind": "positive",
+2026-10-08T20:36:55.6531935Z       "same": true,
+2026-10-08T20:36:55.6532190Z       "stemA": "man",
+2026-10-08T20:36:55.6532435Z       "stemB": "man",
+2026-10-08T20:36:55.6532697Z       "groups": [
+2026-10-08T20:36:55.6532905Z         [
+2026-10-08T20:36:55.6533118Z           0,
+2026-10-08T20:36:55.6533340Z           1
+2026-10-08T20:36:55.6533698Z         ]
+2026-10-08T20:36:55.6533920Z       ],
+2026-10-08T20:36:55.6534132Z       "awarded": 0,
+2026-10-08T20:36:55.6534384Z       "ownAwarded": 0
+2026-10-08T20:36:55.6534618Z     },
+2026-10-08T20:36:55.6534819Z     {
+2026-10-08T20:36:55.6535015Z       "a": "woman",
+2026-10-08T20:36:55.6535257Z       "b": "women",
+2026-10-08T20:36:55.6535502Z       "kind": "positive",
+2026-10-08T20:36:55.6535763Z       "same": true,
+2026-10-08T20:36:55.6535997Z       "stemA": "woman",
+2026-10-08T20:36:55.6536243Z       "stemB": "woman",
+2026-10-08T20:36:55.6536498Z       "groups": [
+2026-10-08T20:36:55.6536721Z         [
+2026-10-08T20:36:55.6536934Z           0,
+2026-10-08T20:36:55.6537140Z           1
+2026-10-08T20:36:55.6537347Z         ]
+2026-10-08T20:36:55.6537591Z       ],
+2026-10-08T20:36:55.6537803Z       "awarded": 0,
+2026-10-08T20:36:55.6538056Z       "ownAwarded": 0
+2026-10-08T20:36:55.6538336Z     },
+2026-10-08T20:36:55.6538536Z     {
+2026-10-08T20:36:55.6538748Z       "a": "knife",
+2026-10-08T20:36:55.6538992Z       "b": "knives",
+2026-10-08T20:36:55.6539246Z       "kind": "positive",
+2026-10-08T20:36:55.6539503Z       "same": true,
+2026-10-08T20:36:55.6539743Z       "stemA": "knife",
+2026-10-08T20:36:55.6540235Z       "stemB": "knife",
+2026-10-08T20:36:55.6540470Z       "groups": [
+2026-10-08T20:36:55.6540708Z         [
+2026-10-08T20:36:55.6540919Z           0,
+2026-10-08T20:36:55.6541136Z           1
+2026-10-08T20:36:55.6541325Z         ]
+2026-10-08T20:36:55.6541534Z       ],
+2026-10-08T20:36:55.6541747Z       "awarded": 0,
+2026-10-08T20:36:55.6541987Z       "ownAwarded": 0
+2026-10-08T20:36:55.6542230Z     },
+2026-10-08T20:36:55.6542434Z     {
+2026-10-08T20:36:55.6542645Z       "a": "leaf",
+2026-10-08T20:36:55.6542862Z       "b": "leaves",
+2026-10-08T20:36:55.6543159Z       "kind": "positive",
+2026-10-08T20:36:55.6543420Z       "same": true,
+2026-10-08T20:36:55.6543661Z       "stemA": "leaf",
+2026-10-08T20:36:55.6543911Z       "stemB": "leaf",
+2026-10-08T20:36:55.6544136Z       "groups": [
+2026-10-08T20:36:55.6544378Z         [
+2026-10-08T20:36:55.6544608Z           0,
+2026-10-08T20:36:55.6544810Z           1
+2026-10-08T20:36:55.6545019Z         ]
+2026-10-08T20:36:55.6545227Z       ],
+2026-10-08T20:36:55.6545424Z       "awarded": 0,
+2026-10-08T20:36:55.6545664Z       "ownAwarded": 0
+2026-10-08T20:36:55.6545902Z     },
+2026-10-08T20:36:55.6546084Z     {
+2026-10-08T20:36:55.6546301Z       "a": "shelf",
+2026-10-08T20:36:55.6546526Z       "b": "shelves",
+2026-10-08T20:36:55.6546778Z       "kind": "positive",
+2026-10-08T20:36:55.6547014Z       "same": true,
+2026-10-08T20:36:55.6547253Z       "stemA": "shelf",
+2026-10-08T20:36:55.6547507Z       "stemB": "shelf",
+2026-10-08T20:36:55.6547730Z       "groups": [
+2026-10-08T20:36:55.6547975Z         [
+2026-10-08T20:36:55.6548183Z           0,
+2026-10-08T20:36:55.6548377Z           1
+2026-10-08T20:36:55.6548562Z         ]
+2026-10-08T20:36:55.6548761Z       ],
+2026-10-08T20:36:55.6548960Z       "awarded": 0,
+2026-10-08T20:36:55.6549172Z       "ownAwarded": 0
+2026-10-08T20:36:55.6549392Z     },
+2026-10-08T20:36:55.6549572Z     {
+2026-10-08T20:36:55.6549782Z       "a": "life",
+2026-10-08T20:36:55.6550335Z       "b": "lives",
+2026-10-08T20:36:55.6550692Z       "kind": "positive",
+2026-10-08T20:36:55.6550943Z       "same": true,
+2026-10-08T20:36:55.6551181Z       "stemA": "life",
+2026-10-08T20:36:55.6551425Z       "stemB": "life",
+2026-10-08T20:36:55.6551671Z       "groups": [
+2026-10-08T20:36:55.6551931Z         [
+2026-10-08T20:36:55.6552133Z           0,
+2026-10-08T20:36:55.6552341Z           1
+2026-10-08T20:36:55.6552553Z         ]
+2026-10-08T20:36:55.6552939Z       ],
+2026-10-08T20:36:55.6553165Z       "awarded": 0,
+2026-10-08T20:36:55.6553421Z       "ownAwarded": 0
+2026-10-08T20:36:55.6553658Z     },
+2026-10-08T20:36:55.6553871Z     {
+2026-10-08T20:36:55.6554078Z       "a": "wife",
+2026-10-08T20:36:55.6554324Z       "b": "wives",
+2026-10-08T20:36:55.6554567Z       "kind": "positive",
+2026-10-08T20:36:55.6554830Z       "same": true,
+2026-10-08T20:36:55.6555182Z       "stemA": "wife",
+2026-10-08T20:36:55.6555403Z       "stemB": "wife",
+2026-10-08T20:36:55.6555653Z       "groups": [
+2026-10-08T20:36:55.6555857Z         [
+2026-10-08T20:36:55.6556073Z           0,
+2026-10-08T20:36:55.6556265Z           1
+2026-10-08T20:36:55.6556449Z         ]
+2026-10-08T20:36:55.6556633Z       ],
+2026-10-08T20:36:55.6556821Z       "awarded": 0,
+2026-10-08T20:36:55.6557057Z       "ownAwarded": 0
+2026-10-08T20:36:55.6557266Z     },
+2026-10-08T20:36:55.6557451Z     {
+2026-10-08T20:36:55.6557654Z       "a": "half",
+2026-10-08T20:36:55.6558017Z       "b": "halves",
+2026-10-08T20:36:55.6558432Z       "kind": "positive",
+2026-10-08T20:36:55.6558883Z       "same": true,
+2026-10-08T20:36:55.6559435Z       "stemA": "half",
+2026-10-08T20:36:55.6560093Z       "stemB": "half",
+2026-10-08T20:36:55.6560491Z       "groups": [
+2026-10-08T20:36:55.6560752Z         [
+2026-10-08T20:36:55.6560960Z           0,
+2026-10-08T20:36:55.6561171Z           1
+2026-10-08T20:36:55.6561359Z         ]
+2026-10-08T20:36:55.6561551Z       ],
+2026-10-08T20:36:55.6561743Z       "awarded": 0,
+2026-10-08T20:36:55.6561960Z       "ownAwarded": 0
+2026-10-08T20:36:55.6562175Z     },
+2026-10-08T20:36:55.6562354Z     {
+2026-10-08T20:36:55.6562564Z       "a": "loaf",
+2026-10-08T20:36:55.6562775Z       "b": "loaves",
+2026-10-08T20:36:55.6562995Z       "kind": "positive",
+2026-10-08T20:36:55.6563230Z       "same": true,
+2026-10-08T20:36:55.6563441Z       "stemA": "loaf",
+2026-10-08T20:36:55.6563659Z       "stemB": "loaf",
+2026-10-08T20:36:55.6563875Z       "groups": [
+2026-10-08T20:36:55.6564076Z         [
+2026-10-08T20:36:55.6564274Z           0,
+2026-10-08T20:36:55.6564467Z           1
+2026-10-08T20:36:55.6564658Z         ]
+2026-10-08T20:36:55.6564839Z       ],
+2026-10-08T20:36:55.6565030Z       "awarded": 0,
+2026-10-08T20:36:55.6565242Z       "ownAwarded": 0
+2026-10-08T20:36:55.6565459Z     },
+2026-10-08T20:36:55.6565638Z     {
+2026-10-08T20:36:55.6565820Z       "a": "elf",
+2026-10-08T20:36:55.6566028Z       "b": "elves",
+2026-10-08T20:36:55.6566248Z       "kind": "positive",
+2026-10-08T20:36:55.6566487Z       "same": true,
+2026-10-08T20:36:55.6566697Z       "stemA": "elf",
+2026-10-08T20:36:55.6566918Z       "stemB": "elf",
+2026-10-08T20:36:55.6567132Z       "groups": [
+2026-10-08T20:36:55.6567331Z         [
+2026-10-08T20:36:55.6567524Z           0,
+2026-10-08T20:36:55.6567713Z           1
+2026-10-08T20:36:55.6567904Z         ]
+2026-10-08T20:36:55.6568093Z       ],
+2026-10-08T20:36:55.6568541Z       "awarded": 0,
+2026-10-08T20:36:55.6568971Z       "ownAwarded": 0
+2026-10-08T20:36:55.6569251Z     },
+2026-10-08T20:36:55.6569473Z     {
+2026-10-08T20:36:55.6569663Z       "a": "cactus",
+2026-10-08T20:36:55.6570252Z       "b": "cacti",
+2026-10-08T20:36:55.6570492Z       "kind": "positive",
+2026-10-08T20:36:55.6570736Z       "same": true,
+2026-10-08T20:36:55.6570958Z       "stemA": "cactus",
+2026-10-08T20:36:55.6571197Z       "stemB": "cactus",
+2026-10-08T20:36:55.6571423Z       "groups": [
+2026-10-08T20:36:55.6571623Z         [
+2026-10-08T20:36:55.6571826Z           0,
+2026-10-08T20:36:55.6572014Z           1
+2026-10-08T20:36:55.6572205Z         ]
+2026-10-08T20:36:55.6572387Z       ],
+2026-10-08T20:36:55.6572576Z       "awarded": 0,
+2026-10-08T20:36:55.6572789Z       "ownAwarded": 0
+2026-10-08T20:36:55.6572999Z     },
+2026-10-08T20:36:55.6573176Z     {
+2026-10-08T20:36:55.6573359Z       "a": "fungus",
+2026-10-08T20:36:55.6573582Z       "b": "fungi",
+2026-10-08T20:36:55.6573800Z       "kind": "positive",
+2026-10-08T20:36:55.6574034Z       "same": true,
+2026-10-08T20:36:55.6574241Z       "stemA": "fungus",
+2026-10-08T20:36:55.6574648Z       "stemB": "fungus",
+2026-10-08T20:36:55.6574894Z       "groups": [
+2026-10-08T20:36:55.6575117Z         [
+2026-10-08T20:36:55.6575326Z           0,
+2026-10-08T20:36:55.6575514Z           1
+2026-10-08T20:36:55.6575701Z         ]
+2026-10-08T20:36:55.6575880Z       ],
+2026-10-08T20:36:55.6576066Z       "awarded": 0,
+2026-10-08T20:36:55.6576285Z       "ownAwarded": 0
+2026-10-08T20:36:55.6576493Z     },
+2026-10-08T20:36:55.6576798Z     {
+2026-10-08T20:36:55.6576982Z       "a": "datum",
+2026-10-08T20:36:55.6577190Z       "b": "data",
+2026-10-08T20:36:55.6577403Z       "kind": "positive",
+2026-10-08T20:36:55.6577638Z       "same": true,
+2026-10-08T20:36:55.6577851Z       "stemA": "datum",
+2026-10-08T20:36:55.6578085Z       "stemB": "datum",
+2026-10-08T20:36:55.6578312Z       "groups": [
+2026-10-08T20:36:55.6578554Z         [
+2026-10-08T20:36:55.6578747Z           0,
+2026-10-08T20:36:55.6578938Z           1
+2026-10-08T20:36:55.6579128Z         ]
+2026-10-08T20:36:55.6579309Z       ],
+2026-10-08T20:36:55.6579500Z       "awarded": 0,
+2026-10-08T20:36:55.6579722Z       "ownAwarded": 0
+2026-10-08T20:36:55.6580231Z     },
+2026-10-08T20:36:55.6580421Z     {
+2026-10-08T20:36:55.6580613Z       "a": "syllabus",
+2026-10-08T20:36:55.6580840Z       "b": "syllabi",
+2026-10-08T20:36:55.6581070Z       "kind": "positive",
+2026-10-08T20:36:55.6581318Z       "same": true,
+2026-10-08T20:36:55.6581544Z       "stemA": "syllabus",
+2026-10-08T20:36:55.6581796Z       "stemB": "syllabus",
+2026-10-08T20:36:55.6582032Z       "groups": [
+2026-10-08T20:36:55.6582237Z         [
+2026-10-08T20:36:55.6582429Z           0,
+2026-10-08T20:36:55.6582622Z           1
+2026-10-08T20:36:55.6582809Z         ]
+2026-10-08T20:36:55.6582994Z       ],
+2026-10-08T20:36:55.6583183Z       "awarded": 0,
+2026-10-08T20:36:55.6583408Z       "ownAwarded": 0
+2026-10-08T20:36:55.6583620Z     },
+2026-10-08T20:36:55.6583804Z     {
+2026-10-08T20:36:55.6584013Z       "a": "analysis",
+2026-10-08T20:36:55.6584235Z       "b": "analyses",
+2026-10-08T20:36:55.6584461Z       "kind": "positive",
+2026-10-08T20:36:55.6584694Z       "same": true,
+2026-10-08T20:36:55.6584907Z       "stemA": "analysis",
+2026-10-08T20:36:55.6585144Z       "stemB": "analysis",
+2026-10-08T20:36:55.6585378Z       "groups": [
+2026-10-08T20:36:55.6585579Z         [
+2026-10-08T20:36:55.6585768Z           0,
+2026-10-08T20:36:55.6585956Z           1
+2026-10-08T20:36:55.6586143Z         ]
+2026-10-08T20:36:55.6586322Z       ],
+2026-10-08T20:36:55.6586513Z       "awarded": 0,
+2026-10-08T20:36:55.6586728Z       "ownAwarded": 0
+2026-10-08T20:36:55.6586971Z     },
+2026-10-08T20:36:55.6587155Z     {
+2026-10-08T20:36:55.6587347Z       "a": "diagnosis",
+2026-10-08T20:36:55.6587577Z       "b": "diagnoses",
+2026-10-08T20:36:55.6587803Z       "kind": "positive",
+2026-10-08T20:36:55.6588034Z       "same": true,
+2026-10-08T20:36:55.6588252Z       "stemA": "diagnosis",
+2026-10-08T20:36:55.6588496Z       "stemB": "diagnosis",
+2026-10-08T20:36:55.6588733Z       "groups": [
+2026-10-08T20:36:55.6588933Z         [
+2026-10-08T20:36:55.6589128Z           0,
+2026-10-08T20:36:55.6589323Z           1
+2026-10-08T20:36:55.6589511Z         ]
+2026-10-08T20:36:55.6589692Z       ],
+2026-10-08T20:36:55.6590107Z       "awarded": 0,
+2026-10-08T20:36:55.6590332Z       "ownAwarded": 0
+2026-10-08T20:36:55.6590543Z     },
+2026-10-08T20:36:55.6590728Z     {
+2026-10-08T20:36:55.6590913Z       "a": "oasis",
+2026-10-08T20:36:55.6591123Z       "b": "oases",
+2026-10-08T20:36:55.6591340Z       "kind": "positive",
+2026-10-08T20:36:55.6591568Z       "same": true,
+2026-10-08T20:36:55.6591781Z       "stemA": "oasis",
+2026-10-08T20:36:55.6592004Z       "stemB": "oasis",
+2026-10-08T20:36:55.6592226Z       "groups": [
+2026-10-08T20:36:55.6592425Z         [
+2026-10-08T20:36:55.6592615Z           0,
+2026-10-08T20:36:55.6592805Z           1
+2026-10-08T20:36:55.6592988Z         ]
+2026-10-08T20:36:55.6593172Z       ],
+2026-10-08T20:36:55.6593360Z       "awarded": 0,
+2026-10-08T20:36:55.6593577Z       "ownAwarded": 0
+2026-10-08T20:36:55.6593792Z     },
+2026-10-08T20:36:55.6594171Z     {
+2026-10-08T20:36:55.6594373Z       "a": "thesis",
+2026-10-08T20:36:55.6594608Z       "b": "theses",
+2026-10-08T20:36:55.6594834Z       "kind": "positive",
+2026-10-08T20:36:55.6595064Z       "same": true,
+2026-10-08T20:36:55.6595508Z       "stemA": "thesis",
+2026-10-08T20:36:55.6595902Z       "stemB": "thesis",
+2026-10-08T20:36:55.6596303Z       "groups": [
+2026-10-08T20:36:55.6596662Z         [
+2026-10-08T20:36:55.6597357Z           0,
+2026-10-08T20:36:55.6597720Z           1
+2026-10-08T20:36:55.6598064Z         ]
+2026-10-08T20:36:55.6598416Z       ],
+2026-10-08T20:36:55.6598765Z       "awarded": 0,
+2026-10-08T20:36:55.6599154Z       "ownAwarded": 0
+2026-10-08T20:36:55.6599532Z     },
+2026-10-08T20:36:55.6600103Z     {
+2026-10-08T20:36:55.6600448Z       "a": "crisis",
+2026-10-08T20:36:55.6600837Z       "b": "crises",
+2026-10-08T20:36:55.6601241Z       "kind": "positive",
+2026-10-08T20:36:55.6601624Z       "same": true,
+2026-10-08T20:36:55.6602041Z       "stemA": "crisis",
+2026-10-08T20:36:55.6602469Z       "stemB": "crisis",
+2026-10-08T20:36:55.6602888Z       "groups": [
+2026-10-08T20:36:55.6603330Z         [
+2026-10-08T20:36:55.6603694Z           0,
+2026-10-08T20:36:55.6604013Z           1
+2026-10-08T20:36:55.6604243Z         ]
+2026-10-08T20:36:55.6604451Z       ],
+2026-10-08T20:36:55.6604679Z       "awarded": 0,
+2026-10-08T20:36:55.6604905Z       "ownAwarded": 0
+2026-10-08T20:36:55.6605119Z     },
+2026-10-08T20:36:55.6605320Z     {
+2026-10-08T20:36:55.6605509Z       "a": "potato",
+2026-10-08T20:36:55.6605730Z       "b": "potatoes",
+2026-10-08T20:36:55.6605964Z       "kind": "positive",
+2026-10-08T20:36:55.6606196Z       "same": true,
+2026-10-08T20:36:55.6606413Z       "stemA": "potato",
+2026-10-08T20:36:55.6606647Z       "stemB": "potato",
+2026-10-08T20:36:55.6606875Z       "groups": [
+2026-10-08T20:36:55.6607080Z         [
+2026-10-08T20:36:55.6607268Z           0,
+2026-10-08T20:36:55.6607463Z           1
+2026-10-08T20:36:55.6607646Z         ]
+2026-10-08T20:36:55.6607831Z       ],
+2026-10-08T20:36:55.6608023Z       "awarded": 0,
+2026-10-08T20:36:55.6608242Z       "ownAwarded": 0
+2026-10-08T20:36:55.6608453Z     },
+2026-10-08T20:36:55.6608630Z     {
+2026-10-08T20:36:55.6608819Z       "a": "tomato",
+2026-10-08T20:36:55.6609033Z       "b": "tomatoes",
+2026-10-08T20:36:55.6609262Z       "kind": "positive",
+2026-10-08T20:36:55.6609496Z       "same": true,
+2026-10-08T20:36:55.6609713Z       "stemA": "tomato",
+2026-10-08T20:36:55.6610261Z       "stemB": "tomato",
+2026-10-08T20:36:55.6610500Z       "groups": [
+2026-10-08T20:36:55.6610706Z         [
+2026-10-08T20:36:55.6610892Z           0,
+2026-10-08T20:36:55.6611086Z           1
+2026-10-08T20:36:55.6611268Z         ]
+2026-10-08T20:36:55.6611454Z       ],
+2026-10-08T20:36:55.6611640Z       "awarded": 0,
+2026-10-08T20:36:55.6611853Z       "ownAwarded": 0
+2026-10-08T20:36:55.6612064Z     },
+2026-10-08T20:36:55.6612243Z     {
+2026-10-08T20:36:55.6612433Z       "a": "sheep",
+2026-10-08T20:36:55.6612660Z       "b": "sheep",
+2026-10-08T20:36:55.6612882Z       "kind": "positive",
+2026-10-08T20:36:55.6613116Z       "same": true,
+2026-10-08T20:36:55.6613332Z       "stemA": "sheep",
+2026-10-08T20:36:55.6613556Z       "stemB": "sheep",
+2026-10-08T20:36:55.6613784Z       "groups": [
+2026-10-08T20:36:55.6614002Z         [
+2026-10-08T20:36:55.6614185Z           0,
+2026-10-08T20:36:55.6614382Z           1
+2026-10-08T20:36:55.6614567Z         ]
+2026-10-08T20:36:55.6614755Z       ],
+2026-10-08T20:36:55.6614948Z       "awarded": 0,
+2026-10-08T20:36:55.6615168Z       "ownAwarded": 0
+2026-10-08T20:36:55.6615380Z     },
+2026-10-08T20:36:55.6615558Z     {
+2026-10-08T20:36:55.6615747Z       "a": "fish",
+2026-10-08T20:36:55.6615955Z       "b": "fish",
+2026-10-08T20:36:55.6616172Z       "kind": "positive",
+2026-10-08T20:36:55.6616404Z       "same": true,
+2026-10-08T20:36:55.6616619Z       "stemA": "fish",
+2026-10-08T20:36:55.6616839Z       "stemB": "fish",
+2026-10-08T20:36:55.6617058Z       "groups": [
+2026-10-08T20:36:55.6617264Z         [
+2026-10-08T20:36:55.6617449Z           0,
+2026-10-08T20:36:55.6617824Z           1
+2026-10-08T20:36:55.6618020Z         ]
+2026-10-08T20:36:55.6618209Z       ],
+2026-10-08T20:36:55.6618398Z       "awarded": 0,
+2026-10-08T20:36:55.6618609Z       "ownAwarded": 0
+2026-10-08T20:36:55.6618824Z     },
+2026-10-08T20:36:55.6619002Z     {
+2026-10-08T20:36:55.6619191Z       "a": "deer",
+2026-10-08T20:36:55.6619399Z       "b": "deer",
+2026-10-08T20:36:55.6619642Z       "kind": "positive",
+2026-10-08T20:36:55.6620251Z       "same": true,
+2026-10-08T20:36:55.6620476Z       "stemA": "deer",
+2026-10-08T20:36:55.6620700Z       "stemB": "deer",
+2026-10-08T20:36:55.6620920Z       "groups": [
+2026-10-08T20:36:55.6621127Z         [
+2026-10-08T20:36:55.6621312Z           0,
+2026-10-08T20:36:55.6621507Z           1
+2026-10-08T20:36:55.6621693Z         ]
+2026-10-08T20:36:55.6621875Z       ],
+2026-10-08T20:36:55.6622063Z       "awarded": 0,
+2026-10-08T20:36:55.6622276Z       "ownAwarded": 0
+2026-10-08T20:36:55.6622492Z     },
+2026-10-08T20:36:55.6622672Z     {
+2026-10-08T20:36:55.6622872Z       "a": "species",
+2026-10-08T20:36:55.6623088Z       "b": "species",
+2026-10-08T20:36:55.6623309Z       "kind": "positive",
+2026-10-08T20:36:55.6623541Z       "same": true,
+2026-10-08T20:36:55.6623752Z       "stemA": "speci",
+2026-10-08T20:36:55.6623986Z       "stemB": "speci",
+2026-10-08T20:36:55.6624214Z       "groups": [
+2026-10-08T20:36:55.6624420Z         [
+2026-10-08T20:36:55.6624606Z           0,
+2026-10-08T20:36:55.6624807Z           1
+2026-10-08T20:36:55.6624992Z         ]
+2026-10-08T20:36:55.6625172Z       ],
+2026-10-08T20:36:55.6625374Z       "awarded": 0,
+2026-10-08T20:36:55.6625586Z       "ownAwarded": 0
+2026-10-08T20:36:55.6625799Z     },
+2026-10-08T20:36:55.6625979Z     {
+2026-10-08T20:36:55.6626169Z       "a": "aircraft",
+2026-10-08T20:36:55.6626386Z       "b": "aircraft",
+2026-10-08T20:36:55.6626612Z       "kind": "positive",
+2026-10-08T20:36:55.6626842Z       "same": true,
+2026-10-08T20:36:55.6627056Z       "stemA": "aircraft",
+2026-10-08T20:36:55.6627306Z       "stemB": "aircraft",
+2026-10-08T20:36:55.6627568Z       "groups": [
+2026-10-08T20:36:55.6627773Z         [
+2026-10-08T20:36:55.6627959Z           0,
+2026-10-08T20:36:55.6628149Z           1
+2026-10-08T20:36:55.6628331Z         ]
+2026-10-08T20:36:55.6628510Z       ],
+2026-10-08T20:36:55.6628706Z       "awarded": 0,
+2026-10-08T20:36:55.6628917Z       "ownAwarded": 0
+2026-10-08T20:36:55.6629131Z     },
+2026-10-08T20:36:55.6629308Z     {
+2026-10-08T20:36:55.6629500Z       "a": "hero",
+2026-10-08T20:36:55.6629704Z       "b": "heroes",
+2026-10-08T20:36:55.6630176Z       "kind": "positive",
+2026-10-08T20:36:55.6630485Z       "same": true,
+2026-10-08T20:36:55.6630884Z       "stemA": "hero",
+2026-10-08T20:36:55.6631129Z       "stemB": "hero",
+2026-10-08T20:36:55.6631347Z       "groups": [
+2026-10-08T20:36:55.6631551Z         [
+2026-10-08T20:36:55.6631761Z           0,
+2026-10-08T20:36:55.6631960Z           1
+2026-10-08T20:36:55.6632144Z         ]
+2026-10-08T20:36:55.6632323Z       ],
+2026-10-08T20:36:55.6632518Z       "awarded": 0,
+2026-10-08T20:36:55.6632754Z       "ownAwarded": 0
+2026-10-08T20:36:55.6632968Z     },
+2026-10-08T20:36:55.6633146Z     {
+2026-10-08T20:36:55.6633451Z       "a": "echo",
+2026-10-08T20:36:55.6633825Z       "b": "echoes",
+2026-10-08T20:36:55.6634203Z       "kind": "positive",
+2026-10-08T20:36:55.6634600Z       "same": true,
+2026-10-08T20:36:55.6634965Z       "stemA": "echo",
+2026-10-08T20:36:55.6635342Z       "stemB": "echo",
+2026-10-08T20:36:55.6635578Z       "groups": [
+2026-10-08T20:36:55.6635786Z         [
+2026-10-08T20:36:55.6635976Z           0,
+2026-10-08T20:36:55.6636161Z           1
+2026-10-08T20:36:55.6636352Z         ]
+2026-10-08T20:36:55.6636532Z       ],
+2026-10-08T20:36:55.6636728Z       "awarded": 0,
+2026-10-08T20:36:55.6636943Z       "ownAwarded": 0
+2026-10-08T20:36:55.6637158Z     },
+2026-10-08T20:36:55.6637338Z     {
+2026-10-08T20:36:55.6637567Z       "a": "bus",
+2026-10-08T20:36:55.6637780Z       "b": "buses",
+2026-10-08T20:36:55.6637992Z       "kind": "positive",
+2026-10-08T20:36:55.6638416Z       "same": true,
+2026-10-08T20:36:55.6638635Z       "stemA": "bus",
+2026-10-08T20:36:55.6638855Z       "stemB": "bus",
+2026-10-08T20:36:55.6639068Z       "groups": [
+2026-10-08T20:36:55.6639271Z         [
+2026-10-08T20:36:55.6639454Z           0,
+2026-10-08T20:36:55.6639642Z           1
+2026-10-08T20:36:55.6640090Z         ]
+2026-10-08T20:36:55.6640436Z       ],
+2026-10-08T20:36:55.6640773Z       "awarded": 0,
+2026-10-08T20:36:55.6641223Z       "ownAwarded": 0
+2026-10-08T20:36:55.6641441Z     },
+2026-10-08T20:36:55.6641625Z     {
+2026-10-08T20:36:55.6641814Z       "a": "quiz",
+2026-10-08T20:36:55.6642032Z       "b": "quizzes",
+2026-10-08T20:36:55.6642257Z       "kind": "positive",
+2026-10-08T20:36:55.6642492Z       "same": true,
+2026-10-08T20:36:55.6642704Z       "stemA": "quiz",
+2026-10-08T20:36:55.6642927Z       "stemB": "quiz",
+2026-10-08T20:36:55.6643147Z       "groups": [
+2026-10-08T20:36:55.6643349Z         [
+2026-10-08T20:36:55.6643541Z           0,
+2026-10-08T20:36:55.6643729Z           1
+2026-10-08T20:36:55.6643932Z         ]
+2026-10-08T20:36:55.6644115Z       ],
+2026-10-08T20:36:55.6644305Z       "awarded": 0,
+2026-10-08T20:36:55.6644521Z       "ownAwarded": 0
+2026-10-08T20:36:55.6644730Z     },
+2026-10-08T20:36:55.6644912Z     {
+2026-10-08T20:36:55.6645098Z       "a": "status",
+2026-10-08T20:36:55.6645318Z       "b": "statuses",
+2026-10-08T20:36:55.6645543Z       "kind": "positive",
+2026-10-08T20:36:55.6645786Z       "same": true,
+2026-10-08T20:36:55.6646000Z       "stemA": "status",
+2026-10-08T20:36:55.6646239Z       "stemB": "status",
+2026-10-08T20:36:55.6646465Z       "groups": [
+2026-10-08T20:36:55.6646672Z         [
+2026-10-08T20:36:55.6646861Z           0,
+2026-10-08T20:36:55.6647049Z           1
+2026-10-08T20:36:55.6647235Z         ]
+2026-10-08T20:36:55.6647415Z       ],
+2026-10-08T20:36:55.6647607Z       "awarded": 0,
+2026-10-08T20:36:55.6647820Z       "ownAwarded": 0
+2026-10-08T20:36:55.6648029Z     },
+2026-10-08T20:36:55.6648212Z     {
+2026-10-08T20:36:55.6648395Z       "a": "roof",
+2026-10-08T20:36:55.6648609Z       "b": "roofs",
+2026-10-08T20:36:55.6648824Z       "kind": "positive",
+2026-10-08T20:36:55.6649058Z       "same": true,
+2026-10-08T20:36:55.6649265Z       "stemA": "roof",
+2026-10-08T20:36:55.6649483Z       "stemB": "roof",
+2026-10-08T20:36:55.6649708Z       "groups": [
+2026-10-08T20:36:55.6650171Z         [
+2026-10-08T20:36:55.6650372Z           0,
+2026-10-08T20:36:55.6650564Z           1
+2026-10-08T20:36:55.6650758Z         ]
+2026-10-08T20:36:55.6650938Z       ],
+2026-10-08T20:36:55.6651135Z       "awarded": 0,
+2026-10-08T20:36:55.6651351Z       "ownAwarded": 0
+2026-10-08T20:36:55.6651563Z     },
+2026-10-08T20:36:55.6651748Z     {
+2026-10-08T20:36:55.6651933Z       "a": "chief",
+2026-10-08T20:36:55.6652145Z       "b": "chiefs",
+2026-10-08T20:36:55.6652372Z       "kind": "positive",
+2026-10-08T20:36:55.6652608Z       "same": true,
+2026-10-08T20:36:55.6652821Z       "stemA": "chief",
+2026-10-08T20:36:55.6653045Z       "stemB": "chief",
+2026-10-08T20:36:55.6653283Z       "groups": [
+2026-10-08T20:36:55.6653485Z         [
+2026-10-08T20:36:55.6653674Z           0,
+2026-10-08T20:36:55.6653863Z           1
+2026-10-08T20:36:55.6654054Z         ]
+2026-10-08T20:36:55.6654233Z       ],
+2026-10-08T20:36:55.6654421Z       "awarded": 0,
+2026-10-08T20:36:55.6654639Z       "ownAwarded": 0
+2026-10-08T20:36:55.6654849Z     },
+2026-10-08T20:36:55.6655037Z     {
+2026-10-08T20:36:55.6655221Z       "a": "proof",
+2026-10-08T20:36:55.6655439Z       "b": "proofs",
+2026-10-08T20:36:55.6655659Z       "kind": "positive",
+2026-10-08T20:36:55.6655890Z       "same": true,
+2026-10-08T20:36:55.6656107Z       "stemA": "proof",
+2026-10-08T20:36:55.6656332Z       "stemB": "proof",
+2026-10-08T20:36:55.6656558Z       "groups": [
+2026-10-08T20:36:55.6656758Z         [
+2026-10-08T20:36:55.6656950Z           0,
+2026-10-08T20:36:55.6657141Z           1
+2026-10-08T20:36:55.6657330Z         ]
+2026-10-08T20:36:55.6657511Z       ],
+2026-10-08T20:36:55.6657696Z       "awarded": 0,
+2026-10-08T20:36:55.6658046Z       "ownAwarded": 0
+2026-10-08T20:36:55.6658401Z     },
+2026-10-08T20:36:55.6658706Z     {
+2026-10-08T20:36:55.6659009Z       "a": "wolf",
+2026-10-08T20:36:55.6659376Z       "b": "wolves",
+2026-10-08T20:36:55.6659755Z       "kind": "positive",
+2026-10-08T20:36:55.6660286Z       "same": true,
+2026-10-08T20:36:55.6660654Z       "stemA": "wolf",
+2026-10-08T20:36:55.6675867Z       "stemB": "wolf",
+2026-10-08T20:36:55.6676204Z       "groups": [
+2026-10-08T20:36:55.6676650Z         [
+2026-10-08T20:36:55.6676857Z           0,
+2026-10-08T20:36:55.6677072Z           1
+2026-10-08T20:36:55.6677262Z         ]
+2026-10-08T20:36:55.6677447Z       ],
+2026-10-08T20:36:55.6677654Z       "awarded": 0,
+2026-10-08T20:36:55.6677885Z       "ownAwarded": 0
+2026-10-08T20:36:55.6678111Z     },
+2026-10-08T20:36:55.6678295Z     {
+2026-10-08T20:36:55.6678487Z       "a": "calf",
+2026-10-08T20:36:55.6678705Z       "b": "calves",
+2026-10-08T20:36:55.6678935Z       "kind": "positive",
+2026-10-08T20:36:55.6679182Z       "same": true,
+2026-10-08T20:36:55.6679403Z       "stemA": "calf",
+2026-10-08T20:36:55.6679627Z       "stemB": "calf",
+2026-10-08T20:36:55.6681143Z       "groups": [
+2026-10-08T20:36:55.6681505Z         [
+2026-10-08T20:36:55.6681774Z           0,
+2026-10-08T20:36:55.6682012Z           1
+2026-10-08T20:36:55.6682287Z         ]
+2026-10-08T20:36:55.6682595Z       ],
+2026-10-08T20:36:55.6682804Z       "awarded": 0,
+2026-10-08T20:36:55.6683035Z       "ownAwarded": 0
+2026-10-08T20:36:55.6683271Z     },
+2026-10-08T20:36:55.6683456Z     {
+2026-10-08T20:36:55.6683650Z       "a": "gas",
+2026-10-08T20:36:55.6683862Z       "b": "gases",
+2026-10-08T20:36:55.6684083Z       "kind": "positive",
+2026-10-08T20:36:55.6684334Z       "same": true,
+2026-10-08T20:36:55.6684548Z       "stemA": "gas",
+2026-10-08T20:36:55.6684768Z       "stemB": "gas",
+2026-10-08T20:36:55.6684987Z       "groups": [
+2026-10-08T20:36:55.6685216Z         [
+2026-10-08T20:36:55.6685402Z           0,
+2026-10-08T20:36:55.6685595Z           1
+2026-10-08T20:36:55.6685785Z         ]
+2026-10-08T20:36:55.6685970Z       ],
+2026-10-08T20:36:55.6686165Z       "awarded": 0,
+2026-10-08T20:36:55.6686383Z       "ownAwarded": 0
+2026-10-08T20:36:55.6686601Z     },
+2026-10-08T20:36:55.6686779Z     {
+2026-10-08T20:36:55.6686963Z       "a": "gas",
+2026-10-08T20:36:55.6687183Z       "b": "gasses",
+2026-10-08T20:36:55.6687404Z       "kind": "positive",
+2026-10-08T20:36:55.6687646Z       "same": true,
+2026-10-08T20:36:55.6687861Z       "stemA": "gas",
+2026-10-08T20:36:55.6688087Z       "stemB": "gas",
+2026-10-08T20:36:55.6688298Z       "groups": [
+2026-10-08T20:36:55.6688509Z         [
+2026-10-08T20:36:55.6688704Z           0,
+2026-10-08T20:36:55.6688898Z           1
+2026-10-08T20:36:55.6689089Z         ]
+2026-10-08T20:36:55.6689272Z       ],
+2026-10-08T20:36:55.6689466Z       "awarded": 0,
+2026-10-08T20:36:55.6689684Z       "ownAwarded": 0
+2026-10-08T20:36:55.6690204Z     },
+2026-10-08T20:36:55.6690402Z     {
+2026-10-08T20:36:55.6690597Z       "a": "cactus",
+2026-10-08T20:36:55.6690823Z       "b": "cactuses",
+2026-10-08T20:36:55.6691058Z       "kind": "positive",
+2026-10-08T20:36:55.6691299Z       "same": true,
+2026-10-08T20:36:55.6691515Z       "stemA": "cactus",
+2026-10-08T20:36:55.6691750Z       "stemB": "cactus",
+2026-10-08T20:36:55.6691974Z       "groups": [
+2026-10-08T20:36:55.6692175Z         [
+2026-10-08T20:36:55.6692367Z           0,
+2026-10-08T20:36:55.6692559Z           1
+2026-10-08T20:36:55.6692745Z         ]
+2026-10-08T20:36:55.6692933Z       ],
+2026-10-08T20:36:55.6693124Z       "awarded": 0,
+2026-10-08T20:36:55.6693334Z       "ownAwarded": 0
+2026-10-08T20:36:55.6693545Z     },
+2026-10-08T20:36:55.6693750Z     {
+2026-10-08T20:36:55.6693934Z       "a": "house",
+2026-10-08T20:36:55.6694143Z       "b": "houses",
+2026-10-08T20:36:55.6694364Z       "kind": "positive",
+2026-10-08T20:36:55.6694597Z       "same": true,
+2026-10-08T20:36:55.6694805Z       "stemA": "house",
+2026-10-08T20:36:55.6695026Z       "stemB": "house",
+2026-10-08T20:36:55.6695247Z       "groups": [
+2026-10-08T20:36:55.6695449Z         [
+2026-10-08T20:36:55.6695855Z           0,
+2026-10-08T20:36:55.6696054Z           1
+2026-10-08T20:36:55.6696241Z         ]
+2026-10-08T20:36:55.6696421Z       ],
+2026-10-08T20:36:55.6696760Z       "awarded": 0,
+2026-10-08T20:36:55.6697126Z       "ownAwarded": 0
+2026-10-08T20:36:55.6697485Z     },
+2026-10-08T20:36:55.6697798Z     {
+2026-10-08T20:36:55.6698112Z       "a": "news",
+2026-10-08T20:36:55.6698462Z       "b": "new",
+2026-10-08T20:36:55.6699083Z       "kind": "negative",
+2026-10-08T20:36:55.6699497Z       "same": false,
+2026-10-08T20:36:55.6700059Z       "stemA": "news",
+2026-10-08T20:36:55.6700439Z       "stemB": "new",
+2026-10-08T20:36:55.6700808Z       "groups": [
+2026-10-08T20:36:55.6701146Z         [
+2026-10-08T20:36:55.6701462Z           0
+2026-10-08T20:36:55.6701773Z         ],
+2026-10-08T20:36:55.6702090Z         [
+2026-10-08T20:36:55.6702396Z           1
+2026-10-08T20:36:55.6702705Z         ]
+2026-10-08T20:36:55.6703020Z       ],
+2026-10-08T20:36:55.6703339Z       "awarded": 2,
+2026-10-08T20:36:55.6703709Z       "ownAwarded": 2
+2026-10-08T20:36:55.6704068Z     },
+2026-10-08T20:36:55.6704376Z     {
+2026-10-08T20:36:55.6704688Z       "a": "chief",
+2026-10-08T20:36:55.6705039Z       "b": "chieves",
+2026-10-08T20:36:55.6705412Z       "kind": "negative",
+2026-10-08T20:36:55.6705791Z       "same": false,
+2026-10-08T20:36:55.6706159Z       "stemA": "chief",
+2026-10-08T20:36:55.6706536Z       "stemB": "chieve",
+2026-10-08T20:36:55.6706931Z       "groups": [
+2026-10-08T20:36:55.6707272Z         [
+2026-10-08T20:36:55.6707583Z           0
+2026-10-08T20:36:55.6707899Z         ],
+2026-10-08T20:36:55.6708211Z         [
+2026-10-08T20:36:55.6708523Z           1
+2026-10-08T20:36:55.6708837Z         ]
+2026-10-08T20:36:55.6709151Z       ],
+2026-10-08T20:36:55.6709469Z       "awarded": 2,
+2026-10-08T20:36:55.6709993Z       "ownAwarded": 2
+2026-10-08T20:36:55.6710366Z     },
+2026-10-08T20:36:55.6710672Z     {
+2026-10-08T20:36:55.6710995Z       "a": "proof",
+2026-10-08T20:36:55.6711346Z       "b": "prooves",
+2026-10-08T20:36:55.6711729Z       "kind": "negative",
+2026-10-08T20:36:55.6712114Z       "same": false,
+2026-10-08T20:36:55.6712529Z       "stemA": "proof",
+2026-10-08T20:36:55.6712920Z       "stemB": "proove",
+2026-10-08T20:36:55.6713314Z       "groups": [
+2026-10-08T20:36:55.6713662Z         [
+2026-10-08T20:36:55.6713975Z           0
+2026-10-08T20:36:55.6714300Z         ],
+2026-10-08T20:36:55.6714612Z         [
+2026-10-08T20:36:55.6714924Z           1
+2026-10-08T20:36:55.6715241Z         ]
+2026-10-08T20:36:55.6715531Z       ],
+2026-10-08T20:36:55.6715845Z       "awarded": 2,
+2026-10-08T20:36:55.6716198Z       "ownAwarded": 2
+2026-10-08T20:36:55.6716560Z     },
+2026-10-08T20:36:55.6716852Z     {
+2026-10-08T20:36:55.6717152Z       "a": "roof",
+2026-10-08T20:36:55.6717468Z       "b": "rooves",
+2026-10-08T20:36:55.6717875Z       "kind": "nonselected-variant",
+2026-10-08T20:36:55.6718304Z       "same": false,
+2026-10-08T20:36:55.6718645Z       "stemA": "roof",
+2026-10-08T20:36:55.6719008Z       "stemB": "roove",
+2026-10-08T20:36:55.6719368Z       "groups": [
+2026-10-08T20:36:55.6719691Z         [
+2026-10-08T20:36:55.6720166Z           0
+2026-10-08T20:36:55.6720502Z         ],
+2026-10-08T20:36:55.6720792Z         [
+2026-10-08T20:36:55.6721075Z           1
+2026-10-08T20:36:55.6721365Z         ]
+2026-10-08T20:36:55.6721645Z       ],
+2026-10-08T20:36:55.6721942Z       "awarded": 2,
+2026-10-08T20:36:55.6722277Z       "ownAwarded": 2
+2026-10-08T20:36:55.6722611Z     },
+2026-10-08T20:36:55.6722894Z     {
+2026-10-08T20:36:55.6723181Z       "a": "axis",
+2026-10-08T20:36:55.6723502Z       "b": "axe",
+2026-10-08T20:36:55.6723828Z       "kind": "negative",
+2026-10-08T20:36:55.6724191Z       "same": false,
+2026-10-08T20:36:55.6724522Z       "stemA": "axis",
+2026-10-08T20:36:55.6724866Z       "stemB": "axe",
+2026-10-08T20:36:55.6725201Z       "groups": [
+2026-10-08T20:36:55.6725508Z         [
+2026-10-08T20:36:55.6725800Z           0
+2026-10-08T20:36:55.6726085Z         ],
+2026-10-08T20:36:55.6726373Z         [
+2026-10-08T20:36:55.6726828Z           1
+2026-10-08T20:36:55.6727122Z         ]
+2026-10-08T20:36:55.6727409Z       ],
+2026-10-08T20:36:55.6727703Z       "awarded": 2,
+2026-10-08T20:36:55.6728038Z       "ownAwarded": 2
+2026-10-08T20:36:55.6728362Z     },
+2026-10-08T20:36:55.6728648Z     {
+2026-10-08T20:36:55.6728933Z       "a": "axis",
+2026-10-08T20:36:55.6729249Z       "b": "axes",
+2026-10-08T20:36:55.6729583Z       "kind": "ambiguous",
+2026-10-08T20:36:55.6730564Z       "same": false,
+2026-10-08T20:36:55.6730916Z       "stemA": "axis",
+2026-10-08T20:36:55.6731263Z       "stemB": "axe",
+2026-10-08T20:36:55.6731606Z       "groups": [
+2026-10-08T20:36:55.6731920Z         [
+2026-10-08T20:36:55.6732204Z           0
+2026-10-08T20:36:55.6732503Z         ],
+2026-10-08T20:36:55.6732788Z         [
+2026-10-08T20:36:55.6733144Z           1
+2026-10-08T20:36:55.6733461Z         ]
+2026-10-08T20:36:55.6733789Z       ],
+2026-10-08T20:36:55.6734106Z       "awarded": 2,
+2026-10-08T20:36:55.6734477Z       "ownAwarded": 2
+2026-10-08T20:36:55.6734838Z     },
+2026-10-08T20:36:55.6735153Z     {
+2026-10-08T20:36:55.6735472Z       "a": "axe",
+2026-10-08T20:36:55.6735816Z       "b": "axes",
+2026-10-08T20:36:55.6736182Z       "kind": "ambiguous",
+2026-10-08T20:36:55.6736577Z       "same": true,
+2026-10-08T20:36:55.6736936Z       "stemA": "axe",
+2026-10-08T20:36:55.6737297Z       "stemB": "axe",
+2026-10-08T20:36:55.6737719Z       "groups": [
+2026-10-08T20:36:55.6738062Z         [
+2026-10-08T20:36:55.6738388Z           0,
+2026-10-08T20:36:55.6738713Z           1
+2026-10-08T20:36:55.6739023Z         ]
+2026-10-08T20:36:55.6739334Z       ],
+2026-10-08T20:36:55.6739652Z       "awarded": 0,
+2026-10-08T20:36:55.6740310Z       "ownAwarded": 0
+2026-10-08T20:36:55.6740675Z     },
+2026-10-08T20:36:55.6740979Z     {
+2026-10-08T20:36:55.6741296Z       "a": "basis",
+2026-10-08T20:36:55.6741640Z       "b": "base",
+2026-10-08T20:36:55.6742006Z       "kind": "negative",
+2026-10-08T20:36:55.6742392Z       "same": false,
+2026-10-08T20:36:55.6742756Z       "stemA": "basis",
+2026-10-08T20:36:55.6743142Z       "stemB": "base",
+2026-10-08T20:36:55.6743509Z       "groups": [
+2026-10-08T20:36:55.6743852Z         [
+2026-10-08T20:36:55.6744165Z           0
+2026-10-08T20:36:55.6744478Z         ],
+2026-10-08T20:36:55.6744784Z         [
+2026-10-08T20:36:55.6745084Z           1
+2026-10-08T20:36:55.6745397Z         ]
+2026-10-08T20:36:55.6745700Z       ],
+2026-10-08T20:36:55.6746025Z       "awarded": 2,
+2026-10-08T20:36:55.6746388Z       "ownAwarded": 2
+2026-10-08T20:36:55.6746746Z     },
+2026-10-08T20:36:55.6747048Z     {
+2026-10-08T20:36:55.6747360Z       "a": "basis",
+2026-10-08T20:36:55.6747704Z       "b": "bases",
+2026-10-08T20:36:55.6748059Z       "kind": "ambiguous",
+2026-10-08T20:36:55.6748448Z       "same": false,
+2026-10-08T20:36:55.6748789Z       "stemA": "basis",
+2026-10-08T20:36:55.6749143Z       "stemB": "base",
+2026-10-08T20:36:55.6749496Z       "groups": [
+2026-10-08T20:36:55.6749993Z         [
+2026-10-08T20:36:55.6750296Z           0
+2026-10-08T20:36:55.6750592Z         ],
+2026-10-08T20:36:55.6750911Z         [
+2026-10-08T20:36:55.6751218Z           1
+2026-10-08T20:36:55.6751529Z         ]
+2026-10-08T20:36:55.6751821Z       ],
+2026-10-08T20:36:55.6752121Z       "awarded": 2,
+2026-10-08T20:36:55.6752473Z       "ownAwarded": 2
+2026-10-08T20:36:55.6752807Z     },
+2026-10-08T20:36:55.6753110Z     {
+2026-10-08T20:36:55.6753418Z       "a": "base",
+2026-10-08T20:36:55.6753809Z       "b": "bases",
+2026-10-08T20:36:55.6754181Z       "kind": "ambiguous",
+2026-10-08T20:36:55.6754575Z       "same": true,
+2026-10-08T20:36:55.6754926Z       "stemA": "base",
+2026-10-08T20:36:55.6755299Z       "stemB": "base",
+2026-10-08T20:36:55.6755666Z       "groups": [
+2026-10-08T20:36:55.6756004Z         [
+2026-10-08T20:36:55.6756325Z           0,
+2026-10-08T20:36:55.6756644Z           1
+2026-10-08T20:36:55.6756992Z         ]
+2026-10-08T20:36:55.6757310Z       ],
+2026-10-08T20:36:55.6757622Z       "awarded": 0,
+2026-10-08T20:36:55.6757974Z       "ownAwarded": 0
+2026-10-08T20:36:55.6758325Z     },
+2026-10-08T20:36:55.6758840Z     {
+2026-10-08T20:36:55.6759179Z       "a": "species",
+2026-10-08T20:36:55.6759543Z       "b": "specie",
+2026-10-08T20:36:55.6760174Z       "kind": "semantic-fuzzy-guard",
+2026-10-08T20:36:55.6760628Z       "same": true,
+2026-10-08T20:36:55.6760856Z       "stemA": "speci",
+2026-10-08T20:36:55.6761087Z       "stemB": "speci",
+2026-10-08T20:36:55.6761306Z       "groups": [
+2026-10-08T20:36:55.6761510Z         [
+2026-10-08T20:36:55.6761871Z           0,
+2026-10-08T20:36:55.6762062Z           1
+2026-10-08T20:36:55.6762253Z         ]
+2026-10-08T20:36:55.6762433Z       ],
+2026-10-08T20:36:55.6762627Z       "awarded": 0,
+2026-10-08T20:36:55.6762840Z       "ownAwarded": 0
+2026-10-08T20:36:55.6763049Z     },
+2026-10-08T20:36:55.6763234Z     {
+2026-10-08T20:36:55.6763421Z       "a": "bus",
+2026-10-08T20:36:55.6763633Z       "b": "business",
+2026-10-08T20:36:55.6763860Z       "kind": "negative",
+2026-10-08T20:36:55.6764093Z       "same": false,
+2026-10-08T20:36:55.6764303Z       "stemA": "bus",
+2026-10-08T20:36:55.6764531Z       "stemB": "business",
+2026-10-08T20:36:55.6764762Z       "groups": [
+2026-10-08T20:36:55.6764958Z         [
+2026-10-08T20:36:55.6765142Z           0
+2026-10-08T20:36:55.6765326Z         ],
+2026-10-08T20:36:55.6765511Z         [
+2026-10-08T20:36:55.6765692Z           1
+2026-10-08T20:36:55.6765873Z         ]
+2026-10-08T20:36:55.6766050Z       ],
+2026-10-08T20:36:55.6766235Z       "awarded": 2,
+2026-10-08T20:36:55.6766455Z       "ownAwarded": 2
+2026-10-08T20:36:55.6766662Z     },
+2026-10-08T20:36:55.6766878Z     {
+2026-10-08T20:36:55.6767065Z       "a": "leaf",
+2026-10-08T20:36:55.6767278Z       "b": "leave",
+2026-10-08T20:36:55.6767489Z       "kind": "negative",
+2026-10-08T20:36:55.6767720Z       "same": false,
+2026-10-08T20:36:55.6767943Z       "stemA": "leaf",
+2026-10-08T20:36:55.6768165Z       "stemB": "leave",
+2026-10-08T20:36:55.6768392Z       "groups": [
+2026-10-08T20:36:55.6768595Z         [
+2026-10-08T20:36:55.6768784Z           0
+2026-10-08T20:36:55.6768967Z         ],
+2026-10-08T20:36:55.6769157Z         [
+2026-10-08T20:36:55.6769334Z           1
+2026-10-08T20:36:55.6769514Z         ]
+2026-10-08T20:36:55.6769700Z       ],
+2026-10-08T20:36:55.6770201Z       "awarded": 2,
+2026-10-08T20:36:55.6770436Z       "ownAwarded": 2
+2026-10-08T20:36:55.6770651Z     },
+2026-10-08T20:36:55.6770835Z     {
+2026-10-08T20:36:55.6771022Z       "a": "knife",
+2026-10-08T20:36:55.6771226Z       "b": "knave",
+2026-10-08T20:36:55.6771451Z       "kind": "negative",
+2026-10-08T20:36:55.6771683Z       "same": false,
+2026-10-08T20:36:55.6771903Z       "stemA": "knife",
+2026-10-08T20:36:55.6772126Z       "stemB": "knave",
+2026-10-08T20:36:55.6772347Z       "groups": [
+2026-10-08T20:36:55.6772550Z         [
+2026-10-08T20:36:55.6772732Z           0
+2026-10-08T20:36:55.6772919Z         ],
+2026-10-08T20:36:55.6773102Z         [
+2026-10-08T20:36:55.6773287Z           1
+2026-10-08T20:36:55.6773465Z         ]
+2026-10-08T20:36:55.6773648Z       ],
+2026-10-08T20:36:55.6773838Z       "awarded": 2,
+2026-10-08T20:36:55.6774056Z       "ownAwarded": 2
+2026-10-08T20:36:55.6774271Z     },
+2026-10-08T20:36:55.6774449Z     {
+2026-10-08T20:36:55.6774638Z       "a": "status",
+2026-10-08T20:36:55.6774847Z       "b": "statue",
+2026-10-08T20:36:55.6775108Z       "kind": "semantic-fuzzy-guard",
+2026-10-08T20:36:55.6775384Z       "same": true,
+2026-10-08T20:36:55.6775601Z       "stemA": "status",
+2026-10-08T20:36:55.6775831Z       "stemB": "statue",
+2026-10-08T20:36:55.6776064Z       "groups": [
+2026-10-08T20:36:55.6776278Z         [
+2026-10-08T20:36:55.6776463Z           0,
+2026-10-08T20:36:55.6776660Z           1
+2026-10-08T20:36:55.6776839Z         ]
+2026-10-08T20:36:55.6777025Z       ],
+2026-10-08T20:36:55.6777227Z       "awarded": 0,
+2026-10-08T20:36:55.6777444Z       "ownAwarded": 0
+2026-10-08T20:36:55.6777662Z     },
+2026-10-08T20:36:55.6777841Z     {
+2026-10-08T20:36:55.6778029Z       "a": "house",
+2026-10-08T20:36:55.6778235Z       "b": "hose",
+2026-10-08T20:36:55.6778453Z       "kind": "negative",
+2026-10-08T20:36:55.6778825Z       "same": false,
+2026-10-08T20:36:55.6779046Z       "stemA": "house",
+2026-10-08T20:36:55.6779274Z       "stemB": "hose",
+2026-10-08T20:36:55.6779492Z       "groups": [
+2026-10-08T20:36:55.6779695Z         [
+2026-10-08T20:36:55.6780157Z           0
+2026-10-08T20:36:55.6780352Z         ],
+2026-10-08T20:36:55.6780536Z         [
+2026-10-08T20:36:55.6780621Z           1
+2026-10-08T20:36:55.6780705Z         ]
+2026-10-08T20:36:55.6780785Z       ],
+2026-10-08T20:36:55.6781016Z       "awarded": 2,
+2026-10-08T20:36:55.6781111Z       "ownAwarded": 2
+2026-10-08T20:36:55.6781197Z     }
+2026-10-08T20:36:55.6781278Z   ]
+2026-10-08T20:36:55.6781367Z }
+2026-10-08T20:36:55.6881281Z ##[group]Run node scripts/browser-check.mjs
+2026-10-08T20:36:55.6881446Z [36;1mnode scripts/browser-check.mjs[0m
+2026-10-08T20:36:55.6942853Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:36:55.6942947Z ##[endgroup]
+2026-10-08T20:36:55.9758316Z {"pid":7465,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","action":"offline functional browser checks"}
+2026-10-08T20:36:56.0412749Z {"profile":"source","name":"HTML embeds its scripts/styles and blocks network by CSP","passed":true}
+2026-10-08T20:36:56.5111311Z {"profile":"desktop","name":"setup and active screen have no horizontal overflow","passed":true}
+2026-10-08T20:36:56.8540340Z {"profile":"desktop","name":"named players are safely escaped; 12 labeled keyboard inputs","passed":true}
+2026-10-08T20:36:57.2926754Z {"profile":"desktop","name":"private handover removes previous answers from the DOM","passed":true}
+2026-10-08T20:36:59.5717691Z {"profile":"desktop","name":"host pause freezes time and preserves draft; keyboard modal traps focus","passed":true}
+2026-10-08T20:37:00.7061166Z {"profile":"desktop","name":"author names are absent from anonymous voting cards; duplicates marked zero","passed":true}
+2026-10-08T20:37:12.1885968Z {"profile":"desktop","name":"all 12 review categories advance; duplicate and rejected-answer scoring come from the actual core","passed":true}
+2026-10-08T20:37:12.4407568Z {"profile":"desktop","name":"final results rank the winner and allow a fresh seeded game","passed":true}
+2026-10-08T20:37:12.4475712Z {"profile":"desktop","name":"reduced motion disables entrance animation","passed":true}
+2026-10-08T20:37:13.4975156Z {"profile":"desktop","name":"timer expiry locks typed answers and waits at a private handover","passed":true}
+2026-10-08T20:37:13.9074534Z {"profile":"phone","name":"setup and active screen have no horizontal overflow","passed":true}
+2026-10-08T20:37:14.2292654Z {"profile":"phone","name":"named players are safely escaped; 12 labeled keyboard inputs","passed":true}
+2026-10-08T20:37:14.7742829Z {"profile":"phone","name":"private handover removes previous answers from the DOM","passed":true}
+2026-10-08T20:37:17.0331180Z {"profile":"phone","name":"host pause freezes time and preserves draft; keyboard modal traps focus","passed":true}
+2026-10-08T20:37:18.1720657Z {"profile":"phone","name":"author names are absent from anonymous voting cards; duplicates marked zero","passed":true}
+2026-10-08T20:37:30.8813336Z {"profile":"phone","name":"all 12 review categories advance; duplicate and rejected-answer scoring come from the actual core","passed":true}
+2026-10-08T20:37:31.2233483Z {"profile":"phone","name":"final results rank the winner and allow a fresh seeded game","passed":true}
+2026-10-08T20:37:31.2294798Z {"profile":"phone","name":"reduced motion disables entrance animation","passed":true}
+2026-10-08T20:37:32.2754717Z {"profile":"phone","name":"timer expiry locks typed answers and waits at a private handover","passed":true}
+2026-10-08T20:37:37.4406247Z {"profile":"desktop","name":"2 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:37:44.3406355Z {"profile":"desktop","name":"3 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:37:51.9917045Z {"profile":"desktop","name":"4 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:37:59.8909008Z {"profile":"desktop","name":"5 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:38:08.0744272Z {"profile":"desktop","name":"6 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:38:16.5070616Z {"profile":"desktop","name":"7 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:38:25.1902848Z {"profile":"desktop","name":"8 seats with easy/medium/strong bots play a whole game","passed":true}
+2026-10-08T20:38:25.1904890Z {"profile":"runtime","name":"offline file made zero network calls and raised no errors or dialogs","passed":true}
+2026-10-08T20:38:25.1912403Z {"profile":"provenance","name":"HTML stayed byte-identical during the whole browser suite","passed":true}
+2026-10-08T20:38:25.2193896Z {"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","passed":true,"checks":28}
+2026-10-08T20:38:25.2358744Z ##[group]Run node scripts/browser-empty-review.mjs after
+2026-10-08T20:38:25.2359234Z [36;1mnode scripts/browser-empty-review.mjs after[0m
+2026-10-08T20:38:25.2359579Z [36;1mnode scripts/browser-clock.mjs[0m
+2026-10-08T20:38:25.2422376Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:38:25.2422654Z ##[endgroup]
+2026-10-08T20:38:25.5392877Z {"pid":7634,"mode":"after","sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","action":"actual offline empty-review baseline/regression"}
+2026-10-08T20:38:27.0651700Z {"humans":2,"readyClicks":0,"ballotLocks":0,"reviewActionCount":0,"reviewElapsedMs":24.785577999999987,"categories":[]}
+2026-10-08T20:38:27.1829408Z {"name":"2 humans all blank: measured compulsory review actions","passed":true}
+2026-10-08T20:38:33.1094928Z {"humans":8,"readyClicks":0,"ballotLocks":0,"reviewActionCount":0,"reviewElapsedMs":20.355437000000165,"categories":[]}
+2026-10-08T20:38:33.2237727Z {"name":"8 humans all blank: measured compulsory review actions","passed":true}
+2026-10-08T20:38:39.0022597Z {"name":"mixed empty, accepted, wrong-initial and duplicate categories retain every nonempty private ballot","passed":true}
+2026-10-08T20:38:41.7563017Z {"name":"host skip crosses an empty block and preserves the next nonempty private ballot","passed":true}
+2026-10-08T20:38:42.7765412Z {"name":"paused blank handover stays paused; explicit host skip settles the blank round","passed":true}
+2026-10-08T20:38:45.0778677Z {"name":"ending paused blank writing preserves completed-round scores","passed":true}
+2026-10-08T20:38:47.9888520Z {"name":"two blank rounds settle independently and continue through the real next-round input","passed":true}
+2026-10-08T20:38:47.9896812Z {"name":"offline runtime and exact tested HTML remain clean","passed":true}
+2026-10-08T20:38:48.0163739Z {"mode":"after","sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","passed":true,"checks":8}
+2026-10-08T20:38:48.4818010Z {"pid":7757,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","action":"isolated review-beat clock check"}
+2026-10-08T20:38:51.3186779Z {"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","seed":42,"browser":"141.0.7390.37","elapsedOnFirstBeatMs":8000,"firstBudgetMs":19726,"expectedNextBudgetMs":20591,"passed":true,"firstDisplayedMs":20000,"nextDisplayedMs":21000}
+2026-10-08T20:38:51.3365719Z ##[group]Run node scripts/browser-receipts.mjs after
+2026-10-08T20:38:51.3366149Z [36;1mnode scripts/browser-receipts.mjs after[0m
+2026-10-08T20:38:51.3427590Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:38:51.3427867Z ##[endgroup]
+2026-10-08T20:38:51.6303827Z {"pid":7831,"mode":"after","sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"}
+2026-10-08T20:39:03.5533625Z {"name":"2 humans score five real rounds and measure completed-receipt access","passed":true}
+2026-10-08T20:39:46.8672810Z {"name":"8 humans score five real rounds and measure completed-receipt access","passed":true}
+2026-10-08T20:39:52.7529160Z {"name":"scored explanations distinguish wrong initial, own repeats and duplicates without future-row leakage","passed":true}
+2026-10-08T20:39:52.7536725Z {"name":"current HTML remains frozen and actual file runtime is offline and error-free","passed":true}
+2026-10-08T20:39:52.7812695Z {"passed":true,"checks":4}
+2026-10-08T20:39:52.7969264Z ##[group]Run node scripts/browser-plurals.mjs after
+2026-10-08T20:39:52.7969701Z [36;1mnode scripts/browser-plurals.mjs after[0m
+2026-10-08T20:39:52.8032350Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:39:52.8032825Z ##[endgroup]
+2026-10-08T20:39:53.0854284Z {"pid":7987,"mode":"after","sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"}
+2026-10-08T20:39:56.1122928Z {"name":"2 people review and score a real mouse/mice duplicate","passed":true}
+2026-10-08T20:40:06.6477700Z {"name":"8 people review and score a real mouse/mice duplicate","passed":true}
+2026-10-08T20:40:06.6483679Z {"name":"the actual file stayed byte-identical, offline and error-free","passed":true}
+2026-10-08T20:40:06.6760640Z {"passed":true,"checks":3,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","closedAt":"2026-10-08T20:40:06.675Z"}
+2026-10-08T20:40:06.6903517Z ##[group]Run node scripts/browser-draft-hints.mjs after
+2026-10-08T20:40:06.6904261Z [36;1mnode scripts/browser-draft-hints.mjs after[0m
+2026-10-08T20:40:06.6982464Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:40:06.6982750Z ##[endgroup]
+2026-10-08T20:40:12.1718377Z {"name":"2 people receive private, nonblocking feedback before locking","passed":true}
+2026-10-08T20:40:30.6199373Z {"name":"8 people receive private, nonblocking feedback before locking","passed":true}
+2026-10-08T20:40:30.6207396Z {"name":"actual offline file, errors and source identity","passed":true}
+2026-10-08T20:40:30.6467809Z {"passed":true,"checks":3,"sourceSha256":"91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236","closedAt":"2026-10-08T20:40:30.646Z"}
+2026-10-08T20:40:30.6601664Z ##[group]Run node scripts/browser-paste.mjs after
+2026-10-08T20:40:30.6602096Z [36;1mnode scripts/browser-paste.mjs after[0m
+2026-10-08T20:40:30.6602432Z [36;1mnode scripts/browser-legacy-save.mjs[0m
+2026-10-08T20:40:30.6664277Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:40:30.6664559Z ##[endgroup]
+2026-10-08T20:40:33.4727864Z {"count":2,"kind":"normal","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"stapler","input":"stapler","warning":"","reviewed":"stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:35.9384675Z {"count":2,"kind":"article-space","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The stapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:38.3548369Z {"count":2,"kind":"tab","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\tstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:40.7716236Z {"count":2,"kind":"newline","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\nstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:43.2215014Z {"count":2,"kind":"crlf","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\r\nstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:45.6710651Z {"count":2,"kind":"vertical-tab","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\u000bstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:48.1214036Z {"count":2,"kind":"del","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"Thestapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:40:57.9870994Z {"count":8,"kind":"normal","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"stapler","input":"stapler","warning":"","reviewed":"stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:07.8864257Z {"count":8,"kind":"article-space","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The stapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:17.7859573Z {"count":8,"kind":"tab","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\tstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:27.6861448Z {"count":8,"kind":"newline","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\nstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:37.5850765Z {"count":8,"kind":"crlf","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\r\nstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:47.4850364Z {"count":8,"kind":"vertical-tab","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"The\u000bstapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:57.3846450Z {"count":8,"kind":"del","letter":"S","categoryId":"school-08","prompt":"Something on a teacher's desk","authoredNoun":"stapler","pasted":"Thestapler","input":"The stapler","warning":"","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"verdict":"+1 point","privateHandover":true,"anotherSheetDidNotAffectAdvice":true}
+2026-10-08T20:41:57.4116373Z {"passed":true,"cases":14,"closedAt":"2026-10-08T20:41:57.410Z"}
+2026-10-08T20:42:00.7354234Z {"count":2,"kind":"normal","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The stapler","oldInput":"The stapler","originalSnapshotSha256":"e563ed52e2330541e5df5db17de4828ca496cb4a7a12ef207fdb46ac41c3efe4","originalSnapshotBytes":3373,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"2231aa36ebc539fbe47a4586e81c9d4d5dfe76fbe8cafb6100b428e309c58c94","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"ballots":2,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:03.6505339Z {"count":2,"kind":"tab","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tstapler","oldInput":"The\tstapler","originalSnapshotSha256":"a21adf58017c0ec4aa85502078d5110cdbd59e7cb3dae4ae6bd42a0400da5102","originalSnapshotBytes":3374,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"2231aa36ebc539fbe47a4586e81c9d4d5dfe76fbe8cafb6100b428e309c58c94","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"ballots":2,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:06.5838329Z {"count":2,"kind":"vertical-tab","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\u000bstapler","oldInput":"The\u000bstapler","originalSnapshotSha256":"636c5a80fcfeb524b2d9ee0be4bf4c4acacc77d923c24508bbed8902942e84ea","originalSnapshotBytes":3378,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"2231aa36ebc539fbe47a4586e81c9d4d5dfe76fbe8cafb6100b428e309c58c94","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"ballots":2,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:09.4844127Z {"count":2,"kind":"del","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"Thestapler","oldInput":"Thestapler","originalSnapshotSha256":"054f22d0fda6612826a9c14ad7817a5a6a0b98b7a86c59d7a69fabd2c6c61ba2","originalSnapshotBytes":3373,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"2231aa36ebc539fbe47a4586e81c9d4d5dfe76fbe8cafb6100b428e309c58c94","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0"],"ballots":2,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:13.3999040Z {"count":2,"kind":"repeat","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tstapler","oldInput":"The\tstapler","originalSnapshotSha256":"17ce1e27fb08a1c94b7c5a7050eb08e8fcb99a270e708ea2f968622fc3852ee1","originalSnapshotBytes":3381,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"Also used in category 2; repeated answers score zero.","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"6677e699b15cee878b21388f6e8ff93690db5097388c02823b71895cf34ee83b","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["0","0"],"ballots":4,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:16.2838724Z {"count":2,"kind":"wrong-initial","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tzebra","oldInput":"The\tzebra","originalSnapshotSha256":"24128ab63d8b4c171cff326fcb44b9b2f32b0051c73ea015c839cb77b2f3630f","originalSnapshotBytes":3372,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The zebra","warning":"Start with S after ignoring A, An or The to score.","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"b83bb179c8766dde5c061feb7fde252bcf57489ceca8312b05b6d1e27b49a5e9","reviewed":"The zebra","eligibility":"Wrong initial · cannot score","scores":["0","0"],"ballots":2,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:26.6504448Z {"count":8,"kind":"normal","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The stapler","oldInput":"The stapler","originalSnapshotSha256":"476b4e0cf23ec54069b1de75ff1fdec8b5f28af5f2373acd3dfc975ad90d255d","originalSnapshotBytes":4641,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"9df02848f2f2c0577f1951c04761f463f2bc6963206a173e6e52e706d8a714b2","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"ballots":8,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:37.0158707Z {"count":8,"kind":"tab","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tstapler","oldInput":"The\tstapler","originalSnapshotSha256":"e6138f6e636e432dd8007e4de67476ef47ac3cb134967ab36ccce02467a5efff","originalSnapshotBytes":4642,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"9df02848f2f2c0577f1951c04761f463f2bc6963206a173e6e52e706d8a714b2","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"ballots":8,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:47.3821305Z {"count":8,"kind":"vertical-tab","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\u000bstapler","oldInput":"The\u000bstapler","originalSnapshotSha256":"dc9f7fc7e6d10dbaac386057e7d92c7bfc26a10bdbe6e484ec643e9a365bcb8c","originalSnapshotBytes":4646,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"9df02848f2f2c0577f1951c04761f463f2bc6963206a173e6e52e706d8a714b2","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"ballots":8,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:42:57.7487870Z {"count":8,"kind":"del","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"Thestapler","oldInput":"Thestapler","originalSnapshotSha256":"b7286d2cf5ea1cd83bafb5b172b7dfd58763fc54eeb9ba58ea56bf63f0c006da","originalSnapshotBytes":4641,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"9df02848f2f2c0577f1951c04761f463f2bc6963206a173e6e52e706d8a714b2","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["1","0","0","0","0","0","0","0"],"ballots":8,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:43:12.1143677Z {"count":8,"kind":"repeat","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tstapler","oldInput":"The\tstapler","originalSnapshotSha256":"533eea97d9a027c8b999f4138b6c3b86bb0b8cb1e33c47bedc35b9510555cf39","originalSnapshotBytes":4649,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The stapler","warning":"Also used in category 2; repeated answers score zero.","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"fcc86a0a4051724800d475048df2b6521e129d766d64fa86bbb082ea4d19bdc1","reviewed":"The stapler","eligibility":"Unique answer · up to 1 point if accepted","scores":["0","0","0","0","0","0","0","0"],"ballots":16,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:43:22.4805240Z {"count":8,"kind":"wrong-initial","passed":true,"letter":"S","prompt":"Something on a teacher's desk","categoryId":"school-08","authoredNoun":"stapler","pasted":"The\tzebra","oldInput":"The\tzebra","originalSnapshotSha256":"b85be152c4bda5996bdd31400cc6c087a53eeb78aa35384b92f83292eb5ff837","originalSnapshotBytes":4640,"compat":"dcaf02963be23af2cc2d09668eba094c35723988255b92c340abc6154e5d3aea","savedElapsedMs":7300,"oldTimer":"0:53","restoredInput":"The zebra","warning":"Start with S after ignoring A, An or The to score.","restoredTimer":"0:53","advancedTimer":"0:48","restoredSnapshotSha256":"5a85728de49a5390e04d1613b2f1d7adb948afc346ca491db56029e0416c083f","reviewed":"The zebra","eligibility":"Wrong initial · cannot score","scores":["0","0","0","0","0","0","0","0"],"ballots":8,"privateHandover":true,"otherSheetAdviceUnchanged":true,"timerPreserved":true}
+2026-10-08T20:43:22.5082443Z {"passed":true,"cases":12,"closedAt":"2026-10-08T20:43:22.507Z"}
+2026-10-08T20:43:22.5276426Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T20:43:22.5276734Z with:
+2026-10-08T20:43:22.5277066Z   name: G09-recovery-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435
+2026-10-08T20:43:22.5277476Z   retention-days: 14
+2026-10-08T20:43:22.5277723Z   compression-level: 0
+2026-10-08T20:43:22.5278716Z   path: jobs/G09-category-rush/evidence/browser/round-3-resume-after/report.json
+jobs/G09-category-rush/scripts/browser-resume.mjs
+jobs/G09-category-rush/evidence/browser/round-9-legacy-save/
+jobs/G09-category-rush/scripts/browser-legacy-save.mjs
+
+2026-10-08T20:43:22.5279734Z   if-no-files-found: warn
+2026-10-08T20:43:22.5280185Z   overwrite: false
+2026-10-08T20:43:22.5280422Z   include-hidden-files: false
+2026-10-08T20:43:22.5280675Z ##[endgroup]
+2026-10-08T20:43:22.7046550Z (node:8642) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:43:22.7047519Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:43:22.7236768Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T20:43:22.7240887Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G09-category-rush. This will be the root directory of the artifact
+2026-10-08T20:43:22.7242657Z With the provided path, there will be 30 files uploaded
+2026-10-08T20:43:22.7245812Z Artifact name is valid!
+2026-10-08T20:43:22.7246807Z Root directory input is valid!
+2026-10-08T20:43:23.0260491Z Beginning upload of artifact content to blob storage
+2026-10-08T20:43:23.0781533Z (node:8642) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:43:23.2690824Z Uploaded bytes 578952
+2026-10-08T20:43:23.2994067Z Finished uploading artifact content to blob storage!
+2026-10-08T20:43:23.2995283Z SHA256 digest of uploaded artifact zip is 44f5bcce41f20f4a544b1d85f34ec5663597369b4d7841177bc6ecbbc08a4513
+2026-10-08T20:43:23.2997478Z Finalizing artifact upload
+2026-10-08T20:43:23.5359293Z Artifact G09-recovery-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435.zip successfully finalized. Artifact ID 11578111330
+2026-10-08T20:43:23.5362558Z Artifact G09-recovery-5f46cddfbedd9e59cccc86927b9369db94826340-37839490435 has been successfully uploaded! Final size is 578952 bytes. Artifact ID is 11578111330
+2026-10-08T20:43:23.5367911Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37839490435/artifacts/11578111330
+2026-10-08T20:43:23.5546049Z Post job cleanup.
+2026-10-08T20:43:23.6770874Z (node:8655) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:43:23.6772000Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:43:23.6775875Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-884fa1d35540dcd96226e498a099abd1be43932f14f8f1ff2bf0256737eb891c, not saving cache.
+2026-10-08T20:43:23.6907566Z Post job cleanup.
+2026-10-08T20:43:23.7791221Z [command]/usr/bin/git version
+2026-10-08T20:43:23.7832029Z git version 2.55.0
+2026-10-08T20:43:23.7875460Z Temporarily overriding HOME='/home/runner/work/_temp/f0f3d8f0-3146-4588-9b21-1d19913cdc0d' before making global git config changes
+2026-10-08T20:43:23.7877366Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:43:23.7885581Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:43:23.7927946Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:43:23.7969444Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:43:23.8285708Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:43:23.8316445Z http.https://github.com/.extraheader
+2026-10-08T20:43:23.8329543Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T20:43:23.8364843Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:43:23.8618917Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:43:23.8666135Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:43:23.9069182Z Cleaning up orphan processes
+2026-10-08T20:43:23.9488182Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
