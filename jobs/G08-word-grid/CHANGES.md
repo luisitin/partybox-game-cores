@@ -22,3 +22,5 @@
 - Delivery candidate: complete verified native clip/report, exact-source disk CI measurements and full React/ReactDOM/Zod/Three MIT notices. Schema now covers media evidence and distinguishes six-fixture/seven-dictionary rebuild reports. Browser native-only flag supports partial local diagnosis and is expressly forbidden in CI. Workflow cancels obsolete same-branch runs.
 - Sort mutation failed-assertion names so report regeneration hashes are stable. All25planted bugs are recorded in VERIFY;24caught, exact-minimum mutant survives the selected quick subset (independent10000-grid oracle still covers that boundary).
 - A temporary offline word-JSON loading experiment failed localFPS and was reverted before commit. No game/client/host behavior changes since the measured5d24187 head; unchanged29visual files remain protected.
+
+- Add the required job-level RULES.md: full cross-sourced mechanics, all researched variants, choices and owner/offline house rules; manufacturer manuals remain explicitly unread. Existing code/client/HTML unchanged.
