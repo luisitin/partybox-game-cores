@@ -1,0 +1,37 @@
+{
+  "origin": "github-actions",
+  "headSha": "fa319698ccf15ccb26afcdebaac10e1a11673d86",
+  "runId": 37804388036,
+  "jobId": 113404718193,
+  "artifactId": 11562412976,
+  "artifactBytes": 435343,
+  "artifactSha256": "5958968b308cc53ee4cec6b0d71141347e3fd2536abc2c7be799073fa3555bd6",
+  "sourceSha256": "abde34978aafaefeaf178a1ab51f20a0992ef714a33659ddc4ed4427ef22a97b",
+  "runnerSha256": "e006063592f45019d4f322fd28183e64343a5c54dc478e9c3174d6f86577cae0",
+  "checksPassed": 17,
+  "clock": {
+    "mode": "paused-manual-advances",
+    "epoch": 1791417600000,
+    "pauseOffsetMs": 1000,
+    "playwrightVersion": "1.56.0"
+  },
+  "boundaryTimer": "0:50",
+  "boundaryElapsedMs": 10000,
+  "runtime": {
+    "errors": [],
+    "requests": [],
+    "dialogs": []
+  },
+  "files": [
+    {
+      "path": "evidence/browser/round-3-resume-after/report.json",
+      "bytes": 418200,
+      "sha256": "029cb2d75e533ecabd2888acddfb316ff04cc455f6d49a9621a9909d3abe5c11"
+    },
+    {
+      "path": "scripts/browser-resume.mjs",
+      "bytes": 16787,
+      "sha256": "e006063592f45019d4f322fd28183e64343a5c54dc478e9c3174d6f86577cae0"
+    }
+  ]
+}
