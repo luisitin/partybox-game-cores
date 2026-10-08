@@ -26,3 +26,5 @@
 - Add the required job-level RULES.md: full cross-sourced mechanics, all researched variants, choices and owner/offline house rules; manufacturer manuals remain explicitly unread. Existing code/client/HTML unchanged.
 
 - State-size hardening: a manual16-seat/five-round Spanish stress probe measured374030bytes with120 escaped control characters per id, exceeding the256KB contract despite128-code-unit bounds. Add pure serialized-byte validation (130UTF-8 JSON bytes) to init and trusted joins; new regression covers maximal ASCII/Unicode/escaped/lone-surrogate identities through five rounds, with peaks79758–82238bytes and rejects over-budget ids. Original clients/assets and state shape retained.
+
+- KEEP round1: constrain host handoff width and wrap long names/large positive-tie crowns using only offline shell CSS;29owner visual files remain byte-identical. Add independent16-turn/16unique-three-letter-word browser regression for a full16-way positive tie, permitted80-character name, every score/avatar bound and all phases. Record milestone clip03 and explicitly partial local report; preserve newest complete actual-disk CI37762679661 evidence.

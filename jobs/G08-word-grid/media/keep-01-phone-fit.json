@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "fileOpened": false,
+  "urlMode": "local HTTP partial",
+  "nativeOnly": true,
+  "browser": "/usr/bin/chromium",
+  "desktop": null,
+  "phone": null,
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true,
+    "longNamesFit": true,
+    "fullSixteenSeatHotseat": true,
+    "sixteenTiedWinnersFit": true
+  },
+  "layoutVideoBytes": 1390903,
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 1166620,
+  "provenance": {
+    "keepGoingRound": 1,
+    "parentCommit": "878f01a43973a5a383c78525b6ec4070f65413ff",
+    "playSha256": "7b81449baf6ce429d5d28cfdf58a55df10846951be0a5e5e95d456dee79a4066",
+    "capture": "03-max-roster-long-names.webm"
+  }
+}

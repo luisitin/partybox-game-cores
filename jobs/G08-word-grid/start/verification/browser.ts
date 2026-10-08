@@ -25,12 +25,12 @@ async function open(width:number,height:number,reduce=false,video=false) {
   page.on('request',req=>{const url=req.url();if(/^https?:/.test(url)&&!url.startsWith('http://127.0.0.1:'))outgoing.push(url.split('?')[0]!);});
   await page.goto(target);await page.getByRole('button',{name:'Start Shake Up'}).waitFor();return {page,context};
 }
-async function setup(page:Page,n=2,grid='4x4',lang='en'){
+async function setup(page:Page,n=2,grid='4x4',lang='en',ready=true){
   await page.getByLabel(/^Players/).selectOption(String(n));await page.getByLabel('Seed',{exact:true}).fill('17');
   await page.getByLabel(/^Grid/).selectOption(grid);await page.getByLabel(/^Words/).selectOption(lang);
   await page.getByLabel(/^Rounds/).selectOption('1');await page.getByLabel(/^Seconds per person/).selectOption('90');
   await page.getByRole('button',{name:'Start Shake Up'}).click();assert.equal(await page.locator('main').getAttribute('data-phase'),'shake');
-  await page.getByRole('button',{name:'Continue',exact:true}).click();await page.getByRole('button',{name:'I’m ready'}).click();
+  await page.getByRole('button',{name:'Continue',exact:true}).click();if(ready)await page.getByRole('button',{name:'I’m ready'}).click();
   assert.equal(await page.locator('main').getAttribute('data-phase'),'hunt');
 }
 async function trace(page:Page,path:number[]){
@@ -88,6 +88,32 @@ assert((await reduced.page.locator('body').innerText()).includes('palabras'));
 const reducedMotion=await reduced.page.getByRole('gridcell').first().evaluate(el=>getComputedStyle(el).animationDuration==='0s');assert(reducedMotion);
 assert(await reduced.page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));await reduced.context.close();
 for(const roster of [1,3,16]){const sample=await open(390,844,true);await setup(sample.page,roster);assert.equal(await sample.page.getByRole('gridcell').count(),16);await sample.context.close();}
+// Full max-roster hot-seat game: permitted long name,16 distinct3-letter words,
+//16way positive tie. Check actual score/avatar bounds, not just document overflow.
+const layout=await open(390,844,true,true);
+await layout.page.getByLabel('Name 1',{exact:true}).fill('W'.repeat(80));
+await setup(layout.page,16,'4x4','en',false);
+async function phoneFits(stage:string){
+ const bounds=await layout.page.evaluate<{width:number;scroll:number;scores:{left:number;right:number}[];avatars:{left:number;right:number}[]}>(`(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth,scores:[...document.querySelectorAll('.pb-screen-body ol li b')].map(e=>({left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right})),avatars:[...document.querySelectorAll('.pb-screen-body span > .pb-avatar')].map(e=>({left:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right}))}))()`);
+ assert(bounds.scroll<=bounds.width,`${stage}: horizontal overflow`);
+ for(const item of [...bounds.scores,...bounds.avatars])assert(item.left>=0&&item.right<=bounds.width,`${stage}: clipped score/avatar`);
+}
+await phoneFits('long-name first handoff');await layout.page.getByRole('button',{name:'I’m ready'}).click();
+const tieGrid=(await layout.page.getByRole('gridcell').allTextContents()).map(s=>s.toLowerCase());
+const tieWords=[...referenceSolve(tieGrid,4,dictionary,3)].filter(([w])=>w.length===3).slice(0,16);assert.equal(tieWords.length,16);
+for(let seat=0;seat<16;seat++){
+ if(seat){await phoneFits(`handoff${seat+1}`);await layout.page.getByRole('button',{name:'I’m ready'}).click();}
+ await phoneFits(`private turn${seat+1}`);await trace(layout.page,tieWords[seat]![1]);await layout.page.getByRole('button',{name:'Finish turn',exact:true}).click();
+}
+let tieBeats=0;while(await layout.page.locator('main').getAttribute('data-phase')==='reveal'){
+ await phoneFits('max-roster reveal');await layout.page.getByRole('button',{name:'Next card',exact:true}).first().click();assert(++tieBeats<40);
+}
+await phoneFits('max-roster tally');await layout.page.getByRole('button',{name:'Continue',exact:true}).click();await phoneFits('max-roster results');
+assert.equal(await layout.page.locator('.pb-screen-body ol').last().locator('li').count(),16);
+assert.deepEqual(await layout.page.locator('.pb-screen-body ol').last().locator('li b').allTextContents(),Array(16).fill('1'));
+const crowned=layout.page.locator('.pb-screen-body span').filter({has:layout.page.locator(':scope > .pb-avatar')});assert.equal(await crowned.locator(':scope > .pb-avatar').count(),16);
+await layout.page.screenshot({path:'.tmp/visual/max-roster-long-names.png'});
+const layoutVideo=await layout.page.video()!.path();await layout.context.close();const layoutDestination='.tmp/visual/max-roster-long-names.webm';renameSync(layoutVideo,layoutDestination);assert(statSync(layoutDestination).size<10*1024*1024);
 await browser.close();assert.deepEqual(errors,[]);assert.deepEqual(outgoing,[]);
-const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true},outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
+const report={version:1,fileOpened:target.startsWith('file:'),urlMode:target.startsWith('file:')?'disk':'local HTTP partial',nativeOnly,browser:executable,desktop:desktopFrames?{width:1920,height:1080,...desktopFrames}:null,phone:phoneFrames?{width:390,height:844,cpuThrottle:4,...phoneFrames}:null,gates:{originalClient:true,nativeKeyboard:true,arrowFocus:true,nativeDrag:true,nativeCancel:true,privateHandoff:true,otherPhonePrivate:true,publicCountsOnly:true,pauseResume:true,reducedMotion:true,spanishFiveByFive:true,rosters:[1,2,3,8,16],allPhasesToResults:true,longNamesFit:true,fullSixteenSeatHotseat:true,sixteenTiedWinnersFit:true},layoutVideoBytes:statSync(layoutDestination).size,outgoingRequests:outgoing.length,pageErrors:errors.length,videoBytes:statSync(destination).size};
 writeFileSync('.tmp/visual/browser-report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));
