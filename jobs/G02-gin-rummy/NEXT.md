@@ -1,26 +1,23 @@
 # Resume G02
 
-Branch: job/G02-gin-rummy, nickname codex-gin. Research blocker resolved through
-actual live source fetches; old failures preserved under evidence/historical-blocker.
+Branch job/G02-gin-rummy, nickname codex-gin. Research blocker resolved;
+original failures preserved under evidence/historical-blocker.
 
-Core and standalone hot-seat page strictly compile. The 10,000-hand independent
-brute-force differential and initial rule goldens pass. First 2,000 strong-v-medium
-games show 1,151 wins (57.55%); full per-count/per-edition contract games and
-medium-v-easy league passed1743/2000 (87.15%). Both privacy/frame browser
-profiles and captured videos passed. All25 mutants are now caught. The
-full current-bot acceptance rerun and hosted CI remain pending.
+The full current npm test PASS/exit0 and additional all-phase/joint-layoff
+checks PASS. See VERIFY and evidence/full-local-accepted.log. This covers
+6,000 complete matches plus6,000 identical replays,1,003 property seeds,
+10,000 exact deadwood proofs,2,000 independent exact joint-layoff proofs,
+408 all-phase cases,25 real compiled mutation kills, two2,000-match leagues,
+actual desktop/phone4x browser/privacy checks and two identical regenerations.
+No hosted CI result or post-green KEEP GOING success claimed yet.
 
-Next required work:
-1. Strengthen edge-case goldens for survivors in .work/mutations-first.log;
-   compile and execute all 25 isolated mutants again (at least 24 assertion kills).
-2. Finish full 1,000 bot games per 2/3/4 player count, BOTH editions, deterministic
-   replays; property seeds 1/2/3 + 1,000 others; privacy perturbations and phase exits.
-3. Run browser interaction/privacy smoke, 1920x1080 and 4x-throttled phone frame
-   measurement, reduced-motion check; capture each functional milestone under 10 MB.
-4. Run actual full npm test, fixture/page regeneration twice, source/data/media
-   integrity; commit actual results to VERIFY/BOTS and regenerate SHA256SUMS.
-5. Push milestones while refreshing the main claim. Open PR when local checks
-   pass; inspect actual exact-head CI; run mandatory KEEP GOING rounds after green.
+Next:
+1. Push this complete local-verification milestone with refreshed main claim.
+2. Open the PR, inspect exact-head G02 workflow logs and actual terminal result.
+3. After green, reread the job and list five biggest weaknesses; fix worst,
+   measure, log in LOOP and push with refreshed claim. Continue until three
+   consecutive rounds make no player-noticeable gain.
+4. Then read main CLAIMS again and claim the next eligible lowest job.
 
-No shared contract or other game edits. Same-author independent algorithm design
-is disclosed; no invented blind authorship. Claims updates alone may go to main.
+Keep shared contract and other jobs untouched. Same-author independent
+algorithms are disclosed; none is falsely called separate blind authorship.

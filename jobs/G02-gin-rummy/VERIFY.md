@@ -1,4 +1,4 @@
-# Verification — implementation milestone, not ready yet
+# Verification — local full acceptance passed, hosted CI pending
 
 Nine actually read Exa extractions, exact extraction hashes and all short quote
 matches are recorded in evidence/research-sources.json. Origin HTTP unobserved.
@@ -20,6 +20,21 @@ Performance is normal play without recording; screen capture uses a separate
 context to avoid encoder overhead. Both milestone videos are under10MB.
 Earlier failed source access,23/25 mutation run and browser failures are preserved.
 
-Current full npm test, fixture regeneration twice and complete file hashes must
-still run; exact-head PR CI is pending. No READY claim until these actually pass.
-Post-green KEEP GOING must subsequently reach its three-round stop condition.
+Actual complete `npm test` finished exit0 on Node24.19.0/TypeScript5.9.3.
+The unchanged code passed15 tests,6,000 matches+6,000 byte-identical replays,
+1,003 property seeds/420,546 events,7,925 hidden-state perturbation stages,
+both2,000-match leagues,25 compiled mutation assertions and the full browser
+interaction/60Hz profile. Actual full-run browser means60.004FPS desktop and
+60.002FPS phone4x; both p99<=16.8ms. All63 then-delivered hashes and TWO
+fixture regeneration runs passed byte-identically. Full actual output and
+records: evidence/full-local-accepted.log and acceptance-summary.json.
+
+Additional actual command: `node --test tests/all-phases.test.mjs
+ tests/layoff-differential.test.mjs` (on one line):3 PASS tests,408 all-phase
+cases plus2,000 independent joint-layoff exact comparisons, checksum102460,
+1,534 actual laid cards and a competing run/set chain. These files were added
+while the longer suite was running and were separately executed, not counted
+as though the earlier glob had included them. Hosted npm test includes all18.
+
+Final exact-head PR CI is still pending. No READY claim until the actual
+hosted result is green. Post-green KEEP GOING remains required.

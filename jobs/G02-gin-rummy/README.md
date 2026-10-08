@@ -28,5 +28,5 @@ VERIFY records actual commands and coverage, BOTS the measured win rates,
 LOOP post-green improvement rounds, NEXT remaining/resume steps.
 SHA256SUMS covers delivered data/media. No external card art or trackers.
 
-Current status: implemented, undergoing the full binding acceptance suite;
-not yet a verified ready delivery. Historical blockers are retained separately.
+Current status: full local acceptance passed; exact-head PR CI and post-green
+KEEP GOING remain pending. Historical blockers are retained separately.
