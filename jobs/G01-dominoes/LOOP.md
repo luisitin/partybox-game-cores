@@ -28,3 +28,4 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 19. Stale-claim recheck:full40-test pipeline,25 kills,all probes,Block71.9%/Draw84.2%,upstream132/200 and fresh capture pass;retain/hash MIT notice and HTML with early hash validation,no player gain,prior streak4.
 20. Re-read G01/five weaknesses in REVIEW;malformed events7/9 throws→0/9,30 focused regressions/25 mutations pass;reliability gain,no-gain streak0.
 21. Frozen pre-guard compatibility:1,003 seeded games/378,899 every-event state comparisons/0 state or result mismatches;no player-visible gain,no-gain streak1.
+22. Seeded JSON envelopes:234,936 probes/3,012 deep-frozen states/1,003 seeds/1,003 paused states/3 phases;0 throws,mutations or identity failures;no player-visible gain,no-gain streak2.

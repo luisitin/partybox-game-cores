@@ -116,3 +116,5 @@ Stale-claim delivery review19:
 Round20:core.ts rejects null/nonobject events,nonfinite clocks,nonstrings actor IDs,malformed presence and schema-invalid inputs before dispatch. test.ts extends all-phase identity regressions;state format/strategy stay0.2.7.
 
 R21:study-total-baseline.ts freezes exact949c2e3 core;total-compatibility.ts/report compare every state and final result with new guards over1,003 seeded mixed-setting games. Wire assertion mode into npm test so valid gameplay regressions fail CI. G01.yml adds per-PR cancellation of obsolete runs;all required checks remain. No production strategy/state changes.
+
+R22:total-envelopes.ts/report exercise invalid actors/payloads/clocks/presence/timer/VIP envelopes against3,012 deep-frozen states from1,003 seeds and three phase fixtures. Assertion mode runs in npm test;the report records actual234,936 probes. This regression coverage targets the R20 contract failure without changing production behavior.

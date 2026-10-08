@@ -9,7 +9,8 @@ R20 malformed events7/9 exceptions→0/9;30 focused tests/25 mutations PASS.
 Exactc19e580 hosted run37755885752 SUCCESS2026-10-08T09:35:55Z runs
 the entire npm test. Real reliability gain resets the old stop.
 R21 1,003 games/378,899 valid transitions against exact949c2e3:0 differences.
-No-gain streak1. Remaining:R22 malformed JSON breadth,R23 fresh browser;
+R22 malformed JSON sweep234,936 probes/0 failures;no-gain streak2.
+Remaining:R23 fresh browser;
 then full local npm test and final-current-head hosted CI before DONE.
 Commands/report counts and five weaknesses are in VERIFY/REVIEW/LOOP.
 

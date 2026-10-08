@@ -111,3 +111,7 @@ Re-read G01. Five weaknesses:7/9 malformed-event probes throw;nonfinite clocks c
 ## Round21
 
 Re-read root G01 and selected rules. Five weaknesses ranked:unproven valid-event compatibility after guards;missing malformed-envelope breadth;finite64-world bot sampling;unavailable physical-phone measurements;older browser capture. Add a frozen exact949c2e3 reducer and compare every JSON transition, including player/pause/resume/timer/skip/input events, over1,003 seeded full games. Production state/results agree at all378,899 transitions. No new player-visible fix;streak1. Scope remains the guarded0.2.7 core. CI concurrency cancels obsolete PR1 runs without changing the checks.
+
+## Round22
+
+Re-read G01. Five weaknesses ranked:malformed-envelope coverage is limited to nine probes;invalid events on paused states need breadth;finite64-world sampling;older browser/performance evidence;physical-phone evidence unavailable. Add deterministic plain-JSON invalid envelopes across1,003 seed states plus their next/paused states and all3 phase fixtures. Deep-freeze states and require identical identity/JSON after each rejected event.234,936 probes pass with0 throws/mutations/identity failures;no new gameplay defect,no-gain streak2.

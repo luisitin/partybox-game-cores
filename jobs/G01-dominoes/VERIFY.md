@@ -313,3 +313,5 @@ R19 full `G01_CAPTURE_PATH=media/milestone-12-license.webm npm test`:EXIT0,40 te
 
 R20 exact-head hosted CI:run37755885752,headc19e580047dbc5f8ffd824871bff5128dc6466d0,verify SUCCESS2026-10-08T09:35:55Z. Every setup and full npm test step succeeded.
 R21 `npm run check && node total-compatibility.ts --write`:PASS,1,003 complete seeded games,378,899 JSON transitions(player2,006/vip14,177/timer22,533/input340,183),0 state or result mismatches against exact949c2e3 frozen core. BaselineSHA256e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be. Catches legitimate-event behavior changes and input-state mutation;production rules/settings/state format stay unchanged.
+
+R22 `npm run check && node total-envelopes.ts --write`:PASS,234,936 plain-JSON invalid event probes over3,012 states(3,010 play,1 round-end,1 done;1,003 play states paused),1,003 distinct seeds incl1,2,3;0 exceptions/mutations/identity failures. Deep-freeze plus JSON comparison catches event rejection that changes state;invalid actors,payloads,clocks,presence fields,VIP actions and stale timers are included.
