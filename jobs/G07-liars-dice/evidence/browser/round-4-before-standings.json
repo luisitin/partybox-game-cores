@@ -1,0 +1,106 @@
+{
+  "beforeCommit": "30eec5b",
+  "browser": "141.0.7390.37",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "cpuThrottle": 1,
+  "fixture": {
+    "players": 8,
+    "counts": [
+      5,
+      5,
+      4,
+      3,
+      3,
+      1,
+      0,
+      0
+    ],
+    "eliminated": [
+      "p7",
+      "p6"
+    ],
+    "names": [
+      "<img src=x onerror=alert(1)>",
+      "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+      "A<&\"quote\">",
+      "Player four",
+      "Player five",
+      "Player six",
+      "Player seven",
+      "Player eight"
+    ],
+    "transition": "prepared live state followed by the actual End game button"
+  },
+  "before": {
+    "htmlSha256": "48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378",
+    "endReason": "vip-end",
+    "title": "Thanks for playing",
+    "standingsRows": 0,
+    "namedTieWinners": 0,
+    "expected": {
+      "scores": {
+        "p0": 8.5,
+        "p1": 8.5,
+        "p2": 8.4,
+        "p3": 8.3,
+        "p4": 8.3,
+        "p5": 8.1,
+        "p6": 2,
+        "p7": 1
+      },
+      "ranking": [
+        {
+          "playerId": "p0",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p1",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p2",
+          "score": 8.4,
+          "rank": 3
+        },
+        {
+          "playerId": "p3",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p4",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p5",
+          "score": 8.1,
+          "rank": 6
+        },
+        {
+          "playerId": "p6",
+          "score": 2,
+          "rank": 7
+        },
+        {
+          "playerId": "p7",
+          "score": 1,
+          "rank": 8
+        }
+      ],
+      "winnerIds": [
+        "p0",
+        "p1"
+      ],
+      "awards": [],
+      "headlineNote": "Ended by the host; remaining dice decide the standings."
+    }
+  },
+  "networkRequests": 0,
+  "pageErrors": 0
+}

@@ -1,0 +1,48 @@
+{
+  "browser": "141.0.7390.37",
+  "htmlSha256": "0e025599d763afc6db397ba14e3125b2a41d461596accd4e3a2ea7f24dd45fb0",
+  "passed": true,
+  "failure": null,
+  "captures": [
+    {
+      "path": "media/milestone-options-optimized-desktop.webm",
+      "bytes": 929477,
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "videoSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuThrottle": 1,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "networkRequests": 0,
+      "pageErrors": 0
+    },
+    {
+      "path": "media/milestone-options-optimized-phone4x.webm",
+      "bytes": 912361,
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "videoSize": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "networkRequests": 0,
+      "pageErrors": 0
+    }
+  ]
+}

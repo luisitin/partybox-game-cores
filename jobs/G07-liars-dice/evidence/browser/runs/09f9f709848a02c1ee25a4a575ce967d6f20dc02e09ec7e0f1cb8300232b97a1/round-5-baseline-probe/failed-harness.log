@@ -1,0 +1,14 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+locator.textContent: Error: strict mode violation: locator('.rules-copy p').filter({ hasText: 'Palifico.' }) resolved to 2 elements:
+    1) <p>…</p> aka getByText('Dudo & calza. Dudo challenges')
+    2) <p>…</p> aka getByText('Palifico. When a player first')
+
+Call log:
+[2m  - waiting for locator('.rules-copy p').filter({ hasText: 'Palifico.' })[22m
+
+    at /workspace/game-cores-G07/jobs/G07-liars-dice/.work/review/capture-round-5-before.mjs:31:83
+
+Node.js v24.19.0

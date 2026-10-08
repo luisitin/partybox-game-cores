@@ -1,0 +1,17 @@
+{
+  "runId": 37744597968,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37744597968",
+  "headSha": "58cca15d0f80d050d5a51913b846b1daa97d5e51",
+  "conclusion": "failure",
+  "scope": "Interim cadence checkpoint; full local core evidence was explicitly pending",
+  "nodeTests": {"tests": 38, "passed": 38, "failed": 0},
+  "browserChecks": {"checks": 52, "passed": 52, "failed": 0, "scope": "full"},
+  "integrityFailure": {
+    "assertion": "stale delivered file evidence/checks/bot-games.json",
+    "manifestExpectedSha256": "8b3603f7007e1c12ba1fe59e84adffe20133da8941b3496eff9bdfe3f79b655f",
+    "regeneratedActualSha256": "455532ebaf7df4861ed35896914b0758e975cd2679891593114149cb7d3dc093",
+    "interpretation": "The mandatory new-core matrix generated a changed deterministic report; the interim manifest still described the preserved initial-core report. The integrity gate correctly rejected stale evidence. Publish the completed local new-core report and regenerate all hashes without weakening the gate."
+  },
+  "commandsRead": ["gh run view 37744597968 --repo luisitin/partybox-game-cores --json status,conclusion,headSha,jobs", "gh run view 37744597968 --repo luisitin/partybox-game-cores --log-failed"],
+  "hostedFrameValues": "Not inferred. Logs report both frame gates passing but no raw artifact was downloaded."
+}

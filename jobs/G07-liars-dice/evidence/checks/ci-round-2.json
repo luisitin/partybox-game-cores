@@ -1,0 +1,46 @@
+{
+  "runId": 37746548680,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37746548680",
+  "headSha": "2ba462691ea3bbecf8607f0737b3287cc8909af7",
+  "conclusion": "success",
+  "completedAt": "2026-10-08T08:03:56Z",
+  "commands": [
+    "npm ci --ignore-scripts --no-audit --no-fund",
+    "npx playwright install --with-deps chromium",
+    "npm test"
+  ],
+  "nodeTests": {
+    "tests": 38,
+    "passed": 38,
+    "failed": 0
+  },
+  "browserChecks": {
+    "checks": 52,
+    "passed": 52,
+    "failed": 0,
+    "scope": "full"
+  },
+  "mutations": {
+    "compiled": 25,
+    "assertionKills": 25,
+    "survivors": []
+  },
+  "integrity": {
+    "fileHashes": 256,
+    "regenerationRuns": 2,
+    "byteIdentical": true
+  },
+  "browserArtifact": {
+    "id": 11535814866,
+    "name": "G07-browser-evidence",
+    "size_in_bytes": 529370,
+    "expired": false,
+    "created_at": "2026-10-08T08:03:53Z",
+    "workflow_run": {
+      "head_branch": "job/G07-liars-dice",
+      "head_sha": "2ba462691ea3bbecf8607f0737b3287cc8909af7",
+      "id": 37746548680
+    }
+  },
+  "artifactReadback": "Not downloaded. GitHub logs show full npm test and browser gates passing. No hosted FPS values are inferred from artifact metadata or local recordings."
+}

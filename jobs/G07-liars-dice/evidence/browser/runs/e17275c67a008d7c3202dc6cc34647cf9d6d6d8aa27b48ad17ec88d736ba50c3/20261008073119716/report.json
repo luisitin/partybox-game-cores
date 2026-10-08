@@ -1,0 +1,931 @@
+{
+  "runId": "20261008073119716",
+  "htmlSha256": "e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3",
+  "browser": "141.0.7390.37",
+  "physicalPhoneTested": false,
+  "performanceWhileRecording": false,
+  "performanceRequirements": {
+    "intervals": 600,
+    "minimumMeanFps": 59,
+    "maximumP99Ms": 17
+  },
+  "frameFiltering": "none: all 600 consecutive requestAnimationFrame intervals retained",
+  "benchmark": {
+    "players": 8,
+    "existingBid": {
+      "quantity": 8,
+      "face": 3
+    },
+    "openPrivateDice": 5,
+    "interaction": "change quantity and face every 30 intervals, including exact controller odds",
+    "isolation": "fresh browser context; functional test navigation history is not retained"
+  },
+  "seed": 7199,
+  "profiles": [
+    {
+      "label": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "cpuThrottle": 1,
+      "frameFile": "desktop-frames.json",
+      "totalMs": 10032.9,
+      "archivedFrameFile": "runs/e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3/20261008073119716/desktop-frames.json",
+      "meanMs": 16.7215,
+      "fps": 59.803247316329276,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 50,
+      "droppedIntervalsOver17Ms": 1,
+      "sampleCount": 600
+    },
+    {
+      "label": "phone4x",
+      "width": 390,
+      "height": 844,
+      "cpuThrottle": 4,
+      "frameFile": "phone4x-frames.json",
+      "totalMs": 10032.9,
+      "archivedFrameFile": "runs/e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3/20261008073119716/phone4x-frames.json",
+      "meanMs": 16.7215,
+      "fps": 59.803247316329276,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 50,
+      "droppedIntervalsOver17Ms": 1,
+      "sampleCount": 600
+    }
+  ],
+  "checks": [
+    {
+      "profile": "desktop",
+      "name": "lobby supports every roster from 2 through 8 and explicit settings",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "private cup disappears on hide, pass, pause and resume",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "changing the device holder clears private dice, odds and bid choices",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "legal bid selectors cover normal, wild-one and palifico raises",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "dudo reveals cups, applies loss and continues to a fresh round",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "optional calza is available only when legal and exact claims gain a die",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "final loss reaches a visible winner and a new game can start",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "bots automate turns for easy, normal and sharp skills",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "the manual bot-step control is reachable while a human holds the device",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an all-bot table holds its reveal until explicitly acknowledged",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "an eliminated human can read and explicitly acknowledge the reveal",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "normal, fast and slow bot pacing use actual selected delays",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual pacing holds regular bot actions until one explicit step",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "manual pacing exposes an eligible bot calza even during a human turn",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "live pace changes synchronize controls, cover the cup and restart scheduling",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause holds bot actions and resume starts a fresh selected wait",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "a human can call calza after reading for over 900ms at normal pace",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "a visible one-second core clock takes priority over normal and manual pacing",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "normal pacing extends the measured eight-seat public bid window",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "deadline catches up after a real main-thread stall",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "player names render as safe literal text",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "reduced motion removes running animations and long transitions",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "600 actual animation-frame intervals meet the strict refresh budget",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "self-contained file works offline without network, external resources, errors or dialogs",
+      "passed": true,
+      "networkRequests": [],
+      "additionalResources": [],
+      "pageErrors": [],
+      "dialogs": []
+    },
+    {
+      "profile": "phone4x",
+      "name": "lobby supports every roster from 2 through 8 and explicit settings",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "private cup disappears on hide, pass, pause and resume",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "changing the device holder clears private dice, odds and bid choices",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "legal bid selectors cover normal, wild-one and palifico raises",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "dudo reveals cups, applies loss and continues to a fresh round",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "optional calza is available only when legal and exact claims gain a die",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "final loss reaches a visible winner and a new game can start",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "bots automate turns for easy, normal and sharp skills",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "the manual bot-step control is reachable while a human holds the device",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "eligible bots make actual interrupt-only calza calls before the active turn",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an all-bot table holds its reveal until explicitly acknowledged",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "an eliminated human can read and explicitly acknowledge the reveal",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "normal, fast and slow bot pacing use actual selected delays",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "manual pacing holds regular bot actions until one explicit step",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "manual pacing exposes an eligible bot calza even during a human turn",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "live pace changes synchronize controls, cover the cup and restart scheduling",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "pause holds bot actions and resume starts a fresh selected wait",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "a human can call calza after reading for over 900ms at normal pace",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "a visible one-second core clock takes priority over normal and manual pacing",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "pause holds real deadlines and resume shifts by actual elapsed time",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "deadline catches up after a real main-thread stall",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "player names render as safe literal text",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "reduced motion removes running animations and long transitions",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "600 actual animation-frame intervals meet the strict refresh budget",
+      "passed": true
+    },
+    {
+      "profile": "phone4x",
+      "name": "self-contained file works offline without network, external resources, errors or dialogs",
+      "passed": true,
+      "networkRequests": [],
+      "additionalResources": [],
+      "pageErrors": [],
+      "dialogs": []
+    },
+    {
+      "profile": "runner",
+      "name": "HTML source stayed unchanged throughout the run",
+      "passed": true,
+      "initialHtmlSha256": "e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3",
+      "finalHtmlSha256": "e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3"
+    }
+  ],
+  "pacingMeasurements": [
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "normal",
+      "armedAt": 73,
+      "observedAt": 2130,
+      "elapsedMs": 2057,
+      "lastUnchangedMs": 2041,
+      "phaseStartedAt": 2128,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "fast",
+      "armedAt": 2140,
+      "observedAt": 2930,
+      "elapsedMs": 790,
+      "lastUnchangedMs": 774,
+      "phaseStartedAt": 2928,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "regular",
+      "pace": "slow",
+      "armedAt": 2941,
+      "observedAt": 7030,
+      "elapsedMs": 4089,
+      "lastUnchangedMs": 4073,
+      "phaseStartedAt": 7028,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "fast",
+      "armedAt": 7041,
+      "observedAt": 7530,
+      "elapsedMs": 489,
+      "lastUnchangedMs": 472,
+      "phaseStartedAt": 7528,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "normal",
+      "armedAt": 7543,
+      "observedAt": 9230,
+      "elapsedMs": 1687,
+      "lastUnchangedMs": 1670,
+      "phaseStartedAt": 9228,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "interrupt",
+      "pace": "slow",
+      "armedAt": 9241,
+      "observedAt": 12930,
+      "elapsedMs": 3689,
+      "lastUnchangedMs": 3672,
+      "phaseStartedAt": 12928,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "manual-regular",
+      "pace": "manual",
+      "heldMs": 2325
+    },
+    {
+      "profile": "desktop",
+      "kind": "manual-interrupt",
+      "pace": "manual",
+      "heldMs": 2285
+    },
+    {
+      "profile": "desktop",
+      "kind": "pace-change",
+      "pace": "fast",
+      "armedAt": 2668,
+      "observedAt": 3437,
+      "elapsedMs": 769,
+      "lastUnchangedMs": 753,
+      "phaseStartedAt": 3431,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "resume",
+      "pace": "normal",
+      "armedAt": 3198,
+      "observedAt": 5238,
+      "elapsedMs": 2040,
+      "lastUnchangedMs": 2023,
+      "phaseStartedAt": 5230,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "human-calza",
+      "pace": "normal",
+      "elapsedMs": 1145,
+      "requestedAt": 1198
+    },
+    {
+      "profile": "desktop",
+      "kind": "core-clock",
+      "pace": "normal",
+      "armedAt": 87,
+      "observedAt": 1166,
+      "elapsedMs": 1079,
+      "lastUnchangedMs": 1063,
+      "phaseStartedAt": 1154,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "core-clock",
+      "pace": "manual",
+      "armedAt": 1189,
+      "observedAt": 2266,
+      "elapsedMs": 1077,
+      "lastUnchangedMs": 1060,
+      "phaseStartedAt": 2254,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "overdue-clock-manual-step",
+      "pace": "manual",
+      "armedAt": 2276,
+      "clickedAt": 3287,
+      "deadline": 3276,
+      "expected": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      },
+      "actual": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      }
+    },
+    {
+      "profile": "desktop",
+      "kind": "overdue-clock-human-input",
+      "pace": "manual",
+      "armedAt": 3298,
+      "clickedAt": 4315,
+      "deadline": 4298,
+      "late": {
+        "quantity": 1,
+        "face": 2
+      },
+      "expected": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      },
+      "actual": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "normal",
+      "armedAt": 287,
+      "observedAt": 2390,
+      "elapsedMs": 2103,
+      "lastUnchangedMs": 2081,
+      "phaseStartedAt": 2376,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "fast",
+      "armedAt": 2440,
+      "observedAt": 3285,
+      "elapsedMs": 845,
+      "lastUnchangedMs": 827,
+      "phaseStartedAt": 3274,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "regular",
+      "pace": "slow",
+      "armedAt": 3315,
+      "observedAt": 7384,
+      "elapsedMs": 4069,
+      "lastUnchangedMs": 4052,
+      "phaseStartedAt": 7373,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "fast",
+      "armedAt": 7423,
+      "observedAt": 7887,
+      "elapsedMs": 464,
+      "lastUnchangedMs": 444,
+      "phaseStartedAt": 7875,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "normal",
+      "armedAt": 7915,
+      "observedAt": 9603,
+      "elapsedMs": 1688,
+      "lastUnchangedMs": 1653,
+      "phaseStartedAt": 9578,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "interrupt",
+      "pace": "slow",
+      "armedAt": 9666,
+      "observedAt": 13384,
+      "elapsedMs": 3718,
+      "lastUnchangedMs": 3701,
+      "phaseStartedAt": 13373,
+      "phase": "reveal",
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-regular",
+      "pace": "manual",
+      "heldMs": 2353
+    },
+    {
+      "profile": "phone4x",
+      "kind": "manual-interrupt",
+      "pace": "manual",
+      "heldMs": 2310
+    },
+    {
+      "profile": "phone4x",
+      "kind": "pace-change",
+      "pace": "fast",
+      "armedAt": 2862,
+      "observedAt": 3649,
+      "elapsedMs": 787,
+      "lastUnchangedMs": 765,
+      "phaseStartedAt": 3638,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "resume",
+      "pace": "normal",
+      "armedAt": 3675,
+      "observedAt": 5741,
+      "elapsedMs": 2066,
+      "lastUnchangedMs": 2045,
+      "phaseStartedAt": 5734,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "human-calza",
+      "pace": "normal",
+      "elapsedMs": 1214,
+      "requestedAt": 1636
+    },
+    {
+      "profile": "phone4x",
+      "kind": "core-clock",
+      "pace": "normal",
+      "armedAt": 324,
+      "observedAt": 1303,
+      "elapsedMs": 979,
+      "lastUnchangedMs": 957,
+      "phaseStartedAt": 1298,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "core-clock",
+      "pace": "manual",
+      "armedAt": 1429,
+      "observedAt": 2515,
+      "elapsedMs": 1086,
+      "lastUnchangedMs": 1069,
+      "phaseStartedAt": 2499,
+      "phase": "bid",
+      "turn": "p0",
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "overdue-clock-manual-step",
+      "pace": "manual",
+      "armedAt": 2570,
+      "clickedAt": 3589,
+      "deadline": 3570,
+      "expected": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      },
+      "actual": {
+        "phase": "bid",
+        "turn": "p2",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 2,
+            "playerId": "p0"
+          },
+          {
+            "quantity": 1,
+            "face": 4,
+            "playerId": "p1"
+          }
+        ],
+        "diceCount": {
+          "p0": 1,
+          "p1": 1,
+          "p2": 1
+        },
+        "reveal": null,
+        "winner": null
+      }
+    },
+    {
+      "profile": "phone4x",
+      "kind": "overdue-clock-human-input",
+      "pace": "manual",
+      "armedAt": 3611,
+      "clickedAt": 4655,
+      "deadline": 4611,
+      "late": {
+        "quantity": 1,
+        "face": 2
+      },
+      "expected": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      },
+      "actual": {
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p0"
+        },
+        "bidLog": [
+          {
+            "quantity": 1,
+            "face": 6,
+            "playerId": "p0"
+          }
+        ],
+        "turn": "p1",
+        "round": 1
+      }
+    }
+  ],
+  "passed": true,
+  "scope": "full",
+  "pacingProbeFile": "round-1-pacing.json"
+}

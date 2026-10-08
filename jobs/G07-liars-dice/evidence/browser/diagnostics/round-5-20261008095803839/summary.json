@@ -1,0 +1,39 @@
+{
+  "diagnosticOnly": true,
+  "authoritativeGate": false,
+  "sourceHtmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "sourceUnchanged": true,
+  "monitoring": {
+    "fullCdpTracing": false,
+    "cpuProfiler": false,
+    "longTaskObserver": true,
+    "allNonZombieProcessSamplingIntervalMs": 1000,
+    "limitations": "Process sampling adds overhead and can miss processes shorter than 1 second; no earlier-run cause is established."
+  },
+  "normalPause": {
+    "stateHeld": true,
+    "rngHeld": true,
+    "heldMs": 2313,
+    "cupBefore": 5,
+    "cupAfter": 0,
+    "resumeActualActionMs": 2087,
+    "resumeWithinOriginalBounds": true
+  },
+  "deliberatelyLatePause": {
+    "actualClickDelayMs": 2571,
+    "movedBeforeClick": true,
+    "stateHeldWhilePaused": true,
+    "rngHeldWhilePaused": true
+  },
+  "phone": {
+    "fps": 59.70386881069893,
+    "p99Ms": 16.800000000000182,
+    "maxMs": 33.399999999999636,
+    "sampleCount": 600,
+    "filtering": "none",
+    "outliersOver17Ms": 3,
+    "longTasks": [],
+    "saveWritesDuringSample": 0
+  },
+  "fullAcceptance": "pending; this diagnostic is never composed into a gating report"
+}

@@ -1,0 +1,29 @@
+{
+  "runId": 37758787707,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37758787707",
+  "headSha": "26222ecb6d337a24f9021bcf472eadf74a888fb9",
+  "conclusion": "failure",
+  "completedAt": "2026-10-08T09:54:34Z",
+  "nodeTests": { "tests": 46, "passed": 46, "failed": 0 },
+  "browserChecks": { "checks": 94, "passed": 94, "failed": 0, "scope": "full" },
+  "mutations": { "compiled": 25, "assertionKills": 25, "survivors": [] },
+  "failure": {
+    "suite": "integrity",
+    "assertion": "browser evidence must match delivered page",
+    "reason": "The proof-pending cadence retains the prior passing09f9 snapshot while delivering new33f5 HTML. It does not claim new-source acceptance; the full fresh hosted browser checks nevertheless passed."
+  },
+  "browserArtifact": {
+    "id": 11541019363,
+    "name": "G07-browser-evidence",
+    "size_in_bytes": 538342,
+    "expired": false,
+    "digest": "sha256:8093dd345f1141edc8777e5e38276b280b569f08004020a196853c8ad6d13336",
+    "created_at": "2026-10-08T09:54:31Z",
+    "workflow_run": {
+      "head_branch": "job/G07-liars-dice",
+      "head_sha": "26222ecb6d337a24f9021bcf472eadf74a888fb9",
+      "id": 37758787707
+    }
+  },
+  "artifactReadback": "Not downloaded. Hosted logs establish that all94 functional/frame checks passed; no hosted FPS values are inferred. Local corrected-runner confirmation and matching published evidence remain pending."
+}

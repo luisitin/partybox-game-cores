@@ -1,0 +1,21 @@
+{
+  "command": "node scripts/league.mjs 100",
+  "pairedSeeds": 100,
+  "gamesPerMatchup": 200,
+  "finalLeaguePrefixUsedForDiagnostics": true,
+  "runs": [
+    {
+      "version": "initial mean-quantity medium",
+      "sharpWins": 94,
+      "normalWins": 71,
+      "result": "FAIL skill order"
+    },
+    {
+      "version": "safest medium, first sharp support posterior",
+      "sharpWins": 153,
+      "normalWins": 39,
+      "result": "FAIL medium vs easy"
+    }
+  ],
+  "fix": "A fixed bidder-support cue for medium; adaptive conditioned-survival model for sharp; Easy unchanged"
+}

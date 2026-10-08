@@ -1,0 +1,79 @@
+TAP version 13
+# Subtest: exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+not ok 1 - exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+  ---
+  duration_ms: 4.183031
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:6:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    n=0 k=1 faces=1
+    + actual - expected
+    
+      {
+    +   atLeast: 1,
+    +   atLeastNumerator: '1',
+    -   atLeast: 0,
+    -   atLeastNumerator: '0',
+        exact: 0,
+        exactNumerator: '0',
+        total: '1'
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    atLeastNumerator: '0'
+    exactNumerator: '0'
+    total: '1'
+    atLeast: 0
+    exact: 0
+  actual:
+    atLeastNumerator: '1'
+    exactNumerator: '0'
+    total: '1'
+    atLeast: 1
+    exact: 0
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:12:12)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+not ok 2 - probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+  ---
+  duration_ms: 0.71755
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:28:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    '36' !== '20'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: '20'
+  actual: '36'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/probability.test.mjs:34:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 0
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 324.089596

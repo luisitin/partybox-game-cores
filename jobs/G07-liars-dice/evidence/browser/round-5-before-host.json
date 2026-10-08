@@ -1,0 +1,77 @@
+{
+  "fixture": {
+    "ids": [
+      "",
+      "__proto__",
+      "constructor"
+    ],
+    "players": [
+      {
+        "id": "",
+        "name": "Empty seat",
+        "avatarId": "face-0",
+        "connected": true,
+        "bot": false
+      },
+      {
+        "id": "__proto__",
+        "name": "Prototype seat",
+        "avatarId": "face-1",
+        "connected": true,
+        "bot": false
+      },
+      {
+        "id": "constructor",
+        "name": "Constructor seat",
+        "avatarId": "face-2",
+        "connected": true,
+        "bot": false
+      }
+    ],
+    "seed": 1,
+    "now": 100,
+    "savedHostNow": 100,
+    "skills": [
+      [
+        "",
+        "normal"
+      ],
+      [
+        "__proto__",
+        "normal"
+      ],
+      [
+        "constructor",
+        "normal"
+      ]
+    ],
+    "botRng": {
+      "seed": 3282421853,
+      "step": 0
+    },
+    "pace": "manual",
+    "stateWasCreatedByActualCoreInit": true,
+    "turnWasNotEdited": true
+  },
+  "expectedCore": {
+    "ownDiceCount": 5,
+    "legalBidCount": 80,
+    "canBid": true
+  },
+  "before": {
+    "htmlSha256": "09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1",
+    "stateTurn": "",
+    "controllerNull": true,
+    "showCupVisible": false,
+    "cupDice": 0,
+    "legalChoices": 0,
+    "palificoHelp": "Palifico. When a player first falls to one die, they start a special round if enabled. Ones stop being wild, and later bids must keep the first face. The exemption setting may let a one-die or experienced player change the face. A player starts palifico only once.",
+    "programmaticHiddenButtonProbe": {
+      "ordinaryHumanClick": false,
+      "cupDiceAfterClick": 0
+    }
+  },
+  "browser": "141.0.7390.37",
+  "networkRequests": 0,
+  "pageErrors": 0
+}
