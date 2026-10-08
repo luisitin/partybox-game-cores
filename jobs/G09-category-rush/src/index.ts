@@ -83,7 +83,11 @@ function enterScores(s:State,now:number):State {
     for(const id of group.owners)points[id]+=group.points;
   const result:RoundResult={round:s.round,letter:s.letter,categories:s.categories.map(c=>({...c})),points,entries:s.reviewed};
   const scores=dictionary(s.order,id=>s.scores[id]+points[id]);
-  return phase({...s,scores,roundResult:result,history:[...s.history,result]},'scores',now,45_000);
+  const readingWords=[...s.categories.map(c=>c.prompt),...s.reviewed.flatMap(c=>c.groups.map(g=>g.text)),
+    ...s.order.map(id=>s.players[id].name),'Round complete. Valid unique answers score one point. Review the answers and points.']
+    .join(' ').trim().split(/\s+/).length;
+  return phase({...s,scores,roundResult:result,history:[...s.history,result]},'scores',now,
+    Math.max(45_000,Math.ceil(1500+333*readingWords*1.3)));
 }
 function finish(s:State,now:number):State{return phase(s,'done',now,null);}
 export function advance(s:State,now:number):State {

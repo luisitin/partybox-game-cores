@@ -11,89 +11,34 @@
       "const": "en"
     },
     "letters": {
+      "minItems": 20,
+      "maxItems": 20,
       "type": "array",
-      "prefixItems": [
-        {
-          "type": "string",
-          "const": "A"
-        },
-        {
-          "type": "string",
-          "const": "B"
-        },
-        {
-          "type": "string",
-          "const": "C"
-        },
-        {
-          "type": "string",
-          "const": "D"
-        },
-        {
-          "type": "string",
-          "const": "E"
-        },
-        {
-          "type": "string",
-          "const": "F"
-        },
-        {
-          "type": "string",
-          "const": "G"
-        },
-        {
-          "type": "string",
-          "const": "H"
-        },
-        {
-          "type": "string",
-          "const": "I"
-        },
-        {
-          "type": "string",
-          "const": "J"
-        },
-        {
-          "type": "string",
-          "const": "K"
-        },
-        {
-          "type": "string",
-          "const": "L"
-        },
-        {
-          "type": "string",
-          "const": "M"
-        },
-        {
-          "type": "string",
-          "const": "N"
-        },
-        {
-          "type": "string",
-          "const": "O"
-        },
-        {
-          "type": "string",
-          "const": "P"
-        },
-        {
-          "type": "string",
-          "const": "R"
-        },
-        {
-          "type": "string",
-          "const": "S"
-        },
-        {
-          "type": "string",
-          "const": "T"
-        },
-        {
-          "type": "string",
-          "const": "W"
-        }
-      ]
+      "items": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "R",
+          "S",
+          "T",
+          "W"
+        ]
+      }
     },
     "categories": {
       "minItems": 300,

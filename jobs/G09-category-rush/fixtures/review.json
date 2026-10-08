@@ -2,12 +2,12 @@
   "phase": {
     "id": "review",
     "startedAt": 1010,
-    "deadline": 20736
+    "deadline": 20303
   },
   "phaseClock": 1010,
   "rng": {
     "seed": 42,
-    "step": 137
+    "step": 265
   },
   "players": {
     "p0": {
@@ -49,120 +49,120 @@
   ],
   "categories": [
     {
-      "id": "transport-01",
-      "prompt": "A vehicle carrying passengers on water",
+      "id": "school-08",
+      "prompt": "Something on a teacher's desk",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "transport"
+      "theme": "school"
     },
     {
-      "id": "clothing-04",
-      "prompt": "Something worn around a neck",
-      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "clothing"
-    },
-    {
-      "id": "parks-02",
-      "prompt": "Something you find beside a park path",
-      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "parks"
-    },
-    {
-      "id": "produce-06",
-      "prompt": "A green vegetable served cooked",
+      "id": "produce-05",
+      "prompt": "Something edible picked from a climbing plant",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
       "theme": "produce"
     },
     {
-      "id": "storage-04",
-      "prompt": "Something rolled up for storage",
+      "id": "jobs-10",
+      "prompt": "A worker who makes or repairs jewelry",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "storage"
+      "theme": "jobs"
     },
     {
-      "id": "home-rooms-04",
-      "prompt": "Something you sit on in a home",
+      "id": "art-08",
+      "prompt": "Something used to shape wet clay",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "home-rooms"
+      "theme": "art"
     },
     {
-      "id": "garden-09",
-      "prompt": "Something a gardener wears for protection",
+      "id": "music-07",
+      "prompt": "Something carried in a guitar case",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "garden"
+      "theme": "music"
     },
     {
-      "id": "travel-packing-07",
-      "prompt": "Something used to carry luggage",
+      "id": "games-toys-01",
+      "prompt": "Something that rolls in a tabletop game",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "travel-packing"
+      "theme": "games-toys"
     },
     {
-      "id": "cooking-04",
-      "prompt": "Something that helps bread dough rise",
+      "id": "events-10",
+      "prompt": "Something used to identify staff at an event",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "cooking"
+      "theme": "events"
     },
     {
-      "id": "dining-06",
-      "prompt": "Something used to serve a shared dish",
+      "id": "parks-07",
+      "prompt": "Something you might feed to garden birds",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "dining"
+      "theme": "parks"
     },
     {
-      "id": "streets-03",
-      "prompt": "Something found at a bus stop",
+      "id": "digital-05",
+      "prompt": "Something that can store a digital photograph",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "streets"
+      "theme": "digital"
     },
     {
-      "id": "breakfast-07",
-      "prompt": "A food intended for a toaster",
+      "id": "community-01",
+      "prompt": "A place where neighbors can borrow something",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "breakfast"
+      "theme": "community"
+    },
+    {
+      "id": "paper-03",
+      "prompt": "Something used to mark a page in a book",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "paper"
+    },
+    {
+      "id": "pantry-08",
+      "prompt": "An ingredient that sweetens cake batter",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "pantry"
     }
   ],
   "answers": {
     "p0": [
       "",
-      "stole",
+      "snap pea",
       "",
       "",
-      "scroll",
-      "stool",
-      "sunhat",
-      "suitcase",
-      "starter",
+      "strap",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
       "",
-      "sign",
-      "sourdough"
+      "string",
+      "stevia"
     ],
     "p1": [
-      "sailboat",
-      "scarf",
+      "stapler",
+      "squash",
       "",
-      "spinach",
-      "sleeping bag",
-      "sofa",
-      "sunhat",
-      "suitcase",
-      "starter",
-      "spoon",
+      "stamp",
+      "string",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "school",
       "",
-      "sourdough"
+      "stevia"
     ],
     "p2": [
-      "sailboat",
-      "scarf",
-      "shrub",
-      "spinach",
-      "sleeping bag",
-      "stool",
-      "sunhat",
-      "suitcase",
-      "steam",
-      "salad servers",
-      "seat",
-      "sourdough"
+      "stapler",
+      "snap pea",
+      "silversmith",
+      "stamp",
+      "slide",
+      "spinner wheel",
+      "shirt",
+      "sunflower seed",
+      "server",
+      "school",
+      "strip",
+      "sugar"
     ]
   },
   "submitted": {

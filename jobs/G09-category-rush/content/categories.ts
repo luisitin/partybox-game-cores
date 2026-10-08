@@ -107,7 +107,8 @@ export const CATEGORIES: readonly Category[] = [
         "finger guard"
       ],
       "G": [
-        "gauntlet"
+        "gauntlet",
+        "grip mitt"
       ],
       "H": [
         "heatproof glove",
@@ -117,8 +118,7 @@ export const CATEGORIES: readonly Category[] = [
         "oven mitt"
       ],
       "P": [
-        "potholder",
-        "pot holder"
+        "potholder"
       ],
       "S": [
         "silicone glove"
@@ -3749,6 +3749,9 @@ export const CATEGORIES: readonly Category[] = [
       "F": [
         "file"
       ],
+      "N": [
+        "nail trimmer"
+      ],
       "P": [
         "polish"
       ],
@@ -3757,9 +3760,6 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "S": [
         "scissors"
-      ],
-      "T": [
-        "trimmer"
       ]
     }
   },
@@ -3882,15 +3882,15 @@ export const CATEGORIES: readonly Category[] = [
         "balm"
       ],
       "C": [
-        "cream",
-        "chapstick"
+        "cream"
       ],
       "H": [
         "hand cream"
       ],
       "L": [
         "lip balm",
-        "lotion"
+        "lotion",
+        "lip salve"
       ],
       "M": [
         "moisturizer"
@@ -9069,7 +9069,6 @@ export const CATEGORIES: readonly Category[] = [
     "answers": {
       "B": [
         "basketball",
-        "badminton",
         "beach volleyball"
       ],
       "F": [
@@ -9080,6 +9079,9 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "N": [
         "netball"
+      ],
+      "P": [
+        "pickleball"
       ],
       "R": [
         "racquetball"
@@ -9456,15 +9458,15 @@ export const CATEGORIES: readonly Category[] = [
       ],
       "D": [
         "duck",
-        "doll",
-        "dog"
+        "doll"
       ],
       "M": [
         "marionette"
       ],
       "P": [
         "puppet",
-        "pull toy"
+        "pull toy",
+        "pull-along dog"
       ],
       "S": [
         "spinning top"

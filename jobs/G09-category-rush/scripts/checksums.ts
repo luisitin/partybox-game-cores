@@ -8,7 +8,7 @@ function walk(folder:string):void {
     if(entry.name==='node_modules'||entry.name.startsWith('.')||entry.name==='SHA256SUMS.txt')continue;
     const path=join(folder,entry.name);
     if(entry.isDirectory())walk(path);
-    else if(/\.(json|jsonl|html|svg|png|webp|webm|mp4)$/.test(entry.name)||path.endsWith('content/authored.mjs'))paths.push(path);
+    else if(entry.name==='THIRD_PARTY_NOTICES.txt'||/^(?:content|evidence|media)\//.test(relative(root,path))||/\.(json|jsonl|html|svg|png|webp|webm|mp4)$/.test(entry.name))paths.push(path);
   }
 }
 walk(root);

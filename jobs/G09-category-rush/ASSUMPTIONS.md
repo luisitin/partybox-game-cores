@@ -7,4 +7,5 @@
 - A departed player's locked answers remain in the round and can cancel duplicates. Departures never remove them from final results. Reconnection cannot undo a permanent leave/kick. Late spectators cannot enter the fixed roster.
 - A VIP ending during writing or review keeps only scores already settled in earlier rounds. Skipping review settles the current category from ballots already cast.
 - The hot-seat page gives each human a private writing turn with the same time allowance. Its local virtual clock freezes between handovers; the core still owns deadlines and only processes explicit timestamped events.
+- Review and score deadlines use the absent SDK's documented 1.5 s + 333 ms per word × 1.3 UI reading formula, with discussion time during votes and at least 45 s for scores. The hot-seat page waits for explicit Next on scores, so receipts can be read at the group's pace.
 - English content only. Proper names must be written with the chosen initial first. Extra proper-name alliteration points and automatic tie-break rounds are researched but not selected.

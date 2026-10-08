@@ -5,6 +5,7 @@ import { test } from 'node:test';
 import { z } from 'zod';
 import { CATEGORIES, LETTERS } from '../content/categories';
 import { categoryPackSchema } from '../content/schema';
+import { validateJsonSchema } from '../scripts/json-schema-validator';
 
 const root = new URL('../', import.meta.url);
 const normalized = (text: string) => text.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/^(?:a|an|the)\s+/, '').replace(/[^a-z0-9]/g, '');
@@ -13,10 +14,27 @@ test('original category content obeys the authoritative schema and JSON Schema h
   const json = JSON.parse(readFileSync(new URL('content/categories.json', root), 'utf8'));
   const schema = JSON.parse(readFileSync(new URL('content/categories.schema.json', root), 'utf8'));
   assert.deepEqual(schema, z.toJSONSchema(categoryPackSchema));
+  assert.deepEqual(validateJsonSchema(schema, json), []);
   const parsed = categoryPackSchema.parse(json);
   assert.deepEqual(parsed.categories, CATEGORIES);
   assert.deepEqual(parsed.letters, LETTERS);
   assert.ok(CATEGORIES.length >= 300);
+});
+
+test('the emitted JSON Schema independently rejects malformed content', () => {
+  const schema = JSON.parse(readFileSync(new URL('content/categories.schema.json', root), 'utf8'));
+  const pack = JSON.parse(readFileSync(new URL('content/categories.json', root), 'utf8'));
+  const badLetter = structuredClone(pack); badLetter.categories[0].answers.Q = ['quilt'];
+  assert.ok(validateJsonSchema(schema, badLetter).some(error => error.includes('outside enum')));
+  const badBank = structuredClone(pack); badBank.categories[0].answers.C = [];
+  assert.ok(validateJsonSchema(schema, badBank).some(error => error.includes('too few items')));
+  const missingLetter = structuredClone(pack); missingLetter.letters.pop();
+  assert.ok(validateJsonSchema(schema, missingLetter).some(error => error.includes('too few items')));
+  const smallPack = structuredClone(pack); smallPack.categories = smallPack.categories.slice(0, 29);
+  assert.ok(validateJsonSchema(schema, smallPack).some(error => error.includes('too few items')));
+  const extra = structuredClone(pack); extra.categories[0].tracking = 'forbidden';
+  assert.ok(validateJsonSchema(schema, extra).some(error => error.includes('forbidden')));
+  assert.throws(() => validateJsonSchema({ $ref: '#/unknown' } as never, {}), /Unsupported/);
 });
 
 test('prompts and IDs are unique and every allowed letter has twelve playable categories', () => {

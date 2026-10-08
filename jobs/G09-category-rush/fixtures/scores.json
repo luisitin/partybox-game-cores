@@ -2,12 +2,12 @@
   "phase": {
     "id": "scores",
     "startedAt": 1020,
-    "deadline": 46020
+    "deadline": 55334
   },
   "phaseClock": 1020,
   "rng": {
     "seed": 42,
-    "step": 137
+    "step": 265
   },
   "players": {
     "p0": {
@@ -49,120 +49,120 @@
   ],
   "categories": [
     {
-      "id": "transport-01",
-      "prompt": "A vehicle carrying passengers on water",
+      "id": "school-08",
+      "prompt": "Something on a teacher's desk",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "transport"
+      "theme": "school"
     },
     {
-      "id": "clothing-04",
-      "prompt": "Something worn around a neck",
-      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "clothing"
-    },
-    {
-      "id": "parks-02",
-      "prompt": "Something you find beside a park path",
-      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "parks"
-    },
-    {
-      "id": "produce-06",
-      "prompt": "A green vegetable served cooked",
+      "id": "produce-05",
+      "prompt": "Something edible picked from a climbing plant",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
       "theme": "produce"
     },
     {
-      "id": "storage-04",
-      "prompt": "Something rolled up for storage",
+      "id": "jobs-10",
+      "prompt": "A worker who makes or repairs jewelry",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "storage"
+      "theme": "jobs"
     },
     {
-      "id": "home-rooms-04",
-      "prompt": "Something you sit on in a home",
+      "id": "art-08",
+      "prompt": "Something used to shape wet clay",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "home-rooms"
+      "theme": "art"
     },
     {
-      "id": "garden-09",
-      "prompt": "Something a gardener wears for protection",
+      "id": "music-07",
+      "prompt": "Something carried in a guitar case",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "garden"
+      "theme": "music"
     },
     {
-      "id": "travel-packing-07",
-      "prompt": "Something used to carry luggage",
+      "id": "games-toys-01",
+      "prompt": "Something that rolls in a tabletop game",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "travel-packing"
+      "theme": "games-toys"
     },
     {
-      "id": "cooking-04",
-      "prompt": "Something that helps bread dough rise",
+      "id": "events-10",
+      "prompt": "Something used to identify staff at an event",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "cooking"
+      "theme": "events"
     },
     {
-      "id": "dining-06",
-      "prompt": "Something used to serve a shared dish",
+      "id": "parks-07",
+      "prompt": "Something you might feed to garden birds",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "dining"
+      "theme": "parks"
     },
     {
-      "id": "streets-03",
-      "prompt": "Something found at a bus stop",
+      "id": "digital-05",
+      "prompt": "Something that can store a digital photograph",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "streets"
+      "theme": "digital"
     },
     {
-      "id": "breakfast-07",
-      "prompt": "A food intended for a toaster",
+      "id": "community-01",
+      "prompt": "A place where neighbors can borrow something",
       "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-      "theme": "breakfast"
+      "theme": "community"
+    },
+    {
+      "id": "paper-03",
+      "prompt": "Something used to mark a page in a book",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "paper"
+    },
+    {
+      "id": "pantry-08",
+      "prompt": "An ingredient that sweetens cake batter",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "pantry"
     }
   ],
   "answers": {
     "p0": [
       "",
-      "stole",
+      "snap pea",
       "",
       "",
-      "scroll",
-      "stool",
-      "sunhat",
-      "suitcase",
-      "starter",
+      "strap",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
       "",
-      "sign",
-      "sourdough"
+      "string",
+      "stevia"
     ],
     "p1": [
-      "sailboat",
-      "scarf",
+      "stapler",
+      "squash",
       "",
-      "spinach",
-      "sleeping bag",
-      "sofa",
-      "sunhat",
-      "suitcase",
-      "starter",
-      "spoon",
+      "stamp",
+      "string",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "school",
       "",
-      "sourdough"
+      "stevia"
     ],
     "p2": [
-      "sailboat",
-      "scarf",
-      "shrub",
-      "spinach",
-      "sleeping bag",
-      "stool",
-      "sunhat",
-      "suitcase",
-      "steam",
-      "salad servers",
-      "seat",
-      "sourdough"
+      "stapler",
+      "snap pea",
+      "silversmith",
+      "stamp",
+      "slide",
+      "spinner wheel",
+      "shirt",
+      "sunflower seed",
+      "server",
+      "school",
+      "strip",
+      "sugar"
     ]
   },
   "submitted": {
@@ -173,22 +173,25 @@
   "reviewIndex": 11,
   "votes": {
     "p0": [
+      true,
       true
     ],
     "p1": [
+      true,
       true
     ],
     "p2": [
+      true,
       true
     ]
   },
   "reviewed": [
     {
-      "categoryId": "transport-01",
+      "categoryId": "school-08",
       "groups": [
         {
           "id": "r1-c0-g0",
-          "text": "sailboat",
+          "text": "stapler",
           "owners": [
             "p1",
             "p2"
@@ -201,39 +204,39 @@
       ]
     },
     {
-      "categoryId": "clothing-04",
+      "categoryId": "produce-05",
       "groups": [
         {
           "id": "r1-c1-g0",
-          "text": "stole",
+          "text": "snap pea",
           "owners": [
-            "p0"
+            "p0",
+            "p2"
           ],
-          "duplicate": false,
+          "duplicate": true,
           "eligible": true,
           "accepted": true,
-          "points": 1
+          "points": 0
         },
         {
           "id": "r1-c1-g1",
-          "text": "scarf",
+          "text": "squash",
           "owners": [
-            "p1",
-            "p2"
+            "p1"
           ],
-          "duplicate": true,
+          "duplicate": false,
           "eligible": true,
           "accepted": true,
-          "points": 0
+          "points": 1
         }
       ]
     },
     {
-      "categoryId": "parks-02",
+      "categoryId": "jobs-10",
       "groups": [
         {
           "id": "r1-c2-g0",
-          "text": "shrub",
+          "text": "silversmith",
           "owners": [
             "p2"
           ],
@@ -245,11 +248,11 @@
       ]
     },
     {
-      "categoryId": "produce-06",
+      "categoryId": "art-08",
       "groups": [
         {
           "id": "r1-c3-g0",
-          "text": "spinach",
+          "text": "stamp",
           "owners": [
             "p1",
             "p2"
@@ -262,11 +265,11 @@
       ]
     },
     {
-      "categoryId": "storage-04",
+      "categoryId": "music-07",
       "groups": [
         {
           "id": "r1-c4-g0",
-          "text": "scroll",
+          "text": "strap",
           "owners": [
             "p0"
           ],
@@ -277,52 +280,52 @@
         },
         {
           "id": "r1-c4-g1",
-          "text": "sleeping bag",
+          "text": "string",
           "owners": [
-            "p1",
-            "p2"
+            "p1"
           ],
-          "duplicate": true,
+          "duplicate": false,
           "eligible": true,
           "accepted": true,
-          "points": 0
+          "points": 1
+        },
+        {
+          "id": "r1-c4-g2",
+          "text": "slide",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
         }
       ]
     },
     {
-      "categoryId": "home-rooms-04",
+      "categoryId": "games-toys-01",
       "groups": [
         {
           "id": "r1-c5-g0",
-          "text": "stool",
+          "text": "spinner wheel",
           "owners": [
             "p0",
+            "p1",
             "p2"
           ],
           "duplicate": true,
           "eligible": true,
           "accepted": true,
           "points": 0
-        },
-        {
-          "id": "r1-c5-g1",
-          "text": "sofa",
-          "owners": [
-            "p1"
-          ],
-          "duplicate": false,
-          "eligible": true,
-          "accepted": true,
-          "points": 1
         }
       ]
     },
     {
-      "categoryId": "garden-09",
+      "categoryId": "events-10",
       "groups": [
         {
           "id": "r1-c6-g0",
-          "text": "sunhat",
+          "text": "shirt",
           "owners": [
             "p0",
             "p1",
@@ -336,11 +339,39 @@
       ]
     },
     {
-      "categoryId": "travel-packing-07",
+      "categoryId": "parks-07",
       "groups": [
         {
           "id": "r1-c7-g0",
-          "text": "suitcase",
+          "text": "seed",
+          "owners": [
+            "p0",
+            "p1"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        },
+        {
+          "id": "r1-c7-g1",
+          "text": "sunflower seed",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "digital-05",
+      "groups": [
+        {
+          "id": "r1-c8-g0",
+          "text": "server",
           "owners": [
             "p0",
             "p1",
@@ -354,66 +385,28 @@
       ]
     },
     {
-      "categoryId": "cooking-04",
+      "categoryId": "community-01",
       "groups": [
         {
-          "id": "r1-c8-g0",
-          "text": "starter",
+          "id": "r1-c9-g0",
+          "text": "school",
           "owners": [
-            "p0",
-            "p1"
+            "p1",
+            "p2"
           ],
           "duplicate": true,
           "eligible": true,
           "accepted": true,
           "points": 0
-        },
-        {
-          "id": "r1-c8-g1",
-          "text": "steam",
-          "owners": [
-            "p2"
-          ],
-          "duplicate": false,
-          "eligible": true,
-          "accepted": true,
-          "points": 1
         }
       ]
     },
     {
-      "categoryId": "dining-06",
-      "groups": [
-        {
-          "id": "r1-c9-g0",
-          "text": "spoon",
-          "owners": [
-            "p1"
-          ],
-          "duplicate": false,
-          "eligible": true,
-          "accepted": true,
-          "points": 1
-        },
-        {
-          "id": "r1-c9-g1",
-          "text": "salad servers",
-          "owners": [
-            "p2"
-          ],
-          "duplicate": false,
-          "eligible": true,
-          "accepted": true,
-          "points": 1
-        }
-      ]
-    },
-    {
-      "categoryId": "streets-03",
+      "categoryId": "paper-03",
       "groups": [
         {
           "id": "r1-c10-g0",
-          "text": "sign",
+          "text": "string",
           "owners": [
             "p0"
           ],
@@ -424,7 +417,7 @@
         },
         {
           "id": "r1-c10-g1",
-          "text": "seat",
+          "text": "strip",
           "owners": [
             "p2"
           ],
@@ -436,118 +429,128 @@
       ]
     },
     {
-      "categoryId": "breakfast-07",
+      "categoryId": "pantry-08",
       "groups": [
         {
           "id": "r1-c11-g0",
-          "text": "sourdough",
+          "text": "stevia",
           "owners": [
             "p0",
-            "p1",
-            "p2"
+            "p1"
           ],
           "duplicate": true,
           "eligible": true,
           "accepted": true,
           "points": 0
+        },
+        {
+          "id": "r1-c11-g1",
+          "text": "sugar",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
         }
       ]
     }
   ],
   "scores": {
-    "p0": 3,
+    "p0": 2,
     "p1": 2,
-    "p2": 4
+    "p2": 5
   },
   "roundResult": {
     "round": 1,
     "letter": "S",
     "categories": [
       {
-        "id": "transport-01",
-        "prompt": "A vehicle carrying passengers on water",
+        "id": "school-08",
+        "prompt": "Something on a teacher's desk",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "transport"
+        "theme": "school"
       },
       {
-        "id": "clothing-04",
-        "prompt": "Something worn around a neck",
-        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "clothing"
-      },
-      {
-        "id": "parks-02",
-        "prompt": "Something you find beside a park path",
-        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "parks"
-      },
-      {
-        "id": "produce-06",
-        "prompt": "A green vegetable served cooked",
+        "id": "produce-05",
+        "prompt": "Something edible picked from a climbing plant",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
         "theme": "produce"
       },
       {
-        "id": "storage-04",
-        "prompt": "Something rolled up for storage",
+        "id": "jobs-10",
+        "prompt": "A worker who makes or repairs jewelry",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "storage"
+        "theme": "jobs"
       },
       {
-        "id": "home-rooms-04",
-        "prompt": "Something you sit on in a home",
+        "id": "art-08",
+        "prompt": "Something used to shape wet clay",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "home-rooms"
+        "theme": "art"
       },
       {
-        "id": "garden-09",
-        "prompt": "Something a gardener wears for protection",
+        "id": "music-07",
+        "prompt": "Something carried in a guitar case",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "garden"
+        "theme": "music"
       },
       {
-        "id": "travel-packing-07",
-        "prompt": "Something used to carry luggage",
+        "id": "games-toys-01",
+        "prompt": "Something that rolls in a tabletop game",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "travel-packing"
+        "theme": "games-toys"
       },
       {
-        "id": "cooking-04",
-        "prompt": "Something that helps bread dough rise",
+        "id": "events-10",
+        "prompt": "Something used to identify staff at an event",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "cooking"
+        "theme": "events"
       },
       {
-        "id": "dining-06",
-        "prompt": "Something used to serve a shared dish",
+        "id": "parks-07",
+        "prompt": "Something you might feed to garden birds",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "dining"
+        "theme": "parks"
       },
       {
-        "id": "streets-03",
-        "prompt": "Something found at a bus stop",
+        "id": "digital-05",
+        "prompt": "Something that can store a digital photograph",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "streets"
+        "theme": "digital"
       },
       {
-        "id": "breakfast-07",
-        "prompt": "A food intended for a toaster",
+        "id": "community-01",
+        "prompt": "A place where neighbors can borrow something",
         "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-        "theme": "breakfast"
+        "theme": "community"
+      },
+      {
+        "id": "paper-03",
+        "prompt": "Something used to mark a page in a book",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "paper"
+      },
+      {
+        "id": "pantry-08",
+        "prompt": "An ingredient that sweetens cake batter",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "pantry"
       }
     ],
     "points": {
-      "p0": 3,
+      "p0": 2,
       "p1": 2,
-      "p2": 4
+      "p2": 5
     },
     "entries": [
       {
-        "categoryId": "transport-01",
+        "categoryId": "school-08",
         "groups": [
           {
             "id": "r1-c0-g0",
-            "text": "sailboat",
+            "text": "stapler",
             "owners": [
               "p1",
               "p2"
@@ -560,39 +563,39 @@
         ]
       },
       {
-        "categoryId": "clothing-04",
+        "categoryId": "produce-05",
         "groups": [
           {
             "id": "r1-c1-g0",
-            "text": "stole",
+            "text": "snap pea",
             "owners": [
-              "p0"
+              "p0",
+              "p2"
             ],
-            "duplicate": false,
+            "duplicate": true,
             "eligible": true,
             "accepted": true,
-            "points": 1
+            "points": 0
           },
           {
             "id": "r1-c1-g1",
-            "text": "scarf",
+            "text": "squash",
             "owners": [
-              "p1",
-              "p2"
+              "p1"
             ],
-            "duplicate": true,
+            "duplicate": false,
             "eligible": true,
             "accepted": true,
-            "points": 0
+            "points": 1
           }
         ]
       },
       {
-        "categoryId": "parks-02",
+        "categoryId": "jobs-10",
         "groups": [
           {
             "id": "r1-c2-g0",
-            "text": "shrub",
+            "text": "silversmith",
             "owners": [
               "p2"
             ],
@@ -604,11 +607,11 @@
         ]
       },
       {
-        "categoryId": "produce-06",
+        "categoryId": "art-08",
         "groups": [
           {
             "id": "r1-c3-g0",
-            "text": "spinach",
+            "text": "stamp",
             "owners": [
               "p1",
               "p2"
@@ -621,11 +624,11 @@
         ]
       },
       {
-        "categoryId": "storage-04",
+        "categoryId": "music-07",
         "groups": [
           {
             "id": "r1-c4-g0",
-            "text": "scroll",
+            "text": "strap",
             "owners": [
               "p0"
             ],
@@ -636,52 +639,52 @@
           },
           {
             "id": "r1-c4-g1",
-            "text": "sleeping bag",
+            "text": "string",
             "owners": [
-              "p1",
-              "p2"
+              "p1"
             ],
-            "duplicate": true,
+            "duplicate": false,
             "eligible": true,
             "accepted": true,
-            "points": 0
+            "points": 1
+          },
+          {
+            "id": "r1-c4-g2",
+            "text": "slide",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
           }
         ]
       },
       {
-        "categoryId": "home-rooms-04",
+        "categoryId": "games-toys-01",
         "groups": [
           {
             "id": "r1-c5-g0",
-            "text": "stool",
+            "text": "spinner wheel",
             "owners": [
               "p0",
+              "p1",
               "p2"
             ],
             "duplicate": true,
             "eligible": true,
             "accepted": true,
             "points": 0
-          },
-          {
-            "id": "r1-c5-g1",
-            "text": "sofa",
-            "owners": [
-              "p1"
-            ],
-            "duplicate": false,
-            "eligible": true,
-            "accepted": true,
-            "points": 1
           }
         ]
       },
       {
-        "categoryId": "garden-09",
+        "categoryId": "events-10",
         "groups": [
           {
             "id": "r1-c6-g0",
-            "text": "sunhat",
+            "text": "shirt",
             "owners": [
               "p0",
               "p1",
@@ -695,11 +698,39 @@
         ]
       },
       {
-        "categoryId": "travel-packing-07",
+        "categoryId": "parks-07",
         "groups": [
           {
             "id": "r1-c7-g0",
-            "text": "suitcase",
+            "text": "seed",
+            "owners": [
+              "p0",
+              "p1"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          },
+          {
+            "id": "r1-c7-g1",
+            "text": "sunflower seed",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "digital-05",
+        "groups": [
+          {
+            "id": "r1-c8-g0",
+            "text": "server",
             "owners": [
               "p0",
               "p1",
@@ -713,66 +744,28 @@
         ]
       },
       {
-        "categoryId": "cooking-04",
+        "categoryId": "community-01",
         "groups": [
           {
-            "id": "r1-c8-g0",
-            "text": "starter",
+            "id": "r1-c9-g0",
+            "text": "school",
             "owners": [
-              "p0",
-              "p1"
+              "p1",
+              "p2"
             ],
             "duplicate": true,
             "eligible": true,
             "accepted": true,
             "points": 0
-          },
-          {
-            "id": "r1-c8-g1",
-            "text": "steam",
-            "owners": [
-              "p2"
-            ],
-            "duplicate": false,
-            "eligible": true,
-            "accepted": true,
-            "points": 1
           }
         ]
       },
       {
-        "categoryId": "dining-06",
-        "groups": [
-          {
-            "id": "r1-c9-g0",
-            "text": "spoon",
-            "owners": [
-              "p1"
-            ],
-            "duplicate": false,
-            "eligible": true,
-            "accepted": true,
-            "points": 1
-          },
-          {
-            "id": "r1-c9-g1",
-            "text": "salad servers",
-            "owners": [
-              "p2"
-            ],
-            "duplicate": false,
-            "eligible": true,
-            "accepted": true,
-            "points": 1
-          }
-        ]
-      },
-      {
-        "categoryId": "streets-03",
+        "categoryId": "paper-03",
         "groups": [
           {
             "id": "r1-c10-g0",
-            "text": "sign",
+            "text": "string",
             "owners": [
               "p0"
             ],
@@ -783,7 +776,7 @@
           },
           {
             "id": "r1-c10-g1",
-            "text": "seat",
+            "text": "strip",
             "owners": [
               "p2"
             ],
@@ -795,20 +788,30 @@
         ]
       },
       {
-        "categoryId": "breakfast-07",
+        "categoryId": "pantry-08",
         "groups": [
           {
             "id": "r1-c11-g0",
-            "text": "sourdough",
+            "text": "stevia",
             "owners": [
               "p0",
-              "p1",
-              "p2"
+              "p1"
             ],
             "duplicate": true,
             "eligible": true,
             "accepted": true,
             "points": 0
+          },
+          {
+            "id": "r1-c11-g1",
+            "text": "sugar",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
           }
         ]
       }
@@ -820,90 +823,90 @@
       "letter": "S",
       "categories": [
         {
-          "id": "transport-01",
-          "prompt": "A vehicle carrying passengers on water",
+          "id": "school-08",
+          "prompt": "Something on a teacher's desk",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "transport"
+          "theme": "school"
         },
         {
-          "id": "clothing-04",
-          "prompt": "Something worn around a neck",
-          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "clothing"
-        },
-        {
-          "id": "parks-02",
-          "prompt": "Something you find beside a park path",
-          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "parks"
-        },
-        {
-          "id": "produce-06",
-          "prompt": "A green vegetable served cooked",
+          "id": "produce-05",
+          "prompt": "Something edible picked from a climbing plant",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
           "theme": "produce"
         },
         {
-          "id": "storage-04",
-          "prompt": "Something rolled up for storage",
+          "id": "jobs-10",
+          "prompt": "A worker who makes or repairs jewelry",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "storage"
+          "theme": "jobs"
         },
         {
-          "id": "home-rooms-04",
-          "prompt": "Something you sit on in a home",
+          "id": "art-08",
+          "prompt": "Something used to shape wet clay",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "home-rooms"
+          "theme": "art"
         },
         {
-          "id": "garden-09",
-          "prompt": "Something a gardener wears for protection",
+          "id": "music-07",
+          "prompt": "Something carried in a guitar case",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "garden"
+          "theme": "music"
         },
         {
-          "id": "travel-packing-07",
-          "prompt": "Something used to carry luggage",
+          "id": "games-toys-01",
+          "prompt": "Something that rolls in a tabletop game",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "travel-packing"
+          "theme": "games-toys"
         },
         {
-          "id": "cooking-04",
-          "prompt": "Something that helps bread dough rise",
+          "id": "events-10",
+          "prompt": "Something used to identify staff at an event",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "cooking"
+          "theme": "events"
         },
         {
-          "id": "dining-06",
-          "prompt": "Something used to serve a shared dish",
+          "id": "parks-07",
+          "prompt": "Something you might feed to garden birds",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "dining"
+          "theme": "parks"
         },
         {
-          "id": "streets-03",
-          "prompt": "Something found at a bus stop",
+          "id": "digital-05",
+          "prompt": "Something that can store a digital photograph",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "streets"
+          "theme": "digital"
         },
         {
-          "id": "breakfast-07",
-          "prompt": "A food intended for a toaster",
+          "id": "community-01",
+          "prompt": "A place where neighbors can borrow something",
           "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
-          "theme": "breakfast"
+          "theme": "community"
+        },
+        {
+          "id": "paper-03",
+          "prompt": "Something used to mark a page in a book",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "paper"
+        },
+        {
+          "id": "pantry-08",
+          "prompt": "An ingredient that sweetens cake batter",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "pantry"
         }
       ],
       "points": {
-        "p0": 3,
+        "p0": 2,
         "p1": 2,
-        "p2": 4
+        "p2": 5
       },
       "entries": [
         {
-          "categoryId": "transport-01",
+          "categoryId": "school-08",
           "groups": [
             {
               "id": "r1-c0-g0",
-              "text": "sailboat",
+              "text": "stapler",
               "owners": [
                 "p1",
                 "p2"
@@ -916,39 +919,39 @@
           ]
         },
         {
-          "categoryId": "clothing-04",
+          "categoryId": "produce-05",
           "groups": [
             {
               "id": "r1-c1-g0",
-              "text": "stole",
+              "text": "snap pea",
               "owners": [
-                "p0"
+                "p0",
+                "p2"
               ],
-              "duplicate": false,
+              "duplicate": true,
               "eligible": true,
               "accepted": true,
-              "points": 1
+              "points": 0
             },
             {
               "id": "r1-c1-g1",
-              "text": "scarf",
+              "text": "squash",
               "owners": [
-                "p1",
-                "p2"
+                "p1"
               ],
-              "duplicate": true,
+              "duplicate": false,
               "eligible": true,
               "accepted": true,
-              "points": 0
+              "points": 1
             }
           ]
         },
         {
-          "categoryId": "parks-02",
+          "categoryId": "jobs-10",
           "groups": [
             {
               "id": "r1-c2-g0",
-              "text": "shrub",
+              "text": "silversmith",
               "owners": [
                 "p2"
               ],
@@ -960,11 +963,11 @@
           ]
         },
         {
-          "categoryId": "produce-06",
+          "categoryId": "art-08",
           "groups": [
             {
               "id": "r1-c3-g0",
-              "text": "spinach",
+              "text": "stamp",
               "owners": [
                 "p1",
                 "p2"
@@ -977,11 +980,11 @@
           ]
         },
         {
-          "categoryId": "storage-04",
+          "categoryId": "music-07",
           "groups": [
             {
               "id": "r1-c4-g0",
-              "text": "scroll",
+              "text": "strap",
               "owners": [
                 "p0"
               ],
@@ -992,52 +995,52 @@
             },
             {
               "id": "r1-c4-g1",
-              "text": "sleeping bag",
+              "text": "string",
               "owners": [
-                "p1",
-                "p2"
+                "p1"
               ],
-              "duplicate": true,
+              "duplicate": false,
               "eligible": true,
               "accepted": true,
-              "points": 0
+              "points": 1
+            },
+            {
+              "id": "r1-c4-g2",
+              "text": "slide",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
             }
           ]
         },
         {
-          "categoryId": "home-rooms-04",
+          "categoryId": "games-toys-01",
           "groups": [
             {
               "id": "r1-c5-g0",
-              "text": "stool",
+              "text": "spinner wheel",
               "owners": [
                 "p0",
+                "p1",
                 "p2"
               ],
               "duplicate": true,
               "eligible": true,
               "accepted": true,
               "points": 0
-            },
-            {
-              "id": "r1-c5-g1",
-              "text": "sofa",
-              "owners": [
-                "p1"
-              ],
-              "duplicate": false,
-              "eligible": true,
-              "accepted": true,
-              "points": 1
             }
           ]
         },
         {
-          "categoryId": "garden-09",
+          "categoryId": "events-10",
           "groups": [
             {
               "id": "r1-c6-g0",
-              "text": "sunhat",
+              "text": "shirt",
               "owners": [
                 "p0",
                 "p1",
@@ -1051,11 +1054,39 @@
           ]
         },
         {
-          "categoryId": "travel-packing-07",
+          "categoryId": "parks-07",
           "groups": [
             {
               "id": "r1-c7-g0",
-              "text": "suitcase",
+              "text": "seed",
+              "owners": [
+                "p0",
+                "p1"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            },
+            {
+              "id": "r1-c7-g1",
+              "text": "sunflower seed",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "digital-05",
+          "groups": [
+            {
+              "id": "r1-c8-g0",
+              "text": "server",
               "owners": [
                 "p0",
                 "p1",
@@ -1069,66 +1100,28 @@
           ]
         },
         {
-          "categoryId": "cooking-04",
+          "categoryId": "community-01",
           "groups": [
             {
-              "id": "r1-c8-g0",
-              "text": "starter",
+              "id": "r1-c9-g0",
+              "text": "school",
               "owners": [
-                "p0",
-                "p1"
+                "p1",
+                "p2"
               ],
               "duplicate": true,
               "eligible": true,
               "accepted": true,
               "points": 0
-            },
-            {
-              "id": "r1-c8-g1",
-              "text": "steam",
-              "owners": [
-                "p2"
-              ],
-              "duplicate": false,
-              "eligible": true,
-              "accepted": true,
-              "points": 1
             }
           ]
         },
         {
-          "categoryId": "dining-06",
-          "groups": [
-            {
-              "id": "r1-c9-g0",
-              "text": "spoon",
-              "owners": [
-                "p1"
-              ],
-              "duplicate": false,
-              "eligible": true,
-              "accepted": true,
-              "points": 1
-            },
-            {
-              "id": "r1-c9-g1",
-              "text": "salad servers",
-              "owners": [
-                "p2"
-              ],
-              "duplicate": false,
-              "eligible": true,
-              "accepted": true,
-              "points": 1
-            }
-          ]
-        },
-        {
-          "categoryId": "streets-03",
+          "categoryId": "paper-03",
           "groups": [
             {
               "id": "r1-c10-g0",
-              "text": "sign",
+              "text": "string",
               "owners": [
                 "p0"
               ],
@@ -1139,7 +1132,7 @@
             },
             {
               "id": "r1-c10-g1",
-              "text": "seat",
+              "text": "strip",
               "owners": [
                 "p2"
               ],
@@ -1151,20 +1144,30 @@
           ]
         },
         {
-          "categoryId": "breakfast-07",
+          "categoryId": "pantry-08",
           "groups": [
             {
               "id": "r1-c11-g0",
-              "text": "sourdough",
+              "text": "stevia",
               "owners": [
                 "p0",
-                "p1",
-                "p2"
+                "p1"
               ],
               "duplicate": true,
               "eligible": true,
               "accepted": true,
               "points": 0
+            },
+            {
+              "id": "r1-c11-g1",
+              "text": "sugar",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
             }
           ]
         }

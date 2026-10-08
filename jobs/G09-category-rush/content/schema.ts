@@ -12,6 +12,6 @@ export const categorySchema = z.object({
 export const categoryPackSchema = z.object({
   schemaVersion: z.literal(1),
   lang: z.literal('en'),
-  letters: z.tuple(letters.map(letter => z.literal(letter)) as [z.ZodLiteral<'A'>, ...z.ZodLiteral<(typeof letters)[number]>[]]),
+  letters: z.array(z.enum(letters)).length(20),
   categories: z.array(categorySchema).min(300).max(1000),
 }).strict();

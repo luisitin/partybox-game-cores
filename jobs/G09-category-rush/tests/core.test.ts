@@ -165,3 +165,36 @@ test('bot strategies cannot inspect private answers or ballots; skill controls c
   assert.equal(game.bot.sampleInput(s,'__proto__',createRng(1)),null);
   const held=reduce(s,{type:'vip',now:1100,action:'pause'});assert.equal(game.bot.sampleInput(held,'p0',createRng(1)),null);
 });
+test('event fuzz across every real phase and bot/view role preserves totality and JSON',()=>{
+  const rng=createRng(0xabc123);
+  for(const phaseId of game.phases){
+    let s=JSON.parse(readFileSync(new URL(`../fixtures/${phaseId}.json`,import.meta.url),'utf8')) as State;
+    for(let i=0;i<500;i++){
+      const id=rng.pick([...s.order,'spectator','__proto__','constructor','toString']);
+      const now=Math.max(s.phase.startedAt,1000)+rng.int(0,300000);
+      const input=rng.pick<Input>([{type:'submit',answers:Array(12).fill('Balloon')},{type:'vote',votes:[true,false,null]},{type:'next'}]);
+      const e=rng.pick<GameEvent<Input>>([{type:'input',now,playerId:id,input,vip:rng.chance(0.5)},
+        {type:'timer',now,phaseId:rng.pick([s.phase.id,'stale']),startedAt:s.phase.startedAt+rng.int(-1,1)},
+        {type:'vip',now,action:rng.pick(['pause','resume','skip','end'])},
+        {type:'player',now,playerId:id,connected:rng.chance(0.5),...(rng.chance(0.1)?{gone:'left' as const}:{})},
+        {type:'speech',now,key:'unused-123',ms:rng.int(-1,10000)},{type:'speechStart',now,key:'unused-123'}]);
+      const old=JSON.stringify(s);const next=reduce(freeze(restored(s)),e);
+      assert.equal(JSON.stringify(s),old);assert.deepEqual(restored(next),next);s=restored(next);
+      for(const viewer of [...s.order,id,'spectator']){
+        const v=controllerView(s,viewer);assert.deepEqual(JSON.parse(JSON.stringify(v)),v);
+        const botInput=game.bot.sampleInput(s,viewer,createRng(i),rng.pick(['easy','normal','sharp']));
+        assert(botInput===null||inputSchema.safeParse(botInput).success);
+      }
+      if(s.phase.id==='done'){assert.equal(Object.keys(results(s)!.scores).length,s.order.length);s=JSON.parse(readFileSync(new URL(`../fixtures/${phaseId}.json`,import.meta.url),'utf8'));}
+    }
+  }
+});
+test('future own-repeat adjudication leaks neither a view flag nor bot ballot',()=>{
+  const s=asReview(setup());s.answers.p0[0]='balloon';
+  const changed=restored(s);changed.answers.p0[11]='balloons';
+  assert.deepEqual(tvView(s),tvView(changed));
+  assert.deepEqual(controllerView(s,'p1'),controllerView(changed,'p1'));
+  assert.deepEqual(game.bot.sampleInput(s,'p1',createRng(1),'sharp'),game.bot.sampleInput(changed,'p1',createRng(1),'sharp'));
+  assert.equal(scoreCategory(s,0).groups[0].eligible,true);
+  assert.equal(scoreCategory(changed,0).groups[0].eligible,false);
+});
