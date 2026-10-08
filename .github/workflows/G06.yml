@@ -39,4 +39,6 @@ jobs:
           path: |
             jobs/G06-spades/browser-report.json
             jobs/G06-spades/browser-raw-1-*.json
+            jobs/G06-spades/capture-milestone-11-report.json
+            jobs/G06-spades/media/milestone-11-pinned-encoder.webm
           if-no-files-found: warn

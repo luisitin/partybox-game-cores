@@ -27,13 +27,15 @@ actual browser controls/frames.
 
 Regenerate with `node generate.ts`, `node fixtures.ts`, `node build.ts`;
 then `node checksums.ts`. Capture a new visual milestone with
-`node browser.ts --write --capture --repeat=2`, then refresh hashes.
+`node capture.ts --milestone=12`, then refresh hashes.
 Browser checks use pinned Playwright Chromium (CHROMIUM_PATH is optional).
 Every case opens the actual file. Both profiles retain900 unfiltered frame
 intervals before asserting >=59FPS and p95<=18ms; source hashes are retained
 and CI uploads the actual reports/raw. Phone390×844/4×CPU approximates hardware.
-node capture.ts --milestone=10 records separately after speed measurements;
+`node capture.ts --milestone=11` records separately after speed measurements;
 the encoded12FPS clip is not a speed acceptance measurement.
+`node verification.ts --browser=browser-report.json --capture=capture-milestone-11-report.json`
+independently checks all raw intervals, current source identity and actual clip.
 
 `game` in core.ts implements the supplied shared contract. Cards, scoring
 and bots are pure; own/public projections enforce privacy. Fixtures cover
