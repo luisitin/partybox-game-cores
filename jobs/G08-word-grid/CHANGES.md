@@ -46,3 +46,5 @@
 - KEEP round7: BOTS level-name mapping, spacing and links make distinct calibration/league/roster scopes explicit. No report values, core/client code, compiled play or media changed.
 
 - KEEP round8: concise resume/delivery/readme navigation and direct installed dependency source URLs. Five functional rounds then three documentation-only rounds; compiled page/source/data/visual/media remain unchanged through the cosmetic streak. No gameplay gain in rounds6–8, stop per root RULES; final exact-head CI gates pending.
+
+- Actual CI preflight caught the new verifier incorrectly hiding the public board. Correct only endpoint expectations to the owner’s real16/25 TV cells; preserve original gameplay/visuals/privacy. Retain failed actual artifact and cancelled ungranted waiter, add runtime/source-integrity corruption controls, and require new current-source proof.

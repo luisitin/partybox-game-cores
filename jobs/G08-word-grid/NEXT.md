@@ -1,3 +1,11 @@
+# G08 — corrected endpoint proof pending
+
+Checkpoint4047 CI caught a wrong TV-grid expectation BEFORE samples (16!==0, profiles[]). The original public TV legitimately shows the board; its private word lists remain hidden. Read review/repair09/RECOVERY.md for actual artifact/failed-report/cancelled-waiter receipts. Local attempt was cancelled with no grant/raw and all owned groups are now absent. This verifier assumption is corrected; no game/HTML/FPS gain is claimed.
+
+Fresh changed-harness attempt must use a new namespace/nonce, real Pause/Resume and current frozen source guards. All four actual-disk profiles, independent raw/capture controls, native recording, exact new full push/PR CI and actual downloaded artifact acceptance remain pending. Current page and original player KEEP6–8 stop3 are unchanged.
+
+Retained recovery handoff:
+
 # G08 — recovered verification repair pending
 
 Read review/repair09/RECOVERY.md for the actual interruption and evidence boundaries. The 18:18 paused attempt has READY only and no surviving process, grant, CLOSED, raw sample or final report; termination time/result are unknown. It contributes no FPS claim. The interruption since the 17:53:50 branch push exceeded 30 minutes.
