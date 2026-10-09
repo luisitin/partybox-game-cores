@@ -253,6 +253,25 @@ test('UTF16 write and catalog admission match an independent code unit decoder',
   assert.equal(rowSchema.safeParse(row).success,allowed);
  }
 });
+test('refused Unicode writes retain every phase and private controller with a valid retry',()=>{
+ const states=[C.init(context(3)),toPhase('demo'),toPhase('answer',1,{mode:'quick'}),toPhase('write',91,{mode:'bluff'}),toPhase('vote',1,{mode:'bluff'}),toPhase('reveal'),toPhase('done')];
+ const refused=['\ud800','\udfff','A\ud800','\ufdfa'.repeat(9),'\ufdfa'.repeat(160),'a'.repeat(158)+'\ufb03','🧭'.repeat(160),'\u0001'.repeat(160)];
+ for(const source of states){
+  const s=freeze(structuredClone(source)),before=JSON.stringify(s),views=s.seats.map(id=>C.controllerView(s,id));
+  for(const candidate of [s,freeze(C.reduce(s,{type:'vip',action:'pause',now:s.phase.startedAt+1})),freeze(C.reduce(s,{type:'player',playerId:'p0',connected:false,now:s.phase.startedAt+1}))]){
+   const expected=JSON.stringify(candidate);
+   for(const text of refused){assert.equal(input(candidate,'p0',{type:'write',text}),candidate);assert.equal(JSON.stringify(candidate),expected);}
+  }
+  assert.equal(JSON.stringify(s),before);assert.deepEqual(s.seats.map(id=>C.controllerView(s,id)),views);
+  if(s.phase.id==='write'){
+   const text='Private valid retry',retry=input(s,'p0',{type:'write',text});
+   assert.equal(C.controllerView(retry,'p0').mine,text);assert.equal(retry.phase.deadline,s.phase.deadline);assert.deepEqual(retry.rng,s.rng);
+   assert(!JSON.stringify(C.tvView(retry)).includes(text));
+   for(const id of retry.seats.filter(id=>id!=='p0')){assert.equal(C.controllerView(retry,id).mine,null);assert(!JSON.stringify(C.controllerView(retry,id)).includes(text));}
+   assert.equal(input(retry,'p0',{type:'write',text:'replacement'}),retry);
+  }
+ }
+});
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{
  let s=toPhase('write',1,{mode:'bluff'});s=input(s,'p0',{type:'write',text:'same fake'});s=input(s,'p1',{type:'write',text:'SAME   FAKE'});s=input(s,'p2',{type:'write',text:'other fake'});
  assert.equal(s.phase.id,'vote');assert.equal(s.options.length,3);const shared=s.options.find(o=>o.owners.length===2)!;const truth=s.options.find(o=>o.correct)!;

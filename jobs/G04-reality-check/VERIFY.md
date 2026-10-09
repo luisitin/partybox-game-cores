@@ -720,3 +720,28 @@ checksums/42 benign3395states+10000 matching cases PASS12:29:02.179987Z;
 Original current c30 complete58test/25mutants/genuine full1433337B official accepted
 12:16:38.815738Z, unchanged reader all1034/3000 intervals/66controls/five VP8 clips.
 Current new test source requires original full again. No local browser/frameclock.
+
+## KEEP4 private refusal/pause/presence/retry coverage
+All actual commands/specs/helpers/raw/projections/current official2fdb/failures in
+results/keep4-private-refusals-20261009/proof.zip, fullCRC/physical comparisons.
+Node24 additional1003 fixed seeded full games/counts2–8/three modes:17718 legal
+timer events/6017 frozen phase states/all7phases/144408 refusals/2004 private retry
+checks/729324 view assertions,48136 paused and48136 disconnected controls.
+All replay hashes/results/deadlines/RNG/private projections exact,states3977B peak.
+Producer3843 inputs unchanged/natural12:46:28.915189Z/peak173887488B<256MiB180s.
+Python strict UTF16/NFKC wholeEOF/state variant+retry hashes/actual TV and own/other
+projection reader1003games/allcounts exact12:48:35.369198Z/all7 inputs unchanged;
+wrapper3846 guards/natural12:48:36.267304Z/peak15876096B/no signals.
+Whole gzip5753708B SHAa9bcb969e3be8c3b07b8973e516ad47af47817227658afad3d0622b56b66167c.
+Local37 focused/4 strict/types/data/twofixtures/twobuilds/freshness/checksums/
+42 benign3395 states+10000 matching cases PASS12:50:03.287439Z;3842 inputs/no
+output changes/peak431173632B<512MiB60s/natural empty. No original sampler altered.
+Configured public curl exact2fdb HTML HTTP200/fullEOF/full physical byte equality:
+495059B/SHA234c7b430308269b610fea599042a9bdaec70f74745a308659da344b9f036a21,
+12:51:31.614999Z/all5 inputs/naturalempty/peak10223616B<64MiB60s/no signals.
+Genuine2fdb original full59-tests/25mutants/official1437634B accepted
+12:44:05.074969Z/all1034 source/module guards/3000 native intervals/66controls/
+five VP8 full decodes/all287 receipt guards. New source requires exact full again.
+Earlier unexecuted v1 preserved; v2 adds saved actual projections only. PR-body
+JS parse failure before all mutation is retained; corrected string formatting.
+Original job/rules remain binding; no local browser/frame/physical-phone claim.

@@ -177,3 +177,18 @@ C0 binary catalog controls refuse; tabs/LF/CR and C1 retain their actual origina
 admission. No invented all-control rejection claim. Paired Unicode remains valid.
 Supplemental round qualification is separate from immutable generic receiver
 fields; current completed2/no-gain1, KEEP3 prospective second until new full.
+
+## KEEP4 rejected inputs and privacy
+Additional deterministic replay seeds are isolated from every original sampler.
+Frozen phase-state probes use actual pure reducer events, not browser clocks or
+synthetic performance measurements. The live/pause/disconnected variants retain
+actual identity/deadlines/RNG on malformed, normalized oversize, raw codepoint
+oversize-storage and control-only writes. Accepted retry views are saved in full
+for independent Python state-hash/projection checking. Timer-only final scores
+zero are a baseline/control, not a bot skill or strategy claim.
+Prospective v1 was never executed; v2 only adds output of actual read-only views.
+The PR-body script parse error happened before any tool/source/PR mutation and
+does not count as a game failure/no-gain. Original raw and earlier failed checks
+stay preserved. Completed qualified3/streak2; round4 prospective final third.
+The public495059-byte file is actual GitHub HTTP delivery, distinct from decoded
+video/runtime checks. Exact new-head full and final qualification are mandatory.
