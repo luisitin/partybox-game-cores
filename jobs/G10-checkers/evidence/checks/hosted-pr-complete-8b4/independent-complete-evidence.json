@@ -1,0 +1,365 @@
+{
+  "currentCheckoutPreserved": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+  "sixCurrentDocumentationGitBridge": [
+    {
+      "path": "jobs/G10-checkers/README.md",
+      "acceptedGitSha256": "46ba31739322c7332fffea1cdee1dd676d2e370394c34b989f8c1c6945750528",
+      "currentGitSha256": "46ba31739322c7332fffea1cdee1dd676d2e370394c34b989f8c1c6945750528",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/VERIFY.md",
+      "acceptedGitSha256": "b161d79a2a0bf294c3af5ff6283238669936f0f442c0d458573cc7fbdf4f2a77",
+      "currentGitSha256": "b161d79a2a0bf294c3af5ff6283238669936f0f442c0d458573cc7fbdf4f2a77",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/NEXT.md",
+      "acceptedGitSha256": "8acea0dfc0e4966cf0a9ce70f6dc37f8eb6402f17dea35d7387e826dccaf7de9",
+      "currentGitSha256": "8acea0dfc0e4966cf0a9ce70f6dc37f8eb6402f17dea35d7387e826dccaf7de9",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/LOOP.md",
+      "acceptedGitSha256": "46ce4f57732d3e75df6a0d1f4f876e95009a5207b1135497b749cb3072539755",
+      "currentGitSha256": "46ce4f57732d3e75df6a0d1f4f876e95009a5207b1135497b749cb3072539755",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/ASSUMPTIONS.md",
+      "acceptedGitSha256": "f2604fe58a05f4589600f4555b789447fba0fb47d1c2e7a9697c7a89a77e8e17",
+      "currentGitSha256": "f2604fe58a05f4589600f4555b789447fba0fb47d1c2e7a9697c7a89a77e8e17",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/SHA256SUMS.txt",
+      "acceptedGitSha256": "f4dad8dd181cc965e68cfd6a3d22ddacf80cfa9e731c719d6bc1d8f48b0b571f",
+      "currentGitSha256": "f4dad8dd181cc965e68cfd6a3d22ddacf80cfa9e731c719d6bc1d8f48b0b571f",
+      "workingBytesMatchCurrentGit": true,
+      "equalToAccepted": true
+    }
+  ],
+  "status": "PASS",
+  "startedAt": "2026-10-09T01:04:24.016Z",
+  "closedAt": "2026-10-09T01:05:40.229Z",
+  "head": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+  "workflowRunId": "37865331876",
+  "workflowRunAttempt": "1",
+  "stageGuardCount": 349,
+  "gameInputCount": 127,
+  "htmlBytes": 1390845993,
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "stages": [
+    {
+      "stage": "node",
+      "elapsedSeconds": 186.831517758,
+      "startedAt": "2026-10-09T00:33:47.071Z",
+      "closedAt": "2026-10-09T00:36:53.902Z",
+      "commands": 14
+    },
+    {
+      "stage": "league-american",
+      "elapsedSeconds": 209.58204289100001,
+      "startedAt": "2026-10-09T00:33:34.155Z",
+      "closedAt": "2026-10-09T00:37:03.737Z",
+      "commands": 3
+    },
+    {
+      "stage": "league-international",
+      "elapsedSeconds": 865.3897688569999,
+      "startedAt": "2026-10-09T00:33:44.467Z",
+      "closedAt": "2026-10-09T00:48:09.857Z",
+      "commands": 3
+    },
+    {
+      "stage": "browser",
+      "elapsedSeconds": 304.60821053000006,
+      "startedAt": "2026-10-09T00:34:21.790Z",
+      "closedAt": "2026-10-09T00:39:26.398Z",
+      "commands": 4
+    },
+    {
+      "stage": "final",
+      "elapsedSeconds": 81.00096748699998,
+      "startedAt": "2026-10-09T00:49:29.064Z",
+      "closedAt": "2026-10-09T00:50:50.065Z",
+      "commands": 4
+    }
+  ],
+  "historicalOriginalGitGuardFiles": 206,
+  "generatedRuntimeExactByteGuards": 143,
+  "league": {
+    "games": 4000,
+    "files": 80,
+    "audits": [
+      {
+        "variant": "american",
+        "higher": "sharp",
+        "lower": "normal",
+        "games": 1000,
+        "wins": 883,
+        "draws": 82,
+        "losses": 35,
+        "moves": 105277,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "american",
+        "higher": "normal",
+        "lower": "easy",
+        "games": 1000,
+        "wins": 999,
+        "draws": 0,
+        "losses": 1,
+        "moves": 50305,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "international",
+        "higher": "sharp",
+        "lower": "normal",
+        "games": 1000,
+        "wins": 930,
+        "draws": 65,
+        "losses": 5,
+        "moves": 112306,
+        "independentLegalMoveReplay": true
+      },
+      {
+        "variant": "international",
+        "higher": "normal",
+        "lower": "easy",
+        "games": 1000,
+        "wins": 1000,
+        "draws": 0,
+        "losses": 0,
+        "moves": 75836,
+        "independentLegalMoveReplay": true
+      }
+    ]
+  },
+  "node": {
+    "tests": 91,
+    "passes": 91,
+    "failures": 0,
+    "mutants": 25,
+    "assertionKilled": 25,
+    "matrixGames": 7000,
+    "moveOracleRandomCases": 10000,
+    "propertyFixedSeeds": [
+      1,
+      2,
+      3
+    ],
+    "propertyRandomSeeds": 1000,
+    "hostControls": [
+      14,
+      127
+    ],
+    "partitionControls": [
+      10,
+      72
+    ],
+    "deliveryControls": [
+      4,
+      21
+    ]
+  },
+  "browser": {
+    "strictRunId": "aa8ae5ec-116e-410e-8467-327230392b52",
+    "captureRunId": "52cf2e6b-e943-40f8-9748-e0a92db1a48f",
+    "functionalChecks": 60,
+    "strictIntervals": 2400,
+    "nativeTimestamps": 2404,
+    "profiles": [
+      {
+        "name": "desktop",
+        "width": 1920,
+        "height": 1080,
+        "throttle": 1,
+        "loadMs": 8441.683503,
+        "checks": 15,
+        "frameResults": [
+          {
+            "variant": "american",
+            "frames": 600,
+            "meanFps": 60.002400096003825,
+            "p99Ms": 16.80000000000291
+          },
+          {
+            "variant": "international",
+            "frames": 600,
+            "meanFps": 60.00219608037656,
+            "p99Ms": 16.80000000000291
+          }
+        ],
+        "pageErrorCount": 0,
+        "httpRequestCount": 0,
+        "pageErrors": [],
+        "httpRequests": []
+      },
+      {
+        "name": "phone",
+        "width": 390,
+        "height": 844,
+        "throttle": 4,
+        "loadMs": 37084.626534,
+        "checks": 15,
+        "frameResults": [
+          {
+            "variant": "american",
+            "frames": 600,
+            "meanFps": 59.902550530796475,
+            "p99Ms": 16.80000000000291
+          },
+          {
+            "variant": "international",
+            "frames": 600,
+            "meanFps": 60.002388095046186,
+            "p99Ms": 16.80000000000291
+          }
+        ],
+        "pageErrorCount": 0,
+        "httpRequestCount": 0,
+        "pageErrors": [],
+        "httpRequests": []
+      }
+    ],
+    "captures": [
+      {
+        "name": "desktop",
+        "gameplay": {
+          "variant": "international",
+          "startPly": 0,
+          "endPly": 24,
+          "elapsedMs": 10777.790506999998
+        },
+        "video": {
+          "file": "desktop.webm",
+          "bytes": 1220920,
+          "sha256": "cefa1f645e518b6e7e40a758c852194a92018d196e6ef228cbb29ce848c30d7b",
+          "probe": {
+            "container": "matroska,webm",
+            "codec": "vp8",
+            "width": 1920,
+            "height": 1080,
+            "frameRate": "25/1",
+            "frames": 250,
+            "durationSeconds": 10
+          },
+          "original": {
+            "file": "desktop-original.webm",
+            "bytes": 5400441,
+            "sha256": "d48e6f1fd84964a8b6483120c51bdc3fee3f0bca8e5b7ae415bbeda910d28c96",
+            "probe": {
+              "container": "matroska,webm",
+              "codec": "vp8",
+              "width": 1920,
+              "height": 1080,
+              "frameRate": "25/1",
+              "frames": 1254,
+              "durationSeconds": 50.16
+            }
+          },
+          "sourceSeekSeconds": 40.16,
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-ss",
+            "40.16",
+            "-i",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop-original.webm",
+            "-t",
+            "10",
+            "-an",
+            "-c:v",
+            "libvpx",
+            "-deadline",
+            "realtime",
+            "-cpu-used",
+            "8",
+            "-threads",
+            "2",
+            "-b:v",
+            "900k",
+            "-y",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop.webm"
+          ],
+          "scope": "Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."
+        }
+      },
+      {
+        "name": "phone",
+        "gameplay": {
+          "variant": "international",
+          "startPly": 0,
+          "endPly": 22,
+          "elapsedMs": 10939.059963999985
+        },
+        "video": {
+          "file": "phone.webm",
+          "bytes": 537003,
+          "sha256": "275da88b47adbc457fda5fbc92525df8874c72d2616e0dd0fd53296a9d565103",
+          "probe": {
+            "container": "matroska,webm",
+            "codec": "vp8",
+            "width": 390,
+            "height": 844,
+            "frameRate": "25/1",
+            "frames": 250,
+            "durationSeconds": 10
+          },
+          "original": {
+            "file": "phone-original.webm",
+            "bytes": 2878224,
+            "sha256": "bc49a333bd6b1499a852dc78ea9097ac39bd51b606cb483439f8887b7259d894",
+            "probe": {
+              "container": "matroska,webm",
+              "codec": "vp8",
+              "width": 390,
+              "height": 844,
+              "frameRate": "25/1",
+              "frames": 2042,
+              "durationSeconds": 81.68
+            }
+          },
+          "sourceSeekSeconds": 71.68,
+          "command": [
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-ss",
+            "71.68",
+            "-i",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone-original.webm",
+            "-t",
+            "10",
+            "-an",
+            "-c:v",
+            "libvpx",
+            "-deadline",
+            "realtime",
+            "-cpu-used",
+            "8",
+            "-threads",
+            "2",
+            "-b:v",
+            "400k",
+            "-y",
+            "/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone.webm"
+          ],
+          "scope": "Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."
+        }
+      }
+    ]
+  },
+  "scope": "Independent exact current8b4 complete hosted acceptance, with all current8b4 runtime/six-doc Git guards: all four stages/final exact guards/runtime/run/attempt/commands, all4000 true-terminal games/80 raw files equal original accepted gold, all2400 native intervals and current International clips/originals fully decoded. Bounded standalone actual ZIP/part/whole-byte validation is a separate required receipt. No delivery acceptance is inferred from these component checks. Historical local17.510FPS failure remains uncaused."
+}

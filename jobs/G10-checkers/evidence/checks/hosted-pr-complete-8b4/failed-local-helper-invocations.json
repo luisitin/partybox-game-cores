@@ -1,0 +1,9 @@
+{
+ "status":"FAILED_HELPER_INVOCATIONS_PRESERVED",
+ "recordedAt":"2026-10-09T01:08:00Z",
+ "attempts":[
+ {"command":".work/memory-json-private/node22/runtime/bin/node scripts/integrity.mjs","exitCode":1,"natural":true,"failedAssertion":"scripts/integrity.mjs:68 historical DEFAULT committed evidence/checks/league.json botSourceSha256 d94ca25475847ad29f679ca154f64a5c4c7a15e618c45272e473ba8e9283385a != actualcurrent src/bots.ts 450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219"},
+ {"command":"G10_HTML_OUT=.work/play-full-guarded.html G10_EVIDENCE_DIR=.work/hosted-8b4-final/extracted/.work/checks G10_BROWSER_DIR=.work/hosted-8b4-final/extracted/.work/browser G10_MEDIA_DIR=.work/hosted-8b4-final/extracted/.work/media .work/memory-json-private/node22/runtime/bin/node scripts/integrity.mjs","exitCode":1,"natural":true,"failedAssertion":"browser-evidence.mjs:109 original reader uses G10_HTML_PATH not G10_HTML_OUT. Actual checked-in historical80,329,212B play.html d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e does not equal current acceptedphysical5ed/baseline1,390,845,993B."}
+ ],
+ "scope":"Two wrong helper invocations before publication. No product source/check/clock/data changed. Full exact8b4 official349/nativeleague4000/browser2400+fullclip acceptance genuinelyPASS via8bcbreader01:05:40.428234 before these helpers. Correct original supported--sources validates archive/currentfullHTML integrity separately and explicitly excludes execution gates."
+}
