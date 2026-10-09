@@ -31,10 +31,14 @@ const html=await readFile('play.html','utf8');assert(!/<(?:script|link)[^>]+(?:s
 const historicalDirectory='evidence/browser/historical-runner-f8a8d602';
 assert.equal(sum(await readFile(historicalDirectory+'/browser-check.observed.txt')),LEGACY_RUNNER_SHA256);
 const historical=await readReportAndRaw(historicalDirectory+'/report.json');
+// These are the actual immutable inputs of this identified historical run.
+// Changed game delivery is checked by the separate fresh, current-only CLI;
+// an old capture cannot establish the identity or performance of a new page.
+// Pins were independently checked against official artifact 11575897174.
 validateHistoricalBrowserEvidence(historical.report,historical.raw,{
- 'play.html':sum(Buffer.from(html)),
- 'dist/core.mjs':sum(await readFile('dist/core.mjs')),
- 'dist/session.mjs':sum(await readFile('dist/session.mjs')),
+ 'play.html':'33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a',
+ 'dist/core.mjs':'947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076',
+ 'dist/session.mjs':'d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8',
 },LEGACY_RUNNER_SHA256);
 const zodLicense=await readFile('node_modules/zod/LICENSE','utf8');
 assert((await readFile('THIRD-PARTY-LICENSES.txt','utf8')).includes(zodLicense),'Zod notice must match the pinned package');

@@ -36,6 +36,20 @@
       "exitCode": 1,
       "error": "contract/types.ts does not exist",
       "recovery": "Read the actual listed contract/contract.ts and explanatory contract in bounded complete sections"
+    },
+    {
+      "scope": "09:48 source-only coordination restore",
+      "command": "git restore --source=028f23a3a8e93557666f6b9c26c2e7abd3ed823a -- CLAIMS.md from the job directory",
+      "exitCode": 1,
+      "error": "pathspec CLAIMS.md did not match from the job directory",
+      "recovery": "Repeated from the repository root; the first chained checksum commands did not execute"
+    },
+    {
+      "scope": "first historical control helper import",
+      "exitCode": 1,
+      "error": "ERR_MODULE_NOT_FOUND: one excess parent component in relative import",
+      "recovery": "Corrected helper import; actual historical controls and original59 tests passed10:14:35.460987",
+      "failureTimestampRecorded": false
     }
   ],
   "noneCountsAsFunctionalPass": true

@@ -17,6 +17,16 @@ Two atomic documentation patches rejected wrong heading anchors without editing
 any file; corrected patches applied. No such failure counts as a functional pass.
 The original failed startup assertion is preserved, not changed into a passing run.
 
+The actual first full changed-source workflow failed only after210 passing tests,
+25 killed mutants and complete fresh browser proof. Its failure remains failure.
+Old-f8 source identities are immutable historical inputs, independently matched
+to the original official artifact11575897174. Pinning these identities preserves
+old provenance; current-only validation still requires all32 fresh source guards.
+No new measurements are attributed to the old runner. A first official-download
+403 and a helper import error are preserved; neither counts as a pass. Full new
+checker/head acceptance remains pending. Original publication/lease receipts use
+actual UTC only; new receipt must retain any real cadence miss.
+
 - Owner's 2–8 players extends publisher 2–6; start with five dice each.
 - Fair independent dice, public remaining counts, private rolls. Raw exact odds
   condition only on the viewing player's cup; learned bid information is heuristic.

@@ -1,0 +1,42 @@
+{
+  "startedUtc": "2026-10-09T10:16:33.735576+00:00",
+  "closedUtc": "2026-10-09T10:16:36.249719+00:00",
+  "allProtectedOtherJobHistoricalArchiveAndRuntimeFiles": 147,
+  "allProtectedFilesUnchanged": true,
+  "runs": [
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:16:34.100102+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:16:34.397526+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/integrity.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:16:36.215111+00:00"
+    }
+  ],
+  "integrity": {
+    "suite": "integrity",
+    "fileHashes": 497,
+    "regenerationRuns": 2,
+    "byteIdentical": true,
+    "coreNoIo": true,
+    "mediaUnder10MB": true
+  },
+  "wholeCorrectedHeadWorkflowAccepted": false,
+  "childrenReaped": true
+}

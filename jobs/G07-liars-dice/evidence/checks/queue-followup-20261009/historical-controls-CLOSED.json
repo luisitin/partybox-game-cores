@@ -1,0 +1,28 @@
+{
+  "startedUtc": "2026-10-09T10:14:35.098632+00:00",
+  "closedUtc": "2026-10-09T10:14:35.460987+00:00",
+  "runs": [
+    {
+      "argv": [
+        "node",
+        "evidence/checks/queue-followup-20261009/historical-binding-controls.mjs",
+        "--historical-source=/tmp/G07-queue-original-baseline-20261009/source/jobs/G07-liars-dice",
+        "--first-current-report=/tmp/G07-full-f123-first-20261009/source/jobs/G07-liars-dice/.work/browser/report.json"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:14:35.204373+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "tests/browser-evidence.test.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:14:35.460963+00:00"
+    }
+  ],
+  "allOriginalArchiveAndRuntimeInputs": 21,
+  "allInputsUnchanged": true,
+  "childrenReaped": true
+}

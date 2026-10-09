@@ -1,40 +1,52 @@
 # Current G07 queue follow-up — 2026-10-09
 
-Owner codex-dice-queue-audit-20261009. Branch job/G07-liars-dice-queue-audit-20261009
-was created from actually claimed main0f9a28cff22ad9a79dcf4a5521904093520db1fb.
-Main G07 row09:20:14Z; normal claim push/readback CLOSED09:20:16.771600UTC EXIT0,
-only CLAIMS changed and all other rows byte-identical. The source branch retains
-the original base's coordination copy for a G07-only supplemental PR; main is the
-authoritative lease and the parent serializes main refreshes. Original Ready PR13
-at028f23a3 and original canonical PR6/1cc4a970 remain untouched.
+Owner codex-dice-queue-audit-20261009; branch job/G07-liars-dice-queue-audit-20261009.
+Created from actually claimed main0f9a28cff22ad9a79dcf4a5521904093520db1fb, then
+normally merged protected028 history. Original Ready PR13/028 and PR6/1cc remain
+untouched; new supplemental PR17 is Draft. Main CLAIMS is authoritative. Own row
+refresh09:52:01Z/normal push09:52:02.562584/read09:52:03.364996, maincbc254e2,
+only own row/tree changed. The source PR retains base CLAIMS for G07-only scope.
 
-Actual original full proof was read again: official11575897174 ZIP/all32 physical
-source/bundle guards/full94/all1200 raw passed unchanged1,387+216 checks09:29:20.
-Whole137,990-character native log/25 assertion-killed mutants and both full VP8
-decodes passed09:30:28. No original timing sampler was repeated.
+Narrow player fix: init uses the existing ordinary departure policy if its
+random starter is disconnected. The original genuine startup assertion failed
+09:31:33.572792 with465 inputs unchanged. Independent comparison verifies11,878
+previously stranded starts become playable,12,506 present/empty and8,064 fully
+connected states remain byte-identical. Six regression tests cover24,384 starts,
+3,048 clocks,28 save/recovery contexts and336 actual complete games. Original
+five-round clips fully decoded10:01:50.457497 with all486 source inputs unchanged;
+recordings are functional evidence, not FPS proof.
 
-Substantive defect: genuine seed1, absent disconnected/here connected, clock0
-leaves the absent seat on turn with no timer and no legal connected action.
-First original probe CLOSED09:31:33.572792 EXIT1/ERR_ASSERTION; all465 tracked inputs
-unchanged. Equivalent ordinary disconnect plays bid1×5 and hands the turn to here.
-Only init now calls that existing policy. Current core94282a57/pagecd6db309.
-Six target tests CLOSED09:39:10.646393 EXIT0:24,384 presence/settings starts,
-3,048 clock cases,28 recovery cases,336 complete one-connected-seat games.
-Independent old/new comparison passes11,878 formerly stranded starts,12,506
-unchanged present/empty starts and8,064 byte-equal fully connected controls.
-Two current-source five-round clips pass; they do not measure FPS.
+First source f123cd8b9c0cc1aa0baaa4517e98b26f8e641577 pushed09:49:19.921738,
+readback09:49:20.989803 EXIT0, before hard09:50:16. Original workflow37913827444,
+verify113765092874, actually FAILED at integrity's historical-page comparison.
+All210 tests (122+88),25 real compiled mutant kills and91 individually logged
+browser rows match the whole94-row report. Entire143,417-byte native log is saved
+losslessly. Official11608627454 ZIP1,252,110B/e3c47013519e4a065425768bbf1db65f80dd76c12be4b1904aa18f5f9dc7d3a6 has all72 files CRC/source verified; no partial cache.
+Independent reader10:12:07.882236 passes1,387 semantic+219 ZIP checks,32 actual
+current guards/physical bundles/full94/1200 untrimmed intervals and original
+clock gates. Specific desktop/phone samples60.0024fps,p99/max16.8ms; original1493
+callback bytes identical. All561 reader inputs unchanged, child reaped. This
+qualifies f123 runtime only; overall original workflow FAILURE remains retained.
+First transfer really returned403; a fresh reference for the SAME immutable
+artifact downloaded without a new browser run. Both native receipts are saved.
 
-Changed-source full acceptance is PENDING. Open the supplemental Draft PR after
-this material push and read actual remote metadata. Run the sole unchanged G07
-workflow; preserve its first complete native log/official artifact. The retained
-historical snapshot is old source: an expected stale-proof integrity failure is
-still a failure. Read all actual source/raw bytes and original gates before a
-truthful saved-proof update. Never change timing values, clock criteria, the
-600-interval callback or workflow. First publication deadline09:50:16UTC;
-real receipt must retain any miss. No new completed KEEP round or Ready is claimed.
-Original KEEP6–8 stopping rounds remain intact; this newly established player
-defect justifies substantive follow-up. Final green/full acceptance and the binding
-KEEP loop remain outstanding. See evidence/checks/queue-followup-20261009/README.md.
+Material checker correction pins the immutable old-f8 archive to its three
+independently verified original inputs, rather than comparing it to today's
+changed game. The archive, actual old runner, current-only CLI, all timing/clock
+criteria, callback and sole workflow remain unchanged. Read-only positive and
+negative controls PASS10:14:35; all3 wrong old identities fail, the historical
+report cannot certify current source, and the genuine f123 report cannot certify
+the changed checker. Original59 evidence tests PASS. Do not label old samples as
+new or claim a full green before the corrected head's genuine original run.
+
+Next: read the corrected head's complete original workflow/native/official ZIP,
+reconstruct exact source and compiled guards, decode both current clips, then
+complete binding substantive KEEP review and mark PR17 Ready only if all pass.
+Preserve original KEEP6–8 three no-gain stop and all failures. Never repeat an
+unchanged sampler, alter runtime/clock gates, or make cosmetic CI succession.
+Last actual publication09:49:19.921738 sets hard next10:19:19.921738; actual next
+receipt must retain any miss. Source/checker correction is not yet remote in this
+saved text. See evidence/checks/queue-followup-20261009/first-current-f123/.
 
 # Protected independent queue review — 2026-10-09
 

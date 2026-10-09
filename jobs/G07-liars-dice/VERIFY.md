@@ -1,23 +1,31 @@
 # Verification log
 
-## Current queue follow-up — 2026-10-09, full acceptance pending
-Read original root/job instructions, NEXT/LOOP and the genuine full original
-canonical proof before modifying the isolated newly claimed branch. The unchanged
-original ZIP reader passes1,387 semantic+216 archive checks; physical pinned build,
-32 source guards/full94/all1200 raw, complete native log and both full VP8 decodes
-are accepted specifically for original1cc4a970. They do not certify the new source.
-Actual original startup probe fails ERR_ASSERTION09:31:33.572792 with all465 inputs
-unchanged. `npm ci --ignore-scripts --no-audit --no-fund && npm run build`:PASS.
-`node --test --test-reporter=tap tests/initial-presence.test.mjs`:PASS6/6, naturally
-CLOSED09:39:10.646393,all13 guarded inputs unchanged. Exact counts are in NEXT.
-`node evidence/checks/queue-followup-20261009/compare-original.mjs --baseline-core=/tmp/G07-original-028-readonly-20261009/jobs/G07-liars-dice/dist/core.mjs`:PASS;
-11,878 originally stranded starts become playable with exactly the old departure
-behavior,12,506 present/empty states and8,064 connected starts remain byte-identical.
-`node scripts/capture.mjs queue-followup-startup`:PASS two5-round recordings,
-zero errors/network,actual sizes/hashes in its source-bound capture JSON.
-Original workflow/current full94/32 guards/1200 raw/integrity remain mandatory and
-PENDING for changed source; no new win-rate,FPS,completed KEEP or Ready is claimed.
-Earlier verification entries are protected historical records.
+## Current queue follow-up — 2026-10-09, corrected-head full acceptance pending
+Original protected full proof/physical build/readers/videos are qualified only
+for the original source; the original failed startup assertion is retained.
+New narrow init fix and six regression tests PASS, independent before/after
+comparison verifies11,878 genuine stranded-to-playable starts and20,570 unchanged
+controls. See original-comparison.json and NEXT for exact bounded domains.
+Current five-round recordings are fully VP8 decoded10:01:50; source guards486
+unchanged, zero errors/network. They do not establish frame rate.
+Actual f123 original37913827444/113765092874 remains FAILURE. All122 main+88
+current evidence tests and25 compiled assertion kills passed. The complete native
+143,417B/SHA48a1006bd01c62aafb4bac8ef02c50d29dbdcbd46a0e81d4ade9630de01d7306
+is retained losslessly; all91 logged browser rows agree with the genuine94-row
+report. Official artifact11608627454/all72 ZIP files/digest/CRC/source verified.
+Independent full reader passes1,387 semantic+219 ZIP assertions10:12:07.882236:
+all32 current source/bundle guards,94 checks,1200 consecutive raw intervals,
+original clock gates and original timed callback. Specific two profiles60.0024
+fps,p99/max16.8ms; no universal timing or full-CI success is inferred.
+First immutable official transfer returned403; same artifact with a fresh signed
+reference succeeded10:11:41.662705. No browser sampler was repeated.
+Original integrity compared old-f8 historical page with current changed HTML.
+The correction pins all3 original independently verified identities; old archive,
+old runner/current CLI/current source gates/clock criteria/workflow are unchanged.
+Read-only cross-source controls PASS10:14:35, wrong old identities reject and
+neither historical nor first-current report can certify the changed checker.
+Original59 browser-evidence tests PASS. The corrected head's full original run is
+still mandatory and pending. No new completed KEEP, Ready or overall pass claimed.
 
 Current gameplay checkpoint: round5 source33f5e801 has full94/94, both
 strict600-frame gates and matching clips. Exactcc0e1aa GitHub37762109046

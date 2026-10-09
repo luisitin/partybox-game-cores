@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "startedUtc": "2026-10-09T10:01:48.624281+00:00",
+  "closedUtc": "2026-10-09T10:01:50.457497+00:00",
+  "sourceHead": "f123cd8b9c0cc1aa0baaa4517e98b26f8e641577",
+  "pageSha256": "cd6db309798ebd4f62c5d898214e0aed140c26c0424325b8f6b52987fd584e13",
+  "allInputsByteIdentical": true,
+  "trackedInputCount": 486,
+  "directChildrenReaped": true,
+  "newNativeFrameSampler": false,
+  "recordingIsNotPerformanceProof": true,
+  "clips": [
+    {
+      "path": "media/queue-followup-startup-desktop.webm",
+      "bytes": 1029439,
+      "sha256": "d8ad502a7c2babfdfb02975f09f8c97db7af1de5ca994d013fe605c717943eef",
+      "completeDecodeExit": 0,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "270"
+          }
+        ],
+        "format": {
+          "duration": "10.800000",
+          "size": "1029439"
+        }
+      },
+      "probeArgv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/media/queue-followup-startup-desktop.webm"
+      ],
+      "decodeArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/media/queue-followup-startup-desktop.webm",
+        "-f",
+        "null",
+        "-"
+      ]
+    },
+    {
+      "path": "media/queue-followup-startup-phone4x.webm",
+      "bytes": 1052311,
+      "sha256": "a507b1a2ce3c19a5f9d145d657e077ba1857ee7ed56092ab0191e89b3ff044cc",
+      "completeDecodeExit": 0,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "361"
+          }
+        ],
+        "format": {
+          "duration": "14.440000",
+          "size": "1052311"
+        }
+      },
+      "probeArgv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/media/queue-followup-startup-phone4x.webm"
+      ],
+      "decodeArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/media/queue-followup-startup-phone4x.webm",
+        "-f",
+        "null",
+        "-"
+      ]
+    }
+  ]
+}
