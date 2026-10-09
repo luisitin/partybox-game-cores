@@ -1,0 +1,168 @@
+{
+  "startedUtc": "2026-10-09T10:17:29.836117+00:00",
+  "pushedUtc": "2026-10-09T10:17:34.790516+00:00",
+  "closedUtc": "2026-10-09T10:17:35.326390+00:00",
+  "exitCode": 0,
+  "head": "0f538c9e95cf4406aabf8fc60d2d1cc0db800632",
+  "parent": "f123cd8b9c0cc1aa0baaa4517e98b26f8e641577",
+  "branch": "job/G07-liars-dice-queue-audit-20261009",
+  "exactRemoteReadback": "0f538c9e95cf4406aabf8fc60d2d1cc0db800632",
+  "hardDeadlineUtc": "2026-10-09T10:19:19.921738+00:00",
+  "actualHardMissSeconds": 0,
+  "normalFastForward": true,
+  "sourceScopeOnlyG07": true,
+  "finalManifestFiles": 500,
+  "finalIntegrity": {
+    "suite": "integrity",
+    "fileHashes": 500,
+    "regenerationRuns": 2,
+    "byteIdentical": true,
+    "coreNoIo": true,
+    "mediaUnder10MB": true
+  },
+  "allOriginalWholeWorkflowAccepted": false,
+  "childrenReaped": true,
+  "runs": [
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:29.839506+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:29.844059+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:30.115739+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:30.354500+00:00"
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--quiet",
+        "-c",
+        "SHA256SUMS.txt"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:30.421229+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/integrity.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:31.493684+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:31.511982+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:31.517143+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "credential.helper=",
+        "ls-remote",
+        "origin",
+        "refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:32.243443+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "jobs/G07-liars-dice"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:32.301599+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "commit",
+        "-m",
+        "G07: bind historical proof to its original inputs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:32.326301+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:32.329240+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "HEAD:refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:34.789668+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "credential.helper=",
+        "ls-remote",
+        "origin",
+        "refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:35.320054+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:17:35.326229+00:00"
+    }
+  ]
+}

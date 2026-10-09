@@ -1,0 +1,102 @@
+{
+  "startedUtc": "2026-10-09T10:33:08.287797+00:00",
+  "closedUtc": "2026-10-09T10:33:31.332690+00:00",
+  "exitCode": 0,
+  "closure": "natural",
+  "argv": [
+    "node",
+    "scripts/capture.mjs",
+    "queue-followup-review1"
+  ],
+  "allPriorSourceFiles": 638,
+  "allInputsUnchanged": true,
+  "performanceSampler": false,
+  "childrenReaped": true,
+  "fullDecodeClosedUtc": "2026-10-09T10:33:32.001102+00:00",
+  "clips": [
+    {
+      "path": "media/queue-followup-review1-desktop.webm",
+      "bytes": 984334,
+      "sha256": "a3eb095560f9cba1760bf6030d9903ce08a1fbb798b113c6ca7029eabaa8f575",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "videoSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "cpuThrottle": 1,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "pacingDemo": null,
+      "recoveryDemo": null,
+      "standingsDemo": null,
+      "customIdsDemo": null,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "wholeFileRead": true,
+      "fullVp8DecodeExit": 0,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 720
+          }
+        ],
+        "format": {
+          "duration": "10.800000",
+          "size": "984334"
+        }
+      }
+    },
+    {
+      "path": "media/queue-followup-review1-phone4x.webm",
+      "bytes": 880403,
+      "sha256": "075ec97818a16203bf73d24a35c37fbc08d4ef30fff2c7330cd02f2291d72ca0",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "videoSize": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "seed": 7199,
+      "rounds": 5,
+      "winner": "p0",
+      "initialRoster": 2,
+      "recordingMeasuresPerformance": false,
+      "pacingDemo": null,
+      "recoveryDemo": null,
+      "standingsDemo": null,
+      "customIdsDemo": null,
+      "networkRequests": 0,
+      "pageErrors": 0,
+      "wholeFileRead": true,
+      "fullVp8DecodeExit": 0,
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "11.480000",
+          "size": "880403"
+        }
+      }
+    }
+  ]
+}

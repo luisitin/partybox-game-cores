@@ -1,0 +1,27 @@
+{
+  "readAtUtc": "2026-10-09T10:13:34.719151+00:00",
+  "head": "f123cd8b9c0cc1aa0baaa4517e98b26f8e641577",
+  "runId": 37913827444,
+  "jobId": 113765092874,
+  "actualWholeWorkflowConclusion": "failure",
+  "allNativeCharacters": 140767,
+  "allNativeBytes": 143417,
+  "allNativeSha256": "48a1006bd01c62aafb4bac8ef02c50d29dbdcbd46a0e81d4ade9630de01d7306",
+  "allParsedJsonRows": 121,
+  "nodePassGroups": [
+    122,
+    88
+  ],
+  "nodeFailGroups": [
+    0,
+    0
+  ],
+  "nodeTotalPassed": 210,
+  "realCompiledAssertionKilledMutants": 25,
+  "allIndividuallyLoggedBrowserRowsMatchGenuineReport": 91,
+  "genuineReportRows": 94,
+  "failure": "integrity incorrectly compared immutable historical page identity to current changed page",
+  "firstCurrentRuntimeReceipt": "independent-current-hosted-validation.json",
+  "currentFullWorkflowAccepted": false,
+  "nativeSamplerRerun": false
+}

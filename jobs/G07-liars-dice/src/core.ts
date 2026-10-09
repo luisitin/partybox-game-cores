@@ -152,7 +152,7 @@ export function init(ctx:InitContext):State {
     autoPaused:false,winner:null,endReason:null,contentLang:ctx.contentLang??'en',phoneOnly:ctx.presence?.phoneOnly??false};
   let rolled=rollRound(s,ctx.now);
   if(!occupied(rolled))rolled={...rolled,autoPaused:true,phase:{...rolled.phase,paused:{at:ctx.now}}};
-  return rolled;
+  return drainAbsent(rolled,ctx.now);
 }
 
 function finish(s:State,now:number,reason:string):State {

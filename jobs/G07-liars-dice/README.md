@@ -1,5 +1,10 @@
 # G07 — Liar's Dice
 
+Current queue follow-up fixes an initially disconnected random starter.
+Corrected-source full210 tests/25 mutants/94 browser checks pass.
+Post-green review3 passes; measured no-gain streak3. Final-head CI pending.
+The completed delivery and measurements below describe the protected prior source.
+
 Complete Perudo-style private-cup game for 2–8 players: wild ones, palifico,
 optional calza, exact-odds bots and a learned bluffing model.
 

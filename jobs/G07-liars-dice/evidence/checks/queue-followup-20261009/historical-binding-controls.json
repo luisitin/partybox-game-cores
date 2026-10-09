@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-09T10:14:35.196Z",
+  "historicalGuards": {
+    "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "dist/core.mjs": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+    "dist/session.mjs": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8"
+  },
+  "genuineHistoricalChecks": 94,
+  "genuineHistoricalRawIntervals": 1200,
+  "oldIncorrectCurrentBindingRejected": true,
+  "allThreeWrongHistoricalIdentitiesRejected": true,
+  "historicalCannotCertifyCurrent": true,
+  "firstCurrentPacketCannotCertifyChangedChecker": true,
+  "nativeSamplerRerun": false
+}

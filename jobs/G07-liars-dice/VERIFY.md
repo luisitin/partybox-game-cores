@@ -1,5 +1,82 @@
 # Verification log
 
+## Post-green review2 — 2026-10-09
+Reread/rank five, then `node /tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/evidence/checks/queue-followup-20261009/postgreen-review.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round2-20261009 --round=2 --head=9b87b52ff28b8f3ab54c1fb5a74ed2690def279b`:PASS 272,183 assertions;
+10,080 reconnect contexts, 10,080 intentional VIP-held joins, 10,080 permanent departures, 6,720 actual deadline controls, 10,080 stale stamps and 40,320 exact natural saves. Worst: Empty-room reconnect versus intentional VIP hold.
+Would catch broken presence/hold ownership, stale clocks, lost seats, hidden
+information exposure or invalid natural saves within this measured domain.
+Natural CLOSED2026-10-09T10:39:45.470424+00:00 EXIT0/all667 input files unchanged.
+No additional player defect/runtime edit; measured gain0, new streak2.
+`node scripts/capture.mjs queue-followup-review2`:PASS two current five-round
+clips; actual whole-file ffprobe and full VP8 `ffmpeg -v error -i <clip> -f null -`
+decode PASS2026-10-09T10:41:07.137923+00:00. They do not measure performance.
+Each round is logged and normally pushed before the next begins; current final
+head's whole original CI must still pass before Ready.
+
+## Final third-review handoff
+Three separately executed and published-order reviews pass2,121,522 total
+semantic assertions with zero new player-visible gain in each round. No runtime
+edit after the adopted startup/historical-binding correction. Source-matched
+clips for all three reviews pass and fully decode. GitHub metadata also reports
+review1 source9b87 original37918673414/113781013700 allsteps SUCCESS as observed
+10:49:12; its whole official packet was not separately qualified here.
+Final third-review source still requires genuine whole exact-head original CI,
+then PR17 Ready and freeze. No further cosmetic source change is needed.
+
+## Post-green review3 — 2026-10-09
+Reread/rank five, then `node /tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/evidence/checks/queue-followup-20261009/postgreen-review.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round3-20261009 --round=3 --head=3cbed6d4cc7795097a1e0fce8d7790b6601c9316`:PASS 899,348 assertions;
+1,680 complete games, 125,986 real connected-player inputs, 4,571 privacy states, 85,041 all-skill hidden-cup/RNG controls, 9,112 exact natural saves and 1,680 final result checks. Worst: Finite completion with the connected seat rotated through every position.
+Would catch broken presence/hold ownership, stale clocks, lost seats, hidden
+information exposure or invalid natural saves within this measured domain.
+Natural CLOSED2026-10-09T10:46:33.533992+00:00 EXIT0/all684 input files unchanged.
+No additional player defect/runtime edit; measured gain0, new streak3.
+`node scripts/capture.mjs queue-followup-review3`:PASS two current five-round
+clips; actual whole-file ffprobe and full VP8 `ffmpeg -v error -i <clip> -f null -`
+decode PASS2026-10-09T10:48:18.513273+00:00. They do not measure performance.
+Each round is logged and normally pushed before the next begins; current final
+head's whole original CI must still pass before Ready.
+
+## Post-green review1 — 2026-10-09
+Actual original0f538 workflow37916703749/113774542147 SUCCESS/all steps, whole
+11610242472 official archive independently source/raw/native accepted10:29:51;
+see accepted-original-0f538/ for immutable full ZIP, native and receipts.
+`node /tmp/G07-followup-postgreen-review-20261009.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round1-20261009 --round=1 --head=0f538c9e95cf4406aabf8fc60d2d1cc0db800632`:PASS949,991 assertions/73,152 actual natural saves/restores;
+would catch missing initial auto-play metadata, unsupported valid clocks,
+state mutation, missing seats, rerolls or lost remaining time on recovery.
+Reread/rank five before execution; all639 tracked/source inputs unchanged;
+CLOSED10:31:29.055714 EXIT0. No new player defect/runtime change/gain; streak1.
+`node scripts/capture.mjs queue-followup-review1`:PASS two source-matched5-round
+clips; each actual whole file ffprobe and full `ffmpeg -v error -i <clip> -f null -`
+decode PASS10:33:32.001102, zero network/errors; no performance inference.
+New review checkpoint still requires its own whole exact-head original CI.
+
+## Current queue follow-up — 2026-10-09, corrected-head full acceptance pending
+Original protected full proof/physical build/readers/videos are qualified only
+for the original source; the original failed startup assertion is retained.
+New narrow init fix and six regression tests PASS, independent before/after
+comparison verifies11,878 genuine stranded-to-playable starts and20,570 unchanged
+controls. See original-comparison.json and NEXT for exact bounded domains.
+Current five-round recordings are fully VP8 decoded10:01:50; source guards486
+unchanged, zero errors/network. They do not establish frame rate.
+Actual f123 original37913827444/113765092874 remains FAILURE. All122 main+88
+current evidence tests and25 compiled assertion kills passed. The complete native
+143,417B/SHA48a1006bd01c62aafb4bac8ef02c50d29dbdcbd46a0e81d4ade9630de01d7306
+is retained losslessly; all91 logged browser rows agree with the genuine94-row
+report. Official artifact11608627454/all72 ZIP files/digest/CRC/source verified.
+Independent full reader passes1,387 semantic+219 ZIP assertions10:12:07.882236:
+all32 current source/bundle guards,94 checks,1200 consecutive raw intervals,
+original clock gates and original timed callback. Specific two profiles60.0024
+fps,p99/max16.8ms; no universal timing or full-CI success is inferred.
+First immutable official transfer returned403; same artifact with a fresh signed
+reference succeeded10:11:41.662705. No browser sampler was repeated.
+Original integrity compared old-f8 historical page with current changed HTML.
+The correction pins all3 original independently verified identities; old archive,
+old runner/current CLI/current source gates/clock criteria/workflow are unchanged.
+Read-only cross-source controls PASS10:14:35, wrong old identities reject and
+neither historical nor first-current report can certify the changed checker.
+Original59 browser-evidence tests PASS. The corrected head's full original run is
+still mandatory and pending. No new completed KEEP, Ready or overall pass claimed.
+
 Current gameplay checkpoint: round5 source33f5e801 has full94/94, both
 strict600-frame gates and matching clips. Exactcc0e1aa GitHub37762109046
 SUCCESS10:23:34 passed46 node/94 browser/integrity334. Core/session unchanged.

@@ -1,5 +1,40 @@
 # Assumptions
 
+## Queue follow-up — 2026-10-09
+Initial context may contain disconnected seats, as allowed by the unchanged
+shared PlayerInfo contract. They retain their dice and original result slot;
+when somebody is present, initial turns use the same existing automatic policy
+as an ordinary disconnection. An entirely empty room still pauses untouched.
+No rules, learned bot model, save shape, SDK contract, clock gate or workflow changed.
+Original Ready13/028 and KEEP6–8 remain protected; new full acceptance is pending.
+The first local normal merge failed before applying with a missing copied blob;
+an ordinary full public main refetch recovered it, then only the expected CLAIMS
+conflict was resolved. Main remains authoritative; branch CLAIMS matches the
+original PR base so unrelated coordination rows are absent from the source PR.
+Original proof metadata first returned RemoteProtocolError and was read again;
+a wrapper's unavailable TextEncoder failed after the native log had been stored.
+Two atomic documentation patches rejected wrong heading anchors without editing
+any file; corrected patches applied. No such failure counts as a functional pass.
+The original failed startup assertion is preserved, not changed into a passing run.
+
+The actual first full changed-source workflow failed only after210 passing tests,
+25 killed mutants and complete fresh browser proof. Its failure remains failure.
+Old-f8 source identities are immutable historical inputs, independently matched
+to the original official artifact11575897174. Pinning these identities preserves
+old provenance; current-only validation still requires all32 fresh source guards.
+No new measurements are attributed to the old runner. A first official-download
+403 and a helper import error are preserved; neither counts as a pass. Full new
+checker/head acceptance remains pending. Original publication/lease receipts use
+actual UTC only; new receipt must retain any real cadence miss.
+
+Corrected source0f538 now has genuine whole original acceptance. Its saved proof
+certifies that specific runtime source, not an unexecuted later checkpoint.
+Review1 intentionally broadens natural startup recovery to every presence mask
+and all48 settings at three valid clock/host profiles; results are semantic,
+not FPS/win-rate measures. No defect or runtime change was found; new gain0.
+The newly adopted startup gain starts its own follow-up streak; original KEEP6–8
+remain unchanged. Each new review is logged/pushed before the next starts.
+
 - Owner's 2–8 players extends publisher 2–6; start with five dice each.
 - Fair independent dice, public remaining counts, private rolls. Raw exact odds
   condition only on the viewing player's cup; learned bid information is heuristic.

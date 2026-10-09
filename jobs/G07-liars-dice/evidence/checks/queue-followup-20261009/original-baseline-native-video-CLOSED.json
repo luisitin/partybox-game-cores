@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-09T09:30:28.165246+00:00",
+  "nativeCharacters": 137990,
+  "nativeBytes": 140636,
+  "nativeSha256": "6aa9a1361a93eec03540161aa70e3372bdf01bf97f312a2149d4e78d61f9b004",
+  "all122JSONLines": 122,
+  "individuallyLoggedChecksMatchingWholeZIP": 91,
+  "fullChecks": 94,
+  "actualAssertionKilledCompiledMutants": 25,
+  "nodePassGroups": [
+    116,
+    88
+  ],
+  "nodeFailGroups": [
+    0,
+    0
+  ],
+  "sumNodePasses": 204,
+  "physicalCompiledAndWholeSourceRead": "baseline-reader-CLOSED.json",
+  "clips": [
+    {
+      "file": "media/resume-audit-13-desktop.webm",
+      "sha256": "2b37fd77c80e9b5858e00b2c09af67a4b2eed9c84c297bec26ac1dcb9742093a",
+      "bytes": 935764,
+      "fullDecodeExit": 0,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 720,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "264"
+          }
+        ],
+        "format": {
+          "duration": "10.560000",
+          "size": "935764"
+        }
+      },
+      "argv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "/tmp/G07-original-028-readonly-20261009/jobs/G07-liars-dice/media/resume-audit-13-desktop.webm"
+      ],
+      "decodeArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "/tmp/G07-original-028-readonly-20261009/jobs/G07-liars-dice/media/resume-audit-13-desktop.webm",
+        "-f",
+        "null",
+        "-"
+      ]
+    },
+    {
+      "file": "media/resume-audit-13-phone4x.webm",
+      "sha256": "754169458a7a9199721d2101226b079f8fe212af839caa5b6975548bd8e0f7cb",
+      "bytes": 956240,
+      "fullDecodeExit": 0,
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844,
+            "r_frame_rate": "25/1",
+            "nb_read_frames": "310"
+          }
+        ],
+        "format": {
+          "duration": "12.400000",
+          "size": "956240"
+        }
+      },
+      "argv": [
+        "ffprobe",
+        "-v",
+        "error",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,r_frame_rate,nb_read_frames",
+        "-show_entries",
+        "format=duration,size",
+        "-of",
+        "json",
+        "/tmp/G07-original-028-readonly-20261009/jobs/G07-liars-dice/media/resume-audit-13-phone4x.webm"
+      ],
+      "decodeArgv": [
+        "ffmpeg",
+        "-v",
+        "error",
+        "-threads",
+        "1",
+        "-i",
+        "/tmp/G07-original-028-readonly-20261009/jobs/G07-liars-dice/media/resume-audit-13-phone4x.webm",
+        "-f",
+        "null",
+        "-"
+      ]
+    }
+  ],
+  "newTimingSampler": false
+}
