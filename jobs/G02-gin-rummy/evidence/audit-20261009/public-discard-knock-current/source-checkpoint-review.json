@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-09T07:10:36.719509+00:00",
+  "lastAcceptedHead": "e228d522396392808575ab2254c74534c4f70453",
+  "acceptedFullRunId": 37895632854,
+  "acceptedWholeArtifactId": 11600601773,
+  "acceptedWholeBytes": 2188063,
+  "acceptedWholeSha256": "457b5f87ba958b52a27e892c379306f1739b646994c611a000b0cb744de83931",
+  "currentCoreSha256": "5ec7c1f712eb17fffd784cde070a8df295f8545bd1e481d81b114e4ecc51abb7",
+  "currentHtmlSha256": "efc3c233aa159b884fcc340fe083f942bbb8e001ac0664352fb487465830c9e0",
+  "beforeNativeTests": {
+    "tests": 3,
+    "pass": 1,
+    "fail": 2,
+    "exit": 1
+  },
+  "afterNativeTests": {
+    "tests": 3,
+    "pass": 3,
+    "fail": 0,
+    "exit": 0
+  },
+  "actualSettingsCases": 1152,
+  "actualIndependentIdenticalPublicViewDefenders": 1000,
+  "actualBoundaryControls": 168,
+  "representativeSignedBefore": -10,
+  "representativeSignedAfter": 1,
+  "actualBoundaryMaxGain": 52,
+  "allSevenFixtureOutputsTwiceByteIdentical": {
+    "manifest.json": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb",
+    "fixtures/discard.json": "378250419994481fa731b81298f941fba834cde4cc98aa9614b383142a82cc29",
+    "fixtures/done.json": "554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4",
+    "fixtures/draw.json": "73eb6eeb5cb01bd2409e93c407a37122866928275ba90bbb8b0faa85a1e181f8",
+    "fixtures/layoff.json": "10bd528f17a5b371019be17b196e48fcb2541cbde499767668b2fb18ecac64ce",
+    "fixtures/round-end.json": "e410bd8a7014fc2ddb4546d3b5356168aada8856559c1422baa64c9b8cbbcca1",
+    "fixtures/upcard.json": "7d21408e6719bdfe0ca64dba1a3dc1d53d11f1e81addbe68e01d0d26d699ad67"
+  },
+  "originalFullCurrentMatrixLeaguesMutantsFresh35HostedAcceptance": "PENDING",
+  "localNativeSamplerRun": false,
+  "oneFiniteMatchingWorkflowReasonAdded": "verified material public-discard closed-meld finishing knock repair; first capture for changed game source",
+  "firstProbeExpectedCardMistakeFailurePreserved": true
+}

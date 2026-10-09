@@ -373,11 +373,11 @@ function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkil
     if(gin&&!bestGin||gin===bestGin&&score<bestScore){bestScore=score;best={card,deadwood:solution.deadwood};}
   }
   if(skill==='sharp'&&v.phaseId==='discard'&&best.deadwood>0&&best.deadwood<=v.knockLimit) {
-    // A meld with no possible first layoff outside our eleven known cards
+    // A meld with no possible first layoff outside our hand and public pile
     // cannot ever accept a defender card. Ignore those closed targets only;
     // identical remaining targets give every defender identical layoff options.
     // Lower deadwood then strictly improves the finishing score.
-    const outside=Array.from({length:52},(_,card)=>card).filter(card=>!hand.includes(card));
+    const outside=Array.from({length:52},(_,card)=>card).filter(card=>!hand.includes(card)&&!v.discard.includes(card));
     const meldKey=(melds:Card[][])=>melds.filter(m=>outside.some(card=>validMeld([...m,card])))
       .map(m=>[...m].sort((a,b)=>a-b).join(',')).sort().join(';');
     const key=meldKey(choices.find(x=>x.card===best.card)!.solution.melds);

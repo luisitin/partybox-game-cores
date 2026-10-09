@@ -1,0 +1,16 @@
+{
+  "closedUtc": "2026-10-09T07:10:36.717759+00:00",
+  "command": "node scripts/fixtures.mjs",
+  "nativeRuns": 2,
+  "bothNativeExitCodes": 0,
+  "allSevenOutputFilesTwiceByteIdentical": {
+    "manifest.json": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb",
+    "fixtures/discard.json": "378250419994481fa731b81298f941fba834cde4cc98aa9614b383142a82cc29",
+    "fixtures/done.json": "554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4",
+    "fixtures/draw.json": "73eb6eeb5cb01bd2409e93c407a37122866928275ba90bbb8b0faa85a1e181f8",
+    "fixtures/layoff.json": "10bd528f17a5b371019be17b196e48fcb2541cbde499767668b2fb18ecac64ce",
+    "fixtures/round-end.json": "e410bd8a7014fc2ddb4546d3b5356168aada8856559c1422baa64c9b8cbbcca1",
+    "fixtures/upcard.json": "7d21408e6719bdfe0ca64dba1a3dc1d53d11f1e81addbe68e01d0d26d699ad67"
+  },
+  "nativeSamplerExecuted": false
+}
