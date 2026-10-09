@@ -1,0 +1,283 @@
+{
+  "schema": "g01-reviewed-private-veil-callback-fix-first/1",
+  "status": "LOCAL_FUNCTIONAL_PASS_FULL_CURRENT_CI_PENDING",
+  "baseHead": "949dbcbd3a82882a6d69bb6c50ff8d735ca5d8dc",
+  "adoptedAt": "2026-10-09T04:25:40.002423+00:00",
+  "sourceAdoption": {
+    "schema": "g01-reviewed-phone-callback-source-adoption/1",
+    "status": "ADOPTED_IN_AUDIT_ONLY",
+    "naturallyClosedAt": "2026-10-09T04:25:40.002423+00:00",
+    "baseHead": "949dbcbd3a82882a6d69bb6c50ff8d735ca5d8dc",
+    "reviewReceiptSha256": "e267c237d3553ce5eb2ab9c6edfceff82d5f36f15a4d7ba65a7fd12206aefad2",
+    "changedProducts": [
+      {
+        "path": "ui.ts",
+        "differsFrom949": true,
+        "bytes": 50283,
+        "sha256": "45d160bb4ab1d7a8a900369b9e7880f51babfabd28069ce3af599272a2e0aeb5"
+      },
+      {
+        "path": "play.html",
+        "differsFrom949": true,
+        "bytes": 1032817,
+        "sha256": "6740130f01cea0cbf752d4d0a1a66001b9acb4300a5363ac853037b7deded145"
+      },
+      {
+        "path": "core.ts",
+        "differsFrom949": false,
+        "bytes": 22697,
+        "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+      },
+      {
+        "path": "strong-bot.ts",
+        "differsFrom949": false,
+        "bytes": 2853,
+        "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+      },
+      {
+        "path": "strong-worker.ts",
+        "differsFrom949": false,
+        "bytes": 868,
+        "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+      },
+      {
+        "path": "browser.ts",
+        "differsFrom949": false,
+        "bytes": 8026,
+        "sha256": "add398c4924eed6ec1852a22070ae9ff50dc12b299c034de53b0c0769ab4cd94"
+      },
+      {
+        "path": "browser-evidence.ts",
+        "differsFrom949": false,
+        "bytes": 5457,
+        "sha256": "61b57e129125f1426bd0c78586faa829b46369791a628cbb111744f3c460bbdb"
+      },
+      {
+        "path": "package.json",
+        "differsFrom949": true,
+        "bytes": 1330,
+        "sha256": "1e8cde83a3358b9dec3fd966352cf8166bf7f44709ca657912b3c846b0bfbdc6"
+      },
+      {
+        "path": "build.ts",
+        "differsFrom949": false,
+        "bytes": 1887,
+        "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+      },
+      {
+        "path": "shell.html",
+        "differsFrom949": false,
+        "bytes": 45308,
+        "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+      }
+    ],
+    "newDefaultRegression": {
+      "path": "/tmp/g01-current-838-proof-20261009/repo/jobs/G01-dominoes/privacy-veil-check.ts",
+      "bytes": 6056,
+      "sha256": "a00e9f99f7a6fb084a59d4dcee1e7e63daf7b1e49d7d632ad29d011aa0d3269b"
+    },
+    "defaultTestAddedOnlyPrivacyRegression": true,
+    "originalBrowserSamplerByteUnchanged": true,
+    "firstChangedSourceFourCasePassClosedAt": "2026-10-09T04:16:57.960318+00:00",
+    "firstRealWaapiRegressionPassClosedAt": "2026-10-09T04:23:57.716040+00:00",
+    "rootActualReviewAt": "2026-10-09T04:20:53Z",
+    "scope": "One stale reveal-finish hide callback removed, same actual animations/clocks/gameplay; same derived tested player, new legitimate separate functional regression added before byte-unchanged original browser sampler. Canonical PR1 untouched; full changed-current CI remains required."
+  },
+  "originalFailure": "First old-source phone trial remains FAIL04:03:00.755822, cause unknown, complete raw preserved in four-human-phone-first.json/proof.zip.",
+  "deterministicCallbackReproduction": "Exact actual UI functions/minimal mock show old callback can hide new prompt; modified source retains it. Controlled callback-order evidence, not actual historical-browser cause.",
+  "firstChangedSourceFourCaseClosedAt": "2026-10-09T04:16:57.960318+00:00",
+  "firstChangedSourceCompleteInputGuardsPassed": true,
+  "firstChangedSourceCases": [
+    {
+      "mode": "draw",
+      "partners": true,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "block",
+      "partners": true,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "draw",
+      "partners": false,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "block",
+      "partners": false,
+      "motion": "no-preference",
+      "status": "PASS",
+      "rawSteps": 21
+    }
+  ],
+  "actualHumanTurns": 16,
+  "firstRealNativeWaapiRegressionClosedAt": "2026-10-09T04:23:57.716040+00:00",
+  "firstRealNativeWaapiCompleteInputGuardsPassed": true,
+  "realNativeWaapiRegression": {
+    "schema": "g01-real-animation-private-veil-regression/1",
+    "status": "PASS",
+    "startedAt": "2026-10-09T04:23:53.667Z",
+    "scope": "Actual offline player Reveal/Hide handlers in one synchronous DOM task, then genuine native WAAPI completion. Phone390x844/4xCPU, normal motion. No synthetic game state, simulated clock, FPS or historical-cause claim.",
+    "sourcesBefore": {
+      "ui.ts": {
+        "bytes": 50283,
+        "sha256": "45d160bb4ab1d7a8a900369b9e7880f51babfabd28069ce3af599272a2e0aeb5"
+      },
+      "play.html": {
+        "bytes": 1032817,
+        "sha256": "6740130f01cea0cbf752d4d0a1a66001b9acb4300a5363ac853037b7deded145"
+      },
+      "privacy-veil-check.ts": {
+        "bytes": 6056,
+        "sha256": "a00e9f99f7a6fb084a59d4dcee1e7e63daf7b1e49d7d632ad29d011aa0d3269b"
+      }
+    },
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "cpuThrottleRate": 4,
+    "clockInstalled": false,
+    "navigation": "Exact play.html bytes page.setContent; no file navigation claim",
+    "steps": [
+      {
+        "label": "initial-private-prompt",
+        "wallNow": 1791519835659,
+        "nativePerformanceNow": 1653.9000000059605,
+        "veilHidden": false,
+        "revealButtonVisible": true,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          }
+        ]
+      },
+      {
+        "label": "actual-reveal-handler",
+        "wallNow": 1791519835691,
+        "nativePerformanceNow": 1686.0999999940395,
+        "veilHidden": true,
+        "revealButtonVisible": false,
+        "handTiles": 5,
+        "status": "Your turn, Player 1",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          }
+        ]
+      },
+      {
+        "label": "actual-hide-handler-before-old-finish",
+        "wallNow": 1791519835708,
+        "nativePerformanceNow": 1702.800000011921,
+        "veilHidden": false,
+        "revealButtonVisible": true,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          }
+        ]
+      },
+      {
+        "label": "after-genuine-native-animation-finish",
+        "wallNow": 1791519836063,
+        "nativePerformanceNow": 2058.5999999940395,
+        "veilHidden": false,
+        "revealButtonVisible": true,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": []
+      },
+      {
+        "label": "trusted-pointer-reopens-same-seat",
+        "wallNow": 1791519836208,
+        "nativePerformanceNow": 2203,
+        "handTiles": 5,
+        "status": "Your turn, Player 1"
+      }
+    ],
+    "errors": [],
+    "externalRequests": [],
+    "actionFailure": null,
+    "finishedAt": "2026-10-09T04:23:56.210Z",
+    "browserClosedAt": "2026-10-09T04:23:56.296Z",
+    "sourcesAfter": {
+      "ui.ts": {
+        "bytes": 50283,
+        "sha256": "45d160bb4ab1d7a8a900369b9e7880f51babfabd28069ce3af599272a2e0aeb5"
+      },
+      "play.html": {
+        "bytes": 1032817,
+        "sha256": "6740130f01cea0cbf752d4d0a1a66001b9acb4300a5363ac853037b7deded145"
+      },
+      "privacy-veil-check.ts": {
+        "bytes": 6056,
+        "sha256": "a00e9f99f7a6fb084a59d4dcee1e7e63daf7b1e49d7d632ad29d011aa0d3269b"
+      }
+    }
+  },
+  "remainingOwnedLiveProcesses": [],
+  "archive": {
+    "path": "media/phone-veil-callback-fix-first-proof.zip",
+    "bytes": 1561040,
+    "sha256": "2c645c4466431e410c93c32207096b82ce4855b9c8845e580f03d0d6b13eb9dc",
+    "members": 34
+  },
+  "originalBrowserSamplerUnchanged": true,
+  "coreRngWorkerPolicyUnchanged": true,
+  "actualAnimationsUnchanged": "260ms reveal,280ms opening,380ms hand animations; existing state/clocks unchanged.",
+  "newDefaultTestAddedOnlyPrivacyRegression": true,
+  "originalPr1": "Open/draft/unmerged/unchanged8c",
+  "renewedCompletedKeepRounds": 0,
+  "provisionalMaterialPrivacyImprovements": 1,
+  "scope": "Root read exact full source/diff04:20:53 before adoption. First changed-source four-case PASS and new real-WAAPI regression PASS. Candidate same UI/player adopted audit only; modified full current pipeline/whole official artifact remain required. No original failure cause, FPS, physical phone, old responsiveness-gain or stopping-streak claim.",
+  "publicationWhitespaceFailurePreserved": true
+}

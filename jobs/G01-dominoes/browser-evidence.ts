@@ -5,7 +5,7 @@ import {spawnSync} from 'node:child_process';
 import {resolve} from 'node:path';
 import assert from 'node:assert/strict';
 
-const sources=['browser.ts','browser-evidence.ts','core.ts','ui.ts','shell.html','build.ts','play.html','package.json','package-lock.json','tsconfig.json','../../contract/contract.ts','../../contract/rng.ts'];
+const sources=['browser.ts','browser-evidence.ts','core.ts','ui.ts','strong-bot.ts','strong-worker.ts','shell.html','build.ts','play.html','package.json','package-lock.json','tsconfig.json','../../contract/contract.ts','../../contract/rng.ts'];
 export function identity(path:string){const p=realpathSync(path),bytes=readFileSync(p);return {path:p,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')};}
 const sourceMap=()=>Object.fromEntries(sources.map(path=>[path,identity(path)]));
 export const evidence:Record<string,unknown>={schema:'g01-browser-evidence/1',startedAt:new Date().toISOString(),status:'STARTED',sourcesBefore:sourceMap(),nodeBefore:identity(process.execPath),nodeVersion:process.version,profiles:[],functionalClock:'Functional bot and mixed-idle contexts use Playwright clock; native refresh contexts do not.',sampler:{intervals:300,warmup:0,filtered:0,timestamp:'native requestAnimationFrame callback',gate:{minimumFps:58,maximumP95Ms:18}},navigation:'exact on-disk play.html bytes via setContent; no direct file navigation claim',phone:'390x844 Chromium viewport at actual 4x CPU throttle; emulation only'};

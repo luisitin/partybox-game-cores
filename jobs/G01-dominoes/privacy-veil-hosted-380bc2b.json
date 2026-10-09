@@ -1,0 +1,207 @@
+{
+  "schema": "g01-current-private-prompt-full-hosted-acceptance/1",
+  "status": "CURRENT_FULL_ACCEPTED_KEEP_CONTINUES",
+  "source": "380bc2b85620995152e57504e319062e69620133",
+  "run": 37884128914,
+  "job": 113670211296,
+  "artifactId": 11596133560,
+  "officialBytes": 114796318,
+  "officialSha256": "549e98a4d5dff8257666ae558b20d184f71aed7ddac933ed05b7b037fed23968",
+  "actualWorkflowSuccessAt": "2026-10-09T04:52:25Z",
+  "independentChecks": 1303,
+  "wholeReaderNaturallyClosedAt": "2026-10-09T05:02:44.578453+00:00",
+  "completeInputGuardStatus": {
+    "status": "PASS",
+    "manifest": {
+      "path": "/tmp/g01-current-838-proof-20261009/private/380-official-ram-first-fresh-inputs.json",
+      "bytes": 3325643,
+      "sha256": "c9421c93dc606084e450c8a770a05682aff6ea91d93faa829e381fc80ea5066e"
+    },
+    "sourceFiles": 189,
+    "installedFileAliases": 1618,
+    "pythonStandardLibraryFiles": 975,
+    "allAliases": 3017
+  },
+  "actualAcceptance": {
+    "status": "PASS",
+    "checks": 1303,
+    "source": "380bc2b85620995152e57504e319062e69620133",
+    "run": "37884128914",
+    "artifactSha256": "549e98a4d5dff8257666ae558b20d184f71aed7ddac933ed05b7b037fed23968",
+    "nativeLog": {
+      "bytes": 128335,
+      "sha256": "f187a77258c1a6725ed78dea99550eb5180bfb48c8feb6ff38ffb271a3bb413b"
+    },
+    "actualDiskNavigation": "PASS",
+    "realWorkerReplayCases": 16,
+    "realWorkerVariants": 5,
+    "rawIntervals": 600,
+    "timestampWitnesses": 602,
+    "actualDecodedFrames": 36,
+    "mutationKills": 25,
+    "independentDecoderTools": [
+      {
+        "path": "/usr/bin/ffmpeg",
+        "bytes": 366984,
+        "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+        "version": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      },
+      {
+        "path": "/usr/bin/ffprobe",
+        "bytes": 206504,
+        "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+        "version": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      }
+    ],
+    "claim": "Current official artifact/source proof; independent decoder headers may differ by tool version."
+  },
+  "actualNativeProfiles": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "fps": 59.60541217142517,
+      "meanMs": 16.776999999999997,
+      "p95Ms": 16.799999999999955,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "fps": 59.8034380597851,
+      "meanMs": 16.721446666666665,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "fullOfficialArchiveOnDisk": false,
+  "boundedOfficialProof": {
+    "path": "media/privacy-veil-hosted-380bc2b-proof.zip",
+    "bytes": 1432118,
+    "sha256": "b3aa9febde40a4b82e2c149d0e8b24a3797b3b5938a164b4f6dc327d1f405b10",
+    "members": 31
+  },
+  "old949Negative": {
+    "baselineSource": "949dbcbd3a82882a6d69bb6c50ff8d735ca5d8dc",
+    "testSource": "380bc2b85620995152e57504e319062e69620133",
+    "status": "ACTUAL_FAIL_PRESERVED",
+    "closedAt": "2026-10-09T04:36:13.599198+00:00",
+    "exitCode": 1,
+    "allInputGuardsPassed": true,
+    "remainingOwnedLiveProcesses": [],
+    "actualRawSteps": [
+      {
+        "label": "initial-private-prompt",
+        "wallNow": 1791520571622,
+        "nativePerformanceNow": 1509.0999999940395,
+        "veilHidden": false,
+        "revealButtonVisible": true,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          }
+        ]
+      },
+      {
+        "label": "actual-reveal-handler",
+        "wallNow": 1791520571647,
+        "nativePerformanceNow": 1533.699999988079,
+        "veilHidden": true,
+        "revealButtonVisible": false,
+        "handTiles": 5,
+        "status": "Your turn, Player 1",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": true
+          }
+        ]
+      },
+      {
+        "label": "actual-hide-handler-before-old-finish",
+        "wallNow": 1791520571659,
+        "nativePerformanceNow": 1545.300000011921,
+        "veilHidden": false,
+        "revealButtonVisible": true,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": [
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": true
+          },
+          {
+            "playState": "running",
+            "currentTime": 0,
+            "finishCallbackPresent": false
+          }
+        ]
+      },
+      {
+        "label": "after-genuine-native-animation-finish",
+        "wallNow": 1791520572012,
+        "nativePerformanceNow": 1898.800000011921,
+        "veilHidden": true,
+        "revealButtonVisible": false,
+        "handTiles": 0,
+        "status": "Player 1\u2019s turn",
+        "boardTiles": [],
+        "activeSeats": [
+          0
+        ],
+        "animations": []
+      }
+    ],
+    "failure": {
+      "type": "AssertionError",
+      "message": "Old reveal animation must not hide a newly reopened private prompt\n\ntrue !== false\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Old reveal animation must not hide a newly reopened private prompt\n\ntrue !== false\n\n    at file:///tmp/g01-current-838-proof-20261009/private/privacy-veil-old949-negative-first/repo/jobs/G01-dominoes/privacy-veil-check.ts:49:9"
+    },
+    "archive": {
+      "path": "media/privacy-veil-old949-negative-complete-proof.zip",
+      "bytes": 765204,
+      "sha256": "4f09a9afded4f2da84856a943a232676e8232256ceb6e61bc57c599f62835f76",
+      "members": 28
+    }
+  },
+  "newDefaultRegression": "Exact full native npm chain invokes source-bound privacy-veil-check.ts before original byte-identical browser.ts; actual genuine native-animation private-prompt PASS sentence is retained in full current proof. Raw regression JSON was not in the original hosted upload path; no hosted raw DOM claim. Separate local first-current-source actual raw is in earlier public phone-veil-callback-fix-first-proof.zip.",
+  "renewedCompletedKeepRounds": 1,
+  "materialPrivacyImprovements": 1,
+  "consecutiveNoPlayerGainRounds": 0,
+  "scope": "Exact modified380 UI current full original pipeline/source/native/25 actual mutants/file:// privacy/real Worker/original600 frame intervals/602 stamps/36 complete VP9 frames accepted. The old callback loses the newlyopened prompt in FIRST new real-WAAPI negative control with unchanged seat/board. Separate older four-phone failure cause UNKNOWN. No FPS, physical phone, responsiveness gain or completed stopping condition claim."
+}

@@ -1,0 +1,12 @@
+{
+  "status": "FAIL",
+  "scope": "First auxiliary independent reader; genuine official artifact was retained unchanged",
+  "reason": "Wrong source parent: shallow git show %P returned no parents",
+  "artifactId": 11586162947,
+  "source": "8c57376d817d1b34c165425cd8bf8d9ee219f7f6",
+  "run": 37859386989,
+  "readerSourceSha256": "4a6ecac00c1fd7fed446b840ba1e388fdf7033c890dac4ab50b18d2cab3ff7df",
+  "actualError": "Traceback (most recent call last):\n  File \"/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/verify-ci-artifact.py\", line 167, in <module>\n    main()\n  File \"/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/verify-ci-artifact.py\", line 68, in main\n    require(args.source == start['checkoutHead'] or args.source in start['checkoutParents'], 'Wrong source parent')\n  File \"/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/verify-ci-artifact.py\", line 31, in require\n    raise ValueError(message)\nValueError: Wrong source parent\n",
+  "correction": "Read and validate real checkout raw Git commit headers plus all138 exact source bytes; no fabricated parent list",
+  "replacementAcceptance": "artifact-acceptance-8c57376.json"
+}

@@ -1,0 +1,95 @@
+{
+  "schema": "g01-independently-accepted-hosted-worker-artifact/1",
+  "status": "PASS",
+  "acceptedSource": "ddd364cd72247387b86b9b39bfd0f0a5f9895ffe",
+  "sourceCheckpointBeforePublication": "ddd364cd72247387b86b9b39bfd0f0a5f9895ffe",
+  "run": 37880122191,
+  "job": 113657699053,
+  "artifactId": 11594815894,
+  "officialBytes": 106473265,
+  "officialSha256": "030ff370216fc90989cad8690480b8471b18654e73a1a92abcd47d5a80a3cdf0",
+  "independentChecks": 1279,
+  "readerNaturallyClosedAt": "2026-10-09T04:00:58.661492+00:00",
+  "remainingOwnedLiveProcesses": [],
+  "wholeReaderResult": {
+    "status": "PASS",
+    "checks": 1279,
+    "source": "ddd364cd72247387b86b9b39bfd0f0a5f9895ffe",
+    "run": "37880122191",
+    "artifactSha256": "030ff370216fc90989cad8690480b8471b18654e73a1a92abcd47d5a80a3cdf0",
+    "nativeLog": {
+      "bytes": 128122,
+      "sha256": "a8a89ee395dd161167cb9bd7793824ce1d73517af0429c0359987f0b73235695"
+    },
+    "actualDiskNavigation": "PASS",
+    "realWorkerReplayCases": 16,
+    "realWorkerVariants": 5,
+    "rawIntervals": 600,
+    "timestampWitnesses": 602,
+    "actualDecodedFrames": 36,
+    "mutationKills": 25,
+    "independentDecoderTools": [
+      {
+        "path": "/usr/bin/ffmpeg",
+        "bytes": 366984,
+        "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+        "version": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      },
+      {
+        "path": "/usr/bin/ffprobe",
+        "bytes": 206504,
+        "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+        "version": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      }
+    ],
+    "claim": "Current official artifact/source proof; independent decoder headers may differ by tool version."
+  },
+  "nativeProfiles": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "fps": 60.00240009600384,
+      "meanMs": 16.666,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "fps": 59.80265125087212,
+      "meanMs": 16.721666666666668,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "nativeLog": {
+    "bytes": 128122,
+    "sha256": "a8a89ee395dd161167cb9bd7793824ce1d73517af0429c0359987f0b73235695"
+  },
+  "capture": {
+    "path": "media/milestone-18-hosted-worker-ddd.webm",
+    "bytes": 280106,
+    "sha256": "6f3873bd74715bdbf9211cda20ba758d300f6b01471a88ad4601ca69b1b81385"
+  },
+  "boundedArchive": {
+    "path": "media/worker-stage-ddd364c-proof.zip",
+    "bytes": 1392209,
+    "sha256": "75c1f0fc6997ed4265652e4e9f6a23c4a97e3fe508a2300e28cad94dd346fd92",
+    "members": 36
+  },
+  "all10CurrentProductFilesByteExactAcceptedSource": true,
+  "fullOfficialArchiveOnDisk": false,
+  "storageScope": "Entire106,473,265-byte official archive SHA/CRC/source/native checks in RAM, all actual raw/mutable outputs and complete reader/native receipts public. No whole ZIP written/extracted.",
+  "scope": "Exact ddd full original npm/source/actual file/Worker/native frame/36-frame proof; the next publication needs its own CI. No native timing retry, player-gain or physical-phone claim.",
+  "renewedKeepRounds": 0,
+  "canonicalPr1": "Unchanged8c/open/draft/unmerged",
+  "diagnosticNativeAcceptance": "Original FAIL and both fixed gain gates FAIL unchanged."
+}

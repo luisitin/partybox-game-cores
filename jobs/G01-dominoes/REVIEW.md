@@ -10,18 +10,47 @@ Five current weaknesses, ranked:
    actual responsiveness for exact-policy worker transport before adopting;
    retain seeds/RNG/state, stale guards and simulated functional checks.
    Earlier FPS failures have UNKNOWN cause.
-2. Missing current CI artifacts/raw/source-bound frame proof. Repair proof
-   delivery first; this verifier change is not a player gain or KEEP round.
-3. Four-seat/partner phone presentation coverage is incomplete. Exercise
+2. Four-seat/partner phone presentation coverage is incomplete. Exercise
    private hands, valid placement, all controls and round-end reveal.
+3. Current strength evidence uses a bounded upstream reference. Preserve
+   its inspected policy/scope rather than infer universal bot superiority.
 4. Thinking-dot background-colour animation repaints. Profile before
    changing visible behaviour or claiming an improvement.
 5. Physical-phone/direct-disk proof is unavailable here. State actual
    emulation/exact-byte setContent limitations without fabricating evidence.
 
-No renewed round or player-visible gain is yet measured. After current full
-CI green, fix/measure the worst testable weakness as round25 and continue
+Current8c full CI and genuine source-bound artifact acceptance passed; see
+ARTIFACT-AUDIT.md. Proof delivery repair is not a player gain or KEEP round.
+No renewed round or player-visible gain is yet measured. Fix/measure the
+worst testable weakness as round25 and continue
 until three consecutive meaningful reviews find no player-visible gain.
+
+## Current audit draft after the bounded face-down change
+
+Re-read README/RULES/JOBS. Five current weaknesses, ranked:
+
+1. Strong-search UI responsiveness gain remains unmeasured. The first paired
+   helper lost the offending baseline trace; repair only logging, isolate exact
+   original8c/Worker2d bytes, retain all values before assertions and obtain a
+   fresh independently reviewed quiet trial before claiming a gain.
+2. Current changed player's complete hosted delivery is pending. The reviewed
+   deal-only source passes both original native gates once, with small margin;
+   accept actual complete current source-bound npm/artifact evidence first.
+3. Four-seat/partner phone interaction coverage and physical phone remain
+   incomplete. Test the actual private-hand handover and controls; distinguish
+   CPU-throttled emulation from hardware evidence.
+4. Thinking-dot background animation and other rendering costs are unmeasured.
+   Profile meaningful hypotheses without attributing historical failures,
+   weakening gates, filtering raw frames or adding settling.
+5. Strong-bot strength evidence uses a bounded upstream reference and finite
+   sampling. Preserve its inspected policy and verified scope rather than infer
+   universal dominance or transfer the old stopping streak to current source.
+
+The deal-only hidden-front change has a source-bound once-only native PASS,
+not a paired causal performance gain. Renewed KEEP rounds and gains remain0.
+After complete current PR checks pass, fix and measure the worst weakness,
+record each actual outcome in LOOP.md and continue through three substantive
+no-player-gain rounds. Preserve the original invalid pair and unknown causes.
 
 ## Round 1
 
@@ -142,3 +171,51 @@ Re-read G01. Five weaknesses ranked:malformed-envelope coverage is limited to ni
 ## Round23
 
 Re-read G01 and selected rules. Five weaknesses ranked:browser evidence predates the core guard;managed file navigation cannot be verified directly;physical phone unavailable;finite64-world hidden-hand sampling;coalition model still has rejected alternatives. Run the existing browser regression unmodified on new standalone bytes,with a new captured milestone. Hot-seat/private hands,complete bot/mixed-idle matches,zero requests/errors,reduced motion,and300-frame TV/4×CPU phone measurements pass.60.0036/59.6054fps,p95 16.7/16.8ms;VP9 clip decodes. No new player-visible gain;streak3,stop met. Final full pipeline/current-head CI remains required.
+
+
+## Current review after the first retained diagnostic (no completed round)
+
+Re-read original README/RULES/JOBS. Five weaknesses, ranked: (1) Strong-search
+responsiveness gain is unestablished: saved old2d/original8c diagnostic fails
+the declared gain gates and native acceptance, despite four retained profiles;
+(2) currentd01 full official artifact needs complete independent acceptance;
+(3) four-seat/partner phone interaction and physical hardware coverage;
+(4) thinking-dot/rendering costs remain unmeasured; (5) bot strength is finite
+and upstream-reference scope remains bounded. Inspect the saved failed native
+predicate offline, preserve it, then fix/measure the worst substantive current
+player weakness. No unchanged luck retry or weaker gate. Renewed KEEP remains0;
+this source-isolated diagnostic is not a current-face-down improvement round.
+
+
+Exactd01 complete1,261-check official artifact now independently accepted.
+The saved native rejection is identified at line267 but remains FAIL; fixed
+TV/phone gain gates also FAIL. Worst remaining current player weakness remains
+unestablished responsiveness improvement; no completed renewed KEEP round.
+Current-headCI, four-seat/partner phone interactions, rendering costs and finite
+strength/reference scope remain ranked review work; no physical-hardware claim.
+
+Exact ddd full1,279-check proof is independently accepted. Current four-human
+phone first functional trial FAIL is retained: three completed reduced-motion
+cases, normal-motion Block expected-seat failure/unknown cause. Complete all
+current input guards and raw retention PASS; no unchanged retry. Ranked worst
+responsiveness gain remains unestablished; native pair/fixed gain gates FAIL
+and renewed KEEP0 unchanged. Diagnose normal-motion phone behavior, current
+new-headCI and substantive player review next.
+
+Current review after private-prompt fix (full current CI still pending):
+1. Rapid Hide/reveal could lose a private prompt through an obsolete finish
+callback. One-callback fix adopted after full source review; original four-case
+first3PASS/1FAIL becomes changed-source4PASS and real-WAAPI regression PASS.
+Historical failing case cause remains unknown; exact callback-order controlled
+mock is separate evidence. No clock/sampler/gate change.
+2. Strong-bot responsiveness gain remains unestablished; old native pair and
+both fixed gain gates FAIL. Current player performance/strength must be measured.
+3. Complete new-current original CI and whole official artifact pending.
+4. Four-seat complete-round/large-hand phone interactions and physical hardware
+remain limited; current proof covers firstfour turns in four emulated cases.
+5. Finite upstream/reference-strength scope still limits best-AI claims.
+Renewed completed KEEP0/provisional material privacy improvement1/no-gain streak0.
+
+After exact380 full original current green and1,303-check genuine artifact acceptance, re-read binding G01: ranked weaknesses are complete four-human phone round/large-hand coverage; unestablished Strong response benefit (both original gain gates FAIL); bounded upstream strategy evidence; unmeasured background animation costs; unavailable physical-phone evidence. R25 private-prompt correction is a qualified bounded reliability gain, renewed no-gain streak0. The next testable weakness is full-round mobile handover and round-end presentation, retaining all native controls and no simulated clocks/FPS retry.
+
+After current corrected380 green, the five largest remaining weaknesses were full-round phone interactions, maximum-hand phone bounds, readonly observation/hidden-information boundaries, unestablished Strong responsiveness benefit, and finite AI/physical-phone scope. R26 exercised complete four-player rounds; R27 selected and played the actual worst13-tile seeded hand; R28 retained the out-of-contract JS endpoint mutation failure and checked9027 frozen actual-consumer states/27081 private substitutions. Current Strong consumers only read readonly endpoints and actual Worker messages serialize; no player benefit from a tuple-copy hygiene edit was established, so it was not adopted. No current product/source change remains justified by these finite checks. R26–R28 each measure zero player-visible gain, satisfying the three consecutive stopping rounds after R25. Final current-head whole workflow/artifact acceptance remains required before Ready.

@@ -1,0 +1,87 @@
+{
+  "schema": "g01-2d-accepted-and-first-pair-invalid/1",
+  "source": "2d30473e443565d033638fbb83851d9d82c5a87d",
+  "hostedAcceptance": {
+    "status": "PASS",
+    "checks": 1225,
+    "source": "2d30473e443565d033638fbb83851d9d82c5a87d",
+    "run": "37869016355",
+    "artifactSha256": "948cb9cd242cfa92cee74540a24b79b690978eedb1158b582b7fb2dfcf3ad4e2",
+    "nativeLog": {
+      "bytes": 127955,
+      "sha256": "7a15c374eea148b66a651a7c42ee92a116ce44950f94fabb68e676fd6bf6330a"
+    },
+    "actualDiskNavigation": "PASS",
+    "realWorkerReplayCases": 16,
+    "realWorkerVariants": 5,
+    "rawIntervals": 600,
+    "timestampWitnesses": 602,
+    "actualDecodedFrames": 36,
+    "mutationKills": 25,
+    "independentDecoderTools": [
+      {
+        "path": "/usr/bin/ffmpeg",
+        "bytes": 366984,
+        "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+        "version": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      },
+      {
+        "path": "/usr/bin/ffprobe",
+        "bytes": 206504,
+        "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+        "version": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+      }
+    ],
+    "claim": "Current official artifact/source proof; independent decoder headers may differ by tool version."
+  },
+  "hostedReaderController": {
+    "startedAt": "2026-10-09T01:41:19.178558+00:00",
+    "closedAt": "2026-10-09T01:41:22.849247+00:00",
+    "exitCode": 0,
+    "readerSha256": "6a33c711fd5d3d17e34c714d0021cf6612783003dc23655c922800cb5fb57106",
+    "source": "2d30473e443565d033638fbb83851d9d82c5a87d",
+    "run": 37869016355,
+    "artifactId": 11590012046
+  },
+  "run": 37869016355,
+  "job": 113622494282,
+  "officialArtifactId": 11590012046,
+  "officialBytes": 93181134,
+  "officialSha256": "948cb9cd242cfa92cee74540a24b79b690978eedb1158b582b7fb2dfcf3ad4e2",
+  "officialZip": "Privately retained; complete official source/CRC/log/native/full36frame decode accepted. Public bounded archive retains actual current outputs and fullnative; no recursive largeZIP added.",
+  "firstPair": {
+    "status": "FAIL",
+    "exitCode": 1,
+    "closedAt": "2026-10-09T01:35:43.504692+00:00",
+    "sourceAndBinaryGuardsPassed": true,
+    "controllerAndReadyUnchanged": true,
+    "savedProfiles": 0,
+    "offendingRawTrace": "ABSENT: assertion preceded rawtrace-save; zero/NaN/cause cannot be inferred",
+    "acceptedScenarios": 0,
+    "gain": "UNMEASURED"
+  },
+  "loggingRepair": {
+    "schema": "g01-first-pair-raw-loss-logging-repair/1",
+    "createdAt": "2026-10-09T01:39:32.330509+00:00",
+    "oldTrial": {
+      "controllerFinishedAt": "2026-10-09T01:35:43.504692+00:00",
+      "exitCode": 1,
+      "status": "FAIL",
+      "savedProfiles": 0,
+      "offendingRawTrace": "ABSENT",
+      "cause": "UNKNOWN"
+    },
+    "oldHarnessSha256": "2d92601286dd972d728c3e01763df3efc742d6ca44799619b080229cc2f035dd",
+    "newDiagnosticHarnessSha256": "614e3e265772b9e9ce973e71bf0e328feef0139388e7c6a0b93f467547aa9bb9",
+    "scope": "Distinct private logger repair only. Original frozen programs and every failure byte preserved. Original predicates, workload, native clock, fixed order and gain thresholds unchanged. New diagnostic NOT EXECUTED/NOT READY; no gain or original failure cleared."
+  },
+  "faceDownPrototype": {
+    "status": "Independent static PASS only; actualCLOSED01:44:24.106993UTC/exit0/177+5guards",
+    "scope": "Private UNEXECUTED materially changed deal-only prototype, original300/301 sampler/gates unchanged. No sourceadoption/runtime/gain/KEEP acceptance",
+    "readySha256": "600bd0bc0656900c1436f4904c32d35365ea27572eb6a27492273587ede80fee",
+    "controllerSha256": "8d954763bd67515497b0a3f28e6e5e68ef4db1fec7a909628c8c9e0ac4613146"
+  },
+  "playerCodeUnchanged": true,
+  "renewedKeepRounds": 0,
+  "candidateAdopted": false
+}

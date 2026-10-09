@@ -1,0 +1,183 @@
+{
+  "schema": "g01-retained-source-isolated-diagnostic-checkpoint/1",
+  "recordedAt": "2026-10-09T03:17:28.535773+00:00",
+  "status": "FAIL",
+  "scope": "Actual first distinct logging diagnostic; retained complete raw values, not accepted native pair/gain or current-face-down FPS/full-CI proof. Original controller receipt is unchanged.",
+  "originalHead": "8c57376d817d1b34c165425cd8bf8d9ee219f7f6",
+  "candidateHead": "2d30473e443565d033638fbb83851d9d82c5a87d",
+  "currentPlayerHead": "8384404ff8e04c9da5405d6654007a06cf5141ba",
+  "sourceCheckpointHead": "d01e51a212da65be02d8591b25a21c8252298145",
+  "childExitCode": 0,
+  "childNaturallyClosedAt": "2026-10-09T03:13:07.843250+00:00",
+  "controllerClosedAt": "2026-10-09T03:13:10.239188+00:00",
+  "remainingOwnedLiveProcesses": [],
+  "nativeAcceptance": {
+    "status": "FAIL",
+    "type": "AssertionError",
+    "message": ""
+  },
+  "rawRetentionAcceptance": {
+    "status": "PASS",
+    "completeProfiles": 4,
+    "partialFailureTraceRetained": false,
+    "scope": "All native values and invalid numeric kinds retained before assertions; retained failure is not native profile, pair or gain acceptance"
+  },
+  "sourceAndBinaryGuardsPassed": true,
+  "completeInstalledInputsPassed": true,
+  "sourceGuards": 1818,
+  "runtimeGuards": 5,
+  "installedFileAliases": 1618,
+  "completeInputAliases": 1821,
+  "profiles": [
+    {
+      "name": "tv",
+      "variant": "baseline",
+      "rawIntervals": 65,
+      "longestIntervalMs": 100,
+      "moveLatencyMs": 1472.2999999821186,
+      "initialFrameLatencyMs": 87.9959999940395
+    },
+    {
+      "name": "tv",
+      "variant": "candidate",
+      "rawIntervals": 75,
+      "longestIntervalMs": 66.60000000000002,
+      "moveLatencyMs": 1486.4000000059605,
+      "initialFrameLatencyMs": 64.79600000596042
+    },
+    {
+      "name": "phone",
+      "variant": "candidate",
+      "rawIntervals": 81,
+      "longestIntervalMs": 50,
+      "moveLatencyMs": 1573.5,
+      "initialFrameLatencyMs": 100.82800001788144
+    },
+    {
+      "name": "phone",
+      "variant": "baseline",
+      "rawIntervals": 78,
+      "longestIntervalMs": 33.39999999999998,
+      "moveLatencyMs": 1525.6000000238419,
+      "initialFrameLatencyMs": 74.29600001192091
+    }
+  ],
+  "gains": [
+    {
+      "name": "tv",
+      "reduction": 0.33399999999999974,
+      "absoluteReductionMs": 33.39999999999998,
+      "moveLatencyRegression": 0.009576852559949112,
+      "passed": false
+    },
+    {
+      "name": "phone",
+      "reduction": -0.497005988023953,
+      "absoluteReductionMs": -16.600000000000023,
+      "moveLatencyRegression": 0.03139748294140632,
+      "passed": false
+    }
+  ],
+  "measuredGainAcceptance": "FAIL",
+  "renewedKeepRounds": 0,
+  "rootPrelaunchHelperFailureScope": "Before any native launch; wrong absence predicate corrected before the first actual master grant. Failed helper receipt is retained.",
+  "currentFullHostedStatus": {
+    "source": "d01e51a212da65be02d8591b25a21c8252298145",
+    "run": 37875754087,
+    "job": 113643842516,
+    "conclusion": "success",
+    "updatedAt": "2026-10-09T02:55:26Z",
+    "officialArtifact": {
+      "id": 11592298166,
+      "bytes": 102143626,
+      "sha256": "cac5327331cfdee3569051dd271179ba3e37628881eb880aa96c51631600019b"
+    },
+    "independentAcceptance": "PENDING"
+  },
+  "archive": {
+    "path": "media/paired-diagnostic-retained-first-proof.zip",
+    "bytes": 470006,
+    "sha256": "7cf15772b0c9fd92007d683d5ab513b78a103702dfd985c9b611960bc11a3654"
+  },
+  "originalReceipt": {
+    "bytes": 573491,
+    "sha256": "c51e3f9086e61779fbf2b12ae42b91d438c76994c06ce2767be2850a828502aa"
+  },
+  "actualProof": {
+    "bytes": 71329,
+    "sha256": "8df10ba2c2f0cb8bc6293e77abe9e414d2b8fc5fd59f32151311e49be2666492"
+  },
+  "publicMembers": {
+    "actual/controller-receipt.json": {
+      "bytes": 573491,
+      "sha256": "c51e3f9086e61779fbf2b12ae42b91d438c76994c06ce2767be2850a828502aa"
+    },
+    "actual/full-child.log": {
+      "bytes": 135,
+      "sha256": "db405666eb1ca2002613f670c4b97bb9dbf95f205428900c67fcd9ec5d16ea41"
+    },
+    "actual/all-four-raw-profiles.json": {
+      "bytes": 71329,
+      "sha256": "8df10ba2c2f0cb8bc6293e77abe9e414d2b8fc5fd59f32151311e49be2666492"
+    },
+    "actual/root-master-grant.json": {
+      "bytes": 2343,
+      "sha256": "8fe042656f4b6d34c70c5f98f2e50856dedf085ac1d255b8ac45bbab6e200fb2"
+    },
+    "actual/root-prelaunch-helper-failure.json": {
+      "bytes": 732,
+      "sha256": "0fbcc1f5854e3ce804b15d3fe5370b14ef5113bf99b440dc05c5355c214c0a53"
+    },
+    "frozen/complete-installed-ready.json": {
+      "bytes": 559915,
+      "sha256": "004d044b43da071988b1e8ebfa3d11e82f45c0a3bc1fb394742803f1c53e5496"
+    },
+    "frozen/complete-installed-controller.py": {
+      "bytes": 19171,
+      "sha256": "3341b7153a2eaffface1da0488e49eefd13b8e76eff1249db2ca78370dd62cea"
+    },
+    "frozen/complete-installed-inputs.json": {
+      "bytes": 2815698,
+      "sha256": "5f4feed4b7cee19bd97da09b1123858918269bc496baad7d6a0e4d47b8ed843a"
+    },
+    "frozen/unchanged-isolated-9dc-harness.ts": {
+      "bytes": 10897,
+      "sha256": "9dc1be6e30456af8c8d74e704b42e17bc75a00692ae4f8b1bc939e551151544c"
+    },
+    "frozen/prior-unexecuted-d347-ready.json": {
+      "bytes": 56683,
+      "sha256": "d34799bb2a2e467ce3012eb94fd27e00967ce832a3bce68ff4c35c693157f61c"
+    },
+    "frozen/prior-unexecuted-b959-controller.py": {
+      "bytes": 13044,
+      "sha256": "b9597d0eeb7945694cc7947258440377636a5dd25c99c53161d21a7f994d576f"
+    },
+    "frozen/prior-unexecuted-d2ff-ready.json": {
+      "bytes": 63229,
+      "sha256": "d2ffc9a7fde6b878be6ed79cdbab200cc4c73538aef5a1064a1bdce16f5ae01f"
+    },
+    "frozen/prior-unexecuted-a31-controller.py": {
+      "bytes": 15984,
+      "sha256": "a31eb6f285726f538046ea8f0f0639cc3c3a83ea23d357298c69ae6ec759bcd5"
+    },
+    "review/independent-static-result.json": {
+      "bytes": 5402,
+      "sha256": "7dfa1e455ccc1cf29c512922a9d0b7cb30d5554113d62ca734ce199d6d68fc84"
+    },
+    "review/finite-complete-freeze-result.json": {
+      "bytes": 1475,
+      "sha256": "f05b750e298b6ea43cbe403a5d2e04cc99a42367cf0fca08d5962dc2ee2c536d"
+    },
+    "review/guard-preparation.py": {
+      "bytes": 13138,
+      "sha256": "fb653490f20daf43b4048e630da92957ececcd6c308aa5efe790d2dea9b2ff99"
+    }
+  },
+  "cadence": {
+    "lastSourcePushClosedAt": "2026-10-09T02:41:16.486356Z",
+    "hardDeadline": "2026-10-09T03:11:16.486356Z",
+    "status": "EXCEEDED",
+    "actualLocalWriterHoldStartedAt": "2026-10-09T02:59:55.407220Z",
+    "nextClock": "Use the actual subsequent source-push receipt; no backdating or PR-metadata-as-source-push claim."
+  }
+}
