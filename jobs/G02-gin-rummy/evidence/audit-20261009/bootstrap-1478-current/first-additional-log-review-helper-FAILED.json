@@ -1,0 +1,9 @@
+{
+  "nativePreparationExitCode": 1,
+  "actualStderr": "Traceback (most recent call last):\n  File \"<string>\", line 15, in <module>\nAssertionError\n",
+  "actualClosedUtc": "not recorded by the first preparation call; do not infer or backdate",
+  "cause": "Additional private log-review regex over-escaped JSON braces and found zero bot-contract records. The native game tests/raw evidence did not fail anew; the corrected parser reads the exact unchanged complete native log.",
+  "projectionActuallySucceededSeparatelyAt": "2026-10-09T07:59:26.133806+00:00",
+  "nativeTimingRerun": false,
+  "gameSourceEditedByHelper": false
+}

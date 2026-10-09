@@ -1,0 +1,13 @@
+{
+  "kind": "synthetic delayed-host-callback and pause regression",
+  "elapsedMs": 20000,
+  "configuredTurnMs": 10000,
+  "firstExpiredCallbackCount": 1,
+  "actionsBefore": 0,
+  "actionsAfter": 1,
+  "deadlineAdvancedOnElapsedTime": true,
+  "visibleCountdown": true,
+  "pausePreservesRemainingTime": true,
+  "entropyCalls": 1,
+  "controlledTestSeed": 7199
+}

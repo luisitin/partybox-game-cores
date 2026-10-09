@@ -1,0 +1,21 @@
+{
+  "characters": 98291,
+  "entries": 1174,
+  "bytes": 100933,
+  "sha256": "6078eab9ecaf71a6b020dce0bbf8393fbc084a36bf9d5c35b139c8a4fd2ef8eb",
+  "jobId": 113724387481,
+  "genuineFirstSourceFailure": true,
+  "actualFailures": [
+    "Z not ok 7 - current source-bound raw proof passes without discarding its largest interval",
+    "Z not ok 9 - changed end guards and failed snapshots are rejected",
+    "Z not ok 11 - reported statistics are recomputed from all retained intervals",
+    "Z not ok 12 - an honestly recomputed slow raw sample still fails the original frame gate"
+  ],
+  "actualSummary": [
+    "2026-10-09T07:54:58.5695035Z # tests 76",
+    "2026-10-09T07:54:58.5695406Z # pass 72",
+    "2026-10-09T07:54:58.5695586Z # fail 4",
+    "2026-10-09T07:54:58.5695769Z # cancelled 0",
+    "2026-10-09T07:54:58.5695972Z # skipped 0"
+  ]
+}

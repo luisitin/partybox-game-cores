@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "head": "1478a93e36f9f6ddf88aad246083ab0c8e059cf4",
+  "originalGuardedSources": 35,
+  "bootstrapWorkflowSha256": "5f6241b15e880f212442f4e51fece427f92725b97c222ffaab6b455f0d38bb2a",
+  "additionalSources": {
+    "../../contract/package.json": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495",
+    "evidence/audit-20261009/bootstrap-request.json": "81d81ac990260c4e0ebc708df0d5649043ffef36918589564252a10506e1b355"
+  },
+  "additionalCopied": [
+    {
+      "originalPath": "../../contract/package.json",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/package.json",
+      "bytes": 95,
+      "sha256": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495"
+    },
+    {
+      "originalPath": "evidence/audit-20261009/bootstrap-request.json",
+      "artifactPath": ".work/initial-presence-bootstrap/bootstrap-request.json",
+      "bytes": 462,
+      "sha256": "81d81ac990260c4e0ebc708df0d5649043ffef36918589564252a10506e1b355"
+    }
+  ],
+  "copied": [
+    {
+      "originalPath": "play.html",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/play.html",
+      "bytes": 492064,
+      "sha256": "8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63"
+    },
+    {
+      "originalPath": "src/core.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/src/core.ts",
+      "bytes": 27595,
+      "sha256": "211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218"
+    },
+    {
+      "originalPath": "src/cards.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/src/cards.ts",
+      "bytes": 6379,
+      "sha256": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9"
+    },
+    {
+      "originalPath": "src/browser.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/src/browser.ts",
+      "bytes": 16563,
+      "sha256": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4"
+    },
+    {
+      "originalPath": "src/play.template.html",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/src/play.template.html",
+      "bytes": 7133,
+      "sha256": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"
+    },
+    {
+      "originalPath": "../../contract/contract.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/contract.ts",
+      "bytes": 26947,
+      "sha256": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+    },
+    {
+      "originalPath": "../../contract/constants.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/constants.ts",
+      "bytes": 4994,
+      "sha256": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef"
+    },
+    {
+      "originalPath": "../../contract/rng.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/rng.ts",
+      "bytes": 3445,
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    },
+    {
+      "originalPath": "../../contract/minigame-schema.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/minigame-schema.ts",
+      "bytes": 2723,
+      "sha256": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb"
+    },
+    {
+      "originalPath": "../../contract/player-count-schema.ts",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/contract/player-count-schema.ts",
+      "bytes": 1236,
+      "sha256": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189"
+    },
+    {
+      "originalPath": "dist/core.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/dist/core.mjs",
+      "bytes": 1027988,
+      "sha256": "dedf75871bc145694fc68721f2f626a63435af95aacc948f5f4715f517bd786a"
+    },
+    {
+      "originalPath": "dist/cards.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/dist/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    {
+      "originalPath": "dist/contract.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/dist/contract.mjs",
+      "bytes": 1006006,
+      "sha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a"
+    },
+    {
+      "originalPath": "scripts/browser-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/browser-check.mjs",
+      "bytes": 13048,
+      "sha256": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc"
+    },
+    {
+      "originalPath": "scripts/clock-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/clock-check.mjs",
+      "bytes": 3273,
+      "sha256": "beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19"
+    },
+    {
+      "originalPath": "scripts/meld-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/meld-check.mjs",
+      "bytes": 5312,
+      "sha256": "d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4"
+    },
+    {
+      "originalPath": "scripts/results-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/results-check.mjs",
+      "bytes": 2649,
+      "sha256": "c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f"
+    },
+    {
+      "originalPath": "scripts/name-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/name-check.mjs",
+      "bytes": 2050,
+      "sha256": "3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f"
+    },
+    {
+      "originalPath": "scripts/host-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/host-check.mjs",
+      "bytes": 5095,
+      "sha256": "e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50"
+    },
+    {
+      "originalPath": "scripts/public-history-check.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/public-history-check.mjs",
+      "bytes": 3543,
+      "sha256": "5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859"
+    },
+    {
+      "originalPath": "tests/browser-fixture.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/tests/browser-fixture.mjs",
+      "bytes": 2870,
+      "sha256": "f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621"
+    },
+    {
+      "originalPath": "tests/helpers.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/tests/helpers.mjs",
+      "bytes": 3202,
+      "sha256": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e"
+    },
+    {
+      "originalPath": "scripts/browser-source-guard.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/browser-source-guard.mjs",
+      "bytes": 1410,
+      "sha256": "e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622"
+    },
+    {
+      "originalPath": "scripts/frame-coordination.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/frame-coordination.mjs",
+      "bytes": 2368,
+      "sha256": "f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656"
+    },
+    {
+      "originalPath": "scripts/strict-browser-proof.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/strict-browser-proof.mjs",
+      "bytes": 8010,
+      "sha256": "fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9"
+    },
+    {
+      "originalPath": "scripts/browser-proof.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/browser-proof.mjs",
+      "bytes": 4588,
+      "sha256": "3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489"
+    },
+    {
+      "originalPath": "scripts/capture.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/capture.mjs",
+      "bytes": 5394,
+      "sha256": "72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985"
+    },
+    {
+      "originalPath": "scripts/build.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/build.mjs",
+      "bytes": 987,
+      "sha256": "3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e"
+    },
+    {
+      "originalPath": "scripts/integrity.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/integrity.mjs",
+      "bytes": 2925,
+      "sha256": "7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb"
+    },
+    {
+      "originalPath": "scripts/check-evidence-links.mjs",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/scripts/check-evidence-links.mjs",
+      "bytes": 1094,
+      "sha256": "03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842"
+    },
+    {
+      "originalPath": "package.json",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/package.json",
+      "bytes": 696,
+      "sha256": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b"
+    },
+    {
+      "originalPath": "package-lock.json",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/package-lock.json",
+      "bytes": 16974,
+      "sha256": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a"
+    },
+    {
+      "originalPath": "tsconfig.json",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/tsconfig.json",
+      "bytes": 366,
+      "sha256": "624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3"
+    },
+    {
+      "originalPath": "manifest.json",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/job/manifest.json",
+      "bytes": 4105,
+      "sha256": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb"
+    },
+    {
+      "originalPath": "../../.github/workflows/G02.yml",
+      "artifactPath": ".work/initial-presence-bootstrap/sources/workflow/G02.yml",
+      "bytes": 13050,
+      "sha256": "5f6241b15e880f212442f4e51fece427f92725b97c222ffaab6b455f0d38bb2a"
+    }
+  ]
+}
