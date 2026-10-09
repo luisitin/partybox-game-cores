@@ -344,3 +344,9 @@ Current full CI/genuine original reader remain required; PR16DRAFT, KEEP14
 tacticalgain still provisional/streak0. This is delivery correction, not a
 formal after-green no-player-gain round. Preserve actual failed source and prior
 35m05 source interval/miss; do not retry unchanged timing samples.
+
+## Current changed-policy acceptance, 2026-10-09
+
+Exact092 full original CI37891792425/job113694132749 SUCCESS. Actual whole official11598961283:98094bytes/SHA25679f7f837c67d033f2c5afbc60d951b35edc0cf6fdd0538d8cf9eede966399499. Full original reader naturally closed06:36:23.607811Z, EXIT0/all272outerguards unchanged. All36core groups,21focused groups,25genuine mutation kills,1003full-match byte replays,16000leagues,1800native intervals/current18sourceguards,10clipguards and18actualVP8frames accepted. TV60.0028001307/CPU4x60.0029281429FPS; p95 16.7/16.8ms. Physical-phone approximation and historical58.381FAIL retained. No unchanged native timing trial.
+
+See failed-nil-current-full-acceptance-20261009.json and media/failed-nil-current-full-acceptance-20261009.zip for the full native/whole official/raw/complete original reader and before/after guards. Initial text wrapper added one terminal LF: retained initial101310-character result; fresh exact101309 text matches entire connector raw and saved-evidence reader passed unchanged gates. This is a source qualification milestone, not an invented no-gain round. KEEP14+120 is qualified; renewed no-gain streak0. Previous source06:06:05.327440Z→hard06:36:05.327440Z was exceeded; actual source publication and lateness must be recorded without backdating.

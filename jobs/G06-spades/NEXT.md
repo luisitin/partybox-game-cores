@@ -1,33 +1,34 @@
-# G06 current failed-nil delivery
-Prepared 2026-10-09T06:04:30.287444+00:00; branch job/G06-spades-audit-20261009; PR16Draft against
-original job/G06-spades-core. Parent5f5c80df93ea20df3befca5a0140b460348dbef5.
-Original ReadyPR7/head48430 unchanged. Read failed-nil-review-20261009.md,
-failed-nil-delivery-20261009.json and media/failed-nil-churn-recovery-20261009.zip.
+# G06 current Spades audit
 
-Player change adopted: own nil already failed + failedNilCounts=true now uses
-existing contract strategy. Actual legal seed377 improves−160→−40(+120).
-All36 original+tactical groups and25 actual mutants passed first full5f5CI;
-the original churn then rejected old counts. No leagues/browser ran.
-Original unchanged --write generator now PASS twice/byte-identical:
-1003seeds/181386events/all7phases/45036privacy/135108botprivacy,3414guards.
-Originalchurn/scoring/reducer/league/sampler/strictgates remain unchanged.
-Old/new goldens and whole first failed native50960chars/official90497B are
-preserved. Its inherited browser-report never supplies current acceptance.
-Fresh actual unused functional capture15:88875B/3897immutableguards/PASS;
-this is controlled functional video, not native FPS evidence.
+Original ReadyPR7/head48430 remains unchanged. Supplemental DraftPR16/base
+job/G06-spades-core; current product head092dbf8fdc65da3a7e6b58afa013612617613fed.
+Read failed-nil-review-20261009.md and current-full-acceptance JSON/ZIP.
 
-After actual normal materialpush, refresh onlyG06 mainrow under serialized
-exclusive lease and update native DraftPRbody/head/readback. Record actualpush
-closure and renewed25/30-minute deadlines privately; previous5f5materialpush
-closed05:42:14.399135, a35m05.123885s interval/hardmiss5m05.123885s honestly logged.
-Read new full original npm/CI plus genuine WHOLE current official artifact and
-unchanged original verification/native/clip reader. No inherited parentgreen.
-No source/gate rewriting to hide failedraw; no unchanged frame retries.
+Actual selected toggle policy: own nil already failed + failedNilCounts=true
+uses existing contract strategy. Legitimate seed377 improves-160 to-40(+120).
+Exact092 original completeCI37891792425/job113694132749 and actual whole
+official11598961283/98094bytes/SHA79f7f837...399499 genuinely accepted.
+Original reader naturallyPASS06:36:23.607811Z/all272outerguards:36coregroups,
+21focusedgroups,25actualmutants,1003fullbyte-replays,16kleagues,1800native
+intervals,18originalsourceguards,10clipguards,18VP8frames. KEEP14qualified;
+renewed no-gainstreak0. Raw/historicalfailures/initialaddedLF read retained.
 
-Only after complete current original acceptance, qualify KEEP14(+120), then
-rereadJOB/rankfive/fixworst/measure/log/push until3newconsecutive no-player-gain
-rounds. Currentstreak0; this golden correction is not a formal new KEEP round.
-Nextweaknesses: failedpartner-nil protection, finite tactical breadth/hidden-
-information invariants, exact scoring variants/source disagreements, historical
-TV58.381fail/phoneNOTRUN and disclosed physicalphone approximation. Preserve
-all original historical clips/reports/failures and protected originalPR7.
+This checkpoint publishes complete genuine acceptance, not a cosmetic round.
+Product/scoring/reducer/runner/league/native sampler/originalstrict assertions
+remain byte-identical to092. Final original fullCI for new documentation head
+and whole actual artifact is still required; no inherited exact-head green.
+Previous sourcepush06:06:05.327440Z; hard06:36:05.327440Z already missed
+during full evidence/readback; retain exact next actual FF closure privately.
+Use only normalFF/expected-head; native authfailure retained/APIfallback
+authorized. Refresh onlyG06 mainrow under an exclusive serialized lease.
+
+After this qualified green, rereadJOBS/rankfive and measure worst legitimate
+player issue: (1) protect live partner nil without wasting own trick when that
+nil already failed; (2) contract tactical breadth; (3) exact variant conflict
+scoring; (4) hidden-info/action immutability; (5) disclosed CPU4x/physicalphone
+limits. First item requires finite legal full-match baseline/candidate evidence;
+no speculative bot rewrite. Use original pure reducer/views/seeded RNG and
+complete terminal scores, immutable physical inputs and real bounded closure.
+Then log real KEEP15 gain/no-gain and push, complete originalchecks; stop after
+3consecutive measured rounds with no player gain. Do not count delivery or an
+unexecuted experiment as a no-gain round. Preserve protected originalPR7.
