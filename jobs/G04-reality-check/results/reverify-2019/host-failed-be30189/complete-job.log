@@ -1,0 +1,1103 @@
+﻿2026-10-08T20:44:23.0118233Z Current runner version: '2.337.0'
+2026-10-08T20:44:23.0143846Z ##[group]Runner Image Provisioner
+2026-10-08T20:44:23.0144806Z Hosted Compute Agent
+2026-10-08T20:44:23.0145443Z Version: 20261002.596
+2026-10-08T20:44:23.0146177Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T20:44:23.0146984Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T20:44:23.0147672Z Worker ID: {30cb674b-2703-493c-89a4-0829475423dd}
+2026-10-08T20:44:23.0148480Z Region: northcentralus
+2026-10-08T20:44:23.0149124Z Cloud: Azure
+2026-10-08T20:44:23.0150050Z ##[endgroup]
+2026-10-08T20:44:23.0151659Z ##[group]Operating System
+2026-10-08T20:44:23.0152315Z Ubuntu
+2026-10-08T20:44:23.0152929Z 24.04.5
+2026-10-08T20:44:23.0153477Z LTS
+2026-10-08T20:44:23.0154063Z ##[endgroup]
+2026-10-08T20:44:23.0154644Z ##[group]Runner Image
+2026-10-08T20:44:23.0155251Z Image: ubuntu-24.04
+2026-10-08T20:44:23.0155874Z Version: 20261004.327.1
+2026-10-08T20:44:23.0157160Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T20:44:23.0158862Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T20:44:23.0160204Z ##[endgroup]
+2026-10-08T20:44:23.0161433Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T20:44:23.0163383Z Contents: read
+2026-10-08T20:44:23.0164092Z Metadata: read
+2026-10-08T20:44:23.0164653Z ##[endgroup]
+2026-10-08T20:44:23.0166897Z Secret source: Actions
+2026-10-08T20:44:23.0168006Z Cache mode: write
+2026-10-08T20:44:23.0168788Z Prepare workflow directory
+2026-10-08T20:44:23.0708569Z Prepare all required actions
+2026-10-08T20:44:23.0780725Z Getting action download info
+2026-10-08T20:44:23.3083249Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T20:44:23.4090515Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T20:44:23.4951039Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T20:44:23.7026386Z Complete job name: verify
+2026-10-08T20:44:23.7822672Z ##[group]Run actions/checkout@v4
+2026-10-08T20:44:23.7823574Z with:
+2026-10-08T20:44:23.7824065Z   ref: be30189bf919efae10723288e2d81cad89994905
+2026-10-08T20:44:23.7824721Z   repository: luisitin/partybox-game-cores
+2026-10-08T20:44:23.7828563Z   token: ***
+2026-10-08T20:44:23.7829001Z   ssh-strict: true
+2026-10-08T20:44:23.7829450Z   ssh-user: git
+2026-10-08T20:44:23.7830178Z   persist-credentials: true
+2026-10-08T20:44:23.7830696Z   clean: true
+2026-10-08T20:44:23.7831144Z   sparse-checkout-cone-mode: true
+2026-10-08T20:44:23.7831673Z   fetch-depth: 1
+2026-10-08T20:44:23.7832108Z   fetch-tags: false
+2026-10-08T20:44:23.7832553Z   show-progress: true
+2026-10-08T20:44:23.7833010Z   lfs: false
+2026-10-08T20:44:23.7833428Z   submodules: false
+2026-10-08T20:44:23.7833883Z   set-safe-directory: true
+2026-10-08T20:44:23.7834402Z   allow-unsafe-pr-checkout: false
+2026-10-08T20:44:23.7835222Z ##[endgroup]
+2026-10-08T20:44:23.8853729Z Syncing repository: luisitin/partybox-game-cores
+2026-10-08T20:44:23.8855949Z ##[group]Getting Git version info
+2026-10-08T20:44:23.8857411Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:44:23.8859458Z [command]/usr/bin/git version
+2026-10-08T20:44:23.8957798Z git version 2.55.0
+2026-10-08T20:44:23.8982194Z ##[endgroup]
+2026-10-08T20:44:23.9000053Z Temporarily overriding HOME='/home/runner/work/_temp/cb34c890-5bce-4eb3-a261-3f476c4a5c64' before making global git config changes
+2026-10-08T20:44:23.9003080Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:44:23.9007682Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:44:23.9073234Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:44:23.9078236Z ##[group]Initializing the repository
+2026-10-08T20:44:23.9082640Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:44:23.9200387Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T20:44:23.9202392Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T20:44:23.9203470Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T20:44:23.9204290Z hint: call:
+2026-10-08T20:44:23.9204741Z hint:
+2026-10-08T20:44:23.9205326Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T20:44:23.9206013Z hint:
+2026-10-08T20:44:23.9206647Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T20:44:23.9208580Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T20:44:23.9209467Z hint:
+2026-10-08T20:44:23.9210250Z hint: 	git branch -m <name>
+2026-10-08T20:44:23.9210816Z hint:
+2026-10-08T20:44:23.9211521Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T20:44:23.9217764Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-08T20:44:23.9228046Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:44:23.9286881Z ##[endgroup]
+2026-10-08T20:44:23.9287840Z ##[group]Disabling automatic garbage collection
+2026-10-08T20:44:23.9291706Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T20:44:23.9352038Z ##[endgroup]
+2026-10-08T20:44:23.9353559Z ##[group]Setting up auth
+2026-10-08T20:44:23.9354963Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:44:23.9383411Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:44:23.9805280Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:44:23.9845922Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:44:24.0071695Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:44:24.0108238Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:44:24.0356505Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T20:44:24.0401250Z ##[endgroup]
+2026-10-08T20:44:24.0402721Z ##[group]Fetching the repository
+2026-10-08T20:44:24.0412142Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin be30189bf919efae10723288e2d81cad89994905
+2026-10-08T20:44:25.0279599Z From https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:44:25.0291535Z  * branch            be30189bf919efae10723288e2d81cad89994905 -> FETCH_HEAD
+2026-10-08T20:44:25.0295439Z ##[endgroup]
+2026-10-08T20:44:25.0297037Z ##[group]Determining the checkout info
+2026-10-08T20:44:25.0298836Z ##[endgroup]
+2026-10-08T20:44:25.0300059Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T20:44:25.0362838Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T20:44:25.0410974Z ##[group]Checking out the ref
+2026-10-08T20:44:25.0421775Z [command]/usr/bin/git checkout --progress --force be30189bf919efae10723288e2d81cad89994905
+2026-10-08T20:44:25.1259993Z Note: switching to 'be30189bf919efae10723288e2d81cad89994905'.
+2026-10-08T20:44:25.1261511Z 
+2026-10-08T20:44:25.1262488Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T20:44:25.1264676Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T20:44:25.1266729Z state without impacting any branches by switching back to a branch.
+2026-10-08T20:44:25.1268291Z 
+2026-10-08T20:44:25.1269236Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T20:44:25.1271524Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T20:44:25.1272564Z 
+2026-10-08T20:44:25.1272950Z   git switch -c <new-branch-name>
+2026-10-08T20:44:25.1273541Z 
+2026-10-08T20:44:25.1273923Z Or undo this operation with:
+2026-10-08T20:44:25.1274458Z 
+2026-10-08T20:44:25.1274777Z   git switch -
+2026-10-08T20:44:25.1275232Z 
+2026-10-08T20:44:25.1276338Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T20:44:25.1277915Z 
+2026-10-08T20:44:25.1279059Z HEAD is now at be30189 Bind G04 native proof to active timed play and current sources
+2026-10-08T20:44:25.1283571Z ##[endgroup]
+2026-10-08T20:44:25.1329173Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T20:44:25.1355882Z be30189bf919efae10723288e2d81cad89994905
+2026-10-08T20:44:25.1799939Z ##[group]Run actions/setup-node@v4
+2026-10-08T20:44:25.1801162Z with:
+2026-10-08T20:44:25.1802042Z   node-version: 24
+2026-10-08T20:44:25.1802964Z   cache: npm
+2026-10-08T20:44:25.1804203Z   cache-dependency-path: jobs/G04-reality-check/package-lock.json
+2026-10-08T20:44:25.1805708Z   always-auth: false
+2026-10-08T20:44:25.1806662Z   check-latest: false
+2026-10-08T20:44:25.1815371Z   token: ***
+2026-10-08T20:44:25.1816336Z ##[endgroup]
+2026-10-08T20:44:25.3306134Z (node:2303) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:44:25.3314330Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:44:25.3342947Z Found in cache @ /opt/hostedtoolcache/node/24.21.0/x64
+2026-10-08T20:44:25.3346476Z ##[group]Environment details
+2026-10-08T20:44:25.7442003Z node: v24.21.0
+2026-10-08T20:44:25.7442478Z npm: 11.19.0
+2026-10-08T20:44:25.7442767Z yarn: 1.22.22
+2026-10-08T20:44:25.7443864Z ##[endgroup]
+2026-10-08T20:44:25.7485350Z [command]/opt/hostedtoolcache/node/24.21.0/x64/bin/npm config get cache
+2026-10-08T20:44:25.8620476Z /home/runner/.npm
+2026-10-08T20:44:25.9800980Z Cache hit for: node-cache-Linux-x64-npm-4ad2ea5b4c18925d01159792879174cf9d8d246cb3de5e98f3319db32e3ed21a
+2026-10-08T20:44:25.9907990Z (node:2303) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:44:26.5360964Z Received 13622548 of 13622548 (100.0%), 29.3 MBs/sec
+2026-10-08T20:44:26.5361828Z Cache Size: ~13 MB (13622548 B)
+2026-10-08T20:44:26.5400512Z [command]/usr/bin/tar -xf /home/runner/work/_temp/c5f19908-ef7d-4091-843b-55c65d093604/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-08T20:44:26.5713472Z Cache restored successfully
+2026-10-08T20:44:26.5724492Z Cache restored from key: node-cache-Linux-x64-npm-4ad2ea5b4c18925d01159792879174cf9d8d246cb3de5e98f3319db32e3ed21a
+2026-10-08T20:44:26.5911080Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-08T20:44:26.5911630Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-08T20:44:26.5912253Z [36;1mnpm install --prefix ../../contract --ignore-scripts --no-audit --no-fund --no-package-lock zod@4.6.5[0m
+2026-10-08T20:44:26.5912862Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-08T20:44:26.6197376Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:44:26.6197733Z ##[endgroup]
+2026-10-08T20:44:28.0153888Z 
+2026-10-08T20:44:28.8693722Z added 8 packages in 1s
+2026-10-08T20:44:28.8694179Z 
+2026-10-08T20:44:28.8694617Z added 1 package in 750ms
+2026-10-08T20:44:29.6692554Z Installing dependencies...
+2026-10-08T20:44:29.6837137Z Switching to root user to install dependencies...
+2026-10-08T20:44:29.7665652Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-08T20:44:29.8101245Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-08T20:44:29.8111224Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-08T20:44:29.8121423Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-08T20:44:29.8166932Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-08T20:44:29.8202867Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-08T20:44:29.9342763Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-08T20:44:29.9443981Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-08T20:44:29.9532023Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-08T20:44:29.9557727Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [474 kB]
+2026-10-08T20:44:29.9875932Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-08T20:44:29.9982367Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-08T20:44:29.9987543Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-08T20:44:30.0074463Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-08T20:44:30.0100071Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-08T20:44:30.0213014Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-08T20:44:30.0251326Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-08T20:44:30.0266043Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-08T20:44:30.0994156Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1115 kB]
+2026-10-08T20:44:30.1055594Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [227 kB]
+2026-10-08T20:44:30.1492990Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1218 kB]
+2026-10-08T20:44:30.1554505Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-08T20:44:30.1578579Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1632 kB]
+2026-10-08T20:44:30.1657826Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [376 kB]
+2026-10-08T20:44:30.1683569Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.6 kB]
+2026-10-08T20:44:33.1041159Z Fetched 12.2 MB in 1s (9734 kB/s)
+2026-10-08T20:44:33.9812502Z Reading package lists...
+2026-10-08T20:44:34.0058789Z Reading package lists...
+2026-10-08T20:44:34.2101062Z Building dependency tree...
+2026-10-08T20:44:34.2107916Z Reading state information...
+2026-10-08T20:44:34.3495763Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-08T20:44:34.3496733Z libasound2t64 set to manually installed.
+2026-10-08T20:44:34.3497478Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:44:34.3498373Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-08T20:44:34.3499177Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:44:34.3500176Z libatk1.0-0t64 set to manually installed.
+2026-10-08T20:44:34.3500951Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-08T20:44:34.3501700Z libatspi2.0-0t64 set to manually installed.
+2026-10-08T20:44:34.3502384Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-08T20:44:34.3503112Z libcairo2 set to manually installed.
+2026-10-08T20:44:34.3504024Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-08T20:44:34.3504844Z libcups2t64 set to manually installed.
+2026-10-08T20:44:34.3505608Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-08T20:44:34.3506699Z libdbus-1-3 set to manually installed.
+2026-10-08T20:44:34.3507531Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-08T20:44:34.3508303Z libdrm2 set to manually installed.
+2026-10-08T20:44:34.3509094Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-08T20:44:34.3510093Z libgbm1 set to manually installed.
+2026-10-08T20:44:34.3511040Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-08T20:44:34.3511877Z libglib2.0-0t64 set to manually installed.
+2026-10-08T20:44:34.3512669Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-08T20:44:34.3513358Z libnspr4 set to manually installed.
+2026-10-08T20:44:34.3513922Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-08T20:44:34.3514492Z libnss3 set to manually installed.
+2026-10-08T20:44:34.3515238Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-08T20:44:34.3516059Z libpango-1.0-0 set to manually installed.
+2026-10-08T20:44:34.3516874Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-10-08T20:44:34.3517659Z libx11-6 set to manually installed.
+2026-10-08T20:44:34.3518399Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-08T20:44:34.3519121Z libxcb1 set to manually installed.
+2026-10-08T20:44:34.3520201Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-08T20:44:34.3521010Z libxcomposite1 set to manually installed.
+2026-10-08T20:44:34.3521838Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-08T20:44:34.3522571Z libxdamage1 set to manually installed.
+2026-10-08T20:44:34.3523319Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-08T20:44:34.3524045Z libxext6 set to manually installed.
+2026-10-08T20:44:34.3524777Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-08T20:44:34.3525496Z libxfixes3 set to manually installed.
+2026-10-08T20:44:34.3526268Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-08T20:44:34.3527034Z libxkbcommon0 set to manually installed.
+2026-10-08T20:44:34.3527824Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-08T20:44:34.3528551Z libxrandr2 set to manually installed.
+2026-10-08T20:44:34.3529315Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-08T20:44:34.3530587Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-08T20:44:34.3531646Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-08T20:44:34.3532466Z libfontconfig1 set to manually installed.
+2026-10-08T20:44:34.3533269Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-08T20:44:34.3534062Z fonts-liberation set to manually installed.
+2026-10-08T20:44:34.3534861Z The following additional packages will be installed:
+2026-10-08T20:44:34.3535672Z   xfonts-encodings xfonts-utils
+2026-10-08T20:44:34.3536194Z Recommended packages:
+2026-10-08T20:44:34.3536729Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-08T20:44:34.3689658Z The following NEW packages will be installed:
+2026-10-08T20:44:34.3690727Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-08T20:44:34.3695800Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-08T20:44:34.3696477Z   xfonts-utils
+2026-10-08T20:44:34.3700231Z The following packages will be upgraded:
+2026-10-08T20:44:34.3704684Z   libfreetype6
+2026-10-08T20:44:34.3877445Z 1 upgraded, 9 newly installed, 0 to remove and 22 not upgraded.
+2026-10-08T20:44:34.3878171Z Need to get 21.5 MB of archives.
+2026-10-08T20:44:34.3878647Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-08T20:44:34.3879165Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-08T20:44:34.5371810Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-08T20:44:34.7421541Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-08T20:44:34.8291366Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-08T20:44:34.8520929Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-08T20:44:34.9270334Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-08T20:44:35.2818545Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+2026-10-08T20:44:35.3214522Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-08T20:44:35.3663831Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-08T20:44:35.3934565Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-08T20:44:35.4345998Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-08T20:44:35.6978783Z Fetched 21.5 MB in 1s (20.2 MB/s)
+2026-10-08T20:44:35.7229401Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-08T20:44:35.7526529Z (Reading database ... 
+2026-10-08T20:44:35.7526990Z (Reading database ... 5%
+2026-10-08T20:44:35.7527270Z (Reading database ... 10%
+2026-10-08T20:44:35.7527551Z (Reading database ... 15%
+2026-10-08T20:44:35.7527819Z (Reading database ... 20%
+2026-10-08T20:44:35.7528081Z (Reading database ... 25%
+2026-10-08T20:44:35.7528339Z (Reading database ... 30%
+2026-10-08T20:44:35.7528588Z (Reading database ... 35%
+2026-10-08T20:44:35.7528837Z (Reading database ... 40%
+2026-10-08T20:44:35.7529087Z (Reading database ... 45%
+2026-10-08T20:44:35.7529336Z (Reading database ... 50%
+2026-10-08T20:44:35.7576508Z (Reading database ... 55%
+2026-10-08T20:44:35.8538301Z (Reading database ... 60%
+2026-10-08T20:44:36.0626115Z (Reading database ... 65%
+2026-10-08T20:44:36.2649548Z (Reading database ... 70%
+2026-10-08T20:44:36.4454493Z (Reading database ... 75%
+2026-10-08T20:44:36.5666913Z (Reading database ... 80%
+2026-10-08T20:44:36.6891359Z (Reading database ... 85%
+2026-10-08T20:44:36.8240311Z (Reading database ... 90%
+2026-10-08T20:44:36.9241635Z (Reading database ... 95%
+2026-10-08T20:44:36.9242237Z (Reading database ... 100%
+2026-10-08T20:44:36.9243134Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-08T20:44:36.9287156Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-08T20:44:36.9380864Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-08T20:44:37.1670089Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-08T20:44:37.1799214Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-08T20:44:37.1806880Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-08T20:44:37.2580475Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-08T20:44:37.2707033Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-08T20:44:37.2715731Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-08T20:44:37.2922980Z Selecting previously unselected package fonts-unifont.
+2026-10-08T20:44:37.3047863Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-08T20:44:37.3056608Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-08T20:44:37.4097855Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-08T20:44:37.4224278Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-08T20:44:37.4323324Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-08T20:44:37.9081969Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+2026-10-08T20:44:37.9116688Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+2026-10-08T20:44:37.9360831Z Selecting previously unselected package xfonts-encodings.
+2026-10-08T20:44:37.9489128Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-08T20:44:37.9498400Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-08T20:44:37.9785129Z Selecting previously unselected package xfonts-utils.
+2026-10-08T20:44:37.9911746Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-08T20:44:37.9920118Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-08T20:44:38.0281330Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-08T20:44:38.0407893Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-08T20:44:38.0417482Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-08T20:44:38.0805527Z Selecting previously unselected package xfonts-scalable.
+2026-10-08T20:44:38.0934339Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-08T20:44:38.0944471Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-08T20:44:38.1399535Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-08T20:44:38.1540123Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-08T20:44:38.1569676Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-08T20:44:38.1598098Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+2026-10-08T20:44:38.1623900Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-08T20:44:38.1646782Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-08T20:44:38.1717599Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-08T20:44:38.1737754Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-08T20:44:38.1762029Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-08T20:44:38.1807177Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-08T20:44:38.2131333Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-08T20:44:38.2407355Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-08T20:44:38.2741262Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-08T20:44:38.2765817Z Not building database; man-db/auto-update is not 'true'.
+2026-10-08T20:44:38.2781185Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-08T20:44:39.0150067Z 
+2026-10-08T20:44:39.0151326Z Running kernel seems to be up-to-date.
+2026-10-08T20:44:39.0151725Z 
+2026-10-08T20:44:39.0151930Z Restarting services...
+2026-10-08T20:44:39.0229597Z  systemctl restart php8.3-fpm.service
+2026-10-08T20:44:39.1333605Z 
+2026-10-08T20:44:39.1335321Z No containers need to be restarted.
+2026-10-08T20:44:39.1350584Z 
+2026-10-08T20:44:39.1351015Z No user sessions are running outdated binaries.
+2026-10-08T20:44:39.1351430Z 
+2026-10-08T20:44:39.1352063Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-08T20:44:40.0692910Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+2026-10-08T20:44:40.2126325Z |                                                                                |   0% of 173.9 MiB
+2026-10-08T20:44:40.3310999Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+2026-10-08T20:44:40.4166790Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+2026-10-08T20:44:40.4985862Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+2026-10-08T20:44:40.5752873Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+2026-10-08T20:44:40.6398894Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+2026-10-08T20:44:40.7016158Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+2026-10-08T20:44:40.8064908Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+2026-10-08T20:44:40.8963492Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+2026-10-08T20:44:40.9749296Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+2026-10-08T20:44:41.0408441Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+2026-10-08T20:44:44.8763882Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+2026-10-08T20:44:44.8768266Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-08T20:44:45.0244930Z |                                                                                |   0% of 2.3 MiB
+2026-10-08T20:44:45.0287657Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-08T20:44:45.0315475Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-08T20:44:45.0340537Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-08T20:44:45.0356559Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-08T20:44:45.0378858Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-08T20:44:45.0396129Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-08T20:44:45.0411075Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-08T20:44:45.0433203Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-08T20:44:45.0446020Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-08T20:44:45.0457073Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-08T20:44:45.1051451Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-08T20:44:45.1055030Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+2026-10-08T20:44:45.2445277Z |                                                                                |   0% of 104.3 MiB
+2026-10-08T20:44:45.3427186Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-10-08T20:44:45.4008932Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-10-08T20:44:45.4751385Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-10-08T20:44:45.5341715Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-10-08T20:44:45.5908464Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-10-08T20:44:45.6567611Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-10-08T20:44:45.7094611Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-10-08T20:44:45.7671201Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-10-08T20:44:45.8060620Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-10-08T20:44:45.8474931Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-10-08T20:44:47.7564797Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+2026-10-08T20:44:47.8660464Z ##[group]Run npx playwright install ffmpeg
+2026-10-08T20:44:47.8660896Z [36;1mnpx playwright install ffmpeg[0m
+2026-10-08T20:44:47.8726546Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:44:47.8726817Z ##[endgroup]
+2026-10-08T20:44:48.7153716Z ##[group]Run npm test
+2026-10-08T20:44:48.7154000Z [36;1mnpm test[0m
+2026-10-08T20:44:48.7217936Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:44:48.7218211Z ##[endgroup]
+2026-10-08T20:44:48.8604004Z 
+2026-10-08T20:44:48.8604543Z > partybox-g04-reality-check@0.1.0 test
+2026-10-08T20:44:48.8608844Z > node checksums.ts --check && npm run check && node generate.ts --check && node --test test.ts && node differential.ts && node bluff-differential.ts && node bounds-probe.ts && node style-probe.ts && node phase-audit.ts && node catalog-probe.ts && node churn-probe.ts && node mutations.ts && node league.ts && node league.ts --held-out && node build.ts --check && node late-input.ts && node host-deadline-mutation.ts && node browser.ts && node browser.ts --repeat=2 && node browser.ts --repeat=3 && node browser-proof.ts && node browser-proof.ts --self-test && node --test strict-proof.test.ts && node strict-browser.ts && node strict-browser-proof.ts && node checksums.ts && node checksums.ts --check
+2026-10-08T20:44:48.8611637Z 
+2026-10-08T20:44:48.9644683Z 108 data/media checksums verified
+2026-10-08T20:44:49.0718937Z 
+2026-10-08T20:44:49.0719646Z > partybox-g04-reality-check@0.1.0 check
+2026-10-08T20:44:49.0720590Z > tsc --noEmit
+2026-10-08T20:44:49.0720826Z 
+2026-10-08T20:44:51.9734678Z 160 fictional rows; 20 per realm; schema valid and byte-identical regeneration
+2026-10-08T20:49:31.9732402Z ✔ catalog has twenty original rows per realm and reproducible validated bytes (15.125733ms)
+2026-10-08T20:49:31.9738191Z ✔ numeric score is symmetric, bounded, unit invariant and zero-safe without overflow (0.977946ms)
+2026-10-08T20:49:31.9740667Z ✔ date and choice scoring use the declared exact/proximity units (0.366214ms)
+2026-10-08T20:49:31.9742485Z ✔ BCE and CE centuries are adjacent without an imaginary century zero (0.256639ms)
+2026-10-08T20:49:31.9744815Z ✔ schema rejects nonfinite, malformed, oversized and additional fields (2.909801ms)
+2026-10-08T20:49:31.9746479Z ✔ settings, distinct rosters and mode balancing are explicit (1.872525ms)
+2026-10-08T20:49:31.9748164Z ✔ factory clones injected content and keeps the exact shared init signature (5.219883ms)
+2026-10-08T20:49:31.9750250Z ✔ first appearances have ten-second demos using a distinct unscored row (1.504876ms)
+2026-10-08T20:49:31.9751980Z ✔ bad contextual answers and repeated submissions preserve identity (1.662784ms)
+2026-10-08T20:49:31.9753710Z ✔ all answers close a quick round and the last round doubles each award once (1.109922ms)
+2026-10-08T20:49:31.9755527Z ✔ empty and format-only fakes are rejected; normalization merges equivalent text (0.548023ms)
+2026-10-08T20:49:31.9762921Z ✔ duplicate fake authors share credit, own votes are invalid, option IDs are anonymous (0.769426ms)
+2026-10-08T20:49:31.9764631Z ✔ correct writes receive truth credit once and private confirmation without a vote (0.675371ms)
+2026-10-08T20:49:31.9766118Z ✔ fooled-vote credit is independent of author/voter seat order (0.430183ms)
+2026-10-08T20:49:31.9767658Z ✔ live answers, other inputs, fake authors and vote choices stay private until reveal (1.640402ms)
+2026-10-08T20:49:31.9769026Z ✔ views are detached copies and spectators never gain private controls (0.38598ms)
+2026-10-08T20:49:31.9770209Z ✔ stale and early timers, wrong phases, spectators and unknown events preserve state (0.3269ms)
+2026-10-08T20:49:31.9774796Z ✔ pause freezes input/timers, shifts deadlines, and resumes a drop-finished phase (0.480677ms)
+2026-10-08T20:49:31.9793932Z ✔ disconnect/leave preserve result seats and an unknown drop is ignored (0.293438ms)
+2026-10-08T20:49:31.9811098Z ✔ all phases exit on deadlines or VIP skip and ended games ignore play (12.265253ms)
+2026-10-08T20:49:31.9831374Z ✔ bots use only public/own data, remain deterministic, and distinguish real strategies (15.769836ms)
+2026-10-08T20:49:31.9842864Z ✔ game modules contain no host entropy, clock, timers, network or I/O (1.294346ms)
+2026-10-08T20:49:31.9844264Z ✔ strong bots read short public years and explicit eras without seeing the answer (0.931309ms)
+2026-10-08T20:49:31.9845290Z ✔ all bot skills submit legal answers on tiny numbers and negative-only century ranges (71.421952ms)
+2026-10-08T20:49:31.9846210Z ✔ controller defaults stay inside fractional and one-sided date bounds (0.397151ms)
+2026-10-08T20:49:31.9847041Z ✔ medium bluffs follow the public two-word hint in every bluff realm (2.139583ms)
+2026-10-08T20:49:31.9848576Z ✔ catalog rejects whitespace and format-only truths before a blank vote can be created (19.554229ms)
+2026-10-08T20:49:31.9850572Z ✔ manifest bytes and all seven phase fixtures use the contract and play to completion (39.423366ms)
+2026-10-08T20:49:31.9852138Z ✔ property replay seeds 1/2/3 plus 1000 random seeded event streams (15516.915951ms)
+2026-10-08T20:49:31.9853218Z ✔ 1000 complete bot games: 2 seats quick (1045.993048ms)
+2026-10-08T20:49:31.9854114Z ✔ 1000 complete bot games: 3 seats quick (1776.812462ms)
+2026-10-08T20:49:31.9854761Z ✔ 1000 complete bot games: 4 seats quick (2572.283882ms)
+2026-10-08T20:49:31.9855245Z ✔ 1000 complete bot games: 5 seats quick (3685.757615ms)
+2026-10-08T20:49:31.9855705Z ✔ 1000 complete bot games: 6 seats quick (5029.023022ms)
+2026-10-08T20:49:31.9856177Z ✔ 1000 complete bot games: 7 seats quick (6654.203897ms)
+2026-10-08T20:49:31.9856636Z ✔ 1000 complete bot games: 8 seats quick (8382.461187ms)
+2026-10-08T20:49:31.9857091Z ✔ 1000 complete bot games: 2 seats mixed (2145.321799ms)
+2026-10-08T20:49:31.9857548Z ✔ 1000 complete bot games: 3 seats mixed (3953.994544ms)
+2026-10-08T20:49:31.9857997Z ✔ 1000 complete bot games: 4 seats mixed (6584.275336ms)
+2026-10-08T20:49:31.9858473Z ✔ 1000 complete bot games: 5 seats mixed (10116.054955ms)
+2026-10-08T20:49:31.9858945Z ✔ 1000 complete bot games: 6 seats mixed (14473.133293ms)
+2026-10-08T20:49:31.9859404Z ✔ 1000 complete bot games: 7 seats mixed (20133.761528ms)
+2026-10-08T20:49:31.9867799Z ✔ 1000 complete bot games: 8 seats mixed (26966.13161ms)
+2026-10-08T20:49:31.9873900Z ✔ 1000 complete bot games: 2 seats bluff (2982.721819ms)
+2026-10-08T20:49:31.9874815Z ✔ 1000 complete bot games: 3 seats bluff (6034.146787ms)
+2026-10-08T20:49:31.9875354Z ✔ 1000 complete bot games: 4 seats bluff (10699.797148ms)
+2026-10-08T20:49:31.9875978Z ✔ 1000 complete bot games: 5 seats bluff (17319.59317ms)
+2026-10-08T20:49:31.9876795Z ✔ 1000 complete bot games: 6 seats bluff (25602.791145ms)
+2026-10-08T20:49:31.9877585Z ✔ 1000 complete bot games: 7 seats bluff (36861.400941ms)
+2026-10-08T20:49:31.9878384Z ✔ 1000 complete bot games: 8 seats bluff (50733.625952ms)
+2026-10-08T20:49:31.9879365Z ✔ 1000 timer-only rosters finish inside estimatedMinutes × 3 (89.794741ms)
+2026-10-08T20:49:32.0276357Z ℹ tests 51
+2026-10-08T20:49:32.0276837Z ℹ suites 0
+2026-10-08T20:49:32.0277062Z ℹ pass 51
+2026-10-08T20:49:32.0277370Z ℹ fail 0
+2026-10-08T20:49:32.0277778Z ℹ cancelled 0
+2026-10-08T20:49:32.0278182Z ℹ skipped 0
+2026-10-08T20:49:32.0278604Z ℹ todo 0
+2026-10-08T20:49:32.0279045Z ℹ duration_ms 280012.484017
+2026-10-08T20:49:32.1213673Z {
+2026-10-08T20:49:32.1214392Z   cases: 10000,
+2026-10-08T20:49:32.1214867Z   edgeCases: 14,
+2026-10-08T20:49:32.1215377Z   mismatches: 0,
+2026-10-08T20:49:32.1215982Z   scaleInvariance: 'passed',
+2026-10-08T20:49:32.1216746Z   reciprocalSymmetry: 'passed',
+2026-10-08T20:49:32.1217561Z   forms: [ 'min/max ratio', 'absolute difference of logarithms' ]
+2026-10-08T20:49:32.1218348Z }
+2026-10-08T20:49:33.6581439Z {
+2026-10-08T20:49:33.6581933Z   cases: 10000,
+2026-10-08T20:49:33.6582359Z   mismatches: 0,
+2026-10-08T20:49:33.6582782Z   lastRounds: 5000,
+2026-10-08T20:49:33.6583272Z   duplicateAuthorCases: 32711,
+2026-10-08T20:49:33.6583767Z   correctWrites: 7381,
+2026-10-08T20:49:33.6584181Z   implementations: [
+2026-10-08T20:49:33.6584608Z     'production voter accumulation',
+2026-10-08T20:49:33.6585216Z     'independent author accumulation from raw text'
+2026-10-08T20:49:33.6585718Z   ]
+2026-10-08T20:49:33.6586054Z }
+2026-10-08T20:49:33.8725087Z {
+2026-10-08T20:49:33.8725584Z   actions: 9000,
+2026-10-08T20:49:33.8725997Z   invalid: 0,
+2026-10-08T20:49:33.8726737Z   results: [
+2026-10-08T20:49:33.8727153Z     {
+2026-10-08T20:49:33.8727536Z       kind: 'number',
+2026-10-08T20:49:33.8727931Z       min: 1e-200,
+2026-10-08T20:49:33.8728314Z       max: 1e-180,
+2026-10-08T20:49:33.8728697Z       skill: 'easy',
+2026-10-08T20:49:33.8729074Z       actions: 1000,
+2026-10-08T20:49:33.8729476Z       invalid: 0
+2026-10-08T20:49:33.8730107Z     },
+2026-10-08T20:49:33.8730421Z     {
+2026-10-08T20:49:33.8730733Z       kind: 'number',
+2026-10-08T20:49:33.8731122Z       min: 1e-200,
+2026-10-08T20:49:33.8731509Z       max: 1e-180,
+2026-10-08T20:49:33.8731851Z       skill: 'normal',
+2026-10-08T20:49:33.8732225Z       actions: 1000,
+2026-10-08T20:49:33.8732559Z       invalid: 0
+2026-10-08T20:49:33.8732858Z     },
+2026-10-08T20:49:33.8733139Z     {
+2026-10-08T20:49:33.8733435Z       kind: 'number',
+2026-10-08T20:49:33.8733778Z       min: 1e-200,
+2026-10-08T20:49:33.8734122Z       max: 1e-180,
+2026-10-08T20:49:33.8734440Z       skill: 'sharp',
+2026-10-08T20:49:33.8734795Z       actions: 1000,
+2026-10-08T20:49:33.8735129Z       invalid: 0
+2026-10-08T20:49:33.8735427Z     },
+2026-10-08T20:49:33.8735705Z     {
+2026-10-08T20:49:33.8736006Z       kind: 'number',
+2026-10-08T20:49:33.8736337Z       min: 5e-324,
+2026-10-08T20:49:33.8736669Z       max: 1e-310,
+2026-10-08T20:49:33.8736987Z       skill: 'easy',
+2026-10-08T20:49:33.8737322Z       actions: 1000,
+2026-10-08T20:49:33.8737645Z       invalid: 0
+2026-10-08T20:49:33.8737955Z     },
+2026-10-08T20:49:33.8738233Z     {
+2026-10-08T20:49:33.8738540Z       kind: 'number',
+2026-10-08T20:49:33.8738872Z       min: 5e-324,
+2026-10-08T20:49:33.8739215Z       max: 1e-310,
+2026-10-08T20:49:33.8739543Z       skill: 'normal',
+2026-10-08T20:49:33.8740105Z       actions: 1000,
+2026-10-08T20:49:33.8740457Z       invalid: 0
+2026-10-08T20:49:33.8740773Z     },
+2026-10-08T20:49:33.8741066Z     {
+2026-10-08T20:49:33.8741657Z       kind: 'number',
+2026-10-08T20:49:33.8742000Z       min: 5e-324,
+2026-10-08T20:49:33.8742328Z       max: 1e-310,
+2026-10-08T20:49:33.8742666Z       skill: 'sharp',
+2026-10-08T20:49:33.8743032Z       actions: 1000,
+2026-10-08T20:49:33.8743382Z       invalid: 0
+2026-10-08T20:49:33.8743701Z     },
+2026-10-08T20:49:33.8743987Z     {
+2026-10-08T20:49:33.8744292Z       kind: 'century',
+2026-10-08T20:49:33.8744677Z       min: -1,
+2026-10-08T20:49:33.8744993Z       max: 0,
+2026-10-08T20:49:33.8745311Z       skill: 'easy',
+2026-10-08T20:49:33.8745685Z       actions: 1000,
+2026-10-08T20:49:33.8746021Z       invalid: 0
+2026-10-08T20:49:33.8746343Z     },
+2026-10-08T20:49:33.8746628Z     {
+2026-10-08T20:49:33.8746927Z       kind: 'century',
+2026-10-08T20:49:33.8747267Z       min: -1,
+2026-10-08T20:49:33.8747591Z       max: 0,
+2026-10-08T20:49:33.8747907Z       skill: 'normal',
+2026-10-08T20:49:33.8748256Z       actions: 1000,
+2026-10-08T20:49:33.8748581Z       invalid: 0
+2026-10-08T20:49:33.8748891Z     },
+2026-10-08T20:49:33.8749174Z     {
+2026-10-08T20:49:33.8749474Z       kind: 'century',
+2026-10-08T20:49:33.8750043Z       min: -1,
+2026-10-08T20:49:33.8750379Z       max: 0,
+2026-10-08T20:49:33.8750700Z       skill: 'sharp',
+2026-10-08T20:49:33.8751055Z       actions: 1000,
+2026-10-08T20:49:33.8751391Z       invalid: 0
+2026-10-08T20:49:33.8751709Z     }
+2026-10-08T20:49:33.8751996Z   ]
+2026-10-08T20:49:33.8752288Z }
+2026-10-08T20:49:34.0682138Z {
+2026-10-08T20:49:34.0682534Z   samples: 300,
+2026-10-08T20:49:34.0682851Z   twoWords: 300,
+2026-10-08T20:49:34.0683099Z   invalid: 0,
+2026-10-08T20:49:34.0683322Z   results: [
+2026-10-08T20:49:34.0683536Z     {
+2026-10-08T20:49:34.0683809Z       realm: 'real-town-or-fake',
+2026-10-08T20:49:34.0684118Z       samples: 100,
+2026-10-08T20:49:34.0684362Z       twoWords: 100,
+2026-10-08T20:49:34.0684597Z       invalid: 0
+2026-10-08T20:49:34.0684819Z     },
+2026-10-08T20:49:34.0685019Z     {
+2026-10-08T20:49:34.0685274Z       realm: 'patent-pending',
+2026-10-08T20:49:34.0685590Z       samples: 100,
+2026-10-08T20:49:34.0685827Z       twoWords: 100,
+2026-10-08T20:49:34.0686069Z       invalid: 0
+2026-10-08T20:49:34.0686942Z     },
+2026-10-08T20:49:34.0687616Z     { realm: 'do-not-use', samples: 100, twoWords: 100, invalid: 0 }
+2026-10-08T20:49:34.0688186Z   ]
+2026-10-08T20:49:34.0688475Z }
+2026-10-08T20:49:39.9605384Z {
+2026-10-08T20:49:39.9605875Z   randomSeed: 100933670,
+2026-10-08T20:49:39.9606346Z   states: 7000,
+2026-10-08T20:49:39.9606742Z   ignoredEvents: 195000,
+2026-10-08T20:49:39.9607202Z   pausedEvents: 30000,
+2026-10-08T20:49:39.9607664Z   privateComparisons: 60000,
+2026-10-08T20:49:39.9608121Z   botComparisons: 90000,
+2026-10-08T20:49:39.9608507Z   acceptedActions: 36000,
+2026-10-08T20:49:39.9608912Z   detachedViews: 49000,
+2026-10-08T20:49:39.9609285Z   failures: 0,
+2026-10-08T20:49:39.9609624Z   phases: [
+2026-10-08T20:49:39.9610472Z     {
+2026-10-08T20:49:39.9610796Z       phase: 'wheel',
+2026-10-08T20:49:39.9611195Z       samples: 1000,
+2026-10-08T20:49:39.9611668Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9612094Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9612585Z       privateComparisons: 12000,
+2026-10-08T20:49:39.9613063Z       botComparisons: 18000,
+2026-10-08T20:49:39.9613488Z       acceptedActions: 0,
+2026-10-08T20:49:39.9613870Z       detachedViews: 7000
+2026-10-08T20:49:39.9614235Z     },
+2026-10-08T20:49:39.9614515Z     {
+2026-10-08T20:49:39.9614817Z       phase: 'demo',
+2026-10-08T20:49:39.9615166Z       samples: 1000,
+2026-10-08T20:49:39.9615503Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9615894Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9616321Z       privateComparisons: 12000,
+2026-10-08T20:49:39.9616746Z       botComparisons: 18000,
+2026-10-08T20:49:39.9617138Z       acceptedActions: 0,
+2026-10-08T20:49:39.9617516Z       detachedViews: 7000
+2026-10-08T20:49:39.9617858Z     },
+2026-10-08T20:49:39.9618140Z     {
+2026-10-08T20:49:39.9618433Z       phase: 'answer',
+2026-10-08T20:49:39.9618792Z       samples: 1000,
+2026-10-08T20:49:39.9619511Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9620128Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9620589Z       privateComparisons: 12000,
+2026-10-08T20:49:39.9621015Z       botComparisons: 18000,
+2026-10-08T20:49:39.9621403Z       acceptedActions: 9000,
+2026-10-08T20:49:39.9621808Z       detachedViews: 7000
+2026-10-08T20:49:39.9622168Z     },
+2026-10-08T20:49:39.9622454Z     {
+2026-10-08T20:49:39.9622753Z       phase: 'write',
+2026-10-08T20:49:39.9623124Z       samples: 1000,
+2026-10-08T20:49:39.9623480Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9623868Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9624307Z       privateComparisons: 12000,
+2026-10-08T20:49:39.9624729Z       botComparisons: 18000,
+2026-10-08T20:49:39.9625146Z       acceptedActions: 9000,
+2026-10-08T20:49:39.9625542Z       detachedViews: 7000
+2026-10-08T20:49:39.9625900Z     },
+2026-10-08T20:49:39.9626191Z     {
+2026-10-08T20:49:39.9626501Z       phase: 'vote',
+2026-10-08T20:49:39.9626861Z       samples: 1000,
+2026-10-08T20:49:39.9627225Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9627623Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9628091Z       privateComparisons: 12000,
+2026-10-08T20:49:39.9628522Z       botComparisons: 18000,
+2026-10-08T20:49:39.9628936Z       acceptedActions: 9000,
+2026-10-08T20:49:39.9629363Z       detachedViews: 7000
+2026-10-08T20:49:39.9629715Z     },
+2026-10-08T20:49:39.9630216Z     {
+2026-10-08T20:49:39.9630527Z       phase: 'reveal',
+2026-10-08T20:49:39.9630893Z       samples: 1000,
+2026-10-08T20:49:39.9631255Z       ignoredEvents: 28000,
+2026-10-08T20:49:39.9631642Z       pausedEvents: 5000,
+2026-10-08T20:49:39.9632045Z       privateComparisons: 0,
+2026-10-08T20:49:39.9632439Z       botComparisons: 0,
+2026-10-08T20:49:39.9632817Z       acceptedActions: 9000,
+2026-10-08T20:49:39.9633216Z       detachedViews: 7000
+2026-10-08T20:49:39.9633585Z     },
+2026-10-08T20:49:39.9633878Z     {
+2026-10-08T20:49:39.9634195Z       phase: 'done',
+2026-10-08T20:49:39.9634546Z       samples: 1000,
+2026-10-08T20:49:39.9634911Z       ignoredEvents: 27000,
+2026-10-08T20:49:39.9635312Z       pausedEvents: 0,
+2026-10-08T20:49:39.9635950Z       privateComparisons: 0,
+2026-10-08T20:49:39.9636377Z       botComparisons: 0,
+2026-10-08T20:49:39.9636779Z       acceptedActions: 0,
+2026-10-08T20:49:39.9637162Z       detachedViews: 7000
+2026-10-08T20:49:39.9637528Z     }
+2026-10-08T20:49:39.9637821Z   ]
+2026-10-08T20:49:39.9638114Z }
+2026-10-08T20:49:40.3685822Z {
+2026-10-08T20:49:40.3686309Z   samplerSeed: 100925447,
+2026-10-08T20:49:40.3686657Z   rows: 10000,
+2026-10-08T20:49:40.3687037Z   byKind: { number: 2500, century: 2500, decade: 2500, choice: 2500 },
+2026-10-08T20:49:40.3687418Z   actions: 30000,
+2026-10-08T20:49:40.3687634Z   defaults: 7500,
+2026-10-08T20:49:40.3687849Z   invalid: 0,
+2026-10-08T20:49:40.3688065Z   blankTruthsRejected: 4,
+2026-10-08T20:49:40.3688314Z   blankTruthsTested: 4
+2026-10-08T20:49:40.3688548Z }
+2026-10-08T20:49:57.7085137Z {
+2026-10-08T20:49:57.7085493Z   samplerSeed: 100925456,
+2026-10-08T20:49:57.7085885Z   games: 1000,
+2026-10-08T20:49:57.7086166Z   bySeats: {
+2026-10-08T20:49:57.7086425Z     '2': 143,
+2026-10-08T20:49:57.7086706Z     '3': 143,
+2026-10-08T20:49:57.7086942Z     '4': 143,
+2026-10-08T20:49:57.7087147Z     '5': 143,
+2026-10-08T20:49:57.7087352Z     '6': 143,
+2026-10-08T20:49:57.7087558Z     '7': 143,
+2026-10-08T20:49:57.7087785Z     '8': 142
+2026-10-08T20:49:57.7087990Z   },
+2026-10-08T20:49:57.7088288Z   byMode: { quick: 334, mixed: 333, bluff: 333 },
+2026-10-08T20:49:57.7088642Z   prototypeRosters: 50,
+2026-10-08T20:49:57.7088900Z   inputs: 42227,
+2026-10-08T20:49:57.7089132Z   timers: 21906,
+2026-10-08T20:49:57.7089356Z   pauses: 5347,
+2026-10-08T20:49:57.7089703Z   presenceEvents: 16585,
+2026-10-08T20:49:57.7090317Z   permanentLeaves: 2273,
+2026-10-08T20:49:57.7090714Z   staleChecks: 585,
+2026-10-08T20:49:57.7091086Z   maxSteps: 153,
+2026-10-08T20:49:57.7091405Z   failures: 0
+2026-10-08T20:49:57.7091722Z }
+2026-10-08T20:49:58.9522482Z stale phase accepted KILLED
+2026-10-08T20:49:59.5237559Z stale nonce accepted KILLED
+2026-10-08T20:50:00.1001758Z early timer accepted KILLED
+2026-10-08T20:50:00.6747399Z paused play accepted KILLED
+2026-10-08T20:50:01.2560171Z prototype spectator becomes player KILLED
+2026-10-08T20:50:01.8414269Z century zero accepted KILLED
+2026-10-08T20:50:02.4135825Z nondecade answer accepted KILLED
+2026-10-08T20:50:02.9934662Z out-of-range estimate accepted KILLED
+2026-10-08T20:50:03.5737629Z answer can be replaced KILLED
+2026-10-08T20:50:04.1503800Z own fake vote accepted KILLED
+2026-10-08T20:50:04.7275132Z duplicate author lost KILLED
+2026-10-08T20:50:05.2997461Z fake case normalization lost KILLED
+2026-10-08T20:50:05.8696439Z correct write earns nothing KILLED
+2026-10-08T20:50:06.4356315Z fooled credit removed KILLED
+2026-10-08T20:50:07.0257213Z truth overwrites earlier fooled credit KILLED
+2026-10-08T20:50:07.6015559Z last round not doubled KILLED
+2026-10-08T20:50:08.1453199Z results never returned KILLED
+2026-10-08T20:50:08.7355231Z left seat omitted from ranking KILLED
+2026-10-08T20:50:09.3216901Z pause duration lost KILLED
+2026-10-08T20:50:09.8920890Z resume remains paused KILLED
+2026-10-08T20:50:10.4735109Z demo only one second KILLED
+2026-10-08T20:50:11.0401912Z every repeat gets demo KILLED
+2026-10-08T20:50:11.6116861Z demo reveals live row KILLED
+2026-10-08T20:50:12.1844386Z live answer leaks in projection KILLED
+2026-10-08T20:50:12.7580315Z phone gets another private answer KILLED
+2026-10-08T20:50:14.9865390Z {
+2026-10-08T20:50:14.9865903Z   mode: 'quick',
+2026-10-08T20:50:14.9866372Z   a: 'sharp',
+2026-10-08T20:50:14.9866686Z   b: 'normal',
+2026-10-08T20:50:14.9866983Z   games: 2000,
+2026-10-08T20:50:14.9867280Z   firstSeed: 1,
+2026-10-08T20:50:14.9867592Z   lastSeed: 2000,
+2026-10-08T20:50:14.9867917Z   wins: 1790,
+2026-10-08T20:50:14.9868215Z   losses: 210,
+2026-10-08T20:50:14.9868502Z   ties: 0,
+2026-10-08T20:50:14.9868794Z   winRate: 0.895,
+2026-10-08T20:50:14.9869262Z   confidence95: [ 0.8815647039481819, 0.9084352960518182 ],
+2026-10-08T20:50:14.9870271Z   steps: 74000,
+2026-10-08T20:50:14.9870914Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:14.9871810Z }
+2026-10-08T20:50:16.9301562Z {
+2026-10-08T20:50:16.9302112Z   mode: 'quick',
+2026-10-08T20:50:16.9302591Z   a: 'normal',
+2026-10-08T20:50:16.9303042Z   b: 'easy',
+2026-10-08T20:50:16.9303477Z   games: 2000,
+2026-10-08T20:50:16.9303917Z   firstSeed: 1,
+2026-10-08T20:50:16.9304380Z   lastSeed: 2000,
+2026-10-08T20:50:16.9304864Z   wins: 1969,
+2026-10-08T20:50:16.9305190Z   losses: 31,
+2026-10-08T20:50:16.9305502Z   ties: 0,
+2026-10-08T20:50:16.9305822Z   winRate: 0.9845,
+2026-10-08T20:50:16.9306336Z   confidence95: [ 0.9790860432399215, 0.9899139567600785 ],
+2026-10-08T20:50:16.9306868Z   steps: 74000,
+2026-10-08T20:50:16.9307472Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:16.9308040Z }
+2026-10-08T20:50:21.1095466Z {
+2026-10-08T20:50:21.1095831Z   mode: 'mixed',
+2026-10-08T20:50:21.1096179Z   a: 'sharp',
+2026-10-08T20:50:21.1096520Z   b: 'normal',
+2026-10-08T20:50:21.1096821Z   games: 2000,
+2026-10-08T20:50:21.1097127Z   firstSeed: 1,
+2026-10-08T20:50:21.1097450Z   lastSeed: 2000,
+2026-10-08T20:50:21.1097757Z   wins: 1971,
+2026-10-08T20:50:21.1098051Z   losses: 21,
+2026-10-08T20:50:21.1098334Z   ties: 8,
+2026-10-08T20:50:21.1098629Z   winRate: 0.9855,
+2026-10-08T20:50:21.1099097Z   confidence95: [ 0.9802609397980172, 0.9907390602019829 ],
+2026-10-08T20:50:21.1099591Z   steps: 93917,
+2026-10-08T20:50:21.1100390Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:21.1100964Z }
+2026-10-08T20:50:25.2334366Z {
+2026-10-08T20:50:25.2334825Z   mode: 'mixed',
+2026-10-08T20:50:25.2337677Z   a: 'normal',
+2026-10-08T20:50:25.2338587Z   b: 'easy',
+2026-10-08T20:50:25.2339143Z   games: 2000,
+2026-10-08T20:50:25.2339664Z   firstSeed: 1,
+2026-10-08T20:50:25.2340446Z   lastSeed: 2000,
+2026-10-08T20:50:25.2340980Z   wins: 1988,
+2026-10-08T20:50:25.2341483Z   losses: 12,
+2026-10-08T20:50:25.2342392Z   ties: 0,
+2026-10-08T20:50:25.2342707Z   winRate: 0.994,
+2026-10-08T20:50:25.2343231Z   confidence95: [ 0.9906153801986043, 0.9973846198013957 ],
+2026-10-08T20:50:25.2343754Z   steps: 94000,
+2026-10-08T20:50:25.2344225Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:25.2344705Z }
+2026-10-08T20:50:31.0039378Z {
+2026-10-08T20:50:31.0040321Z   mode: 'bluff',
+2026-10-08T20:50:31.0040764Z   a: 'sharp',
+2026-10-08T20:50:31.0041136Z   b: 'normal',
+2026-10-08T20:50:31.0041553Z   games: 2000,
+2026-10-08T20:50:31.0041916Z   firstSeed: 1,
+2026-10-08T20:50:31.0042293Z   lastSeed: 2000,
+2026-10-08T20:50:31.0042679Z   wins: 1987,
+2026-10-08T20:50:31.0043034Z   losses: 0,
+2026-10-08T20:50:31.0043378Z   ties: 13,
+2026-10-08T20:50:31.0043723Z   winRate: 0.9935,
+2026-10-08T20:50:31.0044306Z   confidence95: [ 0.9899780621527348, 0.9970219378472653 ],
+2026-10-08T20:50:31.0044883Z   steps: 101864,
+2026-10-08T20:50:31.0045546Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:31.0046273Z }
+2026-10-08T20:50:36.7517349Z {
+2026-10-08T20:50:36.7517762Z   mode: 'bluff',
+2026-10-08T20:50:36.7518187Z   a: 'normal',
+2026-10-08T20:50:36.7518547Z   b: 'easy',
+2026-10-08T20:50:36.7518889Z   games: 2000,
+2026-10-08T20:50:36.7519229Z   firstSeed: 1,
+2026-10-08T20:50:36.7519593Z   lastSeed: 2000,
+2026-10-08T20:50:36.7520304Z   wins: 1992,
+2026-10-08T20:50:36.7520633Z   losses: 0,
+2026-10-08T20:50:36.7520952Z   ties: 8,
+2026-10-08T20:50:36.7521449Z   winRate: 0.996,
+2026-10-08T20:50:36.7522227Z   confidence95: [ 0.9932336906897457, 0.9987663093102543 ],
+2026-10-08T20:50:36.7523194Z   steps: 102000,
+2026-10-08T20:50:36.7524022Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:36.7524771Z }
+2026-10-08T20:50:38.9423646Z {
+2026-10-08T20:50:38.9424541Z   mode: 'quick',
+2026-10-08T20:50:38.9425070Z   a: 'sharp',
+2026-10-08T20:50:38.9425532Z   b: 'normal',
+2026-10-08T20:50:38.9426184Z   games: 2000,
+2026-10-08T20:50:38.9426775Z   firstSeed: 2001,
+2026-10-08T20:50:38.9437838Z   lastSeed: 4000,
+2026-10-08T20:50:38.9438269Z   wins: 1786,
+2026-10-08T20:50:38.9439454Z   losses: 214,
+2026-10-08T20:50:38.9440065Z   ties: 0,
+2026-10-08T20:50:38.9440402Z   winRate: 0.893,
+2026-10-08T20:50:38.9440830Z   confidence95: [ 0.8794525145949516, 0.9065474854050485 ],
+2026-10-08T20:50:38.9441202Z   steps: 74000,
+2026-10-08T20:50:38.9441615Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:38.9442137Z }
+2026-10-08T20:50:40.8907789Z {
+2026-10-08T20:50:40.8908229Z   mode: 'quick',
+2026-10-08T20:50:40.8908619Z   a: 'normal',
+2026-10-08T20:50:40.8909042Z   b: 'easy',
+2026-10-08T20:50:40.8909443Z   games: 2000,
+2026-10-08T20:50:40.8910104Z   firstSeed: 2001,
+2026-10-08T20:50:40.8910540Z   lastSeed: 4000,
+2026-10-08T20:50:40.8910918Z   wins: 1949,
+2026-10-08T20:50:40.8911286Z   losses: 51,
+2026-10-08T20:50:40.8911619Z   ties: 0,
+2026-10-08T20:50:40.8911938Z   winRate: 0.9745,
+2026-10-08T20:50:40.8912507Z   confidence95: [ 0.9675912085137848, 0.9814087914862153 ],
+2026-10-08T20:50:40.8913112Z   steps: 74000,
+2026-10-08T20:50:40.8913779Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:40.8914423Z }
+2026-10-08T20:50:45.0804320Z {
+2026-10-08T20:50:45.0804742Z   mode: 'mixed',
+2026-10-08T20:50:45.0805120Z   a: 'sharp',
+2026-10-08T20:50:45.0805515Z   b: 'normal',
+2026-10-08T20:50:45.0805894Z   games: 2000,
+2026-10-08T20:50:45.0806272Z   firstSeed: 2001,
+2026-10-08T20:50:45.0806672Z   lastSeed: 4000,
+2026-10-08T20:50:45.0807064Z   wins: 1973,
+2026-10-08T20:50:45.0807429Z   losses: 18,
+2026-10-08T20:50:45.0807787Z   ties: 9,
+2026-10-08T20:50:45.0808201Z   winRate: 0.9865,
+2026-10-08T20:50:45.0808777Z   confidence95: [ 0.9814422599710939, 0.9915577400289062 ],
+2026-10-08T20:50:45.0809371Z   steps: 93916,
+2026-10-08T20:50:45.0810663Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:45.0811386Z }
+2026-10-08T20:50:49.1887819Z {
+2026-10-08T20:50:49.1888767Z   mode: 'mixed',
+2026-10-08T20:50:49.1889065Z   a: 'normal',
+2026-10-08T20:50:49.1889323Z   b: 'easy',
+2026-10-08T20:50:49.1889591Z   games: 2000,
+2026-10-08T20:50:49.1890113Z   firstSeed: 2001,
+2026-10-08T20:50:49.1890380Z   lastSeed: 4000,
+2026-10-08T20:50:49.1890629Z   wins: 1988,
+2026-10-08T20:50:49.1890880Z   losses: 11,
+2026-10-08T20:50:49.1891109Z   ties: 1,
+2026-10-08T20:50:49.1891340Z   winRate: 0.994,
+2026-10-08T20:50:49.1891730Z   confidence95: [ 0.9906153801986043, 0.9973846198013957 ],
+2026-10-08T20:50:49.1892148Z   steps: 94000,
+2026-10-08T20:50:49.1892619Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:49.1893101Z }
+2026-10-08T20:50:54.9386856Z {
+2026-10-08T20:50:54.9387294Z   mode: 'bluff',
+2026-10-08T20:50:54.9387694Z   a: 'sharp',
+2026-10-08T20:50:54.9388075Z   b: 'normal',
+2026-10-08T20:50:54.9388447Z   games: 2000,
+2026-10-08T20:50:54.9388833Z   firstSeed: 2001,
+2026-10-08T20:50:54.9389237Z   lastSeed: 4000,
+2026-10-08T20:50:54.9389626Z   wins: 1987,
+2026-10-08T20:50:54.9390361Z   losses: 0,
+2026-10-08T20:50:54.9390722Z   ties: 13,
+2026-10-08T20:50:54.9391090Z   winRate: 0.9935,
+2026-10-08T20:50:54.9391685Z   confidence95: [ 0.9899780621527348, 0.9970219378472653 ],
+2026-10-08T20:50:54.9392348Z   steps: 101845,
+2026-10-08T20:50:54.9393029Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:50:54.9393704Z }
+2026-10-08T20:51:00.6607591Z {
+2026-10-08T20:51:00.6607891Z   mode: 'bluff',
+2026-10-08T20:51:00.6608170Z   a: 'normal',
+2026-10-08T20:51:00.6608428Z   b: 'easy',
+2026-10-08T20:51:00.6608672Z   games: 2000,
+2026-10-08T20:51:00.6608927Z   firstSeed: 2001,
+2026-10-08T20:51:00.6609191Z   lastSeed: 4000,
+2026-10-08T20:51:00.6609444Z   wins: 1991,
+2026-10-08T20:51:00.6609685Z   losses: 0,
+2026-10-08T20:51:00.6610154Z   ties: 9,
+2026-10-08T20:51:00.6610387Z   winRate: 0.9955,
+2026-10-08T20:51:00.6610765Z   confidence95: [ 0.9925666224586666, 0.9984333775413335 ],
+2026-10-08T20:51:00.6611167Z   steps: 102000,
+2026-10-08T20:51:00.6611639Z   scope: 'fictional workshop rows; public clues and own controller only'
+2026-10-08T20:51:00.6612286Z }
+2026-10-08T20:51:00.8380545Z Offline HTML verified: 494865 bytes
+2026-10-08T20:51:01.7303255Z {"startedAt":"2026-10-08T20:51:01.245Z","pid":4014,"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b"}
+2026-10-08T20:51:05.8796914Z Late-input regression 8/8 passed; actual file, covered handover, timer-first scores, offline and source guards verified
+2026-10-08T20:51:14.5188133Z Actual compiled host mutant: old6 PASS, current8 kills exactly2 deadline-boundary cases; original UI/HTML and all guarded sources restored
+2026-10-08T20:51:31.8174094Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.69999999999999,16.599999999999966,16.700000000000045,16.69999999999999,16.599999999999966,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.699999999999932,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.5,16.799999999999955,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.5,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454],"frames":300,"meanMs":16.665999999999997,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.00240009600385}}
+2026-10-08T20:51:31.8211818Z {
+2026-10-08T20:51:31.8212026Z   name: 'tv',
+2026-10-08T20:51:31.8212236Z   frames: 300,
+2026-10-08T20:51:31.8212455Z   fps: 60.00240009600385,
+2026-10-08T20:51:31.8212698Z   p95Ms: 16.700000000000728,
+2026-10-08T20:51:31.8212938Z   p99Ms: 16.800000000000182,
+2026-10-08T20:51:31.8213265Z   rawFile: 'browser-raw-1-tv.json'
+2026-10-08T20:51:31.8213524Z }
+2026-10-08T20:51:46.0532134Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.668000000000006,16.600000000000023,16.699999999999932,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.59999999999991,16.800000000000068,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.59999999999991,16.799999999999955,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.5,16.799999999999727,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.799999999999727,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.5,16.800000000000182,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818],"frames":300,"meanMs":16.665893333333333,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.002784129183595}}
+2026-10-08T20:51:46.0611008Z {
+2026-10-08T20:51:46.0611355Z   name: 'phone',
+2026-10-08T20:51:46.0611743Z   frames: 300,
+2026-10-08T20:51:46.0612110Z   fps: 60.002784129183595,
+2026-10-08T20:51:46.0612513Z   p95Ms: 16.700000000000728,
+2026-10-08T20:51:46.0612911Z   p99Ms: 16.800000000000182,
+2026-10-08T20:51:46.0613393Z   rawFile: 'browser-raw-1-phone.json'
+2026-10-08T20:51:46.0613848Z }
+2026-10-08T20:51:46.3236075Z G04_COMPLETE_REPORT {"functional":["3s wheel / 10s demo / exact pause-shifted deadline / end and restart","all eight realm wedges land under the wheel pointer","number control / private handover / exact score","choice control / private handover / exact score","century control / private handover / exact score","decade control / private handover / exact score","bluff write/vote/reveal / duplicates / own vote disabled / escaped user text","correct-write credit confirmation is private and concealed before handover","bluff/number/range drafts survive hide and pause, remain absent from hidden DOM and never cross owners","draft and keyboard focus survive another player’s input","full quick, 2 seats, eight rounds, finite results, no overflow","full quick, 4 seats, eight rounds, finite results, no overflow","full quick, 8 seats, eight rounds, finite results, no overflow","full mixed, 2 seats, eight rounds, finite results, no overflow","full mixed, 4 seats, eight rounds, finite results, no overflow","full mixed, 8 seats, eight rounds, finite results, no overflow","full bluff, 2 seats, eight rounds, finite results, no overflow","full bluff, 4 seats, eight rounds, finite results, no overflow","full bluff, 8 seats, eight rounds, finite results, no overflow","phone controller has question, live timer and keyboard focus; shared board returns after hide","maximum-length unbroken bluffs wrap within the phone viewport","reduced-motion disables wheel animation"],"evidenceScope":"full browser suite","navigationMode":"Actual self-contained play.html opened from disk via file://","htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceUnchanged":true,"externalRequests":[],"errors":[],"performance":[{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.69999999999999,16.599999999999966,16.700000000000045,16.69999999999999,16.599999999999966,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.699999999999932,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.5,16.799999999999955,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.5,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454],"frames":300,"meanMs":16.665999999999997,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.00240009600385},{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.668000000000006,16.600000000000023,16.699999999999932,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.59999999999991,16.800000000000068,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.59999999999991,16.799999999999955,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.5,16.799999999999727,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.799999999999727,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.700000000000273,16.699999999999818,16.5,16.800000000000182,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818],"frames":300,"meanMs":16.665893333333333,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.002784129183595}],"physicalPhone":"unavailable; 390×844 Chromium with 4× CPU is the measured approximation","capture":"media/milestone-15-browser.webm","captureBytes":211790,"captureSha256":"9160b6ae7c839247723e393984bc6d42e9609e1efd057f05e128c03c0f58ac50"}
+2026-10-08T20:51:46.3302731Z Browser 22 functional scenarios, offline,privacy,reduced-motion,frame times and capture passed (sample 1)
+2026-10-08T20:52:03.9981951Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.69999999999999,16.600000000000023,16.69999999999999,16.600000000000023,16.69999999999999,16.69999999999999,16.69999999999999,16.600000000000023,16.69999999999999,16.69999999999999,16.600000000000023,16.69999999999999,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.800000000000068,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.600000000000364,16.799999999999727,16.59999999999991,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.66578,"p95Ms":16.700000000000273,"p99Ms":16.800000000000182,"fps":60.00319216982343}}
+2026-10-08T20:52:04.0018823Z {
+2026-10-08T20:52:04.0019041Z   name: 'tv',
+2026-10-08T20:52:04.0019254Z   frames: 300,
+2026-10-08T20:52:04.0019471Z   fps: 60.00319216982343,
+2026-10-08T20:52:04.0019714Z   p95Ms: 16.700000000000273,
+2026-10-08T20:52:04.0020228Z   p99Ms: 16.800000000000182,
+2026-10-08T20:52:04.0020515Z   rawFile: 'browser-raw-2-tv.json'
+2026-10-08T20:52:04.0020770Z }
+2026-10-08T20:52:18.1815342Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.600000000000023,16.800000000000068,16.59999999999991,16.600000000000023,16.800000000000068,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.699999999999932,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.600000000000364,16.799999999999727,16.5,16.800000000000182,16.699999999999818,16.5,16.800000000000182,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.799999999999272,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.665779999999998,"p95Ms":16.799999999999272,"p99Ms":16.800000000000182,"fps":60.00319216982344}}
+2026-10-08T20:52:18.1849316Z {
+2026-10-08T20:52:18.1849543Z   name: 'phone',
+2026-10-08T20:52:18.1849872Z   frames: 300,
+2026-10-08T20:52:18.1850106Z   fps: 60.00319216982344,
+2026-10-08T20:52:18.1850352Z   p95Ms: 16.799999999999272,
+2026-10-08T20:52:18.1850599Z   p99Ms: 16.800000000000182,
+2026-10-08T20:52:18.1850893Z   rawFile: 'browser-raw-2-phone.json'
+2026-10-08T20:52:18.1851169Z }
+2026-10-08T20:52:18.4354883Z G04_COMPLETE_REPORT {"functional":["3s wheel / 10s demo / exact pause-shifted deadline / end and restart","all eight realm wedges land under the wheel pointer","number control / private handover / exact score","choice control / private handover / exact score","century control / private handover / exact score","decade control / private handover / exact score","bluff write/vote/reveal / duplicates / own vote disabled / escaped user text","correct-write credit confirmation is private and concealed before handover","bluff/number/range drafts survive hide and pause, remain absent from hidden DOM and never cross owners","draft and keyboard focus survive another player’s input","full quick, 2 seats, eight rounds, finite results, no overflow","full quick, 4 seats, eight rounds, finite results, no overflow","full quick, 8 seats, eight rounds, finite results, no overflow","full mixed, 2 seats, eight rounds, finite results, no overflow","full mixed, 4 seats, eight rounds, finite results, no overflow","full mixed, 8 seats, eight rounds, finite results, no overflow","full bluff, 2 seats, eight rounds, finite results, no overflow","full bluff, 4 seats, eight rounds, finite results, no overflow","full bluff, 8 seats, eight rounds, finite results, no overflow","phone controller has question, live timer and keyboard focus; shared board returns after hide","maximum-length unbroken bluffs wrap within the phone viewport","reduced-motion disables wheel animation"],"evidenceScope":"full browser suite","navigationMode":"Actual self-contained play.html opened from disk via file://","htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceUnchanged":true,"externalRequests":[],"errors":[],"performance":[{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.69999999999999,16.600000000000023,16.69999999999999,16.600000000000023,16.69999999999999,16.69999999999999,16.69999999999999,16.600000000000023,16.69999999999999,16.69999999999999,16.600000000000023,16.69999999999999,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.800000000000068,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.600000000000364,16.799999999999727,16.59999999999991,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.66578,"p95Ms":16.700000000000273,"p99Ms":16.800000000000182,"fps":60.00319216982343},{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.600000000000023,16.800000000000068,16.59999999999991,16.600000000000023,16.800000000000068,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.799999999999955,16.600000000000023,16.600000000000023,16.699999999999932,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.699999999999818,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.799999999999727,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.600000000000364,16.799999999999727,16.5,16.800000000000182,16.699999999999818,16.5,16.800000000000182,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.799999999999272,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.665779999999998,"p95Ms":16.799999999999272,"p99Ms":16.800000000000182,"fps":60.00319216982344}],"physicalPhone":"unavailable; 390×844 Chromium with 4× CPU is the measured approximation","capture":"media/milestone-15-browser-repeat-2.webm","captureBytes":213535,"captureSha256":"1e11a5b3538e30ad85b47e092761ed82dfb555ba85ef19d0e80e6cd7ff7114c7"}
+2026-10-08T20:52:18.4416252Z Browser 22 functional scenarios, offline,privacy,reduced-motion,frame times and capture passed (sample 2)
+2026-10-08T20:52:35.7133485Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.69999999999999,16.599999999999966,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.600000000000023,16.80000000000001,16.599999999999966,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.5,16.800000000000182,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.800000000000182,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818],"frames":300,"meanMs":16.666113333333335,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.00199206613659}}
+2026-10-08T20:52:35.7166626Z {
+2026-10-08T20:52:35.7166841Z   name: 'tv',
+2026-10-08T20:52:35.7167248Z   frames: 300,
+2026-10-08T20:52:35.7167523Z   fps: 60.00199206613659,
+2026-10-08T20:52:35.7167796Z   p95Ms: 16.700000000000728,
+2026-10-08T20:52:35.7168036Z   p99Ms: 16.800000000000182,
+2026-10-08T20:52:35.7168320Z   rawFile: 'browser-raw-3-tv.json'
+2026-10-08T20:52:35.7168634Z }
+2026-10-08T20:52:50.1310723Z G04_RAW_PROFILE {"htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"evidenceScope":"full browser suite, profile saved before assertions","gates":{"minimumMeanFps":59,"maximumP95Ms":18},"errors":[],"externalRequests":[],"performance":{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.668000000000006,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.799999999999955,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.800000000000182,16.5,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.600000000000364,16.799999999999272,16.600000000000364,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.665893333333333,"p95Ms":16.700000000000273,"p99Ms":16.800000000000182,"fps":60.002784129183595}}
+2026-10-08T20:52:50.1343042Z {
+2026-10-08T20:52:50.1343253Z   name: 'phone',
+2026-10-08T20:52:50.1343475Z   frames: 300,
+2026-10-08T20:52:50.1343892Z   fps: 60.002784129183595,
+2026-10-08T20:52:50.1344157Z   p95Ms: 16.700000000000273,
+2026-10-08T20:52:50.1344391Z   p99Ms: 16.800000000000182,
+2026-10-08T20:52:50.1344963Z   rawFile: 'browser-raw-3-phone.json'
+2026-10-08T20:52:50.1345459Z }
+2026-10-08T20:52:50.3846750Z G04_COMPLETE_REPORT {"functional":["3s wheel / 10s demo / exact pause-shifted deadline / end and restart","all eight realm wedges land under the wheel pointer","number control / private handover / exact score","choice control / private handover / exact score","century control / private handover / exact score","decade control / private handover / exact score","bluff write/vote/reveal / duplicates / own vote disabled / escaped user text","correct-write credit confirmation is private and concealed before handover","bluff/number/range drafts survive hide and pause, remain absent from hidden DOM and never cross owners","draft and keyboard focus survive another player’s input","full quick, 2 seats, eight rounds, finite results, no overflow","full quick, 4 seats, eight rounds, finite results, no overflow","full quick, 8 seats, eight rounds, finite results, no overflow","full mixed, 2 seats, eight rounds, finite results, no overflow","full mixed, 4 seats, eight rounds, finite results, no overflow","full mixed, 8 seats, eight rounds, finite results, no overflow","full bluff, 2 seats, eight rounds, finite results, no overflow","full bluff, 4 seats, eight rounds, finite results, no overflow","full bluff, 8 seats, eight rounds, finite results, no overflow","phone controller has question, live timer and keyboard focus; shared board returns after hide","maximum-length unbroken bluffs wrap within the phone viewport","reduced-motion disables wheel animation"],"evidenceScope":"full browser suite","navigationMode":"Actual self-contained play.html opened from disk via file://","htmlSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","htmlSha256AtEnd":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","sourceHashesAtStart":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceHashesAtEnd":{"play.html":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","ui.ts":"57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c","core.ts":"95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1","bots.ts":"5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a","samples.ts":"c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80","samples.json":"2ab29c2d1f1ae72f99d4c75e2a332f679a1d617181fb31cd64a6ec1a1170b39d","manifest.json":"cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e","scoring.ts":"9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033","estimates.ts":"00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06","build.ts":"7d087f5773b0883efce2eb4f947d62b45cf3c640a81e30a44e0e81866838b7e4","shell.html":"70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4","browser.ts":"ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071","capture-encoder.ts":"9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba","THIRD-PARTY-LICENSES.md":"6a2ce916c1ad23e0b6f7fb8a47fbe9b81b868ceb5d8bc783b0f69a5ed80c6a11","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"},"sourceUnchanged":true,"externalRequests":[],"errors":[],"performance":[{"name":"tv","viewport":{"width":1920,"height":1080},"throttle":1,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.634000000000015,16.69999999999999,16.599999999999966,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.700000000000045,16.599999999999966,16.69999999999999,16.600000000000023,16.80000000000001,16.599999999999966,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.699999999999818,16.600000000000136,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999818,16.700000000000045,16.600000000000136,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.799999999999955,16.600000000000136,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.5,16.800000000000182,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.800000000000182,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.700000000000728,16.599999999999454,16.800000000000182,16.600000000000364,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.700000000000728,16.699999999999818,16.599999999999454,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.699999999999818],"frames":300,"meanMs":16.666113333333335,"p95Ms":16.700000000000728,"p99Ms":16.800000000000182,"fps":60.00199206613659},{"name":"phone","viewport":{"width":390,"height":844},"throttle":4,"scenario":"eight seats, open human controller, seven concurrent bot inputs","frameFiltering":"none","intervalsMs":[16.668000000000006,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.700000000000045,16.600000000000023,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.699999999999932,16.600000000000023,16.700000000000045,16.699999999999932,16.600000000000023,16.600000000000023,16.799999999999955,16.600000000000023,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.799999999999955,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.600000000000136,16.799999999999955,16.59999999999991,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.700000000000045,16.59999999999991,16.700000000000045,16.700000000000045,16.59999999999991,16.600000000000136,16.699999999999818,16.700000000000273,16.699999999999818,16.699999999999818,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.799999999999727,16.600000000000364,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.59999999999991,16.800000000000182,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.800000000000182,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.700000000000273,16.59999999999991,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.699999999999818,16.59999999999991,16.700000000000273,16.59999999999991,16.699999999999818,16.700000000000273,16.59999999999991,16.800000000000182,16.5,16.699999999999818,16.699999999999818,16.700000000000273,16.59999999999991,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.800000000000182,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.700000000000728,16.599999999999454,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.600000000000364,16.799999999999272,16.600000000000364,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364,16.699999999999818,16.699999999999818,16.600000000000364],"frames":300,"meanMs":16.665893333333333,"p95Ms":16.700000000000273,"p99Ms":16.800000000000182,"fps":60.002784129183595}],"physicalPhone":"unavailable; 390×844 Chromium with 4× CPU is the measured approximation","capture":"media/milestone-15-browser-repeat-3.webm","captureBytes":211900,"captureSha256":"1fa49013c9f51331795a04c8f23fe68b64551ece95bd2824c0259faa4af28f27"}
+2026-10-08T20:52:50.3910208Z Browser 22 functional scenarios, offline,privacy,reduced-motion,frame times and capture passed (sample 3)
+2026-10-08T20:52:50.4977575Z {
+2026-10-08T20:52:50.4978439Z   "suite": "current-browser-proof",
+2026-10-08T20:52:50.4979251Z   "currentAcceptance": true,
+2026-10-08T20:52:50.4979714Z   "fullRuns": 3,
+2026-10-08T20:52:50.4980343Z   "functionalScenarios": 66,
+2026-10-08T20:52:50.4980804Z   "profiles": 6,
+2026-10-08T20:52:50.4981159Z   "rawIntervals": 1800,
+2026-10-08T20:52:50.4981559Z   "sourceGuards": 16,
+2026-10-08T20:52:50.4981929Z   "unfiltered": true,
+2026-10-08T20:52:50.4982291Z   "capturesVerified": 3
+2026-10-08T20:52:50.4982654Z }
+2026-10-08T20:52:50.6099121Z {
+2026-10-08T20:52:50.6099959Z   "suite": "browser-proof-self-test",
+2026-10-08T20:52:50.6100540Z   "historyOnly": true,
+2026-10-08T20:52:50.6100966Z   "currentAcceptance": false,
+2026-10-08T20:52:50.6101397Z   "historicalRuns": 3,
+2026-10-08T20:52:50.6115523Z   "historicalProfiles": 6,
+2026-10-08T20:52:50.6116140Z   "historicalRawIntervals": 1800,
+2026-10-08T20:52:50.6118531Z   "hostedCaptureContentsRead": false,
+2026-10-08T20:52:50.6119100Z   "localCaptureOnly": {
+2026-10-08T20:52:50.6119696Z     "path": "media/milestone-15-pinned-encoder.webm",
+2026-10-08T20:52:50.6120468Z     "bytes": 156846,
+2026-10-08T20:52:50.6121229Z     "sha256": "6609bc263b72bf2b7d994db2f5db43e67478b2d20509debef7e881355c5d8c8f",
+2026-10-08T20:52:50.6122606Z     "pairedWithHostedProof": false
+2026-10-08T20:52:50.6123103Z   },
+2026-10-08T20:52:50.6123512Z   "corruptionsRejected": 23,
+2026-10-08T20:52:50.6124181Z   "corruptions": [
+2026-10-08T20:52:50.6124537Z     "missing source guards",
+2026-10-08T20:52:50.6124917Z     "stale source guard",
+2026-10-08T20:52:50.6125274Z     "changed end guard",
+2026-10-08T20:52:50.6125658Z     "historical setContent",
+2026-10-08T20:52:50.6126093Z     "frame-only report",
+2026-10-08T20:52:50.6126624Z     "missing functional scenario",
+2026-10-08T20:52:50.6127100Z     "truncated raw",
+2026-10-08T20:52:50.6127494Z     "filtered raw",
+2026-10-08T20:52:50.6127887Z     "invalid interval",
+2026-10-08T20:52:50.6128273Z     "wrong meanMs",
+2026-10-08T20:52:50.6128652Z     "wrong fps",
+2026-10-08T20:52:50.6129040Z     "wrong p95Ms",
+2026-10-08T20:52:50.6129419Z     "wrong p99Ms",
+2026-10-08T20:52:50.6130020Z     "wrong viewport",
+2026-10-08T20:52:50.6130281Z     "wrong phone throttle",
+2026-10-08T20:52:50.6130579Z     "page error",
+2026-10-08T20:52:50.6130821Z     "network request",
+2026-10-08T20:52:50.6131045Z     "relaxed gate",
+2026-10-08T20:52:50.6131297Z     "below FPS",
+2026-10-08T20:52:50.6131509Z     "above p95",
+2026-10-08T20:52:50.6131745Z     "capture hash mismatch",
+2026-10-08T20:52:50.6131998Z     "capture byte mismatch",
+2026-10-08T20:52:50.6132258Z     "missing capture hash"
+2026-10-08T20:52:50.6132481Z   ],
+2026-10-08T20:52:50.6132700Z   "commentProbe": null
+2026-10-08T20:52:50.6132950Z }
+2026-10-08T20:52:50.7586754Z {"frameWindow":"READY","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"8e6cad96-ad5d-4280-99b0-0db6fa4728ac","utc":"2026-10-08T20:52:50.756Z"}
+2026-10-08T20:52:50.7607240Z ✔ exact per-attempt grant rejects stale nonce, source, profile, malformed and extra fields (1.84245ms)
+2026-10-08T20:52:50.9592105Z {"frameWindow":"CLOSED","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"8e6cad96-ad5d-4280-99b0-0db6fa4728ac","coordination":"root-granted","readyUtc":"2026-10-08T20:52:50.756Z","grantUtc":"2026-10-08T20:52:50.958Z","status":"control-only","rawIntervals":0,"utc":"2026-10-08T20:52:50.958Z"}
+2026-10-08T20:52:51.0672260Z ✔ actual asynchronous barrier consumes only this READY nonce and closes its own receipt (203.598811ms)
+2026-10-08T20:52:51.0675005Z ✔ independent acceptance refuses filtered, truncated, stale, inactive, frozen-time and miscomputed proof (50.256957ms)
+2026-10-08T20:52:51.0680333Z ✔ every loaded local checker, schema and pinned runtime identity belongs to current source guards (56.179456ms)
+2026-10-08T20:52:51.0824504Z ℹ tests 4
+2026-10-08T20:52:51.0824933Z ℹ suites 0
+2026-10-08T20:52:51.0825350Z ℹ pass 4
+2026-10-08T20:52:51.0825686Z ℹ fail 0
+2026-10-08T20:52:51.0825908Z ℹ cancelled 0
+2026-10-08T20:52:51.0826147Z ℹ skipped 0
+2026-10-08T20:52:51.0826359Z ℹ todo 0
+2026-10-08T20:52:51.0826606Z ℹ duration_ms 431.606473
+2026-10-08T20:53:02.2918555Z {"frameWindow":"CLOSED","profile":"tv","sourceSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","attemptNonce":"fa8f0137-109f-494a-baa9-b475c8a362b5","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"rawPath":".work/strict/tv-raw.json","utc":"2026-10-08T20:53:02.291Z"}
+2026-10-08T20:53:02.2947295Z {"profile":"tv","actualIntervals":600,"nativeTimestamps":601,"activeWitnesses":601,"fps":60.00240009600384,"p95Ms":16.799999999999272,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"sourceGuards":1034}
+2026-10-08T20:53:13.1508102Z {"frameWindow":"CLOSED","profile":"phone","sourceSha256":"e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b","attemptNonce":"f6145206-ffe1-4a02-b074-ca61733fa050","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"rawPath":".work/strict/phone-raw.json","utc":"2026-10-08T20:53:13.150Z"}
+2026-10-08T20:53:13.1542757Z {"profile":"phone","actualIntervals":600,"nativeTimestamps":601,"activeWitnesses":601,"fps":60.00240009600385,"p95Ms":16.799999999999272,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"sourceGuards":1034}
+2026-10-08T20:53:19.7698924Z node:internal/modules/run_main:107
+2026-10-08T20:53:19.7699604Z     triggerUncaughtException(
+2026-10-08T20:53:19.7700842Z     ^
+2026-10-08T20:53:19.7701268Z 
+2026-10-08T20:53:19.7702358Z AssertionError [ERR_ASSERTION]: [AVFormatContext @ 0x2bdc0840] Requested output format 'image2pipe' is not known.
+2026-10-08T20:53:19.7703936Z [out#0 @ 0x2bdc0700] Error initializing the muxer for pipe:: Invalid argument
+2026-10-08T20:53:19.7704671Z Error opening output file -.
+2026-10-08T20:53:19.7705175Z Error opening output files: Invalid argument
+2026-10-08T20:53:19.7705515Z 
+2026-10-08T20:53:19.7705628Z 
+2026-10-08T20:53:19.7705829Z 234 !== 0
+2026-10-08T20:53:19.7706058Z 
+2026-10-08T20:53:19.7706721Z     at decodeCurrentCapture (file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G04-reality-check/strict-decode.ts:13:114)
+2026-10-08T20:53:19.7707936Z     at capture (file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G04-reality-check/strict-browser.ts:44:47)
+2026-10-08T20:53:19.7709019Z     at async file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G04-reality-check/strict-browser.ts:80:76 {
+2026-10-08T20:53:19.7709759Z   generatedMessage: false,
+2026-10-08T20:53:19.7710475Z   code: 'ERR_ASSERTION',
+2026-10-08T20:53:19.7710832Z   actual: 234,
+2026-10-08T20:53:19.7711158Z   expected: 0,
+2026-10-08T20:53:19.7711485Z   operator: 'strictEqual',
+2026-10-08T20:53:19.7711833Z   diff: 'simple'
+2026-10-08T20:53:19.7712151Z }
+2026-10-08T20:53:19.7712360Z 
+2026-10-08T20:53:19.7712559Z Node.js v24.21.0
+2026-10-08T20:53:19.7928429Z ##[error]Process completed with exit code 1.
+2026-10-08T20:53:19.8030900Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T20:53:19.8031216Z with:
+2026-10-08T20:53:19.8031535Z   name: G04-browser-evidence-d07f90bf17209d2affd5f51a15ffe41ffa5a9eb7
+2026-10-08T20:53:19.8031952Z   if-no-files-found: warn
+2026-10-08T20:53:19.8032203Z   include-hidden-files: true
+2026-10-08T20:53:19.8033502Z   path: jobs/G04-reality-check/browser-report.json
+jobs/G04-reality-check/browser-repeat-*.json
+jobs/G04-reality-check/browser-raw-*.json
+jobs/G04-reality-check/late-input-report.json
+jobs/G04-reality-check/media/milestone-15-browser*.webm
+jobs/G04-reality-check/.work/strict/*.json
+jobs/G04-reality-check/media/strict-reverify-2019-*.webm
+
+2026-10-08T20:53:19.8034816Z   compression-level: 6
+2026-10-08T20:53:19.8035049Z   overwrite: false
+2026-10-08T20:53:19.8035255Z ##[endgroup]
+2026-10-08T20:53:19.9723560Z (node:5578) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:53:19.9725167Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:53:20.0027934Z With the provided path, there will be 19 files uploaded
+2026-10-08T20:53:20.0028932Z Artifact name is valid!
+2026-10-08T20:53:20.0029511Z Root directory input is valid!
+2026-10-08T20:53:20.2278419Z Beginning upload of artifact content to blob storage
+2026-10-08T20:53:20.3455181Z (node:5578) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:53:20.6202559Z Uploaded bytes 1105157
+2026-10-08T20:53:20.6555398Z Finished uploading artifact content to blob storage!
+2026-10-08T20:53:20.6556645Z SHA256 digest of uploaded artifact zip is aa8cd3bd5ab53b36ae5cf37528f90dd4e2b3bebeb104976de745b03b2c8f2233
+2026-10-08T20:53:20.6557855Z Finalizing artifact upload
+2026-10-08T20:53:20.8833961Z Artifact G04-browser-evidence-d07f90bf17209d2affd5f51a15ffe41ffa5a9eb7.zip successfully finalized. Artifact ID 11578870215
+2026-10-08T20:53:20.8836621Z Artifact G04-browser-evidence-d07f90bf17209d2affd5f51a15ffe41ffa5a9eb7 has been successfully uploaded! Final size is 1105157 bytes. Artifact ID is 11578870215
+2026-10-08T20:53:20.8841870Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37841680065/artifacts/11578870215
+2026-10-08T20:53:20.9059277Z Post job cleanup.
+2026-10-08T20:53:20.9936178Z [command]/usr/bin/git version
+2026-10-08T20:53:20.9982905Z git version 2.55.0
+2026-10-08T20:53:21.0027634Z Temporarily overriding HOME='/home/runner/work/_temp/19c1f660-54f9-46cc-bf32-3336dabaae65' before making global git config changes
+2026-10-08T20:53:21.0029205Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:53:21.0034527Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:53:21.0074511Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:53:21.0110826Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:53:21.0370154Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:53:21.0398695Z http.https://github.com/.extraheader
+2026-10-08T20:53:21.0411050Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T20:53:21.0445867Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:53:21.0712311Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:53:21.0755908Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:53:21.1208766Z Cleaning up orphan processes
+2026-10-08T20:53:21.1645628Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

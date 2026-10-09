@@ -1,0 +1,62 @@
+{
+  "head": "25a6023542e657260d9b653bd09bec53f904e640",
+  "runId": 37777044855,
+  "url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37777044855",
+  "conclusion": "success",
+  "observedGreenUtc": "2026-10-08T12:38:03Z",
+  "logsRead": true,
+  "nodeTests": {
+    "passed": 51,
+    "failed": 0
+  },
+  "completeBotGames": 21000,
+  "actualMutationsKilled": 25,
+  "leagueMatches": 24000,
+  "lateInputActualFileCasesPassed": 6,
+  "browserFunctionalScenarios": 66,
+  "performanceProfiles": [
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.00240009600385,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.00319216982343,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 60.00319216982343,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 60.00199206613659,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "rawHostedArtifacts": "Not configured on this head; logged aggregate evidence only. New wrap-up adds complete JSON stdout and always-uploaded artifact."
+}

@@ -1,0 +1,4104 @@
+{
+  "startedAt": "2026-10-08T14:16:16.175Z",
+  "passed": false,
+  "navigationMode": "Actual self-contained play.html from disk via file://",
+  "fixtureLimits": "Playwright timers are held. setSystemTime changes wall Date without delivering phase timers; human late cases advance100ms fake time, then150ms real Node time allows the pre-install native countdown interval to refresh. The actual bot case delivers its scheduled350ms callback. This proves overdue actions cannot beat timer delivery in this controlled fixture; physical-device race frequency and performance are not measured.",
+  "contract": "contract/contract.ts PhaseInfo: engine fires exactly one timer event per(id,startedAt) once deadline reached. Selected RULES: quick50s/write40s/vote30s; pause shifts deadlines.",
+  "htmlSha256": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+  "inlineScriptSha256": [
+    "97b1c4fa2a41e1692b5d65673b034b2fc7896baf492b203e7207a0029f8f1a5e"
+  ],
+  "sourceHashesAtStart": {
+    "play.html": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+    "ui.ts": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "browser.ts": "ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071",
+    "late-input.ts": "a2605f7fc590e1893ba5f95bf357c539cd6bb81ddea937030169ed2a8aeb56a4",
+    "RULES.md": "cd643b6501b9e5cbdaee4e81cebfea69eae26d9fa68b8a3fc44fe402b241b4ed",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+  },
+  "externalRequests": [],
+  "errors": [],
+  "cases": [
+    {
+      "name": "late correct quick answer",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 7,
+        "deadline": 151002,
+        "inputNow": 151112,
+        "before": {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 151112,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "reveal",
+            "startedAt": 151112,
+            "deadline": 166112
+          },
+          "rng": {
+            "seed": 7,
+            "step": 10
+          },
+          "settings": {
+            "mode": "quick",
+            "rounds": 4
+          },
+          "order": [
+            "emergency-room",
+            "dead-or-alive",
+            "ancient-or-ikea",
+            "internet-famous"
+          ],
+          "round": 1,
+          "seen": [
+            "emergency-room"
+          ],
+          "used": [
+            "emergency-room-18"
+          ],
+          "question": {
+            "id": "emergency-room-18",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "hint": "The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 100,
+            "max": 10000,
+            "correct": 5623
+          },
+          "example": {
+            "id": "emergency-room-1",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Nettlewick repair clinic?",
+            "hint": "The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 10,
+            "max": 1000,
+            "correct": 11
+          },
+          "responses": {},
+          "options": [],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [
+            {
+              "round": 1,
+              "realm": "emergency-room",
+              "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+              "kind": "number",
+              "correct": 5623,
+              "awards": {
+                "p0": 0,
+                "p1": 0
+              },
+              "answers": {},
+              "options": [],
+              "votes": {},
+              "multiplier": 1,
+              "fact": "This is a made-up workshop story, not a claim about the real world."
+            }
+          ],
+          "last": {
+            "round": 1,
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "kind": "number",
+            "correct": 5623,
+            "awards": {
+              "p0": 0,
+              "p1": 0
+            },
+            "answers": {},
+            "options": [],
+            "votes": {},
+            "multiplier": 1,
+            "fact": "This is a made-up workshop story, not a claim about the real world."
+          }
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#lock-answer",
+            "now": 151112,
+            "before": {
+              "dateNow": 151112,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "0 s",
+              "controllerClock": "0 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 151112,
+              "performanceNow": 1100,
+              "phase": "reveal",
+              "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +0Guessed: No answerPlayer 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "15 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "late bluff write",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "41 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": "30 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 1,
+        "fake": "Late copper harbour",
+        "deadline": 141002,
+        "inputNow": 141112,
+        "before": {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "menu": {
+          "dateNow": 141112,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": "30 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "vote",
+            "startedAt": 141112,
+            "deadline": 171112
+          },
+          "rng": {
+            "seed": 1,
+            "step": 10
+          },
+          "settings": {
+            "mode": "bluff",
+            "rounds": 4
+          },
+          "order": [
+            "real-town-or-fake",
+            "do-not-use",
+            "patent-pending",
+            "patent-pending"
+          ],
+          "round": 1,
+          "seen": [
+            "real-town-or-fake"
+          ],
+          "used": [
+            "real-town-or-fake-19"
+          ],
+          "question": {
+            "id": "real-town-or-fake-19",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Mallow Shore"
+          },
+          "example": {
+            "id": "real-town-or-fake-1",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Yarrow Quay"
+          },
+          "responses": {},
+          "options": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "owners": [],
+              "correct": true
+            }
+          ],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [],
+          "last": null
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "41 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#input-form button[type=submit]",
+            "now": 141112,
+            "before": {
+              "dateNow": 141112,
+              "performanceNow": 1100,
+              "phase": "write",
+              "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "0 s",
+              "controllerClock": "0 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 141112,
+              "performanceNow": 1100,
+              "phase": "vote",
+              "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "30 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "late correct bluff vote",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "41 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 141 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "41 s",
+          "controllerClock": "41 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "41 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 241 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "41 s",
+          "controllerClock": "41 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "vote",
+          "publicText": "Round 1 / 431 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "31 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.First copper beacon · Your bluffMallow ShoreAnother timber beaconHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "First copper beacon · Your bluff",
+              "disabled": true
+            },
+            {
+              "id": "o1",
+              "text": "Mallow Shore",
+              "disabled": false
+            },
+            {
+              "id": "o2",
+              "text": "Another timber beacon",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.First copper beacon · Your bluffMallow ShoreAnother timber beaconHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "First copper beacon · Your bluff",
+              "disabled": true
+            },
+            {
+              "id": "o1",
+              "text": "Mallow Shore",
+              "disabled": false
+            },
+            {
+              "id": "o2",
+              "text": "Another timber beacon",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedWhich two-word place is in chapter 19 of the imaginary harbour gazette?The truth: Mallow ShorePlayer 1 +0Wrote: First copper beaconVote: No votePlayer 2 +0Wrote: Another timber beaconVote: No voteFirst copper beacon — Player 1Mallow Shore — truthAnother timber beacon — Player 2This is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedWhich two-word place is in chapter 19 of the imaginary harbour gazette?The truth: Mallow ShorePlayer 1 +0Wrote: First copper beaconVote: No votePlayer 2 +0Wrote: Another timber beaconVote: No voteFirst copper beacon — Player 1Mallow Shore — truthAnother timber beacon — Player 2This is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 1,
+        "choice": {
+          "id": "o1",
+          "text": "Mallow Shore",
+          "owners": [],
+          "correct": true
+        },
+        "deadline": 131003,
+        "inputNow": 131113,
+        "before": {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "vote",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.First copper beacon · Your bluffMallow ShoreAnother timber beaconHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "First copper beacon · Your bluff",
+              "disabled": true
+            },
+            {
+              "id": "o1",
+              "text": "Mallow Shore",
+              "disabled": false
+            },
+            {
+              "id": "o2",
+              "text": "Another timber beacon",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 131113,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedWhich two-word place is in chapter 19 of the imaginary harbour gazette?The truth: Mallow ShorePlayer 1 +0Wrote: First copper beaconVote: No votePlayer 2 +0Wrote: Another timber beaconVote: No voteFirst copper beacon — Player 1Mallow Shore — truthAnother timber beacon — Player 2This is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "reveal",
+            "startedAt": 131113,
+            "deadline": 146113
+          },
+          "rng": {
+            "seed": 1,
+            "step": 12
+          },
+          "settings": {
+            "mode": "bluff",
+            "rounds": 4
+          },
+          "order": [
+            "real-town-or-fake",
+            "do-not-use",
+            "patent-pending",
+            "patent-pending"
+          ],
+          "round": 1,
+          "seen": [
+            "real-town-or-fake"
+          ],
+          "used": [
+            "real-town-or-fake-19"
+          ],
+          "question": {
+            "id": "real-town-or-fake-19",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Mallow Shore"
+          },
+          "example": {
+            "id": "real-town-or-fake-1",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Yarrow Quay"
+          },
+          "responses": {
+            "p0": "First copper beacon",
+            "p1": "Another timber beacon"
+          },
+          "options": [
+            {
+              "id": "o0",
+              "text": "First copper beacon",
+              "owners": [
+                "p0"
+              ],
+              "correct": false
+            },
+            {
+              "id": "o1",
+              "text": "Mallow Shore",
+              "owners": [],
+              "correct": true
+            },
+            {
+              "id": "o2",
+              "text": "Another timber beacon",
+              "owners": [
+                "p1"
+              ],
+              "correct": false
+            }
+          ],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [
+            {
+              "round": 1,
+              "realm": "real-town-or-fake",
+              "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+              "kind": "bluff",
+              "correct": "Mallow Shore",
+              "awards": {
+                "p0": 0,
+                "p1": 0
+              },
+              "answers": {
+                "p0": "First copper beacon",
+                "p1": "Another timber beacon"
+              },
+              "options": [
+                {
+                  "id": "o0",
+                  "text": "First copper beacon",
+                  "owners": [
+                    "p0"
+                  ],
+                  "correct": false
+                },
+                {
+                  "id": "o1",
+                  "text": "Mallow Shore",
+                  "owners": [],
+                  "correct": true
+                },
+                {
+                  "id": "o2",
+                  "text": "Another timber beacon",
+                  "owners": [
+                    "p1"
+                  ],
+                  "correct": false
+                }
+              ],
+              "votes": {},
+              "multiplier": 1,
+              "fact": "This is a made-up workshop story, not a claim about the real world."
+            }
+          ],
+          "last": {
+            "round": 1,
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+            "kind": "bluff",
+            "correct": "Mallow Shore",
+            "awards": {
+              "p0": 0,
+              "p1": 0
+            },
+            "answers": {
+              "p0": "First copper beacon",
+              "p1": "Another timber beacon"
+            },
+            "options": [
+              {
+                "id": "o0",
+                "text": "First copper beacon",
+                "owners": [
+                  "p0"
+                ],
+                "correct": false
+              },
+              {
+                "id": "o1",
+                "text": "Mallow Shore",
+                "owners": [],
+                "correct": true
+              },
+              {
+                "id": "o2",
+                "text": "Another timber beacon",
+                "owners": [
+                  "p1"
+                ],
+                "correct": false
+              }
+            ],
+            "votes": {},
+            "multiplier": 1,
+            "fact": "This is a made-up workshop story, not a claim about the real world."
+          }
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "41 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#input-form button[type=submit]",
+            "now": 101000,
+            "event": {
+              "type": "input",
+              "playerId": "p0",
+              "input": {
+                "type": "write",
+                "text": "First copper beacon"
+              }
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 141 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "41 s",
+              "controllerClock": "41 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "41 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#input-form button[type=submit]",
+            "now": 101000,
+            "event": {
+              "type": "input",
+              "playerId": "p1",
+              "input": {
+                "type": "write",
+                "text": "Another timber beacon"
+              }
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 241 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "41 s",
+              "controllerClock": "41 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "vote",
+              "publicText": "Round 1 / 431 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "31 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "[data-choice=\"o1\"]",
+            "now": 131113,
+            "before": {
+              "dateNow": 131113,
+              "performanceNow": 1100,
+              "phase": "vote",
+              "publicText": "Round 1 / 40 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+              "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.First copper beacon · Your bluffMallow ShoreAnother timber beaconHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 0,
+              "clock": "0 s",
+              "controllerClock": "0 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [
+                {
+                  "id": "o0",
+                  "text": "First copper beacon · Your bluff",
+                  "disabled": true
+                },
+                {
+                  "id": "o1",
+                  "text": "Mallow Shore",
+                  "disabled": false
+                },
+                {
+                  "id": "o2",
+                  "text": "Another timber beacon",
+                  "disabled": false
+                }
+              ],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 131113,
+              "performanceNow": 1100,
+              "phase": "reveal",
+              "publicText": "Round 1 / 415 sRound 1 revealedWhich two-word place is in chapter 19 of the imaginary harbour gazette?The truth: Mallow ShorePlayer 1 +0Wrote: First copper beaconVote: No votePlayer 2 +0Wrote: Another timber beaconVote: No voteFirst copper beacon — Player 1Mallow Shore — truthAnother timber beacon — Player 2This is a made-up workshop story, not a claim about the real world.Next roundPlayer 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "15 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual scheduled expired sharp-bot write",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "41 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141012,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141362,
+          "performanceNow": 1350,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141362,
+          "performanceNow": 1350,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": "30 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 1,
+        "actor": "p1",
+        "skill": "sharp",
+        "scheduledDelayMs": 350,
+        "deadline": 141002,
+        "before": {
+          "dateNow": 141012,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "afterBot": {
+          "dateNow": 141362,
+          "performanceNow": 1350,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "menu": {
+          "dateNow": 141362,
+          "performanceNow": 1350,
+          "phase": "vote",
+          "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+          "privateText": "Player 130 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Choose the real answer. Your own bluff is marked and cannot be chosen.Mallow ShoreHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 0,
+          "clock": "30 s",
+          "controllerClock": "30 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "disabled": false
+            }
+          ],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": true
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "vote",
+            "startedAt": 141362,
+            "deadline": 171362
+          },
+          "rng": {
+            "seed": 1,
+            "step": 10
+          },
+          "settings": {
+            "mode": "bluff",
+            "rounds": 4
+          },
+          "order": [
+            "real-town-or-fake",
+            "do-not-use",
+            "patent-pending",
+            "patent-pending"
+          ],
+          "round": 1,
+          "seen": [
+            "real-town-or-fake"
+          ],
+          "used": [
+            "real-town-or-fake-19"
+          ],
+          "question": {
+            "id": "real-town-or-fake-19",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Mallow Shore"
+          },
+          "example": {
+            "id": "real-town-or-fake-1",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Yarrow Quay"
+          },
+          "responses": {},
+          "options": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "owners": [],
+              "correct": true
+            }
+          ],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [],
+          "last": null
+        },
+        "inputObservation": "Actual scheduled bot callback is delivered; menu/phase are observed. No private RNG assertion.",
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "41 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "exact-deadline correct quick answer",
+      "status": "failed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 7,
+        "deadline": 151002,
+        "inputNow": 151002,
+        "before": {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 151002,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "reveal",
+            "startedAt": 151002,
+            "deadline": 166002
+          },
+          "rng": {
+            "seed": 7,
+            "step": 10
+          },
+          "settings": {
+            "mode": "quick",
+            "rounds": 4
+          },
+          "order": [
+            "emergency-room",
+            "dead-or-alive",
+            "ancient-or-ikea",
+            "internet-famous"
+          ],
+          "round": 1,
+          "seen": [
+            "emergency-room"
+          ],
+          "used": [
+            "emergency-room-18"
+          ],
+          "question": {
+            "id": "emergency-room-18",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "hint": "The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 100,
+            "max": 10000,
+            "correct": 5623
+          },
+          "example": {
+            "id": "emergency-room-1",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Nettlewick repair clinic?",
+            "hint": "The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 10,
+            "max": 1000,
+            "correct": 11
+          },
+          "responses": {},
+          "options": [],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [
+            {
+              "round": 1,
+              "realm": "emergency-room",
+              "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+              "kind": "number",
+              "correct": 5623,
+              "awards": {
+                "p0": 0,
+                "p1": 0
+              },
+              "answers": {},
+              "options": [],
+              "votes": {},
+              "multiplier": 1,
+              "fact": "This is a made-up workshop story, not a claim about the real world."
+            }
+          ],
+          "last": {
+            "round": 1,
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "kind": "number",
+            "correct": 5623,
+            "awards": {
+              "p0": 0,
+              "p1": 0
+            },
+            "answers": {},
+            "options": [],
+            "votes": {},
+            "multiplier": 1,
+            "fact": "This is a made-up workshop story, not a claim about the real world."
+          }
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#lock-answer",
+            "now": 151002,
+            "before": {
+              "dateNow": 151002,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 10 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "0 s",
+              "controllerClock": "0 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 151002,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 40 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "0 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      },
+      "error": "AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'answer' !== 'reveal'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2"
+    },
+    {
+      "name": "exact-deadline human bluff write",
+      "status": "failed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "41 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 20 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 1,
+        "fake": "Exact boundary timber beacon",
+        "deadline": 141002,
+        "inputNow": 141002,
+        "before": {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "0 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "menu": {
+          "dateNow": 141002,
+          "performanceNow": 1000,
+          "phase": "write",
+          "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 20 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "0 s",
+          "controllerClock": "0 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "vote",
+            "startedAt": 141002,
+            "deadline": 171002
+          },
+          "rng": {
+            "seed": 1,
+            "step": 10
+          },
+          "settings": {
+            "mode": "bluff",
+            "rounds": 4
+          },
+          "order": [
+            "real-town-or-fake",
+            "do-not-use",
+            "patent-pending",
+            "patent-pending"
+          ],
+          "round": 1,
+          "seen": [
+            "real-town-or-fake"
+          ],
+          "used": [
+            "real-town-or-fake-19"
+          ],
+          "question": {
+            "id": "real-town-or-fake-19",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Mallow Shore"
+          },
+          "example": {
+            "id": "real-town-or-fake-1",
+            "realm": "real-town-or-fake",
+            "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+            "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "bluff",
+            "correct": "Yarrow Quay"
+          },
+          "responses": {},
+          "options": [
+            {
+              "id": "o0",
+              "text": "Mallow Shore",
+              "owners": [],
+              "correct": true
+            }
+          ],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 0,
+            "p1": 0
+          },
+          "history": [],
+          "last": null
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Real Town or FakeWhich two-word place is in chapter 1 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Example answer: Yarrow QuayYour scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 441 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "41 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#input-form button[type=submit]",
+            "now": 141002,
+            "before": {
+              "dateNow": 141002,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 10 sWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Your fake answer · up to 160 charactersLock in bluffHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "0 s",
+              "controllerClock": "0 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 141002,
+              "performanceNow": 1000,
+              "phase": "write",
+              "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "0 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      },
+      "error": "AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'write' !== 'vote'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2"
+    },
+    {
+      "name": "on-time deadline minus1ms control",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 11 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "1 s",
+          "controllerClock": "1 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 11 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "1 s",
+          "controllerClock": "1 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "1 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "1 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "1 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 7,
+        "deadline": 151002,
+        "inputNow": 151001,
+        "before": {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 11 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "1 s",
+          "controllerClock": "1 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "after": {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "1 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "reveal": {
+          "dateNow": 151001,
+          "performanceNow": 1000,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "reveal",
+            "startedAt": 151001,
+            "deadline": 166001
+          },
+          "rng": {
+            "seed": 7,
+            "step": 10
+          },
+          "settings": {
+            "mode": "quick",
+            "rounds": 4
+          },
+          "order": [
+            "emergency-room",
+            "dead-or-alive",
+            "ancient-or-ikea",
+            "internet-famous"
+          ],
+          "round": 1,
+          "seen": [
+            "emergency-room"
+          ],
+          "used": [
+            "emergency-room-18"
+          ],
+          "question": {
+            "id": "emergency-room-18",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "hint": "The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 100,
+            "max": 10000,
+            "correct": 5623
+          },
+          "example": {
+            "id": "emergency-room-1",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Nettlewick repair clinic?",
+            "hint": "The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 10,
+            "max": 1000,
+            "correct": 11
+          },
+          "responses": {
+            "p0": 5623
+          },
+          "options": [],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 1000,
+            "p1": 0
+          },
+          "history": [
+            {
+              "round": 1,
+              "realm": "emergency-room",
+              "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+              "kind": "number",
+              "correct": 5623,
+              "awards": {
+                "p0": 1000,
+                "p1": 0
+              },
+              "answers": {
+                "p0": 5623
+              },
+              "options": [],
+              "votes": {},
+              "multiplier": 1,
+              "fact": "This is a made-up workshop story, not a claim about the real world."
+            }
+          ],
+          "last": {
+            "round": 1,
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "kind": "number",
+            "correct": 5623,
+            "awards": {
+              "p0": 1000,
+              "p1": 0
+            },
+            "answers": {
+              "p0": 5623
+            },
+            "options": [],
+            "votes": {},
+            "multiplier": 1,
+            "fact": "This is a made-up workshop story, not a claim about the real world."
+          }
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#lock-answer",
+            "now": 151001,
+            "event": {
+              "type": "input",
+              "playerId": "p0",
+              "input": {
+                "type": "answer",
+                "value": 5623
+              }
+            },
+            "before": {
+              "dateNow": 151001,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 11 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "1 s",
+              "controllerClock": "1 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 151001,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "1 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 151001,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 151001,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 41 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "1 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 151001,
+              "performanceNow": 1000,
+              "phase": "reveal",
+              "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "15 s",
+              "controllerClock": null,
+              "scores": [
+                1000,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "paused and shifted-deadline control",
+      "status": "passed",
+      "snapshots": [
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "wheel",
+          "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "3 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "demo",
+          "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "11 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 151 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "51 s",
+          "controllerClock": "51 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Player 151 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+          "privateOpen": "true",
+          "privateInputCount": 1,
+          "clock": "51 s",
+          "controllerClock": "51 s",
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        }
+      ],
+      "evidence": {
+        "seed": 7,
+        "oldDeadline": 151002,
+        "shiftedDeadline": 206104,
+        "inputNow": 156102,
+        "pausedBefore": {
+          "dateNow": 101000,
+          "performanceNow": 1000,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        "pausedAfter": {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "Paused",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": true
+        },
+        "after": {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "answer",
+          "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+          "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "51 s",
+          "controllerClock": null,
+          "scores": [
+            0,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "reveal": {
+          "dateNow": 156102,
+          "performanceNow": 1100,
+          "phase": "reveal",
+          "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+          "privateText": "",
+          "privateOpen": "false",
+          "privateInputCount": 0,
+          "clock": "15 s",
+          "controllerClock": null,
+          "scores": [
+            1000,
+            0
+          ],
+          "menu": [],
+          "skipDisabled": false
+        },
+        "expected": {
+          "players": {
+            "p0": {
+              "id": "p0",
+              "name": "Player 1",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            },
+            "p1": {
+              "id": "p1",
+              "name": "Player 2",
+              "avatarId": "🙂",
+              "connected": true,
+              "bot": false
+            }
+          },
+          "seats": [
+            "p0",
+            "p1"
+          ],
+          "left": [],
+          "phase": {
+            "id": "reveal",
+            "startedAt": 156102,
+            "deadline": 171102
+          },
+          "rng": {
+            "seed": 7,
+            "step": 10
+          },
+          "settings": {
+            "mode": "quick",
+            "rounds": 4
+          },
+          "order": [
+            "emergency-room",
+            "dead-or-alive",
+            "ancient-or-ikea",
+            "internet-famous"
+          ],
+          "round": 1,
+          "seen": [
+            "emergency-room"
+          ],
+          "used": [
+            "emergency-room-18"
+          ],
+          "question": {
+            "id": "emergency-room-18",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "hint": "The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 100,
+            "max": 10000,
+            "correct": 5623
+          },
+          "example": {
+            "id": "emergency-room-1",
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Nettlewick repair clinic?",
+            "hint": "The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.",
+            "fact": "This is a made-up workshop story, not a claim about the real world.",
+            "kind": "number",
+            "min": 10,
+            "max": 1000,
+            "correct": 11
+          },
+          "responses": {
+            "p0": 5623
+          },
+          "options": [],
+          "votes": {},
+          "knowledge": [],
+          "scores": {
+            "p0": 1000,
+            "p1": 0
+          },
+          "history": [
+            {
+              "round": 1,
+              "realm": "emergency-room",
+              "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+              "kind": "number",
+              "correct": 5623,
+              "awards": {
+                "p0": 1000,
+                "p1": 0
+              },
+              "answers": {
+                "p0": 5623
+              },
+              "options": [],
+              "votes": {},
+              "multiplier": 1,
+              "fact": "This is a made-up workshop story, not a claim about the real world."
+            }
+          ],
+          "last": {
+            "round": 1,
+            "realm": "emergency-room",
+            "prompt": "How many paper kites visited the imaginary Spindlewick repair clinic?",
+            "kind": "number",
+            "correct": 5623,
+            "awards": {
+              "p0": 1000,
+              "p1": 0
+            },
+            "answers": {
+              "p0": 5623
+            },
+            "options": [],
+            "votes": {},
+            "multiplier": 1,
+            "fact": "This is a made-up workshop story, not a claim about the real world."
+          }
+        },
+        "steps": [
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "wheel",
+              "publicText": "Round 1 / 43 sWhere will the wheel land?A new realm teaches its rules before anyone scores.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "3 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "demo",
+              "publicText": "Round 1 / 411 sUnscored demo · Emergency RoomHow many paper kites visited the imaginary Nettlewick repair clinic?The story's estimates range from 10 to 1000. Equal multiplicative errors score equally.Example answer: 11Your scored question will be different. Watch the 10-second demo.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "11 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#pause",
+            "now": 101000,
+            "event": {
+              "type": "vip",
+              "action": "pause"
+            },
+            "before": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 151 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "51 s",
+              "controllerClock": "51 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 101000,
+              "performanceNow": 1000,
+              "phase": "answer",
+              "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "Paused",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": true
+            }
+          },
+          {
+            "selector": "#pause",
+            "now": 156102,
+            "event": {
+              "type": "vip",
+              "action": "resume"
+            },
+            "before": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 4PausedGame pausedEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "Paused",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": true
+            },
+            "after": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 1Keep other players looking away. Only Player 1 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#lock-answer",
+            "now": 156102,
+            "event": {
+              "type": "input",
+              "playerId": "p0",
+              "input": {
+                "type": "answer",
+                "value": 5623
+              }
+            },
+            "before": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.0 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Player 151 sHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.Estimate between 100 and 100005623Lock in estimateHide controller",
+              "privateOpen": "true",
+              "privateInputCount": 1,
+              "clock": "51 s",
+              "controllerClock": "51 s",
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          },
+          {
+            "selector": "#skip",
+            "now": 156102,
+            "event": {
+              "type": "vip",
+              "action": "skip"
+            },
+            "before": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "answer",
+              "publicText": "Round 1 / 451 sEmergency Room · Make your estimateHow many paper kites visited the imaginary Spindlewick repair clinic?The story's estimates range from 100 to 10000. Equal multiplicative errors score equally.1 of 2 answers locked in.Player 10Player 20",
+              "privateText": "Pass the screen to Player 2Keep other players looking away. Only Player 2 should open this controller.Reveal my controller",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "51 s",
+              "controllerClock": null,
+              "scores": [
+                0,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            },
+            "after": {
+              "dateNow": 156102,
+              "performanceNow": 1100,
+              "phase": "reveal",
+              "publicText": "Round 1 / 415 sRound 1 revealedHow many paper kites visited the imaginary Spindlewick repair clinic?The truth: 5623Player 1 +1000Guessed: 5623Player 2 +0Guessed: No answerThis is a made-up workshop story, not a claim about the real world.Next roundPlayer 11000Player 20",
+              "privateText": "",
+              "privateOpen": "false",
+              "privateInputCount": 0,
+              "clock": "15 s",
+              "controllerClock": null,
+              "scores": [
+                1000,
+                0
+              ],
+              "menu": [],
+              "skipDisabled": false
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "failures": [
+    "exact-deadline correct quick answer: AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'answer' !== 'reveal'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:113:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:110:2",
+    "exact-deadline human bluff write: AssertionError [ERR_ASSERTION]: expired timer must advance before the input\n\n'write' !== 'vote'\n\n    at matchTimer (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:82:60)\n    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:118:79\n    at runCase (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:85:66)\n    at async file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/late-input.ts:115:2"
+  ],
+  "finishedAt": "2026-10-08T14:16:22.004Z",
+  "sourceHashesAtEnd": {
+    "play.html": "a92dec1aee504d3005640479209e093b9b0aa0eaa958f22fe47379f861ff728e",
+    "ui.ts": "ca09de99a7c04563eb5acae4ff4b01c0641d834aefadf7a985151b5c41c81583",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "browser.ts": "ec8ad1aacbcd679444fdf2ef9739a2b4a09bd903c89fde265ac0b1021662a071",
+    "late-input.ts": "a2605f7fc590e1893ba5f95bf357c539cd6bb81ddea937030169ed2a8aeb56a4",
+    "RULES.md": "cd643b6501b9e5cbdaee4e81cebfea69eae26d9fa68b8a3fc44fe402b241b4ed",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+  },
+  "sourceGuardsMatch": true
+}

@@ -1,0 +1,59 @@
+{
+  "command": "node browser-proof.ts --self-test --with-html-comment",
+  "exitCode": 0,
+  "elapsedMs": 328.8449999963632,
+  "htmlSha256Before": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+  "htmlSha256After": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+  "htmlRestored": true,
+  "result": {
+    "suite": "browser-proof-self-test",
+    "historyOnly": true,
+    "currentAcceptance": false,
+    "historicalRuns": 3,
+    "historicalProfiles": 6,
+    "historicalRawIntervals": 1800,
+    "hostedCaptureContentsRead": false,
+    "localCaptureOnly": {
+      "path": "media/milestone-15-pinned-encoder.webm",
+      "bytes": 156846,
+      "sha256": "6609bc263b72bf2b7d994db2f5db43e67478b2d20509debef7e881355c5d8c8f",
+      "pairedWithHostedProof": false
+    },
+    "corruptionsRejected": 23,
+    "corruptions": [
+      "missing source guards",
+      "stale source guard",
+      "changed end guard",
+      "historical setContent",
+      "frame-only report",
+      "missing functional scenario",
+      "truncated raw",
+      "filtered raw",
+      "invalid interval",
+      "wrong meanMs",
+      "wrong fps",
+      "wrong p95Ms",
+      "wrong p99Ms",
+      "wrong viewport",
+      "wrong phone throttle",
+      "page error",
+      "network request",
+      "relaxed gate",
+      "below FPS",
+      "above p95",
+      "capture hash mismatch",
+      "capture byte mismatch",
+      "missing capture hash"
+    ],
+    "commentProbe": {
+      "oldChecksumsAccepted": true,
+      "newSourceProofRejected": true,
+      "htmlRestored": true
+    }
+  },
+  "provenance": {
+    "completedAt": "2026-10-08T13:19:50Z",
+    "scriptSha256": "2dce8e4ce6c946bba3141ddff2e7d57ade3f92d02672232b484a66621531b285",
+    "scope": "focused validator controls and actual current-HTML freshness challenge; historical frame statistics only, not current full browser acceptance"
+  }
+}

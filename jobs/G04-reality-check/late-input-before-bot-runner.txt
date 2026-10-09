@@ -1,0 +1,58 @@
+import {chromium} from 'playwright';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+import {resolve,join} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {game} from '../../core.ts';
+const out=resolve('.work/diagnostics','late-bot-write-'+new Date().toISOString().replace(/[:.]/g,'-'));
+mkdirSync(out,{recursive:true});
+const files=['play.html','ui.ts','browser.ts','core.ts','bots.ts','samples.ts','../../contract/contract.ts','RULES.md'];
+const hashes=()=>Object.fromEntries(files.map(file=>[file,createHash('sha256').update(readFileSync(file)).digest('hex')]));
+const startHashes=hashes();assert.equal(startHashes['play.html'],'25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f');
+const report={diagnostic:true,gating:false,startedAt:new Date().toISOString(),pid:process.pid,sourceHashesAtStart:startHashes,fixtureLimits:'Actual file and ordinary UI controls. Playwright clock pauses timer delivery and setSystemTime changes wall Date only; runFor100 advances fake elapsed time, then150ms real Node delay permits the pre-install native countdown interval to refresh while held phase timers remain pending. This models overdue-input dispatch before scheduled timer delivery, not physical-phone or real-time scheduling frequency.',contract:'contract.ts:230: engine fires exactly one timer event per(id,startedAt) once deadline reached; selected RULES closes quick50s/write40s/vote30s.',cases:[],errors:[],requests:[]};
+console.log(JSON.stringify({startedAt:report.startedAt,pid:process.pid,out,htmlSha256:startHashes['play.html']}));
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+const url=pathToFileURL(resolve('play.html')).href;
+const players=[0,1].map(i=>({id:'p'+i,name:'Player '+(i+1),avatarId:'🙂',connected:true,bot:i===1}));
+function findSeed(mode,kind){for(let seed=1;seed<1000;seed++){const s=game.init({players,seed,now:101000,settings:{mode,rounds:4}});if(!kind||s.question.kind===kind)return seed;}throw Error('missing seed');}
+async function snapshot(page){return page.evaluate(()=>({dateNow:Date.now(),performanceNow:performance.now(),phase:document.querySelector('#public').dataset.phase,publicText:document.querySelector('#public').innerText,privateText:document.querySelector('#private').innerText,privateOpen:document.querySelector('#private').dataset.open,privateInputCount:document.querySelector('#private').querySelectorAll('input,textarea').length,clock:document.querySelector('#countdown')?.textContent,controllerClock:document.querySelector('#controller-countdown')?.textContent,scores:[...document.querySelectorAll('.score strong')].map(e=>Number(e.textContent)),menu:[...document.querySelectorAll('[data-choice]')].map(e=>({id:e.dataset.choice,text:e.textContent,disabled:e.disabled})),skipDisabled:document.querySelector('#skip').disabled}));}
+async function fixture(mode,kind){
+ const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();
+ page.on('pageerror',e=>report.errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))report.requests.push(r.url());});
+ await page.route('**/*',r=>r.request().url()===url?r.continue():r.abort());await page.goto(url);assert.equal(page.url(),url);
+ await page.clock.install({time:100000});await page.clock.pauseAt(101000);
+ const seed=findSeed(mode,kind);await page.selectOption('#players','2');await page.selectOption('#seat-1','sharp');await page.selectOption('#mode',mode);await page.selectOption('#rounds','4');await page.fill('#seed',String(seed));
+ let state=game.init({players,seed,now:await page.evaluate(()=>Date.now()),settings:{mode,rounds:4}});
+ await page.click('#start');
+ async function click(selector,event){const now=await page.evaluate(()=>Date.now());await page.click(selector);if(event)state=game.reduce(state,{...event,now});assert.equal(await page.locator('#public').getAttribute('data-phase'),state.phase.id);return now;}
+ await click('#skip',{type:'vip',action:'skip'});await click('#skip',{type:'vip',action:'skip'});
+ return {context,page,seed,get state(){return state;},click};
+}
+async function correctAnswer(f){await f.page.click('#reveal-private');const q=f.state.question;if(q.kind==='choice')return f.click(`[data-value="${q.correct}"]`,{type:'input',playerId:'p0',input:{type:'answer',value:Number(q.correct)}});await f.page.fill('#answer',String(q.correct));return f.click('#lock-answer',{type:'input',playerId:'p0',input:{type:'answer',value:Number(q.correct)}});}
+async function wallAt(f,now){await f.page.clock.setSystemTime(now);await f.page.clock.runFor(100);await new Promise(resolve=>setTimeout(resolve,150));return snapshot(f.page);}
+function expiredExpected(s,now){return game.reduce(s,{type:'timer',phaseId:s.phase.id,startedAt:s.phase.startedAt,now});}
+try {
+ const f=await fixture('bluff');await f.page.click('#reveal-private');
+ const old=f.state;
+ await f.page.clock.setSystemTime(old.phase.deadline+10);
+ await new Promise(resolve=>setTimeout(resolve,150));
+ const before=await snapshot(f.page);
+ assert.equal(before.phase,'write');assert.equal(before.clock,'0 s');
+ assert(before.publicText.includes('0 of 2 answers locked in.'));
+ await f.page.clock.runFor(350);
+ const afterBot=await snapshot(f.page);
+ assert.equal(afterBot.phase,'write');assert.equal(afterBot.clock,'0 s');
+ assert(afterBot.publicText.includes('1 of 2 answers locked in.'));
+ await f.page.click('#skip');await f.page.click('#reveal-private');
+ const menu=await snapshot(f.page);
+ const botOption=menu.menu.find(o=>o.text!==String(old.question.correct));
+ assert.equal(menu.phase,'vote');assert(botOption);
+ const desired=expiredExpected(old,afterBot.dateNow);
+ report.cases.push({name:'actual scheduled expired sharp-bot write',seed:f.seed,actor:'p1',controller:'sharp',scheduledDelayMs:350,deadline:old.phase.deadline,before,afterBot,menu,observedAcceptedBotAnswerCount:1,observedBotInput:{type:'write',text:botOption.text},inputTimeLimit:'Callback fired during controlled350ms runFor; Date at end retained; no private RNG/state observer or claim.',desiredTimerFirstState:desired,desiredOptions:desired.options.map(o=>({id:o.id,text:o.text})),lateInputAccepted:true});
+ await f.context.close();assert.deepEqual(report.errors,[]);assert.deepEqual(report.requests,[]);
+} catch(error){report.error=String(error.stack??error);process.exitCode=1;console.error(report.error);} finally {
+ await browser.close();report.finishedAt=new Date().toISOString();report.sourceHashesAtEnd=hashes();report.sourceGuardsMatch=JSON.stringify(report.sourceHashesAtStart)===JSON.stringify(report.sourceHashesAtEnd);
+ writeFileSync(join(out,'harness.mjs'),readFileSync(import.meta.filename));writeFileSync(join(out,'report.json'),JSON.stringify(report,null,2)+'\n');
+ console.log(JSON.stringify({finishedAt:report.finishedAt,out,sourceGuardsMatch:report.sourceGuardsMatch,error:report.error??null,cases:report.cases.map(c=>({name:c.name,deadline:c.deadline,beforeDate:c.before.dateNow,beforeClock:c.before.clock,afterDate:c.afterBot.dateNow,afterClock:c.afterBot.clock,observedBotInput:c.observedBotInput,actualMenu:c.menu.menu,desiredOptions:c.desiredOptions}))}));
+}

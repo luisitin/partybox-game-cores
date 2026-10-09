@@ -1,0 +1,14 @@
+{"frameWindow":"READY","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"e3e5d6db-a302-4c6c-9228-59b2975e005a","utc":"2026-10-08T21:05:28.622Z"}
+✔ exact per-attempt grant rejects stale nonce, source, profile, malformed and extra fields (2.593316ms)
+{"frameWindow":"CLOSED","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"e3e5d6db-a302-4c6c-9228-59b2975e005a","coordination":"root-granted","readyUtc":"2026-10-08T21:05:28.622Z","grantUtc":"2026-10-08T21:05:28.825Z","status":"control-only","rawIntervals":0,"utc":"2026-10-08T21:05:28.825Z"}
+✔ actual asynchronous barrier consumes only this READY nonce and closes its own receipt (206.659647ms)
+✔ independent acceptance refuses filtered, truncated, stale, inactive, frozen-time and miscomputed proof (549.227511ms)
+✔ every loaded local checker, schema and pinned runtime identity belongs to current source guards (328.73953ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1344.044792

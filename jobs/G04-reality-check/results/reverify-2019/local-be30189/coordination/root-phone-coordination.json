@@ -1,0 +1,32 @@
+{
+  "coordinator": "root",
+  "grantUtc": "2026-10-08T20:49:41.522775+00:00",
+  "identity": {
+    "profile": "phone",
+    "sourceSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "attemptNonce": "8bb0e456-0f1d-429d-baa0-992342ac22db"
+  },
+  "otherOwnersAcknowledged": [
+    "G08",
+    "G09",
+    "G10",
+    "B19",
+    "tracker"
+  ],
+  "heldPureReaderGroup": 194608,
+  "scope": "Second profile within the same continuous quiet hold; no intermediate release.",
+  "observedClosedUtc": "2026-10-08T20:49:52.370449+00:00",
+  "actualClosure": {
+    "profile": "phone",
+    "sourceSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "attemptNonce": "8bb0e456-0f1d-429d-baa0-992342ac22db",
+    "coordination": "root-granted",
+    "readyUtc": "2026-10-08T20:48:49.982Z",
+    "grantUtc": "2026-10-08T20:49:41.597Z",
+    "status": "samples-written",
+    "rawIntervals": 600,
+    "rawPath": ".work/strict/phone-raw.json",
+    "utc": "2026-10-08T20:49:52.342Z"
+  },
+  "continuousQuietWindowSinceFirstGrant": "2026-10-08T20:48:38.245329+00:00"
+}

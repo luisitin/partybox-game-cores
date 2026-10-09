@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "scope": "Actual canonical tracked bytes compared before documentation; only false manifest declaration/new regression/regenerated manifest and standalone page differ, no local elapsed experiment",
+  "checkedAt": "2026-10-09T03:44:16.539460+00:00",
+  "canonicalHead": "c81b0b7e69b19782613debbc1296c6d56f556927",
+  "canonicalFiles": 229,
+  "unchangedCanonicalFiles": 225,
+  "actualChanges": [
+    {
+      "path": "jobs/G04-reality-check/core.ts",
+      "canonicalSha256": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+      "actualSha256": "0e8440035ca886c713dee9fe8dce75b12e56d6ac5db195a36d160a7ea21df9f3",
+      "canonicalBytes": 14562,
+      "actualBytes": 14549
+    },
+    {
+      "path": "jobs/G04-reality-check/manifest.json",
+      "canonicalSha256": "cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e",
+      "actualSha256": "54f3f0c2064a5005654f2dcf1b0863288117d111952fd542760d510cc8f832e5",
+      "canonicalBytes": 1673,
+      "actualBytes": 1654
+    },
+    {
+      "path": "jobs/G04-reality-check/play.html",
+      "canonicalSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+      "actualSha256": "2907c016beba9f24cd1b0f3a1a3c1bd2fc1ada02e702cd5e703c70e712b5925a",
+      "canonicalBytes": 494865,
+      "actualBytes": 494854
+    },
+    {
+      "path": "jobs/G04-reality-check/test.ts",
+      "canonicalSha256": "8f10f4fff2ef1ec66928df4c8d1ddd4c62a1555b5d36bad998bef7ed9a14f58b",
+      "actualSha256": "8a5d50f4243ebeaa946ea9e38c928667e8674b402f1ea9b93f155a254bfd0771",
+      "canonicalBytes": 22777,
+      "actualBytes": 23287
+    }
+  ],
+  "onlyCoreChange": "remove ,noCards:true from manifest declaration; every reducer/view/bot function byte unchanged",
+  "manifestOnlyChange": "omit false noCards declaration; default English remains",
+  "playerVisibleGain": "not claimed; full SDK picker integration not executed"
+}

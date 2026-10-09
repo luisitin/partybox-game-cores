@@ -1,0 +1,140 @@
+{
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Seat 1",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Seat 2",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Seat 3",
+      "avatarId": "🙂",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "seats": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "phase": {
+    "id": "reveal",
+    "startedAt": 13001,
+    "deadline": 28001
+  },
+  "rng": {
+    "seed": 1,
+    "step": 14
+  },
+  "settings": {
+    "mode": "mixed",
+    "rounds": 8
+  },
+  "order": [
+    "ancient-or-ikea",
+    "real-town-or-fake",
+    "do-not-use",
+    "name-your-baby",
+    "internet-famous",
+    "emergency-room",
+    "patent-pending",
+    "patent-pending"
+  ],
+  "round": 1,
+  "seen": [
+    "ancient-or-ikea"
+  ],
+  "used": [
+    "ancient-or-ikea-19"
+  ],
+  "question": {
+    "id": "ancient-or-ikea-19",
+    "realm": "ancient-or-ikea",
+    "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+    "hint": "Century 1 covers years 1–100. Negative slider values mean BCE; there is no century zero.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "century",
+    "min": -15,
+    "max": 30,
+    "correct": 22
+  },
+  "example": {
+    "id": "ancient-or-ikea-1",
+    "realm": "ancient-or-ikea",
+    "prompt": "A pretend Nettlewick museum label dates its object to 470 BCE. Which century is that?",
+    "hint": "Century 1 covers years 1–100. Negative slider values mean BCE; there is no century zero.",
+    "fact": "This is a made-up workshop story, not a claim about the real world.",
+    "kind": "century",
+    "min": -15,
+    "max": 30,
+    "correct": -5
+  },
+  "responses": {
+    "p0": 23,
+    "p1": 22,
+    "p2": 21
+  },
+  "options": [],
+  "votes": {},
+  "knowledge": [],
+  "scores": {
+    "p0": 750,
+    "p1": 1000,
+    "p2": 750
+  },
+  "history": [
+    {
+      "round": 1,
+      "realm": "ancient-or-ikea",
+      "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+      "kind": "century",
+      "correct": 22,
+      "awards": {
+        "p0": 750,
+        "p1": 1000,
+        "p2": 750
+      },
+      "answers": {
+        "p0": 23,
+        "p1": 22,
+        "p2": 21
+      },
+      "options": [],
+      "votes": {},
+      "multiplier": 1,
+      "fact": "This is a made-up workshop story, not a claim about the real world."
+    }
+  ],
+  "last": {
+    "round": 1,
+    "realm": "ancient-or-ikea",
+    "prompt": "A pretend Hollowmere museum label dates its object to 2175 CE. Which century is that?",
+    "kind": "century",
+    "correct": 22,
+    "awards": {
+      "p0": 750,
+      "p1": 1000,
+      "p2": 750
+    },
+    "answers": {
+      "p0": 23,
+      "p1": 22,
+      "p2": 21
+    },
+    "options": [],
+    "votes": {},
+    "multiplier": 1,
+    "fact": "This is a made-up workshop story, not a claim about the real world."
+  }
+}

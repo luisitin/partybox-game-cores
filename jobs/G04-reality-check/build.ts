@@ -1,0 +1,18 @@
+import {build} from 'esbuild';
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const result=await build({entryPoints:['ui.ts'],bundle:true,write:false,format:'iife',platform:'browser',target:'es2022',minify:true,legalComments:'none'});
+const code=result.outputFiles[0]!.text.replace(/<\/script/gi,'<\\/script');
+const shell=readFileSync('shell.html','utf8');assert.equal(shell.split('/*__INLINE_GAME__*/').length,2);
+const dependency=JSON.parse(readFileSync('node_modules/zod/package.json','utf8')) as {version:string};
+assert.equal(dependency.version,'4.6.5','use the pinned runtime dependency');
+const license=readFileSync('node_modules/zod/LICENSE','utf8');
+assert(!license.includes('-->'),'dependency notice must be a valid HTML comment');
+assert(readFileSync('THIRD-PARTY-LICENSES.md','utf8').includes(license),'keep the complete pinned notice');
+assert(/<!doctype html>/i.test(shell));
+const notice=`<!--\nOriginal G04 code and visuals: MIT.\nZod ${dependency.version} bundled runtime notice:\n${license}-->`;
+const html=shell.replace('/*__INLINE_GAME__*/',()=>code).replace(/<!doctype html>/i,doctype=>`${doctype}\n${notice}`);
+assert(html.includes(license),'standalone page must retain the complete dependency notice');
+assert(!/<script[^>]+src=|<link[^>]+href=|url\(\s*["']?https?:\/\//i.test(html),'single-file page must have no external resources');
+if(process.argv.includes('--check'))assert.equal(readFileSync('play.html','utf8'),html,'rebuild play.html after UI changes');else writeFileSync('play.html',html);
+console.log(`Offline HTML ${process.argv.includes('--check')?'verified':'built'}: ${Buffer.byteLength(html)} bytes`);

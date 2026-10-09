@@ -1,0 +1,201 @@
+{
+  "diagnostic": true,
+  "gating": false,
+  "startedAt": "2026-10-08T12:12:33.199Z",
+  "pid": 132384,
+  "sourceHashesAtStart": {
+    "play.html": "25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f",
+    "ui.ts": "29acb67ea7ea4d32b20bbb7dfeac973526f8eb9ec5a1664436e1af781a9c170c",
+    "browser.ts": "47bee6df304c3dcf516783e6a4e38f6a078c3a962907415252aaa5632ba763e9",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5",
+    "RULES.md": "cd643b6501b9e5cbdaee4e81cebfea69eae26d9fa68b8a3fc44fe402b241b4ed"
+  },
+  "fixtureLimits": "Actual file and ordinary UI controls. Playwright clock pauses timer delivery and setSystemTime changes wall Date only; runFor100 advances fake elapsed time, then150ms real Node delay permits the pre-install native countdown interval to refresh while held phase timers remain pending. This models overdue-input dispatch before scheduled timer delivery, not physical-phone or real-time scheduling frequency.",
+  "contract": "contract.ts:230: engine fires exactly one timer event per(id,startedAt) once deadline reached; selected RULES closes quick50s/write40s/vote30s.",
+  "cases": [
+    {
+      "name": "actual scheduled expired sharp-bot write",
+      "seed": 1,
+      "actor": "p1",
+      "controller": "sharp",
+      "scheduledDelayMs": 350,
+      "deadline": 141002,
+      "before": {
+        "dateNow": 141012,
+        "performanceNow": 1000,
+        "phase": "write",
+        "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.0 of 2 answers locked in.Player 10Player 20",
+        "privateText": "Player 1\n0 s\n\nWhich two-word place is in chapter 19 of the imaginary harbour gazette?\n\nNames in this fictional region use two words: a plant and a harbour word.\n\nYour fake answer · up to 160 characters\nLock in bluff\n\nHide controller",
+        "privateOpen": "true",
+        "privateInputCount": 1,
+        "clock": "0 s",
+        "controllerClock": "0 s",
+        "scores": [
+          0,
+          0
+        ],
+        "menu": [],
+        "skipDisabled": false
+      },
+      "afterBot": {
+        "dateNow": 141362,
+        "performanceNow": 1350,
+        "phase": "write",
+        "publicText": "Round 1 / 40 sReal Town or Fake · Write a believable bluffWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.1 of 2 answers locked in.Player 10Player 20",
+        "privateText": "Player 1\n0 s\n\nWhich two-word place is in chapter 19 of the imaginary harbour gazette?\n\nNames in this fictional region use two words: a plant and a harbour word.\n\nYour fake answer · up to 160 characters\nLock in bluff\n\nHide controller",
+        "privateOpen": "true",
+        "privateInputCount": 1,
+        "clock": "0 s",
+        "controllerClock": "0 s",
+        "scores": [
+          0,
+          0
+        ],
+        "menu": [],
+        "skipDisabled": false
+      },
+      "menu": {
+        "dateNow": 141362,
+        "performanceNow": 1350,
+        "phase": "vote",
+        "publicText": "Round 1 / 430 sReal Town or Fake · Find the truthWhich two-word place is in chapter 19 of the imaginary harbour gazette?Names in this fictional region use two words: a plant and a harbour word.Answers are anonymous. Use your private controller to vote.Player 10Player 20",
+        "privateText": "Player 1\n30 s\n\nWhich two-word place is in chapter 19 of the imaginary harbour gazette?\n\nNames in this fictional region use two words: a plant and a harbour word.\n\nChoose the real answer. Your own bluff is marked and cannot be chosen.\n\nMallow Shore\nMallow Harbour\n\nHide controller",
+        "privateOpen": "true",
+        "privateInputCount": 0,
+        "clock": "30 s",
+        "controllerClock": "30 s",
+        "scores": [
+          0,
+          0
+        ],
+        "menu": [
+          {
+            "id": "o0",
+            "text": "Mallow Shore",
+            "disabled": false
+          },
+          {
+            "id": "o1",
+            "text": "Mallow Harbour",
+            "disabled": false
+          }
+        ],
+        "skipDisabled": false
+      },
+      "observedAcceptedBotAnswerCount": 1,
+      "observedBotInput": {
+        "type": "write",
+        "text": "Mallow Harbour"
+      },
+      "inputTimeLimit": "Callback fired during controlled350ms runFor; Date at end retained; no private RNG/state observer or claim.",
+      "desiredTimerFirstState": {
+        "players": {
+          "p0": {
+            "id": "p0",
+            "name": "Player 1",
+            "avatarId": "🙂",
+            "connected": true,
+            "bot": false
+          },
+          "p1": {
+            "id": "p1",
+            "name": "Player 2",
+            "avatarId": "🙂",
+            "connected": true,
+            "bot": true
+          }
+        },
+        "seats": [
+          "p0",
+          "p1"
+        ],
+        "left": [],
+        "phase": {
+          "id": "vote",
+          "startedAt": 141362,
+          "deadline": 171362
+        },
+        "rng": {
+          "seed": 1,
+          "step": 10
+        },
+        "settings": {
+          "mode": "bluff",
+          "rounds": 4
+        },
+        "order": [
+          "real-town-or-fake",
+          "do-not-use",
+          "patent-pending",
+          "patent-pending"
+        ],
+        "round": 1,
+        "seen": [
+          "real-town-or-fake"
+        ],
+        "used": [
+          "real-town-or-fake-19"
+        ],
+        "question": {
+          "id": "real-town-or-fake-19",
+          "realm": "real-town-or-fake",
+          "prompt": "Which two-word place is in chapter 19 of the imaginary harbour gazette?",
+          "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+          "fact": "This is a made-up workshop story, not a claim about the real world.",
+          "kind": "bluff",
+          "correct": "Mallow Shore"
+        },
+        "example": {
+          "id": "real-town-or-fake-1",
+          "realm": "real-town-or-fake",
+          "prompt": "Which two-word place is in chapter 1 of the imaginary harbour gazette?",
+          "hint": "Names in this fictional region use two words: a plant and a harbour word.",
+          "fact": "This is a made-up workshop story, not a claim about the real world.",
+          "kind": "bluff",
+          "correct": "Yarrow Quay"
+        },
+        "responses": {},
+        "options": [
+          {
+            "id": "o0",
+            "text": "Mallow Shore",
+            "owners": [],
+            "correct": true
+          }
+        ],
+        "votes": {},
+        "knowledge": [],
+        "scores": {
+          "p0": 0,
+          "p1": 0
+        },
+        "history": [],
+        "last": null
+      },
+      "desiredOptions": [
+        {
+          "id": "o0",
+          "text": "Mallow Shore"
+        }
+      ],
+      "lateInputAccepted": true
+    }
+  ],
+  "errors": [],
+  "requests": [],
+  "finishedAt": "2026-10-08T12:12:34.229Z",
+  "sourceHashesAtEnd": {
+    "play.html": "25e0b2fcd636ef2b02ad8f5cb68f2af1b8834432c00ee6a9c9730179fcba698f",
+    "ui.ts": "29acb67ea7ea4d32b20bbb7dfeac973526f8eb9ec5a1664436e1af781a9c170c",
+    "browser.ts": "47bee6df304c3dcf516783e6a4e38f6a078c3a962907415252aaa5632ba763e9",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "../../contract/contract.ts": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5",
+    "RULES.md": "cd643b6501b9e5cbdaee4e81cebfea69eae26d9fa68b8a3fc44fe402b241b4ed"
+  },
+  "sourceGuardsMatch": true
+}
