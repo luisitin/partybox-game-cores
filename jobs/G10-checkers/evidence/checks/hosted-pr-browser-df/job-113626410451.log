@@ -1,0 +1,1204 @@
+﻿2026-10-09T01:32:14.3618254Z Current runner version: '2.337.0'
+2026-10-09T01:32:14.3644716Z ##[group]Runner Image Provisioner
+2026-10-09T01:32:14.3645601Z Hosted Compute Agent
+2026-10-09T01:32:14.3646286Z Version: 20261002.596
+2026-10-09T01:32:14.3647201Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T01:32:14.3647957Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T01:32:14.3648722Z Worker ID: {ceedb734-83b3-45d0-9c52-08deabf24f3e}
+2026-10-09T01:32:14.3649431Z Region: westus2
+2026-10-09T01:32:14.3649997Z Cloud: Azure
+2026-10-09T01:32:14.3650567Z ##[endgroup]
+2026-10-09T01:32:14.3652055Z ##[group]Operating System
+2026-10-09T01:32:14.3652797Z Ubuntu
+2026-10-09T01:32:14.3653324Z 24.04.5
+2026-10-09T01:32:14.3653866Z LTS
+2026-10-09T01:32:14.3654426Z ##[endgroup]
+2026-10-09T01:32:14.3654972Z ##[group]Runner Image
+2026-10-09T01:32:14.3655629Z Image: ubuntu-24.04
+2026-10-09T01:32:14.3656193Z Version: 20261004.327.1
+2026-10-09T01:32:14.3657733Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T01:32:14.3659306Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T01:32:14.3660310Z ##[endgroup]
+2026-10-09T01:32:14.3661414Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T01:32:14.3663434Z Contents: read
+2026-10-09T01:32:14.3664064Z Metadata: read
+2026-10-09T01:32:14.3664744Z ##[endgroup]
+2026-10-09T01:32:14.3667230Z Secret source: Actions
+2026-10-09T01:32:14.3668144Z Cache mode: write
+2026-10-09T01:32:14.3668983Z Prepare workflow directory
+2026-10-09T01:32:14.4288616Z Prepare all required actions
+2026-10-09T01:32:14.4337838Z Getting action download info
+2026-10-09T01:32:14.7658249Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T01:32:14.8634319Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T01:32:14.9638303Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T01:32:15.1637484Z Complete job name: checks (browser)
+2026-10-09T01:32:15.2375703Z ##[group]Run actions/checkout@v4
+2026-10-09T01:32:15.2376795Z with:
+2026-10-09T01:32:15.2377281Z   ref: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:15.2377926Z   repository: luisitin/partybox-game-cores
+2026-10-09T01:32:15.2381899Z   token: ***
+2026-10-09T01:32:15.2382327Z   ssh-strict: true
+2026-10-09T01:32:15.2382772Z   ssh-user: git
+2026-10-09T01:32:15.2383269Z   persist-credentials: true
+2026-10-09T01:32:15.2383764Z   clean: true
+2026-10-09T01:32:15.2384206Z   sparse-checkout-cone-mode: true
+2026-10-09T01:32:15.2384719Z   fetch-depth: 1
+2026-10-09T01:32:15.2385138Z   fetch-tags: false
+2026-10-09T01:32:15.2385583Z   show-progress: true
+2026-10-09T01:32:15.2386031Z   lfs: false
+2026-10-09T01:32:15.2386571Z   submodules: false
+2026-10-09T01:32:15.2387027Z   set-safe-directory: true
+2026-10-09T01:32:15.2387533Z   allow-unsafe-pr-checkout: false
+2026-10-09T01:32:15.2388385Z env:
+2026-10-09T01:32:15.2389038Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:15.2389679Z ##[endgroup]
+2026-10-09T01:32:15.3428106Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T01:32:15.3430681Z ##[group]Getting Git version info
+2026-10-09T01:32:15.3431988Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T01:32:15.3439178Z [command]/usr/bin/git version
+2026-10-09T01:32:15.3572582Z git version 2.55.0
+2026-10-09T01:32:15.3596082Z ##[endgroup]
+2026-10-09T01:32:15.3612072Z Temporarily overriding HOME='/home/runner/work/_temp/17bafeb4-87f9-4a64-84f2-7d0b90cc4c03' before making global git config changes
+2026-10-09T01:32:15.3614411Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T01:32:15.3619567Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T01:32:15.3672386Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T01:32:15.3676383Z ##[group]Initializing the repository
+2026-10-09T01:32:15.3680491Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T01:32:15.3805811Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T01:32:15.3808215Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T01:32:15.3809785Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T01:32:15.3811205Z hint: call:
+2026-10-09T01:32:15.3811863Z hint:
+2026-10-09T01:32:15.3812453Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T01:32:15.3813148Z hint:
+2026-10-09T01:32:15.3814160Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T01:32:15.3815748Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T01:32:15.3817465Z hint:
+2026-10-09T01:32:15.3817914Z hint: 	git branch -m <name>
+2026-10-09T01:32:15.3818435Z hint:
+2026-10-09T01:32:15.3819087Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T01:32:15.3820220Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T01:32:15.3823100Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T01:32:15.3872725Z ##[endgroup]
+2026-10-09T01:32:15.3873529Z ##[group]Disabling automatic garbage collection
+2026-10-09T01:32:15.3877061Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T01:32:15.3920596Z ##[endgroup]
+2026-10-09T01:32:15.3922364Z ##[group]Setting up auth
+2026-10-09T01:32:15.3927034Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T01:32:15.3969392Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T01:32:15.4383684Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T01:32:15.4424834Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T01:32:15.4676727Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T01:32:15.4718403Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T01:32:15.4970556Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T01:32:15.5013012Z ##[endgroup]
+2026-10-09T01:32:15.5013823Z ##[group]Fetching the repository
+2026-10-09T01:32:15.5023032Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:37.1065355Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T01:32:37.1066766Z  * branch            df123c797b226c479b50a998011c1ea6d0157391 -> FETCH_HEAD
+2026-10-09T01:32:37.1070974Z ##[endgroup]
+2026-10-09T01:32:37.1072298Z ##[group]Determining the checkout info
+2026-10-09T01:32:37.1085537Z ##[endgroup]
+2026-10-09T01:32:37.1088081Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T01:32:37.1139661Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T01:32:37.1171413Z ##[group]Checking out the ref
+2026-10-09T01:32:37.1175471Z [command]/usr/bin/git checkout --progress --force df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:38.2197804Z Updating files:   9% (180/1861)
+2026-10-09T01:32:39.2148387Z Updating files:  10% (187/1861)
+2026-10-09T01:32:39.8258346Z Updating files:  10% (199/1861)
+2026-10-09T01:32:40.2314406Z Updating files:  11% (205/1861)
+2026-10-09T01:32:40.9138201Z Updating files:  11% (216/1861)
+2026-10-09T01:32:41.1805842Z Updating files:  12% (224/1861)
+2026-10-09T01:32:42.0828632Z Updating files:  12% (226/1861)
+2026-10-09T01:32:42.2117613Z Updating files:  13% (242/1861)
+2026-10-09T01:32:42.7814117Z Updating files:  13% (243/1861)
+2026-10-09T01:32:42.8015806Z Updating files:  14% (261/1861)
+2026-10-09T01:32:42.8025747Z Updating files:  15% (280/1861)
+2026-10-09T01:32:42.8041181Z Updating files:  16% (298/1861)
+2026-10-09T01:32:42.8239982Z Updating files:  17% (317/1861)
+2026-10-09T01:32:42.8248297Z Updating files:  18% (335/1861)
+2026-10-09T01:32:42.8273154Z Updating files:  19% (354/1861)
+2026-10-09T01:32:42.8472093Z Updating files:  20% (373/1861)
+2026-10-09T01:32:42.8481142Z Updating files:  21% (391/1861)
+2026-10-09T01:32:42.8488584Z Updating files:  22% (410/1861)
+2026-10-09T01:32:42.8502481Z Updating files:  23% (429/1861)
+2026-10-09T01:32:42.8519626Z Updating files:  24% (447/1861)
+2026-10-09T01:32:42.8533102Z Updating files:  25% (466/1861)
+2026-10-09T01:32:42.8546327Z Updating files:  26% (484/1861)
+2026-10-09T01:32:42.8560694Z Updating files:  27% (503/1861)
+2026-10-09T01:32:42.8570797Z Updating files:  28% (522/1861)
+2026-10-09T01:32:42.8645282Z Updating files:  29% (540/1861)
+2026-10-09T01:32:42.8668567Z Updating files:  30% (559/1861)
+2026-10-09T01:32:42.9000282Z Updating files:  31% (577/1861)
+2026-10-09T01:32:42.9010091Z Updating files:  32% (596/1861)
+2026-10-09T01:32:42.9095463Z Updating files:  33% (615/1861)
+2026-10-09T01:32:42.9275409Z Updating files:  34% (633/1861)
+2026-10-09T01:32:42.9459245Z Updating files:  35% (652/1861)
+2026-10-09T01:32:42.9469421Z Updating files:  36% (670/1861)
+2026-10-09T01:32:42.9663256Z Updating files:  37% (689/1861)
+2026-10-09T01:32:42.9676126Z Updating files:  38% (708/1861)
+2026-10-09T01:32:42.9849609Z Updating files:  39% (726/1861)
+2026-10-09T01:32:42.9867123Z Updating files:  40% (745/1861)
+2026-10-09T01:32:42.9878594Z Updating files:  41% (764/1861)
+2026-10-09T01:32:42.9931845Z Updating files:  42% (782/1861)
+2026-10-09T01:32:42.9946598Z Updating files:  43% (801/1861)
+2026-10-09T01:32:42.9959918Z Updating files:  44% (819/1861)
+2026-10-09T01:32:42.9981673Z Updating files:  45% (838/1861)
+2026-10-09T01:32:43.0115085Z Updating files:  46% (857/1861)
+2026-10-09T01:32:43.0277161Z Updating files:  47% (875/1861)
+2026-10-09T01:32:43.0358691Z Updating files:  48% (894/1861)
+2026-10-09T01:32:43.0527332Z Updating files:  49% (912/1861)
+2026-10-09T01:32:43.0545683Z Updating files:  50% (931/1861)
+2026-10-09T01:32:43.0555570Z Updating files:  51% (950/1861)
+2026-10-09T01:32:43.0599222Z Updating files:  52% (968/1861)
+2026-10-09T01:32:43.0649715Z Updating files:  53% (987/1861)
+2026-10-09T01:32:43.0665606Z Updating files:  54% (1005/1861)
+2026-10-09T01:32:43.0702375Z Updating files:  55% (1024/1861)
+2026-10-09T01:32:43.0744890Z Updating files:  56% (1043/1861)
+2026-10-09T01:32:43.0792873Z Updating files:  57% (1061/1861)
+2026-10-09T01:32:43.0835772Z Updating files:  58% (1080/1861)
+2026-10-09T01:32:43.0876276Z Updating files:  59% (1098/1861)
+2026-10-09T01:32:43.0894728Z Updating files:  60% (1117/1861)
+2026-10-09T01:32:43.0924162Z Updating files:  61% (1136/1861)
+2026-10-09T01:32:43.0961829Z Updating files:  62% (1154/1861)
+2026-10-09T01:32:43.0998566Z Updating files:  63% (1173/1861)
+2026-10-09T01:32:43.1042444Z Updating files:  64% (1192/1861)
+2026-10-09T01:32:43.1067009Z Updating files:  65% (1210/1861)
+2026-10-09T01:32:43.1098665Z Updating files:  66% (1229/1861)
+2026-10-09T01:32:43.1135600Z Updating files:  67% (1247/1861)
+2026-10-09T01:32:43.1192354Z Updating files:  68% (1266/1861)
+2026-10-09T01:32:43.1225322Z Updating files:  69% (1285/1861)
+2026-10-09T01:32:43.1229100Z Updating files:  70% (1303/1861)
+2026-10-09T01:32:43.1238448Z Updating files:  70% (1305/1861)
+2026-10-09T01:32:43.1259892Z Updating files:  71% (1322/1861)
+2026-10-09T01:32:43.1270484Z Updating files:  72% (1340/1861)
+2026-10-09T01:32:43.1279722Z Updating files:  73% (1359/1861)
+2026-10-09T01:32:43.1289057Z Updating files:  74% (1378/1861)
+2026-10-09T01:32:43.1296088Z Updating files:  75% (1396/1861)
+2026-10-09T01:32:43.1317625Z Updating files:  76% (1415/1861)
+2026-10-09T01:32:43.1345953Z Updating files:  77% (1433/1861)
+2026-10-09T01:32:43.1356020Z Updating files:  78% (1452/1861)
+2026-10-09T01:32:43.1364829Z Updating files:  79% (1471/1861)
+2026-10-09T01:32:43.1379307Z Updating files:  80% (1489/1861)
+2026-10-09T01:32:43.1388877Z Updating files:  81% (1508/1861)
+2026-10-09T01:32:43.1397532Z Updating files:  82% (1527/1861)
+2026-10-09T01:32:43.1406143Z Updating files:  83% (1545/1861)
+2026-10-09T01:32:43.1439915Z Updating files:  84% (1564/1861)
+2026-10-09T01:32:43.1449274Z Updating files:  85% (1582/1861)
+2026-10-09T01:32:43.1458261Z Updating files:  86% (1601/1861)
+2026-10-09T01:32:43.1466270Z Updating files:  87% (1620/1861)
+2026-10-09T01:32:43.1475876Z Updating files:  88% (1638/1861)
+2026-10-09T01:32:43.1484799Z Updating files:  89% (1657/1861)
+2026-10-09T01:32:43.1501902Z Updating files:  90% (1675/1861)
+2026-10-09T01:32:43.1544884Z Updating files:  91% (1694/1861)
+2026-10-09T01:32:43.1631675Z Updating files:  92% (1713/1861)
+2026-10-09T01:32:43.1648408Z Updating files:  93% (1731/1861)
+2026-10-09T01:32:43.1658226Z Updating files:  94% (1750/1861)
+2026-10-09T01:32:43.5008560Z Updating files:  95% (1768/1861)
+2026-10-09T01:32:43.5017271Z Updating files:  96% (1787/1861)
+2026-10-09T01:32:43.5028302Z Updating files:  97% (1806/1861)
+2026-10-09T01:32:43.5039199Z Updating files:  98% (1824/1861)
+2026-10-09T01:32:43.5049857Z Updating files:  99% (1843/1861)
+2026-10-09T01:32:43.5050653Z Updating files: 100% (1861/1861)
+2026-10-09T01:32:43.5051127Z Updating files: 100% (1861/1861), done.
+2026-10-09T01:32:43.5075498Z Note: switching to 'df123c797b226c479b50a998011c1ea6d0157391'.
+2026-10-09T01:32:43.5076098Z 
+2026-10-09T01:32:43.5077316Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T01:32:43.5078385Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T01:32:43.5079178Z state without impacting any branches by switching back to a branch.
+2026-10-09T01:32:43.5079567Z 
+2026-10-09T01:32:43.5080041Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T01:32:43.5080628Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T01:32:43.5080961Z 
+2026-10-09T01:32:43.5081090Z   git switch -c <new-branch-name>
+2026-10-09T01:32:43.5081314Z 
+2026-10-09T01:32:43.5081445Z Or undo this operation with:
+2026-10-09T01:32:43.5081645Z 
+2026-10-09T01:32:43.5081754Z   git switch -
+2026-10-09T01:32:43.5081902Z 
+2026-10-09T01:32:43.5082171Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T01:32:43.5082565Z 
+2026-10-09T01:32:43.5082891Z HEAD is now at df123c7 Prepare early American startup with verified full production output
+2026-10-09T01:32:43.5229093Z ##[endgroup]
+2026-10-09T01:32:43.5278068Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T01:32:43.5310156Z df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:43.5567491Z ##[group]Run actions/setup-node@v4
+2026-10-09T01:32:43.5567795Z with:
+2026-10-09T01:32:43.5568002Z   node-version: 22.16.0
+2026-10-09T01:32:43.5568222Z   cache: npm
+2026-10-09T01:32:43.5568507Z   cache-dependency-path: jobs/G10-checkers/package-lock.json
+2026-10-09T01:32:43.5568863Z   always-auth: false
+2026-10-09T01:32:43.5569082Z   check-latest: false
+2026-10-09T01:32:43.5571603Z   token: ***
+2026-10-09T01:32:43.5571801Z env:
+2026-10-09T01:32:43.5572049Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:43.5572373Z ##[endgroup]
+2026-10-09T01:32:43.6922259Z Attempting to download 22.16.0...
+2026-10-09T01:32:43.7027070Z (node:2331) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T01:32:43.7028094Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T01:32:44.2216329Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T01:32:44.7370496Z Extracting ...
+2026-10-09T01:32:44.7496889Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/afe02afb-d9b1-42a7-94bc-4862c7483fc3 -f /home/runner/work/_temp/fbe37ddf-a209-4eb4-9cc7-23adef990408
+2026-10-09T01:32:45.9101778Z Adding to the cache ...
+2026-10-09T01:32:47.9667246Z ##[group]Environment details
+2026-10-09T01:32:48.1962997Z node: v22.16.0
+2026-10-09T01:32:48.1963308Z npm: 10.9.2
+2026-10-09T01:32:48.1963620Z yarn: 1.22.22
+2026-10-09T01:32:48.1964183Z ##[endgroup]
+2026-10-09T01:32:48.1987731Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T01:32:48.2927517Z /home/runner/.npm
+2026-10-09T01:32:48.5398248Z Cache hit for: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T01:32:48.5518936Z (node:2331) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T01:32:49.8361611Z Received 93418 of 12676330 (0.7%), 0.1 MBs/sec
+2026-10-09T01:32:50.1575839Z Received 12676330 of 12676330 (100.0%), 9.1 MBs/sec
+2026-10-09T01:32:50.1576833Z Cache Size: ~12 MB (12676330 B)
+2026-10-09T01:32:50.1603143Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e9d30c0f-38e2-47b0-a7bb-fb9c18cc2e09/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T01:32:50.1833981Z Cache restored successfully
+2026-10-09T01:32:50.1844110Z Cache restored from key: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T01:32:50.2049246Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-09T01:32:50.2049740Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-09T01:32:50.2302577Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:32:50.2302886Z env:
+2026-10-09T01:32:50.2303203Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:50.2303613Z ##[endgroup]
+2026-10-09T01:32:51.2117389Z 
+2026-10-09T01:32:51.2127754Z added 6 packages in 920ms
+2026-10-09T01:32:51.3152343Z ##[group]Run if [ -f /etc/apt/apt-mirrors.txt ]; then
+2026-10-09T01:32:51.3152871Z [36;1mif [ -f /etc/apt/apt-mirrors.txt ]; then[0m
+2026-10-09T01:32:51.3153695Z [36;1m  sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt[0m
+2026-10-09T01:32:51.3154441Z [36;1mfi[0m
+2026-10-09T01:32:51.3221370Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:32:51.3221648Z env:
+2026-10-09T01:32:51.3221948Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:51.3222328Z ##[endgroup]
+2026-10-09T01:32:52.0107291Z ##[group]Run sudo apt-get update
+2026-10-09T01:32:52.0108060Z [36;1msudo apt-get update[0m
+2026-10-09T01:32:52.0108674Z [36;1msudo apt-get install -y ffmpeg[0m
+2026-10-09T01:32:52.0109323Z [36;1mffprobe -version[0m
+2026-10-09T01:32:52.0109821Z [36;1mffmpeg -version[0m
+2026-10-09T01:32:52.0174203Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:32:52.0174479Z env:
+2026-10-09T01:32:52.0174766Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:32:52.0175103Z ##[endgroup]
+2026-10-09T01:32:53.0804730Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T01:32:53.1244720Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-09T01:32:53.2337245Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-09T01:32:53.2695628Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-09T01:32:53.2783327Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [474 kB]
+2026-10-09T01:32:53.3039389Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-09T01:32:54.0211319Z Hit:2 https://archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T01:32:54.1843689Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-09T01:32:54.7605874Z Get:4 https://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-09T01:32:55.0832568Z Get:5 https://archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-09T01:32:55.3009731Z Get:11 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-09T01:32:56.0588668Z Get:12 https://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-09T01:32:56.2418002Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-09T01:32:56.6207440Z Get:14 https://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-09T01:32:56.7905934Z Get:15 https://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-09T01:32:57.0365263Z Get:16 https://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-09T01:32:57.2079123Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-09T01:32:57.3618110Z Get:18 https://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-09T01:32:57.5142119Z Get:19 https://archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1116 kB]
+2026-10-09T01:32:57.7198832Z Get:20 https://archive.ubuntu.com/ubuntu noble-security/main Translation-en [228 kB]
+2026-10-09T01:32:58.0748894Z Get:21 https://archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-09T01:32:58.2872979Z Get:22 https://archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-09T01:32:58.4504249Z Get:23 https://archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1632 kB]
+2026-10-09T01:32:58.6813671Z Get:24 https://archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [376 kB]
+2026-10-09T01:32:58.8505869Z Get:25 https://archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.6 kB]
+2026-10-09T01:33:00.8808936Z Fetched 12.2 MB in 6s (2011 kB/s)
+2026-10-09T01:33:01.7655445Z Reading package lists...
+2026-10-09T01:33:01.7967237Z Reading package lists...
+2026-10-09T01:33:02.0139980Z Building dependency tree...
+2026-10-09T01:33:02.0147408Z Reading state information...
+2026-10-09T01:33:02.1667812Z The following additional packages will be installed:
+2026-10-09T01:33:02.1668621Z   i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T01:33:02.1669743Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T01:33:02.1670574Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T01:33:02.1672184Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T01:33:02.1673263Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T01:33:02.1673971Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T01:33:02.1674666Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T01:33:02.1675306Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T01:33:02.1676244Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T01:33:02.1677399Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T01:33:02.1678389Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T01:33:02.1679420Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T01:33:02.1680520Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T01:33:02.1681605Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T01:33:02.1682664Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T01:33:02.1683711Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T01:33:02.1684791Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T01:33:02.1685613Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T01:33:02.1686035Z Suggested packages:
+2026-10-09T01:33:02.1686632Z   ffmpeg-doc i965-va-driver-shaders libcuda1 libnvcuvid1 libnvidia-encode1
+2026-10-09T01:33:02.1687330Z   libbluray-bdj jackd2 libportaudio2 opus-tools pulseaudio libraw1394-doc
+2026-10-09T01:33:02.1687862Z   librsvg2-bin serdi sndiod sordi speex opencl-icd libvdpau-va-gl1
+2026-10-09T01:33:02.2132674Z The following NEW packages will be installed:
+2026-10-09T01:33:02.2137666Z   ffmpeg i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T01:33:02.2138989Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T01:33:02.2140021Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T01:33:02.2141183Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T01:33:02.2142445Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T01:33:02.2143911Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T01:33:02.2145011Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T01:33:02.2146011Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T01:33:02.2147331Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T01:33:02.2148478Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T01:33:02.2149581Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T01:33:02.2150698Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T01:33:02.2151818Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T01:33:02.2152965Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T01:33:02.2154176Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T01:33:02.2155290Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T01:33:02.2156365Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T01:33:02.2157748Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T01:33:02.2349992Z 0 upgraded, 99 newly installed, 0 to remove and 23 not upgraded.
+2026-10-09T01:33:02.2350494Z Need to get 94.1 MB of archives.
+2026-10-09T01:33:02.2350957Z After this operation, 227 MB of additional disk space will be used.
+2026-10-09T01:33:02.2351469Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T01:33:03.0430934Z Get:2 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva2 amd64 2.20.0-2ubuntu0.2 [66.4 kB]
+2026-10-09T01:33:03.5168200Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-drm2 amd64 2.20.0-2ubuntu0.2 [7124 B]
+2026-10-09T01:33:03.6750240Z Get:4 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-x11-2 amd64 2.20.0-2ubuntu0.2 [12.0 kB]
+2026-10-09T01:33:03.8406298Z Get:5 https://archive.ubuntu.com/ubuntu noble/main amd64 libvdpau1 amd64 1.5-2build1 [27.8 kB]
+2026-10-09T01:33:04.0243772Z Get:6 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvpl2 amd64 2023.3.0-1build1 [99.8 kB]
+2026-10-09T01:33:04.3378746Z Get:7 https://archive.ubuntu.com/ubuntu noble/universe amd64 ocl-icd-libopencl1 amd64 2.3.2-1build1 [38.5 kB]
+2026-10-09T01:33:04.5119646Z Get:8 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavutil58 amd64 7:6.1.1-3ubuntu5 [401 kB]
+2026-10-09T01:33:04.9784928Z Get:9 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1 [8998 kB]
+2026-10-09T01:33:06.2328108Z Get:10 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdav1d7 amd64 1.4.1-1build1 [604 kB]
+2026-10-09T01:33:06.3958777Z Get:11 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgsm1 amd64 1.0.22-1build1 [27.8 kB]
+2026-10-09T01:33:06.5492657Z Get:12 https://archive.ubuntu.com/ubuntu noble/universe amd64 libhwy1t64 amd64 1.0.7-8.1build1 [584 kB]
+2026-10-09T01:33:06.7123281Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libjxl0.7 amd64 0.7.0-10.2ubuntu6.1 [1001 kB]
+2026-10-09T01:33:06.8826050Z Get:14 https://archive.ubuntu.com/ubuntu noble/main amd64 libmp3lame0 amd64 3.100-6build1 [142 kB]
+2026-10-09T01:33:07.0374635Z Get:15 https://archive.ubuntu.com/ubuntu noble/main amd64 libopus0 amd64 1.4-1build1 [208 kB]
+2026-10-09T01:33:07.1938002Z Get:16 https://archive.ubuntu.com/ubuntu noble/universe amd64 librav1e0 amd64 0.7.1-2 [1022 kB]
+2026-10-09T01:33:07.3648292Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-2 amd64 2.58.0+dfsg-1ubuntu0.1 [2141 kB]
+2026-10-09T01:33:07.5566862Z Get:18 https://archive.ubuntu.com/ubuntu noble/universe amd64 libshine3 amd64 3.1.1-2build1 [23.2 kB]
+2026-10-09T01:33:07.7101188Z Get:19 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libspeex1 amd64 1.2.1-2ubuntu2.24.04.1 [59.6 kB]
+2026-10-09T01:33:07.8637387Z Get:20 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsvtav1enc1d1 amd64 1.7.0+dfsg-2build1 [2425 kB]
+2026-10-09T01:33:08.2529070Z Get:21 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsoxr0 amd64 0.1.3-4build3 [80.0 kB]
+2026-10-09T01:33:08.4070044Z Get:22 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswresample4 amd64 7:6.1.1-3ubuntu5 [63.8 kB]
+2026-10-09T01:33:08.5605971Z Get:23 https://archive.ubuntu.com/ubuntu noble/main amd64 libtheora0 amd64 1.1.1+dfsg.1-16.1build3 [211 kB]
+2026-10-09T01:33:08.7167316Z Get:24 https://archive.ubuntu.com/ubuntu noble/main amd64 libtwolame0 amd64 0.4.0-2build3 [52.3 kB]
+2026-10-09T01:33:08.8702290Z Get:25 https://archive.ubuntu.com/ubuntu noble/main amd64 libvorbisenc2 amd64 1.3.7-1build3 [80.8 kB]
+2026-10-09T01:33:09.0248880Z Get:26 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libvpx9 amd64 1.14.0-1ubuntu2.3 [1143 kB]
+2026-10-09T01:33:09.1978728Z Get:27 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx264-164 amd64 2:0.164.3108+git31e19f9-1 [604 kB]
+2026-10-09T01:33:09.3612892Z Get:28 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx265-199 amd64 3.5-2build1 [1226 kB]
+2026-10-09T01:33:09.5359975Z Get:29 https://archive.ubuntu.com/ubuntu noble/universe amd64 libxvidcore4 amd64 2:1.3.7-1build1 [219 kB]
+2026-10-09T01:33:09.6925572Z Get:30 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi-common all 0.2.42-2 [42.4 kB]
+2026-10-09T01:33:09.8458243Z Get:31 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi0t64 amd64 0.2.42-2 [261 kB]
+2026-10-09T01:33:10.0032449Z Get:32 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavcodec60 amd64 7:6.1.1-3ubuntu5 [5851 kB]
+2026-10-09T01:33:10.3101306Z Get:33 https://archive.ubuntu.com/ubuntu noble/main amd64 libraw1394-11 amd64 2.1.2-2build3 [26.2 kB]
+2026-10-09T01:33:10.4633065Z Get:34 https://archive.ubuntu.com/ubuntu noble/main amd64 libavc1394-0 amd64 0.5.4-5build3 [15.4 kB]
+2026-10-09T01:33:10.6164958Z Get:35 https://archive.ubuntu.com/ubuntu noble/universe amd64 libunibreak5 amd64 5.1-2build1 [25.0 kB]
+2026-10-09T01:33:10.7699769Z Get:36 https://archive.ubuntu.com/ubuntu noble/universe amd64 libass9 amd64 1:0.17.1-2build1 [104 kB]
+2026-10-09T01:33:10.9235015Z Get:37 https://archive.ubuntu.com/ubuntu noble/universe amd64 libudfread0 amd64 1.1.2-1build1 [19.0 kB]
+2026-10-09T01:33:11.0769411Z Get:38 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbluray2 amd64 1:1.3.4-1build1 [159 kB]
+2026-10-09T01:33:11.2314513Z Get:39 https://archive.ubuntu.com/ubuntu noble/universe amd64 libchromaprint1 amd64 1.5.1-5 [30.5 kB]
+2026-10-09T01:33:11.5792190Z Get:40 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgme0 amd64 0.6.3-7build1 [134 kB]
+2026-10-09T01:33:11.7331131Z Get:41 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpg123-0t64 amd64 1.32.5-1ubuntu1.1 [169 kB]
+2026-10-09T01:33:11.8872307Z Get:42 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenmpt0t64 amd64 0.7.3-1.1build3 [647 kB]
+2026-10-09T01:33:12.0457098Z Get:43 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcjson1 amd64 1.7.17-1 [24.8 kB]
+2026-10-09T01:33:12.1989916Z Get:44 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmbedcrypto7t64 amd64 2.28.8-1 [209 kB]
+2026-10-09T01:33:12.3542292Z Get:45 https://archive.ubuntu.com/ubuntu noble/universe amd64 librist4 amd64 0.2.10+dfsg-2 [74.9 kB]
+2026-10-09T01:33:12.5083293Z Get:46 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsrt1.5-gnutls amd64 1.5.3-1build2 [316 kB]
+2026-10-09T01:33:12.6644061Z Get:47 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-gcrypt-4 amd64 0.10.6-2ubuntu0.5 [226 kB]
+2026-10-09T01:33:12.8190216Z Get:48 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavformat60 amd64 7:6.1.1-3ubuntu5 [1153 kB]
+2026-10-09T01:33:12.9822695Z Get:49 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbs2b0 amd64 3.1.0+dfsg-7build1 [10.6 kB]
+2026-10-09T01:33:13.1353115Z Get:50 https://archive.ubuntu.com/ubuntu noble/universe amd64 libflite1 amd64 2.2-6build3 [13.6 MB]
+2026-10-09T01:33:13.4595563Z Get:51 https://archive.ubuntu.com/ubuntu noble/universe amd64 libserd-0-0 amd64 0.32.2-1 [43.6 kB]
+2026-10-09T01:33:13.6128107Z Get:52 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzix-0-0 amd64 0.4.2-2build1 [23.6 kB]
+2026-10-09T01:33:13.7662135Z Get:53 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsord-0-0 amd64 0.16.16-2build1 [15.8 kB]
+2026-10-09T01:33:13.9191817Z Get:54 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsratom-0-0 amd64 0.6.16-1build1 [17.3 kB]
+2026-10-09T01:33:14.0724241Z Get:55 https://archive.ubuntu.com/ubuntu noble/universe amd64 liblilv-0-0 amd64 0.24.22-1build1 [41.0 kB]
+2026-10-09T01:33:14.2256128Z Get:56 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmysofa1 amd64 1.3.2+dfsg-2ubuntu2 [1158 kB]
+2026-10-09T01:33:14.3864274Z Get:57 https://archive.ubuntu.com/ubuntu noble/universe amd64 libplacebo338 amd64 6.338.2-2build1 [2654 kB]
+2026-10-09T01:33:14.5558811Z Get:58 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libblas3 amd64 3.12.0-3build1.1 [238 kB]
+2026-10-09T01:33:14.7104104Z Get:59 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblapack3 amd64 3.12.0-3build1.1 [2646 kB]
+2026-10-09T01:33:15.0728414Z Get:60 https://archive.ubuntu.com/ubuntu noble/main amd64 libasyncns0 amd64 0.8-6build4 [11.3 kB]
+2026-10-09T01:33:15.2259769Z Get:61 https://archive.ubuntu.com/ubuntu noble/main amd64 libflac12t64 amd64 1.4.3+ds-2.1ubuntu2 [197 kB]
+2026-10-09T01:33:15.3799723Z Get:62 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsndfile1 amd64 1.2.2-1ubuntu5.24.04.1 [209 kB]
+2026-10-09T01:33:15.5344077Z Get:63 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpulse0 amd64 1:16.1+dfsg1-2ubuntu10.1 [292 kB]
+2026-10-09T01:33:15.6893132Z Get:64 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsphinxbase3t64 amd64 0.8+5prealpha+1-17build2 [126 kB]
+2026-10-09T01:33:15.8433232Z Get:65 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpocketsphinx3 amd64 0.8.0+real5prealpha+1-15ubuntu5 [133 kB]
+2026-10-09T01:33:15.9973203Z Get:66 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpostproc57 amd64 7:6.1.1-3ubuntu5 [49.9 kB]
+2026-10-09T01:33:16.1508237Z Get:67 https://archive.ubuntu.com/ubuntu noble/main amd64 libsamplerate0 amd64 0.2.2-4build1 [1344 kB]
+2026-10-09T01:33:16.3120870Z Get:68 https://archive.ubuntu.com/ubuntu noble/universe amd64 librubberband2 amd64 3.3.0+dfsg-2build1 [130 kB]
+2026-10-09T01:33:16.4657783Z Get:69 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswscale7 amd64 7:6.1.1-3ubuntu5 [193 kB]
+2026-10-09T01:33:16.6204681Z Get:70 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvidstab1.1 amd64 1.1.0-2build1 [38.5 kB]
+2026-10-09T01:33:16.7747957Z Get:71 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzimg2 amd64 3.0.5+ds1-1build1 [254 kB]
+2026-10-09T01:33:16.9294584Z Get:72 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavfilter9 amd64 7:6.1.1-3ubuntu5 [4235 kB]
+2026-10-09T01:33:17.1082591Z Get:73 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcaca0 amd64 0.99.beta20-4ubuntu0.2 [209 kB]
+2026-10-09T01:33:17.2629445Z Get:74 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcdio19t64 amd64 2.1.0-4.1ubuntu1.2 [62.4 kB]
+2026-10-09T01:33:17.4162816Z Get:75 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-cdda2t64 amd64 10.2+2.0.1-1.1build2 [16.5 kB]
+2026-10-09T01:33:17.5693676Z Get:76 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-paranoia2t64 amd64 10.2+2.0.1-1.1build2 [16.6 kB]
+2026-10-09T01:33:17.7227661Z Get:77 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdc1394-25 amd64 2.2.6-4build1 [90.1 kB]
+2026-10-09T01:33:18.0692409Z Get:78 https://archive.ubuntu.com/ubuntu noble/main amd64 libiec61883-0 amd64 1.2.0-6build1 [24.5 kB]
+2026-10-09T01:33:18.2225065Z Get:79 https://archive.ubuntu.com/ubuntu noble/main amd64 libjack-jackd2-0 amd64 1.9.21~dfsg-3ubuntu3 [289 kB]
+2026-10-09T01:33:18.3774144Z Get:80 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal-data all 1:1.23.1-4build1 [161 kB]
+2026-10-09T01:33:18.5315953Z Get:81 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsndio7.0 amd64 1.9.0-0.3build3 [29.6 kB]
+2026-10-09T01:33:18.6851956Z Get:82 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal1 amd64 1:1.23.1-4build1 [540 kB]
+2026-10-09T01:33:18.8415356Z Get:83 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-0 amd64 0.2.2-1build2 [16.5 kB]
+2026-10-09T01:33:18.9947969Z Get:84 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsdl2-2.0-0 amd64 2.30.0+dfsg-1ubuntu3.1 [686 kB]
+2026-10-09T01:33:19.1522671Z Get:85 https://archive.ubuntu.com/ubuntu noble/main amd64 libxcb-shape0 amd64 1.15-1ubuntu2 [6100 B]
+2026-10-09T01:33:19.3055475Z Get:86 https://archive.ubuntu.com/ubuntu noble/main amd64 libxv1 amd64 2:1.0.11-1.1build1 [10.7 kB]
+2026-10-09T01:33:19.4590077Z Get:87 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavdevice60 amd64 7:6.1.1-3ubuntu5 [82.3 kB]
+2026-10-09T01:33:19.6124764Z Get:88 https://archive.ubuntu.com/ubuntu noble/universe amd64 ffmpeg amd64 7:6.1.1-3ubuntu5 [1879 kB]
+2026-10-09T01:33:19.7773947Z Get:89 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libigdgmm12 amd64 22.3.17+ds1-1ubuntu1 [145 kB]
+2026-10-09T01:33:19.9312348Z Get:90 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 intel-media-va-driver amd64 24.1.0+dfsg1-1ubuntu0.2 [3163 kB]
+2026-10-09T01:33:20.1042055Z Get:91 https://archive.ubuntu.com/ubuntu noble/universe amd64 libaacs0 amd64 0.11.1-2build1 [62.9 kB]
+2026-10-09T01:33:20.2577966Z Get:92 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbdplus0 amd64 0.2.0-3build1 [52.2 kB]
+2026-10-09T01:33:20.4110464Z Get:93 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-plugin-1-gtk amd64 0.2.2-1build2 [22.2 kB]
+2026-10-09T01:33:20.5641457Z Get:94 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-common amd64 2.58.0+dfsg-1ubuntu0.1 [11.8 kB]
+2026-10-09T01:33:20.7172296Z Get:95 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 mesa-va-drivers amd64 25.2.8-0ubuntu0.24.04.4 [6778 B]
+2026-10-09T01:33:20.8705617Z Get:96 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vdpau-drivers amd64 25.2.8-0ubuntu0.24.04.4 [23.4 kB]
+2026-10-09T01:33:21.2174816Z Get:97 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1ubuntu0.2 [332 kB]
+2026-10-09T01:33:21.3726192Z Get:98 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 va-driver-all amd64 2.20.0-2ubuntu0.2 [5014 B]
+2026-10-09T01:33:21.5256016Z Get:99 https://archive.ubuntu.com/ubuntu noble/main amd64 vdpau-driver-all amd64 1.5-2build1 [4414 B]
+2026-10-09T01:33:21.6786270Z Get:100 https://archive.ubuntu.com/ubuntu noble/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-15ubuntu5 [27.4 MB]
+2026-10-09T01:33:22.1979974Z Fetched 94.1 MB in 20s (4792 kB/s)
+2026-10-09T01:33:22.2225527Z Selecting previously unselected package libva2:amd64.
+2026-10-09T01:33:22.2497817Z (Reading database ... 
+2026-10-09T01:33:22.2498649Z (Reading database ... 5%
+2026-10-09T01:33:22.2499367Z (Reading database ... 10%
+2026-10-09T01:33:22.2500024Z (Reading database ... 15%
+2026-10-09T01:33:22.2500426Z (Reading database ... 20%
+2026-10-09T01:33:22.2500831Z (Reading database ... 25%
+2026-10-09T01:33:22.2501361Z (Reading database ... 30%
+2026-10-09T01:33:22.2501874Z (Reading database ... 35%
+2026-10-09T01:33:22.2502385Z (Reading database ... 40%
+2026-10-09T01:33:22.2502953Z (Reading database ... 45%
+2026-10-09T01:33:22.2503335Z (Reading database ... 50%
+2026-10-09T01:33:22.2538049Z (Reading database ... 55%
+2026-10-09T01:33:22.3708497Z (Reading database ... 60%
+2026-10-09T01:33:22.5622920Z (Reading database ... 65%
+2026-10-09T01:33:22.7691578Z (Reading database ... 70%
+2026-10-09T01:33:22.9547122Z (Reading database ... 75%
+2026-10-09T01:33:23.0776213Z (Reading database ... 80%
+2026-10-09T01:33:23.2099367Z (Reading database ... 85%
+2026-10-09T01:33:23.3302190Z (Reading database ... 90%
+2026-10-09T01:33:23.4284242Z (Reading database ... 95%
+2026-10-09T01:33:23.4284860Z (Reading database ... 100%
+2026-10-09T01:33:23.4285742Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-09T01:33:23.4328340Z Preparing to unpack .../00-libva2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:23.4369767Z Unpacking libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:23.4586956Z Selecting previously unselected package libva-drm2:amd64.
+2026-10-09T01:33:23.4710102Z Preparing to unpack .../01-libva-drm2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:23.4717079Z Unpacking libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:23.4901479Z Selecting previously unselected package libva-x11-2:amd64.
+2026-10-09T01:33:23.5023674Z Preparing to unpack .../02-libva-x11-2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:23.5030751Z Unpacking libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:23.5216968Z Selecting previously unselected package libvdpau1:amd64.
+2026-10-09T01:33:23.5336402Z Preparing to unpack .../03-libvdpau1_1.5-2build1_amd64.deb ...
+2026-10-09T01:33:23.5343352Z Unpacking libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T01:33:23.5540210Z Selecting previously unselected package libvpl2.
+2026-10-09T01:33:23.5661625Z Preparing to unpack .../04-libvpl2_2023.3.0-1build1_amd64.deb ...
+2026-10-09T01:33:23.5668509Z Unpacking libvpl2 (2023.3.0-1build1) ...
+2026-10-09T01:33:23.5873577Z Selecting previously unselected package ocl-icd-libopencl1:amd64.
+2026-10-09T01:33:23.5997422Z Preparing to unpack .../05-ocl-icd-libopencl1_2.3.2-1build1_amd64.deb ...
+2026-10-09T01:33:23.6005264Z Unpacking ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T01:33:23.6237120Z Selecting previously unselected package libavutil58:amd64.
+2026-10-09T01:33:23.6363633Z Preparing to unpack .../06-libavutil58_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:23.6371176Z Unpacking libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:23.6611044Z Selecting previously unselected package libcodec2-1.2:amd64.
+2026-10-09T01:33:23.6736824Z Preparing to unpack .../07-libcodec2-1.2_1.2.0-2build1_amd64.deb ...
+2026-10-09T01:33:23.6744639Z Unpacking libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T01:33:23.7468857Z Selecting previously unselected package libdav1d7:amd64.
+2026-10-09T01:33:23.7596332Z Preparing to unpack .../08-libdav1d7_1.4.1-1build1_amd64.deb ...
+2026-10-09T01:33:23.7602932Z Unpacking libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T01:33:23.7864162Z Selecting previously unselected package libgsm1:amd64.
+2026-10-09T01:33:23.7991742Z Preparing to unpack .../09-libgsm1_1.0.22-1build1_amd64.deb ...
+2026-10-09T01:33:23.7998955Z Unpacking libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T01:33:23.8193064Z Selecting previously unselected package libhwy1t64:amd64.
+2026-10-09T01:33:23.8320713Z Preparing to unpack .../10-libhwy1t64_1.0.7-8.1build1_amd64.deb ...
+2026-10-09T01:33:23.8328841Z Unpacking libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T01:33:23.8645895Z Selecting previously unselected package libjxl0.7:amd64.
+2026-10-09T01:33:23.8773217Z Preparing to unpack .../11-libjxl0.7_0.7.0-10.2ubuntu6.1_amd64.deb ...
+2026-10-09T01:33:23.8780852Z Unpacking libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T01:33:23.9094798Z Selecting previously unselected package libmp3lame0:amd64.
+2026-10-09T01:33:23.9223111Z Preparing to unpack .../12-libmp3lame0_3.100-6build1_amd64.deb ...
+2026-10-09T01:33:23.9231045Z Unpacking libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T01:33:23.9440352Z Selecting previously unselected package libopus0:amd64.
+2026-10-09T01:33:23.9567354Z Preparing to unpack .../13-libopus0_1.4-1build1_amd64.deb ...
+2026-10-09T01:33:23.9574999Z Unpacking libopus0:amd64 (1.4-1build1) ...
+2026-10-09T01:33:23.9784567Z Selecting previously unselected package librav1e0:amd64.
+2026-10-09T01:33:23.9914655Z Preparing to unpack .../14-librav1e0_0.7.1-2_amd64.deb ...
+2026-10-09T01:33:23.9922386Z Unpacking librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T01:33:24.0229333Z Selecting previously unselected package librsvg2-2:amd64.
+2026-10-09T01:33:24.0355439Z Preparing to unpack .../15-librsvg2-2_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T01:33:24.0362861Z Unpacking librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T01:33:24.0805888Z Selecting previously unselected package libshine3:amd64.
+2026-10-09T01:33:24.0932954Z Preparing to unpack .../16-libshine3_3.1.1-2build1_amd64.deb ...
+2026-10-09T01:33:24.0941040Z Unpacking libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T01:33:24.1133798Z Selecting previously unselected package libspeex1:amd64.
+2026-10-09T01:33:24.1259800Z Preparing to unpack .../17-libspeex1_1.2.1-2ubuntu2.24.04.1_amd64.deb ...
+2026-10-09T01:33:24.1267546Z Unpacking libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T01:33:24.1455525Z Selecting previously unselected package libsvtav1enc1d1:amd64.
+2026-10-09T01:33:24.1580315Z Preparing to unpack .../18-libsvtav1enc1d1_1.7.0+dfsg-2build1_amd64.deb ...
+2026-10-09T01:33:24.1588087Z Unpacking libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T01:33:24.2052382Z Selecting previously unselected package libsoxr0:amd64.
+2026-10-09T01:33:24.2178850Z Preparing to unpack .../19-libsoxr0_0.1.3-4build3_amd64.deb ...
+2026-10-09T01:33:24.2186705Z Unpacking libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T01:33:24.2384701Z Selecting previously unselected package libswresample4:amd64.
+2026-10-09T01:33:24.2510068Z Preparing to unpack .../20-libswresample4_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:24.2517335Z Unpacking libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:24.2728223Z Selecting previously unselected package libtheora0:amd64.
+2026-10-09T01:33:24.2857478Z Preparing to unpack .../21-libtheora0_1.1.1+dfsg.1-16.1build3_amd64.deb ...
+2026-10-09T01:33:24.2864650Z Unpacking libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T01:33:24.3082534Z Selecting previously unselected package libtwolame0:amd64.
+2026-10-09T01:33:24.3207499Z Preparing to unpack .../22-libtwolame0_0.4.0-2build3_amd64.deb ...
+2026-10-09T01:33:24.3214183Z Unpacking libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T01:33:24.3406614Z Selecting previously unselected package libvorbisenc2:amd64.
+2026-10-09T01:33:24.3531061Z Preparing to unpack .../23-libvorbisenc2_1.3.7-1build3_amd64.deb ...
+2026-10-09T01:33:24.3537655Z Unpacking libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T01:33:24.3743354Z Selecting previously unselected package libvpx9:amd64.
+2026-10-09T01:33:24.3868114Z Preparing to unpack .../24-libvpx9_1.14.0-1ubuntu2.3_amd64.deb ...
+2026-10-09T01:33:24.3920126Z Unpacking libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T01:33:24.4231669Z Selecting previously unselected package libx264-164:amd64.
+2026-10-09T01:33:24.4358275Z Preparing to unpack .../25-libx264-164_2%3a0.164.3108+git31e19f9-1_amd64.deb ...
+2026-10-09T01:33:24.4364569Z Unpacking libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T01:33:24.4716780Z Selecting previously unselected package libx265-199:amd64.
+2026-10-09T01:33:24.4853459Z Preparing to unpack .../26-libx265-199_3.5-2build1_amd64.deb ...
+2026-10-09T01:33:24.4897612Z Unpacking libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T01:33:24.5563942Z Selecting previously unselected package libxvidcore4:amd64.
+2026-10-09T01:33:24.5692022Z Preparing to unpack .../27-libxvidcore4_2%3a1.3.7-1build1_amd64.deb ...
+2026-10-09T01:33:24.5698967Z Unpacking libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T01:33:24.5904332Z Selecting previously unselected package libzvbi-common.
+2026-10-09T01:33:24.6029175Z Preparing to unpack .../28-libzvbi-common_0.2.42-2_all.deb ...
+2026-10-09T01:33:24.6035738Z Unpacking libzvbi-common (0.2.42-2) ...
+2026-10-09T01:33:24.6323306Z Selecting previously unselected package libzvbi0t64:amd64.
+2026-10-09T01:33:24.6446262Z Preparing to unpack .../29-libzvbi0t64_0.2.42-2_amd64.deb ...
+2026-10-09T01:33:24.6453315Z Unpacking libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T01:33:24.6681592Z Selecting previously unselected package libavcodec60:amd64.
+2026-10-09T01:33:24.6804775Z Preparing to unpack .../30-libavcodec60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:24.6811603Z Unpacking libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:24.7577191Z Selecting previously unselected package libraw1394-11:amd64.
+2026-10-09T01:33:24.7704837Z Preparing to unpack .../31-libraw1394-11_2.1.2-2build3_amd64.deb ...
+2026-10-09T01:33:24.7711880Z Unpacking libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T01:33:24.7907022Z Selecting previously unselected package libavc1394-0:amd64.
+2026-10-09T01:33:24.8029387Z Preparing to unpack .../32-libavc1394-0_0.5.4-5build3_amd64.deb ...
+2026-10-09T01:33:24.8037343Z Unpacking libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T01:33:24.8229136Z Selecting previously unselected package libunibreak5:amd64.
+2026-10-09T01:33:24.8352394Z Preparing to unpack .../33-libunibreak5_5.1-2build1_amd64.deb ...
+2026-10-09T01:33:24.8360681Z Unpacking libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T01:33:24.8558367Z Selecting previously unselected package libass9:amd64.
+2026-10-09T01:33:24.8682764Z Preparing to unpack .../34-libass9_1%3a0.17.1-2build1_amd64.deb ...
+2026-10-09T01:33:24.8690562Z Unpacking libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T01:33:24.8898437Z Selecting previously unselected package libudfread0:amd64.
+2026-10-09T01:33:24.9024903Z Preparing to unpack .../35-libudfread0_1.1.2-1build1_amd64.deb ...
+2026-10-09T01:33:24.9032132Z Unpacking libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T01:33:24.9229900Z Selecting previously unselected package libbluray2:amd64.
+2026-10-09T01:33:24.9359855Z Preparing to unpack .../36-libbluray2_1%3a1.3.4-1build1_amd64.deb ...
+2026-10-09T01:33:24.9367975Z Unpacking libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T01:33:24.9594430Z Selecting previously unselected package libchromaprint1:amd64.
+2026-10-09T01:33:24.9725709Z Preparing to unpack .../37-libchromaprint1_1.5.1-5_amd64.deb ...
+2026-10-09T01:33:24.9734001Z Unpacking libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T01:33:24.9942813Z Selecting previously unselected package libgme0:amd64.
+2026-10-09T01:33:25.0074386Z Preparing to unpack .../38-libgme0_0.6.3-7build1_amd64.deb ...
+2026-10-09T01:33:25.0082338Z Unpacking libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T01:33:25.0299788Z Selecting previously unselected package libmpg123-0t64:amd64.
+2026-10-09T01:33:25.0427460Z Preparing to unpack .../39-libmpg123-0t64_1.32.5-1ubuntu1.1_amd64.deb ...
+2026-10-09T01:33:25.0433949Z Unpacking libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T01:33:25.0648311Z Selecting previously unselected package libopenmpt0t64:amd64.
+2026-10-09T01:33:25.0773125Z Preparing to unpack .../40-libopenmpt0t64_0.7.3-1.1build3_amd64.deb ...
+2026-10-09T01:33:25.0780191Z Unpacking libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T01:33:25.1030353Z Selecting previously unselected package libcjson1:amd64.
+2026-10-09T01:33:25.1155605Z Preparing to unpack .../41-libcjson1_1.7.17-1_amd64.deb ...
+2026-10-09T01:33:25.1162640Z Unpacking libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T01:33:25.1354128Z Selecting previously unselected package libmbedcrypto7t64:amd64.
+2026-10-09T01:33:25.1477633Z Preparing to unpack .../42-libmbedcrypto7t64_2.28.8-1_amd64.deb ...
+2026-10-09T01:33:25.1484440Z Unpacking libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T01:33:25.1698134Z Selecting previously unselected package librist4:amd64.
+2026-10-09T01:33:25.1822066Z Preparing to unpack .../43-librist4_0.2.10+dfsg-2_amd64.deb ...
+2026-10-09T01:33:25.1828743Z Unpacking librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T01:33:25.2107526Z Selecting previously unselected package libsrt1.5-gnutls:amd64.
+2026-10-09T01:33:25.2230212Z Preparing to unpack .../44-libsrt1.5-gnutls_1.5.3-1build2_amd64.deb ...
+2026-10-09T01:33:25.2239294Z Unpacking libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T01:33:25.2461898Z Selecting previously unselected package libssh-gcrypt-4:amd64.
+2026-10-09T01:33:25.2587583Z Preparing to unpack .../45-libssh-gcrypt-4_0.10.6-2ubuntu0.5_amd64.deb ...
+2026-10-09T01:33:25.2595035Z Unpacking libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T01:33:25.2816846Z Selecting previously unselected package libavformat60:amd64.
+2026-10-09T01:33:25.2938626Z Preparing to unpack .../46-libavformat60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:25.2945658Z Unpacking libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:25.3240901Z Selecting previously unselected package libbs2b0:amd64.
+2026-10-09T01:33:25.3363530Z Preparing to unpack .../47-libbs2b0_3.1.0+dfsg-7build1_amd64.deb ...
+2026-10-09T01:33:25.3370691Z Unpacking libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T01:33:25.3582052Z Selecting previously unselected package libflite1:amd64.
+2026-10-09T01:33:25.3704693Z Preparing to unpack .../48-libflite1_2.2-6build3_amd64.deb ...
+2026-10-09T01:33:25.3712288Z Unpacking libflite1:amd64 (2.2-6build3) ...
+2026-10-09T01:33:25.4754783Z Selecting previously unselected package libserd-0-0:amd64.
+2026-10-09T01:33:25.4882326Z Preparing to unpack .../49-libserd-0-0_0.32.2-1_amd64.deb ...
+2026-10-09T01:33:25.4889885Z Unpacking libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T01:33:25.5089637Z Selecting previously unselected package libzix-0-0:amd64.
+2026-10-09T01:33:25.5214789Z Preparing to unpack .../50-libzix-0-0_0.4.2-2build1_amd64.deb ...
+2026-10-09T01:33:25.5222158Z Unpacking libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T01:33:25.5416946Z Selecting previously unselected package libsord-0-0:amd64.
+2026-10-09T01:33:25.5540900Z Preparing to unpack .../51-libsord-0-0_0.16.16-2build1_amd64.deb ...
+2026-10-09T01:33:25.5550307Z Unpacking libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T01:33:25.5743714Z Selecting previously unselected package libsratom-0-0:amd64.
+2026-10-09T01:33:25.5869312Z Preparing to unpack .../52-libsratom-0-0_0.6.16-1build1_amd64.deb ...
+2026-10-09T01:33:25.5876918Z Unpacking libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T01:33:25.6072508Z Selecting previously unselected package liblilv-0-0:amd64.
+2026-10-09T01:33:25.6198024Z Preparing to unpack .../53-liblilv-0-0_0.24.22-1build1_amd64.deb ...
+2026-10-09T01:33:25.6205936Z Unpacking liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T01:33:25.6402355Z Selecting previously unselected package libmysofa1:amd64.
+2026-10-09T01:33:25.6526247Z Preparing to unpack .../54-libmysofa1_1.3.2+dfsg-2ubuntu2_amd64.deb ...
+2026-10-09T01:33:25.6533522Z Unpacking libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T01:33:25.6773077Z Selecting previously unselected package libplacebo338:amd64.
+2026-10-09T01:33:25.6898049Z Preparing to unpack .../55-libplacebo338_6.338.2-2build1_amd64.deb ...
+2026-10-09T01:33:25.6904303Z Unpacking libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T01:33:25.7411098Z Selecting previously unselected package libblas3:amd64.
+2026-10-09T01:33:25.7536799Z Preparing to unpack .../56-libblas3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T01:33:25.7564868Z Unpacking libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T01:33:25.7794495Z Selecting previously unselected package liblapack3:amd64.
+2026-10-09T01:33:25.7920236Z Preparing to unpack .../57-liblapack3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T01:33:25.7947786Z Unpacking liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T01:33:25.8424924Z Selecting previously unselected package libasyncns0:amd64.
+2026-10-09T01:33:25.8548611Z Preparing to unpack .../58-libasyncns0_0.8-6build4_amd64.deb ...
+2026-10-09T01:33:25.8558169Z Unpacking libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T01:33:25.8747336Z Selecting previously unselected package libflac12t64:amd64.
+2026-10-09T01:33:25.8873750Z Preparing to unpack .../59-libflac12t64_1.4.3+ds-2.1ubuntu2_amd64.deb ...
+2026-10-09T01:33:25.8882522Z Unpacking libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T01:33:25.9098251Z Selecting previously unselected package libsndfile1:amd64.
+2026-10-09T01:33:25.9221226Z Preparing to unpack .../60-libsndfile1_1.2.2-1ubuntu5.24.04.1_amd64.deb ...
+2026-10-09T01:33:25.9228101Z Unpacking libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T01:33:25.9462823Z Selecting previously unselected package libpulse0:amd64.
+2026-10-09T01:33:25.9586977Z Preparing to unpack .../61-libpulse0_1%3a16.1+dfsg1-2ubuntu10.1_amd64.deb ...
+2026-10-09T01:33:25.9650086Z Unpacking libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T01:33:25.9884618Z Selecting previously unselected package libsphinxbase3t64:amd64.
+2026-10-09T01:33:26.0011062Z Preparing to unpack .../62-libsphinxbase3t64_0.8+5prealpha+1-17build2_amd64.deb ...
+2026-10-09T01:33:26.0018384Z Unpacking libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T01:33:26.0223154Z Selecting previously unselected package libpocketsphinx3:amd64.
+2026-10-09T01:33:26.0347685Z Preparing to unpack .../63-libpocketsphinx3_0.8.0+real5prealpha+1-15ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.0354432Z Unpacking libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T01:33:26.0556431Z Selecting previously unselected package libpostproc57:amd64.
+2026-10-09T01:33:26.0682215Z Preparing to unpack .../64-libpostproc57_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.0690083Z Unpacking libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:26.0897045Z Selecting previously unselected package libsamplerate0:amd64.
+2026-10-09T01:33:26.1023143Z Preparing to unpack .../65-libsamplerate0_0.2.2-4build1_amd64.deb ...
+2026-10-09T01:33:26.1030973Z Unpacking libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T01:33:26.1281495Z Selecting previously unselected package librubberband2:amd64.
+2026-10-09T01:33:26.1408148Z Preparing to unpack .../66-librubberband2_3.3.0+dfsg-2build1_amd64.deb ...
+2026-10-09T01:33:26.1415316Z Unpacking librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T01:33:26.1622698Z Selecting previously unselected package libswscale7:amd64.
+2026-10-09T01:33:26.1748839Z Preparing to unpack .../67-libswscale7_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.1755804Z Unpacking libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:26.1967579Z Selecting previously unselected package libvidstab1.1:amd64.
+2026-10-09T01:33:26.2092136Z Preparing to unpack .../68-libvidstab1.1_1.1.0-2build1_amd64.deb ...
+2026-10-09T01:33:26.2098850Z Unpacking libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T01:33:26.2288895Z Selecting previously unselected package libzimg2:amd64.
+2026-10-09T01:33:26.2411247Z Preparing to unpack .../69-libzimg2_3.0.5+ds1-1build1_amd64.deb ...
+2026-10-09T01:33:26.2418692Z Unpacking libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T01:33:26.2636804Z Selecting previously unselected package libavfilter9:amd64.
+2026-10-09T01:33:26.2759876Z Preparing to unpack .../70-libavfilter9_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.2767334Z Unpacking libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:26.3422023Z Selecting previously unselected package libcaca0:amd64.
+2026-10-09T01:33:26.3548037Z Preparing to unpack .../71-libcaca0_0.99.beta20-4ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:26.3555872Z Unpacking libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T01:33:26.3823058Z Selecting previously unselected package libcdio19t64:amd64.
+2026-10-09T01:33:26.3949477Z Preparing to unpack .../72-libcdio19t64_2.1.0-4.1ubuntu1.2_amd64.deb ...
+2026-10-09T01:33:26.3958362Z Unpacking libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T01:33:26.4171488Z Selecting previously unselected package libcdio-cdda2t64:amd64.
+2026-10-09T01:33:26.4297459Z Preparing to unpack .../73-libcdio-cdda2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T01:33:26.4308359Z Unpacking libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T01:33:26.4519444Z Selecting previously unselected package libcdio-paranoia2t64:amd64.
+2026-10-09T01:33:26.4643790Z Preparing to unpack .../74-libcdio-paranoia2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T01:33:26.4651230Z Unpacking libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T01:33:26.4843271Z Selecting previously unselected package libdc1394-25:amd64.
+2026-10-09T01:33:26.4967562Z Preparing to unpack .../75-libdc1394-25_2.2.6-4build1_amd64.deb ...
+2026-10-09T01:33:26.4974418Z Unpacking libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T01:33:26.5171703Z Selecting previously unselected package libiec61883-0:amd64.
+2026-10-09T01:33:26.5292106Z Preparing to unpack .../76-libiec61883-0_1.2.0-6build1_amd64.deb ...
+2026-10-09T01:33:26.5299730Z Unpacking libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T01:33:26.5489668Z Selecting previously unselected package libjack-jackd2-0:amd64.
+2026-10-09T01:33:26.5614928Z Preparing to unpack .../77-libjack-jackd2-0_1.9.21~dfsg-3ubuntu3_amd64.deb ...
+2026-10-09T01:33:26.5621937Z Unpacking libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T01:33:26.5855917Z Selecting previously unselected package libopenal-data.
+2026-10-09T01:33:26.5982458Z Preparing to unpack .../78-libopenal-data_1%3a1.23.1-4build1_all.deb ...
+2026-10-09T01:33:26.5997990Z Unpacking libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T01:33:26.6218388Z Selecting previously unselected package libsndio7.0:amd64.
+2026-10-09T01:33:26.6343717Z Preparing to unpack .../79-libsndio7.0_1.9.0-0.3build3_amd64.deb ...
+2026-10-09T01:33:26.6350941Z Unpacking libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T01:33:26.6546881Z Selecting previously unselected package libopenal1:amd64.
+2026-10-09T01:33:26.6671778Z Preparing to unpack .../80-libopenal1_1%3a1.23.1-4build1_amd64.deb ...
+2026-10-09T01:33:26.6679628Z Unpacking libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T01:33:26.6923998Z Selecting previously unselected package libdecor-0-0:amd64.
+2026-10-09T01:33:26.7051471Z Preparing to unpack .../81-libdecor-0-0_0.2.2-1build2_amd64.deb ...
+2026-10-09T01:33:26.7058872Z Unpacking libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T01:33:26.7286380Z Selecting previously unselected package libsdl2-2.0-0:amd64.
+2026-10-09T01:33:26.7412857Z Preparing to unpack .../82-libsdl2-2.0-0_2.30.0+dfsg-1ubuntu3.1_amd64.deb ...
+2026-10-09T01:33:26.7420077Z Unpacking libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T01:33:26.7936139Z Selecting previously unselected package libxcb-shape0:amd64.
+2026-10-09T01:33:26.8062174Z Preparing to unpack .../83-libxcb-shape0_1.15-1ubuntu2_amd64.deb ...
+2026-10-09T01:33:26.8069309Z Unpacking libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T01:33:26.8260520Z Selecting previously unselected package libxv1:amd64.
+2026-10-09T01:33:26.8385637Z Preparing to unpack .../84-libxv1_2%3a1.0.11-1.1build1_amd64.deb ...
+2026-10-09T01:33:26.8391898Z Unpacking libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T01:33:26.8585838Z Selecting previously unselected package libavdevice60:amd64.
+2026-10-09T01:33:26.8711136Z Preparing to unpack .../85-libavdevice60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.8717867Z Unpacking libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:26.8914002Z Selecting previously unselected package ffmpeg.
+2026-10-09T01:33:26.9038713Z Preparing to unpack .../86-ffmpeg_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T01:33:26.9044766Z Unpacking ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:26.9429577Z Selecting previously unselected package libigdgmm12:amd64.
+2026-10-09T01:33:26.9555766Z Preparing to unpack .../87-libigdgmm12_22.3.17+ds1-1ubuntu1_amd64.deb ...
+2026-10-09T01:33:26.9563682Z Unpacking libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T01:33:26.9774463Z Selecting previously unselected package intel-media-va-driver:amd64.
+2026-10-09T01:33:26.9899052Z Preparing to unpack .../88-intel-media-va-driver_24.1.0+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:26.9906177Z Unpacking intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T01:33:27.0544607Z Selecting previously unselected package libaacs0:amd64.
+2026-10-09T01:33:27.0671971Z Preparing to unpack .../89-libaacs0_0.11.1-2build1_amd64.deb ...
+2026-10-09T01:33:27.0679195Z Unpacking libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T01:33:27.0878569Z Selecting previously unselected package libbdplus0:amd64.
+2026-10-09T01:33:27.1003571Z Preparing to unpack .../90-libbdplus0_0.2.0-3build1_amd64.deb ...
+2026-10-09T01:33:27.1009878Z Unpacking libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T01:33:27.1204110Z Selecting previously unselected package libdecor-0-plugin-1-gtk:amd64.
+2026-10-09T01:33:27.1329514Z Preparing to unpack .../91-libdecor-0-plugin-1-gtk_0.2.2-1build2_amd64.deb ...
+2026-10-09T01:33:27.1335799Z Unpacking libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T01:33:27.1531807Z Selecting previously unselected package librsvg2-common:amd64.
+2026-10-09T01:33:27.1656110Z Preparing to unpack .../92-librsvg2-common_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T01:33:27.1666374Z Unpacking librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T01:33:27.1965309Z Selecting previously unselected package mesa-va-drivers:amd64.
+2026-10-09T01:33:27.2090900Z Preparing to unpack .../93-mesa-va-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T01:33:27.2096706Z Unpacking mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T01:33:27.2294326Z Selecting previously unselected package mesa-vdpau-drivers:amd64.
+2026-10-09T01:33:27.2421039Z Preparing to unpack .../94-mesa-vdpau-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T01:33:27.2427467Z Unpacking mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T01:33:27.2635611Z Selecting previously unselected package i965-va-driver:amd64.
+2026-10-09T01:33:27.2763643Z Preparing to unpack .../95-i965-va-driver_2.4.1+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:27.2770882Z Unpacking i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T01:33:27.3012016Z Selecting previously unselected package va-driver-all:amd64.
+2026-10-09T01:33:27.3139127Z Preparing to unpack .../96-va-driver-all_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:27.3145937Z Unpacking va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:27.3330209Z Selecting previously unselected package vdpau-driver-all:amd64.
+2026-10-09T01:33:27.3456262Z Preparing to unpack .../97-vdpau-driver-all_1.5-2build1_amd64.deb ...
+2026-10-09T01:33:27.3463379Z Unpacking vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T01:33:27.3645389Z Selecting previously unselected package pocketsphinx-en-us.
+2026-10-09T01:33:27.3771120Z Preparing to unpack .../98-pocketsphinx-en-us_0.8.0+real5prealpha+1-15ubuntu5_all.deb ...
+2026-10-09T01:33:27.3778840Z Unpacking pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T01:33:27.5617422Z Setting up libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T01:33:27.5642449Z Setting up libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T01:33:27.5659339Z Setting up libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T01:33:27.5679893Z Setting up libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T01:33:27.5696202Z Setting up libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T01:33:27.5716928Z Setting up libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T01:33:27.5736862Z Setting up libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T01:33:27.5755284Z Setting up libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T01:33:27.5773633Z Setting up libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T01:33:27.5795054Z Setting up libvpl2 (2023.3.0-1build1) ...
+2026-10-09T01:33:27.5815054Z Setting up libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T01:33:27.5832712Z Setting up libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T01:33:27.5852007Z Setting up libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T01:33:27.5869981Z Setting up libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T01:33:27.5887738Z Setting up libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T01:33:27.5907522Z Setting up libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T01:33:27.5924201Z Setting up libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T01:33:27.5959355Z Setting up libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T01:33:27.5976698Z Setting up libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T01:33:27.5994081Z Setting up libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T01:33:27.6015509Z Setting up libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T01:33:27.6033277Z Setting up libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T01:33:27.6051932Z Setting up libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T01:33:27.6069694Z Setting up libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T01:33:27.6088533Z Setting up libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T01:33:27.6112265Z Setting up librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T01:33:27.6132749Z Setting up libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T01:33:27.6152350Z Setting up librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T01:33:27.6170971Z Setting up librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T01:33:27.6189006Z Setting up libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T01:33:27.6250467Z update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T01:33:27.6271184Z Setting up libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T01:33:27.6294643Z Setting up libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:27.6318031Z Setting up libopus0:amd64 (1.4-1build1) ...
+2026-10-09T01:33:27.6339101Z Setting up libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T01:33:27.6363976Z Setting up libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T01:33:27.6382277Z Setting up intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T01:33:27.6400598Z Setting up libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T01:33:27.6420224Z Setting up libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T01:33:27.6439768Z Setting up libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T01:33:27.6457933Z Setting up libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T01:33:27.6484843Z Setting up librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T01:33:27.6595268Z Setting up pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T01:33:27.6612303Z Setting up libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T01:33:27.6632706Z Setting up libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T01:33:27.6653364Z Setting up libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T01:33:27.6672941Z Setting up libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T01:33:27.6691521Z Setting up libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T01:33:27.6709225Z Setting up libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T01:33:27.6730233Z Setting up libflite1:amd64 (2.2-6build3) ...
+2026-10-09T01:33:27.6747898Z Setting up libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T01:33:27.6767314Z Setting up libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:27.6786769Z Setting up ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T01:33:27.6805463Z Setting up libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T01:33:27.6825025Z Setting up libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T01:33:27.6850327Z Setting up libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T01:33:27.6869951Z Setting up libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T01:33:27.6889734Z Setting up libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T01:33:27.6909892Z Setting up libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T01:33:27.6929478Z Setting up libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T01:33:27.6953160Z Setting up libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T01:33:27.6972832Z Setting up mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T01:33:27.6990327Z Setting up libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T01:33:27.7011384Z Setting up libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T01:33:27.7029402Z Setting up libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:27.7058894Z Setting up libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T01:33:27.7078687Z Setting up libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T01:33:27.7097329Z Setting up libzvbi-common (0.2.42-2) ...
+2026-10-09T01:33:27.7117557Z Setting up libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T01:33:27.7136422Z Setting up i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T01:33:27.7155289Z Setting up libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T01:33:27.7174448Z Setting up libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T01:33:27.7192984Z Setting up libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T01:33:27.7214018Z Setting up libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T01:33:27.7232635Z Setting up mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T01:33:27.7250187Z Setting up liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T01:33:27.7309532Z update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T01:33:27.7323578Z Setting up libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T01:33:27.7341926Z Setting up libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7364471Z Setting up libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T01:33:27.7383860Z Setting up libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T01:33:27.7402373Z Setting up libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7418977Z Setting up va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T01:33:27.7436194Z Setting up libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7454466Z Setting up librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T01:33:27.7704554Z Setting up libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T01:33:27.7722229Z Setting up vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T01:33:27.7742340Z Setting up libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T01:33:27.7760237Z Setting up libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7778051Z Setting up libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T01:33:27.7798771Z Setting up libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T01:33:27.7815261Z Setting up liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T01:33:27.7833683Z Setting up libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7853232Z Setting up libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T01:33:27.7920507Z Setting up libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.7942223Z Setting up libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T01:33:27.7959001Z Setting up libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T01:33:27.7978860Z Setting up libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T01:33:27.7998287Z Setting up libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.8015481Z Setting up libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.8034023Z Setting up ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T01:33:27.8055685Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T01:33:27.8075096Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T01:33:27.8089791Z Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-10-09T01:33:27.8654454Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T01:33:28.5163030Z 
+2026-10-09T01:33:28.5164389Z Running kernel seems to be up-to-date.
+2026-10-09T01:33:28.5164921Z 
+2026-10-09T01:33:28.5165159Z No services need to be restarted.
+2026-10-09T01:33:28.5165723Z 
+2026-10-09T01:33:28.5165913Z No containers need to be restarted.
+2026-10-09T01:33:28.5166156Z 
+2026-10-09T01:33:28.5166393Z No user sessions are running outdated binaries.
+2026-10-09T01:33:28.5167246Z 
+2026-10-09T01:33:28.5167894Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T01:33:29.4645174Z ffprobe version 6.1.1-3ubuntu5 Copyright (c) 2007-2023 the FFmpeg developers
+2026-10-09T01:33:29.4646223Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T01:33:29.4660240Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T01:33:29.4670022Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T01:33:29.4670586Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T01:33:29.4671142Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T01:33:29.4671704Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T01:33:29.4672290Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T01:33:29.4672842Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T01:33:29.4673396Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T01:33:29.4673949Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T01:33:29.5102006Z ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+2026-10-09T01:33:29.5102995Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T01:33:29.5113159Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T01:33:29.5121087Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T01:33:29.5121499Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T01:33:29.5121819Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T01:33:29.5122123Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T01:33:29.5122432Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T01:33:29.5122742Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T01:33:29.5123050Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T01:33:29.5123356Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T01:33:29.5161996Z ##[group]Run node --version
+2026-10-09T01:33:29.5162325Z [36;1mnode --version[0m
+2026-10-09T01:33:29.5162567Z [36;1mnproc[0m
+2026-10-09T01:33:29.5162817Z [36;1mawk '/MemTotal/ { print }' /proc/meminfo[0m
+2026-10-09T01:33:29.5163132Z [36;1mdf -Pk .[0m
+2026-10-09T01:33:29.5226919Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:33:29.5227189Z env:
+2026-10-09T01:33:29.5227456Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:33:29.5227812Z ##[endgroup]
+2026-10-09T01:33:29.5336805Z v22.16.0
+2026-10-09T01:33:29.5357178Z 4
+2026-10-09T01:33:29.5376972Z MemTotal:       16373452 kB
+2026-10-09T01:33:29.5397097Z Filesystem     1024-blocks     Used Available Capacity Mounted on
+2026-10-09T01:33:29.5397768Z /dev/root        151263856 64390756  86856716      43% /
+2026-10-09T01:33:29.5433092Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-09T01:33:29.5433533Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-09T01:33:29.5493736Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:33:29.5493998Z env:
+2026-10-09T01:33:29.5494278Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:33:29.5494629Z ##[endgroup]
+2026-10-09T01:33:30.3982090Z Installing dependencies...
+2026-10-09T01:33:30.4041656Z Switching to root user to install dependencies...
+2026-10-09T01:33:30.4648752Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T01:33:30.5079056Z Hit:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease
+2026-10-09T01:33:31.2780450Z Hit:2 https://archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T01:33:31.4310799Z Hit:3 https://archive.ubuntu.com/ubuntu noble-updates InRelease
+2026-10-09T01:33:31.5837011Z Hit:4 https://archive.ubuntu.com/ubuntu noble-backports InRelease
+2026-10-09T01:33:31.7362952Z Hit:5 https://archive.ubuntu.com/ubuntu noble-security InRelease
+2026-10-09T01:33:32.7521418Z Reading package lists...
+2026-10-09T01:33:32.7753197Z Reading package lists...
+2026-10-09T01:33:32.9727655Z Building dependency tree...
+2026-10-09T01:33:32.9735699Z Reading state information...
+2026-10-09T01:33:33.1158575Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-09T01:33:33.1160161Z libasound2t64 set to manually installed.
+2026-10-09T01:33:33.1161197Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T01:33:33.1162103Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-09T01:33:33.1162933Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T01:33:33.1163636Z libatk1.0-0t64 set to manually installed.
+2026-10-09T01:33:33.1164321Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T01:33:33.1165040Z libatspi2.0-0t64 set to manually installed.
+2026-10-09T01:33:33.1165791Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-09T01:33:33.1166701Z libcairo2 set to manually installed.
+2026-10-09T01:33:33.1167482Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-09T01:33:33.1168320Z libcups2t64 set to manually installed.
+2026-10-09T01:33:33.1169114Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-09T01:33:33.1169873Z libdbus-1-3 set to manually installed.
+2026-10-09T01:33:33.1170691Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-09T01:33:33.1171429Z libdrm2 set to manually installed.
+2026-10-09T01:33:33.1172187Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-09T01:33:33.1173347Z libgbm1 set to manually installed.
+2026-10-09T01:33:33.1174085Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-09T01:33:33.1174837Z libglib2.0-0t64 set to manually installed.
+2026-10-09T01:33:33.1175602Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-09T01:33:33.1176300Z libnspr4 set to manually installed.
+2026-10-09T01:33:33.1177271Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-09T01:33:33.1177970Z libnss3 set to manually installed.
+2026-10-09T01:33:33.1178713Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-09T01:33:33.1179471Z libpango-1.0-0 set to manually installed.
+2026-10-09T01:33:33.1180193Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-10-09T01:33:33.1180854Z libx11-6 set to manually installed.
+2026-10-09T01:33:33.1181512Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-09T01:33:33.1182168Z libxcb1 set to manually installed.
+2026-10-09T01:33:33.1182905Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-09T01:33:33.1183674Z libxcomposite1 set to manually installed.
+2026-10-09T01:33:33.1184431Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-09T01:33:33.1185129Z libxdamage1 set to manually installed.
+2026-10-09T01:33:33.1186148Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-09T01:33:33.1187043Z libxext6 set to manually installed.
+2026-10-09T01:33:33.1187745Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-09T01:33:33.1188457Z libxfixes3 set to manually installed.
+2026-10-09T01:33:33.1189203Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-09T01:33:33.1190042Z libxkbcommon0 set to manually installed.
+2026-10-09T01:33:33.1190838Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-09T01:33:33.1191538Z libxrandr2 set to manually installed.
+2026-10-09T01:33:33.1192235Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-09T01:33:33.1193181Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-09T01:33:33.1194176Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-09T01:33:33.1194929Z libfontconfig1 set to manually installed.
+2026-10-09T01:33:33.1195660Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-09T01:33:33.1196382Z fonts-liberation set to manually installed.
+2026-10-09T01:33:33.1197330Z The following additional packages will be installed:
+2026-10-09T01:33:33.1197955Z   xfonts-encodings xfonts-utils
+2026-10-09T01:33:33.1198433Z Recommended packages:
+2026-10-09T01:33:33.1198920Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-09T01:33:33.1322629Z The following NEW packages will be installed:
+2026-10-09T01:33:33.1323634Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-09T01:33:33.1329634Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-09T01:33:33.1330396Z   xfonts-utils
+2026-10-09T01:33:33.1334401Z The following packages will be upgraded:
+2026-10-09T01:33:33.1339281Z   libfreetype6
+2026-10-09T01:33:33.1497487Z 1 upgraded, 9 newly installed, 0 to remove and 22 not upgraded.
+2026-10-09T01:33:33.1497956Z Need to get 21.5 MB of archives.
+2026-10-09T01:33:33.1498411Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-09T01:33:33.1499244Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T01:33:33.8595682Z Get:2 https://archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-09T01:33:35.7852396Z Get:3 https://archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-09T01:33:36.3250922Z Get:4 https://archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-09T01:33:36.4865208Z Get:5 https://archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-09T01:33:36.7070144Z Get:6 https://archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-09T01:33:37.0972257Z Get:7 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+2026-10-09T01:33:37.2620832Z Get:8 https://archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-09T01:33:37.4291157Z Get:9 https://archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-09T01:33:37.5897862Z Get:10 https://archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-09T01:33:37.7544069Z Get:11 https://archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-09T01:33:38.0027916Z Fetched 21.5 MB in 5s (4653 kB/s)
+2026-10-09T01:33:38.0230393Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-09T01:33:38.0291326Z (Reading database ... 
+2026-10-09T01:33:38.0291712Z (Reading database ... 5%
+2026-10-09T01:33:38.0292072Z (Reading database ... 10%
+2026-10-09T01:33:38.0292434Z (Reading database ... 15%
+2026-10-09T01:33:38.0292766Z (Reading database ... 20%
+2026-10-09T01:33:38.0293092Z (Reading database ... 25%
+2026-10-09T01:33:38.0293412Z (Reading database ... 30%
+2026-10-09T01:33:38.0293731Z (Reading database ... 35%
+2026-10-09T01:33:38.0294335Z (Reading database ... 40%
+2026-10-09T01:33:38.0294673Z (Reading database ... 45%
+2026-10-09T01:33:38.0295001Z (Reading database ... 50%
+2026-10-09T01:33:38.0319627Z (Reading database ... 55%
+2026-10-09T01:33:38.0421143Z (Reading database ... 60%
+2026-10-09T01:33:38.0446957Z (Reading database ... 65%
+2026-10-09T01:33:38.0467952Z (Reading database ... 70%
+2026-10-09T01:33:38.0504413Z (Reading database ... 75%
+2026-10-09T01:33:38.0534949Z (Reading database ... 80%
+2026-10-09T01:33:38.0677202Z (Reading database ... 85%
+2026-10-09T01:33:38.0867040Z (Reading database ... 90%
+2026-10-09T01:33:38.0935638Z (Reading database ... 95%
+2026-10-09T01:33:38.0936178Z (Reading database ... 100%
+2026-10-09T01:33:38.0937271Z (Reading database ... 203905 files and directories currently installed.)
+2026-10-09T01:33:38.0975511Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-09T01:33:38.1048699Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T01:33:38.3268259Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-09T01:33:38.3394252Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-09T01:33:38.3404521Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T01:33:38.4168831Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-09T01:33:38.4296657Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-09T01:33:38.4303395Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T01:33:38.4507461Z Selecting previously unselected package fonts-unifont.
+2026-10-09T01:33:38.4634473Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-09T01:33:38.4641501Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T01:33:38.5851902Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-09T01:33:38.5980882Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-09T01:33:38.6086342Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T01:33:39.0870292Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+2026-10-09T01:33:39.0909058Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+2026-10-09T01:33:39.1160322Z Selecting previously unselected package xfonts-encodings.
+2026-10-09T01:33:39.1289684Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-09T01:33:39.1297420Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T01:33:39.1693744Z Selecting previously unselected package xfonts-utils.
+2026-10-09T01:33:39.1822745Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-09T01:33:39.1829818Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-09T01:33:39.2142562Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-09T01:33:39.2269513Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-09T01:33:39.2276767Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T01:33:39.2601142Z Selecting previously unselected package xfonts-scalable.
+2026-10-09T01:33:39.2725300Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-09T01:33:39.2732260Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T01:33:39.3159390Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T01:33:39.3276227Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T01:33:39.3302079Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T01:33:39.3319717Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+2026-10-09T01:33:39.3338334Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T01:33:39.3361314Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T01:33:39.3427761Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-09T01:33:39.3442723Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T01:33:39.3460723Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-09T01:33:39.3498840Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T01:33:39.3774008Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T01:33:39.4037490Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T01:33:39.4207381Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T01:33:39.4222903Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T01:33:39.4234241Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-09T01:33:40.0514413Z 
+2026-10-09T01:33:40.0515416Z Running kernel seems to be up-to-date.
+2026-10-09T01:33:40.0515851Z 
+2026-10-09T01:33:40.0516056Z Restarting services...
+2026-10-09T01:33:40.0593086Z  systemctl restart php8.3-fpm.service
+2026-10-09T01:33:40.1618004Z 
+2026-10-09T01:33:40.1619739Z No containers need to be restarted.
+2026-10-09T01:33:40.1620026Z 
+2026-10-09T01:33:40.1621747Z No user sessions are running outdated binaries.
+2026-10-09T01:33:40.1622103Z 
+2026-10-09T01:33:40.1622610Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T01:33:40.9886200Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+2026-10-09T01:33:41.3965758Z |                                                                                |   0% of 173.9 MiB
+2026-10-09T01:33:42.2037864Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+2026-10-09T01:33:42.9326085Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+2026-10-09T01:33:43.1837926Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+2026-10-09T01:33:43.3679431Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+2026-10-09T01:33:43.5960315Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+2026-10-09T01:33:44.0791772Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+2026-10-09T01:33:44.2697915Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+2026-10-09T01:33:44.6402840Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+2026-10-09T01:33:44.7914670Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+2026-10-09T01:33:45.0156074Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+2026-10-09T01:33:48.5439478Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+2026-10-09T01:33:48.5442339Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-09T01:33:48.7931987Z |                                                                                |   0% of 2.3 MiB
+2026-10-09T01:33:48.8429736Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-09T01:33:48.8730768Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-09T01:33:48.8959974Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-09T01:33:48.9240989Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-09T01:33:48.9399151Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-09T01:33:48.9548875Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-09T01:33:48.9845566Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-09T01:33:48.9864175Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-09T01:33:48.9877266Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-09T01:33:49.0075709Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-09T01:33:49.0650900Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-09T01:33:49.0654371Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+2026-10-09T01:33:49.3141178Z |                                                                                |   0% of 104.3 MiB
+2026-10-09T01:33:49.6074499Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-10-09T01:33:49.7068028Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-10-09T01:33:49.7916307Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-10-09T01:33:49.8692493Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-10-09T01:33:49.9431502Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-10-09T01:33:50.0229636Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-10-09T01:33:50.1037973Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-10-09T01:33:50.1958188Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-10-09T01:33:50.2735039Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-10-09T01:33:50.3958905Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-10-09T01:33:52.2535081Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+2026-10-09T01:33:52.3344062Z ##[group]Run set -o pipefail
+2026-10-09T01:33:52.3344417Z [36;1mset -o pipefail[0m
+2026-10-09T01:33:52.3344846Z [36;1mnode scripts/check.mjs --stage 'browser' 2>&1 | tee '.work-stage-browser.stdout'[0m
+2026-10-09T01:33:52.3407289Z shell: /usr/bin/bash -e {0}
+2026-10-09T01:33:52.3407555Z env:
+2026-10-09T01:33:52.3407826Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:33:52.3408228Z ##[endgroup]
+2026-10-09T01:33:52.4736588Z 
+2026-10-09T01:33:52.4737416Z > partybox-g10-checkers@1.0.0 build
+2026-10-09T01:33:52.4737972Z > tsc --noEmit && node scripts/build.mjs
+2026-10-09T01:33:52.4738236Z 
+2026-10-09T01:34:05.8538096Z PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+2026-10-09T01:34:24.1402323Z PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page (delivery execution gates explicitly excluded).
+2026-10-09T01:36:21.8007432Z {"evidenceVersion":1,"runId":"39ab1f31-6466-4966-b5cf-8134385e585e","sourceGuardsBefore":{"../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/package.json":"ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","data/chinook/DB6.bin":"baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f","data/chinook/DB6.idx":"10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd","data/chinook/LICENSE.txt":"8ed5c1393322801ac395d3e6c9d8e8f4b18bcca9e41f7b8cdf312f33be242a2d","data/chinook/manifest.json":"90f1970372040946f299660c33ded627fe574c7fa2d52be168e7b16c391d55d0","data/endgames.json":"edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d","data/international/BOOST-LICENSE.txt":"c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566","data/international/db2.bin":"305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed","data/international/db2.idx":"9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2","data/international/db3.bin":"9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa","data/international/db3.idx":"84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa","data/international/db4.bin":"14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa","data/international/db4.idx":"4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e","data/international/db5.bin":"b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02","data/international/db5.idx":"4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a","data/international/LICENSE.md":"34055034c8caa4d7637c91adc11f28229cea6a097c9b9d2610318cb66e1ef6cc","data/international/manifest.json":"6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04","data/international/six/db6-0303.000.chunk":"75d63f54a4aefbb6a29871ac2c96fe8064239630c141c79298c99ede5af7bfae","data/international/six/db6-0303.idx":"9f6e7dddd055eb1234cc79750e749c9b2ef49bdf410d7761a0a27f76dc606b04","data/international/six/db6-0312.000.chunk":"a65ac7e0daf00efcb905cec95900ce8fe7c7afda3d242a693a229b2584fcdd89","data/international/six/db6-0312.idx":"9df486596addc03a3454c242a25198c35f0a371dbd0055ca1ad777bff28bc43a","data/international/six/db6-0321.000.chunk":"4f4af0182c39c3646128b9e17d2b283196e8cb4441452b4a01e9c2532e4b6b53","data/international/six/db6-0321.001.chunk":"b8d62083255a57d82395b04eddf6cf735700f3ead646b526fc9882bace3a0e40","data/international/six/db6-0321.idx":"af4c2df56553f4386223b11ad75e7ad4f5c26625be854d52b1e6f8760d8c3bee","data/international/six/db6-0330.000.chunk":"de1dfc76776fe69bf25a7e64b4f1800c17b196f7e9cf2258cb792f51d17fd5c1","data/international/six/db6-0330.idx":"ce6bba6b659d289f3823a0221a5927fe0cbdf313af052cadfbfe0259791590ca","data/international/six/db6-0402.000.chunk":"9508c060e20d0f01da854b4cd4e018f634241b5abb90e73ece71bd4ca69c2517","data/international/six/db6-0402.idx":"096c6e3b12ecf960f7012878baec51d00f1cafda9880d2b29128b21cb3821485","data/international/six/db6-0411.000.chunk":"d3a9300cbe73b288d4d897d20434b6f4373166f58cc69328043a835efbf03247","data/international/six/db6-0411.idx":"1c92044e7b38d59c1485a0b064ed22e5b685346a0d62ac8fce74c3d6d5130cf0","data/international/six/db6-0420.000.chunk":"26162642d1c3439d6e3abcef8c1a210857b371607d82a1714cb99a47ad803a6e","data/international/six/db6-0420.idx":"4d47ac027225d63cf773a0f5fe9258c5e5f3b3670b04de677bc0a10399e3a56d","data/international/six/db6-0501.000.chunk":"82881a78d8a5052037911bc0e1d33231fd1dce64f283fd5f53bb297c26e60221","data/international/six/db6-0501.idx":"d29f8d532adce5f2ba9befd66ae47413b3e91e0666b891c1f08b8b0c7eb4ea10","data/international/six/db6-0510.000.chunk":"28f286c57a29bac59c095d9efdbd2cd87ee648416a0d4e85099bd8c192bc8383","data/international/six/db6-0510.idx":"356a04a2d92ce1c614671b5e246d4c74215c55728480d79d24065252b1e3689a","data/international/six/db6-1212.000.chunk":"5f8cc263773a36546efb0af5e5f6e4bdb4bbd497a50bf00e477aec30e478923f","data/international/six/db6-1212.001.chunk":"578a53681f654ca3463c205428c02a2812751af0fc83aabb26912573bfeabf79","data/international/six/db6-1212.idx":"62c58abb6f24f8280d0f2b0d99cf2e78c85e4a8b8a37da142fdafce33911db7a","data/international/six/db6-1221.000.chunk":"acc65c6b904a669302b3f1dacf917f44852baa3febb2d33379ecdb9153dfd898","data/international/six/db6-1221.001.chunk":"44b31af46ccd5df50c10eea39107f33244be8d98ea39300c2ef739173573f775","data/international/six/db6-1221.002.chunk":"471ec101d7053b0029059f4ce617ffb88512a7d08d86f2be7e170abc29e8c2e9","data/international/six/db6-1221.003.chunk":"67460687baa048e40deaf19e4168f3fd644a9ffaad0475a02a7c65462a249738","data/international/six/db6-1221.idx":"893f2a20b42eb9b6a437b2a4c79635190b1b7d8303d67c2c6048ad762b654072","data/international/six/db6-1230.000.chunk":"45e595ea9c3279d783cf4632762912554f98103bb24fd3712ea5cd371ae077c6","data/international/six/db6-1230.001.chunk":"86282c8af312b2ee4e8a8c36a228ccd72b5a81ae7bd9e03ed86e63c92ba386cb","data/international/six/db6-1230.idx":"56f9a806af26475371ea04d7230e2316e6ce8206ea14fe28628b646ac5415d37","data/international/six/db6-1302.000.chunk":"a0bde8399fecc594fe8ad84b953018c2fd3796805de67f5361982b244027413f","data/international/six/db6-1302.001.chunk":"7398a50ae97329727420dca59b959f28ed295dbdd59e6dd54fb54d88554decfa","data/international/six/db6-1302.idx":"fc695c254e053157a79dfd22c287fcde716e887ba4a0e5765cc27be221efd7ab","data/international/six/db6-1311.000.chunk":"eac5625451bccbdee80bb5d98c1ae8b7d9dc7bcd218240d543e04ec76d692a36","data/international/six/db6-1311.001.chunk":"cc9e1d6f56f80b7f6fe73d30a878bd2c7e9be3cea795d0c64e2847976e57d88b","data/international/six/db6-1311.002.chunk":"33eb6b6262f6d2b248c2772ab41277231e227a0024007db766ae48edc31e7c6a","data/international/six/db6-1311.003.chunk":"d59c08b053c2d047da4cb9f793c9bcb905c689b0ada2108569428639f20eb107","data/international/six/db6-1311.idx":"824155526e1423c28dfc5a9e6ce803006fcdaabe5c5dcb72f52e4e0b29eb634a","data/international/six/db6-1320.000.chunk":"d37c461f883e519b95482bf38863e22c5cf71e3d4d26da2758aa06d8c5a69c1d","data/international/six/db6-1320.idx":"d9787b34307105c715e7b1f7cd463398386f5bdfa4d863fdee92af34b1dbf334","data/international/six/db6-1401.000.chunk":"45bb9b0339452bab7a464741003a168e43178944b286320b1eb70eb15458d17e","data/international/six/db6-1401.idx":"36c748d544a0d108e25f26a748f107ced6045229854dc0ec5cbabf39dccfd078","data/international/six/db6-1410.000.chunk":"6f3110cbbe9f88c12a01a7779b2034df76cc065e7767d153f17fd9d90efead51","data/international/six/db6-1410.idx":"f7a26d77bd12fb29b4d8492481e56c5c692a2c280062cc9518728882acd65890","data/international/six/db6-2121.000.chunk":"2b0d462e7d6f4e9188dec28fac5b91df1d93b655bd6f381e01dc7f82426dc742","data/international/six/db6-2121.001.chunk":"dd308ec8c23cb58e50f3be495b79934782cc3624036f88272a8526c87e6cd1f9","data/international/six/db6-2121.idx":"f3c643c2ac5d25da70b71339bc23d9c452e00244bd29562fd424b6a84ca3ad40","data/international/six/db6-2130.000.chunk":"320904de62832a1c6c9054c7650c61f10dd181da2e9b1b04aa86d2977656fde7","data/international/six/db6-2130.001.chunk":"a96061fbe9ec9d57d2edd5773fbd89145aafc7e5a5845c81bc58c5ecab63d2d6","data/international/six/db6-2130.idx":"9d6ed91ef56e08a1b98ee184839d9a880198c141aba47005a13587c572342a50","data/international/six/db6-2202.000.chunk":"43057f23a613a28f06bc9cd465b7ed44cf887dfe50e7001b7d1ef473cdbfd4b2","data/international/six/db6-2202.001.chunk":"585615fed0ec078a94e0ac32e3d52ac4d16b3eb7375663ff30d45e1293b3d44a","data/international/six/db6-2202.idx":"bae2e2b0a9709d4b46e397efdcdf322b2d461c492f221eb11f0638b2eb5951ec","data/international/six/db6-2211.000.chunk":"11dd5e990995f60597ec46e5f37a79429b072d11cf7353322dd95f7058c6d1ed","data/international/six/db6-2211.001.chunk":"8142e6725e68cefe12a42a8a8530a52182e9f44a2b85cb5ded48e445bc85bd7f","data/international/six/db6-2211.002.chunk":"c4d38e79e79b87802b26eded2a7c364946fea4d95450d35f10d7dcce343a8c69","data/international/six/db6-2211.003.chunk":"20b4af2d5329d20ebb3075c8cb31878935c15512cc2808546418879729f79402","data/international/six/db6-2211.004.chunk":"a4367099cfdacac510225de250b300e8fed1ba70d4438e14b311b7c796501089","data/international/six/db6-2211.005.chunk":"19b3a66dbf1497e2e455732a0f7ffb927c9e577f56c75419716439f524e9d514","data/international/six/db6-2211.006.chunk":"8bd6bc5bd76720a95a312bd8c6bae30701a6e99be19886e16126ca6abc3b2a7e","data/international/six/db6-2211.idx":"a525a93cfb7ccef53dce68366382a0c8764af216568b02b045edd8bd1230012a","data/international/six/db6-2220.000.chunk":"e1af2d5283389f43c81708a249e3c0b9968ed4aa322ac0bca48ca1ccc5d4dd7c","data/international/six/db6-2220.idx":"e3f4b23066c9f91d4a0f43984cbea7c01817d6a0e25c3705c7fb8327eb8a31a6","data/international/six/db6-2301.000.chunk":"0b6489a374a7680cb6697f2e78d0261558c15e5f6c629279b84f760cc5e2d4e4","data/international/six/db6-2301.idx":"fdcbc2bd251bf3b73822bd0e2b92cb8791deaa009bd2ab8730a25e3395ce7726","data/international/six/db6-2310.000.chunk":"13ae77b5d13ad94678dab0cfb4ca74f4db89190371eacc10bd92cadf10eb350f","data/international/six/db6-2310.idx":"1f8ece0f98423c4b9213ab41a2eec40fe32679fe71268bce240714d1b7896cda","data/international/six/db6-3030.000.chunk":"cecd125dd3e9f0e1fa8f42abd0d51c9b3f679839db56a60b50b380e764302569","data/international/six/db6-3030.idx":"c41521d134874aaa3151b4595373caf3a91afc0aea9e249c0d722612c0370a82","data/international/six/db6-3102.000.chunk":"c90c2e7384f00811e0445f566d7aa7243e861b65c71791df05f3679c1e6080c1","data/international/six/db6-3102.idx":"f0161e4b20319d077c04ae0e4607ac81a7b50315ea72ff456494b00072dac06d","data/international/six/db6-3111.000.chunk":"e62bab91ea59dbef862261975d320585d13f83fbaf709c7d686e0a085b594576","data/international/six/db6-3111.001.chunk":"49c653dccca0ad25d6c3e858f8dd55e540dfb48d6cee1dba749214d8d12b129b","data/international/six/db6-3111.002.chunk":"f3e3f75261fe41cc65d1ee5c3e4c391c5945e96c7635c091e384ed10d253043c","data/international/six/db6-3111.003.chunk":"5c6f451ee293fea2955580ac6717a2aeb991c58693c1f9a0aa5f7107c506d075","data/international/six/db6-3111.004.chunk":"53e58423b9d85e32bbb2eb3552df28124d5172ca983c214738558e7cf543234d","data/international/six/db6-3111.005.chunk":"6fa72cec7f0dcd4a79458b766c04f2fbbc3eeb1804f8ab8f1a3d546c1d0c04df","data/international/six/db6-3111.idx":"552cea6807e5de8bdaaa7430e48429d2876663c1c13bf8a80438ec3fc11222db","data/international/six/db6-3120.000.chunk":"4849d82cf6c7978ef034fc98ef90951d041b740fd79510c67f902a447061a5d2","data/international/six/db6-3120.idx":"b5243e519c0a2fb6f513062094758a95306e9144a48c7a555a79ed1887780c86","data/international/six/db6-3201.000.chunk":"8d899206c06202a55395530df8eab92bbd29b879e1310c0b704bdd26d1131772","data/international/six/db6-3201.idx":"f9b27e6e4cee762ed97a568b8f32673b1bfe5c22a64d0c5b47b7a18f39749958","data/international/six/db6-3210.000.chunk":"f829ad406b3b2b1f45e1ac30bc0e43440ce2b808025c27d3bfff2f704edeffb4","data/international/six/db6-3210.idx":"ab335ebeed4f38b97ad72512c77a84aa1a7a5b5d63f00278d205e9386b07c3be","data/international/six/db6-4002.000.chunk":"1f810fcb514771696b8b44d264a552607de2068b0595e165ee1b337f691d2530","data/international/six/db6-4002.idx":"7813f455b5b0225444c95e3424c3f30414373dae0cc6065d9b3e7bd07c304c67","data/international/six/db6-4011.000.chunk":"4e9176f2619ef1c62e5cbc5cb1e3ca7a0c45035148e4fb526eefc1266e1e7e38","data/international/six/db6-4011.idx":"84ad8d66b8560bdcf7a999b867381f36d93ee7724cf89d5abda8020ff9658e2d","data/international/six/db6-4020.000.chunk":"c1b0099c29929bd38f39e02b805bfa395e8b058bc73b3710bf6112efc2a56413","data/international/six/db6-4020.idx":"ed46094e80d77e4f27bdae4fe5678903eac0d72ff11bfbf0addf2d84205b7acd","data/international/six/db6-4101.000.chunk":"84e48039e29063ac53bb53f825c070190c6d424d91e41b3c6b8a5712d99dc07a","data/international/six/db6-4101.idx":"5b89058e3c8e2d225b5f80560b27f8001e42d648b410a616165747f2dc2f2a1b","data/international/six/db6-4110.000.chunk":"271c7e822c1a87b1a01c50a0705040d4e22f6f1a6850ba2baf547b09019a9e9c","data/international/six/db6-4110.idx":"99d0d61cfa656d9c84500f41892c66fbe9d24ebd96b873e63d8b3a3315a0fa78","data/international/six/db6-5001.000.chunk":"abb0af9db0c77accee65b836150e0eeed6c24d79d1c552ff21c9f1825e3846cf","data/international/six/db6-5001.idx":"3316a344e28cc3115daf8ed5d0dbf7f66dc57cafc39262172026d7efea6aab76","data/international/six/db6-5010.000.chunk":"b842fd58f936f742947a84e4587ba88fbc656ffa85371e2e75f57b79af612c5b","data/international/six/db6-5010.idx":"bd8c7a7853c0528d92799fbad5a1344a1ae4e7478598c9c82171afccef8cee41","data/international/six/manifest.json":"6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c","data/international/tunstall-v2.bin":"92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9","dist/corpus-pack.json":"6d570320bbb75d898f29cf6fe6c93faef556899cfa0be0a6a33e8cdd862b4cb9","dist/worker-american.mjs":"950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175","dist/worker-international.mjs":"31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2","LICENSE":"e65a07d64c485ec9ffc4f7af9bd03035e365d9cf6bd3f12151f94139ffa86421","manifest.json":"909e9ec620b946f1e5612e47f837ae4aa2701252bebf2f32d08af756a8514385","node_modules/zod/LICENSE":"3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8","package-lock.json":"90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28","package.json":"d96d42f89bfa40bdb6ccf8f10adbec4cd59dff814e78d94bb136598b96631c66","scripts/browser-check.mjs":"ed17d67724ef0ea6af4142413b7b0130a6ee054d5653741ad6bd057b5c2443bb","scripts/browser-evidence-controls.mjs":"1355cbe8f4e12c0e8c76989abab0db6244436cbde77c893de833c329dd0fd38f","scripts/browser-evidence.mjs":"7c9a8c3c478f18535d42b49e48c815c59e82e8617de76560c473ee82a889586b","scripts/build.mjs":"37489e755e6ec672fd77b8b95a08afe50ce7e0c620554bccddb77ec46ec1f703","scripts/check.mjs":"d064d3b7b10d6186b0ecc7f3d9081d0c0936740c358ebc67ca98789be836ebc7","scripts/corpus-pack.mjs":"e5f4915f6bb14b3c6d437276091203557efff8df13caeee85970a45e38392cba","scripts/integrity.mjs":"a0049c52b21e0494a48e1b61012c1d8f3838e5fc939187e905f3a479d060d2f0","src/bot-worker.ts":"eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653","src/bots.ts":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","src/browser.ts":"1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81","src/chinook-corpus.ts":"d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8","src/chinook.ts":"97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a","src/core.ts":"516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b","src/draws.ts":"e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1","src/endgame.ts":"f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821","src/international-corpus.ts":"356c00f5c25642a9393e73e16306f0e02bb31e10818e0cdcfd99e26534b84a8a","src/international-indexes.ts":"fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625","src/international-search.ts":"67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee","src/international-six-data.ts":"08566eb9e7c6d7b324ac3a26f72edf86f8b22634361ec052d099bdab88e851d6","src/international-six-indexes.ts":"641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99","src/international.ts":"832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce","src/moves.ts":"d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1","src/play.template.html":"2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef","src/retrograde.ts":"62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03","src/schema.ts":"416cb6ea418a0c71eb31e4cf8452bb16fbf455d23bd338a0326a76c22e0670ee","src/types.ts":"079cd5dbb2e20329bf386c3f506c3009534d2afce98804a1a999a239fe1cb16a","THIRD-PARTY-LICENSES.txt":"872acef306116e979ae43e6f20df09f3b040019ebbbcb2070d229f0ab5fe52f6","tsconfig.json":"fcc94a699ca26c01b4f9c4422dd4e5ab6811420993f5af01d9c6659549cd257c"},"command":"node scripts/browser-check.mjs","htmlPath":"/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html","htmlBytes":1390846291,"loadTimeoutMs":300000,"sourceSha256":"b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb","profiles":[{"name":"desktop","width":1920,"height":1080,"throttle":1,"loadMs":8363.492161000002,"checks":15,"frameResults":[{"variant":"american","frames":600,"meanFps":60.002400096003825,"p99Ms":16.799999999999272},{"variant":"international","frames":600,"meanFps":60.00240009600385,"p99Ms":16.80000000000291}],"pageErrorCount":0,"httpRequestCount":0,"pageErrors":[],"httpRequests":[]},{"name":"phone","width":390,"height":844,"throttle":4,"loadMs":37492.25821200001,"checks":15,"frameResults":[{"variant":"american","frames":600,"meanFps":59.90295720932088,"p99Ms":16.80000000000291},{"variant":"international","frames":600,"meanFps":60.00259211197924,"p99Ms":16.80000000000291}],"pageErrorCount":0,"httpRequestCount":0,"pageErrors":[],"httpRequests":[]}],"capture":false,"functionalOnly":false,"frameVariants":["american","international"],"sourceGuardsAfter":{"../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/package.json":"ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","data/chinook/DB6.bin":"baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f","data/chinook/DB6.idx":"10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd","data/chinook/LICENSE.txt":"8ed5c1393322801ac395d3e6c9d8e8f4b18bcca9e41f7b8cdf312f33be242a2d","data/chinook/manifest.json":"90f1970372040946f299660c33ded627fe574c7fa2d52be168e7b16c391d55d0","data/endgames.json":"edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d","data/international/BOOST-LICENSE.txt":"c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566","data/international/db2.bin":"305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed","data/international/db2.idx":"9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2","data/international/db3.bin":"9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa","data/international/db3.idx":"84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa","data/international/db4.bin":"14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa","data/international/db4.idx":"4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e","data/international/db5.bin":"b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02","data/international/db5.idx":"4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a","data/international/LICENSE.md":"34055034c8caa4d7637c91adc11f28229cea6a097c9b9d2610318cb66e1ef6cc","data/international/manifest.json":"6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04","data/international/six/db6-0303.000.chunk":"75d63f54a4aefbb6a29871ac2c96fe8064239630c141c79298c99ede5af7bfae","data/international/six/db6-0303.idx":"9f6e7dddd055eb1234cc79750e749c9b2ef49bdf410d7761a0a27f76dc606b04","data/international/six/db6-0312.000.chunk":"a65ac7e0daf00efcb905cec95900ce8fe7c7afda3d242a693a229b2584fcdd89","data/international/six/db6-0312.idx":"9df486596addc03a3454c242a25198c35f0a371dbd0055ca1ad777bff28bc43a","data/international/six/db6-0321.000.chunk":"4f4af0182c39c3646128b9e17d2b283196e8cb4441452b4a01e9c2532e4b6b53","data/international/six/db6-0321.001.chunk":"b8d62083255a57d82395b04eddf6cf735700f3ead646b526fc9882bace3a0e40","data/international/six/db6-0321.idx":"af4c2df56553f4386223b11ad75e7ad4f5c26625be854d52b1e6f8760d8c3bee","data/international/six/db6-0330.000.chunk":"de1dfc76776fe69bf25a7e64b4f1800c17b196f7e9cf2258cb792f51d17fd5c1","data/international/six/db6-0330.idx":"ce6bba6b659d289f3823a0221a5927fe0cbdf313af052cadfbfe0259791590ca","data/international/six/db6-0402.000.chunk":"9508c060e20d0f01da854b4cd4e018f634241b5abb90e73ece71bd4ca69c2517","data/international/six/db6-0402.idx":"096c6e3b12ecf960f7012878baec51d00f1cafda9880d2b29128b21cb3821485","data/international/six/db6-0411.000.chunk":"d3a9300cbe73b288d4d897d20434b6f4373166f58cc69328043a835efbf03247","data/international/six/db6-0411.idx":"1c92044e7b38d59c1485a0b064ed22e5b685346a0d62ac8fce74c3d6d5130cf0","data/international/six/db6-0420.000.chunk":"26162642d1c3439d6e3abcef8c1a210857b371607d82a1714cb99a47ad803a6e","data/international/six/db6-0420.idx":"4d47ac027225d63cf773a0f5fe9258c5e5f3b3670b04de677bc0a10399e3a56d","data/international/six/db6-0501.000.chunk":"82881a78d8a5052037911bc0e1d33231fd1dce64f283fd5f53bb297c26e60221","data/international/six/db6-0501.idx":"d29f8d532adce5f2ba9befd66ae47413b3e91e0666b891c1f08b8b0c7eb4ea10","data/international/six/db6-0510.000.chunk":"28f286c57a29bac59c095d9efdbd2cd87ee648416a0d4e85099bd8c192bc8383","data/international/six/db6-0510.idx":"356a04a2d92ce1c614671b5e246d4c74215c55728480d79d24065252b1e3689a","data/international/six/db6-1212.000.chunk":"5f8cc263773a36546efb0af5e5f6e4bdb4bbd497a50bf00e477aec30e478923f","data/international/six/db6-1212.001.chunk":"578a53681f654ca3463c205428c02a2812751af0fc83aabb26912573bfeabf79","data/international/six/db6-1212.idx":"62c58abb6f24f8280d0f2b0d99cf2e78c85e4a8b8a37da142fdafce33911db7a","data/international/six/db6-1221.000.chunk":"acc65c6b904a669302b3f1dacf917f44852baa3febb2d33379ecdb9153dfd898","data/international/six/db6-1221.001.chunk":"44b31af46ccd5df50c10eea39107f33244be8d98ea39300c2ef739173573f775","data/international/six/db6-1221.002.chunk":"471ec101d7053b0029059f4ce617ffb88512a7d08d86f2be7e170abc29e8c2e9","data/international/six/db6-1221.003.chunk":"67460687baa048e40deaf19e4168f3fd644a9ffaad0475a02a7c65462a249738","data/international/six/db6-1221.idx":"893f2a20b42eb9b6a437b2a4c79635190b1b7d8303d67c2c6048ad762b654072","data/international/six/db6-1230.000.chunk":"45e595ea9c3279d783cf4632762912554f98103bb24fd3712ea5cd371ae077c6","data/international/six/db6-1230.001.chunk":"86282c8af312b2ee4e8a8c36a228ccd72b5a81ae7bd9e03ed86e63c92ba386cb","data/international/six/db6-1230.idx":"56f9a806af26475371ea04d7230e2316e6ce8206ea14fe28628b646ac5415d37","data/international/six/db6-1302.000.chunk":"a0bde8399fecc594fe8ad84b953018c2fd3796805de67f5361982b244027413f","data/international/six/db6-1302.001.chunk":"7398a50ae97329727420dca59b959f28ed295dbdd59e6dd54fb54d88554decfa","data/international/six/db6-1302.idx":"fc695c254e053157a79dfd22c287fcde716e887ba4a0e5765cc27be221efd7ab","data/international/six/db6-1311.000.chunk":"eac5625451bccbdee80bb5d98c1ae8b7d9dc7bcd218240d543e04ec76d692a36","data/international/six/db6-1311.001.chunk":"cc9e1d6f56f80b7f6fe73d30a878bd2c7e9be3cea795d0c64e2847976e57d88b","data/international/six/db6-1311.002.chunk":"33eb6b6262f6d2b248c2772ab41277231e227a0024007db766ae48edc31e7c6a","data/international/six/db6-1311.003.chunk":"d59c08b053c2d047da4cb9f793c9bcb905c689b0ada2108569428639f20eb107","data/international/six/db6-1311.idx":"824155526e1423c28dfc5a9e6ce803006fcdaabe5c5dcb72f52e4e0b29eb634a","data/international/six/db6-1320.000.chunk":"d37c461f883e519b95482bf38863e22c5cf71e3d4d26da2758aa06d8c5a69c1d","data/international/six/db6-1320.idx":"d9787b34307105c715e7b1f7cd463398386f5bdfa4d863fdee92af34b1dbf334","data/international/six/db6-1401.000.chunk":"45bb9b0339452bab7a464741003a168e43178944b286320b1eb70eb15458d17e","data/international/six/db6-1401.idx":"36c748d544a0d108e25f26a748f107ced6045229854dc0ec5cbabf39dccfd078","data/international/six/db6-1410.000.chunk":"6f3110cbbe9f88c12a01a7779b2034df76cc065e7767d153f17fd9d90efead51","data/international/six/db6-1410.idx":"f7a26d77bd12fb29b4d8492481e56c5c692a2c280062cc9518728882acd65890","data/international/six/db6-2121.000.chunk":"2b0d462e7d6f4e9188dec28fac5b91df1d93b655bd6f381e01dc7f82426dc742","data/international/six/db6-2121.001.chunk":"dd308ec8c23cb58e50f3be495b79934782cc3624036f88272a8526c87e6cd1f9","data/international/six/db6-2121.idx":"f3c643c2ac5d25da70b71339bc23d9c452e00244bd29562fd424b6a84ca3ad40","data/international/six/db6-2130.000.chunk":"320904de62832a1c6c9054c7650c61f10dd181da2e9b1b04aa86d2977656fde7","data/international/six/db6-2130.001.chunk":"a96061fbe9ec9d57d2edd5773fbd89145aafc7e5a5845c81bc58c5ecab63d2d6","data/international/six/db6-2130.idx":"9d6ed91ef56e08a1b98ee184839d9a880198c141aba47005a13587c572342a50","data/international/six/db6-2202.000.chunk":"43057f23a613a28f06bc9cd465b7ed44cf887dfe50e7001b7d1ef473cdbfd4b2","data/international/six/db6-2202.001.chunk":"585615fed0ec078a94e0ac32e3d52ac4d16b3eb7375663ff30d45e1293b3d44a","data/international/six/db6-2202.idx":"bae2e2b0a9709d4b46e397efdcdf322b2d461c492f221eb11f0638b2eb5951ec","data/international/six/db6-2211.000.chunk":"11dd5e990995f60597ec46e5f37a79429b072d11cf7353322dd95f7058c6d1ed","data/international/six/db6-2211.001.chunk":"8142e6725e68cefe12a42a8a8530a52182e9f44a2b85cb5ded48e445bc85bd7f","data/international/six/db6-2211.002.chunk":"c4d38e79e79b87802b26eded2a7c364946fea4d95450d35f10d7dcce343a8c69","data/international/six/db6-2211.003.chunk":"20b4af2d5329d20ebb3075c8cb31878935c15512cc2808546418879729f79402","data/international/six/db6-2211.004.chunk":"a4367099cfdacac510225de250b300e8fed1ba70d4438e14b311b7c796501089","data/international/six/db6-2211.005.chunk":"19b3a66dbf1497e2e455732a0f7ffb927c9e577f56c75419716439f524e9d514","data/international/six/db6-2211.006.chunk":"8bd6bc5bd76720a95a312bd8c6bae30701a6e99be19886e16126ca6abc3b2a7e","data/international/six/db6-2211.idx":"a525a93cfb7ccef53dce68366382a0c8764af216568b02b045edd8bd1230012a","data/international/six/db6-2220.000.chunk":"e1af2d5283389f43c81708a249e3c0b9968ed4aa322ac0bca48ca1ccc5d4dd7c","data/international/six/db6-2220.idx":"e3f4b23066c9f91d4a0f43984cbea7c01817d6a0e25c3705c7fb8327eb8a31a6","data/international/six/db6-2301.000.chunk":"0b6489a374a7680cb6697f2e78d0261558c15e5f6c629279b84f760cc5e2d4e4","data/international/six/db6-2301.idx":"fdcbc2bd251bf3b73822bd0e2b92cb8791deaa009bd2ab8730a25e3395ce7726","data/international/six/db6-2310.000.chunk":"13ae77b5d13ad94678dab0cfb4ca74f4db89190371eacc10bd92cadf10eb350f","data/international/six/db6-2310.idx":"1f8ece0f98423c4b9213ab41a2eec40fe32679fe71268bce240714d1b7896cda","data/international/six/db6-3030.000.chunk":"cecd125dd3e9f0e1fa8f42abd0d51c9b3f679839db56a60b50b380e764302569","data/international/six/db6-3030.idx":"c41521d134874aaa3151b4595373caf3a91afc0aea9e249c0d722612c0370a82","data/international/six/db6-3102.000.chunk":"c90c2e7384f00811e0445f566d7aa7243e861b65c71791df05f3679c1e6080c1","data/international/six/db6-3102.idx":"f0161e4b20319d077c04ae0e4607ac81a7b50315ea72ff456494b00072dac06d","data/international/six/db6-3111.000.chunk":"e62bab91ea59dbef862261975d320585d13f83fbaf709c7d686e0a085b594576","data/international/six/db6-3111.001.chunk":"49c653dccca0ad25d6c3e858f8dd55e540dfb48d6cee1dba749214d8d12b129b","data/international/six/db6-3111.002.chunk":"f3e3f75261fe41cc65d1ee5c3e4c391c5945e96c7635c091e384ed10d253043c","data/international/six/db6-3111.003.chunk":"5c6f451ee293fea2955580ac6717a2aeb991c58693c1f9a0aa5f7107c506d075","data/international/six/db6-3111.004.chunk":"53e58423b9d85e32bbb2eb3552df28124d5172ca983c214738558e7cf543234d","data/international/six/db6-3111.005.chunk":"6fa72cec7f0dcd4a79458b766c04f2fbbc3eeb1804f8ab8f1a3d546c1d0c04df","data/international/six/db6-3111.idx":"552cea6807e5de8bdaaa7430e48429d2876663c1c13bf8a80438ec3fc11222db","data/international/six/db6-3120.000.chunk":"4849d82cf6c7978ef034fc98ef90951d041b740fd79510c67f902a447061a5d2","data/international/six/db6-3120.idx":"b5243e519c0a2fb6f513062094758a95306e9144a48c7a555a79ed1887780c86","data/international/six/db6-3201.000.chunk":"8d899206c06202a55395530df8eab92bbd29b879e1310c0b704bdd26d1131772","data/international/six/db6-3201.idx":"f9b27e6e4cee762ed97a568b8f32673b1bfe5c22a64d0c5b47b7a18f39749958","data/international/six/db6-3210.000.chunk":"f829ad406b3b2b1f45e1ac30bc0e43440ce2b808025c27d3bfff2f704edeffb4","data/international/six/db6-3210.idx":"ab335ebeed4f38b97ad72512c77a84aa1a7a5b5d63f00278d205e9386b07c3be","data/international/six/db6-4002.000.chunk":"1f810fcb514771696b8b44d264a552607de2068b0595e165ee1b337f691d2530","data/international/six/db6-4002.idx":"7813f455b5b0225444c95e3424c3f30414373dae0cc6065d9b3e7bd07c304c67","data/international/six/db6-4011.000.chunk":"4e9176f2619ef1c62e5cbc5cb1e3ca7a0c45035148e4fb526eefc1266e1e7e38","data/international/six/db6-4011.idx":"84ad8d66b8560bdcf7a999b867381f36d93ee7724cf89d5abda8020ff9658e2d","data/international/six/db6-4020.000.chunk":"c1b0099c29929bd38f39e02b805bfa395e8b058bc73b3710bf6112efc2a56413","data/international/six/db6-4020.idx":"ed46094e80d77e4f27bdae4fe5678903eac0d72ff11bfbf0addf2d84205b7acd","data/international/six/db6-4101.000.chunk":"84e48039e29063ac53bb53f825c070190c6d424d91e41b3c6b8a5712d99dc07a","data/international/six/db6-4101.idx":"5b89058e3c8e2d225b5f80560b27f8001e42d648b410a616165747f2dc2f2a1b","data/international/six/db6-4110.000.chunk":"271c7e822c1a87b1a01c50a0705040d4e22f6f1a6850ba2baf547b09019a9e9c","data/international/six/db6-4110.idx":"99d0d61cfa656d9c84500f41892c66fbe9d24ebd96b873e63d8b3a3315a0fa78","data/international/six/db6-5001.000.chunk":"abb0af9db0c77accee65b836150e0eeed6c24d79d1c552ff21c9f1825e3846cf","data/international/six/db6-5001.idx":"3316a344e28cc3115daf8ed5d0dbf7f66dc57cafc39262172026d7efea6aab76","data/international/six/db6-5010.000.chunk":"b842fd58f936f742947a84e4587ba88fbc656ffa85371e2e75f57b79af612c5b","data/international/six/db6-5010.idx":"bd8c7a7853c0528d92799fbad5a1344a1ae4e7478598c9c82171afccef8cee41","data/international/six/manifest.json":"6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c","data/international/tunstall-v2.bin":"92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9","dist/corpus-pack.json":"6d570320bbb75d898f29cf6fe6c93faef556899cfa0be0a6a33e8cdd862b4cb9","dist/worker-american.mjs":"950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175","dist/worker-international.mjs":"31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2","LICENSE":"e65a07d64c485ec9ffc4f7af9bd03035e365d9cf6bd3f12151f94139ffa86421","manifest.json":"909e9ec620b946f1e5612e47f837ae4aa2701252bebf2f32d08af756a8514385","node_modules/zod/LICENSE":"3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8","package-lock.json":"90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28","package.json":"d96d42f89bfa40bdb6ccf8f10adbec4cd59dff814e78d94bb136598b96631c66","scripts/browser-check.mjs":"ed17d67724ef0ea6af4142413b7b0130a6ee054d5653741ad6bd057b5c2443bb","scripts/browser-evidence-controls.mjs":"1355cbe8f4e12c0e8c76989abab0db6244436cbde77c893de833c329dd0fd38f","scripts/browser-evidence.mjs":"7c9a8c3c478f18535d42b49e48c815c59e82e8617de76560c473ee82a889586b","scripts/build.mjs":"37489e755e6ec672fd77b8b95a08afe50ce7e0c620554bccddb77ec46ec1f703","scripts/check.mjs":"d064d3b7b10d6186b0ecc7f3d9081d0c0936740c358ebc67ca98789be836ebc7","scripts/corpus-pack.mjs":"e5f4915f6bb14b3c6d437276091203557efff8df13caeee85970a45e38392cba","scripts/integrity.mjs":"a0049c52b21e0494a48e1b61012c1d8f3838e5fc939187e905f3a479d060d2f0","src/bot-worker.ts":"eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653","src/bots.ts":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","src/browser.ts":"1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81","src/chinook-corpus.ts":"d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8","src/chinook.ts":"97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a","src/core.ts":"516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b","src/draws.ts":"e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1","src/endgame.ts":"f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821","src/international-corpus.ts":"356c00f5c25642a9393e73e16306f0e02bb31e10818e0cdcfd99e26534b84a8a","src/international-indexes.ts":"fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625","src/international-search.ts":"67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee","src/international-six-data.ts":"08566eb9e7c6d7b324ac3a26f72edf86f8b22634361ec052d099bdab88e851d6","src/international-six-indexes.ts":"641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99","src/international.ts":"832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce","src/moves.ts":"d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1","src/play.template.html":"2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef","src/retrograde.ts":"62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03","src/schema.ts":"416cb6ea418a0c71eb31e4cf8452bb16fbf455d23bd338a0326a76c22e0670ee","src/types.ts":"079cd5dbb2e20329bf386c3f506c3009534d2afce98804a1a999a239fe1cb16a","THIRD-PARTY-LICENSES.txt":"872acef306116e979ae43e6f20df09f3b040019ebbbcb2070d229f0ab5fe52f6","tsconfig.json":"fcc94a699ca26c01b4f9c4422dd4e5ab6811420993f5af01d9c6659549cd257c"},"sourceSha256After":"b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb","htmlBytesAfter":1390846291,"checks":[{"profile":"desktop","name":"disk load, no external assets and reduced motion","pass":true},{"profile":"desktop","name":"American standard board and complete hot-seat turn","pass":true},{"profile":"desktop","name":"multi-jump draft leaves the actual position unchanged","pass":true},{"profile":"desktop","name":"American crown ends the capture turn","pass":true},{"profile":"desktop","name":"International full maximum capture and promotion","pass":true},{"profile":"desktop","name":"International crown transit stays a man","pass":true},{"profile":"desktop","name":"pause/resume and optional exact deadline forfeit","pass":true},{"profile":"desktop","name":"winner/results and explicit next table","pass":true},{"profile":"desktop","name":"manual Strong move uses local full-corpus worker and preserves legal core choice","pass":true},{"profile":"desktop","name":"International actual2–5 corpus worker prepares offline and preserves pending input","pass":true},{"profile":"desktop","name":"International actual six-piece Strong worker reads original local blocks","pass":true},{"profile":"desktop","name":"consecutive bot turns reuse the prepared worker and pause cancels it","pass":true},{"profile":"desktop","name":"pause cancels worker before it can apply an old move","pass":true},{"profile":"desktop","name":"names remain text and hostile original IDs have finite public results","pass":true},{"profile":"desktop","name":"viewport fits both boards and all controls","pass":true},{"profile":"phone","name":"disk load, no external assets and reduced motion","pass":true},{"profile":"phone","name":"American standard board and complete hot-seat turn","pass":true},{"profile":"phone","name":"multi-jump draft leaves the actual position unchanged","pass":true},{"profile":"phone","name":"American crown ends the capture turn","pass":true},{"profile":"phone","name":"International full maximum capture and promotion","pass":true},{"profile":"phone","name":"International crown transit stays a man","pass":true},{"profile":"phone","name":"pause/resume and optional exact deadline forfeit","pass":true},{"profile":"phone","name":"winner/results and explicit next table","pass":true},{"profile":"phone","name":"manual Strong move uses local full-corpus worker and preserves legal core choice","pass":true},{"profile":"phone","name":"International actual2–5 corpus worker prepares offline and preserves pending input","pass":true},{"profile":"phone","name":"International actual six-piece Strong worker reads original local blocks","pass":true},{"profile":"phone","name":"consecutive bot turns reuse the prepared worker and pause cancels it","pass":true},{"profile":"phone","name":"pause cancels worker before it can apply an old move","pass":true},{"profile":"phone","name":"names remain text and hostile original IDs have finite public results","pass":true},{"profile":"phone","name":"viewport fits both boards and all controls","pass":true}],"totalChecks":30}
+2026-10-09T01:38:51.8132257Z {"evidenceVersion":1,"runId":"2f569ee5-f6ea-4360-a366-b0ab6bdf1996","sourceGuardsBefore":{"../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/package.json":"ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","data/chinook/DB6.bin":"baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f","data/chinook/DB6.idx":"10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd","data/chinook/LICENSE.txt":"8ed5c1393322801ac395d3e6c9d8e8f4b18bcca9e41f7b8cdf312f33be242a2d","data/chinook/manifest.json":"90f1970372040946f299660c33ded627fe574c7fa2d52be168e7b16c391d55d0","data/endgames.json":"edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d","data/international/BOOST-LICENSE.txt":"c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566","data/international/db2.bin":"305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed","data/international/db2.idx":"9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2","data/international/db3.bin":"9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa","data/international/db3.idx":"84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa","data/international/db4.bin":"14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa","data/international/db4.idx":"4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e","data/international/db5.bin":"b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02","data/international/db5.idx":"4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a","data/international/LICENSE.md":"34055034c8caa4d7637c91adc11f28229cea6a097c9b9d2610318cb66e1ef6cc","data/international/manifest.json":"6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04","data/international/six/db6-0303.000.chunk":"75d63f54a4aefbb6a29871ac2c96fe8064239630c141c79298c99ede5af7bfae","data/international/six/db6-0303.idx":"9f6e7dddd055eb1234cc79750e749c9b2ef49bdf410d7761a0a27f76dc606b04","data/international/six/db6-0312.000.chunk":"a65ac7e0daf00efcb905cec95900ce8fe7c7afda3d242a693a229b2584fcdd89","data/international/six/db6-0312.idx":"9df486596addc03a3454c242a25198c35f0a371dbd0055ca1ad777bff28bc43a","data/international/six/db6-0321.000.chunk":"4f4af0182c39c3646128b9e17d2b283196e8cb4441452b4a01e9c2532e4b6b53","data/international/six/db6-0321.001.chunk":"b8d62083255a57d82395b04eddf6cf735700f3ead646b526fc9882bace3a0e40","data/international/six/db6-0321.idx":"af4c2df56553f4386223b11ad75e7ad4f5c26625be854d52b1e6f8760d8c3bee","data/international/six/db6-0330.000.chunk":"de1dfc76776fe69bf25a7e64b4f1800c17b196f7e9cf2258cb792f51d17fd5c1","data/international/six/db6-0330.idx":"ce6bba6b659d289f3823a0221a5927fe0cbdf313af052cadfbfe0259791590ca","data/international/six/db6-0402.000.chunk":"9508c060e20d0f01da854b4cd4e018f634241b5abb90e73ece71bd4ca69c2517","data/international/six/db6-0402.idx":"096c6e3b12ecf960f7012878baec51d00f1cafda9880d2b29128b21cb3821485","data/international/six/db6-0411.000.chunk":"d3a9300cbe73b288d4d897d20434b6f4373166f58cc69328043a835efbf03247","data/international/six/db6-0411.idx":"1c92044e7b38d59c1485a0b064ed22e5b685346a0d62ac8fce74c3d6d5130cf0","data/international/six/db6-0420.000.chunk":"26162642d1c3439d6e3abcef8c1a210857b371607d82a1714cb99a47ad803a6e","data/international/six/db6-0420.idx":"4d47ac027225d63cf773a0f5fe9258c5e5f3b3670b04de677bc0a10399e3a56d","data/international/six/db6-0501.000.chunk":"82881a78d8a5052037911bc0e1d33231fd1dce64f283fd5f53bb297c26e60221","data/international/six/db6-0501.idx":"d29f8d532adce5f2ba9befd66ae47413b3e91e0666b891c1f08b8b0c7eb4ea10","data/international/six/db6-0510.000.chunk":"28f286c57a29bac59c095d9efdbd2cd87ee648416a0d4e85099bd8c192bc8383","data/international/six/db6-0510.idx":"356a04a2d92ce1c614671b5e246d4c74215c55728480d79d24065252b1e3689a","data/international/six/db6-1212.000.chunk":"5f8cc263773a36546efb0af5e5f6e4bdb4bbd497a50bf00e477aec30e478923f","data/international/six/db6-1212.001.chunk":"578a53681f654ca3463c205428c02a2812751af0fc83aabb26912573bfeabf79","data/international/six/db6-1212.idx":"62c58abb6f24f8280d0f2b0d99cf2e78c85e4a8b8a37da142fdafce33911db7a","data/international/six/db6-1221.000.chunk":"acc65c6b904a669302b3f1dacf917f44852baa3febb2d33379ecdb9153dfd898","data/international/six/db6-1221.001.chunk":"44b31af46ccd5df50c10eea39107f33244be8d98ea39300c2ef739173573f775","data/international/six/db6-1221.002.chunk":"471ec101d7053b0029059f4ce617ffb88512a7d08d86f2be7e170abc29e8c2e9","data/international/six/db6-1221.003.chunk":"67460687baa048e40deaf19e4168f3fd644a9ffaad0475a02a7c65462a249738","data/international/six/db6-1221.idx":"893f2a20b42eb9b6a437b2a4c79635190b1b7d8303d67c2c6048ad762b654072","data/international/six/db6-1230.000.chunk":"45e595ea9c3279d783cf4632762912554f98103bb24fd3712ea5cd371ae077c6","data/international/six/db6-1230.001.chunk":"86282c8af312b2ee4e8a8c36a228ccd72b5a81ae7bd9e03ed86e63c92ba386cb","data/international/six/db6-1230.idx":"56f9a806af26475371ea04d7230e2316e6ce8206ea14fe28628b646ac5415d37","data/international/six/db6-1302.000.chunk":"a0bde8399fecc594fe8ad84b953018c2fd3796805de67f5361982b244027413f","data/international/six/db6-1302.001.chunk":"7398a50ae97329727420dca59b959f28ed295dbdd59e6dd54fb54d88554decfa","data/international/six/db6-1302.idx":"fc695c254e053157a79dfd22c287fcde716e887ba4a0e5765cc27be221efd7ab","data/international/six/db6-1311.000.chunk":"eac5625451bccbdee80bb5d98c1ae8b7d9dc7bcd218240d543e04ec76d692a36","data/international/six/db6-1311.001.chunk":"cc9e1d6f56f80b7f6fe73d30a878bd2c7e9be3cea795d0c64e2847976e57d88b","data/international/six/db6-1311.002.chunk":"33eb6b6262f6d2b248c2772ab41277231e227a0024007db766ae48edc31e7c6a","data/international/six/db6-1311.003.chunk":"d59c08b053c2d047da4cb9f793c9bcb905c689b0ada2108569428639f20eb107","data/international/six/db6-1311.idx":"824155526e1423c28dfc5a9e6ce803006fcdaabe5c5dcb72f52e4e0b29eb634a","data/international/six/db6-1320.000.chunk":"d37c461f883e519b95482bf38863e22c5cf71e3d4d26da2758aa06d8c5a69c1d","data/international/six/db6-1320.idx":"d9787b34307105c715e7b1f7cd463398386f5bdfa4d863fdee92af34b1dbf334","data/international/six/db6-1401.000.chunk":"45bb9b0339452bab7a464741003a168e43178944b286320b1eb70eb15458d17e","data/international/six/db6-1401.idx":"36c748d544a0d108e25f26a748f107ced6045229854dc0ec5cbabf39dccfd078","data/international/six/db6-1410.000.chunk":"6f3110cbbe9f88c12a01a7779b2034df76cc065e7767d153f17fd9d90efead51","data/international/six/db6-1410.idx":"f7a26d77bd12fb29b4d8492481e56c5c692a2c280062cc9518728882acd65890","data/international/six/db6-2121.000.chunk":"2b0d462e7d6f4e9188dec28fac5b91df1d93b655bd6f381e01dc7f82426dc742","data/international/six/db6-2121.001.chunk":"dd308ec8c23cb58e50f3be495b79934782cc3624036f88272a8526c87e6cd1f9","data/international/six/db6-2121.idx":"f3c643c2ac5d25da70b71339bc23d9c452e00244bd29562fd424b6a84ca3ad40","data/international/six/db6-2130.000.chunk":"320904de62832a1c6c9054c7650c61f10dd181da2e9b1b04aa86d2977656fde7","data/international/six/db6-2130.001.chunk":"a96061fbe9ec9d57d2edd5773fbd89145aafc7e5a5845c81bc58c5ecab63d2d6","data/international/six/db6-2130.idx":"9d6ed91ef56e08a1b98ee184839d9a880198c141aba47005a13587c572342a50","data/international/six/db6-2202.000.chunk":"43057f23a613a28f06bc9cd465b7ed44cf887dfe50e7001b7d1ef473cdbfd4b2","data/international/six/db6-2202.001.chunk":"585615fed0ec078a94e0ac32e3d52ac4d16b3eb7375663ff30d45e1293b3d44a","data/international/six/db6-2202.idx":"bae2e2b0a9709d4b46e397efdcdf322b2d461c492f221eb11f0638b2eb5951ec","data/international/six/db6-2211.000.chunk":"11dd5e990995f60597ec46e5f37a79429b072d11cf7353322dd95f7058c6d1ed","data/international/six/db6-2211.001.chunk":"8142e6725e68cefe12a42a8a8530a52182e9f44a2b85cb5ded48e445bc85bd7f","data/international/six/db6-2211.002.chunk":"c4d38e79e79b87802b26eded2a7c364946fea4d95450d35f10d7dcce343a8c69","data/international/six/db6-2211.003.chunk":"20b4af2d5329d20ebb3075c8cb31878935c15512cc2808546418879729f79402","data/international/six/db6-2211.004.chunk":"a4367099cfdacac510225de250b300e8fed1ba70d4438e14b311b7c796501089","data/international/six/db6-2211.005.chunk":"19b3a66dbf1497e2e455732a0f7ffb927c9e577f56c75419716439f524e9d514","data/international/six/db6-2211.006.chunk":"8bd6bc5bd76720a95a312bd8c6bae30701a6e99be19886e16126ca6abc3b2a7e","data/international/six/db6-2211.idx":"a525a93cfb7ccef53dce68366382a0c8764af216568b02b045edd8bd1230012a","data/international/six/db6-2220.000.chunk":"e1af2d5283389f43c81708a249e3c0b9968ed4aa322ac0bca48ca1ccc5d4dd7c","data/international/six/db6-2220.idx":"e3f4b23066c9f91d4a0f43984cbea7c01817d6a0e25c3705c7fb8327eb8a31a6","data/international/six/db6-2301.000.chunk":"0b6489a374a7680cb6697f2e78d0261558c15e5f6c629279b84f760cc5e2d4e4","data/international/six/db6-2301.idx":"fdcbc2bd251bf3b73822bd0e2b92cb8791deaa009bd2ab8730a25e3395ce7726","data/international/six/db6-2310.000.chunk":"13ae77b5d13ad94678dab0cfb4ca74f4db89190371eacc10bd92cadf10eb350f","data/international/six/db6-2310.idx":"1f8ece0f98423c4b9213ab41a2eec40fe32679fe71268bce240714d1b7896cda","data/international/six/db6-3030.000.chunk":"cecd125dd3e9f0e1fa8f42abd0d51c9b3f679839db56a60b50b380e764302569","data/international/six/db6-3030.idx":"c41521d134874aaa3151b4595373caf3a91afc0aea9e249c0d722612c0370a82","data/international/six/db6-3102.000.chunk":"c90c2e7384f00811e0445f566d7aa7243e861b65c71791df05f3679c1e6080c1","data/international/six/db6-3102.idx":"f0161e4b20319d077c04ae0e4607ac81a7b50315ea72ff456494b00072dac06d","data/international/six/db6-3111.000.chunk":"e62bab91ea59dbef862261975d320585d13f83fbaf709c7d686e0a085b594576","data/international/six/db6-3111.001.chunk":"49c653dccca0ad25d6c3e858f8dd55e540dfb48d6cee1dba749214d8d12b129b","data/international/six/db6-3111.002.chunk":"f3e3f75261fe41cc65d1ee5c3e4c391c5945e96c7635c091e384ed10d253043c","data/international/six/db6-3111.003.chunk":"5c6f451ee293fea2955580ac6717a2aeb991c58693c1f9a0aa5f7107c506d075","data/international/six/db6-3111.004.chunk":"53e58423b9d85e32bbb2eb3552df28124d5172ca983c214738558e7cf543234d","data/international/six/db6-3111.005.chunk":"6fa72cec7f0dcd4a79458b766c04f2fbbc3eeb1804f8ab8f1a3d546c1d0c04df","data/international/six/db6-3111.idx":"552cea6807e5de8bdaaa7430e48429d2876663c1c13bf8a80438ec3fc11222db","data/international/six/db6-3120.000.chunk":"4849d82cf6c7978ef034fc98ef90951d041b740fd79510c67f902a447061a5d2","data/international/six/db6-3120.idx":"b5243e519c0a2fb6f513062094758a95306e9144a48c7a555a79ed1887780c86","data/international/six/db6-3201.000.chunk":"8d899206c06202a55395530df8eab92bbd29b879e1310c0b704bdd26d1131772","data/international/six/db6-3201.idx":"f9b27e6e4cee762ed97a568b8f32673b1bfe5c22a64d0c5b47b7a18f39749958","data/international/six/db6-3210.000.chunk":"f829ad406b3b2b1f45e1ac30bc0e43440ce2b808025c27d3bfff2f704edeffb4","data/international/six/db6-3210.idx":"ab335ebeed4f38b97ad72512c77a84aa1a7a5b5d63f00278d205e9386b07c3be","data/international/six/db6-4002.000.chunk":"1f810fcb514771696b8b44d264a552607de2068b0595e165ee1b337f691d2530","data/international/six/db6-4002.idx":"7813f455b5b0225444c95e3424c3f30414373dae0cc6065d9b3e7bd07c304c67","data/international/six/db6-4011.000.chunk":"4e9176f2619ef1c62e5cbc5cb1e3ca7a0c45035148e4fb526eefc1266e1e7e38","data/international/six/db6-4011.idx":"84ad8d66b8560bdcf7a999b867381f36d93ee7724cf89d5abda8020ff9658e2d","data/international/six/db6-4020.000.chunk":"c1b0099c29929bd38f39e02b805bfa395e8b058bc73b3710bf6112efc2a56413","data/international/six/db6-4020.idx":"ed46094e80d77e4f27bdae4fe5678903eac0d72ff11bfbf0addf2d84205b7acd","data/international/six/db6-4101.000.chunk":"84e48039e29063ac53bb53f825c070190c6d424d91e41b3c6b8a5712d99dc07a","data/international/six/db6-4101.idx":"5b89058e3c8e2d225b5f80560b27f8001e42d648b410a616165747f2dc2f2a1b","data/international/six/db6-4110.000.chunk":"271c7e822c1a87b1a01c50a0705040d4e22f6f1a6850ba2baf547b09019a9e9c","data/international/six/db6-4110.idx":"99d0d61cfa656d9c84500f41892c66fbe9d24ebd96b873e63d8b3a3315a0fa78","data/international/six/db6-5001.000.chunk":"abb0af9db0c77accee65b836150e0eeed6c24d79d1c552ff21c9f1825e3846cf","data/international/six/db6-5001.idx":"3316a344e28cc3115daf8ed5d0dbf7f66dc57cafc39262172026d7efea6aab76","data/international/six/db6-5010.000.chunk":"b842fd58f936f742947a84e4587ba88fbc656ffa85371e2e75f57b79af612c5b","data/international/six/db6-5010.idx":"bd8c7a7853c0528d92799fbad5a1344a1ae4e7478598c9c82171afccef8cee41","data/international/six/manifest.json":"6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c","data/international/tunstall-v2.bin":"92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9","dist/corpus-pack.json":"6d570320bbb75d898f29cf6fe6c93faef556899cfa0be0a6a33e8cdd862b4cb9","dist/worker-american.mjs":"950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175","dist/worker-international.mjs":"31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2","LICENSE":"e65a07d64c485ec9ffc4f7af9bd03035e365d9cf6bd3f12151f94139ffa86421","manifest.json":"909e9ec620b946f1e5612e47f837ae4aa2701252bebf2f32d08af756a8514385","node_modules/zod/LICENSE":"3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8","package-lock.json":"90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28","package.json":"d96d42f89bfa40bdb6ccf8f10adbec4cd59dff814e78d94bb136598b96631c66","scripts/browser-check.mjs":"ed17d67724ef0ea6af4142413b7b0130a6ee054d5653741ad6bd057b5c2443bb","scripts/browser-evidence-controls.mjs":"1355cbe8f4e12c0e8c76989abab0db6244436cbde77c893de833c329dd0fd38f","scripts/browser-evidence.mjs":"7c9a8c3c478f18535d42b49e48c815c59e82e8617de76560c473ee82a889586b","scripts/build.mjs":"37489e755e6ec672fd77b8b95a08afe50ce7e0c620554bccddb77ec46ec1f703","scripts/check.mjs":"d064d3b7b10d6186b0ecc7f3d9081d0c0936740c358ebc67ca98789be836ebc7","scripts/corpus-pack.mjs":"e5f4915f6bb14b3c6d437276091203557efff8df13caeee85970a45e38392cba","scripts/integrity.mjs":"a0049c52b21e0494a48e1b61012c1d8f3838e5fc939187e905f3a479d060d2f0","src/bot-worker.ts":"eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653","src/bots.ts":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","src/browser.ts":"1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81","src/chinook-corpus.ts":"d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8","src/chinook.ts":"97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a","src/core.ts":"516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b","src/draws.ts":"e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1","src/endgame.ts":"f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821","src/international-corpus.ts":"356c00f5c25642a9393e73e16306f0e02bb31e10818e0cdcfd99e26534b84a8a","src/international-indexes.ts":"fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625","src/international-search.ts":"67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee","src/international-six-data.ts":"08566eb9e7c6d7b324ac3a26f72edf86f8b22634361ec052d099bdab88e851d6","src/international-six-indexes.ts":"641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99","src/international.ts":"832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce","src/moves.ts":"d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1","src/play.template.html":"2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef","src/retrograde.ts":"62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03","src/schema.ts":"416cb6ea418a0c71eb31e4cf8452bb16fbf455d23bd338a0326a76c22e0670ee","src/types.ts":"079cd5dbb2e20329bf386c3f506c3009534d2afce98804a1a999a239fe1cb16a","THIRD-PARTY-LICENSES.txt":"872acef306116e979ae43e6f20df09f3b040019ebbbcb2070d229f0ab5fe52f6","tsconfig.json":"fcc94a699ca26c01b4f9c4422dd4e5ab6811420993f5af01d9c6659549cd257c"},"command":"node scripts/browser-check.mjs --capture","htmlPath":"/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html","htmlBytes":1390846291,"loadTimeoutMs":300000,"sourceSha256":"b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb","profiles":[{"name":"desktop","width":1920,"height":1080,"throttle":1,"loadMs":8468.470207,"checks":15,"frameResults":[{"variant":"american","frames":600,"meanFps":60.00300015000751,"p99Ms":16.80000000000291},{"variant":"international","frames":600,"meanFps":60.002400096003825,"p99Ms":16.80000000000291}],"pageErrorCount":0,"httpRequestCount":0,"pageErrors":[],"httpRequests":[],"video":{"file":"desktop.webm","bytes":1245279,"sha256":"0563b92f9326fa8b0e8e86bc07f4b7ff692e8263a3f029c07a58cb1b0610ed55","probe":{"container":"matroska,webm","codec":"vp8","width":1920,"height":1080,"frameRate":"25/1","frames":250,"durationSeconds":10},"original":{"file":"desktop-original.webm","bytes":5381863,"sha256":"24f54324417fa74dabd2c613a3bc1882186af544eab951a0e998da1db2f35aa9","probe":{"container":"matroska,webm","codec":"vp8","width":1920,"height":1080,"frameRate":"25/1","frames":1253,"durationSeconds":50.12}},"sourceSeekSeconds":40.12,"command":["ffmpeg","-hide_banner","-loglevel","error","-ss","40.12","-i","/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop-original.webm","-t","10","-an","-c:v","libvpx","-deadline","realtime","-cpu-used","8","-threads","2","-b:v","900k","-y","/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/desktop.webm"],"scope":"Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."},"gameplay":{"variant":"international","startPly":0,"endPly":24,"elapsedMs":10815.151720000002}},{"name":"phone","width":390,"height":844,"throttle":4,"loadMs":37454.262603999996,"checks":15,"frameResults":[{"variant":"american","frames":600,"meanFps":60.00300015000751,"p99Ms":16.80000000000291},{"variant":"international","frames":600,"meanFps":60.00198006534217,"p99Ms":16.80000000000291}],"pageErrorCount":0,"httpRequestCount":0,"pageErrors":[],"httpRequests":[],"video":{"file":"phone.webm","bytes":553221,"sha256":"53738bd244809bdd9100862f6d68cf01da327bc6a7275cda1855369e5c8cc50b","probe":{"container":"matroska,webm","codec":"vp8","width":390,"height":844,"frameRate":"25/1","frames":250,"durationSeconds":10},"original":{"file":"phone-original.webm","bytes":2880222,"sha256":"70b5f4148a00dd720f7ca18f86fa8a66d7ccccf0adb44e0363be0657264fe3b8","probe":{"container":"matroska,webm","codec":"vp8","width":390,"height":844,"frameRate":"25/1","frames":2040,"durationSeconds":81.6}},"sourceSeekSeconds":71.6,"command":["ffmpeg","-hide_banner","-loglevel","error","-ss","71.6","-i","/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone-original.webm","-t","10","-an","-c:v","libvpx","-deadline","realtime","-cpu-used","8","-threads","2","-b:v","400k","-y","/home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/media/phone.webm"],"scope":"Last ten seconds of actual recorded International hot-seat legal moves; diagnostic recording, never frame acceptance."},"gameplay":{"variant":"international","startPly":0,"endPly":22,"elapsedMs":10861.399272999988}}],"capture":true,"functionalOnly":false,"frameVariants":["american","international"],"sourceGuardsAfter":{"../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/package.json":"ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","data/chinook/DB6.bin":"baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f","data/chinook/DB6.idx":"10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd","data/chinook/LICENSE.txt":"8ed5c1393322801ac395d3e6c9d8e8f4b18bcca9e41f7b8cdf312f33be242a2d","data/chinook/manifest.json":"90f1970372040946f299660c33ded627fe574c7fa2d52be168e7b16c391d55d0","data/endgames.json":"edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d","data/international/BOOST-LICENSE.txt":"c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566","data/international/db2.bin":"305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed","data/international/db2.idx":"9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2","data/international/db3.bin":"9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa","data/international/db3.idx":"84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa","data/international/db4.bin":"14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa","data/international/db4.idx":"4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e","data/international/db5.bin":"b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02","data/international/db5.idx":"4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a","data/international/LICENSE.md":"34055034c8caa4d7637c91adc11f28229cea6a097c9b9d2610318cb66e1ef6cc","data/international/manifest.json":"6cc33b38df4f1f2b1ea79fa7fcbe11972976986828e7adee28934b4ad3921a04","data/international/six/db6-0303.000.chunk":"75d63f54a4aefbb6a29871ac2c96fe8064239630c141c79298c99ede5af7bfae","data/international/six/db6-0303.idx":"9f6e7dddd055eb1234cc79750e749c9b2ef49bdf410d7761a0a27f76dc606b04","data/international/six/db6-0312.000.chunk":"a65ac7e0daf00efcb905cec95900ce8fe7c7afda3d242a693a229b2584fcdd89","data/international/six/db6-0312.idx":"9df486596addc03a3454c242a25198c35f0a371dbd0055ca1ad777bff28bc43a","data/international/six/db6-0321.000.chunk":"4f4af0182c39c3646128b9e17d2b283196e8cb4441452b4a01e9c2532e4b6b53","data/international/six/db6-0321.001.chunk":"b8d62083255a57d82395b04eddf6cf735700f3ead646b526fc9882bace3a0e40","data/international/six/db6-0321.idx":"af4c2df56553f4386223b11ad75e7ad4f5c26625be854d52b1e6f8760d8c3bee","data/international/six/db6-0330.000.chunk":"de1dfc76776fe69bf25a7e64b4f1800c17b196f7e9cf2258cb792f51d17fd5c1","data/international/six/db6-0330.idx":"ce6bba6b659d289f3823a0221a5927fe0cbdf313af052cadfbfe0259791590ca","data/international/six/db6-0402.000.chunk":"9508c060e20d0f01da854b4cd4e018f634241b5abb90e73ece71bd4ca69c2517","data/international/six/db6-0402.idx":"096c6e3b12ecf960f7012878baec51d00f1cafda9880d2b29128b21cb3821485","data/international/six/db6-0411.000.chunk":"d3a9300cbe73b288d4d897d20434b6f4373166f58cc69328043a835efbf03247","data/international/six/db6-0411.idx":"1c92044e7b38d59c1485a0b064ed22e5b685346a0d62ac8fce74c3d6d5130cf0","data/international/six/db6-0420.000.chunk":"26162642d1c3439d6e3abcef8c1a210857b371607d82a1714cb99a47ad803a6e","data/international/six/db6-0420.idx":"4d47ac027225d63cf773a0f5fe9258c5e5f3b3670b04de677bc0a10399e3a56d","data/international/six/db6-0501.000.chunk":"82881a78d8a5052037911bc0e1d33231fd1dce64f283fd5f53bb297c26e60221","data/international/six/db6-0501.idx":"d29f8d532adce5f2ba9befd66ae47413b3e91e0666b891c1f08b8b0c7eb4ea10","data/international/six/db6-0510.000.chunk":"28f286c57a29bac59c095d9efdbd2cd87ee648416a0d4e85099bd8c192bc8383","data/international/six/db6-0510.idx":"356a04a2d92ce1c614671b5e246d4c74215c55728480d79d24065252b1e3689a","data/international/six/db6-1212.000.chunk":"5f8cc263773a36546efb0af5e5f6e4bdb4bbd497a50bf00e477aec30e478923f","data/international/six/db6-1212.001.chunk":"578a53681f654ca3463c205428c02a2812751af0fc83aabb26912573bfeabf79","data/international/six/db6-1212.idx":"62c58abb6f24f8280d0f2b0d99cf2e78c85e4a8b8a37da142fdafce33911db7a","data/international/six/db6-1221.000.chunk":"acc65c6b904a669302b3f1dacf917f44852baa3febb2d33379ecdb9153dfd898","data/international/six/db6-1221.001.chunk":"44b31af46ccd5df50c10eea39107f33244be8d98ea39300c2ef739173573f775","data/international/six/db6-1221.002.chunk":"471ec101d7053b0029059f4ce617ffb88512a7d08d86f2be7e170abc29e8c2e9","data/international/six/db6-1221.003.chunk":"67460687baa048e40deaf19e4168f3fd644a9ffaad0475a02a7c65462a249738","data/international/six/db6-1221.idx":"893f2a20b42eb9b6a437b2a4c79635190b1b7d8303d67c2c6048ad762b654072","data/international/six/db6-1230.000.chunk":"45e595ea9c3279d783cf4632762912554f98103bb24fd3712ea5cd371ae077c6","data/international/six/db6-1230.001.chunk":"86282c8af312b2ee4e8a8c36a228ccd72b5a81ae7bd9e03ed86e63c92ba386cb","data/international/six/db6-1230.idx":"56f9a806af26475371ea04d7230e2316e6ce8206ea14fe28628b646ac5415d37","data/international/six/db6-1302.000.chunk":"a0bde8399fecc594fe8ad84b953018c2fd3796805de67f5361982b244027413f","data/international/six/db6-1302.001.chunk":"7398a50ae97329727420dca59b959f28ed295dbdd59e6dd54fb54d88554decfa","data/international/six/db6-1302.idx":"fc695c254e053157a79dfd22c287fcde716e887ba4a0e5765cc27be221efd7ab","data/international/six/db6-1311.000.chunk":"eac5625451bccbdee80bb5d98c1ae8b7d9dc7bcd218240d543e04ec76d692a36","data/international/six/db6-1311.001.chunk":"cc9e1d6f56f80b7f6fe73d30a878bd2c7e9be3cea795d0c64e2847976e57d88b","data/international/six/db6-1311.002.chunk":"33eb6b6262f6d2b248c2772ab41277231e227a0024007db766ae48edc31e7c6a","data/international/six/db6-1311.003.chunk":"d59c08b053c2d047da4cb9f793c9bcb905c689b0ada2108569428639f20eb107","data/international/six/db6-1311.idx":"824155526e1423c28dfc5a9e6ce803006fcdaabe5c5dcb72f52e4e0b29eb634a","data/international/six/db6-1320.000.chunk":"d37c461f883e519b95482bf38863e22c5cf71e3d4d26da2758aa06d8c5a69c1d","data/international/six/db6-1320.idx":"d9787b34307105c715e7b1f7cd463398386f5bdfa4d863fdee92af34b1dbf334","data/international/six/db6-1401.000.chunk":"45bb9b0339452bab7a464741003a168e43178944b286320b1eb70eb15458d17e","data/international/six/db6-1401.idx":"36c748d544a0d108e25f26a748f107ced6045229854dc0ec5cbabf39dccfd078","data/international/six/db6-1410.000.chunk":"6f3110cbbe9f88c12a01a7779b2034df76cc065e7767d153f17fd9d90efead51","data/international/six/db6-1410.idx":"f7a26d77bd12fb29b4d8492481e56c5c692a2c280062cc9518728882acd65890","data/international/six/db6-2121.000.chunk":"2b0d462e7d6f4e9188dec28fac5b91df1d93b655bd6f381e01dc7f82426dc742","data/international/six/db6-2121.001.chunk":"dd308ec8c23cb58e50f3be495b79934782cc3624036f88272a8526c87e6cd1f9","data/international/six/db6-2121.idx":"f3c643c2ac5d25da70b71339bc23d9c452e00244bd29562fd424b6a84ca3ad40","data/international/six/db6-2130.000.chunk":"320904de62832a1c6c9054c7650c61f10dd181da2e9b1b04aa86d2977656fde7","data/international/six/db6-2130.001.chunk":"a96061fbe9ec9d57d2edd5773fbd89145aafc7e5a5845c81bc58c5ecab63d2d6","data/international/six/db6-2130.idx":"9d6ed91ef56e08a1b98ee184839d9a880198c141aba47005a13587c572342a50","data/international/six/db6-2202.000.chunk":"43057f23a613a28f06bc9cd465b7ed44cf887dfe50e7001b7d1ef473cdbfd4b2","data/international/six/db6-2202.001.chunk":"585615fed0ec078a94e0ac32e3d52ac4d16b3eb7375663ff30d45e1293b3d44a","data/international/six/db6-2202.idx":"bae2e2b0a9709d4b46e397efdcdf322b2d461c492f221eb11f0638b2eb5951ec","data/international/six/db6-2211.000.chunk":"11dd5e990995f60597ec46e5f37a79429b072d11cf7353322dd95f7058c6d1ed","data/international/six/db6-2211.001.chunk":"8142e6725e68cefe12a42a8a8530a52182e9f44a2b85cb5ded48e445bc85bd7f","data/international/six/db6-2211.002.chunk":"c4d38e79e79b87802b26eded2a7c364946fea4d95450d35f10d7dcce343a8c69","data/international/six/db6-2211.003.chunk":"20b4af2d5329d20ebb3075c8cb31878935c15512cc2808546418879729f79402","data/international/six/db6-2211.004.chunk":"a4367099cfdacac510225de250b300e8fed1ba70d4438e14b311b7c796501089","data/international/six/db6-2211.005.chunk":"19b3a66dbf1497e2e455732a0f7ffb927c9e577f56c75419716439f524e9d514","data/international/six/db6-2211.006.chunk":"8bd6bc5bd76720a95a312bd8c6bae30701a6e99be19886e16126ca6abc3b2a7e","data/international/six/db6-2211.idx":"a525a93cfb7ccef53dce68366382a0c8764af216568b02b045edd8bd1230012a","data/international/six/db6-2220.000.chunk":"e1af2d5283389f43c81708a249e3c0b9968ed4aa322ac0bca48ca1ccc5d4dd7c","data/international/six/db6-2220.idx":"e3f4b23066c9f91d4a0f43984cbea7c01817d6a0e25c3705c7fb8327eb8a31a6","data/international/six/db6-2301.000.chunk":"0b6489a374a7680cb6697f2e78d0261558c15e5f6c629279b84f760cc5e2d4e4","data/international/six/db6-2301.idx":"fdcbc2bd251bf3b73822bd0e2b92cb8791deaa009bd2ab8730a25e3395ce7726","data/international/six/db6-2310.000.chunk":"13ae77b5d13ad94678dab0cfb4ca74f4db89190371eacc10bd92cadf10eb350f","data/international/six/db6-2310.idx":"1f8ece0f98423c4b9213ab41a2eec40fe32679fe71268bce240714d1b7896cda","data/international/six/db6-3030.000.chunk":"cecd125dd3e9f0e1fa8f42abd0d51c9b3f679839db56a60b50b380e764302569","data/international/six/db6-3030.idx":"c41521d134874aaa3151b4595373caf3a91afc0aea9e249c0d722612c0370a82","data/international/six/db6-3102.000.chunk":"c90c2e7384f00811e0445f566d7aa7243e861b65c71791df05f3679c1e6080c1","data/international/six/db6-3102.idx":"f0161e4b20319d077c04ae0e4607ac81a7b50315ea72ff456494b00072dac06d","data/international/six/db6-3111.000.chunk":"e62bab91ea59dbef862261975d320585d13f83fbaf709c7d686e0a085b594576","data/international/six/db6-3111.001.chunk":"49c653dccca0ad25d6c3e858f8dd55e540dfb48d6cee1dba749214d8d12b129b","data/international/six/db6-3111.002.chunk":"f3e3f75261fe41cc65d1ee5c3e4c391c5945e96c7635c091e384ed10d253043c","data/international/six/db6-3111.003.chunk":"5c6f451ee293fea2955580ac6717a2aeb991c58693c1f9a0aa5f7107c506d075","data/international/six/db6-3111.004.chunk":"53e58423b9d85e32bbb2eb3552df28124d5172ca983c214738558e7cf543234d","data/international/six/db6-3111.005.chunk":"6fa72cec7f0dcd4a79458b766c04f2fbbc3eeb1804f8ab8f1a3d546c1d0c04df","data/international/six/db6-3111.idx":"552cea6807e5de8bdaaa7430e48429d2876663c1c13bf8a80438ec3fc11222db","data/international/six/db6-3120.000.chunk":"4849d82cf6c7978ef034fc98ef90951d041b740fd79510c67f902a447061a5d2","data/international/six/db6-3120.idx":"b5243e519c0a2fb6f513062094758a95306e9144a48c7a555a79ed1887780c86","data/international/six/db6-3201.000.chunk":"8d899206c06202a55395530df8eab92bbd29b879e1310c0b704bdd26d1131772","data/international/six/db6-3201.idx":"f9b27e6e4cee762ed97a568b8f32673b1bfe5c22a64d0c5b47b7a18f39749958","data/international/six/db6-3210.000.chunk":"f829ad406b3b2b1f45e1ac30bc0e43440ce2b808025c27d3bfff2f704edeffb4","data/international/six/db6-3210.idx":"ab335ebeed4f38b97ad72512c77a84aa1a7a5b5d63f00278d205e9386b07c3be","data/international/six/db6-4002.000.chunk":"1f810fcb514771696b8b44d264a552607de2068b0595e165ee1b337f691d2530","data/international/six/db6-4002.idx":"7813f455b5b0225444c95e3424c3f30414373dae0cc6065d9b3e7bd07c304c67","data/international/six/db6-4011.000.chunk":"4e9176f2619ef1c62e5cbc5cb1e3ca7a0c45035148e4fb526eefc1266e1e7e38","data/international/six/db6-4011.idx":"84ad8d66b8560bdcf7a999b867381f36d93ee7724cf89d5abda8020ff9658e2d","data/international/six/db6-4020.000.chunk":"c1b0099c29929bd38f39e02b805bfa395e8b058bc73b3710bf6112efc2a56413","data/international/six/db6-4020.idx":"ed46094e80d77e4f27bdae4fe5678903eac0d72ff11bfbf0addf2d84205b7acd","data/international/six/db6-4101.000.chunk":"84e48039e29063ac53bb53f825c070190c6d424d91e41b3c6b8a5712d99dc07a","data/international/six/db6-4101.idx":"5b89058e3c8e2d225b5f80560b27f8001e42d648b410a616165747f2dc2f2a1b","data/international/six/db6-4110.000.chunk":"271c7e822c1a87b1a01c50a0705040d4e22f6f1a6850ba2baf547b09019a9e9c","data/international/six/db6-4110.idx":"99d0d61cfa656d9c84500f41892c66fbe9d24ebd96b873e63d8b3a3315a0fa78","data/international/six/db6-5001.000.chunk":"abb0af9db0c77accee65b836150e0eeed6c24d79d1c552ff21c9f1825e3846cf","data/international/six/db6-5001.idx":"3316a344e28cc3115daf8ed5d0dbf7f66dc57cafc39262172026d7efea6aab76","data/international/six/db6-5010.000.chunk":"b842fd58f936f742947a84e4587ba88fbc656ffa85371e2e75f57b79af612c5b","data/international/six/db6-5010.idx":"bd8c7a7853c0528d92799fbad5a1344a1ae4e7478598c9c82171afccef8cee41","data/international/six/manifest.json":"6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c","data/international/tunstall-v2.bin":"92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9","dist/corpus-pack.json":"6d570320bbb75d898f29cf6fe6c93faef556899cfa0be0a6a33e8cdd862b4cb9","dist/worker-american.mjs":"950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175","dist/worker-international.mjs":"31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2","LICENSE":"e65a07d64c485ec9ffc4f7af9bd03035e365d9cf6bd3f12151f94139ffa86421","manifest.json":"909e9ec620b946f1e5612e47f837ae4aa2701252bebf2f32d08af756a8514385","node_modules/zod/LICENSE":"3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8","package-lock.json":"90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28","package.json":"d96d42f89bfa40bdb6ccf8f10adbec4cd59dff814e78d94bb136598b96631c66","scripts/browser-check.mjs":"ed17d67724ef0ea6af4142413b7b0130a6ee054d5653741ad6bd057b5c2443bb","scripts/browser-evidence-controls.mjs":"1355cbe8f4e12c0e8c76989abab0db6244436cbde77c893de833c329dd0fd38f","scripts/browser-evidence.mjs":"7c9a8c3c478f18535d42b49e48c815c59e82e8617de76560c473ee82a889586b","scripts/build.mjs":"37489e755e6ec672fd77b8b95a08afe50ce7e0c620554bccddb77ec46ec1f703","scripts/check.mjs":"d064d3b7b10d6186b0ecc7f3d9081d0c0936740c358ebc67ca98789be836ebc7","scripts/corpus-pack.mjs":"e5f4915f6bb14b3c6d437276091203557efff8df13caeee85970a45e38392cba","scripts/integrity.mjs":"a0049c52b21e0494a48e1b61012c1d8f3838e5fc939187e905f3a479d060d2f0","src/bot-worker.ts":"eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653","src/bots.ts":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","src/browser.ts":"1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81","src/chinook-corpus.ts":"d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8","src/chinook.ts":"97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a","src/core.ts":"516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b","src/draws.ts":"e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1","src/endgame.ts":"f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821","src/international-corpus.ts":"356c00f5c25642a9393e73e16306f0e02bb31e10818e0cdcfd99e26534b84a8a","src/international-indexes.ts":"fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625","src/international-search.ts":"67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee","src/international-six-data.ts":"08566eb9e7c6d7b324ac3a26f72edf86f8b22634361ec052d099bdab88e851d6","src/international-six-indexes.ts":"641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99","src/international.ts":"832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce","src/moves.ts":"d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1","src/play.template.html":"2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef","src/retrograde.ts":"62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03","src/schema.ts":"416cb6ea418a0c71eb31e4cf8452bb16fbf455d23bd338a0326a76c22e0670ee","src/types.ts":"079cd5dbb2e20329bf386c3f506c3009534d2afce98804a1a999a239fe1cb16a","THIRD-PARTY-LICENSES.txt":"872acef306116e979ae43e6f20df09f3b040019ebbbcb2070d229f0ab5fe52f6","tsconfig.json":"fcc94a699ca26c01b4f9c4422dd4e5ab6811420993f5af01d9c6659549cd257c"},"sourceSha256After":"b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb","htmlBytesAfter":1390846291,"checks":[{"profile":"desktop","name":"disk load, no external assets and reduced motion","pass":true},{"profile":"desktop","name":"American standard board and complete hot-seat turn","pass":true},{"profile":"desktop","name":"multi-jump draft leaves the actual position unchanged","pass":true},{"profile":"desktop","name":"American crown ends the capture turn","pass":true},{"profile":"desktop","name":"International full maximum capture and promotion","pass":true},{"profile":"desktop","name":"International crown transit stays a man","pass":true},{"profile":"desktop","name":"pause/resume and optional exact deadline forfeit","pass":true},{"profile":"desktop","name":"winner/results and explicit next table","pass":true},{"profile":"desktop","name":"manual Strong move uses local full-corpus worker and preserves legal core choice","pass":true},{"profile":"desktop","name":"International actual2–5 corpus worker prepares offline and preserves pending input","pass":true},{"profile":"desktop","name":"International actual six-piece Strong worker reads original local blocks","pass":true},{"profile":"desktop","name":"consecutive bot turns reuse the prepared worker and pause cancels it","pass":true},{"profile":"desktop","name":"pause cancels worker before it can apply an old move","pass":true},{"profile":"desktop","name":"names remain text and hostile original IDs have finite public results","pass":true},{"profile":"desktop","name":"viewport fits both boards and all controls","pass":true},{"profile":"phone","name":"disk load, no external assets and reduced motion","pass":true},{"profile":"phone","name":"American standard board and complete hot-seat turn","pass":true},{"profile":"phone","name":"multi-jump draft leaves the actual position unchanged","pass":true},{"profile":"phone","name":"American crown ends the capture turn","pass":true},{"profile":"phone","name":"International full maximum capture and promotion","pass":true},{"profile":"phone","name":"International crown transit stays a man","pass":true},{"profile":"phone","name":"pause/resume and optional exact deadline forfeit","pass":true},{"profile":"phone","name":"winner/results and explicit next table","pass":true},{"profile":"phone","name":"manual Strong move uses local full-corpus worker and preserves legal core choice","pass":true},{"profile":"phone","name":"International actual2–5 corpus worker prepares offline and preserves pending input","pass":true},{"profile":"phone","name":"International actual six-piece Strong worker reads original local blocks","pass":true},{"profile":"phone","name":"consecutive bot turns reuse the prepared worker and pause cancels it","pass":true},{"profile":"phone","name":"pause cancels worker before it can apply an old move","pass":true},{"profile":"phone","name":"names remain text and hostile original IDs have finite public results","pass":true},{"profile":"phone","name":"viewport fits both boards and all controls","pass":true}],"totalChecks":30}
+2026-10-09T01:38:55.3778042Z {"status":"PASS","stage":"browser","sourceCommit":"df123c797b226c479b50a998011c1ea6d0157391","elapsedSeconds":302.994662885}
+2026-10-09T01:38:55.3909678Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T01:38:55.3909993Z with:
+2026-10-09T01:38:55.3910299Z   name: G10-stage-browser-df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:38:55.3911058Z   path: jobs/G10-checkers/.work-stage-browser.stdout
+jobs/G10-checkers/.work/checks
+jobs/G10-checkers/.work/browser
+jobs/G10-checkers/.work/media
+
+2026-10-09T01:38:55.3911710Z   if-no-files-found: error
+2026-10-09T01:38:55.3911960Z   include-hidden-files: true
+2026-10-09T01:38:55.3912209Z   retention-days: 7
+2026-10-09T01:38:55.3912425Z   compression-level: 6
+2026-10-09T01:38:55.3912653Z   overwrite: false
+2026-10-09T01:38:55.3912856Z env:
+2026-10-09T01:38:55.3913115Z   G10_SOURCE_COMMIT: df123c797b226c479b50a998011c1ea6d0157391
+2026-10-09T01:38:55.3913444Z ##[endgroup]
+2026-10-09T01:38:55.5576953Z (node:4968) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T01:38:55.5577985Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T01:38:55.5715409Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-09T01:38:55.5719251Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers. This will be the root directory of the artifact
+2026-10-09T01:38:55.5720776Z With the provided path, there will be 18 files uploaded
+2026-10-09T01:38:55.5725239Z Artifact name is valid!
+2026-10-09T01:38:55.5726346Z Root directory input is valid!
+2026-10-09T01:38:55.9397124Z Beginning upload of artifact content to blob storage
+2026-10-09T01:38:56.2568053Z (node:4968) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T01:38:57.1264117Z Uploaded bytes 8388608
+2026-10-09T01:38:57.2118781Z Uploaded bytes 8846821
+2026-10-09T01:38:57.2852621Z Finished uploading artifact content to blob storage!
+2026-10-09T01:38:57.2853840Z SHA256 digest of uploaded artifact zip is 7d24263f7363d8db96f7c6f92a664396c304fdf51ab9934cc52924e3f26e414e
+2026-10-09T01:38:57.2856095Z Finalizing artifact upload
+2026-10-09T01:38:57.5268018Z Artifact G10-stage-browser-df123c797b226c479b50a998011c1ea6d0157391.zip successfully finalized. Artifact ID 11590031732
+2026-10-09T01:38:57.5269764Z Artifact G10-stage-browser-df123c797b226c479b50a998011c1ea6d0157391 has been successfully uploaded! Final size is 8846821 bytes. Artifact ID is 11590031732
+2026-10-09T01:38:57.5275297Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37870240814/artifacts/11590031732
+2026-10-09T01:38:57.5461770Z Post job cleanup.
+2026-10-09T01:38:57.6695260Z (node:4981) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T01:38:57.6696266Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T01:38:57.6699828Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a, not saving cache.
+2026-10-09T01:38:57.6841180Z Post job cleanup.
+2026-10-09T01:38:57.7666638Z [command]/usr/bin/git version
+2026-10-09T01:38:57.7709077Z git version 2.55.0
+2026-10-09T01:38:57.7749666Z Temporarily overriding HOME='/home/runner/work/_temp/56a7a1ed-8c44-456e-bb1a-3b16884d1304' before making global git config changes
+2026-10-09T01:38:57.7751397Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T01:38:57.7756204Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T01:38:57.7794492Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T01:38:57.7832419Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T01:38:57.8092800Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T01:38:57.8127295Z http.https://github.com/.extraheader
+2026-10-09T01:38:57.8145798Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T01:38:57.8183121Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T01:38:57.8478810Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T01:38:57.8538418Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T01:38:57.8999430Z Cleaning up orphan processes
+2026-10-09T01:38:57.9339051Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

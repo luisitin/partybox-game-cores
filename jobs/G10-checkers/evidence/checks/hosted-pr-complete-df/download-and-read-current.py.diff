@@ -1,0 +1,53 @@
+--- .work/hosted-8b4-final/download-and-read-current.py
++++ .work/hosted-df-final/download-and-read-current.py
+@@ -1,19 +1,19 @@
+ from pathlib import Path
+ from datetime import datetime, timezone
+ import hashlib,json,subprocess,zipfile,posixpath,time,sys,os
+-base=Path(".work/hosted-8b4-final")
++base=Path(".work/hosted-df-final")
+ def utc():return datetime.now(timezone.utc).isoformat()
+ def sha(path):
+  h=hashlib.sha256()
+  with Path(path).open("rb") as f:
+   while b:=f.read(1<<20):h.update(b)
+  return h.hexdigest()
+-for job in ["113610578603","113614730001"]:
++for job in ["113626410585","113626410633","113626410721","113631344599"]:
+  data=json.loads((base/("job-"+job+".raw.json")).read_text())
+  (base/("job-"+job+".log")).write_bytes(data["content"].encode())
+-ref=json.loads((base/"official-8b4-reference.private.json").read_text())
++ref=json.loads((base/"official-df-reference.private.json").read_text())
+ meta=ref["officialMetadata"]
+-assert meta["id"]==11588353316 and meta["expired"] is False
++assert meta["id"]==11590387621 and meta["expired"] is False
+ started=utc()
+ with (base/"download.stderr").open("wb") as err:
+  child=subprocess.Popen(["curl","--silent","--show-error","--fail","--location","--max-time","120","--output",str(base/"complete.zip"),ref["reference"]["file_uri"]["download_url"]],stderr=err)
+@@ -37,7 +37,7 @@
+    while b:=f.read(1<<20):total+=len(b)
+    assert total==x.file_size
+  z.extractall(base/"extracted")
+-report={"status":"PASS","startedAt":started,"closedAt":utc(),"sourceHead":"8b4bf64639d690247cb1929a0ad0ae25af11de70","workflowRunId":37865331876,"artifactId":meta["id"],"zipBytes":meta["size_in_bytes"],"zipSha256":sha(base/"complete.zip"),"safeUniqueMembers":len(entries),"uncompressedBytes":sum(x.file_size for x in entries),"allMemberCRC":"PASS","scope":"Actual current8b4 officialZIP all bytes/SHA/safeunique paths/CRC EOF; independent full reader remains separate"}
++report={"status":"PASS","startedAt":started,"closedAt":utc(),"sourceHead":"df123c797b226c479b50a998011c1ea6d0157391","workflowRunId":37870240814,"artifactId":meta["id"],"zipBytes":meta["size_in_bytes"],"zipSha256":sha(base/"complete.zip"),"safeUniqueMembers":len(entries),"uncompressedBytes":sum(x.file_size for x in entries),"allMemberCRC":"PASS","scope":"Actual currentdf officialZIP all bytes/SHA/safeunique paths/CRC EOF; independent full reader remains separate"}
+ (base/"zip-integrity.json").write_text(json.dumps(report,indent=2)+"\n")
+ print(json.dumps(report),flush=True)
+ assert subprocess.run([sys.executable,str(base/"audit-git-guards.py")]).returncode==0
+@@ -45,7 +45,7 @@
+ before=sha(node)
+ assert before=="8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+ started=utc();ts=time.monotonic();child=None;natural=False;code=None
+-(base/"reader-controller.json").write_text(json.dumps({"status":"RUNNING","startedAt":started,"readerSha256":sha(base/"validate-complete.mjs"),"head":"8b4bf64639d690247cb1929a0ad0ae25af11de70"},indent=2)+"\n")
++(base/"reader-controller.json").write_text(json.dumps({"status":"RUNNING","startedAt":started,"readerSha256":sha(base/"validate-complete.mjs"),"head":"df123c797b226c479b50a998011c1ea6d0157391"},indent=2)+"\n")
+ try:
+  with (base/"independent-complete.stdout").open("wb") as out,(base/"independent-complete.stderr").open("wb") as err:
+   child=subprocess.Popen([str(node),str(base/"validate-complete.mjs")],stdout=out,stderr=err,start_new_session=True)
+@@ -56,7 +56,7 @@
+   if child.poll() is None:
+    os.killpg(child.pid,15)
+   child.wait()
+- report={"status":"CLOSED","startedAt":started,"closedAt":utc(),"exitCode":code,"natural":natural,"actualWallSeconds":time.monotonic()-ts,"readerSha256":sha(base/"validate-complete.mjs"),"nodeBeforeSha256":before,"nodeAfterSha256":sha(node),"scope":"Exactcurrent8b4 independent full artifact acceptance reader; all native source/raw games/media and physical5ed baseline checks; no candidate adoption"}
++ report={"status":"CLOSED","startedAt":started,"closedAt":utc(),"exitCode":code,"natural":natural,"actualWallSeconds":time.monotonic()-ts,"readerSha256":sha(base/"validate-complete.mjs"),"nodeBeforeSha256":before,"nodeAfterSha256":sha(node),"scope":"Exactcurrentdf independent full artifact acceptance reader; all native source/raw games/media and physicalb4 current page checks; no candidate adoption"}
+  (base/"reader-controller.json").write_text(json.dumps(report,indent=2)+"\n");print(json.dumps(report),flush=True)
+ assert code==0
+ 

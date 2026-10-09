@@ -1,0 +1,36 @@
+{
+  "status": "CLOSED_PASS",
+  "startedAt": "2026-10-09T01:55:30.026389+00:00",
+  "closedAt": "2026-10-09T01:56:25.391453+00:00",
+  "children": [
+    {
+      "name": "git-guards",
+      "startedAt": "2026-10-09T01:55:30.957782+00:00",
+      "status": "CLOSED",
+      "pid": 244908,
+      "natural": true,
+      "closedAt": "2026-10-09T01:55:52.009208+00:00",
+      "exitCode": 0
+    },
+    {
+      "name": "browser",
+      "startedAt": "2026-10-09T01:55:52.009268+00:00",
+      "status": "CLOSED",
+      "pid": 245157,
+      "natural": true,
+      "closedAt": "2026-10-09T01:56:23.814951+00:00",
+      "exitCode": 0
+    }
+  ],
+  "nodeBeforeSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "nodeAfterSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "physicalBeforeAfterIdentity": {
+    "dev": 27,
+    "ino": 1470943,
+    "bytes": 1390846291,
+    "mtimeNs": 1791508858429418818,
+    "ctimeNs": 1791508858433418625
+  },
+  "readerSha256": "ce52881ddbc0c2d4903e47538f9511b0231692d2406b80475ee8ee49edf46609",
+  "scope": "Finite independent actual current browser proof; no local native timing trial and no inferred full completion"
+}
