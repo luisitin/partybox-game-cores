@@ -17,7 +17,7 @@ private hand; hands turn face up only after a round ends.
 - `core.ts`: the game. `game` conforms to `contract/contract.ts`.
 - `manifest.json`: id, settings and limits. `RULES.md`: rules and conventions.
 - `reference.ts`: independent endgame solver that checks the core evaluator.
-- `ui.ts`, `shell.html`, `build.ts`: the standalone page, generated into `play.html`.
+- `ui.ts`, `strong-bot.ts`, `strong-worker.ts`, `shell.html`, `build.ts`: page sources.
 - `fixtures/{play,round-end,done}.json`: one full state per phase.
 - `THIRD-PARTY-LICENSES.txt`: the Zod notice for the bundled standalone page.
 
@@ -52,8 +52,8 @@ Single steps:
 
 ## Status
 
-PR1 is draft for renewed review of current0.2.8/UI changes. Canonical327
-full hosted CI passed; local55.73/51.58fps failures retain UNKNOWN cause.
-Older browser-report.json is historical; current raw/log/capture proof
-belongs in the new CI artifact. NEXT.md binds outstanding delivery checks.
-No gate is weakened and no renewed player-visible gain is yet measured.
+PR1 is draft; canonical8c full CI/1,044-check proof passed (ARTIFACT-AUDIT.md).
+This audit branch's Worker prototype runtime/FPS/full CI/gain are UNRUN.
+Strict build/static/six controls pass; these are not native Worker proof.
+Legacy55.73/51.58fps failures retain UNKNOWN cause; older media are historical.
+NEXT.md binds remaining checks; renewed KEEP0 and original gates remain.

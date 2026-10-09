@@ -71,3 +71,18 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
  23:55:44 wall-clock checkpoint. Actual closure/push dates remain truthful.
 - Worker candidates may send only exported public Observation plus exact
   seed/request identity; never opponent hands/stock order or fake-clock detection.
+
+## Pending asynchronous UI candidate
+
+- Own audit branch can preserve an incomplete Worker checkpoint while
+  canonical8c/PR1 stay unchanged/draft. Old green belongs to exact8c bytes.
+- Six fake-port/timer controls and static review cannot establish actual
+  Worker startup, policy/runtime equivalence, FPS or player gain; these remain
+  explicit pending checks. No test/fake-clock detection exists in production.
+- First controller lifecycle/receipt gap was found before launch; old9067 and
+  READY010c were withheld, not executed. Child cleanup/guard-failure labeling
+  are repaired before any root-exclusive native trial.
+- Runtime proof uses exact actual disk HTML through setContent. It does not
+  prove disk double-click navigation or physical-phone hardware.
+- A current Worker checkpoint needs genuine new capture/current full CI and
+  renewed KEEP. No older media or0.2.7 no-gain rounds can certify changed UI.

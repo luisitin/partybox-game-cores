@@ -402,3 +402,36 @@ metadata repair. Its own full CI is UNRUN; accepted proof is explicitly for
 8c. Player/core/UI/page are unchanged, renewed KEEP rounds/gains remain0.
 Conservative23:55:44 wall-clock checkpoint was exceeded during coordinator
 HOLD23:51:23–23:57:29.128565; no owned local process was paused or active.
+
+## Pending Strong-worker candidate checks
+
+- First `node --test strong-bot-checks.ts && npm run check && node build.ts
+  --check && git diff --check`: FAIL before assertions with
+  ERR_UNSUPPORTED_TYPESCRIPT_SYNTAX (constructor parameter property under
+  Node24 strip-only mode). Esbuild compile had passed. Explicit class fields
+  repair this without flags or environment detection; original failure/source
+  remain in .work/queue-audit-20261008/worker-controls-preparation.json.
+- `node --test strong-bot-checks.ts && npm run check && node build.ts &&
+  node build.ts --check && git diff --check`: PASS/naturalexit0. Six controlled
+  transport tests check own/public-only request, exact legal action, stale
+  reply/cancel/rematch, unsupported/error/messageerror/illegal replies and
+  simulated exact10s watchdog. Controlled ports/timers are not native proof.
+- Independent actual esbuild CLI/API same bundle: PASS,459,592B identical
+  worker output/SHA1cd6cc9d176f48b3c357759b7243e4c117cfccadc20b65a5fa38298372100fb0;
+  actual CLI binary SHA bab29b2ca7a9e89b67cf720b77b2d743f9f31f5cf0d5bd74ee8c8de30ced7014.
+- `npm run check && node checksums.ts && node checksums.ts --check && node
+  build.ts --check && git diff --check`: PASS/naturalexit0; current standalone
+ 1,032,578B/SHA02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0.
+- Static exact-source review CLOSED00:05:52.878739: no observed policy/privacy/
+  lifecycle counterexample. Actual runtime remains required. Later finite
+  static review found prelaunch controller cleanup/PASS-label gaps; repaired
+  lifecycle/receipt handling and refreshed READY before any native trial.
+- `python -m py_compile ../../.work/queue-audit-20261008/worker-native-first-controller.py
+  && npm run check && node build.ts --check && node checksums.ts --check &&
+  git diff --check`: PASS/naturalexit0 observed00:22:40UTC.
+
+Real Worker/offline startup,16 output/RNG replays, actual CSP/runtime/watchdog
+fallback, pending end/rematch, original300-native-frame gates, current capture,
+full candidate npm/CI and measurable player gain are UNRUN/UNMEASURED.
+Native first-trial controller has never launched. Canonical8c accepted proof
+remains distinct; this incomplete candidate checkpoint does not inherit it.

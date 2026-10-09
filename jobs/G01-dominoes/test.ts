@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {createRng} from '../../contract/rng.ts';
+import './strong-bot-checks.ts';
 import type {State,Input} from './core.ts';
 const C:typeof import('./core.ts')=await import(process.env.CORE_PATH??'./core.ts');
 const {game,init,reduce,apply,legal,tile,pips,scoreRound,tvView,controllerView,results,allTiles,observe,choose}=C;

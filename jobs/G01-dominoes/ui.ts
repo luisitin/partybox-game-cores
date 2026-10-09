@@ -1,7 +1,10 @@
 // Hot-seat play page. Renders only from the core's views (plus the local seat roster);
 // every motion is transform/opacity and has an instant reduced-motion path.
-import {game,init,reduce,controllerView,tvView,tile,type State,type Input} from './core.ts';
+import {game,init,reduce,controllerView,tvView,tile,observe,type State,type Input} from './core.ts';
 import {createRng} from '../../contract/rng.ts';
+import {StrongBot} from './strong-bot.ts';
+declare const INLINE_STRONG_BOT:string;
+const strongBot=new StrongBot(INLINE_STRONG_BOT);
 
 type Skill='human'|'easy'|'normal'|'sharp';
 type ViewMode='tv'|'phone';
@@ -98,6 +101,7 @@ const sideName=(seat:number)=>partners()?`${TEAMS[seat%2]!.name}`:label(seat);
 const sideMembers=(seat:number)=>partners()?`${label(seat%2)} & ${label(seat%2+2)}`:label(seat);
 
 function startMatch(seed:number){
+ strongBot.stop();
  const n=Number(checked('players'));
  modes=[];names=[];for(let i=0;i<n;i++){modes.push($<HTMLSelectElement>(`seat-${i}`).value as Skill);names.push(($<HTMLInputElement>(`name-${i}`).value.trim()||`Player ${i+1}`).slice(0,14));}
  const settings={mode:checked('mode'),deal:$<HTMLSelectElement>('deal').value,partners:$<HTMLInputElement>('partners').checked,target:checked('target'),reserve:$<HTMLSelectElement>('reserve').value,opening:$<HTMLSelectElement>('opening').value,blocked:$<HTMLSelectElement>('blocked').value,teamPoints:$<HTMLSelectElement>('teamPoints').value};
@@ -156,7 +160,8 @@ function transition(b:State,a:State,from:Rect|null){
 // An all-computer table moves on a little before the core's 5 s round-end deadline; people get the full countdown.
 const roundEndDue=(s:State)=>modes.every(m=>m!=='human')?s.phase.startedAt+4600:s.phase.deadline!;
 function schedule(){
- if(pending!==null)clearTimeout(pending);pending=null;if(!state||state.phase.id==='done')return;
+ strongBot.cancel();if(pending!==null)clearTimeout(pending);pending=null;
+ if(!state||state.phase.id==='done'||state.phase.paused){strongBot.stop();return;}
  const s=state,captured=s.phase.startedAt;
  if(s.phase.id==='round-end'){
   const bots=modes.every(m=>m!=='human');
@@ -164,7 +169,13 @@ function schedule(){
   return;
  }
  const skill=modes[s.turn]!;
- if(skill!=='human')pending=setTimeout(()=>{if(!state||state.phase.startedAt!==captured)return;const i=game.bot.sampleInput(state,state.seats[state.turn]!,createRng(matchSeed+botStep++),skill);if(i)send(i);},s.board.length===0?1300:820);
+ if(skill!=='human')pending=setTimeout(()=>{
+  const current=()=>state===s&&!s.phase.paused&&s.phase.id==='play';if(!current())return;
+  const seed=matchSeed+botStep++,seat=s.turn,id=s.seats[seat]!;
+  const fallback=()=>{if(!current())return;const i=game.bot.sampleInput(s,id,createRng(seed),skill);if(i)sendAs(seat,i);};
+  if(skill==='sharp'){const observation=observe(s,id);if(observation)strongBot.request(observation,seed,current,i=>sendAs(seat,i),fallback);}
+  else fallback();
+ },s.board.length===0?1300:820);
  else pending=setTimeout(()=>fire(captured),Math.max(0,s.phase.deadline!-Date.now()));
 }
 
@@ -508,7 +519,7 @@ function showWinner(){
  inner.append(podium);
  const btns=h('div','btns'),again=h('button','btn primary','Rematch'),setup=h('button','btn second','New table');again.type=setup.type='button';
  again.addEventListener('click',()=>{box.hidden=true;startMatch(matchSeed+1);});
- setup.addEventListener('click',()=>{box.hidden=true;state=null;if(pending!==null)clearTimeout(pending);$('table').hidden=true;$('end').hidden=true;$('setup').hidden=false;$('roundPill').textContent=view==='tv'?'2–4 players · offline':'2–4 players';});
+ setup.addEventListener('click',()=>{strongBot.stop();box.hidden=true;state=null;if(pending!==null)clearTimeout(pending);$('table').hidden=true;$('end').hidden=true;$('setup').hidden=false;$('roundPill').textContent=view==='tv'?'2–4 players · offline':'2–4 players';});
  btns.append(again,setup);inner.append(btns);box.append(inner);box.hidden=false;cue('win');
  if(moving()){
   const anims:Animation[]=[];

@@ -25,8 +25,10 @@ verifies actual merge46f8ead5 raw Git parents and all source bytes; it does
 not trust an empty parent list. Future CI receipt uses raw Git headers too.
 Reproduce with verify-ci-artifact.py; ARTIFACT-AUDIT.md gives exact command.
 The archived proof belongs to accepted8c, not automatically to this later
-verifier/docs audit head. Original core/UI/page and original browser gates
-remain unchanged; this audit checkpoint is not a player gain or KEEP round.
+verifier/docs audit head. The earlier e034 proof-audit checkpoint kept core/UI/page equal327. This
+later pending Worker checkpoint changes UI scheduling/build/standalone bytes,
+not core policy or the original browser.ts sampler/gates. Its own real Worker,
+native frames, full CI and player effect are UNRUN. No player gain/KEEP round.
 
 Old completed0.2.7/04287939 and R21–23 are historical. Later0.2.8 changed
 the full human-idle cycle/round-end reveal and rebuilt UI; preserve these.
@@ -37,8 +39,9 @@ phone NOT REACHED. Current hosted pass does not erase those failures.
 Renewed KEEP rounds/gains remain0. Start genuine round25 with REVIEW.md's
 five current weaknesses. Strong64-world UI-thread search is a concrete
 responsiveness hypothesis, not an attributed cause of earlier failures.
-No worker prototype is authored yet. Use exported observe→choose plus the
-same UI seed/RNG: transmit own hand/public fields only; retain policy/work,
+A Worker candidate is authored on this audit branch but actual runtime and
+player gain are UNRUN/UNMEASURED. Exported observe→choose plus the
+same UI seed/RNG transmit own hand/public fields only and retain policy/work,
 stale-state/pause/end/rematch guards and genuine unsupported/error fallback.
 Normal/easy may remain synchronous as product behaviour. NEVER detect fake
 clock/test environments or add acceptance-only branches. Measure actual
@@ -54,3 +57,39 @@ After three consecutive meaningful no-player-gain rounds, fresh-read main
 and all matching refs before claiming lowest eligible job under six-hour rules.
 Managed disk navigation/physical phone remain unverified; exact-byte
 setContent and emulation are the actual available checks.
+
+## Pending Worker checkpoint, 2026-10-09 UTC
+
+StrongBot sends only sanitized Observation/seed/request ID to an inline Blob
+worker executing unchanged choose(sharp)/createRng/64-world search. Original
+normal/easy behaviour stays synchronous. Current-state/ID/schema/legal guards
+drop stale/illegal replies; pause/end/rematch/new-table cancel pending work.
+Genuine unsupported/error/messageerror/10s-watchdog fallback uses same seed
+and original policy. Six controlled Node port/timer tests PASS; these are not
+real-worker/FPS proof. Strict TS, byte-exact repeated build, checksums and
+whitespace PASS. HTML1,032,578B, SHA02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0.
+Static review found no policy/privacy/lifecycle counterexample. First Node
+controls failed before assertions on strip-only constructor syntax; explicit
+fields fixed it, failure/source are preserved privately.
+
+Actual worker-browser-check.ts is authored/strict-compiled but NOT RUN. It
+checks exact real UI Blob/output/RNG,16 nontrivial2–4 Draw/Block/partners
+observations, real CSP/runtime/watchdog faults and pending end/rematch.
+Fault Blob substitutions/delays are explicit diagnostic fixtures, never
+production/test-environment branches or FPS acceptance. setContent is the
+actual navigation; no file:// proof. npm test retains every original command
+and adds this real-worker check before unchanged native browser.ts.
+
+Static review rejected first controller9067 before any native launch: its
+postspawn receipt write could bypass child cleanup. Corrected controller
+e24b wraps spawn/write/wait in finally, reaps actual child/owned group before
+CLOSED/FAIL; harness saves FAIL on any final close/source/tool guard failure.
+Old READY010c/controller9067 NEVER RAN. Fresh READY/controller must match
+actual checkpoint/source bytes before root-exclusive first trial. Root's
+active G10 receiver must naturally close; do not pause/STOP it. Protect
+conservative00:29:21 source checkpoint with honest pending-runtime status.
+Next: first real-worker functional trial, once-only original native gates
+with a genuine new source-bound capture, substantive paired responsiveness
+measurement, full current CI/artifact acceptance, then genuine KEEP25+.
+Current accepted full CI/artifact still belongs to canonical8c only; original
+PR1 remains draft. Renewed KEEP rounds/gains remain0. Do not inherit old stop.
