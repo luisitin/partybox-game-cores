@@ -1,0 +1,28 @@
+{
+  "before": {
+    "type": "play",
+    "tile": 1,
+    "side": "left"
+  },
+  "after": {
+    "type": "play",
+    "tile": 2,
+    "side": "right"
+  },
+  "production": {
+    "type": "play",
+    "tile": 2,
+    "side": "right"
+  },
+  "beforePhase": "done",
+  "afterPhase": "round-end",
+  "rootScores": [
+    0,
+    0,
+    99
+  ],
+  "target": 100,
+  "beforeOutcome": "p2 (third seat) plays its last tile for 4 points and reaches 103: match lost",
+  "afterOutcome": "p1 (second seat) plays its last tile for 5 points and reaches 5: match continues",
+  "publicConstraints": "missing-suit evidence uniquely assigns remaining opponents tiles; no stock remains"
+}

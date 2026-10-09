@@ -1,0 +1,68 @@
+name: G01 Dominoes
+on:
+  pull_request:
+    paths:
+      - 'jobs/G01-dominoes/**'
+      - 'contract/**'
+      - '.github/workflows/G01.yml'
+permissions:
+  contents: read
+concurrency:
+  group: G01-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G01-dominoes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: jobs/G01-dominoes/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npm install --prefix ../../contract --ignore-scripts --no-package-lock --no-audit --no-fund
+      - run: python -m pip install --require-hashes --target .baseline -r baseline-requirements.txt
+      - name: Install capture encoder
+        run: |
+          sudo timeout 180s apt-get update -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 || echo "::warning::Index refresh did not finish; trying existing complete package indexes"
+          sudo timeout 300s apt-get install -y --no-install-recommends -o Acquire::Retries=1 -o Acquire::http::Timeout=20 -o Acquire::https::Timeout=20 ffmpeg
+          ffmpeg -version
+      - run: npx playwright install --with-deps chromium
+      - name: Verify and expose failures in check annotations
+        shell: bash
+        run: |
+          python ci-evidence.py start
+          set +e
+          npm test > "$RUNNER_TEMP/g01-test.log" 2>&1
+          test_exit=$?
+          cat "$RUNNER_TEMP/g01-test.log"
+          python ci-evidence.py finish "$test_exit" "$RUNNER_TEMP/g01-test.log"
+          evidence_exit=$?
+          if [ "$test_exit" -ne 0 ]; then
+            python - "$RUNNER_TEMP/g01-test.log" <<'PYCODE'
+          import pathlib, sys
+          tail = "\n".join(pathlib.Path(sys.argv[1]).read_text().splitlines()[-100:])
+          escaped = tail.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+          print("::error title=G01 verification failure::" + escaped)
+          PYCODE
+          fi
+          if [ "$evidence_exit" -ne 0 ]; then
+            exit "$evidence_exit"
+          fi
+          exit "$test_exit"
+        env:
+          BASELINE_PYTHONPATH: ${{ github.workspace }}/jobs/G01-dominoes/.baseline
+      - name: Retain full current evidence, including failures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G01-current-evidence-${{ github.run_id }}-${{ github.run_attempt }}
+          path: jobs/G01-dominoes/.tmp/g01-evidence/
+          include-hidden-files: true
+          if-no-files-found: error
+          retention-days: 30
