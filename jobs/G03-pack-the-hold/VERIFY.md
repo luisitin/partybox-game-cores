@@ -740,3 +740,17 @@ all36 real PNGs/raw WebM/profiles/receipts remain preserved, never labelled PASS
 Original26 core tests+25 mutation kills independently naturally close14:47:04.189790Z,
 2495 unchanged inputs/319,053,824B<512MiB/no signals. Draft21 exists but hosted full
 not started until actual metadata; no current clip/FPS/KEEP acceptance is inferred.
+
+2026-10-09 deferred encoding delivery fix: same original36 frames/flags encoded
+only after actual prior14 browser/encoder PID identities were absent. Full37PNG
+CRC/inflate/39 inputEOF/native36 decoded frames identical,449,019,904B<512MiB,
+all3669 guards/natural15:05:46.681009Z/no signals. Actual4 syntax/grant tests pass;
+first observer wrong '# tests4' failed; saved referee15:16:04 retained all2491,
+originalFAILED/no rerun. Source now waits browserClosed after all original UI
+controls, then optional nonce/PID/pageSHA outside ownership witness before exact
+original encoder. Original full900both/FPS/clock/36frame/schema/workflow unchanged.
+Current16 PENDING/no browser grant, old15 partial raw/profile unchanged. Actual
+faileda049 whole artifact11625115294/192808B/62ae3cec...+8fullCRC/log92524chars,
+original28+1800 native/full36VP9/unchangedCLI pass as subchecks; overall ENOENT15
+FAIL and skippedbenchmark/finalcontrols retained, no wholegreen/KEEP qualification.
+Earlier5e3 source70.888463s hard/370.888463s early misses retained exactly.

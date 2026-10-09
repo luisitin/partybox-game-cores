@@ -1,85 +1,70 @@
-# G03 initial presence follow-up — current handoff
-Owner codex-pack-followup-20261009; job/G03-pack-the-hold-followup-20261009.
-Claim main05c80d starts the new branch; original Ready PR3/41c5dbd and historical
-R10–12 stop remain untouched. Canonical source copy8085df9f matched every Git
-blob and physical byte. Every original research/check/delivery/KEEP rule applies.
+# G03 follow-up current handoff
+Owner codex-pack-followup-20261009; branch job/G03-pack-the-hold-followup-20261009;
+Draft PR21. Original Ready PR3/41c5dbd and all old stopped rounds remain untouched.
+Lawful new main claim05c80d and authenticated physical source copy8085df9 retained.
+Actual normal history repaira049 has parents5e3ed7+41c5 and every prior current tree
+byte/117 physical stats equal; REST mergeable=true and original PR workflow started.
 
-Current product fix was published b141979b40d2a9c72261c783deeccd5091a3e9d1 at
-14:00:56.695653Z/readback14:00:57.261273Z. From claim13:33:01.795599Z:
-1674.900054s, hard30 PASS, early25 MISSED174.900054s. No earlier time is claimed.
-Own-row refresh mainbc4d7ded parent185bbfa actual14:06:07.629327Z/readback
-14:06:08.377699Z, all foreign rows/tree equal/G10 BLOCKED retained/lease released.
+Product: initially disconnected seats are skipped with the full original timer;
+all unavailable enters inspection. Original generator/solver/tiers/data/bots/RNG/
+scoring/contract/page are unchanged by this delivery scheduling checkpoint.
+Permanent508 roster masks/reconnection/26 core tests and25 actual mutations pass.
+Full1003 old/fixed benign games/12167 events/118392 views exactly match; independent
+reader consumed519794971 decompressed bytes with complete CRC/EOF and original seeds.
 
-Fix: first connected seat can pack immediately with the full original timer;
-all unavailable enters inspection. Permanent508 masks/reconnection/13 focused
-checks pass. Actual old42 states/2 negative failures and fixed42/2 passes retained.
-Generator, solver, tiers, data, strategy, RNG, scoring and contract unchanged.
-All1003 complete benign old/new games exactly match:12167 events and bots,
-118392 views, states/RNG/results/max4390B. Independent Python referee actually
-read519794971 decompressed bytes and all1003 separately derived original-mix
-ordered seeds to gzip EOF/CRC; natural14:15:23.908299Z/all2478 source/runtime/self
-guards unchanged/peak38080512B/no signals/no game rerun or browser.
+Failures14 and15 remain visible and unqualified. Managed file14 failed before page
+load/zero frames/all3036+28 guards equal/no forced signals/empty final descendants.
+Supported HTTP15 exceeded1GiB sampled RSS by90,148,864B while encoder+browser overlapped;
+nine forcedSIGTERM/all3316+28 guards/old profile and policies unchanged/descendants[].
+Original15 report stays running with no finish or completed UI controls. Every raw
+frame/video/report/profile/grant/resource receipt is retained, not rewritten PASS.
+Its original scope prose described intended whole decode; actual independent saved
+whole37PNG/full36video decode occurred later at15:05:46.681009Z, not during failed15.
 
-Actual single approved capture-only14 failed14:15:57.066954Z in7.439s after
-file navigation returned net::ERR_BLOCKED_BY_ADMINISTRATOR. Zero native frame
-samples and zero PNGs. All3036 source/runtime/self/installed and28 original
-guards stayed exact; actual final owned descendants empty/no forced signals.
-The failed wrapper flag naturalClosure=false denotes failed proof, not a leaked
-process. Child numerical exit was not separately archived; required zero-exit
-predicate failed, raw uncaught error/stdout/stderr and wrapper EXIT1 preserved.
-Original report moved byte-for-byte to historical/capture-14-managed-file-policy-
-failure.json.txt and whole proof archive; original browser profile remains intact.
-Every media capture is required to pass schema, so failed raw belongs in history;
-no validation is weakened. Old capture13 is preserved historical source evidence.
+Actual saved-only control naturally CLOSED_PASS15:05:46.681009Z/all3669 full guards:
+all37 original1280x900 PNG CRC/inflate; all39 physical input EOF/stat unchanged;
+same original ffmpeg flags encoded identical36 full native decoded frames AFTER all
+14 original PID/start identities were absent. Peak449,019,904B<512MiB/no signals/
+empty descendants/14.162s whole. Component proof does not qualify original UI/report.
+Private syntax/4 genuine grants tests actually EXIT0/pass4/fail0/all2491 guards;
+first observer then failed wrong TAP literal. Original FAILED retained; independent
+saved-only referee15:16:04.696895Z validates actual outputs/10old+9new corruptions,
+without rerun, rewriting timestamps or broad flags.
 
-Current capture references are15, not failed14 or stale13. Capture15 is NOT run
-or accepted. Next: exact isolated new-head worktree for supported --http
---capture-only --record --milestone15; source/binary/full28/PNG/video guards,
-finite original120/240s and1GiB RSS proposal/root review and exact grant first.
-HTTP clip is explicitly partial transport proof. Hosted original real file://
-and1800 native RAF intervals with >=59fps/p95<=18ms remain mandatory unchanged.
-No unchanged local FPS retry or policy bypass. Preserve all prior profiles/raws.
+Current source now defers exact original encoder until EVERY UI control finishes,
+socket/browser/server close and browserClosed resolves. Optional separate nonce,
+actual-browserPID/pageSHA witness requires outside controller to verify owned-only
+Node and original PID/start closures before encoding grant. BrowserClosed alone is
+not an all-descendants assertion. Encoder/barrier failure stays failed and final
+source/report guards are always written. Original frame-grant functions and entire
+900-interval measure function,36 screenshots/native RAF/game clock, original codec/
+flags/dimensions/FPS thresholds/schema/validators/workflow remain unchanged.
+Root statically reviewed exact source diff15:15:46Z; no new browser grant exists.
 
-Material failure/referee helpers, full guards, exact grant and every receipt in
-historical/followup-capture14-failure-benign-referee-20261009.zip; complete CRC
-and physical member comparison. Existing initial presence archive remains intact.
-Full current original npm test/workflow/whole genuine official artifact/logs,
-actual public HTML EOF and current15 clip are pending. No supplemental PR yet.
-New completed qualified KEEP rounds0/no-gain streak0; initial repair pre-green.
-After genuinely green: enumerate five weaknesses, fix worst, measure/log/push
-until THREE NEW consecutive no-player-gain rounds; old stopped branch is history.
-No source-after-Ready commit/merge. Keep every main refresh serialized/foreign
-rows immutable. Re-verify when web works: human calibration remains unmeasured;
-prior blocked references unread; CPU4x phone is emulation, not physical hardware.
-Unique G10 full licensed HTML/data/deps and literal BLOCKED row remain untouched.
+Original exacta049 run37948355018 failed solely ENOENT missingcapture15. Actual full
+artifact11625115294/192808B/SHA62ae3cec2e817232c0e28e01ef818bd900f60766c41c62b506f56923765dd9ea
+and8 fullCRC/physical members/entire92524char log genuinely read15:18:38.287671Z.
+All28 current Gitblob/physical hashes; actual true disk/fullUI/all1800 native intervals
+and unchanged original validator/full36 native VP9 decode pass as SUBCHECKS ONLY:
+TV60.002400096fps/p95=16.8; CPU4xphone60.002800131fps/p95=16.7. Benchmark/final
+corruptions skipped; whole original remains FAILED. No full-green/KEEP acceptance.
 
-## Latest material checkpoint: actual HTTP15 resource failure and pure suite
-Supported isolated HTTP15 ran once on b014 under exact root grant. At14:41:12.690118Z
-owned sampled RSS1,163,890,688B exceeded unchanged1GiB by90,148,864B while native
-ffmpeg401,666,048B overlapped Chromium/Node. Actual whole failure closed14:41:23.874337Z
-in24.556s<=240, all3316 plus original28/old14 profile/policies unchanged, nine
-forced SIGTERM receipts and actual final descendants[] retained. No cap relaxation
-or unchanged browser/FPS retry. All36 original PNGs and native WebM exist; original
-report still running/finishedAt=null and functional checks incomplete. These are
-failed-protocol raw components, not an accepted current clip. Full EOF/independent
-component decode is pending. Every raw byte is archived and physical profiles kept.
-Current15 references remain pending; no fabricated successful report or old13 reuse.
+Current capture references16. Old failed15 and historical13 are not reused. NEXT:
+prepare isolated exact-new-head current16 worktree/finite owned-subtree controller,
+reap only exited owned descendants excluding mainNode, nonce-bound actual-onlyNode
+pre-encoder witness, full currentsource/runtime/self/oldfailure guards/resource gate,
+unchanged1GiB/120child/240whole; root static review+exactgrant BEFORE any browser.
+Then genuine supported HTTP16 full controls/28 guards/all36 independentPNG/videoEOF;
+hosted original true file plus1800 native intervals>=59fps/p95<=18 remain mandatory.
+No local FPS retry, cap relaxation, policy bypass or fake clocks.
 
-Original required pure26 tests and25 real mutant kills naturally CLOSED_PASS
-14:47:04.189790Z, all2495 source/runtime/self inputs unchanged, peak319053824B<512MiB,
-all groups[]/no signals. Includes original1003 property/7000 roster games/both2000
-bot leagues/10k independent solver/304912 malformed/17119 baseline transitions.
-Supplemental Draft PR21 created14:48:24Z at b014 against protected Ready3/41c5;
-body/head/draft/open readback exact. Full original hosted run NOT STARTED until
-actual workflow metadata confirms. Normalized mergeable=false is provisional;
-read actual REST state/base rules, then if real source-copy ancestry conflict,
-perform isolated normal ancestry merge with exact current tree preserved, original
-Ready3 ref untouched, no force/no PR merge and all foreign/core/page/gates guards.
-
-Next: complete saved-only whole36 raw PNG/video referee; independently encode the
-same exact full frames with original flags AFTER all browser descendants closed,
-bounded untimed resource/control evidence. Propose concrete deferred encoder/source
-change for root static review before any further local browser. Original disk-open,
-1800 native intervals and>=59fps/p95<=18ms remain mandatory unchanged. Open Draft
-permits required original PR-only workflow, not Ready/KEEP qualification.
-New qualified KEEP rounds0/no-gain streak0. Preserve unique G10 and all failures.
+New qualified KEEP rounds0/no-gain streak0. After exact integrated original full
+CI/current official whole artifact/logs/publicHTML EOF/current16 genuinely qualify,
+re-read originals, rank five weaknesses, fix worst/measure/log/push until THREE NEW
+consecutive honest no-player gains. Preserve earlier Ready3 stop evidence.
+5e3 publication actual14:51:58.290180Z missed early370.888463s/hard70.888463s;
+a049 actual14:59:41.253270Z is the material normal history checkpoint. All actual
+misses retained. New source publication receipt provides current deadlines.
+Own main refresh serialized; latest9c999f row15:01:38Z/allforeign rows/tree unchanged.
+Unique licensed G10 full HTML/data/proofs and literal G10 BLOCKED remain untouched.
+Re-verify human solve rates/real phone hardware when available; neither is measured.

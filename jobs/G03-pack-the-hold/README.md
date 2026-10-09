@@ -35,10 +35,10 @@ native RAF timestamps and outliers remain unchanged. CPU4x is emulation.
 
 Current separate capture and its checks:
 
-    node scripts/verify-visual.mjs --capture-report media/capture-15-report.json
+    node scripts/verify-visual.mjs --capture-report media/capture-16-report.json
 
 Record a new unused milestone with the browser tool's --capture-only --record
---milestone 15 flags. Current15 is pending; failed14 is retained. Its encoded10fps video is separate from rendering proof.
+--milestone 16 flags. Current16 is pending; failed14 and15 are retained. Its encoded10fps video is separate from rendering proof.
 Historical9362 evidence uses node scripts/verify-historical.mjs; current checks
 require current sources. VERIFY.md records failures and successful hosted gates.
 NEXT.md names the remaining exact-head delivery check and resume point.

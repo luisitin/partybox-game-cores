@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import { createServer } from 'node:http';
 import { createHash } from 'node:crypto';
 import { readdirSync } from 'node:fs';
-import { awaitFrameGrant, closeFrameWindow } from './frame-coordination.mjs';
+import { awaitFrameGrant, closeFrameWindow, awaitCaptureEncoderGrant, closeCaptureEncoderWindow } from './frame-coordination.mjs';
 
 const output = process.argv.includes('--record') ? 'media' : '.tmp/visual';
 const captureOnly = process.argv.includes('--capture-only');
@@ -43,6 +43,9 @@ class Cdp {
 }
 let socket;
 let localServer;
+let uiChecksComplete = false;
+let encoderWindow = null;
+const frameDir = resolve('.tmp/capture');
 try {
   for (let n = 0; n < 450 && !existsSync(`${userData}/DevToolsActivePort`); n++) { if (browser.exitCode !== null) throw Error(`Chrome exited ${browser.exitCode}: ${stderr.slice(0, 1500)}`); await delay(100); }
   if (!existsSync(`${userData}/DevToolsActivePort`)) throw Error(`Chrome did not expose DevTools: ${stderr.slice(0, 1500)}`);
@@ -144,15 +147,13 @@ try {
   assert.equal(await evaluate('parseInt(document.getElementById("value").textContent)'), cargoValue, 'keyboard placement must pack the selected crate');
   const screenshot = await send('Page.captureScreenshot', { format: 'png' }); writeFileSync(`${output}/${recording ? `packing-desktop-${milestone}.png` : 'packing-desktop.png'}`, Buffer.from(screenshot.data, 'base64'));
   // Original UI screencast: repeated real frames captured while arranging the visible hold.
-  const frameDir = resolve('.tmp/capture'); mkdirSync(frameDir, { recursive: true });
+  mkdirSync(frameDir, { recursive: true });
   for (let frame = 0; frame < 36; frame++) {
     if (frame === 4) await evaluate('document.querySelector("[data-select]").click()');
     if (frame === 12) await evaluate('document.getElementById("rotate").click()');
     if (frame === 20) await evaluate('document.getElementById("board").focus();document.dispatchEvent(new KeyboardEvent("keydown",{key:"ArrowRight",bubbles:true}))');
     const shot = await send('Page.captureScreenshot', { format: 'png' }); writeFileSync(`${frameDir}/${String(frame).padStart(3, '0')}.png`, Buffer.from(shot.data, 'base64')); await delay(60);
   }
-  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '10', '-i', `${frameDir}/%03d.png`, '-c:v', 'libvpx-vp9', '-crf', '38', '-b:v', '0', '-an', `${output}/${videoFile}`]);
-  assert.ok(readFileSync(`${output}/${videoFile}`).length < 10_000_000);
   await evaluate('document.getElementById("submit").click()');
   for (let i = 0; i < 100 && !(await evaluate('!document.getElementById("reveal-controls").hidden')); i++) await delay(50);
   assert.ok(await evaluate('!document.getElementById("reveal-controls").hidden'));
@@ -186,16 +187,30 @@ try {
   await evaluate("document.getElementById('next').click()");
   await assertPhoneLayout('results');
   assert.equal(requests.filter(url => /^https?:/.test(url) && url !== documentUrl && !url.endsWith('/favicon.ico')).length, 0); assert.deepEqual(errors, []);
-  const video = readFileSync(`${output}/${videoFile}`);
-  Object.assign(report, { chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; not disk-open proof' : 'disk', reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, touchDrag: true, keyboardFocus: true, keyboardPlacement: true, longNamesFit: true, videoFile, videoBytes: video.length, videoSha256: createHash('sha256').update(video).digest('hex'), encodedVideoFps: 10, videoScope: '36 separately captured real UI images; encoded10fps is not rendering acceptance' });
-  report.status = 'passed';
+  Object.assign(report, { chrome: (await cdp.send('Browser.getVersion')).product, fileOpened: !httpMode, serving: httpMode ? 'localhost HTTP; not disk-open proof' : 'disk', reducedMotion: true, externalRequests: 0, runtimeExceptions: 0, completedTwoPlayerGame: true, completedPlayerCounts, pointerDrag: true, touchDrag: true, keyboardFocus: true, keyboardPlacement: true, longNamesFit: true });
+  uiChecksComplete = true;
 } catch (error) {
   report.status = 'failed'; report.failure = String(error); throw error;
 } finally {
   closeFrameWindow(frameWindow, { status: 'failed', reason: 'runner closing' });
   socket?.close(); browser.kill('SIGTERM'); localServer?.close();
-  await browserClosed;
-  report.finishedAtUtc = new Date().toISOString(); report.sourceHashesEnd = sourceHashes();
-  if (JSON.stringify(report.sourceHashesEnd) !== JSON.stringify(sourceHashesStart)) { report.status = 'failed'; report.failure = 'source changed during browser run'; process.exitCode = 1; }
-  saveReport(); console.log(JSON.stringify(report));
+  try {
+    await browserClosed;
+    if (uiChecksComplete) {
+      encoderWindow = await awaitCaptureEncoderGrant(sourceHashesStart['play.html'], browser.pid);
+  execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', '10', '-i', `${frameDir}/%03d.png`, '-c:v', 'libvpx-vp9', '-crf', '38', '-b:v', '0', '-an', `${output}/${videoFile}`]);
+      const video = readFileSync(`${output}/${videoFile}`);
+      assert.ok(video.length < 10_000_000);
+      Object.assign(report, { videoFile, videoBytes: video.length, videoSha256: createHash('sha256').update(video).digest('hex'), encodedVideoFps: 10, videoScope: '36 separately captured real UI images; encoded10fps is not rendering acceptance' });
+      report.status = 'passed';
+      closeCaptureEncoderWindow(encoderWindow, { status: 'closed', videoBytes: video.length }); encoderWindow = null;
+    }
+  } catch (error) {
+    report.status = 'failed'; report.failure = String(error); throw error;
+  } finally {
+    closeCaptureEncoderWindow(encoderWindow, { status: 'failed', reason: 'runner closing' });
+    report.finishedAtUtc = new Date().toISOString(); report.sourceHashesEnd = sourceHashes();
+    if (JSON.stringify(report.sourceHashesEnd) !== JSON.stringify(sourceHashesStart)) { report.status = 'failed'; report.failure = 'source changed during browser run'; process.exitCode = 1; }
+    saveReport(); console.log(JSON.stringify(report));
+  }
 }
