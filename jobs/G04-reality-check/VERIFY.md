@@ -672,3 +672,24 @@ commands/raw games/source guards/resource closures/whole official archives/errat
    declared generatedplay.html, allchildren naturally empty/no signals, measured
    peak428769280B<declared512MiB/perphase60s. No local browser/frame clock.
 Changed-head original whole CI remains mandatory before qualified gain/Ready.
+
+## KEEP2 complex Unicode independent credit
+Actualcomplete commands/helpers/raw/legalgames/guard/closure/wholeofficial0ad in
+results/keep2-unicode-credit-20261009/proof.zip,fullmemberCRC/physicalcomparisons.
+Corrected Node24 extra1003seed corpus under256MiB180s:1003fullgames/4012rounds/
+48106events/20040writes/17033self-voterefusals/14037duplicateauthors/3007truthwriters,
+zeroindependentaward mismatches/alllegal replay hashes equal;peak20251B;all3837
+inputguards unchanged,naturalclosure12:03:03.525068Z/no signals/peak155627520B.
+First childactualEXIT1 extra revealinputType assertion retained; all3837 failed
+inputs independently unchanged12:02:45.669976; onlythreecompletedgames were saved,
+failedmidgame rawunavailable disclosed. Corrected version addsper-eventflushing
+and phase-aware assert only,keepinggame/corpus/budget/sampler unchanged.
+Python saved-only reader whole1003gzip lines/48106 eventrows throughEOF,
+20040award/10890ownershipassertions/alltotals+winnersPASS12:06:06.167093Z,
+allfiveinputguardsunchanged,4499206B SHA14ef2989ccf9c1444c649a35b4c6f68212ddce3c0fada57ccb591b599a6ff936.
+Local tsc/data/twofixtures/twobuilds/freshness/checksums/Fasttest35/strict4PASS,
+pipeline3836guards/noactualoutputchanges/naturalCLOSED12:04:58.937904Z,
+peak444301312B<512MiB60sphasebound.42benign3395states+10000matchingcases equal.
+Exact0ad full57test/25mutant/originalwholeofficial reader all1034/3000/5clips
+accepted11:59:05.436258; qualifiesKEEP1, historical for newtest source. No local
+nativeclock. Currentnewfull remainsrequired beforequalifiedKEEP2 firstno-gain.

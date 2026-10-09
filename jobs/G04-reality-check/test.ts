@@ -181,6 +181,46 @@ test('maximal well formed catalog and three byte writes keep every saved state b
  assert.equal(s.phase.id,'done');assert.equal(writes,96);
  for(const id of s.seats)assert.equal(s.scores[id],6500,'independent twelve-round author award formula');
 });
+test('Unicode duplicate groups and long casefold keys match independent author credit',()=>{
+ const key=(text:string)=>text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').split(/\s+/u).filter(Boolean).join(' ').toLowerCase();
+ const cases=[['ﬃ','ffi'],['Café','Cafe\u0301'],['\u0130'.repeat(80),'I\u0307'.repeat(80)],['\u0130'.repeat(160),'\u0130'.repeat(160)],['\ufdfa'.repeat(8),'\ufdfa'.repeat(8).normalize('NFKC')],['🧭 Anchor','🧭 ＡＮＣＨＯＲ'],['Anchor\u0001Watch','ＡＮＣＨＯＲ\tＷＡＴＣＨ'],['<Bluff>&"',' <BLUFF>&" ']];
+ for(const [caseIndex,words] of cases.entries()){
+  let s=C.init(context(8,31+caseIndex,{mode:'bluff',rounds:4})),steps=0,rounds=0;
+  const totals:Record<string,number>=Object.fromEntries(s.seats.map(id=>[id,0]));
+  while(s.phase.id!=='done'&&steps++<100){
+   if(s.phase.id!=='write'){s=C.reduce(s,timer(s));continue;}
+   const ids=[...s.seats],truth=String(s.question.correct),writing:Record<string,string>={},votes:Record<string,string>={};
+   for(const [i,id] of ids.entries()){
+    const text=i===3||i===6?truth.toUpperCase():i===4||i===7?'Other fake':words[i%words.length]!;
+    writing[id]=text;assert(C.inputSchema.safeParse({type:'write',text}).success);
+    s=C.reduce(s,{type:'input',playerId:id,input:{type:'write',text},now:s.phase.startedAt+1});
+   }
+   const options=s.options.map(option=>({id:option.id,text:option.text}));
+   for(const [i,id] of ids.entries()){
+    if(key(writing[id]!)===key(truth))continue;
+    const own=options.filter(o=>key(o.text)===key(writing[id]!));
+    for(const option of own)assert.equal(C.reduce(s,{type:'input',playerId:id,input:{type:'vote',choice:option.id},now:s.phase.startedAt+1}),s);
+    for(const option of C.controllerView(s,id).menu)assert.equal(option.mine,key(option.text)===key(writing[id]!));
+    const legal=options.filter(option=>key(option.text)!==key(writing[id]!)),chosen=legal[(s.round+i)%legal.length]!;
+    votes[id]=chosen.text;s=C.reduce(s,{type:'input',playerId:id,input:{type:'vote',choice:chosen.id},now:s.phase.startedAt+1});
+   }
+   assert.equal(s.phase.id,'reveal');const expected:Record<string,number>={};
+   for(const author of ids){
+    const word=key(writing[author]!),knows=word===key(truth);
+    let points=knows||key(votes[author]??'')===key(truth)?1000:0;
+    if(!knows){
+     const owners=ids.filter(id=>key(writing[id]!)===word);
+     const fooled=ids.filter(voter=>key(writing[voter]!)!==key(truth)&&!owners.includes(voter)&&key(votes[voter]??'')===word).length;
+     points+=fooled*Math.floor(500/owners.length);
+    }
+    expected[author]=points*(s.round===4?2:1);totals[author]!+=expected[author]!;
+   }
+   assert.deepEqual(s.last!.awards,expected);assert.deepEqual(s.scores,totals);rounds++;
+   assert(Buffer.byteLength(JSON.stringify(s))<=256*1024);s=C.reduce(s,timer(s));
+  }
+  assert.equal(s.phase.id,'done');assert.equal(rounds,4);assert.deepEqual(C.results(s)!.scores,totals);
+ }
+});
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{
  let s=toPhase('write',1,{mode:'bluff'});s=input(s,'p0',{type:'write',text:'same fake'});s=input(s,'p1',{type:'write',text:'SAME   FAKE'});s=input(s,'p2',{type:'write',text:'other fake'});
  assert.equal(s.phase.id,'vote');assert.equal(s.options.length,3);const shared=s.options.find(o=>o.owners.length===2)!;const truth=s.options.find(o=>o.correct)!;

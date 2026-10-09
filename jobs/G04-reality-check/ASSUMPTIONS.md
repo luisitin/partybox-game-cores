@@ -148,3 +148,16 @@ The first three-byte label actually used two-byte U+0634; the fixed maximum uses
 U+754C. The first C0 inverse substitution and corrected controls remain archived
 with original timestamps, alongside the failed material classifier and patch.
 Both genuine f79/e32 whole proof results are historical for this changed source.
+
+## KEEP2 independent author credit
+Production/runtime/page/bots/scoring and original10000-case oracle staybyteexact.
+The newregression/referee covers Unicode composition/compatibility,160/320-unit
+casefoldkeys,emoji,C0writecleanup andliteralmarkup using actual legal games.
+Oracleaccumulates authorcredits from rawwriting/publicvotetext; production totals
+voters. The independent Python EOF reader repeats author totals using its own
+Unicode implementation, and wholeactualper-event records are compared.
+Reveal legitimately offersNext to a truthwriter; waiting/null belongs tovoting.
+The failed extraharness assumption is neither gamebug nor no-gain. Its raw failed
+midgame memory was notsaved; onlyactual3 prior games/source/error retained. v2
+flushes everyevent. No replay/clock/phase contract changed to hide the failure.
+Prior0ad EARLYmiss105.733498s is explicit;hard30PASS. No forged earlierpush.
