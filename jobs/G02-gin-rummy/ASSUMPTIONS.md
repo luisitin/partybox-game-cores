@@ -151,3 +151,6 @@ KEEP18 saved-only proof naturally CLOSED08:03:14.045314Z EXIT0/PASS, all1978 fro
 
 
 KEEP19: A proof comparing final knock outcomes does not determine expected value of a future hidden stock draw. Keep Strong public-information draw policy while preserving both actual hidden-stock counterexamples and tests. The same view may yield different realized results; this is not hidden-card strategy access or a universal expected-value claim. First probe's stock endpoint mistake and first helper's dependency path failure are recorded as failures, not passes.
+
+
+KEEP20: clear current bot results are a reviewer/documentation improvement, not a gameplay gain. Old1152/1154 narratives remain byte-identical history; actual accepted1166 fixed-corpus wins do not imply population causality or outside tournament strength. No extra functional tests for this prose change.

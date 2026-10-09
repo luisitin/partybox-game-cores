@@ -1,42 +1,48 @@
-# Bots and actual league
+# Bots and current verified league
 
-Easy preserves complete melds, sheds high loose cards with some loose-card
-variation, accepts 70% of immediately useful upcards and knocks when legal.
+Easy preserves complete melds, sheds high loose cards with some variation,
+accepts70% of immediately useful upcards, and knocks when legal.
 Medium minimizes exact post-discard deadwood and takes useful upcards.
-Strong additionally values partial melds and avoids dangerous cards related
-to public opponent pickups. None reads hidden cards, stock order or engine RNG.
-Contract easy/normal/sharp map to easy/medium/strong.
+Strong also values partial melds and public opponent pickup signals.
+All skills prefer legal Gin; an already-zero hand takes a legal pickup that
+preserves zero and ends the hand. Enabled Big Gin takes priority.
+Contract easy/normal/sharp mean easy/medium/strong.
 
-Actual `node scripts/league.mjs`: 2,000 complete matches per pairing, paired
-deal seeds 70000–70999, seats swapped, first-to-target game winners (not the final settlement leader).
+Strong's ordinary finishing choices may lower positive own deadwood when
+every exact live candidate layoff target is a subset of the currently chosen
+targets. Permanently closed groups use own cards and public discards only.
+Targets update after EACH promotion. Forbidden returns and incomparable
+layouts retain their existing policy. No hidden hand, stock order or engine
+RNG is consulted; these finishing promotions are confined to discard phase.
+
+Current original node scripts/league.mjs result, accepted72bd full hosted
+run37906194509/verify113740122349:2000 complete matches per pairing,
+paired seeds70000–70999 with seats swapped. Winners use GameResults.winnerIds
+and the first-to-target hand score, rather than the final settlement leader.
 
 | Pair | Wins | Losses | Win rate | 95% Wilson lower bound |
 |---|---:|---:|---:|---:|
-| sharp vs normal | 1152 | 848 | 57.60% | 55.42% |
-| normal vs easy | 1743 | 257 | 87.15% | 85.61% |
+| sharp vs normal | 1166 | 834 | 58.30% | 56.1252% |
+| normal vs easy | 1743 | 257 | 87.15% | 85.6118% |
 
-Both gates require >=55% wins and a Wilson lower bound above 50%. Actual
-results: evidence/bot-league.json. Earlier random-easy results are retained
-as history, not the delivered strategy. No external champion strength claimed.
+Both original gates require >=55% wins and a Wilson lower bound above50%.
+Full unchanged native and exact league records:
+[evidence](evidence/audit-20261009/accepted-72bd/full-original-artifact-reader-CLOSED.json).
+This finite internal comparison establishes neither external champion
+strength nor that every future population has the same win rate.
 
-Round5 corrects the league to count GameResults.winnerIds. One sharp/normal
-match had a different final-settlement leader; actual new wins1152/2000.
-Medium/easy remains1743/2000. Earlier final-point-counting results stay in
-bot-league-settlement-baseline.json and previous verification history.
+The same finite pairings previously yielded Strong1152 and then1154 wins.
+Those numbers and all earlier narratives are retained byte-identically in
+[evidence](evidence/audit-20261009/bot-report-current/BOTS-before-KEEP20.txt).
+Recent subset/closed/public-discard examples prove bounded tactical gains;
+unchanged1166 results for those repairs are not a population improvement claim.
 
-2026-10-09 renewed KEEP repair: legal Gin now has priority over the public danger heuristic; no hidden hand/stock/RNG information is added. Actual new paired2000-game league: Strong1154/2000=57.70% (95% Wilson lower55.5221%), Medium1743/2000=87.15% (85.6118%). Earlier1152/2000 remains historical. New tactical72-case/1000-defender checks and30000 preserved non-Gin choices are in evidence/audit-20261009/. Full current hosted acceptance remains required.
+KEEP19's576 paired identical public views expose the hidden-stock tradeoff:
+classic stock Gin25 vs visible pickup4; stock miss-10 vs that same pickup4.
+No draw option universally dominates, and no expected-value optimum is claimed.
+[Draw evidence](evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md) retains the real
+compiled phase-guard mutation killed by the public-information regression.
 
-KEEP15 bounded strategy: Strong’s existing public heuristic selects its candidate first. Only an actual eligible finishing ordinary knock may then improve within the exact same exposed meld set, using lower positive own deadwood. This does not change draw/upcard decisions, other skills, forbidden returns, Gin priority or scoring.576 configurations/1000 hidden defenders/144 undercut boundaries prove the bounded scoring gain; the new original paired leagues/current full hosted acceptance are pending.
-
-
-KEEP15 actual completed fixed paired league: Strong1166/2000=58.30%, Wilson95% lower56.1252%; Medium1743/2000=87.15%, lower85.6118%. Original native leagues closed05:28:59.619575Z/all559 guards unchanged. Prior1154 wins remain preserved; +12 wins in these same finite seeds is not an outside strength/statistical-causality claim. Full current hosted acceptance remains required.
-
-
-KEEP16: closed-target finishing dominance; prior e90 full original acceptance is retained whole. Before3 FAIL/after3 PASS1152 settings/1000 independent same-public-view defenders/120 controls; actual signed gain15, boundary max60. Permanently closed targets use only own11-card exclusion; every live group remains equal. Current original full checks/new35 source-bound evidence/full hosted acceptance PENDING; player gain/streak0.
-
-KEEP16 exact finite paired league remains Strong1166/2000=58.30% (Wilson95% lower56.1252%), Medium1743/2000=87.15% (lower85.6118%); CLOSED06:46:16.228875Z/all679 source guards unchanged. The repaired deterministic +15-point example and bounded dominance proof are measured player gains; this unchanged finite league is not a population improvement claim. Full current hosted acceptance remains pending.
-
-
-KEEP17 material public-discard closure repair after genuine e228 whole full original acceptance. Before3 tests1 PASS/2 FAIL; after3 PASS1152 settings/1000 same-public-view independent defenses/168 controls/all10 guards unchanged. Actual representative -10→+1 (+11), boundary maximum52. Only Strong already-finishing positive knocks additionally exclude currently public discard cards from possible layoff starters; no hidden information or global layout policy. Current original complete matrix/leagues/26 mutants/new first35 capture/full hosted acceptance PENDING. Read KEEP-5-VISIBLE-DISCARDS.md and public-discard-knock-current/; accepted-e228d52/ retains the entire genuine previous full packet and first private expectation error. Matching finite reason added to the sole workflow; original full verify and every other byte unchanged. BothPRs Draft, KEEP17 player gain/streak0.
-
-KEEP18 only promotes strictly lower positive finishing deadwood when every live candidate layoff group is in the CURRENT selected layout. Actual classic -10→+4,1152 settings/1000 independent same-public-view defenses/216 controls pass. Current complete leagues/full hosted acceptance pending; prior f461 leagues1166/1743 are historical, no population-strength claim.
+KEEP20 corrects this report only. Production/page/workflow are unchanged;
+no player-noticeable gain, streak2. Subsequent exact-head full hosted
+acceptance remains required, and both PRs remain Draft.
