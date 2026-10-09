@@ -1,0 +1,43 @@
+{
+  "schema": "g01-reviewed-face-down-draft-source-adoption/1",
+  "adoptedAt": "2026-10-09T01:57:58.990741+00:00",
+  "baseHead": "e8ab461f00413f487ec763db7faeab622c1d0f17",
+  "scope": "Exact two independently reviewed deal-only UI changes adopted to audit DRAFT branch only; original canonical PR1 remains untouched; whole current CI and measured Worker responsiveness gain still required",
+  "ui": {
+    "bytes": 50326,
+    "sha256": "9879f1515bb9625379a032087050263514488f897f5980b77039044325fe84a7"
+  },
+  "player": {
+    "bytes": 1032861,
+    "sha256": "05c4687c604e2fe1e9b8f9483ac0266e254b43faa1851c46f0a843bcec67f71b"
+  },
+  "actualTrialClosedAt": "2026-10-09T01:52:39.701547+00:00",
+  "actualNativeProfiles": [
+    {
+      "name": "tv",
+      "frames": 300,
+      "fps": 58.06751316196965,
+      "meanMs": 17.221333333333334,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 33.39999999999998
+    },
+    {
+      "name": "phone",
+      "frames": 300,
+      "fps": 58.44344077575486,
+      "meanMs": 17.11056,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 33.40000000000009
+    }
+  ],
+  "archive": {
+    "path": "jobs/G01-dominoes/media/face-down-native-first-proof.zip",
+    "bytes": 1794189,
+    "sha256": "711d41d274a1ca025b32213c982a30950d0c96d010ca49761274fbe02d263697"
+  },
+  "allArchiveEntriesByteVerified": 30,
+  "corePolicyRngWorkerAndSamplerUnchanged": true,
+  "measuredPlayerGain": "UNMEASURED",
+  "renewedKeepRounds": 0,
+  "originalLocalFailureRemains": true
+}

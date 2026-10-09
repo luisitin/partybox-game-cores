@@ -52,8 +52,8 @@ Single steps:
 
 ## Status
 
-PR1 is draft; canonical8c full CI/1,044-check proof passed (ARTIFACT-AUDIT.md).
-Real Worker replay/fallback/cancel pass on source2ae (WORKER-AUDIT.md).
-Actual file navigation, native FPS, full candidate CI and player gain are pending.
-Legacy55.73/51.58fps failures retain UNKNOWN cause; older media are historical.
-NEXT.md binds remaining checks; renewed KEEP0 and original gates remain.
+PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
+Exact prior Worker 2d full CI/1,225-check proof passed, including real file opening.
+Deal-only face-down source passes the original native TV/phone gates once
+(FACE-DOWN-AUDIT.md). Complete current CI and measured player gain are pending.
+NEXT.md binds remaining checks; historical failures and renewed KEEP0 remain.

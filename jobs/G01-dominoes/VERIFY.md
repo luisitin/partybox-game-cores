@@ -567,3 +567,27 @@ p95<=18 gates/newcapture. Preserve every actualPASS/FAIL before any adoption.
 The logging-only diagnostic needs a separate source-bound review and grant.
 Current documentation checkpoint changes no player/policy/sampler; fresh
 full currentCI remains required. Read actual push/CLAIMS timestamps.
+
+
+## Actual modified face-down source checkpoint (2026-10-09 01:58 UTC)
+
+The modified deal-only face-down candidate's first original native trial
+naturally CLOSED01:52:39.701547UTC, exit0/PASS, all177 source/five executable
+identities and READY/controller unchanged, owned children empty. All600 native
+intervals/602 stamps pass the original58 FPS/p95<=18 gates: TV58.06751316197,
+phone4x58.44344077575 FPS, both p9516.8/p9933.4ms. Full original functional/
+privacy/offline/reduced-motion, zeroHTTP/errors and all36VP9 frames pass.
+FACE-DOWN-AUDIT.md gives scope, exact source identities and public raw/archive.
+This is a genuinely modified source's once-only finite pass, not a60FPS,
+distribution, historical-cause, measured-gain or full-current-CI claim.
+
+Only the exact two reviewed UI changes and their reproducible standalone player
+are now adopted to the audit DRAFT branch; core/RNG/Worker/sampler unchanged.
+The full original current npm workflow and genuine complete current artifact
+must pass before delivery. Exact previous2d success and all historical failures
+remain source-specific. Original PR1 stays unchanged/draft on8c. First pair
+still FAILED with offending raw ABSENT, acceptedscenarios0. Repaired logging-only
+diagnostic is UNEXECUTED; no native launch without fresh review/quiet grant.
+Renewed KEEP rounds and measured gains remain0.
+
+Finite actual draft-adoption checks: `npm run check` and `node build.ts --check` both naturally closed exit0 at 2026-10-09T02:00:33.569821+00:00. Exact UI/player unchanged; owned groups empty. These catch strict TypeScript and any stale/non-reproducible standalone build, without a new native trial. face-down-checks.json records actual commands/times.

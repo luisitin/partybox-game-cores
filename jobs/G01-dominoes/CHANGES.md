@@ -120,3 +120,10 @@ R21:study-total-baseline.ts freezes exact949c2e3 core;total-compatibility.ts/rep
 R22:total-envelopes.ts/report exercise invalid actors/payloads/clocks/presence/timer/VIP envelopes against3,012 deep-frozen states from1,003 seeds and three phase fixtures. Assertion mode runs in npm test;the report records actual234,936 probes. This regression coverage targets the R20 contract failure without changing production behavior.
 
 Final R23 verification refresh:commit the full-pipeline browser report,TV screenshot,capture and their hashes so the delivered evidence matches the guarded reducer's full production run. No source change follows the passing full pipeline.
+
+
+2026-10-09 draft rendering change: add faceDown(w,hgt) with the exact original
+back SVG and container/face styles; use it only for never-flipping dealBeat
+clones. Draw and play still use twoSided. Reproducible player bytes and the
+actual modified-source original300/native/full36-frame pass are archived in
+FACE-DOWN-AUDIT.md. No policy/RNG/Worker/sampler change or measured gain claim.

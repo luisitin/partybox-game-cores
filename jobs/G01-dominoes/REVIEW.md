@@ -25,6 +25,33 @@ No renewed round or player-visible gain is yet measured. Fix/measure the
 worst testable weakness as round25 and continue
 until three consecutive meaningful reviews find no player-visible gain.
 
+## Current audit draft after the bounded face-down change
+
+Re-read README/RULES/JOBS. Five current weaknesses, ranked:
+
+1. Strong-search UI responsiveness gain remains unmeasured. The first paired
+   helper lost the offending baseline trace; repair only logging, isolate exact
+   original8c/Worker2d bytes, retain all values before assertions and obtain a
+   fresh independently reviewed quiet trial before claiming a gain.
+2. Current changed player's complete hosted delivery is pending. The reviewed
+   deal-only source passes both original native gates once, with small margin;
+   accept actual complete current source-bound npm/artifact evidence first.
+3. Four-seat/partner phone interaction coverage and physical phone remain
+   incomplete. Test the actual private-hand handover and controls; distinguish
+   CPU-throttled emulation from hardware evidence.
+4. Thinking-dot background animation and other rendering costs are unmeasured.
+   Profile meaningful hypotheses without attributing historical failures,
+   weakening gates, filtering raw frames or adding settling.
+5. Strong-bot strength evidence uses a bounded upstream reference and finite
+   sampling. Preserve its inspected policy and verified scope rather than infer
+   universal dominance or transfer the old stopping streak to current source.
+
+The deal-only hidden-front change has a source-bound once-only native PASS,
+not a paired causal performance gain. Renewed KEEP rounds and gains remain0.
+After complete current PR checks pass, fix and measure the worst weakness,
+record each actual outcome in LOOP.md and continue through three substantive
+no-player-gain rounds. Preserve the original invalid pair and unknown causes.
+
 ## Round 1
 
 Five largest weaknesses, ranked: published Draw deal not selectable; Draw bot lookahead ignores future stock; bounded hidden-deal rejection can fall back; no physical-phone/file-navigation proof in managed environment; limited upstream baseline scope. Fixed the first with a labelled 7/7/6 Draw option, retaining 7/5/5 as the explicit house default and seven-per-partner override. Other regional rules remain independently configurable; this option does not claim a complete Pagat rules edition.

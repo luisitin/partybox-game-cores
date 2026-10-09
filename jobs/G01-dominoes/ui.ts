@@ -376,6 +376,11 @@ function twoSided(top:number,bottom:number,w:number,hgt:number):HTMLDivElement{
  const front=tileEl(top,bottom),back=tileEl(null);for(const f of [front,back]){f.style.width='100%';f.style.height='100%';f.style.backfaceVisibility='hidden';}
  back.style.transform='rotateY(180deg)';box.append(front,back);return box;
 }
+// Deal-only tiles never flip: keep their exact visible back and omit the hidden blank front.
+function faceDown(w:number,hgt:number):HTMLDivElement{
+ const box=h('div');box.style.cssText=`position:absolute;left:0;top:0;width:${w}px;height:${hgt}px;transform-style:preserve-3d`;
+ const back=tileEl(null);back.style.width='100%';back.style.height='100%';back.style.backfaceVisibility='hidden';back.style.transform='rotateY(180deg)';box.append(back);return box;
+}
 function flight(clone:HTMLElement,from:Rect,to:Rect,o:{w:number;h:number;rot0:number;rot1:number;flip0:number;flip1:number;ms:number;lift:number}){
  const fx0=from.left+from.width/2,fy0=from.top+from.height/2,fx1=to.left+to.width/2,fy1=to.top+to.height/2;
  const s0=Math.max(from.width,from.height)/Math.max(o.w,o.h);const side=Math.abs(o.rot1%180)===90;
@@ -436,7 +441,7 @@ function dealBeat(){
  const max=Math.max(...s.hands.map(h=>h.length));
  for(let r=0;r<max;r++)for(let seat=0;seat<s.seats.length;seat++){
   if(r>=s.hands[seat]!.length||rackSeat()===seat)continue;const to=seatRect(seat);if(!to)continue;
-  const w=view==='tv'?44:24,clone=twoSided(0,0,w,w*2);clone.style.opacity='0';
+  const w=view==='tv'?44:24,clone=faceDown(w,w*2);clone.style.opacity='0';
   setTimeout(()=>{clone.style.opacity='';flight(clone,c,{left:to.left,top:to.top,width:to.width,height:to.height},{w,h:w*2,rot0:(rand()-.5)*60,rot1:0,flip0:180,flip1:180,ms:420,lift:50});if(k%3===0)cue('tick');},(k++)*45);
  }
 }

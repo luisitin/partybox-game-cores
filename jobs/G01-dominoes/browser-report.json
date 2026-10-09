@@ -12,10 +12,10 @@
       },
       "throttle": 1,
       "frames": 300,
-      "meanMs": 16.66566666666667,
-      "p95Ms": 16.700000000000273,
-      "p99Ms": 16.800000000000182,
-      "fps": 60.00360021601295
+      "meanMs": 17.221333333333334,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 33.39999999999998,
+      "fps": 58.06751316196965
     },
     {
       "name": "phone",
@@ -25,13 +25,15 @@
       },
       "throttle": 4,
       "frames": 300,
-      "meanMs": 16.832333333333334,
-      "p95Ms": 16.700000000000273,
-      "p99Ms": 16.800000000000182,
-      "fps": 59.409469869497194
+      "meanMs": 17.11056,
+      "p95Ms": 16.800000000000182,
+      "p99Ms": 33.40000000000009,
+      "fps": 58.44344077575486
     }
   ],
   "reducedMotion": "passed",
+  "automatedBotMatchMs": 320000,
   "mixedUnattended": "passed within 3600000ms with private hands hidden",
-  "capture": "media/milestone-13-total-events.webm"
+  "mixedUnattendedMs": 620000,
+  "capture": "media/milestone-15-face-down-deal.webm"
 }

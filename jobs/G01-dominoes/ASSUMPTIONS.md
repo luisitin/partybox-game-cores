@@ -111,3 +111,11 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
 - Exact e4 hosted file://, Worker and original native gates passed, while the once-only local original TV profile failed57.8815357901fps. The cause remains UNKNOWN; hosted success does not erase the local failure. Phone/capture15 were not reached locally. No paired player gain, adoption or renewed KEEP round is inferred.
 
 - First pair lost its offending baseline rawtrace because the assertion preceded save. It remains an invalid trial with zero acceptedscenarios/unknowncause; logging repair and faceDown prototype are unexecuted. No timing result or playergain is invented.
+
+
+2026-10-09 face-down adoption: the initial deal's flight uses flip0=flip1=180,
+so its blank front is permanently hidden. Omitting only that element preserves
+its exact visible back and all cue/geometry/timing bytes. This is a rendering
+cost hypothesis; neither the earlier TV failure's cause nor an FPS distribution
+or Worker gain is inferred from the single modified-source native pass. Full
+current CI and renewed KEEP remain required; original canonical PR1 unchanged.
