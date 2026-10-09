@@ -544,3 +544,30 @@ its own source checksum and does not run inside the sampled browser.
 This documentation/evidence commit still requires its own exact-head full
 CI and genuine artifact validation before original PR4 Ready. Subsequent
 current proof belongs in the PR body without another publication cycle.
+
+## Independent metadata audit — 2026-10-09
+
+Original noCards declaration violates shared optional literal-true metadata rule
+for160 English prompts. New focused regression genuinely failed once before fix:
+actual true, expected undefined. Its original stdout/CLOSED classifier failure is
+preserved; distinct reader naturally EXIT0 at03:35:34.679651Z, no test rerun.
+Fixed controller naturally CLOSED03:37:37.935573Z, direct children reaped/owned
+process groups empty. Local env FAST_TEST=1; Node24.19.0. Actual commands:
+
+- npm run check: strict PASS.
+- node fixtures.ts twice: identical manifest/7fixtures; fixtures unchanged.
+- node build.ts twice, then node build.ts --check: identical/fresh PASS.
+- node --test --test-reporter=tap test.ts:29/29 PASS,0fail.
+- node generate.ts --check: original160 samples PASS.
+- node --test --test-reporter=tap strict-proof.test.ts:4/4 PASS,0fail.
+
+Pre-doc actual229-file source comparison:225 identical and exactlycore manifest,
+test, manifest JSON and bundled page changed; all reducers/views/bots/UI identical.
+Logs, original receipts and scope proof in results/audit-20261009.
+Original canonical c81 full run37846802513/SUCCESS and official artifact11580178889
+were fetched/read fresh. Genuine1444862-byte SHA56f9427d827bd42cb74b5656842e75dc1fb30402281fd1a15e80607756944a3c ZIP retained.
+Original frozen verify-hosted-artifact.py with --head c81b0b7e69b19782613debbc1296c6d56f556927 --run-id37846802513 naturally CLOSED03:42:43.599512Z EXIT0:
+10862 assertions/all1034 identities/all3000 raw/66functionals/allfive fullydecoded
+clips PASS. Historical only. Corrected current full workflow, complete log,
+genuine ZIP and unchanged original reader are pending. No local timing or full
+npmtest trial was launched. All old failure bytes and predeclared gates preserved.

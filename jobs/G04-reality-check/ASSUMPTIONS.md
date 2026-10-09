@@ -80,3 +80,23 @@ and hosted environments are scoped honestly. An actual isolated install
 reproduced the old hosted package formatting exactly; --no-save preserves
 the original shared package. All public source/artifact archives are public
 code/data/evidence only, with bundled source licences retained.
+
+## 2026-10-09 independent contract audit
+
+Fresh main65ec rules/claims and all21 refs/20 job committer dates made G04 the
+lowest eligible job at03:28:15Z; both G04 branches and the claim were older6h.
+Main7ae claim push naturally CLOSED03:28:24Z, all other rows unchanged. Audit
+branch starts from claimed main and normally merges canonical c81 without force.
+The noCards declaration conflicts with160 English prompts under the shared
+contract; omission, not false, is schema-valid and preserves default English.
+This fixes metadata semantics only; full SDK picker integration was not executed
+and no player-visible/FPS gain is claimed. Reducer/view/bots/UI/fixtures unchanged.
+Original gameplay KEEP12–14 remain historical; no invented numbered improvement.
+Original negative-control child failed exactly true-versus-undefined. The outer
+helper expected TAP but Node emitted spec, so its classifier EXIT1 stays public.
+A distinct finite reader accepted that original output without rerunning the test.
+Fresh c81 official proof is a historical baseline and cannot accept new source.
+All four original source mechanisms were reread live; uppercase first README404
+resolved from the actual pinned directory to readme.md. No external assets/code.
+BCE/CE/decade conventions remain from knowledge, unverified externally.
+Full current hosted npmtest/artifact proof is still required before audit Ready.

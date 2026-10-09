@@ -1,59 +1,54 @@
-# G04 final evidence handoff
+# G04 independent contract audit handoff
 
-Owner codex-reality-reverify. Canonical job/G04-reality-check-core,
-original PR4. Legal claim20:20:15Z/main894bbe3 after fresh18 refs/dates;
-normal merge5f8f2c7 preserves b189. Never force or merge the original PR.
-Only G04 and its workflow change; refresh only G04 main claim per push.
+Owner codex-reality-audit-20261009. Supplemental branch
+job/G04-reality-check-audit-20261009 starts at lawful claim main7ae0f36d;
+claim03:28:15Z, actual normal main update CLOSED03:28:24Z. Fresh main rules,
+all21 refs and all20 job committer dates were read; only G04 was eligible.
+Original canonical job/G04-reality-check-core/c81b0b7e and Ready PR4 are preserved.
+The ordinary merge keeps claimed-main and canonical parents; no force/PR merge.
+Only this supplemental G04 source changes; source CLAIMS matches canonical.
+Refresh only the main G04 row after every source push, preserving all other rows.
 
-Last successful push7e077efa at observed21:12:04.219862Z. Buffered
-target21:37:04/hard21:42:04 applies until this final evidence checkpoint.
-Earlier21:09:18 buffered miss during the actual G09 hold remains recorded;
-actual21:12 push met30-minute bound. Original74s/97s/interruption misses
-remain honest. Latest G09 delegated hold released21:23:53.231577Z.
+Material audit found false noCards:true metadata on a160-English-prompt game.
+Shared GAME_CONTRACT forbids that flag for prompts/language. The exact13-byte
+core declaration was removed; the meaningful new regression failed against old
+core and passes now. Generated manifest/page updated. Reducer/view/bots/UI,
+scoring/timers/data/sampler and allseven fixtures remain byte-identical.
+No SDK picker execution, observed player gain or FPS improvement is claimed.
 
-Exact7e077efa11354e5f19f981b26975b7dcff1eae18 CI37845083064 SUCCESS
-21:19:52Z; full230849-character log read. Alloriginal checks,real compiled
-deadline mutant,new1200 native intervals/all1202 frame witnesses,18 actual
-capture counterfeits and147 generated data/media checksums pass. Genuine
-artifact11579627268:1428663bytes,
-SHA2bc3f3d7e5d5b40f3ac3f2487b8a46394a5429ccfa7f77d68cc31f1b7fc81fa1.
-Downloaded all20 actual safe ZIP entries; public independent reader
-passed10862 assertions/all1034 current source identities/all3000
-unfiltered original+strict intervals/66functionals/allfive fully decoded
-clips. Exact commands/logs/bytes/metadata/receipts are in VERIFY and
-results/reverify-2019/host-success-7e077ef.
+Actual local fixed pipeline naturally CLOSED03:37:37.935573Z: strict types,
+2 identical fixtures,2 identical page builds, build freshness,29 focused tests,
+160 sample rows and4 original strict refusal/proof tests PASS. FAST_TEST=1 is
+explicitly local only. No full matrix/league/browser/performance trial was run.
+Original negative helper EXIT1 due spec/TAP classifier error is retained; distinct
+original-output reader accepted the genuine before-fix test failure without rerun.
 
-Strict actualTV60.002400FPS/CPU4phone60.002796,allp99/max16.8ms.
-Real timers/private draft/write phase/seven actual bot callbacks are proved
-on all1202 callbacks. Genuine host Node24.21.0,pinned encoder distinct
-from explicit system decoderFFmpeg6.1.1; all identities are actual and
-scoped. Local Node24.19/FFmpeg7.1.5 symlink remains separate evidence.
-The actualbe30189 decoder failure234/missingimage2pipe and initial source
-comparison failure are public,not discarded. Actual isolated npm install
-reproduced the sole generated package identity; --no-save now preserves
-exact shared bytes. Historical/local FPS failures remain with unknown causes.
+229-file pre-doc comparison CLOSED03:44:16.539460Z:225 identical, exactly4
+runtime/test/generated changes. All four original research sources read live;
+first source's uppercase README.md404 resolved via actual pinned readme.md.
+Actual canonical run37846802513/official artifact11580178889 was independently
+read anew,10862 assertions/all1034 source IDs/all3000 raw/allfive clips PASS.
+This is historical c81 baseline, not acceptance of this corrected source.
+Public scoped receipts/logs/genuine ZIP: results/audit-20261009.
 
-This final documentation/evidence checkpoint includes the accepted genuine
-artifact and reusable independent post-run reader. All1034 sampled runtime
-source inputs,entire strict-browser.ts and productionpage/UI/core/bots/data
-remain byte-identical to accepted7e077efa. Actual player KEEP12–14 retains
-its three-round no-gain stop; no new player gain or fictitious round.
-No new unchanged local FPS run is authorized or needed.
+This material source checkpoint must push before03:58:24Z; early target03:53:24Z.
+Use actual natural push closure for the next30-minute deadline. Never backdate.
+After push open DRAFT supplemental PR targeting job/G04-reality-check-core.
+Read complete current full npmtest log and download genuine current official ZIP;
+run unchanged verify-hosted-artifact.py with EXACT published head/run/evidence-dir.
+Bind all installed/source inputs, original+strict raw and fullfive clip decodes.
+Keep draft until all original checks pass. Preserve any real failure and fix only
+proven causes. Avoid unchanged FPS luck reruns. Root coordinates any local timing
+with fresh global quiet ACKs; no timing currently authorized or needed locally.
+Update completion in PR body without another completion-only source publication.
 
-Next required action: obtain this final published exact head's full npmtest
-GREEN,read its complete actual log,download the genuine current artifact,
-and run verify-hosted-artifact.py with THAT exact head/run/evidence folder.
-Match actual runtime-source maps and alloriginal+strictraw and fiveclips.
-Keep any real failure and fix only a proven issue. Then update originalPR4
-body with actual current-head receipt and markReady. Avoid another source
-commit solely to repeat that completion metadata. If PR4 is alreadyReady
-when resumed,read its actual head/run/artifact and current GitHub state.
-Accepted gameplay stop remains valid; do not rerun FPS for luck.
-Then fresh-read mainCLAIMS and every matching branch committer date,claim
-only the lowest eligible next job under BOTH6-hour rules.
+Original gameplay KEEP12–14 and three no-gain stop remain historical. This audit
+fixes a contract declaration; it invents no player improvement or numbered round.
+On release after completion, fresh-read mainCLAIMS and every matching branch
+committer date and take only the lowest job eligible under both6-hour rules.
 
 ## Re-verify when web works
 
-BCE/CE/decade conventions remain "from knowledge, unverified" in SOURCES.
+BCE/CE/decade conventions remain from knowledge, unverified in SOURCES.
 Read two independent live sources before claiming external corroboration.
 All160 sample rows are fictional workshop data.

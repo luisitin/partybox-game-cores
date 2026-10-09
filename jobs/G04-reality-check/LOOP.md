@@ -16,3 +16,14 @@ Baseline current-head CI passed before round1. See REVIEWS.md.
 12 | five weaknesses: stale source/media evidence; local frame variance; exact timer boundary coverage; physical phone approximation; recovery documentation | fix worst: independent current source/raw/capture validator, integrated after3 full runs | actual harmless HTML change old integrity PASS→new source proof REJECT, restored e570;23 corruptions rejected,1,800 true historical intervals recomputed, genuine156846-byte local clip hash checked separately; runtime unchanged | player gain0; no-gain streak1; exact5c45099 CI PASS and native actualclips/raw/source CLI PASS.
 13 | five weaknesses: exact deadline equality; local frame variance; compiled host boundary mutant; physical phone limit; documentation | fix worst: add two real exact-deadline controls | eight cases PASS; actual compiled <= mutant escapes old6 but new8 catches both boundary cases, UI/page restored; actual host1,800 raw/3capturehashes independently PASS, fresh157763-byte clip | player gain0; no-gain streak2; exact5b99dae CI37787851588 SUCCESS, full actual logs read.
 14 | five weaknesses: private/manual compiled host mutation; local frame variance; physical phone approximation; handoff navigation; future content integration | fix worst: self-contained actual compiled host mutation in npmtest | strict types PASS; old6 PASS, current8 catches exactly2 boundary cases, every originalcase PASS; finally restores all13 guarded sources including original UI/page; fresh157527-byte clip/108data-media hashes PASS | player gain0; no-gain streak3; exact b18952bf CI37791478413 SUCCESS14:26:07, full actual log read; runtime and frame thresholds unchanged.
+
+## Independent contract audit, 2026-10-09 (outside player improvement rounds)
+
+Concrete defect: false noCards:true declaration for160 English prompts. The new
+regression fails on old core and passes after omission. Bounded fixed pipeline:
+29 focused tests/4 strict controls/types/regeneration/data allPASS. Declaration
+violations observed1→0; no gameplay, picker or performance gain is claimed.
+Original reducer/view/bot/UI/timer/sampler and allseven fixtures unchanged.
+Original player KEEP12–14 three-round no-gain stop remains historical; no new
+numbered player round or candidate timing invented. Current full hosted checks
+are still required; canonical c81 proof is explicitly historical baseline.

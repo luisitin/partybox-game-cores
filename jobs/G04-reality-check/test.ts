@@ -30,6 +30,13 @@ test('catalog has twenty original rows per realm and reproducible validated byte
  assert.equal(catalogSchema.safeParse([...sampleRows,sampleRows[0]]).success,false);
  assert.equal(catalogSchema.safeParse(sampleRows.map(r=>r.kind==='number'?{...r,correct:-1}:r)).success,false);
 });
+test('language-bearing quiz manifest preserves default English content metadata',()=>{
+ assert.equal(sampleRows.length,160);
+ assert(sampleRows.every(row=>row.prompt.trim().length>0),'quiz prompts carry language');
+ assert.equal(C.manifest.noCards,undefined,'noCards is reserved for games without cards, prompts or language text');
+ assert.equal(C.manifest.contentLangs?.[0]??'en','en','absent contentLangs selects English');
+ assert.deepEqual(JSON.parse(readFileSync('manifest.json','utf8')),C.manifest);
+});
 test('numeric score is symmetric, bounded, unit invariant and zero-safe without overflow',()=>{
  assert.equal(numberScore(1,2),500);assert.equal(numberScore(2,1),500);assert.equal(numberScore(.5,1),500);
  assert.equal(numberScore(0,0),1000);assert.equal(numberScore(0,1),0);assert.equal(numberScore(1,0),0);

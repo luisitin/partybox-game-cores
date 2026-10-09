@@ -14,7 +14,7 @@ Development requires Node 24+, Chromium and ffmpeg:
 ```sh
 cd jobs/G04-reality-check
 npm ci --ignore-scripts --no-audit --no-fund
-npm install --prefix ../../contract --ignore-scripts --no-package-lock zod@4.6.5
+npm install --prefix ../../contract --no-save --ignore-scripts --no-package-lock zod@4.6.5
 npm test
 ```
 
