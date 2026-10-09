@@ -1,0 +1,16 @@
+{
+  "package": "dominoes",
+  "version": "6.1.0",
+  "games": 200,
+  "wins": 135,
+  "losses": 65,
+  "ties": 0,
+  "winRate": 0.675,
+  "confidence95": [
+    0.6100865576324904,
+    0.7399134423675097
+  ],
+  "steps": 31271,
+  "baseline": "bota_gorda before <=9 remaining tiles; probabilistic_alphabeta(sample_size=16) thereafter",
+  "scope": "four-seat partnership Block, all-remaining scoring; alternate teams; no private opposing hand supplied"
+}

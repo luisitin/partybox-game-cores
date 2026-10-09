@@ -1,0 +1,60 @@
+{
+  "schema": "g01-four-human-phone-functional-first/1",
+  "status": "FAIL",
+  "acceptedSource": "ddd364cd72247387b86b9b39bfd0f0a5f9895ffe",
+  "scope": "First four human turns, actual390x844/4xCPU; setContent exact current player, no file/FPS/Worker gain/physical-phone claim.",
+  "naturallyClosedAt": "2026-10-09T04:03:00.755822+00:00",
+  "exitCode": 1,
+  "remainingOwnedLiveProcesses": [],
+  "completeInputGuardsPassed": true,
+  "installedFiles": 1618,
+  "inventoryEntries": 1746,
+  "aliases": 1630,
+  "runtimeGuards": 5,
+  "cases": [
+    {
+      "mode": "draw",
+      "partners": true,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "block",
+      "partners": true,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "draw",
+      "partners": false,
+      "motion": "reduce",
+      "status": "PASS",
+      "rawSteps": 21
+    },
+    {
+      "mode": "block",
+      "partners": false,
+      "motion": "no-preference",
+      "status": "STARTED",
+      "rawSteps": 8
+    }
+  ],
+  "actualFailure": {
+    "type": "AssertionError",
+    "message": "The expression evaluated to a falsy value:\n\n  assert(raw.status.includes('Player '+(turn+1)))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(raw.status.includes('Player '+(turn+1)))\n\n    at file:///tmp/g01-current-838-proof-20261009/private/phone-four-human-functional-first.mjs:38:185"
+  },
+  "browserClosedAt": "2026-10-09T04:02:58.157Z",
+  "externalRequests": [],
+  "errors": [],
+  "archive": {
+    "path": "media/four-human-phone-first-proof.zip",
+    "bytes": 907599,
+    "sha256": "49facb2c0b535589cf67ff631269f70feba7fe664590cb8b4e6d0e6939141d06",
+    "members": 12
+  },
+  "interpretation": "Three reduced-motion cases completed; normal-motion Block individual failed the predeclared expected Player2 predicate with saved actual Player3 active. Saved earlier step already shows board22 and Player2 after hide/reveal. No cause attribution or unchanged retry. Full raw/partial failure, sources, installed inputs, READY/controller and three completed screenshots preserved.",
+  "renewedKeepRounds": 0
+}

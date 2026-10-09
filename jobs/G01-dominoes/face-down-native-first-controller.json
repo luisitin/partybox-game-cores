@@ -1,0 +1,992 @@
+{
+  "schema": "g01-modified-face-down-native-profile-first-controller/1",
+  "scope": "Once-only original unchanged browser.ts checks on a genuinely modified private deal-only face-down prototype; original300 gates/no filtering and new capture retained; no adoptedsource/cause/distribution or wholeCI claim",
+  "startedAt": "2026-10-09T01:51:14.656006+00:00",
+  "ready": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-ready.json",
+    "bytes": 75502,
+    "sha256": "600bd0bc0656900c1436f4904c32d35365ea27572eb6a27492273587ede80fee"
+  },
+  "controllerBefore": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-first-controller.py",
+    "bytes": 9534,
+    "sha256": "8d954763bd67515497b0a3f28e6e5e68ef4db1fec7a909628c8c9e0ac4613146"
+  },
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "browser.ts"
+  ],
+  "status": "PASS",
+  "naturalClosure": true,
+  "childPid": 244432,
+  "remainingOwnedLiveProcesses": [],
+  "childClosedAt": "2026-10-09T01:52:38.817657+00:00",
+  "exitCode": 0,
+  "log": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-first.log",
+    "bytes": 486,
+    "sha256": "563327432c5f8f341af8ac03332b280a4141dca8b89f2f19430a17270176cb9f"
+  },
+  "guardsAfter": {
+    "sources": {
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/.github/workflows/G01.yml": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/.github/workflows/G01.yml",
+        "bytes": 2764,
+        "sha256": "c3372f9a766aafca959d10ace6db2f4e3312163fbf17d156b4cc46c7cc9e3a2c"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/JOBS.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/JOBS.md",
+        "bytes": 3624,
+        "sha256": "20d45e05c417e9129536a8567bdde7fec430a778846ac95375bdd6c0075bf4cc"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/README.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/README.md",
+        "bytes": 487,
+        "sha256": "e4b24b68ddbdf53fbc5c0288e66750f7ba302357d846307ebe9a67e209870d94"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/RULES.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/RULES.md",
+        "bytes": 3466,
+        "sha256": "4149f36b129b99097091d89ade741deacd952e393be2a8d80d7aba552fe2566a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/GAME_CONTRACT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/GAME_CONTRACT.md",
+        "bytes": 40395,
+        "sha256": "2d71cb4335bc9d56cd396a1350a0babdcf8b8d6be13dd296e4225dabff5bbd5f"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/constants.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/constants.ts",
+        "bytes": 4994,
+        "sha256": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/contract.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/contract.ts",
+        "bytes": 26947,
+        "sha256": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/minigame-schema.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/minigame-schema.ts",
+        "bytes": 2723,
+        "sha256": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/package.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/package.json",
+        "bytes": 95,
+        "sha256": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/player-count-schema.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/player-count-schema.ts",
+        "bytes": 1236,
+        "sha256": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/contract/rng.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/contract/rng.ts",
+        "bytes": 3445,
+        "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/.gitignore": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/.gitignore",
+        "bytes": 56,
+        "sha256": "c8b2cef6a6c3ac0e75b75171a0beae38cd72329486b73222eeff8c358172cbd4"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ARTIFACT-AUDIT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ARTIFACT-AUDIT.md",
+        "bytes": 2877,
+        "sha256": "892b7715164718937dcd3bd1b4dd78d282feda61e22bd4b81d47878ec472e896"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ASSUMPTIONS.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ASSUMPTIONS.md",
+        "bytes": 8212,
+        "sha256": "8fd4786d8829af11a48ccd3ef23298b02a08095894168c0a6b31d248eae7d19b"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/BOTS.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/BOTS.md",
+        "bytes": 5845,
+        "sha256": "04e25b3b4695460c97976537945b7cfa2d8ed25667f1759172cb799f4d0fbdac"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/CHANGES.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/CHANGES.md",
+        "bytes": 16718,
+        "sha256": "9ccd2ae7c4d9935a4d571784ac90e4684331c820589d889c7c5b04b710da833e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/CONFLICTS.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/CONFLICTS.md",
+        "bytes": 1677,
+        "sha256": "5f4aeab126acfda12e5da5616e0219234687bc8a8ef4df188d60458bda2617cd"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/DISK-AUDIT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/DISK-AUDIT.md",
+        "bytes": 2229,
+        "sha256": "d1246ace30cac2aa06782e35e5b4aaf539f912b70feb7d1785847071197b9aa9"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/HOSTED-WORKER-AUDIT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/HOSTED-WORKER-AUDIT.md",
+        "bytes": 2887,
+        "sha256": "23ef99da6a5f069d1c474f332d2c7801d32fa06622658ace1c195515ed1773be"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/INTEGRATION.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/INTEGRATION.md",
+        "bytes": 22605,
+        "sha256": "207714a5c8612816c17ffe36724a9ad75735e64dd2190e11c0ffc2a3f26aea96"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/LOOP.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/LOOP.md",
+        "bytes": 5580,
+        "sha256": "f9130c6d962aeed3ec7ab74d92b2a7456ca6196b82386f39e5a23c6e415a67ec"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/NEXT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/NEXT.md",
+        "bytes": 6564,
+        "sha256": "6955ebf7b323ee915ab9ebd086e3b30bcd36b356b22ef44ebb7df14fe008ef1a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/README.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/README.md",
+        "bytes": 2735,
+        "sha256": "92cf602ef366e0b4fb915186340d5d64fc4da89cd766d71c329d29ca913f2161"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/REVIEW.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/REVIEW.md",
+        "bytes": 14319,
+        "sha256": "76e3703f7a48e345f225ab10b2f47e3bf59b6a6813fa336b7a08285c8c25d2ad"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/RULES.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/RULES.md",
+        "bytes": 4857,
+        "sha256": "40ebe40ff7fc21d8b82b062f640bc0e3f69e643fc8743ca0cd114666d096f1df"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/SHA256SUMS.txt": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/SHA256SUMS.txt",
+        "bytes": 7922,
+        "sha256": "6a8503ca3b446c9235cca121ee87ae363b4a05857589b5cd6f13c5dc6d3f276f"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/SOURCES.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/SOURCES.md",
+        "bytes": 4724,
+        "sha256": "b228509763a15fbba8582fb62b15ff4a74a9e5bdcd978018a15f3a6a57c994da"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/THIRD-PARTY-LICENSES.txt": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/THIRD-PARTY-LICENSES.txt",
+        "bytes": 1072,
+        "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/VERIFY.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/VERIFY.md",
+        "bytes": 50557,
+        "sha256": "c682fc4a21399202e58fc776a54c1aaf6a272a9b518422257a304e11ab7f9e7a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/WORKER-AUDIT.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/WORKER-AUDIT.md",
+        "bytes": 3467,
+        "sha256": "81c029d54217cf63fee26aba1b5d9bde3bb600cb874e2f378dfe671734927be8"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/artifact-acceptance-8c57376.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/artifact-acceptance-8c57376.json",
+        "bytes": 5033,
+        "sha256": "0de150d966416ffaaaeb414c47365dcfdcc642953d968c1733710e49cb645407"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/artifact-reader-first-failure.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/artifact-reader-first-failure.json",
+        "bytes": 1201,
+        "sha256": "9f95cb5788c5c1c39735c5b5baeb2f352308f090f03d539b8875d96936bf9cf7"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-conditional16-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-conditional16-report.json",
+        "bytes": 444,
+        "sha256": "c0ed44e3c139c52a7fae19b47335fb196a18722c535c11b05ca0e90581c1e1df"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-goal32-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-goal32-report.json",
+        "bytes": 444,
+        "sha256": "01ce85e7a5cfa656ca209816cd7975c66192c59e336cc5e1752c20ba791a3e98"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-report.json",
+        "bytes": 443,
+        "sha256": "93a47874165fbbe5782f83dd1af0dfe5749dad153285993ae1ff514e87c0b205"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-requirements.txt": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline-requirements.txt",
+        "bytes": 95,
+        "sha256": "b4ad49900f0a2fd3ce53461ad2bf2da875823288f009673a49b9491989537a06"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline.py",
+        "bytes": 1884,
+        "sha256": "f6b5e02ddcd80530f05e1aa2fe135842630b63f2d1026243195059a2ab90445c"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/baseline.ts",
+        "bytes": 2705,
+        "sha256": "d27ef65b017598a35c77836e39097a79053c5ba2cdfc6a6050df818e729308ed"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-evidence.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-evidence.ts",
+        "bytes": 5457,
+        "sha256": "61b57e129125f1426bd0c78586faa829b46369791a628cbb111744f3c460bbdb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-mixed-before-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-mixed-before-report.json",
+        "bytes": 141,
+        "sha256": "1f8fffef355e362bf18876f505cb53079c2747a2cbef7dd1c21ff11c2a699d40"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-samples64-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-samples64-report.json",
+        "bytes": 888,
+        "sha256": "11e2299cec16f7dde05e48a54469ccfbe44963cc28dcce85423e44e2afbb2d03"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-unattended32-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser-unattended32-report.json",
+        "bytes": 900,
+        "sha256": "8257c4f147b180f718fcc2b81b2b72ab359a95f1fc18e8b3cfc148131bd57bb5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/browser.ts",
+        "bytes": 8026,
+        "sha256": "add398c4924eed6ec1852a22070ae9ff50dc12b299c034de53b0c0769ab4cd94"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-depth4-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-depth4-report.json",
+        "bytes": 316,
+        "sha256": "fa6e9518f99839e97897240246ba120e0b7157d979d229195c9950b2d5e33a9a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-samples64-confirmation-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-samples64-confirmation-report.json",
+        "bytes": 321,
+        "sha256": "c130eeb0db57734c9c392cf37dde9b64ae63fd7eb11283ad577eae8346d0376a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-samples64-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-samples64-report.json",
+        "bytes": 318,
+        "sha256": "aeb16e136419461d5858302f0ec62a75d1f9a2c02f013e7e26142dae22f7c9b6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-goal-study.ts",
+        "bytes": 2282,
+        "sha256": "8add8b46ee5b027c854342af2183927823a00f702a8eaba489e8cc2bf613cde0"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples32-confirmation-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples32-confirmation-report.json",
+        "bytes": 322,
+        "sha256": "2e6e07c6fcad023dfac5c420bbeec42ee61af35d8f788eaf4e57d25fda35eb1c"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples32-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples32-report.json",
+        "bytes": 319,
+        "sha256": "cc9dd2197732aa191cd4ef71fbba21d89abff30b10e2334ecbb191d09228e244"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples64-paired-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples64-paired-report.json",
+        "bytes": 316,
+        "sha256": "cfc513d2b1d25097ac940cc5d79687eba2e38193b809373e00301d8695d7d7fb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples64-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-samples64-study.ts",
+        "bytes": 3514,
+        "sha256": "af52eb95bdf7f662d710781cc37cde34684a3a70e59cb5257c98de4b4362dbb6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/budget-study.ts",
+        "bytes": 2262,
+        "sha256": "b2c2484a7130bad02d1bf5de12ee485eeb4b6c4ad85d9dee3efe94a5663b5e28"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/build.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/build.ts",
+        "bytes": 1887,
+        "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/checksums.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/checksums.ts",
+        "bytes": 774,
+        "sha256": "2488fe20c13f0a674478ac3f4fa2d98f0719f5fa19124883eddc6a328e45dea5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ci-evidence.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ci-evidence.py",
+        "bytes": 4859,
+        "sha256": "3f31b78d6db875ee42f4e00fbbdc1e0cf0c47cde20bf820dd8139d1de1450a17"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-check.ts",
+        "bytes": 2361,
+        "sha256": "7ee87ac830c34940a5ee40e6e2adc651431635271658d30af548ab203a99f717"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-report.json",
+        "bytes": 268,
+        "sha256": "dc71e493f3bb2fed707f6950cebdb33717d5d24c51d904564454010c751a42cf"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-suits-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/conditional-suits-report.json",
+        "bytes": 242,
+        "sha256": "f0aa3cd7ad99989c0f7094366e6093592bb7fc4916fc46c1022a31b1a238e2a1"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/core.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/core.ts",
+        "bytes": 22697,
+        "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/differential-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/differential-report.json",
+        "bytes": 225,
+        "sha256": "2341e45c4a907234cce323e516c6e965747ef1b6b9c64c11ce2536119a74c725"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/differential.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/differential.ts",
+        "bytes": 1613,
+        "sha256": "4b7eb167ea3170000fc8906977b3b8f3a610bbda2f623974dfd9fb5708795a6d"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-browser-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-browser-check.ts",
+        "bytes": 6472,
+        "sha256": "5b127a206128059b4e368cdb53bc140d31e5a4c9d9d53ac8c256e0362cbb22a3"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-navigation-managed-d4ddb2c-controller.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-navigation-managed-d4ddb2c-controller.json",
+        "bytes": 10568,
+        "sha256": "11f9a8bdcdf8f521630cb7f686289b3b63d596bb8129de18948cdbfec22cfb8e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-navigation-managed-d4ddb2c.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/disk-navigation-managed-d4ddb2c.json",
+        "bytes": 6542,
+        "sha256": "aca09a361dc3c3a51b06bfb2fdbe0f481883c90af73a534693ec2df5a6ee24ca"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-before.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-before.json",
+        "bytes": 482,
+        "sha256": "4f638cd0ae3bdff424e404ad60a5023190d2a5f169792f863e9f8d7ca705221e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-conditional16-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-conditional16-report.json",
+        "bytes": 481,
+        "sha256": "df8161c4e94e587d0826e430160af4390428db4f518643851dd53c28a4fe2f63"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-goal32-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-goal32-report.json",
+        "bytes": 481,
+        "sha256": "eb9f3b958c4c8fced262b20541029385d00a2e2a96539a5ada4a6e31683692d0"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-opener-block-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-opener-block-report.json",
+        "bytes": 481,
+        "sha256": "9497b2b18de416a2950c85c3184465050c6965e56fd41b100ad235d87d2b1c47"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-report.json",
+        "bytes": 481,
+        "sha256": "2d6d9a0dea3adeedd813d041a52449e0d2ace4adf9e9ec6247c9f50cc77d7700"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-stock.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-league-stock.json",
+        "bytes": 480,
+        "sha256": "f19dc8bd557984fbe6ccae41e77296531e025d99745fbbd5c1b158733dc86dad"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-before-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-before-report.json",
+        "bytes": 483,
+        "sha256": "b15cc7152bdfeb2b3ad2d1e25df8dbe14ff9d26d283426205d5cf8243e242cc0"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-probe.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-probe.ts",
+        "bytes": 3143,
+        "sha256": "8421c2e9d36261087f9ffae6e5f26c09c0ffb291d24ec49d58161414d8f9177c"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/draw-opener-report.json",
+        "bytes": 467,
+        "sha256": "e64362d6c17dad82c7cdbf8490ab47aeed55a98c87cb3d60cd5618cae6cfd096"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures.ts",
+        "bytes": 973,
+        "sha256": "1384bd13b95cc2a09741da4a3627c09de2c7116ab62be813c585ce77107fd5de"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/done.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/done.json",
+        "bytes": 3547,
+        "sha256": "cc4a333595a7e7f119732e43839a67c93c14f626a64fcb3cd96a5e2a104cde00"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/play.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/play.json",
+        "bytes": 1472,
+        "sha256": "10653c7f4ca1da472e33aaaa6faa25edfe3f2a2adea0c4674419ecb7003c8302"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/round-end.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/fixtures/round-end.json",
+        "bytes": 3257,
+        "sha256": "2edb90b130e27f8993a00247bb32fba74a91f0a231d0af88b77acb987add8310"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/idle-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/idle-report.json",
+        "bytes": 86,
+        "sha256": "66abc3fbcd6cdd5e6a6b399a0483af76352f8d66bba23e9df59304e7e61374ea"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/idle.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/idle.ts",
+        "bytes": 1089,
+        "sha256": "315ce03d8489ebc74cc29ccb49bd2e453ddc2d3aa6cabddaca1f9236ed1b41d2"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-depth4-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-depth4-report.json",
+        "bytes": 2824,
+        "sha256": "5235c1f23f35cb2c8d3a2744a560ae62bb2fb6a092fb4f5e5b291797c17598cf"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-draw-depth-confirmation-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-draw-depth-confirmation-report.json",
+        "bytes": 2845,
+        "sha256": "6236c365d8d4c360ef602cedc5a3e28ab4d9f3f833cbbf31c93c2ac2698b4b5a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-draw-depth-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-draw-depth-report.json",
+        "bytes": 2837,
+        "sha256": "5428828e1d755a25948aa08453e82689724cbf35e8a3478c79a3f27d1c28a656"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-leaf-count-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-leaf-count-report.json",
+        "bytes": 2844,
+        "sha256": "4a7de6dfd0c6d6f24611d179c99845c1c013c9a9ef8ee2e695f5f547c9acac43"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/improvement-study.ts",
+        "bytes": 4255,
+        "sha256": "d794233d1943948f4f6f7d6b4d6b30a288a56aac1f99caf5c13d75f44ec37a8a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-conditional16-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-conditional16-report.json",
+        "bytes": 481,
+        "sha256": "7aa6a98acc6ba026bd697e1e99236a3deb94dfc0d07cf666ee975c5519b3efc2"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-goal32-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-goal32-report.json",
+        "bytes": 482,
+        "sha256": "c523be7687f14aa4cdd8f4d484533783ce5ae053e33466f7acf957d0ab816454"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-report.json",
+        "bytes": 481,
+        "sha256": "22155d31161df6a494f4a309980d9bd98e1430c2dfb6098364d3f62bc407a1bb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-samples64-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league-samples64-report.json",
+        "bytes": 482,
+        "sha256": "d5b30ce29326e8d822d207bba655525033f04ffc9df50d059cb1714a86b9c56b"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/league.ts",
+        "bytes": 2001,
+        "sha256": "5f15363b86be24ee59fd54a394e4370c07f10b78893855fccde48234cf0b88b8"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/manifest.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/manifest.json",
+        "bytes": 3165,
+        "sha256": "772e05fed0ae36e2fa59b7a8487eb57cd3306609a253b7c702660178c3b86e67"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/match-goal-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/match-goal-check.ts",
+        "bytes": 4209,
+        "sha256": "7c987b6f79495009dc94883ea53718fe455c7f0944e968f860c62c95177a8aba"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/match-goal-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/match-goal-report.json",
+        "bytes": 652,
+        "sha256": "a3ad0b33e83c82c0a6089cc318baabd57c587cbee088f6a1097ade2f97043610"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/accepted-checkpoint-8c57376-proof.zip": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/accepted-checkpoint-8c57376-proof.zip",
+        "bytes": 10067417,
+        "sha256": "f5e31c1bcd9e01fa4f1924e5f44c413d25169a9ebd18145196ff2ee8760106f6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/accepted-worker-checkpoint-e4d5882-proof.zip": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/accepted-worker-checkpoint-e4d5882-proof.zip",
+        "bytes": 30520437,
+        "sha256": "1ce6dd56e54ed3e4c60ea763ecc9504744bb31a5425dcfb684d633ada2bc32f8"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/disk-navigation-managed-d4ddb2c-proof.zip": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/disk-navigation-managed-d4ddb2c-proof.zip",
+        "bytes": 13108,
+        "sha256": "1c2c02a2e79d5833637947ee90aac94d7473d64c8f05ca65288ec482d89cc383"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-1.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-1.webm",
+        "bytes": 264390,
+        "sha256": "f3bd30a7bb7cef19dd1f7b9692d2711c0330bee511ee75fee982a9d47f2488f5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-10-opener.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-10-opener.webm",
+        "bytes": 273938,
+        "sha256": "553242349cf8d4a4d2fd597347ed3d374a573567d03041ce0e4fbee4432bdc20"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-11-draw-opener.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-11-draw-opener.webm",
+        "bytes": 272350,
+        "sha256": "5958c66d9e554abd1b1f6868f4096fde453121e08bb1271c7bd80728bb06a9ce"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-12-license.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-12-license.webm",
+        "bytes": 272346,
+        "sha256": "fab869b106253bfc39b312114ea1eacccac332b679334ec1ddacd781e0353cfa"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-13-total-events.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-13-total-events.webm",
+        "bytes": 270302,
+        "sha256": "8c3ff8d00500fe2d8a3813ea890d65b76cabb033705661fcf081589e5e15acc5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-14-presentation.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-14-presentation.webm",
+        "bytes": 368150,
+        "sha256": "d2d88955155005314a7bb88710a5a761ae075ca6cc26a8a6f6e5d9959f3a4010"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-2-deal.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-2-deal.webm",
+        "bytes": 256137,
+        "sha256": "8690b25dd336178e0733a92d4018765c35212f288677791fee2ea114c631ec04"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-3-stock.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-3-stock.webm",
+        "bytes": 253878,
+        "sha256": "b7e69c2a1167c92718fa8d004807ec88740f4b6ea39deb2108b2d6c545c2c247"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-4-conditional.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-4-conditional.webm",
+        "bytes": 246320,
+        "sha256": "2d5156df4b38d2e78795c89598550f56c43528aa0a37bd30ed34c09322630973"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-5-samples32.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-5-samples32.webm",
+        "bytes": 276052,
+        "sha256": "20c89f1be9e248b26bfb948a1b8a0b30f9351a516d4a7d48af0bc65deab0aee9"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-6-score-policy.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-6-score-policy.webm",
+        "bytes": 277797,
+        "sha256": "c33c119107a6310d73e833901581edd285e4acc0404863bdfe858995db0360cc"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-7-match-goal.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-7-match-goal.webm",
+        "bytes": 275815,
+        "sha256": "a7e5fc0f0142c91e7ba1a1d61fbe63f086d451a331de052dca8018692651404a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-8-unattended.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-8-unattended.webm",
+        "bytes": 229973,
+        "sha256": "a2b45725cc73d6afc4a6a8bb536ab30a4a53e31a7f31616fb109ea720a87cd4a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-9-samples64.webm": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-9-samples64.webm",
+        "bytes": 254213,
+        "sha256": "f04205ec45004ddad518102b00c6ccdf018381a5ecd50e58e4340e8278dab16a"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/worker-functional-2ae0438-proof.zip": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/worker-functional-2ae0438-proof.zip",
+        "bytes": 28080,
+        "sha256": "9cb2d0ee923e1b1ab655aa86d94b78fc7e35f820ede93458300a14e88437679b"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/worker-native-first-e4d5882-proof.zip": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/worker-native-first-e4d5882-proof.zip",
+        "bytes": 833987,
+        "sha256": "31e407fc264cbdfc137f4dd160090866016c2bad74aef32992176641246b767d"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle-before-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle-before-report.json",
+        "bytes": 5128,
+        "sha256": "c3801c531918269b88c344c1375005b075aa0d47aa89bb6661648eb524f607f2"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle-report.json",
+        "bytes": 4098,
+        "sha256": "0ba4ecf3b0b5e136b4ca690d0389fb1b4b55dff16a4056314c494a674ab51cfc"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mixed-idle.ts",
+        "bytes": 2105,
+        "sha256": "c17b9ddc9103a79bfbd39eaf9ad5671ca00fbe7d5988388f3d45c40325e0f5b0"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mutation-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mutation-report.json",
+        "bytes": 2857,
+        "sha256": "24f41ad67ff92e45f6045ac8c3b31bd2d186d351171ddae4f6b6704ef426f3ad"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mutations.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/mutations.ts",
+        "bytes": 3714,
+        "sha256": "dbb6c650633b17ca4a9186eb3724839e47faf987e6e5a0e50b9f34c0e9f86106"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-before-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-before-report.json",
+        "bytes": 462,
+        "sha256": "82ef4ebdc84f661c3b45eac9584a439832e2425ad9a583083187a661139cbd3b"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-probe.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-probe.ts",
+        "bytes": 3109,
+        "sha256": "d0ced35f632ae45d8b34ffec99cb0111a6ba10749c11ced0ac2a491bcc41cd03"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/opener-report.json",
+        "bytes": 446,
+        "sha256": "d8642e54b140b45294cc164cccb902608fdcaec8cf89b5f242042b68a9e000bf"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/package-lock.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/package-lock.json",
+        "bytes": 17697,
+        "sha256": "1a242ae1104a5219ec0aff32d353cf9fe2f529086de13fa7bc236f75875ef859"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/package.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/package.json",
+        "bytes": 1300,
+        "sha256": "f7332248e11dc222dd99cc168de1b345ce7b1cf43f94eea64939572fb278b741"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/parallel-improvement.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/parallel-improvement.ts",
+        "bytes": 2629,
+        "sha256": "bd3bd1e736fa775f63d9033ea9e451058c799f2146ad56e51d86d8cdba4259b6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/play.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/play.html",
+        "bytes": 1032861,
+        "sha256": "05c4687c604e2fe1e9b8f9483ac0266e254b43faa1851c46f0a843bcec67f71b"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/preflight.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/preflight.ts",
+        "bytes": 627,
+        "sha256": "73602dbb56ca73e1cabd03af362c549dbf6df6100b8b13072d71593ac9f9eb6e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/reference.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/reference.ts",
+        "bytes": 2532,
+        "sha256": "28ac7e907801e6d358f2d8362388c6852814c1aae4a29b5b260473812c9901b1"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/score-policy-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/score-policy-check.ts",
+        "bytes": 2900,
+        "sha256": "e912a93a15bb9b0ad63e9c262ce9e8dd24d930089d3a1b1c1214a926da2d409d"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/score-policy-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/score-policy-report.json",
+        "bytes": 117,
+        "sha256": "65a02dd2ca0e07bb248cf4ddf48a878140fc01bc23476be149ae4f5190624fd7"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/shell.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/shell.html",
+        "bytes": 45308,
+        "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-goal-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-goal-report.json",
+        "bytes": 246,
+        "sha256": "efff833823aada6866c1d89d47fee24cbfe268a9bd0ead829a6074d2ecab37ca"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-goal-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-goal-study.ts",
+        "bytes": 2542,
+        "sha256": "c865d25b6ff7ad35954eb34e5b121d599b0b9a390096bd33febb67e1f2053f69"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-confirmation-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-confirmation-report.json",
+        "bytes": 249,
+        "sha256": "290fa7af73a2ffbb5d9acb12c0e0ce85def7b45d8a284de2e7e849e66d88f06e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-report.json",
+        "bytes": 246,
+        "sha256": "25c70a6e5d7410a2e5457eca985d4820f364149a9fef33e2846f0578dd5d192e"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-samples64-study.ts",
+        "bytes": 2801,
+        "sha256": "3d0cf239497d59b021f3a564450cedf147ac53ce4e01d10ad6dcd1cab4ab8406"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-study-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-study-report.json",
+        "bytes": 246,
+        "sha256": "20ab31a96e1b71fe642e91ab84c6a9eb4db8c25d7189ec7777f50e17132fed68"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-study.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strategy-study.ts",
+        "bytes": 2528,
+        "sha256": "1424364dcee9e1cb329e9795a82ad0dd2be5f9ec4dc43b7f60e507c81574dd75"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-bot-checks.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-bot-checks.ts",
+        "bytes": 5059,
+        "sha256": "eb3ba85034c4a07c9a5dcfa70e119f3fe0abe5912fbd73d605e0443f9f816bdd"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-bot.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-bot.ts",
+        "bytes": 2853,
+        "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-worker.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/strong-worker.ts",
+        "bytes": 868,
+        "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-baseline.ts",
+        "bytes": 20349,
+        "sha256": "a19d2b4c77f3f1dc5e1cd3c358e740c27c3b67124d835318887df2df0c645d73"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-current-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-current-baseline.ts",
+        "bytes": 21948,
+        "sha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-goal-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-goal-baseline.ts",
+        "bytes": 21042,
+        "sha256": "f68e0817932e260b47bb08722d1574c153c79700267708c3142afcf4fe11b99c"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-opener-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-opener-baseline.ts",
+        "bytes": 21671,
+        "sha256": "a7a5acdc11eb362e8ab29463f746c58a50e4bd7e99557fcf0888e46d09a231aa"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-samples64-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-samples64-baseline.ts",
+        "bytes": 21042,
+        "sha256": "9512830d962a89d99236c077196a94d560e677338b709272dac64a4ff730ea21"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-score-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-score-baseline.ts",
+        "bytes": 20702,
+        "sha256": "a12a896c693c940f8a6a4ffa39e41ea0de54e805a3ecef9602a303a5e1d32f05"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-total-baseline.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/study-total-baseline.ts",
+        "bytes": 21948,
+        "sha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/test.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/test.ts",
+        "bytes": 30258,
+        "sha256": "ec0e69878659edfdacf8f3a60e8e011013fe67cad88a22abe13eba6772de3af6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-compatibility-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-compatibility-report.json",
+        "bytes": 455,
+        "sha256": "64ec0866be9366e504c15fcd93dda989b8e8e4753998266ed18ff1c8c616d0c5"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-compatibility.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-compatibility.ts",
+        "bytes": 3840,
+        "sha256": "cbddd8a6fdd6874f75c1b9e4f54e2d48661f7ba73f30f1e8fad9221e1430ab90"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-envelopes-report.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-envelopes-report.json",
+        "bytes": 227,
+        "sha256": "43294fce02f174813b979af845e3b35f110a590bc5fcc546a771ab15f53ce5db"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-envelopes.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/total-envelopes.ts",
+        "bytes": 3656,
+        "sha256": "f2bbc0f7296fdf202e8c1d182e7ac4968df14398ecf3ead36ff89622b511cb83"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/tsconfig.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/tsconfig.json",
+        "bytes": 273,
+        "sha256": "3c1deb2e83a4638a7d2c27175019ab064aab7ff6b071a296b39f9e06cceb92fb"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ui.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/ui.ts",
+        "bytes": 50326,
+        "sha256": "9879f1515bb9625379a032087050263514488f897f5980b77039044325fe84a7"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/verify-ci-artifact.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/verify-ci-artifact.py",
+        "bytes": 11752,
+        "sha256": "a659f70189033dcda165491629b6288b85457057658b9fa7a8fd6eec029d1931"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/verify-worker-artifact.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/verify-worker-artifact.py",
+        "bytes": 15871,
+        "sha256": "6a33c711fd5d3d17e34c714d0021cf6612783003dc23655c922800cb5fb57106"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-browser-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-browser-check.ts",
+        "bytes": 13314,
+        "sha256": "5fa662868c6126ee0d50aaed5bff5a2de0d773d03cd2cef2332e0342faac5ff6"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-functional-2ae0438.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-functional-2ae0438.json",
+        "bytes": 61948,
+        "sha256": "f6a148bc6e18e01410e5f65ace6038b41d756bfa976958cbf78d8f3e32134986"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-functional-controller-2ae0438.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-functional-controller-2ae0438.json",
+        "bytes": 10306,
+        "sha256": "82eb5faf30b41930d60b8c44b6fc28914a21292b87c83d13549b7ad65d1f0432"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-hosted-e4d5882.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-hosted-e4d5882.json",
+        "bytes": 5899,
+        "sha256": "db62340a4b8523c043b3904c49bd9bc0b97d62f06d19f7ac6fae2e7e01b98139"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-native-first-e4d5882-controller.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-native-first-e4d5882-controller.json",
+        "bytes": 45671,
+        "sha256": "361914742c52b16dae0ff186d2c0cbc64b9e717bc5fde259ba84dc761644f1ed"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-native-first-e4d5882.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/worker-native-first-e4d5882.json",
+        "bytes": 21755,
+        "sha256": "f6bbae54dff3ff81b98a84db42c358a0f51e041d7964b652353354e905d38373"
+      },
+      ".work/queue-audit-20261008/face-down-profile-first-controller.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-first-controller.py",
+        "bytes": 9534,
+        "sha256": "8d954763bd67515497b0a3f28e6e5e68ef4db1fec7a909628c8c9e0ac4613146"
+      },
+      ".work/queue-audit-20261008/face-down-deal-prototype.mjs": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-deal-prototype.mjs",
+        "bytes": 5758,
+        "sha256": "6ff843eb78c92f1c52f2823823c94eb2b66c074a3c73228bd02cd6ed4854853a"
+      },
+      ".work/queue-audit-20261008/face-down-deal-ui.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-deal-ui.ts",
+        "bytes": 50326,
+        "sha256": "9879f1515bb9625379a032087050263514488f897f5980b77039044325fe84a7"
+      },
+      ".work/queue-audit-20261008/face-down-deal-play.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-deal-play.html",
+        "bytes": 1032861,
+        "sha256": "05c4687c604e2fe1e9b8f9483ac0266e254b43faa1851c46f0a843bcec67f71b"
+      },
+      ".work/queue-audit-20261008/face-down-deal-prototype.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-deal-prototype.json",
+        "bytes": 6670,
+        "sha256": "83a1b458c916cab6d093da6a67573e46ca3024bc0dd250aee1faedcba1559200"
+      },
+      ".work/queue-audit-20261008/face-down-profile-clone.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone.json",
+        "bytes": 26791,
+        "sha256": "cf03408a5f4607603609e5a2f73e23a868677e5b7f5033fd9117ecc163245807"
+      },
+      "jobs/G01-dominoes/ui.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/ui.ts",
+        "bytes": 49869,
+        "sha256": "51b051811761544f0ab1a83ae55fde48b7fc27d8756500d25e4e6280d4f27560"
+      },
+      "jobs/G01-dominoes/play.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html",
+        "bytes": 1032578,
+        "sha256": "02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0"
+      },
+      "jobs/G01-dominoes/core.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/core.ts",
+        "bytes": 22697,
+        "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+      },
+      "jobs/G01-dominoes/browser.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/browser.ts",
+        "bytes": 8026,
+        "sha256": "add398c4924eed6ec1852a22070ae9ff50dc12b299c034de53b0c0769ab4cd94"
+      },
+      "jobs/G01-dominoes/browser-evidence.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/browser-evidence.ts",
+        "bytes": 5457,
+        "sha256": "61b57e129125f1426bd0c78586faa829b46369791a628cbb111744f3c460bbdb"
+      },
+      "jobs/G01-dominoes/strong-worker.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-worker.ts",
+        "bytes": 868,
+        "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+      },
+      "jobs/G01-dominoes/strong-bot.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-bot.ts",
+        "bytes": 2853,
+        "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+      },
+      "jobs/G01-dominoes/package.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/package.json",
+        "bytes": 1300,
+        "sha256": "f7332248e11dc222dd99cc168de1b345ce7b1cf43f94eea64939572fb278b741"
+      },
+      "jobs/G01-dominoes/build.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/build.ts",
+        "bytes": 1887,
+        "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+      },
+      "jobs/G01-dominoes/shell.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/shell.html",
+        "bytes": 45308,
+        "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+      },
+      "contract/rng.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/rng.ts",
+        "bytes": 3445,
+        "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+      }
+    },
+    "binaries": {
+      "node": {
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "bytes": 125989464,
+        "sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+      },
+      "chromium": {
+        "path": "/usr/lib/chromium/chromium",
+        "bytes": 321686360,
+        "sha256": "d387400aaf740ccb75e5e996a34aa0940e6e97683a4eabd6ae34c1eed6804723"
+      },
+      "compiler": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/@esbuild/linux-x64/bin/esbuild",
+        "bytes": 10358936,
+        "sha256": "bab29b2ca7a9e89b67cf720b77b2d743f9f31f5cf0d5bd74ee8c8de30ced7014"
+      },
+      "ffmpeg": {
+        "path": "/usr/bin/ffmpeg",
+        "bytes": 366984,
+        "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a"
+      },
+      "ffprobe": {
+        "path": "/usr/bin/ffprobe",
+        "bytes": 206504,
+        "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46"
+      }
+    }
+  },
+  "sourceAndBinaryGuardsPassed": true,
+  "readyAfter": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-ready.json",
+    "bytes": 75502,
+    "sha256": "600bd0bc0656900c1436f4904c32d35365ea27572eb6a27492273587ede80fee"
+  },
+  "controllerAfter": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-first-controller.py",
+    "bytes": 9534,
+    "sha256": "8d954763bd67515497b0a3f28e6e5e68ef4db1fec7a909628c8c9e0ac4613146"
+  },
+  "controllerAndReadyUnchanged": true,
+  "actualProof": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/.tmp/g01-evidence/browser-current.json",
+    "bytes": 52307,
+    "sha256": "0d1f2fbb81baee3fec81f364bad3dce083ceb7a18d86b2c9b1158c5fb0ef031b"
+  },
+  "proofStatus": "PASS",
+  "nativeAcceptance": {
+    "status": "PASS",
+    "profiles": [
+      {
+        "name": "tv",
+        "frames": 300,
+        "fps": 58.06751316196965,
+        "meanMs": 17.221333333333334,
+        "p95Ms": 16.800000000000182,
+        "p99Ms": 33.39999999999998
+      },
+      {
+        "name": "phone",
+        "frames": 300,
+        "fps": 58.44344077575486,
+        "meanMs": 17.11056,
+        "p95Ms": 16.800000000000182,
+        "p99Ms": 33.40000000000009
+      }
+    ],
+    "capture": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/face-down-profile-clone/repo/jobs/G01-dominoes/media/milestone-15-face-down-deal.webm",
+      "bytes": 250955,
+      "sha256": "80ba27597baabf29eac2804d6e3a17df1fc27b591af0c91091e278ada6a7fd81"
+    },
+    "scope": "Original gates passed once; player gain not measured"
+  },
+  "controllerFinishedAt": "2026-10-09T01:52:39.701547+00:00"
+}

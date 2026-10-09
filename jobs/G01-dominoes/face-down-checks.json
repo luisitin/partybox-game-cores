@@ -1,0 +1,47 @@
+{
+  "schema": "g01-reviewed-face-down-draft-finite-checks/1",
+  "startedAt": "2026-10-09T02:00:27.682976+00:00",
+  "uiBefore": {
+    "bytes": 50326,
+    "sha256": "9879f1515bb9625379a032087050263514488f897f5980b77039044325fe84a7"
+  },
+  "playBefore": {
+    "bytes": 1032861,
+    "sha256": "05c4687c604e2fe1e9b8f9483ac0266e254b43faa1851c46f0a843bcec67f71b"
+  },
+  "scope": "Finite strict/source/reproducible-build checks only; no native launch/fullnpm/currenthosted or measuredgain claim",
+  "checks": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "startedAt": "2026-10-09T02:00:27.688396+00:00",
+      "naturallyClosedAt": "2026-10-09T02:00:32.674181+00:00",
+      "exitCode": 0,
+      "remainingOwnedLiveProcesses": []
+    },
+    {
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "build.ts",
+        "--check"
+      ],
+      "startedAt": "2026-10-09T02:00:32.726136+00:00",
+      "naturallyClosedAt": "2026-10-09T02:00:33.513009+00:00",
+      "exitCode": 0,
+      "remainingOwnedLiveProcesses": []
+    }
+  ],
+  "uiAfter": {
+    "bytes": 50326,
+    "sha256": "9879f1515bb9625379a032087050263514488f897f5980b77039044325fe84a7"
+  },
+  "playAfter": {
+    "bytes": 1032861,
+    "sha256": "05c4687c604e2fe1e9b8f9483ac0266e254b43faa1851c46f0a843bcec67f71b"
+  },
+  "status": "PASS",
+  "naturallyClosedAt": "2026-10-09T02:00:33.569821+00:00"
+}

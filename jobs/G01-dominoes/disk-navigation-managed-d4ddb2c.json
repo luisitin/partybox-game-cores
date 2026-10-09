@@ -1,0 +1,141 @@
+{
+  "schema": "g01-disk-browser-proof/1",
+  "status": "FAIL",
+  "startedAt": "2026-10-09T00:44:23.291Z",
+  "navigationMode": "Actual page.goto(file://); no setContent fallback",
+  "fileURL": "file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html",
+  "sourcesBefore": {
+    "disk-browser-check.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/disk-browser-check.ts",
+      "bytes": 6472,
+      "sha256": "5b127a206128059b4e368cdb53bc140d31e5a4c9d9d53ac8c256e0362cbb22a3"
+    },
+    "play.html": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html",
+      "bytes": 1032578,
+      "sha256": "02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0"
+    },
+    "ui.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/ui.ts",
+      "bytes": 49869,
+      "sha256": "51b051811761544f0ab1a83ae55fde48b7fc27d8756500d25e4e6280d4f27560"
+    },
+    "strong-bot.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-bot.ts",
+      "bytes": 2853,
+      "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+    },
+    "strong-worker.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-worker.ts",
+      "bytes": 868,
+      "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+    },
+    "core.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/core.ts",
+      "bytes": 22697,
+      "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+    },
+    "build.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/build.ts",
+      "bytes": 1887,
+      "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+    },
+    "shell.html": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/shell.html",
+      "bytes": 45308,
+      "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+    },
+    "package.json": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/package.json",
+      "bytes": 1300,
+      "sha256": "f7332248e11dc222dd99cc168de1b345ce7b1cf43f94eea64939572fb278b741"
+    },
+    "../../contract/rng.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/rng.ts",
+      "bytes": 3445,
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    }
+  },
+  "nodeBefore": {
+    "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "bytes": 125989464,
+    "sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+  },
+  "nodeVersion": "v24.19.0",
+  "chromiumBefore": {
+    "path": "/usr/lib/chromium/chromium",
+    "bytes": 321686360,
+    "sha256": "d387400aaf740ccb75e5e996a34aa0940e6e97683a4eabd6ae34c1eed6804723"
+  },
+  "chromiumVersion": "151.0.7922.173",
+  "failure": {
+    "name": "Error",
+    "message": "page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html\nCall log:\n\u001b[2m  - navigating to \"file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html\", waiting until \"load\"\u001b[22m\n",
+    "stack": "page.goto: net::ERR_BLOCKED_BY_ADMINISTRATOR at file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html\nCall log:\n\u001b[2m  - navigating to \"file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html\", waiting until \"load\"\u001b[22m\n\n    at /workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/disk-browser-check.ts:37:13"
+  },
+  "errors": [],
+  "externalRequests": [],
+  "browserClosedAt": "2026-10-09T00:44:24.151Z",
+  "sourcesAfter": {
+    "disk-browser-check.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/disk-browser-check.ts",
+      "bytes": 6472,
+      "sha256": "5b127a206128059b4e368cdb53bc140d31e5a4c9d9d53ac8c256e0362cbb22a3"
+    },
+    "play.html": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html",
+      "bytes": 1032578,
+      "sha256": "02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0"
+    },
+    "ui.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/ui.ts",
+      "bytes": 49869,
+      "sha256": "51b051811761544f0ab1a83ae55fde48b7fc27d8756500d25e4e6280d4f27560"
+    },
+    "strong-bot.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-bot.ts",
+      "bytes": 2853,
+      "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+    },
+    "strong-worker.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-worker.ts",
+      "bytes": 868,
+      "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+    },
+    "core.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/core.ts",
+      "bytes": 22697,
+      "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+    },
+    "build.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/build.ts",
+      "bytes": 1887,
+      "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+    },
+    "shell.html": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/shell.html",
+      "bytes": 45308,
+      "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+    },
+    "package.json": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/package.json",
+      "bytes": 1300,
+      "sha256": "f7332248e11dc222dd99cc168de1b345ce7b1cf43f94eea64939572fb278b741"
+    },
+    "../../contract/rng.ts": {
+      "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/rng.ts",
+      "bytes": 3445,
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    }
+  },
+  "nodeAfter": {
+    "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "bytes": 125989464,
+    "sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+  },
+  "chromiumAfter": {
+    "path": "/usr/lib/chromium/chromium",
+    "bytes": 321686360,
+    "sha256": "d387400aaf740ccb75e5e996a34aa0940e6e97683a4eabd6ae34c1eed6804723"
+  }
+}

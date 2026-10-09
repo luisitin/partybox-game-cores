@@ -1,11 +1,11 @@
 # CLAIMS (one line per job: ID, UTC time, chat nickname)
-G01 2026-10-09T12:56:22Z codex-domino-queue-audit-20261009
-G02 2026-10-09T09:05:25Z codex-gin-audit-20261009
-G03 2026-10-09T05:50:07Z codex-pack-audit-20261009
-G04 2026-10-09T12:34:02Z codex-reality-followup-20261009
-G05 2026-10-09T12:36:29Z codex-hearts-queue-audit-20261009
-G06 2026-10-09T10:22:18Z codex-spades-audit-20261009
-G07 2026-10-09T10:51:30Z codex-dice-queue-audit-20261009
-G08 2026-10-09T05:18:37Z codex-shake-audit-20261009
-G09 2026-10-09T05:33:07Z codex-category-audit-20261009
-G10 BLOCKED
+G01 2026-10-08T22:58:53Z codex-domino-audit
+G02 2026-10-08T19:46:10Z codex-gin-reverify
+G03 2026-10-08T17:46:52Z codex-pack-resume
+G04 2026-10-08T21:26:54Z codex-reality-reverify
+G05 2026-10-08T22:11:59Z codex-hearts-reverify
+G06 2026-10-08T22:22:18Z codex-spades-audit
+G07 2026-10-08T19:52:05Z codex-dice-resume
+G08 2026-10-08T22:09:04Z codex-shake-resume
+G09 2026-10-08T21:36:43Z codex-category
+G10 2026-10-08T22:38:35Z codex-audit
