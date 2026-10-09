@@ -1,0 +1,269 @@
+{
+  "planted": 25,
+  "killed": 25,
+  "baselineTests": 28,
+  "startupFailuresCounted": 0,
+  "timeoutsCounted": 0,
+  "records": [
+    {
+      "id": 1,
+      "module": "scoring",
+      "bug": "Exact contract treated as failure",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 2,
+      "module": "scoring",
+      "bug": "Contracts worth nine instead of ten",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 3,
+      "module": "scoring",
+      "bug": "Failed contract awards points",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 4,
+      "module": "scoring",
+      "bug": "Blind nil loses double bonus",
+      "killed": true,
+      "assertionFailures": [
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 5,
+      "module": "scoring",
+      "bug": "Nil success and failure signs reversed",
+      "killed": true,
+      "assertionFailures": [
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 6,
+      "module": "scoring",
+      "bug": "Bag penalty waits until eleven",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 7,
+      "module": "scoring",
+      "bug": "Bag carry uses nine",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 8,
+      "module": "scoring",
+      "bug": "Carried bags ignored by penalty",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 9,
+      "module": "scoring",
+      "bug": "Failed nil silently rescues normal contract",
+      "killed": true,
+      "assertionFailures": [
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 10,
+      "module": "scoring",
+      "bug": "Nil tricks stop counting as bags",
+      "killed": true,
+      "assertionFailures": [
+        "✖ contract exact/missed/overtrick scoring and carried multiple ten-bag penalties",
+        "✖ ordinary and blind nil bonuses are independent of partner success",
+        "✖ failed nil tricks never silently rescue the default contract; contribution is selectable",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 11,
+      "module": "cards",
+      "bug": "Follow latest card instead of original lead",
+      "killed": true,
+      "assertionFailures": [
+        "✖ original lead suit remains compulsory after another player trumps",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 12,
+      "module": "cards",
+      "bug": "Unbroken spades always leadable",
+      "killed": true,
+      "assertionFailures": [
+        "✖ unbroken-spade leads wait except when every remaining card is spades",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 13,
+      "module": "cards",
+      "bug": "All-spades exception removed",
+      "killed": true,
+      "assertionFailures": [
+        "✖ unbroken-spade leads wait except when every remaining card is spades",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 14,
+      "module": "cards",
+      "bug": "Lower rank beats higher rank",
+      "killed": true,
+      "assertionFailures": [
+        "✖ highest trump or original-lead card wins regardless of off-suit aces",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 15,
+      "module": "cards",
+      "bug": "Hearts become trump",
+      "killed": true,
+      "assertionFailures": [
+        "✖ highest trump or original-lead card wins regardless of off-suit aces",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 16,
+      "module": "core",
+      "bug": "Blind decision leaks own hand",
+      "killed": true,
+      "assertionFailures": [
+        "✖ blind nil cannot inspect a hand or be declared after looking",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 17,
+      "module": "core",
+      "bug": "Four-player bids exceed thirteen",
+      "killed": true,
+      "assertionFailures": [
+        "✖ blind score deficit, disabled blind and contextual bid ceilings are enforced",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 18,
+      "module": "core",
+      "bug": "Duplicate exchange accepted",
+      "killed": true,
+      "assertionFailures": [
+        "✖ exchange rejects duplicate or unheld cards and wrong actors without changing identity",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 19,
+      "module": "core",
+      "bug": "Wrong actor accepted",
+      "killed": true,
+      "assertionFailures": [
+        "✖ exchange rejects duplicate or unheld cards and wrong actors without changing identity",
+        "✖ play rejects wrong seats, unheld cards and illegal suit choices",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 20,
+      "module": "core",
+      "bug": "Spectator input accepted",
+      "killed": true,
+      "assertionFailures": [
+        "✖ all phases ignore spectators, unexpected inputs, stale timers and early deadlines",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 21,
+      "module": "core",
+      "bug": "Stale phase nonce ignored",
+      "killed": true,
+      "assertionFailures": [
+        "✖ all phases ignore spectators, unexpected inputs, stale timers and early deadlines",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 22,
+      "module": "core",
+      "bug": "Early deadline accepted",
+      "killed": true,
+      "assertionFailures": [
+        "✖ all phases ignore spectators, unexpected inputs, stale timers and early deadlines",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 23,
+      "module": "core",
+      "bug": "Pause stops freezing input/timer",
+      "killed": true,
+      "assertionFailures": [
+        "✖ pause freezes input and timer; resume shifts visible deadlines exactly",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 24,
+      "module": "core",
+      "bug": "Exact 500 fails to end match",
+      "killed": true,
+      "assertionFailures": [
+        "✖ 500 threshold, mercy threshold and shared leading ties follow the selected rules",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": 25,
+      "module": "core",
+      "bug": "Shared leading tie ends match",
+      "killed": true,
+      "assertionFailures": [
+        "✖ 500 threshold, mercy threshold and shared leading ties follow the selected rules",
+        "✖ failing tests:"
+      ]
+    }
+  ]
+}

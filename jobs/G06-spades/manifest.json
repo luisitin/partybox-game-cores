@@ -1,0 +1,147 @@
+{
+  "id": "spades",
+  "name": "Spades",
+  "icon": "♠️",
+  "tagline": "Make your bid. Protect your partner. Watch the bags.",
+  "description": "Classic 500-point partnership Spades or three-player Cutthroat, with nil, blind nil, optional two-card exchange and accumulated bags.",
+  "howToPlay": [
+    "Declare how many tricks you will take; nil promises none.",
+    "Follow the lead suit; spades always trump and the winner leads.",
+    "Meet contracts, protect nils and avoid ten bags. First to 500 wins."
+  ],
+  "version": "0.1.0",
+  "minPlayers": 3,
+  "maxPlayers": 4,
+  "playerCounts": {
+    "setting": "mode",
+    "default": [
+      4,
+      4
+    ],
+    "overrides": {
+      "cutthroat": [
+        3,
+        3
+      ]
+    }
+  },
+  "estimatedMinutes": 60,
+  "unlimitedDuration": true,
+  "tags": [
+    "classic",
+    "strategy",
+    "teams"
+  ],
+  "presence": {
+    "needs": "anywhere"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "settings": [
+    {
+      "key": "mode",
+      "label": "Table",
+      "type": "select",
+      "default": "partnership",
+      "options": [
+        {
+          "value": "partnership",
+          "label": "Partnership — four players"
+        },
+        {
+          "value": "cutthroat",
+          "label": "Cutthroat — three players"
+        }
+      ]
+    },
+    {
+      "key": "blind",
+      "label": "Allow blind nil",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "blindGap",
+      "label": "Blind nil deficit",
+      "type": "select",
+      "default": "100",
+      "options": [
+        {
+          "value": "100",
+          "label": "At least 100 behind"
+        },
+        {
+          "value": "0",
+          "label": "Tied or behind; no minimum deficit"
+        }
+      ]
+    },
+    {
+      "key": "exchange",
+      "label": "Blind nil two-card exchange",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "nilValue",
+      "label": "Nil bonus",
+      "type": "select",
+      "default": "100",
+      "options": [
+        {
+          "value": "100",
+          "label": "100 / blind 200"
+        },
+        {
+          "value": "50",
+          "label": "50 / blind 100"
+        }
+      ]
+    },
+    {
+      "key": "failedNilCounts",
+      "label": "Failed nil tricks help the contract",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "mercy",
+      "label": "End if a side reaches −500",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "cutDeck",
+      "label": "Cutthroat deck",
+      "type": "select",
+      "default": "low-club",
+      "options": [
+        {
+          "value": "low-club",
+          "label": "Remove 2♣"
+        },
+        {
+          "value": "stock",
+          "label": "One unseen undealt card"
+        }
+      ]
+    },
+    {
+      "key": "cutLead",
+      "label": "Cutthroat first lead",
+      "type": "select",
+      "default": "dealer",
+      "options": [
+        {
+          "value": "dealer",
+          "label": "Dealer’s left"
+        },
+        {
+          "value": "club",
+          "label": "Lowest club holder"
+        }
+      ]
+    }
+  ]
+}

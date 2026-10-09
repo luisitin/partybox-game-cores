@@ -1,0 +1,86 @@
+{
+  "fileOpen": "managed file navigation blocked; exact bytes exercised using setContent",
+  "functional": [
+    "partnership valid40-character names fit390px, concealed and open",
+    "cutthroat valid40-character names fit390px, concealed and open",
+    "partnership duplicate-name handovers disambiguated by seat / each revealed hand matches its owner / name resembling seat label stays distinct",
+    "cutthroat duplicate-name handovers disambiguated by seat / each revealed hand matches its owner / name resembling seat label stays distinct",
+    "follow-suit hand focuses first enabled card; native keyboard Enter plays it",
+    "four humans / concealed handover / escaped names / bid draft hide-pause-resume / legal keyboard play / trick timer and winner lead / partial end / restart",
+    "blind cards absent / late blind unavailable / sequential exchange / two selected cards survive hide and pause / received cards returned / handover removes DOM",
+    "four blind bids / both pairs exchange once / all four sequential transfers complete",
+    "complete UI partnership/52-card / exact core scores / half nil / contribution / no mercy / no blind-exchange / no overflow / finite final sides",
+    "complete UI cutthroat/low-club / exact core scores / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides",
+    "complete UI cutthroat/stock / exact core scores / half nil / contribution / no mercy / no blind-exchange / lowest club / no overflow / finite final sides",
+    "TV reduced motion / no overflow",
+    "phone-4x reduced motion / no overflow"
+  ],
+  "scenarios": 13,
+  "completeGames": [
+    {
+      "mode": "partnership",
+      "deck": "52-card",
+      "clockSteps": 476,
+      "durationMs": 2750.9411,
+      "scores": [
+        226,
+        503
+      ]
+    },
+    {
+      "mode": "cutthroat",
+      "deck": "low-club",
+      "clockSteps": 864,
+      "durationMs": 3705.670926999999,
+      "scores": [
+        547,
+        397,
+        86
+      ]
+    },
+    {
+      "mode": "cutthroat",
+      "deck": "stock",
+      "clockSteps": 612,
+      "durationMs": 3129.362097999998,
+      "scores": [
+        368,
+        305,
+        518
+      ]
+    }
+  ],
+  "errors": 0,
+  "externalRequests": 0,
+  "performance": [
+    {
+      "label": "TV",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "frames": 900,
+      "averageMs": 16.81411111111111,
+      "fps": 59.47385463268287,
+      "p95Ms": 16.799999999999272,
+      "maxMs": 83.30000000000018
+    },
+    {
+      "label": "phone-4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "frames": 900,
+      "averageMs": 16.66588888888889,
+      "fps": 60.00280013067276,
+      "p95Ms": 16.700000000000728,
+      "maxMs": 16.80000000000109
+    }
+  ],
+  "phoneLimitation": "390x844 and four-times CPU throttle; no physical phone available",
+  "capture": "media/milestone-6-offline.webm",
+  "durationMs": 55259.477968
+}

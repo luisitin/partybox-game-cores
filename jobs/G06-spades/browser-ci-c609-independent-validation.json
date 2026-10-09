@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-08T15:15:59.689Z",
+  "head": "c60923dd80e357b29196133caddf3d5ccb5c7fd2",
+  "run": 37797062112,
+  "artifact": 11558968769,
+  "zipBytes": 8220,
+  "zipSha256": "1dcdd3090f6c9e176fc943fa9c2dc837131e161c3180369cedea6164fc8a4efe",
+  "scope": "Actual completed CI artifact byte read; frozen current-source independent raw recomputation before further edits; historical after later runner-only edits",
+  "htmlSha256": "81acc8a73244a8df72f34cfda1d6dbedc4ac2cfd9e075c1ee2ce88ec09161e41",
+  "sourceGuards": 17,
+  "rawIntervals": 1800,
+  "metrics": [
+    {
+      "profile": "TV",
+      "frames": 900,
+      "averageMs": 16.666,
+      "fps": 60.00240009600384,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    },
+    {
+      "profile": "phone-4x",
+      "frames": 900,
+      "averageMs": 16.665926666666667,
+      "fps": 60.00266411828685,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    }
+  ]
+}

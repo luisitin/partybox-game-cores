@@ -1,0 +1,52 @@
+import assert from 'node:assert/strict';
+import { writeFileSync } from 'node:fs';
+import { performance } from 'node:perf_hooks';
+import { createRng } from '../../../contract/rng.ts';
+import { game, blindEligible, sideOf, type State, type Input } from '../core.ts';
+
+const started = performance.now();
+const observations: unknown[] = [];
+let reproduced = false;
+for (let seed = 1; seed <= 5 && !reproduced; seed++) {
+  const players = Array.from({ length: 4 }, (_, i) => ({ id: `p${i}`, name: `Player ${i + 1}`, avatarId: '🙂', connected: true, bot: true }));
+  let state: State = game.init({ players, settings: { mode: 'partnership', blindGap: 0 }, seed, now: 0 });
+  const random = state.seats.map((_, i) => createRng(seed ^ Math.imul(i + 13, 0x9e3779b1)));
+  let events = 0;
+  while (state.handNumber === 1 && events++ < 200) {
+    if (state.phase.deadline !== null) {
+      state = game.reduce(state, { type: 'timer', phaseId: state.phase.id, startedAt: state.phase.startedAt, now: state.phase.deadline });
+    } else {
+      const index = state.turn;
+      const id = state.seats[index]!;
+      const input = game.bot.sampleInput(state, id, random[index]!, 'normal');
+      assert(input, `normal bot has no action in ${state.phase.id}`);
+      state = game.reduce(state, { type: 'input', playerId: id, input, now: state.phase.startedAt + 1 });
+    }
+  }
+  assert.equal(state.handNumber, 2, 'diagnostic must reach a naturally scored next hand');
+  const beforeBidding = structuredClone(state);
+  for (let bids = 0; bids < 8 && ['blind', 'bid'].includes(state.phase.id); bids++) {
+    const id = state.seats[state.turn]!;
+    const side = sideOf(state, id);
+    const leading = state.scores[side]! > Math.max(...state.scores.filter((_, i) => i !== side));
+    const observation = { seed, hand: state.handNumber, scores: [...state.scores], actor: id, leading, phase: state.phase.id, looked: state.looked.includes(id), eligible: blindEligible(state, id), handVisible: game.controllerView(state, id).hand.length };
+    observations.push(observation);
+    if (leading) {
+      assert.equal(state.settings.blindGap, 0);
+      assert.equal(state.phase.id, 'bid', 'leading side bypasses the pre-look blind choice');
+      assert.equal(blindEligible(state, id), false);
+      assert.equal(observation.looked, true);
+      assert.equal(observation.handVisible, 13);
+      const denied = game.reduce(state, { type: 'input', playerId: id, input: { type: 'blind-nil' }, now: state.phase.startedAt + 1 });
+      assert.equal(denied, state, 'leading side cannot declare blind nil');
+      reproduced = true;
+    }
+    const input: Input = state.phase.id === 'blind' ? { type: 'look' } : { type: 'bid', value: 1 };
+    state = game.reduce(state, { type: 'input', playerId: id, input, now: state.phase.startedAt + 1 });
+  }
+  assert.equal(beforeBidding.settings.blindGap, 0);
+}
+assert(reproduced, 'a naturally reached leading side must reproduce the eligibility/label mismatch');
+const report = { claim: 'The Any score label includes leaders in ordinary English, while unchanged gap0 eligibility only admits tied or trailing sides.', naturallyReached: true, reproduced, observations, durationMs: performance.now() - started };
+writeFileSync(new URL('./audit-blind-gap-result.json', import.meta.url), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify(report, null, 2));
