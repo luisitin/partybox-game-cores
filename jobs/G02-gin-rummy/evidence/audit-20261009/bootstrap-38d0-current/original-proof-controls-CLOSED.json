@@ -1,0 +1,17 @@
+{
+  "closedUtc": "2026-10-09T04:06:55.571348+00:00",
+  "command": "node --test tests/browser-proof.test.mjs tests/strict-browser-proof.test.mjs",
+  "tests": 14,
+  "pass": 14,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "todo": 0,
+  "syntheticGuardCorruptionsRejected": 175,
+  "guardedSources": 35,
+  "freshBootstrapSourceHead": "38d0bc07d1b6709ff34098297715575509d71b3e",
+  "immutableProjectionCommand": "node evidence/audit-20261009/bootstrap-38d0-current/validate-projections.mjs",
+  "samplerExecuted": false,
+  "fullNpmTestAccepted": false,
+  "observedActualToolClosure": "2026-10-09T04:05:31.242Z"
+}
