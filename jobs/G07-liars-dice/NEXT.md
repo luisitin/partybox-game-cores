@@ -1,10 +1,11 @@
-# Current G07 queue follow-up — post-green review2, 2026-10-09
+# Current G07 queue follow-up — post-green review3, 2026-10-09
 
 Owner codex-dice-queue-audit-20261009, branch job/G07-liars-dice-queue-audit-20261009,
 new supplemental Draft PR17/base protected028. Original Ready13/028 and Ready6/1cc
 remain untouched. Isolated branch came from actual claimed main0f9a28c.
-Main authoritative row refreshed10:18:26Z, exact claim G07 push10:18:27.690759 /
-readback CLOSED10:18:28.456907 main7743d5cb; all other rows/tree unchanged.
+Latest completed own main refresh: G07 2026-10-09T10:44:04Z codex-dice-queue-audit-20261009;
+actual normal push2026-10-09T10:44:05.446515+00:00 / readback2026-10-09T10:44:06.192404+00:00
+main12062ffd315a964c50a0b74ba7c118538cd7f8e9; all foreign rows/tree byte-identical.
 Source coordination copy remains base's CLAIMS so this PR is G07-only.
 
 Genuine narrow startup correction is adopted:11,878 formerly stranded starts
@@ -29,24 +30,26 @@ p99/max16.8ms. First f123 failed whole log/ZIP and403 are retained separately.
 Binding post-green reviews execute and publish one at a time. Review1 passed
 949,991 assertions/73,152 actual natural initial saves/restores at all48 settings,
 every presence mask/count/three clock profiles; all639 inputs unchanged, gain0.
-Review2 now naturally CLOSED2026-10-09T10:39:45.470424+00:00 EXIT0:
-272,183 assertions; 10,080 reconnect contexts, 10,080 intentional VIP-held joins, 10,080 permanent departures, 6,720 actual deadline controls, 10,080 stale stamps and 40,320 exact natural saves.
-Worst ranked weakness: Empty-room reconnect versus intentional VIP hold.
-All667 source/compiled inputs unchanged; no new defect or runtime edit.
-New follow-up no-gain streak2; original KEEP6–8 preserved unchanged.
+Review2 passed272,183 assertions/10,080 reconnect domains/40,320 natural saves,
+6,720 live deadline controls/10,080 stale stamps;all667 inputs unchanged,gain0.
+Review3 now naturally CLOSED2026-10-09T10:46:33.533992+00:00 EXIT0:
+899,348 assertions; 1,680 complete games, 125,986 real connected-player inputs, 4,571 privacy states, 85,041 all-skill hidden-cup/RNG controls, 9,112 exact natural saves and 1,680 final result checks.
+Worst ranked weakness: Finite completion with the connected seat rotated through every position.
+All684 source/compiled inputs unchanged; no new defect or runtime edit.
+New follow-up no-gain streak3; original KEEP6–8 preserved unchanged.
 Two required current-source five-round clips/full VP8 decode PASS
-2026-10-09T10:41:07.137923+00:00, zero network/errors, separate from FPS.
-Previous review source9b87b52ff28b8f3ab54c1fb5a74ed2690def279b actually pushed2026-10-09T10:36:45.181639+00:00
-/readback2026-10-09T10:36:46.295629+00:00. Latest own main refresh:
-G07 2026-10-09T10:38:18Z codex-dice-queue-audit-20261009, actualpush2026-10-09T10:38:19.902459+00:00, readback2026-10-09T10:38:20.607472+00:00,
-maind55ea4c97a8b32cbde63aab7a81f638bf94f637a; only own row/all other rows and tree byte-identical.
+2026-10-09T10:48:18.513273+00:00, zero network/errors, separate from FPS.
+Previous review source3cbed6d4cc7795097a1e0fce8d7790b6601c9316 actually pushed2026-10-09T10:42:49.132973+00:00
+/readback2026-10-09T10:42:49.888399+00:00. Latest own main refresh:
+G07 2026-10-09T10:44:04Z codex-dice-queue-audit-20261009, actualpush2026-10-09T10:44:05.446515+00:00, readback2026-10-09T10:44:06.192404+00:00,
+main12062ffd315a964c50a0b74ba7c118538cd7f8e9; only own row/all other rows and tree byte-identical.
 
-After this review is logged/pushed and own main row refreshed, reread/rank five and run only review3: rotated connected-seat complete games, private cup/RNG independence and original finite results. Publish that final third review separately before its whole exact-head original CI.
+The new follow-up now has three consecutive measured zero-player-gain reviews. Freeze this final third-review handoff after ordinary push and refresh only the own main row. Read its complete genuine exact-head original workflow, native log and official ZIP/source/bundles/raw checks. Mark PR17 Ready only after that whole current-head acceptance. Stop further cosmetic source commits and return to the binding main queue.
 This saved handoff qualifies the previously accepted0f538 runtime; current new
 checkpoint whole original CI remains pending. Retain all native failure/403 data,
 immutable old-f8 attribution and unchanged current-only timing/clock/source gates.
 No new local frame sampler. Parent serializes all main refreshes.
-Evidence: queue-followup-20261009/review2/, accepted-original-0f538/,
+Evidence: queue-followup-20261009/review3/, accepted-original-0f538/,
 first-current-f123/. This text is saved before publication; actual new receipt
 must retain publication UTC/readback and any hard cadence miss.
 

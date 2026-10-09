@@ -13,6 +13,29 @@ decode PASS2026-10-09T10:41:07.137923+00:00. They do not measure performance.
 Each round is logged and normally pushed before the next begins; current final
 head's whole original CI must still pass before Ready.
 
+## Final third-review handoff
+Three separately executed and published-order reviews pass2,121,522 total
+semantic assertions with zero new player-visible gain in each round. No runtime
+edit after the adopted startup/historical-binding correction. Source-matched
+clips for all three reviews pass and fully decode. GitHub metadata also reports
+review1 source9b87 original37918673414/113781013700 allsteps SUCCESS as observed
+10:49:12; its whole official packet was not separately qualified here.
+Final third-review source still requires genuine whole exact-head original CI,
+then PR17 Ready and freeze. No further cosmetic source change is needed.
+
+## Post-green review3 — 2026-10-09
+Reread/rank five, then `node /tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/evidence/checks/queue-followup-20261009/postgreen-review.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round3-20261009 --round=3 --head=3cbed6d4cc7795097a1e0fce8d7790b6601c9316`:PASS 899,348 assertions;
+1,680 complete games, 125,986 real connected-player inputs, 4,571 privacy states, 85,041 all-skill hidden-cup/RNG controls, 9,112 exact natural saves and 1,680 final result checks. Worst: Finite completion with the connected seat rotated through every position.
+Would catch broken presence/hold ownership, stale clocks, lost seats, hidden
+information exposure or invalid natural saves within this measured domain.
+Natural CLOSED2026-10-09T10:46:33.533992+00:00 EXIT0/all684 input files unchanged.
+No additional player defect/runtime edit; measured gain0, new streak3.
+`node scripts/capture.mjs queue-followup-review3`:PASS two current five-round
+clips; actual whole-file ffprobe and full VP8 `ffmpeg -v error -i <clip> -f null -`
+decode PASS2026-10-09T10:48:18.513273+00:00. They do not measure performance.
+Each round is logged and normally pushed before the next begins; current final
+head's whole original CI must still pass before Ready.
+
 ## Post-green review1 — 2026-10-09
 Actual original0f538 workflow37916703749/113774542147 SUCCESS/all steps, whole
 11610242472 official archive independently source/raw/native accepted10:29:51;

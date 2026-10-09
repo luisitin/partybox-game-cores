@@ -1,0 +1,176 @@
+{
+  "startedUtc": "2026-10-09T10:42:44.666372+00:00",
+  "pushedUtc": "2026-10-09T10:42:49.132973+00:00",
+  "closedUtc": "2026-10-09T10:42:49.888399+00:00",
+  "exitCode": 0,
+  "head": "3cbed6d4cc7795097a1e0fce8d7790b6601c9316",
+  "parent": "9b87b52ff28b8f3ab54c1fb5a74ed2690def279b",
+  "branch": "job/G07-liars-dice-queue-audit-20261009",
+  "round": 2,
+  "playerVisibleGain": 0,
+  "newNoGainStreak": 2,
+  "runtimePins": {
+    "src/core.ts": "94282a57a2832377f4ccb3420d9fc693cbec8b8c6bdfee1227d061e962185347",
+    "play.html": "cd6db309798ebd4f62c5d898214e0aed140c26c0424325b8f6b52987fd584e13",
+    "dist/core.mjs": "febb305806cb905f0b6954edd6c7620555d4c31687db5e87c80b8cb8edee335e"
+  },
+  "finalManifestFiles": 546,
+  "finalIntegrity": {
+    "suite": "integrity",
+    "fileHashes": 546,
+    "regenerationRuns": 2,
+    "byteIdentical": true,
+    "coreNoIo": true,
+    "mediaUnder10MB": true
+  },
+  "hardDeadlineUtc": "2026-10-09T11:06:45.181639+00:00",
+  "actualHardMissSeconds": 0,
+  "normalFastForward": true,
+  "exactRemoteReadback": "3cbed6d4cc7795097a1e0fce8d7790b6601c9316",
+  "sourceScopeOnlyG07": true,
+  "newHeadWholeOriginalCiAccepted": false,
+  "childrenReaped": true,
+  "runs": [
+    {
+      "argv": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:44.669299+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:44.672403+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:44.891655+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/hashes.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:45.107188+00:00"
+    },
+    {
+      "argv": [
+        "sha256sum",
+        "--quiet",
+        "-c",
+        "SHA256SUMS.txt"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:45.182332+00:00"
+    },
+    {
+      "argv": [
+        "node",
+        "scripts/integrity.mjs"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:45.941611+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:45.954106+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:45.958974+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "credential.helper=",
+        "ls-remote",
+        "origin",
+        "refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:46.688253+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "add",
+        "jobs/G07-liars-dice"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:46.760193+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "commit",
+        "-m",
+        "G07: record post-green review 2"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:46.786977+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:46.790114+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "push",
+        "origin",
+        "HEAD:refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:49.132652+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "-c",
+        "credential.helper=",
+        "ls-remote",
+        "origin",
+        "refs/heads/job/G07-liars-dice-queue-audit-20261009"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:49.880400+00:00"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain"
+      ],
+      "exitCode": 0,
+      "closedUtc": "2026-10-09T10:42:49.887800+00:00"
+    }
+  ]
+}

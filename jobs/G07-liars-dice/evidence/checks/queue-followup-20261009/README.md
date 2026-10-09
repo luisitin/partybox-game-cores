@@ -38,3 +38,6 @@ Later reviews execute only after this first review is normally published.
 
 Separate post-green review2:review2/ contains ranked five weaknesses,
 actual 272,183 assertions, finite measured domain and gain0/streak2.
+
+Separate post-green review3:review3/ contains ranked five weaknesses,
+actual 899,348 assertions, finite measured domain and gain0/streak3.
