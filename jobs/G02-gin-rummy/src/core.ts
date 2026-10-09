@@ -325,7 +325,12 @@ export function sampleInput(state:State,id:string,rng:Rng,skill:BotSkill='normal
   if(v.phaseId==='upcard'||v.phaseId==='draw') {
     if(v.legal.length===1)return v.legal[0];
     const top=v.discard.at(-1);
-    const helped=top!==undefined&&bestDiscard([...hand,top],top,v,skill).deadwood<minimizeDeadwood(hand).deadwood;
+    const currentDeadwood=minimizeDeadwood(hand).deadwood;
+    const candidate=top!==undefined?bestDiscard([...hand,top],top,v,skill):null;
+    // A zero-deadwood hand cannot improve numerically, but a legal pickup that
+    // preserves zero can end the hand immediately (including enabled Big Gin).
+    if(currentDeadwood===0&&candidate?.deadwood===0)return {type:'draw',source:'discard'};
+    const helped=candidate!==null&&candidate.deadwood<currentDeadwood;
     if(skill==='easy')return helped&&rng.chance(.7)?{type:'draw',source:'discard'}:v.phaseId==='upcard'?{type:'pass'}:{type:'draw',source:'stock'};
     return helped?{type:'draw',source:'discard'}:v.phaseId==='upcard'?{type:'pass'}:{type:'draw',source:'stock'};
   }

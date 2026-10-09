@@ -1,0 +1,91 @@
+{"suite":"preexisting-gin-draw-boundaries","controls":90}
+✖ all skills take a guaranteed finishing discard even when ten-card deadwood is already zero (12.782028ms)
+✖ 1000 hidden defender completions keep the same guaranteed choice and exact independent finishing score (3.821375ms)
+✔ forced stock, unavailable actors, pause and non-finishing discards retain the original legal boundaries (38.695265ms)
+✖ the reproduced opening takes 31-point Big Gin instead of passing into a 20-point Gin (9.206954ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 1
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 279.758305
+
+✖ failing tests:
+
+test at tests/gin-draw-priority.test.mjs:10:1
+✖ all skills take a guaranteed finishing discard even when ten-card deadwood is already zero (12.782028ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   type: 'pass'
+  -   source: 'discard',
+  -   type: 'draw'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-draw-priority.test.mjs:19:11)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'pass' },
+    expected: { type: 'draw', source: 'discard' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/gin-draw-priority.test.mjs:35:1
+✖ 1000 hidden defender completions keep the same guaranteed choice and exact independent finishing score (3.821375ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   type: 'pass'
+  -   source: 'discard',
+  -   type: 'draw'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-draw-priority.test.mjs:42:55)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'pass' },
+    expected: { type: 'draw', source: 'discard' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/gin-draw-priority.test.mjs:68:1
+✖ the reproduced opening takes 31-point Big Gin instead of passing into a 20-point Gin (9.206954ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   type: 'pass'
+  -   source: 'discard',
+  -   type: 'draw'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-draw-priority.test.mjs:69:80)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'pass' },
+    expected: { type: 'draw', source: 'discard' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

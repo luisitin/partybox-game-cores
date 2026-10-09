@@ -1,3 +1,5 @@
+Current supplemental repairs: initial presence and guaranteed Gin decisions passed full original CI at8a349. The next bounded already-zero-deadwood pickup repair is under current verification; see NEXT/VERIFY and supplemental PR12. Original PR2/history retained; current full CI and KEEP are required.
+
 # G02 — Gin Rummy
 
 Pure deterministic TypeScript core following the exact workshop contract.

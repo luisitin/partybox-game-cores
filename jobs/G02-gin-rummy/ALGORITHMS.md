@@ -38,3 +38,6 @@ The exact recurrence is not an exact whole-game strategy solver: strong play
 uses explicit partial-meld/danger heuristics and measured league separation.
 
 Strong terminal choice2026-10-09: eligible zero-deadwood discards form the first ranking group, with the previous heuristic/tie order retained within each group. This is justified by positive Gin bonuses and no defender layoffs, rather than inferred hidden cards. The existing Big Gin branch and immediate-return restriction stay earlier/unchanged.
+
+
+KEEP14 finishing pickup: existing forced-stock/single-action guard remains first. Compute current and legal candidate deadwood once; when both are zero, take the discard to finish immediately. Otherwise use the original strictly-decreasing-help rule and existing Easy probability/normal/Sharp heuristics. No opponent hand, stock order or new RNG call is used.
