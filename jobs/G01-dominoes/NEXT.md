@@ -5,6 +5,48 @@ Validation PR11 is open and draft against job/G01-dominoes. Original PR1 stays
 open, draft and unchanged on canonical 8c57376. No merge or force-push.
 Read CLAIMS.md on current main; refresh only G01 after every source push.
 
+## Exact d01 whole hosted artifact independently accepted
+
+Exactd01 run37875754087/job113643842516 succeeded02:55:26UTC. Genuine official
+11592298166/102,143,626B/cac5327331cfdee3569051dd271179ba3e37628881eb880aa96c51631600019b
+passed the unchanged independent reader1,261 assertions. Outer natural CLOSED
+03:26:58.193318UTC/exit0/no owned processes; reader03:26:57.689638UTC. Every
+immutable source/Git byte, entire native npm log,25 mutants, actual file://
+handover/inlineWorker,16 nontrivial realWorker/five variants,600 native intervals/
+602 stamps and36 independently decoded VP9 frames pass. Hosted TV60.0024000960
+FPS/p9516.7ms, phone4x59.8034380598FPS/p9516.7ms; original gates unchanged.
+Native log128,121B/SHA10dbcd40cc8fb7eecf5dfa1f8ee39fcb9db26d55a5c22f90fcfbfc3346cc4d2f.
+Public worker-hosted-d01e51a.json and media/worker-stage-d01e51a-proof.zip retain
+every actual top-level raw/mutable after-output, native log/reader/controller,
+failures and the complete source-bound clip17. All archive members byte/CRC
+verified. Whole102MB was bounded in RAM; no physical full ZIP/extraction.
+
+First RAM transport actually failed HTTP40303:23:44 before artifact bytes;
+closed group[] and FAIL receipts are preserved. Its outer final-print NoneType
+error occurred after writing the FAIL receipt/reaping its child. A distinct
+fresh official reference+cURL stdin transport passed; no cause is attributed
+to reference age, client or host. Exact original reader/criteria did not change.
+No browser/native-FPS trial was repeated. Signed URLs stay private.
+
+## Saved diagnostic native rejection identified, still FAIL
+
+Offline AST execution of the unchanged saved predicates reproduced the exact
+first rejection at controller line267: startedAt<=firstTileAt<=last rAF stamp.
+First TV baseline actual saved values782.4000000059605<=2254.699999988079<=2186.9
+fail that predicate. All original controller/READY/proof/FAIL receipt SHA stayed
+unchanged; no browser launched. paired-diagnostic-offline-predicate-review.json
+retains exact inputs/reproduction. This identifies a saved failed comparison;
+it does not accept the original native pair or weaken/rewrite its predicate.
+The declared TV/phone gain gates remain FAIL and original earlier-pair offending
+raw remains ABSENT. No cause claim or new unchanged retry. Renewed KEEP remains0.
+
+Current d331 workflow37878647281 remains in progress at latest03:33:53UTC read.
+Exact ten player/core/Worker/sampler/build bytes stay identical to accepted d01/
+838. This publication changes actual evidence/docs/mutable outputs only; its
+own newest-head complete CI and substantive current-player review are pending.
+Last source push03:18:07.611800UTC, current hard03:48:07.611800UTC. Read the actual
+new publication receipt for fresh cadence; prior late pushes remain recorded.
+
 ## Latest retained responsiveness diagnostic — not accepted
 
 The distinct original8c-versus-Worker2d logging diagnostic ran once with the

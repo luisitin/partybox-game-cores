@@ -1,0 +1,37 @@
+{
+  "status": "REPRODUCED_ORIGINAL_SAVED_ASSERTION_FAILURE",
+  "firstFailingPredicate": "Controller line 267: trace['startedAt'] <= trace['firstTileAt'] <= times[-1]",
+  "profile": {
+    "name": "tv",
+    "variant": "baseline"
+  },
+  "savedTimes": {
+    "startedAt": 782.4000000059605,
+    "firstTileAt": 2254.699999988079,
+    "lastNativeRafTimestamp": 2186.9
+  },
+  "schema": "g01-offline-retained-diagnostic-predicate-inspection/1",
+  "naturallyClosedAt": "2026-10-09T03:20:16.217481+00:00",
+  "inputs": {
+    "/tmp/g01-current-838-proof-20261009/private/root-gated-complete-inputs-pair-first-controller.py": {
+      "bytes": 19171,
+      "sha256": "3341b7153a2eaffface1da0488e49eefd13b8e76eff1249db2ca78370dd62cea"
+    },
+    "/tmp/g01-current-838-proof-20261009/private/root-gated-complete-inputs-pair-ready.json": {
+      "bytes": 559915,
+      "sha256": "004d044b43da071988b1e8ebfa3d11e82f45c0a3bc1fb394742803f1c53e5496"
+    },
+    "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/paired-worker-response-diagnostic-isolated.json": {
+      "bytes": 71329,
+      "sha256": "8df10ba2c2f0cb8bc6293e77abe9e414d2b8fc5fd59f32151311e49be2666492"
+    },
+    "/tmp/g01-current-838-proof-20261009/private/root-gated-complete-inputs-pair-first-controller.json": {
+      "bytes": 573491,
+      "sha256": "c51e3f9086e61779fbf2b12ae42b91d438c76994c06ce2767be2850a828502aa"
+    }
+  },
+  "sourceAssertionsUnchanged": true,
+  "noBrowserOrNativeTrial": true,
+  "originalFailedReceiptUnchanged": true,
+  "scope": "Saved-data-only reproduction. Does not change the original FAIL, accept profiles or gain, explain the absent first-pair raw or authorize a retry."
+}

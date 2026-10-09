@@ -12,10 +12,10 @@
       },
       "throttle": 1,
       "frames": 300,
-      "meanMs": 16.888333333333332,
+      "meanMs": 16.666,
       "p95Ms": 16.700000000000728,
-      "p99Ms": 33.30000000000001,
-      "fps": 59.212474094542586
+      "p99Ms": 16.800000000000182,
+      "fps": 60.00240009600384
     },
     {
       "name": "phone",
@@ -25,14 +25,14 @@
       },
       "throttle": 4,
       "frames": 300,
-      "meanMs": 16.721333333333334,
-      "p95Ms": 16.800000000000182,
+      "meanMs": 16.72144666666667,
+      "p95Ms": 16.700000000000273,
       "p99Ms": 16.800000000000182,
-      "fps": 59.803843393668764
+      "fps": 59.803438059785094
     }
   ],
   "reducedMotion": "passed",
-  "automatedBotMatchMs": 320000,
+  "automatedBotMatchMs": 310000,
   "mixedUnattended": "passed within 3600000ms with private hands hidden",
   "mixedUnattendedMs": 620000,
   "capture": "media/milestone-14-presentation.webm"

@@ -53,7 +53,7 @@ Single steps:
 ## Status
 
 PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
-Exact Worker/face-down838 full CI and1,252-check genuine artifact proof passed,
+Exact Worker/face-down d01 full CI and1,261-check genuine artifact proof passed,
 including real file opening,600 native intervals and36 decoded VP9 frames.
-d01 full CI is green; its artifact audit/current-headCI and renewed KEEP remain.
+Current-head CI and renewed KEEP remain; isolated diagnostic/gain gates FAILED.
 NEXT.md binds remaining checks; all historical failures remain preserved.
