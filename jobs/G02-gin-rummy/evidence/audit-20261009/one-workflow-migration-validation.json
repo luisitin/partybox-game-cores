@@ -1,0 +1,31 @@
+{
+  "closedUtc": "2026-10-09T02:59:58.567619+00:00",
+  "singleWorkflow": true,
+  "originalVerifyJobUnchanged": true,
+  "originalOnAndPermissionsUnchanged": true,
+  "inlineScriptsSyntaxChecked": 4,
+  "requestControls": [
+    {
+      "mode": "real-request",
+      "exit": 0,
+      "output": "bootstrap=true\n",
+      "nativeSamplerExecuted": false
+    },
+    {
+      "mode": "disabled-private",
+      "exit": 0,
+      "output": "bootstrap=false\n",
+      "nativeSamplerExecuted": false
+    },
+    {
+      "mode": "wrong-source-private",
+      "exit": 1,
+      "output": null,
+      "nativeSamplerExecuted": false
+    }
+  ],
+  "workflowSha256": "06586d983db44bceb41d6316cfbb065decfade0c89b33eb8a9a6eff96ff571b4",
+  "originalGuardedSources": 35,
+  "supplementalGuardedInputs": 2,
+  "localBrowserRun": false
+}

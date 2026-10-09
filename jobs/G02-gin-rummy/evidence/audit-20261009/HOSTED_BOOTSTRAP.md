@@ -1,3 +1,44 @@
+# Mandatory one-workflow correction
+
+RULES.md binds "One workflow per job: .github/workflows/<ID>.yml". Root had
+approved a separate bootstrap before rereading this rule; that approval was
+wrong. The separate 5fe workflow already finished genuinely at run37875913629,
+job113644356488. Its complete original native proof is retained as history,
+not hidden, cancelled, retried or promoted as current full acceptance.
+
+All58 actual ZIP members/CRCs and the exact57-file closing manifest passed
+the independent reader. All35 source copies,1200 intervals,1202 native
+timestamps,1208 active-hand witnesses and both VP8 clips were verified; both
+clips fully decoded. Desktop60.00300015/phone60.00180005FPS, both p99<=16.8ms.
+The exact official1784093-byte ZIP SHA256 is
+b4b42795233bfc1afbb13e2083bdf111c2daaaca3041a2bc59b94313a0eba38f.
+Native full log and all original data are in bootstrap-5fe-historical/. The
+full reader closed2026-10-09T02:55:43.246011Z with101 guards unchanged.
+
+The extra workflow is deleted. The existing G02.yml now adds an explicit
+bootstrap job while preserving the original verify job, triggers, permissions,
+30-minute limit and actions. The original600-interval sampler, native clocks,
+35-source checker and frame gates remain unchanged. The bootstrap checks out
+the exact PR head and obeys a fixed-source explicit request. After its fresh
+packet is fully read, the projection commit disables that request, so a
+subsequent push does not automatically repeat the bootstrap. Original full
+npm-test acceptance still runs and remains required.
+
+The original G02.yml itself is a guarded input and now changes. Thus the new
+head needs its own genuine fresh packet; the prior35-source proof does not
+accept this changed workflow. The bootstrap also explicitly copies and guards
+contract/package.json and its request, with closing self-SHA checks. Independent
+reconstruction found that preserving the original contract package type=module
+is necessary to reproduce the hosted contract bundle; physically placing pinned
+Zod removes external-symlink path differences. All3 bundles and HTML reproduced
+byte-exact, without a browser or frame rerun.
+
+Current migrated bootstrap, five-source compatibility projection and full
+exact-head original CI remain pending. Both PRs stay draft; Strong Gin remains
+unfixed. No physical-phone or outside bot-strength claim is added.
+
+## Historical first-approved proposal, preserved below
+
 # Initial-presence hosted browser bootstrap
 
 The confirmed initialization repair changes the core and generated standalone page.
