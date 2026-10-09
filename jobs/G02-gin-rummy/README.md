@@ -25,16 +25,17 @@ RULES/SOURCES/CONFLICTS document researched rules and deliberate variants.
 VERIFY/BOTS/LOOP/NEXT record checks, measured strategy and resume steps.
 SHA256SUMS covers every delivered file; no trackers or runtime network.
 
-Accepted72bd/run37906194509: all77 tests,6k exact every-event replays,
-Strong1166/2000 andMedium1743/2000,26 actual mutations,1132 hashes/two gens,
+Accepted2e949/run37907166446: all77 tests,6k exact every-event replays,
+Strong1166/2000 andMedium1743/2000,26 actual mutations,1161 hashes/two gens,
 current35 sources/1200 intervals/two full decoded recordings pass.
-Whole official packet: evidence/audit-20261009/accepted-72bd/.
+Whole official packet: evidence/audit-20261009/accepted-2e949/.
 
 Finishing subset repair reproduces loss10→win4. Draw-boundary controls
 preserve public-information strategy when hidden stock outcomes differ:
 576 paired views/1152 choices and one actual compiled mutant pass.
 Evidence: evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md.
-Bot report now leads with current verified results; KEEP20 streak2, PRs Draft.
-Subsequent exact-head full77-test hosted acceptance remains required.
+Bot report/index clarify current evidence; KEEP19–21 no-player-gain streak3.
+Final exact-head full77-test hosted acceptance is required before PR12 Ready.
 CPU4 Chromium evidence does not establish physical-phone/SDK integration.
+Final review: evidence/audit-20261009/FINAL-REVIEW.md.
 Prior genuine failures remain in the historical evidence.

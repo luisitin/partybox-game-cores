@@ -15,8 +15,8 @@ Targets update after EACH promotion. Forbidden returns and incomparable
 layouts retain their existing policy. No hidden hand, stock order or engine
 RNG is consulted; these finishing promotions are confined to discard phase.
 
-Current original node scripts/league.mjs result, accepted72bd full hosted
-run37906194509/verify113740122349:2000 complete matches per pairing,
+Current original node scripts/league.mjs result, accepted2e949 full hosted
+run37907166446/verify113743302361:2000 complete matches per pairing,
 paired seeds70000–70999 with seats swapped. Winners use GameResults.winnerIds
 and the first-to-target hand score, rather than the final settlement leader.
 
@@ -27,7 +27,7 @@ and the first-to-target hand score, rather than the final settlement leader.
 
 Both original gates require >=55% wins and a Wilson lower bound above50%.
 Full unchanged native and exact league records:
-[evidence](evidence/audit-20261009/accepted-72bd/full-original-artifact-reader-CLOSED.json).
+[evidence](evidence/audit-20261009/accepted-2e949/full-original-artifact-reader-CLOSED.json).
 This finite internal comparison establishes neither external champion
 strength nor that every future population has the same win rate.
 
@@ -43,6 +43,6 @@ No draw option universally dominates, and no expected-value optimum is claimed.
 [Draw evidence](evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md) retains the real
 compiled phase-guard mutation killed by the public-information regression.
 
-KEEP20 corrects this report only. Production/page/workflow are unchanged;
-no player-noticeable gain, streak2. Subsequent exact-head full hosted
-acceptance remains required, and both PRs remain Draft.
+KEEP19–21 add controls and clarify reports/navigation without changing
+production. No player-noticeable gain in three consecutive rounds. Final
+exact-head full original hosted acceptance is required before PR12 Ready.

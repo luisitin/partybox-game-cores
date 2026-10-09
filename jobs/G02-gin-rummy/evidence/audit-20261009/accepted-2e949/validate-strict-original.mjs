@@ -1,0 +1,11 @@
+import {readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {verifyStrictBrowserProof} from '/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/scripts/strict-browser-proof.mjs';
+import {browserSourceHashes,sha256} from '/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/scripts/browser-source-guard.mjs';
+const base='/tmp/G02-full-2e949-artifact-20261009/extracted';
+const json=async path=>JSON.parse(await readFile(base+'/'+path,'utf8'));
+const report=await json('.work/browser/report.json'),captures=await json('.work/browser/captures.json');
+const raw=Object.fromEntries(await Promise.all(['desktop','phone4x'].map(async label=>[label,await json('.work/browser/'+label+'-frames.json')])));
+const sources=await browserSourceHashes();
+const media=await Promise.all(captures.rows.map(async row=>{assert(row.path.startsWith('.work/browser/'));const bytes=await readFile(base+'/'+row.path);return {bytes:bytes.length,sha256:sha256(bytes)};}));
+console.log(JSON.stringify({result:verifyStrictBrowserProof({report,raw,captures,sources,media}),rows:report.rows.map(({label,fps,p99Ms,maxMs,attemptNonce})=>({label,fps,p99Ms,maxMs,attemptNonce})),media}));

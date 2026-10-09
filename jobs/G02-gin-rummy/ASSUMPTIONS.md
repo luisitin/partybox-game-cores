@@ -154,3 +154,6 @@ KEEP19: A proof comparing final knock outcomes does not determine expected value
 
 
 KEEP20: clear current bot results are a reviewer/documentation improvement, not a gameplay gain. Old1152/1154 narratives remain byte-identical history; actual accepted1166 fixed-corpus wins do not imply population causality or outside tournament strength. No extra functional tests for this prose change.
+
+
+KEEP21: all old current/pending prose belongs to the dated historical packets; the revised leading index names exact accepted2e parent and requires final publication's own full gate. Three zero-player-gain rounds satisfy KEEP convergence; PR live metadata can report final acceptance without another self-referential source commit. No source/platform/strength behavior changed and no automatic merge is authorized by the queue instructions.
