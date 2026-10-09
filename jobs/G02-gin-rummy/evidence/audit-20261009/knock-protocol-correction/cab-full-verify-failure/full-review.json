@@ -1,0 +1,27 @@
+{
+  "status": "ACTUAL_FULL_ORIGINAL_VERIFY_FAILURE_PRESERVED",
+  "readAt": "2026-10-09T05:37:15.757380+00:00",
+  "sourceHead": "cab97d5449e1e7a2442cf589039f697ddb5638dc",
+  "runId": 37888705956,
+  "jobId": 113684497712,
+  "nativeCharacters": 92839,
+  "nativeUTF8Bytes": 95481,
+  "nativeSha256": "2f63f54697d00abd85871386f072628c9b370eda130131ffab103242cd30bd0b",
+  "actualTests": 67,
+  "actualPass": 63,
+  "actualFail": 4,
+  "downstreamOriginalLeaguesMutantsBrowserCaptureIntegrity": "NOT_RUN",
+  "nativeMarkers": [
+    "2026-10-09T05:28:54.6651747Z not ok 7 - current source-bound raw proof passes without discarding its largest interval",
+    "2026-10-09T05:28:54.6708803Z not ok 9 - changed end guards and failed snapshots are rejected",
+    "2026-10-09T05:28:54.6790574Z not ok 11 - reported statistics are recomputed from all retained intervals",
+    "2026-10-09T05:28:54.6858138Z not ok 12 - an honestly recomputed slow raw sample still fails the original frame gate",
+    "2026-10-09T05:32:18.3191139Z # tests 67",
+    "2026-10-09T05:32:18.3191418Z # suites 0",
+    "2026-10-09T05:32:18.3191791Z # pass 63",
+    "2026-10-09T05:32:18.3192158Z # fail 4",
+    "2026-10-09T05:32:18.3192821Z # skipped 0",
+    "2026-10-09T05:32:18.3193471Z # duration_ms 217670.612656",
+    "2026-10-09T05:32:18.3204732Z ##[error]Process completed with exit code 1."
+  ]
+}

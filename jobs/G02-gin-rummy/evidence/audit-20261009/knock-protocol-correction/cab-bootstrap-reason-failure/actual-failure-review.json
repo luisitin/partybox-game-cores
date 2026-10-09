@@ -1,0 +1,122 @@
+{
+  "steps": [
+    {
+      "name": "Set up job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 1
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 2
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 3
+    },
+    {
+      "name": "Read the explicit once-only bootstrap request",
+      "status": "completed",
+      "conclusion": "failure",
+      "number": 4
+    },
+    {
+      "name": "Record the exact one-shot run identity",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 5
+    },
+    {
+      "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 6
+    },
+    {
+      "name": "Run npx playwright install --with-deps chromium",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 7
+    },
+    {
+      "name": "Run npm run build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 8
+    },
+    {
+      "name": "Require the committed standalone page to match the original build",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 9
+    },
+    {
+      "name": "Preserve every original guarded input before native execution",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 10
+    },
+    {
+      "name": "Run the unchanged original 600-interval desktop and phone checks once",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 11
+    },
+    {
+      "name": "Record the unchanged separate functional clips",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 12
+    },
+    {
+      "name": "Validate all 35 current sources and every fresh native sample and clip",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 13
+    },
+    {
+      "name": "Preserve complete actual outputs and closing guards on success or failure",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 14
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 15
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "status": "completed",
+      "conclusion": "skipped",
+      "number": 29
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 30
+    },
+    {
+      "name": "Complete job",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 31
+    }
+  ],
+  "recordedUtc": "2026-10-09T05:31:27.831667+00:00",
+  "sourceHead": "cab97d5449e1e7a2442cf589039f697ddb5638dc",
+  "runId": 37888705956,
+  "jobId": 113684498031,
+  "nativeTimingInvocations": 0,
+  "samplerAndCaptureStepsSkipped": true,
+  "reason": "finite reason allowlist lacks the new truthful same-meld finishing-knock label",
+  "completeLogCharacters": 17093,
+  "completeLogBytes": 17095,
+  "completeLogSha256": "a1eb7f685a1cde8f3d74f46642e715ed4d211a7151a989657f15b39cfcc0e051"
+}

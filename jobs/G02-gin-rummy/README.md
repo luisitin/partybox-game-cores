@@ -35,8 +35,8 @@ Initial-presence, guaranteed Gin and already-zero-deadwood finishing pickup
 repairs are accepted at that historical source head.
 
 The next bounded Strong-knock repair chooses lower positive deadwood only
-when the exposed melds are identical. Original current full checks and
-fresh source-bound browser/full hosted acceptance are pending: see NEXT.
+when the exposed melds are identical. Current leagues pass58.30%/87.15%,
+all26 compiled mutations are caught; fresh browser/full CI are pending.
 Both original PR2 and supplemental PR12 remain Draft; renewed KEEP streak0.
 
 [Current evidence](evidence/resume-20261008/INDEX.md) and

@@ -1,0 +1,27 @@
+{
+  "status": "FULL_ACTUAL_FAILED_VERIFY_ARTIFACT_READ_SAFE_CRC_HASH_PASS",
+  "closedAt": "2026-10-09T05:37:35.264061+00:00",
+  "members": 3,
+  "files": [
+    {
+      "name": "media/strict-reverify-1900-desktop.webm",
+      "bytes": 726815,
+      "sha256": "b63b3b2168a6366fe20bf2271b3b7fd5a1b56bf3455fccd8adbb9decca793483",
+      "crc": 1827497710
+    },
+    {
+      "name": "media/strict-reverify-1900-phone4x.webm",
+      "bytes": 546355,
+      "sha256": "0fbd0abba423959bb0002dd461699a592507d50781fa923bfcf8acf2069e036c",
+      "crc": 1247157850
+    },
+    {
+      "name": "evidence/resume-20261008/strict-reverify-1900-captures.json",
+      "bytes": 8316,
+      "sha256": "3a8cce57f6fbbedc77f5bbf851660b27afe993f8e35ab68adcb013cec26d7bfe",
+      "crc": 3411452261
+    }
+  ],
+  "freshCurrentNativeTiming": false,
+  "scope": "Historical committed evidence uploaded by failed verify; no current browser phase ran"
+}
