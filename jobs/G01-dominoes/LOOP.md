@@ -53,3 +53,6 @@ Provisional isolated absence repair,2026-10-09:468 fixed-human whole pairs old42
 
 ## Evidence checkpoint, not a KEEP round
 2026-10-09: exact-tree source-history repair makes Draft20 mergeable; preserve genuine original9f whole failure. Corrected explicit-absence old-engine oracle retains1003 seeds/372510 original physical transitions/827 independently bounded moves; extra1003 connected games377896 WHOLESTATE transitions byte-exact eadb; two full reports identical/all3327 guards natural13:59:36.736578. Actual new-page TV/phone4x/reduced24 private handovers/all3326 guards and333 fully decoded functional capture frames pass. No production/native gate edit, qualified new gain or formal post-green credit; complete current original pipeline pending.
+
+## R29 investigation checkpoint, no completed round
+After actual whole32a green, reread/rank5; FIRST240 legal full-inactive-cycle controls yield480 true failures: direct active departure and paused-drop-resume give next human1000ms instead30000. Source32a whole1342 proof/genuine55 tests retained; negative natural14:33:56.571522/all6568 inputs. No code change, measured repair gain or completed formal round/noGain credit yet. Worst defect is NEXT; this material evidence/handoff push keeps all old scopes/failures truthful.

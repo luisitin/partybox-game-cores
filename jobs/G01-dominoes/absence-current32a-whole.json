@@ -1,0 +1,434 @@
+{
+  "schema": "g01-current32a-whole-and-first-idle-negative/1",
+  "preparedUtc": "2026-10-09T14:40:37.158338+00:00",
+  "sourceParent": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+  "originalWholeAcceptance": {
+    "schema": "g01-current-original-official-whole-first-acceptance/1",
+    "startedUtc": "2026-10-09T14:26:35.482609+00:00",
+    "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+    "run": "37941524593",
+    "job": "113856832232",
+    "artifactId": 11622437616,
+    "expectedBytes": 138424314,
+    "expectedSha256": "d2bc3dc9a64d6928aaa59093324fced93b067e753ae3ad74103238576bd6e375",
+    "scope": "First whole official exact32a original artifact, unchanged6a33 whole native/source/privacy/Worker/600interval/602timestamp/36VP9 decoder reader. No local browser/native FPS retry; no historical PASS substitution. Fresh actual candidate importer alias witnesses apply only to this reader invocation.",
+    "signalsSent": [],
+    "wholeBoundSeconds": 240,
+    "nativeFullLog": {
+      "bytes": 130021,
+      "sha256": "03ee4c7d25d569afcfaa8d125e7bd6ad30fd92acaef32dddbb79d75c11f6fb3f"
+    },
+    "transportStartedUtc": "2026-10-09T14:26:40.082432+00:00",
+    "transportExitCode": 0,
+    "transportClosedUtc": "2026-10-09T14:26:43.812700+00:00",
+    "transportStderr": "",
+    "wholeOfficialMetadataDigestPass": true,
+    "unchangedReaderArgv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+      "/tmp/G01-source-queue-audit-20261009/jobs/G01-dominoes/verify-worker-artifact.py",
+      "/dev/shm/G01-private-remaining-issue-20261009/official-current32a-first/whole-original-official.zip",
+      "--sha256",
+      "d2bc3dc9a64d6928aaa59093324fced93b067e753ae3ad74103238576bd6e375",
+      "--source",
+      "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+      "--run",
+      "37941524593",
+      "--repo",
+      "/tmp/G01-source-queue-audit-20261009",
+      "--native-log",
+      "/dev/shm/G01-private-remaining-issue-20261009/original32a-native-full.log"
+    ],
+    "childPid": 401547,
+    "childStartedUtc": "2026-10-09T14:26:51.868563+00:00",
+    "childClosedUtc": "2026-10-09T14:26:56.988949+00:00",
+    "childExitCode": 0,
+    "allFrozenInputsUnchanged": true,
+    "frozenAliasCount": 6569,
+    "sourceFiles": 202,
+    "actualIndependentAcceptance": {
+      "status": "PASS",
+      "checks": 1342,
+      "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+      "run": "37941524593",
+      "artifactSha256": "d2bc3dc9a64d6928aaa59093324fced93b067e753ae3ad74103238576bd6e375",
+      "nativeLog": {
+        "bytes": 130021,
+        "sha256": "03ee4c7d25d569afcfaa8d125e7bd6ad30fd92acaef32dddbb79d75c11f6fb3f"
+      },
+      "actualDiskNavigation": "PASS",
+      "realWorkerReplayCases": 16,
+      "realWorkerVariants": 5,
+      "rawIntervals": 600,
+      "timestampWitnesses": 602,
+      "actualDecodedFrames": 36,
+      "mutationKills": 25,
+      "independentDecoderTools": [
+        {
+          "path": "/usr/bin/ffmpeg",
+          "bytes": 366984,
+          "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+          "version": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+        },
+        {
+          "path": "/usr/bin/ffprobe",
+          "bytes": 206504,
+          "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+          "version": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers\nbuilt with gcc 14 (Debian 14.2.0-19)\nconfiguration: --prefix=/usr --extra-version=0+deb13u1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-libmfx --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared\nlibavutil      59. 39.100 / 59. 39.100\nlibavcodec     61. 19.101 / 61. 19.101\nlibavformat    61.  7.103 / 61.  7.103\nlibavdevice    61.  3.100 / 61.  3.100\nlibavfilter    10.  5.100 / 10.  5.100\nlibswscale      8.  3.100 /  8.  3.100\nlibswresample   5.  3.100 /  5.  3.100\nlibpostproc    58.  3.100 / 58.  3.100\n"
+        }
+      ],
+      "claim": "Current official artifact/source proof; independent decoder headers may differ by tool version."
+    },
+    "status": "PASS",
+    "exitCode": 0,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "completeReaderNativeLog": {
+      "bytes": 4672,
+      "sha256": "f484990915e7eafa1d1f3bb4663214b541181a055be296f48e6f3b3e71eafb8d"
+    },
+    "closedUtc": "2026-10-09T14:27:04.352304+00:00"
+  },
+  "originalNodeFullNativeReadback": {
+    "status": "PASS",
+    "readUtc": "2026-10-09T14:21:09.202313+00:00",
+    "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+    "nativeWholeBytes": 5152,
+    "nativeWholeSha256": "04f44a8f42e89cd6086df01363521095ee9b16adecdcbcdcc40247d00d6b9b9e",
+    "actualCounts": {
+      "tests": [
+        48,
+        7
+      ],
+      "pass": [
+        48,
+        7
+      ],
+      "fail": [
+        0,
+        0
+      ],
+      "cancelled": [
+        0,
+        0
+      ],
+      "skipped": [
+        0,
+        0
+      ],
+      "todo": [
+        0,
+        0
+      ]
+    },
+    "totalPassed": 55,
+    "all3331ObservedAliasesUnchanged": true,
+    "scope": "First complete original48 plusnew7 default tests. Observed source/installed-tree/runtime alias guards; additional importer resolution below is a fresh after-only observation and does not backdate an importer guard to the prior invocation.",
+    "originalController": {
+      "schema": "g01-original-node-suite-current-first/1",
+      "startedUtc": "2026-10-09T14:07:59.230260+00:00",
+      "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+      "wholeBoundSeconds": 540,
+      "scope": "First complete unchanged original node:test suite and new absence regressions on exact published32a, without FAST_TEST/test filters/mocks. Whole committed source and complete installed/browser/Python/runtime aliases frozen before and after. No browser/FPS launch.",
+      "commands": [
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+            "--test",
+            "test.ts"
+          ],
+          "startedUtc": "2026-10-09T14:08:04.222799+00:00",
+          "childPid": 396838,
+          "closedUtc": "2026-10-09T14:11:54.320132+00:00",
+          "exitCode": 0
+        },
+        {
+          "argv": [
+            "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+            "--test",
+            "absence-presence.test.ts"
+          ],
+          "startedUtc": "2026-10-09T14:11:54.469613+00:00",
+          "childPid": 397674,
+          "closedUtc": "2026-10-09T14:11:55.563972+00:00",
+          "exitCode": 0
+        }
+      ],
+      "signalsSent": [],
+      "allFrozenInputsUnchanged": true,
+      "frozenAliasCount": 3331,
+      "sourceFiles": 202,
+      "status": "PASS",
+      "exitCode": 0,
+      "remainingOwnedChildren": [],
+      "remainingOwnedDetached": [],
+      "naturalClosure": true,
+      "closedUtc": "2026-10-09T14:12:04.880208+00:00"
+    },
+    "freshAfterOnlyImporterObservation": {
+      "zod": "file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/zod/index.js",
+      "playwright": "file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/playwright/index.mjs",
+      "typescript": "file:///workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/typescript/lib/typescript.js",
+      "nodeModulesIsSymlink": true,
+      "nodeModulesLink": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules"
+    },
+    "freshAfterOnlyImporterNodeArgv": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "Literal resolver observation saved in this command receipt; no game execution or source mutation"
+    ]
+  },
+  "actualCurrentProfiles": [
+    {
+      "name": "tv",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "throttle": 1,
+      "fps": 59.80265125087212,
+      "meanMs": 16.721666666666668,
+      "p95Ms": 16.799999999999955,
+      "p99Ms": 16.800000000000182
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "throttle": 4,
+      "fps": 59.80265125087212,
+      "meanMs": 16.721666666666668,
+      "p95Ms": 16.799999999999727,
+      "p99Ms": 16.800000000000182
+    }
+  ],
+  "originalMutations": {
+    "mutants": 25,
+    "killed": 25,
+    "results": [
+      {
+        "index": 1,
+        "name": "allow negative tile IDs",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 2,
+        "name": "allow tile 28",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 3,
+        "name": "accept extra pass fields",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 4,
+        "name": "deal six instead of seven",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 5,
+        "name": "deal six instead of five",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 6,
+        "name": "disable first double requirement",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 7,
+        "name": "allow any opening tile",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 8,
+        "name": "swap left orientation",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 9,
+        "name": "swap right orientation",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 10,
+        "name": "do not remove played tile",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 11,
+        "name": "never reset passes after play",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 12,
+        "name": "reverse turn direction",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 13,
+        "name": "draw ignores reserve",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 14,
+        "name": "draw last instead of first",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 15,
+        "name": "draw advances turn",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 16,
+        "name": "keep invalid pass inference",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 17,
+        "name": "block one pass early",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 18,
+        "name": "gross partnership omits teammate pips",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 19,
+        "name": "award ties to first seat",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 20,
+        "name": "break partner team membership",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 21,
+        "name": "target requires strict overshoot",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 22,
+        "name": "spectator prototype membership",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 23,
+        "name": "ignore paused guard",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 24,
+        "name": "omit timer instance guard",
+        "killed": true,
+        "exit": 1
+      },
+      {
+        "index": 25,
+        "name": "TV leaks private hands",
+        "killed": true,
+        "exit": 1
+      }
+    ]
+  },
+  "currentClip": {
+    "path": "media/milestone-20-current32a-hosted.webm",
+    "bytes": 317769,
+    "sha256": "a1b427d90f5736d9be15f5136d0a4e7f637aa0da802bd1e1c3b4cb9d2b1357f0",
+    "scope": "Genuine original32a official36-frame VP9 capture, complete unchanged reader decoder passed. Nominal12fps export is not native refresh."
+  },
+  "firstPostGreenNegative": {
+    "schema": "g01-postgreen-idle-departure-first-controller/1",
+    "startedUtc": "2026-10-09T14:33:42.176986+00:00",
+    "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+    "scope": "First measured review investigation after whole current original green; native child failure is preserved as a real product-policy rejection, never a PASS/no-gain round.",
+    "wholeBoundSeconds": 90,
+    "signalsSent": [],
+    "childPid": 403085,
+    "childStartedUtc": "2026-10-09T14:33:49.615954+00:00",
+    "childClosedUtc": "2026-10-09T14:33:50.139305+00:00",
+    "childExitCode": 1,
+    "allFrozenInputsUnchanged": true,
+    "frozenAliasCount": 6568,
+    "actualReport": {
+      "schema": "g01-postgreen-idle-departure-first/1",
+      "status": "FAIL_CURRENT_POLICY",
+      "source": "32a10dd94565acbfe7d7f42b5f5ebbef9a57a9ce",
+      "scope": "First post-green real legal timer-cycle/departure/resume control. Injected game-event times are deterministic simulation, not browser/native time. No production edit, no completed round or gain credit.",
+      "fiveWeaknesses": [
+        "Known departure after full-table inactivity may preserve shortened human window",
+        "Paused departure after inactivity must restore next present-human time",
+        "Fully connected adaptive idle behavior must remain exact",
+        "Historical Worker response benefit remains unqualified; no unchanged timing retry",
+        "Finite physical-phone/upstream strength scope"
+      ],
+      "fullyConnectedIdleControls": 240,
+      "eligibleDepartures": 240,
+      "eligiblePausedResumes": 240,
+      "finishedUtc": "2026-10-09T14:33:49.945Z"
+    },
+    "failureCount": 480,
+    "firstFailure": {
+      "case": 1,
+      "path": "direct-departure",
+      "actualMs": 1000,
+      "requiredMs": 30000
+    },
+    "status": "CLOSED_FAILURE",
+    "exitCode": 1,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "closedUtc": "2026-10-09T14:33:56.571522+00:00"
+  },
+  "currentInitialAbsenceRepair": "Qualified by genuine original32a full1342-check acceptance; narrow initial active-human absence liveness gain only",
+  "unfixedNewIssue": "After a legal whole-table idle cycle, direct active departure and paused departure/resume leave next present-human window1000ms, violating documented30000ms policy;240 cases each/480 actual failures.",
+  "renewedFormalReviewsCompleted": 0,
+  "consecutiveNoPlayerGain": 0,
+  "formalReviewState": "First reread/rank5/measure investigation found real defect; worst still requires narrow fix/measure/log/push. No noGain or completed review credit.",
+  "currentNewCheckpointQualification": "PENDING newest-source original whole workflow and actual official full acceptance. Protected Ready11/canonicalDraft1 remain untouched; no Ready20 yet.",
+  "fullRawProof": {
+    "path": "media/absence-current32a-whole-proof.zip",
+    "bytes": 4409457,
+    "sha256": "7579f9c8562da7d0b98a0e129aca9e68b8befd9ced3d489ff5ef84c449320bea",
+    "safeUniqueMembers": 53,
+    "fullCrcAndEveryMemberBytePass": true
+  },
+  "cadence": {
+    "lastActualSourcePush": "2026-10-09T14:04:47.620789+00:00",
+    "hardDeadline": "2026-10-09T14:34:47.620789+00:00",
+    "actualPreparationSecondsPastHard": 349.537549,
+    "actualPublication": "Read next native publication receipt; no backdate/prepublication credit"
+  },
+  "scope": "Entire original first official ZIP138424314B/d2bc3d...6e375 preserved in own/dev/shm and fully verified; public archive contains all top-level actual raw evidence, every original mutable after-output, complete controllers/importer aliases/55-test native result and all480 negative observations. Product files/rules/strategies/native clocks/gates unchanged at this checkpoint."
+}

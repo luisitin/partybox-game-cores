@@ -1,3 +1,57 @@
+## Current G01 follow-up: genuine full32a green, first review found a real defect
+
+Owner codex-domino-queue-audit-20261009; DraftPR20 remains incomplete.
+Branch job/G01-dominoes-queue-audit-20261009; protected Ready11 eadb and
+canonical Draft1 8c remain static/unmerged. Below preserves all historical facts.
+
+Initial absence repair is qualified by exact32a original37941524593 /
+job113856832232 SUCCESS14:23:09; entire first official11622437616,
+138424314B/SHAd2bc3dc9a64d6928aaa59093324fced93b067e753ae3ad74103238576bd6e375
+passed unchanged6a33 reader1342 checks. Actual controller closed14:27:04.352304,
+all6569 fresh source202/installed/Python/runtime/actual importer/ZIP/native
+aliases unchanged; no signals or owned group/detached children. Full native
+130021B/SHA03ee4c7d25d569afcfaa8d125e7bd6ad30fd92acaef32dddbb79d75c11f6fb3f.
+All25 actual mutant kills/actual file:// privacy/16 real Worker replays/five
+variants/600 original native intervals/602 stamps/36 completely decoded VP9
+frames pass unchanged gates. Exact observed profile numbers are in the JSON;
+no stronger FPS/hardware/gain claim. Earlier original9f FAIL remains preserved.
+Complete local original48 +new7 tests pass/no skip, all3331 observed aliases.
+Fresh after-only importer observation is not backdated to that earlier suite.
+
+After green, re-read binding job and rank5: old full-idle departure clock;
+paused drop/resume clock; fullyconnected adaptive idle parity; historical failed
+Worker benefit (no unchanged timing retry); finite phone/upstream scope.
+FIRST real240 legal full-idle contexts show active departure leaves next human
+1000ms instead of documented30000;240 paused-drop-resume paths fail too.
+Child naturally FAIL1 14:33:50.139305; controller CLOSED_FAILURE14:33:56.571522;
+all6568 fresh actual importer/source/runtime guards pass/group+detached[].
+Full240 states/events/480 genuine failures/helpers/complete guards are public.
+This is an incomplete first formal review: NO noGain/completed-round credit.
+
+NEXT: fix only explicit active departure and paused drop/resume from existing
+idle cycle; preserve fullyconnected whole states, empty/paused controls and
+automatic inactive-budget acceleration. Do NOT reset idle after every absent
+automatic turn: that could prevent an inactive remaining human's fast progress.
+Measure negative→pass, full connected parity/idle-budget/empty controls; strict
+build/new default regression/current functional capture; log/push this separate
+review and accept new whole original exact-head official proof. Then reread/
+rank5/measure/log/push each further review until3 true player-no-gain rounds.
+PR20 stays Draft. No cosmetic source change/old protected source mutation.
+
+absence-current32a-whole.json and safe unique complete media ZIP retain every
+original raw/mutable output/source/runtime receipt/current official capture,
+all first failures and observed counts. Projection copies genuine current32a
+mutable outputs ONLY; the old immutable runner/source attribution stays exact.
+Core/page/strategy/native sampler/clock/gate unchanged in this checkpoint.
+
+Last actual source push32a14:04:47.620789; early14:29:47.620789/hard14:34:47.620789.
+This preparation happens after the hard deadline during actual whole acceptance
+and first post-green negative review; real delay retained, no backdate. Read
+actual next push receipt for publication/new conservative cadence. Refresh own
+G01 MAIN row only after actual push under exclusive serialized root lease.
+
+## Earlier checkpoint/historical handoffs (exact original scopes remain below)
+
 ## Current isolated absence follow-up: Draft PR20, full qualification pending
 
 Owner: codex-domino-queue-audit-20261009. Branch:

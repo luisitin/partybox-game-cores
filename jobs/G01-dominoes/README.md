@@ -52,7 +52,7 @@ Single steps:
 
 ## Status
 
-Protected PR11 is Ready on eadb; this isolated absent-turn repair is unqualified.
+Protected PR11 stays Ready; initial repair32a passed whole original CI; Draft20 incomplete.
 Controlled468 pairs pass;360 connected games keep every state byte-identical.
-New7-test regressions pass/old6 fail. First full CI failure retained; new full CI/KEEP pending.
-1003 full connected matches and24 private handovers pass; NEXT.md records evidence/cadence.
+All55 tests/25 mutants/whole1342 checks pass; new full-idle departure defect480 FAIL.
+NEXT.md records the first post-green defect, required fix, retained failures and cadence.
