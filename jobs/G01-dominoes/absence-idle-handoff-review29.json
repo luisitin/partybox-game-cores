@@ -1,0 +1,737 @@
+{
+  "schema": "g01-postgreen-review29-explicit-idle-handoff/1",
+  "preparedUtc": "2026-10-09T15:10:43.531400+00:00",
+  "publishedParent": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+  "reviewNumber": 29,
+  "fiveWeaknessesRanked": [
+    "Explicit active departure after full inactive cycle can leave next human only1000ms",
+    "Paused active departure/resume must reset only the new present turn",
+    "Connected adaptive idle/empty/remaining-inactive budgets must remain unchanged",
+    "Prior Worker response/gain diagnostics remain failed and unqualified; no unchanged timing retry",
+    "Finite functional/physical-phone/upstream scope must stay explicit"
+  ],
+  "adoptedNarrowPolicy": "Reset idleTurns only on actual connected active-seat departure, or actual resume into declared absent active seat, while unpaused play and at least one present seat remain; then run the unchanged legal absent-seat drain. Ordinary automatic timers, inactive/duplicate metadata, paused/empty behavior and connected whole states are preserved.",
+  "adoptedProduct": {
+    "core.ts": {
+      "bytes": 24159,
+      "sha256": "c36e2d6e7ed5877bcbe74726da55faf2b3527351b012defd6841e3052dfd7869"
+    },
+    "absence-presence.test.ts": {
+      "bytes": 7180,
+      "sha256": "b162e918daf297839f4f7ff704eb7a8936c05a1a884671ac43f5f4229e579d62"
+    },
+    "play.html": {
+      "bytes": 1033446,
+      "sha256": "92f2e7b91b81db799f04eea233c80fe70a9564f47f7eb34a8042a3cd0481a7a1"
+    }
+  },
+  "measuredPlayerGain": {
+    "oldHumanWindowMs": 1000,
+    "newHumanWindowMs": 30000,
+    "additionalHumanWindowMs": 29000,
+    "actualOldFailures": 480,
+    "actualCorrectedWindows": 480,
+    "legalContexts": 240,
+    "scope": "Deterministic legal core-event observations; not native browser elapsed time/absence UI-event/performance/hardware measurement. Whole new hosted qualification pending."
+  },
+  "actualFullPrivateController": {
+    "schema": "g01-idle-handoff-private-first-controller/1",
+    "startedUtc": "2026-10-09T14:52:24.224363+00:00",
+    "publishedParent": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+    "candidateRoot": "/dev/shm/G01-idle-handoff-private-candidate-20261009",
+    "wholeBoundSeconds": 840,
+    "scope": "First unadopted narrow timer repair. Full480 oldfail/newpass real contexts, physical/idle-budget controls; new9 default regressions against candidate and actual pre-fix source (old7PASS2FAIL expected); both entire original1003-seed compatibility lanes twice; original48 default node tests. No FAST_TEST, skips or native/browser clock/sample. Fresh all current/candidate/importer/dependency/runtime aliases protected before and after.",
+    "commands": [
+      {
+        "name": "new-control",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/dev/shm/G01-idle-handoff-private-candidate-control-20261009.mjs"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T14:52:35.100984+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-new-control-native.log",
+        "childPid": 406792,
+        "exitCode": 0,
+        "closedUtc": "2026-10-09T14:52:45.609029+00:00",
+        "nativeBytes": 927,
+        "nativeSha256": "abb9e3258d0e384dc8596959119fd073c7474ea9d8c094f563904ef9c1baff6a"
+      },
+      {
+        "name": "new-default9",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--test",
+          "absence-presence.test.ts"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T14:52:45.775623+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-new-default9-native.log",
+        "childPid": 406808,
+        "exitCode": 0,
+        "closedUtc": "2026-10-09T14:52:48.564563+00:00",
+        "nativeBytes": 952,
+        "nativeSha256": "fc248eeca08e4b50ec9aa2d04cdb7bda26183b89361e8427a6034f24d91084f2",
+        "wholeNativeCounts": {
+          "tests": [
+            9
+          ],
+          "pass": [
+            9
+          ],
+          "fail": [
+            0
+          ],
+          "cancelled": [
+            0
+          ],
+          "skipped": [
+            0
+          ],
+          "todo": [
+            0
+          ]
+        },
+        "scope": "Actual complete unfiltered default Node suite PASS"
+      },
+      {
+        "name": "old-default9",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--test",
+          "absence-presence.test.ts"
+        ],
+        "envOverrides": {
+          "ABSENCE_CORE_PATH": "/tmp/G01-source-queue-audit-20261009/jobs/G01-dominoes/core.ts"
+        },
+        "expectedNativeExit": 1,
+        "startedUtc": "2026-10-09T14:52:48.996493+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-old-default9-native.log",
+        "childPid": 406825,
+        "exitCode": 1,
+        "closedUtc": "2026-10-09T14:52:50.619226+00:00",
+        "nativeBytes": 2815,
+        "nativeSha256": "7f565b918aaa35b2ea2c6dc095295c5ddb8ecd489c29dcb0c57ba01565a397dc",
+        "wholeNativeCounts": {
+          "tests": [
+            9
+          ],
+          "pass": [
+            7
+          ],
+          "fail": [
+            2
+          ],
+          "cancelled": [
+            0
+          ],
+          "skipped": [
+            0
+          ],
+          "todo": [
+            0
+          ]
+        },
+        "scope": "Actual expected pre-fix product rejection, not a passed game gate"
+      },
+      {
+        "name": "compatibility1",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "total-compatibility.ts"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T14:52:50.870517+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-compatibility1-native.log",
+        "childPid": 406841,
+        "exitCode": 0,
+        "closedUtc": "2026-10-09T14:54:33.901394+00:00",
+        "nativeBytes": 944,
+        "nativeSha256": "f424783f181a60d09180de766a9011988e9c1150973a88140eda609c69e8a672",
+        "entireOriginalReport": {
+          "baselineCommit": "949c2e3de79c4665ea18145fe62bf5b908a77472",
+          "baselineSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+          "games": 1003,
+          "seeds": 1003,
+          "transitions": 372510,
+          "kinds": {
+            "player": 2006,
+            "vip": 13977,
+            "timer": 22140,
+            "input": 334387
+          },
+          "normalized": [
+            "idleTurns",
+            "phase.deadline"
+          ],
+          "idleDeadlineDifferences": 2581,
+          "stateMismatches": 0,
+          "resultMismatches": 0,
+          "explicitAbsencePolicy": "Unchanged frozen engine legal greedy actions at declaration time; full physical state comparison, stock plus N-1 progress bound; paused/empty tables unchanged",
+          "absenceReplayActions": 827,
+          "connectedBaselineCommit": "eadb642bc1f9f4f2c839c7a6754932e7a5b640ec",
+          "connectedBaselineSha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95",
+          "connectedGames": 1003,
+          "connectedTransitions": 377896,
+          "connectedWholeStateMismatches": 0
+        }
+      },
+      {
+        "name": "compatibility2",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "total-compatibility.ts"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T14:54:34.160904+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-compatibility2-native.log",
+        "childPid": 407552,
+        "exitCode": 0,
+        "closedUtc": "2026-10-09T14:57:00.365551+00:00",
+        "nativeBytes": 944,
+        "nativeSha256": "f424783f181a60d09180de766a9011988e9c1150973a88140eda609c69e8a672",
+        "entireOriginalReport": {
+          "baselineCommit": "949c2e3de79c4665ea18145fe62bf5b908a77472",
+          "baselineSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
+          "games": 1003,
+          "seeds": 1003,
+          "transitions": 372510,
+          "kinds": {
+            "player": 2006,
+            "vip": 13977,
+            "timer": 22140,
+            "input": 334387
+          },
+          "normalized": [
+            "idleTurns",
+            "phase.deadline"
+          ],
+          "idleDeadlineDifferences": 2581,
+          "stateMismatches": 0,
+          "resultMismatches": 0,
+          "explicitAbsencePolicy": "Unchanged frozen engine legal greedy actions at declaration time; full physical state comparison, stock plus N-1 progress bound; paused/empty tables unchanged",
+          "absenceReplayActions": 827,
+          "connectedBaselineCommit": "eadb642bc1f9f4f2c839c7a6754932e7a5b640ec",
+          "connectedBaselineSha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95",
+          "connectedGames": 1003,
+          "connectedTransitions": 377896,
+          "connectedWholeStateMismatches": 0
+        }
+      },
+      {
+        "name": "original-default48",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "--test",
+          "test.ts"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T14:57:01.222477+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-original-default48-native.log",
+        "childPid": 411580,
+        "exitCode": 0,
+        "closedUtc": "2026-10-09T15:01:26.334590+00:00",
+        "nativeBytes": 4405,
+        "nativeSha256": "b709e4589df76039f70ba2ddbc017b22d7fcbb869290da1ba4c5813725fa31eb",
+        "wholeNativeCounts": {
+          "tests": [
+            48
+          ],
+          "pass": [
+            48
+          ],
+          "fail": [
+            0
+          ],
+          "cancelled": [
+            0
+          ],
+          "skipped": [
+            0
+          ],
+          "todo": [
+            0
+          ]
+        },
+        "scope": "Actual complete unfiltered default Node suite PASS"
+      }
+    ],
+    "signalsSent": [],
+    "bothOriginalCompleteReportsByteIdentical": true,
+    "allFrozenInputsUnchanged": true,
+    "frozenAliasCount": 10015,
+    "candidateFiles": 206,
+    "actualControl": {
+      "schema": "g01-idle-handoff-private-first-control/1",
+      "status": "PASS",
+      "startedUtc": "2026-10-09T14:52:36.050Z",
+      "publishedBefore": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+      "candidateRoot": "/dev/shm/G01-idle-handoff-private-candidate-20261009",
+      "scope": "New private deterministic event control, no native/browser timing. Compare genuine pre-fix480 failures against narrow explicit departure/resume repair. All normal connected timers/counters remain exact; full physical/RNG/scoring states and inactive budgets checked.",
+      "cases": 240,
+      "oldFailures": 480,
+      "newFullHumanWindows": 480,
+      "fullConnectedWholeStateControls": 780,
+      "pausedUnchangedControls": 480,
+      "inactiveMetadataExactControls": 480,
+      "duplicateAbsenceExactControls": 240,
+      "emptyExactControls": 1020,
+      "invalidIdentityControls": 960,
+      "wholeInactiveMatches": 240,
+      "wholePhysicalTransitions": 88055,
+      "budgetMs": 3600000,
+      "maximumCandidateInactiveMs": 1244311,
+      "finishedUtc": "2026-10-09T14:52:45.526Z"
+    },
+    "status": "PASS",
+    "exitCode": 0,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "closedUtc": "2026-10-09T15:01:46.232632+00:00"
+  },
+  "actualPrivateFunctionalVisual": {
+    "schema": "g01-idle-handoff-private-first-visual-controller/1",
+    "startedUtc": "2026-10-09T14:54:33.238220+00:00",
+    "publishedParent": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+    "candidateRoot": "/dev/shm/G01-idle-handoff-private-candidate-20261009",
+    "wholeBoundSeconds": 180,
+    "scope": "Actual changed private candidate page, native trusted functional hot-seat visuals only. No FPS/native clock alteration/file-navigation/absence UI-event/hardware claim.",
+    "signalsSent": [],
+    "childPid": 407832,
+    "childStartedUtc": "2026-10-09T14:54:49.692086+00:00",
+    "childClosedUtc": "2026-10-09T14:55:45.825385+00:00",
+    "childExitCode": 0,
+    "allFrozenInputsUnchanged": true,
+    "frozenAliasCount": 10015,
+    "actualReport": {
+      "schema": "g01-idle-handoff-private-first-visual/1",
+      "status": "PASS",
+      "startedUtc": "2026-10-09T14:54:50.970Z",
+      "publishedParent": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+      "candidateRoot": "/dev/shm/G01-idle-handoff-private-candidate-20261009/jobs/G01-dominoes",
+      "player": {
+        "bytes": 1033446,
+        "sha256": "92f2e7b91b81db799f04eea233c80fe70a9564f47f7eb34a8042a3cd0481a7a1"
+      },
+      "scope": "First distinct private narrow timer-repair visual milestone: exact self-contained page bytes setContent, real trusted hot-seat actions and native animations. No clock installation, FPS/performance gain, file navigation, physical phone or UI absence-event claim.",
+      "errors": [],
+      "externalRequests": [],
+      "finishedUtc": "2026-10-09T14:55:45.313Z",
+      "browserClosedUtc": "2026-10-09T14:55:45.625Z"
+    },
+    "caseSummaries": [
+      {
+        "name": "phone-normal",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "cpu": 4,
+        "reducedMotion": "no-preference",
+        "record": true,
+        "status": "PASS",
+        "actions": 8,
+        "handovers": 8,
+        "closedUtc": "2026-10-09T14:55:16.686Z",
+        "video": {
+          "path": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-visual/video/c00dbd300631d7eb0933bca6d65aa79c.webm",
+          "bytes": 2969822,
+          "sha256": "8e6bdcff93610908597b616686d2dd042286e9b835741126c3eb69cf5288c07e"
+        }
+      },
+      {
+        "name": "tv-normal",
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "cpu": 1,
+        "reducedMotion": "no-preference",
+        "record": false,
+        "status": "PASS",
+        "actions": 8,
+        "handovers": 8,
+        "closedUtc": "2026-10-09T14:55:34.462Z"
+      },
+      {
+        "name": "phone-reduced",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "cpu": 4,
+        "reducedMotion": "reduce",
+        "record": false,
+        "status": "PASS",
+        "actions": 8,
+        "handovers": 8,
+        "closedUtc": "2026-10-09T14:55:45.286Z"
+      }
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "closedUtc": "2026-10-09T14:56:01.462469+00:00"
+  },
+  "actualWholeCaptureDecode": {
+    "schema": "g01-idle-handoff-private-first-whole-video-decode/1",
+    "startedUtc": "2026-10-09T14:57:03.261721+00:00",
+    "scope": "Whole new private candidate source-bound native functional capture independent full decode. Export25fps is not a native performance measurement; no timing/FPS/gain claim.",
+    "wholeBoundSeconds": 90,
+    "signalsSent": [],
+    "commands": [
+      {
+        "argv": [
+          "/usr/bin/ffprobe",
+          "-v",
+          "error",
+          "-select_streams",
+          "v:0",
+          "-count_frames",
+          "-show_entries",
+          "stream=codec_name,width,height,r_frame_rate,nb_read_frames:format=duration,size",
+          "-of",
+          "json",
+          "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-visual/video/c00dbd300631d7eb0933bca6d65aa79c.webm"
+        ],
+        "startedUtc": "2026-10-09T14:57:06.058235+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-whole-ffprobe-native.log",
+        "childPid": 411622,
+        "closedUtc": "2026-10-09T14:57:07.391999+00:00",
+        "exitCode": 0
+      },
+      {
+        "argv": [
+          "/usr/bin/ffmpeg",
+          "-v",
+          "error",
+          "-i",
+          "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-visual/video/c00dbd300631d7eb0933bca6d65aa79c.webm",
+          "-map",
+          "0:v:0",
+          "-f",
+          "framehash",
+          "-hash",
+          "sha256",
+          "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-complete-framehash.txt"
+        ],
+        "startedUtc": "2026-10-09T14:57:07.701110+00:00",
+        "nativePath": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-whole-ffmpeg-native.log",
+        "childPid": 411623,
+        "closedUtc": "2026-10-09T14:57:12.408005+00:00",
+        "exitCode": 0
+      }
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "metadata": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "r_frame_rate": "25/1",
+          "nb_read_frames": "665"
+        }
+      ],
+      "format": {
+        "duration": "26.600000",
+        "size": "2969822"
+      }
+    },
+    "frames": 665,
+    "clip": {
+      "path": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-first-visual/video/c00dbd300631d7eb0933bca6d65aa79c.webm",
+      "bytes": 2969822,
+      "sha256": "8e6bdcff93610908597b616686d2dd042286e9b835741126c3eb69cf5288c07e"
+    },
+    "completeFramehash": {
+      "bytes": 74697,
+      "sha256": "eed13d769d5bbda92e952af570008626a0fc17ce0b3246fb6d1447b9fb8d0160"
+    },
+    "allFreshInputAliasesUnchanged": true,
+    "frozenAliasCount": 1201,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "closedUtc": "2026-10-09T14:57:13.518962+00:00"
+  },
+  "actualIndependentStrictMutationControls": {
+    "schema": "g01-idle-handoff-private-first-actual-mutants/1",
+    "startedUtc": "2026-10-09T15:03:31.572264+00:00",
+    "scope": "Three real separately injected, strictly compiled timer policy bugs must be rejected by the complete actual first control. Expected native failures are mutant kills, not passing game gates. Original25 mutation gate remains unchanged. No source mutation or browser/native timing.",
+    "wholeBoundSeconds": 180,
+    "signalsSent": [],
+    "commands": [
+      {
+        "name": "strict-all3",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/typescript/bin/tsc",
+          "--noEmit",
+          "--strict",
+          "--target",
+          "ES2022",
+          "--module",
+          "ES2022",
+          "--moduleResolution",
+          "bundler",
+          "--allowImportingTsExtensions",
+          "--skipLibCheck",
+          "--lib",
+          "ES2022,DOM,DOM.Iterable",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-ordinary-absence-idle-reset.ts",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-paused-departure-counter-reset.ts",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-empty-room-counter-reset.ts"
+        ],
+        "envOverrides": {},
+        "expectedNativeExit": 0,
+        "startedUtc": "2026-10-09T15:03:42.573022+00:00",
+        "childPid": 413234,
+        "closedUtc": "2026-10-09T15:03:45.519182+00:00",
+        "exitCode": 0,
+        "fullNativeIdentity": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      {
+        "name": "ordinary-absence-idle-reset",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs"
+        ],
+        "envOverrides": {
+          "G01_MUTANT_CORE": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-ordinary-absence-idle-reset.ts",
+          "G01_MUTANT_OUTPUT": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-ordinary-absence-idle-reset"
+        },
+        "expectedNativeExit": 1,
+        "startedUtc": "2026-10-09T15:03:45.693962+00:00",
+        "childPid": 413241,
+        "closedUtc": "2026-10-09T15:03:46.064458+00:00",
+        "exitCode": 1,
+        "fullNativeIdentity": {
+          "bytes": 387,
+          "sha256": "f5d482143ef9f05f44fd63126a2e06169a4751e8c3f6ac992c4b822cac2aab64"
+        }
+      },
+      {
+        "name": "paused-departure-counter-reset",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs"
+        ],
+        "envOverrides": {
+          "G01_MUTANT_CORE": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-paused-departure-counter-reset.ts",
+          "G01_MUTANT_OUTPUT": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-paused-departure-counter-reset"
+        },
+        "expectedNativeExit": 1,
+        "startedUtc": "2026-10-09T15:03:46.323007+00:00",
+        "childPid": 413248,
+        "closedUtc": "2026-10-09T15:03:46.742935+00:00",
+        "exitCode": 1,
+        "fullNativeIdentity": {
+          "bytes": 2871,
+          "sha256": "ff938e1f9ec49ee4d8e0467deffd72392381b37de2a259b9f2917be558f7c50b"
+        }
+      },
+      {
+        "name": "empty-room-counter-reset",
+        "argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs"
+        ],
+        "envOverrides": {
+          "G01_MUTANT_CORE": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-empty-room-counter-reset.ts",
+          "G01_MUTANT_OUTPUT": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-empty-room-counter-reset"
+        },
+        "expectedNativeExit": 1,
+        "startedUtc": "2026-10-09T15:03:47.001367+00:00",
+        "childPid": 413255,
+        "closedUtc": "2026-10-09T15:03:47.458300+00:00",
+        "exitCode": 1,
+        "fullNativeIdentity": {
+          "bytes": 2770,
+          "sha256": "0443ba4eed1dcba528d681afaa1a009ce53898f864a75f1317914a38b6fae21a"
+        }
+      }
+    ],
+    "status": "PASS",
+    "exitCode": 0,
+    "actualStrictlyCompiledMutationKills": [
+      {
+        "name": "ordinary-absence-idle-reset",
+        "mutant": {
+          "name": "ordinary-absence-idle-reset",
+          "corePath": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-ordinary-absence-idle-reset.ts",
+          "reportDirectory": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-ordinary-absence-idle-reset",
+          "bytes": 24218,
+          "sha256": "ab56a7767c8a3e28668fbbbbbac014f3dc8289167ccc6fcbc7ef9d3714508fac",
+          "injectedBug": "ordinary-absence-idle-reset"
+        },
+        "actualRejectedProductControl": {
+          "schema": "g01-idle-handoff-private-first-control/1",
+          "status": "FAIL",
+          "startedUtc": "2026-10-09T15:03:45.923Z",
+          "publishedBefore": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+          "actualMutantCore": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-ordinary-absence-idle-reset.ts",
+          "scope": "New private deterministic event control, no native/browser timing. Compare genuine pre-fix480 failures against narrow explicit departure/resume repair. All normal connected timers/counters remain exact; full physical/RNG/scoring states and inactive budgets checked.",
+          "cases": 1,
+          "oldFailures": 2,
+          "newFullHumanWindows": 2,
+          "fullConnectedWholeStateControls": 2,
+          "pausedUnchangedControls": 2,
+          "inactiveMetadataExactControls": 2,
+          "duplicateAbsenceExactControls": 1,
+          "emptyExactControls": 3,
+          "invalidIdentityControls": 4,
+          "wholeInactiveMatches": 0,
+          "wholePhysicalTransitions": 0,
+          "budgetMs": 3600000,
+          "maximumCandidateInactiveMs": 0,
+          "failure": {
+            "name": "AssertionError",
+            "message": "Expected values to be strictly equal:\n\n0 !== 1\n",
+            "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs:36:94"
+          },
+          "finishedUtc": "2026-10-09T15:03:45.933Z"
+        },
+        "native": {
+          "bytes": 387,
+          "sha256": "f5d482143ef9f05f44fd63126a2e06169a4751e8c3f6ac992c4b822cac2aab64"
+        },
+        "nativeExitCode": 1
+      },
+      {
+        "name": "paused-departure-counter-reset",
+        "mutant": {
+          "name": "paused-departure-counter-reset",
+          "corePath": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-paused-departure-counter-reset.ts",
+          "reportDirectory": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-paused-departure-counter-reset",
+          "bytes": 24139,
+          "sha256": "7806c41f99dfe0893deb3bfeb6befc0f9d5f31decbbacbce08995502bf6206b5",
+          "injectedBug": "paused-departure-counter-reset"
+        },
+        "actualRejectedProductControl": {
+          "schema": "g01-idle-handoff-private-first-control/1",
+          "status": "FAIL",
+          "startedUtc": "2026-10-09T15:03:46.540Z",
+          "publishedBefore": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+          "actualMutantCore": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-paused-departure-counter-reset.ts",
+          "scope": "New private deterministic event control, no native/browser timing. Compare genuine pre-fix480 failures against narrow explicit departure/resume repair. All normal connected timers/counters remain exact; full physical/RNG/scoring states and inactive budgets checked.",
+          "cases": 1,
+          "oldFailures": 1,
+          "newFullHumanWindows": 1,
+          "fullConnectedWholeStateControls": 2,
+          "pausedUnchangedControls": 1,
+          "inactiveMetadataExactControls": 0,
+          "duplicateAbsenceExactControls": 0,
+          "emptyExactControls": 0,
+          "invalidIdentityControls": 0,
+          "wholeInactiveMatches": 0,
+          "wholePhysicalTransitions": 0,
+          "budgetMs": 3600000,
+          "maximumCandidateInactiveMs": 0,
+          "failure": {
+            "name": "AssertionError",
+            "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    board: [\n      {\n        a: 5,\n        b: 3,\n...\n    history: [],\n+   idleTurns: 0,\n-   idleTurns: 2,\n    last: null,\n    missed: [\n      0,\n      0\n    ],\n",
+            "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    board: [\n      {\n        a: 5,\n        b: 3,\n...\n    history: [],\n+   idleTurns: 0,\n-   idleTurns: 2,\n    last: null,\n    missed: [\n      0,\n      0\n    ],\n\n    at file:///dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs:21:141"
+          },
+          "finishedUtc": "2026-10-09T15:03:46.549Z"
+        },
+        "native": {
+          "bytes": 2871,
+          "sha256": "ff938e1f9ec49ee4d8e0467deffd72392381b37de2a259b9f2917be558f7c50b"
+        },
+        "nativeExitCode": 1
+      },
+      {
+        "name": "empty-room-counter-reset",
+        "mutant": {
+          "name": "empty-room-counter-reset",
+          "corePath": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-empty-room-counter-reset.ts",
+          "reportDirectory": "/dev/shm/G01-private-remaining-issue-20261009/idle-handoff-private-mutant-empty-room-counter-reset",
+          "bytes": 24109,
+          "sha256": "b79809fb787907feb19367318d4a6c31a2f74254e982c0eb000049c6b2112b98",
+          "injectedBug": "empty-room-counter-reset"
+        },
+        "actualRejectedProductControl": {
+          "schema": "g01-idle-handoff-private-first-control/1",
+          "status": "FAIL",
+          "startedUtc": "2026-10-09T15:03:47.224Z",
+          "publishedBefore": "a81713c23ab6e2a605e2cd34e1b2f11b6cff3fe1",
+          "actualMutantCore": "/dev/shm/G01-idle-handoff-private-mutants-20261009/jobs/G01-dominoes/core-empty-room-counter-reset.ts",
+          "scope": "New private deterministic event control, no native/browser timing. Compare genuine pre-fix480 failures against narrow explicit departure/resume repair. All normal connected timers/counters remain exact; full physical/RNG/scoring states and inactive budgets checked.",
+          "cases": 1,
+          "oldFailures": 2,
+          "newFullHumanWindows": 2,
+          "fullConnectedWholeStateControls": 2,
+          "pausedUnchangedControls": 2,
+          "inactiveMetadataExactControls": 2,
+          "duplicateAbsenceExactControls": 1,
+          "emptyExactControls": 2,
+          "invalidIdentityControls": 4,
+          "wholeInactiveMatches": 0,
+          "wholePhysicalTransitions": 0,
+          "budgetMs": 3600000,
+          "maximumCandidateInactiveMs": 0,
+          "failure": {
+            "name": "AssertionError",
+            "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    board: [\n      {\n        a: 5,\n        b: 3,\n...\n    history: [],\n+   idleTurns: 0,\n-   idleTurns: 2,\n    last: null,\n    missed: [\n      0,\n      0\n    ],\n",
+            "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    board: [\n      {\n        a: 5,\n        b: 3,\n...\n    history: [],\n+   idleTurns: 0,\n-   idleTurns: 2,\n    last: null,\n    missed: [\n      0,\n      0\n    ],\n\n    at file:///dev/shm/G01-idle-handoff-private-mutants-20261009/actual-control.mjs:31:83"
+          },
+          "finishedUtc": "2026-10-09T15:03:47.233Z"
+        },
+        "native": {
+          "bytes": 2770,
+          "sha256": "0443ba4eed1dcba528d681afaa1a009ce53898f864a75f1317914a38b6fae21a"
+        },
+        "nativeExitCode": 1
+      }
+    ],
+    "allFrozenInputsUnchanged": true,
+    "frozenAliasCount": 13268,
+    "remainingOwnedChildren": [],
+    "remainingOwnedDetached": [],
+    "naturalClosure": true,
+    "closedUtc": "2026-10-09T15:03:57.623477+00:00"
+  },
+  "fullRawProof": {
+    "path": "media/absence-idle-handoff-review29-proof.zip",
+    "bytes": 10607815,
+    "sha256": "3e41df794f786c5ce100308326bce6741959061910d842db63ce64765dc512ae",
+    "safeUniqueMembers": 230,
+    "fullCrcAndEveryMemberBytePass": true
+  },
+  "currentFunctionalCapture": {
+    "path": "media/milestone-21-idle-departure-clock-functional.webm",
+    "bytes": 2969822,
+    "sha256": "8e6bdcff93610908597b616686d2dd042286e9b835741126c3eb69cf5288c07e",
+    "frames": 665,
+    "durationSeconds": 26.6,
+    "codec": "VP8",
+    "scope": "Exact changed candidate page24 trusted actions/private handovers at desktop/phone4x/reduced motion; full665-frame decode. setContent only/no UI absence declaration/file/FPS/physical-phone claim."
+  },
+  "originalWorkflowStateAtPreparation": "a817 original37946697815/job113874697807 still observed in_progress15:07:27; original32a whole1342 acceptance remains genuine historical initial-repair qualification, never substituted for new timer repair or newest source.",
+  "formalReviewCredit": "R29 fix/measure/log completed in this preparation; formal source publication pending actual next guarded normalFF receipt. New repair qualification pending whole current original workflow/native first official artifact. No noGain/Ready credit; next review must wait current whole green.",
+  "consecutiveNoPlayerGain": 0,
+  "protectedHistory": "Protected Ready11 eadb and canonical Draft1 8c stay unchanged/unmerged; first43 invalid ZIP/stale NEXT, concurrent-build guard failure, actual original9f failed oracle, full-idle480 negatives and first packaging path comparison error remain preserved.",
+  "cadence": {
+    "lastActualSourcePush": "2026-10-09T14:46:24.715050+00:00",
+    "earlyDeadline": "2026-10-09T15:11:24.715050+00:00",
+    "hardDeadline": "2026-10-09T15:16:24.715050+00:00",
+    "priorActualHardMissSeconds": 697.094261,
+    "nextActualPublication": "Read next source receipt, never backdate"
+  },
+  "storage": "Original objects/files/proofs retained. Only own new reconstructible Git writes use dedicated RAM store/default verified alternates; no original object relocation/deletion or external file change."
+}

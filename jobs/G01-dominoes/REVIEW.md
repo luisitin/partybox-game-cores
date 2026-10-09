@@ -228,3 +228,6 @@ Current ranked5:1 full original new-head qualification/intentional-absence refer
 
 ## First renewed post-green review remains incomplete
 Re-read original README/RULES/JOBS after whole32a green. Rank5: full-idle explicit departure; paused departure/resume; unchanged connected adaptive idle plus empty-room budget; unqualified historical Worker benefit; physical-phone/upstream bounds. Real first240 legal contexts reject both currenthuman-clock paths480 times. Worst is real; fix explicit event/resume only, avoid unconditional idle reset which could break remaining inactive-human liveness. No candidate adopted yet; first review is incomplete/no streak credit.
+
+## R29 fix of the first measured worst defect
+After original32a green and reread/rank5, worst was explicit active departure after full inactivity. Narrow predicate resets idle only on actual active departure or actual resume into absent active seat with someone present; never ordinary automatic absent turns/paused/empty rooms.240 real contexts+480oldfail/newpass prove29s additional human time, with whole240 games/88055 physical transitions and both exact original1003-seed compatibility lanes;3 actual mutants catch overbroad reset. No native performance inference; currentwhole stillpending/no next formal review until green.

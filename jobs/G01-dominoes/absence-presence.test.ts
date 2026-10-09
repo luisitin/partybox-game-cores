@@ -42,3 +42,22 @@ test('ordinary one-present matches at every count finish inside the unchanged bu
   assert.equal(s.phase.id,'done');assert(s.phase.startedAt<=C.manifest.estimatedMinutes*3*60000);assert.deepEqual(Object.keys(C.results(s)!.scores).sort(),s.seats.slice().sort());
  }
 });
+
+function fullyIdle(n:number,seed:number):ReturnType<typeof C.init> {
+ let s=C.init(context(n,seed,(1<<n)-1,{mode:seed%2?'draw':'block',target:'250',opening:'rotating'}));
+ for(let i=0;i<100&&s.phase.id==='play'&&s.idleTurns<n;i++)s=C.reduce(freeze(s),{type:'timer',now:s.phase.deadline!,phaseId:s.phase.id,startedAt:s.phase.startedAt});
+ assert.equal(s.phase.id,'play');assert.equal(s.idleTurns,n);assert.equal(s.phase.deadline!-s.phase.startedAt,1000);return s;
+}
+test('explicit active departure after a legal inactive cycle restores a full human turn',()=>{
+ for(const n of [2,3,4])for(const seed of [1,2,3,146,700064]){
+  const s=fullyIdle(n,seed),next=C.reduce(freeze(s),{type:'player',now:s.phase.startedAt+1,playerId:s.seats[s.turn]!,connected:false,gone:'left'});
+  assert.equal(next.phase.id,'play');assert(next.players[next.seats[next.turn]!]!.connected);assert.equal(next.phase.deadline!-next.phase.startedAt,30000);assert.equal(next.idleTurns,0);assert.deepEqual(next.rng,s.rng);assert.deepEqual([...next.hands.flat(),...next.stock,...next.board.map(t=>t.tile)].sort((a,b)=>a-b),C.allTiles());
+ }
+});
+test('paused active departure after an inactive cycle restores full time only on resume',()=>{
+ for(const n of [2,3,4])for(const seed of [1,2,3,146,700064]){
+  const s=fullyIdle(n,seed),paused=C.reduce(freeze(s),{type:'vip',now:s.phase.startedAt+1,action:'pause'}),dropped=C.reduce(freeze(paused),{type:'player',now:s.phase.startedAt+2,playerId:s.seats[s.turn]!,connected:false});
+  assert.deepEqual(dropped.phase,paused.phase);assert.deepEqual(dropped.board,paused.board);assert.equal(dropped.idleTurns,n);
+  const resumed=C.reduce(freeze(dropped),{type:'vip',now:s.phase.startedAt+101,action:'resume'});assert.equal(resumed.phase.id,'play');assert(resumed.players[resumed.seats[resumed.turn]!]!.connected);assert.equal(resumed.phase.deadline!-resumed.phase.startedAt,30000);assert.equal(resumed.idleTurns,0);assert.deepEqual(resumed.rng,s.rng);
+ }
+});

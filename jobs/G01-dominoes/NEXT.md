@@ -1,3 +1,59 @@
+## Current R29 timer repair: measured and adopted, full new hosted qualification pending
+
+DraftPR20, job/G01-dominoes-queue-audit-20261009. Protected Ready11 eadb and
+canonical Draft1 8c stay static/unmerged; full old histories remain below.
+Initial32a repair has genuine whole1342 acceptance14:27:04.352304. The first
+post-green review found480 real full-idle departure/resume human1000ms failures.
+R29 now narrowly resets idle only on explicit active departure or actual resume
+into an absent active seat when a present seat remains; automatic idle speed-up,
+paused/empty rooms, inactive/duplicate declarations and all connected behavior
+are preserved. Core c36e2d6e7ed5877bcbe74726da55faf2b3527351b012defd6841e3052dfd7869.
+
+FIRST private full control closed15:01:46.232632/all10015 fresh source/candidate/
+actual importer/runtime aliases unchanged/no signals/group+detached[].
+240 real contexts reproduce480 old failures→480 full30000ms windows (+29000ms).
+240 whole unattended remainders/88055 strict non-clock physical/RNG/score
+comparisons match; max1244311 simulatedms stays inside unchanged3600000 budget.
+780 connected-idle full-state/480 paused/480 inactive metadata/240 duplicate/
+1020 empty/960 invalid-identity controls pass. All48 original +9 default tests
+PASS/no skip; actual old7PASS2FAIL retained. Entire original1003 games/372510
+transitions/827 old-engine absence replays and separate1003 fullyconnected
+games/377896 WHOLESTATE transitions run twice byte-identically (944B native);
+every original oracle/seed/event/physical/scoring/RNG/field/gate remains unchanged.
+Three real separately injected ordinary-absence/paused/empty reset bugs strictly
+compile then each genuinely fails AssertionError/native1. Mutant controller
+closed15:03:57.623477/all13268 fresh aliases/no child; original25 gate unchanged.
+
+Changed page1033446B/92f2e7b91b81db799f04eea233c80fe70a9564f47f7eb34a8042a3cd0481a7a1
+passes24 trusted private handovers desktop/phone4x/reduced motion, no HTTP/errors;
+visual closed14:56:01.462469/all10015 guards. Actual2969822B/8e6bdcff93610908597b616686d2dd042286e9b835741126c3eb69cf5288c07e
+26.6s665VP8 frame clip fully independently decoded14:57:13.518962/all1201 fresh
+inputs. These are functional setContent observations, no nativeFPS/file/absence
+UI-event/physical-phone claims. Strict adopted rebuild exactly matches this page.
+
+NEXT: finish actual guarded source push/readback and refresh ONLY ownG01 MAIN
+row under root serialized lease. Keep Draft20. Accept EVERY original newest
+workflow/default test/25 mutants/source/native first WHOLE official artifact/
+raw privacy/Worker/browser intervals/full decoder with unchanged6a33 reader.
+a817 original37946697815/job113874697807 was still in_progress15:07:27; its exact
+206-file RAM partial detached worktree preserves first whole evidence scope if
+it closes after publication. Never infer old32a success for new source or hide
+actual cancellation/failure. No sampler retry/gate change/extra workflow.
+R29 measured +29s gain remains unqualified until newest whole original passes;
+no noGain/Ready credit. Then reread/rank5/measure/log/push EACH subsequent review
+separately until3 actual player-no-gain rounds; no bundled/private review credit.
+
+Full genuine first controls/default natives/old failures/aliases/actual mutants/
+complete framehash/all new candidate code are in absence-idle-handoff-review29
+JSON +safe complete media ZIP. Prior media remain exact public a817 bytes; all
+are listed and guarded in complete manifests. Historical raw/errors retained.
+Last actualsourcea81714:46:24.715050: early15:11:24.715050/hard15:16:24.715050.
+Prior source697.094261s hardmiss remains real. Read next actual receipt for new
+cadence, never backdate. New Git object writes go to owned RAM via verified
+alternates; every original object/source/proof remains untouched.
+
+## Earlier checkpoints and original historical scopes remain below verbatim
+
 ## Current G01 follow-up: genuine full32a green, first review found a real defect
 
 Owner codex-domino-queue-audit-20261009; DraftPR20 remains incomplete.

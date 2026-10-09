@@ -156,7 +156,14 @@ function reduceEvent(s:State,e:GameEvent<Input>):State{
 }
 export function reduce(s:State,e:GameEvent<Input>):State {
  const next=reduceEvent(s,e);
- return next===s?s:drainAbsent(next,e.now);
+ if(next===s)return s;
+ // An explicit active departure, or resuming onto a declared absent active
+ // seat, starts a fresh present-human turn. Preserve ordinary automatic idle
+ // acceleration: resetting after every absent action would stall empty play.
+ const departed=e.type==='player'&&e.connected===false&&e.playerId===s.seats[s.turn]&&s.players[e.playerId]!.connected;
+ const resumed=e.type==='vip'&&e.action==='resume'&&!!s.phase.paused;
+ const fresh=(departed||resumed)&&next.phase.id==='play'&&!next.phase.paused&&!next.players[next.seats[next.turn]!]!.connected&&next.seats.some(id=>next.players[id]!.connected);
+ return drainAbsent(fresh?{...next,idleTurns:0}:next,e.now);
 }
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,
