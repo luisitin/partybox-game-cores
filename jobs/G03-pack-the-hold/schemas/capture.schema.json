@@ -1,0 +1,230 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 2
+    },
+    "kind": {
+      "type": "string",
+      "const": "capture-only"
+    },
+    "status": {
+      "type": "string",
+      "const": "passed"
+    },
+    "startedAtUtc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "finishedAtUtc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "sourceHashesStart": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "sourceHashesEnd": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "wallClock": {
+      "type": "string",
+      "const": "Date.now frozen by host; native RAF timestamps unchanged"
+    },
+    "rawFiltering": {
+      "type": "string",
+      "const": "none"
+    },
+    "captureDuringSamples": {
+      "type": "boolean",
+      "const": false
+    },
+    "physicalPhoneMeasured": {
+      "type": "boolean",
+      "const": false
+    },
+    "desktop": {
+      "type": "null"
+    },
+    "phone": {
+      "type": "null"
+    },
+    "failure": {
+      "type": "null"
+    },
+    "requests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "errors": {
+      "minItems": 0,
+      "maxItems": 0,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "documentUrl": {
+      "type": "string"
+    },
+    "chrome": {
+      "type": "string"
+    },
+    "fileOpened": {
+      "type": "boolean"
+    },
+    "serving": {
+      "type": "string"
+    },
+    "reducedMotion": {
+      "type": "boolean",
+      "const": true
+    },
+    "externalRequests": {
+      "type": "number",
+      "const": 0
+    },
+    "runtimeExceptions": {
+      "type": "number",
+      "const": 0
+    },
+    "completedTwoPlayerGame": {
+      "type": "boolean",
+      "const": true
+    },
+    "completedPlayerCounts": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "const": 2
+        },
+        {
+          "type": "number",
+          "const": 3
+        },
+        {
+          "type": "number",
+          "const": 4
+        },
+        {
+          "type": "number",
+          "const": 5
+        },
+        {
+          "type": "number",
+          "const": 6
+        },
+        {
+          "type": "number",
+          "const": 7
+        },
+        {
+          "type": "number",
+          "const": 8
+        }
+      ],
+      "items": false,
+      "minItems": 7,
+      "maxItems": 7
+    },
+    "pointerDrag": {
+      "type": "boolean",
+      "const": true
+    },
+    "touchDrag": {
+      "type": "boolean",
+      "const": true
+    },
+    "keyboardFocus": {
+      "type": "boolean",
+      "const": true
+    },
+    "keyboardPlacement": {
+      "type": "boolean",
+      "const": true
+    },
+    "longNamesFit": {
+      "type": "boolean",
+      "const": true
+    },
+    "videoFile": {
+      "type": "string",
+      "pattern": "^milestone-\\d{2}\\.webm$"
+    },
+    "videoBytes": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9999999
+    },
+    "videoSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "encodedVideoFps": {
+      "type": "number",
+      "const": 10
+    },
+    "videoScope": {
+      "type": "string",
+      "const": "36 separately captured real UI images; encoded10fps is not rendering acceptance"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "kind",
+    "status",
+    "startedAtUtc",
+    "finishedAtUtc",
+    "sourceHashesStart",
+    "sourceHashesEnd",
+    "wallClock",
+    "rawFiltering",
+    "captureDuringSamples",
+    "physicalPhoneMeasured",
+    "desktop",
+    "phone",
+    "failure",
+    "requests",
+    "errors",
+    "documentUrl",
+    "chrome",
+    "fileOpened",
+    "serving",
+    "reducedMotion",
+    "externalRequests",
+    "runtimeExceptions",
+    "completedTwoPlayerGame",
+    "completedPlayerCounts",
+    "pointerDrag",
+    "touchDrag",
+    "keyboardFocus",
+    "keyboardPlacement",
+    "longNamesFit",
+    "videoFile",
+    "videoBytes",
+    "videoSha256",
+    "encodedVideoFps",
+    "videoScope"
+  ],
+  "additionalProperties": false
+}
