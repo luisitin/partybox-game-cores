@@ -36,3 +36,8 @@ retained. Fresh capture19 passes20 functionals, not FPS. Current full original C
 and genuine artifact proof still pending; no completed KEEP round or reset claimed
 yet. Old11–13 stop is historical. After current acceptance, measure this gain and
 run three real consecutive substantive no-gain audits before stopping.
+
+14 acceptance | Corrected b0 full push37885148039 and PR37886579081 SUCCESS; both genuine artifacts/137 original assertions/all1200 native intervals/full36VP9 PASS. Recovery gain proved by old failure/new24 local checks/600 saves and actualTV/phone DOM; renewed no-gain streak0.
+15 | Audit64 declared selected configurations through64 complete matches and12463 valid snapshots acrossall five phases/3–6 counts/moon/Jack/passing/timed options. No new save failure/product change/player gain; streak1. Three-deck and queen switches correlate with noPass/Jack; not an exhaustive Cartesian claim.
+16 | Resume288 genuine observed phase states; exact final scores/history/results match uninterrupted games.32 passing configurations have5 phases,32 no-pass have4; original emitted field5 corrected by preserved erratum. No product change/player gain; streak2.
+17 | Recovered TV/controller privacy and mutable-view isolation:2592 hidden-hand ordering comparisons/1296 controller mutation checks PASS for288 restored states. No product change/player gain; streak3. Whole native audit CLOSED05:06:23.754378Z/EXIT0/1016 frozen inputs unchanged; no browser/FPS rerun.

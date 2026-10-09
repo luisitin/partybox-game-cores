@@ -153,3 +153,13 @@ Round13 actual public helper command works,27source guards match and the
 marker is unchanged; its functional-only report rejects full acceptance.
 README45lines remains under60; old verification history remains untouched
 below a corrected current36-test scope. No player gain, resumed streak3.
+
+Recovery reviews14–17, after corrected full PR37886579081 GREEN.
+Actual five ranked weaknesses per round and selected substantive audit are
+recorded in media/keep-recovery-15-17-proof.zip round15/16/17.json. The concrete
+ledger recovery fix is now accepted; subsequent full-match save, resumed-score
+and restored-view privacy audits found no further player defect.64 selected
+configurations,12463 valid snapshots,288 restores,2592 privacy comparisons and
+1296 mutation-isolation checks PASS. No runtime/UI edits or cosmetic churn.
+Three consecutive no-player-gain audits complete the renewed stopping rule.
+Physical phone and per-frame native witness coverage remain stated limitations.

@@ -661,3 +661,29 @@ historical sources/all1200 raw intervals/full36-frame VP9 were checked. This
 accepts only85d. Current both full workflows and official artifacts are required.
 Default original generate/check-repro,25 mutations,1003 seeds,10K oracle,
 all original leagues and600 retained unfiltered intervals per profile stay binding.
+
+## Corrected recovery full acceptance and post-green reviews
+Current player source b0ea697ca4b56c3ac9aaf7c1bae6a93d5ed667cc passed full
+push37885148039 and PR37886579081. Genuine official936742/936788-byte ZIPs
+matched official SHA, safe entries/CRC, all30 immutable sources/all1200 raw
+intervals/full36VP9,137 public assertions each. Complete93381/95006-character
+native logs prove39/39 tests,25 compiled mutations,1003 property seeds,10K
+independent cases,1000 full matches at each3–6 count,2x2000 leagues and2 identical
+102-file regenerations. The original reader itself is byte-unchanged.
+Exact original command: python3 jobs/G05-hearts/scripts/verify-ci-artifact.py
+--head b0ea697ca4b56c3ac9aaf7c1bae6a93d5ed667cc --run-id RUN_ID
+--evidence-dir REPO/.work/audit-20261009/current-b0-EVENT-RUN_ID.
+Actual native reader CLOSED05:03:03.435339Z/05:06:58.361818Z; EXIT0.
+
+After the full PR was green, node REPO/.work/keep-recovery-20261009/audit.mjs
+ran with cwd REPO/jobs/G05-hearts with source/runtime/generated inputs frozen. Whole native
+CLOSED05:06:23.754378Z/EXIT0/1016 identical guards.64 selected configurations
+validated12463 snapshots across complete games;288 resumed states keep exact
+final scores/history/results;2592 hidden-hand ordering comparisons and1296
+controller mutation-isolation checks PASS. Three no-gain reviews15–17.
+The archive preserves original raw receipts and a correction to the emitted
+phasesPerConfiguration field: five phases overall,4 for no-pass configs.
+Queen/deck assignments correlate with Jack/noPass; no exhaustive combinations
+or physical-phone/performance gain is claimed. This is no new frame trial.
+Both public proof ZIPs are CRC-verified; new metadata checkpoint must get its
+own full green workflows/genuine immutable-source proof before PR15 Ready.

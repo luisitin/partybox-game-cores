@@ -43,6 +43,7 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 
 The current audit corrects corrupt-save recovery before Resume opens a stuck game.
 Valid partial tricks still restore with private cards concealed. Actual24 local
-tests/600 valid saves and TV/phone recovery proof passed. New full hosted checks
-and genuine artifacts are pending; original PR5 remains Ready separately.
+tests/600 valid saves and TV/phone recovery proof passed. Both corrected-source
+full hosted checks and genuine artifacts passed. Three further audits found no
+new player gain. Original PR5 remains Ready separately.
 See NEXT.md and media/audit-20261009-proof.zip for exact scope and retained errors.

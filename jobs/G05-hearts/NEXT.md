@@ -44,3 +44,17 @@ Completed means merged; do not merge original PRs or mark completed prematurely.
 First material5da44dd normal source push succeeded, observed04:42:09.929Z.
 Root-relative CLAIMS restoration then required a normal follow-up correction;
 first head is historical. Final full checks must use the corrected current head.
+
+Corrected b0ea697 full push37885148039 and PR37886579081 are both SUCCESS.
+Both genuine official ZIPs passed the unchanged137-assertion public reader,
+all30 immutable inputs/all1200 raw intervals/full36-frame VP9, with complete
+39-test/25-mutant/1003-seed/4x1000-game/2x2000-league/two-regeneration logs.
+Receipts: media/accepted-recovery-b0-proof.zip. KEEP14 now has accepted recovery
+gain; actual substantive15–17 passed with no further player gain/streak3.
+See media/keep-recovery-15-17-proof.zip and archived honest scope erratum.
+This evidence-only checkpoint keeps all30 acceptance inputs unchanged from b0.
+Its own final full push/PR workflows and genuine official artifacts still need
+acceptance before supplemental PR15 Ready. Target canonical job/G05-hearts;
+original PR5 and all history remain unchanged. No merge authorized/performed.
+Environment restart prevented live work04:43–57; original checkpoint stayed public.
+Current full evidence/KEEP publication targets05:07:38, hard05:12:38.506758Z.
