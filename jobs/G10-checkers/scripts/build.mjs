@@ -79,7 +79,7 @@ const htmlOut=resolve(process.env.G10_HTML_OUT??'play.html'),temporary=htmlOut+'
 const destination=createWriteStream(temporary);const append=async value=>{if(!destination.write(value))await once(destination,'drain');};
 const [before,after]=template.split('<!--G10_SCRIPT-->');assert(after!==undefined);
 await append(before+'<script>'+script+'</script>\n');
-for(const {name,compressed} of Object.values(payloads).flat()){await append('<script type="application/octet-stream" id="g10-corpus-'+name+'">'+compressed.toString('base64')+'</script>\n');if(name==='chinook')await append("<script>document.dispatchEvent(new Event('g10-american-corpus-ready'));</script>\n");}
+for(const {name,compressed} of Object.values(payloads).flat()){await append('<script type="application/octet-stream" id="g10-corpus-'+name+'">'+compressed.toString('base64')+'</script>\n');if(name==='chinook')await append("<script>document.dispatchEvent(new Event('g10-american-corpus-ready'));</script>\n");if(name==='tunstall-v2')await append("<script>document.dispatchEvent(new Event('g10-international-worker-ready'));</script>\n");}
 for(const part of sourceParts){
   await append('<script type="application/octet-stream" id="'+part.id+'">');
   const bytes=Buffer.alloc(part.bytes),source=await open(part.path,'r');let count=0;

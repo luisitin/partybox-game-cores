@@ -52,6 +52,19 @@ function originalBlock(need:OfflineBlockNeed){
   originalBlockReads++;originalFiles.add(need.file);
   return result;
 }
+function offlineBlockReady(need:OfflineBlockNeed){
+  const file=G10_INTERNATIONAL_PARTS[need.file];
+  if(!file||!Number.isSafeInteger(need.offset)||need.offset<0||need.offset%4096!==0||need.offset>=file.byteLength||need.length!==Math.min(4096,file.byteLength-need.offset))throw new Error('Invalid offline block request');
+  const end=need.offset+need.length;
+  for(const part of file.parts){
+    if(Math.max(need.offset,part.offset)>=Math.min(end,part.offset+part.bytes))continue;
+    const node=el<HTMLScriptElement>(part.id)?.firstChild;
+    if(!node)return false;
+    if(!(node instanceof Text)||node.length>part.encodedLength)throw new Error('Offline source data missing');
+    if(node.length<part.encodedLength)return false;
+  }
+  return true;
+}
 function serveOfflineBlocks(activeWorker:Worker,id:number,needs:OfflineBlockNeed[]){
   if(!Array.isArray(needs)||needs.length===0||needs.length>32768)throw new Error('Invalid offline block batch');
   const seen=new Set<string>();for(const need of needs){const key=need.file+':'+need.offset;if(seen.has(key))throw new Error('Repeated offline block');seen.add(key);}
@@ -59,7 +72,9 @@ function serveOfflineBlocks(activeWorker:Worker,id:number,needs:OfflineBlockNeed
   const send=()=>{
     if(worker!==activeWorker||!pending||pending.id!==id||state!==pending.state)return;
     try{
-      const blocks=needs.slice(at,at+16).map(need=>({file:need.file,offset:need.offset,data:originalBlock(need)}));at+=blocks.length;
+      const batch=needs.slice(at,at+16);
+      if(document.readyState==='loading'&&!batch.map(need=>offlineBlockReady(need)).every(Boolean)){requestAnimationFrame(send);return;}
+      const blocks=batch.map(need=>({file:need.file,offset:need.offset,data:originalBlock(need)}));at+=blocks.length;
       activeWorker.postMessage({id,blocks,more:at<needs.length},blocks.map(block=>block.data.buffer));
       if(at<needs.length)requestAnimationFrame(send);
     }catch{stopWorker();notice='The offline bot data could not be read. Pause or start a new table.';botDue=Infinity;render();}
@@ -194,6 +209,7 @@ function tick(){
 el('start').addEventListener('click',start);['new-game','play-again'].forEach(id=>el(id).addEventListener('click',setup));
 startReadiness();['variant','seat-0','seat-1'].forEach(id=>el(id).addEventListener('change',startReadiness));
 document.addEventListener('g10-american-corpus-ready',()=>{readyVariants.american=true;startReadiness();});
+document.addEventListener('g10-international-worker-ready',()=>{readyVariants.international=true;startReadiness();});
 document.addEventListener('DOMContentLoaded',()=>{readyVariants.american=true;readyVariants.international=true;startReadiness();},{once:true});
 ['pause','resume','end'].forEach(action=>el(action).addEventListener('click',()=>event({type:'vip',action:action as 'pause'|'resume'|'end',now:now()})));
 el('resign').addEventListener('click',()=>{if(humanTurn())act({type:'resign'});});

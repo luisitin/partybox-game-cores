@@ -1,0 +1,5 @@
+# Actual International startup production integration
+
+The exact reviewed two-file patch is now applied. Original strict TypeScript and the complete original offline builder passed; the actual physical1,390,847,100-byte output matches the measured canonical candidate SHA b85a8288345c8e0040d523e3998d31216aa61b6872c8e3bc76313944802dd1b2. All1,341 source/self/compiler/runtime rows stayed equal, with precisely the two canonical source changes and347 original guards unchanged. All41 licensed files/1304parts/full six-piece data/workers/licenses stay exact; the older unique1.39GB file was preserved byte/stat unchanged. Large output is retained in/tmp and is not duplicated into the almost-full overlay.
+
+The archive preserves the original independent accepted observation receipt and its explicit22physical/all26CRC scope correction. A fresh supplement actually compared the remainingfour complete bridge files without rewriting the earlier timestamp. Both observed startup gains are independently accepted; new integrated original full CI and delivery still gate qualified KEEP gain/Ready/done. No timing retry or new browser trial ran.
