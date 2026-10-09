@@ -1,0 +1,168 @@
+{
+  "status": "ACTUAL_NATIVE_EXPERIMENT_PASS_PENDING_CURRENT_FULL_AND_INDEPENDENT_VALIDATION",
+  "builtAt": "2026-10-09T08:25:52.393761+00:00",
+  "zipBytes": 764452,
+  "zipSha256": "719401b35bfe153e26907923b353209ad27dad411566ab36a69a5958f75ebfd3",
+  "members": {
+    "actual-one-native-experiment/controller.json": {
+      "bytes": 2383,
+      "sha256": "af31e149bc88eb3d511809be0f1dd156190904c8d28e7f62719d25301d3a3419"
+    },
+    "actual-one-native-experiment/rss-samples.json": {
+      "bytes": 2387184,
+      "sha256": "af64167df22a979985e6557d9dfbb37f94d7d6f0b26a15cec128932a8037dbc2"
+    },
+    "actual-one-native-experiment/freeze-finally.json": {
+      "bytes": 1652442,
+      "sha256": "9dfb7d37e29a9dd569bd5563f617e1bdfd21a1b4c358f53454c4c33b3b5badfa"
+    },
+    "actual-one-native-experiment/browser-http-closure-ack.json": {
+      "bytes": 1372,
+      "sha256": "46f5cc3a089b1889cd0140e0c54ab1a00be1dfbf82ad04d129d1dedc31d8edf8"
+    },
+    "actual-one-native-experiment/browser-http-closure-request.json": {
+      "bytes": 222,
+      "sha256": "3c6a79b3b207707f26ce98d7254eb32f3b88a759e16c7dc4818b9400279c0038"
+    },
+    "actual-one-native-experiment/native.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual-one-native-experiment/native.stdout": {
+      "bytes": 1463,
+      "sha256": "b84e50fa4d8997ccc8c3bf1dfcb4ac09afc4b0ba98295bdfd86aa96e0ee1a893"
+    },
+    "actual-one-native-experiment/resources-before.json": {
+      "bytes": 532,
+      "sha256": "d2a42bf0f4d62fbaf4ad5ba5a051f6b280fc46fc2ac1b83d99eba59e9ba5c241"
+    },
+    "actual-one-native-experiment/freeze-before.json": {
+      "bytes": 1586322,
+      "sha256": "5b467578952f81c9708270c9b62cc2cd4794f4560bf37fc0065493b2e22bdf0f"
+    },
+    "actual-one-native-experiment/actual/server.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual-one-native-experiment/actual/server.stdout": {
+      "bytes": 1314,
+      "sha256": "46f7f1684be6fd4fe75de57f3f69e858318ed799aead08e20e1dc4c7843617f0"
+    },
+    "actual-one-native-experiment/actual/report.json": {
+      "bytes": 76414,
+      "sha256": "ce7c190c847cbdd45dda6f1771b08f90cb850430f6c7147c2fdf103471971779"
+    },
+    "exact-granted-protocol/freeze-spec.json": {
+      "bytes": 1801842,
+      "sha256": "d52175aeee163c69e45e775d97dac4ab3bfcaefe34f1779ab3efe3b39ca35be2"
+    },
+    "exact-granted-protocol/ready.json": {
+      "bytes": 480712,
+      "sha256": "cfc67179e9c9e933cd60b64930b6aeae99227303e4b137d4f6a871ce53c5769d"
+    },
+    "exact-granted-protocol/prepare.py": {
+      "bytes": 10401,
+      "sha256": "253168cb2764590d55dca9580daeb40aeeb542751c9b7b7a9e5ec3889497dacd"
+    },
+    "exact-granted-protocol/grant.json": {
+      "bytes": 1744,
+      "sha256": "e9564623c3f6f745974cecb437ce5aa4f73f710e2f8889bf663c4f8b9543d7a7"
+    },
+    "exact-granted-protocol/observe.mjs.identity-only.diff": {
+      "bytes": 2685,
+      "sha256": "666c39797077953743b9b057fca825859d259262946712cec49650c983b85b7d"
+    },
+    "exact-granted-protocol/proposal.json": {
+      "bytes": 4933,
+      "sha256": "083c52c9ab8f9799739cc448fd16c660ba92d0aa4284b0c0a57153bfd7a1e37e"
+    },
+    "exact-granted-protocol/controller.py.identity-only.diff": {
+      "bytes": 1112,
+      "sha256": "a495e9101228f819ab8bb3efff6a0d53578affb83d175608a9d2cb0183c70a7f"
+    },
+    "exact-granted-protocol/prepare-receipt.json": {
+      "bytes": 723,
+      "sha256": "4e41b54b520b3056480147cdd86e10880a4a90eaa12d6cec9c981ca7a91a1d99"
+    },
+    "exact-granted-protocol/observe.mjs": {
+      "bytes": 17373,
+      "sha256": "1819b33b6d9525c02139e2c78655959ba85e56bbc407009304e7f1cea103a8fb"
+    },
+    "exact-granted-protocol/controller.py": {
+      "bytes": 12770,
+      "sha256": "445b965d6fc8338acdab33665c89b6839e00b045213a9de22051eb72d6ecb9c4"
+    },
+    "current349-sixdoc-bridge/owner-closure.json": {
+      "bytes": 261,
+      "sha256": "e88a01e5f844a6299f195652435f0c8b4b419b571ac5d1c0fd9a4da0721c5c41"
+    },
+    "current349-sixdoc-bridge/historical-git-guards.json": {
+      "bytes": 19150,
+      "sha256": "d1e9a4e0a4630df9ad8f186f48d0f65957734ef6cf2d7913173f2e934b7bf691"
+    },
+    "current349-sixdoc-bridge/audit.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "current349-sixdoc-bridge/audit.stdout": {
+      "bytes": 174,
+      "sha256": "9d2a93b8cc2b4ce0ddb73c380f87cab79510e7f28cf5b6bf2e301e4c88e3406a"
+    }
+  },
+  "actualController": {
+    "status": "CLOSED_PASS",
+    "startedAt": "2026-10-09T08:17:20.250385+00:00",
+    "closedAt": "2026-10-09T08:23:12.909783+00:00",
+    "head": "a2d7609eed63308290b3e8dee7e491d1896ef6d0",
+    "rootGrantNonce": "G10-international-deferred-bounded-actual-closure-461457d0-e381-4f6c-b5da-60725b4390c1",
+    "actualNativeResult": {
+      "status": "PASS",
+      "playerGainPredicate": true,
+      "auditOutcome": "PLAYER_GAIN_PREDICATE_PASSED_PENDING_INDEPENDENT_VALIDATION",
+      "nativeDriverElapsedMs": 290623.67342300003,
+      "gains": [
+        {
+          "name": "desktop",
+          "baselineObservedFirstLegalMs": 22411.09999999404,
+          "candidateObservedFirstLegalMs": 4894,
+          "observedReductionMs": 17517.09999999404,
+          "candidateBeforeDOMContentLoaded": true,
+          "baselineAfterDOMContentLoaded": true,
+          "pass": true
+        },
+        {
+          "name": "phone",
+          "baselineObservedFirstLegalMs": 82975.79999998212,
+          "candidateObservedFirstLegalMs": 9503.5,
+          "observedReductionMs": 73472.29999998212,
+          "candidateBeforeDOMContentLoaded": true,
+          "baselineAfterDOMContentLoaded": true,
+          "pass": true
+        }
+      ]
+    },
+    "closure": {
+      "actualRemainingGroup": [],
+      "groupSignals": [],
+      "reapedAdoptedDescendants": [],
+      "actualExitCode": 0,
+      "natural": true,
+      "allDetachedDescendants": {
+        "actualRemainingOwnedDescendants": [],
+        "signals": [],
+        "reapedAdopted": [],
+        "natural": true
+      }
+    },
+    "fullFinalFreezePassed": true,
+    "independentNativeDriverIntervalMs": 306260.7407759933,
+    "independentIntervalScope": "Actual controller monotonic interval immediately before Popen until natural native Node exit observed by original100ms poll; conservative upper bound includes interpreter startup/initial hash guard/browser/EOF/closure barrier/full pure replay, distinct from native performance.now duration. No clock substitution or budget relaxation.",
+    "nativeWaitBudgetSeconds": 360,
+    "nativeChildWallBoundSeconds": 440,
+    "wholeWallLimitSeconds": 540,
+    "rssEnvelopeBytes": 4831838208,
+    "sharedReserveBytes": 1610612736,
+    "scope": "ONE root-granted native International four-arm pair. No unchanged retries. Gain accepted only if both prospective predicates pass, whole original source/HTTP/legal/bot equivalence valid, natural empty-group closure and full final source/self/runtime freeze."
+  },
+  "qualifiedGainAdoptionKEEP": "No inference: exacta2d originalwholefull pending; candidateunadopted; renewedround1 IN_PROGRESS/0completed/0qualifiedgains/0consecutive no-gain. Allpriorresource/fixture failures retained."
+}
