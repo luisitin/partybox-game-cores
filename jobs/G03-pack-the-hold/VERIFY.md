@@ -702,3 +702,21 @@ Fresh all-ref queue at2026-10-08T10:48:44.273455+00:00:no eligible IDs;every rem
 
 R13 final-delivery audit:full hosted37765943337 SUCCESS for34b073c1870fe32422a465e8579f42228113f06d at2026-10-08T10:51:23Z,but `gh api repos/luisitin/partybox-game-cores/actions/runs/37765943337/artifacts --jq '{total_count,artifacts:[.artifacts[]|{name,size_in_bytes,expired}]}'` returns0 artifacts. The upload step warns that the explicit.tmp paths had no included files. Live `curl -fsS https://raw.githubusercontent.com/actions/upload-artifact/v4/action.yml` confirms hidden files default false.
 Set include-hidden-files:true and if-no-files-found:error for those explicit evidence paths. Final delivery now additionally requires `gh api repos/luisitin/partybox-game-cores/actions/runs/<final_run>/artifacts` to show a nonempty,unexpired G03-check-evidence upload;that final exact-head CI/artifact receipt is recorded externally on PR3 to avoid changing the verified head. No gameplay/build/data change and no repeated local suite is needed for the upload-only fix.
+
+## Initial presence follow-up, 2026-10-09
+Exact commands/specs/helpers/whole raw/failures/source guards in historical/
+followup-initial-presence-20261009.zip, all members full CRC/physical equality.
+Original shipped51 hashes/strict compile/build pass. Actual old42-state controls
+node --test G03-initial-start-negative-20261009.mjs: EXIT1/two fail/zero pass.
+Wrapper literal reporter assumption fails; separate saved-output reader confirms
+all2474 source/runtime/self bytes unchanged, only byte-identical play output
+mtime changed, all groups empty/no signals. Original FAILED receipt preserved.
+Fixed strict compile/offline build/13 focused checks pass/all2472 frozen
+non-output guards; intentional page rebuild549225B/SHA928958719234ad28ae13326953953d350fac4c52233ed8b5dee67f94a7d2f697.
+Fixed42 controls two pass/zero fail;1003 additional complete seeded benign games,
+12167 transitions/bots,118392 views,all initial/final/results exact,max4390B;
+whole8675839B gzip SHA0937cf70d975e7f9923aef749abb737d8382a7520898e289396a8edd912c754a.
+Natural13:56:17.333050Z/all2509 inputs/peak276951040B<512MiB180s/no signals.
+Original exactsolver/certificate/data/samplers/bot strategy remain unchanged.
+New capture14/current original full and independent whole official receipt
+remain pending; no local browser or sampled frame retry has been run.

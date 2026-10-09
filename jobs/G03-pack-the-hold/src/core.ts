@@ -20,7 +20,7 @@ export function init(ctx: InitContext): HoldState {
   };
   const generated = generateLevel(seedRng(ctx.seed), settings.difficulty, settings.allowFlip);
   const order = ctx.players.map(p => p.id);
-  return {
+  const state: HoldState = {
     phase: { id: 'pack', startedAt: ctx.now, deadline: ctx.now + settings.turnSeconds * 1000 },
     rng: generated.rng, players: Object.fromEntries(ctx.players.map(p => [p.id, { ...p }])),
     settings, order, left: [], round: 1, seat: 0,
@@ -29,6 +29,9 @@ export function init(ctx: InitContext): HoldState {
     scores: Object.fromEntries(order.map(id => [id, 0])), history: Object.fromEntries(order.map(id => [id, []])),
     seenHolds: [holdKey(generated.level.cells)],
   };
+  const firstAvailable = order.findIndex(id => available(state, id));
+  if (firstAvailable < 0) return enterReveal(state, ctx.now);
+  return firstAvailable === 0 ? state : { ...state, seat: firstAvailable };
 }
 function enterDone(s: HoldState, now: number): HoldState {
   return { ...s, phase: { id: 'done', startedAt: Math.max(now, s.phase.startedAt + 1), deadline: null } };

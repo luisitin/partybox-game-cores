@@ -52,3 +52,19 @@
 - After G03 completion,the fresh all-ref queue at2026-10-08T10:48:44.273455+00:00 contains no
   eligible job. Preserve active claims;do not manufacture an expired stamp
   or take another worker's fresh branch. Re-check on a later continuation.
+
+## 2026-10-09 lawful initial-presence follow-up
+Fresh lowest G03 row and all three matching branch committers were >6h old;
+lower claims fresh. Main claim05c80 actual13:33:01.795599/fullreadback02.348923.
+Original Ready3 remains unchanged; new branch starts claimed main. Exact job
+and workflow bytes copied from preserved physical Ready sources, validated to
+canonical Git blob hashes with all original physical inputs unchanged.
+Initial borrowed shallow metadata lacked its old boundary; failed merge assumption
+and promisor503 were preserved. No credentials/proxy changes or forced Git push.
+The old negative tests actually fail; a separate wrapper reporter assumption
+fails afterward (# versus ℹ), and intentional byte-identical page rebuild changes
+mtime. Saved-output supplement establishes all source bytes equal/actual natural
+empty groups; original broad false flags stay untouched.
+Only initialization changes. Current source-bound capture14 and full original
+checks remain required; old capture13 stays preserved and cannot qualify new core.
+No human solve-rate, phone hardware, native timing gain or new KEEP qualification.
