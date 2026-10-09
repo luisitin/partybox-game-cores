@@ -735,3 +735,38 @@ First source publication scope guard rejected untracked dependency-link staging
 and unstaged branch CLAIMS restoration before any remote push. A normal correction
 removes the local pointer and restores audit-base CLAIMS in the branch; main stays
 untouched. First hard11:43:57.150035Z was actually missed; no backdating.
+
+## Accepted missing-seat source8b and separate review19
+
+Both original full workflows and FIRST official artifacts are accepted for8b:
+push37926068472/artifact11613433924 and PR37926638979/artifact11614487431.
+Exact full commands: `python3 jobs/G05-hearts/scripts/verify-ci-artifact.py
+--head 8b21cfcd53a19cf54db6e548cbdd6c1208b14d33 --run-id RUN_ID
+--evidence-dir ACTUAL_PACKET_DIRECTORY`; original reader unchanged,137 assertions
+each/all15 CRC entries/current30 sources/full1200 raw intervals/full36 VP9.
+`python3 /tmp/G05-verify-current-whole-native-20261009.py`:78 complete-native
+assertions each,46 actual passing tests/25 real compiled kills/full specified
+corpus/two111-file regenerations. Full raw packets and controller are archived.
+Original `node scripts/mutations.mjs`, `node scripts/check-repro.mjs`,
+`node scripts/check-research.mjs`, `node scripts/check-data.mjs` also genuinely
+PASS locally11:54:07.189712Z/all184 frozen inputs; no child survives.
+
+Review19 exact measured command: `node ABSOLUTE_PROOF_DIRECTORY/probe.mjs`,
+working directory jobs/G05-hearts; the full script/controller/ranking/frozen
+receipts are in media/queue-presence-review19-proof.zip. All nonempty3–6-seat
+masks × noPass × moon × Jack × turnSeconds[0,1,60] × now[0,1000,1e12];
+one deterministic deal per context.8352 cases/563905 assertions PASS.
+Catches paused card movement, lost held duration, old deadline stealing a turn,
+stale instance advancing a new phase, stranded resumed actor, context mutation,
+non-JSON/deterministic or oversized state and lost/duplicated physical cards.
+No exhaustive-all-deals claim. No new player defect/runtime change; streak1.
+The standalone save parser deliberately accepts only the table's fully connected
+p0–p5 roster; this audit uses core JSON host state, not unsupported local Resume.
+
+Source publication failures are preserved in the new proof: accidental local
+dependency-link staging and unstaged CLAIMS restoration were rejected before
+remote delivery; normal corrected8b push then genuinely lacked26 Git objects.
+Public exact history recovery changed that condition; successful actual push
+11:49:04.531056Z missed first hard307.381021s. No authentication failure claim,
+force or injected credential. This evidence publication still needs its own
+original exact-head full workflow; prior accepted8b is explicitly historical.

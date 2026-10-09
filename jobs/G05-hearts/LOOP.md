@@ -53,3 +53,6 @@ Adopt only initial ordinary takeover and finiteN→2N bound. New7 tests PASS,
 one-connected human games. All46 original/current tests also PASS.
 New full hosted/genuine ZIP pending; provisional gain only/streak not reset.
 Protected15–17 no-gain3 stays historical.
+
+18 acceptance | Actual8b original full push37926068472 and PR37926638979 SUCCESS; both first official whole ZIPs/137 unchanged-reader assertions/78 entire-native assertions/46 tests/25 kills/required full corpus/current browser proof PASS, all178 inputs unchanged; adopted two missing-seat stalls, renewed no-gain streak0. First publication really missed its hard bound307.381021s; no retrocredit.
+19 | Reread job and rank five: held-clock/drop/rejoin; partial ledgers/save boundaries; next-hand score/pass lifecycle; private/mutable views; truthful delivery/sampler scope. Measure worst over8352 declared nonempty3–6-seat contexts:563905 assertions/22752 paused drops/16704 stale timers/8352 legal inputs/56160 deterministic JSON comparisons PASS;187 inputs frozen, CLOSED12:09:09.620684Z. No newly found player defect or implementation change; no-player-gain streak1. Full unchanged first8b hosted clip retained byte-identically, no new native timing. Log/proof pushed before beginning next review.

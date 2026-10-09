@@ -1,3 +1,58 @@
+# G05 queue audit — accepted fix, formal review19
+
+Draft PR19: job/G05-hearts-queue-audit-20261009 → protected Ready15 audit.
+Original Ready PR5/85d and Ready PR15/033 stay untouched and unmerged.
+Lawful claim mainf43d849,row11:13:55Z; isolated branch began FROM that main.
+MAIN own G05 row was refreshed separately to180925e89 at11:50:29Z,
+normal push11:50:31.494175/read11:50:32.372631; every foreign row/tree same.
+
+First actual source8b21cfcd53a19cf54db6e548cbdd6c1208b14d33 published
+11:49:04.531056/read11:49:05.093041Z. Real first hard11:43:57.150035
+missed307.381021s. Before recovery, normal push truly lacked historical
+blob8c9b05ce; public main --refetch recovered ALL26 missing objects.
+Scope/staging and object failures remain public; no force/credential injection.
+No pre-publication cadence or retroactive completion credit.
+
+Both ORIGINAL exact8b push37926068472 and PR37926638979 are SUCCESS.
+First genuine whole ZIPs: push11613433924,936644B,SHA256
+ce42f58e27cdbf0a3454e4fe449c774e824450506ac7db9d4435a40168e22f71;
+PR11614487431,936806B,SHA256
+22877472a3c04f876e341199d59b8b8a9433c625bf5761729190fe678873e895.
+Unchanged reader:137 actual assertions each/all15 safe CRC entries/
+30 current guarded sources/all1200 retained intervals/full36-frame VP9.
+Entire native logs separately78 assertions each:46PASS/0FAIL/0SKIP,
+25 real mutant kills,1003 replay seeds,4x1000 full games,10K independent
+scoring cases,600 saves,both unchanged2000-game leagues and two byte-identical
+111-file regenerations. Actual final independent native closure12:06:17.513237Z,
+all178 source/log/metadata/ZIP/result inputs unchanged per run.
+Desktop/CPU4x phone60.0024fps; retained600 each AFTER original60warmup.
+There are no per-frame phase/native witnesses; old local failures stay explicit.
+
+KEEP18 is now accepted: two real missing-seat stalls fixed by initial
+ordinary takeover plus finiteN→2N bound only. Original failures and
+init-only5PASS/1FAIL candidate remain preserved. No rules/bot/save/contract/
+sampler/gate/workflow change. Seven new regressions and all46 full checks pass.
+
+KEEP19 separately reread/ranked5 and measured worst held-clock/empty-room
+reconnect behavior.8352 declared contexts/563905 assertions/22752 paused
+departures/16704 stale timers/8352 legal real-player inputs/56160 JSON replay
+comparisons PASS; all187 inputs frozen; natural closure12:09:09.620684Z.
+No new player defect or runtime change. Renewed no-player-gain streak1.
+Whole raw evidence: media/queue-presence-review19-proof.zip.
+The accepted8b PR webm is the genuine first hosted clip, copied byte-identically;
+no extra recording, browser clock or performance rerun was performed.
+
+This review publication still requires its OWN original whole workflows.
+Keep PR19 Draft; next reread/rank5,measure,log and PUSH review20 separately,
+then repeat review21 separately unless a material finding resets the streak.
+After final third-review handoff and genuine exact-final-head full qualification,
+mark Ready; keep final source static. Completed means merged; do not merge.
+Current deadline is measured from actual source publication, never this document.
+Refresh ONLY G05 on fresh main under explicit serialized root lease after push.
+
+---
+## Previous initial handoff — unchanged historical record
+
 # G05 missing-seat queue audit — 2026-10-09
 
 Lawful lowest G05 claim: main f43d849bcff1369491cefe9dc35eaa20e60e443c,

@@ -142,3 +142,13 @@ First source publication scope guard rejected untracked dependency-link staging
 and unstaged branch CLAIMS restoration before any remote push. A normal correction
 removes the local pointer and restores audit-base CLAIMS in the branch; main stays
 untouched. First hard11:43:57.150035Z was actually missed; no backdating.
+
+Review19 follows genuine whole8b PR acceptance and is a separate formal
+log-and-push round. It measures core JSON host persistence and clock handling.
+Standalone parseSave intentionally refuses disconnected rosters, so no broader
+Resume compatibility is claimed. All selected presence masks are enumerated
+within the declared24 settings and3 times, with one seeded deal per context.
+First publication11:49:04.531056 genuinely missed hard11:43:57.150035 by
+307.381021s after public-history object recovery; do not backdate delivery.
+The accepted8b first hosted video is retained byte-identically for this evidence
+milestone. Native sampler, original gates and player behavior are unchanged.
