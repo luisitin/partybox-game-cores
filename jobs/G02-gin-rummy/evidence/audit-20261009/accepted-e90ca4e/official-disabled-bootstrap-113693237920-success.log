@@ -1,0 +1,199 @@
+﻿2026-10-09T06:02:52.0304393Z Current runner version: '2.337.0'
+2026-10-09T06:02:52.0323501Z ##[group]Runner Image Provisioner
+2026-10-09T06:02:52.0324242Z Hosted Compute Agent
+2026-10-09T06:02:52.0324737Z Version: 20261002.596
+2026-10-09T06:02:52.0325278Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T06:02:52.0325861Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T06:02:52.0326412Z Worker ID: {47c04874-625e-4b29-9628-da7ded6bc541}
+2026-10-09T06:02:52.0326961Z Region: centralus
+2026-10-09T06:02:52.0327403Z Cloud: Azure
+2026-10-09T06:02:52.0327862Z ##[endgroup]
+2026-10-09T06:02:52.0328807Z ##[group]Operating System
+2026-10-09T06:02:52.0329301Z Ubuntu
+2026-10-09T06:02:52.0329767Z 24.04.5
+2026-10-09T06:02:52.0330230Z LTS
+2026-10-09T06:02:52.0330692Z ##[endgroup]
+2026-10-09T06:02:52.0331326Z ##[group]Runner Image
+2026-10-09T06:02:52.0331834Z Image: ubuntu-24.04
+2026-10-09T06:02:52.0332309Z Version: 20261004.327.1
+2026-10-09T06:02:52.0333321Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T06:02:52.0334488Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T06:02:52.0335218Z ##[endgroup]
+2026-10-09T06:02:52.0336073Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T06:02:52.0337693Z Contents: read
+2026-10-09T06:02:52.0338150Z Metadata: read
+2026-10-09T06:02:52.0338561Z ##[endgroup]
+2026-10-09T06:02:52.0340205Z Secret source: Actions
+2026-10-09T06:02:52.0340890Z Cache mode: write
+2026-10-09T06:02:52.0341705Z Prepare workflow directory
+2026-10-09T06:02:52.0699812Z Prepare all required actions
+2026-10-09T06:02:52.0738130Z Getting action download info
+2026-10-09T06:02:52.2991552Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T06:02:52.4159213Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T06:02:52.5342492Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T06:02:52.7361022Z Complete job name: browser-bootstrap
+2026-10-09T06:02:52.7899463Z ##[group]Run actions/checkout@v4
+2026-10-09T06:02:52.7900055Z with:
+2026-10-09T06:02:52.7900429Z   ref: e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:52.7900956Z   repository: luisitin/partybox-game-cores
+2026-10-09T06:02:52.7903940Z   token: ***
+2026-10-09T06:02:52.7904314Z   ssh-strict: true
+2026-10-09T06:02:52.7904665Z   ssh-user: git
+2026-10-09T06:02:52.7905018Z   persist-credentials: true
+2026-10-09T06:02:52.7905436Z   clean: true
+2026-10-09T06:02:52.7905823Z   sparse-checkout-cone-mode: true
+2026-10-09T06:02:52.7906230Z   fetch-depth: 1
+2026-10-09T06:02:52.7906587Z   fetch-tags: false
+2026-10-09T06:02:52.7906944Z   show-progress: true
+2026-10-09T06:02:52.7907343Z   lfs: false
+2026-10-09T06:02:52.7907695Z   submodules: false
+2026-10-09T06:02:52.7908056Z   set-safe-directory: true
+2026-10-09T06:02:52.7908464Z   allow-unsafe-pr-checkout: false
+2026-10-09T06:02:52.7909012Z env:
+2026-10-09T06:02:52.7909450Z   G02_SOURCE_HEAD: e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:52.7910019Z ##[endgroup]
+2026-10-09T06:02:52.8620259Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T06:02:52.8622169Z ##[group]Getting Git version info
+2026-10-09T06:02:52.8623025Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T06:02:52.8623999Z [command]/usr/bin/git version
+2026-10-09T06:02:52.8703776Z git version 2.55.0
+2026-10-09T06:02:52.8723713Z ##[endgroup]
+2026-10-09T06:02:52.8736967Z Temporarily overriding HOME='/home/runner/work/_temp/01da3470-968c-400b-83ae-72253a83291c' before making global git config changes
+2026-10-09T06:02:52.8738453Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T06:02:52.8742752Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:02:52.8783687Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T06:02:52.8787313Z ##[group]Initializing the repository
+2026-10-09T06:02:52.8791756Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:02:52.8896904Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T06:02:52.8898086Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T06:02:52.8899204Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T06:02:52.8899792Z hint: call:
+2026-10-09T06:02:52.8900152Z hint:
+2026-10-09T06:02:52.8900591Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T06:02:52.8901048Z hint:
+2026-10-09T06:02:52.8901792Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T06:02:52.8903132Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T06:02:52.8904048Z hint:
+2026-10-09T06:02:52.8904716Z hint: 	git branch -m <name>
+2026-10-09T06:02:52.8905270Z hint:
+2026-10-09T06:02:52.8906048Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T06:02:52.8907255Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T06:02:52.8909266Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T06:02:52.8956875Z ##[endgroup]
+2026-10-09T06:02:52.8957529Z ##[group]Disabling automatic garbage collection
+2026-10-09T06:02:52.8960513Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T06:02:52.8990630Z ##[endgroup]
+2026-10-09T06:02:52.8991542Z ##[group]Setting up auth
+2026-10-09T06:02:52.9000195Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T06:02:52.9029438Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T06:02:52.9312573Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T06:02:52.9335421Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T06:02:52.9477697Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T06:02:52.9499941Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T06:02:52.9641636Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T06:02:52.9676533Z ##[endgroup]
+2026-10-09T06:02:52.9677338Z ##[group]Fetching the repository
+2026-10-09T06:02:52.9683392Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:55.3467829Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T06:02:55.3469826Z  * branch            e90ca4e8744f3dc2e890f83ddddd43327cee80f4 -> FETCH_HEAD
+2026-10-09T06:02:55.3476558Z ##[endgroup]
+2026-10-09T06:02:55.3477709Z ##[group]Determining the checkout info
+2026-10-09T06:02:55.3478799Z ##[endgroup]
+2026-10-09T06:02:55.3479723Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T06:02:55.3541930Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T06:02:55.3579325Z ##[group]Checking out the ref
+2026-10-09T06:02:55.3582602Z [command]/usr/bin/git checkout --progress --force e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:55.5344059Z Note: switching to 'e90ca4e8744f3dc2e890f83ddddd43327cee80f4'.
+2026-10-09T06:02:55.5344962Z 
+2026-10-09T06:02:55.5345485Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T06:02:55.5346661Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T06:02:55.5348133Z state without impacting any branches by switching back to a branch.
+2026-10-09T06:02:55.5348823Z 
+2026-10-09T06:02:55.5349331Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T06:02:55.5350453Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T06:02:55.5351095Z 
+2026-10-09T06:02:55.5351570Z   git switch -c <new-branch-name>
+2026-10-09T06:02:55.5352087Z 
+2026-10-09T06:02:55.5352377Z Or undo this operation with:
+2026-10-09T06:02:55.5352809Z 
+2026-10-09T06:02:55.5353089Z   git switch -
+2026-10-09T06:02:55.5353442Z 
+2026-10-09T06:02:55.5354057Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T06:02:55.5354852Z 
+2026-10-09T06:02:55.5355432Z HEAD is now at e90ca4e G02 bind full current knock evidence and regenerated fixture
+2026-10-09T06:02:55.5376813Z ##[endgroup]
+2026-10-09T06:02:55.5413060Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T06:02:55.5430358Z e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:55.5711905Z ##[group]Run actions/setup-node@v4
+2026-10-09T06:02:55.5712830Z with:
+2026-10-09T06:02:55.5713605Z   node-version: 22.16.0
+2026-10-09T06:02:55.5714354Z   cache: npm
+2026-10-09T06:02:55.5715305Z   cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+2026-10-09T06:02:55.5716412Z   always-auth: false
+2026-10-09T06:02:55.5717222Z   check-latest: false
+2026-10-09T06:02:55.5723040Z   token: ***
+2026-10-09T06:02:55.5723762Z env:
+2026-10-09T06:02:55.5724987Z   G02_SOURCE_HEAD: e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:02:55.5725974Z ##[endgroup]
+2026-10-09T06:02:55.6751513Z Attempting to download 22.16.0...
+2026-10-09T06:02:55.6827309Z (node:2090) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T06:02:55.6829239Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T06:02:56.4560943Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T06:02:56.9205991Z Extracting ...
+2026-10-09T06:02:56.9290860Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/2cca5e95-b870-4c92-a7d6-548c13d6cf08 -f /home/runner/work/_temp/17f364ec-484d-452e-9365-b45f2ecbea01
+2026-10-09T06:02:57.8608171Z Adding to the cache ...
+2026-10-09T06:03:00.0217196Z ##[group]Environment details
+2026-10-09T06:03:00.1956818Z node: v22.16.0
+2026-10-09T06:03:00.1957418Z npm: 10.9.2
+2026-10-09T06:03:00.1957900Z yarn: 1.22.22
+2026-10-09T06:03:00.1958607Z ##[endgroup]
+2026-10-09T06:03:00.1974636Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T06:03:00.2612941Z /home/runner/.npm
+2026-10-09T06:03:00.3881479Z Cache hit for: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T06:03:00.3961643Z (node:2090) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T06:03:01.1173066Z Received 12676573 of 12676573 (100.0%), 21.8 MBs/sec
+2026-10-09T06:03:01.1173864Z Cache Size: ~12 MB (12676573 B)
+2026-10-09T06:03:01.1244706Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4ca42553-bd64-4a2f-bfbe-6dd6adc69aa6/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T06:03:01.1444046Z Cache restored successfully
+2026-10-09T06:03:01.1451467Z Cache restored from key: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T06:03:01.1584402Z ##[group]Run node --input-type=module <<'JS'
+2026-10-09T06:03:01.1584886Z [36;1mnode --input-type=module <<'JS'[0m
+2026-10-09T06:03:01.1585171Z [36;1mimport assert from 'node:assert/strict';[0m
+2026-10-09T06:03:01.1585552Z [36;1mimport {readFile,appendFile} from 'node:fs/promises';[0m
+2026-10-09T06:03:01.1586087Z [36;1mimport {createHash} from 'node:crypto';[0m
+2026-10-09T06:03:01.1586568Z [36;1mconst request=JSON.parse(await readFile('evidence/audit-20261009/bootstrap-request.json','utf8'));[0m
+2026-10-09T06:03:01.1587097Z [36;1massert.equal(request.version,1);assert.equal(typeof request.enabled,'boolean');[0m
+2026-10-09T06:03:01.1587464Z [36;1mif(request.enabled){[0m
+2026-10-09T06:03:01.1588692Z [36;1m assert(['mandatory one-workflow correction; first capture binding the corrected G02 workflow','verified material Strong Gin-priority repair; first capture for changed game source','verified material Gin draw repair; first capture for changed game source','verified material same-meld finishing knock repair; first capture for changed game source'].includes(request.reason),'explicit material/protocol bootstrap reason required');[0m
+2026-10-09T06:03:01.1589859Z [36;1m const sha=bytes=>createHash('sha256').update(bytes).digest('hex');[0m
+2026-10-09T06:03:01.1590288Z [36;1m assert.equal(sha(await readFile('src/core.ts')),request.coreSha256);[0m
+2026-10-09T06:03:01.1590716Z [36;1m assert.equal(sha(await readFile('play.html')),request.htmlSha256);[0m
+2026-10-09T06:03:01.1591099Z [36;1m}[0m
+2026-10-09T06:03:01.1591705Z [36;1mawait appendFile(process.env.GITHUB_OUTPUT,'bootstrap='+String(request.enabled)+'\n');[0m
+2026-10-09T06:03:01.1592335Z [36;1mconsole.log(JSON.stringify({nativeBootstrapRequested:request.enabled,samplersExecuted:false,reason:request.reason}));[0m
+2026-10-09T06:03:01.1592841Z [36;1mJS[0m
+2026-10-09T06:03:01.1759348Z shell: /usr/bin/bash -e {0}
+2026-10-09T06:03:01.1759663Z env:
+2026-10-09T06:03:01.1760042Z   G02_SOURCE_HEAD: e90ca4e8744f3dc2e890f83ddddd43327cee80f4
+2026-10-09T06:03:01.1760354Z ##[endgroup]
+2026-10-09T06:03:01.2043550Z {"nativeBootstrapRequested":false,"samplersExecuted":false,"reason":"verified material same-meld finishing knock repair; first capture for changed game source"}
+2026-10-09T06:03:01.2240170Z Post job cleanup.
+2026-10-09T06:03:01.4179307Z (node:2156) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T06:03:01.4180258Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T06:03:01.4181740Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317, not saving cache.
+2026-10-09T06:03:01.4397136Z Post job cleanup.
+2026-10-09T06:03:01.5029364Z [command]/usr/bin/git version
+2026-10-09T06:03:01.5058067Z git version 2.55.0
+2026-10-09T06:03:01.5082335Z Temporarily overriding HOME='/home/runner/work/_temp/dacdbce3-d935-460b-8c59-efeaae67d206' before making global git config changes
+2026-10-09T06:03:01.5083544Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T06:03:01.5085008Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:03:01.5187543Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T06:03:01.5214855Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T06:03:01.5396375Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T06:03:01.5415406Z http.https://github.com/.extraheader
+2026-10-09T06:03:01.5423581Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T06:03:01.5573588Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T06:03:01.5782208Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T06:03:01.5800451Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T06:03:01.6055621Z Cleaning up orphan processes
+2026-10-09T06:03:01.6285961Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

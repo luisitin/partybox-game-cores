@@ -1,0 +1,36 @@
+{
+  "closedUtc": "2026-10-09T05:02:49.578250+00:00",
+  "result": "all3 independently rebuilt outputs equal whole official byte for byte",
+  "rows": [
+    {
+      "path": "dist/core.mjs",
+      "previousSha256": "5d6a2f20910aa5272fa7abacdeadb9e38c8a6ea93daf8f2973f8f7f786cb1d80",
+      "previousBytes": 1037950,
+      "physicalCurrentRebuildSha256": "b8b48119e5e4be693a0fc75d9b99872c911aaf80a019d8a878f2ae95aa82185d",
+      "physicalCurrentRebuildBytes": 1027120,
+      "pathPrefixOnlyDifference": true,
+      "wholeOfficialByteIdentical": true
+    },
+    {
+      "path": "dist/contract.mjs",
+      "previousSha256": "ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f",
+      "previousBytes": 1016836,
+      "physicalCurrentRebuildSha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+      "physicalCurrentRebuildBytes": 1006006,
+      "pathPrefixOnlyDifference": true,
+      "wholeOfficialByteIdentical": true
+    },
+    {
+      "path": "dist/cards.mjs",
+      "previousSha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+      "previousBytes": 5882,
+      "physicalCurrentRebuildSha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+      "physicalCurrentRebuildBytes": 5882,
+      "pathPrefixOnlyDifference": true,
+      "wholeOfficialByteIdentical": true
+    }
+  ],
+  "gameSourceChanged": false,
+  "samplerExecuted": false,
+  "firstReaderFailedRetained": true
+}

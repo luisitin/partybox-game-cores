@@ -1,0 +1,36 @@
+{
+  "closedAt": "2026-10-09T06:30:19.140446+00:00",
+  "command": [
+    "node",
+    "--test",
+    "tests/closed-knock-priority.test.mjs"
+  ],
+  "nativeExitCode": 1,
+  "sourceHead": "e90ca4e8744f3dc2e890f83ddddd43327cee80f4",
+  "guards": 9,
+  "sourceStart": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/closed-knock-priority.test.mjs": "febe8d6940833764de07d9737ba189ba93b2c4a6e270e440e1cccf4ff89cd303",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/layoff-reference.mjs": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-cases.mjs": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/core.mjs": "432cae2754d7e96770c5e5e1aed4a6a0f92592ec5d8a3257762f25dc86c24cc4"
+  },
+  "sourceEnd": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/closed-knock-priority.test.mjs": "febe8d6940833764de07d9737ba189ba93b2c4a6e270e440e1cccf4ff89cd303",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/layoff-reference.mjs": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-cases.mjs": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/core.mjs": "432cae2754d7e96770c5e5e1aed4a6a0f92592ec5d8a3257762f25dc86c24cc4"
+  },
+  "sourceUnchanged": true,
+  "samplerExecuted": false,
+  "scope": "accepted production source before closed-target repair"
+}

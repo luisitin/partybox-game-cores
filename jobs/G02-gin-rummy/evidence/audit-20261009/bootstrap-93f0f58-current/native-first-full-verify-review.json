@@ -1,0 +1,21 @@
+{
+  "recordedUtc": "2026-10-09T06:46:52.192177+00:00",
+  "runId": 37894118428,
+  "jobId": 113701426050,
+  "sourceHead": "93f0f58284f3c0df6c6e4c8e055d208845748f15",
+  "nativeFullLogBytes": 97190,
+  "nativeFullLogSha256": "7d7b047cd582bed8a8c6c8f482321fde2dd22803dfbdb3e6ff0cfe1a86530ca1",
+  "actualTests": 70,
+  "actualPass": 66,
+  "actualFail": 4,
+  "actualFailedTests": [
+    "2026-10-09T06:34:05.5576359Z not ok 7 - current source-bound raw proof passes without discarding its largest interval",
+    "2026-10-09T06:34:05.5627562Z not ok 9 - changed end guards and failed snapshots are rejected",
+    "2026-10-09T06:34:05.5694515Z not ok 11 - reported statistics are recomputed from all retained intervals",
+    "2026-10-09T06:34:05.5750379Z not ok 12 - an honestly recomputed slow raw sample still fails the original frame gate"
+  ],
+  "nonGinChoicesByteEquivalent": 30000,
+  "downstreamOriginalLeaguesMutantsBrowserCaptureIntegrityExecuted": false,
+  "freshBootstrapScopeSeparate": true,
+  "wholeOriginalAcceptance": false
+}

@@ -1,47 +1,41 @@
 # G02 — Gin Rummy
 
-Pure deterministic TypeScript core following the exact workshop contract.
+Pure deterministic TypeScript core following the workshop contract.
 Standard and Oklahoma Gin; optional 3–4 seat winner-stays rotation.
-Exact deadwood, chosen knock layouts,
-joint optimal defender melds/layoffs, Gin, Big Gin, undercut, match/box bonuses,
-explicit scoring presets and three honest bot skills are included.
+Exact deadwood, chosen knock layouts, joint optimal defender melds/layoffs,
+Gin, Big Gin, undercut, match/box bonuses and three bot skills are included.
 
-Open **play.html** directly from disk to play: no server, build or network
-needed. Two humans or bots; three/four players rotate through two active seats.
-Cover private hands between turns. A bot move button keeps the table's pace
-under the players' control. Every scoring and clock setting is shown before deal.
+Open **play.html** directly from disk: no server, build or network needed.
+Two humans or bots play; three/four seats rotate through two active hands.
+Cover private hands between turns. Bot move lets players set the pace.
 
-Development/checking: Node 22.16+, then in this folder:
+Development/checks, Node22.16+ from this folder:
 
     npm ci --ignore-scripts --no-audit --no-fund
     npx playwright install --with-deps chromium
     npm test
 
-`npm run build` strictly type-checks and regenerates the self-contained page.
-`npm run fixtures` deterministically regenerates all phase states and manifest.
-`npm run league` runs the required 2,000-game comparison for each adjacent skill.
-`src/core.ts` exports `game`; `src/cards.ts` exports the exact scoring algorithms.
-The only runtime dependency is allowed Zod; it is inlined in the offline page.
+npm run build strictly type-checks and regenerates the self-contained page.
+npm run fixtures regenerates every phase fixture and manifest.
+npm run league runs2000 games per adjacent bot-skill pairing.
+src/core.ts exports game; src/cards.ts contains exact scoring solvers.
+Zod is the sole allowed runtime dependency, inlined with its MIT notice.
 
-RULES/SOURCES/CONFLICTS record read sources and deliberate scoring choices.
-VERIFY records actual commands and coverage, BOTS the measured win rates,
-LOOP post-green improvement rounds, NEXT remaining/resume steps.
-SHA256SUMS covers delivered data/media. No external card art or trackers.
+RULES/SOURCES/CONFLICTS document researched rules and deliberate variants.
+VERIFY/BOTS/LOOP/NEXT record checks, measured strategy and resume steps.
+SHA256SUMS covers every delivered file; no trackers or runtime network.
 
-The original eight KEEP GOING rounds finished at head723bfa77, with exact-head
-CI37730486159 green and PR#2 ready. Earlier timing failures remain preserved.
-The resumed host repair consumes an overdue clock before human/bot moves and
-clears private DOM when starting over. Its unchanged source passed full local
-and hosted browser gates; new fixes restart the KEEP GOING streak at zero.
-Current exact-head CI must pass before delivery is complete: see
-https://github.com/luisitin/partybox-game-cores/pull/2/checks .
-[Current proof index](evidence/resume-20261008/INDEX.md) separates accepted
-raw samples, source guards and retained historical failures.
-Resumed rounds 10–12 add no player-visible gain (streak 3); final CI is required.
-Integrity checks the current proof index against the actual page/core, all
-1,200 raw frame intervals and guarded recording hashes.
+Accepted2e949/run37907166446: all77 tests,6k exact every-event replays,
+Strong1166/2000 andMedium1743/2000,26 actual mutations,1161 hashes/two gens,
+current35 sources/1200 intervals/two full decoded recordings pass.
+Whole official packet: evidence/audit-20261009/accepted-2e949/.
 
-[Revalidation review](evidence/reverify-1900/REVIEW.md) preserves game bytes and
-the player stop. New35-source/unique-attempt/native/active-hand gates retain
-a genuine desktop failure; phone timing NOT RUN. npm test verifies its own
-fresh raw and separate clips. Current hosted full CI/actual artifact required.
+Finishing subset repair reproduces loss10→win4. Draw-boundary controls
+preserve public-information strategy when hidden stock outcomes differ:
+576 paired views/1152 choices and one actual compiled mutant pass.
+Evidence: evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md.
+Bot report/index clarify current evidence; KEEP19–21 no-player-gain streak3.
+Final exact-head full77-test hosted acceptance is required before PR12 Ready.
+CPU4 Chromium evidence does not establish physical-phone/SDK integration.
+Final review: evidence/audit-20261009/FINAL-REVIEW.md.
+Prior genuine failures remain in the historical evidence.

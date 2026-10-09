@@ -1,0 +1,16 @@
+{
+  "kind": "actual pre-repair all-connected initialization bytes",
+  "head": "d5fbb39746f8f7900bee57506e8133e8675f48ed",
+  "cases": 6000,
+  "order": "count2/3/4, variant standard/oklahoma, seeds1..1000",
+  "context": "now100, clockoff, p0..pN names Seat N/avatar faceN; every player connected",
+  "sourceSha256": {
+    "src/core.ts": "59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "play.html": "a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f"
+  },
+  "jsonStatesSha256": "cefddf6052ce21c1e6ea9f8d22c478afc05cafd8b578f5ac7fbfc80b765d15c3",
+  "completed": "2026-10-09T02:01:49.533Z"
+}

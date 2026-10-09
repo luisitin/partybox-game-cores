@@ -1,0 +1,116 @@
+{
+  "createdUtc": "2026-10-09T04:42:49.667510+00:00",
+  "nativeHead": "44505b6a513b03c35217d877925f7be101aceb19",
+  "nativeRunId": 37884838261,
+  "nativeJobId": 113672396102,
+  "artifactId": 11595522097,
+  "officialZipBytes": 1792661,
+  "officialZipSha256": "c1fd7459a03ff559d414a59e765796e9552373e8ec8a27660f81fd59e504fced",
+  "originalGuardedSourceCount": 35,
+  "legacySourcePaths": [
+    "play.html",
+    "src/core.ts",
+    "src/cards.ts",
+    "src/browser.ts",
+    "src/play.template.html"
+  ],
+  "allowedLegacyChanges": [
+    "sourceStart",
+    "sourceEnd",
+    "captures.rows[].path"
+  ],
+  "allowedFull35DeliveryChanges": [
+    "captures.rows[].path"
+  ],
+  "mediaPaths": [
+    {
+      "originalPath": ".work/browser/initial-presence-bootstrap-2026-10-09t04-39-46-063z-desktop.webm",
+      "deliveryPath": "media/initial-presence-bootstrap-2026-10-09t04-39-46-063z-desktop.webm",
+      "bytes": 719464,
+      "sha256": "00805afcafe297426a035e810790bbee588aaa324d182f1132c2e6b96e362e76",
+      "byteIdentical": true
+    },
+    {
+      "originalPath": ".work/browser/initial-presence-bootstrap-2026-10-09t04-39-46-063z-phone4x.webm",
+      "deliveryPath": "media/initial-presence-bootstrap-2026-10-09t04-39-46-063z-phone4x.webm",
+      "bytes": 676393,
+      "sha256": "c49036e9ccb9c0e998238f5421cb9c7b68f8302300518e9211edeca3cd2ee666",
+      "byteIdentical": true
+    }
+  ],
+  "immutableCopiedFiles": [
+    {
+      "path": "official-11595522097.zip",
+      "bytes": 1792661,
+      "sha256": "c1fd7459a03ff559d414a59e765796e9552373e8ec8a27660f81fd59e504fced"
+    },
+    {
+      "path": "official-job-113672396102.log",
+      "bytes": 67591,
+      "sha256": "1282add729914be3002cb3ad7a94e093df507932b8c2b0eed22a5aabb1c89d8c"
+    },
+    {
+      "path": "full-zip-reader.json",
+      "bytes": 13160,
+      "sha256": "6f7dcf0293b0f9a3f85d9f426f04c52d06bd4c1cefddeb09c1849a335d6ae88a"
+    },
+    {
+      "path": "exact-source-rebuild.json",
+      "bytes": 34469,
+      "sha256": "79753539656d1fe3e2fe75670baddfdc2d84004337af9b87684360b1e82b1c12"
+    },
+    {
+      "path": "full-original-artifact-reader.json",
+      "bytes": 39459,
+      "sha256": "287f7006699f20351799a67e312d1cdacee37fe0faccdd0ca414f845635734ee"
+    },
+    {
+      "path": "original-report35.json",
+      "bytes": 47845,
+      "sha256": "d65739e21cfd71ff07b92747740e315bcf7a52d03f4452a80fc5401b5d5488fa"
+    },
+    {
+      "path": "original-captures35.json",
+      "bytes": 8425,
+      "sha256": "83b9c625bb4c5a57e9518a958787b98c6ecfd42a073c2ff45e5b87f208e15ec3"
+    },
+    {
+      "path": "desktop-frames.json",
+      "bytes": 244205,
+      "sha256": "aff040ab70f159da89ad4276e832924aa8f5b59067f1227a5b42a2dcfd41a530"
+    },
+    {
+      "path": "phone4x-frames.json",
+      "bytes": 244414,
+      "sha256": "229f5eb65c1117c20de2b7ba40bd3a9f47f0be942a61d200a198be5637a562e1"
+    },
+    {
+      "path": "native-CLOSED.json",
+      "bytes": 12211,
+      "sha256": "280eaf2fd2ef71fdc2939157843c4e9673030363a50705f9d8130b5fbb0b84cc"
+    },
+    {
+      "path": "native-run.json",
+      "bytes": 585,
+      "sha256": "67844fb46db07eb162d73ace3ab5a4acf6d5259a59e21fba70d0e79732bff3b3"
+    },
+    {
+      "path": "original-source-copy-index.json",
+      "bytes": 9985,
+      "sha256": "f208ca0e2a63b2d848ddb41b8b02ab6309a5a1e44f46eaca42b7cd4217e50fad"
+    },
+    {
+      "path": "executed-bootstrap-request.json",
+      "bytes": 441,
+      "sha256": "bcb35796fe27d2db3f976d70443ed20f577ca38b3adf8878701499a12fc05e94"
+    }
+  ],
+  "all1200RawIntervalsUnchanged": true,
+  "all1202NativeTimestampsUnchanged": true,
+  "all1208ActiveHandWitnessesUnchanged": true,
+  "samplerRerun": false,
+  "bootstrapDisabledForFuturePushes": true,
+  "executedRequestRetained": "evidence/audit-20261009/bootstrap-44505b6-current/executed-bootstrap-request.json",
+  "executedAdditionalRequestIsHistorical": true,
+  "fullNpmTestAccepted": false
+}

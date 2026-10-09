@@ -1,50 +1,25 @@
-# Current G02 proof
+# Current G02 source and review evidence
 
-Open [play.html](../../play.html) directly from disk. Current production sources
-are unchanged since the genuine Pass-attribution repair. The guarded local
-full run is `2026-10-08T12-15-12-540Z`; its complete 600 intervals per profile
-include the desktop 50 ms maximum. Integrity recomputes every interval.
+Open [play.html](../../play.html) directly from disk. This final review publication changes documentation only. The current game source matches the latest wholly accepted parent2e9497385b333497cf96b0d4bd0f6fd8083b412b. The final publication must independently pass the full original checks at [PR12](https://github.com/luisitin/partybox-game-cores/pull/12/checks) and its whole official artifact must be read before Ready. [Resume condition](../../NEXT.md) distinguishes that remaining gate from historical paragraphs.
 
-| Profile | FPS | p99 ms | Maximum ms | Raw samples |
-| --- | ---: | ---: | ---: | --- |
-| Desktop 1920×1080, CPU 1× | 59.703869 | 16.8 | 50 | [600 intervals](desktop-frames.json) |
-| Phone 390×844, Chrome CPU 4× | 60.003000 | 16.8 | 16.8 | [600 intervals](phone4x-frames.json) |
+Exact2e949 whole original full accepted08:53:54.962169Z/outer naturally CLOSED08:53:55.175450Z EXIT0/all1228 frozen inputs unchanged. Run37907166446/verify113743302361; whole official11605760167 ZIP2194524B/SHA64fd5836e65073754937c3c45a9271a5db0564ee3c16f8aaf70673a2a57d53c0/all13 safeCRC, complete96966B native/1021 entries. All77 tests/six1000 every-event SHA/byte/JSON replays/paired leagues1166+1743/26 compiled assertion kills/1161 hashes/two generations/all1161 immutable Git blobs/1162 inventory/current35+three physically proven bundlesHTML/1200 intervals1202 timestamps1208 witnesses/two fullVP8 decodes PASS. Desktop60.002796130/CPU4 phone60.002400096FPS,p99~16.8; actualmergecc15756076083c0dac896e262d244b6cc3ac11ac. Whole original packet is retained accepted-2e949/, with provider personal author metadata private and labelled essential projection. No local sampler.
 
-[Accepted report](browser.json), [exact runner](attempts/2026-10-08T12-15-12-540Z/browser-check.mjs),
-[complete run log](attempts/2026-10-08T12-15-12-540Z/passed.log),
-[current-proof index](current-proof.json), [verification](../../VERIFY.md).
-No startup samples or outliers are removed; recordings are separate from FPS proof.
-
-| Delivered source | SHA256 |
+| Current delivered source | SHA256 |
 | --- | --- |
-| [play.html](../../play.html) | `a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f` |
-| [src/core.ts](../../src/core.ts) | `59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf` |
-| [src/cards.ts](../../src/cards.ts) | `e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9` |
-| [src/browser.ts](../../src/browser.ts) | `56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4` |
-| [src/play.template.html](../../src/play.template.html) | `1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7` |
+| [play.html](../../play.html) | 8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63 |
+| [src/core.ts](../../src/core.ts) | 211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218 |
+| [src/cards.ts](../../src/cards.ts) | e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9 |
+| [src/browser.ts](../../src/browser.ts) | 56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4 |
+| [src/play.template.html](../../src/play.template.html) | 1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7 |
 
-Latest completed source head `fa7e3e9` passed [exact CI 37779189588](https://github.com/luisitin/partybox-game-cores/actions/runs/37779189588).
-Its [actually read log](round-12/hosted-round-11.log) and [metadata](round-12/hosted-round-11.json)
-report 43 tests, the full core matrix/properties/solvers, unchanged 57.6%/87.15%
-bot leagues, 26 compiled assertion-killed mutants, full browser gates and proof integrity.
-The final branch head must independently be green at [PR #2 checks](https://github.com/luisitin/partybox-game-cores/pull/2/checks).
+The exact [full original reader receipt](../audit-20261009/accepted-2e949/full-original-artifact-reader-CLOSED.json), [natural controller closure](../audit-20261009/accepted-2e949/full-reader-controller-CLOSED.json), [entire official13-member ZIP](../audit-20261009/accepted-2e949/official-full.zip), [complete native log](../audit-20261009/accepted-2e949/official-verify-113743302361-success.log), [explicit essential run metadata](../audit-20261009/accepted-2e949/official-run-essential-fields.json) and [byte-exact delivery receipt](../audit-20261009/accepted-2e949/whole-packet-copy-CLOSED.json) retain current proof. The whole ZIP contains every raw interval/timestamp/witness and both contemporary recordings. Decode or inspect the recordings independently of the FPS data; the functional capture viewport is separate from the1920x1080 timing profile.
 
-Fresh final-review [desktop recording](../../media/round-12-final-review-desktop.webm)
-and [phone recording](../../media/round-12-final-review-phone4x.webm) show actual Pass
-history, private cleanup, timeout and pause/end. [Capture metadata](round-12-final-review-captures.json)
-checks independent start/end source hashes and recording bytes/hashes. These are
-functional recordings, not timing measurements or physical-device evidence.
+The first original packet for these unchanged game bytes retains [native35-source report](../audit-20261009/bootstrap-1478-current/original-report35.json), [capture metadata](../audit-20261009/bootstrap-1478-current/original-captures35.json), [source-copy index](../audit-20261009/bootstrap-1478-current/original-source-copy-index.json), [full independent first reader](../audit-20261009/bootstrap-1478-current/full-original-artifact-reader-CLOSED.json) and [labelled five-dictionary/media-path bridge](../audit-20261009/bootstrap-1478-current/projection-and-path-bridge.json). The bridge does not alter original35/raw measurements or the original archive.
 
-Historical evidence stays separate: [failed 58.730 FPS run](attempts/2026-10-08T11-27-10-248Z/report.json),
-[all its raw desktop intervals](attempts/2026-10-08T11-27-10-248Z/desktop-frames.json),
-[real host before](before.json), [real host after](after.json),
-[wrong Pass labels before](round-9/ui-before.json), [correct labels after](round-9/ui-after.json),
-[26-mutation assertions](round-10/M26-assertions.log),
-[old/new stale-proof negative control](round-11/negative-control.json).
-Hidden New match retention was inside a hidden table; no visual or core-view leak
-is claimed. The earlier frame failure has no established cause.
+[Rules](../../RULES.md), [sources](../../SOURCES.md), [conflicts](../../CONFLICTS.md), [current bot report](../../BOTS.md), [verification](../../VERIFY.md), [KEEP rounds](../../LOOP.md), [final review](../audit-20261009/FINAL-REVIEW.md) and [delivery hashes](../../SHA256SUMS.txt) describe the shipped core and its limits. The sole original workflow and every gate remain unchanged. No runtime network or hidden-card strategy is added.
 
-Limits: no physical handset or unavailable application SDK was tested, and no
-outside elite bot strength is claimed. Historical Azure artifact downloads
-returned 403; artifact contents were not read or reconstructed. Actual hosted
-logs and current local raw samples support the stated results.
+# Historical evidence
+
+The [complete former index](../audit-20261009/final-review-current/INDEX-before-KEEP21.txt) is preserved byte-identically; its references to0493/pre-audit source and older pending gates are historical. Prior fully accepted [e542](../audit-20261009/accepted-e542/full-original-artifact-reader-CLOSED.json) and [72bd](../audit-20261009/accepted-72bd/full-original-artifact-reader-CLOSED.json), [original audit](../audit-20261009/AUDIT.md), [Strong Gin repair](../audit-20261009/KEEP-1-STRONG-GIN.md), [zero-hand pickup repair](../audit-20261009/KEEP-2-ZERO-GIN-DRAW.md), [same-meld knock repair](../audit-20261009/KEEP-3-SAME-MELD-KNOCK.md), [closed targets](../audit-20261009/KEEP-4-CLOSED-TARGETS.md), [visible discards](../audit-20261009/KEEP-5-VISIBLE-DISCARDS.md), [target subsets](../audit-20261009/KEEP-6-SUBSET-TARGETS.md) and [draw-boundary counterexample](../audit-20261009/KEEP-7-DRAW-BOUNDARY.md) preserve each actual gain, rejected proposal and first failure.
+
+All real failed native runs, source/transport/helper failures, numerical-reader correction, stale-proof failures and deadline/resource exceptions remain unchanged in their dated packets and VERIFY. No physical handset, unavailable PartyBox SDK or outside elite-bot strength was established. The required CPU4 Chromium and finite internal league scope is stated precisely.

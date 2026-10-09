@@ -1,0 +1,28 @@
+{
+  "closedUtc": "2026-10-09T03:55:46.250693+00:00",
+  "originalVerifyJobBytePrefixAndParsedObjectUnchanged": true,
+  "singleWorkflow": true,
+  "inlineScriptsSyntaxPassed": 4,
+  "actualRequestControls": [
+    {
+      "label": "enabled-correct",
+      "exitCode": 0,
+      "stdout": "{\"nativeBootstrapRequested\":true,\"samplersExecuted\":false,\"reason\":\"verified material Strong Gin-priority repair; first capture for changed game source\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "disabled",
+      "exitCode": 0,
+      "stdout": "{\"nativeBootstrapRequested\":false,\"samplersExecuted\":false,\"reason\":\"verified material Strong Gin-priority repair; first capture for changed game source\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "enabled-wrong-source",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "node:internal/modules/run_main:107\n    triggerUncaughtException(\n    ^\n\nAssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ '389fda6be764fcaf753f8153c0d0e54b400b652198608a79966128eae72e5d76'\n- '0000000000000000000000000000000000000000000000000000000000000000'\n\n    at file:///tmp/G02-strong-request-control-20261009/[eval1]:9:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '389fda6be764fcaf753f8153c0d0e54b400b652198608a79966128eae72e5d76',\n  expected: '0000000000000000000000000000000000000000000000000000000000000000',\n  operator: 'strictEqual',\n  diff: 'simple'\n}\n\nNode.js v24.19.0\n"
+    }
+  ],
+  "workflowSha256": "d177727723ba04faf8d36b43011e80462d7f48150ee65c7411cae053c3414c77",
+  "samplerExecuted": false
+}

@@ -1,0 +1,81 @@
+{
+  "closedUtc": "2026-10-09T08:01:12.002396+00:00",
+  "actualTests": 76,
+  "actualPass": 72,
+  "actualFail": 4,
+  "onlyFourPreviousBrowserProofFailures": true,
+  "fullOriginalWorkflowNotAccepted": true,
+  "allSix1000EveryEventRows": [
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 260844,
+      "maxEvents": 612,
+      "replayChecks": 260844,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 285455,
+      "maxEvents": 775,
+      "replayChecks": 285455,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 344241,
+      "maxEvents": 825,
+      "replayChecks": 344241,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 255515,
+      "maxEvents": 755,
+      "replayChecks": 255515,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 268526,
+      "maxEvents": 812,
+      "replayChecks": 268526,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 315689,
+      "maxEvents": 929,
+      "replayChecks": 315689,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    }
+  ],
+  "downstreamHostedLeaguesMutantsBrowserCaptureIntegrityExecuted": false,
+  "completeFailureNativePreserved": true,
+  "nativeLogSha256": "6078eab9ecaf71a6b020dce0bbf8393fbc084a36bf9d5c35b139c8a4fd2ef8eb",
+  "nativeLogUnchanged": true,
+  "firstAdditionalReviewHelperFailureRetained": true
+}

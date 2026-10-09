@@ -1,0 +1,26 @@
+{
+  "startedUtc": "2026-10-09T05:16:32.442746+00:00",
+  "closedUtc": "2026-10-09T05:16:32.707409+00:00",
+  "nativeExitCode": 1,
+  "sourceHead": "3bf3456fd8e0a58636229c264a45bac844385827",
+  "suite": "targeted same-meld finishing knock regression before repair",
+  "sourceStart": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "aa9a48dbae7f6ba7010a737eeebd2133394970fdaca96c11b118ccf3941cfcf6",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/play.html": "8d562d7a1b592e13f0f6a8e7c2fa492dbeb5e70dab117910842d6ce590bde533",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/core.mjs": "b8b48119e5e4be693a0fc75d9b99872c911aaf80a019d8a878f2ae95aa82185d",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/knock-layout-priority.test.mjs": "e8a923662a746d707b649621fd1c9204267a07ae58ba1e016b0b6ab6cd1db38a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-check.mjs": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+    "/workspace/game-cores-G02-audit-source-20261009/.github/workflows/G02.yml": "b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1"
+  },
+  "sourceEnd": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "aa9a48dbae7f6ba7010a737eeebd2133394970fdaca96c11b118ccf3941cfcf6",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/play.html": "8d562d7a1b592e13f0f6a8e7c2fa492dbeb5e70dab117910842d6ce590bde533",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/dist/core.mjs": "b8b48119e5e4be693a0fc75d9b99872c911aaf80a019d8a878f2ae95aa82185d",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/knock-layout-priority.test.mjs": "e8a923662a746d707b649621fd1c9204267a07ae58ba1e016b0b6ab6cd1db38a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-check.mjs": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+    "/workspace/game-cores-G02-audit-source-20261009/.github/workflows/G02.yml": "b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1"
+  },
+  "sourceUnchanged": true,
+  "expectedToExposeActualOldBotDefect": true,
+  "samplerExecuted": false
+}

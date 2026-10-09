@@ -1,0 +1,358 @@
+{
+  "closedUtc": "2026-10-09T02:49:48.281000+00:00",
+  "artifactId": 11592227548,
+  "zipBytes": 1784093,
+  "zipSha256": "b4b42795233bfc1afbb13e2083bdf111c2daaaca3041a2bc59b94313a0eba38f",
+  "safeMembers": 58,
+  "allCrcRead": true,
+  "members": [
+    {
+      "path": "initial-presence-bootstrap/CLOSED.json",
+      "bytes": 11501,
+      "sha256": "bc4154d18b1758023285fce0e14b623474459e1e9cc73b14ee4baad47750af17",
+      "crc32": "9dba0ad9"
+    },
+    {
+      "path": "initial-presence-bootstrap/bootstrap-workflow.yml",
+      "bytes": 7944,
+      "sha256": "d12d2c99a44436b82d2108b69649584998ea4d06e666ec94acbb0991b1a9f60c",
+      "crc32": "c052ae85"
+    },
+    {
+      "path": "initial-presence-bootstrap/run.json",
+      "bytes": 482,
+      "sha256": "ac19f1545cc687f78c7d9166711882c56ba494bfb1661f02452e83a2f8fbd69e",
+      "crc32": "59536723"
+    },
+    {
+      "path": "initial-presence-bootstrap/source-copy-index.json",
+      "bytes": 9177,
+      "sha256": "e8444cbdd66323d4a2f838958434bc68330ce6afa3a4079ac18ab497d619ca99",
+      "crc32": "66da5034"
+    },
+    {
+      "path": "initial-presence-bootstrap/source-end.json",
+      "bytes": 3599,
+      "sha256": "e252db53762b987573f35f835a2772607b1ba56347dd1c7f928573c6d532c8e5",
+      "crc32": "7364bdc4"
+    },
+    {
+      "path": "initial-presence-bootstrap/source-start.json",
+      "bytes": 3356,
+      "sha256": "b3470fc20efea1ab4909cc2328fc2a36e1f57910543345db555abe2255a01c7a",
+      "crc32": "63654cae"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/contract/constants.ts",
+      "bytes": 4994,
+      "sha256": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef",
+      "crc32": "07b65da0"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/contract/contract.ts",
+      "bytes": 26947,
+      "sha256": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5",
+      "crc32": "3e53b38b"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/contract/minigame-schema.ts",
+      "bytes": 2723,
+      "sha256": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb",
+      "crc32": "f5c20d44"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/contract/player-count-schema.ts",
+      "bytes": 1236,
+      "sha256": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189",
+      "crc32": "05379131"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/contract/rng.ts",
+      "bytes": 3445,
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+      "crc32": "d418b1f5"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/dist/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+      "crc32": "89c0849c"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/dist/contract.mjs",
+      "bytes": 1006006,
+      "sha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+      "crc32": "2fbfbb83"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/dist/core.mjs",
+      "bytes": 1026800,
+      "sha256": "3e19e5ef083eab3761a95b2d51edc26991ec6c5041545f3892b30787dee98705",
+      "crc32": "2b661517"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/manifest.json",
+      "bytes": 4105,
+      "sha256": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb",
+      "crc32": "f2637d51"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/package-lock.json",
+      "bytes": 16974,
+      "sha256": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a",
+      "crc32": "ee3b48d0"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/package.json",
+      "bytes": 696,
+      "sha256": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b",
+      "crc32": "e2fb1c99"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/play.html",
+      "bytes": 491451,
+      "sha256": "df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375",
+      "crc32": "00d3834f"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/browser-check.mjs",
+      "bytes": 13048,
+      "sha256": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+      "crc32": "12110e9e"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/browser-proof.mjs",
+      "bytes": 4588,
+      "sha256": "3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489",
+      "crc32": "a0995095"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/browser-source-guard.mjs",
+      "bytes": 1410,
+      "sha256": "e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622",
+      "crc32": "3919a4b2"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/capture.mjs",
+      "bytes": 5394,
+      "sha256": "72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985",
+      "crc32": "8bec1703"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/build.mjs",
+      "bytes": 987,
+      "sha256": "3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e",
+      "crc32": "f15068ce"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/check-evidence-links.mjs",
+      "bytes": 1094,
+      "sha256": "03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842",
+      "crc32": "10b6cf1a"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/clock-check.mjs",
+      "bytes": 3273,
+      "sha256": "beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19",
+      "crc32": "1ac2f2fe"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/frame-coordination.mjs",
+      "bytes": 2368,
+      "sha256": "f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656",
+      "crc32": "e1e6e899"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/host-check.mjs",
+      "bytes": 5095,
+      "sha256": "e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50",
+      "crc32": "1ce7fcbc"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/integrity.mjs",
+      "bytes": 2925,
+      "sha256": "7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb",
+      "crc32": "09ee98d1"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/meld-check.mjs",
+      "bytes": 5312,
+      "sha256": "d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4",
+      "crc32": "9cf4f5f0"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/name-check.mjs",
+      "bytes": 2050,
+      "sha256": "3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f",
+      "crc32": "c1ac6440"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/public-history-check.mjs",
+      "bytes": 3543,
+      "sha256": "5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859",
+      "crc32": "0b6f0c89"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/results-check.mjs",
+      "bytes": 2649,
+      "sha256": "c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f",
+      "crc32": "ffc00ecc"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/scripts/strict-browser-proof.mjs",
+      "bytes": 8010,
+      "sha256": "fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9",
+      "crc32": "7957b944"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/src/browser.ts",
+      "bytes": 16563,
+      "sha256": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+      "crc32": "7659deab"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/src/cards.ts",
+      "bytes": 6379,
+      "sha256": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+      "crc32": "01059221"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/src/core.ts",
+      "bytes": 25901,
+      "sha256": "3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b",
+      "crc32": "e717f071"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/src/play.template.html",
+      "bytes": 7133,
+      "sha256": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+      "crc32": "56eb0a53"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/tests/browser-fixture.mjs",
+      "bytes": 2870,
+      "sha256": "f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621",
+      "crc32": "8364b205"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/tests/helpers.mjs",
+      "bytes": 3202,
+      "sha256": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+      "crc32": "09eb7839"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/workflow/G02.yml",
+      "bytes": 1485,
+      "sha256": "438061d4cd18c18cc09ade9cf587830b9788dd1541f8ea33ad066edf58830bbb",
+      "crc32": "e8808875"
+    },
+    {
+      "path": "initial-presence-bootstrap/sources/job/tsconfig.json",
+      "bytes": 366,
+      "sha256": "624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3",
+      "crc32": "b7ba652c"
+    },
+    {
+      "path": "browser/attempts/2026-10-09T02-44-05-718Z/browser-check.mjs",
+      "bytes": 13048,
+      "sha256": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+      "crc32": "12110e9e"
+    },
+    {
+      "path": "browser/attempts/2026-10-09T02-44-05-718Z/desktop-frames.json",
+      "bytes": 244516,
+      "sha256": "cfbcbe8dab2411365b8655ccfeaf86289944d5cbbd46870d00558c85158a3668",
+      "crc32": "8d620003"
+    },
+    {
+      "path": "browser/attempts/2026-10-09T02-44-05-718Z/phone4x-frames.json",
+      "bytes": 244437,
+      "sha256": "f551811d3218b1c513629e45d36008b176b69cf014b17b312bc9f517a33670c6",
+      "crc32": "e69113ba"
+    },
+    {
+      "path": "browser/attempts/2026-10-09T02-44-05-718Z/report.json",
+      "bytes": 47921,
+      "sha256": "cc3c871fad7d6a450d0dedc133283f1be76428d042e1b8aa9d7ecf3fce86b0d1",
+      "crc32": "0b95e609"
+    },
+    {
+      "path": "browser/capture-attempts/initial-presence-bootstrap-2026-10-09t02-44-34-714z/captures.json",
+      "bytes": 8425,
+      "sha256": "d65519b901ad3947f3decd9ff52ea1f1930f9c26bf4c9e44b04dde11d0ae1388",
+      "crc32": "657d0d52"
+    },
+    {
+      "path": "browser/captures.json",
+      "bytes": 8425,
+      "sha256": "d65519b901ad3947f3decd9ff52ea1f1930f9c26bf4c9e44b04dde11d0ae1388",
+      "crc32": "657d0d52"
+    },
+    {
+      "path": "browser/desktop-frames.json",
+      "bytes": 244516,
+      "sha256": "cfbcbe8dab2411365b8655ccfeaf86289944d5cbbd46870d00558c85158a3668",
+      "crc32": "8d620003"
+    },
+    {
+      "path": "browser/desktop.png",
+      "bytes": 65513,
+      "sha256": "518bfebff2b246bfc8b7e9e93e6cdf048f273512b1827285b6379b3fdda4b8b0",
+      "crc32": "27348dce"
+    },
+    {
+      "path": "browser/initial-presence-bootstrap-2026-10-09t02-44-34-714z-desktop.webm",
+      "bytes": 713362,
+      "sha256": "a1b236db0f74cb39e4ae16b10f5fe48296f2322fbb04198025ca5cc40d49e157",
+      "crc32": "4620b990"
+    },
+    {
+      "path": "browser/initial-presence-bootstrap-2026-10-09t02-44-34-714z-phone4x.webm",
+      "bytes": 684756,
+      "sha256": "a5ce5dc1de8e6d6e52f2c899278705476ce3b2203803074ed281a7f4452482b0",
+      "crc32": "bd655bde"
+    },
+    {
+      "path": "browser/phone4x-frames.json",
+      "bytes": 244437,
+      "sha256": "f551811d3218b1c513629e45d36008b176b69cf014b17b312bc9f517a33670c6",
+      "crc32": "e69113ba"
+    },
+    {
+      "path": "browser/phone4x.png",
+      "bytes": 55697,
+      "sha256": "2557173f077172ae1d8ac35c207be8da503a28b4837a7e64c76e5adf36c5ad55",
+      "crc32": "869cf31a"
+    },
+    {
+      "path": "browser/report.json",
+      "bytes": 47921,
+      "sha256": "cc3c871fad7d6a450d0dedc133283f1be76428d042e1b8aa9d7ecf3fce86b0d1",
+      "crc32": "0b95e609"
+    },
+    {
+      "path": "clock-after.json",
+      "bytes": 356,
+      "sha256": "f5e5d5e321b93564b3d166cdb14b427a06405d2b0d12e42f936f2bef59950d09",
+      "crc32": "e672dde4"
+    },
+    {
+      "path": "custom-meld-after.json",
+      "bytes": 861,
+      "sha256": "9df04324dbff91a62c36526992a7ed6f76dd07b420c878a746731299417af7f5",
+      "crc32": "6a00f157"
+    },
+    {
+      "path": "results-after.json",
+      "bytes": 611,
+      "sha256": "0edc506dbc730cb562a59d6ac1844d072402844c1e7ef1898b996b2b44418911",
+      "crc32": "a5d0cb8a"
+    },
+    {
+      "path": "name-check.json",
+      "bytes": 174,
+      "sha256": "848407ff03f52c0c8a001fb4b7ab833b4b5647366a7c8baaea44f4a2bc418fd4",
+      "crc32": "47a410eb"
+    }
+  ]
+}

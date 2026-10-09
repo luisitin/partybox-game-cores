@@ -1,0 +1,39 @@
+{
+  "closedAt": "2026-10-09T05:57:04.168929+00:00",
+  "status": "EXACT_ALREADY_INDEPENDENTLY_REBUILT_ORIGINAL_BUNDLES_COPIED_PASS",
+  "purpose": "Preserve and replace only ignored compiled dependency-path labels before saved native proof checks; no source or gate edit",
+  "previousArchive": "previous-ignored-generated-bundles.zip",
+  "archiveBytes": 268230,
+  "archiveSha256": "560edcfab59ca53d44f7a75c5038e2e9edced59979268669623eabffca3d13d3",
+  "before": {
+    "core.mjs": {
+      "bytes": 1038497,
+      "sha256": "94b8bf6a2434eed1fa62a6148c02dda0259e0ed3b3306288837a82f305fc5359"
+    },
+    "cards.mjs": {
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    "contract.mjs": {
+      "bytes": 1016836,
+      "sha256": "ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f"
+    }
+  },
+  "after": {
+    "core.mjs": {
+      "bytes": 1027667,
+      "sha256": "432cae2754d7e96770c5e5e1aed4a6a0f92592ec5d8a3257762f25dc86c24cc4"
+    },
+    "cards.mjs": {
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    "contract.mjs": {
+      "bytes": 1006006,
+      "sha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a"
+    }
+  },
+  "onlyDiagnosticByteDifference": "external dependency comment prefix versus physical node_modules/",
+  "actualReplacementBytes": "all original independently reconstructed official bundle bytes",
+  "samplerExecuted": false
+}

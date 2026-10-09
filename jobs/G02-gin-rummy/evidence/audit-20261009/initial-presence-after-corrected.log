@@ -1,0 +1,14 @@
+{"suite":"initial-presence-exhaustive","cases":336,"connectionMasks":"all","counts":[2,3,4],"variants":["standard","oklahoma"],"clocks":[0,10]}
+{"suite":"initial-presence-seeded","cases":1000}
+✔ known initial presence is handled before either player needs to send an event (225.651145ms)
+✔ 1000 seeded initial presence patterns are playable or paused without a duplicate drop event (300.9859ms)
+{"suite":"connected-initialization-byte-equivalence","cases":6000,"baselineHead":"d5fbb39746f8f7900bee57506e8133e8675f48ed"}
+✔ all-connected opening states retain the exact 6000 pre-repair JSON states (118.280472ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 806.527284

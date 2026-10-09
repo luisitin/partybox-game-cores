@@ -1,0 +1,14 @@
+{"suite":"public-discard-closed-meld-knock-settings","cases":1152,"minGain":11,"maxGain":52,"classicSignedBefore":-10,"classicSignedAfter":1}
+{"suite":"public-discard-closed-meld-knock-independent-hidden-defenders","defenders":1000,"publicViewsByteIdentical":true,"minGain":1,"maxGain":1,"winningTransitions":0}
+{"suite":"public-discard-closed-meld-knock-boundaries","controls":168}
+✔ Strong excludes publicly discarded cards from finishing layoff targets in every setting and suit (1428.107474ms)
+✔ 1000 identical public views keep the same safe choice and independent joint-defense score (6569.356946ms)
+✔ public discard closure preserves hidden-card uncertainty, forbidden returns, no-knock and Gin boundaries (102.763508ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8249.362805

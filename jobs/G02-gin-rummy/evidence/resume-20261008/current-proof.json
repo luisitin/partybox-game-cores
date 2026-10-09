@@ -1,9 +1,12 @@
 {
   "version": 1,
-  "report": "evidence/resume-20261008/browser.json",
+  "report": "evidence/audit-20261009/bootstrap-1478-current/derived-legacy-report5.json",
   "raw": {
-    "desktop": "evidence/resume-20261008/desktop-frames.json",
-    "phone4x": "evidence/resume-20261008/phone4x-frames.json"
+    "desktop": "evidence/audit-20261009/bootstrap-1478-current/desktop-frames.json",
+    "phone4x": "evidence/audit-20261009/bootstrap-1478-current/phone4x-frames.json"
   },
-  "captures": "evidence/resume-20261008/round-12-final-review-captures.json"
+  "captures": "evidence/audit-20261009/bootstrap-1478-current/derived-legacy-captures5.json",
+  "full35Index": "evidence/audit-20261009/bootstrap-1478-current/current-proof35.json",
+  "derivation": "Compatibility projection of only sourceStart/sourceEnd to the original five paths, plus byte-identical delivery media path rebase. All other fields and all raw samples are unchanged.",
+  "fullNpmTestAccepted": false
 }

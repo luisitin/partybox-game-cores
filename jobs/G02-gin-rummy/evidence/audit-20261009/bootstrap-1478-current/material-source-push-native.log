@@ -1,0 +1,156 @@
+[
+  {
+    "argv": [
+      "git",
+      "branch",
+      "--show-current"
+    ],
+    "exitCode": 0,
+    "stdout": "job/G02-gin-rummy-audit-20261009\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:24.504610+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exitCode": 0,
+    "stdout": "f46153e6645cf22f1c66167a281c0e292155a329\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:24.509047+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "fetch",
+      "origin",
+      "job/G02-gin-rummy-audit-20261009"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/luisitin/partybox-game-cores\n * branch            job/G02-gin-rummy-audit-20261009 -> FETCH_HEAD\n",
+    "closedUtc": "2026-10-09T07:50:25.344820+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "origin/job/G02-gin-rummy-audit-20261009"
+    ],
+    "exitCode": 0,
+    "stdout": "f46153e6645cf22f1c66167a281c0e292155a329\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.347988+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.364114+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "add",
+      "--",
+      ".github/workflows/G02.yml",
+      "jobs/G02-gin-rummy"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.610050+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--name-only"
+    ],
+    "exitCode": 0,
+    "stdout": ".github/workflows/G02.yml\njobs/G02-gin-rummy/ASSUMPTIONS.md\njobs/G02-gin-rummy/BOTS.md\njobs/G02-gin-rummy/LOOP.md\njobs/G02-gin-rummy/NEXT.md\njobs/G02-gin-rummy/README.md\njobs/G02-gin-rummy/SHA256SUMS.txt\njobs/G02-gin-rummy/VERIFY.md\njobs/G02-gin-rummy/evidence/audit-20261009/KEEP-6-SUBSET-TARGETS.md\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/actual-curl.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/archive-copy-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/disabled-bootstrap-native-transport.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/download-receipt.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/evidence/resume-20261008/strict-reverify-1900-captures.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/media/strict-reverify-1900-desktop.webm\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/media/strict-reverify-1900-phone4x.webm\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-original-artifact-reader-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller-READY.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader.py\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-zip-reader-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/main-refresh-0735-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/main-refresh-0735-native.log\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/native-log-transport.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-artifact-metadata.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-disabled-bootstrap-113717418634-success.log\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-full.zip\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-jobs.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-run-check-fields.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-verify-113717418411-success.log\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/private-stdin-download.py\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/proof-f46153e-push-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/strict-original-reader.log\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/validate-strict-original.mjs\njobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/whole-git-reader-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/bootstrap-request.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-READY.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-READY.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-READY.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-production-probe.mjs\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/first-hypothesis-failure-review.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/discard.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/done.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/draw.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/layoff.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/round-end.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/upcard.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/manifest.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/discard.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/done.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/draw.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/layoff.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/round-end.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/upcard.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/manifest.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-CLOSED.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-READY.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-controller.py\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe.stderr\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe.stdout\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/production-probe.mjs\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/rank-five.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/source-checkpoint-review.json\njobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/two-fixture-generations-CLOSED.json\njobs/G02-gin-rummy/play.html\njobs/G02-gin-rummy/src/core.ts\njobs/G02-gin-rummy/tests/subset-knock-priority.test.mjs\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.619642+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "commit",
+      "-m",
+      "G02 prefer safe subset finishing layoff targets"
+    ],
+    "exitCode": 0,
+    "stdout": "[job/G02-gin-rummy-audit-20261009 1478a93] G02 prefer safe subset finishing layoff targets\n 90 files changed, 11183 insertions(+), 28 deletions(-)\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/KEEP-6-SUBSET-TARGETS.md\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/actual-curl.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/archive-copy-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/disabled-bootstrap-native-transport.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/download-receipt.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/evidence/resume-20261008/strict-reverify-1900-captures.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/media/strict-reverify-1900-desktop.webm\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/extracted/media/strict-reverify-1900-phone4x.webm\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-original-artifact-reader-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller-READY.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader-controller.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-reader.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/full-zip-reader-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/main-refresh-0735-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/main-refresh-0735-native.log\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/native-log-transport.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-artifact-metadata.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-disabled-bootstrap-113717418634-success.log\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-full.zip\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-jobs.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-run-check-fields.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/official-verify-113717418411-success.log\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/private-stdin-download.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/proof-f46153e-push-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/strict-original-reader.log\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/validate-strict-original.mjs\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/accepted-f46153e/whole-git-reader-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-READY.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/after-tests.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-READY.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/before-tests.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/build.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-READY.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-probe.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/corrected-production-probe.mjs\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/first-hypothesis-failure-review.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/discard.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/done.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/draw.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/layoff.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/round-end.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/fixtures/upcard.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-1/manifest.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/discard.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/done.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/draw.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/layoff.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/round-end.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/fixtures/upcard.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/fixtures-generation-2/manifest.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-READY.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe-controller.py\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe.stderr\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/probe.stdout\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/production-probe.mjs\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/rank-five.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/source-checkpoint-review.json\n create mode 100644 jobs/G02-gin-rummy/evidence/audit-20261009/subset-knock-current/two-fixture-generations-CLOSED.json\n create mode 100644 jobs/G02-gin-rummy/tests/subset-knock-priority.test.mjs\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.829669+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exitCode": 0,
+    "stdout": "1478a93e36f9f6ddf88aad246083ab0c8e059cf4\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.832781+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "HEAD^"
+    ],
+    "exitCode": 0,
+    "stdout": "f46153e6645cf22f1c66167a281c0e292155a329\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:25.837547+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "push",
+      "origin",
+      "job/G02-gin-rummy-audit-20261009"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "To https://github.com/luisitin/partybox-game-cores.git\n   f46153e..1478a93  job/G02-gin-rummy-audit-20261009 -> job/G02-gin-rummy-audit-20261009\n",
+    "closedUtc": "2026-10-09T07:50:28.561597+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "-c",
+      "credential.helper=",
+      "fetch",
+      "origin",
+      "job/G02-gin-rummy-audit-20261009"
+    ],
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "From https://github.com/luisitin/partybox-game-cores\n * branch            job/G02-gin-rummy-audit-20261009 -> FETCH_HEAD\n",
+    "closedUtc": "2026-10-09T07:50:29.139320+00:00"
+  },
+  {
+    "argv": [
+      "git",
+      "rev-parse",
+      "origin/job/G02-gin-rummy-audit-20261009"
+    ],
+    "exitCode": 0,
+    "stdout": "1478a93e36f9f6ddf88aad246083ab0c8e059cf4\n",
+    "stderr": "",
+    "closedUtc": "2026-10-09T07:50:29.142168+00:00"
+  }
+]

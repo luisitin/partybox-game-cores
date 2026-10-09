@@ -1,0 +1,10 @@
+{
+  "state": "FAILED",
+  "actualFailure": "exec-server rejected request: Argument list too long (os error 7)",
+  "failedBeforeProcessCreation": true,
+  "sourceMutation": false,
+  "testsExecuted": false,
+  "firstFailureUtc": "not independently recorded",
+  "recordedUtc": "2026-10-09T08:31:22.754247+00:00",
+  "correction": "split native writes into separately bounded arguments"
+}

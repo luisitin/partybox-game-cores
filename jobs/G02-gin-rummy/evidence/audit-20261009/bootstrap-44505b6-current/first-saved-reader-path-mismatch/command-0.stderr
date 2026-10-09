@@ -1,0 +1,109 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: current guarded source differs
++ actual - expected
+... Skipped lines
+
+  {
+    '../../.github/workflows/G02.yml': 'b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1',
+    '../../contract/constants.ts': '27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef',
+    '../../contract/contract.ts': 'c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5',
+    '../../contract/minigame-schema.ts': '2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb',
+...
+    'dist/cards.mjs': '1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77',
++   'dist/contract.mjs': '0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a',
++   'dist/core.mjs': 'b8b48119e5e4be693a0fc75d9b99872c911aaf80a019d8a878f2ae95aa82185d',
+-   'dist/contract.mjs': 'ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f',
+-   'dist/core.mjs': '5d6a2f20910aa5272fa7abacdeadb9e38c8a6ea93daf8f2973f8f7f786cb1d80',
+    'manifest.json': 'd079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb',
+    'package-lock.json': 'bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a',
+    'package.json': '8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b',
+    'play.html': '8d562d7a1b592e13f0f6a8e7c2fa492dbeb5e70dab117910842d6ce590bde533',
+    'scripts/browser-check.mjs': '536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc',
+
+    at guard (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/strict-browser-proof.mjs:15:9)
+    at verifyStrictBrowserProof (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/strict-browser-proof.mjs:27:2)
+    at file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/evidence/audit-20261009/bootstrap-44505b6-current/validate-projections.mjs:42:45 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    'play.html': '8d562d7a1b592e13f0f6a8e7c2fa492dbeb5e70dab117910842d6ce590bde533',
+    'src/core.ts': 'aa9a48dbae7f6ba7010a737eeebd2133394970fdaca96c11b118ccf3941cfcf6',
+    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7',
+    '../../contract/contract.ts': 'c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5',
+    '../../contract/constants.ts': '27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef',
+    '../../contract/rng.ts': '7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe',
+    '../../contract/minigame-schema.ts': '2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb',
+    '../../contract/player-count-schema.ts': '0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189',
+    'dist/core.mjs': 'b8b48119e5e4be693a0fc75d9b99872c911aaf80a019d8a878f2ae95aa82185d',
+    'dist/cards.mjs': '1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77',
+    'dist/contract.mjs': '0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a',
+    'scripts/browser-check.mjs': '536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc',
+    'scripts/clock-check.mjs': 'beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19',
+    'scripts/meld-check.mjs': 'd514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4',
+    'scripts/results-check.mjs': 'c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f',
+    'scripts/name-check.mjs': '3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f',
+    'scripts/host-check.mjs': 'e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50',
+    'scripts/public-history-check.mjs': '5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859',
+    'tests/browser-fixture.mjs': 'f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621',
+    'tests/helpers.mjs': '402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e',
+    'scripts/browser-source-guard.mjs': 'e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622',
+    'scripts/frame-coordination.mjs': 'f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656',
+    'scripts/strict-browser-proof.mjs': 'fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9',
+    'scripts/browser-proof.mjs': '3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489',
+    'scripts/capture.mjs': '72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985',
+    'scripts/build.mjs': '3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e',
+    'scripts/integrity.mjs': '7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb',
+    'scripts/check-evidence-links.mjs': '03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842',
+    'package.json': '8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b',
+    'package-lock.json': 'bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a',
+    'tsconfig.json': '624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3',
+    'manifest.json': 'd079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb',
+    '../../.github/workflows/G02.yml': 'b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1'
+  },
+  expected: {
+    'play.html': '8d562d7a1b592e13f0f6a8e7c2fa492dbeb5e70dab117910842d6ce590bde533',
+    'src/core.ts': 'aa9a48dbae7f6ba7010a737eeebd2133394970fdaca96c11b118ccf3941cfcf6',
+    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7',
+    '../../contract/contract.ts': 'c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5',
+    '../../contract/constants.ts': '27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef',
+    '../../contract/rng.ts': '7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe',
+    '../../contract/minigame-schema.ts': '2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb',
+    '../../contract/player-count-schema.ts': '0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189',
+    'dist/core.mjs': '5d6a2f20910aa5272fa7abacdeadb9e38c8a6ea93daf8f2973f8f7f786cb1d80',
+    'dist/cards.mjs': '1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77',
+    'dist/contract.mjs': 'ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f',
+    'scripts/browser-check.mjs': '536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc',
+    'scripts/clock-check.mjs': 'beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19',
+    'scripts/meld-check.mjs': 'd514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4',
+    'scripts/results-check.mjs': 'c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f',
+    'scripts/name-check.mjs': '3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f',
+    'scripts/host-check.mjs': 'e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50',
+    'scripts/public-history-check.mjs': '5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859',
+    'tests/browser-fixture.mjs': 'f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621',
+    'tests/helpers.mjs': '402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e',
+    'scripts/browser-source-guard.mjs': 'e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622',
+    'scripts/frame-coordination.mjs': 'f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656',
+    'scripts/strict-browser-proof.mjs': 'fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9',
+    'scripts/browser-proof.mjs': '3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489',
+    'scripts/capture.mjs': '72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985',
+    'scripts/build.mjs': '3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e',
+    'scripts/integrity.mjs': '7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb',
+    'scripts/check-evidence-links.mjs': '03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842',
+    'package.json': '8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b',
+    'package-lock.json': 'bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a',
+    'tsconfig.json': '624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3',
+    'manifest.json': 'd079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb',
+    '../../.github/workflows/G02.yml': 'b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1'
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,22 @@
+{
+  "closedUtc": "2026-10-09 08:21:13 UTC",
+  "head": "fc7e4a21f1ed213fd75e6281a423ee85fab3cf2e",
+  "parent": "41b40aad424fe91862f37be9087ab147f7ec29e2",
+  "tree": "dba4cea38cfd07f5c8222dd4829666e7cdbefe4d",
+  "row": "G02 2026-10-09T08:19:54Z codex-gin-audit-20261009",
+  "exactCommitMessage": "claim G02",
+  "normalFastForwardExpectedHead": true,
+  "force": false,
+  "allOtherRowsByteIdentical": true,
+  "allOtherRootTreeEntriesByteIdentical": true,
+  "onlyCLAIMSChanged": true,
+  "exactRemoteReadback": true,
+  "onlyRemoteGitDataApiUsed": true,
+  "localChildrenStarted": 0,
+  "firstReadOnlyWrapperFailurePreserved": {
+    "phase": "read-only metadata wrapper, before any remote mutation",
+    "message": "JSON.parse was applied to the connector's already-decoded CLAIMS.md text, causing SyntaxError. Exact raw text remains stored.",
+    "localChildrenStarted": 0
+  },
+  "result": "PASS"
+}

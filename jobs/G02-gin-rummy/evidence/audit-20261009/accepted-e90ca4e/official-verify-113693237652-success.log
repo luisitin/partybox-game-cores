@@ -1,0 +1,950 @@
+﻿2026-10-09T06:02:51.7602309Z Current runner version: '2.337.0'
+2026-10-09T06:02:51.7628756Z ##[group]Runner Image Provisioner
+2026-10-09T06:02:51.7629890Z Hosted Compute Agent
+2026-10-09T06:02:51.7630542Z Version: 20261002.596
+2026-10-09T06:02:51.7631151Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T06:02:51.7631934Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T06:02:51.7632620Z Worker ID: {f3cc4d01-3dd3-43c2-9b4d-fd2df6bbc282}
+2026-10-09T06:02:51.7633352Z Region: eastus2
+2026-10-09T06:02:51.7633949Z Cloud: Azure
+2026-10-09T06:02:51.7634480Z ##[endgroup]
+2026-10-09T06:02:51.7636440Z ##[group]Operating System
+2026-10-09T06:02:51.7637094Z Ubuntu
+2026-10-09T06:02:51.7637681Z 24.04.5
+2026-10-09T06:02:51.7638247Z LTS
+2026-10-09T06:02:51.7638755Z ##[endgroup]
+2026-10-09T06:02:51.7639348Z ##[group]Runner Image
+2026-10-09T06:02:51.7640476Z Image: ubuntu-24.04
+2026-10-09T06:02:51.7641039Z Version: 20261004.327.1
+2026-10-09T06:02:51.7642423Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T06:02:51.7644049Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T06:02:51.7645017Z ##[endgroup]
+2026-10-09T06:02:51.7646244Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T06:02:51.7648409Z Contents: read
+2026-10-09T06:02:51.7649011Z Metadata: read
+2026-10-09T06:02:51.7649955Z ##[endgroup]
+2026-10-09T06:02:51.7652336Z Secret source: Actions
+2026-10-09T06:02:51.7653401Z Cache mode: write
+2026-10-09T06:02:51.7654296Z Prepare workflow directory
+2026-10-09T06:02:51.8055765Z Prepare all required actions
+2026-10-09T06:02:51.8103856Z Getting action download info
+2026-10-09T06:02:52.0347805Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T06:02:52.1473851Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T06:02:52.2355396Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T06:02:52.4521287Z Complete job name: verify
+2026-10-09T06:02:52.5325154Z ##[group]Run actions/checkout@v4
+2026-10-09T06:02:52.5326048Z with:
+2026-10-09T06:02:52.5326524Z   repository: luisitin/partybox-game-cores
+2026-10-09T06:02:52.5330646Z   token: ***
+2026-10-09T06:02:52.5331101Z   ssh-strict: true
+2026-10-09T06:02:52.5331544Z   ssh-user: git
+2026-10-09T06:02:52.5331990Z   persist-credentials: true
+2026-10-09T06:02:52.5332476Z   clean: true
+2026-10-09T06:02:52.5332915Z   sparse-checkout-cone-mode: true
+2026-10-09T06:02:52.5333430Z   fetch-depth: 1
+2026-10-09T06:02:52.5333864Z   fetch-tags: false
+2026-10-09T06:02:52.5334307Z   show-progress: true
+2026-10-09T06:02:52.5334757Z   lfs: false
+2026-10-09T06:02:52.5335167Z   submodules: false
+2026-10-09T06:02:52.5335614Z   set-safe-directory: true
+2026-10-09T06:02:52.5336120Z   allow-unsafe-pr-checkout: false
+2026-10-09T06:02:52.5336893Z ##[endgroup]
+2026-10-09T06:02:52.6417764Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T06:02:52.6420876Z ##[group]Getting Git version info
+2026-10-09T06:02:52.6422290Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T06:02:52.6424165Z [command]/usr/bin/git version
+2026-10-09T06:02:52.6517017Z git version 2.55.0
+2026-10-09T06:02:52.6543127Z ##[endgroup]
+2026-10-09T06:02:52.6561676Z Temporarily overriding HOME='/home/runner/work/_temp/d455dfe8-2f88-48f0-b0fe-440b65e4f5b8' before making global git config changes
+2026-10-09T06:02:52.6564106Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T06:02:52.6567632Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:02:52.6627521Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T06:02:52.6632725Z ##[group]Initializing the repository
+2026-10-09T06:02:52.6639116Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:02:52.6796167Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T06:02:52.6798303Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T06:02:52.6800566Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T06:02:52.6802150Z hint: call:
+2026-10-09T06:02:52.6803390Z hint:
+2026-10-09T06:02:52.6804491Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T06:02:52.6805851Z hint:
+2026-10-09T06:02:52.6807070Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T06:02:52.6808864Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T06:02:52.6811830Z hint:
+2026-10-09T06:02:52.6812868Z hint: 	git branch -m <name>
+2026-10-09T06:02:52.6813925Z hint:
+2026-10-09T06:02:52.6815159Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T06:02:52.6817385Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T06:02:52.6821953Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T06:02:52.6877999Z ##[endgroup]
+2026-10-09T06:02:52.6879306Z ##[group]Disabling automatic garbage collection
+2026-10-09T06:02:52.6882600Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T06:02:52.6922459Z ##[endgroup]
+2026-10-09T06:02:52.6923745Z ##[group]Setting up auth
+2026-10-09T06:02:52.6930361Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T06:02:52.6985708Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T06:02:52.7416629Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T06:02:52.7459246Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T06:02:52.7704723Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T06:02:52.7749059Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T06:02:52.8014256Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T06:02:52.8061791Z ##[endgroup]
+2026-10-09T06:02:52.8062655Z ##[group]Fetching the repository
+2026-10-09T06:02:52.8077015Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +d3daa4863ac4557d21c68dce2b398b1dabad0f6d:refs/remotes/pull/12/merge
+2026-10-09T06:02:54.7315752Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T06:02:54.7317066Z  * [new ref]         d3daa4863ac4557d21c68dce2b398b1dabad0f6d -> pull/12/merge
+2026-10-09T06:02:54.7328127Z ##[endgroup]
+2026-10-09T06:02:54.7330350Z ##[group]Determining the checkout info
+2026-10-09T06:02:54.7332236Z ##[endgroup]
+2026-10-09T06:02:54.7333130Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T06:02:54.7392157Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T06:02:54.7432439Z ##[group]Checking out the ref
+2026-10-09T06:02:54.7436041Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/12/merge
+2026-10-09T06:02:54.9491427Z Note: switching to 'refs/remotes/pull/12/merge'.
+2026-10-09T06:02:54.9492287Z 
+2026-10-09T06:02:54.9492885Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T06:02:54.9494250Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T06:02:54.9495621Z state without impacting any branches by switching back to a branch.
+2026-10-09T06:02:54.9496437Z 
+2026-10-09T06:02:54.9496975Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T06:02:54.9498590Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T06:02:54.9499671Z 
+2026-10-09T06:02:54.9500481Z   git switch -c <new-branch-name>
+2026-10-09T06:02:54.9501365Z 
+2026-10-09T06:02:54.9501716Z Or undo this operation with:
+2026-10-09T06:02:54.9502261Z 
+2026-10-09T06:02:54.9502553Z   git switch -
+2026-10-09T06:02:54.9502985Z 
+2026-10-09T06:02:54.9504321Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T06:02:54.9505601Z 
+2026-10-09T06:02:54.9507107Z HEAD is now at d3daa48 Merge e90ca4e8744f3dc2e890f83ddddd43327cee80f4 into d5fbb39746f8f7900bee57506e8133e8675f48ed
+2026-10-09T06:02:54.9525658Z ##[endgroup]
+2026-10-09T06:02:54.9573900Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T06:02:54.9601503Z d3daa4863ac4557d21c68dce2b398b1dabad0f6d
+2026-10-09T06:02:55.0059639Z ##[group]Run actions/setup-node@v4
+2026-10-09T06:02:55.0061007Z with:
+2026-10-09T06:02:55.0061953Z   node-version: 22.16.0
+2026-10-09T06:02:55.0063006Z   cache: npm
+2026-10-09T06:02:55.0064320Z   cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+2026-10-09T06:02:55.0065944Z   always-auth: false
+2026-10-09T06:02:55.0067003Z   check-latest: false
+2026-10-09T06:02:55.0077846Z   token: ***
+2026-10-09T06:02:55.0078901Z ##[endgroup]
+2026-10-09T06:02:55.1519165Z Attempting to download 22.16.0...
+2026-10-09T06:02:55.1626976Z (node:2294) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T06:02:55.6983574Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T06:02:55.7034884Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T06:02:56.1065525Z Extracting ...
+2026-10-09T06:02:56.1194288Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/2485d4dc-3c4e-4016-bc5c-af97f35c34f5 -f /home/runner/work/_temp/3004f001-4621-4445-9df2-a5f11a29a03c
+2026-10-09T06:02:57.2914621Z Adding to the cache ...
+2026-10-09T06:02:59.5698848Z ##[group]Environment details
+2026-10-09T06:02:59.8244901Z node: v22.16.0
+2026-10-09T06:02:59.8245465Z npm: 10.9.2
+2026-10-09T06:02:59.8245896Z yarn: 1.22.22
+2026-10-09T06:02:59.8246746Z ##[endgroup]
+2026-10-09T06:02:59.8272304Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T06:02:59.9231582Z /home/runner/.npm
+2026-10-09T06:03:00.0145307Z Cache hit for: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T06:03:00.0270082Z (node:2294) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T06:03:00.1911198Z Received 12676573 of 12676573 (100.0%), 85.1 MBs/sec
+2026-10-09T06:03:00.1911935Z Cache Size: ~12 MB (12676573 B)
+2026-10-09T06:03:00.2048576Z [command]/usr/bin/tar -xf /home/runner/work/_temp/1d5666ec-9094-451b-9b1c-87043ac96707/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T06:03:00.2285556Z Cache restored successfully
+2026-10-09T06:03:00.2296818Z Cache restored from key: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T06:03:00.2487005Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-09T06:03:00.2487555Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-09T06:03:00.2789047Z shell: /usr/bin/bash -e {0}
+2026-10-09T06:03:00.2789631Z ##[endgroup]
+2026-10-09T06:03:01.2549355Z 
+2026-10-09T06:03:01.2559685Z added 6 packages in 916ms
+2026-10-09T06:03:01.3040748Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-09T06:03:01.3041381Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-09T06:03:01.3107938Z shell: /usr/bin/bash -e {0}
+2026-10-09T06:03:01.3108489Z ##[endgroup]
+2026-10-09T06:03:02.1848942Z Installing dependencies...
+2026-10-09T06:03:02.1924590Z Switching to root user to install dependencies...
+2026-10-09T06:03:02.2808983Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-09T06:03:02.3131595Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T06:03:02.3141078Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-09T06:03:02.3148564Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-09T06:03:02.3211098Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-09T06:03:02.3261343Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-09T06:03:02.4480570Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [475 kB]
+2026-10-09T06:03:02.4713638Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-09T06:03:02.4801255Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-09T06:03:02.4821027Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-09T06:03:02.5050899Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-09T06:03:02.5127811Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-09T06:03:02.5157293Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-09T06:03:02.5240583Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-09T06:03:02.5262724Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-09T06:03:02.5364755Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-09T06:03:02.5387173Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-09T06:03:02.5401126Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-09T06:03:02.6282591Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1118 kB]
+2026-10-09T06:03:02.6357900Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [228 kB]
+2026-10-09T06:03:02.6858401Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-09T06:03:02.6919661Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-09T06:03:02.6923607Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1667 kB]
+2026-10-09T06:03:02.7004436Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [383 kB]
+2026-10-09T06:03:02.7030919Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [49.8 kB]
+2026-10-09T06:03:02.7038039Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+2026-10-09T06:03:06.2408508Z Fetched 12.3 MB in 1s (9598 kB/s)
+2026-10-09T06:03:07.1339299Z Reading package lists...
+2026-10-09T06:03:07.1584715Z Reading package lists...
+2026-10-09T06:03:07.3723970Z Building dependency tree...
+2026-10-09T06:03:07.3731078Z Reading state information...
+2026-10-09T06:03:07.5299898Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-09T06:03:07.5300501Z libasound2t64 set to manually installed.
+2026-10-09T06:03:07.5301043Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T06:03:07.5301590Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-09T06:03:07.5302656Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T06:03:07.5303420Z libatk1.0-0t64 set to manually installed.
+2026-10-09T06:03:07.5304125Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T06:03:07.5305139Z libatspi2.0-0t64 set to manually installed.
+2026-10-09T06:03:07.5305833Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-09T06:03:07.5306474Z libcairo2 set to manually installed.
+2026-10-09T06:03:07.5307213Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-09T06:03:07.5307936Z libcups2t64 set to manually installed.
+2026-10-09T06:03:07.5308431Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-09T06:03:07.5308899Z libdbus-1-3 set to manually installed.
+2026-10-09T06:03:07.5309649Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-09T06:03:07.5310143Z libdrm2 set to manually installed.
+2026-10-09T06:03:07.5310617Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-09T06:03:07.5311174Z libgbm1 set to manually installed.
+2026-10-09T06:03:07.5311648Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-09T06:03:07.5312130Z libglib2.0-0t64 set to manually installed.
+2026-10-09T06:03:07.5312621Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-09T06:03:07.5313373Z libnspr4 set to manually installed.
+2026-10-09T06:03:07.5314170Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-09T06:03:07.5314985Z libnss3 set to manually installed.
+2026-10-09T06:03:07.5315842Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-09T06:03:07.5316627Z libpango-1.0-0 set to manually installed.
+2026-10-09T06:03:07.5317455Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-10-09T06:03:07.5318142Z libx11-6 set to manually installed.
+2026-10-09T06:03:07.5319088Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-09T06:03:07.5320100Z libxcb1 set to manually installed.
+2026-10-09T06:03:07.5320929Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-09T06:03:07.5321750Z libxcomposite1 set to manually installed.
+2026-10-09T06:03:07.5322561Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-09T06:03:07.5323621Z libxdamage1 set to manually installed.
+2026-10-09T06:03:07.5324366Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-09T06:03:07.5325087Z libxext6 set to manually installed.
+2026-10-09T06:03:07.5325877Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-09T06:03:07.5326600Z libxfixes3 set to manually installed.
+2026-10-09T06:03:07.5327384Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-09T06:03:07.5328144Z libxkbcommon0 set to manually installed.
+2026-10-09T06:03:07.5328923Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-09T06:03:07.5329959Z libxrandr2 set to manually installed.
+2026-10-09T06:03:07.5330728Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-09T06:03:07.5331788Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-09T06:03:07.5332853Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-09T06:03:07.5333704Z libfontconfig1 set to manually installed.
+2026-10-09T06:03:07.5334528Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-09T06:03:07.5335333Z fonts-liberation set to manually installed.
+2026-10-09T06:03:07.5336103Z The following additional packages will be installed:
+2026-10-09T06:03:07.5336782Z   xfonts-encodings xfonts-utils
+2026-10-09T06:03:07.5337325Z Recommended packages:
+2026-10-09T06:03:07.5337868Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-09T06:03:07.5518453Z The following NEW packages will be installed:
+2026-10-09T06:03:07.5519235Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-09T06:03:07.5527445Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-09T06:03:07.5528751Z   xfonts-utils
+2026-10-09T06:03:07.5534050Z The following packages will be upgraded:
+2026-10-09T06:03:07.5540417Z   libfreetype6
+2026-10-09T06:03:07.5748712Z 1 upgraded, 9 newly installed, 0 to remove and 22 not upgraded.
+2026-10-09T06:03:07.5750052Z Need to get 21.5 MB of archives.
+2026-10-09T06:03:07.5750518Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-09T06:03:07.5751037Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-09T06:03:07.7667522Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-09T06:03:09.4432439Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-09T06:03:11.4194377Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-09T06:03:11.5452918Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-09T06:03:12.6587766Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-09T06:03:15.3087199Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+2026-10-09T06:03:15.5306644Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-09T06:03:15.8278916Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-09T06:03:15.9520367Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-09T06:03:16.1806986Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-09T06:03:16.5405336Z Fetched 21.5 MB in 9s (2464 kB/s)
+2026-10-09T06:03:16.5702271Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-09T06:03:16.6040171Z (Reading database ... 
+2026-10-09T06:03:16.6040687Z (Reading database ... 5%
+2026-10-09T06:03:16.6041059Z (Reading database ... 10%
+2026-10-09T06:03:16.6041350Z (Reading database ... 15%
+2026-10-09T06:03:16.6041613Z (Reading database ... 20%
+2026-10-09T06:03:16.6041938Z (Reading database ... 25%
+2026-10-09T06:03:16.6042203Z (Reading database ... 30%
+2026-10-09T06:03:16.6042452Z (Reading database ... 35%
+2026-10-09T06:03:16.6042752Z (Reading database ... 40%
+2026-10-09T06:03:16.6043029Z (Reading database ... 45%
+2026-10-09T06:03:16.6043310Z (Reading database ... 50%
+2026-10-09T06:03:16.6103690Z (Reading database ... 55%
+2026-10-09T06:03:16.6774489Z (Reading database ... 60%
+2026-10-09T06:03:16.9168983Z (Reading database ... 65%
+2026-10-09T06:03:17.0865871Z (Reading database ... 70%
+2026-10-09T06:03:17.2682119Z (Reading database ... 75%
+2026-10-09T06:03:17.3907623Z (Reading database ... 80%
+2026-10-09T06:03:17.5237252Z (Reading database ... 85%
+2026-10-09T06:03:17.6824711Z (Reading database ... 90%
+2026-10-09T06:03:17.8198792Z (Reading database ... 95%
+2026-10-09T06:03:17.8199288Z (Reading database ... 100%
+2026-10-09T06:03:17.8200187Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-09T06:03:17.8266980Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-09T06:03:17.8381651Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T06:03:18.0746714Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-09T06:03:18.0872907Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-09T06:03:18.0879900Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T06:03:18.1700190Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-09T06:03:18.1825939Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-09T06:03:18.1833438Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T06:03:18.2041385Z Selecting previously unselected package fonts-unifont.
+2026-10-09T06:03:18.2166787Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-09T06:03:18.2174600Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T06:03:18.3259780Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-09T06:03:18.3387230Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-09T06:03:18.3492689Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T06:03:18.8307290Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+2026-10-09T06:03:18.8340694Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+2026-10-09T06:03:18.8607330Z Selecting previously unselected package xfonts-encodings.
+2026-10-09T06:03:18.8736091Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-09T06:03:18.8760175Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T06:03:18.9064199Z Selecting previously unselected package xfonts-utils.
+2026-10-09T06:03:18.9191508Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-09T06:03:18.9200725Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-09T06:03:18.9592837Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-09T06:03:18.9722233Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-09T06:03:18.9730024Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T06:03:19.0085802Z Selecting previously unselected package xfonts-scalable.
+2026-10-09T06:03:19.0212157Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-09T06:03:19.0219595Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T06:03:19.0736449Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T06:03:19.0852987Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T06:03:19.0870017Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T06:03:19.0886696Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+2026-10-09T06:03:19.0903520Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T06:03:19.0919832Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T06:03:19.0984439Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-09T06:03:19.1000704Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T06:03:19.1016892Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-09T06:03:19.1055063Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T06:03:19.1334488Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T06:03:19.1606273Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T06:03:19.1952056Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T06:03:19.1974327Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T06:03:19.1988369Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-09T06:03:19.9504816Z 
+2026-10-09T06:03:19.9505651Z Running kernel seems to be up-to-date.
+2026-10-09T06:03:19.9505940Z 
+2026-10-09T06:03:19.9506088Z Restarting services...
+2026-10-09T06:03:19.9584475Z  systemctl restart php8.3-fpm.service
+2026-10-09T06:03:20.0707041Z 
+2026-10-09T06:03:20.0708471Z No containers need to be restarted.
+2026-10-09T06:03:20.0708963Z 
+2026-10-09T06:03:20.0720652Z No user sessions are running outdated binaries.
+2026-10-09T06:03:20.0721074Z 
+2026-10-09T06:03:20.0721484Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T06:03:21.1128265Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+2026-10-09T06:03:21.2776501Z |                                                                                |   0% of 173.9 MiB
+2026-10-09T06:03:21.4297409Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+2026-10-09T06:03:21.5223432Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+2026-10-09T06:03:21.6121842Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+2026-10-09T06:03:21.6902926Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+2026-10-09T06:03:21.7621780Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+2026-10-09T06:03:21.8354140Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+2026-10-09T06:03:21.8978335Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+2026-10-09T06:03:21.9592299Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+2026-10-09T06:03:22.0182555Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+2026-10-09T06:03:22.0820618Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+2026-10-09T06:03:25.9547065Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+2026-10-09T06:03:25.9551130Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-09T06:03:26.1728155Z |                                                                                |   0% of 2.3 MiB
+2026-10-09T06:03:26.1837395Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-09T06:03:26.1950576Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-09T06:03:26.1971657Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-09T06:03:26.2010563Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-09T06:03:26.2040816Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-09T06:03:26.2064416Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-09T06:03:26.2086982Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-09T06:03:26.2107678Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-09T06:03:26.2120952Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-09T06:03:26.2142365Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-09T06:03:26.2744571Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-09T06:03:26.2748273Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+2026-10-09T06:03:26.4374045Z |                                                                                |   0% of 104.3 MiB
+2026-10-09T06:03:26.5594033Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-10-09T06:03:26.6265519Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-10-09T06:03:26.6813519Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-10-09T06:03:26.7411314Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-10-09T06:03:26.7923015Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-10-09T06:03:26.8406439Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-10-09T06:03:26.8877010Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-10-09T06:03:26.9326782Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-10-09T06:03:26.9882186Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-10-09T06:03:27.0366366Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-10-09T06:03:28.9657728Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+2026-10-09T06:03:29.0629740Z ##[group]Run npm test
+2026-10-09T06:03:29.0630062Z [36;1mnpm test[0m
+2026-10-09T06:03:29.0694667Z shell: /usr/bin/bash -e {0}
+2026-10-09T06:03:29.0694958Z ##[endgroup]
+2026-10-09T06:03:29.1719412Z 
+2026-10-09T06:03:29.1720950Z > partybox-g02-gin-rummy@1.2.1 test
+2026-10-09T06:03:29.1722542Z > npm run build && node --test tests/*.test.mjs && node scripts/league.mjs && node scripts/mutations.mjs && node scripts/browser-check.mjs && node scripts/capture.mjs ci-current --public-history --ci-output && node scripts/integrity.mjs
+2026-10-09T06:03:29.1723612Z 
+2026-10-09T06:03:29.2807571Z 
+2026-10-09T06:03:29.2808442Z > partybox-g02-gin-rummy@1.2.1 build
+2026-10-09T06:03:29.2809250Z > tsc --noEmit && node scripts/build.mjs
+2026-10-09T06:03:29.2809965Z 
+2026-10-09T06:03:31.3860844Z TAP version 13
+2026-10-09T06:03:31.5596796Z # {"suite":"all-phases","phases":6,"cases":408}
+2026-10-09T06:03:31.5676022Z # Subtest: every event family, roster id and bot skill in every delivered phase
+2026-10-09T06:03:31.5694212Z ok 1 - every event family, roster id and bot skill in every delivered phase
+2026-10-09T06:03:31.5695489Z   ---
+2026-10-09T06:03:31.5696129Z   duration_ms: 53.265127
+2026-10-09T06:03:31.5696743Z   type: 'test'
+2026-10-09T06:03:31.5697286Z   ...
+2026-10-09T06:03:31.5698385Z # Subtest: registered prototype-looking ids remain valid players and finite result keys
+2026-10-09T06:03:31.5700246Z ok 2 - registered prototype-looking ids remain valid players and finite result keys
+2026-10-09T06:03:31.5701272Z   ---
+2026-10-09T06:03:31.5701817Z   duration_ms: 2.043323
+2026-10-09T06:03:31.5702966Z   type: 'test'
+2026-10-09T06:03:31.5703489Z   ...
+2026-10-09T06:03:36.3168768Z # {"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+2026-10-09T06:03:36.3210234Z # Subtest: 10500 batch outcomes retain exact standalone layouts and independent minima
+2026-10-09T06:03:36.3311645Z ok 3 - 10500 batch outcomes retain exact standalone layouts and independent minima
+2026-10-09T06:03:36.3317292Z   ---
+2026-10-09T06:03:36.3317763Z   duration_ms: 4847.297914
+2026-10-09T06:03:36.3318215Z   type: 'test'
+2026-10-09T06:03:36.3318575Z   ...
+2026-10-09T06:03:43.7505781Z # {"suite":"boundary-fuzz","seed":912701,"invalidInputs":1000,"phases":6,"rejectedInputs":6000,"metadataChecks":282,"viewChecks":66}
+2026-10-09T06:03:43.7508991Z # Subtest: 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase
+2026-10-09T06:03:43.7511156Z ok 4 - 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase
+2026-10-09T06:03:43.7512207Z   ---
+2026-10-09T06:03:43.7512826Z   duration_ms: 73.904139
+2026-10-09T06:03:43.7513435Z   type: 'test'
+2026-10-09T06:03:43.7513983Z   ...
+2026-10-09T06:03:43.7515754Z # {"suite":"mixed-event-replay","phaseStarts":6,"seedsPerPhase":100,"transitions":48000,"changed":12742,"eventFamilies":["input","player","speech","speechStart","timer","vip"]}
+2026-10-09T06:03:43.7520040Z # Subtest: mixed event families replay through JSON after every transition from every phase
+2026-10-09T06:03:43.7521669Z ok 5 - mixed event families replay through JSON after every transition from every phase
+2026-10-09T06:03:43.7522657Z   ---
+2026-10-09T06:03:43.7523192Z   duration_ms: 12163.243013
+2026-10-09T06:03:43.7523987Z   type: 'test'
+2026-10-09T06:03:43.7525901Z   ...
+2026-10-09T06:03:43.7682260Z # Subtest: branching target ends retain exact minima, legal chains, layouts and all cards
+2026-10-09T06:03:43.7731311Z ok 6 - branching target ends retain exact minima, legal chains, layouts and all cards
+2026-10-09T06:03:43.7758857Z   ---
+2026-10-09T06:03:43.7790504Z   duration_ms: 55.168547
+2026-10-09T06:03:43.7791378Z   type: 'test'
+2026-10-09T06:03:43.7800353Z   ...
+2026-10-09T06:03:43.7801393Z # Subtest: current source-bound raw proof passes without discarding its largest interval
+2026-10-09T06:03:43.7802812Z ok 7 - current source-bound raw proof passes without discarding its largest interval
+2026-10-09T06:03:43.7803710Z   ---
+2026-10-09T06:03:43.7804818Z   duration_ms: 4.539373
+2026-10-09T06:03:43.7805496Z   type: 'test'
+2026-10-09T06:03:43.7806060Z   ...
+2026-10-09T06:03:43.7807111Z # Subtest: a refreshed inventory cannot accept stale browser or recording source hashes
+2026-10-09T06:03:43.7808601Z ok 8 - a refreshed inventory cannot accept stale browser or recording source hashes
+2026-10-09T06:03:43.7809821Z   ---
+2026-10-09T06:03:43.7810386Z   duration_ms: 17.303747
+2026-10-09T06:03:43.7811026Z   type: 'test'
+2026-10-09T06:03:43.7811568Z   ...
+2026-10-09T06:03:43.7812406Z # Subtest: changed end guards and failed snapshots are rejected
+2026-10-09T06:03:43.7813605Z ok 9 - changed end guards and failed snapshots are rejected
+2026-10-09T06:03:43.7814411Z   ---
+2026-10-09T06:03:43.7814970Z   duration_ms: 12.894647
+2026-10-09T06:03:43.7815572Z   type: 'test'
+2026-10-09T06:03:43.7816139Z   ...
+2026-10-09T06:03:43.7817202Z # Subtest: missing, altered and invalid raw intervals cannot be hidden by good summary fields
+2026-10-09T06:03:43.7818790Z ok 10 - missing, altered and invalid raw intervals cannot be hidden by good summary fields
+2026-10-09T06:03:43.7820111Z   ---
+2026-10-09T06:03:43.7820688Z   duration_ms: 13.508132
+2026-10-09T06:03:43.7821325Z   type: 'test'
+2026-10-09T06:03:43.7821888Z   ...
+2026-10-09T06:03:43.7822815Z # Subtest: reported statistics are recomputed from all retained intervals
+2026-10-09T06:03:43.7824141Z ok 11 - reported statistics are recomputed from all retained intervals
+2026-10-09T06:03:43.7825147Z   ---
+2026-10-09T06:03:43.7825575Z   duration_ms: 18.938158
+2026-10-09T06:03:43.7827478Z   type: 'test'
+2026-10-09T06:03:43.7827838Z   ...
+2026-10-09T06:03:43.7832040Z # Subtest: an honestly recomputed slow raw sample still fails the original frame gate
+2026-10-09T06:03:43.7834725Z ok 12 - an honestly recomputed slow raw sample still fails the original frame gate
+2026-10-09T06:03:43.7836264Z   ---
+2026-10-09T06:03:43.7838018Z   duration_ms: 4.186013
+2026-10-09T06:03:43.7838462Z   type: 'test'
+2026-10-09T06:03:43.7838818Z   ...
+2026-10-09T06:03:43.7841072Z # Subtest: profile dimensions, CPU rates and encoder separation must remain truthful
+2026-10-09T06:03:43.7845138Z ok 13 - profile dimensions, CPU rates and encoder separation must remain truthful
+2026-10-09T06:03:43.7847287Z   ---
+2026-10-09T06:03:43.7847680Z   duration_ms: 12.348909
+2026-10-09T06:03:43.7848097Z   type: 'test'
+2026-10-09T06:03:43.7849912Z   ...
+2026-10-09T06:03:43.7852040Z # Subtest: changed, oversized and falsely labeled recordings are rejected
+2026-10-09T06:03:43.7854542Z ok 14 - changed, oversized and falsely labeled recordings are rejected
+2026-10-09T06:03:43.7855250Z   ---
+2026-10-09T06:03:43.7857080Z   duration_ms: 26.192807
+2026-10-09T06:03:43.7857668Z   type: 'test'
+2026-10-09T06:03:43.7859494Z   ...
+2026-10-09T06:03:43.7861968Z # Subtest: actual capture CLI refuses invalid tags and existing media/report before any browser launch
+2026-10-09T06:03:43.7866604Z ok 15 - actual capture CLI refuses invalid tags and existing media/report before any browser launch
+2026-10-09T06:03:43.7867492Z   ---
+2026-10-09T06:03:43.7867853Z   duration_ms: 819.645173
+2026-10-09T06:03:43.7868262Z   type: 'test'
+2026-10-09T06:03:43.7872748Z   ...
+2026-10-09T06:03:43.7873734Z # Subtest: meld validation rejects impossible card IDs while preserving legitimate edge runs/sets
+2026-10-09T06:03:43.7875179Z ok 16 - meld validation rejects impossible card IDs while preserving legitimate edge runs/sets
+2026-10-09T06:03:43.7876007Z   ---
+2026-10-09T06:03:43.7876344Z   duration_ms: 1.127324
+2026-10-09T06:03:43.7876738Z   type: 'test'
+2026-10-09T06:03:43.7877094Z   ...
+2026-10-09T06:04:08.8109708Z # {"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":260878,"maxEvents":612,"replayChecks":260878,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:04:39.3522945Z # {"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":285455,"maxEvents":775,"replayChecks":285455,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:05:17.1225419Z # {"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":344241,"maxEvents":825,"replayChecks":344241,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:05:44.4931614Z # {"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":255515,"maxEvents":755,"replayChecks":255515,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:06:14.5806418Z # {"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":268526,"maxEvents":812,"replayChecks":268526,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:06:50.5936406Z # {"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":315689,"maxEvents":929,"replayChecks":315689,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+2026-10-09T06:07:03.4590102Z # {"suite":"properties","seeds":1003,"events":420546}
+2026-10-09T06:07:07.0082571Z # {"suite":"secrecy","comparisons":7925}
+2026-10-09T06:07:07.0331144Z # Subtest: 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event
+2026-10-09T06:07:07.0333406Z ok 17 - 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event
+2026-10-09T06:07:07.0334841Z   ---
+2026-10-09T06:07:07.0335589Z   duration_ms: 197578.011236
+2026-10-09T06:07:07.0336118Z   type: 'test'
+2026-10-09T06:07:07.0336520Z   ...
+2026-10-09T06:07:07.0337498Z # Subtest: property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+2026-10-09T06:07:07.0342179Z ok 18 - property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+2026-10-09T06:07:07.0343105Z   ---
+2026-10-09T06:07:07.0343499Z   duration_ms: 12864.225213
+2026-10-09T06:07:07.0343958Z   type: 'test'
+2026-10-09T06:07:07.0344344Z   ...
+2026-10-09T06:07:07.0345334Z # Subtest: hidden-card/order perturbations never change TV, another controller or bot decisions
+2026-10-09T06:07:07.0350892Z ok 19 - hidden-card/order perturbations never change TV, another controller or bot decisions
+2026-10-09T06:07:07.0351747Z   ---
+2026-10-09T06:07:07.0352136Z   duration_ms: 3549.179452
+2026-10-09T06:07:07.0352543Z   type: 'test'
+2026-10-09T06:07:07.0352865Z   ...
+2026-10-09T06:07:07.0353664Z # Subtest: idle/no-clock matches remain until explicit end, every phase can exit via VIP
+2026-10-09T06:07:07.0354879Z ok 20 - idle/no-clock matches remain until explicit end, every phase can exit via VIP
+2026-10-09T06:07:07.0355618Z   ---
+2026-10-09T06:07:07.0355945Z   duration_ms: 22.197483
+2026-10-09T06:07:07.0356342Z   type: 'test'
+2026-10-09T06:07:07.0356665Z   ...
+2026-10-09T06:07:07.0606172Z # {"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+2026-10-09T06:07:07.0607444Z # Subtest: departures in every live phase finish the absent turn without exposing its hand
+2026-10-09T06:07:07.0608407Z ok 21 - departures in every live phase finish the absent turn without exposing its hand
+2026-10-09T06:07:07.0609016Z   ---
+2026-10-09T06:07:07.0609302Z   duration_ms: 23.479048
+2026-10-09T06:07:07.0610047Z   type: 'test'
+2026-10-09T06:07:07.0610321Z   ...
+2026-10-09T06:07:07.0611040Z # Subtest: 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+2026-10-09T06:07:07.0612151Z ok 22 - 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+2026-10-09T06:07:07.0612786Z   ---
+2026-10-09T06:07:07.0613051Z   duration_ms: 4457.977861
+2026-10-09T06:07:07.0613429Z   type: 'test'
+2026-10-09T06:07:07.0613764Z   ...
+2026-10-09T06:07:07.0614521Z # Subtest: empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+2026-10-09T06:07:07.0615634Z ok 23 - empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+2026-10-09T06:07:07.0616218Z   ---
+2026-10-09T06:07:07.0617194Z   duration_ms: 1.398578
+2026-10-09T06:07:07.0617574Z   type: 'test'
+2026-10-09T06:07:07.0617842Z   ...
+2026-10-09T06:07:07.0618446Z # Subtest: departures during VIP pause drain only on resume; malformed control events do nothing
+2026-10-09T06:07:07.0619925Z ok 24 - departures during VIP pause drain only on resume; malformed control events do nothing
+2026-10-09T06:07:07.0620684Z   ---
+2026-10-09T06:07:07.0620896Z   duration_ms: 0.55727
+2026-10-09T06:07:07.0621237Z   type: 'test'
+2026-10-09T06:07:07.0621443Z   ...
+2026-10-09T06:07:07.0622099Z # {"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+2026-10-09T06:07:07.0623070Z # Subtest: independent exhaustive meld-subset packing proves 10000 exact minima
+2026-10-09T06:07:07.0624132Z ok 25 - independent exhaustive meld-subset packing proves 10000 exact minima
+2026-10-09T06:07:07.0624870Z   ---
+2026-10-09T06:07:07.0625238Z   duration_ms: 7184.610551
+2026-10-09T06:07:07.0625676Z   type: 'test'
+2026-10-09T06:07:07.0626027Z   ...
+2026-10-09T06:07:07.0627042Z # Subtest: actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+2026-10-09T06:07:07.0628522Z ok 26 - actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+2026-10-09T06:07:07.0629361Z   ---
+2026-10-09T06:07:07.0629966Z   duration_ms: 11.244982
+2026-10-09T06:07:07.0630400Z   type: 'test'
+2026-10-09T06:07:07.0630742Z   ...
+2026-10-09T06:07:07.0631650Z # Subtest: actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+2026-10-09T06:07:07.0633347Z ok 27 - actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+2026-10-09T06:07:07.0634152Z   ---
+2026-10-09T06:07:07.0634476Z   duration_ms: 6.390639
+2026-10-09T06:07:07.0634826Z   type: 'test'
+2026-10-09T06:07:07.0635023Z   ...
+2026-10-09T06:07:07.0635666Z # Subtest: winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+2026-10-09T06:07:07.0636502Z ok 28 - winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+2026-10-09T06:07:07.0636949Z   ---
+2026-10-09T06:07:07.0637267Z   duration_ms: 3.137081
+2026-10-09T06:07:07.0637663Z   type: 'test'
+2026-10-09T06:07:07.0637987Z   ...
+2026-10-09T06:07:07.0639677Z # {"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"fad1961c-e847-48eb-a581-dcfc65f2c03f","utc":"2026-10-09T06:03:44.008Z"}
+2026-10-09T06:07:07.0643964Z # {"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"fad1961c-e847-48eb-a581-dcfc65f2c03f","coordination":"root-granted","readyUtc":"2026-10-09T06:03:44.008Z","grantUtc":"2026-10-09T06:03:45.018Z","status":"closed","utc":"2026-10-09T06:03:45.019Z"}
+2026-10-09T06:07:07.0646213Z # {"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"0bd5d3e5-ea1c-4237-983e-f8fc8a90c275","utc":"2026-10-09T06:03:45.020Z"}
+2026-10-09T06:07:07.0650193Z # {"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"0bd5d3e5-ea1c-4237-983e-f8fc8a90c275","coordination":"root-granted","readyUtc":"2026-10-09T06:03:45.020Z","grantUtc":"2026-10-09T06:03:45.221Z","status":"closed","utc":"2026-10-09T06:03:45.222Z"}
+2026-10-09T06:07:07.0652956Z # {"actualGrantCorruptionControls":10,"sequentialAttempts":2}
+2026-10-09T06:07:07.0655272Z # {"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"c1cc5ff2-d564-4eb8-91d4-ca7092077945","utc":"2026-10-09T06:03:45.225Z"}
+2026-10-09T06:07:07.0657565Z # Subtest: actual temporary grants reject stale nonce/source/profile and malformed or extra fields
+2026-10-09T06:07:07.0659260Z ok 29 - actual temporary grants reject stale nonce/source/profile and malformed or extra fields
+2026-10-09T06:07:07.0660414Z   ---
+2026-10-09T06:07:07.0660782Z   duration_ms: 1217.81539
+2026-10-09T06:07:07.0661224Z   type: 'test'
+2026-10-09T06:07:07.0661580Z   ...
+2026-10-09T06:07:07.0664665Z # {"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"c1cc5ff2-d564-4eb8-91d4-ca7092077945","coordination":"root-granted","readyUtc":"2026-10-09T06:03:45.225Z","grantUtc":null,"status":"failed","reason":"matching grant timed out","utc":"2026-10-09T06:03:45.425Z"}
+2026-10-09T06:07:07.0666629Z # Subtest: actual missing grant fails and writes CLOSED; no configured barrier returns an explicit uncoordinated identity
+2026-10-09T06:07:07.0667556Z ok 30 - actual missing grant fails and writes CLOSED; no configured barrier returns an explicit uncoordinated identity
+2026-10-09T06:07:07.0668084Z   ---
+2026-10-09T06:07:07.0668288Z   duration_ms: 202.354398
+2026-10-09T06:07:07.0668535Z   type: 'test'
+2026-10-09T06:07:07.0668731Z   ...
+2026-10-09T06:07:07.0670000Z # {"suite":"preexisting-gin-draw-matrix","cases":6912,"actualLegalDrawPhaseRoutes":true,"skills":3,"variants":2,"counts":[2,3,4],"suits":4,"endpoints":2,"clockSettings":[0,10]}
+2026-10-09T06:07:07.0672556Z # {"suite":"preexisting-gin-hidden-defenders","cases":1000,"choices":3000,"sha256":"2e50741934f3e2fc8cdb29eb066c29fe991f8fc1a2cd24123969b3121ec98db8"}
+2026-10-09T06:07:07.0674129Z # {"suite":"preexisting-gin-draw-boundaries","controls":90}
+2026-10-09T06:07:07.0675464Z # {"suite":"preexisting-gin-measured-gain","immediatePoints":31,"priorPassRoutePoints":20,"gain":11}
+2026-10-09T06:07:07.0677371Z # Subtest: all skills take a guaranteed finishing discard even when ten-card deadwood is already zero
+2026-10-09T06:07:07.0678891Z ok 31 - all skills take a guaranteed finishing discard even when ten-card deadwood is already zero
+2026-10-09T06:07:07.0680098Z   ---
+2026-10-09T06:07:07.0680507Z   duration_ms: 3544.201666
+2026-10-09T06:07:07.0680991Z   type: 'test'
+2026-10-09T06:07:07.0681373Z   ...
+2026-10-09T06:07:07.0682459Z # Subtest: 1000 hidden defender completions keep the same guaranteed choice and exact independent finishing score
+2026-10-09T06:07:07.0684153Z ok 32 - 1000 hidden defender completions keep the same guaranteed choice and exact independent finishing score
+2026-10-09T06:07:07.0685122Z   ---
+2026-10-09T06:07:07.0685500Z   duration_ms: 1502.920458
+2026-10-09T06:07:07.0685946Z   type: 'test'
+2026-10-09T06:07:07.0686322Z   ...
+2026-10-09T06:07:07.0687442Z # Subtest: forced stock, unavailable actors, pause and non-finishing discards retain the original legal boundaries
+2026-10-09T06:07:07.0689198Z ok 33 - forced stock, unavailable actors, pause and non-finishing discards retain the original legal boundaries
+2026-10-09T06:07:07.0690449Z   ---
+2026-10-09T06:07:07.0690836Z   duration_ms: 17.014913
+2026-10-09T06:07:07.0691343Z   type: 'test'
+2026-10-09T06:07:07.0691712Z   ...
+2026-10-09T06:07:07.0692624Z # Subtest: the reproduced opening takes 31-point Big Gin instead of passing into a 20-point Gin
+2026-10-09T06:07:07.0694070Z ok 34 - the reproduced opening takes 31-point Big Gin instead of passing into a 20-point Gin
+2026-10-09T06:07:07.0694919Z   ---
+2026-10-09T06:07:07.0695298Z   duration_ms: 2.008245
+2026-10-09T06:07:07.0695725Z   type: 'test'
+2026-10-09T06:07:07.0696080Z   ...
+2026-10-09T06:07:07.0696798Z # {"suite":"strong-guaranteed-gin","cases":72,"knownClassicPoints":22}
+2026-10-09T06:07:07.0698855Z # {"suite":"gin-actual-score-dominance","defenders":1000,"ordinaryComparisons":6904,"minGain":21,"sha256":"d57bb9977c2b677288f79cc4dae664d82a2d9bf8316ccc658f30362fdc3130d5"}
+2026-10-09T06:07:07.0700912Z # {"suite":"gin-policy-boundaries","forbiddenCases":52,"bigGinCases":12}
+2026-10-09T06:07:07.0702276Z # Subtest: Strong takes guaranteed Gin despite public discard danger in every edition/profile/rotation
+2026-10-09T06:07:07.0704055Z ok 35 - Strong takes guaranteed Gin despite public discard danger in every edition/profile/rotation
+2026-10-09T06:07:07.0704978Z   ---
+2026-10-09T06:07:07.0705368Z   duration_ms: 106.933871
+2026-10-09T06:07:07.0705835Z   type: 'test'
+2026-10-09T06:07:07.0706217Z   ...
+2026-10-09T06:07:07.0707213Z # Subtest: actual Gin scoring dominates every legal ordinary knock against 1000 disjoint hidden defenders
+2026-10-09T06:07:07.0708764Z ok 36 - actual Gin scoring dominates every legal ordinary knock against 1000 disjoint hidden defenders
+2026-10-09T06:07:07.0709926Z   ---
+2026-10-09T06:07:07.0710313Z   duration_ms: 2936.023073
+2026-10-09T06:07:07.0710766Z   type: 'test'
+2026-10-09T06:07:07.0711144Z   ...
+2026-10-09T06:07:07.0712176Z # Subtest: Gin priority respects immediate-return prohibition and preserves the existing Big Gin branch
+2026-10-09T06:07:07.0713779Z ok 37 - Gin priority respects immediate-return prohibition and preserves the existing Big Gin branch
+2026-10-09T06:07:07.0714711Z   ---
+2026-10-09T06:07:07.0715092Z   duration_ms: 28.310759
+2026-10-09T06:07:07.0715539Z   type: 'test'
+2026-10-09T06:07:07.0715920Z   ...
+2026-10-09T06:07:07.0717200Z # {"suite":"non-gin-policy-byte-equivalence","states":10000,"decisions":30000,"baselineHead":"72d0f3f4ad4f6b70a8ac6b0ed81121300aa54c1f"}
+2026-10-09T06:07:07.0718792Z # Subtest: all 30000 non-Gin bot choices retain the accepted pre-repair behavior
+2026-10-09T06:07:07.0720237Z ok 38 - all 30000 non-Gin bot choices retain the accepted pre-repair behavior
+2026-10-09T06:07:07.0720990Z   ---
+2026-10-09T06:07:07.0721366Z   duration_ms: 2593.723909
+2026-10-09T06:07:07.0721820Z   type: 'test'
+2026-10-09T06:07:07.0722187Z   ...
+2026-10-09T06:07:07.0723818Z # {"suite":"initial-presence-exhaustive","cases":336,"connectionMasks":"all","counts":[2,3,4],"variants":["standard","oklahoma"],"clocks":[0,10]}
+2026-10-09T06:07:07.0725244Z # {"suite":"initial-presence-seeded","cases":1000}
+2026-10-09T06:07:07.0726341Z # Subtest: known initial presence is handled before either player needs to send an event
+2026-10-09T06:07:07.0727667Z ok 39 - known initial presence is handled before either player needs to send an event
+2026-10-09T06:07:07.0728458Z   ---
+2026-10-09T06:07:07.0728834Z   duration_ms: 302.244221
+2026-10-09T06:07:07.0729282Z   type: 'test'
+2026-10-09T06:07:07.0729901Z   ...
+2026-10-09T06:07:07.0730965Z # Subtest: 1000 seeded initial presence patterns are playable or paused without a duplicate drop event
+2026-10-09T06:07:07.0732490Z ok 40 - 1000 seeded initial presence patterns are playable or paused without a duplicate drop event
+2026-10-09T06:07:07.0733368Z   ---
+2026-10-09T06:07:07.0733704Z   duration_ms: 378.645814
+2026-10-09T06:07:07.0734132Z   type: 'test'
+2026-10-09T06:07:07.0734484Z   ...
+2026-10-09T06:07:07.0735691Z # {"suite":"connected-initialization-byte-equivalence","cases":6000,"baselineHead":"d5fbb39746f8f7900bee57506e8133e8675f48ed"}
+2026-10-09T06:07:07.0737272Z # Subtest: all-connected opening states retain the exact 6000 pre-repair JSON states
+2026-10-09T06:07:07.0738561Z ok 41 - all-connected opening states retain the exact 6000 pre-repair JSON states
+2026-10-09T06:07:07.0739369Z   ---
+2026-10-09T06:07:07.0739969Z   duration_ms: 119.044946
+2026-10-09T06:07:07.0740394Z   type: 'test'
+2026-10-09T06:07:07.0740738Z   ...
+2026-10-09T06:07:07.0741831Z # {"suite":"same-meld-knock-configurations","cases":576,"minGain":1,"classicPointsBefore":1,"classicPointsAfter":2}
+2026-10-09T06:07:07.0744324Z # {"suite":"same-meld-knock-hidden-defenders","defenders":1000,"minGain":1,"maxGain":2,"positiveKnocks":1000,"undercuts":0,"sha256":"8b7cd1f52b2b229393f43ad8ccd09056a2c496a42b5d8e277cf9436049027bd2"}
+2026-10-09T06:07:07.0746119Z # {"suite":"same-meld-knock-boundaries","controls":120}
+2026-10-09T06:07:07.0747576Z # {"suite":"same-meld-knock-score-boundaries","cases":144,"winningTransitions":36,"minGain":1,"maxGain":52,"defenderDeadwoods":[0,1,2,3]}
+2026-10-09T06:07:07.0749237Z # Subtest: Strong takes the strictly better same-meld knock in all editions, profiles, rosters and suits
+2026-10-09T06:07:07.0751069Z ok 42 - Strong takes the strictly better same-meld knock in all editions, profiles, rosters and suits
+2026-10-09T06:07:07.0751970Z   ---
+2026-10-09T06:07:07.0752347Z   duration_ms: 593.001509
+2026-10-09T06:07:07.0752771Z   type: 'test'
+2026-10-09T06:07:07.0753137Z   ...
+2026-10-09T06:07:07.0754193Z # Subtest: the same public decision dominates against 1000 hidden defenders with independent joint layoff scoring
+2026-10-09T06:07:07.0755838Z ok 43 - the same public decision dominates against 1000 hidden defenders with independent joint layoff scoring
+2026-10-09T06:07:07.0756719Z   ---
+2026-10-09T06:07:07.0757071Z   duration_ms: 5718.167578
+2026-10-09T06:07:07.0757511Z   type: 'test'
+2026-10-09T06:07:07.0757857Z   ...
+2026-10-09T06:07:07.0758872Z # Subtest: ordinary-knock priority retains immediate-return, Gin, no-knock and unavailable-player boundaries
+2026-10-09T06:07:07.0760679Z ok 44 - ordinary-knock priority retains immediate-return, Gin, no-knock and unavailable-player boundaries
+2026-10-09T06:07:07.0761640Z   ---
+2026-10-09T06:07:07.0762007Z   duration_ms: 33.121811
+2026-10-09T06:07:07.0762466Z   type: 'test'
+2026-10-09T06:07:07.0762836Z   ...
+2026-10-09T06:07:07.0763872Z # Subtest: same-meld lower deadwood improves both undercuts and the transition from undercut to winning knock
+2026-10-09T06:07:07.0765459Z ok 45 - same-meld lower deadwood improves both undercuts and the transition from undercut to winning knock
+2026-10-09T06:07:07.0766358Z   ---
+2026-10-09T06:07:07.0766707Z   duration_ms: 746.009462
+2026-10-09T06:07:07.0767122Z   type: 'test'
+2026-10-09T06:07:07.0767452Z   ...
+2026-10-09T06:07:07.0768645Z # {"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+2026-10-09T06:07:07.0770802Z # Subtest: 2000 independent joint meld/layoff weighted packings including chained extensions
+2026-10-09T06:07:07.0772156Z ok 46 - 2000 independent joint meld/layoff weighted packings including chained extensions
+2026-10-09T06:07:07.0772827Z   ---
+2026-10-09T06:07:07.0773139Z   duration_ms: 5864.940909
+2026-10-09T06:07:07.0773564Z   type: 'test'
+2026-10-09T06:07:07.0773947Z   ...
+2026-10-09T06:07:07.0774901Z # {"suite":"opening-pass-attribution","directPassCases":360,"editions":2,"counts":[2,3,4]}
+2026-10-09T06:07:07.0776021Z # {"suite":"pass-valid-ids","cases":240,"ids":["","__proto__","constructor","last"]}
+2026-10-09T06:07:07.0777017Z # {"suite":"automatic-pass-attribution","routes":["timer","vip","player"]}
+2026-10-09T06:07:07.0778165Z # Subtest: both opening passes identify their actual actors across counts, editions and seeds
+2026-10-09T06:07:07.0779334Z ok 47 - both opening passes identify their actual actors across counts, editions and seeds
+2026-10-09T06:07:07.0780262Z   ---
+2026-10-09T06:07:07.0780573Z   duration_ms: 96.513431
+2026-10-09T06:07:07.0780931Z   type: 'test'
+2026-10-09T06:07:07.0781235Z   ...
+2026-10-09T06:07:07.0781950Z # Subtest: empty and prototype-shaped original IDs retain pass attribution as own keys
+2026-10-09T06:07:07.0783091Z ok 48 - empty and prototype-shaped original IDs retain pass attribution as own keys
+2026-10-09T06:07:07.0783821Z   ---
+2026-10-09T06:07:07.0784148Z   duration_ms: 39.74767
+2026-10-09T06:07:07.0784528Z   type: 'test'
+2026-10-09T06:07:07.0784854Z   ...
+2026-10-09T06:07:07.0785540Z # Subtest: timer, VIP skip and absent-seat automation identify the automatic passer
+2026-10-09T06:07:07.0786569Z ok 49 - timer, VIP skip and absent-seat automation identify the automatic passer
+2026-10-09T06:07:07.0787223Z   ---
+2026-10-09T06:07:07.0787536Z   duration_ms: 1.769249
+2026-10-09T06:07:07.0787885Z   type: 'test'
+2026-10-09T06:07:07.0788231Z   ...
+2026-10-09T06:07:07.0789082Z # Subtest: first raw target winner keeps the crown even when final box settlement reverses points
+2026-10-09T06:07:07.0790531Z ok 50 - first raw target winner keeps the crown even when final box settlement reverses points
+2026-10-09T06:07:07.0791294Z   ---
+2026-10-09T06:07:07.0791612Z   duration_ms: 8.626367
+2026-10-09T06:07:07.0791956Z   type: 'test'
+2026-10-09T06:07:07.0792252Z   ...
+2026-10-09T06:07:07.0793234Z # Subtest: every valid string ID, including empty, wins, earns bonuses and stays in rotation
+2026-10-09T06:07:07.0794520Z ok 51 - every valid string ID, including empty, wins, earns bonuses and stays in rotation
+2026-10-09T06:07:07.0795245Z   ---
+2026-10-09T06:07:07.0795553Z   duration_ms: 12.967943
+2026-10-09T06:07:07.0795786Z   type: 'test'
+2026-10-09T06:07:07.0795981Z   ...
+2026-10-09T06:07:07.0796437Z # Subtest: malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+2026-10-09T06:07:07.0797136Z ok 52 - malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+2026-10-09T06:07:07.0797602Z   ---
+2026-10-09T06:07:07.0797794Z   duration_ms: 1.934187
+2026-10-09T06:07:07.0798018Z   type: 'test'
+2026-10-09T06:07:07.0798207Z   ...
+2026-10-09T06:07:07.0798613Z # Subtest: early end preserves earned raw points and reports current standings
+2026-10-09T06:07:07.0799214Z ok 53 - early end preserves earned raw points and reports current standings
+2026-10-09T06:07:07.0799905Z   ---
+2026-10-09T06:07:07.0800111Z   duration_ms: 0.797226
+2026-10-09T06:07:07.0800342Z   type: 'test'
+2026-10-09T06:07:07.0800537Z   ...
+2026-10-09T06:07:07.0800837Z # Subtest: aces low, set cardinality, runs and overlap
+2026-10-09T06:07:07.0801245Z ok 54 - aces low, set cardinality, runs and overlap
+2026-10-09T06:07:07.0801545Z   ---
+2026-10-09T06:07:07.0801738Z   duration_ms: 2.829176
+2026-10-09T06:07:07.0801956Z   type: 'test'
+2026-10-09T06:07:07.0802152Z   ...
+2026-10-09T06:07:07.0802610Z # Subtest: joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+2026-10-09T06:07:07.0803529Z ok 55 - joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+2026-10-09T06:07:07.0803962Z   ---
+2026-10-09T06:07:07.0804147Z   duration_ms: 2.701758
+2026-10-09T06:07:07.0804362Z   type: 'test'
+2026-10-09T06:07:07.0804551Z   ...
+2026-10-09T06:07:07.0804924Z # Subtest: every score formula, tie undercut and spade whole-hand doubling
+2026-10-09T06:07:07.0805479Z ok 56 - every score formula, tie undercut and spade whole-hand doubling
+2026-10-09T06:07:07.0805828Z   ---
+2026-10-09T06:07:07.0806019Z   duration_ms: 2.714932
+2026-10-09T06:07:07.0806231Z   type: 'test'
+2026-10-09T06:07:07.0806417Z   ...
+2026-10-09T06:07:07.0806890Z # Subtest: opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+2026-10-09T06:07:07.0807607Z ok 57 - opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+2026-10-09T06:07:07.0808036Z   ---
+2026-10-09T06:07:07.0808232Z   duration_ms: 16.451599
+2026-10-09T06:07:07.0808458Z   type: 'test'
+2026-10-09T06:07:07.0808645Z   ...
+2026-10-09T06:07:07.0809047Z # Subtest: Oklahoma limits / ace / spade configurations from all 52 initial upcards
+2026-10-09T06:07:07.0810095Z ok 58 - Oklahoma limits / ace / spade configurations from all 52 initial upcards
+2026-10-09T06:07:07.0810498Z   ---
+2026-10-09T06:07:07.0810692Z   duration_ms: 29.33752
+2026-10-09T06:07:07.0810924Z   type: 'test'
+2026-10-09T06:07:07.0811110Z   ...
+2026-10-09T06:07:07.0811595Z # Subtest: pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+2026-10-09T06:07:07.0812339Z ok 59 - pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+2026-10-09T06:07:07.0812773Z   ---
+2026-10-09T06:07:07.0812957Z   duration_ms: 2.301451
+2026-10-09T06:07:07.0813176Z   type: 'test'
+2026-10-09T06:07:07.0813364Z   ...
+2026-10-09T06:07:07.0813823Z # Subtest: all required roster settings, default sanitization, exact phase fixtures and manifest
+2026-10-09T06:07:07.0814548Z ok 60 - all required roster settings, default sanitization, exact phase fixtures and manifest
+2026-10-09T06:07:07.0814992Z   ---
+2026-10-09T06:07:07.0815182Z   duration_ms: 93.8744
+2026-10-09T06:07:07.0815404Z   type: 'test'
+2026-10-09T06:07:07.0815595Z   ...
+2026-10-09T06:07:07.0815949Z # {"syntheticGuardCorruptionsRejected":175,"guardedSources":35}
+2026-10-09T06:07:07.0816801Z # Subtest: synthetic positive control covers full identities, native timestamps, all hand witnesses and clips
+2026-10-09T06:07:07.0817649Z ok 61 - synthetic positive control covers full identities, native timestamps, all hand witnesses and clips
+2026-10-09T06:07:07.0818125Z   ---
+2026-10-09T06:07:07.0818307Z   duration_ms: 9.090502
+2026-10-09T06:07:07.0818524Z   type: 'test'
+2026-10-09T06:07:07.0818708Z   ...
+2026-10-09T06:07:07.0819180Z # Subtest: every guarded source and each start/end inventory entry rejects a stale hash or omission
+2026-10-09T06:07:07.0820175Z ok 62 - every guarded source and each start/end inventory entry rejects a stale hash or omission
+2026-10-09T06:07:07.0820617Z   ---
+2026-10-09T06:07:07.0820808Z   duration_ms: 127.954714
+2026-10-09T06:07:07.0821034Z   type: 'test'
+2026-10-09T06:07:07.0821499Z   ...
+2026-10-09T06:07:07.0822158Z # Subtest: wrong attempt/profile/page/transport/throttle, filtered samples and fake native clocks fail
+2026-10-09T06:07:07.0823111Z ok 63 - wrong attempt/profile/page/transport/throttle, filtered samples and fake native clocks fail
+2026-10-09T06:07:07.0823713Z   ---
+2026-10-09T06:07:07.0824074Z   duration_ms: 19.343902
+2026-10-09T06:07:07.0824417Z   type: 'test'
+2026-10-09T06:07:07.0824700Z   ...
+2026-10-09T06:07:07.0825416Z # Subtest: missing/invalid timestamp, raw interval or active-frame witness fails despite good summaries
+2026-10-09T06:07:07.0837523Z ok 64 - missing/invalid timestamp, raw interval or active-frame witness fails despite good summaries
+2026-10-09T06:07:07.0838116Z   ---
+2026-10-09T06:07:07.0838340Z   duration_ms: 12.554001
+2026-10-09T06:07:07.0838591Z   type: 'test'
+2026-10-09T06:07:07.0838997Z   ...
+2026-10-09T06:07:07.0839842Z # Subtest: all statistics are recomputed and an honestly reported long interval fails the fixed gate
+2026-10-09T06:07:07.0840642Z ok 65 - all statistics are recomputed and an honestly reported long interval fails the fixed gate
+2026-10-09T06:07:07.0841100Z   ---
+2026-10-09T06:07:07.0841309Z   duration_ms: 7.609861
+2026-10-09T06:07:07.0841551Z   type: 'test'
+2026-10-09T06:07:07.0841757Z   ...
+2026-10-09T06:07:07.0842264Z # Subtest: failed runs, mislabeled clips, altered bytes, outsize media and network/errors are rejected
+2026-10-09T06:07:07.0843033Z ok 66 - failed runs, mislabeled clips, altered bytes, outsize media and network/errors are rejected
+2026-10-09T06:07:07.0843487Z   ---
+2026-10-09T06:07:07.0843694Z   duration_ms: 25.200194
+2026-10-09T06:07:07.0843925Z   type: 'test'
+2026-10-09T06:07:07.0844117Z   ...
+2026-10-09T06:07:07.0844533Z # Subtest: same-timestamp turns cannot share timer instance identity
+2026-10-09T06:07:07.0845265Z ok 67 - same-timestamp turns cannot share timer instance identity
+2026-10-09T06:07:07.0845619Z   ---
+2026-10-09T06:07:07.0845816Z   duration_ms: 8.961201
+2026-10-09T06:07:07.0846051Z   type: 'test'
+2026-10-09T06:07:07.0846242Z   ...
+2026-10-09T06:07:07.0846420Z 1..67
+2026-10-09T06:07:07.0846604Z # tests 67
+2026-10-09T06:07:07.0846820Z # suites 0
+2026-10-09T06:07:07.0847041Z # pass 67
+2026-10-09T06:07:07.0847235Z # fail 0
+2026-10-09T06:07:07.0847427Z # cancelled 0
+2026-10-09T06:07:07.0847622Z # skipped 0
+2026-10-09T06:07:07.0847809Z # todo 0
+2026-10-09T06:07:07.0848022Z # duration_ms 215700.745389
+2026-10-09T06:07:27.0550257Z {"stronger":"sharp","weaker":"normal","games":2000,"wins":1166,"losses":834,"ties":0,"winRate":0.583,"wilsonLower":0.5612515833637743,"events":524676,"pairedSeeds":true}
+2026-10-09T06:07:45.8003697Z {"stronger":"normal","weaker":"easy","games":2000,"wins":1743,"losses":257,"ties":0,"winRate":0.8715,"wilsonLower":0.8561180625080238,"events":490034,"pairedSeeds":true}
+2026-10-09T06:07:46.4829825Z M01 caught wrong rank
+2026-10-09T06:07:46.7933513Z M02 caught wrong suit
+2026-10-09T06:07:47.1000392Z M03 caught wrong face value
+2026-10-09T06:07:47.4284483Z M04 caught reject three-card meld
+2026-10-09T06:07:47.7605814Z M05 caught reject four-card set
+2026-10-09T06:07:48.0865083Z M06 caught off-by-one run
+2026-10-09T06:07:48.4094690Z M07 caught omit three-card candidate runs
+2026-10-09T06:07:48.7371433Z M08 caught omit three-of-kind candidates
+2026-10-09T06:07:49.0664708Z M09 caught maximize instead of minimize
+2026-10-09T06:07:49.3931800Z M10 caught invert Gin layoff prohibition
+2026-10-09T06:07:49.7183799Z M11 caught omit layoffs
+2026-10-09T06:07:50.0484122Z M12 caught allow discard after two opening passes
+2026-10-09T06:07:50.3660128Z M13 caught allow opening stock draw
+2026-10-09T06:07:50.6822734Z M14 caught allow immediate returned upcard
+2026-10-09T06:07:51.0095707Z M15 caught continue past two stock cards
+2026-10-09T06:07:51.3248764Z M16 caught deny tie undercut
+2026-10-09T06:07:51.6506378Z M17 caught subtract opponent Gin deadwood
+2026-10-09T06:07:51.9688372Z M18 caught Big Gin wrong bonus
+2026-10-09T06:07:52.2921841Z M19 caught reverse undercut difference
+2026-10-09T06:07:52.6172945Z M20 caught wrong knock difference
+2026-10-09T06:07:52.9367960Z M21 caught ignore double Big Gin
+2026-10-09T06:07:53.2475583Z M22 caught Oklahoma ace wrong limit
+2026-10-09T06:07:53.5450670Z M23 caught double hearts instead of spades
+2026-10-09T06:07:53.8802787Z M24 caught accept stale timer
+2026-10-09T06:07:54.2043452Z M25 caught resume omits pause duration
+2026-10-09T06:07:54.5303913Z M26 caught attribute opening Pass to next player
+2026-10-09T06:07:54.9235052Z {"kind":"full browser proof","started":"2026-10-09T06:07:54.921Z","pid":4062,"sourceStart":{"play.html":"0329573fde228c5d7bde7226f41914592a746fd934a8aeb4be9c4ba251bb66e2","src/core.ts":"0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0","src/cards.ts":"e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9","src/browser.ts":"56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4","src/play.template.html":"1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","dist/core.mjs":"432cae2754d7e96770c5e5e1aed4a6a0f92592ec5d8a3257762f25dc86c24cc4","dist/cards.mjs":"1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77","dist/contract.mjs":"0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a","scripts/browser-check.mjs":"536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc","scripts/clock-check.mjs":"beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19","scripts/meld-check.mjs":"d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4","scripts/results-check.mjs":"c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f","scripts/name-check.mjs":"3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f","scripts/host-check.mjs":"e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50","scripts/public-history-check.mjs":"5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859","tests/browser-fixture.mjs":"f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621","tests/helpers.mjs":"402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e","scripts/browser-source-guard.mjs":"e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622","scripts/frame-coordination.mjs":"f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656","scripts/strict-browser-proof.mjs":"fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9","scripts/browser-proof.mjs":"3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489","scripts/capture.mjs":"72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985","scripts/build.mjs":"3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e","scripts/integrity.mjs":"7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb","scripts/check-evidence-links.mjs":"03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842","package.json":"8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b","package-lock.json":"bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a","tsconfig.json":"624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3","manifest.json":"d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb","../../.github/workflows/G02.yml":"aef3ddd8ff4e8253d4334ccc8c3afc67df5b6177b31d246c683e705e8dcb2722"}}
+2026-10-09T06:08:05.7338962Z {"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"0329573fde228c5d7bde7226f41914592a746fd934a8aeb4be9c4ba251bb66e2","attemptNonce":"205411b5-c7a4-44e3-93c4-e9ad46dd58aa","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"utc":"2026-10-09T06:08:05.733Z"}
+2026-10-09T06:08:05.9377440Z {"label":"desktop","fps":60.00240009600384,"meanMs":16.666,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+2026-10-09T06:08:16.9712964Z {"frameWindow":"CLOSED","profile":"phone4x","sourceSha256":"0329573fde228c5d7bde7226f41914592a746fd934a8aeb4be9c4ba251bb66e2","attemptNonce":"f0929e52-3538-4ea6-b4a8-10450b92f01c","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"utc":"2026-10-09T06:08:16.968Z"}
+2026-10-09T06:08:17.2163706Z {"label":"phone4x","fps":60.00300015000751,"meanMs":16.66583333333333,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+2026-10-09T06:08:17.4570823Z {"kind":"synthetic delayed-host-callback and pause regression","elapsedMs":20000,"configuredTurnMs":10000,"firstExpiredCallbackCount":1,"actionsBefore":0,"actionsAfter":1,"deadlineAdvancedOnElapsedTime":true,"visibleCountdown":true,"pausePreservesRemainingTime":true,"entropyCalls":1,"controlledTestSeed":7199}
+2026-10-09T06:08:19.7583274Z {"customMeldRegression":[{"label":"desktop","cpuThrottle":1,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"},{"label":"phone4x","cpuThrottle":4,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"}]}
+2026-10-09T06:08:20.7196244Z {"resultsRegression":[{"label":"desktop","cpuThrottle":1,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"},{"label":"phone4x","cpuThrottle":4,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"}]}
+2026-10-09T06:08:21.3428411Z {"payload":"<svg onload=alert(1)>","renderedAsText":true,"insertedMarkupNodes":0,"dialogs":0,"pageErrors":0,"networkRequests":0,"cpuThrottle":4}
+2026-10-09T06:08:23.6142658Z {"runId":"2026-10-09T06-07-54-921Z","passed":true,"sourceUnchanged":true,"extraHostChecks":5,"rows":[{"label":"desktop","fps":60.00240009600384,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true},{"label":"phone4x","fps":60.00300015000751,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true}]}
+2026-10-09T06:08:23.9467535Z {"kind":"functional recordings","started":"2026-10-09T06:08:23.943Z","pid":4253,"sourceStart":{"play.html":"0329573fde228c5d7bde7226f41914592a746fd934a8aeb4be9c4ba251bb66e2","src/core.ts":"0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0","src/cards.ts":"e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9","src/browser.ts":"56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4","src/play.template.html":"1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","dist/core.mjs":"432cae2754d7e96770c5e5e1aed4a6a0f92592ec5d8a3257762f25dc86c24cc4","dist/cards.mjs":"1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77","dist/contract.mjs":"0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a","scripts/browser-check.mjs":"536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc","scripts/clock-check.mjs":"beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19","scripts/meld-check.mjs":"d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4","scripts/results-check.mjs":"c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f","scripts/name-check.mjs":"3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f","scripts/host-check.mjs":"e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50","scripts/public-history-check.mjs":"5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859","tests/browser-fixture.mjs":"f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621","tests/helpers.mjs":"402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e","scripts/browser-source-guard.mjs":"e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622","scripts/frame-coordination.mjs":"f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656","scripts/strict-browser-proof.mjs":"fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9","scripts/browser-proof.mjs":"3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489","scripts/capture.mjs":"72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985","scripts/build.mjs":"3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e","scripts/integrity.mjs":"7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb","scripts/check-evidence-links.mjs":"03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842","package.json":"8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b","package-lock.json":"bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a","tsconfig.json":"624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3","manifest.json":"d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb","../../.github/workflows/G02.yml":"aef3ddd8ff4e8253d4334ccc8c3afc67df5b6177b31d246c683e705e8dcb2722"}}
+2026-10-09T06:08:37.6977123Z {"path":".work/browser/ci-current-2026-10-09t06-08-23-926z-desktop.webm","bytes":721129,"sha256":"035a92043e059757f07f8643d72e2b540641c6e844be7dd8cf19ec075343a7b3","cpuThrottle":1,"viewport":{"width":1920,"height":1080},"performanceMeasurement":false,"newMatchPrivateDomCleared":true,"actualElapsedTimeoutCoveredHand":true,"publicPassHistoryShown":true,"passActors":["Player 1: pass","Player 2: pass"],"networkRequests":0,"pageErrors":0}
+2026-10-09T06:08:51.6777873Z {"path":".work/browser/ci-current-2026-10-09t06-08-23-926z-phone4x.webm","bytes":690244,"sha256":"b18f9794f535fba3e26e53436d432fcff9e3e41bc1dc8849f85aa128b709a5c1","cpuThrottle":4,"viewport":{"width":390,"height":844},"performanceMeasurement":false,"newMatchPrivateDomCleared":true,"actualElapsedTimeoutCoveredHand":true,"publicPassHistoryShown":true,"passActors":["Player 1: pass","Player 2: pass"],"networkRequests":0,"pageErrors":0}
+2026-10-09T06:08:51.9751543Z {"suite":"committed-browser-proof","sourceMatched":true,"profiles":2,"rawIntervals":1200,"unfiltered":true,"recordingsMatched":2}
+2026-10-09T06:08:51.9788555Z {"suite":"evidence-links","localLinks":32,"allLocalFilesExist":true,"externalLinks":2,"externalLinksFetched":false}
+2026-10-09T06:08:52.3690858Z {"suite":"integrity","fileHashes":646,"regenerationRuns":2,"byteIdentical":true,"coreNoIo":true,"mediaUnder10MB":true}
+2026-10-09T06:08:52.3823753Z {"suite":"strict-current-browser-proof","guardedSources":35,"profiles":2,"rawIntervals":1200,"nativeTimestamps":1202,"activeHandWitnesses":1208,"unfiltered":true,"recordingsMatched":2}
+2026-10-09T06:08:52.4000861Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T06:08:52.4001187Z with:
+2026-10-09T06:08:52.4001400Z   name: G02-browser-evidence
+2026-10-09T06:08:52.4003281Z   path: jobs/G02-gin-rummy/.work/browser/*-frames.json
+jobs/G02-gin-rummy/.work/browser/report.json
+jobs/G02-gin-rummy/.work/browser/captures.json
+jobs/G02-gin-rummy/.work/browser/ci-current-*.webm
+jobs/G02-gin-rummy/.work/clock-after.json
+jobs/G02-gin-rummy/.work/custom-meld-after.json
+jobs/G02-gin-rummy/.work/results-after.json
+jobs/G02-gin-rummy/.work/name-check.json
+jobs/G02-gin-rummy/media/strict-reverify-1900-*.webm
+jobs/G02-gin-rummy/evidence/resume-20261008/strict-reverify-1900-captures.json
+
+2026-10-09T06:08:52.4005286Z   include-hidden-files: true
+2026-10-09T06:08:52.4005531Z   if-no-files-found: warn
+2026-10-09T06:08:52.4005765Z   compression-level: 6
+2026-10-09T06:08:52.4005984Z   overwrite: false
+2026-10-09T06:08:52.4006193Z ##[endgroup]
+2026-10-09T06:08:52.5715903Z (node:4380) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T06:08:52.5716762Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T06:08:52.5944702Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-09T06:08:52.5950972Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G02-gin-rummy. This will be the root directory of the artifact
+2026-10-09T06:08:52.5953914Z With the provided path, there will be 13 files uploaded
+2026-10-09T06:08:52.5957537Z Artifact name is valid!
+2026-10-09T06:08:52.5958403Z Root directory input is valid!
+2026-10-09T06:08:52.8188600Z Beginning upload of artifact content to blob storage
+2026-10-09T06:08:52.9411406Z (node:4380) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T06:08:52.9978818Z Uploaded bytes 2216235
+2026-10-09T06:08:53.0124362Z Finished uploading artifact content to blob storage!
+2026-10-09T06:08:53.0126278Z SHA256 digest of uploaded artifact zip is 52552eb1e5503a2b4849d3710abf20c21feccbe38db5a9ec596a29f8cd9e65a6
+2026-10-09T06:08:53.0127772Z Finalizing artifact upload
+2026-10-09T06:08:53.1991006Z Artifact G02-browser-evidence.zip successfully finalized. Artifact ID 11597719471
+2026-10-09T06:08:53.1992807Z Artifact G02-browser-evidence has been successfully uploaded! Final size is 2216235 bytes. Artifact ID is 11597719471
+2026-10-09T06:08:53.1999146Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37891506020/artifacts/11597719471
+2026-10-09T06:08:53.2195906Z Post job cleanup.
+2026-10-09T06:08:53.3468254Z (node:4394) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T06:08:53.3469259Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T06:08:53.3472970Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317, not saving cache.
+2026-10-09T06:08:53.3606319Z Post job cleanup.
+2026-10-09T06:08:53.4653811Z [command]/usr/bin/git version
+2026-10-09T06:08:53.4707088Z git version 2.55.0
+2026-10-09T06:08:53.4755569Z Temporarily overriding HOME='/home/runner/work/_temp/8760e9d2-8366-43f9-886b-f639a1cd9555' before making global git config changes
+2026-10-09T06:08:53.4757443Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T06:08:53.4761238Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T06:08:53.4812390Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T06:08:53.4856994Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T06:08:53.5136168Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T06:08:53.5173649Z http.https://github.com/.extraheader
+2026-10-09T06:08:53.5190456Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T06:08:53.5233730Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T06:08:53.5499259Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T06:08:53.5554907Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T06:08:53.6000590Z Cleaning up orphan processes
+2026-10-09T06:08:53.6364707Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

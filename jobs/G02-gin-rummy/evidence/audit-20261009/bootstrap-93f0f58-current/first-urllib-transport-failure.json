@@ -1,0 +1,18 @@
+{
+  "recordedUtc": "2026-10-09T06:45:07.949060+00:00",
+  "failures": [
+    {
+      "operation": "initial Python urllib official ZIP transport",
+      "result": "HTTP 403 before every ZIP read",
+      "exactClosureTimestampNotRecorded": true
+    },
+    {
+      "operation": "direct-connect curl official ZIP transport",
+      "result": "native EXIT 7, could not connect",
+      "stderr": "artifact-11599895348-curl.stderr",
+      "exactClosureTimestampNotRecorded": true
+    }
+  ],
+  "scope": "Transport only; no native browser sampler or test was rerun",
+  "recovery": "configured proxy curl and private stdin, actual EXIT 0"
+}

@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-09T05:39:36.869772+00:00",
+  "previousMaterialHead": "cab97d5449e1e7a2442cf589039f697ddb5638dc",
+  "actualCoreSha256": "0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0",
+  "actualHtmlSha256": "0329573fde228c5d7bde7226f41914592a746fd934a8aeb4be9c4ba251bb66e2",
+  "actualWorkflowSha256": "aef3ddd8ff4e8253d4334ccc8c3afc67df5b6177b31d246c683e705e8dcb2722",
+  "oneFiniteReasonLiteralOnly": true,
+  "originalFullVerifyBytesUnchanged": true,
+  "originalFullNodeTests": 67,
+  "pass": 63,
+  "fail": 4,
+  "failures": "four retained stale original committed-browser-proof guards only",
+  "originalLeagues": [
+    {
+      "stronger": "sharp",
+      "weaker": "normal",
+      "games": 2000,
+      "wins": 1166,
+      "losses": 834,
+      "ties": 0,
+      "winRate": 0.583,
+      "wilsonLower": 0.5612515833637743,
+      "events": 524676,
+      "pairedSeeds": true
+    },
+    {
+      "stronger": "normal",
+      "weaker": "easy",
+      "games": 2000,
+      "wins": 1743,
+      "losses": 257,
+      "ties": 0,
+      "winRate": 0.8715,
+      "wilsonLower": 0.8561180625080238,
+      "events": 490034,
+      "pairedSeeds": true
+    }
+  ],
+  "original26ActualCompiledAssertionKills": 26,
+  "extraActualCompiledAssertionKills": 2,
+  "firstCabBootstrapBeforeNative": "FAILURE at explicit request label; every sampler/build/install/browser/capture step skipped",
+  "nativeSamplerInvocationsAtFailedCabBootstrap": 0,
+  "completeFirstHostedFailureNativeBytes": 95481,
+  "freshCurrent35NativeAndFullHostedAcceptance": "PENDING",
+  "samplerExecutedLocally": false,
+  "archives": [
+    {
+      "status": "WHOLE_ACTUAL_ARCHIVE_CRC_EOF_EVERY_BYTE_HASH_PASS",
+      "closedAt": "2026-10-09T05:39:35.099494+00:00",
+      "archive": "exact-request-controls.zip",
+      "bytes": 1220868,
+      "sha256": "f84ea07587eeac4a20afa9237c1cb065df372cab76b23b8961abb6608623077b"
+    },
+    {
+      "status": "WHOLE_ACTUAL_ARCHIVE_CRC_EOF_EVERY_BYTE_HASH_PASS",
+      "closedAt": "2026-10-09T05:39:36.852250+00:00",
+      "archive": "original26-compiled-mutants.zip",
+      "bytes": 7147559,
+      "sha256": "9e3233c7f0be2ea918733a336e8a3fc2ddc64279e3ee05b51ecb68dca50069eb"
+    }
+  ]
+}

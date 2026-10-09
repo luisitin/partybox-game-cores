@@ -1,0 +1,41 @@
+{
+  "closedUtc": "2026-10-09T02:54:40.019620+00:00",
+  "copiedArchivedGuardedInputs": 35,
+  "all33UncompiledInputsMatchedOriginal": true,
+  "physicalPinnedZodVersion": "4.6.5",
+  "dependencyBytesCopied": 6140311,
+  "additionalOriginalContractPackageSha256": "ec1418bc79e3563ed63d2aebfbb0cb039529f6dc1ac0e8e6d61f790cb065f495",
+  "contractPackageReason": "The original contract/package.json type=module affects ESM interop and must be preserved in the independent reconstruction.",
+  "buildCommand": [
+    "node",
+    "scripts/build.mjs"
+  ],
+  "buildExit": 0,
+  "regenerated": [
+    {
+      "path": "dist/core.mjs",
+      "bytes": 1026800,
+      "sha256": "3e19e5ef083eab3761a95b2d51edc26991ec6c5041545f3892b30787dee98705",
+      "byteIdentical": true
+    },
+    {
+      "path": "dist/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+      "byteIdentical": true
+    },
+    {
+      "path": "dist/contract.mjs",
+      "bytes": 1006006,
+      "sha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+      "byteIdentical": true
+    },
+    {
+      "path": "play.html",
+      "bytes": 491451,
+      "sha256": "df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375",
+      "byteIdentical": true
+    }
+  ],
+  "noBrowserRun": true
+}

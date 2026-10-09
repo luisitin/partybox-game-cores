@@ -1,0 +1,9 @@
+{
+  "firstProbeWasUnadopted": true,
+  "actualOldDiscard": 29,
+  "expectedOldDiscard": 26,
+  "actualOldDeadwood": 3,
+  "hypothesizedOldDeadwood": 6,
+  "reason": "The extra ace formed an unexpected rank set. With both public spade-two and spade-three pickups, the old actual layout had incomparable live targets; its measured +2 alternative is insufficient for subset dominance. Preserve full first assertion failure. Narrow the fixture to only the actual public spade-three pickup and rerun as a distinct functional case, not timing.",
+  "sourcesChanged": false
+}

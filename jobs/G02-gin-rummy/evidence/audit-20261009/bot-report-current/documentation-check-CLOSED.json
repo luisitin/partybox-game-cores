@@ -1,0 +1,29 @@
+{
+  "closedUtc": "2026-10-09T08:46:52.551309+00:00",
+  "acceptedHead": "72bd30595c1b18346c31f0192691c3fede309cef",
+  "actualLeagueRows": [
+    {
+      "expectedExactTableRow": "| sharp vs normal | 1166 | 834 | 58.30% | 56.1252% |",
+      "matched": true
+    },
+    {
+      "expectedExactTableRow": "| normal vs easy | 1743 | 257 | 87.15% | 85.6118% |",
+      "matched": true
+    }
+  ],
+  "newLocalLinks": [
+    "evidence/audit-20261009/accepted-72bd/full-original-artifact-reader-CLOSED.json",
+    "evidence/audit-20261009/bot-report-current/BOTS-before-KEEP20.txt",
+    "evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md"
+  ],
+  "allLinksExist": true,
+  "oldBotsWholeByteIdenticalToImmutableGit": true,
+  "oldBotsSha256": "4c8d9034fec7ef24bde2e6eddb96a6dd6f94ee630b11c88d6dbaf2a8afef446d",
+  "readmeUnder60Lines": true,
+  "productionPageSoleWorkflowUnchanged": true,
+  "noFunctionalTestAddedForProse": true,
+  "noLocalSamplerOrUnchangedLeagueRerun": true,
+  "noPlayerGainStreak": 2,
+  "pass": true,
+  "newHeadFullAcceptancePending": true
+}

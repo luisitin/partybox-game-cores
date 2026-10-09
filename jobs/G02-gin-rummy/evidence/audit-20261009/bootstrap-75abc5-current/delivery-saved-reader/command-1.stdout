@@ -1,0 +1,23 @@
+✔ current source-bound raw proof passes without discarding its largest interval (3.11878ms)
+✔ a refreshed inventory cannot accept stale browser or recording source hashes (11.400864ms)
+✔ changed end guards and failed snapshots are rejected (9.448114ms)
+✔ missing, altered and invalid raw intervals cannot be hidden by good summary fields (9.884033ms)
+✔ reported statistics are recomputed from all retained intervals (19.448038ms)
+✔ an honestly recomputed slow raw sample still fails the original frame gate (4.442301ms)
+✔ profile dimensions, CPU rates and encoder separation must remain truthful (8.778989ms)
+✔ changed, oversized and falsely labeled recordings are rejected (13.859867ms)
+{"syntheticGuardCorruptionsRejected":175,"guardedSources":35}
+✔ synthetic positive control covers full identities, native timestamps, all hand witnesses and clips (11.710378ms)
+✔ every guarded source and each start/end inventory entry rejects a stale hash or omission (141.49747ms)
+✔ wrong attempt/profile/page/transport/throttle, filtered samples and fake native clocks fail (14.868665ms)
+✔ missing/invalid timestamp, raw interval or active-frame witness fails despite good summaries (10.539357ms)
+✔ all statistics are recomputed and an honestly reported long interval fails the fixed gate (5.313442ms)
+✔ failed runs, mislabeled clips, altered bytes, outsize media and network/errors are rejected (14.022142ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 291.974957

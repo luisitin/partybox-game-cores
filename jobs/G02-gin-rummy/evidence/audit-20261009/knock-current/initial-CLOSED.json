@@ -1,0 +1,50 @@
+{
+  "closedUtc": "2026-10-09T05:17:18.574295+00:00",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "startedUtc": "2026-10-09T05:17:11.329117+00:00",
+      "closedUtc": "2026-10-09T05:17:13.756975+00:00",
+      "nativeExitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "tests/knock-layout-priority.test.mjs",
+        "tests/gin-priority.test.mjs",
+        "tests/gin-draw-priority.test.mjs"
+      ],
+      "startedUtc": "2026-10-09T05:17:13.757100+00:00",
+      "closedUtc": "2026-10-09T05:17:18.573039+00:00",
+      "nativeExitCode": 0
+    }
+  ],
+  "sourceStart": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/knock-layout-priority.test.mjs": "e8a923662a746d707b649621fd1c9204267a07ae58ba1e016b0b6ab6cd1db38a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-check.mjs": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/build.mjs": "3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e",
+    "/workspace/game-cores-G02-audit-source-20261009/.github/workflows/G02.yml": "b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1"
+  },
+  "sourceEnd": {
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/core.ts": "0ab6faaab888559655dc0ec866a58273cde4440a68db7c1d17c2c65762181bb0",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/knock-layout-priority.test.mjs": "e8a923662a746d707b649621fd1c9204267a07ae58ba1e016b0b6ab6cd1db38a",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-check.mjs": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc",
+    "/workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/build.mjs": "3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e",
+    "/workspace/game-cores-G02-audit-source-20261009/.github/workflows/G02.yml": "b5756e16c1a060cff3a286773fed54a440772bf0e17513a1093bf9af03d882a1"
+  },
+  "sourceUnchanged": true,
+  "samplerExecuted": false,
+  "result": "PASS"
+}

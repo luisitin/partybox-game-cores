@@ -1,0 +1,68 @@
+{
+  "closedUtc": "2026-10-09T07:46:54.552035+00:00",
+  "nativeExitCode": 0,
+  "allSevenOutputsByteIdentical": true,
+  "generations": [
+    {
+      "generation": 1,
+      "closedUtc": "2026-10-09T07:46:54.329388+00:00",
+      "nativeExitCode": 0,
+      "outputHashes": {
+        "manifest.json": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb",
+        "fixtures/discard.json": "378250419994481fa731b81298f941fba834cde4cc98aa9614b383142a82cc29",
+        "fixtures/done.json": "554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4",
+        "fixtures/draw.json": "73eb6eeb5cb01bd2409e93c407a37122866928275ba90bbb8b0faa85a1e181f8",
+        "fixtures/layoff.json": "10bd528f17a5b371019be17b196e48fcb2541cbde499767668b2fb18ecac64ce",
+        "fixtures/round-end.json": "e410bd8a7014fc2ddb4546d3b5356168aada8856559c1422baa64c9b8cbbcca1",
+        "fixtures/upcard.json": "7d21408e6719bdfe0ca64dba1a3dc1d53d11f1e81addbe68e01d0d26d699ad67"
+      }
+    },
+    {
+      "generation": 2,
+      "closedUtc": "2026-10-09T07:46:54.549280+00:00",
+      "nativeExitCode": 0,
+      "outputHashes": {
+        "manifest.json": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb",
+        "fixtures/discard.json": "378250419994481fa731b81298f941fba834cde4cc98aa9614b383142a82cc29",
+        "fixtures/done.json": "554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4",
+        "fixtures/draw.json": "73eb6eeb5cb01bd2409e93c407a37122866928275ba90bbb8b0faa85a1e181f8",
+        "fixtures/layoff.json": "10bd528f17a5b371019be17b196e48fcb2541cbde499767668b2fb18ecac64ce",
+        "fixtures/round-end.json": "e410bd8a7014fc2ddb4546d3b5356168aada8856559c1422baa64c9b8cbbcca1",
+        "fixtures/upcard.json": "7d21408e6719bdfe0ca64dba1a3dc1d53d11f1e81addbe68e01d0d26d699ad67"
+      }
+    }
+  ],
+  "sourceStart": {
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/core.ts": "211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package.json": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package-lock.json": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tsconfig.json": "624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/scripts/fixtures.mjs": "736bbf4de7b10ae79eb38468cb4293f97f07475fe68827e9eaf69b0f26ada030",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/core.mjs": "dedf75871bc145694fc68721f2f626a63435af95aacc948f5f4715f517bd786a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/play.html": "8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63"
+  },
+  "sourceEnd": {
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/core.ts": "211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package.json": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package-lock.json": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tsconfig.json": "624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/scripts/fixtures.mjs": "736bbf4de7b10ae79eb38468cb4293f97f07475fe68827e9eaf69b0f26ada030",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/core.mjs": "dedf75871bc145694fc68721f2f626a63435af95aacc948f5f4715f517bd786a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/contract.mjs": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/play.html": "8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63"
+  },
+  "allReadOnlyGuards": 13,
+  "sourceUnchanged": true,
+  "noLocalSampler": true
+}

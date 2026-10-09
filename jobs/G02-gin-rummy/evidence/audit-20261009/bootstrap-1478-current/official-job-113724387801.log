@@ -1,0 +1,600 @@
+﻿2026-10-09T07:50:38.9945101Z Current runner version: '2.337.0'
+2026-10-09T07:50:38.9971935Z ##[group]Runner Image Provisioner
+2026-10-09T07:50:38.9972773Z Hosted Compute Agent
+2026-10-09T07:50:38.9973479Z Version: 20261002.596
+2026-10-09T07:50:38.9974186Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T07:50:38.9974954Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T07:50:38.9975656Z Worker ID: {f7188a2f-70cb-47b4-ae25-ac49324a95e7}
+2026-10-09T07:50:38.9976355Z Region: eastus2
+2026-10-09T07:50:38.9976983Z Cloud: Azure
+2026-10-09T07:50:38.9977545Z ##[endgroup]
+2026-10-09T07:50:38.9979025Z ##[group]Operating System
+2026-10-09T07:50:38.9979696Z Ubuntu
+2026-10-09T07:50:38.9980445Z 24.04.5
+2026-10-09T07:50:38.9981050Z LTS
+2026-10-09T07:50:38.9981606Z ##[endgroup]
+2026-10-09T07:50:38.9982186Z ##[group]Runner Image
+2026-10-09T07:50:38.9982864Z Image: ubuntu-24.04
+2026-10-09T07:50:38.9983436Z Version: 20261004.327.1
+2026-10-09T07:50:38.9984733Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T07:50:38.9986306Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T07:50:38.9987339Z ##[endgroup]
+2026-10-09T07:50:38.9988438Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T07:50:38.9990846Z Contents: read
+2026-10-09T07:50:38.9991576Z Metadata: read
+2026-10-09T07:50:38.9992231Z ##[endgroup]
+2026-10-09T07:50:38.9994362Z Secret source: Actions
+2026-10-09T07:50:38.9995372Z Cache mode: write
+2026-10-09T07:50:38.9996141Z Prepare workflow directory
+2026-10-09T07:50:39.0552488Z Prepare all required actions
+2026-10-09T07:50:39.0603036Z Getting action download info
+2026-10-09T07:50:39.2808924Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T07:50:39.4090081Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T07:50:39.5425452Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T07:50:39.7337565Z Complete job name: browser-bootstrap
+2026-10-09T07:50:39.8107081Z ##[group]Run actions/checkout@v4
+2026-10-09T07:50:39.8107964Z with:
+2026-10-09T07:50:39.8108453Z   ref: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:39.8109101Z   repository: luisitin/partybox-game-cores
+2026-10-09T07:50:39.8113036Z   token: ***
+2026-10-09T07:50:39.8113480Z   ssh-strict: true
+2026-10-09T07:50:39.8113908Z   ssh-user: git
+2026-10-09T07:50:39.8114388Z   persist-credentials: true
+2026-10-09T07:50:39.8114873Z   clean: true
+2026-10-09T07:50:39.8115318Z   sparse-checkout-cone-mode: true
+2026-10-09T07:50:39.8115871Z   fetch-depth: 1
+2026-10-09T07:50:39.8116296Z   fetch-tags: false
+2026-10-09T07:50:39.8116734Z   show-progress: true
+2026-10-09T07:50:39.8117174Z   lfs: false
+2026-10-09T07:50:39.8117583Z   submodules: false
+2026-10-09T07:50:39.8118057Z   set-safe-directory: true
+2026-10-09T07:50:39.8118560Z   allow-unsafe-pr-checkout: false
+2026-10-09T07:50:39.8119316Z env:
+2026-10-09T07:50:39.8119865Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:39.8120998Z ##[endgroup]
+2026-10-09T07:50:39.9171274Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T07:50:39.9173609Z ##[group]Getting Git version info
+2026-10-09T07:50:39.9174559Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T07:50:39.9175697Z [command]/usr/bin/git version
+2026-10-09T07:50:39.9243862Z git version 2.55.0
+2026-10-09T07:50:39.9273240Z ##[endgroup]
+2026-10-09T07:50:39.9288690Z Temporarily overriding HOME='/home/runner/work/_temp/a6523e42-f94b-4f6d-b237-a7c388de8af7' before making global git config changes
+2026-10-09T07:50:39.9291453Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T07:50:39.9295731Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T07:50:39.9375176Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T07:50:39.9379457Z ##[group]Initializing the repository
+2026-10-09T07:50:39.9384816Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T07:50:39.9494742Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T07:50:39.9496350Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T07:50:39.9497336Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T07:50:39.9498146Z hint: call:
+2026-10-09T07:50:39.9498556Z hint:
+2026-10-09T07:50:39.9499082Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T07:50:39.9499693Z hint:
+2026-10-09T07:50:39.9500547Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T07:50:39.9501499Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T07:50:39.9502236Z hint:
+2026-10-09T07:50:39.9502645Z hint: 	git branch -m <name>
+2026-10-09T07:50:39.9503161Z hint:
+2026-10-09T07:50:39.9503835Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T07:50:39.9510066Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T07:50:39.9523471Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T07:50:39.9571803Z ##[endgroup]
+2026-10-09T07:50:39.9573068Z ##[group]Disabling automatic garbage collection
+2026-10-09T07:50:39.9576775Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T07:50:39.9640740Z ##[endgroup]
+2026-10-09T07:50:39.9642523Z ##[group]Setting up auth
+2026-10-09T07:50:39.9649660Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T07:50:39.9713346Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T07:50:40.0119378Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T07:50:40.0237195Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T07:50:40.0409672Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T07:50:40.0460554Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T07:50:40.0714293Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T07:50:40.0755375Z ##[endgroup]
+2026-10-09T07:50:40.0767468Z ##[group]Fetching the repository
+2026-10-09T07:50:40.0769826Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:42.2276143Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T07:50:42.2277423Z  * branch            1478a93e36f9f6ddf88aad246083ab0c8e059cf4 -> FETCH_HEAD
+2026-10-09T07:50:42.2312877Z ##[endgroup]
+2026-10-09T07:50:42.2314439Z ##[group]Determining the checkout info
+2026-10-09T07:50:42.2316179Z ##[endgroup]
+2026-10-09T07:50:42.2317228Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T07:50:42.2357254Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T07:50:42.2396774Z ##[group]Checking out the ref
+2026-10-09T07:50:42.2405899Z [command]/usr/bin/git checkout --progress --force 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:42.5169380Z Note: switching to '1478a93e36f9f6ddf88aad246083ab0c8e059cf4'.
+2026-10-09T07:50:42.5170949Z 
+2026-10-09T07:50:42.5171870Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T07:50:42.5173248Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T07:50:42.5175026Z state without impacting any branches by switching back to a branch.
+2026-10-09T07:50:42.5175822Z 
+2026-10-09T07:50:42.5176388Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T07:50:42.5177713Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T07:50:42.5178501Z 
+2026-10-09T07:50:42.5178857Z   git switch -c <new-branch-name>
+2026-10-09T07:50:42.5179425Z 
+2026-10-09T07:50:42.5179771Z Or undo this operation with:
+2026-10-09T07:50:42.5180611Z 
+2026-10-09T07:50:42.5180945Z   git switch -
+2026-10-09T07:50:42.5181383Z 
+2026-10-09T07:50:42.5182142Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T07:50:42.5183167Z 
+2026-10-09T07:50:42.5183797Z HEAD is now at 1478a93 G02 prefer safe subset finishing layoff targets
+2026-10-09T07:50:42.5203157Z ##[endgroup]
+2026-10-09T07:50:42.5250870Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T07:50:42.5277036Z 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:42.5717313Z ##[group]Run actions/setup-node@v4
+2026-10-09T07:50:42.5718516Z with:
+2026-10-09T07:50:42.5719402Z   node-version: 22.16.0
+2026-10-09T07:50:42.5720562Z   cache: npm
+2026-10-09T07:50:42.5721767Z   cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+2026-10-09T07:50:42.5723193Z   always-auth: false
+2026-10-09T07:50:42.5724167Z   check-latest: false
+2026-10-09T07:50:42.5733009Z   token: ***
+2026-10-09T07:50:42.5733913Z env:
+2026-10-09T07:50:42.5734970Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:42.5736294Z ##[endgroup]
+2026-10-09T07:50:42.7133199Z Attempting to download 22.16.0...
+2026-10-09T07:50:42.7239593Z (node:2314) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T07:50:42.7242475Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T07:50:43.3980072Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T07:50:43.8724865Z Extracting ...
+2026-10-09T07:50:43.8856763Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/2cb6f6e0-20f3-4470-bb7e-ea6dea3e33c6 -f /home/runner/work/_temp/b68f751a-02c6-4253-ac40-2cb50ad13f00
+2026-10-09T07:50:45.0912229Z Adding to the cache ...
+2026-10-09T07:50:47.0881144Z ##[group]Environment details
+2026-10-09T07:50:47.3337811Z node: v22.16.0
+2026-10-09T07:50:47.3338674Z npm: 10.9.2
+2026-10-09T07:50:47.3339090Z yarn: 1.22.22
+2026-10-09T07:50:47.3339947Z ##[endgroup]
+2026-10-09T07:50:47.3365320Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T07:50:47.4300747Z /home/runner/.npm
+2026-10-09T07:50:47.5254322Z Cache hit for: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T07:50:47.5379398Z (node:2314) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T07:50:47.6962504Z Received 12676573 of 12676573 (100.0%), 92.3 MBs/sec
+2026-10-09T07:50:47.6963391Z Cache Size: ~12 MB (12676573 B)
+2026-10-09T07:50:47.6992111Z [command]/usr/bin/tar -xf /home/runner/work/_temp/878a7aa7-7204-4cc8-990b-3aa80a01788f/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T07:50:47.7221645Z Cache restored successfully
+2026-10-09T07:50:47.7232458Z Cache restored from key: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+2026-10-09T07:50:47.7431356Z ##[group]Run node --input-type=module <<'JS'
+2026-10-09T07:50:47.7431799Z [36;1mnode --input-type=module <<'JS'[0m
+2026-10-09T07:50:47.7432150Z [36;1mimport assert from 'node:assert/strict';[0m
+2026-10-09T07:50:47.7432554Z [36;1mimport {readFile,appendFile} from 'node:fs/promises';[0m
+2026-10-09T07:50:47.7433184Z [36;1mimport {createHash} from 'node:crypto';[0m
+2026-10-09T07:50:47.7433738Z [36;1mconst request=JSON.parse(await readFile('evidence/audit-20261009/bootstrap-request.json','utf8'));[0m
+2026-10-09T07:50:47.7434406Z [36;1massert.equal(request.version,1);assert.equal(typeof request.enabled,'boolean');[0m
+2026-10-09T07:50:47.7434849Z [36;1mif(request.enabled){[0m
+2026-10-09T07:50:47.7437459Z [36;1m assert(['mandatory one-workflow correction; first capture binding the corrected G02 workflow','verified material Strong Gin-priority repair; first capture for changed game source','verified material Gin draw repair; first capture for changed game source','verified material same-meld finishing knock repair; first capture for changed game source','verified material closed-meld finishing knock repair; first capture for changed game source','verified material public-discard closed-meld finishing knock repair; first capture for changed game source','verified material strict-subset finishing knock repair; first capture for changed game source'].includes(request.reason),'explicit material/protocol bootstrap reason required');[0m
+2026-10-09T07:50:47.7440508Z [36;1m const sha=bytes=>createHash('sha256').update(bytes).digest('hex');[0m
+2026-10-09T07:50:47.7441045Z [36;1m assert.equal(sha(await readFile('src/core.ts')),request.coreSha256);[0m
+2026-10-09T07:50:47.7441564Z [36;1m assert.equal(sha(await readFile('play.html')),request.htmlSha256);[0m
+2026-10-09T07:50:47.7441971Z [36;1m}[0m
+2026-10-09T07:50:47.7442362Z [36;1mawait appendFile(process.env.GITHUB_OUTPUT,'bootstrap='+String(request.enabled)+'\n');[0m
+2026-10-09T07:50:47.7443136Z [36;1mconsole.log(JSON.stringify({nativeBootstrapRequested:request.enabled,samplersExecuted:false,reason:request.reason}));[0m
+2026-10-09T07:50:47.7443713Z [36;1mJS[0m
+2026-10-09T07:50:47.7706430Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:50:47.7706735Z env:
+2026-10-09T07:50:47.7707031Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:47.7707430Z ##[endgroup]
+2026-10-09T07:50:47.8109702Z {"nativeBootstrapRequested":true,"samplersExecuted":false,"reason":"verified material strict-subset finishing knock repair; first capture for changed game source"}
+2026-10-09T07:50:47.8197397Z ##[group]Run mkdir -p .work/initial-presence-bootstrap
+2026-10-09T07:50:47.8197876Z [36;1mmkdir -p .work/initial-presence-bootstrap[0m
+2026-10-09T07:50:47.8198218Z [36;1mnode --input-type=module <<'JS'[0m
+2026-10-09T07:50:47.8198549Z [36;1mimport {writeFile} from 'node:fs/promises';[0m
+2026-10-09T07:50:47.8198899Z [36;1mimport assert from 'node:assert/strict';[0m
+2026-10-09T07:50:47.8199260Z [36;1mimport {execFileSync} from 'node:child_process';[0m
+2026-10-09T07:50:47.8201758Z [36;1mconst identity={version:1,head:process.env.G02_SOURCE_HEAD,ref:process.env.GITHUB_REF,sourceBranch:process.env.GITHUB_HEAD_REF,checkoutSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,job:process.env.GITHUB_JOB,repository:process.env.GITHUB_REPOSITORY,startedUtc:new Date().toISOString(),purpose:'Fresh original browser evidence for an explicitly requested material G02 repair; not full npm-test acceptance.',originalVerifyJobUnchanged:true,physicalPhoneTested:false};[0m
+2026-10-09T07:50:47.8204127Z [36;1mawait writeFile('.work/initial-presence-bootstrap/run.json',JSON.stringify(identity,null,2)+'\n');[0m
+2026-10-09T07:50:47.8204850Z [36;1massert.equal(identity.runAttempt,'1','this bootstrap must not be rerun to chase a frame pass');[0m
+2026-10-09T07:50:47.8205480Z [36;1massert.equal(identity.sourceBranch,'job/G02-gin-rummy-audit-20261009');[0m
+2026-10-09T07:50:47.8206124Z [36;1massert.equal(identity.checkoutSha,identity.head,'bootstrap checkout must be the exact source head');[0m
+2026-10-09T07:50:47.8206634Z [36;1mJS[0m
+2026-10-09T07:50:47.8270102Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:50:47.8270648Z env:
+2026-10-09T07:50:47.8270915Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:47.8271448Z ##[endgroup]
+2026-10-09T07:50:47.8724013Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-09T07:50:47.8724520Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-09T07:50:47.8787651Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:50:47.8787916Z env:
+2026-10-09T07:50:47.8788179Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:47.8788508Z ##[endgroup]
+2026-10-09T07:50:48.8294160Z 
+2026-10-09T07:50:48.8294887Z added 6 packages in 895ms
+2026-10-09T07:50:48.8831077Z ##[group]Run npx playwright install --with-deps chromium
+2026-10-09T07:50:48.8831546Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-10-09T07:50:48.8897398Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:50:48.8897651Z env:
+2026-10-09T07:50:48.8897909Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:50:48.8898243Z ##[endgroup]
+2026-10-09T07:50:49.7639524Z Installing dependencies...
+2026-10-09T07:50:49.7703958Z Switching to root user to install dependencies...
+2026-10-09T07:50:50.4231504Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-09T07:50:50.4612981Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T07:50:50.4627060Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-09T07:50:50.4692117Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-09T07:50:50.4708179Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-09T07:50:50.4928534Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-09T07:50:50.5926141Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-09T07:50:50.6082331Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-09T07:50:50.6104338Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-09T07:50:50.6221876Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-09T07:50:50.6236877Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-09T07:50:50.6357233Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-09T07:50:50.6391363Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-09T07:50:50.6400910Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-09T07:50:50.7063307Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1118 kB]
+2026-10-09T07:50:50.7122491Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [228 kB]
+2026-10-09T07:50:50.7548965Z Get:23 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-09T07:50:50.7559454Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-09T07:50:50.7589443Z Get:24 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-09T07:50:50.7649828Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-09T07:50:50.7664301Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1667 kB]
+2026-10-09T07:50:50.7697941Z Get:25 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [475 kB]
+2026-10-09T07:50:50.7750344Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [383 kB]
+2026-10-09T07:50:50.7771784Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [49.8 kB]
+2026-10-09T07:50:50.7773361Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+2026-10-09T07:50:50.7782098Z Get:26 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-09T07:50:53.6924395Z Fetched 12.3 MB in 1s (9938 kB/s)
+2026-10-09T07:50:54.5523676Z Reading package lists...
+2026-10-09T07:50:54.5767993Z Reading package lists...
+2026-10-09T07:50:54.7602991Z Building dependency tree...
+2026-10-09T07:50:54.7610176Z Reading state information...
+2026-10-09T07:50:54.8986827Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-10-09T07:50:54.8987873Z libasound2t64 set to manually installed.
+2026-10-09T07:50:54.8989194Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T07:50:54.8989774Z libatk-bridge2.0-0t64 set to manually installed.
+2026-10-09T07:50:54.8990859Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T07:50:54.8991410Z libatk1.0-0t64 set to manually installed.
+2026-10-09T07:50:54.8991904Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-10-09T07:50:54.8992392Z libatspi2.0-0t64 set to manually installed.
+2026-10-09T07:50:54.8992871Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-10-09T07:50:54.8993304Z libcairo2 set to manually installed.
+2026-10-09T07:50:54.8993784Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-10-09T07:50:54.8994249Z libcups2t64 set to manually installed.
+2026-10-09T07:50:54.8994719Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-10-09T07:50:54.8995169Z libdbus-1-3 set to manually installed.
+2026-10-09T07:50:54.8995658Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-10-09T07:50:54.8996122Z libdrm2 set to manually installed.
+2026-10-09T07:50:54.8996580Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-10-09T07:50:54.8997032Z libgbm1 set to manually installed.
+2026-10-09T07:50:54.8997498Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+2026-10-09T07:50:54.8997975Z libglib2.0-0t64 set to manually installed.
+2026-10-09T07:50:54.8998464Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-10-09T07:50:54.8998962Z libnspr4 set to manually installed.
+2026-10-09T07:50:54.8999418Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+2026-10-09T07:50:54.8999854Z libnss3 set to manually installed.
+2026-10-09T07:50:54.9000561Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-10-09T07:50:54.9001102Z libpango-1.0-0 set to manually installed.
+2026-10-09T07:50:54.9001567Z libx11-6 is already the newest version (2:1.8.7-1build1).
+2026-10-09T07:50:54.9001992Z libx11-6 set to manually installed.
+2026-10-09T07:50:54.9002438Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-10-09T07:50:54.9002851Z libxcb1 set to manually installed.
+2026-10-09T07:50:54.9003318Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-10-09T07:50:54.9003798Z libxcomposite1 set to manually installed.
+2026-10-09T07:50:54.9004268Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-10-09T07:50:54.9004712Z libxdamage1 set to manually installed.
+2026-10-09T07:50:54.9005162Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-10-09T07:50:54.9005580Z libxext6 set to manually installed.
+2026-10-09T07:50:54.9006020Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-10-09T07:50:54.9006456Z libxfixes3 set to manually installed.
+2026-10-09T07:50:54.9006908Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-10-09T07:50:54.9007360Z libxkbcommon0 set to manually installed.
+2026-10-09T07:50:54.9007817Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-10-09T07:50:54.9008265Z libxrandr2 set to manually installed.
+2026-10-09T07:50:54.9008709Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+2026-10-09T07:50:54.9009299Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-10-09T07:50:54.9009860Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-10-09T07:50:54.9010461Z libfontconfig1 set to manually installed.
+2026-10-09T07:50:54.9010876Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-10-09T07:50:54.9011563Z fonts-liberation set to manually installed.
+2026-10-09T07:50:54.9011965Z The following additional packages will be installed:
+2026-10-09T07:50:54.9012321Z   xfonts-encodings xfonts-utils
+2026-10-09T07:50:54.9012597Z Recommended packages:
+2026-10-09T07:50:54.9012871Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-10-09T07:50:54.9188928Z The following NEW packages will be installed:
+2026-10-09T07:50:54.9189587Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-10-09T07:50:54.9194813Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-10-09T07:50:54.9195302Z   xfonts-utils
+2026-10-09T07:50:54.9198652Z The following packages will be upgraded:
+2026-10-09T07:50:54.9203253Z   libfreetype6
+2026-10-09T07:50:54.9361569Z 1 upgraded, 9 newly installed, 0 to remove and 22 not upgraded.
+2026-10-09T07:50:54.9362074Z Need to get 21.5 MB of archives.
+2026-10-09T07:50:54.9362521Z After this operation, 79.5 MB of additional disk space will be used.
+2026-10-09T07:50:54.9363358Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-10-09T07:50:55.0401552Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-10-09T07:50:55.2187891Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-10-09T07:50:55.4858908Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-10-09T07:50:55.5741168Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-10-09T07:50:55.7447926Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-10-09T07:50:56.1242633Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+2026-10-09T07:50:56.2141329Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-10-09T07:50:56.3060625Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-10-09T07:50:56.3924446Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-10-09T07:50:56.4822834Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-10-09T07:50:56.7348841Z Fetched 21.5 MB in 2s (13.8 MB/s)
+2026-10-09T07:50:56.7592739Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-10-09T07:50:56.7862291Z (Reading database ... 
+2026-10-09T07:50:56.7862819Z (Reading database ... 5%
+2026-10-09T07:50:56.7863291Z (Reading database ... 10%
+2026-10-09T07:50:56.7863674Z (Reading database ... 15%
+2026-10-09T07:50:56.7863985Z (Reading database ... 20%
+2026-10-09T07:50:56.7864284Z (Reading database ... 25%
+2026-10-09T07:50:56.7864582Z (Reading database ... 30%
+2026-10-09T07:50:56.7864907Z (Reading database ... 35%
+2026-10-09T07:50:56.7865206Z (Reading database ... 40%
+2026-10-09T07:50:56.7865500Z (Reading database ... 45%
+2026-10-09T07:50:56.7865795Z (Reading database ... 50%
+2026-10-09T07:50:56.7908750Z (Reading database ... 55%
+2026-10-09T07:50:56.8939962Z (Reading database ... 60%
+2026-10-09T07:50:57.1040138Z (Reading database ... 65%
+2026-10-09T07:50:57.2942695Z (Reading database ... 70%
+2026-10-09T07:50:57.4574130Z (Reading database ... 75%
+2026-10-09T07:50:57.6412640Z (Reading database ... 80%
+2026-10-09T07:50:57.8542826Z (Reading database ... 85%
+2026-10-09T07:50:58.0959254Z (Reading database ... 90%
+2026-10-09T07:50:58.2536672Z (Reading database ... 95%
+2026-10-09T07:50:58.2537162Z (Reading database ... 100%
+2026-10-09T07:50:58.2537739Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-09T07:50:58.2578827Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-10-09T07:50:58.2669567Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T07:50:58.5308901Z Selecting previously unselected package fonts-freefont-ttf.
+2026-10-09T07:50:58.5437859Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-10-09T07:50:58.5549694Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T07:50:58.9671521Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-10-09T07:50:58.9784471Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-10-09T07:50:58.9794584Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T07:50:59.0002643Z Selecting previously unselected package fonts-unifont.
+2026-10-09T07:50:59.0129991Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-10-09T07:50:59.0137156Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T07:50:59.1182874Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-10-09T07:50:59.1306159Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-10-09T07:50:59.1403045Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T07:50:59.6082994Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+2026-10-09T07:50:59.6114287Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+2026-10-09T07:50:59.6355318Z Selecting previously unselected package xfonts-encodings.
+2026-10-09T07:50:59.6481132Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-10-09T07:50:59.6487726Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T07:50:59.6760444Z Selecting previously unselected package xfonts-utils.
+2026-10-09T07:50:59.6885809Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-10-09T07:50:59.6912064Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-10-09T07:50:59.7561006Z Selecting previously unselected package xfonts-cyrillic.
+2026-10-09T07:50:59.7707472Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-10-09T07:50:59.7716020Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T07:50:59.8057547Z Selecting previously unselected package xfonts-scalable.
+2026-10-09T07:50:59.8181973Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-10-09T07:50:59.8189954Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T07:50:59.8605903Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-10-09T07:50:59.8725510Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-10-09T07:50:59.8743638Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-10-09T07:50:59.8761527Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+2026-10-09T07:50:59.8779124Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-10-09T07:50:59.8797279Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-10-09T07:50:59.8864360Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-10-09T07:50:59.8880593Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-10-09T07:50:59.8898346Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-10-09T07:50:59.8941608Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-10-09T07:50:59.9259839Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-10-09T07:50:59.9562354Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T07:50:59.9858999Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T07:50:59.9884816Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T07:50:59.9896399Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-10-09T07:51:00.7804841Z 
+2026-10-09T07:51:00.7805620Z Running kernel seems to be up-to-date.
+2026-10-09T07:51:00.7805987Z 
+2026-10-09T07:51:00.7806170Z Restarting services...
+2026-10-09T07:51:00.7881566Z  systemctl restart php8.3-fpm.service
+2026-10-09T07:51:00.8990903Z 
+2026-10-09T07:51:00.8991854Z No containers need to be restarted.
+2026-10-09T07:51:00.8992232Z 
+2026-10-09T07:51:00.8992549Z No user sessions are running outdated binaries.
+2026-10-09T07:51:00.8993238Z 
+2026-10-09T07:51:00.8993741Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T07:51:01.7891378Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+2026-10-09T07:51:01.9613148Z |                                                                                |   0% of 173.9 MiB
+2026-10-09T07:51:02.1453130Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+2026-10-09T07:51:02.2389167Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+2026-10-09T07:51:02.3187633Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+2026-10-09T07:51:02.3811965Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+2026-10-09T07:51:02.4386308Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+2026-10-09T07:51:02.4961547Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+2026-10-09T07:51:02.5575999Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+2026-10-09T07:51:02.6145522Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+2026-10-09T07:51:02.6695303Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+2026-10-09T07:51:02.7237831Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+2026-10-09T07:51:06.3305498Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+2026-10-09T07:51:06.3308805Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+2026-10-09T07:51:06.4924329Z |                                                                                |   0% of 2.3 MiB
+2026-10-09T07:51:06.5040018Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+2026-10-09T07:51:06.5108342Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+2026-10-09T07:51:06.5163947Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+2026-10-09T07:51:06.5199636Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+2026-10-09T07:51:06.5229467Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+2026-10-09T07:51:06.5267053Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+2026-10-09T07:51:06.5292981Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+2026-10-09T07:51:06.5310039Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+2026-10-09T07:51:06.5329018Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+2026-10-09T07:51:06.5342698Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+2026-10-09T07:51:06.5897893Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+2026-10-09T07:51:06.5901940Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+2026-10-09T07:51:06.7492866Z |                                                                                |   0% of 104.3 MiB
+2026-10-09T07:51:06.8626053Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+2026-10-09T07:51:06.9240532Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+2026-10-09T07:51:06.9722784Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+2026-10-09T07:51:07.0242623Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+2026-10-09T07:51:07.0663090Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+2026-10-09T07:51:07.1052076Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+2026-10-09T07:51:07.1421365Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+2026-10-09T07:51:07.1794023Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+2026-10-09T07:51:07.2156150Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+2026-10-09T07:51:07.2527543Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+2026-10-09T07:51:09.2433805Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+2026-10-09T07:51:09.6646514Z ##[group]Run npm run build
+2026-10-09T07:51:09.6646805Z [36;1mnpm run build[0m
+2026-10-09T07:51:09.6711143Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:51:09.6711401Z env:
+2026-10-09T07:51:09.6711658Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:51:09.6711990Z ##[endgroup]
+2026-10-09T07:51:09.7751469Z 
+2026-10-09T07:51:09.7752164Z > partybox-g02-gin-rummy@1.2.1 build
+2026-10-09T07:51:09.7752886Z > tsc --noEmit && node scripts/build.mjs
+2026-10-09T07:51:09.7753266Z 
+2026-10-09T07:51:12.1167694Z ##[group]Run git diff --exit-code -- play.html
+2026-10-09T07:51:12.1168084Z [36;1mgit diff --exit-code -- play.html[0m
+2026-10-09T07:51:12.1231452Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:51:12.1231705Z env:
+2026-10-09T07:51:12.1232008Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:51:12.1232344Z ##[endgroup]
+2026-10-09T07:51:12.4532082Z ##[group]Run node --input-type=module <<'JS'
+2026-10-09T07:51:12.4532503Z [36;1mnode --input-type=module <<'JS'[0m
+2026-10-09T07:51:12.4532825Z [36;1mimport assert from 'node:assert/strict';[0m
+2026-10-09T07:51:12.4533223Z [36;1mimport {readFile,writeFile,mkdir} from 'node:fs/promises';[0m
+2026-10-09T07:51:12.4533606Z [36;1mimport {dirname} from 'node:path';[0m
+2026-10-09T07:51:12.4534134Z [36;1mimport {browserSourcePaths,browserSourceHashes,sha256} from './scripts/browser-source-guard.mjs';[0m
+2026-10-09T07:51:12.4534876Z [36;1mconst base='.work/initial-presence-bootstrap',sources=await browserSourceHashes(),copied=[];[0m
+2026-10-09T07:51:12.4535386Z [36;1mconst destination=path=>{[0m
+2026-10-09T07:51:12.4535903Z [36;1m  if(path.startsWith('../../contract/'))return base+'/sources/contract/'+path.slice('../../contract/'.length);[0m
+2026-10-09T07:51:12.4536620Z [36;1m  if(path==='../../.github/workflows/G02.yml')return base+'/sources/workflow/G02.yml';[0m
+2026-10-09T07:51:12.4537246Z [36;1m  assert(!path.startsWith('../')&&!path.startsWith('/'));return base+'/sources/job/'+path;[0m
+2026-10-09T07:51:12.4537680Z [36;1m};[0m
+2026-10-09T07:51:12.4537914Z [36;1mfor(const path of browserSourcePaths){[0m
+2026-10-09T07:51:12.4538450Z [36;1m  const bytes=await readFile(path),target=destination(path);assert.equal(sha256(bytes),sources[path]);[0m
+2026-10-09T07:51:12.4539088Z [36;1m  await mkdir(dirname(target),{recursive:true});await writeFile(target,bytes);[0m
+2026-10-09T07:51:12.4539712Z [36;1m  copied.push({originalPath:path,artifactPath:target,bytes:bytes.length,sha256:sha256(bytes)});[0m
+2026-10-09T07:51:12.4540524Z [36;1m}[0m
+2026-10-09T07:51:12.4540819Z [36;1mconst additionalSources={},additionalCopied=[];[0m
+2026-10-09T07:51:12.4541708Z [36;1mfor(const [originalPath,artifactPath] of [['../../contract/package.json',base+'/sources/contract/package.json'],['evidence/audit-20261009/bootstrap-request.json',base+'/bootstrap-request.json']]){[0m
+2026-10-09T07:51:12.4543188Z [36;1m const bytes=await readFile(originalPath);additionalSources[originalPath]=sha256(bytes);await writeFile(artifactPath,bytes);additionalCopied.push({originalPath,artifactPath,bytes:bytes.length,sha256:sha256(bytes)});[0m
+2026-10-09T07:51:12.4544103Z [36;1m}[0m
+2026-10-09T07:51:12.4544404Z [36;1mconst bootstrap=await readFile('../../.github/workflows/G02.yml');[0m
+2026-10-09T07:51:12.4544873Z [36;1mawait writeFile(base+'/bootstrap-workflow.yml',bootstrap);[0m
+2026-10-09T07:51:12.4545379Z [36;1mawait writeFile(base+'/source-start.json',JSON.stringify(sources,null,2)+'\n');[0m
+2026-10-09T07:51:12.4546611Z [36;1mawait writeFile(base+'/source-copy-index.json',JSON.stringify({version:1,head:process.env.G02_SOURCE_HEAD,originalGuardedSources:browserSourcePaths.length,bootstrapWorkflowSha256:sha256(bootstrap),additionalSources,additionalCopied,copied},null,2)+'\n');[0m
+2026-10-09T07:51:12.4547723Z [36;1massert.equal(copied.length,35);[0m
+2026-10-09T07:51:12.4548341Z [36;1mconsole.log(JSON.stringify({preservedOriginalInputs:copied.length,head:process.env.G02_SOURCE_HEAD}));[0m
+2026-10-09T07:51:12.4548944Z [36;1mJS[0m
+2026-10-09T07:51:12.4611394Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:51:12.4611821Z env:
+2026-10-09T07:51:12.4612175Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:51:12.4612586Z ##[endgroup]
+2026-10-09T07:51:12.5307469Z {"preservedOriginalInputs":35,"head":"1478a93e36f9f6ddf88aad246083ab0c8e059cf4"}
+2026-10-09T07:51:12.5378332Z ##[group]Run node scripts/browser-check.mjs
+2026-10-09T07:51:12.5378699Z [36;1mnode scripts/browser-check.mjs[0m
+2026-10-09T07:51:12.5441641Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:51:12.5441903Z env:
+2026-10-09T07:51:12.5442163Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:51:12.5442690Z ##[endgroup]
+2026-10-09T07:51:12.9478905Z {"kind":"full browser proof","started":"2026-10-09T07:51:12.944Z","pid":3252,"sourceStart":{"play.html":"8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63","src/core.ts":"211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218","src/cards.ts":"e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9","src/browser.ts":"56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4","src/play.template.html":"1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","dist/core.mjs":"dedf75871bc145694fc68721f2f626a63435af95aacc948f5f4715f517bd786a","dist/cards.mjs":"1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77","dist/contract.mjs":"0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a","scripts/browser-check.mjs":"536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc","scripts/clock-check.mjs":"beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19","scripts/meld-check.mjs":"d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4","scripts/results-check.mjs":"c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f","scripts/name-check.mjs":"3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f","scripts/host-check.mjs":"e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50","scripts/public-history-check.mjs":"5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859","tests/browser-fixture.mjs":"f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621","tests/helpers.mjs":"402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e","scripts/browser-source-guard.mjs":"e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622","scripts/frame-coordination.mjs":"f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656","scripts/strict-browser-proof.mjs":"fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9","scripts/browser-proof.mjs":"3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489","scripts/capture.mjs":"72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985","scripts/build.mjs":"3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e","scripts/integrity.mjs":"7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb","scripts/check-evidence-links.mjs":"03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842","package.json":"8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b","package-lock.json":"bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a","tsconfig.json":"624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3","manifest.json":"d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb","../../.github/workflows/G02.yml":"5f6241b15e880f212442f4e51fece427f92725b97c222ffaab6b455f0d38bb2a"}}
+2026-10-09T07:51:23.8816625Z {"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63","attemptNonce":"2214ad64-6f81-4a6a-a61c-1ae89d1c538c","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"utc":"2026-10-09T07:51:23.881Z"}
+2026-10-09T07:51:24.1062032Z {"label":"desktop","fps":60.00180005400163,"meanMs":16.666166666666665,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+2026-10-09T07:51:35.1390743Z {"frameWindow":"CLOSED","profile":"phone4x","sourceSha256":"8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63","attemptNonce":"904ee8e4-1312-43aa-9275-658c380a344b","coordination":"uncoordinated","readyUtc":null,"grantUtc":null,"status":"samples-written","rawIntervals":600,"utc":"2026-10-09T07:51:35.136Z"}
+2026-10-09T07:51:35.3909006Z {"label":"phone4x","fps":60.00240009600384,"meanMs":16.666,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+2026-10-09T07:51:35.6589202Z {"kind":"synthetic delayed-host-callback and pause regression","elapsedMs":20000,"configuredTurnMs":10000,"firstExpiredCallbackCount":1,"actionsBefore":0,"actionsAfter":1,"deadlineAdvancedOnElapsedTime":true,"visibleCountdown":true,"pausePreservesRemainingTime":true,"entropyCalls":1,"controlledTestSeed":7199}
+2026-10-09T07:51:38.0307772Z {"customMeldRegression":[{"label":"desktop","cpuThrottle":1,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"},{"label":"phone4x","cpuThrottle":4,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"}]}
+2026-10-09T07:51:39.0928148Z {"resultsRegression":[{"label":"desktop","cpuThrottle":1,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"},{"label":"phone4x","cpuThrottle":4,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"}]}
+2026-10-09T07:51:39.7446540Z {"payload":"<svg onload=alert(1)>","renderedAsText":true,"insertedMarkupNodes":0,"dialogs":0,"pageErrors":0,"networkRequests":0,"cpuThrottle":4}
+2026-10-09T07:51:42.0683448Z {"runId":"2026-10-09T07-51-12-944Z","passed":true,"sourceUnchanged":true,"extraHostChecks":5,"rows":[{"label":"desktop","fps":60.00180005400163,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true},{"label":"phone4x","fps":60.00240009600384,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true}]}
+2026-10-09T07:51:42.0842756Z ##[group]Run node scripts/capture.mjs initial-presence-bootstrap --public-history --ci-output
+2026-10-09T07:51:42.0843987Z [36;1mnode scripts/capture.mjs initial-presence-bootstrap --public-history --ci-output[0m
+2026-10-09T07:51:42.0932578Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:51:42.0932841Z env:
+2026-10-09T07:51:42.0933103Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:51:42.0933438Z ##[endgroup]
+2026-10-09T07:51:42.4160016Z {"kind":"functional recordings","started":"2026-10-09T07:51:42.413Z","pid":3444,"sourceStart":{"play.html":"8336c62b86e8045f2350e01b8b7b7e2c09c9c31858af6e5a784b9710dd3a9c63","src/core.ts":"211f2307bd96d497e444a4c75157256398f690892b0e9beb4c226c1aeb49e218","src/cards.ts":"e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9","src/browser.ts":"56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4","src/play.template.html":"1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7","../../contract/contract.ts":"c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5","../../contract/constants.ts":"27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef","../../contract/rng.ts":"7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe","../../contract/minigame-schema.ts":"2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb","../../contract/player-count-schema.ts":"0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189","dist/core.mjs":"dedf75871bc145694fc68721f2f626a63435af95aacc948f5f4715f517bd786a","dist/cards.mjs":"1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77","dist/contract.mjs":"0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a","scripts/browser-check.mjs":"536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc","scripts/clock-check.mjs":"beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19","scripts/meld-check.mjs":"d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4","scripts/results-check.mjs":"c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f","scripts/name-check.mjs":"3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f","scripts/host-check.mjs":"e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50","scripts/public-history-check.mjs":"5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859","tests/browser-fixture.mjs":"f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621","tests/helpers.mjs":"402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e","scripts/browser-source-guard.mjs":"e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622","scripts/frame-coordination.mjs":"f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656","scripts/strict-browser-proof.mjs":"fae9a75d472307307c6eb4781c77f32845ebdade6f4104d859957ce62c1d43d9","scripts/browser-proof.mjs":"3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489","scripts/capture.mjs":"72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985","scripts/build.mjs":"3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e","scripts/integrity.mjs":"7104c27be54110cac7b2d336e594ce0681a578fcb301a863540084619a7e42bb","scripts/check-evidence-links.mjs":"03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842","package.json":"8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b","package-lock.json":"bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a","tsconfig.json":"624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3","manifest.json":"d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb","../../.github/workflows/G02.yml":"5f6241b15e880f212442f4e51fece427f92725b97c222ffaab6b455f0d38bb2a"}}
+2026-10-09T07:51:56.1630931Z {"path":".work/browser/initial-presence-bootstrap-2026-10-09t07-51-42-397z-desktop.webm","bytes":724308,"sha256":"a3f73b2a0cf60bd299011f76645f635e330a1d646751dd4ddc87df854db33c5b","cpuThrottle":1,"viewport":{"width":1920,"height":1080},"performanceMeasurement":false,"newMatchPrivateDomCleared":true,"actualElapsedTimeoutCoveredHand":true,"publicPassHistoryShown":true,"passActors":["Player 1: pass","Player 2: pass"],"networkRequests":0,"pageErrors":0}
+2026-10-09T07:52:10.1132061Z {"path":".work/browser/initial-presence-bootstrap-2026-10-09t07-51-42-397z-phone4x.webm","bytes":652067,"sha256":"fd3c3b858f5f8c16a8cdcd5fd2bf6c4bfbb79f3e14fc9b664dc1f4d81bc08dfa","cpuThrottle":4,"viewport":{"width":390,"height":844},"performanceMeasurement":false,"newMatchPrivateDomCleared":true,"actualElapsedTimeoutCoveredHand":true,"publicPassHistoryShown":true,"passActors":["Player 1: pass","Player 2: pass"],"networkRequests":0,"pageErrors":0}
+2026-10-09T07:52:10.1543544Z ##[group]Run node scripts/strict-browser-proof.mjs --live
+2026-10-09T07:52:10.1544006Z [36;1mnode scripts/strict-browser-proof.mjs --live[0m
+2026-10-09T07:52:10.1606121Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:52:10.1606375Z env:
+2026-10-09T07:52:10.1606631Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:52:10.1606960Z ##[endgroup]
+2026-10-09T07:52:10.2123554Z {"suite":"strict-current-browser-proof","guardedSources":35,"profiles":2,"rawIntervals":1200,"nativeTimestamps":1202,"activeHandWitnesses":1208,"unfiltered":true,"recordingsMatched":2}
+2026-10-09T07:52:10.2190546Z ##[group]Run node --input-type=module <<'JS'
+2026-10-09T07:52:10.2191013Z [36;1mnode --input-type=module <<'JS'[0m
+2026-10-09T07:52:10.2191342Z [36;1mimport assert from 'node:assert/strict';[0m
+2026-10-09T07:52:10.2191776Z [36;1mimport {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';[0m
+2026-10-09T07:52:10.2192559Z [36;1mimport {browserSourceHashes,sha256} from './scripts/browser-source-guard.mjs';[0m
+2026-10-09T07:52:10.2193169Z [36;1mconst base='.work/initial-presence-bootstrap';await mkdir(base,{recursive:true});[0m
+2026-10-09T07:52:10.2193892Z [36;1mlet sources=null,sourceError=null;try{sources=await browserSourceHashes();}catch(error){sourceError=String(error);}[0m
+2026-10-09T07:52:10.2195016Z [36;1mlet bootstrapWorkflowSha256=null,bootstrapWorkflowError=null;try{bootstrapWorkflowSha256=sha256(await readFile('../../.github/workflows/G02.yml'));}catch(error){bootstrapWorkflowError=String(error);}[0m
+2026-10-09T07:52:10.2196740Z [36;1mlet additionalSources=null,additionalSourceError=null;try{additionalSources={};for(const path of ['../../contract/package.json','evidence/audit-20261009/bootstrap-request.json'])additionalSources[path]=sha256(await readFile(path));}catch(error){additionalSourceError=String(error);}[0m
+2026-10-09T07:52:10.2198484Z [36;1mawait writeFile(base+'/source-end.json',JSON.stringify({sources,sourceError,bootstrapWorkflowSha256,bootstrapWorkflowError,additionalSources,additionalSourceError},null,2)+'\n');[0m
+2026-10-09T07:52:10.2199891Z [36;1mlet before=null,beforeIndex=null;try{before=JSON.parse(await readFile(base+'/source-start.json','utf8'));beforeIndex=JSON.parse(await readFile(base+'/source-copy-index.json','utf8'));}catch{}[0m
+2026-10-09T07:52:10.2201169Z [36;1mconst files=[];[0m
+2026-10-09T07:52:10.2201654Z [36;1masync function walk(path){let entries;try{entries=await readdir(path,{withFileTypes:true});}catch{return;}[0m
+2026-10-09T07:52:10.2202410Z [36;1m  for(const entry of entries.sort((a,b)=>a.name.localeCompare(b.name))){const next=path+'/'+entry.name;[0m
+2026-10-09T07:52:10.2203306Z [36;1m    if(entry.isDirectory())await walk(next);else if(entry.isFile()){const bytes=await readFile(next);files.push({path:next,bytes:bytes.length,sha256:sha256(bytes)});}[0m
+2026-10-09T07:52:10.2203981Z [36;1m  }[0m
+2026-10-09T07:52:10.2204164Z [36;1m}[0m
+2026-10-09T07:52:10.2204417Z [36;1mawait walk('.work/browser');await walk(base);[0m
+2026-10-09T07:52:10.2205036Z [36;1mfor(const path of ['.work/clock-after.json','.work/custom-meld-after.json','.work/results-after.json','.work/name-check.json']){[0m
+2026-10-09T07:52:10.2205840Z [36;1m  try{const bytes=await readFile(path);files.push({path,bytes:bytes.length,sha256:sha256(bytes)});}catch{}[0m
+2026-10-09T07:52:10.2206326Z [36;1m}[0m
+2026-10-09T07:52:10.2206740Z [36;1mconst sourceUnchanged=before!==null&&sources!==null&&JSON.stringify(before)===JSON.stringify(sources);[0m
+2026-10-09T07:52:10.2207553Z [36;1mconst bootstrapWorkflowUnchanged=beforeIndex!==null&&bootstrapWorkflowSha256===beforeIndex.bootstrapWorkflowSha256;[0m
+2026-10-09T07:52:10.2208584Z [36;1mconst additionalSourceUnchanged=beforeIndex!==null&&additionalSources!==null&&JSON.stringify(additionalSources)===JSON.stringify(beforeIndex.additionalSources);[0m
+2026-10-09T07:52:10.2211325Z [36;1mconst closed={version:1,head:process.env.G02_SOURCE_HEAD,runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,closedUtc:new Date().toISOString(),statusBeforeClosure:process.env.BOOTSTRAP_STATUS,sourceUnchanged,sourceError,bootstrapWorkflowUnchanged,bootstrapWorkflowSha256,bootstrapWorkflowError,additionalSourceUnchanged,additionalSources,additionalSourceError,files,rawFiltering:'none',fullNpmTestAccepted:false};[0m
+2026-10-09T07:52:10.2213511Z [36;1mawait writeFile(base+'/CLOSED.json',JSON.stringify(closed,null,2)+'\n');[0m
+2026-10-09T07:52:10.2214623Z [36;1mconsole.log(JSON.stringify({closedUtc:closed.closedUtc,head:closed.head,files:files.length,sourceUnchanged,statusBeforeClosure:closed.statusBeforeClosure}));[0m
+2026-10-09T07:52:10.2216210Z [36;1mif(before!==null){assert(sourceUnchanged,'guarded inputs changed during the bootstrap');assert(bootstrapWorkflowUnchanged,'the bootstrap workflow changed during execution');assert(additionalSourceUnchanged,'the contract package or explicit request changed during execution');}[0m
+2026-10-09T07:52:10.2217430Z [36;1mJS[0m
+2026-10-09T07:52:10.2279914Z shell: /usr/bin/bash -e {0}
+2026-10-09T07:52:10.2280452Z env:
+2026-10-09T07:52:10.2280731Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:52:10.2281095Z   BOOTSTRAP_STATUS: success
+2026-10-09T07:52:10.2281324Z ##[endgroup]
+2026-10-09T07:52:10.2982970Z {"closedUtc":"2026-10-09T07:52:10.297Z","head":"1478a93e36f9f6ddf88aad246083ab0c8e059cf4","files":59,"sourceUnchanged":true,"statusBeforeClosure":"success"}
+2026-10-09T07:52:10.3101664Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T07:52:10.3101985Z with:
+2026-10-09T07:52:10.3102338Z   name: G02-initial-presence-current-1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:52:10.3103608Z   path: jobs/G02-gin-rummy/.work/initial-presence-bootstrap/**
+jobs/G02-gin-rummy/.work/browser/**
+jobs/G02-gin-rummy/.work/clock-after.json
+jobs/G02-gin-rummy/.work/custom-meld-after.json
+jobs/G02-gin-rummy/.work/results-after.json
+jobs/G02-gin-rummy/.work/name-check.json
+
+2026-10-09T07:52:10.3104710Z   include-hidden-files: true
+2026-10-09T07:52:10.3104960Z   if-no-files-found: error
+2026-10-09T07:52:10.3105197Z   compression-level: 6
+2026-10-09T07:52:10.3105412Z   overwrite: false
+2026-10-09T07:52:10.3105609Z env:
+2026-10-09T07:52:10.3105851Z   G02_SOURCE_HEAD: 1478a93e36f9f6ddf88aad246083ab0c8e059cf4
+2026-10-09T07:52:10.3106165Z ##[endgroup]
+2026-10-09T07:52:10.4875464Z (node:3568) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T07:52:10.4877422Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T07:52:10.5187642Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-09T07:52:10.5190859Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G02-gin-rummy/.work. This will be the root directory of the artifact
+2026-10-09T07:52:10.5192436Z With the provided path, there will be 60 files uploaded
+2026-10-09T07:52:10.5193413Z Artifact name is valid!
+2026-10-09T07:52:10.5200827Z Root directory input is valid!
+2026-10-09T07:52:10.7533829Z Beginning upload of artifact content to blob storage
+2026-10-09T07:52:10.9541038Z (node:3568) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T07:52:11.0597126Z Uploaded bytes 1775665
+2026-10-09T07:52:11.0805284Z Finished uploading artifact content to blob storage!
+2026-10-09T07:52:11.0806772Z SHA256 digest of uploaded artifact zip is 5641f2e2c18cf273fa9a9738a3ed964008d84b5a5783956769aa2c9293cfaaea
+2026-10-09T07:52:11.0808612Z Finalizing artifact upload
+2026-10-09T07:52:11.2905336Z Artifact G02-initial-presence-current-1478a93e36f9f6ddf88aad246083ab0c8e059cf4.zip successfully finalized. Artifact ID 11602253768
+2026-10-09T07:52:11.2907036Z Artifact G02-initial-presence-current-1478a93e36f9f6ddf88aad246083ab0c8e059cf4 has been successfully uploaded! Final size is 1775665 bytes. Artifact ID is 11602253768
+2026-10-09T07:52:11.2913633Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37901344277/artifacts/11602253768
+2026-10-09T07:52:11.3096033Z Post job cleanup.
+2026-10-09T07:52:11.4340708Z (node:3583) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T07:52:11.4342273Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T07:52:11.4345223Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317, not saving cache.
+2026-10-09T07:52:11.4479352Z Post job cleanup.
+2026-10-09T07:52:11.5393116Z [command]/usr/bin/git version
+2026-10-09T07:52:11.5439934Z git version 2.55.0
+2026-10-09T07:52:11.5487713Z Temporarily overriding HOME='/home/runner/work/_temp/31a7ce6e-ccb0-4b80-a276-cfa33eb11987' before making global git config changes
+2026-10-09T07:52:11.5489922Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T07:52:11.5494388Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T07:52:11.5542182Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T07:52:11.5582920Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T07:52:11.5928200Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T07:52:11.5975940Z http.https://github.com/.extraheader
+2026-10-09T07:52:11.5987955Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T07:52:11.6039731Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T07:52:11.6379753Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T07:52:11.6428876Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T07:52:11.6807808Z Cleaning up orphan processes
+2026-10-09T07:52:11.7126896Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

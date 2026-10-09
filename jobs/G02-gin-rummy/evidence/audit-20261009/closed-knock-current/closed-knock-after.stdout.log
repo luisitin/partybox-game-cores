@@ -1,0 +1,14 @@
+{"suite":"closed-meld-knock-settings","cases":1152,"minGain":11,"maxGain":60,"classicSignedBefore":-14,"classicSignedAfter":1}
+{"suite":"closed-meld-knock-independent-hidden-defenders","defenders":1000,"publicViewsByteIdentical":true,"minGain":5,"maxGain":5,"winningTransitions":0}
+{"suite":"closed-meld-knock-boundaries","controls":120}
+✔ Strong improves a finishing knock across different closed melds in every setting and suit (1157.438291ms)
+✔ 1000 identical public views keep the same safe choice and independent joint-defense score (5408.351562ms)
+✔ closed-target dominance preserves forbidden returns, no-knock, Gin and inactive boundaries (38.332546ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6774.875591

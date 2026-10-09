@@ -1,0 +1,68 @@
+{"suite":"gin-policy-boundaries","forbiddenCases":52,"bigGinCases":12}
+✖ Strong takes guaranteed Gin despite public discard danger in every edition/profile/rotation (6.876062ms)
+✖ actual Gin scoring dominates every legal ordinary knock against 1000 disjoint hidden defenders (88.908106ms)
+✔ Gin priority respects immediate-return prohibition and preserves the existing Big Gin branch (21.807523ms)
+{"suite":"non-gin-policy-byte-equivalence","states":10000,"decisions":30000,"baselineHead":"72d0f3f4ad4f6b70a8ac6b0ed81121300aa54c1f"}
+✔ all 30000 non-Gin bot choices retain the accepted pre-repair behavior (2280.68957ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 2
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2536.151332
+
+✖ failing tests:
+
+test at tests/gin-priority.test.mjs:11:1
+✖ Strong takes guaranteed Gin despite public discard danger in every edition/profile/rotation (6.876062ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   card: 4,
+  -   card: 39,
+      knock: true,
+      type: 'discard'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-priority.test.mjs:16:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'discard', card: 4, knock: true },
+    expected: { type: 'discard', card: 39, knock: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/gin-priority.test.mjs:27:1
+✖ actual Gin scoring dominates every legal ordinary knock against 1000 disjoint hidden defenders (88.908106ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   card: 4,
+  -   card: 39,
+      knock: true,
+      type: 'discard'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/gin-priority.test.mjs:34:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'discard', card: 4, knock: true },
+    expected: { type: 'discard', card: 39, knock: true },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

@@ -1,0 +1,328 @@
+{
+  "kind": "unfixed independent bot weakness; exact valid52-card fixture",
+  "completed": "2026-10-09T02:07:47.795Z",
+  "sourceSha256": "3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b",
+  "state": {
+    "phase": {
+      "id": "discard",
+      "startedAt": 0,
+      "deadline": null
+    },
+    "phaseClock": 0,
+    "roomEmpty": false,
+    "rng": {
+      "seed": 1,
+      "step": 52
+    },
+    "players": {
+      "p0": {
+        "id": "p0",
+        "name": "Seat 0",
+        "avatarId": "face0",
+        "connected": true
+      },
+      "p1": {
+        "id": "p1",
+        "name": "Seat 1",
+        "avatarId": "face1",
+        "connected": true
+      }
+    },
+    "config": {
+      "variant": "standard",
+      "mode": "duel",
+      "target": 100,
+      "ginBonus": 20,
+      "undercutBonus": 10,
+      "boxBonus": 20,
+      "bigGin": false,
+      "bigGinBonus": 31,
+      "dealer": "winner",
+      "aceGin": true,
+      "spadeDouble": true,
+      "extraBoxes": false,
+      "shutout": "gameBonus",
+      "turnSeconds": 0
+    },
+    "order": [
+      "p0",
+      "p1"
+    ],
+    "active": [
+      "p0",
+      "p1"
+    ],
+    "waiting": [],
+    "left": [],
+    "scores": {
+      "p0": 0,
+      "p1": 0
+    },
+    "boxes": {
+      "p0": 0,
+      "p1": 0
+    },
+    "wins": {
+      "p0": 0,
+      "p1": 0
+    },
+    "dealer": "p0",
+    "turn": "p0",
+    "hand": 1,
+    "hands": {
+      "p0": [
+        1,
+        2,
+        3,
+        4,
+        14,
+        15,
+        16,
+        27,
+        28,
+        29,
+        39
+      ],
+      "p1": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        21,
+        22,
+        23,
+        24,
+        40
+      ]
+    },
+    "stock": [
+      0,
+      5,
+      6,
+      7,
+      13,
+      17,
+      18,
+      19,
+      20,
+      25,
+      26,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "discard": [
+      51
+    ],
+    "initialUpcard": 42,
+    "knockLimit": 10,
+    "multiplier": 1,
+    "openingPasses": 0,
+    "mustStock": false,
+    "drawnDiscard": null,
+    "pending": null,
+    "roundResult": null,
+    "finished": false,
+    "endedEarly": false,
+    "publicLog": [
+      {
+        "player": "p1",
+        "action": "take-discard",
+        "card": 40
+      }
+    ]
+  },
+  "rows": [
+    {
+      "skill": "normal",
+      "input": {
+        "type": "discard",
+        "card": 39,
+        "knock": true
+      },
+      "phaseAfter": "round-end",
+      "result": {
+        "winner": "p0",
+        "points": 22,
+        "kind": "gin",
+        "knocker": "p0",
+        "knockerLayout": {
+          "deadwood": 0,
+          "melds": [
+            [
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              14,
+              15,
+              16
+            ],
+            [
+              27,
+              28,
+              29
+            ]
+          ],
+          "loose": []
+        },
+        "defenderLayout": {
+          "deadwood": 2,
+          "melds": [
+            [
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            [
+              21,
+              22,
+              23,
+              24
+            ]
+          ],
+          "loose": [
+            40
+          ],
+          "laid": []
+        },
+        "hands": {
+          "p0": [
+            1,
+            2,
+            3,
+            4,
+            14,
+            15,
+            16,
+            27,
+            28,
+            29
+          ],
+          "p1": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            21,
+            22,
+            23,
+            24,
+            40
+          ]
+        },
+        "multiplier": 1
+      }
+    },
+    {
+      "skill": "sharp",
+      "input": {
+        "type": "discard",
+        "card": 4,
+        "knock": true
+      },
+      "phaseAfter": "layoff",
+      "result": {
+        "winner": "p0",
+        "points": 1,
+        "kind": "knock",
+        "knocker": "p0",
+        "knockerLayout": {
+          "deadwood": 1,
+          "melds": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              14,
+              15,
+              16
+            ],
+            [
+              27,
+              28,
+              29
+            ]
+          ],
+          "loose": [
+            39
+          ]
+        },
+        "defenderLayout": {
+          "deadwood": 2,
+          "melds": [
+            [
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            [
+              21,
+              22,
+              23,
+              24
+            ]
+          ],
+          "loose": [
+            40
+          ],
+          "laid": []
+        },
+        "hands": {
+          "p0": [
+            1,
+            2,
+            3,
+            14,
+            15,
+            16,
+            27,
+            28,
+            29,
+            39
+          ],
+          "p1": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            21,
+            22,
+            23,
+            24,
+            40
+          ]
+        },
+        "multiplier": 1
+      }
+    }
+  ],
+  "changedBotCode": false
+}

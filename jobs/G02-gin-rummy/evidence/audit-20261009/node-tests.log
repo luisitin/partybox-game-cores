@@ -1,0 +1,286 @@
+{"suite":"all-phases","phases":6,"cases":408}
+✔ every event family, roster id and bot skill in every delivered phase (66.393074ms)
+✔ registered prototype-looking ids remain valid players and finite result keys (3.050762ms)
+{"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+✔ 10500 batch outcomes retain exact standalone layouts and independent minima (7900.912799ms)
+{"suite":"boundary-fuzz","seed":912701,"invalidInputs":1000,"phases":6,"rejectedInputs":6000,"metadataChecks":282,"viewChecks":66}
+✔ 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase (64.363565ms)
+{"suite":"mixed-event-replay","phaseStarts":6,"seedsPerPhase":100,"transitions":48000,"changed":12742,"eventFamilies":["input","player","speech","speechStart","timer","vip"]}
+✔ mixed event families replay through JSON after every transition from every phase (15131.283863ms)
+✔ branching target ends retain exact minima, legal chains, layouts and all cards (35.072105ms)
+✖ current source-bound raw proof passes without discarding its largest interval (5.627677ms)
+✔ a refreshed inventory cannot accept stale browser or recording source hashes (2.950407ms)
+✖ changed end guards and failed snapshots are rejected (1.264107ms)
+✔ missing, altered and invalid raw intervals cannot be hidden by good summary fields (1.843499ms)
+✖ reported statistics are recomputed from all retained intervals (1.057767ms)
+✖ an honestly recomputed slow raw sample still fails the original frame gate (1.360628ms)
+✔ profile dimensions, CPU rates and encoder separation must remain truthful (1.752916ms)
+✔ changed, oversized and falsely labeled recordings are rejected (2.640407ms)
+✔ actual capture CLI refuses invalid tags and existing media/report before any browser launch (1453.283266ms)
+✔ meld validation rejects impossible card IDs while preserving legitimate edge runs/sets (1.851658ms)
+{"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612,"replayChecks":261181,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775,"replayChecks":286246,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825,"replayChecks":343987,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755,"replayChecks":258472,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812,"replayChecks":269750,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929,"replayChecks":317252,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+{"suite":"properties","seeds":1003,"events":420546}
+{"suite":"secrecy","comparisons":7925}
+✔ 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event (249417.030225ms)
+✔ property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability (14703.067306ms)
+✔ hidden-card/order perturbations never change TV, another controller or bot decisions (4819.654628ms)
+✔ idle/no-clock matches remain until explicit end, every phase can exit via VIP (29.217209ms)
+{"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+✔ departures in every live phase finish the absent turn without exposing its hand (21.021019ms)
+✔ 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play (4105.597457ms)
+✔ empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin (1.228188ms)
+✔ departures during VIP pause drain only on resume; malformed control events do nothing (0.563451ms)
+{"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+✔ independent exhaustive meld-subset packing proves 10000 exact minima (7915.84551ms)
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (11.499803ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (7.431079ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (4.805951ms)
+{"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"10941392-6e3b-408d-a594-a1149840c020","utc":"2026-10-09T02:03:39.662Z"}
+{"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"10941392-6e3b-408d-a594-a1149840c020","coordination":"root-granted","readyUtc":"2026-10-09T02:03:39.662Z","grantUtc":"2026-10-09T02:03:40.669Z","status":"closed","utc":"2026-10-09T02:03:40.669Z"}
+{"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"abebf3b4-dca3-435a-9bab-50eaa652663f","utc":"2026-10-09T02:03:40.670Z"}
+{"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"abebf3b4-dca3-435a-9bab-50eaa652663f","coordination":"root-granted","readyUtc":"2026-10-09T02:03:40.670Z","grantUtc":"2026-10-09T02:03:40.873Z","status":"closed","utc":"2026-10-09T02:03:40.873Z"}
+{"actualGrantCorruptionControls":10,"sequentialAttempts":2}
+{"frameWindow":"READY","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"f0251a0e-e611-4e73-8bc4-a090689d1481","utc":"2026-10-09T02:03:40.877Z"}
+✔ actual temporary grants reject stale nonce/source/profile and malformed or extra fields (1215.079041ms)
+{"frameWindow":"CLOSED","profile":"desktop","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"f0251a0e-e611-4e73-8bc4-a090689d1481","coordination":"root-granted","readyUtc":"2026-10-09T02:03:40.877Z","grantUtc":null,"status":"failed","reason":"matching grant timed out","utc":"2026-10-09T02:03:41.079Z"}
+✔ actual missing grant fails and writes CLOSED; no configured barrier returns an explicit uncoordinated identity (206.258388ms)
+{"suite":"initial-presence-exhaustive","cases":336,"connectionMasks":"all","counts":[2,3,4],"variants":["standard","oklahoma"],"clocks":[0,10]}
+{"suite":"initial-presence-seeded","cases":1000}
+✔ known initial presence is handled before either player needs to send an event (367.251971ms)
+✔ 1000 seeded initial presence patterns are playable or paused without a duplicate drop event (472.055196ms)
+{"suite":"connected-initialization-byte-equivalence","cases":6000,"baselineHead":"d5fbb39746f8f7900bee57506e8133e8675f48ed"}
+✔ all-connected opening states retain the exact 6000 pre-repair JSON states (226.174523ms)
+{"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+✔ 2000 independent joint meld/layoff weighted packings including chained extensions (7957.133051ms)
+{"suite":"opening-pass-attribution","directPassCases":360,"editions":2,"counts":[2,3,4]}
+{"suite":"pass-valid-ids","cases":240,"ids":["","__proto__","constructor","last"]}
+{"suite":"automatic-pass-attribution","routes":["timer","vip","player"]}
+✔ both opening passes identify their actual actors across counts, editions and seeds (102.57294ms)
+✔ empty and prototype-shaped original IDs retain pass attribution as own keys (39.702827ms)
+✔ timer, VIP skip and absent-seat automation identify the automatic passer (3.920436ms)
+✔ first raw target winner keeps the crown even when final box settlement reverses points (21.775903ms)
+✔ every valid string ID, including empty, wins, earns bonuses and stays in rotation (87.478483ms)
+✔ malformed identity metadata cannot coerce a registered ID, throw or reveal a hand (1.684937ms)
+✔ early end preserves earned raw points and reports current standings (4.131143ms)
+✔ aces low, set cardinality, runs and overlap (2.560611ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (4.097331ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (2.195303ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (20.055566ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (16.956913ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (3.626322ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (596.64347ms)
+{"syntheticGuardCorruptionsRejected":175,"guardedSources":35}
+✔ synthetic positive control covers full identities, native timestamps, all hand witnesses and clips (24.806105ms)
+✔ every guarded source and each start/end inventory entry rejects a stale hash or omission (482.841234ms)
+✔ wrong attempt/profile/page/transport/throttle, filtered samples and fake native clocks fail (26.132186ms)
+✔ missing/invalid timestamp, raw interval or active-frame witness fails despite good summaries (16.453507ms)
+✔ all statistics are recomputed and an honestly reported long interval fails the fixed gate (10.490785ms)
+✔ failed runs, mislabeled clips, altered bytes, outsize media and network/errors are rejected (25.606284ms)
+✔ same-timestamp turns cannot share timer instance identity (14.809645ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 51
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 271839.60405
+
+✖ failing tests:
+
+test at tests/browser-proof.test.mjs:6:1
+✖ current source-bound raw proof passes without discarding its largest interval (5.627677ms)
+  AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes
+  + actual - expected
+  
+    {
+  +   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+  -   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',
+      'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+      'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+  +   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+  -   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',
+      'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+    }
+  
+      at sourceGuard (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:13:9)
+      at verifyBrowserProof (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:21:2)
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:8:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: { 'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f', 'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf', 'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9', 'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4', 'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7' },
+    expected: { 'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375', 'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b', 'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9', 'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4', 'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7' },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/browser-proof.test.mjs:16:1
+✖ changed end guards and failed snapshots are rejected (1.264107ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /end hashes/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  {\n' +
+    "+   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',\n" +
+    "-   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',\n" +
+    "    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',\n" +
+    "    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',\n" +
+    "+   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',\n" +
+    "-   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',\n" +
+    "    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'\n" +
+    '  }\n'
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:17:74)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes
+    + actual - expected
+    
+      {
+    +   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+    -   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',
+        'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+        'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    +   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    -   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',
+        'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+      }
+    
+        at sourceGuard (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:13:9)
+        at verifyBrowserProof (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:21:2)
+        at file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:17:85
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:17:74)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+        at Test.postRun (node:internal/test_runner/test:1522:19),
+    expected: /end hashes/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/browser-proof.test.mjs:26:1
+✖ reported statistics are recomputed from all retained intervals (1.057767ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /retained interval/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  {\n' +
+    "+   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',\n" +
+    "-   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',\n" +
+    "    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',\n" +
+    "    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',\n" +
+    "+   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',\n" +
+    "-   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',\n" +
+    "    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'\n" +
+    '  }\n'
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:29:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes
+    + actual - expected
+    
+      {
+    +   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+    -   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',
+        'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+        'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    +   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    -   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',
+        'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+      }
+    
+        at sourceGuard (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:13:9)
+        at verifyBrowserProof (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:21:2)
+        at file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:29:21
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:29:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+        at Test.postRun (node:internal/test_runner/test:1522:19),
+    expected: /retained interval/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tests/browser-proof.test.mjs:32:1
+✖ an honestly recomputed slow raw sample still fails the original frame gate (1.360628ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /raw frame gate failed/. Input:
+  
+  'AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes\n' +
+    '+ actual - expected\n' +
+    '\n' +
+    '  {\n' +
+    "+   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',\n" +
+    "-   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',\n" +
+    "    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',\n" +
+    "    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',\n" +
+    "+   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',\n" +
+    "-   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',\n" +
+    "    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'\n" +
+    '  }\n'
+  
+      at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:37:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes
+    + actual - expected
+    
+      {
+    +   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+    -   'play.html': 'df0dcd628e146a875194042a4909a4bdcb8a3ad482a95d6b442eea548c5f8375',
+        'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+        'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    +   'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    -   'src/core.ts': '3a275679866d4822d8f41cf450e0f4883756ba9498ad026feb5395d8618ffc9b',
+        'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+      }
+    
+        at sourceGuard (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:13:9)
+        at verifyBrowserProof (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/browser-proof.mjs:21:2)
+        at file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:37:20
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/tests/browser-proof.test.mjs:37:9)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+        at Test.postRun (node:internal/test_runner/test:1522:19),
+    expected: /raw frame gate failed/,
+    operator: 'throws',
+    diff: 'simple'
+  }

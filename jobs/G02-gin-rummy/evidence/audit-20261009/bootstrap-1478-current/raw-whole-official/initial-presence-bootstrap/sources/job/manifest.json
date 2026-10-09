@@ -1,0 +1,211 @@
+{
+  "id": "gin-rummy",
+  "name": "Gin Rummy",
+  "icon": "🃏",
+  "tagline": "Build melds, keep your deadwood low.",
+  "description": "Standard or Oklahoma Gin, exact meld scoring, and an optional winner-stays rotation.",
+  "howToPlay": [
+    "Draw a card, then discard one.",
+    "Make sets and runs; knock with low deadwood.",
+    "Gin earns a bonus. First to the target ends the match."
+  ],
+  "version": "1.2.1",
+  "minPlayers": 2,
+  "maxPlayers": 4,
+  "estimatedMinutes": 20,
+  "unlimitedDuration": true,
+  "tags": [
+    "classic",
+    "strategy"
+  ],
+  "presence": {
+    "needs": "same-room"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "playerCounts": {
+    "setting": "mode",
+    "default": [
+      2,
+      2
+    ],
+    "overrides": {
+      "duel": [
+        2,
+        2
+      ],
+      "rotation": [
+        3,
+        4
+      ]
+    }
+  },
+  "settings": [
+    {
+      "key": "variant",
+      "label": "Rules",
+      "type": "select",
+      "default": "standard",
+      "options": [
+        {
+          "value": "standard",
+          "label": "standard"
+        },
+        {
+          "value": "oklahoma",
+          "label": "oklahoma"
+        }
+      ]
+    },
+    {
+      "key": "mode",
+      "label": "Seats",
+      "type": "select",
+      "default": "duel",
+      "options": [
+        {
+          "value": "duel",
+          "label": "duel"
+        },
+        {
+          "value": "rotation",
+          "label": "rotation"
+        }
+      ]
+    },
+    {
+      "key": "target",
+      "label": "Hand-point target",
+      "type": "select",
+      "default": "100",
+      "options": [
+        {
+          "value": "100",
+          "label": "100"
+        },
+        {
+          "value": "150",
+          "label": "150"
+        },
+        {
+          "value": "250",
+          "label": "250"
+        }
+      ]
+    },
+    {
+      "key": "bonusProfile",
+      "label": "Bonus profile",
+      "type": "select",
+      "default": "classic",
+      "options": [
+        {
+          "value": "classic",
+          "label": "classic"
+        },
+        {
+          "value": "northAmerican",
+          "label": "northAmerican"
+        },
+        {
+          "value": "rubl",
+          "label": "rubl"
+        }
+      ]
+    },
+    {
+      "key": "bigGin",
+      "label": "Allow eleven-card Big Gin",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "bigGinBonus",
+      "label": "Big Gin bonus",
+      "type": "select",
+      "default": "31",
+      "options": [
+        {
+          "value": "31",
+          "label": "31"
+        },
+        {
+          "value": "50",
+          "label": "50"
+        }
+      ]
+    },
+    {
+      "key": "dealer",
+      "label": "Next dealer",
+      "type": "select",
+      "default": "winner",
+      "options": [
+        {
+          "value": "winner",
+          "label": "winner"
+        },
+        {
+          "value": "loser",
+          "label": "loser"
+        },
+        {
+          "value": "alternate",
+          "label": "alternate"
+        }
+      ]
+    },
+    {
+      "key": "aceGin",
+      "label": "Oklahoma ace requires Gin",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "spadeDouble",
+      "label": "Oklahoma spade doubles hand",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "extraBoxes",
+      "label": "Oklahoma extra boxes",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "key": "shutout",
+      "label": "Shutout formula",
+      "type": "select",
+      "default": "gameBonus",
+      "options": [
+        {
+          "value": "gameBonus",
+          "label": "gameBonus"
+        },
+        {
+          "value": "handPoints",
+          "label": "handPoints"
+        },
+        {
+          "value": "wholeScore",
+          "label": "wholeScore"
+        },
+        {
+          "value": "none",
+          "label": "none"
+        }
+      ]
+    },
+    {
+      "key": "turnSeconds",
+      "label": "Optional turn clock (0 is off)",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 120,
+      "step": 10
+    }
+  ]
+}

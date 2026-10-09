@@ -1,0 +1,318 @@
+{
+  "phase": {
+    "id": "layoff",
+    "startedAt": 30,
+    "deadline": null
+  },
+  "phaseClock": 30,
+  "roomEmpty": false,
+  "rng": {
+    "seed": 1,
+    "step": 52
+  },
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Seat 0",
+      "avatarId": "face0",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Seat 1",
+      "avatarId": "face1",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "config": {
+    "variant": "standard",
+    "mode": "duel",
+    "target": 100,
+    "ginBonus": 20,
+    "undercutBonus": 10,
+    "boxBonus": 20,
+    "bigGin": true,
+    "bigGinBonus": 31,
+    "dealer": "winner",
+    "aceGin": true,
+    "spadeDouble": true,
+    "extraBoxes": false,
+    "shutout": "gameBonus",
+    "turnSeconds": 0
+  },
+  "order": [
+    "p0",
+    "p1"
+  ],
+  "active": [
+    "p0",
+    "p1"
+  ],
+  "waiting": [],
+  "left": [],
+  "scores": {
+    "p0": 0,
+    "p1": 0
+  },
+  "boxes": {
+    "p0": 0,
+    "p1": 0
+  },
+  "wins": {
+    "p0": 0,
+    "p1": 0
+  },
+  "dealer": "p0",
+  "turn": "p0",
+  "hand": 1,
+  "hands": {
+    "p0": [
+      43,
+      17,
+      36,
+      10,
+      29,
+      23,
+      41,
+      3,
+      30,
+      49
+    ],
+    "p1": [
+      31,
+      18,
+      2,
+      0,
+      32,
+      26,
+      27,
+      33,
+      34,
+      44
+    ]
+  },
+  "stock": [
+    4,
+    7,
+    15,
+    12,
+    20,
+    14,
+    16,
+    48,
+    35,
+    1,
+    5,
+    28,
+    39,
+    6,
+    8,
+    45,
+    13,
+    40,
+    38,
+    50,
+    46
+  ],
+  "discard": [
+    9,
+    25,
+    24,
+    22,
+    37,
+    51,
+    11,
+    21,
+    47,
+    19,
+    42
+  ],
+  "initialUpcard": 42,
+  "knockLimit": 10,
+  "multiplier": 1,
+  "openingPasses": 0,
+  "mustStock": false,
+  "drawnDiscard": null,
+  "pending": {
+    "knocker": "p1",
+    "layout": {
+      "deadwood": 7,
+      "melds": [
+        [
+          31,
+          18,
+          44
+        ],
+        [
+          32,
+          33,
+          34
+        ]
+      ],
+      "loose": [
+        2,
+        0,
+        26,
+        27
+      ]
+    },
+    "big": false
+  },
+  "roundResult": null,
+  "finished": false,
+  "endedEarly": false,
+  "publicLog": [
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 42
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 9
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 25
+    },
+    {
+      "player": "p1",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 24
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 22
+    },
+    {
+      "player": "p1",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 37
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 51
+    },
+    {
+      "player": "p1",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 11
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 33
+    },
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 33
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 21
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 19
+    },
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 19
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 47
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 34
+    },
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 34
+    },
+    {
+      "player": "p1",
+      "action": "discard",
+      "card": 19
+    },
+    {
+      "player": "p0",
+      "action": "draw-stock",
+      "card": null
+    },
+    {
+      "player": "p0",
+      "action": "discard",
+      "card": 44
+    },
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 44
+    },
+    {
+      "player": "p1",
+      "action": "knock",
+      "card": 42
+    }
+  ]
+}

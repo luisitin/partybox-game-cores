@@ -1,0 +1,41 @@
+{
+  "closedUtc": "2026-10-09T07:39:40.352102+00:00",
+  "nativeChildReturnCode": 1,
+  "guardedInputs": 14,
+  "sourceStart": {
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/core.ts": "5ec7c1f712eb17fffd784cde070a8df295f8545bd1e481d81b114e4ecc51abb7",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/core.mjs": "b2c7b4c93badc4f7c41214a5a5222c30b102e6f4a25166d6b026e52864833943",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/play.html": "efc3c233aa159b884fcc340fe083f942bbb8e001ac0664352fb487465830c9e0",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package.json": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package-lock.json": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/gin-cases.mjs": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/layoff-reference.mjs": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1",
+    "/tmp/G02-source-93f0f58-20261009/.github/workflows/G02.yml": "f5cb756d4029be69c41da39ccd3b8929849418956d96b6122db7598bf8f92a7d",
+    "/tmp/G02-KEEP18-subset-knock-20261009/production-probe.mjs": "70ab1fcdd4ca7c72b2c5ca485a3e8383d4b2fdff61b99275103fb49c444151c6",
+    "/tmp/G02-KEEP18-subset-knock-20261009/rank-five.json": "7d2f76548f07bc4167106959261d92d84ab9724b4a06381ac56b5a651dde4669",
+    "/tmp/G02-KEEP18-subset-knock-20261009/probe-controller.py": "50c99f409e1f52a618f12b5f1e569ea59d9a735754e9ae49e8860722ea597d78"
+  },
+  "sourceEnd": {
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/core.ts": "5ec7c1f712eb17fffd784cde070a8df295f8545bd1e481d81b114e4ecc51abb7",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/core.mjs": "b2c7b4c93badc4f7c41214a5a5222c30b102e6f4a25166d6b026e52864833943",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/dist/cards.mjs": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/play.html": "efc3c233aa159b884fcc340fe083f942bbb8e001ac0664352fb487465830c9e0",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package.json": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/package-lock.json": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/gin-cases.mjs": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/helpers.mjs": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e",
+    "/tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/layoff-reference.mjs": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1",
+    "/tmp/G02-source-93f0f58-20261009/.github/workflows/G02.yml": "f5cb756d4029be69c41da39ccd3b8929849418956d96b6122db7598bf8f92a7d",
+    "/tmp/G02-KEEP18-subset-knock-20261009/production-probe.mjs": "70ab1fcdd4ca7c72b2c5ca485a3e8383d4b2fdff61b99275103fb49c444151c6",
+    "/tmp/G02-KEEP18-subset-knock-20261009/rank-five.json": "7d2f76548f07bc4167106959261d92d84ab9724b4a06381ac56b5a651dde4669",
+    "/tmp/G02-KEEP18-subset-knock-20261009/probe-controller.py": "50c99f409e1f52a618f12b5f1e569ea59d9a735754e9ae49e8860722ea597d78"
+  },
+  "sourceUnchanged": true,
+  "pass": false,
+  "candidateAdopted": false,
+  "noLocalSampler": true
+}
