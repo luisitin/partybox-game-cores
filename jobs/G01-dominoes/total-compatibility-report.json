@@ -3,18 +3,25 @@
   "baselineSha256": "e9e882f2095d45671a282e8c90ef5da5b1b1d26a6cf33259245c73b637a7e3be",
   "games": 1003,
   "seeds": 1003,
-  "transitions": 378899,
+  "transitions": 372510,
   "kinds": {
     "player": 2006,
-    "vip": 14177,
-    "timer": 22533,
-    "input": 340183
+    "vip": 13977,
+    "timer": 22140,
+    "input": 334387
   },
   "normalized": [
     "idleTurns",
     "phase.deadline"
   ],
-  "idleDeadlineDifferences": 2630,
+  "idleDeadlineDifferences": 2581,
   "stateMismatches": 0,
-  "resultMismatches": 0
+  "resultMismatches": 0,
+  "explicitAbsencePolicy": "Unchanged frozen engine legal greedy actions at declaration time; full physical state comparison, stock plus N-1 progress bound; paused/empty tables unchanged",
+  "absenceReplayActions": 827,
+  "connectedBaselineCommit": "eadb642bc1f9f4f2c839c7a6754932e7a5b640ec",
+  "connectedBaselineSha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95",
+  "connectedGames": 1003,
+  "connectedTransitions": 377896,
+  "connectedWholeStateMismatches": 0
 }

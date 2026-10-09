@@ -52,8 +52,7 @@ Single steps:
 
 ## Status
 
-PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
-Prior Worker/face-down ddd full CI and1,279-check genuine artifact proof passed,
-including real file opening,600 native intervals and36 decoded VP9 frames.
-Privacy fix/full1,303-check proof and renewed KEEP PASS; final delivery CI pending.
-NEXT.md binds remaining checks; all historical failures remain preserved.
+Protected PR11 stays Ready; initial repair32a passed whole original CI; Draft20 incomplete.
+Controlled468 pairs pass;360 connected games keep every state byte-identical.
+Qualified1008:57 tests/25 mutants/whole1360 checks; R30 first empty-room return1200 FAIL.
+NEXT.md records qualified R29, open R30 return defect, failures and actual cadence.

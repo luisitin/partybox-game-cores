@@ -91,7 +91,7 @@ export function init(ctx:InitContext):State{
  const seats=ctx.players.map(p=>p.id);if(seats.length<2||seats.length>4||new Set(seats).size!==seats.length)throw new Error('Dominoes requires 2–4 unique players');
  const c=ctx.settings;const settings:Settings={mode:c.mode==='block'?'block':'draw',deal:c.deal==='traditional'?'traditional':'block-sized',partners:c.partners===true&&seats.length===4,target:[100,150,250].includes(Number(c.target))?Number(c.target):100,reserve:c.reserve==='2'?2:0,opening:c.opening==='rotating'?'rotating':'highest-double',blocked:c.blocked==='opponents'?'opponents':'difference',teamPoints:c.teamPoints==='all'?'all':'opponents'};
  const s:State={players:Object.fromEntries(ctx.players.map(p=>[p.id,{...p}])),phase:{id:'play',startedAt:ctx.now-1,deadline:null},rng:seedRng(ctx.seed),seats,settings,hands:[],stock:[],board:[],ends:null,turn:0,idleTurns:0,starter:0,forced:null,round:1,passes:0,scores:seats.map(()=>0),missed:seats.map(()=>0),history:[],last:null};
- return drainAbsent(deal(s,ctx.now),ctx.now);
+ return deal(s,ctx.now);
 }
 export function sameInput(a:Input,b:Input):boolean{return a.type===b.type&&(a.type!=='play'||(b.type==='play'&&a.tile===b.tile&&a.side===b.side));}
 export function apply(s:State,i:Input,now:number):State{
@@ -119,17 +119,7 @@ function submitted(s:State,i:Input,now:number,playerId:string):State {const idle
 // A full cycle of automatic turns (one per seat) with no human input speeds the table up; the
 // round-end countdown is not a missed turn, so a present player never inherits a one-second window.
 function automatic(s:State,now:number):State {return apply({...s,idleTurns:s.phase.id==='play'?Math.min(s.seats.length,s.idleTurns+1):s.idleTurns},greedy(s.hands[s.turn]!,s.ends,legal(s)),now);}
-// A disconnected human has already passed the shell's reconnect grace. Advance
-// that seat without making the connected table wait through another turn clock.
-// Before a present seat is reached, at most 28 stock draws and N-1 play/pass
-// actions are possible. Stop at round end, while paused, or in an empty room.
-function drainAbsent(s:State,now:number):State {
- if(s.phase.paused||!s.seats.some(id=>s.players[id]!.connected))return s;
- let next=s;
- for(let count=0;count<28+s.seats.length&&next.phase.id==='play'&&!next.players[next.seats[next.turn]!]!.connected;count++)next=apply(next,greedy(next.hands[next.turn]!,next.ends,legal(next)),now);
- return next;
-}
-function reduceEvent(s:State,e:GameEvent<Input>):State{
+export function reduce(s:State,e:GameEvent<Input>):State{
  if(!e||typeof e!=='object'||!Number.isFinite(e.now))return s;
  if(e.type==='player')return typeof e.connected==='boolean'&&(e.gone===undefined||['left','kicked'].includes(e.gone))&&own(s,e.playerId)?{...s,players:{...s.players,[e.playerId]:{...s.players[e.playerId]!,connected:e.connected}}}:s;
  if(e.type==='vip'){
@@ -153,17 +143,6 @@ function reduceEvent(s:State,e:GameEvent<Input>):State{
  if(s.phase.id==='round-end'){return value.type==='next'?submitted(s,value,e.now,e.playerId):s;}
  if(s.seats[s.turn]!==e.playerId)return s;
  return submitted(s,value,e.now,e.playerId);
-}
-export function reduce(s:State,e:GameEvent<Input>):State {
- const next=reduceEvent(s,e);
- if(next===s)return s;
- // An explicit active departure, or resuming onto a declared absent active
- // seat, starts a fresh present-human turn. Preserve ordinary automatic idle
- // acceleration: resetting after every absent action would stall empty play.
- const departed=e.type==='player'&&e.connected===false&&e.playerId===s.seats[s.turn]&&s.players[e.playerId]!.connected;
- const resumed=e.type==='vip'&&e.action==='resume'&&!!s.phase.paused;
- const fresh=(departed||resumed)&&next.phase.id==='play'&&!next.phase.paused&&!next.players[next.seats[next.turn]!]!.connected&&next.seats.some(id=>next.players[id]!.connected);
- return drainAbsent(fresh?{...next,idleTurns:0}:next,e.now);
 }
 export function tvView(s:State):PublicView{
  return {gameId:manifest.id,phaseId:s.phase.id,deadline:s.phase.deadline,paused:!!s.phase.paused,
