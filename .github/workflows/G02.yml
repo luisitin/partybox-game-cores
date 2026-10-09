@@ -66,7 +66,7 @@ jobs:
         const request=JSON.parse(await readFile('evidence/audit-20261009/bootstrap-request.json','utf8'));
         assert.equal(request.version,1);assert.equal(typeof request.enabled,'boolean');
         if(request.enabled){
-         assert(['mandatory one-workflow correction; first capture binding the corrected G02 workflow','verified material Strong Gin-priority repair; first capture for changed game source','verified material Gin draw repair; first capture for changed game source','verified material same-meld finishing knock repair; first capture for changed game source'].includes(request.reason),'explicit material/protocol bootstrap reason required');
+         assert(['mandatory one-workflow correction; first capture binding the corrected G02 workflow','verified material Strong Gin-priority repair; first capture for changed game source','verified material Gin draw repair; first capture for changed game source','verified material same-meld finishing knock repair; first capture for changed game source','verified material closed-meld finishing knock repair; first capture for changed game source'].includes(request.reason),'explicit material/protocol bootstrap reason required');
          const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
          assert.equal(sha(await readFile('src/core.ts')),request.coreSha256);
          assert.equal(sha(await readFile('play.html')),request.htmlSha256);

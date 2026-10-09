@@ -27,19 +27,16 @@ VERIFY records commands/coverage, BOTS measured win rates, LOOP improvement
 rounds, NEXT resume steps. SHA256SUMS covers every delivered data/media file.
 No external art, trackers, hidden-card strategy access or runtime requests.
 
-Prior accepted3bf3456/run37886788920 passed the full original63 tests,
-6000 every-event replays, two2000-game leagues,26 compiled mutants,
-521 file hashes, native1200 browser intervals and two fully decoded clips.
-The full genuine artifact11596602554 is retained in accepted-3bf3456/.
-Initial-presence, guaranteed Gin and already-zero-deadwood finishing pickup
-repairs are accepted at that historical source head.
+Prior accepted e90/full run37891506020 passes67 tests,6k full replays,
+Strong1166/2000 and Medium1743/2000,26 mutants,646 hashes/two regenerations,
+original35 native1200 intervals and two fully decoded recordings.
+Its whole official11597719471 and log are retained in accepted-e90ca4e/.
 
-The next bounded Strong-knock repair chooses lower positive deadwood only
-when the exposed melds are identical. Current leagues pass58.30%/87.15%,
-all26 compiled mutations are caught; fresh browser proof passes/full CI pending.
-Both original PR2 and supplemental PR12 remain Draft; renewed KEEP streak0.
+Next Strong finishing repair compares equal live layoff targets, ignoring
+only groups blocked by its own11 cards. Representative loss14→win1;
+1152 settings/1000 oracle defenders/120 controls pass. Current full checks
+and fresh source-bound evidence remain pending; both PRs Draft/streak0.
 
-[Current evidence](evidence/resume-20261008/INDEX.md) and
-[retained timing failure](evidence/reverify-1900/REVIEW.md) document scope.
-Original native FPS/clock/corpus/guard gates stay unchanged; hosted CPU4
-Chromium evidence is not a physical-phone or PartyBox SDK claim.
+[Evidence](evidence/resume-20261008/INDEX.md) retains original failures.
+Original frame/clock/gate limits stay intact; CPU4 Chromium evidence
+does not establish physical-phone or PartyBox SDK integration.

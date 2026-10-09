@@ -459,3 +459,6 @@ First saved-only original reader genuinely FAILED05:57:33.632721Z: strict curren
 
 
 Current saved-only original proof and integrity naturally CLOSED06:00:39.596489Z EXIT0/PASS, all2211 frozen inputs unchanged. Exact commands: node evidence/audit-20261009/bootstrap-407e528-current/validate-projections.mjs --strict; node --test tests/browser-proof.test.mjs tests/strict-browser-proof.test.mjs (14 PASS/175 corruptions); node scripts/integrity.mjs (638 current hashes,32 local links,two deterministic regenerations,pinned-Zod license/pure core,current35/1200 native samples and two unchanged clips). Full command stdout/stderr/READY/CLOSED maps: bootstrap-407e528-current/delivery-saved-reader/. First stale-fixture FAIL and both old/new data remain retained. Final receipt addition requires regenerated delivery manifest; full exact-head original hosted npm test is still REQUIRED, PR12/PR2 Draft, KEEP15 gain/streak0.
+
+
+KEEP16: closed-target finishing dominance; prior e90 full original acceptance is retained whole. Before3 FAIL/after3 PASS1152 settings/1000 independent same-public-view defenders/120 controls; actual signed gain15, boundary max60. Permanently closed targets use only own11-card exclusion; every live group remains equal. Current original full checks/new35 source-bound evidence/full hosted acceptance PENDING; player gain/streak0.

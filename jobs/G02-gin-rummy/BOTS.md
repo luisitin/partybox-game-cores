@@ -30,3 +30,6 @@ KEEP15 bounded strategy: Strong’s existing public heuristic selects its candid
 
 
 KEEP15 actual completed fixed paired league: Strong1166/2000=58.30%, Wilson95% lower56.1252%; Medium1743/2000=87.15%, lower85.6118%. Original native leagues closed05:28:59.619575Z/all559 guards unchanged. Prior1154 wins remain preserved; +12 wins in these same finite seeds is not an outside strength/statistical-causality claim. Full current hosted acceptance remains required.
+
+
+KEEP16: closed-target finishing dominance; prior e90 full original acceptance is retained whole. Before3 FAIL/after3 PASS1152 settings/1000 independent same-public-view defenders/120 controls; actual signed gain15, boundary max60. Permanently closed targets use only own11-card exclusion; every live group remains equal. Current original full checks/new35 source-bound evidence/full hosted acceptance PENDING; player gain/streak0.

@@ -125,3 +125,6 @@ Current407 packet keeps every full35/raw/native source unchanged; only dictionar
 
 
 First saved-only original reader genuinely FAILED05:57:33.632721Z: strict current35 projection and14 original proof tests PASS, original integrity rejected the stale done fixture after the new Strong bot produced p1 score296 instead of295; exactly one of2195 frozen inputs changed. Full first failure/before-after maps and both old/new fixture bytes are retained in first-saved-reader-fixture-failure/. The unchanged original scripts/fixtures.mjs then ran twice and generated all7 manifest/phase files byte-identically, naturally CLOSED05:59:38.316755Z/all630 read-only guards unchanged. Only deterministic fixtures/done.json is updated; neither game source, generator nor integrity assertion/gate changes. Corrected saved-only controls/integrity and final current full hosted acceptance remain required.
+
+
+KEEP16: closed-target finishing dominance; prior e90 full original acceptance is retained whole. Before3 FAIL/after3 PASS1152 settings/1000 independent same-public-view defenders/120 controls; actual signed gain15, boundary max60. Permanently closed targets use only own11-card exclusion; every live group remains equal. Current original full checks/new35 source-bound evidence/full hosted acceptance PENDING; player gain/streak0.
