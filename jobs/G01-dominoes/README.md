@@ -53,7 +53,7 @@ Single steps:
 ## Status
 
 PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
-Exact Worker/face-down ddd full CI and1,279-check genuine artifact proof passed,
+Prior Worker/face-down ddd full CI and1,279-check genuine artifact proof passed,
 including real file opening,600 native intervals and36 decoded VP9 frames.
-Current-head CI and renewed KEEP remain; isolated diagnostic/gain gates FAILED.
+Privacy prompt fix passes four-case/WAAPI checks; current full CI/KEEP pending.
 NEXT.md binds remaining checks; all historical failures remain preserved.

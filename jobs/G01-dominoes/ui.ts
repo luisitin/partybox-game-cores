@@ -353,7 +353,7 @@ function showVeil(seat:number){
 }
 function reveal(seat:number){
  initAudio();revealed=seat;selected=null;const veil=$('veil');
- if(!veil.hidden&&moving()){const a=veil.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-30px)'}],{duration:260,easing:EASE});a.onfinish=()=>{veil.hidden=true;};}else veil.hidden=true;
+ if(!veil.hidden&&moving()){veil.animate([{opacity:1,transform:'none'},{opacity:0,transform:'translateY(-30px)'}],{duration:260,easing:EASE});}else veil.hidden=true;
  render();
  if(moving())[...document.querySelectorAll<HTMLElement>('#hand .hand-tile .tile')].forEach((el,i)=>el.animate([{transform:'perspective(600px) rotateY(180deg)',opacity:0},{transform:'perspective(600px) rotateY(0)',opacity:1}],{duration:380,delay:i*55,easing:EASE,fill:'backwards'}));
 }

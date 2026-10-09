@@ -5,7 +5,59 @@ Validation PR11 is open and draft against job/G01-dominoes. Original PR1 stays
 open, draft and unchanged on canonical 8c57376. No merge or force-push.
 Read CLAIMS.md on current main; refresh only G01 after every source push.
 
-## Latest exact ddd whole artifact and four-human phone checkpoint
+## Current private-hand prompt fix adopted in audit
+
+The audit now removes one obsolete reveal-animation finish callback. renderDock
+already hides the veil when a hand is revealed; a later old animation callback
+must not hide a newly reopened prompt. Same260/280/380ms animations, core/RNG/
+Worker policy, UI/game clocks and original300 native sampler/gates remain.
+UI45d160bb4ab1d7a8a900369b9e7880f51babfabd28069ce3af599272a2e0aeb5;
+player1,032,817B/6740130f01cea0cbf752d4d0a1a66001b9acb4300a5363ac853037b7deded145.
+Root actually read full original/candidate UI excerpts/diff04:20:53UTC before
+the actual same-hash adoption04:25:40.002423UTC. Canonical PR1 unchanged8c/draft.
+
+FIRST changed-source four-human390x844/4xCPU validation naturally CLOSED
+04:16:57.960318UTC/exit0/PASS/group[]. Allfour original cases pass: Draw/Block
+partners, Draw individual with reduced motion; Block individual normal motion.
+All16 first human turns/private hide-reveal/legal moves/control fit passed with
+all1,630 source/helper aliases/whole1,618 installed inputs/1,746inventory and
+five runtime guards. Complete raw/native snapshot timestamps saved before
+assertions. Exact original seat/visibility/control predicates were preserved.
+
+New legitimate privacy-veil-check.ts runs the actual Reveal/Hide DOM handlers
+in one synchronous task, then waits350ms for genuine native WAAPI completion.
+The prompt remains visible/private, samePlayer1/empty board/no exposed hand;
+a subsequent trusted pointer reveals the samefive tiles. FIRST actual run
+naturally CLOSED04:23:57.716040UTC/exit0/PASS/group[], all1,631aliases/whole
+installed inputs/runtimes unchanged. No state injection, clock installation,
+FPS sample or historical failure-cause claim. This separate functional check
+is added to default npm test before byte-unchanged original browser.ts.
+
+phone-veil-callback-fix-first.json and media/phone-veil-callback-fix-first-proof.zip
+retain exact full four-case raw/four screenshots, real-WAAPI raw, original
+programs/READY/controllers/complete inputs, exact adopted sources, source
+review/mocks and both before-native preparation errors. Every member byte/CRC
+checked. Original old-source phone FAIL remains intact/causeUNKNOWN; controlled
+mock reproduction is not a retrospective browser-cause attribution.
+
+This is a measured bounded privacy usability improvement, pending complete
+new-current full original CI and genuine official artifact acceptance. Earlier
+ddd1,279-check whole proof remains historical, not green for this modified UI.
+PR11 draft, PR1 unchanged8c. Responsiveness native acceptance and both fixed
+gain gates remain FAIL; no FPS/physical-phone/player-response gain claim.
+Renewed completed KEEP rounds0; provisional material privacy improvements1,
+three-consecutive no-gain stopping streak0. After actual full current green,
+re-read original instructions/rankfive/fix-measure worst and complete KEEP.
+
+Last actual source push04:05:12.921243UTC, hard04:35:12.921243UTC; this concrete
+fix checkpoint is due before that hard time. Read actual new push receipt for
+fresh cadence. Own mainCLAIMS refresh follows under exclusive own-row lease.
+Authoritative /tmp checkout remains; original workspace/history/unique ZIPs and
+all failures remain preserved. No local original FPS or old-pair retry occurred.
+
+## Historical accepted ddd artifact and old-source phone failure
+
+The following describes exact earlier sources, not current modified UI green.
 
 Exact ddd364cd72247387b86b9b39bfd0f0a5f9895ffe workflow37880122191/
 job113657699053 succeeded03:52:26UTC. Official11594815894/106,473,265B/

@@ -33,3 +33,13 @@ Green baseline: PR #1, CI run 37647980032 succeeded for c28d4e4.
 24. 2026-10-08 polish pass: npm test (Node 24.21) exit 1 after about 53 min at browser.ts TV gate (55.73 fps; standalone re-run 51.58; gate 58, not weakened); earlier steps green: 42/42 node tests, 25/25 mutations, Block 1438/2000 and 1619/2000, Draw 1684/2000 and 1155/2000, upstream 132/200; browser functional, privacy, bot match and mixed-idle PASS; restored the 57efe0b browser report that 3001349 had replaced with a lowered-threshold run; core, rules and manifest unchanged; no defect found.
 
 Evidence checkpoint, not a KEEP round: first complete-input original8c/Worker2d logging diagnostic retained all4 raw profiles and passed1,823 guards, but controller native acceptance FAILED and both fixed player-gain gates FAILED; renewed current-face-down KEEP rounds remain0.
+
+Provisional current privacy improvement P1, 2026-10-09: source reviewed04:20:53,
+same-hash UI/player adopted04:25:40. Remove only obsolete veil finish hide
+callback; actual animation/game clocks/core/Worker/original sampler unchanged.
+First modified-source originalfourphone cases PASS04:16:57.960318, all16 human
+turns/guard/raw steps. Default real native-WAAPI regression PASS04:23:57.716040,
+genuine finish preserves reopened privateprompt and same hand/seat. Old original
+phone firstFAIL/causeUNKNOWN retained. This meaningful privacy fix awaits full
+current CI/whole artifact before completing renewed KEEP; completed rounds0,
+no-gain streak0. Original response native acceptance and both gain gates FAIL.

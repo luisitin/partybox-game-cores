@@ -201,3 +201,17 @@ current input guards and raw retention PASS; no unchanged retry. Ranked worst
 responsiveness gain remains unestablished; native pair/fixed gain gates FAIL
 and renewed KEEP0 unchanged. Diagnose normal-motion phone behavior, current
 new-headCI and substantive player review next.
+
+Current review after private-prompt fix (full current CI still pending):
+1. Rapid Hide/reveal could lose a private prompt through an obsolete finish
+callback. One-callback fix adopted after full source review; original four-case
+first3PASS/1FAIL becomes changed-source4PASS and real-WAAPI regression PASS.
+Historical failing case cause remains unknown; exact callback-order controlled
+mock is separate evidence. No clock/sampler/gate change.
+2. Strong-bot responsiveness gain remains unestablished; old native pair and
+both fixed gain gates FAIL. Current player performance/strength must be measured.
+3. Complete new-current original CI and whole official artifact pending.
+4. Four-seat complete-round/large-hand phone interactions and physical hardware
+remain limited; current proof covers firstfour turns in four emulated cases.
+5. Finite upstream/reference-strength scope still limits best-AI claims.
+Renewed completed KEEP0/provisional material privacy improvement1/no-gain streak0.
