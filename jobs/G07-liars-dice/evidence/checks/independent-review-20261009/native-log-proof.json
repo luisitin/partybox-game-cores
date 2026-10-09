@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-09T02:24:00.672637+00:00",
+  "canonicalHead": "1cc4a9709a60783ecad45476c02668d62f4c8a4a",
+  "runId": 37835172268,
+  "jobId": 113510247997,
+  "nativeLogCharacters": 137990,
+  "nativeLogSha256": "6aa9a1361a93eec03540161aa70e3372bdf01bf97f312a2149d4e78d61f9b004",
+  "individuallyLoggedChecksMatchingActualZip": 91,
+  "nativeFullSummaryChecks": 94,
+  "nativeFullSummaryFailures": 0,
+  "reportOnlyOfflineSourceRows": [
+    [
+      "desktop",
+      "self-contained file works offline without network, external resources, errors or dialogs",
+      true
+    ],
+    [
+      "phone4x",
+      "self-contained file works offline without network, external resources, errors or dialogs",
+      true
+    ],
+    [
+      "runner",
+      "HTML source stayed unchanged throughout the run",
+      true
+    ]
+  ],
+  "actualCompiledAssertionKills": 25,
+  "unitPasses": 116,
+  "currentEvidenceControls": 88,
+  "scope": "Actual specified canonical native log and genuine official ZIP; no new timing or new-branch full CI acceptance"
+}

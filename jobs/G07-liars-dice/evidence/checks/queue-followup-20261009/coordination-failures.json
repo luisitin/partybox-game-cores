@@ -1,0 +1,42 @@
+{
+  "recordedUtc": "2026-10-09T09:48:17.248145+00:00",
+  "failureTimestampsRecorded": false,
+  "sourceWorkspace": "/tmp/G07-source-queue-audit-20261009",
+  "failures": [
+    {
+      "scope": "source import, before merge",
+      "command": "git merge --no-commit --no-ff 028f23a3a8e93557666f6b9c26c2e7abd3ed823a",
+      "exitCode": 128,
+      "actualOutput": "fatal: unable to read blob object a8b8e294d313d4b7f366b75d530b56523cb4f4d0",
+      "recovery": "git -c credential.helper= fetch --refetch --no-filter origin main; normal merge then expected CLAIMS conflict only"
+    },
+    {
+      "scope": "original metadata",
+      "error": "RemoteProtocolError: Server disconnected without sending a response.",
+      "recovery": "Read the same original job metadata again; no sampler rerun"
+    },
+    {
+      "scope": "metadata wrapper only, original log already stored",
+      "error": "ReferenceError: TextEncoder is not defined",
+      "recovery": "Preserved complete raw string and measured exact UTF-8 bytes in native Python"
+    },
+    {
+      "scope": "atomic documentation patch",
+      "count": 2,
+      "errors": [
+        "README heading anchor did not match",
+        "ASSUMPTIONS heading anchor did not match"
+      ],
+      "sourceEditsApplied": false,
+      "recovery": "Read actual headings, apply corrected patch"
+    },
+    {
+      "scope": "initial instruction file read",
+      "command": "cat RUN-ALL.md contract/GAME_CONTRACT.md contract/types.ts",
+      "exitCode": 1,
+      "error": "contract/types.ts does not exist",
+      "recovery": "Read the actual listed contract/contract.ts and explanatory contract in bounded complete sections"
+    }
+  ],
+  "noneCountsAsFunctionalPass": true
+}

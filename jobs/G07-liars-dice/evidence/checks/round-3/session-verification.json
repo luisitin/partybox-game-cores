@@ -1,0 +1,39 @@
+{
+  "result": "PASS",
+  "provenance": "Recorded execution summary from tool results. No raw TAP file or raw stdout file was retained; this summary is not a reconstructed test log.",
+  "commands": [
+    {
+      "command": "npm run build && node --test tests/session.test.mjs",
+      "result": "PASS: TypeScript and bundling succeeded; 8 tests passed, 0 failed, 0 skipped.",
+      "note": "First focused run preceded the final strengthening of the natural-calza test. Session source and build script were unchanged in the final run."
+    },
+    {
+      "command": "node --test tests/session.test.mjs",
+      "result": "PASS: final test source, 8 tests passed, 0 failed, 0 skipped; reported aggregate duration 1000.459952 ms."
+    }
+  ],
+  "verifiedInputSha256": {
+    "src/session.ts": "0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30",
+    "tests/session.test.mjs": "a8a7b51c89107a3b3eabcb55cac9e47e95cf98dabcca6bd69e16141a606dd1ba",
+    "scripts/build.mjs": "c08db5217362b4d321ec7ccd08ad31294b938282f2d53c6c47ab793b369839ec",
+    "src/core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "fixtures/schema.json": "5812194381977865fe2cdb4b146fc3399c18ac47e6181e4bf8bfc4bca60628b0",
+    "package-lock.json": "db722fbc9efb2faa40e82ea0d773370015480bbb602fc09529e8f8499ec4eef3"
+  },
+  "testedBundleSha256": {
+    "dist/session.mjs": "d636bfba62a0854a9d5dfff51b5f0915a8bc76f58f4c32885c89ebb8a47fe2e8"
+  },
+  "coverage": [
+    "All three authoritative phase fixtures and genuine empty/prototype-named seats retain original own map values.",
+    "1101 naturally accepted same-tick raises produce a phase stamp beyond the host clock and deadline; recovery equals ordinary core pause/resume exactly.",
+    "Intentional and automatic holds, done with a pause, and done with an automatic-hold flag remain unchanged.",
+    "Natural elimination, palifico-to-duel, duel pending-palifico, and successful calza preserve pre-challenge/reward cups.",
+    "Every accepted event in seven varied seeded games covering 2 through 8 players survives save validation unchanged.",
+    "Corrupt versions, metadata, maps, prototype leaves, references, static keys, model weights, and oversized UTF-8 saves fail closed.",
+    "Four seeds with 1000 mixed calls each match the shared RNG wrapper; cursor snapshots are isolated, and large counters and degenerate calls are covered."
+  ],
+  "limitations": [
+    "This focused module verification does not certify browser UI, frame timing, captures, or hosted CI.",
+    "Large-counter tests compare restored wrapper twins; ordinary-counter mixed-call tests compare against the unchanged shared generator wrapper."
+  ]
+}

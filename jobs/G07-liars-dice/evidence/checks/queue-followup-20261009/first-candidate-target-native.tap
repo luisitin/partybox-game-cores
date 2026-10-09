@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: a disconnected random first seat does not strand the connected player with the default clock off
+ok 1 - a disconnected random first seat does not strand the connected player with the default clock off
+  ---
+  duration_ms: 4.836013
+  type: 'test'
+  ...
+# Subtest: every presence mask at every 2–8 seat count is playable across all 48 rule settings
+ok 2 - every presence mask at every 2–8 seat count is playable across all 48 rule settings
+  ---
+  duration_ms: 9521.702435
+  type: 'test'
+  ...
+# Subtest: initial absent turns use exactly the ordinary departure behavior, including clock boundaries
+ok 3 - initial absent turns use exactly the ordinary departure behavior, including clock boundaries
+  ---
+  duration_ms: 1566.990826
+  type: 'test'
+  ...
+# Subtest: initial automatic bids do not double-play on duplicate presence or override an intentional hold
+ok 4 - initial automatic bids do not double-play on duplicate presence or override an intentional hold
+  ---
+  duration_ms: 0.698341
+  type: 'test'
+  ...
+# Subtest: natural mixed-presence starts roundtrip through validated recovery and retain every original seat
+ok 5 - natural mixed-presence starts roundtrip through validated recovery and retain every original seat
+  ---
+  duration_ms: 61.302802
+  type: 'test'
+  ...
+# Subtest: one connected seat can complete genuine games with every other seat initially absent
+ok 6 - one connected seat can complete genuine games with every other seat initially absent
+  ---
+  duration_ms: 6221.283759
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 17743.060141

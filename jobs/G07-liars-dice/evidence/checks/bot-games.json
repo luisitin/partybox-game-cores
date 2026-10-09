@@ -1,0 +1,46 @@
+{
+  "result": "PASS",
+  "completedGames": 7000,
+  "byCount": [
+    {
+      "players": 2,
+      "games": 1000,
+      "events": 45906
+    },
+    {
+      "players": 3,
+      "games": 1000,
+      "events": 96581
+    },
+    {
+      "players": 4,
+      "games": 1000,
+      "events": 155976
+    },
+    {
+      "players": 5,
+      "games": 1000,
+      "events": 224054
+    },
+    {
+      "players": 6,
+      "games": 1000,
+      "events": 302594
+    },
+    {
+      "players": 7,
+      "games": 1000,
+      "events": 389440
+    },
+    {
+      "players": 8,
+      "games": 1000,
+      "events": 483901
+    }
+  ],
+  "events": 1698452,
+  "botSamples": 12279033,
+  "maxStateBytes": 3859,
+  "replay": "Twin reduction, previous-state immutability, SHA-256 and exact bytes, JSON roundtrip, ≤256 KiB after every event",
+  "everyEventReplaySha256": "39f8b3e0a3eb0e9a4ec18be8f04d7414e80555b0186b4ea78d45047c50875d1c"
+}

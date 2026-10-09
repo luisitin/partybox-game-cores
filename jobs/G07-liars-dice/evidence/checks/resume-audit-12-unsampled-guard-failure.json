@@ -1,0 +1,21 @@
+{
+  "scope": "Actual first corrected clock run; the new map-count guard failed before any frame READY/sample. Gameplay and FPS did not fail this run.",
+  "observedClosedAt": "2026-10-08T19:22:25.471476+00:00",
+  "head": "191c37268f7823bcf551eadc61438189de6bd7ec",
+  "runId": "20261008191711475",
+  "passed": false,
+  "checks": 94,
+  "passedChecks": 92,
+  "sourceGuards": 32,
+  "guardsUnchanged": true,
+  "actualFramesSampled": 0,
+  "failure": "Checker used .length on contract Record<string,PlayerInfo>; changed to Object.keys(...).length after closure.",
+  "ownerGroupGone": true,
+  "browserGroupGone": true,
+  "clockErrorsMs": [
+    0,
+    17,
+    0,
+    60
+  ]
+}

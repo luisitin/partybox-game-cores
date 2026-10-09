@@ -1,0 +1,946 @@
+{
+  "suite": "round-2-medium-certainty",
+  "beforeRevision": "6387696d0891f25e01df76f50aa4c7aefdb3ee35",
+  "beforeCoreSha256": "d45b2a5b68b7082b1543dea949777a89ac1f3af5664cae2c5240852e20bea7ee",
+  "afterCoreSha256": "947f4f6fabf7d6eb0264a7175df2bb4003e918be7fa4dda1fc23acee83d5c076",
+  "afterSourceSha256": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+  "transcript": {
+    "seed": 1309716532,
+    "acceptedEvents": 27,
+    "round": 8,
+    "diceCount": {
+      "p0": 2,
+      "p1": 1
+    },
+    "ownDice": [
+      1,
+      1
+    ],
+    "bid": {
+      "quantity": 2,
+      "face": 1,
+      "playerId": "p1"
+    },
+    "externalBotRngSeed": 6789
+  },
+  "alternatives": [
+    {
+      "quantity": 3,
+      "face": 1,
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      }
+    },
+    {
+      "quantity": 4,
+      "face": 1,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 1,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 2,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 3,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 4,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 5,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    },
+    {
+      "quantity": 5,
+      "face": 6,
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      }
+    }
+  ],
+  "cases": [
+    {
+      "hiddenFace": 1,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": false,
+      "afterWinnerIfRaiseChallenged": "p0"
+    },
+    {
+      "hiddenFace": 2,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": true,
+      "afterWinnerIfRaiseChallenged": null
+    },
+    {
+      "hiddenFace": 3,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": true,
+      "afterWinnerIfRaiseChallenged": null
+    },
+    {
+      "hiddenFace": 4,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": true,
+      "afterWinnerIfRaiseChallenged": null
+    },
+    {
+      "hiddenFace": 5,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": true,
+      "afterWinnerIfRaiseChallenged": null
+    },
+    {
+      "hiddenFace": 6,
+      "currentBidOdds": {
+        "atLeastNumerator": "6",
+        "exactNumerator": "5",
+        "total": "6",
+        "atLeast": 1,
+        "exact": 0.8333333333333334
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "bid",
+        "quantity": 3,
+        "face": 1
+      },
+      "beforeHeroLostDie": true,
+      "afterHeroLostDieIfRaiseChallenged": true,
+      "afterWinnerIfRaiseChallenged": null
+    }
+  ],
+  "uncertainControls": [
+    {
+      "ownDice": [
+        1,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        1,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        1,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        1,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        1,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        1
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        2,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        1
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        3,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        1
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        4,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        1
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        5,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        1
+      ],
+      "odds": {
+        "atLeastNumerator": "1",
+        "exactNumerator": "1",
+        "total": "6",
+        "atLeast": 0.16666666666666666,
+        "exact": 0.16666666666666666
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        2
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        3
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        4
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        5
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    },
+    {
+      "ownDice": [
+        6,
+        6
+      ],
+      "odds": {
+        "atLeastNumerator": "0",
+        "exactNumerator": "0",
+        "total": "6",
+        "atLeast": 0,
+        "exact": 0
+      },
+      "beforeAction": {
+        "type": "dudo"
+      },
+      "afterAction": {
+        "type": "dudo"
+      }
+    }
+  ],
+  "nearCertainty": {
+    "description": "Eight seats with five dice each; own five twos, opposing six-twos bid. A supported near-certain case, with no production hooks.",
+    "odds": {
+      "atLeastNumerator": "1719069619156801873617354752",
+      "exactNumerator": "20660353362554697809920",
+      "total": "1719070799748422591028658176",
+      "atLeast": 0.9999993132385119,
+      "exact": 0.000012018326043103192
+    },
+    "beforeAction": {
+      "type": "bid",
+      "quantity": 7,
+      "face": 2
+    },
+    "afterAction": {
+      "type": "bid",
+      "quantity": 7,
+      "face": 2
+    }
+  },
+  "measuredBenefit": {
+    "beforeHeroDieLossesOnSelectedInput": 6,
+    "afterHeroDieLossesOnSelectedInput": 0,
+    "afterLegalRaisesAccepted": 6,
+    "afterHeroDieLossesIfRaisesImmediatelyChallenged": 5,
+    "afterHeroKeepsDiceIfRaisesImmediatelyChallenged": 1,
+    "compatibleHiddenCases": 6,
+    "solePositiveRaiseRawProbability": "1/6"
+  },
+  "unchangedPolicies": [
+    "Easy",
+    "Strong"
+  ],
+  "privacy": "Opposing-cup and game-RNG read traps pass in all six cases",
+  "limits": "The six after-action zero losses refer only to accepting the bid input; they do not certify eventual survival. Standardized opposing dudo loses the hero a die in five of six hidden cases and preserves both dice in one. Exhaustive immediate decision comparison in this information set; not a new league estimate. Existing uncertain thresholds and support likelihood are unchanged. Default baseline reproduction requires the old commit object; tests need only the published transcript."
+}

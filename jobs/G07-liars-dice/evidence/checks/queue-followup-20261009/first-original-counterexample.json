@@ -1,0 +1,214 @@
+{
+  "context": {
+    "players": [
+      {
+        "id": "absent",
+        "name": "Absent seat",
+        "avatarId": "face",
+        "connected": false
+      },
+      {
+        "id": "here",
+        "name": "Connected seat",
+        "avatarId": "face",
+        "connected": true
+      }
+    ],
+    "settings": {
+      "turnSeconds": 0
+    },
+    "seed": 1,
+    "now": 1000
+  },
+  "actualInitialState": {
+    "phase": {
+      "id": "bid",
+      "startedAt": 1000,
+      "deadline": null
+    },
+    "phaseClock": 1000,
+    "rng": {
+      "seed": 1,
+      "step": 11
+    },
+    "players": {
+      "absent": {
+        "id": "absent",
+        "name": "Absent seat",
+        "avatarId": "face",
+        "connected": false
+      },
+      "here": {
+        "id": "here",
+        "name": "Connected seat",
+        "avatarId": "face",
+        "connected": true
+      }
+    },
+    "order": [
+      "absent",
+      "here"
+    ],
+    "settings": {
+      "onesWild": true,
+      "palificoEnabled": true,
+      "palificoExemption": "none",
+      "calzaEnabled": false,
+      "calzaPolicy": "anyOther",
+      "turnSeconds": 0
+    },
+    "cups": {
+      "absent": [
+        6,
+        6,
+        5,
+        5,
+        2
+      ],
+      "here": [
+        6,
+        2,
+        1,
+        6,
+        5
+      ]
+    },
+    "diceCount": {
+      "absent": 5,
+      "here": 5
+    },
+    "turn": "absent",
+    "round": 1,
+    "bid": null,
+    "bidLog": [],
+    "palifico": false,
+    "palificoStarter": null,
+    "seenPalifico": {
+      "absent": false,
+      "here": false
+    },
+    "nextStarter": "absent",
+    "nextPalifico": null,
+    "reveal": null,
+    "eliminated": [],
+    "left": [],
+    "models": {
+      "absent": {
+        "truth": 3,
+        "false": 2
+      },
+      "here": {
+        "truth": 3,
+        "false": 2
+      }
+    },
+    "autoPaused": false,
+    "winner": null,
+    "endReason": null,
+    "contentLang": "en",
+    "phoneOnly": false
+  },
+  "equivalentOrdinaryDeparture": {
+    "phase": {
+      "id": "bid",
+      "startedAt": 1001,
+      "deadline": null
+    },
+    "phaseClock": 1001,
+    "rng": {
+      "seed": 1,
+      "step": 11
+    },
+    "players": {
+      "absent": {
+        "id": "absent",
+        "name": "Absent seat",
+        "avatarId": "face",
+        "connected": false
+      },
+      "here": {
+        "id": "here",
+        "name": "Connected seat",
+        "avatarId": "face",
+        "connected": true
+      }
+    },
+    "order": [
+      "absent",
+      "here"
+    ],
+    "settings": {
+      "onesWild": true,
+      "palificoEnabled": true,
+      "palificoExemption": "none",
+      "calzaEnabled": false,
+      "calzaPolicy": "anyOther",
+      "turnSeconds": 0
+    },
+    "cups": {
+      "absent": [
+        6,
+        6,
+        5,
+        5,
+        2
+      ],
+      "here": [
+        6,
+        2,
+        1,
+        6,
+        5
+      ]
+    },
+    "diceCount": {
+      "absent": 5,
+      "here": 5
+    },
+    "turn": "here",
+    "round": 1,
+    "bid": {
+      "quantity": 1,
+      "face": 5,
+      "playerId": "absent"
+    },
+    "bidLog": [
+      {
+        "quantity": 1,
+        "face": 5,
+        "playerId": "absent"
+      }
+    ],
+    "palifico": false,
+    "palificoStarter": null,
+    "seenPalifico": {
+      "absent": false,
+      "here": false
+    },
+    "nextStarter": "absent",
+    "nextPalifico": null,
+    "reveal": null,
+    "eliminated": [],
+    "left": [],
+    "models": {
+      "absent": {
+        "truth": 3,
+        "false": 2
+      },
+      "here": {
+        "truth": 3,
+        "false": 2
+      }
+    },
+    "autoPaused": false,
+    "winner": null,
+    "endReason": null,
+    "contentLang": "en",
+    "phoneOnly": false
+  },
+  "duplicateDisconnectReturnsSameState": true,
+  "connectedPlayerCanBid": false,
+  "connectedPlayerSample": null,
+  "disconnectedPlayerSample": null,
+  "deadline": null
+}

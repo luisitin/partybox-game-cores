@@ -1,0 +1,71 @@
+{
+  "kind": "actual legacy frame-validation block counterexamples",
+  "originalIntegritySha256": "5194466018aa136b8e13319b534b032d530dee5066145ee8f56dd75bf70ef53b",
+  "blockSha256": "1fefad99b8039cef52ec4dc01cf0721210769cbca0ec74b2a6e6b4cd94222459",
+  "method": "Execute the exact original browser-snapshot validation block with genuine raw sidecars and one changed report field set. This is not a claim that the whole integrity CLI accepts a stale delivery checksum.",
+  "genuineBaseRun": "20261008100423816",
+  "genuineSourceSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "rawFrameArraysAltered": false,
+  "results": [
+    {
+      "name": "empty profile list",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "desktop only",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "duplicate desktop",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "wrong phone CPU",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "wrong phone viewport",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "wrong phone label",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "partial scope",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "failed functional check hidden by passed flag",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "wrong core bundle source",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "different frame recipe",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "missing functional checks",
+      "accepted": true,
+      "error": null
+    },
+    {
+      "name": "recorded-performance claim",
+      "accepted": true,
+      "error": null
+    }
+  ]
+}

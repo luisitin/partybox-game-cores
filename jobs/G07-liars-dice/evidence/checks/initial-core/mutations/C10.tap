@@ -1,0 +1,330 @@
+TAP version 13
+# Subtest: contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+ok 1 - contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+  ---
+  duration_ms: 14.745418
+  type: 'test'
+  ...
+# Subtest: contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+ok 2 - contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+  ---
+  duration_ms: 2.4263
+  type: 'test'
+  ...
+# Subtest: contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+not ok 3 - contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+  ---
+  duration_ms: 2.691639
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/contract.test.mjs:65:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected "actual" to be reference-equal to "expected":
+    + actual - expected
+    ... Skipped lines
+    
+      {
+        autoPaused: false,
+    +   bid: {
+    +     face: 2,
+    +     playerId: 'p0',
+    +     quantity: 1
+    +   },
+    +   bidLog: [
+    +     {
+    +       face: 2,
+    +       playerId: 'p0',
+    +       quantity: 1
+    +     }
+    +   ],
+    -   bid: null,
+    -   bidLog: [],
+        contentLang: 'en',
+        cups: {
+          p0: [
+            1,
+            4,
+    ...
+        phase: {
+    +     deadline: 11001,
+    -     deadline: 11000,
+          id: 'bid',
+    +     startedAt: 1001
+    -     paused: {
+    -       at: 2000
+    -     },
+    -     startedAt: 1000
+        },
+    +   phaseClock: 1001,
+    -   phaseClock: 1000,
+        phoneOnly: false,
+        players: {
+          p0: {
+            avatarId: 'face-0',
+            bot: true,
+    ...
+        },
+    +   turn: 'p1',
+    -   turn: 'p0',
+        winner: null
+      }
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    phase:
+      id: 'bid'
+      startedAt: 1000
+      deadline: 11000
+      paused:
+        at: 2000
+    phaseClock: 1000
+    rng:
+      seed: 16
+      step: 16
+    players:
+      p0:
+        id: 'p0'
+        name: 'Player 1'
+        avatarId: 'face-0'
+        connected: true
+        bot: true
+        canSeeTv: true
+      p1:
+        id: 'p1'
+        name: 'Player 2'
+        avatarId: 'face-1'
+        connected: true
+        bot: true
+        canSeeTv: true
+      p2:
+        id: 'p2'
+        name: 'Player 3'
+        avatarId: 'face-2'
+        connected: true
+        bot: true
+        canSeeTv: true
+    order:
+      0: 'p0'
+      1: 'p1'
+      2: 'p2'
+    settings:
+      onesWild: true
+      palificoEnabled: true
+      palificoExemption: 'none'
+      calzaEnabled: false
+      calzaPolicy: 'anyOther'
+      turnSeconds: 10
+    cups:
+      p0:
+        0: 1
+        1: 4
+        2: 2
+        3: 1
+        4: 5
+      p1:
+        0: 5
+        1: 6
+        2: 5
+        3: 1
+        4: 6
+      p2:
+        0: 6
+        1: 1
+        2: 4
+        3: 5
+        4: 1
+    diceCount:
+      p0: 5
+      p1: 5
+      p2: 5
+    turn: 'p0'
+    round: 1
+    bid: ~
+    bidLog:
+    palifico: false
+    palificoStarter: ~
+    seenPalifico:
+      p0: false
+      p1: false
+      p2: false
+    nextStarter: 'p0'
+    nextPalifico: ~
+    reveal: ~
+    eliminated:
+    left:
+    models:
+      p0:
+        truth: 3
+        false: 2
+      p1:
+        truth: 3
+        false: 2
+      p2:
+        truth: 3
+        false: 2
+    autoPaused: false
+    winner: ~
+    endReason: ~
+    contentLang: 'en'
+    phoneOnly: false
+  actual:
+    phase:
+      id: 'bid'
+      startedAt: 1001
+      deadline: 11001
+    phaseClock: 1001
+    rng:
+      seed: 16
+      step: 16
+    players:
+      p0:
+        id: 'p0'
+        name: 'Player 1'
+        avatarId: 'face-0'
+        connected: true
+        bot: true
+        canSeeTv: true
+      p1:
+        id: 'p1'
+        name: 'Player 2'
+        avatarId: 'face-1'
+        connected: true
+        bot: true
+        canSeeTv: true
+      p2:
+        id: 'p2'
+        name: 'Player 3'
+        avatarId: 'face-2'
+        connected: true
+        bot: true
+        canSeeTv: true
+    order:
+      0: 'p0'
+      1: 'p1'
+      2: 'p2'
+    settings:
+      onesWild: true
+      palificoEnabled: true
+      palificoExemption: 'none'
+      calzaEnabled: false
+      calzaPolicy: 'anyOther'
+      turnSeconds: 10
+    cups:
+      p0:
+        0: 1
+        1: 4
+        2: 2
+        3: 1
+        4: 5
+      p1:
+        0: 5
+        1: 6
+        2: 5
+        3: 1
+        4: 6
+      p2:
+        0: 6
+        1: 1
+        2: 4
+        3: 5
+        4: 1
+    diceCount:
+      p0: 5
+      p1: 5
+      p2: 5
+    turn: 'p1'
+    round: 1
+    bid:
+      quantity: 1
+      face: 2
+      playerId: 'p0'
+    bidLog:
+      0: <Circular>
+    palifico: false
+    palificoStarter: ~
+    seenPalifico:
+      p0: false
+      p1: false
+      p2: false
+    nextStarter: 'p0'
+    nextPalifico: ~
+    reveal: ~
+    eliminated:
+    left:
+    models:
+      p0:
+        truth: 3
+        false: 2
+      p1:
+        truth: 3
+        false: 2
+      p2:
+        truth: 3
+        false: 2
+    autoPaused: false
+    winner: ~
+    endReason: ~
+    contentLang: 'en'
+    phoneOnly: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/contract.test.mjs:77:10)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+ok 4 - empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+  ---
+  duration_ms: 1.144116
+  type: 'test'
+  ...
+# Subtest: permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+ok 5 - permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+  ---
+  duration_ms: 0.839702
+  type: 'test'
+  ...
+# Subtest: legitimate empty-string and prototype-named seats remain playable and ranked
+ok 6 - legitimate empty-string and prototype-named seats remain playable and ranked
+  ---
+  duration_ms: 0.994095
+  type: 'test'
+  ...
+# Subtest: contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+ok 7 - contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+  ---
+  duration_ms: 2.229386
+  type: 'test'
+  ...
+# Subtest: contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+ok 8 - contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+  ---
+  duration_ms: 1.579244
+  type: 'test'
+  ...
+# Subtest: contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+ok 9 - contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+  ---
+  duration_ms: 2.452379
+  type: 'test'
+  ...
+# Subtest: contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+ok 10 - contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+  ---
+  duration_ms: 129.787024
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 9
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 343.888408
