@@ -1,43 +1,63 @@
-## Current isolated follow-up: absent-turn repair remains unqualified
+## Current isolated absence follow-up: Draft PR20, full qualification pending
 
 Owner: codex-domino-queue-audit-20261009. Branch:
 job/G01-dominoes-queue-audit-20261009 from claimed MAIN ba14179.
-Protected Ready11 eadb and Draft1 canonical8c are untouched and unmerged.
-Original final eadb full1318-check acceptance and R25–28 stop stay historical.
+PR20 targets protected Ready11 eadb; canonical Draft1 8c stays untouched.
+Original Ready11 whole1318 acceptance and R25–28 stopping rounds remain historical.
 
-Fixed all-human one-present control completed468 pairs/936 ordinary games:
-427 old matches exceed the contract60-minute simulated budget. Bounded greedy
-takeover of explicitly absent active seats removes repeated extra turn waits.
-Empty and paused rooms wait; every next present human keeps the full30s turn.
-Rules, RNG, scoring, original bot strategies, native clocks/gates stay exact.
-Stable controlled proof CLOSED13:22:00.314634/pass/no child/all1230 inputs:
-468 full pairs/527041 assertions/74211 physical checkpoints match, old427 to
-new0 budget failures. Seed1 Draw100:7303305 to90587 simulated ms, same19 rounds
-and scores94/133.360 connected games/101238 every-event states byte-identical;
-360 empty starts/360 pause-drop-resume cases pass. No FPS/hardware gain claim.
-Seven new default regressions pass; six genuinely fail the exact old eadb core.
-Those separate smoke runs are not whole-source or hosted acceptance.
+Actual source9f history repair published13:44:37.278902/closed13:44:39.036081.
+It preserves exact ce2 tree029dc9f and adds eadb as second parent, making the
+14-file G01-only PR mergeable. No public PR merge, force or protected-ref change.
+Original run37939034123/job113848358588 actually FAILED13:45:35 before browser:
+historical total-compatibility expected departed active seat to remain idle.
+Entire first official11620331652,128399627B/SHA77dd5ac989493bc3a74598a7310b305
+d6e03f19795e3470ae056631c2de99ad7 has397 safe unique entries/full CRC/all197
+source maps/572 immutable assertions/native failure retained, inspection closed
+13:52:16.097435. Native105111B/SHA14aedac882627c2395bbdbb79b4668310eca6b3a050
+633145951756af299264f. No historical browser success substituted.
 
-First actual source43f28f5 was normally pushed, commit13:26:35Z/readback13:27:18Z.
-Its exact publication clock was not instrumented. Hard13:26:24.419231 was missed
-by at least10.580769s; the earlier25-minute target was missed too. No backdate.
-Its first ZIP preparation rejected duplicate member names, but dependent shell
-commands wrongly continued; the source contained that invalid ZIP and stale
-copied handoff. The exact bad ZIP/first source/failure receipt remain retained.
-This correction deduplicates identical input paths and fully verifies every
-member byte, full CRC and unique names before publication. ENOSPC/empty helper
-was UNEXECUTED; the first concurrent-build controller truly FAIL remains.
+The corrected oracle keeps every original1003 seed/event and the exact frozen
+949 engine, two historical idleTurns/deadline normalisations only. Explicit
+absence is independently replayed through unchanged old legal/apply/greedy,
+strict stock+N-1 bound, all28 conservation and RNG.372510 full transitions/
+827 absence actions/1003 results agree. Separate exact eadb module1003 fully
+connected matches/377896 transitions compare EVERY WHOLESTATE byte with no
+normalisation. Strict compiler/two whole byte-identical943B regenerated reports
+PASS; controller closed13:59:36.736578/all3327 input aliases/groups/detached[].
+No production core/page/strategy/native sampler/clock/gate changed here.
 
-Current code/page proofs, all raw rows/events/programs/guards/native outputs and
-failures are in absence-takeover-first.json and its corrected complete media ZIP.
-Read actual next normal push receipt for new source and conservative cadence;
-until then use earliest next hard13:56:35Z, never infer exact prior push time.
+First source-bound actual functional milestone: TV, phone4x normal and phone
+reduced motion;24 legal actions/24 private handovers/full30s next-human clocks,
+zero HTTP/errors. Closed13:48:56.856901/all3326 aliases/natural/group/detached[].
+Actual phone capture1576893B,13.32s,333VP8 frames completely independently
+decoded13:56:43.574302/all214 decoder/library guards. Nativeexport25fps is NOT
+a performance measurement, file-navigation proof or physical phone result.
+Full source/raw/helper/controller/alias/failure evidence and clip identities:
+absence-compatibility-milestone.json and its safe unique complete media ZIP.
 
-NEXT: current visual milestone capture; complete every original check plus new
-default regressions, open/keep supplemental PR Draft, accept exact new original
-workflow and whole genuine official artifact. No qualified new gain/formal KEEP
-round credited. After actual full current green, reread/rank5, measure/log/push
-each separate round until3 no-player-gain. Preserve original Ready11 static.
+Prior stable repair control remains468 all-human complete pairs/527041
+assertions/74211 exact physical checkpoints:427 old budget failures to0new.
+Seed1 Draw100 7303305→90587 simulatedms, same19 rounds/scores94,133.
+360 earlier connected games/101238 exact transitions and360 empty/360 paused
+drop/resume controls pass. Seven new default regressions pass/six old fail;
+those targeted smoke runs are not whole current hosted qualification.
+
+First43 late invalid ZIP/stale copied NEXT, concurrent-build guard failure and
+ENOSPC/empty-helper UNEXECUTED remain preserved; no retroactive cadence credit.
+Last actual source push9f13:44:37.278902: early14:09:37.278902/hard14:14:37.278902.
+Read the next actual normal push receipt for this checkpoint's head/timing.
+Refresh only own G01 MAIN row after each push under exclusive root lease.
+
+NEXT: keep PR20 Draft; accept every original full check plus new regression,
+complete actual native log/first whole official ZIP/current Git bytes/current
+both native browser profiles/36-frame official capture with unchanged reader.
+If golden expectations differ, preserve first failure and reason independently;
+no skipped checks, weaker gates or repeat unchanged timing. No qualified new
+gain/formal KEEP credit yet. After complete current green, reread/rank5,
+measure/log/push each review separately until3 player-no-gain rounds. Preserve
+all original sources and never merge public PRs without explicit authorization.
+
+## Protected historical handoff below (verbatim; prior Draft statements historical)
 
 # G01 delivery review — incomplete
 

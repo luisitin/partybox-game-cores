@@ -54,5 +54,5 @@ Single steps:
 
 Protected PR11 is Ready on eadb; this isolated absent-turn repair is unqualified.
 Controlled468 pairs pass;360 connected games keep every state byte-identical.
-New7-test regressions pass/old6 fail. Original full CI/video/KEEP remain pending.
-NEXT.md records the retained failed first package and truthful source cadence.
+New7-test regressions pass/old6 fail. First full CI failure retained; new full CI/KEEP pending.
+1003 full connected matches and24 private handovers pass; NEXT.md records evidence/cadence.
