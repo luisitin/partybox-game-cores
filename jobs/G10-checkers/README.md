@@ -2,14 +2,14 @@
 
 American 8×8 and International 10×10 for two seats, hot-seat or bots.
 Full licensed American and International 2–6-piece databases are included.
-Draft PR #10 stays open. Exact dd226 full native checks and clips passed.
+Draft PR #10 stays open. Exact474 full native checks and clips passed.
 Four df download parts passed whole-byte verification with explicit source bridges.
 New-head verification and the renewed KEEP loop remain pending.
 
 The draft startup change lets American bots start after American data loads.
 International bots wait for the complete page. Its actual physical page,
 original strict TypeScript and direct full production output hashes passed.
-Exact dd226 gameplay and original FPS passed independent full verification.
+Exact474 gameplay and original FPS passed independent full verification.
 The genuine df full download parts passed every ZIP/raw/whole-page check.
 
 Exact historical8b4 hosted proof passed 91 tests,25 real mutants,7,000
@@ -43,7 +43,7 @@ Previous delivered full baseline:1,390,845,993bytes SHA-256:
 Artifacts expire after seven days and are not persistent Release assets.
 Tracked play.html is the older2–5-piece baseline. Rebuild the full current page
 with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough space.
-Observed hosted phone4x full load was36.877s; renewed startup KEEP remains open.
+Startup remains the next measured player issue; renewed KEEP remains open.
 
 American data terms require Chinook/University of Alberta acknowledgement and
 prohibit database sale. Ed Gilbert permits International data distribution.
