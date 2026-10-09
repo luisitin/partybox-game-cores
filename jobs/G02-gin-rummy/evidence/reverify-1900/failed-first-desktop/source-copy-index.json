@@ -1,0 +1,215 @@
+{
+  "scope": "exact first FAILED desktop harness; every original guarded input byte-verified; bundle copies mapped outside recursive dist ignore",
+  "entries": [
+    {
+      "guardPath": "play.html",
+      "archivePath": "sources/job/play.html",
+      "bytes": 491441,
+      "sha256": "a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f"
+    },
+    {
+      "guardPath": "src/core.ts",
+      "archivePath": "sources/job/src/core.ts",
+      "bytes": 25730,
+      "sha256": "59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf"
+    },
+    {
+      "guardPath": "src/cards.ts",
+      "archivePath": "sources/job/src/cards.ts",
+      "bytes": 6379,
+      "sha256": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9"
+    },
+    {
+      "guardPath": "src/browser.ts",
+      "archivePath": "sources/job/src/browser.ts",
+      "bytes": 16563,
+      "sha256": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4"
+    },
+    {
+      "guardPath": "src/play.template.html",
+      "archivePath": "sources/job/src/play.template.html",
+      "bytes": 7133,
+      "sha256": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"
+    },
+    {
+      "guardPath": "../../contract/contract.ts",
+      "archivePath": "sources/repository/contract/contract.ts",
+      "bytes": 26947,
+      "sha256": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+    },
+    {
+      "guardPath": "../../contract/constants.ts",
+      "archivePath": "sources/repository/contract/constants.ts",
+      "bytes": 4994,
+      "sha256": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef"
+    },
+    {
+      "guardPath": "../../contract/rng.ts",
+      "archivePath": "sources/repository/contract/rng.ts",
+      "bytes": 3445,
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    },
+    {
+      "guardPath": "../../contract/minigame-schema.ts",
+      "archivePath": "sources/repository/contract/minigame-schema.ts",
+      "bytes": 2723,
+      "sha256": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb"
+    },
+    {
+      "guardPath": "../../contract/player-count-schema.ts",
+      "archivePath": "sources/repository/contract/player-count-schema.ts",
+      "bytes": 1236,
+      "sha256": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189"
+    },
+    {
+      "guardPath": "dist/core.mjs",
+      "archivePath": "sources/job/bundled/core.mjs",
+      "bytes": 1026775,
+      "sha256": "f308ed6612e839a9a6a9289b992370f82c9d251b0620a7bd79f84ff9a68966d8"
+    },
+    {
+      "guardPath": "dist/cards.mjs",
+      "archivePath": "sources/job/bundled/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    {
+      "guardPath": "dist/contract.mjs",
+      "archivePath": "sources/job/bundled/contract.mjs",
+      "bytes": 1006006,
+      "sha256": "0d477737fffa3503f35a19d174fce2f29de33bef1769ee5bba2c327ac592101a"
+    },
+    {
+      "guardPath": "scripts/browser-check.mjs",
+      "archivePath": "sources/job/scripts/browser-check.mjs",
+      "bytes": 13048,
+      "sha256": "536587be20208be80ec3bc081be7ff5a23ceeac9bc83ab3a67095084bbbd87dc"
+    },
+    {
+      "guardPath": "scripts/clock-check.mjs",
+      "archivePath": "sources/job/scripts/clock-check.mjs",
+      "bytes": 3273,
+      "sha256": "beba34324460280157fbdffd947f02731437e067fbb6ac816a7e49d2c4e6da19"
+    },
+    {
+      "guardPath": "scripts/meld-check.mjs",
+      "archivePath": "sources/job/scripts/meld-check.mjs",
+      "bytes": 5312,
+      "sha256": "d514a510f1972bdfa0b60d5148c1d42a82efeb4b21f3b799c4e0794054b4b7e4"
+    },
+    {
+      "guardPath": "scripts/results-check.mjs",
+      "archivePath": "sources/job/scripts/results-check.mjs",
+      "bytes": 2649,
+      "sha256": "c478d1b3f32b71c94f2d5307f2c3b3e1e044edd84833d28e7ffc165f13bd310f"
+    },
+    {
+      "guardPath": "scripts/name-check.mjs",
+      "archivePath": "sources/job/scripts/name-check.mjs",
+      "bytes": 2050,
+      "sha256": "3802ec077deee82176a892bcb51df0bb268c7ab765851d636faa5ab2228f531f"
+    },
+    {
+      "guardPath": "scripts/host-check.mjs",
+      "archivePath": "sources/job/scripts/host-check.mjs",
+      "bytes": 5095,
+      "sha256": "e47e9a53aad166af54d78ea28e44ec5defff3e56d69139863113f5c132425b50"
+    },
+    {
+      "guardPath": "scripts/public-history-check.mjs",
+      "archivePath": "sources/job/scripts/public-history-check.mjs",
+      "bytes": 3543,
+      "sha256": "5c887f46d5240f1434f173bbd495c560869441b074447d52f4a49878a66a0859"
+    },
+    {
+      "guardPath": "tests/browser-fixture.mjs",
+      "archivePath": "sources/job/tests/browser-fixture.mjs",
+      "bytes": 2870,
+      "sha256": "f499940919128006bc90c4cb08eb766677c1bff3ea4dccf02645863a3bc50621"
+    },
+    {
+      "guardPath": "tests/helpers.mjs",
+      "archivePath": "sources/job/tests/helpers.mjs",
+      "bytes": 3202,
+      "sha256": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e"
+    },
+    {
+      "guardPath": "scripts/browser-source-guard.mjs",
+      "archivePath": "sources/job/scripts/browser-source-guard.mjs",
+      "bytes": 1410,
+      "sha256": "e5d9304a91ef04963133fe6bbae2c62189da28e917562da5a7cdb856596a1622"
+    },
+    {
+      "guardPath": "scripts/frame-coordination.mjs",
+      "archivePath": "sources/job/scripts/frame-coordination.mjs",
+      "bytes": 2368,
+      "sha256": "f1d34bfd418b5446a14c2ee3b3ba297eac18ed126d4ee261dffab57224399656"
+    },
+    {
+      "guardPath": "scripts/strict-browser-proof.mjs",
+      "archivePath": "sources/job/scripts/strict-browser-proof.mjs",
+      "bytes": 7148,
+      "sha256": "81b137c766c8f86f8074013aec185cfbe57f075db4a0c78fd17a87bf07ee870a"
+    },
+    {
+      "guardPath": "scripts/browser-proof.mjs",
+      "archivePath": "sources/job/scripts/browser-proof.mjs",
+      "bytes": 4588,
+      "sha256": "3ce834d0a764a4aefc93d0eaf7171f805d4ea5428563bcd976728f65222a8489"
+    },
+    {
+      "guardPath": "scripts/capture.mjs",
+      "archivePath": "sources/job/scripts/capture.mjs",
+      "bytes": 5394,
+      "sha256": "72077090f49f70e74c05ee925560a760f1f52b671ccb72d63570d609b9f80985"
+    },
+    {
+      "guardPath": "scripts/build.mjs",
+      "archivePath": "sources/job/scripts/build.mjs",
+      "bytes": 987,
+      "sha256": "3580cac9f713c9e4c3bfe8a83ec6bef33a64cd30be2c5d27c028b29a6a06fe8e"
+    },
+    {
+      "guardPath": "scripts/integrity.mjs",
+      "archivePath": "sources/job/scripts/integrity.mjs",
+      "bytes": 2763,
+      "sha256": "620cfdfc3eadd2fa52cc082d100e1acf8dd79bad6cf673ce374f14b1c7ff0b9b"
+    },
+    {
+      "guardPath": "scripts/check-evidence-links.mjs",
+      "archivePath": "sources/job/scripts/check-evidence-links.mjs",
+      "bytes": 1094,
+      "sha256": "03484934e141e8e0b08e8928bf6f89f48a15f0cfe95b24e94273eebfb1a62842"
+    },
+    {
+      "guardPath": "package.json",
+      "archivePath": "sources/job/package.json",
+      "bytes": 696,
+      "sha256": "8855d609e12ca7990d525b64c285513acde1420fc6368ccca3a937979253a91b"
+    },
+    {
+      "guardPath": "package-lock.json",
+      "archivePath": "sources/job/package-lock.json",
+      "bytes": 16974,
+      "sha256": "bb2357fee1276cb24714d62a0a02d478e465806f5ec8978034da5594d6fa765a"
+    },
+    {
+      "guardPath": "tsconfig.json",
+      "archivePath": "sources/job/tsconfig.json",
+      "bytes": 366,
+      "sha256": "624efd829d3631cf6a6cc8d7b345e93bb47e713f05162b0ff511ef6cfc0a6ac3"
+    },
+    {
+      "guardPath": "manifest.json",
+      "archivePath": "sources/job/manifest.json",
+      "bytes": 4105,
+      "sha256": "d079699772d442cda13bf8a41672e7de59d8a62966e07d0c87b8b8e991d84dbb"
+    },
+    {
+      "guardPath": "../../.github/workflows/G02.yml",
+      "archivePath": "sources/repository/.github/workflows/G02.yml",
+      "bytes": 1485,
+      "sha256": "438061d4cd18c18cc09ade9cf587830b9788dd1541f8ea33ad066edf58830bbb"
+    }
+  ]
+}

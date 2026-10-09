@@ -1,0 +1,19 @@
+{"kind":"fixed-page real-click confirmation","started":"2026-10-08T11:25:58.126Z","pid":123048,"htmlSha256":"796f66c60bb3a805ede1e860ee57864cb12cb01e631c10bcd1b6946454637681","measuresFps":false}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 10
+
+    at file:///workspace/game-cores-G02-finish/jobs/G02-gin-rummy/scripts/real-host-check.mjs:81:65 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 10,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

@@ -1,0 +1,14 @@
+{"suite":"opening-pass-attribution","directPassCases":360,"editions":2,"counts":[2,3,4]}
+{"suite":"pass-valid-ids","cases":240,"ids":["","__proto__","constructor","last"]}
+{"suite":"automatic-pass-attribution","routes":["timer","vip","player"]}
+✔ both opening passes identify their actual actors across counts, editions and seeds (121.603145ms)
+✔ empty and prototype-shaped original IDs retain pass attribution as own keys (55.184272ms)
+✔ timer, VIP skip and absent-seat automation identify the automatic passer (4.870188ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 376.975483

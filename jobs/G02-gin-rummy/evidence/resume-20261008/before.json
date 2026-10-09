@@ -1,0 +1,86 @@
+{
+  "baselineOnly": true,
+  "measuresFps": false,
+  "started": "2026-10-08T11:13:22.823Z",
+  "completed": "2026-10-08T11:13:45.707Z",
+  "htmlSha256": "ac9f39656e06a9231ec52ef2c3881a3bbdd91c44978d848a73ba960ac26632b7",
+  "sourceSha256": {
+    "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/browser.ts": "b14a8327517d6ab558a7941b5a3c2dd01d7c5bff8f1132ddcac9d7ad349c9b36",
+    "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"
+  },
+  "sourceUnchanged": true,
+  "fixture": "actual seeded game.init roster; no state, turn, cards or core RNG injected",
+  "rows": [
+    {
+      "kind": "late human click",
+      "entropySeed": 7,
+      "gameSeed": 3660348618,
+      "actualOrdinaryPlaywrightClick": true,
+      "actualFileNavigation": true,
+      "actualElapsedClock": true,
+      "capturePhaseStallMs": 9876.79999999702,
+      "lateByMs": 30.799999997019768,
+      "lateInput": {
+        "type": "pass"
+      },
+      "actual": {
+        "observedAt": 10435.10000000894,
+        "status": "Player 1 · accept the upcard or pass",
+        "log": [
+          "Player 1: pass"
+        ],
+        "privateCards": 0
+      },
+      "expectedTimerOnlyLog": [
+        "Player 2: take-discard 6♥"
+      ],
+      "timerFirst": false
+    },
+    {
+      "kind": "late manual Easy-bot click",
+      "entropySeed": 7,
+      "gameSeed": 3660348618,
+      "actualOrdinaryPlaywrightClick": true,
+      "actualFileNavigation": true,
+      "actualElapsedClock": true,
+      "capturePhaseStallMs": 9981,
+      "lateByMs": 30.100000008940697,
+      "lateInput": {
+        "type": "pass"
+      },
+      "actual": {
+        "observedAt": 10509.70000000298,
+        "status": "Player 1 · accept the upcard or pass",
+        "log": [
+          "Player 1: pass"
+        ],
+        "privateCards": 0
+      },
+      "expectedTimerOnlyLog": [
+        "Player 2: take-discard 6♥"
+      ],
+      "timerFirst": false
+    },
+    {
+      "kind": "New match hidden-DOM retention",
+      "before": {
+        "cards": 11,
+        "meldSelectors": 10,
+        "deadwood": "Minimum deadwood: 59. Selected: 4♣.",
+        "actions": 3,
+        "tableHidden": false
+      },
+      "after": {
+        "cards": 11,
+        "meldSelectors": 10,
+        "deadwood": "Minimum deadwood: 59. Selected: 4♣.",
+        "actions": 3,
+        "tableHidden": true
+      },
+      "visuallyExposed": false,
+      "privateDomCleared": false
+    }
+  ]
+}

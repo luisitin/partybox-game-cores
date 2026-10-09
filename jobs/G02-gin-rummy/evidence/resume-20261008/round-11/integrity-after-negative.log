@@ -1,0 +1,41 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: accepted proof has stale source hashes
++ actual - expected
+
+  {
++   'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+-   'play.html': '7f690e274a80e65e51ec94d18175f7ad6d3f06883e1874f0b3bfa0a81321787f',
+    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+  }
+
+    at sourceGuard (file:///workspace/game-cores-G02-finish/jobs/G02-gin-rummy/.work/proof-freshness-negative/scripts/browser-proof.mjs:13:9)
+    at verifyBrowserProof (file:///workspace/game-cores-G02-finish/jobs/G02-gin-rummy/.work/proof-freshness-negative/scripts/browser-proof.mjs:21:2)
+    at checkBrowserProof (file:///workspace/game-cores-G02-finish/jobs/G02-gin-rummy/.work/proof-freshness-negative/scripts/browser-proof.mjs:62:50)
+    at async file:///workspace/game-cores-G02-finish/jobs/G02-gin-rummy/.work/proof-freshness-negative/scripts/integrity.mjs:22:28 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: {
+    'play.html': 'a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f',
+    'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+  },
+  expected: {
+    'play.html': '7f690e274a80e65e51ec94d18175f7ad6d3f06883e1874f0b3bfa0a81321787f',
+    'src/core.ts': '59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf',
+    'src/cards.ts': 'e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9',
+    'src/browser.ts': '56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4',
+    'src/play.template.html': '1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7'
+  },
+  operator: 'deepStrictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

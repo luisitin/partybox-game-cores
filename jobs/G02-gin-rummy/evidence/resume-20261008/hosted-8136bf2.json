@@ -1,0 +1,57 @@
+{
+  "head": "8136bf2136da4c5223aa1a2c43881dc71e0ad7fe",
+  "runId": 37770743158,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37770743158",
+  "completedAt": "2026-10-08T11:36:08Z",
+  "conclusion": "success",
+  "logActuallyRead": true,
+  "logSha256": "aa2839be40ca55b021efa0fdfeb0c71d153894546317352010ab4f1a80e099d2",
+  "nodeTests": {
+    "passed": 32,
+    "failed": 0
+  },
+  "browserSourceStart": {
+    "kind": "full browser proof",
+    "started": "2026-10-08T11:35:37.480Z",
+    "pid": 3679,
+    "sourceStart": {
+      "play.html": "796f66c60bb3a805ede1e860ee57864cb12cb01e631c10bcd1b6946454637681",
+      "src/core.ts": "d3f000221c95eb66204eea24238c7bff7b5cbbef72195e7df0753a5f3ce5063f",
+      "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+      "src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+      "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"
+    }
+  },
+  "browserFullPassSummary": {
+    "runId": "2026-10-08T11-35-37-480Z",
+    "passed": true,
+    "sourceUnchanged": true,
+    "extraHostChecks": 5,
+    "rows": [
+      {
+        "label": "desktop",
+        "fps": 60.00219608037654,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "frameGatePassed": true
+      },
+      {
+        "label": "phone4x",
+        "fps": 60.00240009600384,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "frameGatePassed": true
+      }
+    ]
+  },
+  "hostedRawFrameContentsRead": false,
+  "artifact": {
+    "id": 11548086113,
+    "name": "G02-browser-evidence",
+    "sizeBytes": 5618,
+    "expired": false,
+    "downloadOutcome": "Azure artifact endpoint returned HTTP403; artifact contents not read"
+  },
+  "localFailureRetained": "attempts/2026-10-08T11-27-10-248Z",
+  "physicalPhoneTested": false
+}

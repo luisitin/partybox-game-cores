@@ -1,0 +1,123 @@
+{
+  "scope": "FIRST actual native desktop attempt; FAILED; phone NOT RUN; no cause established",
+  "rawIntervals": 600,
+  "nativeTimestamps": 601,
+  "perFrameActiveHandWitnesses": 601,
+  "guardedSources": 35,
+  "sourceCopiesByteVerified": true,
+  "statistics": {
+    "fps": 40.72545612510856,
+    "meanMs": 24.554666666666694,
+    "p99Ms": 150,
+    "maxMs": 2083.3000000000175
+  },
+  "longIntervals": [
+    {
+      "index": 154,
+      "ms": 2083.3000000000175
+    },
+    {
+      "index": 157,
+      "ms": 33.30000000001746
+    },
+    {
+      "index": 158,
+      "ms": 133.39999999999418
+    },
+    {
+      "index": 159,
+      "ms": 600
+    },
+    {
+      "index": 160,
+      "ms": 383.29999999998836
+    },
+    {
+      "index": 162,
+      "ms": 150
+    },
+    {
+      "index": 166,
+      "ms": 33.29999999998836
+    },
+    {
+      "index": 169,
+      "ms": 116.59999999997672
+    },
+    {
+      "index": 170,
+      "ms": 50.10000000000582
+    },
+    {
+      "index": 172,
+      "ms": 200
+    },
+    {
+      "index": 177,
+      "ms": 50
+    },
+    {
+      "index": 181,
+      "ms": 66.69999999998254
+    },
+    {
+      "index": 194,
+      "ms": 116.70000000001164
+    },
+    {
+      "index": 195,
+      "ms": 50
+    },
+    {
+      "index": 205,
+      "ms": 33.39999999999418
+    },
+    {
+      "index": 223,
+      "ms": 100.10000000000582
+    },
+    {
+      "index": 224,
+      "ms": 33.29999999998836
+    },
+    {
+      "index": 229,
+      "ms": 33.19999999998254
+    },
+    {
+      "index": 236,
+      "ms": 83.29999999998836
+    },
+    {
+      "index": 237,
+      "ms": 50
+    },
+    {
+      "index": 239,
+      "ms": 400
+    },
+    {
+      "index": 241,
+      "ms": 33.29999999998836
+    },
+    {
+      "index": 258,
+      "ms": 66.69999999998254
+    },
+    {
+      "index": 262,
+      "ms": 150.09999999997672
+    },
+    {
+      "index": 302,
+      "ms": 100
+    }
+  ],
+  "unchangedLocalRetry": false,
+  "preSampleRootHold": {
+    "stopUtc": "2026-10-08T19:30:46.187750Z",
+    "continueUtc": "2026-10-08T19:31:43.381534Z",
+    "scope": "waiting processes only; native sample began after continuation/grant; optional turn clock remains off"
+  },
+  "productUnchangedFrom": "4fa969bf0a4e4a6ef193a4e71718c06cda75095d"
+}

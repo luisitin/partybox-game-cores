@@ -1,0 +1,242 @@
+verify	Run npm test	﻿2026-10-08T04:37:22.1398175Z ##[group]Run npm test
+verify	Run npm test	2026-10-08T04:37:22.1398480Z [36;1mnpm test[0m
+verify	Run npm test	2026-10-08T04:37:22.1462836Z shell: /usr/bin/bash -e {0}
+verify	Run npm test	2026-10-08T04:37:22.1463301Z ##[endgroup]
+verify	Run npm test	2026-10-08T04:37:22.2446696Z 
+verify	Run npm test	2026-10-08T04:37:22.2447256Z > partybox-g02-gin-rummy@1.2.1 test
+verify	Run npm test	2026-10-08T04:37:22.2448677Z > npm run build && node --test tests/*.test.mjs && node scripts/league.mjs && node scripts/mutations.mjs && node scripts/browser-check.mjs && node scripts/integrity.mjs
+verify	Run npm test	2026-10-08T04:37:22.2449559Z 
+verify	Run npm test	2026-10-08T04:37:22.3439268Z 
+verify	Run npm test	2026-10-08T04:37:22.3439753Z > partybox-g02-gin-rummy@1.2.1 build
+verify	Run npm test	2026-10-08T04:37:22.3440259Z > tsc --noEmit && node scripts/build.mjs
+verify	Run npm test	2026-10-08T04:37:22.3440513Z 
+verify	Run npm test	2026-10-08T04:37:24.3528311Z TAP version 13
+verify	Run npm test	2026-10-08T04:37:24.5022582Z # {"suite":"all-phases","phases":6,"cases":408}
+verify	Run npm test	2026-10-08T04:37:24.5083201Z # Subtest: every event family, roster id and bot skill in every delivered phase
+verify	Run npm test	2026-10-08T04:37:24.5113074Z ok 1 - every event family, roster id and bot skill in every delivered phase
+verify	Run npm test	2026-10-08T04:37:24.5142508Z   ---
+verify	Run npm test	2026-10-08T04:37:24.5143098Z   duration_ms: 50.488829
+verify	Run npm test	2026-10-08T04:37:24.5153024Z   type: 'test'
+verify	Run npm test	2026-10-08T04:37:24.5153547Z   ...
+verify	Run npm test	2026-10-08T04:37:24.5154521Z # Subtest: registered prototype-looking ids remain valid players and finite result keys
+verify	Run npm test	2026-10-08T04:37:24.5156018Z ok 2 - registered prototype-looking ids remain valid players and finite result keys
+verify	Run npm test	2026-10-08T04:37:24.5156901Z   ---
+verify	Run npm test	2026-10-08T04:37:24.5157342Z   duration_ms: 2.120224
+verify	Run npm test	2026-10-08T04:37:24.5157845Z   type: 'test'
+verify	Run npm test	2026-10-08T04:37:24.5158283Z   ...
+verify	Run npm test	2026-10-08T04:37:28.2830320Z # {"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+verify	Run npm test	2026-10-08T04:37:28.2866727Z # Subtest: 10500 batch outcomes retain exact standalone layouts and independent minima
+verify	Run npm test	2026-10-08T04:37:28.2872237Z ok 3 - 10500 batch outcomes retain exact standalone layouts and independent minima
+verify	Run npm test	2026-10-08T04:37:28.2873174Z   ---
+verify	Run npm test	2026-10-08T04:37:28.2873667Z   duration_ms: 3848.013275
+verify	Run npm test	2026-10-08T04:37:28.2874265Z   type: 'test'
+verify	Run npm test	2026-10-08T04:37:28.2874817Z   ...
+verify	Run npm test	2026-10-08T04:37:28.3125832Z # Subtest: branching target ends retain exact minima, legal chains, layouts and all cards
+verify	Run npm test	2026-10-08T04:37:28.3143566Z ok 4 - branching target ends retain exact minima, legal chains, layouts and all cards
+verify	Run npm test	2026-10-08T04:37:28.3144545Z   ---
+verify	Run npm test	2026-10-08T04:37:28.3145140Z   duration_ms: 56.504637
+verify	Run npm test	2026-10-08T04:37:28.3145775Z   type: 'test'
+verify	Run npm test	2026-10-08T04:37:28.3146299Z   ...
+verify	Run npm test	2026-10-08T04:37:49.3306650Z # {"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612}
+verify	Run npm test	2026-10-08T04:38:11.4976174Z # {"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775}
+verify	Run npm test	2026-10-08T04:38:37.5975819Z # {"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825}
+verify	Run npm test	2026-10-08T04:38:57.8259155Z # {"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755}
+verify	Run npm test	2026-10-08T04:39:19.2127454Z # {"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812}
+verify	Run npm test	2026-10-08T04:39:44.1925591Z # {"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929}
+verify	Run npm test	2026-10-08T04:39:57.0954730Z # {"suite":"properties","seeds":1003,"events":420546}
+verify	Run npm test	2026-10-08T04:40:00.5487985Z # {"suite":"secrecy","comparisons":7925}
+verify	Run npm test	2026-10-08T04:40:00.5799625Z # Subtest: 1000 finished seeded bot games at EACH valid player count and BOTH editions
+verify	Run npm test	2026-10-08T04:40:00.5823528Z ok 5 - 1000 finished seeded bot games at EACH valid player count and BOTH editions
+verify	Run npm test	2026-10-08T04:40:00.5824440Z   ---
+verify	Run npm test	2026-10-08T04:40:00.5824821Z   duration_ms: 139530.964918
+verify	Run npm test	2026-10-08T04:40:00.5825271Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.5825615Z   ...
+verify	Run npm test	2026-10-08T04:40:00.5826471Z # Subtest: property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+verify	Run npm test	2026-10-08T04:40:00.5828377Z ok 6 - property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+verify	Run npm test	2026-10-08T04:40:00.5829435Z   ---
+verify	Run npm test	2026-10-08T04:40:00.5829758Z   duration_ms: 12901.789568
+verify	Run npm test	2026-10-08T04:40:00.5830145Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.5830461Z   ...
+verify	Run npm test	2026-10-08T04:40:00.5831309Z # Subtest: hidden-card/order perturbations never change TV, another controller or bot decisions
+verify	Run npm test	2026-10-08T04:40:00.5832848Z ok 7 - hidden-card/order perturbations never change TV, another controller or bot decisions
+verify	Run npm test	2026-10-08T04:40:00.5833608Z   ---
+verify	Run npm test	2026-10-08T04:40:00.5833932Z   duration_ms: 3453.335933
+verify	Run npm test	2026-10-08T04:40:00.5834312Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.5834619Z   ...
+verify	Run npm test	2026-10-08T04:40:00.5835384Z # Subtest: idle/no-clock matches remain until explicit end, every phase can exit via VIP
+verify	Run npm test	2026-10-08T04:40:00.5839792Z ok 8 - idle/no-clock matches remain until explicit end, every phase can exit via VIP
+verify	Run npm test	2026-10-08T04:40:00.5840654Z   ---
+verify	Run npm test	2026-10-08T04:40:00.5843714Z   duration_ms: 27.699779
+verify	Run npm test	2026-10-08T04:40:00.5844611Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.5845093Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6106817Z # {"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+verify	Run npm test	2026-10-08T04:40:00.6108296Z # Subtest: departures in every live phase finish the absent turn without exposing its hand
+verify	Run npm test	2026-10-08T04:40:00.6109523Z ok 9 - departures in every live phase finish the absent turn without exposing its hand
+verify	Run npm test	2026-10-08T04:40:00.6110252Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6110594Z   duration_ms: 23.329552
+verify	Run npm test	2026-10-08T04:40:00.6110988Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6111317Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6112429Z # Subtest: 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+verify	Run npm test	2026-10-08T04:40:00.6113759Z ok 10 - 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+verify	Run npm test	2026-10-08T04:40:00.6114519Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6114847Z   duration_ms: 5723.301148
+verify	Run npm test	2026-10-08T04:40:00.6115244Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6115517Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6116137Z # Subtest: empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+verify	Run npm test	2026-10-08T04:40:00.6118919Z ok 11 - empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+verify	Run npm test	2026-10-08T04:40:00.6119796Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6120153Z   duration_ms: 1.081779
+verify	Run npm test	2026-10-08T04:40:00.6120532Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6120861Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6121710Z # Subtest: departures during VIP pause drain only on resume; malformed control events do nothing
+verify	Run npm test	2026-10-08T04:40:00.6123339Z ok 12 - departures during VIP pause drain only on resume; malformed control events do nothing
+verify	Run npm test	2026-10-08T04:40:00.6124098Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6124421Z   duration_ms: 0.521148
+verify	Run npm test	2026-10-08T04:40:00.6124800Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6125125Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6126054Z # {"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+verify	Run npm test	2026-10-08T04:40:00.6127329Z # Subtest: independent exhaustive meld-subset packing proves 10000 exact minima
+verify	Run npm test	2026-10-08T04:40:00.6128433Z ok 13 - independent exhaustive meld-subset packing proves 10000 exact minima
+verify	Run npm test	2026-10-08T04:40:00.6129107Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6129433Z   duration_ms: 8619.996481
+verify	Run npm test	2026-10-08T04:40:00.6129819Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6130149Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6131093Z # Subtest: actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+verify	Run npm test	2026-10-08T04:40:00.6133402Z ok 14 - actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+verify	Run npm test	2026-10-08T04:40:00.6134246Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6134566Z   duration_ms: 10.855547
+verify	Run npm test	2026-10-08T04:40:00.6134952Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6135272Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6136176Z # Subtest: actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+verify	Run npm test	2026-10-08T04:40:00.6137561Z ok 15 - actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+verify	Run npm test	2026-10-08T04:40:00.6139269Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6139595Z   duration_ms: 6.214354
+verify	Run npm test	2026-10-08T04:40:00.6139969Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6140290Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6141165Z # Subtest: winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+verify	Run npm test	2026-10-08T04:40:00.6142719Z ok 16 - winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+verify	Run npm test	2026-10-08T04:40:00.6143177Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6143368Z   duration_ms: 3.042496
+verify	Run npm test	2026-10-08T04:40:00.6143591Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6143845Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6144682Z # {"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+verify	Run npm test	2026-10-08T04:40:00.6145719Z # Subtest: 2000 independent joint meld/layoff weighted packings including chained extensions
+verify	Run npm test	2026-10-08T04:40:00.6147018Z ok 17 - 2000 independent joint meld/layoff weighted packings including chained extensions
+verify	Run npm test	2026-10-08T04:40:00.6147787Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6148141Z   duration_ms: 7722.10667
+verify	Run npm test	2026-10-08T04:40:00.6148527Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6148850Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6149712Z # Subtest: first raw target winner keeps the crown even when final box settlement reverses points
+verify	Run npm test	2026-10-08T04:40:00.6151003Z ok 18 - first raw target winner keeps the crown even when final box settlement reverses points
+verify	Run npm test	2026-10-08T04:40:00.6151762Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6152303Z   duration_ms: 11.656871
+verify	Run npm test	2026-10-08T04:40:00.6152703Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6153023Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6153826Z # Subtest: every valid string ID, including empty, wins, earns bonuses and stays in rotation
+verify	Run npm test	2026-10-08T04:40:00.6155035Z ok 19 - every valid string ID, including empty, wins, earns bonuses and stays in rotation
+verify	Run npm test	2026-10-08T04:40:00.6155753Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6156073Z   duration_ms: 20.794807
+verify	Run npm test	2026-10-08T04:40:00.6156446Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6156771Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6157584Z # Subtest: malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+verify	Run npm test	2026-10-08T04:40:00.6158830Z ok 20 - malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+verify	Run npm test	2026-10-08T04:40:00.6159309Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6159493Z   duration_ms: 1.868494
+verify	Run npm test	2026-10-08T04:40:00.6159706Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6159888Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6160278Z # Subtest: early end preserves earned raw points and reports current standings
+verify	Run npm test	2026-10-08T04:40:00.6160877Z ok 21 - early end preserves earned raw points and reports current standings
+verify	Run npm test	2026-10-08T04:40:00.6161245Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6161428Z   duration_ms: 0.695434
+verify	Run npm test	2026-10-08T04:40:00.6161639Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6161826Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6162476Z # Subtest: aces low, set cardinality, runs and overlap
+verify	Run npm test	2026-10-08T04:40:00.6163112Z ok 22 - aces low, set cardinality, runs and overlap
+verify	Run npm test	2026-10-08T04:40:00.6163568Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6163869Z   duration_ms: 2.588092
+verify	Run npm test	2026-10-08T04:40:00.6164226Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6164550Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6165311Z # Subtest: joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+verify	Run npm test	2026-10-08T04:40:00.6166208Z ok 23 - joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+verify	Run npm test	2026-10-08T04:40:00.6166628Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6166814Z   duration_ms: 4.973202
+verify	Run npm test	2026-10-08T04:40:00.6167022Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6167205Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6167629Z # Subtest: every score formula, tie undercut and spade whole-hand doubling
+verify	Run npm test	2026-10-08T04:40:00.6173181Z ok 24 - every score formula, tie undercut and spade whole-hand doubling
+verify	Run npm test	2026-10-08T04:40:00.6173853Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6174075Z   duration_ms: 2.69407
+verify	Run npm test	2026-10-08T04:40:00.6174309Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6174510Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6175005Z # Subtest: opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+verify	Run npm test	2026-10-08T04:40:00.6176279Z ok 25 - opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+verify	Run npm test	2026-10-08T04:40:00.6176855Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6177050Z   duration_ms: 24.248794
+verify	Run npm test	2026-10-08T04:40:00.6177277Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6177473Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6177892Z # Subtest: Oklahoma limits / ace / spade configurations from all 52 initial upcards
+verify	Run npm test	2026-10-08T04:40:00.6178500Z ok 26 - Oklahoma limits / ace / spade configurations from all 52 initial upcards
+verify	Run npm test	2026-10-08T04:40:00.6178883Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6179072Z   duration_ms: 33.561128
+verify	Run npm test	2026-10-08T04:40:00.6179301Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6179487Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6179964Z # Subtest: pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+verify	Run npm test	2026-10-08T04:40:00.6180707Z ok 27 - pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+verify	Run npm test	2026-10-08T04:40:00.6181134Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6181326Z   duration_ms: 2.488524
+verify	Run npm test	2026-10-08T04:40:00.6181555Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6181743Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6182532Z # Subtest: all required roster settings, default sanitization, exact phase fixtures and manifest
+verify	Run npm test	2026-10-08T04:40:00.6183278Z ok 28 - all required roster settings, default sanitization, exact phase fixtures and manifest
+verify	Run npm test	2026-10-08T04:40:00.6183721Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6183917Z   duration_ms: 116.89978
+verify	Run npm test	2026-10-08T04:40:00.6184144Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6184327Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6184683Z # Subtest: same-timestamp turns cannot share timer instance identity
+verify	Run npm test	2026-10-08T04:40:00.6185195Z ok 29 - same-timestamp turns cannot share timer instance identity
+verify	Run npm test	2026-10-08T04:40:00.6185521Z   ---
+verify	Run npm test	2026-10-08T04:40:00.6185705Z   duration_ms: 13.760144
+verify	Run npm test	2026-10-08T04:40:00.6185923Z   type: 'test'
+verify	Run npm test	2026-10-08T04:40:00.6186104Z   ...
+verify	Run npm test	2026-10-08T04:40:00.6186274Z 1..29
+verify	Run npm test	2026-10-08T04:40:00.6186449Z # tests 29
+verify	Run npm test	2026-10-08T04:40:00.6186637Z # suites 0
+verify	Run npm test	2026-10-08T04:40:00.6186817Z # pass 29
+verify	Run npm test	2026-10-08T04:40:00.6186999Z # fail 0
+verify	Run npm test	2026-10-08T04:40:00.6187181Z # cancelled 0
+verify	Run npm test	2026-10-08T04:40:00.6187375Z # skipped 0
+verify	Run npm test	2026-10-08T04:40:00.6187555Z # todo 0
+verify	Run npm test	2026-10-08T04:40:00.6187756Z # duration_ms 156280.408648
+verify	Run npm test	2026-10-08T04:40:21.3092392Z {"stronger":"sharp","weaker":"normal","games":2000,"wins":1152,"losses":848,"ties":0,"winRate":0.576,"wilsonLower":0.5542157372425242,"events":527438,"pairedSeeds":true}
+verify	Run npm test	2026-10-08T04:40:40.2146132Z {"stronger":"normal","weaker":"easy","games":2000,"wins":1743,"losses":257,"ties":0,"winRate":0.8715,"wilsonLower":0.8561180625080238,"events":490034,"pairedSeeds":true}
+verify	Run npm test	2026-10-08T04:40:40.8468368Z M01 caught wrong rank
+verify	Run npm test	2026-10-08T04:40:41.1471383Z M02 caught wrong suit
+verify	Run npm test	2026-10-08T04:40:41.4511041Z M03 caught wrong face value
+verify	Run npm test	2026-10-08T04:40:41.7671718Z M04 caught reject three-card meld
+verify	Run npm test	2026-10-08T04:40:42.0870679Z M05 caught reject four-card set
+verify	Run npm test	2026-10-08T04:40:42.4062468Z M06 caught off-by-one run
+verify	Run npm test	2026-10-08T04:40:42.7220068Z M07 caught omit three-card candidate runs
+verify	Run npm test	2026-10-08T04:40:43.0306484Z M08 caught omit three-of-kind candidates
+verify	Run npm test	2026-10-08T04:40:43.3510113Z M09 caught maximize instead of minimize
+verify	Run npm test	2026-10-08T04:40:43.6642910Z M10 caught invert Gin layoff prohibition
+verify	Run npm test	2026-10-08T04:40:43.9844104Z M11 caught omit layoffs
+verify	Run npm test	2026-10-08T04:40:44.2927270Z M12 caught allow discard after two opening passes
+verify	Run npm test	2026-10-08T04:40:44.5925868Z M13 caught allow opening stock draw
+verify	Run npm test	2026-10-08T04:40:44.8995708Z M14 caught allow immediate returned upcard
+verify	Run npm test	2026-10-08T04:40:45.2224077Z M15 caught continue past two stock cards
+verify	Run npm test	2026-10-08T04:40:45.5343058Z M16 caught deny tie undercut
+verify	Run npm test	2026-10-08T04:40:45.8443971Z M17 caught subtract opponent Gin deadwood
+verify	Run npm test	2026-10-08T04:40:46.1598684Z M18 caught Big Gin wrong bonus
+verify	Run npm test	2026-10-08T04:40:46.4787556Z M19 caught reverse undercut difference
+verify	Run npm test	2026-10-08T04:40:46.7960578Z M20 caught wrong knock difference
+verify	Run npm test	2026-10-08T04:40:47.1103526Z M21 caught ignore double Big Gin
+verify	Run npm test	2026-10-08T04:40:47.4132229Z M22 caught Oklahoma ace wrong limit
+verify	Run npm test	2026-10-08T04:40:47.7187121Z M23 caught double hearts instead of spades
+verify	Run npm test	2026-10-08T04:40:48.0451055Z M24 caught accept stale timer
+verify	Run npm test	2026-10-08T04:40:48.3669968Z M25 caught resume omits pause duration
+verify	Run npm test	2026-10-08T04:40:53.3595988Z {"label":"desktop","fps":60.00400026668446,"meanMs":16.665555555555553,"p99Ms":16.800000000000182,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+verify	Run npm test	2026-10-08T04:40:57.4857433Z {"label":"phone4x","fps":60.00200006666889,"meanMs":16.66611111111111,"p99Ms":16.800000000000182,"maxMs":16.800000000000182,"networkRequests":0,"pageErrors":0}
+verify	Run npm test	2026-10-08T04:40:57.7273885Z {"kind":"synthetic delayed-host-callback and pause regression","elapsedMs":20000,"configuredTurnMs":10000,"firstExpiredCallbackCount":1,"actionsBefore":0,"actionsAfter":1,"deadlineAdvancedOnElapsedTime":true,"visibleCountdown":true,"pausePreservesRemainingTime":true,"entropyCalls":1,"controlledTestSeed":7199}
+verify	Run npm test	2026-10-08T04:40:59.9742939Z {"customMeldRegression":[{"label":"desktop","cpuThrottle":1,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"},{"label":"phone4x","cpuThrottle":4,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"}]}
+verify	Run npm test	2026-10-08T04:41:00.9161227Z {"resultsRegression":[{"label":"desktop","cpuThrottle":1,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"},{"label":"phone4x","cpuThrottle":4,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"}]}
+verify	Run npm test	2026-10-08T04:41:01.3733603Z {"suite":"integrity","fileHashes":150,"regenerationRuns":2,"byteIdentical":true,"coreNoIo":true,"mediaUnder10MB":true}
