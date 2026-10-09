@@ -1,0 +1,121 @@
+{
+  "status": "ACTUAL_AFTER_GREEN_KEEP18_NO_NEW_PLAYER_GAIN",
+  "round": 18,
+  "rankedFive": {
+    "status": "ACTUAL_AFTER_GREEN_KEEP18_BID_LATTICE_RANKED_FIVE",
+    "afterGreenHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "reviewHead": "8135ab2c62edc1f01fd3b54fa6407edb3837335b",
+    "bindingReadAt": "2026-10-09T10:08:55Z",
+    "rankedFive": [
+      "Numeric-bid combinations beyond first positive6/9 may expose different contract/bag outcomes.",
+      "Blind-nil counterpart is one real seeded prefix; larger gap/exchange contexts are finite.",
+      "Cutthroat/default failed-nil exclusion must preserve policy action and RNG.",
+      "Phone hardware and online-source access remain limited.",
+      "Existing bot benchmarks demonstrate finite tier strength, not expert-level play."
+    ],
+    "worstAction": "Replay actual seed577 full legal prefix with all169 valid own/opponent numeric bid pairs, both failedNilCounts settings and nil bonuses, preserving nil partners and exact cards. Independently finish old/current choices and both-team scoring across every200 carried-bag/nil boundaries for each pair. Any adverse margin must be preserved before a production change.",
+    "noGainStreakBefore": 1
+  },
+  "actualControllerClosure": {
+    "status": "ACTUAL_FINITE_UNTIMED_OPPONENT_NIL_PROBE_CLOSED",
+    "sourceHead": "8135ab2c62edc1f01fd3b54fa6407edb3837335b",
+    "startedAt": "2026-10-09T10:10:54.507700+00:00",
+    "naturallyClosedAt": "2026-10-09T10:11:05.583229+00:00",
+    "exitCode": 0,
+    "natural": true,
+    "actualOwnedGroupEmpty": true,
+    "guardCount": 3446,
+    "allFrozenInputsUnchanged": true,
+    "probeScope": "KEEP18 after green1120 and actual KEEP17 push/reread/rankfive:676 genuine seed577 histories with169 legal numeric-bid pairs/both failed-nil toggles/both bonuses/all3 skill/RNG/two legal terminal continuations/202800 independent bag outcomes. One-deal finite lattice, not169 random deals. No new production change or native timing.",
+    "controller": "/tmp/G06-genuine-numeric-bid-lattice-review-controlled-20261009.py"
+  },
+  "newProductionGain": 0,
+  "formalNoGainStreak": 2,
+  "priorGreen": {
+    "status": "ACTUAL_FULL_ORIGINAL_CURRENT_1120_ACCEPTED",
+    "sourceHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "currentRuntimeBridgeHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "scope": "current exact1120 original full CI, actual official whole artifact and original unchanged verification reader",
+    "artifactId": 11606979916,
+    "runId": 37912054471,
+    "jobId": 113759291886,
+    "officialZipBytes": 98036,
+    "officialZipSha256": "051bd896a255ad000ebcbab9b26cbf49f069212a0d348fbbedacee51a139ec85",
+    "fullNativeCharacters": 103151,
+    "trackedGitFilesCompared": 289,
+    "outerGuardCount": 3447,
+    "allGuardsUnchanged": true,
+    "startedAt": "2026-10-09T10:01:30.497089+00:00",
+    "naturallyClosedAt": "2026-10-09T10:01:31.449033+00:00",
+    "steps": [
+      {
+        "name": "full-original-reader",
+        "exitCode": 0
+      },
+      {
+        "name": "full-video-decode",
+        "exitCode": 0
+      },
+      {
+        "name": "all-video-frame-inventory",
+        "exitCode": 0
+      }
+    ],
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "nb_read_frames": "18"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      }
+    },
+    "rawIntervals": 1800,
+    "coreTests": 48,
+    "focusedGroups": 21,
+    "actualMutationKills": 25,
+    "presenceSeeds": 1003,
+    "skillGames": 16000,
+    "negativeEvidenceControls": 58,
+    "captureCliControls": 12
+  },
+  "runtimeAndGatesIdenticalAcrossElevenProofOnlyPaths": [
+    "jobs/G06-spades/ASSUMPTIONS.md",
+    "jobs/G06-spades/AUDIT.md",
+    "jobs/G06-spades/BOTS.md",
+    "jobs/G06-spades/KEEP17-public-unseen-outcome-review-20261009.json",
+    "jobs/G06-spades/LOOP.md",
+    "jobs/G06-spades/NEXT.md",
+    "jobs/G06-spades/SHA256SUMS.txt",
+    "jobs/G06-spades/VERIFY.md",
+    "jobs/G06-spades/media/KEEP17-public-unseen-outcome-review-20261009.zip",
+    "jobs/G06-spades/media/opponent-nil-current-1120-full-20261009.zip",
+    "jobs/G06-spades/opponent-nil-current-1120-full-acceptance-20261009.json"
+  ],
+  "reviewMetrics": {
+    "status": "ACTUAL_GENUINE_NUMERIC_BID_LATTICE_REVIEW_PASS",
+    "scope": "676 legitimate full seeded577 histories with legal bid-only changes covering all169 numeric pairs, both nil bonuses and failedNilCounts settings; all three skill actions/RNG and both terminal continuations,202800 independent carried-bag scores. Finite one-deal lattice; not169 random deals, universal strength or a new production gain. No timing repeated.",
+    "cases": 676,
+    "numericPairs": 169,
+    "events": 70304,
+    "unchanged": 1868,
+    "changed": 160,
+    "boundaries": 202800,
+    "minChangedMarginGain": 0,
+    "newProductionGain": 0
+  },
+  "archive": {
+    "path": "media/KEEP18-genuine-bid-lattice-review-20261009.zip",
+    "members": 9,
+    "bytes": 753883,
+    "sha256": "da879f91046fdbfa182bf05c0e751bc29f10996894492228af902f0f6f8f8e14"
+  },
+  "limitations": "676 legitimate seed577 histories cover all169 legal numeric bid pairs and four bonus/count settings on ONE unchanged deal, not676 random deals or universal bot strength. Prior22k and16blind investigations remain separate and are not retrospective no-gain rounds. No native timing repeated.",
+  "errata": "The preserved high-contract-expanded JSON header says ownBids:[2,13]; actual immutable loop used ONLY ownBid13/opponentBid13 and NEW seeds1001..10000. This record corrects that scope without altering the original. Root mistyped score.ts/reference-score.ts read paths10:03, actual shell EXIT1 ENOENT; corrected reads scoring.ts/reference.ts were complete."
+}
