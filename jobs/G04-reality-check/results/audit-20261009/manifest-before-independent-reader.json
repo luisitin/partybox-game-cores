@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scope": "Finite interpretation of the actual already-closed negative control; no new test or elapsed experiment",
+  "checkedAt": "2026-10-09T03:35:34.679651+00:00",
+  "actualChildClosedAt": "2026-10-09T03:34:30.611378+00:00",
+  "actualChildExit": 1,
+  "actualTests": 1,
+  "actualPasses": 0,
+  "actualFailures": 1,
+  "actualAssertion": "noCards is reserved for games without cards, prompts or language text",
+  "actual": true,
+  "expected": "undefined (omit unsupported declaration)",
+  "sourceUnchanged": true,
+  "stdoutSha256": "d7db60a63aa1fa48faa27a5cd2b01fbd4bd06489e834aee03e24013a7286c6e9",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "originalClassifierFailure": "Original outer helper expected TAP # fail1, but the actual Node default reporter emitted Unicode spec \u2139 fail1. Original CLOSED/controller preserved unchanged; this reader inspects actual full output."
+}

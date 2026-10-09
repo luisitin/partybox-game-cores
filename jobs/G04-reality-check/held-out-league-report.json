@@ -1,0 +1,110 @@
+[
+  {
+    "mode": "quick",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1786,
+    "losses": 214,
+    "ties": 0,
+    "winRate": 0.893,
+    "confidence95": [
+      0.8794525145949516,
+      0.9065474854050485
+    ],
+    "steps": 74000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "quick",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1949,
+    "losses": 51,
+    "ties": 0,
+    "winRate": 0.9745,
+    "confidence95": [
+      0.9675912085137848,
+      0.9814087914862153
+    ],
+    "steps": 74000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "mixed",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1973,
+    "losses": 18,
+    "ties": 9,
+    "winRate": 0.9865,
+    "confidence95": [
+      0.9814422599710939,
+      0.9915577400289062
+    ],
+    "steps": 93916,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "mixed",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1988,
+    "losses": 11,
+    "ties": 1,
+    "winRate": 0.994,
+    "confidence95": [
+      0.9906153801986043,
+      0.9973846198013957
+    ],
+    "steps": 94000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "bluff",
+    "a": "sharp",
+    "b": "normal",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1987,
+    "losses": 0,
+    "ties": 13,
+    "winRate": 0.9935,
+    "confidence95": [
+      0.9899780621527348,
+      0.9970219378472653
+    ],
+    "steps": 101845,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  },
+  {
+    "mode": "bluff",
+    "a": "normal",
+    "b": "easy",
+    "games": 2000,
+    "firstSeed": 2001,
+    "lastSeed": 4000,
+    "wins": 1991,
+    "losses": 0,
+    "ties": 9,
+    "winRate": 0.9955,
+    "confidence95": [
+      0.9925666224586666,
+      0.9984333775413335
+    ],
+    "steps": 102000,
+    "scope": "fictional workshop rows; public clues and own controller only"
+  }
+]

@@ -1,0 +1,36 @@
+TAP version 13
+# {"frameWindow":"READY","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"bd46cdb9-0bda-4946-b65f-1b802dd88747","utc":"2026-10-09T03:37:37.013Z"}
+# Subtest: exact per-attempt grant rejects stale nonce, source, profile, malformed and extra fields
+ok 1 - exact per-attempt grant rejects stale nonce, source, profile, malformed and extra fields
+  ---
+  duration_ms: 2.136347
+  type: 'test'
+  ...
+# {"frameWindow":"CLOSED","profile":"tv","sourceSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","attemptNonce":"bd46cdb9-0bda-4946-b65f-1b802dd88747","coordination":"root-granted","readyUtc":"2026-10-09T03:37:37.013Z","grantUtc":"2026-10-09T03:37:37.214Z","status":"control-only","rawIntervals":0,"utc":"2026-10-09T03:37:37.214Z"}
+# Subtest: actual asynchronous barrier consumes only this READY nonce and closes its own receipt
+ok 2 - actual asynchronous barrier consumes only this READY nonce and closes its own receipt
+  ---
+  duration_ms: 202.331259
+  type: 'test'
+  ...
+# Subtest: independent acceptance refuses filtered, truncated, stale, inactive, frozen-time and miscomputed proof
+ok 3 - independent acceptance refuses filtered, truncated, stale, inactive, frozen-time and miscomputed proof
+  ---
+  duration_ms: 323.380234
+  type: 'test'
+  ...
+# Subtest: every loaded local checker, schema and pinned runtime identity belongs to current source guards
+ok 4 - every loaded local checker, schema and pinned runtime identity belongs to current source guards
+  ---
+  duration_ms: 196.668545
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 859.288667

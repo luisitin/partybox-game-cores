@@ -1,0 +1,217 @@
+{
+  "scope": "Original finite strict/manifest/focused pure-core/source refusal checks only; no local browser/FPS/league/full timing experiment",
+  "startedAt": "2026-10-09T03:37:30.692583+00:00",
+  "commands": [
+    [
+      "npm",
+      "run",
+      "check"
+    ],
+    [
+      "node",
+      "fixtures.ts"
+    ],
+    [
+      "node",
+      "fixtures.ts"
+    ],
+    [
+      "node",
+      "build.ts"
+    ],
+    [
+      "node",
+      "build.ts"
+    ],
+    [
+      "node",
+      "build.ts",
+      "--check"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "test.ts"
+    ],
+    [
+      "node",
+      "generate.ts",
+      "--check"
+    ],
+    [
+      "node",
+      "--test",
+      "--test-reporter=tap",
+      "strict-proof.test.ts"
+    ]
+  ],
+  "guardHashesBefore": {
+    "core.ts": "0e8440035ca886c713dee9fe8dce75b12e56d6ac5db195a36d160a7ea21df9f3",
+    "test.ts": "8a5d50f4243ebeaa946ea9e38c928667e8674b402f1ea9b93f155a254bfd0771",
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "strict-browser.ts": "8fd82794248f59cd55dbd44381d7943cb248aff233fc7aea1bd77607fd8f6f30",
+    "strict-coordination.ts": "af1e569ed8e24da4f80c2c8446b0c674d8c417f66ae5c0a4222d78249c985d5c",
+    "strict-browser-proof.ts": "3a8fdc2720cf492e957580ea7ba1881d0b8f6d8c7039f48b17ea8d21538e1ce4",
+    "strict-decode.ts": "360c25cbefe2dd53957362edad08f600efc5d9af9b62c2bd58f2f8fe79558b4c",
+    "shell.html": "70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4",
+    "package.json": "6f6fc20942a4d0b35ff8956419c9a1de38654e889f39683c727e5548c4fdb69a",
+    "package-lock.json": "fe1dd82a23c8d6396ec11fbf3e56ab993a5e061e938981cb85aa80ab91f7ff76"
+  },
+  "closedAt": "2026-10-09T03:37:37.935573+00:00",
+  "results": [
+    {
+      "argv": [
+        "npm",
+        "run",
+        "check"
+      ],
+      "startedAt": "2026-10-09T03:37:30.693084+00:00",
+      "childPid": 260322,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:34.286483+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "fixtures.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:34.405742+00:00",
+      "childPid": 260345,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:34.670903+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "fixtures.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:34.735602+00:00",
+      "childPid": 260352,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:34.950362+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "build.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:35.029147+00:00",
+      "childPid": 260359,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:35.246059+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "build.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:35.305867+00:00",
+      "childPid": 260374,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:35.523801+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "build.ts",
+        "--check"
+      ],
+      "startedAt": "2026-10-09T03:37:35.585763+00:00",
+      "childPid": 260390,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:35.800337+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "test.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:35.857354+00:00",
+      "childPid": 260406,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:36.525654+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "generate.ts",
+        "--check"
+      ],
+      "startedAt": "2026-10-09T03:37:36.584987+00:00",
+      "childPid": 260428,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:36.799727+00:00",
+      "ownedGroup": []
+    },
+    {
+      "argv": [
+        "node",
+        "--test",
+        "--test-reporter=tap",
+        "strict-proof.test.ts"
+      ],
+      "startedAt": "2026-10-09T03:37:36.856318+00:00",
+      "childPid": 260435,
+      "exitCode": 0,
+      "closedAt": "2026-10-09T03:37:37.772346+00:00",
+      "ownedGroup": []
+    }
+  ],
+  "directChildReaped": true,
+  "ownedGroupSurvivors": [],
+  "exception": null,
+  "guardHashesAfter": {
+    "core.ts": "0e8440035ca886c713dee9fe8dce75b12e56d6ac5db195a36d160a7ea21df9f3",
+    "test.ts": "8a5d50f4243ebeaa946ea9e38c928667e8674b402f1ea9b93f155a254bfd0771",
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "estimates.ts": "00b3db5cd3368012af5059623338da50545cf9ffdadc38de52e8ff4cf63e5c06",
+    "strict-browser.ts": "8fd82794248f59cd55dbd44381d7943cb248aff233fc7aea1bd77607fd8f6f30",
+    "strict-coordination.ts": "af1e569ed8e24da4f80c2c8446b0c674d8c417f66ae5c0a4222d78249c985d5c",
+    "strict-browser-proof.ts": "3a8fdc2720cf492e957580ea7ba1881d0b8f6d8c7039f48b17ea8d21538e1ce4",
+    "strict-decode.ts": "360c25cbefe2dd53957362edad08f600efc5d9af9b62c2bd58f2f8fe79558b4c",
+    "shell.html": "70dbc736013e06ecea558efa0365431dcae3fb70fe335588b9ac82c2b7e09ec4",
+    "package.json": "6f6fc20942a4d0b35ff8956419c9a1de38654e889f39683c727e5548c4fdb69a",
+    "package-lock.json": "fe1dd82a23c8d6396ec11fbf3e56ab993a5e061e938981cb85aa80ab91f7ff76"
+  },
+  "sourceUnchanged": true,
+  "fixtureHashesBefore": {
+    "fixtures/vote.json": "29153ec7f7cc900cf9da472261f3694814de20e43e73bf1dcf94b16f45176224",
+    "fixtures/demo.json": "12eed95fdb47dbbf72e67ae9331ca4ae33f3b1dde581d2b28f2be6a6bde4353d",
+    "fixtures/done.json": "9045a15c57c1faebc352511ad3099e0f8b1adaeab2802b7560b9fd670de8dffe",
+    "fixtures/answer.json": "3a2410cb069f6ca33485e6b4fc899cd338da18d5ada56c93416772b90f55127b",
+    "fixtures/wheel.json": "cd17abd0d4e1d58bc429e0097bbbe7bda0b7b19bdd50f0098954513c69def07c",
+    "fixtures/reveal.json": "46895fc3328b78e3e13462a8717a9630dfed1ec504016d677632707114f25f84",
+    "fixtures/write.json": "769494cc959e8f90e25c17d1837cdd25c5d9f19afcad2899edeff3e294929ad7"
+  },
+  "fixtureHashesAfter": {
+    "fixtures/vote.json": "29153ec7f7cc900cf9da472261f3694814de20e43e73bf1dcf94b16f45176224",
+    "fixtures/demo.json": "12eed95fdb47dbbf72e67ae9331ca4ae33f3b1dde581d2b28f2be6a6bde4353d",
+    "fixtures/done.json": "9045a15c57c1faebc352511ad3099e0f8b1adaeab2802b7560b9fd670de8dffe",
+    "fixtures/answer.json": "3a2410cb069f6ca33485e6b4fc899cd338da18d5ada56c93416772b90f55127b",
+    "fixtures/wheel.json": "cd17abd0d4e1d58bc429e0097bbbe7bda0b7b19bdd50f0098954513c69def07c",
+    "fixtures/reveal.json": "46895fc3328b78e3e13462a8717a9630dfed1ec504016d677632707114f25f84",
+    "fixtures/write.json": "769494cc959e8f90e25c17d1837cdd25c5d9f19afcad2899edeff3e294929ad7"
+  },
+  "fixtureBytesUnchanged": true,
+  "manifestSha256": "54f3f0c2064a5005654f2dcf1b0863288117d111952fd542760d510cc8f832e5",
+  "pageSha256": "2907c016beba9f24cd1b0f3a1a3c1bd2fc1ada02e702cd5e703c70e712b5925a",
+  "pageBytes": 494854,
+  "passed": true
+}

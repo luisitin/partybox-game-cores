@@ -1,0 +1,17 @@
+{
+  "startedAt": "2026-10-09T03:34:30.042708+00:00",
+  "sourceBaseline": "canonicalc81b0b7e69b19782613debbc1296c6d56f556927 plus only the new contract regression",
+  "scope": "Actual untimed manifest regression before correcting its declaration; no browser/performance launch",
+  "expectedChildExit": 1,
+  "before": {
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "manifest.json": "cb2e43b471a4a4d6bb8a0c94c9d2ef9d9bb849a6ec92be19811887becada775e",
+    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "test.ts": "8a5d50f4243ebeaa946ea9e38c928667e8674b402f1ea9b93f155a254bfd0771",
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "samples.ts": "c83851b5a980b3393f486863e817058e223f5ed3942b115e1f2a0c73b5579f80",
+    "scoring.ts": "9b14e083e0386b22e8cf864a64a1664daff5a5540f8ab9b49ce3ba250dd28033",
+    "strict-browser.ts": "8fd82794248f59cd55dbd44381d7943cb248aff233fc7aea1bd77607fd8f6f30"
+  }
+}

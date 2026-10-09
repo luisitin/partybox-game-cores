@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: catalog has twenty original rows per realm and reproducible validated bytes
+ok 1 - catalog has twenty original rows per realm and reproducible validated bytes
+  ---
+  duration_ms: 9.232347
+  type: 'test'
+  ...
+# Subtest: language-bearing quiz manifest preserves default English content metadata
+ok 2 - language-bearing quiz manifest preserves default English content metadata
+  ---
+  duration_ms: 0.400998
+  type: 'test'
+  ...
+# Subtest: numeric score is symmetric, bounded, unit invariant and zero-safe without overflow
+ok 3 - numeric score is symmetric, bounded, unit invariant and zero-safe without overflow
+  ---
+  duration_ms: 0.723328
+  type: 'test'
+  ...
+# Subtest: date and choice scoring use the declared exact/proximity units
+ok 4 - date and choice scoring use the declared exact/proximity units
+  ---
+  duration_ms: 0.249912
+  type: 'test'
+  ...
+# Subtest: BCE and CE centuries are adjacent without an imaginary century zero
+ok 5 - BCE and CE centuries are adjacent without an imaginary century zero
+  ---
+  duration_ms: 0.142746
+  type: 'test'
+  ...
+# Subtest: schema rejects nonfinite, malformed, oversized and additional fields
+ok 6 - schema rejects nonfinite, malformed, oversized and additional fields
+  ---
+  duration_ms: 2.349237
+  type: 'test'
+  ...
+# Subtest: settings, distinct rosters and mode balancing are explicit
+ok 7 - settings, distinct rosters and mode balancing are explicit
+  ---
+  duration_ms: 1.305295
+  type: 'test'
+  ...
+# Subtest: factory clones injected content and keeps the exact shared init signature
+ok 8 - factory clones injected content and keeps the exact shared init signature
+  ---
+  duration_ms: 5.223011
+  type: 'test'
+  ...
+# Subtest: first appearances have ten-second demos using a distinct unscored row
+ok 9 - first appearances have ten-second demos using a distinct unscored row
+  ---
+  duration_ms: 0.922274
+  type: 'test'
+  ...
+# Subtest: bad contextual answers and repeated submissions preserve identity
+ok 10 - bad contextual answers and repeated submissions preserve identity
+  ---
+  duration_ms: 1.352064
+  type: 'test'
+  ...
+# Subtest: all answers close a quick round and the last round doubles each award once
+ok 11 - all answers close a quick round and the last round doubles each award once
+  ---
+  duration_ms: 0.858558
+  type: 'test'
+  ...
+# Subtest: empty and format-only fakes are rejected; normalization merges equivalent text
+ok 12 - empty and format-only fakes are rejected; normalization merges equivalent text
+  ---
+  duration_ms: 0.805052
+  type: 'test'
+  ...
+# Subtest: duplicate fake authors share credit, own votes are invalid, option IDs are anonymous
+ok 13 - duplicate fake authors share credit, own votes are invalid, option IDs are anonymous
+  ---
+  duration_ms: 0.857433
+  type: 'test'
+  ...
+# Subtest: correct writes receive truth credit once and private confirmation without a vote
+ok 14 - correct writes receive truth credit once and private confirmation without a vote
+  ---
+  duration_ms: 0.849759
+  type: 'test'
+  ...
+# Subtest: fooled-vote credit is independent of author/voter seat order
+ok 15 - fooled-vote credit is independent of author/voter seat order
+  ---
+  duration_ms: 0.533156
+  type: 'test'
+  ...
+# Subtest: live answers, other inputs, fake authors and vote choices stay private until reveal
+ok 16 - live answers, other inputs, fake authors and vote choices stay private until reveal
+  ---
+  duration_ms: 1.327584
+  type: 'test'
+  ...
+# Subtest: views are detached copies and spectators never gain private controls
+ok 17 - views are detached copies and spectators never gain private controls
+  ---
+  duration_ms: 0.396844
+  type: 'test'
+  ...
+# Subtest: stale and early timers, wrong phases, spectators and unknown events preserve state
+ok 18 - stale and early timers, wrong phases, spectators and unknown events preserve state
+  ---
+  duration_ms: 0.259661
+  type: 'test'
+  ...
+# Subtest: pause freezes input/timers, shifts deadlines, and resumes a drop-finished phase
+ok 19 - pause freezes input/timers, shifts deadlines, and resumes a drop-finished phase
+  ---
+  duration_ms: 0.360141
+  type: 'test'
+  ...
+# Subtest: disconnect/leave preserve result seats and an unknown drop is ignored
+ok 20 - disconnect/leave preserve result seats and an unknown drop is ignored
+  ---
+  duration_ms: 0.373365
+  type: 'test'
+  ...
+# Subtest: all phases exit on deadlines or VIP skip and ended games ignore play
+ok 21 - all phases exit on deadlines or VIP skip and ended games ignore play
+  ---
+  duration_ms: 9.730912
+  type: 'test'
+  ...
+# Subtest: bots use only public/own data, remain deterministic, and distinguish real strategies
+ok 22 - bots use only public/own data, remain deterministic, and distinguish real strategies
+  ---
+  duration_ms: 13.228552
+  type: 'test'
+  ...
+# Subtest: game modules contain no host entropy, clock, timers, network or I/O
+ok 23 - game modules contain no host entropy, clock, timers, network or I/O
+  ---
+  duration_ms: 0.978189
+  type: 'test'
+  ...
+# Subtest: strong bots read short public years and explicit eras without seeing the answer
+ok 24 - strong bots read short public years and explicit eras without seeing the answer
+  ---
+  duration_ms: 0.69582
+  type: 'test'
+  ...
+# Subtest: all bot skills submit legal answers on tiny numbers and negative-only century ranges
+ok 25 - all bot skills submit legal answers on tiny numbers and negative-only century ranges
+  ---
+  duration_ms: 55.194229
+  type: 'test'
+  ...
+# Subtest: controller defaults stay inside fractional and one-sided date bounds
+ok 26 - controller defaults stay inside fractional and one-sided date bounds
+  ---
+  duration_ms: 0.337089
+  type: 'test'
+  ...
+# Subtest: medium bluffs follow the public two-word hint in every bluff realm
+ok 27 - medium bluffs follow the public two-word hint in every bluff realm
+  ---
+  duration_ms: 3.349261
+  type: 'test'
+  ...
+# Subtest: catalog rejects whitespace and format-only truths before a blank vote can be created
+ok 28 - catalog rejects whitespace and format-only truths before a blank vote can be created
+  ---
+  duration_ms: 9.509065
+  type: 'test'
+  ...
+# Subtest: manifest bytes and all seven phase fixtures use the contract and play to completion
+ok 29 - manifest bytes and all seven phase fixtures use the contract and play to completion
+  ---
+  duration_ms: 34.608143
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 575.289774

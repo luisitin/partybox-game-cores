@@ -1,0 +1,41 @@
+{
+  "startedAt": "2026-10-08T12:22:22.900Z",
+  "finishedAt": "2026-10-08T12:22:27.863Z",
+  "recordingMeasuresPerformance": false,
+  "navigationMode": "Actual file://",
+  "fixture": "Playwright held phase timers; wallDate set beyond deadline; original native countdown allowed to show0s; ordinary correct-answer button advances expired timer to zero-point reveal.",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "seed": 7,
+  "deadline": 151002,
+  "inputNow": 151112,
+  "lateByMs": 110,
+  "phaseAfter": "reveal",
+  "scores": [
+    0,
+    0
+  ],
+  "privateInputCount": 0,
+  "errors": [],
+  "externalRequests": [],
+  "sourceHashesAtStart": {
+    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "late-input.ts": "a7dec3b6572dda53bd61a40cbbb22ced99bd2222b855f6f5121a1471b4df08e4"
+  },
+  "sourceHashesAtEnd": {
+    "play.html": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "ui.ts": "57b121f75a3a4e145017b4bdfa83bb677be95b9c87859ccb3e03388f340f6d6c",
+    "core.ts": "95948fd63963c79e60a526a392f6a1cff532933d309f093761b71d7b182282c1",
+    "bots.ts": "5b001d5fd5a573022c24643a3936e53e80df9797ebaea1c4b47efaaab149ae6a",
+    "late-input.ts": "a7dec3b6572dda53bd61a40cbbb22ced99bd2222b855f6f5121a1471b4df08e4"
+  },
+  "sourceGuardsMatch": true,
+  "video": "media/milestone-13-deadline.webm",
+  "bytes": 209705,
+  "sha256": "ad6db44a8e60fa98d0b9b32183a3645754fa5f0f732052ea8db4fa31b2be911a"
+}
