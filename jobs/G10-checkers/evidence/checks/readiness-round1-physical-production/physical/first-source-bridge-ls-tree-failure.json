@@ -1,0 +1,7 @@
+{
+  "status": "FAIL_BEFORE_BASELINE_READ_OR_MUTATION",
+  "recordedAt": "2026-10-09T01:18:59.315419+00:00",
+  "exitCode": 1,
+  "natural": true,
+  "reason": "Missing original --full-tree on git ls-tree in job-folder cwd classified all source paths generated; all349 localbyte guards passed but expected206immutableGit/143generated count assertion failed. Corrected original --full-tree, no assert removed/weakened. No unlink/build/timing or production mutation."
+}

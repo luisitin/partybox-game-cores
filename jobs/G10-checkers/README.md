@@ -1,48 +1,48 @@
 # G10 Checkers
 
-American 8×8 and International 10×10 Checkers for two seats, hot-seat or bots.
-The full licensed American and International 2–6-piece databases are included.
+American 8×8 and International 10×10 for two seats, hot-seat or bots.
+Full licensed American and International 2–6-piece databases are included.
+Draft PR #10 remains open; current full CI, native FPS and renewed KEEP are pending.
 
-Exact historical head ae36b497 passed the complete hosted workflow: 91 tests,
-25 actual mutants, 7,000 configuration games, 4,000 strength games, all four
-600-frame desktop/phone-4× profiles and separate decoded gameplay captures.
-Independent readers checked all actual raw games, native frames and source hashes.
-The genuine earlier local International 17.510-FPS failure remains preserved;
-a different hosted environment does not establish its cause or a causal fix.
+The draft startup change lets American bots start after American data loads.
+International bots wait for the complete page. Its actual physical page,
+original strict TypeScript and direct full production output hashes passed.
+This does not yet establish current full gameplay, FPS or delivery acceptance.
 
-The first uploaded full-page ZIP exceeded the connector's 512-MiB download
-limit. Current delivery publishes four bounded parts of the identical page.
-All four actual downloads passed ZIP/part/whole-byte verification at that head.
-Draft PR #10 exists; fresh checkpoint CI and KEEP GOING remain pending.
+Exact historical8b4 hosted proof passed 91 tests,25 real mutants,7,000
+configuration games,4,000 strength games,all four original600-frame profiles,
+full decoded clips and independent source/raw verification. Four earlier217
+standalone parts were actually received and byte-verified. Historical local
+International17.510-FPS failure/phoneNOTRUN remains with cause unknown.
 
-Requires Node 22.16+ and pinned package-lock.json. From this directory:
+Requires Node22.16+ and pinned package-lock.json. From this directory:
 
 ```sh
 npm ci --ignore-scripts
 npm test
 ```
 
-One workflow runs the complete Node, both 2,000-game leagues and browser checks
-on separate Ubuntu runners, each with a 30-minute timeout. Final validation
-requires all current stages, source hashes and all original workloads to pass.
-After success, download all four G10-standalone-part artifacts from that run
-and extract them into the same folder. Their identical source/part/whole SHA
-manifest and standard-library Python helper accompany every part. Then run:
+One read-only workflow runs Node, both2,000-game leagues and original browser
+checks on separate Ubuntu runners,each with a30-minute timeout. All current
+stages, source hashes and original workloads must pass before completion.
+After current success, download all four G10-standalone-part artifacts from
+that exact run, extract into one folder and use their identical manifest/helper:
 
 ```sh
 python3 standalone-parts.py join standalone-parts.json play.html
 ```
 
-Open the resulting single play.html from disk. It makes no runtime network calls.
-Full page: 1,390,845,993 bytes; SHA-256:
+Open the resulting single play.html from disk; it has no runtime network calls.
+New draft full output:1,390,846,291bytes; actual SHA-256:
+b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb.
+Previous delivered full baseline:1,390,845,993bytes SHA-256:
 5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801.
-Actions artifacts expire after seven days; they are not persistent Release assets.
-Tracked play.html is the older 2–5-piece baseline. Rebuild the full page with
-G10_HTML_OUT=.work/play-full.html npm run build. Full phone data load can exceed
-two minutes. Two Human seats may start earlier; bots wait for all required data.
+Artifacts expire after seven days and are not persistent Release assets.
+Tracked play.html is the older2–5-piece baseline. Rebuild the full current page
+with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough space.
+Full phone data load can exceed two minutes; early American readiness is under validation.
 
-American database terms require Chinook/University of Alberta acknowledgement
-and prohibit database sale. Ed Gilbert permits International database distribution;
-original source bytes, terms and Boost notices accompany the data and page.
-Read RULES.md, SOURCES.md and CONFLICTS.md for research, VERIFY.md for checks,
-BOTS.md for actual strength results, and NEXT.md for the exact resume checkpoint.
+American data terms require Chinook/University of Alberta acknowledgement and
+prohibit database sale. Ed Gilbert permits International data distribution.
+Original terms and Boost notices accompany source data and the full page.
+Read RULES.md,SOURCES.md,CONFLICTS.md,VERIFY.md,BOTS.md and NEXT.md.

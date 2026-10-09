@@ -1,0 +1,39 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "originalBuilderSha256": "d6ab129ec1f993805226a13a23bed6186c82c1047f4049fea2886a9207048c43",
+  "candidatePhysicalBuilderSha256": "06ece5e34ad7aad1f1b293042407f6c877dbcb04bc75494bb61a1b28e1e54b05",
+  "candidateSourceSha256": "1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81",
+  "markerBytes": 81,
+  "markerSha256": "86864036a154e43ae691b232c26dd4433ea117aec5ed430f6cebb3ffe7ba976c",
+  "expectedRawBytes": 1390846291,
+  "expectedRawSha256": "b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb",
+  "approvedOriginalSource": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+  "currentEvidenceOnlyHead": "4bfa6e0f41a3b860131fa227378f649766f99a43",
+  "changes": [
+    {
+      "original": "from './corpus-pack.mjs';",
+      "replacement": "from '../../scripts/corpus-pack.mjs';\nassert.equal(process.env.G10_BUILD_BROWSER_ONLY,'1');assert.equal(process.env.G10_HTML_OUT,'.work/play-full-candidate-b4.html');"
+    },
+    {
+      "kind": "private-output-paths",
+      "scope": "dist and license paths only; browser-only assertion excludes all Node regeneration"
+    },
+    {
+      "original": "const browser=await build({entryPoints:['src/browser.ts']",
+      "replacement": "const candidateSource=await readFile('.work/american-ready-private/candidate-browser.ts');assert.equal(sha256(candidateSource),'1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81');\nconst privateOverlay={name:'private-exact-candidate-source',setup(api){api.onLoad({filter:/src\\/browser\\.ts$/},()=>({contents:candidateSource.toString(),loader:'ts',resolveDir:resolve('src')}));}};\nconst browser=await build({entryPoints:['src/browser.ts']"
+    },
+    {
+      "original": "plugins:[stub(false,false)],define:",
+      "replacement": "plugins:[privateOverlay,stub(false,false)],define:"
+    },
+    {
+      "original": "for(const {name,compressed} of Object.values(payloads).flat())await append('<script type=\"application/octet-stream\" id=\"g10-corpus-'+name+'\">'+compressed.toString('base64')+'</script>\\n');",
+      "replacement": "const marker=await readFile('.work/american-ready-private/american-ready-marker.html');assert.equal(marker.length,81);assert.equal(sha256(marker),'86864036a154e43ae691b232c26dd4433ea117aec5ed430f6cebb3ffe7ba976c');\nfor(const {name,compressed} of Object.values(payloads).flat()){await append('<script type=\"application/octet-stream\" id=\"g10-corpus-'+name+'\">'+compressed.toString('base64')+'</script>\\n');if(name==='chinook')await append(marker);}"
+    },
+    {
+      "original": "'THIRD-PARTY-LICENSES.txt'",
+      "replacement": "'.work/american-ready-physical/THIRD-PARTY-LICENSES.txt'"
+    }
+  ],
+  "scope": "Original genuine esbuild/compiler/worker/corpora/license bounded physical file writer; private exact217bootstrap sourceoverlay+exact81B marker AFTER completeChinook newline; original full41/1304 data/writer/reducers/bots/RNG unchanged; no gzip allocation/no production adoption/no performance test"
+}
