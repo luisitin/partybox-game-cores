@@ -1,0 +1,118 @@
+name: G02 initial-presence browser bootstrap
+on:
+  push:
+    branches:
+      - 'job/G02-gin-rummy-audit-20261009'
+    paths:
+      - '.github/workflows/G02-initial-presence-browser.yml'
+permissions:
+  contents: read
+concurrency:
+  group: G02-initial-presence-browser-bootstrap
+  cancel-in-progress: false
+jobs:
+  original-browser-once:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G02-gin-rummy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+      - name: Record the exact one-shot run identity
+        run: |
+          mkdir -p .work/initial-presence-bootstrap
+          node --input-type=module <<'JS'
+          import {writeFile} from 'node:fs/promises';
+          import assert from 'node:assert/strict';
+          const identity={version:1,head:process.env.GITHUB_SHA,ref:process.env.GITHUB_REF,runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,job:process.env.GITHUB_JOB,repository:process.env.GITHUB_REPOSITORY,startedUtc:new Date().toISOString(),purpose:'Fresh original browser evidence for the initial-presence repair; not full npm-test acceptance.',originalWorkflowUnchanged:true,physicalPhoneTested:false};
+          await writeFile('.work/initial-presence-bootstrap/run.json',JSON.stringify(identity,null,2)+'\n');
+          assert.equal(identity.runAttempt,'1','this bootstrap must not be rerun to chase a frame pass');
+          assert.equal(identity.ref,'refs/heads/job/G02-gin-rummy-audit-20261009');
+          JS
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run build
+      - name: Require the committed standalone page to match the original build
+        run: git diff --exit-code -- play.html
+      - name: Preserve every original guarded input before native execution
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import {readFile,writeFile,mkdir} from 'node:fs/promises';
+          import {dirname} from 'node:path';
+          import {browserSourcePaths,browserSourceHashes,sha256} from './scripts/browser-source-guard.mjs';
+          const base='.work/initial-presence-bootstrap',sources=await browserSourceHashes(),copied=[];
+          const destination=path=>{
+            if(path.startsWith('../../contract/'))return base+'/sources/contract/'+path.slice('../../contract/'.length);
+            if(path==='../../.github/workflows/G02.yml')return base+'/sources/workflow/G02.yml';
+            assert(!path.startsWith('../')&&!path.startsWith('/'));return base+'/sources/job/'+path;
+          };
+          for(const path of browserSourcePaths){
+            const bytes=await readFile(path),target=destination(path);assert.equal(sha256(bytes),sources[path]);
+            await mkdir(dirname(target),{recursive:true});await writeFile(target,bytes);
+            copied.push({originalPath:path,artifactPath:target,bytes:bytes.length,sha256:sha256(bytes)});
+          }
+          const bootstrap=await readFile('../../.github/workflows/G02-initial-presence-browser.yml');
+          await writeFile(base+'/bootstrap-workflow.yml',bootstrap);
+          await writeFile(base+'/source-start.json',JSON.stringify(sources,null,2)+'\n');
+          await writeFile(base+'/source-copy-index.json',JSON.stringify({version:1,head:process.env.GITHUB_SHA,originalGuardedSources:browserSourcePaths.length,bootstrapWorkflowSha256:sha256(bootstrap),copied},null,2)+'\n');
+          assert.equal(copied.length,35);
+          console.log(JSON.stringify({preservedOriginalInputs:copied.length,head:process.env.GITHUB_SHA}));
+          JS
+      - name: Run the unchanged original 600-interval desktop and phone checks once
+        run: node scripts/browser-check.mjs
+      - name: Record the unchanged separate functional clips
+        run: node scripts/capture.mjs initial-presence-bootstrap --public-history --ci-output
+      - name: Validate all 35 current sources and every fresh native sample and clip
+        run: node scripts/strict-browser-proof.mjs --live
+      - name: Preserve complete actual outputs and closing guards on success or failure
+        if: always()
+        env:
+          BOOTSTRAP_STATUS: ${{ job.status }}
+        run: |
+          node --input-type=module <<'JS'
+          import assert from 'node:assert/strict';
+          import {readFile,writeFile,mkdir,readdir} from 'node:fs/promises';
+          import {browserSourceHashes,sha256} from './scripts/browser-source-guard.mjs';
+          const base='.work/initial-presence-bootstrap';await mkdir(base,{recursive:true});
+          let sources=null,sourceError=null;try{sources=await browserSourceHashes();}catch(error){sourceError=String(error);}
+          let bootstrapWorkflowSha256=null,bootstrapWorkflowError=null;try{bootstrapWorkflowSha256=sha256(await readFile('../../.github/workflows/G02-initial-presence-browser.yml'));}catch(error){bootstrapWorkflowError=String(error);}
+          await writeFile(base+'/source-end.json',JSON.stringify({sources,sourceError,bootstrapWorkflowSha256,bootstrapWorkflowError},null,2)+'\n');
+          let before=null,beforeIndex=null;try{before=JSON.parse(await readFile(base+'/source-start.json','utf8'));beforeIndex=JSON.parse(await readFile(base+'/source-copy-index.json','utf8'));}catch{}
+          const files=[];
+          async function walk(path){let entries;try{entries=await readdir(path,{withFileTypes:true});}catch{return;}
+            for(const entry of entries.sort((a,b)=>a.name.localeCompare(b.name))){const next=path+'/'+entry.name;
+              if(entry.isDirectory())await walk(next);else if(entry.isFile()){const bytes=await readFile(next);files.push({path:next,bytes:bytes.length,sha256:sha256(bytes)});}
+            }
+          }
+          await walk('.work/browser');await walk(base);
+          for(const path of ['.work/clock-after.json','.work/custom-meld-after.json','.work/results-after.json','.work/name-check.json']){
+            try{const bytes=await readFile(path);files.push({path,bytes:bytes.length,sha256:sha256(bytes)});}catch{}
+          }
+          const sourceUnchanged=before!==null&&sources!==null&&JSON.stringify(before)===JSON.stringify(sources);
+          const bootstrapWorkflowUnchanged=beforeIndex!==null&&bootstrapWorkflowSha256===beforeIndex.bootstrapWorkflowSha256;
+          const closed={version:1,head:process.env.GITHUB_SHA,runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,closedUtc:new Date().toISOString(),statusBeforeClosure:process.env.BOOTSTRAP_STATUS,sourceUnchanged,sourceError,bootstrapWorkflowUnchanged,bootstrapWorkflowSha256,bootstrapWorkflowError,files,rawFiltering:'none',fullNpmTestAccepted:false};
+          await writeFile(base+'/CLOSED.json',JSON.stringify(closed,null,2)+'\n');
+          console.log(JSON.stringify({closedUtc:closed.closedUtc,head:closed.head,files:files.length,sourceUnchanged,statusBeforeClosure:closed.statusBeforeClosure}));
+          if(before!==null){assert(sourceUnchanged,'guarded inputs changed during the bootstrap');assert(bootstrapWorkflowUnchanged,'the bootstrap workflow changed during execution');}
+          JS
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G02-initial-presence-bootstrap-${{ github.sha }}
+          path: |
+            jobs/G02-gin-rummy/.work/initial-presence-bootstrap/**
+            jobs/G02-gin-rummy/.work/browser/**
+            jobs/G02-gin-rummy/.work/clock-after.json
+            jobs/G02-gin-rummy/.work/custom-meld-after.json
+            jobs/G02-gin-rummy/.work/results-after.json
+            jobs/G02-gin-rummy/.work/name-check.json
+          include-hidden-files: true
+          if-no-files-found: error
+
