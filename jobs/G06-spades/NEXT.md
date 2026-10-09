@@ -1,28 +1,28 @@
-# G06 Spades: current whole acceptance verified; KEEP16 still open
+# G06 Spades: failed opponent nil saves120; current full checks pending
 
-Protected ReadyPR7/head48430 remains unchanged. DraftPR16 bases canonical
-job/G06-spades-core. Current proof-only5dd complete original hosted CI and
-whole official reader ACCEPTED08:28:07.780175Z,278Git/3436physical guards.
-42core/21focused/25actualmutants/1003byte-replays/16kleagues/1800raw,
-58negative/12capture controls/full18VP8frames all passed. Official11603441218
-98170B SHAdaf17aa2d4259e58e3aa3790944ea5db3268526a95b03df747d8e8a61ed8eb8e.
-Qualified own-failed-nil+120 and last-trump partner-nil+180 remain accepted.
-This checkpoint changes no game/bot/scoring/gate/capture bytes.
+Protected ReadyPR7/head48430 remains unchanged; DraftPR16 bases canonical
+job/G06-spades-core. Current change adds one public-information bot guard
+after prior own+120 and partner+180 qualified fixes. KEEP16 seed577 uses
+trump41 rather than duck18: own-160 to-40, opponent unchanged, margin+120.
+Both teams must need at least2 numeric tricks, opponent nil already failed
+and contributes, fourth card/final2. Broad one-sided proposal was rejected.
+All200 independent two-team bags0..9/nil50+100 boundaries pass. Six meaningful
+new groups pass; old policy fails3. 400 legitimate hands/67100 unaffected
+choices/20184 live-opponent-nil observations and hidden-hand controls pass.
+Original churn twice is byteexact old43f1a188, capture17 actual functional
+only. Import-copy compiler failure and complete raw proofs remain archived.
 
-NEXT: complete KEEP16 two-sided opponent-nil investigation. Preserved
-13000 seeded legal hands/897308events/22changes measured ONLY own score;
-no own gain is NOT a formal no-gain round. Check BOTH team terminal scores,
-own-minus-opponent margin and all valid bags0..9/nilbonus50/100 independently.
-Prospective narrower safe alternative requires BOTH teams need at least2
-tricks at fourth-card/last2 after opponent nil already failed and contributes.
-Possible genuine search: seed1..1000,p0numeric2..13,p1numeric15-p0,p2+p3nil;
-all init/reducer/legal/schema/conservation/replay checks and unchanged full
-continuations. Proposal is UNEXECUTED/UNADOPTED, not a promised gain.
-NoGainStreak0; three substantive after-green rounds remain.
+NEXT: locate exact NEW source-head original G06 workflow, wait its natural
+closure, read ENTIRE native log and download the genuine official whole
+artifact. Run unchanged original full reader, physical/Git seals and full
+VP8 decode for capture17. Expected48core/21focused/25actualmutants/1003full
+byte-replays/16kleagues/1800raw/58negative/12capture. No parent-green transfer,
+synthetic logs, native timing retries or skipped checks. Gain is PROVISIONAL;
+PR16 stays Draft and noGainStreak0 until current original full passes.
 
-Preserve all raw failed proposals/readers/archives. No unchanged timing
-retry. Root source prior5dd07:56:29.471114; hard08:26:29.471114 passed while
-shared quiet/actual receiver correction and packet verification; record
-actual source publication and renew25/30min from its real closure receipt.
-After push refresh ONLYG06 mainCLAIMS via serialized lease. New proof-only
-head requires own original fullCI/whole packet; do not inherit prior green.
+After genuine current green, reread original instructions, rank5, fixworst,
+measure/log/push KEEP rounds until3 substantive consecutive no-gain rounds.
+Protect original ReadyPR7 and all older raw errors/archives. Refresh only
+G06 mainCLAIMS with serialized own-row lease after actual source push.
+Prior source push08:31:13.479797/hard09:01:13.479797 missed; exact new source
+receipt logs actual publication and renews25/30min from observed closure.

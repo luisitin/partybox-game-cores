@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "test": "npm run check && node generate.ts --check && node fixtures.ts --check && node build.ts --check && node checksums.ts --check && node differential.ts && node --test test.ts failed-nil-test.ts failed-partner-nil-test.ts && node mutations.ts && node churn.ts && node league.ts && node league.ts --start=2001 && node browser.ts && node verification.ts --browser=browser-report.json --capture=capture-milestone-16-report.json && G06_CURRENT_BROWSER_REPORT=browser-report.json G06_CAPTURE_REPORT=capture-milestone-16-report.json node --test verification-test.ts frame-coordination-test.ts capture-preflight-test.ts"
+    "test": "npm run check && node generate.ts --check && node fixtures.ts --check && node build.ts --check && node checksums.ts --check && node differential.ts && node --test test.ts failed-nil-test.ts failed-partner-nil-test.ts failed-opponent-nil-test.ts && node mutations.ts && node churn.ts && node league.ts && node league.ts --start=2001 && node browser.ts && node verification.ts --browser=browser-report.json --capture=capture-milestone-17-report.json && G06_CURRENT_BROWSER_REPORT=browser-report.json G06_CAPTURE_REPORT=capture-milestone-17-report.json node --test verification-test.ts frame-coordination-test.ts capture-preflight-test.ts"
   },
   "dependencies": {
     "zod": "4.6.5"

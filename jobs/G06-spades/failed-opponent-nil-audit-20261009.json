@@ -1,0 +1,150 @@
+{
+  "status": "ADOPTED_NARROW_FAILED_OPPONENT_NIL_PROPOSAL_CURRENT_FULL_ORIGINAL_PENDING",
+  "parent": "255be4cfae5701fed8ed771019be641f51bda08f",
+  "KEEP16": {
+    "seed": 577,
+    "ownNumericBid": 6,
+    "opponentNumericBid": 9,
+    "oldCard": 18,
+    "newCard": 41,
+    "oldOwnScore": -160,
+    "newOwnScore": -40,
+    "ownGain": 120,
+    "opponentGain": 0,
+    "marginGain": 120,
+    "independentBagAndNilBoundaries": 200,
+    "qualified": false,
+    "noGainStreak": 0
+  },
+  "guard": "Both teams need at least two numeric contract tricks; last two cards/fourth position; already failed opponent nil contributes. Only public controller information. Default false, Easy, live nil and cutthroat preserve original choices.",
+  "finiteProbe": {
+    "status": "ACTUAL_FINITE_UNTIMED_OPPONENT_NIL_PROBE_CLOSED",
+    "sourceHead": "255be4cfae5701fed8ed771019be641f51bda08f",
+    "startedAt": "2026-10-09T08:33:42.291710+00:00",
+    "naturallyClosedAt": "2026-10-09T08:35:02.248499+00:00",
+    "exitCode": 0,
+    "natural": true,
+    "actualOwnedGroupEmpty": true,
+    "guardCount": 3434,
+    "allFrozenInputsUnchanged": true,
+    "probeScope": "finite seeded whole legal hands after5dd fullgreen; both team scores/margin200 independent carried-bag boundaries; unadopted proposal/current255 wholepending",
+    "controller": "/tmp/G06-opponent-nil-two-sided-probe-controlled-20261009.py"
+  },
+  "newFocusedTests": {
+    "status": "ACTUAL_SIX_CORRECTED_FOCUSED_OPPONENT_NIL_GROUPS_PASS",
+    "startedAt": "2026-10-09T08:46:47.707407+00:00",
+    "naturallyClosedAt": "2026-10-09T08:47:00.784193+00:00",
+    "guardCount": 3434,
+    "allWorkingSourceInputsUnchanged": true,
+    "steps": [
+      {
+        "name": "strict",
+        "exitCode": 0,
+        "naturallyClosedAt": "2026-10-09T08:46:50.990107+00:00",
+        "actualOwnedGroupEmpty": true
+      },
+      {
+        "name": "six-focused",
+        "exitCode": 0,
+        "naturallyClosedAt": "2026-10-09T08:47:00.285904+00:00",
+        "actualOwnedGroupEmpty": true
+      }
+    ],
+    "scope": "Actual modified working proposal, exact tracked parent255; genuine prefix/counterfactual200two-team scores,400 firsthands/unaffected/liveNil/privacy controls. No current fullCI qualification claim."
+  },
+  "oldPolicyNegativeControl": {
+    "status": "ACTUAL_OLD_POLICY_NEGATIVE_CONTROL_OBSERVED",
+    "observedAt": "2026-10-09T08:42:09Z",
+    "sourceHead": "255be4cfae5701fed8ed771019be641f51bda08f",
+    "command": "node --test failed-opponent-nil-test.ts",
+    "exitCode": 1,
+    "groups": 6,
+    "pass": 3,
+    "fail": 3,
+    "unaffectedChoices": 67100,
+    "liveOpponentNil": 20184,
+    "newChoices": 0,
+    "scope": "Actual old public runtime run. Tool stdout complete; no separate before/after physical controller was used for this old run, so no synthetic freeze or exact natural closure time is claimed."
+  },
+  "unchangedOriginalChurnTwice": {
+    "status": "ACTUAL_ORIGINAL_CHURN_AFTER_NARROW_OPPONENT_NIL_TWICE",
+    "baseHead": "255be4cfae5701fed8ed771019be641f51bda08f",
+    "naturallyClosedAt": "2026-10-09T08:56:11.868634+00:00",
+    "steps": [
+      {
+        "i": 1,
+        "startedAt": "2026-10-09T08:54:48.887607+00:00",
+        "naturallyClosedAt": "2026-10-09T08:55:26.865270+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      },
+      {
+        "i": 2,
+        "startedAt": "2026-10-09T08:55:26.865699+00:00",
+        "naturallyClosedAt": "2026-10-09T08:56:10.274146+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      }
+    ],
+    "guardCount": 3436,
+    "allFrozenInputsUnchanged": true,
+    "oldSha256": "43f1a188f8cc4c2e91d98e896e97ec4b569282eeeecca778e89329d3b0ab7537",
+    "newSha256": "43f1a188f8cc4c2e91d98e896e97ec4b569282eeeecca778e89329d3b0ab7537",
+    "byteIdenticalTwice": true,
+    "oldGoldenUnchanged": true,
+    "report": {
+      "seeds": 1003,
+      "randomSeed": 1610637318,
+      "seedsOneTwoThree": true,
+      "events": 181386,
+      "phases": [
+        "bid",
+        "blind",
+        "done",
+        "exchange",
+        "hand",
+        "play",
+        "trick"
+      ],
+      "counts": {
+        "input": 44055,
+        "drop": 12244,
+        "pause": 9468,
+        "resume": 9370,
+        "timer": 44340,
+        "reconnect": 9622,
+        "kicked": 3243,
+        "left": 5423,
+        "skip": 42618,
+        "end": 1003
+      },
+      "maxStateBytes": 5650,
+      "protoCases": 145,
+      "privacyComparisons": 45036,
+      "botPrivacyComparisons": 135108
+    },
+    "allOriginalAssertionsAndGeneratorUnchanged": true
+  },
+  "functionalCapture17": {
+    "status": "ACTUAL_CAPTURE17_CLOSED",
+    "parentHead": "255be4cfae5701fed8ed771019be641f51bda08f",
+    "startedAt": "2026-10-09T08:51:19.069991+00:00",
+    "naturallyClosedAt": "2026-10-09T08:51:23.313448+00:00",
+    "exitCode": 0,
+    "allFrozenInputCount": 3920,
+    "allGuardsUnchanged": true,
+    "scope": "original actual-file clock-controlled functional capture only; no native frames/FPS gain",
+    "controllerSha256": "3eaf721a9d8d3684a645dbf5e0ea9ab89143b5412e1f3275ce9884b9732929ad"
+  },
+  "preservedImplementationError": "Initial private-candidate copy retained private relative imports; original strict compiler rejected TS2307. Complete original failure and corrected six-group pass are both preserved. No false focused pass or synthetic old-run physical freeze is claimed.",
+  "fullOriginalQualification": "Prior proof-only5dd original whole packet is accepted, but changed-source 48 core tests, original mutation/replay/leagues/browser/native frames and whole genuine official packet remain mandatory and pending. No Ready/Done/current FPS claim.",
+  "cadence": "Prior actual source push08:31:13.479797; hard09:01:13.479797 was missed during final evidence assembly/session compaction. Actual new publication closure and lateness recorded separately, never backdated.",
+  "archive": {
+    "name": "media/failed-opponent-nil-audit-20261009.zip",
+    "members": 55,
+    "bytes": 2510614,
+    "sha256": "b0c3ab9ccdf7994ef806a11f279a17ba6c55cc1b35636943c04b42241ef9e67c"
+  }
+}

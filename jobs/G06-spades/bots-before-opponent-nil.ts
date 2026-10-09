@@ -31,7 +31,7 @@ function play(v:PhoneView,rng:Rng,skill:BotSkill):number{
  const mySide=v.sides.find(side=>side.ids.includes(v.me.id))!,contract=mySide.ids.reduce((n,id)=>n+(v.bids[id]?.kind==='number'?v.bids[id]!.value:0),0);
  const taken=mySide.ids.reduce((n,id)=>n+((v.settings.failedNilCounts||v.bids[id]?.kind==='number')?v.won[id]!:0),0),needed=taken<contract;
  if(current&&v.partner===current.playerId&&v.bids[current.playerId]?.kind!=='number'&&!(v.settings.failedNilCounts&&v.won[current.playerId]!>0&&v.trick.length===3&&v.hand.length===2&&contract-taken>=2))return winning.length?low(winning):low(legal);
- if(current&&current.playerId!==v.me.id&&current.playerId!==v.partner&&v.bids[current.playerId]?.kind!=='number'&&losing.length&&!(v.settings.failedNilCounts&&v.won[current.playerId]!>0&&v.trick.length===3&&v.hand.length===2&&contract-taken>=2&&v.sides.some(side=>!side.ids.includes(v.me.id)&&side.ids.reduce((n,id)=>n+(v.bids[id]?.kind==='number'?v.bids[id]!.value:0)-v.won[id]!,0)>=2)))return high(losing);
+ if(current&&current.playerId!==v.me.id&&current.playerId!==v.partner&&v.bids[current.playerId]?.kind!=='number'&&losing.length)return high(losing);
  if(current?.playerId===v.partner)return losing.length?high(losing):low(legal);
  if(v.trick.length){if(needed&&winning.length)return skill==='sharp'?low(winning):high(winning);return losing.length?high(losing):low(legal);}
  if(!needed)return low(legal);
