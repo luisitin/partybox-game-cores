@@ -1,34 +1,37 @@
-# G06 current Spades audit
+# G06 Spades: narrow partner-nil contract recovery
 
-Original ReadyPR7/head48430 remains unchanged. Supplemental DraftPR16/base
-job/G06-spades-core; current product head092dbf8fdc65da3a7e6b58afa013612617613fed.
-Read failed-nil-review-20261009.md and current-full-acceptance JSON/ZIP.
+Protected original ReadyPR7/head48430 remains unchanged. DraftPR16/base
+job/G06-spades-core. Parent f92 complete original fullCI/genuine whole official
+accepted06:55:38.389243Z/all3424fullphysicalsource/runtime/Pythonguards.
 
-Actual selected toggle policy: own nil already failed + failedNilCounts=true
-uses existing contract strategy. Legitimate seed377 improves-160 to-40(+120).
-Exact092 original completeCI37891792425/job113694132749 and actual whole
-official11598961283/98094bytes/SHA79f7f837...399499 genuinely accepted.
-Original reader naturallyPASS06:36:23.607811Z/all272outerguards:36coregroups,
-21focusedgroups,25actualmutants,1003fullbyte-replays,16kleagues,1800native
-intervals,18originalsourceguards,10clipguards,18VP8frames. KEEP14qualified;
-renewed no-gainstreak0. Raw/historicalfailures/initialaddedLF read retained.
+KEEP15 narrow player fix: failedpartnernil contributes=true, fourthcard of
+last2tricks, teamneedsatleast2tricks: keep winningtrump for finaltrick rather
+thanovertrump an already-guaranteed partnertrick. Legitimate seed674/bid9
+fullhand-190 to-10(+180); currentgain provisionaluntilnewcompletefullCI.
+Broaderproposal rejected:+1atbid8 canbe-99at9bags. Exactnewpredicate leaves
+thatcase/defaultfalse/Easy/livepartnernil/3player unchanged. Actual6default
+groupsPASS afteractualold3FAIL3PASS/new6PASS/all3423 frozen inputs;400full
+firsthands/67100unchangedchoices/5268livenilcontrols; hiddenhand substitutions.
+Source oldbots preserved in bots-before-partner-nil.ts; fulllegal replays and
+allprivate raw/controls in auditJSON/media ZIP. Fresh unusedfunctionalclip16
+actualoriginalcapture/all3908guards; controlledfunctional, neverFPS.
 
-This checkpoint publishes complete genuine acceptance, not a cosmetic round.
-Product/scoring/reducer/runner/league/native sampler/originalstrict assertions
-remain byte-identical to092. Final original fullCI for new documentation head
-and whole actual artifact is still required; no inherited exact-head green.
-Previous sourcepush06:06:05.327440Z; hard06:36:05.327440Z already missed
-during full evidence/readback; retain exact next actual FF closure privately.
-Use only normalFF/expected-head; native authfailure retained/APIfallback
-authorized. Refresh onlyG06 mainrow under an exclusive serialized lease.
+Original unchanged churn generator already ran TWICE and naturally closed
+07:15:16.046646Z; both PASS, all3426 frozen inputs unchanged, 1003 seeds /
+181386 events, byte-identical to the prior golden SHA43f1a188...b7537.
+No golden update or assertion change was needed. Whole actual f92 accepted
+parent and both complete churn receipts/raw/frozen-input maps are preserved
+in media/partner-nil-parent-and-churn-20261009.zip.
 
-After this qualified green, rereadJOBS/rankfive and measure worst legitimate
-player issue: (1) protect live partner nil without wasting own trick when that
-nil already failed; (2) contract tactical breadth; (3) exact variant conflict
-scoring; (4) hidden-info/action immutability; (5) disclosed CPU4x/physicalphone
-limits. First item requires finite legal full-match baseline/candidate evidence;
-no speculative bot rewrite. Use original pure reducer/views/seeded RNG and
-complete terminal scores, immutable physical inputs and real bounded closure.
-Then log real KEEP15 gain/no-gain and push, complete originalchecks; stop after
-3consecutive measured rounds with no player gain. Do not count delivery or an
-unexecuted experiment as a no-gain round. Preserve protected originalPR7.
+NEXT REQUIRED: current exact-source original fullCI/core42/focused21/
+mutations25/1003 byte-replays/16k leagues/native1800 raw/current18 guards/
+full decoded clip/whole genuine official original-reader acceptance. No
+inheritedf92green. KEEP15+180 provisional, no unchanged timing retry.
+After qualification, rereadJOBS/rank5/fixworst/measure/log/push until three
+new consecutive no-player-gain rounds. Current streak0. Prior source push
+06:40:55.187634Z and hard07:10:55.187634Z; this checkpoint is late. Record
+the actual push closure/interval/lateness and renew deadlines without
+backdating. Preserve old exact receipts and failed proposals.
+
+RefreshonlyG06mainCLAIMSrow under serializedlease afteractualsourcepush.
+Recordexactactualclosure and renewed25/30minute deadlines privately.

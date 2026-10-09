@@ -1,0 +1,179 @@
+{
+  "status": "NARROW_PARTNER_NIL_PRESSURE_POLICY_DELIVERABLE_CURRENT_FULL_PENDING",
+  "preparedAt": "2026-10-09T07:11:48.434311+00:00",
+  "acceptedParent": {
+    "status": "ACTUAL_FULL_ORIGINAL_CURRENT_F92_ACCEPTED",
+    "sourceHead": "f92ddec60e4f7f4f48a855951574dd798f6b8f5b",
+    "currentRuntimeBridgeHead": "f92ddec60e4f7f4f48a855951574dd798f6b8f5b",
+    "scope": "current exactf92 original full CI, actual official whole artifact and original unchanged verification reader",
+    "artifactId": 11599808519,
+    "runId": 37894809307,
+    "jobId": 113703639243,
+    "officialZipBytes": 98068,
+    "officialZipSha256": "4bf7b4df9f77945e2870940f03907f9fe84a0b0d11ff64b7acca3dc427b09d0b",
+    "fullNativeCharacters": 101290,
+    "trackedGitFilesCompared": 267,
+    "outerGuardCount": 3424,
+    "allGuardsUnchanged": true,
+    "startedAt": "2026-10-09T06:55:37.544175+00:00",
+    "naturallyClosedAt": "2026-10-09T06:55:38.389243+00:00",
+    "steps": [
+      {
+        "name": "full-original-reader",
+        "exitCode": 0
+      },
+      {
+        "name": "full-video-decode",
+        "exitCode": 0
+      },
+      {
+        "name": "all-video-frame-inventory",
+        "exitCode": 0
+      }
+    ],
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "nb_read_frames": "18"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      }
+    },
+    "rawIntervals": 1800,
+    "coreTests": 36,
+    "focusedGroups": 21,
+    "actualMutationKills": 25,
+    "presenceSeeds": 1003,
+    "skillGames": 16000,
+    "negativeEvidenceControls": 58,
+    "captureCliControls": 12
+  },
+  "KEEP": {
+    "round": 15,
+    "playerGain": 180,
+    "gainScope": "legitimate seed674/ownbid9/finalfourth card of finaltwo tricks; team needs both, failedpartnernil contributes; -190 to-10",
+    "qualifiedCurrentFull": false,
+    "noGainStreak": 0
+  },
+  "baselineNegativeCandidatePositive": {
+    "status": "ACTUAL_SIX_PRIVATE_NIL_PRESSURE_GROUPS_CLOSED",
+    "sourceHead": "f92ddec60e4f7f4f48a855951574dd798f6b8f5b",
+    "naturallyClosedAt": "2026-10-09T07:06:54.040938+00:00",
+    "steps": [
+      {
+        "label": "baseline-negative",
+        "startedAt": "2026-10-09T07:06:35.789380+00:00",
+        "naturallyClosedAt": "2026-10-09T07:06:44.736133+00:00",
+        "exitCode": 1,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      },
+      {
+        "label": "candidate-positive",
+        "startedAt": "2026-10-09T07:06:44.736290+00:00",
+        "naturallyClosedAt": "2026-10-09T07:06:53.461754+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      }
+    ],
+    "guardCount": 3423,
+    "allFrozenInputsUnchanged": true,
+    "noProductionPolicyAdopted": true
+  },
+  "unaffectedChoices": 67100,
+  "liveNilObservations": 5268,
+  "actualGenuineFirstHands": 400,
+  "broaderCandidateRejected": "same legitimate seed674/bid8 adds1bag: independent production/reference20 valid scoring boundaries show+1 withbags0..8 but-99 withcarriedbags9; deployednarrowfix requiresatleast2moretricks andcannotchange this case",
+  "capture16": {
+    "status": "ACTUAL_CAPTURE16_CLOSED",
+    "parentHead": "f92ddec60e4f7f4f48a855951574dd798f6b8f5b",
+    "startedAt": "2026-10-09T07:10:18.644791+00:00",
+    "naturallyClosedAt": "2026-10-09T07:10:23.455449+00:00",
+    "exitCode": 0,
+    "allFrozenInputCount": 3908,
+    "allGuardsUnchanged": true,
+    "scope": "original actual-file clock-controlled functional capture only; no native frames/FPS gain",
+    "controllerSha256": "695f57926214482455bc7a88ada4a53d922540a8897dcb7ada3828c96c0cbc50"
+  },
+  "nextRequired": "current exact-source original full CI/core42/focused21/mutants25/1003byte-replays/16k leagues/1800 native intervals/current18 guards/fullclip/whole actual official original-reader acceptance; KEEP15 provisional, noGain0",
+  "noNativeFrameRetry": true,
+  "originalChurnAndScoringAndLeaguesAndNativeSamplerAssertionsUnchanged": true,
+  "updatedAt": "2026-10-09T07:26:32.561418+00:00",
+  "actualOriginalChurnTwice": {
+    "status": "ACTUAL_ORIGINAL_CHURN_AFTER_NARROW_PARTNER_NIL_TWICE",
+    "baseHead": "f92ddec60e4f7f4f48a855951574dd798f6b8f5b",
+    "naturallyClosedAt": "2026-10-09T07:15:16.046646+00:00",
+    "steps": [
+      {
+        "i": 1,
+        "startedAt": "2026-10-09T07:14:00.923542+00:00",
+        "naturallyClosedAt": "2026-10-09T07:14:37.539801+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      },
+      {
+        "i": 2,
+        "startedAt": "2026-10-09T07:14:37.540566+00:00",
+        "naturallyClosedAt": "2026-10-09T07:15:14.658104+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      }
+    ],
+    "guardCount": 3426,
+    "allFrozenInputsUnchanged": true,
+    "oldSha256": "43f1a188f8cc4c2e91d98e896e97ec4b569282eeeecca778e89329d3b0ab7537",
+    "newSha256": "43f1a188f8cc4c2e91d98e896e97ec4b569282eeeecca778e89329d3b0ab7537",
+    "byteIdenticalTwice": true,
+    "oldGoldenUnchanged": true,
+    "report": {
+      "seeds": 1003,
+      "randomSeed": 1610637318,
+      "seedsOneTwoThree": true,
+      "events": 181386,
+      "phases": [
+        "bid",
+        "blind",
+        "done",
+        "exchange",
+        "hand",
+        "play",
+        "trick"
+      ],
+      "counts": {
+        "input": 44055,
+        "drop": 12244,
+        "pause": 9468,
+        "resume": 9370,
+        "timer": 44340,
+        "reconnect": 9622,
+        "kicked": 3243,
+        "left": 5423,
+        "skip": 42618,
+        "end": 1003
+      },
+      "maxStateBytes": 5650,
+      "protoCases": 145,
+      "privacyComparisons": 45036,
+      "botPrivacyComparisons": 135108
+    },
+    "allOriginalAssertionsAndGeneratorUnchanged": true
+  },
+  "acceptedParentAndActualChurnArchive": {
+    "path": "media/partner-nil-parent-and-churn-20261009.zip",
+    "members": 24,
+    "bytes": 804376,
+    "sha256": "d3cd27bd5e60e0682adf9ed9a527144e1149c79da0bcdd7392169ec0ba90c417",
+    "wholeCRCAndByteReadback": true
+  },
+  "cadenceStatus": "prior actual source push06:40:55.187634Z; hard07:10:55.187634Z missed while local final controls and evidence preparation ran; actual upcoming push timing recorded separately, no backdating"
+}
