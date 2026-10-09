@@ -1,3 +1,11 @@
+# Current migrated packet and delivery projection
+
+Current proof checkpoint 2026-10-09: migrated single G02 workflow0493/run37877499360 has genuine browser-bootstrap SUCCESS/job113649340593 and original full verify FAILURE/job113649340397 (55 tests/51 PASS/four stale committed-proof guards; downstream phases NOT RUN). Official artifact11593057479, all60 ZIP members/59-file CLOSED, original35+2 inputs, all1200 raw/1202 native timestamps/1208 active witnesses and both fully decoded clips passed the independent104-guard reader CLOSED03:17:19.749006Z. Exact immutable packet, full native success/failure logs and explicit five-source-only compatibility plus byte-identical media path projection: evidence/audit-20261009/bootstrap-0493-current/. The bootstrap request is now disabled in the same proof checkpoint. Original full exact-head npm-test CI is still REQUIRED; both PRs stay draft, KEEP streak0 and Strong Gin remains unfixed. No local sampler, filter, clock/gate edit or physical-phone claim.
+
+The original approved text below limited changes to the two source dictionaries. Inspection of the original loader additionally establishes its media/ path requirement; the explicit authorized path-only delivery rebase is fully byte/hash checked and preserves every original native capture field in original-captures35.json. Full exact-head acceptance remains required.
+
+Historical proposal/protocol records below are preserved.
+
 # Mandatory one-workflow correction
 
 RULES.md binds "One workflow per job: .github/workflows/<ID>.yml". Root had

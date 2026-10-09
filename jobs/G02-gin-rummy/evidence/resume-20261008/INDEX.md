@@ -1,3 +1,9 @@
+# Current initial-presence repair proof
+
+Current source changed for the initialization availability repair. Its complete hosted [full35 packet](../audit-20261009/bootstrap-0493-current/README.md), [original report](../audit-20261009/bootstrap-0493-current/original-report35.json), [native capture metadata](../audit-20261009/bootstrap-0493-current/original-captures35.json), [full35 delivery index](../audit-20261009/bootstrap-0493-current/current-proof35.json) and [explicit compatibility bridge](../audit-20261009/bootstrap-0493-current/projection-and-path-bridge.json) preserve every raw frame and original byte. The [legacy current index](current-proof.json) identifies the labelled derived projection. Bootstrap succeeded; full original exact-head npm-test acceptance remains required and both PRs remain draft.
+
+Historical proof and source-specific limits below are retained.
+
 # Current G02 proof
 
 Open [play.html](../../play.html) directly from disk. Current production sources
