@@ -54,7 +54,7 @@ export function init(ctx: InitContext): HeartsState {
     trickNumber: 0, played: [], captured: records(order), heartsBroken: false,
     scores: Object.fromEntries(order.map(id => [id, 0])), handScored: false, history: [],
   };
-  return deal(base, ctx.now);
+  return drainMissing(deal(base, ctx.now), ctx.now);
 }
 function passCards(s: HeartsState, id: string, cards: readonly Card[], now: number): HeartsState {
   if (s.phase.id !== 'pass' || Object.hasOwn(s.passes, id) || cards.length !== 3 || new Set(cards).size !== 3 || cards.some(c => !s.hands[id]?.includes(c))) return s;
@@ -112,7 +112,9 @@ function drainMissing(s: HeartsState, now: number): HeartsState {
   // Empty classic rooms persist until explicit VIP end; otherwise retain each
   // departed seat through a deterministic legal takeover, never delete scores.
   if (!s.order.some(id => available(s, id))) return s;
-  for (let step = 0; step < s.order.length && !next.phase.paused && (next.phase.id === 'pass' || next.phase.id === 'play') && !available(next, next.actor); step++) next = advanceOne(next, now);
+  // Finishing the remaining passes can enter play before a connected seat acts:
+  // at most n-1 missing passes followed by n-1 missing opening-card turns.
+  for (let step = 0; step < 2 * s.order.length && !next.phase.paused && (next.phase.id === 'pass' || next.phase.id === 'play') && !available(next, next.actor); step++) next = advanceOne(next, now);
   return next;
 }
 export function advance(s: HeartsState, now: number): HeartsState { return drainMissing(advanceOne(s, now), now); }

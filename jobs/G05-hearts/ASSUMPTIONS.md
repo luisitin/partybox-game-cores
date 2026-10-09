@@ -124,3 +124,16 @@ PR events only; native actions/runs query identified the already-successful
 b0 push37885148039. No unchanged retry was triggered. Original full source
 and native evidence are preserved. Post-green64-config audit records its exact
 selected correlated settings and an honest emitted phase-count erratum.
+
+
+## 2026-10-09 missing-seat queue audit
+Ready status does not remove lawful6h eligibility. Preserve both Ready sources.
+Disconnected InitContext seats use existing deterministic ordinary drop policy.
+The standalone table initializes all seats connected; no frequency/startup FPS
+claim follows from these core counterexamples. Passing may cross into play,
+requiring at most N-1 absent passes plus N-1 absent opening turns. Keep empty
+rooms/pacing/pause policy unchanged. Original regressions genuinely fail.
+Init-only candidate5PASS/1FAIL and the first outer spec-vs-TAP reader error
+remain immutable; a separate same-native-log correction clarifies the latter.
+Orchestration quoting failures happened before child launch; no source gain.
+Only exact new hosted whole proof can qualify this repair.

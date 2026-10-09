@@ -96,3 +96,12 @@ cb7e785dbcbac37c3f93e9d1893bbfe8169cfe14, blob
 moon/J-diamond and roster deck cuts remain as documented; no mechanics changed.
 Relevant targeted sections and the full short Nathan rules were read; full longer
 sources were fetched but not claimed fully read. No source implementation/art copied.
+
+
+## 2026-10-09 follow-up reread
+Full pinned Nathan Long and Cached Cards texts above were freshly fetched/read.
+Opening/follow-suit/26-point/lowest-score facts stay selected. Cached Cards omits
+the all-penalty first-trick exception; retain Nathan/OpenSpiel/Pagat decision.
+No rule/code/art copied. Public InitContext and ordinary core player-drop
+handling define networking behavior; card rules do not define connections.
+Read-text byte/SHA receipts are retained privately for audit reproducibility.

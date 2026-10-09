@@ -41,3 +41,15 @@ run three real consecutive substantive no-gain audits before stopping.
 15 | Audit64 declared selected configurations through64 complete matches and12463 valid snapshots acrossall five phases/3–6 counts/moon/Jack/passing/timed options. No new save failure/product change/player gain; streak1. Three-deck and queen switches correlate with noPass/Jack; not an exhaustive Cartesian claim.
 16 | Resume288 genuine observed phase states; exact final scores/history/results match uninterrupted games.32 passing configurations have5 phases,32 no-pass have4; original emitted field5 corrected by preserved erratum. No product change/player gain; streak2.
 17 | Recovered TV/controller privacy and mutable-view isolation:2592 hidden-hand ordering comparisons/1296 controller mutation checks PASS for288 restored states. No product change/player gain; streak3. Whole native audit CLOSED05:06:23.754378Z/EXIT0/1016 frozen inputs unchanged; no browser/FPS rerun.
+
+
+18 | PRE-ACCEPTANCE missing-seat gain. Reread root/job binding instructions,
+contract,research and existing loops. Ranked: absent untimed opening seat;
+missing-pass→play takeover bound; paused reconnect/empty persistence;
+hidden-hand/bot boundaries; save/initial consistency. Worst blocked-turn
+family genuinely fails original twice. Init-only candidate5PASS/1FAIL retained.
+Adopt only initial ordinary takeover and finiteN→2N bound. New7 tests PASS,
+34560 starts/9216 targets/1003 seeded/77640 bot privacy checks/144 whole
+one-connected human games. All46 original/current tests also PASS.
+New full hosted/genuine ZIP pending; provisional gain only/streak not reset.
+Protected15–17 no-gain3 stays historical.
