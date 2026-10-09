@@ -1,0 +1,186 @@
+{
+  "status": "COMPLETE_ACTUAL_ARCHIVE",
+  "builtAt": "2026-10-09T06:47:40.702934+00:00",
+  "proofZipBytes": 10654770,
+  "proofZipSha256": "77d45306ccdb036ecbfd459a668cb8b9977ebd88dc4bb579e67443087644bff0",
+  "members": {
+    "actual/artifacts-native.json": {
+      "bytes": 6621,
+      "sha256": "6181dfbe86e2b8eb0fd24fbd93b06897ca32c45673212f9f78cdae25b83dc7d6"
+    },
+    "actual/audit-git-guards-closure.json": {
+      "bytes": 304,
+      "sha256": "2b9ab01c77d43032ff843c2b394220a5f43ca4d53af037168a1044d250f94b09"
+    },
+    "actual/audit-git-guards.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual/audit-git-guards.stdout": {
+      "bytes": 174,
+      "sha256": "14543c47b28bc6d3d5c7dfeb7868a6421969c1626d9e0e6bb7dde82b0e90896b"
+    },
+    "actual/complete.zip": {
+      "bytes": 10553589,
+      "sha256": "4297256e84c5426884a6850fb4dd31d105e1b109f533e301714a88b20d8ffb0b"
+    },
+    "actual/controller.json": {
+      "bytes": 10644,
+      "sha256": "d9343767ccc26030cf30f1041759f979a94bfd5fb873decb2bec97ff4a4ebbbf"
+    },
+    "actual/download-closure.json": {
+      "bytes": 304,
+      "sha256": "090010eb4afcd82cc3f94031656cbd083bb1cdbb987949f03eb15c892d70ee30"
+    },
+    "actual/download.stderr": {
+      "bytes": 21,
+      "sha256": "f0586f9419fbe3b5897a698c95dc8b108d99cbbe3c80a54db1d25b6a61b116f9"
+    },
+    "actual/download.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual/execution-freeze-after.json": {
+      "bytes": 9244,
+      "sha256": "4330a139f96606fafef4aa7ec60c154d2943f0e416d6250439b799081738c6be"
+    },
+    "actual/execution-freeze-before.json": {
+      "bytes": 9244,
+      "sha256": "4330a139f96606fafef4aa7ec60c154d2943f0e416d6250439b799081738c6be"
+    },
+    "actual/execution-freeze-finally.json": {
+      "bytes": 9880,
+      "sha256": "f63c7728004a8ac130e1289b5422cba92ed7afcbff3fc3f2d58dbd407b1495f4"
+    },
+    "actual/execution-freeze.json": {
+      "bytes": 9374,
+      "sha256": "a5567e20fd92840628f91b4423868ad2cf1991bcf9388c21170a811d627b3e73"
+    },
+    "actual/first-prepare-failure.json": {
+      "bytes": 348,
+      "sha256": "e80630b48a8c1bb8d3ea637c247e05c2d18d4ae808c2288703b8bee4ea574a50"
+    },
+    "actual/historical-git-guards.json": {
+      "bytes": 19162,
+      "sha256": "14aacf6b6d583af6558583a2334c3f5c0ec5fa3a4948c8226c535785445a1750"
+    },
+    "actual/independent-complete-closure.json": {
+      "bytes": 304,
+      "sha256": "6690cf86be964b1aa376ce8f3f25d66914048ae6fe6392a122813171d860945f"
+    },
+    "actual/independent-complete-evidence.json": {
+      "bytes": 11192,
+      "sha256": "9ae043534918037c815a50c463156875700c87a55da32357668d2ba5e44094d4"
+    },
+    "actual/independent-complete.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual/independent-complete.stdout": {
+      "bytes": 917,
+      "sha256": "8b4946f5d9d34e28f0a659386757637c2bfb9a063e6c188fa61413acb3f00744"
+    },
+    "actual/job-113691868956.log": {
+      "bytes": 187453,
+      "sha256": "8cd027177431d7f6ee66b7e9ca8aa555ce071c05be6c69d519963d22e3780d47"
+    },
+    "actual/job-113691869120.log": {
+      "bytes": 51271,
+      "sha256": "8fe27fe32403ca6158bec64514cf63af0b182b7a4f1b44992eb14ef4421595c9"
+    },
+    "actual/job-113691869185.log": {
+      "bytes": 51967,
+      "sha256": "f04a1f56bd6853b2a9809ebb3715139b23040ecbe75fc6798aa553f9c2922e55"
+    },
+    "actual/job-113691869200.log": {
+      "bytes": 143186,
+      "sha256": "a88ce5a943943383320c12f62a35d81280a26d16b920b934053fbd7d6d11aa62"
+    },
+    "actual/job-113696040972.log": {
+      "bytes": 111109,
+      "sha256": "11419c763fd10b3f47ab73e49585813c201743d81d13df8bab5565812e7c9f4b"
+    },
+    "actual/jobs-native.json": {
+      "bytes": 17015,
+      "sha256": "6ce98c0fa9105b9c6f526b82925715a87ba0fdf381a3438187fed2a974edaba7"
+    },
+    "actual/owner-closure.json": {
+      "bytes": 261,
+      "sha256": "304fb4c47baf47496db4b35b5c98288b3fe5ce985a5cdf1f558b16dd51af97fe"
+    },
+    "actual/owner.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual/owner.stdout": {
+      "bytes": 194,
+      "sha256": "a09a1edf3ca691d02fb6b860fe09790d3f1184aed8ff0c4573a7e7cee0e87aa5"
+    },
+    "actual/run-native.json": {
+      "bytes": 13574,
+      "sha256": "33b26457829ccba3f587d73456c4d841b1e3e6263579b5fbdd203657bf717f5f",
+      "originalPrivateNativeInputSha256": "4f6c52ac07b58f328af251ee8daa1e673438299ac21bb479be656a5e97a90df8",
+      "publicPersonalEmailValuesOmitted": 2
+    },
+    "actual/zip-integrity.json": {
+      "bytes": 644,
+      "sha256": "deb4ac5411b1e74d633dd3c75fbf62ea590e2cdd901f6b728b5c58b839362c6f"
+    },
+    "code/audit-git-guards.py": {
+      "bytes": 3309,
+      "sha256": "6e9c43e207aae7befa23867a10a96fa820e6e83b8ea0041e1e7d0ab0ba21b561"
+    },
+    "code/audit-git-guards.py.identity-output-only.diff": {
+      "bytes": 3234,
+      "sha256": "792ac248da35a323e2db90a6450e476821033656ee36a94795444a565998e03b"
+    },
+    "code/metadata-environment.json": {
+      "bytes": 160,
+      "sha256": "a9745d16dbddd688bf2e783f4871b9fbe75754f16758022a44bf55b9778beaa9"
+    },
+    "code/receive-complete.py": {
+      "bytes": 10504,
+      "sha256": "18d8d5d559971fe927f5ce0a3cda7855bcc6c63a594c92f0a2f9ed4f11dcf272"
+    },
+    "code/receive-complete.py.identity-output-only.diff": {
+      "bytes": 5467,
+      "sha256": "e9b9a8ca86340c483fbe24343a07c683cf438480c8901338dd24e9476a45e09a"
+    },
+    "code/validate-complete.mjs": {
+      "bytes": 8297,
+      "sha256": "28e6ed946987508667fed02eeae6575b2d577c643f04d612a2a333682716607a"
+    },
+    "code/validate-complete.mjs.identity-output-only.diff": {
+      "bytes": 6106,
+      "sha256": "edd4f7b78c6060b2cdb86b8a1054976939b8ad87e9a1a7a4d031e478af52080f"
+    },
+    "recovery/d619-publication-recovery.json": {
+      "bytes": 1403,
+      "sha256": "9a0f8ab5eb74e4a5448507e4e0358d08677d9f0735839b82622b182379229a62"
+    },
+    "recovery/isolated-fetch.json": {
+      "bytes": 566,
+      "sha256": "c4a22587ef482dc07a30e59308fbe6092851422ed8d80eabbe3d250a8fad2cdd"
+    },
+    "recovery/isolated-fetch.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "recovery/isolated-fetch.stdout": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "recovery/local-publish.py": {
+      "bytes": 3680,
+      "sha256": "a421e3019e3b905c11d888603510f4049b1c6006d00ec13850444b38e70bad65"
+    }
+  },
+  "privateProviderReferenceContentsOmitted": true,
+  "publicEmailAndRawAPICommitMetadataOmitted": true,
+  "acceptedHead": "56db9298847ff312860bed8e71f32f2ac76bd41f",
+  "immutableCurrentDocBridge": "d61912087420a62b26bfed2f977799e529a37897",
+  "wholeOwnerClosedAt": "2026-10-09T06:43:41.438718+00:00",
+  "zip239CRCPass": true,
+  "fullReaderInventoryAndGatesUnchanged": true,
+  "erratum": "Output receipt scope sentences inherited historical0f504 words from original helper; every actual checked head/run/artifact and immutable current doc SHA correctly pins historical56db/currentd619. Preserve raw wording; do not relabel these exact56 original observations as d619 native timing. First preparation missing inherited job-log filename failed before frozen spec/controller; actual diagnosis retained."
+}
