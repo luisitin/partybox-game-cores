@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import {cleanText,normalize} from './scoring.ts';
+import {isCatalogText,cleanText,normalize} from './scoring.ts';
 export const realmIds=['emergency-room','dead-or-alive','internet-famous','ancient-or-ikea','name-your-baby','real-town-or-fake','patent-pending','do-not-use'] as const;
 export type RealmId=typeof realmIds[number];
 export type Kind='number'|'choice'|'century'|'decade'|'bluff';
@@ -13,14 +13,15 @@ export const realms:readonly {id:RealmId;name:string;kind:Kind}[]=Object.freeze(
  {id:'patent-pending',name:'Patent Pending',kind:'bluff'},
  {id:'do-not-use',name:'Do Not Use',kind:'bluff'}
 ].map(r=>Object.freeze(r)) as {id:RealmId;name:string;kind:Kind}[]);
-const base={id:z.string().min(1).max(80),realm:z.enum(realmIds),prompt:z.string().min(1).max(240),hint:z.string().max(200),fact:z.string().max(90)};
+const catalogText=z.string().refine(isCatalogText,'Catalog text must be well formed and contain no binary controls');
+const base={id:catalogText.min(1).max(80),realm:z.enum(realmIds),prompt:catalogText.min(1).max(240),hint:catalogText.max(200),fact:catalogText.max(90)};
 const bounded={min:z.number().finite(),max:z.number().finite(),correct:z.number().finite()};
 export const rowSchema=z.discriminatedUnion('kind',[
  z.object({...base,kind:z.literal('number'),...bounded}).strict().refine(r=>r.min>=0&&r.max>r.min&&r.max<=1e12&&r.correct>=r.min&&r.correct<=r.max),
- z.object({...base,kind:z.literal('choice'),correct:z.union([z.literal(0),z.literal(1)]),left:z.string().max(80),right:z.string().max(80)}).strict(),
+ z.object({...base,kind:z.literal('choice'),correct:z.union([z.literal(0),z.literal(1)]),left:catalogText.max(80),right:catalogText.max(80)}).strict(),
  z.object({...base,kind:z.literal('century'),...bounded}).strict().refine(r=>[r.min,r.max,r.correct].every(Number.isInteger)&&r.min>=-100&&r.max<=100&&r.min<r.max&&r.correct>=r.min&&r.correct<=r.max&&r.correct!==0),
  z.object({...base,kind:z.literal('decade'),...bounded}).strict().refine(r=>[r.min,r.max,r.correct].every(n=>Number.isInteger(n)&&n%10===0)&&r.min>=0&&r.max<=3000&&r.min<r.max&&r.correct>=r.min&&r.correct<=r.max),
- z.object({...base,kind:z.literal('bluff'),correct:z.string().min(1).max(160)}).strict().refine(r=>normalize(r.correct).length>0&&cleanText(r.correct).length<=160,'Bluff truth must fit the normalized answer input')
+ z.object({...base,kind:z.literal('bluff'),correct:catalogText.min(1).max(160)}).strict().refine(r=>normalize(r.correct).length>0&&cleanText(r.correct).length<=160,'Bluff truth must fit the normalized answer input')
 ]);
 export type Row=z.infer<typeof rowSchema>;
 export const catalogSchema=z.array(rowSchema).min(16).max(50000).refine(rows=>new Set(rows.map(r=>r.id)).size===rows.length&&realms.every(realm=>rows.filter(r=>r.realm===realm.id).length>=2)&&rows.every(r=>realms.find(realm=>realm.id===r.realm)?.kind===r.kind));

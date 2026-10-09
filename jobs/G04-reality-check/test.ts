@@ -139,6 +139,48 @@ test('catalog truth normalization uses the writable display limit without limiti
   s=g.reduce(s,timer(s));assert.equal(s.last!.awards.p0,1000,'valid truth is credited once');
  }
 });
+test('malformed UTF16 and binary catalog controls are rejected before play',()=>{
+ for(const bad of ['\ud800','\udfff','\ud800A','A\udfff','\u0001','\u0007'])for(const field of ['id','prompt','hint','fact','correct','left','right']){
+  const rows=makeSamples(),row=rows.find(r=>r.kind===(field==='left'||field==='right'?'choice':'bluff'))!;
+  Object.assign(row,{[field]:'Visible '+bad});
+  assert.throws(()=>C.createGame(rows),'catalog text must reject malformed UTF16 or binary controls');
+ }
+ const s=toPhase('write',91,{mode:'bluff'});
+ for(const text of ['\ud800','\udfff','A\ud800','\udfffA']){
+  assert.equal(C.inputSchema.safeParse({type:'write',text}).success,false);
+  assert.equal(input(s,'p0',{type:'write',text}),s,'malformed submission must not lock a seat');
+ }
+ for(const control of ['\u0001','\u0007']){
+  assert(C.inputSchema.safeParse({type:'write',text:'A'+control.repeat(159)}).success);
+  assert.equal(input(s,'p0',{type:'write',text:'A'+control.repeat(159)}).responses.p0,'A','existing C0 write cleanup stays exact');
+  assert.equal(input(s,'p0',{type:'write',text:control.repeat(160)}),s);
+ }
+ for(const text of ['x'.repeat(158)+'🧭','\u0130'.repeat(160),' Ｃｏｐｐｅｒ\n Compass ']){
+  const n=input(s,'p0',{type:'write',text});assert.notEqual(n,s);assert(String(n.responses.p0).length<=160);
+ }
+ assert.equal(input(input(s,'p0',{type:'write',text:'\ud800'}),'p0',{type:'write',text:'valid retry'}).responses.p0,'valid retry');
+});
+test('maximal well formed catalog and three byte writes keep every saved state bounded',()=>{
+ const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,id:(row.id+'界'.repeat(80)).slice(0,80),prompt:('Prompt '+'界'.repeat(240)).slice(0,240),hint:('Hint '+'界'.repeat(200)).slice(0,200),fact:('Fact '+'界'.repeat(90)).slice(0,90),correct:('Truth '+'界'.repeat(160)).slice(0,160)}:row);
+ const g=C.createGame(rows);let s=g.init(context(8,3,{mode:'bluff',rounds:12})),steps=0,writes=0;
+ const move=(event:Parameters<typeof g.reduce>[1])=>{s=g.reduce(s,event);assert(Buffer.byteLength(JSON.stringify(s))<=256*1024,'original state ceiling is unchanged');};
+ while(s.phase.id!=='done'&&steps++<300){
+  if(s.phase.id==='write'){
+   for(const [i,id] of s.seats.entries()){
+    move({type:'input',playerId:id,input:{type:'write',text:'f'+i+' '+'界'.repeat(157)},now:s.phase.startedAt+1});writes++;
+   }
+   assert.equal(s.phase.id,'vote');assert.equal(s.options.length,9);
+  }else if(s.phase.id==='vote'){
+   const ids=[...s.seats],options=structuredClone(s.options);
+   for(const [i,id] of ids.entries()){
+    const choice=options.find(option=>option.owners.includes(ids[(i+1)%ids.length]!))!;
+    move({type:'input',playerId:id,input:{type:'vote',choice:choice.id},now:s.phase.startedAt+1});
+   }
+  }else move(timer(s));
+ }
+ assert.equal(s.phase.id,'done');assert.equal(writes,96);
+ for(const id of s.seats)assert.equal(s.scores[id],6500,'independent twelve-round author award formula');
+});
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{
  let s=toPhase('write',1,{mode:'bluff'});s=input(s,'p0',{type:'write',text:'same fake'});s=input(s,'p1',{type:'write',text:'SAME   FAKE'});s=input(s,'p2',{type:'write',text:'other fake'});
  assert.equal(s.phase.id,'vote');assert.equal(s.options.length,3);const shared=s.options.find(o=>o.owners.length===2)!;const truth=s.options.find(o=>o.correct)!;

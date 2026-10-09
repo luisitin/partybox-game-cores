@@ -3,12 +3,12 @@ import type {GameDefinition,GameStateBase,GameManifest,InitContext,GameEvent,TvV
 import {seedRng,nextInt,shuffle,type Rng} from '../../contract/rng.ts';
 import type {BotSkill} from '../../contract/constants.ts';
 import {catalogSchema,sampleRows,realms,type Row,type RealmId,type Kind} from './samples.ts';
-import {quickScore,cleanText,normalize} from './scoring.ts';
+import {quickScore,isWellFormedText,cleanText,normalize} from './scoring.ts';
 import {fromView} from './bots.ts';
 
 export const inputSchema=z.discriminatedUnion('type',[
  z.object({type:z.literal('answer'),value:z.number().finite().min(-100).max(1e12)}).strict(),
- z.object({type:z.literal('write'),text:z.string().min(1).max(160)}).strict(),
+ z.object({type:z.literal('write'),text:z.string().min(1).max(160).refine(isWellFormedText,'Use well formed text')}).strict(),
  z.object({type:z.literal('vote'),choice:z.string().regex(/^o\d{1,2}$/)}).strict(),
  z.object({type:z.literal('next')}).strict()
 ]);

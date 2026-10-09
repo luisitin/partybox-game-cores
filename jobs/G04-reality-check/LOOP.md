@@ -38,3 +38,5 @@ units after f79 | shared case-preserving cleanup and catalog display-length
 validation |32 focused/four strict PASS;10000 matching comparisons equal;
 42 benign games3395 states/bots/views/results equal;3830 guards/closure PASS
 | whole new original proof pending; new completed KEEP rounds0/no-gain streak0.
+
+1 follow-up | five weaknesses: escaped JSON state growth;complex Unicode projections;custom catalogs;physical phone approximation;draft refusal | fix worst: refuse malformed writes and malformed/binary-control catalog strings | actual old3 games/33 oversized states/max288469; fixed42 pre-play refusals,9 maximal valid games1971 exact legal/replay events/max151384;34 focused/four strict/3834 guards pass;42 benign3395states and10000 matching cases unchanged | actual local player robustness gain; exact changed-head full still pending; completed new rounds0/no-gain streak0 until qualification; no clock gain.

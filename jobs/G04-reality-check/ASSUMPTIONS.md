@@ -132,3 +132,19 @@ pre-green product correction, not a qualified KEEP/no-gain round.
 The actual hosted download403 is distinct from a source/test failure. Metadata
 green and complete text logs do not accept unreceived official ZIP/native clips.
 Public signed-URL errors are redacted; all actual private original bytes remain.
+
+## KEEP1 text and saved-state budget, 2026-10-09
+Actual valid-by-old-schema malformed UTF16 fields and writes exceeded the original
+state bound. Reject lone surrogates at write validation and malformed/binary-control
+catalog fields before play. Preserve complete well-formed emoji pairs, ordinary
+whitespace/tab/newline catalog text, NFKC/display160/casefold rules. Raw C0 writes
+keep their original cleanup before storage, rather than silently changing scoring.
+This local validated content factory is not an established content-packs ABI.
+The256KiB state contract/performance gates are never relaxed; old raw33 actual
+violations and all original e32 source remain exact. Max valid3-byte/emoji/quote
+controls use ordinary bounded Seat/player metadata; no claim covers unbounded
+foreign host metadata. Parser hygiene is a deliberate admitted-content change.
+The first three-byte label actually used two-byte U+0634; the fixed maximum uses
+U+754C. The first C0 inverse substitution and corrected controls remain archived
+with original timestamps, alongside the failed material classifier and patch.
+Both genuine f79/e32 whole proof results are historical for this changed source.

@@ -641,3 +641,34 @@ SHA58c9f87a4b536df5df8d5de7b77353a4eaa1e0aed429db3d1b89787348145770.
 Actual two configured403 downloads received0B; no whole/native/clip acceptance.
 First broad failed controller flag is not a source mutation finding. New source
 full original CI and unchanged complete-reader acceptance remain mandatory.
+
+## KEEP1 accepted Unicode saved states
+See results/keep1-unicode-state-20261009/proof.zip/archive.json for complete actual
+commands/raw games/source guards/resource closures/whole official archives/errata.
+1. Current e32 genuine original run37923500292 complete55-test log/all25 kills,
+   official artifact11613082801 full1432496B/SHAb4d0a9cc873ca8958032d8005783fa8e5cbe7b4917aa74aeb4bd3379ab10a1c7:
+   unchanged reader exacthead/run accepts1034 guards/3000 native/66 controls/5 clips,
+   actual reception CLOSED11:33:23.361223Z/all277 inputs unchanged/natural closure.
+2. Declared untimed original sample24 games:5256 events/2304 writes/288 rounds,
+   all legal replays/independent6500-per-seat awards/private projections exact,
+   max227496 under262144,3834 guards/256MiB60s/no signals; not a no-gain round.
+3. Distinct maximal admitted catalog3 games/seeds1/2/3:657 events/288writes/36rounds,
+   33 actual violations/max288469>262144; savedwhole games/replays exact.
+   Observer CLOSED11:38:09.388481Z means measurements closed; stateContractPass=false.
+4. Direct original U+0001/U+0007 catalog admission fields id/prompt/hint/fact/truth
+   all accepted. Original write A+159 controls storesA, wholly blank refused.
+   C0 v1 other workload retained; exact v2 valid3-byte fake/corrected raw-C0 catalogs
+   full2 games438 events max182960 CLOSED11:44:01.243332Z. No cap changed.
+5. FAST_TEST=1 CORE_PATH=/tmp/G04-e32-preserved-baseline-20261009/jobs/G04-reality-check/core.ts node --test --test-reporter=tap --test-name-pattern='malformed UTF16 and binary catalog' test.ts:
+   actual EXIT1/oneexpected missing-exception failure/zero pass; complete TAP read.
+6. Fixed node tsc --noEmit,generate.ts --check,fixtures.ts twice,build.ts twice,
+   build.ts --check,checksums.ts/write+--check allPASS. FAST_TEST=1 test.ts34PASS,
+   unchanged strict-proof.test.ts4PASS. Allseven original fixture bytes unchanged.
+7. Fixed pure scripts42 old/new benign games3395 states/actions/views/results exact,
+   10000 matching cases equal,42 malformed/control raw catalog admissions nowreject.
+   Nine maximal valid3-byte/quote/emoji8-seat12-round games1971 events/864writes/
+   108rounds, all complete replays, independent6500 scores exact,max151384<262144.
+8. Actual fixed pipeline CLOSED11:47:48.214088Z,3834 guarded inputs stable except
+   declared generatedplay.html, allchildren naturally empty/no signals, measured
+   peak428769280B<declared512MiB/perphase60s. No local browser/frame clock.
+Changed-head original whole CI remains mandatory before qualified gain/Ready.
