@@ -2,14 +2,14 @@
 
 American 8×8 and International 10×10 for two seats, hot-seat or bots.
 Full licensed American and International 2–6-piece databases are included.
-Draft PR #10 stays open. Genuine56db full checks/clips passed with source bridges.
+Draft PR #10 stays open. Genuine1120 full checks/clips passed with source bridges.
 Four df download parts passed whole-byte verification with explicit source bridges.
 New-head verification and the renewed KEEP loop remain pending.
 
 The draft startup change lets American bots start after American data loads.
 International bots wait for the complete page. Its actual physical page,
 original strict TypeScript and direct full production output hashes passed.
-Genuine56db gameplay and original FPS passed independent full verification.
+Genuine1120 gameplay and original FPS passed independent full verification.
 The genuine df full download parts passed every ZIP/raw/whole-page check.
 
 Exact historical8b4 hosted proof passed 91 tests,25 real mutants,7,000
@@ -45,7 +45,8 @@ Tracked play.html is the older2–5-piece baseline. Rebuild the full current pag
 with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough space.
 Private International startup output passed full raw/source-byte checks.
 Full HTTP bytes passed. One native trial exceeded its memory bound.
-Saved8-game eager/deferred full-core replay equivalence passed; no new timing.
+Saved8-game full-core replay and actual process-closure controls passed.
+A fresh deferred native protocol is prepared; no new timing or adoption.
 The candidate remains unadopted; renewed KEEP and current checks stay open.
 
 American data terms require Chinook/University of Alberta acknowledgement and
