@@ -1,0 +1,127 @@
+{
+  "status": "ACTUAL_AFTER_GREEN_KEEP19_THIRD_NO_NEW_PLAYER_GAIN_STOP",
+  "round": 19,
+  "rankedFive": {
+    "status": "ACTUAL_AFTER_GREEN_KEEP19_GENUINE_BLIND_AND_CUTTHROAT_MATRIX",
+    "afterGreenHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "reviewHead": "b64ea49a6617d2cef4c687bfdff49c0f17d61852",
+    "bindingReadAt": "2026-10-09T10:13:26Z",
+    "rankedFive": [
+      "Blind eligibility after actual prior-hand scores and legal exchanges may expose privacy/scoring regressions.",
+      "Cutthroat nil and deck/lead variants must remain identical to the pre-opponent-nil bot.",
+      "New nil exceptions were tested under finite fixed histories, not every deal.",
+      "Physical phone access remains unavailable.",
+      "Public delivery/performance proof remains finite and must use exact final current source."
+    ],
+    "worstAction": "Run actual two/three consecutive complete hands from original init across partnership/cutthroat, both real blind-gap settings, exchanges, bonuses and failed-nil toggles, plus both Cutthroat deck/lead variants, seeds1/2/3/577. Check actual pre-look privacy, illegal blind attempts, all skill/RNG comparisons and independent persisted score/bag ledgers. Any changed play gets both legal final continuations/all independent bag outcomes. No fabricated score state or native timing.",
+    "formalNoGainStreakBefore": 2
+  },
+  "actualControllerClosure": {
+    "status": "ACTUAL_FINITE_UNTIMED_OPPONENT_NIL_PROBE_CLOSED",
+    "sourceHead": "b64ea49a6617d2cef4c687bfdff49c0f17d61852",
+    "startedAt": "2026-10-09T10:16:06.059172+00:00",
+    "naturallyClosedAt": "2026-10-09T10:16:33.847298+00:00",
+    "exitCode": 0,
+    "natural": true,
+    "actualOwnedGroupEmpty": true,
+    "guardCount": 3448,
+    "allFrozenInputsUnchanged": true,
+    "probeScope": "KEEP19 after accepted1120/actual KEEP18 publication/root new binding read/rankfive:320 real games at most3 complete consecutive hands/3+4seats/actual blind-gap0+100 eligibility from real persisted scores/exchange/bonus/failed-nil and all Cutthroat deck+lead settings/seeds1,2,3,577. Pre-look privacy/actual blind rejection/all3 skill-RNG/both legal changed-choice continuations and independent bag outcomes; no fabricated scores/native timing/new production change.",
+    "controller": "/tmp/G06-genuine-blind-cutthroat-matrix-review-controlled-20261009.py"
+  },
+  "newProductionGain": 0,
+  "formalNoGainStreak": 3,
+  "priorGreen": {
+    "status": "ACTUAL_FULL_ORIGINAL_CURRENT_1120_ACCEPTED",
+    "sourceHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "currentRuntimeBridgeHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "scope": "current exact1120 original full CI, actual official whole artifact and original unchanged verification reader",
+    "artifactId": 11606979916,
+    "runId": 37912054471,
+    "jobId": 113759291886,
+    "officialZipBytes": 98036,
+    "officialZipSha256": "051bd896a255ad000ebcbab9b26cbf49f069212a0d348fbbedacee51a139ec85",
+    "fullNativeCharacters": 103151,
+    "trackedGitFilesCompared": 289,
+    "outerGuardCount": 3447,
+    "allGuardsUnchanged": true,
+    "startedAt": "2026-10-09T10:01:30.497089+00:00",
+    "naturallyClosedAt": "2026-10-09T10:01:31.449033+00:00",
+    "steps": [
+      {
+        "name": "full-original-reader",
+        "exitCode": 0
+      },
+      {
+        "name": "full-video-decode",
+        "exitCode": 0
+      },
+      {
+        "name": "all-video-frame-inventory",
+        "exitCode": 0
+      }
+    ],
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "nb_read_frames": "18"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      }
+    },
+    "rawIntervals": 1800,
+    "coreTests": 48,
+    "focusedGroups": 21,
+    "actualMutationKills": 25,
+    "presenceSeeds": 1003,
+    "skillGames": 16000,
+    "negativeEvidenceControls": 58,
+    "captureCliControls": 12
+  },
+  "runtimeAndGatesIdenticalAcrossThirteenProofOnlyPaths": [
+    "jobs/G06-spades/ASSUMPTIONS.md",
+    "jobs/G06-spades/AUDIT.md",
+    "jobs/G06-spades/BOTS.md",
+    "jobs/G06-spades/KEEP17-public-unseen-outcome-review-20261009.json",
+    "jobs/G06-spades/KEEP18-genuine-bid-lattice-review-20261009.json",
+    "jobs/G06-spades/LOOP.md",
+    "jobs/G06-spades/NEXT.md",
+    "jobs/G06-spades/SHA256SUMS.txt",
+    "jobs/G06-spades/VERIFY.md",
+    "jobs/G06-spades/media/KEEP17-public-unseen-outcome-review-20261009.zip",
+    "jobs/G06-spades/media/KEEP18-genuine-bid-lattice-review-20261009.zip",
+    "jobs/G06-spades/media/opponent-nil-current-1120-full-20261009.zip",
+    "jobs/G06-spades/opponent-nil-current-1120-full-acceptance-20261009.json"
+  ],
+  "reviewMetrics": {
+    "status": "ACTUAL_GENUINE_BLIND_CUTTHROAT_MATRIX_REVIEW_PASS",
+    "scope": "320 genuine consecutive-hand games with seeds1/2/3/577 across3/4 seats, both blind gaps, exchanges, bonuses, failed-nil toggles and four Cutthroat deck/lead variants. Scores and eligibility come only from actual prior completed hands; no synthetic score assignments. Original baseline progress, all3 current skill/RNG comparisons, actual pre-look privacy/illegal blind rejection/legal exchanges/persisted independent bag ledger; changed choices get both legal final continuations/independent bag outcomes. Finite suite; no universal safety or new production change/native timing.",
+    "games": 320,
+    "hands": 960,
+    "events": 69686,
+    "privacy": 1648,
+    "blindDeclarations": 714,
+    "gap100LaterDeclarations": 210,
+    "exchanges": 168,
+    "rejectedBlind": 2358,
+    "skillComparisons": 159978,
+    "changed": 12,
+    "boundaries": 1200,
+    "newProductionGain": 0
+  },
+  "archive": {
+    "path": "media/KEEP19-genuine-blind-cutthroat-review-20261009.zip",
+    "members": 9,
+    "bytes": 755363,
+    "sha256": "daf63cc44818d954499f53c4a90a32f94d6328e479d6cc8c385182dec7b23e18"
+  },
+  "limitations": "320 genuine games/960 consecutive complete hands use four named seeds and the declared settings matrix, not960 independent random deals or universal safety. Actual prior scores determine210 later-hand blind declarations with gap100; no score state fabricated. Prior22k and16blind investigations remain separate. No native timing repeated. Three formal no-gain rounds17/18/19 stop further cosmetic work; final exact-head full hosted acceptance remains pending.",
+  "errata": "The preserved high-contract-expanded JSON header says ownBids:[2,13]; actual immutable loop used ONLY ownBid13/opponentBid13 and NEW seeds1001..10000. This record corrects that scope without altering the original. Root mistyped score.ts/reference-score.ts read paths10:03, actual shell EXIT1 ENOENT; corrected reads scoring.ts/reference.ts were complete."
+}

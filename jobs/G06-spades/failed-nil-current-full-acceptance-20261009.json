@@ -1,0 +1,74 @@
+{
+  "status": "ACTUAL_FULL_ORIGINAL_CURRENT_092_ACCEPTED",
+  "sourceHead": "092dbf8fdc65da3a7e6b58afa013612617613fed",
+  "currentRuntimeBridgeHead": "092dbf8fdc65da3a7e6b58afa013612617613fed",
+  "scope": "current exact092 original full CI, actual official whole artifact and original unchanged verification reader",
+  "artifactId": 11598961283,
+  "runId": 37891792425,
+  "jobId": 113694132749,
+  "officialZipBytes": 98094,
+  "officialZipSha256": "79f7f837c67d033f2c5afbc60d951b35edc0cf6fdd0538d8cf9eede966399499",
+  "fullNativeCharacters": 101309,
+  "trackedGitFilesCompared": 265,
+  "outerGuardCount": 272,
+  "allGuardsUnchanged": true,
+  "startedAt": "2026-10-09T06:36:22.999045+00:00",
+  "naturallyClosedAt": "2026-10-09T06:36:23.607811+00:00",
+  "steps": [
+    {
+      "name": "full-original-reader",
+      "exitCode": 0
+    },
+    {
+      "name": "full-video-decode",
+      "exitCode": 0
+    },
+    {
+      "name": "all-video-frame-inventory",
+      "exitCode": 0
+    }
+  ],
+  "video": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp8",
+        "width": 390,
+        "height": 844,
+        "nb_read_frames": "18"
+      }
+    ],
+    "format": {
+      "duration": "1.500000"
+    }
+  },
+  "rawIntervals": 1800,
+  "coreTests": 36,
+  "focusedGroups": 21,
+  "actualMutationKills": 25,
+  "presenceSeeds": 1003,
+  "skillGames": 16000,
+  "negativeEvidenceControls": 58,
+  "captureCliControls": 12,
+  "nativeUtf8Bytes": 104097,
+  "nativeSha256": "44d3fb09fc0e1b71b0655b1da2323336bcde9a0343492d7a39c6d6adcbb3cc0e",
+  "completeNativeTextEqualsConnectorOriginal": true,
+  "initialSavedWrapperErratum": "Initial apply_patch text save added one terminal LF (101310 versus original101309 characters); first passing whole reader retained separately. Exact text now matches complete connector-native readback, fresh parameter-only saved-evidence full reader passed with all original gates; no sampler replay.",
+  "originalSamplerAndVerificationUnchanged": true,
+  "physicalPhoneApproximation": "Chrome CPU4x on hosted runner; not physical phone or cold-cache/load timing claim",
+  "KEEP": {
+    "qualifiedRound": 14,
+    "playerGain": 120,
+    "scope": "legitimate seed377/own already-failed nil/failedNilCounts=true, -160 to -40; no overall league gain asserted",
+    "noGainStreak": 0,
+    "nextFormalRound": 15
+  },
+  "checkpointCadence": {
+    "priorActualSourcePushClosure": "2026-10-09T06:06:05.327440Z",
+    "earlyDeadline": "2026-10-09T06:31:05.327440Z",
+    "hardDeadline": "2026-10-09T06:36:05.327440Z",
+    "status": "ACTUAL_DEADLINE_ALREADY_MISSED; record actual subsequent source closure privately without backdating",
+    "reason": "Full genuine current source/native/official evidence, exact text readback and required source qualification preparation; native Git authorization expiry fallback retained."
+  }
+}

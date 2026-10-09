@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-10-09T08:51:19.548Z",
+  "finishedAt": "2026-10-09T08:51:21.099Z",
+  "command": "node capture.ts --milestone=17",
+  "scope": "Actual-file functional/source-bound short capture only; not FPS acceptance",
+  "output": "media/milestone-17-pinned-encoder.webm",
+  "bytes": 88845,
+  "sha256": "91f49bc422ed72f25a8d559fb2b0331cadc806c135631c14797cd4ed8a6dee05",
+  "frameCount": 18,
+  "encodedFps": 12,
+  "sourceHashesAtStart": {
+    "play.html": "b7e3cdf992e1c86e9322118d69204b834174667a9d84f53f6b3081ef1983ee26",
+    "ui.ts": "6a44fd3cc2cd8fa13aacb7ec300ae45e00388fd1d3c520b0a737298973a52f2a",
+    "core.ts": "f109a7f4cf8adeb42416bcc15bda2fcccf1c2176ae7e70103c6d7ebfe4a7fc87",
+    "bots.ts": "49f1cebdcb011bfc099aa560a968ccf6c9171af577bec4cc4713726b3b141938",
+    "cards.ts": "4c863a33f4e9e040b166b7103f2adc747093e74ab81c69667d742b082627ae38",
+    "scoring.ts": "57db5bcc91bfd5052203f4a30c514d0871267636fbeaeaf97bf09b4e465b9311",
+    "deck.json": "fba1afc87f49c16b741e623c3d2aacc94b8d630ba3b8d25b7ec88e58265b65f6",
+    "manifest.json": "60532b21faaae18dc29ebddfc0a7e7eeeb0bfcd5af525cf2615f17d0ff46da06",
+    "capture.ts": "b0e2ff870a4b03ecd71ae05ab478817b4e58cfc846c0fa4d5e01971fbdcb1a25",
+    "capture-encoder.ts": "9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba"
+  },
+  "sourceHashesAtEnd": {
+    "play.html": "b7e3cdf992e1c86e9322118d69204b834174667a9d84f53f6b3081ef1983ee26",
+    "ui.ts": "6a44fd3cc2cd8fa13aacb7ec300ae45e00388fd1d3c520b0a737298973a52f2a",
+    "core.ts": "f109a7f4cf8adeb42416bcc15bda2fcccf1c2176ae7e70103c6d7ebfe4a7fc87",
+    "bots.ts": "49f1cebdcb011bfc099aa560a968ccf6c9171af577bec4cc4713726b3b141938",
+    "cards.ts": "4c863a33f4e9e040b166b7103f2adc747093e74ab81c69667d742b082627ae38",
+    "scoring.ts": "57db5bcc91bfd5052203f4a30c514d0871267636fbeaeaf97bf09b4e465b9311",
+    "deck.json": "fba1afc87f49c16b741e623c3d2aacc94b8d630ba3b8d25b7ec88e58265b65f6",
+    "manifest.json": "60532b21faaae18dc29ebddfc0a7e7eeeb0bfcd5af525cf2615f17d0ff46da06",
+    "capture.ts": "b0e2ff870a4b03ecd71ae05ab478817b4e58cfc846c0fa4d5e01971fbdcb1a25",
+    "capture-encoder.ts": "9dc486aabdfcb097a4126a2dc985d9a03e857a32aeacd8ff9bfa69bc4e52adba"
+  },
+  "sourceUnchanged": true,
+  "functional": [
+    "actual file: four seats, 13 own cards, conceal/reopen preserves bid5, hidden cards absent",
+    "new table clears cards; three seats own17 cards; phone does not overflow",
+    "reduced motion disables animation"
+  ],
+  "errors": [],
+  "externalRequests": []
+}

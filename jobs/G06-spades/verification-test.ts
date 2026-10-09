@@ -5,7 +5,7 @@ import {recomputeFrames,validateBrowserReport,validateHistoricalC609BrowserRepor
 type Obj=Record<string,unknown>;
 const current=process.env.G06_CURRENT_BROWSER_REPORT;
 const browser=JSON.parse(readFileSync(current??'browser-ci-c609-report.json','utf8')) as Obj;
-const capture=JSON.parse(readFileSync('capture-milestone-13-report.json','utf8')) as Obj;
+const capture=JSON.parse(readFileSync(process.env.G06_CAPTURE_REPORT??'capture-milestone-13-report.json','utf8')) as Obj;
 const object=(v:unknown)=>v as Obj;
 const profile=(v:Obj,index=0)=>object((v.performance as unknown[])[index]);
 const read=(file:string)=>readFileSync(!current&&file==='browser.ts'?'browser-ci-c609-runner.txt':!current&&file.startsWith('browser-raw-1-')?`browser-ci-c609-raw-${file.slice('browser-raw-1-'.length)}`:file);

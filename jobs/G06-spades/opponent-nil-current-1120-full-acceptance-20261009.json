@@ -1,0 +1,129 @@
+{
+  "status": "ACTUAL_CURRENT_1120_FULL_ORIGINAL_ACCEPTED_KEEP17_IN_PROGRESS",
+  "acceptance": {
+    "status": "ACTUAL_FULL_ORIGINAL_CURRENT_1120_ACCEPTED",
+    "sourceHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "currentRuntimeBridgeHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "scope": "current exact1120 original full CI, actual official whole artifact and original unchanged verification reader",
+    "artifactId": 11606979916,
+    "runId": 37912054471,
+    "jobId": 113759291886,
+    "officialZipBytes": 98036,
+    "officialZipSha256": "051bd896a255ad000ebcbab9b26cbf49f069212a0d348fbbedacee51a139ec85",
+    "fullNativeCharacters": 103151,
+    "trackedGitFilesCompared": 289,
+    "outerGuardCount": 3447,
+    "allGuardsUnchanged": true,
+    "startedAt": "2026-10-09T10:01:30.497089+00:00",
+    "naturallyClosedAt": "2026-10-09T10:01:31.449033+00:00",
+    "steps": [
+      {
+        "name": "full-original-reader",
+        "exitCode": 0
+      },
+      {
+        "name": "full-video-decode",
+        "exitCode": 0
+      },
+      {
+        "name": "all-video-frame-inventory",
+        "exitCode": 0
+      }
+    ],
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "nb_read_frames": "18"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      }
+    },
+    "rawIntervals": 1800,
+    "coreTests": 48,
+    "focusedGroups": 21,
+    "actualMutationKills": 25,
+    "presenceSeeds": 1003,
+    "skillGames": 16000,
+    "negativeEvidenceControls": 58,
+    "captureCliControls": 12
+  },
+  "reader": {
+    "status": "ORIGINAL_FULL_READER_PASS",
+    "scope": "current exact1120 original workflow and genuine official full artifact",
+    "nativeCharacters": 103151,
+    "metrics": {
+      "htmlSha256": "b7e3cdf992e1c86e9322118d69204b834174667a9d84f53f6b3081ef1983ee26",
+      "sourceGuards": 18,
+      "rawIntervals": 1800,
+      "metrics": [
+        {
+          "profile": "TV",
+          "frames": 900,
+          "averageMs": 16.666,
+          "fps": 60.00240009600384,
+          "p95Ms": 16.700000000000728,
+          "p99Ms": 16.800000000000182,
+          "maxMs": 16.80000000000109
+        },
+        {
+          "profile": "phone-4x",
+          "frames": 900,
+          "averageMs": 16.665964444444445,
+          "fps": 60.00252810651755,
+          "p95Ms": 16.700000000000728,
+          "p99Ms": 16.800000000000182,
+          "maxMs": 16.80000000000109
+        }
+      ]
+    },
+    "clip": {
+      "htmlSha256": "b7e3cdf992e1c86e9322118d69204b834174667a9d84f53f6b3081ef1983ee26",
+      "sourceGuards": 10,
+      "bytes": 88845,
+      "sha256": "91f49bc422ed72f25a8d559fb2b0331cadc806c135631c14797cd4ed8a6dee05",
+      "scope": "functional capture only"
+    }
+  },
+  "officialArtifactMetadata": {
+    "sourceHead": "1120daf66512817f2ba59bc8af54890348e97eb0",
+    "runId": 37912054471,
+    "jobId": 113759291886,
+    "artifactId": 11606979916,
+    "zipBytes": 98036,
+    "zipSha256": "051bd896a255ad000ebcbab9b26cbf49f069212a0d348fbbedacee51a139ec85",
+    "wholeNativeCharacters": 103151
+  },
+  "qualifiedFinitePlayerGains": {
+    "KEEP14": 120,
+    "KEEP15": 180,
+    "KEEP16": 120
+  },
+  "KEEP17": {
+    "status": "IN_PROGRESS",
+    "formalNoGain": false,
+    "noGainStreak": 0,
+    "rankedFive": {
+      "status": "ACTUAL_AFTER_GREEN_KEEP17_RANKED_FIVE",
+      "acceptedHead": "39664be661b3947d101a32c0c952a72b9c8f0295",
+      "fullAcceptedAt": "2026-10-09T09:26:51.334867+00:00",
+      "rankedFive": [
+        "Live partner nil may break if the final trump is spent under extreme valid numeric contract deficits.",
+        "Blind-nil counterpart has higher penalty and needs genuine pre-look/optional exchange coverage.",
+        "Carried bags and impossible combined bids need adverse-outcome controls beyond the first positive seed.",
+        "Only throttled Chromium approximates a phone; physical hardware remains unavailable.",
+        "Finite benchmark strength does not prove expert play."
+      ],
+      "worst": "Prospectively test all1000 hands with both numeric13 bids and nil partners; genuine full legal histories and both scores/200 carried-bag boundaries. Preserve prior12000-hand828014-event probe with only1changed decision and no negative, without treating it as universal safety.",
+      "noGainStreak": 0
+    },
+    "priorAdditionalAdverseControls": "12000 hands828014events +1000 extreme hands69014events plus9000 NEW extreme hands621168events/12changed/no adverse. Genuine16 ordinary/blind nil counterparts1504events64pre-look privacy16legalexchanges3200both-team scores passed. These investigations found no new policy but are not retrospective formal no-gain rounds; noGainStreak0."
+  },
+  "scope": "Whole exact proof-source1120 original48core21focused25mutants1003replays16kleagues1800native intervals58negative12capture controls/full18VP8 accepted; protect ReadyPR7. New proof-only source requires own full before Ready, and substantive KEEP17 is incomplete."
+}

@@ -68,3 +68,11 @@ script comment. Build checks compare installed/committed/embedded notices.
 This licensed runtime bundle is separate from the rules/strategy references.
 
 2026-10-08 corrective read: pinned Pagatmirror and independent HughesREADME above rereadlive throughnativeGitHub. Standard13cards/trump/follow-suit/contract±10/nil±100/blind±200/bags10→−100/target500 reconfirmed; originalpublisherpages not newlyclaimedread. Captureencoder helper reused from this same MIT repository G04 at https://github.com/luisitin/partybox-game-cores/blob/b18952bfca09a6e3b3e2647adc0ea5c327a99d73/jobs/G04-reality-check/capture-encoder.ts ; originalJPEG screenshots encode via pinnedPlaywrightffmpeg, no outsideart/assets.
+
+2026-10-09 resumed live read: exact pinned Pagat mirror standard four-player
+deal/bidding/play/scoring, independent Hughes README gameplay/scoring, and Elixir
+GameScoreRoundTeam successful_bid/failed_bid/nil/bags functions above were read
+through GitHub. They corroborate the standard scoring facts and preserve the
+explicit failed-nil-contribution disagreement. Sources inform rules only; no
+outside code, artwork or assets are imported. A heuristic improvement is not
+claimed as an official rule or outside-AI strength measurement.

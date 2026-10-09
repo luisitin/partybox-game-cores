@@ -1,0 +1,125 @@
+{
+  "status": "ACTUAL_CURRENT_5DD_FULL_ORIGINAL_ACCEPTED",
+  "acceptance": {
+    "status": "ACTUAL_FULL_ORIGINAL_CURRENT_5DD_ACCEPTED",
+    "sourceHead": "5dd12c052b9225a60c8c0f1dac18fcd412d31dcf",
+    "currentRuntimeBridgeHead": "5dd12c052b9225a60c8c0f1dac18fcd412d31dcf",
+    "scope": "current exact5dd original full CI, actual official whole artifact and original unchanged verification reader",
+    "artifactId": 11603441218,
+    "runId": 37901931935,
+    "jobId": 113726262828,
+    "officialZipBytes": 98170,
+    "officialZipSha256": "daf17aa2d4259e58e3aa3790944ea5db3268526a95b03df747d8e8a61ed8eb8e",
+    "fullNativeCharacters": 102308,
+    "trackedGitFilesCompared": 278,
+    "outerGuardCount": 3436,
+    "allGuardsUnchanged": true,
+    "startedAt": "2026-10-09T08:28:06.746449+00:00",
+    "naturallyClosedAt": "2026-10-09T08:28:07.780175+00:00",
+    "steps": [
+      {
+        "name": "full-original-reader",
+        "exitCode": 0
+      },
+      {
+        "name": "full-video-decode",
+        "exitCode": 0
+      },
+      {
+        "name": "all-video-frame-inventory",
+        "exitCode": 0
+      }
+    ],
+    "video": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "nb_read_frames": "18"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      }
+    },
+    "rawIntervals": 1800,
+    "coreTests": 42,
+    "focusedGroups": 21,
+    "actualMutationKills": 25,
+    "presenceSeeds": 1003,
+    "skillGames": 16000,
+    "negativeEvidenceControls": 58,
+    "captureCliControls": 12
+  },
+  "reader": {
+    "status": "ORIGINAL_FULL_READER_PASS",
+    "scope": "current exact5dd original workflow and genuine official full artifact",
+    "nativeCharacters": 102308,
+    "metrics": {
+      "htmlSha256": "af2182465810b67c3b748c1af9596e1a582e118735b0a2a6d8ec90bd69f7fda5",
+      "sourceGuards": 18,
+      "rawIntervals": 1800,
+      "metrics": [
+        {
+          "profile": "TV",
+          "frames": 900,
+          "averageMs": 16.666,
+          "fps": 60.00240009600384,
+          "p95Ms": 16.700000000000728,
+          "p99Ms": 16.800000000000182,
+          "maxMs": 16.80000000000109
+        },
+        {
+          "profile": "phone-4x",
+          "frames": 900,
+          "averageMs": 16.665926666666667,
+          "fps": 60.00266411828685,
+          "p95Ms": 16.799999999999272,
+          "p99Ms": 16.800000000000182,
+          "maxMs": 16.80000000000109
+        }
+      ]
+    },
+    "clip": {
+      "htmlSha256": "af2182465810b67c3b748c1af9596e1a582e118735b0a2a6d8ec90bd69f7fda5",
+      "sourceGuards": 10,
+      "bytes": 88884,
+      "sha256": "64696c407ede3ddf15d4daa98bc6b3d267541471d7532fa5965dc9debce468ba",
+      "scope": "functional capture only"
+    }
+  },
+  "officialArtifactMetadata": {
+    "sourceHead": "5dd12c052b9225a60c8c0f1dac18fcd412d31dcf",
+    "runId": 37901931935,
+    "jobId": 113726262828,
+    "artifactId": 11603441218,
+    "zipBytes": 98170,
+    "zipSha256": "daf17aa2d4259e58e3aa3790944ea5db3268526a95b03df747d8e8a61ed8eb8e",
+    "wholeNativeCharacters": 102308
+  },
+  "priorPlayerGains": {
+    "KEEP14": 120,
+    "KEEP15": 180,
+    "qualified": true
+  },
+  "KEEP16": {
+    "status": "INCOMPLETE",
+    "formalNoGain": false,
+    "adopted": false,
+    "noGainStreak": 0,
+    "remaining": "Both team scores/margin and all valid carried-bag boundaries; original finite13000-hand own-score-only probe is insufficient."
+  },
+  "sharedMeasurementHold": {
+    "rootGrantedAt": "2026-10-09T08:15:39.668212+00:00",
+    "actualControllerClosedAt": "2026-10-09T08:23:12.909783+00:00",
+    "rootReleaseReceivedAt": "2026-10-09T08:24:40Z",
+    "note": "Approximate release observation only; exact grant/closure timestamps are separately native. Root actual publication deadline08:26:29.471114 passed; publication receipt records real lateness, never backdated."
+  },
+  "receiverFailures": {
+    "status": "PRESERVED_TOOL_FAILURES_BEFORE_ANY_URL_TRANSFER",
+    "details": "Initial heredoc stdin was not a TTY; subsequent /dev/tty r+ open rejected as nonseekable twice. Corrected /dev/tty read-only receiver securely downloaded actual official packet. Full original native string exactly matches saved readback102308 characters; no log reconstruction."
+  }
+}

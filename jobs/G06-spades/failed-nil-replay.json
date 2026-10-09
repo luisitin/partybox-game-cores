@@ -1,0 +1,1588 @@
+{
+  "status": "VALID_LEGAL_COUNTERFACTUAL_SCORE_GAIN",
+  "scope": "one untimed seeded hand, original source unchanged, no adopted policy or universal league gain",
+  "seed": 377,
+  "partnerBid": 6,
+  "hands": 3014,
+  "events": 208127,
+  "eligible": 12,
+  "initialContext": {
+    "players": [
+      {
+        "id": "p0",
+        "name": "Player 1",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      {
+        "id": "p1",
+        "name": "Player 2",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      {
+        "id": "p2",
+        "name": "Player 3",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      {
+        "id": "p3",
+        "name": "Player 4",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      }
+    ],
+    "seed": 377,
+    "now": 0,
+    "settings": {
+      "mode": "partnership",
+      "blind": false,
+      "exchange": false,
+      "failedNilCounts": true
+    }
+  },
+  "prefix": [
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "bid",
+        "value": 6
+      },
+      "now": 1
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "bid",
+        "value": 2
+      },
+      "now": 2
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "nil"
+      },
+      "now": 3
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "value": 3
+      },
+      "now": 4
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 25
+      },
+      "now": 5
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 20
+      },
+      "now": 6
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 24
+      },
+      "now": 7
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 17
+      },
+      "now": 8
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 8,
+      "now": 8008
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 8
+      },
+      "now": 8009
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 12
+      },
+      "now": 8010
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 11
+      },
+      "now": 8011
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 4
+      },
+      "now": 8012
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 8012,
+      "now": 16012
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 10
+      },
+      "now": 16013
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 9
+      },
+      "now": 16014
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 3
+      },
+      "now": 16015
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 7
+      },
+      "now": 16016
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 16016,
+      "now": 24016
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 35
+      },
+      "now": 24017
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 34
+      },
+      "now": 24018
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 31
+      },
+      "now": 24019
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 33
+      },
+      "now": 24020
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 24020,
+      "now": 32020
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 6
+      },
+      "now": 32021
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 23
+      },
+      "now": 32022
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 0
+      },
+      "now": 32023
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 5
+      },
+      "now": 32024
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 32024,
+      "now": 40024
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 19
+      },
+      "now": 40025
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 13
+      },
+      "now": 40026
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 16
+      },
+      "now": 40027
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 21
+      },
+      "now": 40028
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 40028,
+      "now": 48028
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 15
+      },
+      "now": 48029
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 18
+      },
+      "now": 48030
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 22
+      },
+      "now": 48031
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 38
+      },
+      "now": 48032
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 48032,
+      "now": 56032
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 29
+      },
+      "now": 56033
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 26
+      },
+      "now": 56034
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 27
+      },
+      "now": 56035
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 2
+      },
+      "now": 56036
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 56036,
+      "now": 64036
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 30
+      },
+      "now": 64037
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 37
+      },
+      "now": 64038
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 28
+      },
+      "now": 64039
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 1
+      },
+      "now": 64040
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 64040,
+      "now": 72040
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 36
+      },
+      "now": 72041
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 51
+      },
+      "now": 72042
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 49
+      },
+      "now": 72043
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 32
+      },
+      "now": 72044
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 72044,
+      "now": 80044
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 44
+      },
+      "now": 80045
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 42
+      },
+      "now": 80046
+    },
+    {
+      "type": "input",
+      "playerId": "p0",
+      "input": {
+        "type": "play",
+        "card": 41
+      },
+      "now": 80047
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 45
+      },
+      "now": 80048
+    },
+    {
+      "type": "timer",
+      "phaseId": "trick",
+      "startedAt": 80048,
+      "now": 88048
+    },
+    {
+      "type": "input",
+      "playerId": "p1",
+      "input": {
+        "type": "play",
+        "card": 47
+      },
+      "now": 88049
+    },
+    {
+      "type": "input",
+      "playerId": "p2",
+      "input": {
+        "type": "play",
+        "card": 43
+      },
+      "now": 88050
+    },
+    {
+      "type": "input",
+      "playerId": "p3",
+      "input": {
+        "type": "play",
+        "card": 39
+      },
+      "now": 88051
+    }
+  ],
+  "state": {
+    "players": {
+      "p0": {
+        "id": "p0",
+        "name": "Player 1",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      "p1": {
+        "id": "p1",
+        "name": "Player 2",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      "p2": {
+        "id": "p2",
+        "name": "Player 3",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      },
+      "p3": {
+        "id": "p3",
+        "name": "Player 4",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true
+      }
+    },
+    "seats": [
+      "p0",
+      "p1",
+      "p2",
+      "p3"
+    ],
+    "left": [],
+    "settings": {
+      "mode": "partnership",
+      "blind": false,
+      "blindGap": 100,
+      "exchange": false,
+      "nilValue": 100,
+      "failedNilCounts": true,
+      "mercy": true,
+      "cutDeck": "low-club",
+      "cutLead": "dealer"
+    },
+    "dealer": 1,
+    "turn": 0,
+    "handNumber": 1,
+    "trickNumber": 12,
+    "hands": {
+      "p0": [
+        46,
+        48
+      ],
+      "p1": [
+        50
+      ],
+      "p2": [
+        40
+      ],
+      "p3": [
+        14
+      ]
+    },
+    "stock": null,
+    "bids": {
+      "p2": {
+        "kind": "number",
+        "value": 6
+      },
+      "p3": {
+        "kind": "number",
+        "value": 2
+      },
+      "p0": {
+        "kind": "nil",
+        "value": 0
+      },
+      "p1": {
+        "kind": "number",
+        "value": 3
+      }
+    },
+    "looked": [
+      "p0",
+      "p1",
+      "p2",
+      "p3"
+    ],
+    "won": {
+      "p0": 2,
+      "p1": 2,
+      "p2": 3,
+      "p3": 4
+    },
+    "scores": [
+      0,
+      0
+    ],
+    "bags": [
+      0,
+      0
+    ],
+    "trick": [
+      {
+        "playerId": "p1",
+        "card": 47
+      },
+      {
+        "playerId": "p2",
+        "card": 43
+      },
+      {
+        "playerId": "p3",
+        "card": 39
+      }
+    ],
+    "completed": [
+      {
+        "number": 1,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 25
+          },
+          {
+            "playerId": "p3",
+            "card": 20
+          },
+          {
+            "playerId": "p0",
+            "card": 24
+          },
+          {
+            "playerId": "p1",
+            "card": 17
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 2,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 8
+          },
+          {
+            "playerId": "p3",
+            "card": 12
+          },
+          {
+            "playerId": "p0",
+            "card": 11
+          },
+          {
+            "playerId": "p1",
+            "card": 4
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 3,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 10
+          },
+          {
+            "playerId": "p0",
+            "card": 9
+          },
+          {
+            "playerId": "p1",
+            "card": 3
+          },
+          {
+            "playerId": "p2",
+            "card": 7
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 4,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 35
+          },
+          {
+            "playerId": "p0",
+            "card": 34
+          },
+          {
+            "playerId": "p1",
+            "card": 31
+          },
+          {
+            "playerId": "p2",
+            "card": 33
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 5,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 6
+          },
+          {
+            "playerId": "p0",
+            "card": 23
+          },
+          {
+            "playerId": "p1",
+            "card": 0
+          },
+          {
+            "playerId": "p2",
+            "card": 5
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 6,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 19
+          },
+          {
+            "playerId": "p0",
+            "card": 13
+          },
+          {
+            "playerId": "p1",
+            "card": 16
+          },
+          {
+            "playerId": "p2",
+            "card": 21
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 7,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 15
+          },
+          {
+            "playerId": "p3",
+            "card": 18
+          },
+          {
+            "playerId": "p0",
+            "card": 22
+          },
+          {
+            "playerId": "p1",
+            "card": 38
+          }
+        ],
+        "winner": "p0"
+      },
+      {
+        "number": 8,
+        "cards": [
+          {
+            "playerId": "p0",
+            "card": 29
+          },
+          {
+            "playerId": "p1",
+            "card": 26
+          },
+          {
+            "playerId": "p2",
+            "card": 27
+          },
+          {
+            "playerId": "p3",
+            "card": 2
+          }
+        ],
+        "winner": "p0"
+      },
+      {
+        "number": 9,
+        "cards": [
+          {
+            "playerId": "p0",
+            "card": 30
+          },
+          {
+            "playerId": "p1",
+            "card": 37
+          },
+          {
+            "playerId": "p2",
+            "card": 28
+          },
+          {
+            "playerId": "p3",
+            "card": 1
+          }
+        ],
+        "winner": "p1"
+      },
+      {
+        "number": 10,
+        "cards": [
+          {
+            "playerId": "p1",
+            "card": 36
+          },
+          {
+            "playerId": "p2",
+            "card": 51
+          },
+          {
+            "playerId": "p3",
+            "card": 49
+          },
+          {
+            "playerId": "p0",
+            "card": 32
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 11,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 44
+          },
+          {
+            "playerId": "p3",
+            "card": 42
+          },
+          {
+            "playerId": "p0",
+            "card": 41
+          },
+          {
+            "playerId": "p1",
+            "card": 45
+          }
+        ],
+        "winner": "p1"
+      }
+    ],
+    "broken": true,
+    "forcedLead": null,
+    "exchangePlan": [],
+    "exchangeStep": 0,
+    "report": null,
+    "history": [],
+    "doneReason": null,
+    "rng": {
+      "seed": 377,
+      "step": 52
+    },
+    "phase": {
+      "id": "play",
+      "startedAt": 88051,
+      "deadline": null
+    }
+  },
+  "publicOwnView": {
+    "gameId": "spades",
+    "phaseId": "play",
+    "deadline": null,
+    "paused": false,
+    "players": [
+      {
+        "id": "p0",
+        "name": "Player 1",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true,
+        "score": 0,
+        "status": "active"
+      },
+      {
+        "id": "p1",
+        "name": "Player 2",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true,
+        "score": 0,
+        "status": "waiting"
+      },
+      {
+        "id": "p2",
+        "name": "Player 3",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true,
+        "score": 0,
+        "status": "waiting"
+      },
+      {
+        "id": "p3",
+        "name": "Player 4",
+        "avatarId": "🙂",
+        "connected": true,
+        "bot": true,
+        "score": 0,
+        "status": "waiting"
+      }
+    ],
+    "mode": "partnership",
+    "handNumber": 1,
+    "trickNumber": 12,
+    "tricksPerHand": 13,
+    "dealer": "p1",
+    "turn": "p0",
+    "sides": [
+      {
+        "ids": [
+          "p0",
+          "p2"
+        ],
+        "score": 0,
+        "bags": 0
+      },
+      {
+        "ids": [
+          "p1",
+          "p3"
+        ],
+        "score": 0,
+        "bags": 0
+      }
+    ],
+    "bids": {
+      "p2": {
+        "kind": "number",
+        "value": 6
+      },
+      "p3": {
+        "kind": "number",
+        "value": 2
+      },
+      "p0": {
+        "kind": "nil",
+        "value": 0
+      },
+      "p1": {
+        "kind": "number",
+        "value": 3
+      }
+    },
+    "won": {
+      "p0": 2,
+      "p1": 2,
+      "p2": 3,
+      "p3": 4
+    },
+    "handCounts": {
+      "p0": 2,
+      "p1": 1,
+      "p2": 1,
+      "p3": 1
+    },
+    "trick": [
+      {
+        "playerId": "p1",
+        "card": 47
+      },
+      {
+        "playerId": "p2",
+        "card": 43
+      },
+      {
+        "playerId": "p3",
+        "card": 39
+      }
+    ],
+    "completed": [
+      {
+        "number": 1,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 25
+          },
+          {
+            "playerId": "p3",
+            "card": 20
+          },
+          {
+            "playerId": "p0",
+            "card": 24
+          },
+          {
+            "playerId": "p1",
+            "card": 17
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 2,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 8
+          },
+          {
+            "playerId": "p3",
+            "card": 12
+          },
+          {
+            "playerId": "p0",
+            "card": 11
+          },
+          {
+            "playerId": "p1",
+            "card": 4
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 3,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 10
+          },
+          {
+            "playerId": "p0",
+            "card": 9
+          },
+          {
+            "playerId": "p1",
+            "card": 3
+          },
+          {
+            "playerId": "p2",
+            "card": 7
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 4,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 35
+          },
+          {
+            "playerId": "p0",
+            "card": 34
+          },
+          {
+            "playerId": "p1",
+            "card": 31
+          },
+          {
+            "playerId": "p2",
+            "card": 33
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 5,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 6
+          },
+          {
+            "playerId": "p0",
+            "card": 23
+          },
+          {
+            "playerId": "p1",
+            "card": 0
+          },
+          {
+            "playerId": "p2",
+            "card": 5
+          }
+        ],
+        "winner": "p3"
+      },
+      {
+        "number": 6,
+        "cards": [
+          {
+            "playerId": "p3",
+            "card": 19
+          },
+          {
+            "playerId": "p0",
+            "card": 13
+          },
+          {
+            "playerId": "p1",
+            "card": 16
+          },
+          {
+            "playerId": "p2",
+            "card": 21
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 7,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 15
+          },
+          {
+            "playerId": "p3",
+            "card": 18
+          },
+          {
+            "playerId": "p0",
+            "card": 22
+          },
+          {
+            "playerId": "p1",
+            "card": 38
+          }
+        ],
+        "winner": "p0"
+      },
+      {
+        "number": 8,
+        "cards": [
+          {
+            "playerId": "p0",
+            "card": 29
+          },
+          {
+            "playerId": "p1",
+            "card": 26
+          },
+          {
+            "playerId": "p2",
+            "card": 27
+          },
+          {
+            "playerId": "p3",
+            "card": 2
+          }
+        ],
+        "winner": "p0"
+      },
+      {
+        "number": 9,
+        "cards": [
+          {
+            "playerId": "p0",
+            "card": 30
+          },
+          {
+            "playerId": "p1",
+            "card": 37
+          },
+          {
+            "playerId": "p2",
+            "card": 28
+          },
+          {
+            "playerId": "p3",
+            "card": 1
+          }
+        ],
+        "winner": "p1"
+      },
+      {
+        "number": 10,
+        "cards": [
+          {
+            "playerId": "p1",
+            "card": 36
+          },
+          {
+            "playerId": "p2",
+            "card": 51
+          },
+          {
+            "playerId": "p3",
+            "card": 49
+          },
+          {
+            "playerId": "p0",
+            "card": 32
+          }
+        ],
+        "winner": "p2"
+      },
+      {
+        "number": 11,
+        "cards": [
+          {
+            "playerId": "p2",
+            "card": 44
+          },
+          {
+            "playerId": "p3",
+            "card": 42
+          },
+          {
+            "playerId": "p0",
+            "card": 41
+          },
+          {
+            "playerId": "p1",
+            "card": 45
+          }
+        ],
+        "winner": "p1"
+      }
+    ],
+    "broken": true,
+    "forcedLead": null,
+    "exchange": null,
+    "report": null,
+    "target": 500,
+    "nilValue": 100,
+    "doneReason": null,
+    "settings": {
+      "mode": "partnership",
+      "blind": false,
+      "blindGap": 100,
+      "exchange": false,
+      "nilValue": 100,
+      "failedNilCounts": true,
+      "mercy": true,
+      "cutDeck": "low-club",
+      "cutLead": "dealer"
+    },
+    "me": {
+      "id": "p0",
+      "role": "player"
+    },
+    "hand": [
+      46,
+      48
+    ],
+    "legal": [
+      46,
+      48
+    ],
+    "inputType": "play",
+    "blindEligible": false,
+    "partner": "p2"
+  },
+  "originalChoice": {
+    "type": "play",
+    "card": 46
+  },
+  "legalCounterfactualChoice": {
+    "type": "play",
+    "card": 48
+  },
+  "original": {
+    "report": {
+      "hand": 1,
+      "bids": {
+        "p2": {
+          "kind": "number",
+          "value": 6
+        },
+        "p3": {
+          "kind": "number",
+          "value": 2
+        },
+        "p0": {
+          "kind": "nil",
+          "value": 0
+        },
+        "p1": {
+          "kind": "number",
+          "value": 3
+        }
+      },
+      "won": {
+        "p0": 2,
+        "p1": 4,
+        "p2": 3,
+        "p3": 4
+      },
+      "sides": [
+        {
+          "bid": 6,
+          "won": 5,
+          "contractTricks": 5,
+          "contract": -60,
+          "nil": -100,
+          "newBags": 0,
+          "penalty": 0,
+          "score": -160,
+          "bags": 0
+        },
+        {
+          "bid": 5,
+          "won": 8,
+          "contractTricks": 8,
+          "contract": 50,
+          "nil": 0,
+          "newBags": 3,
+          "penalty": 0,
+          "score": 53,
+          "bags": 3
+        }
+      ],
+      "before": [
+        0,
+        0
+      ]
+    },
+    "trace": [
+      {
+        "type": "input",
+        "playerId": "p0",
+        "input": {
+          "type": "play",
+          "card": 46
+        },
+        "now": 88052
+      },
+      {
+        "type": "timer",
+        "phaseId": "trick",
+        "startedAt": 88052,
+        "now": 96052
+      },
+      {
+        "type": "input",
+        "playerId": "p1",
+        "input": {
+          "type": "play",
+          "card": 50
+        },
+        "now": 96053
+      },
+      {
+        "type": "input",
+        "playerId": "p2",
+        "input": {
+          "type": "play",
+          "card": 40
+        },
+        "now": 96054
+      },
+      {
+        "type": "input",
+        "playerId": "p3",
+        "input": {
+          "type": "play",
+          "card": 14
+        },
+        "now": 96055
+      },
+      {
+        "type": "input",
+        "playerId": "p0",
+        "input": {
+          "type": "play",
+          "card": 48
+        },
+        "now": 96056
+      },
+      {
+        "type": "timer",
+        "phaseId": "trick",
+        "startedAt": 96056,
+        "now": 104056
+      }
+    ]
+  },
+  "counterfactual": {
+    "report": {
+      "hand": 1,
+      "bids": {
+        "p2": {
+          "kind": "number",
+          "value": 6
+        },
+        "p3": {
+          "kind": "number",
+          "value": 2
+        },
+        "p0": {
+          "kind": "nil",
+          "value": 0
+        },
+        "p1": {
+          "kind": "number",
+          "value": 3
+        }
+      },
+      "won": {
+        "p0": 3,
+        "p1": 3,
+        "p2": 3,
+        "p3": 4
+      },
+      "sides": [
+        {
+          "bid": 6,
+          "won": 6,
+          "contractTricks": 6,
+          "contract": 60,
+          "nil": -100,
+          "newBags": 0,
+          "penalty": 0,
+          "score": -40,
+          "bags": 0
+        },
+        {
+          "bid": 5,
+          "won": 7,
+          "contractTricks": 7,
+          "contract": 50,
+          "nil": 0,
+          "newBags": 2,
+          "penalty": 0,
+          "score": 52,
+          "bags": 2
+        }
+      ],
+      "before": [
+        0,
+        0
+      ]
+    },
+    "trace": [
+      {
+        "type": "input",
+        "playerId": "p0",
+        "input": {
+          "type": "play",
+          "card": 48
+        },
+        "now": 88052
+      },
+      {
+        "type": "timer",
+        "phaseId": "trick",
+        "startedAt": 88052,
+        "now": 96052
+      },
+      {
+        "type": "input",
+        "playerId": "p0",
+        "input": {
+          "type": "play",
+          "card": 46
+        },
+        "now": 96053
+      },
+      {
+        "type": "input",
+        "playerId": "p1",
+        "input": {
+          "type": "play",
+          "card": 50
+        },
+        "now": 96054
+      },
+      {
+        "type": "input",
+        "playerId": "p2",
+        "input": {
+          "type": "play",
+          "card": 40
+        },
+        "now": 96055
+      },
+      {
+        "type": "input",
+        "playerId": "p3",
+        "input": {
+          "type": "play",
+          "card": 14
+        },
+        "now": 96056
+      },
+      {
+        "type": "timer",
+        "phaseId": "trick",
+        "startedAt": 96056,
+        "now": 104056
+      }
+    ]
+  },
+  "side": 0,
+  "gain": 120
+}
