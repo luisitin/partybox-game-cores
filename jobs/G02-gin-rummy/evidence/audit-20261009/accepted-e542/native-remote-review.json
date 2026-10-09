@@ -1,0 +1,115 @@
+{
+  "fullNativeLogReviewed": true,
+  "head": "e5423c811bc24cbed443f0d0e0e65947f67a8fe2",
+  "runId": 37903146148,
+  "jobId": 113730163838,
+  "actualPassedTests": 76,
+  "nativeStringCharacters": 93570,
+  "nativeEntries": 1014,
+  "contracts": [
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 260844,
+      "maxEvents": 612,
+      "replayChecks": 260844,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 285455,
+      "maxEvents": 775,
+      "replayChecks": 285455,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 344241,
+      "maxEvents": 825,
+      "replayChecks": 344241,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 255515,
+      "maxEvents": 755,
+      "replayChecks": 255515,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 268526,
+      "maxEvents": 812,
+      "replayChecks": 268526,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 315689,
+      "maxEvents": 929,
+      "replayChecks": 315689,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    }
+  ],
+  "leagues": [
+    {
+      "stronger": "sharp",
+      "weaker": "normal",
+      "games": 2000,
+      "wins": 1166,
+      "losses": 834,
+      "ties": 0,
+      "winRate": 0.583,
+      "wilsonLower": 0.5612515833637743,
+      "events": 524604,
+      "pairedSeeds": true
+    },
+    {
+      "stronger": "normal",
+      "weaker": "easy",
+      "games": 2000,
+      "wins": 1743,
+      "losses": 257,
+      "ties": 0,
+      "winRate": 0.8715,
+      "wilsonLower": 0.8561180625080238,
+      "events": 490034,
+      "pairedSeeds": true
+    }
+  ],
+  "integrity": {
+    "suite": "integrity",
+    "fileHashes": 1067,
+    "regenerationRuns": 2,
+    "byteIdentical": true,
+    "coreNoIo": true,
+    "mediaUnder10MB": true
+  },
+  "all26CompiledMutantsCaught": true,
+  "entireOfficialArtifactAndGitBlobAcceptanceStillPending": true,
+  "localChildrenStarted": 0,
+  "reviewDuringRootQuietUsesRemoteMetadataOnly": true
+}

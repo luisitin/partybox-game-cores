@@ -7,8 +7,7 @@ Gin, Big Gin, undercut, match/box bonuses and three bot skills are included.
 
 Open **play.html** directly from disk: no server, build or network needed.
 Two humans or bots play; three/four seats rotate through two active hands.
-Cover private hands between turns. The bot move button lets players set pace.
-Scoring and optional clock settings are shown before dealing.
+Cover private hands between turns. Bot move lets players set the pace.
 
 Development/checks, Node22.16+ from this folder:
 
@@ -16,38 +15,26 @@ Development/checks, Node22.16+ from this folder:
     npx playwright install --with-deps chromium
     npm test
 
-`npm run build` strictly type-checks and regenerates the self-contained page.
-`npm run fixtures` regenerates every phase fixture and the manifest.
-`npm run league` runs2000 games per adjacent bot-skill pairing.
-`src/core.ts` exports `game`; `src/cards.ts` contains exact scoring solvers.
-Zod is the only allowed runtime dependency and is inlined in the offline page.
+npm run build strictly type-checks and regenerates the self-contained page.
+npm run fixtures regenerates every phase fixture and manifest.
+npm run league runs2000 games per adjacent bot-skill pairing.
+src/core.ts exports game; src/cards.ts contains exact scoring solvers.
+Zod is the sole allowed runtime dependency, inlined with its MIT notice.
 
-RULES/SOURCES/CONFLICTS record read sources and deliberate variants.
-VERIFY records commands/coverage, BOTS measured win rates, LOOP improvement
-rounds, NEXT resume steps. SHA256SUMS covers every delivered data/media file.
-No external art, trackers, hidden-card strategy access or runtime requests.
+RULES/SOURCES/CONFLICTS document researched rules and deliberate variants.
+VERIFY/BOTS/LOOP/NEXT record checks, measured strategy and resume steps.
+SHA256SUMS covers every delivered file; no trackers or runtime network.
 
-Prior accepted e90/full run37891506020 passes67 tests,6k full replays,
-Strong1166/2000 and Medium1743/2000,26 mutants,646 hashes/two regenerations,
-original35 native1200 intervals and two fully decoded recordings.
-Its whole official11597719471 and log are retained in accepted-e90ca4e/.
+Accepted e542/run37903146148: all76 tests,6k exact every-event replays,
+Strong1166/2000 andMedium1743/2000,26 actual mutations,1067 hashes/two gens,
+current35 sources/1200 intervals/two full decoded recordings pass.
+Whole official packet: evidence/audit-20261009/accepted-e542/.
 
-Next Strong finishing repair compares equal live layoff targets, ignoring
-only groups blocked by its own11 cards. Representative loss14→win1;
-1152 settings/1000 oracle defenders/120 controls pass. Current full checks
-and fresh source-bound evidence remain pending; both PRs Draft/streak0.
-
-[Evidence](evidence/resume-20261008/INDEX.md) retains original failures.
-Original frame/clock/gate limits stay intact; CPU4 Chromium evidence
-does not establish physical-phone or PartyBox SDK integration.
-
-
-Current KEEP16 saved-only proof naturally CLOSED06:48:39.211708Z EXIT0/PASS, all1652 actual frozen inputs unchanged. Strict current35 projection,14 original proof tests/175 corruption controls and original integrity736 hashes/32 links/two deterministic fixture generations all pass. The genuine first93 original60-member ZIP/full raw35/source copies/native failure and functional clips remain immutable; only labelled5 source dictionaries/two byte-identical media paths are derived and request disabled in this SAME proof checkpoint. Final receipt files are added to the regenerated delivery manifest; subsequent exact-head full original hosted npm test and its whole official artifact remain REQUIRED. BothPRs Draft, KEEP16 player gain/streak0; no local sampler.
-
-
-KEEP17 material public-discard closure repair after genuine e228 whole full original acceptance. Before3 tests1 PASS/2 FAIL; after3 PASS1152 settings/1000 same-public-view independent defenses/168 controls/all10 guards unchanged. Actual representative -10→+1 (+11), boundary maximum52. Only Strong already-finishing positive knocks additionally exclude currently public discard cards from possible layoff starters; no hidden information or global layout policy. Current original complete matrix/leagues/26 mutants/new first35 capture/full hosted acceptance PENDING. Read KEEP-5-VISIBLE-DISCARDS.md and public-discard-knock-current/; accepted-e228d52/ retains the entire genuine previous full packet and first private expectation error. Matching finite reason added to the sole workflow; original full verify and every other byte unchanged. BothPRs Draft, KEEP17 player gain/streak0.
-
-
-KEEP17 saved-only proof naturally CLOSED07:22:07.946143Z EXIT0/PASS, all1759 frozen inputs unchanged. Strict current35 projection,14 original proof tests/175 corruptions, original integrity843 hashes/32 links/two deterministic fixture generations pass. Whole original current35/raw/native/60-member packet and two full clips remain immutable; only labelled5 dictionary/media-path compatibility is derived, request disabled in this SAME proof checkpoint. Final receipt files enter the regenerated manifest; subsequent exact-head full original hosted73-test npm test/whole official artifact remain REQUIRED before next KEEP review. PR12/PR2 Draft, KEEP17 player gain/streak0. No local native sampler.
-
-KEEP18 strict-subset finishing evidence: evidence/audit-20261009/KEEP-6-SUBSET-TARGETS.md; current full hosted acceptance pending.
+Finishing subset repair reproduces loss10→win4. Draw-boundary controls
+preserve public-information strategy when hidden stock outcomes differ:
+576 paired views/1152 choices and one actual compiled mutant pass.
+Evidence: evidence/audit-20261009/KEEP-7-DRAW-BOUNDARY.md.
+Production unchanged; KEEP19 no-player-gain streak1, both PRs Draft.
+Subsequent exact-head full77-test hosted acceptance remains required.
+CPU4 Chromium evidence does not establish physical-phone/SDK integration.
+Prior genuine failures remain in the historical evidence.

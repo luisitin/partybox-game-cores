@@ -148,3 +148,6 @@ KEEP18 current finite follow-through: exact1478 source run37901344277/verify1137
 
 
 KEEP18 saved-only proof naturally CLOSED08:03:14.045314Z EXIT0/PASS, all1978 frozen inputs unchanged. Strict current35 projection,14 original proof tests/175 corruptions, original integrity1059 hashes/32 local links/two deterministic fixture generations PASS. Whole original first35/raw/native/60-member packet and both full clips remain immutable; only labelled5 dictionary/media-path compatibility is derived, matching bootstrap request disabled in SAME proof checkpoint. Final receipt files enter the regenerated delivery manifest; subsequent exact-head full original hosted76-test npm test/whole official artifact remain REQUIRED before next KEEP review. PR12/PR2 Draft, KEEP18 player gain/streak0. No local native sampler.
+
+
+KEEP19: A proof comparing final knock outcomes does not determine expected value of a future hidden stock draw. Keep Strong public-information draw policy while preserving both actual hidden-stock counterexamples and tests. The same view may yield different realized results; this is not hidden-card strategy access or a universal expected-value claim. First probe's stock endpoint mistake and first helper's dependency path failure are recorded as failures, not passes.
