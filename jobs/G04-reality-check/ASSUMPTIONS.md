@@ -161,3 +161,19 @@ The failed extraharness assumption is neither gamebug nor no-gain. Its raw faile
 midgame memory was notsaved; onlyactual3 prior games/source/error retained. v2
 flushes everyevent. No replay/clock/phase contract changed to hide the failure.
 Prior0ad EARLYmiss105.733498s is explicit;hard30PASS. No forged earlierpush.
+
+## KEEP3 raw codepoints versus normalized UTF16 storage
+Actual pinned Zod4.6.5 checks.ts explicitly counts raw Unicode codepoints for string
+min/max; earlier statements equating raw socket max160 with UTF16 were incorrect.
+The reducer's existing normalized text.length<=160 and UI maxlength160 are UTF16,
+so a raw160-codepoint/320-unit emoji write can validate yet remains refused before
+storage. The catalog's normalized bluff truth uses the same writable bound.
+The first new test failure and original prose are preserved, not relabeled PASS.
+Correct only the independent length oracle; no raw admission rule, product, state
+cap, clock, sampler or original10k oracle is altered. Whole supplementary-plane
+catalog fields may contain up to two UTF16 units per raw codepoint; new actual
+maximum controls cover that admitted space, not only the earlier BMP maxima.
+C0 binary catalog controls refuse; tabs/LF/CR and C1 retain their actual original
+admission. No invented all-control rejection claim. Paired Unicode remains valid.
+Supplemental round qualification is separate from immutable generic receiver
+fields; current completed2/no-gain1, KEEP3 prospective second until new full.

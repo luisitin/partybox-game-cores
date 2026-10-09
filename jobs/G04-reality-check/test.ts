@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRng} from '../../contract/rng.ts';
 import {manifestSchema} from './preflight.ts';
-import {sampleRows,makeSamples,catalogSchema,realms} from './samples.ts';
+import {sampleRows,makeSamples,catalogSchema,rowSchema,realms} from './samples.ts';
 import {numberScore,quickScore,normalize} from './scoring.ts';
 import {numberMidpoint,initialEstimate} from './estimates.ts';
 import {replaySeeds,replaySamplerSeed} from './verification-seeds.ts';
@@ -219,6 +219,38 @@ test('Unicode duplicate groups and long casefold keys match independent author c
    assert(Buffer.byteLength(JSON.stringify(s))<=256*1024);s=C.reduce(s,timer(s));
   }
   assert.equal(s.phase.id,'done');assert.equal(rounds,4);assert.deepEqual(C.results(s)!.scores,totals);
+ }
+});
+test('UTF16 write and catalog admission match an independent code unit decoder',()=>{
+ const decode=(text:string)=>{
+  let points=0;
+  for(let i=0;i<text.length;i++){
+   const unit=text.charCodeAt(i);
+   if(unit>=0xd800&&unit<=0xdbff){const next=text.charCodeAt(++i);if(!(next>=0xdc00&&next<=0xdfff))return null;}
+   else if(unit>=0xdc00&&unit<=0xdfff)return null;
+   points++;
+  }
+  return points;
+ };
+ const check=(text:string)=>{const points=decode(text);assert.equal(C.inputSchema.safeParse({type:'write',text}).success,points!==null&&points>0&&points<=160);};
+ for(let unit=0;unit<65536;unit++)check('A'+String.fromCharCode(unit));
+ for(let i=0;i<1024;i++){
+  const high=0xd800+i,low=0xdc00+((i*37)&1023),pair=String.fromCharCode(high,low);
+  for(const text of ['A'+pair,'A'+pair+String.fromCharCode(high),'A'+String.fromCharCode(high,high,low),'A'+String.fromCharCode(low,high,low),'A'+pair+pair,'A'+String.fromCharCode(low)])check(text);
+ }
+ for(const text of ['', 'x'.repeat(158)+'🧭','x'.repeat(159)+'🧭'])check(text);
+ const writing=toPhase('write',91,{mode:'bluff'});
+ for(const text of ['x'.repeat(159)+'🧭','🧭'.repeat(160)]){
+  assert(C.inputSchema.safeParse({type:'write',text}).success,'pinned Zod counts raw Unicode code points');
+  assert.equal(input(writing,'p0',{type:'write',text}),writing,'normalized stored UTF16 bound remains enforced');
+ }
+ for(const text of ['x'.repeat(158)+'🧭','🧭'.repeat(80)])assert.equal(input(writing,'p0',{type:'write',text}).responses.p0,text);
+ const controls=[...Array.from({length:32},(_,i)=>i),127,...Array.from({length:32},(_,i)=>128+i)];
+ for(const unit of controls)for(const field of ['id','prompt','hint','fact','correct','left','right']){
+  const example=sampleRows.find(row=>row.kind===(field==='left'||field==='right'?'choice':'bluff'))!;
+  const row={...example,[field]:'Visible '+String.fromCharCode(unit)};
+  const allowed=unit>31&&unit!==127||unit===9||unit===10||unit===13;
+  assert.equal(rowSchema.safeParse(row).success,allowed);
  }
 });
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{

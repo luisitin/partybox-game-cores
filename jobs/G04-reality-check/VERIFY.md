@@ -693,3 +693,30 @@ peak444301312B<512MiB60sphasebound.42benign3395states+10000matchingcases equal.
 Exact0ad full57test/25mutant/originalwholeofficial reader all1034/3000/5clips
 accepted11:59:05.436258; qualifiesKEEP1, historical for newtest source. No local
 nativeclock. Currentnewfull remainsrequired beforequalifiedKEEP2 firstno-gain.
+
+## KEEP3 independent text validation and admitted storage maxima
+Complete exact commands/helpers/specs/raw/failures/guards/closure/whole current c30
+in results/keep3-utf16-boundaries-20261009/proof.zip, all full CRC/physical comparisons.
+Node24 finite256MiB180s producer:1120690 saved rows (65536 singles/1048576 paired/
+5120 edges/1003 new seeds/455 catalog cases), zero independent decoder/schema/
+factory discrepancies;2517 actual malformed refusals+retries;210 expected catalog
+refusals.3840 guards unchanged/natural12:20:39.087683Z/peak145997824B/no signals.
+Python strict UTF16 whole gzip EOF1120690 rows PASS12:22:19.475306Z,all6 input
+guards unchanged; wrapper3843 guards/natural12:22:20.402726Z/peak14024704B.
+Gzip10324975B SHA f450abe5087a1fc747a83304b3988f08151b419e993323fb04e79b6381135949.
+Extra permanent test actual35pass/1fail raw161UTF16-unit/160-codepoint assumption;
+original failed test/Zod4.6.5 checks.ts/source/log retained. Independent3839 guards
+all equal12:24:20.215253Z; generic failed-wrapper booleans do not show mutations.
+Correct only raw length oracle to pinned codepoints; storage limit still160 units.
+Initial independent-wrapper existing-directory allocation failed before any child,
+original helper/tool output preserved; corrected output path only.
+Distinct Node finite256MiB180s maximum actual admitted 4byte catalogs/3byte fakes:
+9 games108 rounds1560 legal events432 writes/max158015<262144/all independent
+scores/replay exact;24 raw length/14 catalog-boundary controls;all3840 guards,
+natural12:28:13.801737Z/peak87220224B/no signals.
+Corrected Node36 focused/four strict/types/data/2 fixtures/2 builds/freshness/
+checksums/42 benign3395states+10000 matching cases PASS12:29:02.179987Z;
+3839 unchanged inputs/no output changes/peak431558656B<512MiB60s phasebound.
+Original current c30 complete58test/25mutants/genuine full1433337B official accepted
+12:16:38.815738Z, unchanged reader all1034/3000 intervals/66controls/five VP8 clips.
+Current new test source requires original full again. No local browser/frameclock.
