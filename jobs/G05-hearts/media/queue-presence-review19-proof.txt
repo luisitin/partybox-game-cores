@@ -1,0 +1,24 @@
+G05 review19 and genuine original8b qualification.
+{
+  "preparedUtc": "2026-10-09T12:11:48.187063+00:00",
+  "testedHead": "8b21cfcd53a19cf54db6e548cbdd6c1208b14d33",
+  "review": 19,
+  "sourceFilesChanged": false,
+  "archiveBytes": 2162628,
+  "archiveSha256": "8cdebb4cbf51c41c2a6f8a79959d16303310dd20b3591b434006e84915c1ee0f",
+  "archiveEntries": 70,
+  "actualFirstPrVideoBytes": 138541,
+  "actualFirstPrVideoSha256": "72192c153a13f164706835f11653c35e756207ed4c99234cee4bedfb8845d1ff",
+  "newCaptureOrPerformanceRun": false,
+  "reviewAssertions": 563905,
+  "noPlayerGainStreak": 1
+}
+
+The webm is copied byte-for-byte from the FIRST official PR37926638979 ZIP.
+Its native capture started11:57:28.868Z; this is immutable hosted footage,
+not a later or repeated sampler. Both complete official ZIPs and native logs
+are enclosed. Readers and all gates are unchanged.
+Review19 is the8352-case pure-core held-clock/drop/rejoin/timer audit.
+No new player defect, implementation change or performance claim.
+The publication that carries this evidence still needs its own current
+original whole workflow before Ready; protected Ready5/15 are separate.

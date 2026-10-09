@@ -124,3 +124,48 @@ PR events only; native actions/runs query identified the already-successful
 b0 push37885148039. No unchanged retry was triggered. Original full source
 and native evidence are preserved. Post-green64-config audit records its exact
 selected correlated settings and an honest emitted phase-count erratum.
+
+
+## 2026-10-09 missing-seat queue audit
+Ready status does not remove lawful6h eligibility. Preserve both Ready sources.
+Disconnected InitContext seats use existing deterministic ordinary drop policy.
+The standalone table initializes all seats connected; no frequency/startup FPS
+claim follows from these core counterexamples. Passing may cross into play,
+requiring at most N-1 absent passes plus N-1 absent opening turns. Keep empty
+rooms/pacing/pause policy unchanged. Original regressions genuinely fail.
+Init-only candidate5PASS/1FAIL and the first outer spec-vs-TAP reader error
+remain immutable; a separate same-native-log correction clarifies the latter.
+Orchestration quoting failures happened before child launch; no source gain.
+Only exact new hosted whole proof can qualify this repair.
+
+First source publication scope guard rejected untracked dependency-link staging
+and unstaged branch CLAIMS restoration before any remote push. A normal correction
+removes the local pointer and restores audit-base CLAIMS in the branch; main stays
+untouched. First hard11:43:57.150035Z was actually missed; no backdating.
+
+Review19 follows genuine whole8b PR acceptance and is a separate formal
+log-and-push round. It measures core JSON host persistence and clock handling.
+Standalone parseSave intentionally refuses disconnected rosters, so no broader
+Resume compatibility is claimed. All selected presence masks are enumerated
+within the declared24 settings and3 times, with one seeded deal per context.
+First publication11:49:04.531056 genuinely missed hard11:43:57.150035 by
+307.381021s after public-history object recovery; do not backdate delivery.
+The accepted8b first hosted video is retained byte-identically for this evidence
+milestone. Native sampler, original gates and player behavior are unchanged.
+
+Review20 is a separate formal round begun only after review19 was actually
+pushed. It intentionally finishes one genuine first hand per declared context,
+then performs VIP end at the scored hand for done/repeated-end checks. It does
+not claim an ordinary full-match victory audit. Disconnected core JSON hosts
+remain supported independently of the standalone fully-connected save parser.
+All clocks are supplied reducer data; no native browser timing is rerun.
+
+Final review21 is a separate formal round after real review20 publication.
+Initial sole connected anchor is intentional; subsequent roster schedules
+exercise genuine temporary/permanent departures and paused reconnects.
+Both wrong private oracle expectations are preserved, corrected separately
+and count as neither player repairs nor extra successful review rounds.
+Selected right passing has signed-1 representation and physicaln-1 displacement;
+the corrected independent oracle checks circular recipients for every seat.
+After this final handoff qualifies under the whole unchanged original workflow,
+only PR metadata/Ready changes; do not append cosmetic source acceptance notes.

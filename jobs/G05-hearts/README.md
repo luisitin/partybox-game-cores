@@ -41,9 +41,16 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-The current audit corrects corrupt-save recovery before Resume opens a stuck game.
+The prior audit corrects corrupt-save recovery before Resume opens a stuck game.
 Valid partial tricks still restore with private cards concealed. Actual24 local
 tests/600 valid saves and TV/phone recovery proof passed. Both corrected-source
 full hosted checks and genuine artifacts passed. Three further audits found no
 new player gain. Original PR5 remains Ready separately.
 See NEXT.md and media/audit-20261009-proof.zip for exact scope and retained errors.
+
+
+The new queue audit prevents disconnected opening seats and the transition
+from missing-player passes to play from blocking a nonempty table. Seven new
+checks and all46 original/current node tests pass. Both original8b full hosted
+runs and first genuine artifacts pass. Separate reviews19–21 found no further
+player defect; final current workflow remains required. Protected Ready5/15 separate.

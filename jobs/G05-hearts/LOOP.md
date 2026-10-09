@@ -41,3 +41,22 @@ run three real consecutive substantive no-gain audits before stopping.
 15 | Audit64 declared selected configurations through64 complete matches and12463 valid snapshots acrossall five phases/3–6 counts/moon/Jack/passing/timed options. No new save failure/product change/player gain; streak1. Three-deck and queen switches correlate with noPass/Jack; not an exhaustive Cartesian claim.
 16 | Resume288 genuine observed phase states; exact final scores/history/results match uninterrupted games.32 passing configurations have5 phases,32 no-pass have4; original emitted field5 corrected by preserved erratum. No product change/player gain; streak2.
 17 | Recovered TV/controller privacy and mutable-view isolation:2592 hidden-hand ordering comparisons/1296 controller mutation checks PASS for288 restored states. No product change/player gain; streak3. Whole native audit CLOSED05:06:23.754378Z/EXIT0/1016 frozen inputs unchanged; no browser/FPS rerun.
+
+
+18 | PRE-ACCEPTANCE missing-seat gain. Reread root/job binding instructions,
+contract,research and existing loops. Ranked: absent untimed opening seat;
+missing-pass→play takeover bound; paused reconnect/empty persistence;
+hidden-hand/bot boundaries; save/initial consistency. Worst blocked-turn
+family genuinely fails original twice. Init-only candidate5PASS/1FAIL retained.
+Adopt only initial ordinary takeover and finiteN→2N bound. New7 tests PASS,
+34560 starts/9216 targets/1003 seeded/77640 bot privacy checks/144 whole
+one-connected human games. All46 original/current tests also PASS.
+New full hosted/genuine ZIP pending; provisional gain only/streak not reset.
+Protected15–17 no-gain3 stays historical.
+
+18 acceptance | Actual8b original full push37926068472 and PR37926638979 SUCCESS; both first official whole ZIPs/137 unchanged-reader assertions/78 entire-native assertions/46 tests/25 kills/required full corpus/current browser proof PASS, all178 inputs unchanged; adopted two missing-seat stalls, renewed no-gain streak0. First publication really missed its hard bound307.381021s; no retrocredit.
+19 | Reread job and rank five: held-clock/drop/rejoin; partial ledgers/save boundaries; next-hand score/pass lifecycle; private/mutable views; truthful delivery/sampler scope. Measure worst over8352 declared nonempty3–6-seat contexts:563905 assertions/22752 paused drops/16704 stale timers/8352 legal inputs/56160 deterministic JSON comparisons PASS;187 inputs frozen, CLOSED12:09:09.620684Z. No newly found player defect or implementation change; no-player-gain streak1. Full unchanged first8b hosted clip retained byte-identically, no new native timing. Log/proof pushed before beginning next review.
+
+20 | AFTER separate8674 publication, reread and rank five: partial takeover-ledger recovery; next-hand lifecycle; private/mutable views; fully connected old/current equivalence; truthful delivery/sampler scope. Worst5568 declared reconnect/save settings:1404624 assertions/58560 snapshots/all five phases/23904 partial tricks/14304 reconnects/52992 resumed real inputs/5376 deliberate unsupported absent-roster rejections PASS;190 inputs unchanged, CLOSED12:18:44.445408Z. No new player defect/parser/runtime change; no-player-gain streak2. One first hand per setting, deliberate scored-hand VIP end; no full-match win-rate or browser timing claim. Log/proof pushed before beginning review21.
+
+21 | AFTER separatea851 publication, reread/rank five: whole roster-event lifecycle; hidden-card/mutable views; unaffected byte equivalence; truthful final source qualification; declared bot/sampler model limits. First paused-input and signed-offset private oracle failures retained; corrected physical-recipient/blocked-paused checks complete2592 ordinary matches/18496018 assertions/1058929 actual player inputs/23499 independent scored hands/104364 hidden-card view checks/234819 all-skill information checks/26091 mutable views PASS;192 unchanged inputs,CLOSED2026-10-09T12:31:33.774484+00:00. Zero administrative skip/end. No new player defect/runtime/gate change; renewed no-player-gain streak3. Log/final handoff pushed separately; require own final whole original acceptance then stop source churn.

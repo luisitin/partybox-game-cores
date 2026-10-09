@@ -1,6 +1,6 @@
 # Verification record
 
-Current verification scope is 37 node tests, 25 assertion-killed compiled
+Historical canonical verification scope is 37 node tests, 25 assertion-killed compiled
 mutants, 10,000 independent comparisons, 1,003 property seeds, 1,000 complete
 bot games at each 3–6-player count and two 2,000-game strength leagues.
 All 1,200 native intervals, 20 functional flags, 30 immutable inputs, clip
@@ -687,3 +687,140 @@ Queen/deck assignments correlate with Jack/noPass; no exhaustive combinations
 or physical-phone/performance gain is claimed. This is no new frame trial.
 Both public proof ZIPs are CRC-verified; new metadata checkpoint must get its
 own full green workflows/genuine immutable-source proof before PR15 Ready.
+
+
+## 2026-10-09 missing-seat follow-up
+Fresh original033 whole run37887280675/job113680005076/official11596508347:
+936816B ZIP SHA5d3e3abda184b3d01326537c2546e298a1290282dd4c78c14221229ad3083a08.
+Unchanged public verify-ci-artifact.py PASS137/all30 sources/all1200 actual
+intervals/all36 VP9 frames/all15 ZIP CRCs at11:18:39.835023Z,175 frozen inputs.
+Full95079B native logSHA8c9d09c3f7b712ce5cd402498cc4cd3072d65d807f9b745de900d7c372c0bf32.
+This is old-source acceptance; no new browser or timing experiment.
+
+Original opening counterexample genuinely FAIL11:20:53.122573Z/all180 inputs.
+Delivered original first test FAIL p3 instead of p0; first outer reporter
+parsing failure retained and corrected by same-log readback only.
+Original pass transition counterexample closed11:31:34.496631Z/all196 inputs.
+Selected delivered pass regression against actual original compiled copy
+genuinely FAIL1 at11:32:29.771289Z/all17 compiled/test inputs unchanged.
+Init-only candidate FAIL1/PASS5 at11:27:06.907938Z is preserved.
+
+Exact current commands, in jobs/G05-hearts:
+    npm run build
+    node scripts/html.mjs
+PASS strict build/actual inline page at11:32:33.574066Z.
+    node --test --test-reporter=tap tests/initial-presence.test.mjs
+PASS7/7/FAIL0/SKIP0 at11:33:07.807092Z/all179 inputs unchanged.
+34560 starts(all3–6 masks×96 settings×3 supplied times;1152 empty,16141
+takeovers),9216 connected targets,1003 seeds/25880 private-view/77640 all-skill
+hidden-hand checks,144 whole one-connected HUMAN games/10046 real inputs/
+0 administrative skips,24 pause/empty controls. Explicit pass transition
+matches ordinary manual legal player actions. TranscriptSHA
+613b88a49418805fc8c48c15afb138e0a270a50ceabe7799ee87ac678f7b5c7b.
+    node --test --test-reporter=tap --test-concurrency=1 tests/*.test.mjs
+PASS46/46/FAIL0/SKIP0 at11:37:46.113542Z/all166 runtime/test/data/media inputs
+unchanged. Original1003 replay seeds/4x1000 games/10K independent cases/
+600 valid intermediate saves/both2000-game leagues remain satisfied.
+Exact expanded argv/native logs and all failing-before receipts are preserved.
+Original25 mutants/two regenerated hashes/data/research/current functional
+capture and exact new full hosted qualification remain binding and pending.
+
+Milestone20 actual original functional capture naturally CLOSED11:42:01.906399Z,
+623 frozen inputs unchanged/all20 functionals/zero requests/errors/all3–6rosters;
+actual current36-frame VP9 full decode PASS. No frame-rate acceptance.
+All raw before failures/local46 checks/baseline/capture receipts are public in
+media/queue-presence-20261009-proof.zip. Original current hosted full is pending.
+
+First source publication scope guard rejected untracked dependency-link staging
+and unstaged branch CLAIMS restoration before any remote push. A normal correction
+removes the local pointer and restores audit-base CLAIMS in the branch; main stays
+untouched. First hard11:43:57.150035Z was actually missed; no backdating.
+
+## Accepted missing-seat source8b and separate review19
+
+Both original full workflows and FIRST official artifacts are accepted for8b:
+push37926068472/artifact11613433924 and PR37926638979/artifact11614487431.
+Exact full commands: `python3 jobs/G05-hearts/scripts/verify-ci-artifact.py
+--head 8b21cfcd53a19cf54db6e548cbdd6c1208b14d33 --run-id RUN_ID
+--evidence-dir ACTUAL_PACKET_DIRECTORY`; original reader unchanged,137 assertions
+each/all15 CRC entries/current30 sources/full1200 raw intervals/full36 VP9.
+`python3 /tmp/G05-verify-current-whole-native-20261009.py`:78 complete-native
+assertions each,46 actual passing tests/25 real compiled kills/full specified
+corpus/two111-file regenerations. Full raw packets and controller are archived.
+Original `node scripts/mutations.mjs`, `node scripts/check-repro.mjs`,
+`node scripts/check-research.mjs`, `node scripts/check-data.mjs` also genuinely
+PASS locally11:54:07.189712Z/all184 frozen inputs; no child survives.
+
+Review19 exact measured command: `node ABSOLUTE_PROOF_DIRECTORY/probe.mjs`,
+working directory jobs/G05-hearts; the full script/controller/ranking/frozen
+receipts are in media/queue-presence-review19-proof.zip. All nonempty3–6-seat
+masks × noPass × moon × Jack × turnSeconds[0,1,60] × now[0,1000,1e12];
+one deterministic deal per context.8352 cases/563905 assertions PASS.
+Catches paused card movement, lost held duration, old deadline stealing a turn,
+stale instance advancing a new phase, stranded resumed actor, context mutation,
+non-JSON/deterministic or oversized state and lost/duplicated physical cards.
+No exhaustive-all-deals claim. No new player defect/runtime change; streak1.
+The standalone save parser deliberately accepts only the table's fully connected
+p0–p5 roster; this audit uses core JSON host state, not unsupported local Resume.
+
+Source publication failures are preserved in the new proof: accidental local
+dependency-link staging and unstaged CLAIMS restoration were rejected before
+remote delivery; normal corrected8b push then genuinely lacked26 Git objects.
+Public exact history recovery changed that condition; successful actual push
+11:49:04.531056Z missed first hard307.381021s. No authentication failure claim,
+force or injected credential. This evidence publication still needs its own
+original exact-head full workflow; prior accepted8b is explicitly historical.
+
+## Separate formal review20: recovered takeover ledgers
+
+Actual `node ABSOLUTE_REVIEW20_PROOF_DIRECTORY/probe.mjs` from jobs/G05-hearts,
+wrapped by the archived G05-review20-controller-20261009.py, PASS12:18:44.445408Z.
+5568 declared cases/1404624 assertions/58560 observed saved states. Every
+nonempty3–6-seat mask × noPass × moon × Jack × turnSeconds[0,1,60] ×
+target[25,200], one deterministic first hand each.23904 partial-trick
+snapshots and all five actual phases restore exact card/pass/turn/score ledgers.
+14304 ordinary reconnects preserve already-played cards;52992 recovered real
+inputs agree with independent ordinary core pause/resume controls.5376 absent
+local-roster saves intentionally stay rejected; supported fully reconnected
+p0–p5 human tables restore. Export/parser inputs are immutable and independent
+mutable copies. Repeated end after an already-scored hand is harmless.
+No normal full-match/performance/all-seeds claim; the chosen first-hand
+termination plus administrative end is explicit in the native transcript.
+190 actual source/build/probe inputs unchanged; no child remains. Script/ranking/
+raw/native/frozen receipt and prior real publication/current114-data evidence
+are in media/queue-presence-review20-proof.zip. No new player-visible gain.
+This source publication still needs its own whole original workflow.
+
+## Final separate formal review21: ordinary full roster-event matches
+
+Exact actual `node ABSOLUTE_REVIEW21_V3_DIRECTORY/probe.mjs` from
+jobs/G05-hearts, archived G05-review21-v3-controller-20261009.py,
+PASS2026-10-09T12:31:33.774484+00:00/EXIT0/192 actual source/build/probe inputs unchanged.
+2592 full ordinary games/18496018 assertions/1058929 actual inputs.
+Domain:3–6 seats,every anchor seat,noPass,moon,Jack,clocks0/1/60,
+temporary/left/kicked schedule,targets25/100. Initial sole-anchor presence;
+subsequent explicit temporary/permanent/pause/rejoin events are recorded.
+No VIP skip or end. ThreeDeck correlates with moon; queenBreaks with anchor
+seat. No exhaustive-all-presence/seed/setting or expert win-rate claim.
+Every selected passing offset is witnessed; every actual circular recipient
+matches the independent official table. Every completed hand compares the
+existing independent referenceScore and independently accumulates scores
+for all retained seats. All final ranks/ties/whole transcript replays match.
+23499 scored hands/71390 roster events/9671 paused drops/
+1681 permanent departures/1149661 replay events. Different
+hidden-card content swaps yield104364 equal uninformed views/
+234819 all-skill decisions;26091 mutable views cannot corrupt
+the game. Card conservation/schema/size/stale timers/progress hold.
+
+First native probe genuinely FAIL12:27:18.330832: my new oracle wrongly
+expected a legal move while paused. Second genuine FAIL12:28:38.658891:
+my raw displacement table compared2 against the equivalent signed-1.
+Both originals are immutable. Separate v3 requires blocked paused card/pass/
+bot input and compares physical destinations for EVERY seat, then succeeds.
+No original checker, phase policy or acceptance gate was weakened.
+Full scripts/rank/native/stderr/source freezes/actual corrected receipt are in
+media/queue-presence-review21-final-proof.zip. This is one completed review
+after successful correction, not extra rounds or a player repair. No new
+native performance run or changed game implementation. No-player-gain3.
+This final source's whole original workflow and official ZIP remain mandatory
+before Ready; use its exact immutable head, not accepted8b or intermediate refs.
