@@ -40,3 +40,7 @@ First source hard deadline04:44:30.835Z; internal04:39:30.835 target missed.
 Every material milestone push refreshes only G05 on fresh main under its lease.
 Next source deadline derives from actual push closure,25-minute target/30 max.
 Completed means merged; do not merge original PRs or mark completed prematurely.
+
+First material5da44dd normal source push succeeded, observed04:42:09.929Z.
+Root-relative CLAIMS restoration then required a normal follow-up correction;
+first head is historical. Final full checks must use the corrected current head.
