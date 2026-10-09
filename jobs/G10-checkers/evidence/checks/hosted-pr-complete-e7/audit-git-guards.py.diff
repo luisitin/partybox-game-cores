@@ -1,0 +1,41 @@
+--- preserved217/audit-git-guards.py
++++ historical-e7-current071/audit-git-guards.py
+@@ -5,12 +5,12 @@
+ import posixpath
+ import subprocess
+ 
+-HEAD = '21770325250068d5a2fb05a8c31209894ca806d2'
+-base = Path('.work/hosted-217-final')
++HEAD = 'e7a5c6463af2f0033ff08d333fb378ad160c1e43'
++base = Path('.work/hosted-e7-final')
+ started = datetime.now(timezone.utc).isoformat()
+-assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == HEAD
++assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == '0718272a91bfda8749c7e4df25ce22c5c578d7fd'
+ receipt = json.loads((base / 'extracted/.work/checks/stage-node.json').read_text())
+-assert receipt['sourceCommit'] == HEAD and receipt['workflowRunId'] == '37857480233'
++assert receipt['sourceCommit'] == HEAD and receipt['workflowRunId'] == '37860295647'
+ guards = receipt['sourceGuardsAfter']
+ assert receipt['sourceGuardsBefore'] == guards and len(guards) == 349
+ tracked = set(subprocess.check_output(['git', 'ls-tree', '--full-tree', '-r', '--name-only', HEAD], text=True).splitlines())
+@@ -31,11 +31,18 @@
+         assert digest.hexdigest() == expected, relative
+         generated.append(relative)
+ assert len(original) == 206 and len(generated) == 143
+-assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == HEAD
+-result = {'status': 'PASS', 'startedAt': started, 'closedAt': datetime.now(timezone.utc).isoformat(),
++assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == '0718272a91bfda8749c7e4df25ce22c5c578d7fd'
++docs=[]
++for name in ['README.md','VERIFY.md','NEXT.md','LOOP.md','ASSUMPTIONS.md','SHA256SUMS.txt']:
++    path='jobs/G10-checkers/'+name
++    accepted_bytes=subprocess.check_output(['git','cat-file','blob',HEAD+':'+path])
++    current_bytes=subprocess.check_output(['git','cat-file','blob','0718272a91bfda8749c7e4df25ce22c5c578d7fd'+':'+path])
++    assert Path(name).read_bytes()==current_bytes
++    docs.append({'path':path,'acceptedGitSha256':sha256(accepted_bytes).hexdigest(),'currentGitSha256':sha256(current_bytes).hexdigest(),'workingBytesMatchCurrentGit':True,'equalToAccepted':accepted_bytes==current_bytes})
++result = {'currentCheckoutPreserved':'0718272a91bfda8749c7e4df25ce22c5c578d7fd','sixCurrentDocumentationGitBridge':docs,'status': 'PASS', 'startedAt': started, 'closedAt': datetime.now(timezone.utc).isoformat(),
+           'acceptedHead': HEAD, 'sourceGuardCount': len(guards),
+           'gitTrackedOriginalBytes': original, 'generatedRuntimePathsRequireCurrentByteMatch': generated,
+-          'scope': 'Every349 actual current Node stage guard:206 immutable original Git blobs and143 exact loaded generated/runtime byte hashes. Full final stage/browser/league/download acceptance remains separate.'}
++          'scope': 'Historical e7 exact349 Node-stage guards:206 immutable e7 original Git blobs plus143 loaded generated/runtime byte hashes. Explicit six docs current071 working==immutableGit bridge with accepted/current hashes, outside349 guard set. Full current-source acceptance and standalone part delivery remain separate.'}
+ (base / 'historical-git-guards.json').write_text(json.dumps(result, indent=2) + '\n')
+ print(json.dumps({'status': 'PASS', 'head': HEAD, 'originalGitFiles': len(original),
+                   'generatedRuntimeFiles': len(generated), 'closedAt': result['closedAt']}))

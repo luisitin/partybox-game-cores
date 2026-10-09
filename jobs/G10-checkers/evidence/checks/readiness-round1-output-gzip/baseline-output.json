@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-09T00:27:33.440Z",
+  "closedAt": "2026-10-09T00:28:49.580Z",
+  "arm": "baseline",
+  "outputBytes": 1390845993,
+  "outputSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "gzip": {
+    "bytes": 961536512,
+    "sha256": "658f2b6d6a35e41f29169e0a1d7d5c788cacf58dde5d9e7469b62fe4e6943a5f",
+    "level": 9,
+    "mtime": 0,
+    "node": "v22.16.0",
+    "zlib": "1.3.0.1-motley-780819f"
+  },
+  "originalBrowserSourceSha256": "dc29bcf9d10189bf92983344854970dcfb54b3366c25558d695d04e72e39dcdf",
+  "candidateBrowserSourceSha256": "1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81",
+  "fullOriginalFiles": 41,
+  "fullOriginalParts": 1304,
+  "fullOriginalInternationalBytes": 1006478762,
+  "scope": "Private genuine full builder/compiler/data output with bounded raw+gzip hash sink only. Original production writer logic retained, candidate source overlay plus exact American marker. No complete HTML filesystem file is allocated; not final disk/offline/FPS/CI acceptance."
+}

@@ -1,0 +1,47 @@
+--- preserved3b5e/receive.py
++++ corrected-worker-finally/receive.py
+@@ -130,13 +130,37 @@
+             mismatches, received = [], 0
+             with (DIRECTORY/f'part-{index:02d}-worker.stderr').open('wb') as stderr:
+                 child = subprocess.Popen([sys.executable,str(Path(__file__).resolve()),'worker',str(index)],stdout=subprocess.PIPE,stderr=stderr)
+-                assert child.stdout is not None
+-                while block := child.stdout.read(1024*1024):
+-                    expected = original.read(len(block))
+-                    if expected != block and len(mismatches) < 10: mismatches.append(total+received)
+-                    joined.update(block); received += len(block)
+-                child.stdout.close()
+-                exit_code = child.wait()
++                read_exception = False
++                terminate_sent = False
++                try:
++                    assert child.stdout is not None
++                    while block := child.stdout.read(1024*1024):
++                        expected = original.read(len(block))
++                        if expected != block and len(mismatches) < 10: mismatches.append(total+received)
++                        joined.update(block); received += len(block)
++                except BaseException:
++                    read_exception = True
++                    raise
++                finally:
++                    try:
++                        if child.stdout is not None: child.stdout.close()
++                    finally:
++                        try:
++                            if read_exception and child.poll() is None:
++                                # This failed finite raw proof reader has no native timing claim.
++                                # Preserve the failed ZIP and failure; never stop an elapsed trial.
++                                try:
++                                    child.terminate()
++                                    terminate_sent = True
++                                except ProcessLookupError:
++                                    pass
++                        finally:
++                            exit_code = child.wait()
++                    write(DIRECTORY/f'part-{index:02d}-worker-closure.json',
++                          {'status':'TERMINATED_REAPED_AFTER_EXCEPTION' if terminate_sent else 'NATURALLY_CLOSED',
++                           'closedAt':utc(),'childPid':child.pid,'exitCode':exit_code,
++                           'readerException':read_exception,'terminateSent':terminate_sent,
++                           'scope':'Actual finite raw-worker closure; failed ZIPs never cleaned up.'})
+             worker_closed = utc()
+             assert exit_code == 0 and not mismatches
+             result = json.loads((DIRECTORY/f'part-{index:02d}-worker.json').read_text())

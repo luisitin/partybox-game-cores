@@ -1,0 +1,8 @@
+{
+  "status": "FAILED",
+  "closedAt": "2026-10-09T00:20:58.231022+00:00",
+  "errorType": "AssertionError",
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-217-sequential/receive.py\", line 197, in <module>\n    else: receiver()\n          ^^^^^^^^^^\n  File \"/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-217-sequential/receive.py\", line 128, in receiver\n    assert download.returncode == 0\n           ^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "scope": "Original failure retained; no PASS, no baseline mutation."
+}
