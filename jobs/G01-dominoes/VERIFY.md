@@ -471,3 +471,19 @@ actual disk-navigation validator. From this job folder, `node checksums.ts
 of original core/sampler and accepted Worker/UI/page to source2ae, all ZIP
 entry digests/raw-copy equality/CRC, README<60 and `git diff --check`: PASS.
 These check preparation and archived bytes, not unrun disk/FPS acceptance.
+
+
+## Actual managed disk navigation failure
+
+Root authorized one genuine functional run, without FPS/speed acceptance.
+`python .work/queue-audit-20261008/disk-native-first-controller.py` from the
+repository root launched actual Node24/Chromium151 `disk-browser-check.ts`.
+START00:44:21.072548; page.goto(file://) FAILED with literal
+net::ERR_BLOCKED_BY_ADMINISTRATOR before the HTML loaded. No setContent
+substitution, actual disk UI success or Worker success is inferred.
+Browser CLOSED00:44:24.151, child naturally CLOSED00:44:25.488498, whole
+controller naturally CLOSED00:44:26.616533/exit1. All29 source/five binaries,
+READY and controller remained unchanged; owned live children, errors and
+HTTP requests are empty. DISK-AUDIT.md and raw receipts/archive preserve it.
+The mandatory disk command remains in every npm test. Hosted full CI must
+actually pass it; this environment failure is never changed to a passing test.

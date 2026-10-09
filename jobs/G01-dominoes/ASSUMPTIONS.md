@@ -100,3 +100,10 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
   hosted archive. Before/after source and true process closure are preserved.
 - No native profile has yet run on Worker bytes. Root must grant fresh frozen
   source/runtime identities and quiet ownership before each new elapsed trial.
+
+
+- First genuine file:// check failed the managed Chromium administrator policy
+  before file load. This is a recorded failure, not evidence against normal
+  disk opening or a reason to modify production. The authorized separate
+  draft validation PR obtains existing full hosted CI while original PR1/8c
+  remains unchanged/draft. All binding completion/KEEP checks remain required.

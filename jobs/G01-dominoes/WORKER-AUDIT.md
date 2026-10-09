@@ -44,8 +44,9 @@ prove file navigation, physical-phone performance or the native refresh gate.
 `disk-browser-check.ts` adds an actual `page.goto(file://)` check to every
 `npm test`, including hosted CI: human handover privacy, real inline Worker
 Input/RNG replay and zero external requests. It has no setContent fallback.
-That new check is strict-compiled but UNRUN at this checkpoint. Managed disk
-navigation failures must remain failures; hosted CI must genuinely open the
+The first actual managed check on d4ddb2c failed ERR_BLOCKED_BY_ADMINISTRATOR
+before file load; DISK-AUDIT.md retains it with full closure/guard receipts.
+Hosted CI must genuinely open the
 file before completion. Original `browser.ts` and its exact 300 unfiltered
 intervals/301 timestamps, zero warmup and 58 fps/p95 ≤18 ms gates are unchanged.
 

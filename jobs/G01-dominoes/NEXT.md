@@ -4,7 +4,7 @@ Chat codex-domino-audit; lawful main claim98529de at 2026-10-08T22:58:53Z.
 Own branch: job/G01-dominoes-queue-audit-20261008. Original PR1 is open,
 unmerged and draft on job/G01-dominoes at accepted8c57376. No duplicate PR,
 force-push or public merge. Refresh ONLY G01 on main after every source push.
-Main refresh preceding this checkpoint: G01 2026-10-09T00:25:17Z
+Main refresh preceding this checkpoint: G01 2026-10-09T00:43:36Z
 codex-domino-audit. Read current CLAIMS.md for the post-push refresh.
 
 ## Verified proof
@@ -54,8 +54,12 @@ claimed until measured; no unchanged rerun for luck after a failure.
 The newly added disk-browser-check.ts always uses actual page.goto(file://),
 with no setContent fallback. Every npm test, including hosted CI, must prove
 real single-file human privacy and inline Worker seed/output/RNG plus zero
-network. Strict compilation is the only result so far. Preserve any managed
-file-navigation failure; hosted CI must genuinely open the file. This is a
+network. First actual disk check on d4ddb2c naturally FAILED00:44:26.616533/exit1:
+page.goto(file://) returned ERR_BLOCKED_BY_ADMINISTRATOR before file load.
+All29 source/five binary guards stayed unchanged and no owned child remains.
+DISK-AUDIT.md and the raw failure retain this managed restriction. Hosted CI
+must genuinely open the file; create the authorized draft validation PR from
+this audit branch to job/G01-dominoes while original PR1 stays draft on8c. This is a
 binding visual requirement, not permission to change the game for a sandbox.
 
 Run every original npm command plus the Worker and disk checks. After genuine
@@ -80,9 +84,8 @@ replaced by actual source-bound measurements; never present them as current.
 
 The conservative23:55:44 deadline was exceeded during continuous coordinator
 HOLD23:51:23–23:57:29.128565; actual timestamps were retained. Previous source
-push2ae naturally CLOSED00:24:55.724704; conservative hard00:54:53. This
-checkpoint publishes the actual functional proof and compiled disk validator
-before that deadline. Record true source/claim push closure, refresh only G01
+pushd4 naturally CLOSED00:43:14.265245; conservative hard01:13:12. This
+checkpoint retains the actual managed disk failure before hosted validation. Record true source/claim push closure, refresh only G01
 and prepare a fresh frozen native READY; next cadence starts at actual push.
 After the required stopping condition, fresh-read main/all matching branches
 and legally claim the lowest eligible queue job. Physical phone remains
