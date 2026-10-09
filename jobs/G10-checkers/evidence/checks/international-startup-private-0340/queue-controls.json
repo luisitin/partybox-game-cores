@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-09T03:40:23.834Z",
+  "closedAt": "2026-10-09T03:40:24.085Z",
+  "candidateSha256": "bf8b12c6a389daa050f70f602e53480b506c0f4810288c24ebb6810a6aa477cf",
+  "acceptedSourceSha256": "1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81",
+  "originalBlockFunctionUnchanged": true,
+  "actualOriginalFixtureFile": "data/international/db4.bin",
+  "fixtureBytes": 69632,
+  "fixtureSha256": "e106a3942889e76e801b1cc74e94ba6f2ec61bb9713f898feb80714d69c6bf83",
+  "controls": [
+    {
+      "name": "Loading valid absent or partial text waits, then all17 genuine blocks transfer in original16+1 order",
+      "status": "PASS"
+    },
+    {
+      "name": "An absent earlier block cannot conceal a later misaligned request in its currentbatch",
+      "status": "PASS"
+    },
+    {
+      "name": "Deliberately reverted short-circuit variant is genuinely rejected by that control",
+      "status": "PASS"
+    },
+    {
+      "name": "Unknownfile request is rejected while loading, even after absent valid block",
+      "status": "PASS"
+    },
+    {
+      "name": "Too-long actual text is corruption and fails immediately during loading",
+      "status": "PASS"
+    },
+    {
+      "name": "NonText firstchild is corruption and fails immediately during loading",
+      "status": "PASS"
+    },
+    {
+      "name": "Afterparser completion missing data keeps original immediate stop/error behavior",
+      "status": "PASS"
+    },
+    {
+      "name": "Afterparser completion truncated text is rejected without waiting",
+      "status": "PASS"
+    },
+    {
+      "name": "Cancelling or replacing pending worker prevents any later queued transfer",
+      "status": "PASS"
+    },
+    {
+      "name": "Already available genuine bytes duringloading preserve16+1 protocol and exactoriginal ranges",
+      "status": "PASS"
+    },
+    {
+      "name": "Empty/duplicate/oversize batches retain original synchronous rejection",
+      "status": "PASS"
+    },
+    {
+      "name": "Invalid requested length and beyond-file offset fail before any transfer",
+      "status": "PASS"
+    }
+  ],
+  "scope": "Finite private host-queue behavior controls using the actual AST-extracted original/candidate functions and genuine originaldata bytes, simulated parser/worker/RAF only. No realbrowser/FPS/gameplay acceptance, no timing/gain/productionadoption/KEEP completion; full original currentnative checks remain required before adoption."
+}

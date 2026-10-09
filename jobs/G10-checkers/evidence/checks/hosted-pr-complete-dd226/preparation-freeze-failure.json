@@ -1,0 +1,4 @@
+{
+  "status": "PREPARATION_FAILED",
+  "reason": "Inherited native log labels were named by stage, not job-ID prefix; freeze preparation looked for a previous job ID. No artifact reception/native reader/browser/timing workload launched. Correct by identifying preserved prior log path filenames and freezing current actual native log files."
+}
