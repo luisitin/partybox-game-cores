@@ -1,0 +1,25 @@
+{
+  "status": "CURRENT_MATERIAL_PROTOCOL_FULL_ORIGINAL_VERIFY_FAILURE_RETAINED",
+  "readAt": "2026-10-09T05:46:02.610913+00:00",
+  "head": "407e528d3008b3dff9f3304b9b3b6ecfffe4a916",
+  "runId": 37889697024,
+  "jobId": 113687582542,
+  "tests": 67,
+  "pass": 63,
+  "fail": 4,
+  "failureScope": "four original stale committed-browser-proof guards only",
+  "originalDownstreamPhases": "NOT_RUN",
+  "nativeCharacters": 92837,
+  "nativeUTF8Bytes": 95479,
+  "nativeSha256": "9db7217e2e4034ce40e1b3235d21ca71025323697eff1995688c62dfc99b2042",
+  "actualMarkers": [
+    "2026-10-09T05:41:14.0931104Z not ok 7 - current source-bound raw proof passes without discarding its largest interval",
+    "2026-10-09T05:41:14.1044412Z not ok 9 - changed end guards and failed snapshots are rejected",
+    "2026-10-09T05:41:14.1114336Z not ok 11 - reported statistics are recomputed from all retained intervals",
+    "2026-10-09T05:41:14.1181322Z not ok 12 - an honestly recomputed slow raw sample still fails the original frame gate",
+    "2026-10-09T05:44:37.7533812Z # tests 67",
+    "2026-10-09T05:44:37.7534212Z # pass 63",
+    "2026-10-09T05:44:37.7534395Z # fail 4",
+    "2026-10-09T05:44:37.7550070Z ##[error]Process completed with exit code 1."
+  ]
+}

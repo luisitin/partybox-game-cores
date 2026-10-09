@@ -1,0 +1,20 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: non-deterministic generated fixture fixtures/done.json
++ actual - expected
+
++ '554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4'
+- 'fdd527c2dbf270f1e6d19b62fe4ecd9f16f5bd290c25f70be708c69f9e9c1b36'
+
+    at file:///workspace/game-cores-G02-audit-source-20261009/jobs/G02-gin-rummy/scripts/integrity.mjs:30:31 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: '554180df7cdff3a66a12ea751c768b323a6989edae55416b0012330e863d5ee4',
+  expected: 'fdd527c2dbf270f1e6d19b62fe4ecd9f16f5bd290c25f70be708c69f9e9c1b36',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

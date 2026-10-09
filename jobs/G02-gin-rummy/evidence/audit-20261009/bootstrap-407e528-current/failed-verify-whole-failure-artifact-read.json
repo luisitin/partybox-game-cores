@@ -1,0 +1,29 @@
+{
+  "status": "COMPLETE_FAILED_VERIFY_ARCHIVE_SAFE_CRC_EOF_HASH_PASS",
+  "closedAt": "2026-10-09T05:46:20.082049+00:00",
+  "head": "407e528d3008b3dff9f3304b9b3b6ecfffe4a916",
+  "artifactId": 11598106821,
+  "runId": 37889697024,
+  "members": 3,
+  "files": [
+    {
+      "path": "media/strict-reverify-1900-desktop.webm",
+      "bytes": 726815,
+      "sha256": "b63b3b2168a6366fe20bf2271b3b7fd5a1b56bf3455fccd8adbb9decca793483",
+      "crc": 1827497710
+    },
+    {
+      "path": "media/strict-reverify-1900-phone4x.webm",
+      "bytes": 546355,
+      "sha256": "0fbd0abba423959bb0002dd461699a592507d50781fa923bfcf8acf2069e036c",
+      "crc": 1247157850
+    },
+    {
+      "path": "evidence/resume-20261008/strict-reverify-1900-captures.json",
+      "bytes": 8316,
+      "sha256": "3a8cce57f6fbbedc77f5bbf851660b27afe993f8e35ab68adcb013cec26d7bfe",
+      "crc": 3411452261
+    }
+  ],
+  "scope": "Actual failed original verify artifact contains historical committed clips only; no current browser phase ran in verify"
+}
