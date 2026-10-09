@@ -66,7 +66,7 @@ jobs:
         const request=JSON.parse(await readFile('evidence/audit-20261009/bootstrap-request.json','utf8'));
         assert.equal(request.version,1);assert.equal(typeof request.enabled,'boolean');
         if(request.enabled){
-         assert.equal(request.reason,'mandatory one-workflow correction; first capture binding the corrected G02 workflow');
+         assert(['mandatory one-workflow correction; first capture binding the corrected G02 workflow','verified material Strong Gin-priority repair; first capture for changed game source'].includes(request.reason),'explicit material/protocol bootstrap reason required');
          const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
          assert.equal(sha(await readFile('src/core.ts')),request.coreSha256);
          assert.equal(sha(await readFile('play.html')),request.htmlSha256);
@@ -81,7 +81,7 @@ jobs:
         import {writeFile} from 'node:fs/promises';
         import assert from 'node:assert/strict';
         import {execFileSync} from 'node:child_process';
-        const identity={version:1,head:process.env.G02_SOURCE_HEAD,ref:process.env.GITHUB_REF,sourceBranch:process.env.GITHUB_HEAD_REF,checkoutSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,job:process.env.GITHUB_JOB,repository:process.env.GITHUB_REPOSITORY,startedUtc:new Date().toISOString(),purpose:'Fresh original browser evidence for the initial-presence repair; not full npm-test acceptance.',originalVerifyJobUnchanged:true,physicalPhoneTested:false};
+        const identity={version:1,head:process.env.G02_SOURCE_HEAD,ref:process.env.GITHUB_REF,sourceBranch:process.env.GITHUB_HEAD_REF,checkoutSha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),runId:process.env.GITHUB_RUN_ID,runAttempt:process.env.GITHUB_RUN_ATTEMPT,job:process.env.GITHUB_JOB,repository:process.env.GITHUB_REPOSITORY,startedUtc:new Date().toISOString(),purpose:'Fresh original browser evidence for an explicitly requested material G02 repair; not full npm-test acceptance.',originalVerifyJobUnchanged:true,physicalPhoneTested:false};
         await writeFile('.work/initial-presence-bootstrap/run.json',JSON.stringify(identity,null,2)+'\n');
         assert.equal(identity.runAttempt,'1','this bootstrap must not be rerun to chase a frame pass');
         assert.equal(identity.sourceBranch,'job/G02-gin-rummy-audit-20261009');

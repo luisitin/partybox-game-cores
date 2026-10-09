@@ -361,7 +361,10 @@ function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkil
     // A legal knock/GIN always outranks a non-knocking heuristic alternative.
     if(solution.deadwood<=v.knockLimit)score-=1000;
     score-=value(card)*.001;
-    if(score<bestScore){bestScore=score;best={card,deadwood:solution.deadwood};}
+    // Gin ends the hand with a positive bonus and no layoffs; public discard
+    // danger cannot make an ordinary knock score better against that defender.
+    const gin=solution.deadwood===0,bestGin=best.deadwood===0;
+    if(gin&&!bestGin||gin===bestGin&&score<bestScore){bestScore=score;best={card,deadwood:solution.deadwood};}
   }
   return best;
 }
