@@ -1,4 +1,4 @@
-# Current G07 queue follow-up — post-green review1, 2026-10-09
+# Current G07 queue follow-up — post-green review2, 2026-10-09
 
 Owner codex-dice-queue-audit-20261009, branch job/G07-liars-dice-queue-audit-20261009,
 new supplemental Draft PR17/base protected028. Original Ready13/028 and Ready6/1cc
@@ -26,24 +26,29 @@ original clocks/callback. Entire142,895-byte native confirms210 tests/25 actual
 compiled kills/500 hashes/twice-regeneration. Specific samples60.0024/60.0030fps,
 p99/max16.8ms. First f123 failed whole log/ZIP and403 are retained separately.
 
-Binding post-green review1 reread10:30:56/rank five; worst=natural initial saved
-recovery at clock endpoints. PASS949,991 assertions/73,152 actual saves/restores
-(all48 settings/every2–8 count/everypresence mask/clock0,1,120/host0,.5,1e15),
-max2,736B,all639 inputs unchanged,naturally CLOSED10:31:29.055714.
-No new player defect/runtime edit; gain0,new follow-up no-gain streak1.
-Two required five-round source-matched clips/full VP8 decode PASS10:33:32.
-This review is being logged and published before round2 begins. Original KEEP6–8
-remain immutable; new player fix receives its own truthful follow-up streak.
+Binding post-green reviews execute and publish one at a time. Review1 passed
+949,991 assertions/73,152 actual natural initial saves/restores at all48 settings,
+every presence mask/count/three clock profiles; all639 inputs unchanged, gain0.
+Review2 now naturally CLOSED2026-10-09T10:39:45.470424+00:00 EXIT0:
+272,183 assertions; 10,080 reconnect contexts, 10,080 intentional VIP-held joins, 10,080 permanent departures, 6,720 actual deadline controls, 10,080 stale stamps and 40,320 exact natural saves.
+Worst ranked weakness: Empty-room reconnect versus intentional VIP hold.
+All667 source/compiled inputs unchanged; no new defect or runtime edit.
+New follow-up no-gain streak2; original KEEP6–8 preserved unchanged.
+Two required current-source five-round clips/full VP8 decode PASS
+2026-10-09T10:41:07.137923+00:00, zero network/errors, separate from FPS.
+Previous review source9b87b52ff28b8f3ab54c1fb5a74ed2690def279b actually pushed2026-10-09T10:36:45.181639+00:00
+/readback2026-10-09T10:36:46.295629+00:00. Latest own main refresh:
+G07 2026-10-09T10:38:18Z codex-dice-queue-audit-20261009, actualpush2026-10-09T10:38:19.902459+00:00, readback2026-10-09T10:38:20.607472+00:00,
+maind55ea4c97a8b32cbde63aab7a81f638bf94f637a; only own row/all other rows and tree byte-identical.
 
-Next AFTER normal publication: refresh ONLY own main row under root's exclusive
-lease, then reread/rank five and perform review2 on empty-room/reconnect/VIP/timer
-sequencing. Log/measure/push it separately before review3. Final third review
-handoff must precede its own whole exact-head original CI, then Ready17 only after
-all pass. No new local frame sampler, weakened gate or cosmetic post-Ready commit.
-Current saved text qualifies source0f538; this review's new checkpoint full run is
-pending. Last actual publication10:17:34.790516 gives hard10:47:34.790516; retain
-actual next receipt and any miss. Evidence is in queue-followup-20261009/review1
-and accepted-original-0f538. Parent owns serialized main coordination.
+After this review is logged/pushed and own main row refreshed, reread/rank five and run only review3: rotated connected-seat complete games, private cup/RNG independence and original finite results. Publish that final third review separately before its whole exact-head original CI.
+This saved handoff qualifies the previously accepted0f538 runtime; current new
+checkpoint whole original CI remains pending. Retain all native failure/403 data,
+immutable old-f8 attribution and unchanged current-only timing/clock/source gates.
+No new local frame sampler. Parent serializes all main refreshes.
+Evidence: queue-followup-20261009/review2/, accepted-original-0f538/,
+first-current-f123/. This text is saved before publication; actual new receipt
+must retain publication UTC/readback and any hard cadence miss.
 
 # Protected independent queue review — 2026-10-09
 

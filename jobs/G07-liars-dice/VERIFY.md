@@ -1,5 +1,18 @@
 # Verification log
 
+## Post-green review2 — 2026-10-09
+Reread/rank five, then `node /tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice/evidence/checks/queue-followup-20261009/postgreen-review.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round2-20261009 --round=2 --head=9b87b52ff28b8f3ab54c1fb5a74ed2690def279b`:PASS 272,183 assertions;
+10,080 reconnect contexts, 10,080 intentional VIP-held joins, 10,080 permanent departures, 6,720 actual deadline controls, 10,080 stale stamps and 40,320 exact natural saves. Worst: Empty-room reconnect versus intentional VIP hold.
+Would catch broken presence/hold ownership, stale clocks, lost seats, hidden
+information exposure or invalid natural saves within this measured domain.
+Natural CLOSED2026-10-09T10:39:45.470424+00:00 EXIT0/all667 input files unchanged.
+No additional player defect/runtime edit; measured gain0, new streak2.
+`node scripts/capture.mjs queue-followup-review2`:PASS two current five-round
+clips; actual whole-file ffprobe and full VP8 `ffmpeg -v error -i <clip> -f null -`
+decode PASS2026-10-09T10:41:07.137923+00:00. They do not measure performance.
+Each round is logged and normally pushed before the next begins; current final
+head's whole original CI must still pass before Ready.
+
 ## Post-green review1 — 2026-10-09
 Actual original0f538 workflow37916703749/113774542147 SUCCESS/all steps, whole
 11610242472 official archive independently source/raw/native accepted10:29:51;

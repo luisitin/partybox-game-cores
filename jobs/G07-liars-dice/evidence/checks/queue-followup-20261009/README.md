@@ -35,3 +35,6 @@ startup problem; full changed-source acceptance and subsequent KEEP remain open.
 Post-green review1 is logged separately:review1/README.md/report.json lists the
 five priorities,73152 actual saves/restores and measured player gain0/streak1.
 Later reviews execute only after this first review is normally published.
+
+Separate post-green review2:review2/ contains ranked five weaknesses,
+actual 272,183 assertions, finite measured domain and gain0/streak2.
