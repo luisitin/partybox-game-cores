@@ -44,7 +44,7 @@ Artifacts expire after seven days and are not persistent Release assets.
 Tracked play.html is the older2–5-piece baseline. Rebuild the full current page
 with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough space.
 Private International startup output passed full raw/source-byte checks.
-Real browser/delivery/timing checks and renewed KEEP remain open.
+Full untimed HTTP bytes passed; browser/timing and renewed KEEP remain open.
 
 American data terms require Chinook/University of Alberta acknowledgement and
 prohibit database sale. Ed Gilbert permits International data distribution.
