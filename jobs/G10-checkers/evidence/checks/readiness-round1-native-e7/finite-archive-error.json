@@ -1,0 +1,9 @@
+{
+  "status": "PRESERVED_PRE_COPY_ARCHIVE_FAILURE",
+  "observedOn": "2026-10-09",
+  "error": "FileNotFoundError: [Errno 2] No such file or directory: 'jobs/G10-checkers/.work/american-ready-private/native-9d5f3327-90f2-4549-99fe-a1d3e0286f07/report.json'",
+  "cause": "The first archive command used a repository-root relative path while its working directory was already the job directory. It failed before copying the report or changing any job docs. The empty nested directory contains no evidence.",
+  "followingUnchangedIntegrity": "Naturally CLOSED exit 0; tool completion observed 2026-10-09T00:02:40Z before corrected source edits.",
+  "correction": "Use the absolute job path. Corrected archive command completed with exit 0 and original report SHA a67bb434f6a8142455db109c882e508bcd598710ad8bae700b737f89515cdfd6.",
+  "scope": "Finite archive orchestration error only. Original trial report and source evidence unchanged. Final checksums/integrity must run after corrected archive edits."
+}

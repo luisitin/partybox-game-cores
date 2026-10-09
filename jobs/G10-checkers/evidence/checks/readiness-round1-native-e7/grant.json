@@ -1,0 +1,64 @@
+{
+  "status": "DELEGATED_EXCLUSIVE_GRANTED",
+  "grantedAt": "2026-10-08T23:38:52.155080+00:00",
+  "sourceHead": "e7a5c6463af2f0033ff08d333fb378ad160c1e43",
+  "rootGrantNonce": "G10-native-player-e66940a7-b4ba-497a-9578-0c8cb8a627a2",
+  "readySha256": "bc4b78fa9e2c3803e214e3cd0c4de3c90f5b27aab66995d8b7f29654ba1adde0",
+  "authorization": "Root delegation after normal checkpoint+claim+fresh READY+actual zero-owner process revalidation; only authorized expected-head literal update in preparer. All six peer/root continuous HOLD facts unchanged.",
+  "actualZeroOwnerProcessNames": [
+    {
+      "pid": 1,
+      "ppid": 0,
+      "state": "S+",
+      "name": "tail"
+    },
+    {
+      "pid": 2,
+      "ppid": 1,
+      "state": "S+",
+      "name": "caas-prefix-tra"
+    },
+    {
+      "pid": 199,
+      "ppid": 1,
+      "state": "Ssl",
+      "name": "dockerd"
+    },
+    {
+      "pid": 248,
+      "ppid": 199,
+      "state": "Ssl",
+      "name": "containerd"
+    },
+    {
+      "pid": 464,
+      "ppid": 0,
+      "state": "Sl+",
+      "name": "codex"
+    },
+    {
+      "pid": 213645,
+      "ppid": 464,
+      "state": "Ss",
+      "name": "bash"
+    },
+    {
+      "pid": 213648,
+      "ppid": 213645,
+      "state": "S",
+      "name": "python3"
+    },
+    {
+      "pid": 213649,
+      "ppid": 213648,
+      "state": "R",
+      "name": "ps"
+    }
+  ],
+  "command": [
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/american-ready-private/observe-player.mjs"
+  ],
+  "nativeWaitBudgetMs": 360000,
+  "scope": "One complete-byte HTTP trusted-player diagnostic: desktop baseline then candidate, phone4x candidate then baseline, original full source, no extra arms/retries/settling/SIGSTOP. Pre/post hashing and natural child/controller closure are additional actual wall time, not a hard360s cap."
+}
