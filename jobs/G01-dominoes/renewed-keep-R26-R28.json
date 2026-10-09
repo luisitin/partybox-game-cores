@@ -1,0 +1,223 @@
+{
+  "schema": "g01-renewed-post-privacy-keep-R26-R28/1",
+  "status": "THREE_SUBSTANTIVE_NO_PLAYER_GAIN_ROUNDS_CURRENT_HEAD_CI_PENDING",
+  "source": "48cb1b551365f613b65948fb640d3105f679f719",
+  "acceptedProductSource": "380bc2b85620995152e57504e319062e69620133",
+  "preparedAt": "2026-10-09T05:24:22.560528+00:00",
+  "qualifiedPrivacyImprovement": "R25 complete current corrected380 original pipeline/genuine1303-check acceptance; actual old949 real-WAAPI default negative FAIL and actual newdefault PASS, same-prompt reliability gain.",
+  "rounds": [
+    {
+      "id": "R26",
+      "status": "PASS_NO_PLAYER_VISIBLE_GAIN",
+      "naturallyClosedAt": "2026-10-09T05:11:43.127037+00:00",
+      "cases": [
+        {
+          "mode": "draw",
+          "partners": true,
+          "motion": "reduce",
+          "summary": {
+            "actions": 26,
+            "turns": 26,
+            "draws": 0,
+            "passes": 1,
+            "maximumHand": 7,
+            "knownHands": {
+              "0": [
+                4
+              ],
+              "1": [],
+              "2": [
+                3
+              ],
+              "3": [
+                27
+              ]
+            }
+          },
+          "rawSnapshots": 132,
+          "nextRoundPrivateHandover": "PASS"
+        },
+        {
+          "mode": "block",
+          "partners": true,
+          "motion": "reduce",
+          "summary": {
+            "actions": 26,
+            "turns": 26,
+            "draws": 0,
+            "passes": 1,
+            "maximumHand": 7,
+            "knownHands": {
+              "0": [
+                4
+              ],
+              "1": [],
+              "2": [
+                3
+              ],
+              "3": [
+                27
+              ]
+            }
+          },
+          "rawSnapshots": 132,
+          "nextRoundPrivateHandover": "PASS"
+        },
+        {
+          "mode": "draw",
+          "partners": false,
+          "motion": "reduce",
+          "summary": {
+            "actions": 25,
+            "turns": 19,
+            "draws": 6,
+            "passes": 0,
+            "maximumHand": 5,
+            "knownHands": {
+              "0": [
+                22,
+                4
+              ],
+              "1": [
+                1,
+                7,
+                19
+              ],
+              "2": [],
+              "3": [
+                0,
+                3
+              ]
+            }
+          },
+          "rawSnapshots": 103,
+          "nextRoundPrivateHandover": "PASS"
+        },
+        {
+          "mode": "block",
+          "partners": false,
+          "motion": "no-preference",
+          "summary": {
+            "actions": 23,
+            "turns": 23,
+            "draws": 0,
+            "passes": 8,
+            "maximumHand": 5,
+            "knownHands": {
+              "0": [
+                25,
+                22
+              ],
+              "1": [
+                7
+              ],
+              "2": [
+                20
+              ],
+              "3": [
+                3
+              ]
+            }
+          },
+          "rawSnapshots": 117,
+          "nextRoundPrivateHandover": "PASS"
+        }
+      ],
+      "totalActions": 100,
+      "totalHumanTurns": 94,
+      "actualDraws": 6,
+      "actualPasses": 10,
+      "rawSnapshots": 484,
+      "measurement": "All four complete actual four-human phone rounds and next private deals pass; independently derived authorized-hand pip sums and all28tile conservation match. No existing current-player fault found/fixed."
+    },
+    {
+      "id": "R27",
+      "status": "PASS_NO_PLAYER_VISIBLE_GAIN",
+      "naturallyClosedAt": "2026-10-09T05:15:39.935361+00:00",
+      "allFixtureSelectionRows": 5000,
+      "selectedFixture": {
+        "seed": 146,
+        "maximumHand": 13,
+        "actions": 27,
+        "draws": 8,
+        "remainingHands": [
+          2,
+          9,
+          0,
+          2
+        ]
+      },
+      "actualSummary": {
+        "actions": 27,
+        "turns": 19,
+        "draws": 8,
+        "passes": 4,
+        "maximumHand": 13,
+        "knownHands": {
+          "0": [
+            10,
+            19
+          ],
+          "1": [
+            7,
+            0,
+            25,
+            1,
+            8,
+            20,
+            27,
+            18,
+            16
+          ],
+          "2": [],
+          "3": [
+            9,
+            3
+          ]
+        }
+      },
+      "rawSnapshots": 105,
+      "measurement": "First genuine13-tile phone hand fixture146 with normal motion/4xCPU passes all public/private/control bounds/draw/pass/round-end/next-private predicates. No player change or measured benefit."
+    },
+    {
+      "id": "R28",
+      "status": "PASS_NO_PLAYER_VISIBLE_GAIN",
+      "naturallyClosedAt": "2026-10-09T05:20:45.364738+00:00",
+      "counts": {
+        "frozenStates": 9027,
+        "hiddenSubstitutionPairs": 27081,
+        "deterministicEasyNormalCalls": 36108,
+        "deterministicSharpCalls": 72,
+        "pureReducerTransitions": 9027
+      },
+      "deliberateReadonlyMutationNegative": {
+        "status": "ACTUAL_FAIL_PRESERVED",
+        "naturallyClosedAt": "2026-10-09T05:18:13.093046+00:00",
+        "originalEnds": [
+          4,
+          6
+        ],
+        "changedEnds": [
+          5,
+          6
+        ],
+        "boardLeft": 4,
+        "scope": "Private JavaScript probe deliberately writes through an exported readonly Tile; shared array means caller mutation changes original state. This is not mutation by the game function or a demonstrated shipped-consumer defect. The actual choose consumers read that tuple, and Worker delivery uses structured clone. Full failure retained; tuple-copy hygiene proposal unadopted."
+      },
+      "measurement": "Actual view/bot/reducer consumers operate on9027 fully frozen states with27081 hidden-substitution pairs and deterministic valid policies, including72 Strong calls, with zero errors/input mutation/leaks. No demonstrated player-visible gain remains in this bounded review."
+    }
+  ],
+  "allFreshInputGuardsPassed": true,
+  "remainingOwnedLiveProcesses": [],
+  "renewedCompletedKeepRounds": 4,
+  "qualifiedPlayerImprovements": 1,
+  "consecutiveNoPlayerGainRounds": 3,
+  "archive": {
+    "path": "media/renewed-keep-R26-R28-complete-proof.zip",
+    "bytes": 2985649,
+    "sha256": "34491483dc47f6d470015c7f429101ea01fb93ab6de226ad9f2851827a661b59",
+    "members": 49
+  },
+  "limits": "CPU-throttled emulation, not physical phone; finite rules/AI/multi-state scope; prior responsiveness native acceptance and both improvement gates remainFAIL. Original oldphone failure causeUNKNOWN. No FPS trial, fake clock, filtered frame, state injection, hidden-state policy input or unchanged retry.",
+  "currentDelivery": "Final evidence/docs-only publication still requires its own original full workflow and genuine immutable whole-artifact reader before PR11 Ready. Current player/core/Worker/default-check/sampler bytes remain exact accepted380. OriginalPR1 stays canonical8c/draft/unmerged; original stopping streak before0.2.8 remains historical."
+}

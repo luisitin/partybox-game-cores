@@ -55,5 +55,5 @@ Single steps:
 PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
 Prior Worker/face-down ddd full CI and1,279-check genuine artifact proof passed,
 including real file opening,600 native intervals and36 decoded VP9 frames.
-Privacy prompt fix/current full CI and1,303-check whole proof PASS; KEEP pending.
+Privacy fix/full1,303-check proof and renewed KEEP PASS; final delivery CI pending.
 NEXT.md binds remaining checks; all historical failures remain preserved.

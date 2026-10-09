@@ -357,3 +357,55 @@ the execution-environment restart/resumption. Work actually resumed04:59:15UTC;
 this preparation occurs after the deadline, with no backdated timestamp.
 Read the next actual source-push receipt for exact interval and fresh cadence.
 Main CLAIMS refresh requires the root-serialized exclusive ownG01row lease.
+
+## Renewed KEEP stopping condition reached; current delivery check
+
+Exact corrected380 player has complete original current green and genuine
+1,303-check whole-artifact acceptance as recorded below. The source remains
+byte-identical throughout three new substantive rounds following privacy R25:
+
+- R26 complete four-human phone rounds: actual4/4 Draw/Block/partner/individual
+  PASS;100 legal actions/94 human turns/6 draws/10 passes/484 raw snapshots.
+  Public round pips independently match observed authorized hands; all28 tiles
+  conserve, every next-round handover stays private. Natural close05:11:43.127037
+  UTC/exit0/group[]/allfreshinputguardsPASS. No player-visible gain found.
+- R27 worst hand fixture: entire untimed5,000-seed scan selected smallest-tie
+  seed146, genuine13-tile hand. First actual phone/normalmotion/4xCPU case PASS:
+  27 actions/19 turns/8 draws/4 passes/105 snapshots, exact pips/conservation and
+  next private deal. Natural close05:15:39.935361UTC/exit0/group[]/allguardsPASS.
+  No current player change or player-visible gain found.
+- R28 data-boundary/actual consumer audit:9,027 fully frozen states,27,081 hidden
+  substitution pairs,36,108 deterministic Easy/Medium calls,72 Strong calls,
+  9,027 pure reducer transitions allPASS. Natural close05:20:45.364738UTC/exit0/
+  group[]/allfreshguardsPASS. An earlier deliberate JavaScript write to the
+  exported readonly observation ends tuple genuinely failed and is retained:
+  caller changed ends4→5 while board stayed4. Actual shipped consumers read
+  that tuple; Worker messages copy it. No game-function input mutation or
+  shipped-player defect demonstrated; tuple-copy proposal was not adopted.
+
+renewed-keep-R26-R28.json and the complete verified media archive retain every
+actual raw snapshot, screenshot, full5,000 scan rows, full frozen-state rows,
+unmodified controller/helper/input/alias/runtime receipts and both preparation
+errors. Every member has full CRC and byte verification. Private test clone
+copies exact Git source and resolves existing pinnedZod4.6.5; no product edit.
+
+Renewed completed KEEP4 including qualified privacy improvementR25; consecutive
+substantive no-player-gain rounds3 (R26–R28). The binding stopping condition
+is reached for the current player. This is a bounded review, with no stronger
+AI/FPS/physical-phone claim. All historical failures and unknown causes stay.
+
+This final evidence/docs checkpoint needs its own original full CI and actual
+immutable whole uploaded artifact acceptance. PR11 remains draft until those
+pass. On resume, first read PR11/head/workflow and the private native receipt;
+accept only this exact delivery source. After its current proof passes, mark
+PR11 Ready, preserve originalPR1 unchanged8c/draft, and read fresh main claims/
+all branch last-commit times before taking the next lowest eligible queue job.
+Evidence-only finalization does not reset the three completed review rounds.
+Do not make a completion-only source commit that restarts unchanged checks.
+
+Actual prior source push48cb closed05:05:31.077751UTC; next early05:30:31.077751/
+hard05:35:31.077751UTC. Its prior interval was35m56.451372s: hard04:59:34.626379
+missed5m56.451372s during actual environment restart/resumption/readback, no
+backdates. Read the next actual source push receipt for current cadence.
+Own G01 main row refreshed05:06:15UTC under exclusive lease; only own-row
+refresh follows this new push under the root-serialized main lease.
