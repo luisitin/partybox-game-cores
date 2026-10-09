@@ -1,0 +1,175 @@
+{
+  "schema": "g01-absent-turn-candidate/2",
+  "recordedUtc": "2026-10-09T13:34:04.149480+00:00",
+  "protectedReady11": "eadb642bc1f9f4f2c839c7a6754932e7a5b640ec",
+  "currentCoreSha256": "d613584f856db6f041aa0c9c8a5558d08bca6e841bfba8356415bbaf1fe162d6",
+  "currentPageSha256": "65dcc2f274844123f2115eee3c159d78b9fb983c6fa293550d40263915990d6a",
+  "firstActualFixedHumanControl": {
+    "pairedCases": 468,
+    "oldBudgetFailures": 427,
+    "allPhysicalCheckpointsEqual": true,
+    "closedUtc": "2026-10-09T13:09:27.529285+00:00"
+  },
+  "stableCandidateProof": {
+    "status": "PASS",
+    "scope": "Controlled private candidate proof; unqualified until original full new-source workflow",
+    "pairedCompleteGames": 468,
+    "assertions": 527041,
+    "checkpoints": 74211,
+    "oldAutomaticEvents": 142151,
+    "connectedContexts": 360,
+    "connectedEveryEvent": 101238,
+    "emptyContexts": 360,
+    "pauseCases": 360,
+    "oldBudgetFailures": 427,
+    "newBudgetFailures": 0,
+    "noBrowserOrTimingSampler": true,
+    "firstMeasured": {
+      "n": 2,
+      "present": 0,
+      "settings": {
+        "mode": "draw",
+        "target": "100",
+        "partners": false,
+        "deal": "block-sized",
+        "reserve": "0",
+        "opening": "rotating",
+        "blocked": "difference",
+        "teamPoints": "opponents"
+      },
+      "seed": 1,
+      "presentInputsAndRoundEnds": 304,
+      "round": 19,
+      "scores": [
+        94,
+        133
+      ],
+      "oldElapsedMs": 7303305,
+      "newElapsedMs": 90587,
+      "allPhysicalCheckpointsEqual": true,
+      "presentAlwaysFullTurn": true
+    }
+  },
+  "controller": {
+    "startedUtc": "2026-10-09T13:21:46.786954+00:00",
+    "scope": "First bounded private untimed investigation of exact protected Ready11; no source adoption, browser, timing retry or formal KEEP credit",
+    "protectedSource": "eadb642bc1f9f4f2c839c7a6754932e7a5b640ec",
+    "wholeBoundSeconds": 330,
+    "signalsSent": [],
+    "remainingOwnedChildren": [],
+    "childPid": 385333,
+    "childStartedUtc": "2026-10-09T13:21:48.496950+00:00",
+    "childClosedUtc": "2026-10-09T13:21:59.715208+00:00",
+    "childExitCode": 0,
+    "allFrozenInputsUnchanged": true,
+    "frozenInputCount": 1230,
+    "naturalClosure": true,
+    "status": "PASS",
+    "exitCode": 0,
+    "actualResult": {
+      "status": "PASS",
+      "scope": "Controlled private candidate proof; unqualified until original full new-source workflow",
+      "pairedCompleteGames": 468,
+      "assertions": 527041,
+      "checkpoints": 74211,
+      "oldAutomaticEvents": 142151,
+      "connectedContexts": 360,
+      "connectedEveryEvent": 101238,
+      "emptyContexts": 360,
+      "pauseCases": 360,
+      "oldBudgetFailures": 427,
+      "newBudgetFailures": 0,
+      "noBrowserOrTimingSampler": true,
+      "firstMeasured": {
+        "n": 2,
+        "present": 0,
+        "settings": {
+          "mode": "draw",
+          "target": "100",
+          "partners": false,
+          "deal": "block-sized",
+          "reserve": "0",
+          "opening": "rotating",
+          "blocked": "difference",
+          "teamPoints": "opponents"
+        },
+        "seed": 1,
+        "presentInputsAndRoundEnds": 304,
+        "round": 19,
+        "scores": [
+          94,
+          133
+        ],
+        "oldElapsedMs": 7303305,
+        "newElapsedMs": 90587,
+        "allPhysicalCheckpointsEqual": true,
+        "presentAlwaysFullTurn": true
+      }
+    },
+    "resultFile": {
+      "realPath": "/dev/shm/G01-private-remaining-issue-20261009/candidate-absence-stable-build-v2.json",
+      "bytes": 277615,
+      "sha256": "c9dfd12d90f0d459e8d2bdc9e64d4051d38e06864d60794ba49beda39cd23f6c",
+      "dev": 26,
+      "inode": 4809,
+      "nlink": 1,
+      "mtimeNs": 1791552119661150691
+    },
+    "nativeLog": {
+      "realPath": "/dev/shm/G01-private-remaining-issue-20261009/candidate-absence-stable-build-v2-native.log",
+      "bytes": 755,
+      "sha256": "66198cedd8a741c565217ea67f3451630fbd06de0bf8355cc3ea465ed0b915c4",
+      "dev": 26,
+      "inode": 4808,
+      "nlink": 1,
+      "mtimeNs": 1791552119661150691
+    },
+    "closedUtc": "2026-10-09T13:22:00.314634+00:00"
+  },
+  "newDefaultRegressionSmoke": {
+    "command": "node --test absence-presence.test.ts",
+    "pass": 7,
+    "fail": 0,
+    "firstProtectedOldSourceCommand": "ABSENCE_CORE_PATH=<exact copied eadb core> node --test absence-presence.test.ts",
+    "firstOldPass": 1,
+    "firstOldFail": 6,
+    "scope": "Separate targeted smoke runs; these do not independently certify entire new source/hosted qualification"
+  },
+  "proofArchive": {
+    "path": "media/absence-takeover-first-proof.zip",
+    "bytes": 1810615,
+    "sha256": "e9674dd40c5f76545392e92abbb94deee90fddfdf0e9df084f01e20dae37975d",
+    "members": 40,
+    "allMemberBytesCRCAndUniqueNamesVerified": true
+  },
+  "firstPublicationFailure": {
+    "status": "FAIL",
+    "actualFirstSource": "43f28f5ac55d5b308a75ba9998b99bfae32c8196",
+    "firstSourceCommitUtc": "2026-10-09T13:26:35Z",
+    "firstSourceRemoteObservedUtc": "2026-10-09T13:27:18Z",
+    "exactPublicationTimeNotInstrumented": true,
+    "firstSourceHardUtc": "2026-10-09T13:26:24.419231Z",
+    "hardMissMinimumSeconds": 10.580769,
+    "firstArchiveBytes": 971629,
+    "firstArchiveSha256": "ea242d01e106d3a4337873f69cf6d9eddd2e3752c2d1dba6a37f08ca1ca79b8b",
+    "duplicateMemberNames": [
+      "private-first/remaining-issue-first-v2-CLOSED.json",
+      "private-first/remaining-issue-first-v3-CLOSED.json",
+      "private-first/remaining-issue-first-v3-inputs-after.json",
+      "private-first/remaining-issue-first-v3-inputs-before.json",
+      "private-first/remaining-issue-first-v3-native.log",
+      "private-first/remaining-issue-first-v3.json"
+    ],
+    "firstArchivePreparationRejected": true,
+    "dependentShellCommandsIncorrectlyContinuedBeforeFailureInspection": true,
+    "oldCopiedNEXTStillStaleAtFirstPublication": true,
+    "newSourceQualification": "PENDING",
+    "originalReady11Unchanged": true,
+    "newNativePerformanceOrFormalKeepCredit": false,
+    "emptyStableHelperAfterENOSPC": "UNEXECUTED; exit0 from an empty Python file is not a test pass",
+    "HeartsCacheArchivePreparation": "Wrong src/core.ts path caused preflight FileNotFoundError; no cache file was removed; separate shared-memory output mount now available"
+  },
+  "qualification": "PENDING original whole new-source CI and visual milestone capture",
+  "formalKeepRoundsCredited": 0,
+  "nativePerformanceClaim": false
+}

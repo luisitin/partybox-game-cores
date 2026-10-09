@@ -1,3 +1,44 @@
+## Current isolated follow-up: absent-turn repair remains unqualified
+
+Owner: codex-domino-queue-audit-20261009. Branch:
+job/G01-dominoes-queue-audit-20261009 from claimed MAIN ba14179.
+Protected Ready11 eadb and Draft1 canonical8c are untouched and unmerged.
+Original final eadb full1318-check acceptance and R25–28 stop stay historical.
+
+Fixed all-human one-present control completed468 pairs/936 ordinary games:
+427 old matches exceed the contract60-minute simulated budget. Bounded greedy
+takeover of explicitly absent active seats removes repeated extra turn waits.
+Empty and paused rooms wait; every next present human keeps the full30s turn.
+Rules, RNG, scoring, original bot strategies, native clocks/gates stay exact.
+Stable controlled proof CLOSED13:22:00.314634/pass/no child/all1230 inputs:
+468 full pairs/527041 assertions/74211 physical checkpoints match, old427 to
+new0 budget failures. Seed1 Draw100:7303305 to90587 simulated ms, same19 rounds
+and scores94/133.360 connected games/101238 every-event states byte-identical;
+360 empty starts/360 pause-drop-resume cases pass. No FPS/hardware gain claim.
+Seven new default regressions pass; six genuinely fail the exact old eadb core.
+Those separate smoke runs are not whole-source or hosted acceptance.
+
+First actual source43f28f5 was normally pushed, commit13:26:35Z/readback13:27:18Z.
+Its exact publication clock was not instrumented. Hard13:26:24.419231 was missed
+by at least10.580769s; the earlier25-minute target was missed too. No backdate.
+Its first ZIP preparation rejected duplicate member names, but dependent shell
+commands wrongly continued; the source contained that invalid ZIP and stale
+copied handoff. The exact bad ZIP/first source/failure receipt remain retained.
+This correction deduplicates identical input paths and fully verifies every
+member byte, full CRC and unique names before publication. ENOSPC/empty helper
+was UNEXECUTED; the first concurrent-build controller truly FAIL remains.
+
+Current code/page proofs, all raw rows/events/programs/guards/native outputs and
+failures are in absence-takeover-first.json and its corrected complete media ZIP.
+Read actual next normal push receipt for new source and conservative cadence;
+until then use earliest next hard13:56:35Z, never infer exact prior push time.
+
+NEXT: current visual milestone capture; complete every original check plus new
+default regressions, open/keep supplemental PR Draft, accept exact new original
+workflow and whole genuine official artifact. No qualified new gain/formal KEEP
+round credited. After actual full current green, reread/rank5, measure/log/push
+each separate round until3 no-player-gain. Preserve original Ready11 static.
+
 # G01 delivery review — incomplete
 
 Owner: codex-domino-audit. Audit branch: job/G01-dominoes-queue-audit-20261008.

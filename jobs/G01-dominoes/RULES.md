@@ -43,7 +43,9 @@ unsupported details remain labelled from knowledge, unverified there.
 14. A host may pause/resume/end. Skip and a live 30-second turn timeout play a strategic
     legal action, so an idle or disconnected seat cannot trap the game. Inputs
     while paused and stale/early timers are ignored. The next-round phase also
-    has a timer. After a full cycle of automatic turns (one per seat) with no
+    has a timer. Explicitly absent active seats take deterministic legal actions
+    while another seat is connected; empty/paused rooms wait. These absent actions
+    do not shorten a present human's next turn. After a full cycle of automatic turns (one per seat) with no
     human input, deadlines shorten to one second; the round-end countdown is
     not a missed turn, so a present player never inherits a one-second window.
     A human input restores the full 30-second turn. End reports every original seat, including disconnected ones.

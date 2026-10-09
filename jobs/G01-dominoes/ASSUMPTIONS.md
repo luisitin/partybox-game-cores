@@ -395,3 +395,6 @@ missed5m56.451372s during actual environment restart/resumption/readback, no
 backdates. Read the next actual source push receipt for current cadence.
 Own G01 main row refreshed05:06:15UTC under exclusive lease; only own-row
 refresh follows this new push under the root-serialized main lease.
+
+## Lawful G01 follow-up,2026-10-09
+Full latest MAIN instructions/CLAIMS/all29 matching committer tips made G01 lowest stale. Own-row claim published12:56:24.419231, all foreign rows/tree/G10 BLOCKED intact. Isolated branch created from claimed MAIN. Declared disconnect already passed shell grace per contract/GAME_CONTRACT.md; deterministic legal takeover avoids extra absent-turn waits. Those actions are not missed present-human turns. Empty/paused rooms retain control. Original Ready11 whole1318 proof and R25–28 stop remain protected. Simulated schedule gain is not native FPS/hardware evidence. First source43 was genuinely late and its invalid duplicate ZIP/stale handoff remain in history; no backdate/force/retrocredit. Separate output mount resolved ENOSPC without reclaiming any Hearts cache/source.
