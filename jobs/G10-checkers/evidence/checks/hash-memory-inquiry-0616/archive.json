@@ -1,0 +1,78 @@
+{
+  "status": "SAFE_UNIQUE_FULL_CRC_EOF_EVERY_FILE_SHA_CHECKED",
+  "bytes": 647169,
+  "sha256": "bc220786574a14e9306e4d61f0e3c83b86a2106bf84b51e859cc0d6547ea2fb2",
+  "files": [
+    {
+      "member": "actual-untimed-inquiry/controller.json",
+      "bytes": 3304,
+      "sha256": "ba9573feb0882364a96e30a8bcd00e78f53e390a0e06765da1f350e86664364e"
+    },
+    {
+      "member": "actual-untimed-inquiry/controller.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "actual-untimed-inquiry/controller.stdout",
+      "bytes": 2586,
+      "sha256": "f6359ea276bbbae5743d80cc1afa7958a0c01d86ab5fd6cd60228889022246dd"
+    },
+    {
+      "member": "actual-untimed-inquiry/freeze-before.json",
+      "bytes": 1349078,
+      "sha256": "34c8a9e7cc6ff20430e9a4ffde479f7bfba943eb9ed7077836e55d7988d8f260"
+    },
+    {
+      "member": "actual-untimed-inquiry/freeze-finally.json",
+      "bytes": 1406100,
+      "sha256": "04d8cecd974d50a0d1f8797704c88bed11d703b3dc9dd0d468a98bc2ea1c8f97"
+    },
+    {
+      "member": "actual-untimed-inquiry/original-stream-result.json",
+      "bytes": 4441,
+      "sha256": "7768d1cff2f411ad78a252673285b5fdc674dd2b8ec0e3db5dd0cea4fac2c69d"
+    },
+    {
+      "member": "actual-untimed-inquiry/original-stream.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "actual-untimed-inquiry/original-stream.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "actual-untimed-inquiry/reused-buffer-result.json",
+      "bytes": 3297,
+      "sha256": "4542addc564f4be1e9f9db471b4b919a685d26c426878244c0b4c9a3ee3bb134"
+    },
+    {
+      "member": "actual-untimed-inquiry/reused-buffer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "actual-untimed-inquiry/reused-buffer.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "member": "actual-untimed-inquiry/spec.json",
+      "bytes": 2911963,
+      "sha256": "09f6f2a26108315d507d5473c4bfee5444ab336e36675ba3de0c32313197f315"
+    },
+    {
+      "member": "executed-untimed-controls/controller.py",
+      "bytes": 6578,
+      "sha256": "60580504aacb4fddfae3c9f747d57845b747d03ec2daa199116a374d0b06294e"
+    },
+    {
+      "member": "executed-untimed-controls/measure.mjs",
+      "bytes": 1716,
+      "sha256": "efa5338b268ed03a946e56557fddefa9be5d6a53bf60f080984fd485f965cb97"
+    }
+  ],
+  "scope": "Predeclared one originalstream and one reusable1MiBbuffer hash-only process with same real fullpurecore import. Both actually stopped by512MiB bound before any inputmatch,0matches; failure-only ownedgroups[] and full2372 final source/self/runtime freeze PASS. Narrow allocation inquiry only; no correctedhasher/product/gain/native retry/no-gain KEEP."
+}
