@@ -1,0 +1,15 @@
+# KEEP round15: prefer a strictly better knock with identical melds
+
+Only after exact3bf3456 full original hosted run37886788920 and whole official11596602554 were independently accepted05:11:15.117701Z, reread README/RULES/JOBS, the full Gin rules, source/bot/solver and contract. Complete previous raw ZIP/native log/89-guard reader and its first arithmetic failure are retained under accepted-3bf3456/. Python3.12 compensated sum was replaced only in the independent reader by original JavaScript-order sequential IEEE754 addition; all native samples and literal59FPS/17ms gates stayed unchanged.
+
+Five ranked weaknesses:
+
+1. Confirmed: Strong retains2 deadwood instead of1 while exposing the exact same three melds. Its public discard caution sacrifices a guaranteed finishing point. Complete52-card representative scores1 instead of2; the earlier independent lead and actual pre-fix source regression2 FAIL/1 PASS are retained. This is the worst confirmed remaining player defect.
+2. Strategy limitation: public pickup danger may survive a later public discard. No independent measured improvement is established; retain the current heuristic outside the bounded finishing case.
+3. Strategy limitation: equally minimal own meld layouts are not compared by expected defender layoff risk. Different exposed melds can change the defender's optimum, so do not globally rank all ordinary knocks only by deadwood.
+4. Coverage limitation: current leagues compare the shipped internal skills, not an external champion. Current Strong1154/2000 and Medium1743/2000 clearly pass the required internal gates; no outside strength claim is made.
+5. Delivery limitation: current offline Chromium desktop/CPU4 proof does not establish physical-phone or PartyBox SDK integration. Keep the original documented scope and timing failures.
+
+Fix only item1. Retain original heuristic/ties to select its candidate, then only for Strong in the actual discard phase, replace an eligible ordinary knock with lower positive deadwood when the exposed melds are exactly equal. Never return the just-picked-up discard; Gin/BigGin and every draw/upcard/other-skill path stay as before. Equal target melds give the defender the same joint layoff problem, so a lower own deadwood strictly improves the signed hand score for every hidden completion. The program never reads those hidden cards to choose.
+
+Meaningful checks use real production legal inputs/reducers and full52-card invariants:576 configurations across all editions/bonus profiles/2-3-4 rosters/4suits/BigGin/spade/clock settings;1000 disjoint hidden completions checked against independent joint packing oracle;120 legality/Gin/no-knock/pause controls;144 explicit defender0/1/2/3-deadwood score boundaries including36 undercut-to-winning transitions. Original Gin/zero-deadwood pickup suites and30000 unchanged non-Gin choices remain required. Original full node/matrices/leagues/26 compiled mutants/current35 source-bound browser/full hosted acceptance are required after this new material source change. All current results are pending until natural closure, both PRs Draft, renewed no-gain streak0.

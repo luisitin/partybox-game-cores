@@ -1,0 +1,30 @@
+{"suite":"preexisting-gin-draw-matrix","cases":6912,"actualLegalDrawPhaseRoutes":true,"skills":3,"variants":2,"counts":[2,3,4],"suits":4,"endpoints":2,"clockSettings":[0,10]}
+{"suite":"preexisting-gin-hidden-defenders","cases":1000,"choices":3000,"sha256":"2e50741934f3e2fc8cdb29eb066c29fe991f8fc1a2cd24123969b3121ec98db8"}
+{"suite":"preexisting-gin-draw-boundaries","controls":90}
+{"suite":"preexisting-gin-measured-gain","immediatePoints":31,"priorPassRoutePoints":20,"gain":11}
+✔ all skills take a guaranteed finishing discard even when ten-card deadwood is already zero (3253.447853ms)
+✔ 1000 hidden defender completions keep the same guaranteed choice and exact independent finishing score (1010.708543ms)
+✔ forced stock, unavailable actors, pause and non-finishing discards retain the original legal boundaries (12.282451ms)
+✔ the reproduced opening takes 31-point Big Gin instead of passing into a 20-point Gin (1.540343ms)
+{"suite":"strong-guaranteed-gin","cases":72,"knownClassicPoints":22}
+{"suite":"gin-actual-score-dominance","defenders":1000,"ordinaryComparisons":6904,"minGain":21,"sha256":"d57bb9977c2b677288f79cc4dae664d82a2d9bf8316ccc658f30362fdc3130d5"}
+{"suite":"gin-policy-boundaries","forbiddenCases":52,"bigGinCases":12}
+✔ Strong takes guaranteed Gin despite public discard danger in every edition/profile/rotation (65.463943ms)
+✔ actual Gin scoring dominates every legal ordinary knock against 1000 disjoint hidden defenders (2104.962683ms)
+✔ Gin priority respects immediate-return prohibition and preserves the existing Big Gin branch (22.169919ms)
+{"suite":"non-gin-policy-byte-equivalence","states":10000,"decisions":30000,"baselineHead":"72d0f3f4ad4f6b70a8ac6b0ed81121300aa54c1f"}
+✔ all 30000 non-Gin bot choices retain the accepted pre-repair behavior (2346.084595ms)
+{"suite":"same-meld-knock-configurations","cases":576,"minGain":1,"classicPointsBefore":1,"classicPointsAfter":2}
+{"suite":"same-meld-knock-hidden-defenders","defenders":1000,"minGain":1,"maxGain":2,"positiveKnocks":1000,"undercuts":0,"sha256":"8b7cd1f52b2b229393f43ad8ccd09056a2c496a42b5d8e277cf9436049027bd2"}
+{"suite":"same-meld-knock-boundaries","controls":120}
+✔ Strong takes the strictly better same-meld knock in all editions, profiles, rosters and suits (438.535248ms)
+✔ the same public decision dominates against 1000 hidden defenders with independent joint layoff scoring (3455.985807ms)
+✔ ordinary-knock priority retains immediate-return, Gin, no-knock and unavailable-player boundaries (22.781062ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4724.89583

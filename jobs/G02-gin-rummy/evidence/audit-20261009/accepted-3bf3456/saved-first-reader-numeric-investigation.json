@@ -1,0 +1,72 @@
+{
+  "pythonVersion": "3.12.14",
+  "rows": [
+    {
+      "profile": "desktop",
+      "method": "builtin_sum",
+      "sum": 9999.6,
+      "stats": {
+        "meanMs": 16.666,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "fps": 60.00240009600384
+      },
+      "allExact": false,
+      "differences": [
+        {
+          "meanMs": [
+            16.666,
+            16.665999999999997,
+            16.665999999999997
+          ]
+        },
+        {
+          "fps": [
+            60.00240009600384,
+            60.00240009600385,
+            60.00240009600385
+          ]
+        }
+      ]
+    },
+    {
+      "profile": "desktop",
+      "method": "manual_sequential_ieee754",
+      "sum": 9999.599999999999,
+      "stats": {
+        "meanMs": 16.665999999999997,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "fps": 60.00240009600385
+      },
+      "allExact": true,
+      "differences": []
+    },
+    {
+      "profile": "phone4x",
+      "method": "builtin_sum",
+      "sum": 9999.6,
+      "stats": {
+        "meanMs": 16.666,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "fps": 60.00240009600384
+      },
+      "allExact": true,
+      "differences": []
+    },
+    {
+      "profile": "phone4x",
+      "method": "manual_sequential_ieee754",
+      "sum": 9999.6,
+      "stats": {
+        "meanMs": 16.666,
+        "p99Ms": 16.800000000000182,
+        "maxMs": 16.80000000000109,
+        "fps": 60.00240009600384
+      },
+      "allExact": true,
+      "differences": []
+    }
+  ]
+}

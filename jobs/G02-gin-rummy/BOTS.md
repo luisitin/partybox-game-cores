@@ -25,3 +25,5 @@ Medium/easy remains1743/2000. Earlier final-point-counting results stay in
 bot-league-settlement-baseline.json and previous verification history.
 
 2026-10-09 renewed KEEP repair: legal Gin now has priority over the public danger heuristic; no hidden hand/stock/RNG information is added. Actual new paired2000-game league: Strong1154/2000=57.70% (95% Wilson lower55.5221%), Medium1743/2000=87.15% (85.6118%). Earlier1152/2000 remains historical. New tactical72-case/1000-defender checks and30000 preserved non-Gin choices are in evidence/audit-20261009/. Full current hosted acceptance remains required.
+
+KEEP15 bounded strategy: Strong’s existing public heuristic selects its candidate first. Only an actual eligible finishing ordinary knock may then improve within the exact same exposed meld set, using lower positive own deadwood. This does not change draw/upcard decisions, other skills, forbidden returns, Gin priority or scoring.576 configurations/1000 hidden defenders/144 undercut boundaries prove the bounded scoring gain; the new original paired leagues/current full hosted acceptance are pending.

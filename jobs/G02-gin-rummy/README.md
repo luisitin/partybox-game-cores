@@ -1,49 +1,45 @@
-Current supplemental repairs: initial presence and guaranteed Gin decisions passed full original CI at8a349. The next bounded already-zero-deadwood pickup repair is under current verification; see NEXT/VERIFY and supplemental PR12. Original PR2/history retained; current full CI and KEEP are required.
-
 # G02 — Gin Rummy
 
-Pure deterministic TypeScript core following the exact workshop contract.
+Pure deterministic TypeScript core following the workshop contract.
 Standard and Oklahoma Gin; optional 3–4 seat winner-stays rotation.
-Exact deadwood, chosen knock layouts,
-joint optimal defender melds/layoffs, Gin, Big Gin, undercut, match/box bonuses,
-explicit scoring presets and three honest bot skills are included.
+Exact deadwood, chosen knock layouts, joint optimal defender melds/layoffs,
+Gin, Big Gin, undercut, match/box bonuses and three bot skills are included.
 
-Open **play.html** directly from disk to play: no server, build or network
-needed. Two humans or bots; three/four players rotate through two active seats.
-Cover private hands between turns. A bot move button keeps the table's pace
-under the players' control. Every scoring and clock setting is shown before deal.
+Open **play.html** directly from disk: no server, build or network needed.
+Two humans or bots play; three/four seats rotate through two active hands.
+Cover private hands between turns. The bot move button lets players set pace.
+Scoring and optional clock settings are shown before dealing.
 
-Development/checking: Node 22.16+, then in this folder:
+Development/checks, Node22.16+ from this folder:
 
     npm ci --ignore-scripts --no-audit --no-fund
     npx playwright install --with-deps chromium
     npm test
 
 `npm run build` strictly type-checks and regenerates the self-contained page.
-`npm run fixtures` deterministically regenerates all phase states and manifest.
-`npm run league` runs the required 2,000-game comparison for each adjacent skill.
-`src/core.ts` exports `game`; `src/cards.ts` exports the exact scoring algorithms.
-The only runtime dependency is allowed Zod; it is inlined in the offline page.
+`npm run fixtures` regenerates every phase fixture and the manifest.
+`npm run league` runs2000 games per adjacent bot-skill pairing.
+`src/core.ts` exports `game`; `src/cards.ts` contains exact scoring solvers.
+Zod is the only allowed runtime dependency and is inlined in the offline page.
 
-RULES/SOURCES/CONFLICTS record read sources and deliberate scoring choices.
-VERIFY records actual commands and coverage, BOTS the measured win rates,
-LOOP post-green improvement rounds, NEXT remaining/resume steps.
-SHA256SUMS covers delivered data/media. No external card art or trackers.
+RULES/SOURCES/CONFLICTS record read sources and deliberate variants.
+VERIFY records commands/coverage, BOTS measured win rates, LOOP improvement
+rounds, NEXT resume steps. SHA256SUMS covers every delivered data/media file.
+No external art, trackers, hidden-card strategy access or runtime requests.
 
-The original eight KEEP GOING rounds finished at head723bfa77, with exact-head
-CI37730486159 green and PR#2 ready. Earlier timing failures remain preserved.
-The resumed host repair consumes an overdue clock before human/bot moves and
-clears private DOM when starting over. Its unchanged source passed full local
-and hosted browser gates; new fixes restart the KEEP GOING streak at zero.
-Current exact-head CI must pass before delivery is complete: see
-https://github.com/luisitin/partybox-game-cores/pull/2/checks .
-[Current proof index](evidence/resume-20261008/INDEX.md) separates accepted
-raw samples, source guards and retained historical failures.
-Resumed rounds 10–12 add no player-visible gain (streak 3); final CI is required.
-Integrity checks the current proof index against the actual page/core, all
-1,200 raw frame intervals and guarded recording hashes.
+Prior accepted3bf3456/run37886788920 passed the full original63 tests,
+6000 every-event replays, two2000-game leagues,26 compiled mutants,
+521 file hashes, native1200 browser intervals and two fully decoded clips.
+The full genuine artifact11596602554 is retained in accepted-3bf3456/.
+Initial-presence, guaranteed Gin and already-zero-deadwood finishing pickup
+repairs are accepted at that historical source head.
 
-[Revalidation review](evidence/reverify-1900/REVIEW.md) preserves game bytes and
-the player stop. New35-source/unique-attempt/native/active-hand gates retain
-a genuine desktop failure; phone timing NOT RUN. npm test verifies its own
-fresh raw and separate clips. Current hosted full CI/actual artifact required.
+The next bounded Strong-knock repair chooses lower positive deadwood only
+when the exposed melds are identical. Original current full checks and
+fresh source-bound browser/full hosted acceptance are pending: see NEXT.
+Both original PR2 and supplemental PR12 remain Draft; renewed KEEP streak0.
+
+[Current evidence](evidence/resume-20261008/INDEX.md) and
+[retained timing failure](evidence/reverify-1900/REVIEW.md) document scope.
+Original native FPS/clock/corpus/guard gates stay unchanged; hosted CPU4
+Chromium evidence is not a physical-phone or PartyBox SDK claim.

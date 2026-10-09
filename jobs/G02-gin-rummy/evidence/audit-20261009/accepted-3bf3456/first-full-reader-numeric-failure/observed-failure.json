@@ -1,0 +1,11 @@
+{
+  "recordedUtc": "2026-10-09T05:11:13.344254+00:00",
+  "actualNativeExitCode": 1,
+  "failingFileLine": 50,
+  "failingPredicate": "for k,v in stats.items():assert v==row[k]==sample[k]",
+  "sourceSha256": "3136d9e035c1b07affc8e5a91fe0cf82eb3d21b217bc49f64e31440ee6baf0ca",
+  "nativeHostedWorkflowResult": "SUCCESS",
+  "fullArtifactAcceptanceClaimed": false,
+  "gatesOrRawModified": false,
+  "savedNumericDiagnosis": "../saved-first-reader-numeric-investigation.json"
+}

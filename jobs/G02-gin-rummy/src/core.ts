@@ -349,7 +349,8 @@ export function sampleInput(state:State,id:string,rng:Rng,skill:BotSkill='normal
 }
 function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkill):{card:Card;deadwood:number} {
   let best={card:hand.find(c=>c!==forbidden)!,deadwood:999},bestScore=Infinity;
-  for(const {card,solution} of discardSolutions(hand))if(card!==forbidden) {
+  const choices=discardSolutions(hand);
+  for(const {card,solution} of choices)if(card!==forbidden) {
     let score=solution.deadwood;
     if(skill==='sharp') {
       let potential=0;
@@ -370,6 +371,15 @@ function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkil
     // danger cannot make an ordinary knock score better against that defender.
     const gin=solution.deadwood===0,bestGin=best.deadwood===0;
     if(gin&&!bestGin||gin===bestGin&&score<bestScore){bestScore=score;best={card,deadwood:solution.deadwood};}
+  }
+  if(skill==='sharp'&&v.phaseId==='discard'&&best.deadwood>0&&best.deadwood<=v.knockLimit) {
+    // Identical exposed melds give the defender identical layoff options.
+    // Lower deadwood therefore improves the finishing score against every
+    // defender; future discard danger has no value once the hand ends.
+    const meldKey=(melds:Card[][])=>melds.map(m=>[...m].sort((a,b)=>a-b).join(',')).sort().join(';');
+    const key=meldKey(choices.find(x=>x.card===best.card)!.solution.melds);
+    for(const {card,solution} of choices)if(card!==forbidden&&solution.deadwood>0&&solution.deadwood<best.deadwood&&meldKey(solution.melds)===key)
+      best={card,deadwood:solution.deadwood};
   }
   return best;
 }

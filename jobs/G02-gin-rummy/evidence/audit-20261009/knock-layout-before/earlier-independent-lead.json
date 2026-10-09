@@ -1,0 +1,367 @@
+{
+  "closedUtc": "2026-10-09T04:21:55.923Z",
+  "sourceHead": "8a349d40de81afb48f85b63cd1590d5a3c9d847d",
+  "status": "INDEPENDENT_KNOCK_HEURISTIC_LEAD_NOT_ADOPTED",
+  "valid52Cards": true,
+  "state": {
+    "phase": {
+      "id": "discard",
+      "startedAt": 0,
+      "deadline": null
+    },
+    "phaseClock": 0,
+    "roomEmpty": false,
+    "rng": {
+      "seed": 1,
+      "step": 52
+    },
+    "players": {
+      "p0": {
+        "id": "p0",
+        "name": "Seat 0",
+        "avatarId": "face0",
+        "connected": true,
+        "bot": true
+      },
+      "p1": {
+        "id": "p1",
+        "name": "Seat 1",
+        "avatarId": "face1",
+        "connected": true,
+        "bot": true
+      }
+    },
+    "config": {
+      "variant": "standard",
+      "mode": "duel",
+      "target": 100,
+      "ginBonus": 20,
+      "undercutBonus": 10,
+      "boxBonus": 20,
+      "bigGin": false,
+      "bigGinBonus": 31,
+      "dealer": "winner",
+      "aceGin": true,
+      "spadeDouble": true,
+      "extraBoxes": false,
+      "shutout": "gameBonus",
+      "turnSeconds": 0
+    },
+    "order": [
+      "p0",
+      "p1"
+    ],
+    "active": [
+      "p0",
+      "p1"
+    ],
+    "waiting": [],
+    "left": [],
+    "scores": {
+      "p0": 0,
+      "p1": 0
+    },
+    "boxes": {
+      "p0": 0,
+      "p1": 0
+    },
+    "wins": {
+      "p0": 0,
+      "p1": 0
+    },
+    "dealer": "p0",
+    "turn": "p0",
+    "hand": 1,
+    "hands": {
+      "p0": [
+        2,
+        3,
+        4,
+        15,
+        16,
+        17,
+        28,
+        29,
+        30,
+        13,
+        40
+      ],
+      "p1": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        21,
+        22,
+        23,
+        24,
+        41
+      ]
+    },
+    "stock": [
+      0,
+      1,
+      5,
+      6,
+      7,
+      14,
+      18,
+      19,
+      20,
+      25,
+      26,
+      27,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "discard": [
+      51
+    ],
+    "initialUpcard": 41,
+    "knockLimit": 10,
+    "multiplier": 1,
+    "openingPasses": 0,
+    "mustStock": false,
+    "drawnDiscard": null,
+    "pending": null,
+    "roundResult": null,
+    "finished": false,
+    "endedEarly": false,
+    "publicLog": [
+      {
+        "player": "p1",
+        "action": "take-discard",
+        "card": 41
+      }
+    ]
+  },
+  "results": [
+    {
+      "skill": "normal",
+      "input": {
+        "type": "discard",
+        "card": 40,
+        "knock": true
+      },
+      "knockerDeadwood": 1,
+      "melds": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          15,
+          16,
+          17
+        ],
+        [
+          28,
+          29,
+          30
+        ]
+      ],
+      "roundResult": {
+        "winner": "p0",
+        "points": 2,
+        "kind": "knock",
+        "knocker": "p0",
+        "knockerLayout": {
+          "deadwood": 1,
+          "melds": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              15,
+              16,
+              17
+            ],
+            [
+              28,
+              29,
+              30
+            ]
+          ],
+          "loose": [
+            13
+          ]
+        },
+        "defenderLayout": {
+          "deadwood": 3,
+          "melds": [
+            [
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            [
+              21,
+              22,
+              23,
+              24
+            ]
+          ],
+          "loose": [
+            41
+          ],
+          "laid": []
+        },
+        "hands": {
+          "p0": [
+            2,
+            3,
+            4,
+            15,
+            16,
+            17,
+            28,
+            29,
+            30,
+            13
+          ],
+          "p1": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            21,
+            22,
+            23,
+            24,
+            41
+          ]
+        },
+        "multiplier": 1
+      },
+      "signedKnockerScore": 2
+    },
+    {
+      "skill": "sharp",
+      "input": {
+        "type": "discard",
+        "card": 13,
+        "knock": true
+      },
+      "knockerDeadwood": 2,
+      "melds": [
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          15,
+          16,
+          17
+        ],
+        [
+          28,
+          29,
+          30
+        ]
+      ],
+      "roundResult": {
+        "winner": "p0",
+        "points": 1,
+        "kind": "knock",
+        "knocker": "p0",
+        "knockerLayout": {
+          "deadwood": 2,
+          "melds": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              15,
+              16,
+              17
+            ],
+            [
+              28,
+              29,
+              30
+            ]
+          ],
+          "loose": [
+            40
+          ]
+        },
+        "defenderLayout": {
+          "deadwood": 3,
+          "melds": [
+            [
+              8,
+              9,
+              10,
+              11,
+              12
+            ],
+            [
+              21,
+              22,
+              23,
+              24
+            ]
+          ],
+          "loose": [
+            41
+          ],
+          "laid": []
+        },
+        "hands": {
+          "p0": [
+            2,
+            3,
+            4,
+            15,
+            16,
+            17,
+            28,
+            29,
+            30,
+            40
+          ],
+          "p1": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            21,
+            22,
+            23,
+            24,
+            41
+          ]
+        },
+        "multiplier": 1
+      },
+      "signedKnockerScore": 1
+    }
+  ]
+}

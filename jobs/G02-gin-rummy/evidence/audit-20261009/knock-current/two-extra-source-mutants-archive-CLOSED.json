@@ -1,0 +1,133 @@
+{
+  "closedUtc": "2026-10-09T05:24:24.854242+00:00",
+  "result": "PASS",
+  "allMembersCrcRead": 25,
+  "allOriginalFilesByteIdentical": 24,
+  "wholeBytes": 571572,
+  "wholeSha256": "61c9a4fd29638935fe92bb99053893d815e4e27ebafa3779626d8b2bfd51ace8",
+  "compiledExtraMutants": 2,
+  "actualAssertionKills": 2,
+  "normalOriginalMutantsUnchanged": 26,
+  "files": [
+    {
+      "path": "CLOSED.json",
+      "bytes": 3532,
+      "sha256": "2ecce4f46730e1ec089512020e6941810a6c283422a5aea1c4a72dfa4abba043"
+    },
+    {
+      "path": "K01/dist/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    {
+      "path": "K01/dist/contract.mjs",
+      "bytes": 1016836,
+      "sha256": "ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f"
+    },
+    {
+      "path": "K01/dist/core.mjs",
+      "bytes": 1038404,
+      "sha256": "d4e4f55659d199b179c98bb85d1a5c6e90b2ec587b0407414fd7e23b80e500d4"
+    },
+    {
+      "path": "K01/mutated-core.ts",
+      "bytes": 27221,
+      "sha256": "028c789a0ef6794fd42982f103e40242ededd53f7d198466eeafbdb01d3a7b3b"
+    },
+    {
+      "path": "K01/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "K01/stdout",
+      "bytes": 4140,
+      "sha256": "5fc7617a66c9e80654b6b053359c0aaa118baed949b0b8763f0e861dddd7e330"
+    },
+    {
+      "path": "K01/tests/gin-cases.mjs",
+      "bytes": 2525,
+      "sha256": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18"
+    },
+    {
+      "path": "K01/tests/helpers.mjs",
+      "bytes": 3202,
+      "sha256": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e"
+    },
+    {
+      "path": "K01/tests/knock-layout-priority.test.mjs",
+      "bytes": 7545,
+      "sha256": "532f0d4b73538d8caedd1f34f84032ca7d6991b8cebc6485c0ba60b7baecf099"
+    },
+    {
+      "path": "K01/tests/layoff-reference.mjs",
+      "bytes": 1329,
+      "sha256": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1"
+    },
+    {
+      "path": "K02/dist/cards.mjs",
+      "bytes": 5882,
+      "sha256": "1b8d994514e2de1464f361bddac143b99dfa328037152a89a476bcb1ce5f6c77"
+    },
+    {
+      "path": "K02/dist/contract.mjs",
+      "bytes": 1016836,
+      "sha256": "ac609bfaadda164a91a82b6db00cf7c80f320a64fee9c8a63983892cefe8102f"
+    },
+    {
+      "path": "K02/dist/core.mjs",
+      "bytes": 1038475,
+      "sha256": "a777d58bc755d353492fbf58b9bd364b00e74728df3c2eb0a1a1cdbd6d60a332"
+    },
+    {
+      "path": "K02/mutated-core.ts",
+      "bytes": 27196,
+      "sha256": "70f73c880e5029eaf552552aa5ac2e4ef149e29f4ba91019974bee631aaf6f13"
+    },
+    {
+      "path": "K02/stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "K02/stdout",
+      "bytes": 2261,
+      "sha256": "45c64391baf40566641eb1eb3c241519b6363fdc9b01bf4d55b48f5bf8921a58"
+    },
+    {
+      "path": "K02/tests/gin-cases.mjs",
+      "bytes": 2525,
+      "sha256": "a2e401596df74617e5c5a5a22005599648e12c52a6616d8ce3def3f82de9ed18"
+    },
+    {
+      "path": "K02/tests/helpers.mjs",
+      "bytes": 3202,
+      "sha256": "402515edb7b2a6af9548da2a2f1a7fa8f6b220b425da9664bd8c4a3e8b552b2e"
+    },
+    {
+      "path": "K02/tests/knock-layout-priority.test.mjs",
+      "bytes": 7545,
+      "sha256": "532f0d4b73538d8caedd1f34f84032ca7d6991b8cebc6485c0ba60b7baecf099"
+    },
+    {
+      "path": "K02/tests/layoff-reference.mjs",
+      "bytes": 1329,
+      "sha256": "9e8ba34183899531736cb4acbe80d25893009b469a3caf73d3252be87ce579a1"
+    },
+    {
+      "path": "READY.json",
+      "bytes": 1058,
+      "sha256": "de7cb359e847bc719ceec91ecfdaa426d793d0d013d0a77e9313cdc7f96e9e16"
+    },
+    {
+      "path": "baseline.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline.stdout",
+      "bytes": 1087,
+      "sha256": "889ac5b5483f8cc09896618bb4df4c82e380a42a54c985388d94bc4265ea5e0a"
+    }
+  ]
+}
