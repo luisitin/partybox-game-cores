@@ -107,3 +107,5 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
   disk opening or a reason to modify production. The authorized separate
   draft validation PR obtains existing full hosted CI while original PR1/8c
   remains unchanged/draft. All binding completion/KEEP checks remain required.
+
+- Exact e4 hosted file://, Worker and original native gates passed, while the once-only local original TV profile failed57.8815357901fps. The cause remains UNKNOWN; hosted success does not erase the local failure. Phone/capture15 were not reached locally. No paired player gain, adoption or renewed KEEP round is inferred.

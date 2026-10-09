@@ -31,6 +31,20 @@ The actual navigation was setContent, not file://. No fake clock or FPS claim.
 Preparation Node syntax failure, withheld controller and static READY drift
 remain archived. They never became successful runtime trials.
 
+## Latest exact hosted proof and actual local failure
+
+HOSTED-WORKER-AUDIT.md retains full genuinee4 hosted success, independently
+accepted1,204 assertions at01:15:09.936976UTC, including actualfile:// and
+all600 native intervals/36decodedVP9frames. Validation PR11 is open/draft.
+The once-only local original300 TV-profile trial FAILED57.8815357901fps
+against unchanged58; phone/capture15 NOT RUN. Natural controller CLOSED
+01:14:16.581822UTC/exit1/all159 guards/no child. Cause UNKNOWN. Preserve
+worker-native-first-e4d5882.json/controller/archive; no unchanged luck rerun.
+A separate private paired-response harness is UNEXECUTED and NOT READY.
+Candidate remains unadopted; renewed KEEP rounds/gains0. Exact player/core/
+UI/Worker and sampler unchanged in this evidence checkpoint. Read fresh
+CLAIMS.md and actual source push receipts for the next cadence.
+
 ## Candidate and checks still required
 
 StrongBot sends only sanitized Observation/seed/request ID to an inline Blob
@@ -43,11 +57,9 @@ Strict build/static/six controlled-port checks passed; real first proof now
 adds native Worker legality/privacy/replay/lifecycle evidence. HTML is
 1,032,578B, SHA02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0.
 
-Next, run the original browser.ts once on these exact bytes under root's
-fresh exclusive native grant, keeping original300 unfiltered intervals,
-301 timestamps, zero warmup/filtering and58fps/p95<=18ms gates. Retain all
-raw times and a new genuine milestone15 clip; do not overwrite older media.
-Then perform a predeclared paired original8c/Worker responsiveness comparison
+The once-only original browser.ts trial has now run and FAILED locally as
+recorded above; do not rerun unchanged source for luck. Preserve original
+300/301 raw values/gates and complete hosted proof. Perform a predeclared paired original8c/Worker responsiveness comparison
 with actual policy/seed/action equivalence and native raw timings. No gain is
 claimed until measured; no unchanged rerun for luck after a failure.
 
