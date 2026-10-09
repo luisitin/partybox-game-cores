@@ -1,0 +1,155 @@
+{
+  "head": "a96d1354a3ec89ef67fa8fdee2a55b1bb0e92387",
+  "sourceGuards": 183,
+  "rawIntervals": 2400,
+  "fullArtifactPassed": true,
+  "profiles": [
+    {
+      "profile": "en-4x4-TV",
+      "frames": 600,
+      "milliseconds": 9999.502,
+      "meanMs": 16.665836666666667,
+      "fps": 60.002988148809806,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    },
+    {
+      "profile": "en-4x4-phone-4x",
+      "frames": 600,
+      "milliseconds": 9999.536,
+      "meanMs": 16.665893333333333,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    },
+    {
+      "profile": "es-5x5-TV",
+      "frames": 600,
+      "milliseconds": 9999.536,
+      "meanMs": 16.665893333333333,
+      "fps": 60.002784129183595,
+      "p95Ms": 16.799999999999272,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    },
+    {
+      "profile": "es-5x5-phone-4x",
+      "frames": 600,
+      "milliseconds": 9999.5,
+      "meanMs": 16.66583333333333,
+      "fps": 60.0030001500075,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109
+    }
+  ],
+  "videos": [
+    {
+      "name": "native-private-input-and-results.webm",
+      "bytes": 431062,
+      "sha256": "8660322c8a750d44ef77bd89e373d9571f264d1ff6675a14fdba0d31eb8b2024",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "4.320000"
+        }
+      }
+    },
+    {
+      "name": "spanish-host.webm",
+      "bytes": 100337,
+      "sha256": "b869f3d64269befcd35dcd6e65aee64b6137c8b7d00704e7544b015dff13aafc",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "0.920000"
+        }
+      }
+    },
+    {
+      "name": "max-roster-long-names.webm",
+      "bytes": 551239,
+      "sha256": "facb63958dc71e66c872141a5f9d069fdc92ff415c792add7ef42a6c5506acd6",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "4.440000"
+        }
+      }
+    },
+    {
+      "name": "restart-preserves-progress.webm",
+      "bytes": 131011,
+      "sha256": "b292ad242c04aa8e91d33cb3e4abb9b69230a3078e89c1ce68dab1a798e7207f",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "1.280000"
+        }
+      }
+    },
+    {
+      "name": "bot-observer.webm",
+      "bytes": 151200,
+      "sha256": "22d15cedeea9c3064173a2fe0fda8188fdbf650b461f1dc4f81366bd0f0409c8",
+      "metadata": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "4.200000"
+        }
+      }
+    }
+  ],
+  "resumeCountdown": {
+    "beforeSeconds": 90,
+    "pausedSeconds": 90,
+    "afterSeconds": 90,
+    "heldMs": 2000.3574250000001
+  },
+  "functionalGates": 22,
+  "rosters": 5,
+  "nativeOnly": false,
+  "scope": "Actual genuine supplied artifact independently bound to immutable exact Git head; original artifact/report/clip bytes unchanged"
+}

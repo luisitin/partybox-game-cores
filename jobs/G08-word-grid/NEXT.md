@@ -1,0 +1,99 @@
+# G08 — KEEP12 completed; final exact-head acceptance gate
+
+Formal rounds 10/11/12 are three consecutive no-player-gain reviews after round9's real Resume-clock gain; KEEP stops. Read review/keep12/README.md and review/REPRODUCE.md. Accepted prior document baseline 8c9a9627c0bf2e66905f7e5c1341e293aeb4b27a has both actual full green events and both genuine source-bound artifacts independently accepted (183 inputs each, 4800 raw intervals, eight profiles, 22 gates, ten decoded clips).
+
+The final KEEP12 document HEAD is a new acceptance scope: require BOTH exact-head push and PR full SUCCESS, read both complete logs, download/independently accept genuine current ZIP/raw/native evidence, then mark original PR9 ready. If those exact conditions are already true, delivery is complete: return to the queue without another cosmetic commit. PR body and actual current GitHub runs retain final acceptance receipts; never infer final success from the preceding baseline. Refresh only own G08 claim after each normal push, never merge/force-push or change owner assets. No unchanged local FPS retry. Preserve local phone57.6947FAIL/Spanish NOT RUN, all original failures and unknown restart exit. Complete physical face/Spanish edition authentication and production SDK remain explicit re-verification scope; both actually read primary manuals are reconciled in keep11.
+
+# G08 — KEEP11 completed; one no-player-gain review remains
+
+Accepted baseline 0b24bf6f590bd0e0d49cdafe1d89a4ef6907409d has BOTH full hosted events green and BOTH genuine artifacts independently accepted: 183 immutable inputs each, 4800 total unfiltered raw intervals/eight profiles, 22 native gates, ten decoded hashed clips. See review/keep11/README.md. Formal KEEP11 re-read/rank/fix/measure improves the stale VERIFY opening and reconciles genuinely read primary manuals/variants. Documentation only: original player/page/runtime/proof inputs unchanged, no-gain streak2. Latest new document head full paired CI/artifact acceptance pending, then one separate formal review before final acceptance/PR9 readiness. Preserve all sibling/setup/local FPS failures and unknown restart exit; no unchanged local FPS retry. Physical complete-face/Spanish edition authentication and actual production SDK runtime remain open re-verification scope, not unread-manual claims.
+
+# G08 — observed slow Ubuntu mirror repaired; full paired acceptance pending
+
+Read review/repair14/README.md first. cc464 PR37847330430 full green and its actual downloaded artifact independently passes183guards/2400raw/fivedecodedclips/22native gates. Same-head push37847322222 correctly FAILS bounded capture installation with exit124; no game/FPS test or artifact there. Concrete new workflow replaces only Azure URL in existing runner mirrorlist with available official HTTPS Ubuntu archive; Ubuntu trust/source definitions and all fatal timeouts/tests/performance gates remain. New exact-head push AND PR full green plus genuine source-bound artifact acceptance pending. PR9 DRAFT. KEEP10 streak1 remains; two subsequent formal reviews still required. No unchanged local FPS retry or owner game/page/art change.
+
+# G08 — actual installer timeout repaired; full acceptance pending
+
+Read review/repair13/README.md first. d613 paired PR naturally hit its actual 30-minute job limit after capture installation consumed 22m6s; push and genuine downloaded push artifact passed, paired overall acceptance did not. New workflow bounds the installer, excludes optional APT recommendations and requires actual ffmpeg/ffprobe. New exact-head full push AND PR and genuine current artifact acceptance pending; PR9 stays DRAFT. No local FPS retry or original page/game/art changes. KEEP10 streak1 preserved; KEEP11/12 not started. New readable primary manuals still need factual/variant reconciliation.
+
+# G08 — KEEP10 completed; two no-gain reviews remain
+
+Accepted baseline a96d1354a3ec89ef67fa8fdee2a55b1bb0e92387 has both full push/PR green and both actual artifacts independently accepted; see review/keep10/README.md. KEEP10 read/rank/fix/measure is documentation-only, no player gain, streak1. Current source/page/native sampler remain unchanged. Next: complete two further separate binding reviews/pushes, then both final exact-head full CI and genuine artifact acceptance before PR9 is ready. Do not repeat unchanged local FPS or erase any failed/interrupted attempt. Refresh only own G08 claim after each normal push. Prior local phone failure and restart exit unknown remain explicit.
+
+# G08 — native minimum-hold proof repaired, full acceptance pending
+
+Latest work reads main README/RULES/JOBS, START-HERE and original owner instructions. Canonical branch job/G08-word-grid-the-owner-s-shake-up, originalPR9 stays DRAFT. Current game/pageSHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e remains14,208,702bytes, owner assets/core/data unchanged. Resume clock gain is genuine; no-player-gain streak0 and the old stop3 is invalidated.
+
+Read review/repair12/README.md for exact recovered partial recording, unknown interrupted session exit, real2170.605254ms two-second Pause and19negative controls. Prior22f PR37838445873 green and push37838439275 red both preserved. The red push correctly rejected1999.752709ms hold. Harness now waits for the real native deadline without weakening>=2000, frames, source guards or page.
+
+Normal push checkpoint and refresh ONLY own G08 claim in /workspace/game-cores-G08-claims. Then read full exact-new-head push and PR logs and independently download/validate genuine current artifacts before PR9 is ready. KEEP: re-read/rank five/fix worst/measure/push until three consecutive no-player-gain rounds after full green. Never merge/force push or edit owner art/name/film. No new unchanged local FPS retry; local phone57.6947FAIL and all raw/grants/CLOSED preserved, Spanish NOTRUN.
+
+Re-verify when web works: manufacturer primary PDFs and physical edition labels; actual production SDK audio/3D/UI runtime. Test-only bindings are permitted by G08; denied sources remain labelled unread.
+
+Previous checkpoint follows unchanged for evidence history.
+
+# G08 — CSP-safe capture checkpoint, full delivery pending
+
+Current KEEP9 player gain remains the repaired Resume clock; owner game/client/core/art/data are preserved and page14,208,702B/SHA3763b7f89abc81838abfd48c0f7a10f6ae734e9db0b08b41a6f98334322a866e remains unchanged. Old stop3 is invalidated; current no-player-gain streak0 until new full acceptance and formal subsequent rounds.
+
+Published ca8b720 local current-page strict run: EnglishTV600native intervals60.002400096FPS PASS; EnglishCPU4phone600intervals57.694704242FPS FAIL (<59, cause unresolved). Both live hunt/endpoints/private-public/grid/advancing240→230clock pass with183distinct source guards unchanged. SpanishTV/phone NOTRUN. Exact raw/report and root grants/CLOSED markers retained verbatim in review/repair11; no unchanged local luck retry or filtered intervals. Both ca8 full CI events FAIL; actual PR37835424897 full121069-character log says all185assertions and allfour hosted frame/raw/23negative gates passed, then capture string waitForFunction violated CSP unsafe-eval. Overall full acceptance failed. Its genuine failed artifact11574609568 is downloaded privately; independent historical2400raw acceptance still pending.
+
+Current checker replaces only that focus wait with bounded Node-side locator.evaluate polling, keeping exact heading identity, page CSP and all thresholds intact. Actual native-only capture exit0 observed20:13:26Z; independent183guards/22gates/5rosters/5fully decoded hashed clips and18real captured-baseline negatives PASS. Resume90→90after2001.526151ms actualPause; zero errors/network. NativeOnlytrue/nullFPS is partial, not speed acceptance; see review/repair11/native-only and media/11-csp-focus-verification.webm.
+
+Normal-push this checkpoint and refresh ONLY own G08 main claim in /workspace/game-cores-G08-claims. Read exact new full push and PR CI logs and download/independently validate genuine current artifacts before PR9 leaves draft. Then KEEP GOING until three consecutive rounds with no player-visible gain. Never lower59FPS/p95<=20ms/600interval/4profile gates, rebuild or replace owner assets/game, force push or merge. No active local sampler; new current unchanged-game local speed luck retry is not authorized. Canonical job/G08-word-grid-the-owner-s-shake-up, nicknamecodex-shake-resume, originalPR9. Last public ca8 push accepted19:54:12Z/readback19:54:42Z, own claim row19:55:13Z. Current checkpoint target20:19:03Z/hard20:24:03Z.
+
+Retained prior verification handoff:
+
+# G08 — corrected endpoint proof pending
+
+Checkpoint4047 CI caught a wrong TV-grid expectation BEFORE samples (16!==0, profiles[]). The original public TV legitimately shows the board; its private word lists remain hidden. Read review/repair09/RECOVERY.md for actual artifact/failed-report/cancelled-waiter receipts. Local attempt was cancelled with no grant/raw and all owned groups are now absent. This verifier assumption is corrected; no game/HTML/FPS gain is claimed.
+
+Fresh changed-harness attempt must use a new namespace/nonce, real Pause/Resume and current frozen source guards. All four actual-disk profiles, independent raw/capture controls, native recording, exact new full push/PR CI and actual downloaded artifact acceptance remain pending. Current page and original player KEEP6–8 stop3 are unchanged.
+
+Retained recovery handoff:
+
+# G08 — recovered verification repair pending
+
+Read review/repair09/RECOVERY.md for the actual interruption and evidence boundaries. The 18:18 paused attempt has READY only and no surviving process, grant, CLOSED, raw sample or final report; termination time/result are unknown. It contributes no FPS claim. The interruption since the 17:53:50 branch push exceeded 30 minutes.
+
+Published 1d2c470 has both exact-head full CI runs green (37820082838/37820089198) and an independently checked actual 2,400-interval/180-guard artifact. Newer private host verifiers are a new proof scope and remain pending. Game/client/art/data/play.html are unchanged, so the prior player KEEP6–8 stop3 is retained.
+
+Next actual work: strict typecheck and coordination tests; a fresh 600-second namespace with real owner Pause before READY and Resume after an exact root grant; all four English4×4/Spanish5×5 TV1920×1080/phone390×844 CPU4 profiles; 600 unfiltered intervals each, >=59FPS and p95<=20ms, advancing hunt-clock/runtime endpoint assertions; independent current raw/source checks and real-baseline negatives; separate native capture/full decode and 14 actual capture-corruption controls. Use no warmup/filter/fake clock or threshold relaxation. Notify root before browser/heavy work and require root grants.
+
+After every branch push refresh only G08 in /workspace/game-cores-G08-claims main using a normal claim commit/push. PR9 stays draft until all required gates pass on the exact new head, both full CI events are green and the downloaded actual current artifact is independently verified. No owner assets rebuilt/replaced, force push, PR merge, or other claim/Site edits.
+
+Historical handoff (retained):
+
+# G08 — current browser-proof repair pending
+
+Actual first local attempt CLOSED by17:51:59Z with runnerexit1/no grant/no sampled frames. Exact failed report and READY retained in review/repair09. No FPS result or acceptance claimed; original120s window was too short for shared coordination. Parent directs a future NEW changed-harness>=600s wait; do not silently retry. Native milestone09 recording, full current four-profile acceptance/fullCI still pending. Firstcheckpoint is a progress publication, not a completion milestone.
+
+Resume2026-10-08T17:48:38Z. G08 lawfully claimed17:24:54Z/mainaf37417178d2e84013f9221dcdf8fa51bdd6169a, push17:24:56Z; all17 matching branch commit times were checked. Isolated worktree `/workspace/game-cores-G08-resume`, canonical branch `job/G08-word-grid-the-owner-s-shake-up` normally merged oldcd4 from claimed main. OriginalPR9 is DRAFT until fresh full exact-head acceptance. Only own G08 claim was edited.
+
+Existing Shake Up, owner art/assets/core/client/dictionaries/offline sources and play.html remain unchanged. Page14,208,697bytes/SHA863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9. Preserve all151 supplied/168 gameplay assertions,29 protected visuals, full16-seat native controls and every research gate. Prior player KEEP6–8 stop3 remains applicable to unchanged game bytes. This host-only verification repair claims no new player-visible gain.
+
+Audit: old sampler had no raw intervals/complete source guards, filtered nonpositive intervals and included a partial first interval, covered English4×4 only, saved report after acceptance, and omitted hidden uploaded files. Actual native artifact listing for oldPR run37768048402 returned[]. Historical old English metrics/local failures stay historical; they do not cover Spanish5×5.
+
+Current tools: `frames.ts` opens actualfile:// via locked Playwright headless shell, retains600 unfiltered RAF intervals after an anchor frame for EACH English4×4 and Spanish5×5 TV1920×1080/phone390×844CPU4. Raw persists before threshold assertions; complete current start/end guards cover all start/ plus actual root contract and tool manifests. Original59FPS/p95≤20ms gates retained. Independent `verify-browser.mjs` recomputes current digests/statistics/four exact profiles; negative CLI mutates only real accepted evidence. Seven actual temp-file source/profile/nonce/grant controls PASS; corrected full strict typecheck PASS. Initial pointer-before-directory error was caught/fixed before publication.
+
+Pending: current local four-profile raw acceptance, real-baseline negative CLI, separately recorded current native milestone09 clip, fresh full npm test/exact-head push+PR green, actual downloaded artifact byte verification. Do not transfer old CI green to the repair head. Historical partial HTTP/native-only and failed FPS attempts remain retained.
+
+Run npm ci, `npx playwright-core install chromium --only-shell`, then npm test for all required gates. Local actual sample MUST use G08_FRAME_BARRIER_DIR and root grant. Set G08_FRAME_OUTPUT to a fresh nonexisting output; send actual READY tuple/path after all owned tests/builds/writers are zero. Root grants exact nonce/source/profile, then sampler writes CLOSED before processing. Never silently retry failed samples. Native captures follow timingCLOSED, use fresh nonexisting G08_NATIVE_OUTPUT directories and decoded positive<10MBVP8 bytes/SHA. CI rejects partial mode and uploads hidden files with no-file error.
+
+Claim clone `/workspace/game-cores-G08-claims`: pull main, refresh ONLY ownG08 row, commit `claim G08`, normal push after EACH job push. Firsttarget17:49:56Z/hard17:54:56Z. No force/PRmerge/owner asset changes/otherclaims/Site or original-repo main writes.
+
+Historical cd4 handoff follows; its completion status is superseded by the pending repair above.
+
+# G08 — implementation and KEEP GOING complete
+
+PR: https://github.com/luisitin/partybox-game-cores/pull/9 (open, never merged). Branch: job/G08-word-grid-the-owner-s-shake-up. Five meaningful rounds fixed phone bounds/16 tied winners, restart protection/fresh seed, keyboard handoff/grid focus, Spanish host controls/help and bot-only observation/full final awards. Rounds 6–8 only clarify documentation; page SHA256863a1910a63a16ed3dc1735a2c1e73e2c1b5317df6f50b01673e0fb3296073f9 is unchanged. Three consecutive rounds with no player-visible gain satisfy KEEP GOING; no further rounds unless a new defect appears.
+
+Final delivery gate: exact branch HEAD must have SUCCESS for both G08 push and pull_request workflow runs. Check GitHub Actions or `python /workspace/partybox-ci-head.py G08 --watch` in this workspace. It checks the current SHA via REST. If green, G08 is delivered: go back to the queue claim step. If failing, read its logs, fix, update CHANGES/VERIFY/NEXT/hashes, push and refresh main claim; never lower thresholds. Source/profile/media provenance is retained in VERIFY and media. Do not repeat completed research/simulations manually without a new concern: npm test already repeats every mandatory gate in CI.
+
+Baseline878f01a push37762679661 and PR37763533665 passed all gates before KEEP GOING. Real disk60.028desktop/60.029CPU4phonefps,p95<=16.8ms,0network/errors; media/browser-ci-37762679661.json identifies the exact source. Later local native browser runs exercise all functional fixes, seven milestone clips (<10MB each), privacy/pause/touch/cancel/keyboard,1/2/3/8/16rosters, full16-seat positive tie, restart, Spanish5×5, bot observer and awards. Their keep-01..05 reports explicitly say local HTTP/native-only/nullFPS. Managed local file policy/FPS failures remain recorded; CI cannot fall back.
+
+Reproducible gates: `npm ci`, `npm test`.168assertions (151supplied+12contract+5published rules);24/25behavioral mutations (exact-minimum quick-subset survivor separately covered by mandatory independent diffs);50000grids/10000sealed oracle comparisons/2383756validated paths;2000bot calibration boards/4000default-three-round leagues;1003adversarial replays/16000complete roster games (1000each1–16)/4idle games; two dictionary and fixture rebuilds;38JSONschemas,87checksums,29protected original model/CSS/film files; strict ES2022 and actual nine root invariants; actualfile browser/FPS. Original name/art/assets/film look retained. Core version0.2.0, no state-shape change in KEEP GOING.
+
+Main claim worktree is /tmp/g08-claim-main. After every job push use /workspace/g08-refresh-claim-isolated.py to update G08 on main without switching the active tree. Remove this clean worktree before the generic queue helper switchesmain. Never switch the live tree during long checks. Claims/branch activity must be fetched fresh before picking another job.
+
+Re-verify when available: manufacturer primary PDFs/physical edition labels; actual production SDK audio/3D/UI runtime. Test-only bindings are explicitly permitted by the job. Dictionary/common/Spanish/frequency licences and original-visual hashes are retained; no source declared read after a denied request.

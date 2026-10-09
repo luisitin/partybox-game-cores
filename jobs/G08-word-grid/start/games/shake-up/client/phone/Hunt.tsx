@@ -13,6 +13,17 @@ import ws from '../words.module.css';
 
 type Note = { tone: 'ok' | 'bad' | 'info'; text: string; key: number };
 
+// Only the clock needs a periodic render. Rebuilding every cube/chip at CPU4x
+// on each timer tick delayed input frames, especially with a long private list.
+function HuntClock({ deadline, paused }: { deadline: number | null; paused: boolean }) {
+  const now = useServerNow(250);
+  const frozen = useRef(0);
+  const left = paused ? frozen.current : Math.max(0, (deadline ?? now) - now);
+  if (!paused) frozen.current = left;
+  const danger = left <= 5000 && !paused;
+  return <span className={`${s.clock} ${danger ? s.danger : ''}`}>{danger ? '⏰' : '⏱'} {clock(left)}</span>;
+}
+
 export function Hunt({ view, send }: { view: ControllerView; send: (i: Input) => void }) {
   const [path, setPath] = useState<number[]>([]);
   const [note, setNote] = useState<Note | null>(null);
@@ -23,11 +34,6 @@ export function Hunt({ view, send }: { view: ControllerView; send: (i: Input) =>
   const list = useRef<HTMLUListElement>(null);
   // Newest first: when a word lands, the chips already there glide aside instead of jumping.
   useGlide(list, view.me.words.map((w) => w.w).join(' '), motion, false);
-  const now = useServerNow(250);
-  const frozen = useRef(0);
-  const left = view.paused ? frozen.current : Math.max(0, (view.deadline ?? now) - now);
-  if (!view.paused) frozen.current = left;
-  const danger = left <= 5000 && !view.paused;
   const word = spell(view.grid, path);
   const len = letterLen(word);
   const have = new Set(view.me.words.map((w) => w.w));
@@ -86,7 +92,7 @@ export function Hunt({ view, send }: { view: ControllerView; send: (i: Input) =>
     <Screen footer={bar}>
       <div className={s.hunt}>
         <div className={s.status} aria-live="polite">
-          <span className={`${s.clock} ${danger ? s.danger : ''}`}>{danger ? '⏰' : '⏱'} {clock(left)}</span>
+          <HuntClock deadline={view.deadline} paused={view.paused} />
           <span className={s.count}>{view.me.words.length === 1 ? L('1 word') : L('{n} words', { n: view.me.words.length })}</span>
         </div>
         <div className={s.stage} style={{ '--su-n': view.size } as CSSProperties} onAnimationEnd={() => setBroken(false)}>

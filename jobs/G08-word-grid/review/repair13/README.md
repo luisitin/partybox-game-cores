@@ -1,0 +1,13 @@
+# Capture installer timeout: authentic pending-delivery checkpoint
+
+Immutable head d6135f6f30742257229918c1f8e4ca7f9170db2e has push run 37843297310 SUCCESS at 21:03:26 UTC and independently accepted genuine artifact 11578249201 (1598835 ZIP bytes, SHA256 a42790f306d2dc0c686dfc0aecc7da22f2d152af673b0ab4c44e63b389d41147). Its paired PR run 37843303885/job 113537850257 completed CANCELLED at 21:27:57 UTC. The exact check-run annotation says: "The job has exceeded the maximum execution time of 30m0s". This was a natural limit, not a new branch push or a G08 manual cancellation.
+
+The complete PR log was fetched and inspected (111751 JavaScript UTF-16 code units); capture-tool installation ran 21:01:10–21:23:16. APT fetched 94.1 MB in 21min 57s at 71.4 kB/s, including recommended speech/graphics packages. Actual npm test began at 21:23:16. Typecheck, 185 assertions in 20 files, both bot leagues, 24/25 behavioral mutations and the 10000-case independent cube study passed. The seeded stage was still running at timeout. Later rebuild, offline build/data and frame/native stages were NOT RUN. Partial artifact 11580475340 is 111787 ZIP bytes, server SHA256 3b3ca869a2b0c09c68b72b0060f0f90b1d04009106f742b40ac8bd9f2bb5d05e; no whole-job acceptance.
+
+Concrete repair is confined to .github/workflows/G08.yml: no optional APT recommendations, update/install limits of 60/180 seconds, 30-second network timeouts, no silent retries, five-minute installer step limit, and actual ffmpeg/ffprobe existence/version checks. Failure remains fatal. Overall job limit, tests, raw/native source binding, 59 FPS/p95 <=20 ms/four-profile/600-interval requirements and original page/game/art/data are unchanged. No local FPS retry.
+
+This is a delivery-proof repair, not formal KEEP11. KEEP10 streak remains 1. Exact restart exit uncertainty, historical failed 22f hold and local phone 57.6947 FPS failure/Spanish NOT RUN remain preserved.
+
+Previous branch push was about 20:57:31 UTC. Early 21:22:31 and hard 21:27:31 elapsed targets passed during shared timing holds and preservation of the natural CI result. Actual overrun is not backdated; commit/push and own claim timestamps are recorded in GitHub/Git.
+
+Two new private primary HTTP 200 reads at about 21:20 UTC: Hasbro Boggle PDF 229431 bytes/SHA256 750336c4b319802d3f63c350710f61e77601b129a9a6b29cc4a8b5634ec95d2a; Winning Moves Big Boggle PDF 230622 bytes/SHA256 d8f0c74de575177af2c388f1d933ce8b25e74dfb9ad6cb30c9ec3e3fe88a418e. Both read, Hasbro's two scanned pages visually and Winning Moves extracted text. Facts/variants still need separate research reconciliation. Earlier denied requests remain historical. Commercial PDF/art is not committed.

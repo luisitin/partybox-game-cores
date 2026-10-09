@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "fileOpened": false,
+  "urlMode": "local HTTP partial",
+  "nativeOnly": true,
+  "browser": "/usr/bin/chromium",
+  "desktop": null,
+  "phone": null,
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true,
+    "longNamesFit": true,
+    "fullSixteenSeatHotseat": true,
+    "sixteenTiedWinnersFit": true,
+    "cancelRestartKeepsProgress": true,
+    "newGameFreshSeed": true,
+    "handoffAndGridFocus": true
+  },
+  "restartVideoBytes": 283314,
+  "layoutVideoBytes": 1578828,
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 1009300,
+  "provenance": {
+    "keepGoingRound": 3,
+    "parentCommit": "0d8c5800a05eb57eab011e53a08d5b6b83a9bda1",
+    "playSha256": "544e105a3524a06fe3a209121b185a4a1879fc3ac3238fde5944dd20f0f23daa",
+    "capture": "05-handoff-keyboard-focus.webm"
+  }
+}

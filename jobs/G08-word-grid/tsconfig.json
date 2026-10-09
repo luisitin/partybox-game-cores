@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@partybox/game-sdk": [
+        "start/test-support/sdk.ts"
+      ],
+      "@partybox/game-sdk/ui": [
+        "start/test-support/ui.tsx"
+      ],
+      "@partybox/game-sdk/ui/table3d": [
+        "start/test-support/table3d.tsx"
+      ],
+      "@partybox/game-sdk/speech": [
+        "start/test-support/speech.ts"
+      ],
+      "zod": [
+        "node_modules/zod"
+      ]
+    }
+  },
+  "include": [
+    "start/**/*.ts",
+    "start/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    ".tmp"
+  ]
+}

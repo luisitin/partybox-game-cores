@@ -1,6 +1,6 @@
 // Grid solver: depth-first over neighbours, pruned by prefix lookups.
 // Used for "the best word nobody found" and by the bot (on its own word list).
-import { hasPrefix, hasWord, type WordList } from './dict';
+import { prefixRange, type WordList } from './dict';
 import { neighbours } from './rules';
 
 export type Found = { w: string; path: number[] };
@@ -9,29 +9,30 @@ export type Found = { w: string; path: number[] };
  * Every word in `words` that the grid can spell, first path found per word,
  * in a stable order (by first cell, then depth-first). Capped for safety.
  */
-export function solve(grid: readonly string[], size: number, words: WordList, minLen: number, cap = 4000): Found[] {
+export function solve(grid: readonly string[], size: number, words: WordList, minLen: number, cap = Number.POSITIVE_INFINITY): Found[] {
   const adj = neighbours(size);
   const out: Found[] = [];
   const seen = new Set<string>();
   const used = new Array<boolean>(grid.length).fill(false);
   const path: number[] = [];
 
-  const walk = (cell: number, prefix: string): void => {
+  const walk = (cell: number, prefix: string, lo: number, hi: number): void => {
     if (out.length >= cap) return;
     const w = prefix + (grid[cell] ?? '');
-    if (!hasPrefix(words, w)) return;
+    const [start, end] = prefixRange(words, w, lo, hi);
+    if (start === end) return;
     used[cell] = true;
     path.push(cell);
-    if ([...w].length >= minLen && !seen.has(w) && hasWord(words, w)) {
+    if ([...w].length >= minLen && !seen.has(w) && words[start] === w) {
       seen.add(w);
       out.push({ w, path: path.slice() });
     }
-    for (const nb of adj[cell] ?? []) if (!used[nb]) walk(nb, w);
+    for (const nb of adj[cell] ?? []) if (!used[nb]) walk(nb, w, start, end);
     path.pop();
     used[cell] = false;
   };
 
-  for (let c = 0; c < grid.length; c++) walk(c, '');
+  for (let c = 0; c < grid.length; c++) walk(c, '', 0, words.length);
   return out;
 }
 

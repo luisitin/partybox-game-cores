@@ -8,7 +8,7 @@ import { findersByWord, judgePlayer, type Judged, type Status } from './scoring'
 import { letterCount, pointsFor, showFace, showWord } from './rules';
 import { SHAKE_MS, type PhaseId, type State } from './types';
 
-export type PlayerRow = { id: string; name: string; seat: number; bot: boolean; away: boolean; score: number };
+export type PlayerRow = { id: string; name: string; avatarId?: string; connected?: boolean; status?: 'active' | 'submitted' | 'waiting' | 'spectator'; seat: number; bot: boolean; away: boolean; score: number };
 export type CardWord = { w: string; len: number; pts: number; status: Status; with: string[] };
 /** What a card leaves off: scoring words with their points (so the shown numbers add up to the total), and shared ones. */
 export type CardMore = { words: number; pts: number; shared: number };
@@ -20,17 +20,20 @@ export type TallyRow = { id: string; before: number; gained: number; after: numb
 export type TallyView = { rows: TallyRow[]; spotlight?: { id: string; w: string; len: number; pts: number; tied?: string[] } };
 
 type Common = {
+  gameId: string;
+  phaseId: string;
   phase: PhaseId;
   round: number;
   rounds: number;
   size: number;
   minLen: number;
   lang: string;
+  dictionary: 'full' | 'common';
   grid: string[];
-  players: PlayerRow[];
+  players: (PlayerRow & { avatarId: string; connected: boolean; status: 'active' | 'submitted' | 'waiting' | 'spectator' })[];
   paused: boolean;
   /** End of the current phase or beat (server clock). Omitted when the phase has none. */
-  deadline?: number;
+  deadline: number | null;
   /** The line the reader says now (text always shown). Omitted when none. */
   say?: Line;
   /** Shake only: when the roll began on the server clock (pauses already added) and how long the phase runs. */
@@ -47,7 +50,7 @@ export type TvView = Common & {
 
 export type MyWord = { w: string; ok: boolean; pts: number };
 export type ControllerView = Common & {
-  me: { id: string; score: number; done: boolean; words: MyWord[]; verdict?: { seq: number; w: string; kind: string } };
+  me: { id: string; role: 'player' | 'spectator'; score: number; done: boolean; words: MyWord[]; verdict?: { seq: number; w: string; kind: string } };
   waitingOn?: number;
   /** rulable: the dictionary misses the VIP may rule on, each with who found it. */
   reveal?: { step: number; total: number; beat: BeatView; mineShown: boolean; rulable: { w: string; by: string[] }[]; counted: string[] };
@@ -61,21 +64,24 @@ export type FinalView = { headline: string; awards: Award[]; longest?: { id: str
 function common(state: State): Common {
   const players = state.order.map((id) => {
     const p = state.players[id];
-    return { id, name: p?.name ?? '', seat: p?.seat ?? 0, bot: p?.bot ?? false, away: p?.away ?? false, score: state.scores[id] ?? 0 };
+    return { id, name: p?.name ?? '', avatarId: p?.avatarId ?? '', connected: p?.connected ?? false, status: (state.phase.id === 'hunt' ? (state.done[id] === true ? 'submitted' : 'active') : 'waiting') as 'active' | 'submitted' | 'waiting', seat: p?.seat ?? 0, bot: p?.bot ?? false, away: p?.away ?? false, score: state.scores[id] ?? 0 };
   });
   const c: Common = {
+    gameId: 'shake-up',
+    phaseId: state.phase.id,
     phase: state.phase.id,
     round: state.round,
     rounds: state.cfg.rounds,
     size: state.cfg.size,
     minLen: state.cfg.minLen,
     lang: state.cfg.lang,
+    dictionary: state.cfg.dictionary,
     grid: state.grid.map(showFace),
     players,
-    paused: state.paused !== undefined,
+    paused: state.phase.paused !== undefined,
+    deadline: state.phase.deadline,
   };
-  if (state.phase.deadline !== undefined) c.deadline = state.phase.deadline;
-  if (state.phase.id === 'shake' && state.phase.deadline !== undefined) c.roll = { at: state.phase.deadline - SHAKE_MS, ms: SHAKE_MS };
+  if (state.phase.id === 'shake' && state.phase.deadline !== null) c.roll = { at: state.phase.deadline - SHAKE_MS, ms: SHAKE_MS };
   const say = currentLine(state);
   return say ? { ...c, say } : c;
 }
@@ -96,7 +102,7 @@ function beatView(state: State, step: number): BeatView | null {
   if (!beat) return null;
   if (beat.kind === 'missed') {
     const m = state.missed;
-    return { kind: 'missed', w: showWord(m?.w ?? ''), len: [...(m?.w ?? '')].length, glow: m?.path ?? [] };
+    return { kind: 'missed', w: showWord(m?.w ?? ''), len: [...(m?.w ?? '')].length, glow: m?.path.slice() ?? [] };
   }
   if (beat.kind === 'empty') return { kind: 'empty', ids: beat.ids, all: beat.ids.length === state.order.length };
   const judged = judgePlayer(state, beat.id, findersByWord(state));
@@ -104,7 +110,7 @@ function beatView(state: State, step: number): BeatView | null {
   const words = shown.map((j) => ({ w: showWord(j.w), len: j.len, pts: j.pts, status: j.status, with: j.with }));
   // The tray glows the best word that scores (as the reader names it); a card with nothing scoring glows nothing.
   const top = judged.find((j) => j.pts > 0);
-  return { kind: 'player', id: beat.id, total: judged.reduce((s, j) => s + j.pts, 0), words, more, glow: top ? top.p : [] };
+  return { kind: 'player', id: beat.id, total: judged.reduce((s, j) => s + j.pts, 0), words, more, glow: top ? top.p.slice() : [] };
 }
 
 /**
@@ -147,9 +153,8 @@ function tallyView(state: State): TallyView {
 export function tvView(state: State): TvView {
   const v: TvView = { ...common(state), throwSeed: state.throwSeed, cubes: state.cubes.map((c) => c.map(showFace)) };
   if (state.phase.id === 'hunt') {
-    const counts: Record<string, number> = {};
-    for (const id of state.order) counts[id] = state.words[id]?.length ?? 0;
-    const hunt: NonNullable<TvView['hunt']> = { counts, done: state.order.filter((id) => state.done[id]), lastCall: lastCallLine(state) };
+    const counts: Record<string, number> = Object.fromEntries(state.order.map(id => [id, state.words[id]?.length ?? 0]));
+    const hunt: NonNullable<TvView['hunt']> = { counts, done: state.order.filter((id) => state.done[id] === true), lastCall: lastCallLine(state) };
     v.hunt = state.toast ? { ...hunt, toast: state.toast } : hunt;
   }
   if (state.phase.id === 'reveal') {
@@ -173,12 +178,13 @@ function finalView(state: State): FinalView {
 }
 
 export function controllerView(state: State, playerId: string): ControllerView {
-  const words = (state.words[playerId] ?? []).map((e) => ({ w: showWord(e.w), ok: e.ok, pts: e.ok ? pointsFor(e.w) : 0 }));
-  const verdict = state.verdicts[playerId];
-  const me: ControllerView['me'] = { id: playerId, score: state.scores[playerId] ?? 0, done: state.done[playerId] === true, words: words.slice().reverse() };
+  const playing = Object.hasOwn(state.players, playerId);
+  const words = (playing ? state.words[playerId] ?? [] : []).map((e) => ({ w: showWord(e.w), ok: e.ok, pts: e.ok ? pointsFor(e.w) : 0 }));
+  const verdict = playing && Object.hasOwn(state.verdicts, playerId) ? state.verdicts[playerId] : undefined;
+  const me: ControllerView['me'] = { id: playerId, role: playing ? 'player' : 'spectator', score: playing ? state.scores[playerId] ?? 0 : 0, done: playing && state.done[playerId] === true, words: words.slice().reverse() };
   const v: ControllerView = { ...common(state), me: verdict ? { ...me, verdict: { ...verdict, w: showWord(verdict.w) } } : me };
   if (state.phase.id === 'hunt') {
-    v.waitingOn = state.order.filter((id) => !state.players[id]?.bot && !state.players[id]?.away && !state.done[id]).length;
+    v.waitingOn = state.order.filter((id) => !state.players[id]?.bot && !state.players[id]?.away && state.done[id] !== true).length;
   }
   if (state.phase.id === 'reveal') {
     const step = state.phase.step ?? 0;

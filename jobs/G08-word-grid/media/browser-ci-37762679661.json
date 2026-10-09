@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "fileOpened": true,
+  "urlMode": "disk",
+  "nativeOnly": false,
+  "browser": "/usr/bin/google-chrome",
+  "desktop": {
+    "width": 1920,
+    "height": 1080,
+    "frames": 601,
+    "milliseconds": 10012.000000000011,
+    "fps": 60.027966440271605,
+    "meanMs": 16.65890183028288,
+    "p95Ms": 16.700000000000728,
+    "maxMs": 16.80000000000109
+  },
+  "phone": {
+    "width": 390,
+    "height": 844,
+    "cpuThrottle": 4,
+    "frames": 601,
+    "milliseconds": 10011.800000000036,
+    "fps": 60.02916558460995,
+    "meanMs": 16.65856905158076,
+    "p95Ms": 16.799999999999272,
+    "maxMs": 16.80000000000109
+  },
+  "gates": {
+    "originalClient": true,
+    "nativeKeyboard": true,
+    "arrowFocus": true,
+    "nativeDrag": true,
+    "nativeCancel": true,
+    "privateHandoff": true,
+    "otherPhonePrivate": true,
+    "publicCountsOnly": true,
+    "pauseResume": true,
+    "reducedMotion": true,
+    "spanishFiveByFive": true,
+    "rosters": [
+      1,
+      2,
+      3,
+      8,
+      16
+    ],
+    "allPhasesToResults": true
+  },
+  "outgoingRequests": 0,
+  "pageErrors": 0,
+  "videoBytes": 377098,
+  "provenance": {
+    "runId": 37762679661,
+    "sourceCommit": "878f01a43973a5a383c78525b6ec4070f65413ff",
+    "retrievedFrom": "GitHub Actions complete successful push log"
+  }
+}

@@ -47,7 +47,7 @@ describe('scoring', () => {
     s = say(s, 'p2', [0, 1, 2, 3, 6, 5, 9]); // STRANDE? not a word → unknown, 0
     s = until(fire(s), 'tally');
     expect(s.scores).toEqual({ p1: 11, p2: 0, p3: 0 });
-    const r = game.results({ ...s, phase: { id: 'done', startedAt: 0 } });
+    const r = game.results({ ...s, phase: { id: 'done', startedAt: 0, deadline: null } })!;
     expect(r.ranking.map((x) => x.place)).toEqual([1, 2, 2]);
     expect(r.winnerIds).toEqual(['p1']);
   });
@@ -57,7 +57,7 @@ describe('results', () => {
   it('lists every player with finite scores and 3–5 awards, even when nobody played', () => {
     let s = room(4, { rounds: 1 });
     s = until(s, 'done');
-    const r = game.results(s);
+    const r = game.results(s)!;
     expect(r.ranking).toHaveLength(4);
     expect(r.ranking.every((x) => Number.isFinite(x.score))).toBe(true);
     expect(r.awards.length).toBeGreaterThanOrEqual(3);
@@ -69,7 +69,7 @@ describe('results', () => {
     s = say(s, 'p1', STRANDED);
     s = say(s, 'p2', TRAIN);
     s = until(fire(s), 'done');
-    const r = game.results(s);
+    const r = game.results(s)!;
     const d = r.detail as { longest: { word: string; playerId: string; letters: number }; perPlayer: unknown[]; missed: { word: string } | null };
     expect(d.longest).toEqual({ word: 'STRANDED', playerId: 'p1', letters: 8 });
     expect(d.perPlayer).toHaveLength(2);

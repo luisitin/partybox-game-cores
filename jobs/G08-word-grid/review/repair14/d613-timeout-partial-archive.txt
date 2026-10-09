@@ -1,0 +1,148 @@
+{
+  "immutableHead": "d6135f6f30742257229918c1f8e4ca7f9170db2e",
+  "run": 37843303885,
+  "artifact": 11580475340,
+  "zipBytes": 111787,
+  "sha256": "3b3ca869a2b0c09c68b72b0060f0f90b1d04009106f742b40ac8bd9f2bb5d05e",
+  "safeEntries": 31,
+  "allCRC": true,
+  "actualMutationFiles": 25,
+  "behavioralKills": 24,
+  "visualFiles": 0,
+  "overallConclusion": "cancelled/natural 30-minute timeout, partial only",
+  "mutations": [
+    {
+      "name": "1.json",
+      "actualFailedAssertions": 27
+    },
+    {
+      "name": "10.json",
+      "actualFailedAssertions": 28
+    },
+    {
+      "name": "11.json",
+      "actualFailedAssertions": 3
+    },
+    {
+      "name": "12.json",
+      "actualFailedAssertions": 0
+    },
+    {
+      "name": "13.json",
+      "actualFailedAssertions": 3
+    },
+    {
+      "name": "14.json",
+      "actualFailedAssertions": 3
+    },
+    {
+      "name": "15.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "16.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "17.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "18.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "19.json",
+      "actualFailedAssertions": 3
+    },
+    {
+      "name": "2.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "20.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "21.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "22.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "23.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "24.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "25.json",
+      "actualFailedAssertions": 26
+    },
+    {
+      "name": "3.json",
+      "actualFailedAssertions": 2
+    },
+    {
+      "name": "4.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "5.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "6.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "7.json",
+      "actualFailedAssertions": 1
+    },
+    {
+      "name": "8.json",
+      "actualFailedAssertions": 5
+    },
+    {
+      "name": "9.json",
+      "actualFailedAssertions": 1
+    }
+  ],
+  "entries": [
+    "check-bots.log",
+    "check-cube-study.log",
+    "check-mutations.log",
+    "check-seeded.log",
+    "check-typecheck.log",
+    "check-unit.log",
+    "mutations/1.json",
+    "mutations/10.json",
+    "mutations/11.json",
+    "mutations/12.json",
+    "mutations/13.json",
+    "mutations/14.json",
+    "mutations/15.json",
+    "mutations/16.json",
+    "mutations/18.json",
+    "mutations/19.json",
+    "mutations/17.json",
+    "mutations/2.json",
+    "mutations/20.json",
+    "mutations/21.json",
+    "mutations/22.json",
+    "mutations/23.json",
+    "mutations/24.json",
+    "mutations/25.json",
+    "mutations/3.json",
+    "mutations/4.json",
+    "mutations/5.json",
+    "mutations/6.json",
+    "mutations/7.json",
+    "mutations/8.json",
+    "mutations/9.json"
+  ]
+}

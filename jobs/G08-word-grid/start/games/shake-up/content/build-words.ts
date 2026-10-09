@@ -17,7 +17,7 @@ import { foldWord } from '../server/rules';
 const require = createRequire(import.meta.url);
 const here = dirname(fileURLToPath(import.meta.url));
 const MIN = 3;
-const MAX = 17; // 16 cubes, one of which may be "Qu"
+const MAX = 26; // 25 cubes plus the extra u supplied by the one Qu cube
 
 type Lang = 'en' | 'es';
 const ALPHA: Record<Lang, RegExp> = { en: /^[a-z]+$/, es: /^[a-zñ]+$/ };
@@ -68,6 +68,8 @@ function main(): void {
   const enSet = new Set(en);
   const enBlockSet = new Set(enBlocked);
   const tier = (n: number) => clean('en', require(`wordlist-english/english-words-${n}.json`) as string[]);
+  const common = clean('en', [10, 20, 35, 40, 50, 55, 60, 70].flatMap(n => require(`wordlist-english/english-words-${n}.json`) as string[])).filter(w => enSet.has(w));
+  write('common-words.en.json', common);
   write('words.en.json', en);
   write('blocked.en.json', enBlocked.filter((w) => enSet.has(w)));
   write('bot-words.en.json', {
@@ -84,8 +86,7 @@ function main(): void {
   write('words.es.json', es);
   write('blocked.es.json', esBlocked.filter((w) => esSet.has(w)));
   if (!esFreqPath || esFreqPath.startsWith('--')) {
-    console.warn('No --es-freq file: Spanish bots fall back to short dictionary words.');
-    return;
+    throw new Error('Required --es-freq input missing; no partial rebuild may be called reproducible.');
   }
   const ranked = readFileSync(esFreqPath, 'utf8')
     .split('\n')
