@@ -125,3 +125,18 @@ any reader/fixture; exact new log and unchanged gate retained honestly. No nativ
 performance/browser retry.1fc early15:48:11.885100/hard15:53:11.885100 both missed;
 actual newpublication deadline/miss in receipt. Current16 unexecuted/ungranted.
 Original1GiB/120child/240whole and whole original CI remain mandatory; KEEP0/0.
+
+2026-10-09 exactly one root-granted current16 fails before DevTools/page/native
+frames:121-byte Chrome singleton socket address exceeds Linux108-byte sun_path
+includingNUL. Actualcontroller16:20:31.923228Z/61.249730s; childexit1/50.170295s,
+0PNGs/0nativeFPS/noencoderrequest/ffmpeg, all6588full/28reportguards equal, sampled
+ownedpeak42278912B<unchanged1GiB, no forcedsignals/actualemptyowneddescendants.
+Fullfailedreport/profile/grant/RAWstderr/resources/closure physically retained;
+completepublic archiveCRC/physical equality, profilehash/linkmetadata only public.
+Currentf0d whole92608-character joblog confirms solemissing16ENOENT, no fullgreen.
+UntimedAF_UNIX control16:24:59.896177Z rejects121-byte surrogate/binds79-byte
+surrogate, no browser. Distinct17 short RAMOUT=/dev/shm/G03c17-6bf135 retains
+TMPDIR=OUT/runtime-tmp and original240whole/120child/1GiB caps. Source changes
+current-report references17 only; originalgame/visual/native/codec/gates preserved.
+Exact new root protocol review/grant still required before17; no retry occurred.
+No accepted clip/wholeoriginal/KEEP; new rounds0/streak0. Old14–16 untouched.

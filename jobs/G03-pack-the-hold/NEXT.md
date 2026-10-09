@@ -1,4 +1,32 @@
 # G03 follow-up current handoff
+## Actual capture16 startup failure and distinct17 resume
+The ONE root-granted capture16 actually CLOSED_FAILED16:20:31.923228Z/61.249730s,
+childexit1/50.170295s. Chrome FATAL singleton socket path is121bytes (Unix limit
+108bytes includingNUL), beforeDevTools/page/PNG/nativeRAF.0frames/noencoder/ffmpeg.
+All6588 before/final physicalguards and28 reportsource hashes exactly match;
+fullowned samplepeak42278912B<1GiB/no forcedsignals/final owneddescendants[].
+Failure report/profile/grant/allresource samples/rawstderr retained. Failed16
+copy is preserved and never retried, renamed into success, or reused as current.
+
+Actual untimed local AF_UNIX fixture16:24:59.896177Z rejects a same121byte surrogate
+and binds/closes a79byte surrogate. Concrete next transport: unique short RAM
+OUT=/dev/shm/G03c17-6bf135, unchanged TMPDIR=OUT/runtime-tmp, maximal observed
+Chrome singleton suffix computes79bytes. Check this before any browser launch.
+No browser/page/native frame/performance ran in that fixture; socket kept private.
+Current references17,UNEXECUTED/UNGRANTED. Original game/28 source-gate definitions,
+RAF/Date/36frames/UI/codec/dimensions/nativeFPS/validators/workflow remain unchanged.
+
+NEXT: isolate this exact new source; finite240s outside controller/1GiB ownedRSS/
+120child, all currenttracked/compiled/runtime/self/namedwrapper/old14–16 profiles
+and failure receipts frozen. Include path-byte preflight and live ownership/nonce
+proof. Root personally reviews complete new17controller/gate/reader/witness and
+grants exact sourceSHA+nonce BEFORE any browser. No second grant exists here.
+Then current17 fullcontrols/28guards/37PNGCRC/36nativeVP9EOF and whole original
+hosted true-file/1800native/fullartifact+logs/currentpublicHTML remain mandatory.
+New qualified KEEP rounds0/no-gain streak0. Main root-held; await own-row lease.
+Previous f0d publication16:09:50.184405Z deadlines16:34:50.184405/16:39:50.184405;
+actual checkpoint receipt records new interval/misses, never backdates them.
+
 ## Resumed actual 16:00 checkpoint
 Current material checkpoint retains complete failed1fc run37951352846: actual
 192740-byte official ZIP11625967745 SHA5b9cfbaf5c232e2ae76c0d20b8377d19dc0821c5cc353219672e941fa7852439;
