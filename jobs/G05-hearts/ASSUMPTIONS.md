@@ -159,3 +159,13 @@ then performs VIP end at the scored hand for done/repeated-end checks. It does
 not claim an ordinary full-match victory audit. Disconnected core JSON hosts
 remain supported independently of the standalone fully-connected save parser.
 All clocks are supplied reducer data; no native browser timing is rerun.
+
+Final review21 is a separate formal round after real review20 publication.
+Initial sole connected anchor is intentional; subsequent roster schedules
+exercise genuine temporary/permanent departures and paused reconnects.
+Both wrong private oracle expectations are preserved, corrected separately
+and count as neither player repairs nor extra successful review rounds.
+Selected right passing has signed-1 representation and physicaln-1 displacement;
+the corrected independent oracle checks circular recipients for every seat.
+After this final handoff qualifies under the whole unchanged original workflow,
+only PR metadata/Ready changes; do not append cosmetic source acceptance notes.

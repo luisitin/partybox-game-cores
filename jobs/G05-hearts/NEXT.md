@@ -1,3 +1,71 @@
+# G05 final queue-audit handoff — three separate no-player-gain rounds
+
+Supplemental Draft PR19: job/G05-hearts-queue-audit-20261009 targets
+protected Ready15 job/G05-hearts-audit-20261009. Original Ready5/85d and
+Ready15/033 remain untouched/unmerged; this is a material follow-up only.
+Lawful initial G05 claim mainf43d849,row11:13:55Z/normal closed11:13:57.150035.
+First actual source8b21 published11:49:04.531056/read11:49:05.093041;
+real first hard deadline missed307.381021s. Scope/staging/missing26-object
+failures and exact public-history recovery are retained, with no backdating.
+
+ONLY two production changes: initial ordinary disconnected-seat takeover,
+and finiteN→2N drain for remaining passes then absent opening-card turns.
+Seed1/four-seat and seed50000/three-seat original failures, plus the first
+init-only5PASS/1FAIL candidate, are preserved. Rules/bots/save parser/contract/
+standalone browser/turn pacing/empty rooms/native sampler/strict gates and
+the sole original G05 workflow are unchanged. Seven new regressions pass.
+Both exact8b ORIGINAL full push37926068472 and PR37926638979 succeeded.
+Both FIRST whole official ZIPs and complete native logs independently accepted:
+137 unchanged-browser-reader plus78 full-native assertions EACH,46 tests,
+25 real mutant kills,1003 replay seeds,4x1000 complete games,10K independent
+scoring cases,600 valid saves,both unchanged2000-game leagues and two111-file
+regenerations;30 guards/all1200 raw retained timings/full36 VP9 frames.
+Actual last native closure12:06:17.513237/all178 inputs unchanged.
+This accepted8b evidence is historical for the newer final document head.
+
+19 was separately published8674f5e5c0b1257bdef8c8a261c71b8061b09d3b
+12:14:10.267628/read12:14:10.869676;8352 paused-drop/rejoin/timer cases,
+563905 assertions PASS/no player gain1. Early target missed5.736572s,
+hard30-minute window met. Own main row refreshedfad3054d at12:15:37Z.
+20 was separately publisheda8518c318734fd749b1b4f06118e4cc034aa1a4c
+12:22:58.898264/read12:22:59.687107;5568 reconnect/save cases,
+1404624 assertions/58560 snapshots PASS/no player gain2. Own main row
+52ad0acb at12:24:05Z/push12:24:06.756374/read12:24:07.393119,
+all foreign rows/tree/literal G10 BLOCKED unchanged. Original116-file
+regeneration/twice-byte-identical/schema/hash check PASS12:22:40.262580.
+
+21 began ONLY after that real publication and freshly reread/ranked five.
+First two private probes genuinely FAILED: incorrect paused-input expectation
+and signed-right offset representation. Both raw failures remain immutable;
+v3 explicitly tests blocked paused inputs and all physical recipient mappings.
+Actual v3 natural CLOSED 2026-10-09T12:31:33.774484+00:00/EXIT0/192 inputs unchanged.
+2592 ordinary COMPLETE matches/18496018 assertions/1058929 real inputs,
+71390 roster events/9671 paused drops/1681 permanent departures,
+23499 independently scored hands/1149661 replayed events,
+104364 different-hidden-card view checks/234819 all-skill bot boundaries/
+26091 mutable-copy checks PASS; every passing offset witnessed.
+No VIP skip or end. Targets25/100,all3–6 seats/every anchor seat/moon/Jack/
+passing/clock0,1,60/temporary,left,kicked policies. ThreeDeck/queen switches
+are correlated as explicitly declared. No broad strength/FPS claim.
+No new player defect or implementation change; renewed no-gain streak3.
+Full measured raw proof: media/queue-presence-review21-final-proof.zip.
+
+THIS is the final third-review log/handoff publication. Its OWN exact-head
+original full push+PR workflows/complete logs/FIRST genuine whole official
+ZIPs must qualify before Ready19. Invoke unchanged137-assertion reader with
+that immutable FINAL head/run; verify all original native counts and118 hashes,
+30 current guards,1200 raw retained intervals,full36-frame video and source
+freezes. Never inherit earlier head acceptance or replace the original sampler.
+If current full fails, retain its real failure/artifact and fix only a material
+cause; otherwise update PR metadata/Ready and KEEP THIS SOURCE STATIC.
+After Ready, return to fresh MAIN/ALL matching-branch committer eligibility
+scan and the lowest lawful queue job. No cosmetic post-Ready commit/merge.
+Completed means merged; these supplemental PRs are delivered for review.
+Refresh ONLY G05 on fresh main under explicit root lease after this source push.
+
+---
+## Previous review20 handoff — unchanged historical record
+
 # G05 queue audit — formal review20, no-player-gain streak2
 
 Draft PR19 and protected original Ready5/Ready15 remain separate/unmerged.

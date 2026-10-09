@@ -790,3 +790,37 @@ termination plus administrative end is explicit in the native transcript.
 raw/native/frozen receipt and prior real publication/current114-data evidence
 are in media/queue-presence-review20-proof.zip. No new player-visible gain.
 This source publication still needs its own whole original workflow.
+
+## Final separate formal review21: ordinary full roster-event matches
+
+Exact actual `node ABSOLUTE_REVIEW21_V3_DIRECTORY/probe.mjs` from
+jobs/G05-hearts, archived G05-review21-v3-controller-20261009.py,
+PASS2026-10-09T12:31:33.774484+00:00/EXIT0/192 actual source/build/probe inputs unchanged.
+2592 full ordinary games/18496018 assertions/1058929 actual inputs.
+Domain:3–6 seats,every anchor seat,noPass,moon,Jack,clocks0/1/60,
+temporary/left/kicked schedule,targets25/100. Initial sole-anchor presence;
+subsequent explicit temporary/permanent/pause/rejoin events are recorded.
+No VIP skip or end. ThreeDeck correlates with moon; queenBreaks with anchor
+seat. No exhaustive-all-presence/seed/setting or expert win-rate claim.
+Every selected passing offset is witnessed; every actual circular recipient
+matches the independent official table. Every completed hand compares the
+existing independent referenceScore and independently accumulates scores
+for all retained seats. All final ranks/ties/whole transcript replays match.
+23499 scored hands/71390 roster events/9671 paused drops/
+1681 permanent departures/1149661 replay events. Different
+hidden-card content swaps yield104364 equal uninformed views/
+234819 all-skill decisions;26091 mutable views cannot corrupt
+the game. Card conservation/schema/size/stale timers/progress hold.
+
+First native probe genuinely FAIL12:27:18.330832: my new oracle wrongly
+expected a legal move while paused. Second genuine FAIL12:28:38.658891:
+my raw displacement table compared2 against the equivalent signed-1.
+Both originals are immutable. Separate v3 requires blocked paused card/pass/
+bot input and compares physical destinations for EVERY seat, then succeeds.
+No original checker, phase policy or acceptance gate was weakened.
+Full scripts/rank/native/stderr/source freezes/actual corrected receipt are in
+media/queue-presence-review21-final-proof.zip. This is one completed review
+after successful correction, not extra rounds or a player repair. No new
+native performance run or changed game implementation. No-player-gain3.
+This final source's whole original workflow and official ZIP remain mandatory
+before Ready; use its exact immutable head, not accepted8b or intermediate refs.
