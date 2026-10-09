@@ -43,3 +43,5 @@ genuine finish preserves reopened privateprompt and same hand/seat. Old original
 phone firstFAIL/causeUNKNOWN retained. This meaningful privacy fix awaits full
 current CI/whole artifact before completing renewed KEEP; completed rounds0,
 no-gain streak0. Original response native acceptance and both gain gates FAIL.
+
+R25, 2026-10-09: complete exact380 full CI/genuine1,303-check official proof validates the bounded obsolete-reveal-callback fix. FIRST old949 real-WAAPI new-regression negative FAIL353.5ms hides prompt; changed-source four-case16 human turns and same real-WAAPI/default full pipeline PASS. Older phone failure cause UNKNOWN, no response/FPS claim. Renewed completed rounds1/material privacy improvement1/no-player-gain streak0.

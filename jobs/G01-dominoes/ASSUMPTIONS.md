@@ -301,3 +301,45 @@ fix checkpoint is due before that hard time. Read actual new push receipt for
 fresh cadence. Own mainCLAIMS refresh follows under exclusive own-row lease.
 Authoritative /tmp checkout remains; original workspace/history/unique ZIPs and
 all failures remain preserved. No local original FPS or old-pair retry occurred.
+
+## Current full privacy fix accepted; KEEP continues
+
+Exact380bc2b full original workflow37884128914/job113670211296 SUCCEEDED
+04:52:25UTC. Genuine official11596133560/114,796,318B/SHA549e98a4d5dff825
+7666ae558b20d184f71aed7ddac933ed05b7b037fed23968 passed the BYTE-UNCHANGED
+full reader1,303 checks. Outer naturally CLOSED05:02:44.578453UTC/exit0/group[].
+Whole SHA/safe unique paths/CRC/all immutable Git bytes/full native npm/25 actual
+mutants/real file:// private handover/16 real Worker replays/five actual variants/
+600 original intervals/602 stamps/36 fully decoded VP9 frames PASS. Whole ZIP
+was held in bounded RAM; complete bounded raw/mutable outputs/native/reader are
+in media/privacy-veil-hosted-380bc2b-proof.zip. The fresh after-restart source,
+installed aliases/Python stdlib/external startup modules/runtimes stayed exact.
+
+FIRST new default real-WAAPI regression on exact old949 source genuinely FAILED
+04:36:13.599198UTC/exit1. All complete input guards PASS/group[]: after actual
+Reveal/Hide and353.5 native ms, the old finish callback hides the new prompt,
+with samePlayer1/empty board/no hand exposed. New exact380 full original npm
+invokes that regression before byte-unchanged original browser.ts, with its
+actual native PASS sentence. Full hosted raw regression JSON was outside the
+original upload path; no hosted raw DOM claim. Earlier first changed-source
+four-case/real-WAAPI full raw is public. This controlled negative identifies
+this callback defect; the older four-phone failure cause remains UNKNOWN.
+
+privacy-veil-hosted-380bc2b.json records exact current proof and both complete
+archives. Old949 FAIL/default regression/raw/controllers/complete inputs and the
+reader's before-child-only helper namespace error are preserved byte-for-byte.
+No original sampler/gate/clock changed; no native unchanged retry occurred.
+
+Renewed completed KEEP1: bounded private-prompt reliability improvement now
+qualified by complete current CI. Consecutive no-player-gain rounds0. PR11
+stays draft until renewed substantive review reaches the binding three-round
+no-player-gain condition. Original PR1 unchanged canonical8c/draft/unmerged.
+Next: re-read G01/rankfive, examine the worst remaining testable weakness with
+actual evidence, preserve every rejected attempt and log each measured round.
+Old responsiveness native acceptance and both player-gain gates remain FAIL.
+
+Last source push04:29:34.626379UTC; hard04:59:34.626379UTC was exceeded during
+the execution-environment restart/resumption. Work actually resumed04:59:15UTC;
+this preparation occurs after the deadline, with no backdated timestamp.
+Read the next actual source-push receipt for exact interval and fresh cadence.
+Main CLAIMS refresh requires the root-serialized exclusive ownG01row lease.

@@ -215,3 +215,5 @@ both fixed gain gates FAIL. Current player performance/strength must be measured
 remain limited; current proof covers firstfour turns in four emulated cases.
 5. Finite upstream/reference-strength scope still limits best-AI claims.
 Renewed completed KEEP0/provisional material privacy improvement1/no-gain streak0.
+
+After exact380 full original current green and1,303-check genuine artifact acceptance, re-read binding G01: ranked weaknesses are complete four-human phone round/large-hand coverage; unestablished Strong response benefit (both original gain gates FAIL); bounded upstream strategy evidence; unmeasured background animation costs; unavailable physical-phone evidence. R25 private-prompt correction is a qualified bounded reliability gain, renewed no-gain streak0. The next testable weakness is full-round mobile handover and round-end presentation, retaining all native controls and no simulated clocks/FPS retry.
