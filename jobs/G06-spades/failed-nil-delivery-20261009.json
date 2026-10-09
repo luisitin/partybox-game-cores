@@ -1,0 +1,179 @@
+{
+  "status": "ORIGINAL_GOLDEN_REGENERATED_CURRENT_FULL_ACCEPTANCE_PENDING",
+  "preparedAt": "2026-10-09T06:04:30.287444+00:00",
+  "parentFailedSourceHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+  "unchangedRuntimeBotPolicyHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+  "currentPolicyGainScope": "legal seed377 with failedNilCounts=true, own nil already failed: team -160 to -40, +120; no default league or general skill gain asserted",
+  "failedFullWorkflow": {
+    "runId": 37889847743,
+    "jobId": 113688060789,
+    "fullNativeCharacters": 50960,
+    "fullNativeSha256": "7c1c89d28fbd08f0a6075cad6b94efe386c03799dd6bea368432b3136a6a8410",
+    "coreAndNewDefaultGroups": 36,
+    "actualMutationKills": 25,
+    "hardestFunctionDifferentialCases": 20000,
+    "regressionMeaningfulControls": {
+      "fullFirstHands": 400,
+      "unaffectedPolicyComparisons": 66214,
+      "unfailedNilObservations": 10170
+    },
+    "failure": "original churn-results.json event counts reflect old bot policy; six count fields differ after legitimate alternate scoring settings",
+    "leaguesInvoked": false,
+    "nativeFramesInvoked": false,
+    "currentFullAcceptance": false,
+    "official": {
+      "status": "ACTUAL_FAILED_ARCHIVE_FULL_CRC_BYTES_ACCEPTED_NOT_CURRENT_BROWSER",
+      "sourceHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+      "artifactId": 11597503170,
+      "wholeBytes": 90497,
+      "sha256": "bccea8700a4d17b4f716289517d2258626205c8490f45d81946e1c36c5388ee3",
+      "safeUniqueMembers": [
+        {
+          "name": "browser-report.json",
+          "bytes": 1841,
+          "sha256": "6c8ae045f4e1afec78cfd27fe5e3f7976a01585ca68e86f59160b90629848ed7",
+          "equalsTrackedFailedHeadFile": true
+        },
+        {
+          "name": "capture-milestone-14-report.json",
+          "bytes": 2499,
+          "sha256": "8acc7d4a304c6ae88f10ffa20fa0c842613ee3492f52c3eff901decb6d4ccb7f",
+          "equalsTrackedFailedHeadFile": true
+        },
+        {
+          "name": "media/milestone-14-pinned-encoder.webm",
+          "bytes": 88884,
+          "sha256": "4354fa94e4a89d5fe4881f1f861e2ea348095634f8ef657e766cf57e22727fe6",
+          "equalsTrackedFailedHeadFile": true
+        }
+      ],
+      "scope": "current full workflow stopped at churn golden before leagues/browser; uploaded browser-report is inherited historical committed data without current raw intervals, never current native frame acceptance; actual unchanged capture14 members fully verified"
+    }
+  },
+  "goldenRegeneration": {
+    "status": "ACTUAL_ORIGINAL_CHURN_REGENERATED_TWICE",
+    "parentHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+    "startedAt": "2026-10-09T05:58:07.014031+00:00",
+    "naturallyClosedAt": "2026-10-09T05:59:10.330658+00:00",
+    "steps": [
+      {
+        "index": 1,
+        "startedAt": "2026-10-09T05:58:07.014621+00:00",
+        "naturallyClosedAt": "2026-10-09T05:58:36.829927+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      },
+      {
+        "index": 2,
+        "startedAt": "2026-10-09T05:58:36.833211+00:00",
+        "naturallyClosedAt": "2026-10-09T05:59:08.791894+00:00",
+        "exitCode": 0,
+        "natural": true,
+        "actualOwnedGroupEmpty": true
+      }
+    ],
+    "fullGuardCount": 3414,
+    "allImmutableGuardsUnchanged": true,
+    "onlyMutableOutput": "jobs/G06-spades/churn-results.json",
+    "oldSha256": "764fcdd7bfd9689daa20b229e44b88d77f66671412f8c0da626839e121bcde12",
+    "newSha256": "43f1a188f8cc4c2e91d98e896e97ec4b569282eeeecca778e89329d3b0ab7537",
+    "byteIdenticalOriginalRegeneration": true,
+    "newReport": {
+      "seeds": 1003,
+      "randomSeed": 1610637318,
+      "seedsOneTwoThree": true,
+      "events": 181386,
+      "phases": [
+        "bid",
+        "blind",
+        "done",
+        "exchange",
+        "hand",
+        "play",
+        "trick"
+      ],
+      "counts": {
+        "input": 44055,
+        "drop": 12244,
+        "pause": 9468,
+        "resume": 9370,
+        "timer": 44340,
+        "reconnect": 9622,
+        "kicked": 3243,
+        "left": 5423,
+        "skip": 42618,
+        "end": 1003
+      },
+      "maxStateBytes": 5650,
+      "protoCases": 145,
+      "privacyComparisons": 45036,
+      "botPrivacyComparisons": 135108
+    },
+    "actualFailedNativeCharacters": 50960,
+    "nativeFullLogSha256": "7c1c89d28fbd08f0a6075cad6b94efe386c03799dd6bea368432b3136a6a8410",
+    "scope": "original1003-seed generator with every original invariant/privacy/byte-replay assertion unchanged; current failedNilCounts=true strategic policy changes a few real events, so regenerate golden data, never relax the comparison; no browser, frame or clock invocation"
+  },
+  "freshActualFunctionalCapture15": {
+    "status": "ACTUAL_CAPTURE15_CLOSED",
+    "parentHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+    "startedAt": "2026-10-09T06:01:31.751881+00:00",
+    "naturallyClosedAt": "2026-10-09T06:01:36.454117+00:00",
+    "exitCode": 0,
+    "allFrozenInputCount": 3897,
+    "allGuardsUnchanged": true,
+    "scope": "original actual-file clock-controlled functional capture only; no native frames/FPS gain",
+    "controllerSha256": "0f1f8100d8190497c536b9337016edcd03aa32f30253f11252fc13dcddf77c44"
+  },
+  "currentFullWorkflowRequired": true,
+  "originalCoreReducerScoringRunnerChurnGeneratorMutationGeneratorLeagueAndNativeSamplerUnchanged": true,
+  "noLiteralGateOrAssertionRelaxation": true,
+  "KEEP": {
+    "formalRound": 14,
+    "gainQualification": "provisional until complete current original CI and actual genuine full artifact accepted",
+    "noGainStreak": 0,
+    "thisMilestone": "delivery correction, not a new formal after-green KEEP round"
+  },
+  "deliveryCadence": {
+    "scope": "actual normal material source push",
+    "sourceHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+    "preparedAt": "2026-10-09T05:42:12.365889+00:00",
+    "pushStartedAt": "2026-10-09T05:42:12.471330+00:00",
+    "pushNaturallyClosedAt": "2026-10-09T05:42:14.399135+00:00",
+    "exitCode": 0,
+    "priorActualClosure": "2026-10-09T05:07:09.275250+00:00",
+    "intervalSeconds": 2105.123885,
+    "hardIntervalPass": false,
+    "latenessSeconds": 305.123885,
+    "nextEarlyDeadline": "2026-10-09T06:07:14.399135+00:00",
+    "nextHardDeadline": "2026-10-09T06:12:14.399135+00:00",
+    "paths": [
+      ".github/workflows/G06.yml",
+      "jobs/G06-spades/ASSUMPTIONS.md",
+      "jobs/G06-spades/AUDIT.md",
+      "jobs/G06-spades/BOTS.md",
+      "jobs/G06-spades/CHANGES.md",
+      "jobs/G06-spades/LOOP.md",
+      "jobs/G06-spades/NEXT.md",
+      "jobs/G06-spades/SHA256SUMS.txt",
+      "jobs/G06-spades/VERIFY.md",
+      "jobs/G06-spades/bots-before-failed-nil.ts",
+      "jobs/G06-spades/bots.ts",
+      "jobs/G06-spades/capture-milestone-14-report.json",
+      "jobs/G06-spades/failed-nil-audit-summary.json",
+      "jobs/G06-spades/failed-nil-replay.json",
+      "jobs/G06-spades/failed-nil-review-20261009.md",
+      "jobs/G06-spades/failed-nil-test.ts",
+      "jobs/G06-spades/media/failed-nil-audit-20261009.zip",
+      "jobs/G06-spades/media/milestone-14-pinned-encoder.webm",
+      "jobs/G06-spades/package.json",
+      "jobs/G06-spades/play.html",
+      "jobs/G06-spades/verification-test.ts"
+    ],
+    "commitOutput": "[job/G06-spades-audit-20261009 5f5c80d] fix G06 bot contract recovery after failed nil\n 21 files changed, 1992 insertions(+), 31 deletions(-)\n create mode 100644 jobs/G06-spades/bots-before-failed-nil.ts\n create mode 100644 jobs/G06-spades/capture-milestone-14-report.json\n create mode 100644 jobs/G06-spades/failed-nil-audit-summary.json\n create mode 100644 jobs/G06-spades/failed-nil-replay.json\n create mode 100644 jobs/G06-spades/failed-nil-review-20261009.md\n create mode 100644 jobs/G06-spades/failed-nil-test.ts\n create mode 100644 jobs/G06-spades/media/failed-nil-audit-20261009.zip\n create mode 100644 jobs/G06-spades/media/milestone-14-pinned-encoder.webm",
+    "remoteReadbackAt": "2026-10-09T05:42:15.084345+00:00",
+    "remoteHead": "5f5c80df93ea20df3befca5a0140b460348dbef5",
+    "trackedClean": true
+  },
+  "scope": "First full changed-policy source correctly failed before native sampling; original generator regenerated exact output twice with every invariant and privacy assertion retained. New source must pass complete original checks. No unchanged native timing retry, physical-phone/cold-cache/general strength claim."
+}

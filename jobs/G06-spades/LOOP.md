@@ -22,3 +22,5 @@ audit; worstownfailednil keepsducking despiteoptionalcontribution | legitimate
 seed377 old9spades vswinningJspades, completecontract−60→+60/team−160→−40;
 5newdefaultgroupsPASS/finite400hands/default+Easy+privacycontrols; fresh14
 functionalclipPASS | playergain provisionalpendingnewfull, renewedstreak0.
+
+2026-10-09 delivery correction after5f5 original failure: regenerate original1003-seed churn golden twice byte-identically;181386events/3414frozeninputs/36groups+25mutants; real unused capture15. Not a new formal KEEP round;14gain provisional/current full acceptance pending/streak0.

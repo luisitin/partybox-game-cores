@@ -320,3 +320,27 @@ This does not run native frames. Parentexact0ed full genuine99998native and
 104105BofficialZIP/all1800raw/18guards/18decodedVP8 PASS05:28:24.442692.
 See public archive:42members/936433B/SHAb63c8cf8e12a7c97748e29e7dc47bbd1a34958260cdad1294cda2ea0081fce4c.
 Full changed-head original npm/CI and renewedthree-round stop are pending.
+
+### Original failed-nil golden recovery, prepared 2026-10-09T06:04:30.287444+00:00
+First full changed-head5f5 original CI correctly rejected stale churn data after
+all36 core/tactical groups,20,000 independent differentials and25 real mutants
+passed. Actual original1003-seed generator includes failedNilCounts=true, so the
+adopted strategy changes six counts while total181386 events, all seven phases,
+145 prototype-ID cases,45036 privacy and135108 bot-privacy comparisons stay equal.
+The original churn generator and every assertion are byte-unchanged. Its exact
+--write command genuinely regenerated twice, closed05:58:36.829927 and05:59:08.791894
+EXIT0/groupempty, byte-identical, all3414 immutable inputs unchanged. Old golden
+764fcdd7… and new43f1a188… are both preserved; only generated data is replaced.
+Fresh unused functional capture15 closed06:01:36.454117,88875B, all3897 frozen
+inputs unchanged, zero network/errors. It is never a native FPS result.
+The entire50960-character failed native log and90497B real official3-member ZIP
+are preserved. Its uploaded browser-report is inherited historical data: no
+current raw frames or leagues were invoked, so it proves neither current.
+Public proof archive media/failed-nil-churn-recovery-20261009.zip: 30
+safe unique fullyCRC/byte-verified members, 1002136B SHA256 9c399c7170fb51c1fec4b2ba7f622e464131fc330870fc4befd85c58c2a74222.
+Package/workflow only select capture15; original core/scoring/churn/mutation/
+league/native-frame assertions and literal gates are unchanged.
+Current full CI/genuine original reader remain required; PR16DRAFT, KEEP14
+tacticalgain still provisional/streak0. This is delivery correction, not a
+formal after-green no-player-gain round. Preserve actual failed source and prior
+35m05 source interval/miss; do not retry unchanged timing samples.

@@ -1,34 +1,33 @@
-# G06 failed-nil recovery milestone
+# G06 current failed-nil delivery
+Prepared 2026-10-09T06:04:30.287444+00:00; branch job/G06-spades-audit-20261009; PR16Draft against
+original job/G06-spades-core. Parent5f5c80df93ea20df3befca5a0140b460348dbef5.
+Original ReadyPR7/head48430 unchanged. Read failed-nil-review-20261009.md,
+failed-nil-delivery-20261009.json and media/failed-nil-churn-recovery-20261009.zip.
 
-Owner codex-spades-audit-20261009; branch job/G06-spades-audit-20261009; PR16DRAFT
-against original job/G06-spades-core. Prepared 2026-10-09T05:34:12.249638+00:00; parent0ed388a70d13b59fb3f69a412b77d5c606e5b9a7.
-Original PR7Ready/head48430 unchanged. Read failed-nil-review-20261009.md and
-failed-nil-audit-summary.json for the exact current source and retained raw proof.
+Player change adopted: own nil already failed + failedNilCounts=true now uses
+existing contract strategy. Actual legal seed377 improves−160→−40(+120).
+All36 original+tactical groups and25 actual mutants passed first full5f5CI;
+the original churn then rejected old counts. No leagues/browser ran.
+Original unchanged --write generator now PASS twice/byte-identical:
+1003seeds/181386events/all7phases/45036privacy/135108botprivacy,3414guards.
+Originalchurn/scoring/reducer/league/sampler/strictgates remain unchanged.
+Old/new goldens and whole first failed native50960chars/official90497B are
+preserved. Its inherited browser-report never supplies current acceptance.
+Fresh actual unused functional capture15:88875B/3897immutableguards/PASS;
+this is controlled functional video, not native FPS evidence.
 
-Adopted: normal/strong bots with failedNilCounts=true and already-lost nil now
-use existing contract strategy. Actual legal seed377 contract−60→+60; total
-−160→−40 (+120). Defaultfalse/Easy and original seed44 full scores unchanged.
-Five new default regression groups PASS; stricttypes/new490391Bpage PASS.
-Fresh actual-source capture14 unused/non-FPS PASS. Full CHANGED-HEAD npm/CI
-and genuine whole artifact are still REQUIRED; do not transfer parent green.
-The previous material push closed05:07:09.275250. Its05:37:09.275250 hard
-30-minute deadline was missed during the root handoff and final publication:
-at05:41:13 all staged checks had closed successfully, but source was not pushed.
-Preserve this interval failure; use the actual next push closure for its exact
-duration and the renewed25/30-minute deadlines.
-Exact parent0ed full original99998-char native/104105Bofficial/archive/full
-reader1800raw/25actualmutants/16000leagues accepted05:28:24.442692exit0.
+After actual normal materialpush, refresh onlyG06 mainrow under serialized
+exclusive lease and update native DraftPRbody/head/readback. Record actualpush
+closure and renewed25/30-minute deadlines privately; previous5f5materialpush
+closed05:42:14.399135, a35m05.123885s interval/hardmiss5m05.123885s honestly logged.
+Read new full original npm/CI plus genuine WHOLE current official artifact and
+unchanged original verification/native/clip reader. No inherited parentgreen.
+No source/gate rewriting to hide failedraw; no unchanged frame retries.
 
-Next: after normal sourcepush, refresh onlyG06main row underexclusive rootlease,
-record actualclosure and new25/30minute deadlines; update DraftPRbody. Read new
-full original job output and whole real official artifact. If any source-bound
-functional/typing/gate failure appears, preserve all raw and fix actual cause;
-never repeat unchanged local frames merely to find a passing sample.
-
-When neworiginal fullgreen is genuinely accepted, qualify KEEP14 tacticalgain
-and run renewed KEEP: rereadJOB/rankfive/fixworst/measure/push. Currentstreak0;
-three new consecutive no-player-gain rounds needed. Other priorities: protection
-of already-failed partner nil, tactical breadth/hidden-information invariants,
-documented original-publisher gaps and disclosed physicalphone approximation.
-No outsideexpert/coldcache/universalstrength claim. Historical TV58.381FAIL
-and phoneNOTRUN remain unresolved; original capture13/report/clip preserved.
+Only after complete current original acceptance, qualify KEEP14(+120), then
+rereadJOB/rankfive/fixworst/measure/log/push until3newconsecutive no-player-gain
+rounds. Currentstreak0; this golden correction is not a formal new KEEP round.
+Nextweaknesses: failedpartner-nil protection, finite tactical breadth/hidden-
+information invariants, exact scoring variants/source disagreements, historical
+TV58.381fail/phoneNOTRUN and disclosed physicalphone approximation. Preserve
+all original historical clips/reports/failures and protected originalPR7.
