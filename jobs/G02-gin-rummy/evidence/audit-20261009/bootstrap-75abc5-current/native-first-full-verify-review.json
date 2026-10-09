@@ -1,0 +1,86 @@
+{
+  "recordedUtc": "2026-10-09T07:19:29.222982+00:00",
+  "sourceHead": "75abc5dceae9fa2001f68b98fc7fa0b606931592",
+  "runId": 37897544523,
+  "jobId": 113712240354,
+  "actualTests": 73,
+  "actualPass": 69,
+  "actualFail": 4,
+  "actualFailedTests": [
+    "2026-10-09T07:11:44.7121036Z not ok 7 - current source-bound raw proof passes without discarding its largest interval",
+    "2026-10-09T07:11:44.7192279Z not ok 9 - changed end guards and failed snapshots are rejected",
+    "2026-10-09T07:11:44.7269557Z not ok 11 - reported statistics are recomputed from all retained intervals",
+    "2026-10-09T07:11:44.7331370Z not ok 12 - an honestly recomputed slow raw sample still fails the original frame gate"
+  ],
+  "allSix1000FullEveryEventReplayMatrices": [
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 260844,
+      "maxEvents": 612,
+      "replayChecks": 260844,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 285455,
+      "maxEvents": 775,
+      "replayChecks": 285455,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "standard",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 344241,
+      "maxEvents": 825,
+      "replayChecks": 344241,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 2,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 255515,
+      "maxEvents": 755,
+      "replayChecks": 255515,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 3,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 268526,
+      "maxEvents": 812,
+      "replayChecks": 268526,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    },
+    {
+      "suite": "bot-contract",
+      "variant": "oklahoma",
+      "players": 4,
+      "games": 1000,
+      "replays": 1000,
+      "totalEvents": 315689,
+      "maxEvents": 929,
+      "replayChecks": 315689,
+      "comparison": "every-event SHA256 and bytes; JSON-roundtrip replay"
+    }
+  ],
+  "all30000NonGinChoicesByteEqual": true,
+  "downstreamOriginalLeaguesMutantsBrowserCaptureIntegrityNotRun": true,
+  "fullCurrentOriginalAcceptance": false
+}
