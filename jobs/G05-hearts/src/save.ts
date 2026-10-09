@@ -1,12 +1,13 @@
 import {object,number,array,string,literal,enum as enumeration} from 'zod';
 import {stateSchema} from './schema.js';
 import {deckFor,legalCards,passingOffset,trickWinner} from './rules.js';
-import type {HeartsState} from './types.js';
+import type {HeartsState,Play} from './types.js';
 export type Mode='human'|'easy'|'normal'|'sharp';
 export interface SeatPref{name:string;mode:Mode}
 export interface SavedGame{version:1;savedAt:number;state:HeartsState;seats:SeatPref[]}
 export const saveSchema=object({version:literal(1),savedAt:number().int().min(0).max(Number.MAX_SAFE_INTEGER),state:stateSchema,seats:array(object({name:string().max(24),mode:enumeration(['human','easy','normal','sharp'])}).strict()).min(3).max(6)}).strict();
 const same=(a:readonly number[],b:readonly number[]):boolean=>{const x=[...a].sort((i,j)=>i-j),y=[...b].sort((i,j)=>i-j);return x.length===y.length&&x.every((c,i)=>c===y[i]);};
+const samePlays=(a:readonly Play[],b:readonly Play[]):boolean=>a.length===b.length&&a.every((p,i)=>p.playerId===b[i]!.playerId&&p.card===b[i]!.card);
 /** Snapshot data only: holding a saved clock never mutates the live game. */
 export function makeSave(s:HeartsState,seats:readonly SeatPref[],at:number):SavedGame{
  const copy=JSON.parse(JSON.stringify(s)) as HeartsState;
@@ -30,6 +31,20 @@ export function parseSave(value:unknown):SavedGame|null{
  const expected=Object.fromEntries(s.order.map(id=>[id,[] as number[]]));
  for(let i=0;i<s.played.length;i+=n){const trick=s.played.slice(i,i+n);if(new Set(trick.map(p=>p.playerId)).size!==trick.length)return null;if(trick.length===n)expected[trickWinner(trick)!]!.push(...trick.map(p=>p.card));}
  if(s.order.some(id=>!same(s.captured[id]!,expected[id]!)||s.hands[id]!.length!==deck.length/n-s.played.filter(p=>p.playerId===id).length))return null;
+ // A schema-valid snapshot can still erase a live card or restore the wrong turn.
+ // Keep the current/public trick metadata tied to the actual played-card ledger.
+ const partial=s.played.length%n,currentLength=s.trick.length;
+ if(partial?currentLength!==partial:currentLength!==0&&currentLength!==n)return null;
+ if(currentLength&&!samePlays(s.trick,s.played.slice(-currentLength)))return null;
+ if(s.trickNumber!==(s.played.length-currentLength)/n)return null;
+ const completeEnd=s.played.length-partial,last=completeEnd?s.played.slice(completeEnd-n,completeEnd):[];
+ if(!samePlays(s.lastTrick,last)||s.lastWinner!==trickWinner(last))return null;
+ if(s.phase.id==='pass'&&s.actor!==s.order.find(id=>!Object.hasOwn(s.passes,id)))return null;
+ if(s.phase.id==='play'){
+  const actor=currentLength?s.order[(s.order.indexOf(s.trick.at(-1)!.playerId)+1)%n]:s.played.length?s.lastWinner:s.order.find(id=>s.hands[id]!.includes(s.opening));
+  if(s.actor!==actor)return null;
+ }
+ if((s.phase.id==='trick'||s.phase.id==='hand')&&s.actor!==s.lastWinner)return null;
  if(s.lastWinner!==null&&!ids.has(s.lastWinner)||s.phase.id==='trick'&&(s.lastWinner===null||s.trick.length!==n))return null;
  if(s.phase.id==='hand'&&(!s.handScored||remaining.length)||s.phase.id==='done'&&!s.handScored)return null;
  if(s.phase.id==='play'&&(!s.hands[s.actor]!.length||!legalCards(s.hands[s.actor]!,s.trick,s.trickNumber===0,s.heartsBroken,s.opening).length))return null;

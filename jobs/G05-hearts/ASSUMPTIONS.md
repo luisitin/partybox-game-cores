@@ -108,3 +108,19 @@ identical. Public independent reader uses actual immutable Git inputs and a
 pinned package license; all writes are private under repository .work.
 Complete successful65a push/PR artifacts are preserved before the final change;
 their old accepted head is not transferred to this new verifier checkpoint.
+
+## 2026-10-09 recovery audit
+Deliberately corrupt local snapshots expose a current-ledger coherence defect;
+ordinary-play frequency and performance causes are unknown. Fix recovery only;
+no rules, bot policy or clock/sampler changes. Original three no-gain rounds are
+not transferred over this player recovery gain. Initial cross-filesystem hardlink
+preparation failed before build; corrected using read-only existing dependencies.
+The first DOM outer helper had a syntax error before launching any child. A later
+media helper imported a nonexistent export; the successful capture was retained,
+and only its existing video was decoded with the original decodeCapture export.
+
+Full-workflow discovery correction: the connector commit-workflow helper listed
+PR events only; native actions/runs query identified the already-successful
+b0 push37885148039. No unchanged retry was triggered. Original full source
+and native evidence are preserved. Post-green64-config audit records its exact
+selected correlated settings and an honest emitted phase-count erratum.

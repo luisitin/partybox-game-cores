@@ -41,7 +41,9 @@ Code/UI MIT; zod's MIT notice is inside the standalone bundle. No source art.
 [NEXT.md](NEXT.md) records current delivery/resumption status;
 [LOOP.md](LOOP.md) records every measured review round.
 
-Both full65a310b hosted checks and their genuine artifacts are accepted.
-Original60-frame warmup precedes600 retained intervals; old local failures
-remain unexplained. Final verifier receipt/source changes need their own full
-CI and genuine artifact audit before PR5 Ready; see VERIFY.md for reproduction.
+The current audit corrects corrupt-save recovery before Resume opens a stuck game.
+Valid partial tricks still restore with private cards concealed. Actual24 local
+tests/600 valid saves and TV/phone recovery proof passed. Both corrected-source
+full hosted checks and genuine artifacts passed. Three further audits found no
+new player gain. Original PR5 remains Ready separately.
+See NEXT.md and media/audit-20261009-proof.zip for exact scope and retained errors.

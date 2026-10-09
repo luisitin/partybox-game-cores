@@ -83,3 +83,16 @@ or art from them is copied.
 
 A search candidate in shmup/card-game-rules/briscola.md was about Briscola,
 not Hearts; it supplies no Hearts fact and is not counted as corroboration.
+
+## 2026-10-09 pinned original-source reread
+Pagat transcription mondary/PKcards assets/rules/rules_pagat/hearts.md at
+b5147daa70a1a1a41b18549b80e51dbc035098ba, actual blob
+e2178fc36b97290d6864d9a8304988a6ba60fa96; Nathan Long nathanlong/rules
+content/games/hearts.md at27d4ebb7557eae7c04fb3fa608182d80e0f71593,
+blob b36e3cf6331c70bebac6f1eb4e6578cb89330eee; BGA factual implementation
+wardcanyon/localarena src/hearts/hearts.game.php at
+cb7e785dbcbac37c3f93e9d1893bbfe8169cfe14, blob
+65d6bfa4fed736d32270dcb152ef1e089e612bb2. Passing, first-trick exceptions,
+moon/J-diamond and roster deck cuts remain as documented; no mechanics changed.
+Relevant targeted sections and the full short Nathan rules were read; full longer
+sources were fetched but not claimed fully read. No source implementation/art copied.

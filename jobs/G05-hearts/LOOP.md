@@ -25,3 +25,19 @@
 12 | Add real-disk harmless-HTML-change/restoration and actual full-kind CI-summary-without-raw negatives;6/6 focused groups/34 meaningful negatives PASS, actual source hash changes→stale-proof rejection→exact153921B HTML restoration. Runtime/UI/core/bots and strict frame gates unchanged; prior exact e5f92a1 CI37795105831 full1200raw/source/clip verification passes with desktop/phone60.0024fps. Fresh milestone15 functional capture 136324bytes/27matching guards/all20functionals recorded separately, not a benchmark. Player gain: none meaningful; resumed cosmetic streak2.
 
 13 | Publish the actual functional capture helper (ignored/unreproducible→delivered scripts/capture.mjs), bind its true self-hash and require unused milestones; actual command passes all20functionals/3–6rosters/27matching guards,136324B clip independently matches bytes/SHA, latest strict marker stays unchanged and full validator rejects the partial report. Correct obsolete30-test verification header→36tests/34negatives, preserve history and local failures. Default600-frame runner/checker and all gameplay unchanged; no extra frame/core rerun. Player gain: none meaningful; resumed cosmetic streak3.
+
+14 | PRE-ACCEPTANCE recovery gain: ranked weaknesses were erased/substituted
+current trick, wrong next actor, wrong trick number, false last trick/winner and
+historical sampler witness scope. Fix the worst ledger-coherence family only.
+Original schema-valid erased trick accepted then stalled; new regression genuinely
+fails original parser. Corrected24 tests/24 corrupt variants/600 valid snapshots
+PASS; actual native TV/phone DOM five cases PASS, valid exact restore/concealment
+retained. Fresh capture19 passes20 functionals, not FPS. Current full original CI
+and genuine artifact proof still pending; no completed KEEP round or reset claimed
+yet. Old11–13 stop is historical. After current acceptance, measure this gain and
+run three real consecutive substantive no-gain audits before stopping.
+
+14 acceptance | Corrected b0 full push37885148039 and PR37886579081 SUCCESS; both genuine artifacts/137 original assertions/all1200 native intervals/full36VP9 PASS. Recovery gain proved by old failure/new24 local checks/600 saves and actualTV/phone DOM; renewed no-gain streak0.
+15 | Audit64 declared selected configurations through64 complete matches and12463 valid snapshots acrossall five phases/3–6 counts/moon/Jack/passing/timed options. No new save failure/product change/player gain; streak1. Three-deck and queen switches correlate with noPass/Jack; not an exhaustive Cartesian claim.
+16 | Resume288 genuine observed phase states; exact final scores/history/results match uninterrupted games.32 passing configurations have5 phases,32 no-pass have4; original emitted field5 corrected by preserved erratum. No product change/player gain; streak2.
+17 | Recovered TV/controller privacy and mutable-view isolation:2592 hidden-hand ordering comparisons/1296 controller mutation checks PASS for288 restored states. No product change/player gain; streak3. Whole native audit CLOSED05:06:23.754378Z/EXIT0/1016 frozen inputs unchanged; no browser/FPS rerun.

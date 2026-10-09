@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import{game,start,toPhase,finish}from'./helpers.mjs';
+import{game,start,toPhase,finish,eventFor}from'./helpers.mjs';
 import{makeSave,parseSave}from'../.build/jobs/G05-hearts/src/save.js';
 const seats=n=>Array.from({length:n},(_,i)=>({name:`Player ${i+1}`,mode:'normal'}));
 test('saved snapshots validate in all phases/counts, preserve live state and resume completed matches',()=>{
@@ -24,4 +24,37 @@ test('saved passing memory must be complete before any controller can see it',()
 
 test('a caller mutating an exported save cannot change live hands, scores or paused clocks',()=>{
  const s=game.reduce(start(1),{type:'vip',action:'pause',now:2000}),before=JSON.stringify(s),saved=makeSave(s,seats(4),3000);saved.state.hands.p0[0]=99;saved.state.scores.p0=999;saved.state.phase.paused.at=999;assert.equal(JSON.stringify(s),before);
+});
+
+test('saved current trick and turn must agree with the actual played-card ledger',()=>{
+ for(const n of[3,4,5,6]){
+  let s=start(17,n,{target:25,noPass:true});let steps=0;
+  while(!(s.phase.id==='play'&&s.trickNumber===1&&s.trick.length===1)&&steps++<200)s=game.reduce(s,eventFor(s));
+  assert.equal(s.trickNumber,1);assert.equal(s.trick.length,1);
+  const good=makeSave(s,seats(n),1_000_000);assert.ok(parseSave(good));
+  const cases=[
+   ['erased current trick',v=>v.trick=[]],
+   ['substituted current card',v=>v.trick[0].card=v.hands[v.actor][0]],
+   ['wrong next player',v=>v.actor=v.order[(v.order.indexOf(v.actor)+1)%n]],
+   ['wrong trick number',v=>v.trickNumber=0],
+   ['erased last completed trick',v=>v.lastTrick=[]],
+   ['wrong last winner',v=>v.lastWinner=v.order[(v.order.indexOf(v.lastWinner)+1)%n]],
+  ];
+  for(const[label,corrupt]of cases){const bad=structuredClone(good);corrupt(bad.state);assert.equal(parseSave(bad)===null,true,`${n} seats: ${label} must be rejected before Resume`);}
+ }
+});
+
+test('save ledger validation preserves genuine partial tricks, clocks and early endings',()=>{
+ let snapshots=0;
+ for(const n of[3,4,5,6])for(const noPass of[false,true])for(const turnSeconds of[0,10]){
+  let s=start(41,n,{target:25,noPass,turnSeconds});let steps=0;
+  while(s.trickNumber<3&&s.phase.id!=='done'&&steps++<100){
+   const before=JSON.stringify(s),good=makeSave(s,seats(n),s.phase.startedAt+1);assert.ok(parseSave(good),`${n}/${noPass}/${turnSeconds}/${s.phase.id}/${s.trick.length}`);
+   const ended=game.reduce(s,{type:'vip',action:'end',now:s.phase.startedAt+2});assert.ok(parseSave(makeSave(ended,seats(n),ended.phase.startedAt+1)),`valid early end ${s.phase.id}`);
+   assert.equal(JSON.stringify(s),before,'saving and validating never mutate live state');snapshots+=2;
+   s=game.reduce(s,eventFor(s));
+  }
+  assert.ok(steps<100,'genuine game reaches at least three tricks');
+ }
+ assert.ok(snapshots>400);console.log(JSON.stringify({validIntermediateAndEarlyEndSaves:snapshots}));
 });
