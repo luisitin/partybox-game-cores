@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import {normalize} from './scoring.ts';
+import {cleanText,normalize} from './scoring.ts';
 export const realmIds=['emergency-room','dead-or-alive','internet-famous','ancient-or-ikea','name-your-baby','real-town-or-fake','patent-pending','do-not-use'] as const;
 export type RealmId=typeof realmIds[number];
 export type Kind='number'|'choice'|'century'|'decade'|'bluff';
@@ -20,7 +20,7 @@ export const rowSchema=z.discriminatedUnion('kind',[
  z.object({...base,kind:z.literal('choice'),correct:z.union([z.literal(0),z.literal(1)]),left:z.string().max(80),right:z.string().max(80)}).strict(),
  z.object({...base,kind:z.literal('century'),...bounded}).strict().refine(r=>[r.min,r.max,r.correct].every(Number.isInteger)&&r.min>=-100&&r.max<=100&&r.min<r.max&&r.correct>=r.min&&r.correct<=r.max&&r.correct!==0),
  z.object({...base,kind:z.literal('decade'),...bounded}).strict().refine(r=>[r.min,r.max,r.correct].every(n=>Number.isInteger(n)&&n%10===0)&&r.min>=0&&r.max<=3000&&r.min<r.max&&r.correct>=r.min&&r.correct<=r.max),
- z.object({...base,kind:z.literal('bluff'),correct:z.string().min(1).max(160)}).strict().refine(r=>normalize(r.correct).length>0,'Bluff truth must contain visible answer text')
+ z.object({...base,kind:z.literal('bluff'),correct:z.string().min(1).max(160)}).strict().refine(r=>normalize(r.correct).length>0&&cleanText(r.correct).length<=160,'Bluff truth must fit the normalized answer input')
 ]);
 export type Row=z.infer<typeof rowSchema>;
 export const catalogSchema=z.array(rowSchema).min(16).max(50000).refine(rows=>new Set(rows.map(r=>r.id)).size===rows.length&&realms.every(realm=>rows.filter(r=>r.realm===realm.id).length>=2)&&rows.every(r=>realms.find(realm=>realm.id===r.realm)?.kind===r.kind));

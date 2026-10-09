@@ -3,7 +3,7 @@ import type {GameDefinition,GameStateBase,GameManifest,InitContext,GameEvent,TvV
 import {seedRng,nextInt,shuffle,type Rng} from '../../contract/rng.ts';
 import type {BotSkill} from '../../contract/constants.ts';
 import {catalogSchema,sampleRows,realms,type Row,type RealmId,type Kind} from './samples.ts';
-import {quickScore,normalize} from './scoring.ts';
+import {quickScore,cleanText,normalize} from './scoring.ts';
 import {fromView} from './bots.ts';
 
 export const inputSchema=z.discriminatedUnion('type',[
@@ -139,7 +139,7 @@ export function createGame(content:readonly Row[]=sampleRows):GameDefinition<Sta
    const n={...s,responses:{...s.responses,[id]:input.value}};return allReady(n)?advance(n,event.now):n;
   }
   if(input.type==='write'){
-   const text=input.text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').trim().replace(/\s+/gu,' ');
+   const text=cleanText(input.text);
    if(s.phase.id!=='write'||Object.hasOwn(s.responses,id)||text.length>160||!normalize(text))return s;
    const n={...s,responses:{...s.responses,[id]:text}};return allReady(n)?advance(n,event.now):n;
   }

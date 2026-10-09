@@ -122,6 +122,23 @@ test('Unicode normalization cannot exceed the saved-state ceiling across twelve 
  assert.equal(s.phase.id,'done');assert.equal(rejected,96);
  assert.deepEqual(Object.keys(C.results(s)!.scores),s.seats);
 });
+test('catalog truth normalization uses the writable display limit without limiting casefold keys',()=>{
+ for(const correct of ['\ufdfa'.repeat(9),'\ufb03'.repeat(54)]){
+  const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,correct}:row);
+  assert.throws(()=>C.createGame(rows),'catalog must reject a truth that cannot fit a normalized submission');
+ }
+ for(const correct of ['\ufdfa'.repeat(8)+'x'.repeat(16),'Ａ'.repeat(160),'\u0130'.repeat(160)]){
+  const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,correct}:row),g=C.createGame(rows);
+  let s=g.init(context(2,91,{mode:'bluff',rounds:4}));
+  for(let step=0;step<10&&s.phase.id!=='write';step++)s=g.reduce(s,timer(s));
+  assert.equal(s.phase.id,'write');
+  s=g.reduce(s,{type:'input',playerId:'p0',input:{type:'write',text:correct},now:s.phase.startedAt+1});
+  assert.equal(String(s.responses.p0).length,160,'bounded normalized display remains writable');
+  s=g.reduce(s,timer(s));
+  assert.equal(g.controllerView(s,'p0').foundTruth,true);
+  s=g.reduce(s,timer(s));assert.equal(s.last!.awards.p0,1000,'valid truth is credited once');
+ }
+});
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{
  let s=toPhase('write',1,{mode:'bluff'});s=input(s,'p0',{type:'write',text:'same fake'});s=input(s,'p1',{type:'write',text:'SAME   FAKE'});s=input(s,'p2',{type:'write',text:'other fake'});
  assert.equal(s.phase.id,'vote');assert.equal(s.options.length,3);const shared=s.options.find(o=>o.owners.length===2)!;const truth=s.options.find(o=>o.correct)!;

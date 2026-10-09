@@ -17,4 +17,5 @@ export function quickScore(row:Row,guess:number):number{
  }
  return Math.max(0,1000-250*Math.abs(guess-row.correct)/10);
 }
-export function normalize(text:string):string{return text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').trim().replace(/\s+/gu,' ').toLowerCase();}
+export function cleanText(text:string):string{return text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').trim().replace(/\s+/gu,' ');}
+export function normalize(text:string):string{return cleanText(text).toLowerCase();}

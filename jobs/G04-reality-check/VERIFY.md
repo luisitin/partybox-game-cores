@@ -620,3 +620,24 @@ output and actual command/cwd are preserved in proof.zip. The original
 67-member archive is retained privately; the70-member archive preserves
 all original members byte-for-byte plus this diagnostic. Correct job-cwd
 checksum write/check is required before publication; no test/native rerun.
+
+## Catalog bound consistency (2026-10-09)
+Complete probe/negative/fixed source/runtime/resource/raw receipts are in
+results/followup-catalog-normalization-20261009/proof.zip; archive.json gives
+full member CRC/exact byte comparisons and digest. Actual saved f79 catalog
+regression command FAST_TEST=1 CORE_PATH=<saved-f79>/core.ts node --test
+--test-reporter=tap --test-name-pattern='catalog truth normalization' test.ts:
+EXIT1,one expected missing-exception failure/zero pass, complete TAP read.
+New Node24 pipeline types/data/two fixtures/two builds/freshness/checksums PASS;
+FAST_TEST=1 test.ts32 PASS; unchanged strict-proof.test.ts four PASS.
+10000 seeded old/new normalization comparisons equal;2 overflow catalogs rejected,
+3 exact160 display boundaries accepted/credited, including320 lowercase key.
+42 oldReady/new games3395 states/actions/views/results exact. Same worst-case
+96 refusals8995B. Actual closure11:10:33.286930Z, all3830 guards unchanged within
+recorded declared-output scopes, peak436432896B<512MiB/no signals/empty groups.
+First f79 workflow run37920764830/job113787854390 is metadata success; whole
+decoded54-test log independently read. Official11611612904 expected1448737B/
+SHA58c9f87a4b536df5df8d5de7b77353a4eaa1e0aed429db3d1b89787348145770.
+Actual two configured403 downloads received0B; no whole/native/clip acceptance.
+First broad failed controller flag is not a source mutation finding. New source
+full original CI and unchanged complete-reader acceptance remain mandatory.

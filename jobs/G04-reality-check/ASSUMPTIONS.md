@@ -120,3 +120,15 @@ The fixed pipeline's2987 rows do not separately enumerate old installed
 Zod; the unchanged1106 original full source/Zod/runtime/helper supplement
 covers that earlier guard set across both actual controls. No overclaim of
 an unrecorded per-phase dependency path or exact instantaneous RSS is made.
+
+## Catalog normalization consistency, 2026-10-09
+The first submission bound exposed a genuine custom-catalog regression:
+accepted raw9/54-unit truths normalize to162 and cannot be submitted. Use the
+same original case-preserving cleanup at catalog load and submission, limit
+display/storage units, preserve lowercase matching keys and all original scoring.
+Three valid160-unit boundaries and a320-unit comparison key remain accepted.
+Saved original f79/source and failed regression remain unchanged; this is a
+pre-green product correction, not a qualified KEEP/no-gain round.
+The actual hosted download403 is distinct from a source/test failure. Metadata
+green and complete text logs do not accept unreceived official ZIP/native clips.
+Public signed-URL errors are redacted; all actual private original bytes remain.

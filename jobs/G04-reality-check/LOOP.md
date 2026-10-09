@@ -31,3 +31,10 @@ are still required; canonical c81 proof is explicitly historical baseline.
 ## Unicode follow-up baseline, 2026-10-09
 
 Pre-green real defect |160 input→2880 stored; old676419B state | refuse normalized oversize before storage | fixed96 refusals/8995B peak;42 benign games/3395 event states plus bots/views/results equal;31 focused/4 strict controls pass | not a qualified KEEP round; new full hosted proof pending; original12–14 stop preserved; new completed rounds0/no-gain streak0.
+
+## Catalog consistency follow-up, 2026-10-09
+Pre-green real finding | two accepted catalog truths normalize to162 unwritable
+units after f79 | shared case-preserving cleanup and catalog display-length
+validation |32 focused/four strict PASS;10000 matching comparisons equal;
+42 benign games3395 states/bots/views/results equal;3830 guards/closure PASS
+| whole new original proof pending; new completed KEEP rounds0/no-gain streak0.
