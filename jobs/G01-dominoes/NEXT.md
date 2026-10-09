@@ -5,6 +5,24 @@ Validation PR11 is open and draft against job/G01-dominoes. Original PR1 stays
 open, draft and unchanged on canonical 8c57376. No merge or force-push.
 Read CLAIMS.md on current main; refresh only G01 after every source push.
 
+## Latest exact current full proof
+
+Full original838 workflow37872579179/job113633825656 SUCCEEDED02:24:25UTC.
+Official11591617572/98,673,066B/b467433c… was independently accepted1,252
+assertions, naturally CLOSED02:25:55.955693UTC/exit0/no owned process. All
+source/Git/native npm/25 mutants/file privacy/16 realWorker replays/fivevariants,
+600 native intervals/602 stamps and36 decoded frames pass. Hosted TV59.21247 /
+phone4x59.80384FPS, original gates unchanged. worker-hosted-8384404.json and
+media/worker-stage-8384404-proof.zip retain all bounded actual raw/receipts;
+whole unique98MB official ZIP stays in the original workspace. New capture16
+is current; historical local failures and missing first-pair raw remain.
+
+The new evidence-only checkpoint keeps exact838 player bytes. Original PR1
+stays unchanged/draft; PR11 draft. Full newest-headCI and substantive renewed
+KEEP remain; no measured player gain. Prepared logging diagnostic remains first
+UNEXECUTED, requires current-head bridge/review/rootgrant. Current /tmp checkout
+is authoritative after its push because original writable workspace is ENOSPC.
+
 ## Current player and genuine native result
 
 The audit draft now adopts the exact two independently reviewed deal-only UI
@@ -24,7 +42,7 @@ requests/errors. Functional clocks and native refresh clocks remain separate.
 No 60FPS, physical-phone, direct-file, cause or measured improvement claim.
 FACE-DOWN-AUDIT.md and complete public raw/controller/archive retain the trial.
 
-## Hosted acceptance still required for this changed player
+## Historical hosted acceptance and source-specific evidence
 
 Previous exact2d full run37869016355/job113622494282 succeeded01:39:42UTC.
 Its official93,181,134-byte artifact11590012046 was independently accepted
@@ -35,13 +53,11 @@ variants. Private fullZIP and public bounded worker-stage-2d30473-proof.zip
 retain actual evidence. Earlier e4 full1,204-check and canonical8c full1,044-check
 proof remain public. These successes certify only their exact source.
 
-Documentation-only e8 run37871497932 was actually in progress at01:55UTC.
-Obtain its actual result without assigning prior green by assertion. After the
-face-down adoption push, obtain and accept the complete original current npm
-workflow and genuine full official artifact, including all source bytes,
-25 mutants, real file opening, Worker lifecycle/privacy and native raw/clip.
-Do not add recursively nested large artifact ZIPs to the public job; retain
-full genuine bytes privately and archive bounded raw outputs/receipts publicly.
+Documentation-only e8 run37871497932 was actually cancelled02:01:45UTC by
+the newer838 material source push. Exact838 full hosted proof now PASS as
+recorded at the top below. This checkpoint changes only evidence/docs and
+actual generated mutable outputs; core/UI/player/Worker/sampler bytes stay
+exact838. Obtain complete new-headCI without assigning838 green by assertion.
 
 ## Strong Worker responsiveness remains unmeasured
 
@@ -86,12 +102,16 @@ rounds have no player-visible gain. Proof delivery or this finite native pass
 is not a completed improvement round. Original PR1 stays draft until actual
 current proof and proper adoption; never merge based on historical green.
 
-Last completed source push e8 naturally closed01:47:47.275532UTC; its next hard
-cadence is02:17:47.275532UTC. The previous46:54 deadline was exceeded by52.919272s;
-actual timestamps remain unaltered. Read the new actual push receipt for the
-fresh30-minute cadence and main claim. Physical phone remains unverified.
-Only one fully recoverable private e4 duplicate was removed after complete
-immutable Git/public/private equality, immediate same-stat/nlink1/FDzero checks;
-public exact recovery, all unique history and private current2dZIP remain.
+Last completed source838 push naturally CLOSED02:01:23.597412UTC. Its hard
+02:31:23.597412UTC cadence was exceeded during shared workspace ENOSPC. Actual
+full acceptance and capacity block are retained, no backdates. This checkpoint
+uses independent /tmp/g01-current-838-proof-20261009/repo; original workspace
+and unique whole2d/current838 ZIP/history remain intact. Read actual new push
+receipt for fresh30-minute cadence, and current mainCLAIMS for own-row refresh.
+Only fully recoverable authorized e4 duplicates were deleted; completed face
+clone needs its exact immutable838 public Git blob restored before any replay.
+No paired diagnostic launched; current190 identities remain frozen on old838,
+so a fresh current source bridge/review/rootgrant is required. Physical phone
+remains unverified; native4xCPU is emulation.
 After the required stopping condition, fresh-read main and branch activity,
 then legally claim the lowest eligible queue job. Never stop at a cosmetic gain.

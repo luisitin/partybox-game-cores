@@ -53,7 +53,7 @@ Single steps:
 ## Status
 
 PR1 stays draft on canonical8c; validation PR11 contains the audit candidate.
-Exact prior Worker 2d full CI/1,225-check proof passed, including real file opening.
-Deal-only face-down source passes the original native TV/phone gates once
-(FACE-DOWN-AUDIT.md). Complete current CI and measured player gain are pending.
-NEXT.md binds remaining checks; historical failures and renewed KEEP0 remain.
+Exact Worker/face-down838 full CI and1,252-check genuine artifact proof passed,
+including real file opening,600 native intervals and36 decoded VP9 frames.
+The new evidence-only headCI, measured player gain and renewed KEEP are pending.
+NEXT.md binds remaining checks; all historical failures remain preserved.

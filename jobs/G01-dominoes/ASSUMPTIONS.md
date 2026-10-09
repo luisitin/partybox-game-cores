@@ -119,3 +119,13 @@ its exact visible back and all cue/geometry/timing bytes. This is a rendering
 cost hypothesis; neither the earlier TV failure's cause nor an FPS distribution
 or Worker gain is inferred from the single modified-source native pass. Full
 current CI and renewed KEEP remain required; original canonical PR1 unchanged.
+
+
+2026-10-09 capacity assumption: /tmp is independently writable tmpfs, while
+original shared workspace has0 available bytes for uid1000. Use only a small
+sparse shared Git checkout there for the exact-source proof checkpoint; preserve
+all original files/history/unique2d/current838 fullZIPs. Load the already accepted
+current official ZIP once into BytesIO, archive every unique top-level/raw and
+mutable output within3MB, and retain full SHA/acceptance/Git provenance. The
+31:23 deadline was actually exceeded; no backdates, filtered frames, speculative
+cause or false completion. Original unexecuted pair needs fresh current bridge.
