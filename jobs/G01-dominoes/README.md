@@ -53,7 +53,7 @@ Single steps:
 ## Status
 
 PR1 is draft; canonical8c full CI/1,044-check proof passed (ARTIFACT-AUDIT.md).
-This audit branch's Worker prototype runtime/FPS/full CI/gain are UNRUN.
-Strict build/static/six controls pass; these are not native Worker proof.
+Real Worker replay/fallback/cancel pass on source2ae (WORKER-AUDIT.md).
+Actual file navigation, native FPS, full candidate CI and player gain are pending.
 Legacy55.73/51.58fps failures retain UNKNOWN cause; older media are historical.
 NEXT.md binds remaining checks; renewed KEEP0 and original gates remain.

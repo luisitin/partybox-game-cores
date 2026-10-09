@@ -435,3 +435,39 @@ fallback, pending end/rematch, original300-native-frame gates, current capture,
 full candidate npm/CI and measurable player gain are UNRUN/UNMEASURED.
 Native first-trial controller has never launched. Canonical8c accepted proof
 remains distinct; this incomplete candidate checkpoint does not inherit it.
+
+
+## First actual Worker proof, 2026-10-09 UTC
+
+The preceding UNRUN notes describe preparation before this actual first run.
+Root executed `python .work/queue-audit-20261008/worker-native-first-controller.py`
+from the repository root after a fresh all-owner zero-process grant. Its exact
+child was Node24.19 `worker-browser-check.ts` with actual Chromium ELF151.
+START00:36:12.578852; child naturally CLOSED00:36:45.330516; whole controller
+CLOSED00:36:46.056604, exit0. No owned live process remains. All28 source/five
+binary identities, controller and READY match before/after. Raw receipts and
+exact preparation failures are archived; WORKER-AUDIT.md gives hashes/commands.
+
+All16 nontrivial own/public-only observations reproduce exact original Input
+and RNG state (2/3/4 Draw/Block, including four-seat partners). Real UI Blob
+is exact compiled code, initial seed23 tile22/RNGstep2112. Actual CSP denial,
+runtime error and unresponsive ten-second watchdog retain same fallback move;
+pending end terminates delayed work, no old reply, rematch seed24/new ID works.
+Requests/errors=[]; actual browser closure00:36:43.608. Diagnostic fault/delay
+fixtures are explicit, not production environment branches or FPS acceptance.
+Actual messageerror decoding was not induced; controlled-port handling is
+covered by the six Node tests. No native frame or player-gain result yet.
+
+`disk-browser-check.ts` is added before the existing Worker/browser commands
+in every npm test. It requires actual file:// navigation, human hand concealment,
+real inline Blob worker output/RNG and zero requests/errors; no setContent
+fallback or weakened assertion. Hosted full CI must genuinely pass it.
+This new disk command is UNRUN here; original browser.ts bytes/gates unchanged.
+
+
+`npm run check --prefix jobs/G01-dominoes`: PASS, strict-compiles the new
+actual disk-navigation validator. From this job folder, `node checksums.ts
+&& node checksums.ts --check && node build.ts --check`, exact Git comparison
+of original core/sampler and accepted Worker/UI/page to source2ae, all ZIP
+entry digests/raw-copy equality/CRC, README<60 and `git diff --check`: PASS.
+These check preparation and archived bytes, not unrun disk/FPS acceptance.

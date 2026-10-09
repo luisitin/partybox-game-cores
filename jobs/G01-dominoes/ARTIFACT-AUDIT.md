@@ -43,6 +43,8 @@ The corrected reader checks real raw Git merge headers and all source bytes.
 Future CI uses raw headers too. No invented parent or weakened source check.
 
 Archived proof is for source8c, not automatically for this later audit head.
-Original core/UI/page remain unchanged, renewed KEEP rounds/gains remain0,
-original PR1 remains draft. Historical55.73/51.58fps failures and older media
+The e034 reader/archive checkpoint kept core/UI/page unchanged. The later
+Worker candidate changes UI/build/page and has separate functional evidence
+in WORKER-AUDIT.md; it does not inherit this full green. Renewed KEEP rounds
+and gains remain0, original PR1 remains draft. Historical55.73/51.58fps failures and older media
 remain preserved; a current hosted success does not erase them.

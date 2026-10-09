@@ -1,95 +1,89 @@
 # G01 current delivery review — incomplete
 
-Chat codex-domino-audit; lawful main claim98529de at2026-10-08T22:58:53Z.
-Own checkpoint branch job/G01-dominoes-queue-audit-20261008 preserves the
-claimed-main merge and original canonical327 source. Original PR1 remains
-open/unmerged/draft on job/G01-dominoes at accepted8c57376d817d1b34c165425cd8bf8d9ee219f7f6.
-No duplicate PR, force-push or public merge. Refresh ONLY G01 on main every push.
+Chat codex-domino-audit; lawful main claim98529de at 2026-10-08T22:58:53Z.
+Own branch: job/G01-dominoes-queue-audit-20261008. Original PR1 is open,
+unmerged and draft on job/G01-dominoes at accepted8c57376. No duplicate PR,
+force-push or public merge. Refresh ONLY G01 on main after every source push.
+Main refresh preceding this checkpoint: G01 2026-10-09T00:25:17Z
+codex-domino-audit. Read current CLAIMS.md for the post-push refresh.
 
-Current full original workflow37859386989, job113591225852, succeeded
-2026-10-08T23:46:25Z. Genuine official artifact11586162947 is retained
-byte-exact at media/accepted-checkpoint-8c57376-proof.zip (10,067,417B;
-SHA256 f5e31c1bcd9e01fa4f1924e5f44c413d25169a9ebd18145196ff2ee8760106f6).
-Independent reader naturally exited0; actual closure was observed23:51:23Z.
-artifact-acceptance-8c57376.json records1,044 checks:138 exact declared Git
-source files,119 immutable inputs, complete npm log/exit,25 genuine mutants,
-600 original unfiltered native intervals/602 timestamps and all36 decoded
-current VP9 frames. TV58.6349777187fps/p9516.8ms; phone390x844/4xCPU
-59.8038433937fps/p9516.7ms. Both ORIGINAL58fps/p95<=18ms gates pass.
-No warmup/filtering or substituted timing. Clip268,630B,1920x1080,
-36 frames/12 encoded fps/3s; encoded fps is not browser refresh.
+## Verified proof
 
-First auxiliary reader failed on shallow checkout's empty parent metadata.
-The failure is retained in artifact-reader-first-failure.json. Corrected reader
-verifies actual merge46f8ead5 raw Git parents and all source bytes; it does
-not trust an empty parent list. Future CI receipt uses raw Git headers too.
-Reproduce with verify-ci-artifact.py; ARTIFACT-AUDIT.md gives exact command.
-The archived proof belongs to accepted8c, not automatically to this later
-verifier/docs audit head. The earlier e034 proof-audit checkpoint kept core/UI/page equal327. This
-later pending Worker checkpoint changes UI scheduling/build/standalone bytes,
-not core policy or the original browser.ts sampler/gates. Its own real Worker,
-native frames, full CI and player effect are UNRUN. No player gain/KEEP round.
+Full original workflow37859386989 succeeded 2026-10-08T23:46:25Z on exact8c.
+Its byte-exact official artifact11586162947 is retained in
+media/accepted-checkpoint-8c57376-proof.zip; independent1,044-check acceptance
+includes all source bytes,119 immutable inputs, complete npm/25 mutants,
+600 native intervals/602 timestamps and all36 decoded current VP9 frames.
+TV58.63498fps/p9516.8ms, phone390x844/actual4x59.80384fps/p9516.7ms pass the
+original58fps/p95<=18 gates. ARTIFACT-AUDIT.md gives reproduction and scope.
+The shallow-parent reader's first failure is retained; raw Git headers and
+actual source bytes correct its assumption without inventing lineage.
+This full green belongs only to8c, not the later changed Worker candidate.
 
-Old completed0.2.7/04287939 and R21–23 are historical. Later0.2.8 changed
-the full human-idle cycle/round-end reveal and rebuilt UI; preserve these.
-Restored browser-report.json and milestone14/tv.png are historical.
-LOOP24 retains local55.73/51.58fps failures against58; UNKNOWN cause,
-phone NOT REACHED. Current hosted pass does not erase those failures.
+First actual Worker functional trial on public source2ae0438 passed.
+Root START00:36:12.578852; browser CLOSED00:36:43.608; child CLOSED
+00:36:45.330516; whole controller naturally CLOSED00:36:46.056604, exit0.
+All28 source/five binary guards, controller and READY stayed unchanged;
+remaining owned live children are empty. WORKER-AUDIT.md and the raw receipts
+retain exact UI output/RNG,16 nontrivial2–4 Draw/Block/partner replays, real
+CSP/runtime/watchdog fallback, pending end/rematch and zero requests/errors.
+The actual navigation was setContent, not file://. No fake clock or FPS claim.
+Preparation Node syntax failure, withheld controller and static READY drift
+remain archived. They never became successful runtime trials.
 
-Renewed KEEP rounds/gains remain0. Start genuine round25 with REVIEW.md's
-five current weaknesses. Strong64-world UI-thread search is a concrete
-responsiveness hypothesis, not an attributed cause of earlier failures.
-A Worker candidate is authored on this audit branch but actual runtime and
-player gain are UNRUN/UNMEASURED. Exported observe→choose plus the
-same UI seed/RNG transmit own hand/public fields only and retain policy/work,
-stale-state/pause/end/rematch guards and genuine unsupported/error fallback.
-Normal/easy may remain synchronous as product behaviour. NEVER detect fake
-clock/test environments or add acceptance-only branches. Measure actual
-worker legality/privacy/replay/fallback and native player effect before adoption.
-Native elapsed/browser trials require root's fresh exclusive owner grant.
-
-The conservative23:55:44 checkpoint wall-clock deadline was exceeded during
-continuous coordinator HOLD23:51:23–23:57:29.128565; no local readers/writers
-ran during that hold. B19's once-only comparison closed naturally/exit0.
-Resume uses real timestamps; no backdating. Push this meaningful public
-proof checkpoint, refresh only G01, then author private round25 candidate.
-After three consecutive meaningful no-player-gain rounds, fresh-read main
-and all matching refs before claiming lowest eligible job under six-hour rules.
-Managed disk navigation/physical phone remain unverified; exact-byte
-setContent and emulation are the actual available checks.
-
-## Pending Worker checkpoint, 2026-10-09 UTC
+## Candidate and checks still required
 
 StrongBot sends only sanitized Observation/seed/request ID to an inline Blob
-worker executing unchanged choose(sharp)/createRng/64-world search. Original
-normal/easy behaviour stays synchronous. Current-state/ID/schema/legal guards
-drop stale/illegal replies; pause/end/rematch/new-table cancel pending work.
-Genuine unsupported/error/messageerror/10s-watchdog fallback uses same seed
-and original policy. Six controlled Node port/timer tests PASS; these are not
-real-worker/FPS proof. Strict TS, byte-exact repeated build, checksums and
-whitespace PASS. HTML1,032,578B, SHA02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0.
-Static review found no policy/privacy/lifecycle counterexample. First Node
-controls failed before assertions on strip-only constructor syntax; explicit
-fields fixed it, failure/source are preserved privately.
+worker executing unchanged choose(sharp)/createRng/64-world search. Core
+policy and normal/easy behavior are unchanged. Current-state/ID/schema/legal
+checks drop stale/illegal replies; pause/end/rematch/new-table cancel work.
+Genuine unsupported/error/messageerror/ten-second watchdog fallback keeps the
+same seed/policy. Never detect test/fake-clock environments in production.
+Strict build/static/six controlled-port checks passed; real first proof now
+adds native Worker legality/privacy/replay/lifecycle evidence. HTML is
+1,032,578B, SHA02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0.
 
-Actual worker-browser-check.ts is authored/strict-compiled but NOT RUN. It
-checks exact real UI Blob/output/RNG,16 nontrivial2–4 Draw/Block/partners
-observations, real CSP/runtime/watchdog faults and pending end/rematch.
-Fault Blob substitutions/delays are explicit diagnostic fixtures, never
-production/test-environment branches or FPS acceptance. setContent is the
-actual navigation; no file:// proof. npm test retains every original command
-and adds this real-worker check before unchanged native browser.ts.
+Next, run the original browser.ts once on these exact bytes under root's
+fresh exclusive native grant, keeping original300 unfiltered intervals,
+301 timestamps, zero warmup/filtering and58fps/p95<=18ms gates. Retain all
+raw times and a new genuine milestone15 clip; do not overwrite older media.
+Then perform a predeclared paired original8c/Worker responsiveness comparison
+with actual policy/seed/action equivalence and native raw timings. No gain is
+claimed until measured; no unchanged rerun for luck after a failure.
 
-Static review rejected first controller9067 before any native launch: its
-postspawn receipt write could bypass child cleanup. Corrected controller
-e24b wraps spawn/write/wait in finally, reaps actual child/owned group before
-CLOSED/FAIL; harness saves FAIL on any final close/source/tool guard failure.
-Old READY010c/controller9067 NEVER RAN. Fresh READY/controller must match
-actual checkpoint/source bytes before root-exclusive first trial. Root's
-active G10 receiver must naturally close; do not pause/STOP it. Protect
-conservative00:29:21 source checkpoint with honest pending-runtime status.
-Next: first real-worker functional trial, once-only original native gates
-with a genuine new source-bound capture, substantive paired responsiveness
-measurement, full current CI/artifact acceptance, then genuine KEEP25+.
-Current accepted full CI/artifact still belongs to canonical8c only; original
-PR1 remains draft. Renewed KEEP rounds/gains remain0. Do not inherit old stop.
+The newly added disk-browser-check.ts always uses actual page.goto(file://),
+with no setContent fallback. Every npm test, including hosted CI, must prove
+real single-file human privacy and inline Worker seed/output/RNG plus zero
+network. Strict compilation is the only result so far. Preserve any managed
+file-navigation failure; hosted CI must genuinely open the file. This is a
+binding visual requirement, not permission to change the game for a sandbox.
+
+Run every original npm command plus the Worker and disk checks. After genuine
+local player validation, normally fast-forward the canonical branch to the
+validated candidate, keep PR1 draft, and obtain/accept complete current full
+CI and artifacts. Never assign8c's proof to new source by assertion.
+
+Renewed KEEP rounds/gains remain0. Re-read job/rules, rank five weaknesses,
+fix/measure/log the worst and continue until three consecutive substantive
+rounds have no player-visible gain. REVIEW.md's current hypotheses concern
+main-thread64-world search, phone/four-seat coverage, bounded reference,
+thinking-dot repaint and actual disk/physical-phone evidence. Neither the
+old0.2.7 stopping streak nor proof delivery constitutes a new player gain.
+
+## History and limits
+
+Later0.2.8 introduced full human-idle progression and round-end reveal and
+rebuilt UI after the old04287939/R21–23 stop. Preserve those player changes.
+LOOP24 retains local55.73/51.58fps failures against58; cause UNKNOWN, phone
+NOT REACHED. Old browser-report.json/milestone14/pngs are historical until
+replaced by actual source-bound measurements; never present them as current.
+
+The conservative23:55:44 deadline was exceeded during continuous coordinator
+HOLD23:51:23–23:57:29.128565; actual timestamps were retained. Previous source
+push2ae naturally CLOSED00:24:55.724704; conservative hard00:54:53. This
+checkpoint publishes the actual functional proof and compiled disk validator
+before that deadline. Record true source/claim push closure, refresh only G01
+and prepare a fresh frozen native READY; next cadence starts at actual push.
+After the required stopping condition, fresh-read main/all matching branches
+and legally claim the lowest eligible queue job. Physical phone remains
+unverified; CPU-throttled browser evidence is emulation.

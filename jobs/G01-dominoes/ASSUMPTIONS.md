@@ -86,3 +86,17 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
   prove disk double-click navigation or physical-phone hardware.
 - A current Worker checkpoint needs genuine new capture/current full CI and
   renewed KEEP. No older media or0.2.7 no-gain rounds can certify changed UI.
+
+
+## First actual Worker functional acceptance
+
+- First runtime source2ae passed with actual native Worker policy/RNG/privacy,
+  fallback and pending end/rematch. Its saved setContent navigation still does
+  not establish disk transport, native FPS or a player-visible gain.
+- Actual file:// navigation is a separate binding check in every npm test,
+  including hosted CI. Never silently substitute setContent for it. A managed
+  navigation restriction must remain a recorded failure; no product workaround.
+- New proof archive is bounded28,080B and does not nest/copy the earlier10MB
+  hosted archive. Before/after source and true process closure are preserved.
+- No native profile has yet run on Worker bytes. Root must grant fresh frozen
+  source/runtime identities and quiet ownership before each new elapsed trial.

@@ -1,0 +1,220 @@
+{
+  "schema": "g01-native-worker-first-controller/1",
+  "scope": "First actual-worker functional trial; no FPS/player-gain claim",
+  "startedAt": "2026-10-09T00:36:12.578852+00:00",
+  "ready": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-ready.json",
+    "bytes": 9488,
+    "sha256": "df86d5b750c37841a00c31e549db495c6b7ef90bd6a4f83a6f933b9ff95eaf60"
+  },
+  "controllerBefore": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-first-controller.py",
+    "bytes": 5657,
+    "sha256": "e24b332efb195aa53549bd7bc941e2f3362abf1e3751558de0a149528eebfa6d"
+  },
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+    "worker-browser-check.ts"
+  ],
+  "status": "PASS",
+  "naturalClosure": true,
+  "childPid": 226064,
+  "remainingOwnedLiveProcesses": [],
+  "childClosedAt": "2026-10-09T00:36:45.330516+00:00",
+  "exitCode": 0,
+  "log": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-first.log",
+    "bytes": 132,
+    "sha256": "770086146d6923c159ffbadf0c1da63033b3c2ef18c3666ad5c124aba038cb1c"
+  },
+  "guardsAfter": {
+    "sources": {
+      "jobs/G01-dominoes/ui.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/ui.ts",
+        "bytes": 49869,
+        "sha256": "51b051811761544f0ab1a83ae55fde48b7fc27d8756500d25e4e6280d4f27560"
+      },
+      "jobs/G01-dominoes/build.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/build.ts",
+        "bytes": 1887,
+        "sha256": "b7deea53e66801f219ae1c48374a5af38a01b7f3d6d92377fa63a79f70671601"
+      },
+      "jobs/G01-dominoes/strong-bot.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-bot.ts",
+        "bytes": 2853,
+        "sha256": "297b8594475cf70ab2a737fdfde243514fdfbe0a1abc49d95aae9df25202ef70"
+      },
+      "jobs/G01-dominoes/strong-worker.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-worker.ts",
+        "bytes": 868,
+        "sha256": "5caf9f3cb8250add5e74de640ef7bd113f518b9f36308a1cc43ed280630bd2e6"
+      },
+      "jobs/G01-dominoes/strong-bot-checks.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/strong-bot-checks.ts",
+        "bytes": 5059,
+        "sha256": "eb3ba85034c4a07c9a5dcfa70e119f3fe0abe5912fbd73d605e0443f9f816bdd"
+      },
+      "jobs/G01-dominoes/worker-browser-check.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/worker-browser-check.ts",
+        "bytes": 13314,
+        "sha256": "5fa662868c6126ee0d50aaed5bff5a2de0d773d03cd2cef2332e0342faac5ff6"
+      },
+      "jobs/G01-dominoes/test.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/test.ts",
+        "bytes": 30258,
+        "sha256": "ec0e69878659edfdacf8f3a60e8e011013fe67cad88a22abe13eba6772de3af6"
+      },
+      "jobs/G01-dominoes/browser.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/browser.ts",
+        "bytes": 8026,
+        "sha256": "add398c4924eed6ec1852a22070ae9ff50dc12b299c034de53b0c0769ab4cd94"
+      },
+      "jobs/G01-dominoes/browser-evidence.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/browser-evidence.ts",
+        "bytes": 5457,
+        "sha256": "61b57e129125f1426bd0c78586faa829b46369791a628cbb111744f3c460bbdb"
+      },
+      "jobs/G01-dominoes/core.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/core.ts",
+        "bytes": 22697,
+        "sha256": "b8838080d2ac938e9ad3da11966c94895d4fb3991ca99f0bdf2c0a6364644c95"
+      },
+      "jobs/G01-dominoes/shell.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/shell.html",
+        "bytes": 45308,
+        "sha256": "6e4e16feb97c4fbc7de3ada2b7b1dfc0eabd4e0dcb10c9b8cd549e704d1982fb"
+      },
+      "jobs/G01-dominoes/play.html": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/play.html",
+        "bytes": 1032578,
+        "sha256": "02776e5ef10941a7ae1cde783095f84fa47316bc114810a5caf4f4e3b31f15d0"
+      },
+      "jobs/G01-dominoes/package.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/package.json",
+        "bytes": 1270,
+        "sha256": "c08ce649102f80aa5858f35f09ae4197df1723a5260f052aa7561bbd4aa13956"
+      },
+      "jobs/G01-dominoes/package-lock.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/package-lock.json",
+        "bytes": 17697,
+        "sha256": "1a242ae1104a5219ec0aff32d353cf9fe2f529086de13fa7bc236f75875ef859"
+      },
+      "jobs/G01-dominoes/tsconfig.json": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/tsconfig.json",
+        "bytes": 273,
+        "sha256": "3c1deb2e83a4638a7d2c27175019ab064aab7ff6b071a296b39f9e06cceb92fb"
+      },
+      "jobs/G01-dominoes/ci-evidence.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/ci-evidence.py",
+        "bytes": 4859,
+        "sha256": "3f31b78d6db875ee42f4e00fbbdc1e0cf0c47cde20bf820dd8139d1de1450a17"
+      },
+      "jobs/G01-dominoes/checksums.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/checksums.ts",
+        "bytes": 774,
+        "sha256": "2488fe20c13f0a674478ac3f4fa2d98f0719f5fa19124883eddc6a328e45dea5"
+      },
+      "jobs/G01-dominoes/SHA256SUMS.txt": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/SHA256SUMS.txt",
+        "bytes": 6749,
+        "sha256": "f40c1e7f9c283d1b0db9c3bd4038ca8c8c98c416704f75025c684b8c43a6ad86"
+      },
+      "contract/player-count-schema.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/player-count-schema.ts",
+        "bytes": 1236,
+        "sha256": "0748d9d9bcf795d0693c37a0f369b262fd8801dec9ab1e4a9a4f5ec23751a189"
+      },
+      "contract/rng.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/rng.ts",
+        "bytes": 3445,
+        "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+      },
+      "contract/minigame-schema.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/minigame-schema.ts",
+        "bytes": 2723,
+        "sha256": "2438655eeb8ca658543b475070e6fb3ccb3947f154f57caa3f619c87853c9bbb"
+      },
+      "contract/contract.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/contract.ts",
+        "bytes": 26947,
+        "sha256": "c0f999c153074769c99c67ab2a71ad66c879e45e834713f3367b2bde4a1873d5"
+      },
+      "contract/constants.ts": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/contract/constants.ts",
+        "bytes": 4994,
+        "sha256": "27cdd23112ea03f344457e6f6e6b5839ff536ebeadbba189751520353aa085ef"
+      },
+      ".github/workflows/G01.yml": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.github/workflows/G01.yml",
+        "bytes": 2764,
+        "sha256": "c3372f9a766aafca959d10ace6db2f4e3312163fbf17d156b4cc46c7cc9e3a2c"
+      },
+      "RULES.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/RULES.md",
+        "bytes": 3466,
+        "sha256": "4149f36b129b99097091d89ade741deacd952e393be2a8d80d7aba552fe2566a"
+      },
+      "JOBS.md": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/JOBS.md",
+        "bytes": 3624,
+        "sha256": "20d45e05c417e9129536a8567bdde7fec430a778846ac95375bdd6c0075bf4cc"
+      },
+      ".work/queue-audit-20261008/worker-native-first-controller.py": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-first-controller.py",
+        "bytes": 5657,
+        "sha256": "e24b332efb195aa53549bd7bc941e2f3362abf1e3751558de0a149528eebfa6d"
+      },
+      "jobs/G01-dominoes/THIRD-PARTY-LICENSES.txt": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/THIRD-PARTY-LICENSES.txt",
+        "bytes": 1072,
+        "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+      }
+    },
+    "binaries": {
+      "node": {
+        "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "bytes": 125989464,
+        "sha256": "bc17c508ffeed0ec622934f9b7fa72f8e78da65350e63c3eceb56fa688aa5e12"
+      },
+      "chromium": {
+        "path": "/usr/lib/chromium/chromium",
+        "bytes": 321686360,
+        "sha256": "d387400aaf740ccb75e5e996a34aa0940e6e97683a4eabd6ae34c1eed6804723"
+      },
+      "compiler": {
+        "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/node_modules/@esbuild/linux-x64/bin/esbuild",
+        "bytes": 10358936,
+        "sha256": "bab29b2ca7a9e89b67cf720b77b2d743f9f31f5cf0d5bd74ee8c8de30ced7014"
+      },
+      "ffmpeg": {
+        "path": "/usr/bin/ffmpeg",
+        "bytes": 366984,
+        "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a"
+      },
+      "ffprobe": {
+        "path": "/usr/bin/ffprobe",
+        "bytes": 206504,
+        "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46"
+      }
+    }
+  },
+  "sourceAndBinaryGuardsPassed": true,
+  "readyAfter": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-ready.json",
+    "bytes": 9488,
+    "sha256": "df86d5b750c37841a00c31e549db495c6b7ef90bd6a4f83a6f933b9ff95eaf60"
+  },
+  "controllerAfter": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/.work/queue-audit-20261008/worker-native-first-controller.py",
+    "bytes": 5657,
+    "sha256": "e24b332efb195aa53549bd7bc941e2f3362abf1e3751558de0a149528eebfa6d"
+  },
+  "controllerAndReadyUnchanged": true,
+  "actualProof": {
+    "path": "/workspace/game-cores-G01-queue-audit-20261008/jobs/G01-dominoes/.tmp/g01-evidence/worker-current.json",
+    "bytes": 61948,
+    "sha256": "f6a148bc6e18e01410e5f65ace6038b41d756bfa976958cbf78d8f3e32134986"
+  },
+  "proofStatus": "PASS",
+  "controllerFinishedAt": "2026-10-09T00:36:46.056604+00:00"
+}
