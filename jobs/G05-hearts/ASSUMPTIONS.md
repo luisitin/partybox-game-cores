@@ -137,3 +137,8 @@ Init-only candidate5PASS/1FAIL and the first outer spec-vs-TAP reader error
 remain immutable; a separate same-native-log correction clarifies the latter.
 Orchestration quoting failures happened before child launch; no source gain.
 Only exact new hosted whole proof can qualify this repair.
+
+First source publication scope guard rejected untracked dependency-link staging
+and unstaged branch CLAIMS restoration before any remote push. A normal correction
+removes the local pointer and restores audit-base CLAIMS in the branch; main stays
+untouched. First hard11:43:57.150035Z was actually missed; no backdating.

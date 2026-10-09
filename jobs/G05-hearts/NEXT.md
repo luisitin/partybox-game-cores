@@ -122,3 +122,8 @@ Milestone20 actual original functional capture naturally CLOSED11:42:01.906399Z,
 actual current36-frame VP9 full decode PASS. No frame-rate acceptance.
 All raw before failures/local46 checks/baseline/capture receipts are public in
 media/queue-presence-20261009-proof.zip. Original current hosted full is pending.
+
+First source publication scope guard rejected untracked dependency-link staging
+and unstaged branch CLAIMS restoration before any remote push. A normal correction
+removes the local pointer and restores audit-base CLAIMS in the branch; main stays
+untouched. First hard11:43:57.150035Z was actually missed; no backdating.
