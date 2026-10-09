@@ -39,6 +39,8 @@ same-tab recovery, final standings, accurate palifico help/supported saved seats
 Historical original-runner full report:evidence/browser/historical-runner-f8a8d602/.
 The resume audit adds70 passing evidence/coordination tests,30 source guards,
 and requires a fresh complete94-check report for each current hosted run.
-Current audit acceptance is pending; NEXT.md tracks the exact-head result.
-Earlier failures and nongating diagnostics are preserved.
-KEEP GOING review/final hosted acceptance remains tracked in NEXT/LOOP/VERIFY.
+Canonical PR6 is Ready at 1cc4a970 with independently verified full hosted proof.
+The separate 2026-10-09 review passed 336 games across all 48 settings and 2–8
+players, 72,036 natural saves and 95,160 hidden-info bot controls.
+See evidence/checks/independent-review-20261009/README.md and NEXT.md.
+Gameplay is unchanged; earlier failures and original KEEP6–8 remain preserved.

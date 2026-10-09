@@ -735,3 +735,48 @@ ffmpeg -v error -threads 1 -i media/resume-audit-13-phone4x.webm -f null -
 The receipt also records each actual argv array; adding this command record
 does not rerun or change the clips or measured results. Final checkpoint's new-head CI
 still must pass before ready;prior source-specific green remains explicit.
+
+
+## Independent queue review — 2026-10-09
+
+Commands run from jobs/G07-liars-dice unless stated otherwise.
+`npm run build`:strict PASS; actual rebuilt32 source/compiled hashes equal the
+canonical official proof. The earlier root-directory ENOENT and symlink-bundle
+hash mismatch occurred before the semantic audit and are recorded diagnostics.
+`node --check evidence/checks/independent-review-20261009/audit.mjs`:PASS.
+`node evidence/checks/independent-review-20261009/audit.mjs`:PASS1,388,223 assertions,
+336 genuine games across48 settings/every2–8 roster;72,036 exact saves,
+95,160 bot counterfactuals,independent challenge/count/starter/legality checks.
+Actual outer natural CLOSED02:05:09.166614UTC EXIT0/direct child reaped; START/
+CLOSED and complete report persist in the review folder. No elapsed acceptance.
+
+Fresh native PR6/run37835172268/job113510247997 metadata/full137,990-character
+log/official11575897174 were read. Positive reader command actually executed:
+`python3 evidence/checks/independent-review-20261009/zip-reader.py --base evidence/checks/independent-review-20261009/hosted-canonical-final --local-repository /workspace/game-cores-G07-audit-20261009 --head 1cc4a9709a60783ecad45476c02668d62f4c8a4a --run-id 37835172268 --job-id 113510247997 --artifact-id 11575897174 --zip-bytes 1249263 --zip-sha256 b0765a5995d353f111d5019034bbc300f378dd20956a57e0f61a9278f9c916fd`
+PASS at02:07:44.740336UTC:original1,387 assertions plus216 archive/cache checks,
+actual32 guarded sources/full94/all1200 raw/original strict gates unchanged.
+This is the canonical successful run,not a claim that the new audit branch has
+fresh full CI. The genuine final ZIP is permanently committed here.
+`python3 evidence/checks/independent-review-20261009/cache-control.py`:PASS at
+02:17:20.258179UTC,actual old reader accepts mismatched genuine earlier cache
+EXIT0,new reader rejects EXIT1. No synthetic frame or changed timing value.
+
+All444 actual canonical tracked hashes before/after the review:PASS.
+Final audit source/data hashes,integrity and diff checks are recorded by the
+checkpoint commands. Every old failed/local/interrupted receipt remains intact;
+no product cause or relaxed threshold is inferred. Existing KEEP6–8 stay valid.
+
+Final `node scripts/hashes.mjs` twice/`cmp`, `sha256sum --check --quiet SHA256SUMS.txt`,
+`node scripts/integrity.mjs`, `git diff --check`:PASS after the explicit native
+91-row/full94-summary parser correction. This correction changes evidence claims
+only; the unchanged full94 acceptance remains mandatory.
+
+
+The first audit source deadline02:24:51UTC was missed by9.939692 seconds.
+The commit actually failed ENOSPC before creating its tree; only this review's
+regenerable extracted positive/negative caches,duplicate ZIP and nonaccepted
+intermediate symlink-build outputs were deleted to recover11MB of free space.
+The original official ZIPs and all canonical444 files/old failures were preserved.
+The discarded intermediate compilation bytes are not claimed archived; their
+observed mismatch remains logged. Natural push6064463 CLOSED02:25:00.939692UTC
+EXIT0. No backdate or cadence waiver. checkpoint-6064463.json retains the receipt.

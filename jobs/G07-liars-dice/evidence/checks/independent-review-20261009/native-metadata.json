@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-10-09 02:05:34 UTC",
+  "repository": "luisitin/partybox-game-cores",
+  "pr": {
+    "number": 6,
+    "state": "open",
+    "draft": false,
+    "merged": false,
+    "head": "job/G07-liars-dice",
+    "head_sha": "1cc4a9709a60783ecad45476c02668d62f4c8a4a",
+    "base": "main",
+    "url": "https://github.com/luisitin/partybox-game-cores/pull/6"
+  },
+  "run": {
+    "id": 37835172268,
+    "head_branch": "job/G07-liars-dice",
+    "head_sha": "1cc4a9709a60783ecad45476c02668d62f4c8a4a",
+    "status": "completed",
+    "conclusion": "success",
+    "event": "pull_request",
+    "path": ".github/workflows/G07.yml",
+    "created_at": "2026-10-08T19:52:15Z",
+    "updated_at": "2026-10-08T20:02:55Z",
+    "run_attempt": 1,
+    "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37835172268"
+  },
+  "jobId": 113510247997,
+  "artifact": {
+    "id": 11575897174,
+    "name": "G07-browser-evidence",
+    "size_in_bytes": 1249263,
+    "expired": false,
+    "digest": "sha256:b0765a5995d353f111d5019034bbc300f378dd20956a57e0f61a9278f9c916fd",
+    "created_at": "2026-10-08T20:02:51Z",
+    "expires_at": "2026-10-22T20:02:50Z"
+  },
+  "nativeLogCharacters": 137990
+}

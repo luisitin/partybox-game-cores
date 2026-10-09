@@ -186,3 +186,37 @@ and `ffmpeg -v error -threads 1 -i <actual clip> -f null -`:both actual VP8
 decodes PASS,1280x720/390x844,264/310 encoded frames,10.56/12.4s. Encoded25FPS
 is a recording property,not game refresh proof. Final checkpoint's new-head CI
 still must pass before ready;prior source-specific green remains explicit.
+
+
+## Independent queue review — 2026-10-09
+
+The lowest eligible G07 was lawfully claimed on main at01:54:51UTC. This isolated
+claimed-main branch normally imports the unchanged canonical Ready delivery;
+no original PR6,gameplay,old failed sample or prior KEEP result is replaced.
+Sparse checkout and read-only hardlinks avoid copying54MB of old evidence;
+all444 actual canonical tracked files remained byte-identical. Build dependency
+symlinks altered emitted module path labels; the initial mismatch was logged,
+and a real local dependency tree rebuilt all32 exact guarded bytes.
+An initial npm launcher used the repo root and failed ENOENT before compilation;
+the corrected job-folder build passed. No failed launcher is a test pass.
+The new semantic audit runs Node24.19.0; canonical full CI uses its stated Node22.
+The new reader repairs only archive/cache provenance and never changes the
+original timing loop,gates,clock behavior or gameplay. Both countercontrol ZIPs
+are genuine prior official artifacts; incorrect cached acceptance is explicitly
+negative evidence. There is no new player KEEP round or fresh timing trial.
+
+The initial native-row parser expected94 printed rows and failed: the real log
+prints91 plus the full94/zero-failure summary; three offline/source rows occur
+in the complete ZIP report. Corrected proof explicitly reports91+summary94,
+while the independent ZIP reader still verifies every94 check. No row or gate
+is removed from acceptance and the observed assertion failure is retained here.
+
+
+The first audit source deadline02:24:51UTC was missed by9.939692 seconds.
+The commit actually failed ENOSPC before creating its tree; only this review's
+regenerable extracted positive/negative caches,duplicate ZIP and nonaccepted
+intermediate symlink-build outputs were deleted to recover11MB of free space.
+The original official ZIPs and all canonical444 files/old failures were preserved.
+The discarded intermediate compilation bytes are not claimed archived; their
+observed mismatch remains logged. Natural push6064463 CLOSED02:25:00.939692UTC
+EXIT0. No backdate or cadence waiver. checkpoint-6064463.json retains the receipt.
