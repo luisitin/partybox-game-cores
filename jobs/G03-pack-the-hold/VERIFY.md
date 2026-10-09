@@ -754,3 +754,21 @@ faileda049 whole artifact11625115294/192808B/62ae3cec...+8fullCRC/log92524chars,
 original28+1800 native/full36VP9/unchangedCLI pass as subchecks; overall ENOENT15
 FAIL and skippedbenchmark/finalcontrols retained, no wholegreen/KEEP qualification.
 Earlier5e3 source70.888463s hard/370.888463s early misses retained exactly.
+
+2026-10-09 resumed whole negative/owned lifecycle proof: exact1fc official failed
+run37951352846 ZIP11625967745/192740B/SHA5b9cfbaf... all8 completeCRC/physical
+members, exact92538-character whole log,28 exactGitblob/physical, both900 native
+RAF60.002400096fps/p95=16.7/true disk/fullUI/36nativeVP9 pass as subchecks only.
+Actual saved reader16:05:27.792258Z and wrapper16:05:31.002980Z/all4046 frozen.
+WholeFAIL solely ENOENT current16; benchmark/finalcorruptions skipped; no fullgreen.
+Finite untimed actual Node-only detachedchild/10malformed grants includingheight
+fixture16:06:55.825807Z, wrapper16:06:58.823779Z/all3828 frozen including explicit
+244tracked+17compiled+named directwrapper. Same gate70b8dd08, fullowned88457216B,
+no signals/emptydescendants/mainstatus excluded; old first/v2/failures preserved.
+Commands/helpers/specs/completepublic evidence archived with CRC/physical match;
+fulljoblog/provider/private metadata kept private, exactlogSHA810f206e4b4575639996f3ea30d5ee861ad47c4268f44b91f0c8bba42ae80e82.
+Initial log writer addedLF and duplicateheight proposal assertion failed before
+any reader/fixture; exact new log and unchanged gate retained honestly. No native
+performance/browser retry.1fc early15:48:11.885100/hard15:53:11.885100 both missed;
+actual newpublication deadline/miss in receipt. Current16 unexecuted/ungranted.
+Original1GiB/120child/240whole and whole original CI remain mandatory; KEEP0/0.

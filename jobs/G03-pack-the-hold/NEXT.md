@@ -1,4 +1,36 @@
 # G03 follow-up current handoff
+## Resumed actual 16:00 checkpoint
+Current material checkpoint retains complete failed1fc run37951352846: actual
+192740-byte official ZIP11625967745 SHA5b9cfbaf5c232e2ae76c0d20b8377d19dc0821c5cc353219672e941fa7852439;
+all8 completeCRC/physical members and exact92538-character full log read.
+Reader16:05:27.792258Z/wrapper16:05:31.002980Z/all4046physical guards unchanged.
+Both900 native RAF profiles60.002400096fps/p95=16.7 and true disk/fullUI/36nativeVP9
+are accepted SUBCHECKS ONLY. WholeFAIL solely missing current16 report; benchmark
+and final corruption groups skipped. No current clip/fullgreen/KEEP inferred.
+
+Untimed actual Node-only fixture16:06:55.825807Z/wrapper16:06:58.823779Z passes
+10 genuine malformed grants including wrong-height against unchanged gate70b8dd08.
+Actual live detachedchild withholds; only exited adopted children are reaped;
+main Node status excluded, all other observedPID/start identities close first.
+All3828 physical guards equal, explicit244 isolatedtracked+17compiled+namedwrapper;
+peak fullowned88457216B<512MiB, no signals, emptydescendants. Original initial/v2
+and rejected preparation outcomes retained; no Chrome/ffmpeg/game timing ran.
+The earlier perceived missing height check was a reading error; no gate edit.
+
+Previous1fc normal publication15:23:11.885100Z; early15:48:11.885100 and hard
+15:53:11.885100 elapsed during agent absence/resume. Actual miss retained in new
+publication receipt, never backdated. Own-main fresh70d561→d33aab normalFF actual
+16:03:57.148618Z; row16:03:54Z/allforeign rows and literalG10BLOCKED byte-equal.
+Main lease released. Source checkpoint changes evidence/prose/checksums only.
+
+NEXT: prepare NEW isolated current-checkpoint source and finite240s controller,
+freeze all tracked/compiled/namedwrapper/runtime/self/oldfailure inputs explicitly,
+preserve1fc copy/protocol/READY unexecuted. Root personally reviews full controller,
+unchanged gate and actual witness, then grants exact sourceSHA/nonce BEFORE browser.
+Original1GiB ownedRSS/120child/240whole and source/codec/UI/frame/RAF policies stand.
+Original hosted whole file/1800native/current artifact+logs+publicHTML EOF and
+genuine current16 acceptance still required. New KEEP rounds0/no-gain streak0.
+
 Owner codex-pack-followup-20261009; branch job/G03-pack-the-hold-followup-20261009;
 Draft PR21. Original Ready PR3/41c5dbd and all old stopped rounds remain untouched.
 Lawful new main claim05c80d and authenticated physical source copy8085df9 retained.
