@@ -731,3 +731,12 @@ zero samples/PNGs,3036+28 unchanged, no forced signals/remaining descendants.
 Full source/runtime/self proof, grant, stdout/stderr, actual raw failed report and
 receipts archived with complete CRC/physical equality; old profile retained.
 All current15/full original/hosted disk/performance/delivery gates remain pending.
+
+2026-10-09: actual supported HTTP15 exceeded immutable1GiB RSS at1,163,890,688B
+while encoder401,666,048B overlapped browser. Failed24.556s whole/nine forced
+SIGTERM cleanup/all actual descendants empty; all3316 and original28 inputs,
+old14 profile and managed policies unchanged. Original incomplete running report,
+all36 real PNGs/raw WebM/profiles/receipts remain preserved, never labelled PASS.
+Original26 core tests+25 mutation kills independently naturally close14:47:04.189790Z,
+2495 unchanged inputs/319,053,824B<512MiB/no signals. Draft21 exists but hosted full
+not started until actual metadata; no current clip/FPS/KEEP acceptance is inferred.

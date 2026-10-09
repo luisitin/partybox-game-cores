@@ -84,3 +84,12 @@ Independent saved-only Python reader derived all1003 ordered seeds from the
 original Murmur mix and read519794971 decompressed bytes/complete gzip EOF/CRC;
 states, RNG, events, views, bots, results and4390B peak match the complete originals.
 Initial b141 publication's early25 target missed174.900054s; hard30 passed.
+
+2026-10-09: actual supported HTTP15 exceeded immutable1GiB RSS at1,163,890,688B
+while encoder401,666,048B overlapped browser. Failed24.556s whole/nine forced
+SIGTERM cleanup/all actual descendants empty; all3316 and original28 inputs,
+old14 profile and managed policies unchanged. Original incomplete running report,
+all36 real PNGs/raw WebM/profiles/receipts remain preserved, never labelled PASS.
+Original26 core tests+25 mutation kills independently naturally close14:47:04.189790Z,
+2495 unchanged inputs/319,053,824B<512MiB/no signals. Draft21 exists but hosted full
+not started until actual metadata; no current clip/FPS/KEEP acceptance is inferred.

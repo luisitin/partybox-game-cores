@@ -52,3 +52,34 @@ No source-after-Ready commit/merge. Keep every main refresh serialized/foreign
 rows immutable. Re-verify when web works: human calibration remains unmeasured;
 prior blocked references unread; CPU4x phone is emulation, not physical hardware.
 Unique G10 full licensed HTML/data/deps and literal BLOCKED row remain untouched.
+
+## Latest material checkpoint: actual HTTP15 resource failure and pure suite
+Supported isolated HTTP15 ran once on b014 under exact root grant. At14:41:12.690118Z
+owned sampled RSS1,163,890,688B exceeded unchanged1GiB by90,148,864B while native
+ffmpeg401,666,048B overlapped Chromium/Node. Actual whole failure closed14:41:23.874337Z
+in24.556s<=240, all3316 plus original28/old14 profile/policies unchanged, nine
+forced SIGTERM receipts and actual final descendants[] retained. No cap relaxation
+or unchanged browser/FPS retry. All36 original PNGs and native WebM exist; original
+report still running/finishedAt=null and functional checks incomplete. These are
+failed-protocol raw components, not an accepted current clip. Full EOF/independent
+component decode is pending. Every raw byte is archived and physical profiles kept.
+Current15 references remain pending; no fabricated successful report or old13 reuse.
+
+Original required pure26 tests and25 real mutant kills naturally CLOSED_PASS
+14:47:04.189790Z, all2495 source/runtime/self inputs unchanged, peak319053824B<512MiB,
+all groups[]/no signals. Includes original1003 property/7000 roster games/both2000
+bot leagues/10k independent solver/304912 malformed/17119 baseline transitions.
+Supplemental Draft PR21 created14:48:24Z at b014 against protected Ready3/41c5;
+body/head/draft/open readback exact. Full original hosted run NOT STARTED until
+actual workflow metadata confirms. Normalized mergeable=false is provisional;
+read actual REST state/base rules, then if real source-copy ancestry conflict,
+perform isolated normal ancestry merge with exact current tree preserved, original
+Ready3 ref untouched, no force/no PR merge and all foreign/core/page/gates guards.
+
+Next: complete saved-only whole36 raw PNG/video referee; independently encode the
+same exact full frames with original flags AFTER all browser descendants closed,
+bounded untimed resource/control evidence. Propose concrete deferred encoder/source
+change for root static review before any further local browser. Original disk-open,
+1800 native intervals and>=59fps/p95<=18ms remain mandatory unchanged. Open Draft
+permits required original PR-only workflow, not Ready/KEEP qualification.
+New qualified KEEP rounds0/no-gain streak0. Preserve unique G10 and all failures.
