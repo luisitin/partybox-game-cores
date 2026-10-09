@@ -56,3 +56,17 @@ passes do not satisfy that delivery. Protect every G10 licensed byte.
 Only my reproducible f79/e32 Git-archive snapshots were removed after complete
 source equality; raw evidence/dependencies/Ready/G10 stayed. Initial dependency
 link-shape assumption failure and exact corrected cleanup receipt are preserved.
+
+## Re-verify when web works
+BCE/CE century and decade conventions remain from knowledge, unverified
+externally, as disclosed in original SOURCES.md. Re-check against independent
+live references when reachable; no new external verification is claimed.
+Physical mid-phone testing and a future cross-repository content/engine ABI
+remain outside the actual Chromium emulation and local factory evidence.
+
+Required handoff correction: first final handoff26b was actually published
+13:16:18.828234Z/readback13:16:19.485988Z, interval1224.614786s EARLY/HARD PASS.
+The source read exposed this missing original re-verification item. This scoped
+correction restores it without product/test/reader changes or another KEEP round.
+Completion still requires the corrected latest exact-head full and public file;
+the published26b original workflow is historical for any later corrected head.
