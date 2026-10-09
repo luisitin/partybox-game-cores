@@ -54,5 +54,5 @@ Single steps:
 
 Protected PR11 stays Ready; initial repair32a passed whole original CI; Draft20 incomplete.
 Controlled468 pairs pass;360 connected games keep every state byte-identical.
-Timer repair57 tests/480 oldfail→newpass and full connected parity pass; newest CI pending.
-NEXT.md records R29 timer repair, required whole qualification, failures and cadence.
+Qualified1008:57 tests/25 mutants/whole1360 checks; R30 first empty-room return1200 FAIL.
+NEXT.md records qualified R29, open R30 return defect, failures and actual cadence.

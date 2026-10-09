@@ -231,3 +231,6 @@ Re-read original README/RULES/JOBS after whole32a green. Rank5: full-idle explic
 
 ## R29 fix of the first measured worst defect
 After original32a green and reread/rank5, worst was explicit active departure after full inactivity. Narrow predicate resets idle only on actual active departure or actual resume into absent active seat with someone present; never ordinary automatic absent turns/paused/empty rooms.240 real contexts+480oldfail/newpass prove29s additional human time, with whole240 games/88055 physical transitions and both exact original1003-seed compatibility lanes;3 actual mutants catch overbroad reset. No native performance inference; currentwhole stillpending/no next formal review until green.
+
+## R30 actual postgreen five-weakness rank and negative
+After full1008 green re-read binding job; rank first empty-room human return, paused first-human return, stale/duplicate identity preservation, historical failed Worker benefit, physical-phone/upstream limitations. Worst actual1440-case deterministic test finds1200 less-than30s human windows. No production edits/repair/noGain credit. R29 +29s is qualified only by full1008. Narrow next fix must preserve ordinary connected/paused/empty metadata and every original fullyconnected whole state/physical score/RNG/inactive budget.

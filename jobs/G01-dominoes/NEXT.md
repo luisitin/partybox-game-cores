@@ -1,3 +1,43 @@
+## Current genuine1008 whole qualification; R30 empty-room return defect remains open
+
+Source1008 full original37949931679/job113885765277 and first whole artifact
+11625469527,174562700B/a2f7094b1ae1464d4f2271423ffa9338b220a95dddc259faf764f578cbfb8ffb
+PASS1360 unchanged6a33-reader checks; natural15:32:31.862717/all6575 frozen
+actual aliases/source208/no signals/group+detached[]. Full native130880B/
+a6f1611e82d715f2651bb4c058cfb4369eea5abfad989f9e260b2d27a880bcc4.
+All57 default tests,25 actual mutant kills,600 native intervals/602 stamps,
+36 fully decodedVP9 frames,16 realWorker replay/five variants/actualfile privacy
+pass original gates. R29's explicit departure/resume +29s repair is qualified.
+Protected Ready11 eadb/canonicalDraft1 8c stay static/unmerged; Draft20 incomplete.
+
+After green, actual original job reread/rank5 and R30 investigation found the
+next real worst issue: first live return to an empty full-idle room before/after
+an old deadline or while paused. Final real1440 legal cases produce1200 windows
+below required30000ms;780 connected parity/1440 physical metadata/240 paused
+controls pass. Negative natural15:40:33.609564/all6578 guards/no children.
+First helper falsely expected declared connected metadata unchanged and failed
+before cases; next exact-equality helper also marked six harmless >30s windows.
+Both genuine failures stay intact. Corrected minimum30s policy retains all1200
+true failures, full states/events/raw observations. No candidate adopted yet.
+
+NEXT: fix only first-empty-room return/full decision-clock semantics including
+paused return, with stale-epoch and duplicate/ordinary metadata/fullyconnected
+whole-state/physical/RNG/scoring/inactive-budget controls. Measure oldFAIL→newPASS,
+add default regressions, strict rebuild and genuine changed functional capture;
+log/push this separate R30 review, then full newest original qualification.
+NoGain0, no R30 repair/completion/Ready credit. Subsequent reviews must each
+reread/rank5/measure/log/push after green until3 true no-player-gain rounds.
+
+This material checkpoint publishes entire1008 qualification and genuine R30
+negative evidence, original36-frame capture and current mutable outputs only;
+immutable runner attribution stays1008. No sampler/clock/gate/workflow change.
+Last actual push15:12:00.273216; early15:37/hard15:42 genuinely missed.
+Actual preparation 2026-10-09T16:12:34.621059+00:00, 1834.347843s past hard; actual publication is
+in the next native receipt. B13 peer and restoration interruption occurred;
+no retroactive cadence credit. Every prior failure/protected history retained.
+
+## Previous checkpoints below remain historical and verbatim
+
 ## Current R29 timer repair: measured and adopted, full new hosted qualification pending
 
 DraftPR20, job/G01-dominoes-queue-audit-20261009. Protected Ready11 eadb and
