@@ -1,0 +1,66 @@
+{"suite":"subset-finishing-knock-boundaries","controls":216}
+✖ Strong removes strictly unnecessary finishing layoff targets across every setting and suit (11.678306ms)
+✖ 1000 identical public views prove defender opportunity inclusion with independent joint-defense scoring (2.507245ms)
+✔ subset finishing preserves incomparable layouts, public uncertainty, forbidden discards, other skills and non-finishing boundaries (59.029869ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 1
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 82.335969
+
+✖ failing tests:
+
+test at tests/subset-knock-priority.test.mjs:20:1
+✖ Strong removes strictly unnecessary finishing layoff targets across every setting and suit (11.678306ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   card: 1,
+  -   card: 28,
+      knock: true,
+      type: 'discard'
+    }
+  
+      at TestContext.<anonymous> (file:///tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/subset-knock-priority.test.mjs:24:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/subset-knock-priority.test.mjs:31:1
+✖ 1000 identical public views prove defender opportunity inclusion with independent joint-defense scoring (2.507245ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   card: 1,
+  -   card: 28,
+      knock: true,
+      type: 'discard'
+    }
+  
+      at TestContext.<anonymous> (file:///tmp/G02-source-93f0f58-20261009/jobs/G02-gin-rummy/tests/subset-knock-priority.test.mjs:35:80)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [Object],
+    expected: [Object],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

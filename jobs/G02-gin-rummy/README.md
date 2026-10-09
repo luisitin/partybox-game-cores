@@ -49,3 +49,5 @@ KEEP17 material public-discard closure repair after genuine e228 whole full orig
 
 
 KEEP17 saved-only proof naturally CLOSED07:22:07.946143Z EXIT0/PASS, all1759 frozen inputs unchanged. Strict current35 projection,14 original proof tests/175 corruptions, original integrity843 hashes/32 links/two deterministic fixture generations pass. Whole original current35/raw/native/60-member packet and two full clips remain immutable; only labelled5 dictionary/media-path compatibility is derived, request disabled in this SAME proof checkpoint. Final receipt files enter the regenerated manifest; subsequent exact-head full original hosted73-test npm test/whole official artifact remain REQUIRED before next KEEP review. PR12/PR2 Draft, KEEP17 player gain/streak0. No local native sampler.
+
+KEEP18 strict-subset finishing evidence: evidence/audit-20261009/KEEP-6-SUBSET-TARGETS.md; current full hosted acceptance pending.

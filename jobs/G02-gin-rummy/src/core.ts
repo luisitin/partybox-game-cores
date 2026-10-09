@@ -375,14 +375,18 @@ function bestDiscard(hand:Card[],forbidden:Card|null,v:PrivateView,skill:BotSkil
   if(skill==='sharp'&&v.phaseId==='discard'&&best.deadwood>0&&best.deadwood<=v.knockLimit) {
     // A meld with no possible first layoff outside our hand and public pile
     // cannot ever accept a defender card. Ignore those closed targets only;
-    // identical remaining targets give every defender identical layoff options.
-    // Lower deadwood then strictly improves the finishing score.
+    // removing further live targets cannot improve any defender's best score.
+    // Lower own deadwood then strictly improves the finishing score.
     const outside=Array.from({length:52},(_,card)=>card).filter(card=>!hand.includes(card)&&!v.discard.includes(card));
-    const meldKey=(melds:Card[][])=>melds.filter(m=>outside.some(card=>validMeld([...m,card])))
-      .map(m=>[...m].sort((a,b)=>a-b).join(',')).sort().join(';');
-    const key=meldKey(choices.find(x=>x.card===best.card)!.solution.melds);
-    for(const {card,solution} of choices)if(card!==forbidden&&solution.deadwood>0&&solution.deadwood<best.deadwood&&meldKey(solution.melds)===key)
-      best={card,deadwood:solution.deadwood};
+    const meldKeys=(melds:Card[][])=>melds.filter(m=>outside.some(card=>validMeld([...m,card])))
+      .map(m=>[...m].sort((a,b)=>a-b).join(',')).sort();
+    let targets=meldKeys(choices.find(x=>x.card===best.card)!.solution.melds);
+    for(const {card,solution} of choices)if(card!==forbidden&&solution.deadwood>0&&solution.deadwood<best.deadwood) {
+      const nextTargets=meldKeys(solution.melds);
+      if(nextTargets.every(key=>targets.includes(key))) {
+        best={card,deadwood:solution.deadwood};targets=nextTargets;
+      }
+    }
   }
   return best;
 }

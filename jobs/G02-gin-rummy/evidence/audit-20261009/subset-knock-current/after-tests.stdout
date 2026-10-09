@@ -1,0 +1,14 @@
+{"suite":"subset-finishing-knock-settings","cases":1152,"minGain":14,"maxGain":58,"classicSignedBefore":-10,"classicSignedAfter":4}
+{"suite":"subset-finishing-knock-independent-hidden-defenders","defenders":1000,"publicViewsByteIdentical":true,"minGain":1,"maxGain":5,"winningTransitions":0,"strictDefenseImprovements":904}
+{"suite":"subset-finishing-knock-boundaries","controls":216}
+✔ Strong removes strictly unnecessary finishing layoff targets across every setting and suit (1476.179372ms)
+✔ 1000 identical public views prove defender opportunity inclusion with independent joint-defense scoring (6203.805066ms)
+✔ subset finishing preserves incomparable layouts, public uncertainty, forbidden discards, other skills and non-finishing boundaries (65.207277ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7753.200865

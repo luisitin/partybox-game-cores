@@ -1,0 +1,148 @@
+{
+  "phase": {
+    "id": "discard",
+    "startedAt": 1,
+    "deadline": null
+  },
+  "phaseClock": 1,
+  "roomEmpty": false,
+  "rng": {
+    "seed": 1,
+    "step": 52
+  },
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Seat 0",
+      "avatarId": "face0",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Seat 1",
+      "avatarId": "face1",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "config": {
+    "variant": "standard",
+    "mode": "duel",
+    "target": 100,
+    "ginBonus": 20,
+    "undercutBonus": 10,
+    "boxBonus": 20,
+    "bigGin": true,
+    "bigGinBonus": 31,
+    "dealer": "winner",
+    "aceGin": true,
+    "spadeDouble": true,
+    "extraBoxes": false,
+    "shutout": "gameBonus",
+    "turnSeconds": 0
+  },
+  "order": [
+    "p0",
+    "p1"
+  ],
+  "active": [
+    "p0",
+    "p1"
+  ],
+  "waiting": [],
+  "left": [],
+  "scores": {
+    "p0": 0,
+    "p1": 0
+  },
+  "boxes": {
+    "p0": 0,
+    "p1": 0
+  },
+  "wins": {
+    "p0": 0,
+    "p1": 0
+  },
+  "dealer": "p0",
+  "turn": "p1",
+  "hand": 1,
+  "hands": {
+    "p0": [
+      43,
+      17,
+      25,
+      19,
+      36,
+      22,
+      10,
+      29,
+      33,
+      23
+    ],
+    "p1": [
+      24,
+      21,
+      31,
+      18,
+      2,
+      0,
+      37,
+      9,
+      47,
+      32,
+      42
+    ]
+  },
+  "stock": [
+    44,
+    26,
+    51,
+    11,
+    41,
+    27,
+    3,
+    30,
+    34,
+    49,
+    4,
+    7,
+    15,
+    12,
+    20,
+    14,
+    16,
+    48,
+    35,
+    1,
+    5,
+    28,
+    39,
+    6,
+    8,
+    45,
+    13,
+    40,
+    38,
+    50,
+    46
+  ],
+  "discard": [],
+  "initialUpcard": 42,
+  "knockLimit": 10,
+  "multiplier": 1,
+  "openingPasses": 0,
+  "mustStock": false,
+  "drawnDiscard": 42,
+  "pending": null,
+  "roundResult": null,
+  "finished": false,
+  "endedEarly": false,
+  "publicLog": [
+    {
+      "player": "p1",
+      "action": "take-discard",
+      "card": 42
+    }
+  ]
+}
