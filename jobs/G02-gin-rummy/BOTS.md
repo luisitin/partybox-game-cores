@@ -33,3 +33,5 @@ KEEP15 actual completed fixed paired league: Strong1166/2000=58.30%, Wilson95% l
 
 
 KEEP16: closed-target finishing dominance; prior e90 full original acceptance is retained whole. Before3 FAIL/after3 PASS1152 settings/1000 independent same-public-view defenders/120 controls; actual signed gain15, boundary max60. Permanently closed targets use only own11-card exclusion; every live group remains equal. Current original full checks/new35 source-bound evidence/full hosted acceptance PENDING; player gain/streak0.
+
+KEEP16 exact finite paired league remains Strong1166/2000=58.30% (Wilson95% lower56.1252%), Medium1743/2000=87.15% (lower85.6118%); CLOSED06:46:16.228875Z/all679 source guards unchanged. The repaired deterministic +15-point example and bounded dominance proof are measured player gains; this unchanged finite league is not a population improvement claim. Full current hosted acceptance remains pending.
