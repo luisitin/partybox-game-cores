@@ -51,3 +51,11 @@ human tiers is established by these measurements.
    defaults false; if-no-files-found accepts error. Used only to upload
    already enumerated public audit evidence. Observed run37765943337 and
    REST artifact_count0 independently confirm the prior skipped upload.
+
+2026-10-09 follow-up re-read both pinned Dijkstra solver.py and semiexp naive.rs
+live through the configured GitHub connection. Legal transformations, bounds,
+collision rejection and finite exhaustive enumeration corroborate the same
+original mechanics. No external code/art/content copied. Initial-presence
+defect is an actual observation from this original core, not a research claim.
+
+Resumed verification evidence source: https://github.com/luisitin/partybox-game-cores/actions/runs/37951352846 — complete official failed artifact11625967745 and whole job log, independently consumed on 2026-10-09. No gameplay facts or source rules changed.

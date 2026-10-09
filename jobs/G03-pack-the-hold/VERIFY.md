@@ -702,3 +702,88 @@ Fresh all-ref queue at2026-10-08T10:48:44.273455+00:00:no eligible IDs;every rem
 
 R13 final-delivery audit:full hosted37765943337 SUCCESS for34b073c1870fe32422a465e8579f42228113f06d at2026-10-08T10:51:23Z,but `gh api repos/luisitin/partybox-game-cores/actions/runs/37765943337/artifacts --jq '{total_count,artifacts:[.artifacts[]|{name,size_in_bytes,expired}]}'` returns0 artifacts. The upload step warns that the explicit.tmp paths had no included files. Live `curl -fsS https://raw.githubusercontent.com/actions/upload-artifact/v4/action.yml` confirms hidden files default false.
 Set include-hidden-files:true and if-no-files-found:error for those explicit evidence paths. Final delivery now additionally requires `gh api repos/luisitin/partybox-game-cores/actions/runs/<final_run>/artifacts` to show a nonempty,unexpired G03-check-evidence upload;that final exact-head CI/artifact receipt is recorded externally on PR3 to avoid changing the verified head. No gameplay/build/data change and no repeated local suite is needed for the upload-only fix.
+
+## Initial presence follow-up, 2026-10-09
+Exact commands/specs/helpers/whole raw/failures/source guards in historical/
+followup-initial-presence-20261009.zip, all members full CRC/physical equality.
+Original shipped51 hashes/strict compile/build pass. Actual old42-state controls
+node --test G03-initial-start-negative-20261009.mjs: EXIT1/two fail/zero pass.
+Wrapper literal reporter assumption fails; separate saved-output reader confirms
+all2474 source/runtime/self bytes unchanged, only byte-identical play output
+mtime changed, all groups empty/no signals. Original FAILED receipt preserved.
+Fixed strict compile/offline build/13 focused checks pass/all2472 frozen
+non-output guards; intentional page rebuild549225B/SHA928958719234ad28ae13326953953d350fac4c52233ed8b5dee67f94a7d2f697.
+Fixed42 controls two pass/zero fail;1003 additional complete seeded benign games,
+12167 transitions/bots,118392 views,all initial/final/results exact,max4390B;
+whole8675839B gzip SHA0937cf70d975e7f9923aef749abb737d8382a7520898e289396a8edd912c754a.
+Natural13:56:17.333050Z/all2509 inputs/peak276951040B<512MiB180s/no signals.
+Original exactsolver/certificate/data/samplers/bot strategy remain unchanged.
+New capture14/current original full and independent whole official receipt
+remain pending; no local browser or sampled frame retry has been run.
+
+## Follow-up actual complete saved referee and managed file failure
+Whole independent referee natural14:15:23.908299Z/all2478 physical guards unchanged,
+38,080,512B<512MiB/90s/no signals. Full519,794,971 decoded bytes/1003 independently
+derived ordered seeds/12167 events+bots/118392 views/results/RNG/max4390B equal.
+Exact original capture-only14 natural processes closed14:15:57.066954Z; controller
+CLOSED_FAILED/7.439s<=240 due managed file:// navigation ERR_BLOCKED_BY_ADMINISTRATOR,
+zero samples/PNGs,3036+28 unchanged, no forced signals/remaining descendants.
+Full source/runtime/self proof, grant, stdout/stderr, actual raw failed report and
+receipts archived with complete CRC/physical equality; old profile retained.
+All current15/full original/hosted disk/performance/delivery gates remain pending.
+
+2026-10-09: actual supported HTTP15 exceeded immutable1GiB RSS at1,163,890,688B
+while encoder401,666,048B overlapped browser. Failed24.556s whole/nine forced
+SIGTERM cleanup/all actual descendants empty; all3316 and original28 inputs,
+old14 profile and managed policies unchanged. Original incomplete running report,
+all36 real PNGs/raw WebM/profiles/receipts remain preserved, never labelled PASS.
+Original26 core tests+25 mutation kills independently naturally close14:47:04.189790Z,
+2495 unchanged inputs/319,053,824B<512MiB/no signals. Draft21 exists but hosted full
+not started until actual metadata; no current clip/FPS/KEEP acceptance is inferred.
+
+2026-10-09 deferred encoding delivery fix: same original36 frames/flags encoded
+only after actual prior14 browser/encoder PID identities were absent. Full37PNG
+CRC/inflate/39 inputEOF/native36 decoded frames identical,449,019,904B<512MiB,
+all3669 guards/natural15:05:46.681009Z/no signals. Actual4 syntax/grant tests pass;
+first observer wrong '# tests4' failed; saved referee15:16:04 retained all2491,
+originalFAILED/no rerun. Source now waits browserClosed after all original UI
+controls, then optional nonce/PID/pageSHA outside ownership witness before exact
+original encoder. Original full900both/FPS/clock/36frame/schema/workflow unchanged.
+Current16 PENDING/no browser grant, old15 partial raw/profile unchanged. Actual
+faileda049 whole artifact11625115294/192808B/62ae3cec...+8fullCRC/log92524chars,
+original28+1800 native/full36VP9/unchangedCLI pass as subchecks; overall ENOENT15
+FAIL and skippedbenchmark/finalcontrols retained, no wholegreen/KEEP qualification.
+Earlier5e3 source70.888463s hard/370.888463s early misses retained exactly.
+
+2026-10-09 resumed whole negative/owned lifecycle proof: exact1fc official failed
+run37951352846 ZIP11625967745/192740B/SHA5b9cfbaf... all8 completeCRC/physical
+members, exact92538-character whole log,28 exactGitblob/physical, both900 native
+RAF60.002400096fps/p95=16.7/true disk/fullUI/36nativeVP9 pass as subchecks only.
+Actual saved reader16:05:27.792258Z and wrapper16:05:31.002980Z/all4046 frozen.
+WholeFAIL solely ENOENT current16; benchmark/finalcorruptions skipped; no fullgreen.
+Finite untimed actual Node-only detachedchild/10malformed grants includingheight
+fixture16:06:55.825807Z, wrapper16:06:58.823779Z/all3828 frozen including explicit
+244tracked+17compiled+named directwrapper. Same gate70b8dd08, fullowned88457216B,
+no signals/emptydescendants/mainstatus excluded; old first/v2/failures preserved.
+Commands/helpers/specs/completepublic evidence archived with CRC/physical match;
+fulljoblog/provider/private metadata kept private, exactlogSHA810f206e4b4575639996f3ea30d5ee861ad47c4268f44b91f0c8bba42ae80e82.
+Initial log writer addedLF and duplicateheight proposal assertion failed before
+any reader/fixture; exact new log and unchanged gate retained honestly. No native
+performance/browser retry.1fc early15:48:11.885100/hard15:53:11.885100 both missed;
+actual newpublication deadline/miss in receipt. Current16 unexecuted/ungranted.
+Original1GiB/120child/240whole and whole original CI remain mandatory; KEEP0/0.
+
+2026-10-09 exactly one root-granted current16 fails before DevTools/page/native
+frames:121-byte Chrome singleton socket address exceeds Linux108-byte sun_path
+includingNUL. Actualcontroller16:20:31.923228Z/61.249730s; childexit1/50.170295s,
+0PNGs/0nativeFPS/noencoderrequest/ffmpeg, all6588full/28reportguards equal, sampled
+ownedpeak42278912B<unchanged1GiB, no forcedsignals/actualemptyowneddescendants.
+Fullfailedreport/profile/grant/RAWstderr/resources/closure physically retained;
+completepublic archiveCRC/physical equality, profilehash/linkmetadata only public.
+Currentf0d whole92608-character joblog confirms solemissing16ENOENT, no fullgreen.
+UntimedAF_UNIX control16:24:59.896177Z rejects121-byte surrogate/binds79-byte
+surrogate, no browser. Distinct17 short RAMOUT=/dev/shm/G03c17-6bf135 retains
+TMPDIR=OUT/runtime-tmp and original240whole/120child/1GiB caps. Source changes
+current-report references17 only; originalgame/visual/native/codec/gates preserved.
+Exact new root protocol review/grant still required before17; no retry occurred.
+No accepted clip/wholeoriginal/KEEP; new rounds0/streak0. Old14–16 untouched.

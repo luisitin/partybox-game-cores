@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { currentSourceHashes, loadVisual, validateCapture } from './verify-visual.mjs';
 
 test('actual current separate clip passes; source, bytes, scope and functional corruptions fail', () => {
-  const { report, video } = loadVisual('media/capture-13-report.json'), hashes = currentSourceHashes();
+  const { report, video } = loadVisual('media/capture-17-report.json'), hashes = currentSourceHashes();
   assert.ok(validateCapture(report, hashes, video));
   const mutations = [
     r => { r.kind = 'visual'; }, r => { r.status = 'failed'; }, r => { r.failure = 'error'; },

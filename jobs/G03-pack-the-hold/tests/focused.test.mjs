@@ -21,6 +21,37 @@ test('exact solver handles weighted skipping, holes, overlap, impossible cargo a
     assert.ok(evaluateLayout(puzzle, actual.placements).valid);
   }
 });
+
+test('initial presence selects a connected packing seat for every valid roster mask', () => {
+  for (let count = 2; count <= 8; count++) for (let mask = 0; mask < 2 ** count; mask++) {
+    const roster = players(count).map((p, i) => ({ ...p, connected: Boolean(mask & (1 << i)) }));
+    const turnSeconds = mask % 2 ? 20 : 60;
+    const ctx = { players: roster, settings: { rounds: 3, turnSeconds, difficulty: 1 + mask % 10, allowFlip: Boolean(mask % 2) }, seed: 91, now: 1000 };
+    const before = JSON.stringify(ctx), s = game.init(ctx), first = roster.findIndex(p => p.connected);
+    assert.equal(JSON.stringify(ctx), before); assert.deepEqual(s.players, Object.fromEntries(roster.map(p => [p.id, p])));
+    if (first >= 0) {
+      assert.equal(s.phase.id, 'pack'); assert.equal(s.seat, first); assert.equal(game.tvView(s).seatId, roster[first].id);
+      assert.equal(s.phase.deadline, ctx.now + turnSeconds * 1000);
+      for (const [i, p] of roster.entries()) assert.equal(game.controllerView(s, p.id).canPack, i === first);
+      assert.notEqual(game.bot.sampleInput(s, roster[first].id, createRng(91), 'normal'), null);
+    } else {
+      assert.equal(s.phase.id, 'reveal'); assert.equal(game.tvView(s).seatId, null);
+      assert.ok(roster.every(p => !game.controllerView(s, p.id).canPack));
+      assert.ok(Object.values(game.tvView(s).roundScores).every(row => row.value === 0 && row.ratio === 0));
+      const done = finish(s).state; assert.equal(done.phase.id, 'done'); assert.deepEqual(Object.keys(game.results(done).scores).sort(), roster.map(p => p.id).sort());
+    }
+  }
+});
+test('reconnection retains the current initial turn and every original result seat', () => {
+  const roster = players(2).map((p, i) => ({ ...p, connected: i !== 0 }));
+  const initial = game.init({ players: roster, settings: { rounds: 3 }, seed: 91, now: 1000 });
+  const reconnected = game.reduce(initial, { type: 'player', playerId: roster[0].id, connected: true, now: 1001 });
+  assert.equal(reconnected.seat, 1); assert.deepEqual(reconnected.phase, initial.phase);
+  const done = finish(reconnected).state;
+  assert.deepEqual(Object.keys(game.results(done).scores).sort(), roster.map(p => p.id).sort());
+  assert.equal(game.results(done).scores.p0, 1.6); assert.equal(game.results(done).scores.p1, 2.4000000000000004);
+});
+
 test('all quarter turns and reflection restrictions are geometric, not metadata', () => {
   assert.deepEqual(orient([[0, 0], [0, 1], [1, 1]], 1), [[0, 0], [1, 0], [0, 1]]);
   const chiral = [[0, 0], [0, 1], [0, 2], [1, 2]];

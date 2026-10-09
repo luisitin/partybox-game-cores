@@ -52,3 +52,91 @@
 - After G03 completion,the fresh all-ref queue at2026-10-08T10:48:44.273455+00:00 contains no
   eligible job. Preserve active claims;do not manufacture an expired stamp
   or take another worker's fresh branch. Re-check on a later continuation.
+
+## 2026-10-09 lawful initial-presence follow-up
+Fresh lowest G03 row and all three matching branch committers were >6h old;
+lower claims fresh. Main claim05c80 actual13:33:01.795599/fullreadback02.348923.
+Original Ready3 remains unchanged; new branch starts claimed main. Exact job
+and workflow bytes copied from preserved physical Ready sources, validated to
+canonical Git blob hashes with all original physical inputs unchanged.
+Initial borrowed shallow metadata lacked its old boundary; failed merge assumption
+and promisor503 were preserved. No credentials/proxy changes or forced Git push.
+The old negative tests actually fail; a separate wrapper reporter assumption
+fails afterward (# versus ℹ), and intentional byte-identical page rebuild changes
+mtime. Saved-output supplement establishes all source bytes equal/actual natural
+empty groups; original broad false flags stay untouched.
+Only initialization changes. Current source-bound capture14 and full original
+checks remain required; old capture13 stays preserved and cannot qualify new core.
+No human solve-rate, phone hardware, native timing gain or new KEEP qualification.
+
+## 2026-10-09 actual managed file policy and complete benign referee
+The exact approved capture-only14 encountered ERR_BLOCKED_BY_ADMINISTRATOR before
+page load; zero PNG/native frame samples. This is a managed browser file policy
+failure, not game performance or a player no-gain round. All3036 plus original28
+source/runtime/self guards and actual empty descendants/no signals are preserved.
+The failed media report is moved byte-identically to historical raw + complete
+archive because the unchanged media schema requires passed reports. Original
+browser profile is kept, and a separate worktree is required for any new capture.
+Current15 references retain all25 corruption checks. Supported localhost capture
+remains partial transport proof; hosted true file opening and1800 native FPS gates
+are unchanged. No policy/credentials bypass or unchanged native FPS retry.
+Independent saved-only Python reader derived all1003 ordered seeds from the
+original Murmur mix and read519794971 decompressed bytes/complete gzip EOF/CRC;
+states, RNG, events, views, bots, results and4390B peak match the complete originals.
+Initial b141 publication's early25 target missed174.900054s; hard30 passed.
+
+2026-10-09: actual supported HTTP15 exceeded immutable1GiB RSS at1,163,890,688B
+while encoder401,666,048B overlapped browser. Failed24.556s whole/nine forced
+SIGTERM cleanup/all actual descendants empty; all3316 and original28 inputs,
+old14 profile and managed policies unchanged. Original incomplete running report,
+all36 real PNGs/raw WebM/profiles/receipts remain preserved, never labelled PASS.
+Original26 core tests+25 mutation kills independently naturally close14:47:04.189790Z,
+2495 unchanged inputs/319,053,824B<512MiB/no signals. Draft21 exists but hosted full
+not started until actual metadata; no current clip/FPS/KEEP acceptance is inferred.
+
+2026-10-09 deferred encoding delivery fix: same original36 frames/flags encoded
+only after actual prior14 browser/encoder PID identities were absent. Full37PNG
+CRC/inflate/39 inputEOF/native36 decoded frames identical,449,019,904B<512MiB,
+all3669 guards/natural15:05:46.681009Z/no signals. Actual4 syntax/grant tests pass;
+first observer wrong '# tests4' failed; saved referee15:16:04 retained all2491,
+originalFAILED/no rerun. Source now waits browserClosed after all original UI
+controls, then optional nonce/PID/pageSHA outside ownership witness before exact
+original encoder. Original full900both/FPS/clock/36frame/schema/workflow unchanged.
+Current16 PENDING/no browser grant, old15 partial raw/profile unchanged. Actual
+faileda049 whole artifact11625115294/192808B/62ae3cec...+8fullCRC/log92524chars,
+original28+1800 native/full36VP9/unchangedCLI pass as subchecks; overall ENOENT15
+FAIL and skippedbenchmark/finalcontrols retained, no wholegreen/KEEP qualification.
+Earlier5e3 source70.888463s hard/370.888463s early misses retained exactly.
+
+2026-10-09 resumed whole negative/owned lifecycle proof: exact1fc official failed
+run37951352846 ZIP11625967745/192740B/SHA5b9cfbaf... all8 completeCRC/physical
+members, exact92538-character whole log,28 exactGitblob/physical, both900 native
+RAF60.002400096fps/p95=16.7/true disk/fullUI/36nativeVP9 pass as subchecks only.
+Actual saved reader16:05:27.792258Z and wrapper16:05:31.002980Z/all4046 frozen.
+WholeFAIL solely ENOENT current16; benchmark/finalcorruptions skipped; no fullgreen.
+Finite untimed actual Node-only detachedchild/10malformed grants includingheight
+fixture16:06:55.825807Z, wrapper16:06:58.823779Z/all3828 frozen including explicit
+244tracked+17compiled+named directwrapper. Same gate70b8dd08, fullowned88457216B,
+no signals/emptydescendants/mainstatus excluded; old first/v2/failures preserved.
+Commands/helpers/specs/completepublic evidence archived with CRC/physical match;
+fulljoblog/provider/private metadata kept private, exactlogSHA810f206e4b4575639996f3ea30d5ee861ad47c4268f44b91f0c8bba42ae80e82.
+Initial log writer addedLF and duplicateheight proposal assertion failed before
+any reader/fixture; exact new log and unchanged gate retained honestly. No native
+performance/browser retry.1fc early15:48:11.885100/hard15:53:11.885100 both missed;
+actual newpublication deadline/miss in receipt. Current16 unexecuted/ungranted.
+Original1GiB/120child/240whole and whole original CI remain mandatory; KEEP0/0.
+
+2026-10-09 exactly one root-granted current16 fails before DevTools/page/native
+frames:121-byte Chrome singleton socket address exceeds Linux108-byte sun_path
+includingNUL. Actualcontroller16:20:31.923228Z/61.249730s; childexit1/50.170295s,
+0PNGs/0nativeFPS/noencoderrequest/ffmpeg, all6588full/28reportguards equal, sampled
+ownedpeak42278912B<unchanged1GiB, no forcedsignals/actualemptyowneddescendants.
+Fullfailedreport/profile/grant/RAWstderr/resources/closure physically retained;
+completepublic archiveCRC/physical equality, profilehash/linkmetadata only public.
+Currentf0d whole92608-character joblog confirms solemissing16ENOENT, no fullgreen.
+UntimedAF_UNIX control16:24:59.896177Z rejects121-byte surrogate/binds79-byte
+surrogate, no browser. Distinct17 short RAMOUT=/dev/shm/G03c17-6bf135 retains
+TMPDIR=OUT/runtime-tmp and original240whole/120child/1GiB caps. Source changes
+current-report references17 only; originalgame/visual/native/codec/gates preserved.
+Exact new root protocol review/grant still required before17; no retry occurred.
+No accepted clip/wholeoriginal/KEEP; new rounds0/streak0. Old14–16 untouched.
