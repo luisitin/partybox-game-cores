@@ -5,7 +5,48 @@ Validation PR11 is open and draft against job/G01-dominoes. Original PR1 stays
 open, draft and unchanged on canonical 8c57376. No merge or force-push.
 Read CLAIMS.md on current main; refresh only G01 after every source push.
 
-## Exact d01 whole hosted artifact independently accepted
+## Latest exact ddd whole artifact and four-human phone checkpoint
+
+Exact ddd364cd72247387b86b9b39bfd0f0a5f9895ffe workflow37880122191/
+job113657699053 succeeded03:52:26UTC. Official11594815894/106,473,265B/
+030ff370216fc90989cad8690480b8471b18654e73a1a92abcd47d5a80a3cdf0 passed
+the unchanged full reader1,279 assertions. Outer naturally CLOSED04:00:58.661492
+UTC/exit0/group[]. Whole SHA/CRC, exact immutable source/Git, full native npm,
+25 mutants, actual file:// private handover/inline Worker,16 real Worker replays/
+five variants,600 native intervals/602 stamps and36 decoded VP9 frames passed.
+Hosted TV60.0024000960 FPS/phone4x59.8026512509FPS, p9516.7/16.8ms; finite
+original gate observations, no generic60FPS/physical-phone/player-gain claim.
+worker-hosted-ddd364c.json and media/worker-stage-ddd364c-proof.zip retain exact
+bounded raw/controller/source evidence; clip18 is actual hosted capture. Whole
+106MB stayed in RAM; no physical full ZIP/extraction or browser/FPS rerun.
+
+FIRST actual four-human390x844/4xCPU functional check naturally CLOSED
+04:03:00.755822UTC/exit1/FAIL/group[]. All1,618 installed dependency aliases,
+1,746-entry inventory,1,630 source/helper aliases andfive runtime guards passed
+before module import/after browser closure. Three reduced-motion cases completed:
+Draw partners, Block partners and Draw individual, including allfour private
+handovers/hide-reveal/legal actions/control fit. Normal-motion Block individual
+failed the expected Player2 predicate with actual Player3 active. Saved earlier
+hide/reveal step already has board22 and Player2. Preserve all raw/partial DOM
+before assertions, first program/READY/inputs/controller and three screenshots
+in media/four-human-phone-first-proof.zip; four-human-phone-first.json is the
+granular summary. No cause attribution, retroactive acceptance or unchanged
+retry. Source-bound diagnostic timestamps/turn-event observation are required
+before distinguishing UI behavior from helper delay/turn assumption.
+
+Current ten product/core/Worker/sampler/build bytes remain exact accepted ddd/
+d01/838. The next evidence publication needs its own full CI. PR11 stays draft;
+PR1 stays unchanged8c/open/draft/unmerged. Responsiveness native acceptance and
+both fixed gain gates remain FAIL; renewed KEEP0/player gain unestablished.
+Finish the failed normal-motion phone diagnosis, then ranked current-player
+review/measurement; proof delivery is not a completed improvement round.
+
+Last actual source push03:37:17.716577UTC, hard04:07:17.716577UTC. Shared quiet
+HOLD03:49:17→direct root release03:59:00 preserved; no local native launch
+during HOLD. Read actual next push receipt for fresh30-minute cadence. Earlier
+ENOSPC/review-window misses and all historical failures remain retained.
+
+## Historical exact d01 whole hosted artifact independently accepted
 
 Exactd01 run37875754087/job113643842516 succeeded02:55:26UTC. Genuine official
 11592298166/102,143,626B/cac5327331cfdee3569051dd271179ba3e37628881eb880aa96c51631600019b
@@ -40,7 +81,7 @@ it does not accept the original native pair or weaken/rewrite its predicate.
 The declared TV/phone gain gates remain FAIL and original earlier-pair offending
 raw remains ABSENT. No cause claim or new unchanged retry. Renewed KEEP remains0.
 
-Current d331 workflow37878647281 remains in progress at latest03:33:53UTC read.
+Historical d331 workflow37878647281 was later CANCELLED03:37:37UTC by ddd.
 Exact ten player/core/Worker/sampler/build bytes stay identical to accepted d01/
 838. This publication changes actual evidence/docs/mutable outputs only; its
 own newest-head complete CI and substantive current-player review are pending.
@@ -76,8 +117,8 @@ native launch because of a wrong absence assertion; correction preceded the
 one actual grant/trial. No claim of a second native attempt.
 
 Exactd01 full workflow37875754087/job113643842516 SUCCEEDED02:55:26UTC.
-Official11592298166/102,143,626B/cac53273… independent complete-artifact
-acceptance remains PENDING. Exact838 prior1,252-check proof stays accepted.
+Official11592298166/102,143,626B/cac53273… complete1,261-check acceptance
+subsequently passed; exact ddd now1,279 PASS above. Exact838 prior proof stays accepted.
 The current evidence checkpoint's own new-headCI remains required.
 
 Cadence03:11:16.486356UTC was exceeded during the local-writer HOLD from

@@ -210,3 +210,44 @@ Exact ten player/core/Worker/sampler/build bytes stay identical to accepted d01/
 own newest-head complete CI and substantive current-player review are pending.
 Last source push03:18:07.611800UTC, current hard03:48:07.611800UTC. Read the actual
 new publication receipt for fresh cadence; prior late pushes remain recorded.
+
+## Latest exact ddd whole artifact and four-human phone checkpoint
+
+Exact ddd364cd72247387b86b9b39bfd0f0a5f9895ffe workflow37880122191/
+job113657699053 succeeded03:52:26UTC. Official11594815894/106,473,265B/
+030ff370216fc90989cad8690480b8471b18654e73a1a92abcd47d5a80a3cdf0 passed
+the unchanged full reader1,279 assertions. Outer naturally CLOSED04:00:58.661492
+UTC/exit0/group[]. Whole SHA/CRC, exact immutable source/Git, full native npm,
+25 mutants, actual file:// private handover/inline Worker,16 real Worker replays/
+five variants,600 native intervals/602 stamps and36 decoded VP9 frames passed.
+Hosted TV60.0024000960 FPS/phone4x59.8026512509FPS, p9516.7/16.8ms; finite
+original gate observations, no generic60FPS/physical-phone/player-gain claim.
+worker-hosted-ddd364c.json and media/worker-stage-ddd364c-proof.zip retain exact
+bounded raw/controller/source evidence; clip18 is actual hosted capture. Whole
+106MB stayed in RAM; no physical full ZIP/extraction or browser/FPS rerun.
+
+FIRST actual four-human390x844/4xCPU functional check naturally CLOSED
+04:03:00.755822UTC/exit1/FAIL/group[]. All1,618 installed dependency aliases,
+1,746-entry inventory,1,630 source/helper aliases andfive runtime guards passed
+before module import/after browser closure. Three reduced-motion cases completed:
+Draw partners, Block partners and Draw individual, including allfour private
+handovers/hide-reveal/legal actions/control fit. Normal-motion Block individual
+failed the expected Player2 predicate with actual Player3 active. Saved earlier
+hide/reveal step already has board22 and Player2. Preserve all raw/partial DOM
+before assertions, first program/READY/inputs/controller and three screenshots
+in media/four-human-phone-first-proof.zip; four-human-phone-first.json is the
+granular summary. No cause attribution, retroactive acceptance or unchanged
+retry. Source-bound diagnostic timestamps/turn-event observation are required
+before distinguishing UI behavior from helper delay/turn assumption.
+
+Current ten product/core/Worker/sampler/build bytes remain exact accepted ddd/
+d01/838. The next evidence publication needs its own full CI. PR11 stays draft;
+PR1 stays unchanged8c/open/draft/unmerged. Responsiveness native acceptance and
+both fixed gain gates remain FAIL; renewed KEEP0/player gain unestablished.
+Finish the failed normal-motion phone diagnosis, then ranked current-player
+review/measurement; proof delivery is not a completed improvement round.
+
+Last actual source push03:37:17.716577UTC, hard04:07:17.716577UTC. Shared quiet
+HOLD03:49:17→direct root release03:59:00 preserved; no local native launch
+during HOLD. Read actual next push receipt for fresh30-minute cadence. Earlier
+ENOSPC/review-window misses and all historical failures remain retained.

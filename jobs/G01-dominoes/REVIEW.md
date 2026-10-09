@@ -193,3 +193,11 @@ TV/phone gain gates also FAIL. Worst remaining current player weakness remains
 unestablished responsiveness improvement; no completed renewed KEEP round.
 Current-headCI, four-seat/partner phone interactions, rendering costs and finite
 strength/reference scope remain ranked review work; no physical-hardware claim.
+
+Exact ddd full1,279-check proof is independently accepted. Current four-human
+phone first functional trial FAIL is retained: three completed reduced-motion
+cases, normal-motion Block expected-seat failure/unknown cause. Complete all
+current input guards and raw retention PASS; no unchanged retry. Ranked worst
+responsiveness gain remains unestablished; native pair/fixed gain gates FAIL
+and renewed KEEP0 unchanged. Diagnose normal-motion phone behavior, current
+new-headCI and substantive player review next.
