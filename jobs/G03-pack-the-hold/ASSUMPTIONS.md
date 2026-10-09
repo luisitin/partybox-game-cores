@@ -68,3 +68,19 @@ empty groups; original broad false flags stay untouched.
 Only initialization changes. Current source-bound capture14 and full original
 checks remain required; old capture13 stays preserved and cannot qualify new core.
 No human solve-rate, phone hardware, native timing gain or new KEEP qualification.
+
+## 2026-10-09 actual managed file policy and complete benign referee
+The exact approved capture-only14 encountered ERR_BLOCKED_BY_ADMINISTRATOR before
+page load; zero PNG/native frame samples. This is a managed browser file policy
+failure, not game performance or a player no-gain round. All3036 plus original28
+source/runtime/self guards and actual empty descendants/no signals are preserved.
+The failed media report is moved byte-identically to historical raw + complete
+archive because the unchanged media schema requires passed reports. Original
+browser profile is kept, and a separate worktree is required for any new capture.
+Current15 references retain all25 corruption checks. Supported localhost capture
+remains partial transport proof; hosted true file opening and1800 native FPS gates
+are unchanged. No policy/credentials bypass or unchanged native FPS retry.
+Independent saved-only Python reader derived all1003 ordered seeds from the
+original Murmur mix and read519794971 decompressed bytes/complete gzip EOF/CRC;
+states, RNG, events, views, bots, results and4390B peak match the complete originals.
+Initial b141 publication's early25 target missed174.900054s; hard30 passed.

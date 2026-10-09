@@ -1,51 +1,54 @@
-# G03 initial presence follow-up
-Owner codex-pack-followup-20261009; branchjob/G03-pack-the-hold-followup-20261009.
-Claim main05c80d00797671f9fbe548fa7654df3c1325d31c, actual13:33:01.795599Z,
-ownrow13:32:58Z/all foreign rows/tree equal/G10 BLOCKED preserved/lease released.
-Branch was created from exact claimed main; exact original Ready PR3/41c5dbd
-source was copied with every canonical Git blob/physical SHA match; old inputs
-unchanged. Source-only provenance8085df9f follows claimed main. Original Ready3,
-its historical R10–12 stop and every prior raw failure remain unchanged.
+# G03 initial presence follow-up — current handoff
+Owner codex-pack-followup-20261009; job/G03-pack-the-hold-followup-20261009.
+Claim main05c80d starts the new branch; original Ready PR3/41c5dbd and historical
+R10–12 stop remain untouched. Canonical source copy8085df9f matched every Git
+blob and physical byte. Every original research/check/delivery/KEEP rule applies.
 
-Original README/RULES/JOBS, contract, job rules/PROOF/BOTS/LOOP/ASSUMPTIONS read.
-Two independently authored pinned geometry/search sources reread live. A shallow
-object-boundary merge assumption and actual promisor503 copy failure are retained;
-physical preserved Ready source resolved access without changing credentials.
+Current product fix was published b141979b40d2a9c72261c783deeccd5091a3e9d1 at
+14:00:56.695653Z/readback14:00:57.261273Z. From claim13:33:01.795599Z:
+1674.900054s, hard30 PASS, early25 MISSED174.900054s. No earlier time is claimed.
+Own-row refresh mainbc4d7ded parent185bbfa actual14:06:07.629327Z/readback
+14:06:08.377699Z, all foreign rows/tree equal/G10 BLOCKED retained/lease released.
 
-Actual real defect: initial state always selected disconnected seat0; connected
-people could not pack or sample a bot and waited45s. All unavailable initial
-rosters also spent an empty packing turn. Actual42-state matrix retained; old
-two negative tests fail0pass/2fail. Original build had an extra observer reporter
-assumption (# versus actual ℹ); all2474 input bytes equal, only byte-identical
-play rebuild timestamp changed. Original FAILED wrapper and precise saved-only
-supplement retained; actual processes naturally empty/no signals.
-Fix: first connected initial seat packs immediately with full original timer;
-none available enters inspection. No generator, solver, strategy, RNG or scoring
-change. Permanent508 roster-mask/reconnection tests plus all original focused
-checks13pass/0fail. Strict build naturally CLOSED13:52:22.545079Z/all2472
-non-output inputs frozen/348012544B<512MiB; declared page549225B is rebuilt.
-Actual fixed42-state controls2pass/0fail and extra1003 complete original/fixed
-benign games12167 events/118392 views/12167 bots/results exactly equal,
-peakstate4390B. Whole gzip8675839B/SHA0937cf70d975e7f9923aef749abb737d8382a7520898e289396a8edd912c754a.
-Actual natural closure13:56:17.333050Z/all2509 source/runtime/self+compiled
-inputs equal/peak276951040B<512MiB180s/no signals/no browsers.
+Fix: first connected seat can pack immediately with the full original timer;
+all unavailable enters inspection. Permanent508 masks/reconnection/13 focused
+checks pass. Actual old42 states/2 negative failures and fixed42/2 passes retained.
+Generator, solver, tiers, data, strategy, RNG, scoring and contract unchanged.
+All1003 complete benign old/new games exactly match:12167 events and bots,
+118392 views, states/RNG/results/max4390B. Independent Python referee actually
+read519794971 decompressed bytes and all1003 separately derived original-mix
+ordered seeds to gzip EOF/CRC; natural14:15:23.908299Z/all2478 source/runtime/self
+guards unchanged/peak38080512B/no signals/no game rerun or browser.
 
-Full current checks remain PENDING. Original capture13 is source-bound history
-after code changes; mandatory current capture14 references are updated, never
-fallback to stale13. Capture14 not yet recorded; full npm test cannot qualify
-until actual new source-bound clip exists. Checksum coverage adds ZIP without
-removing any prior data/media entries. All proof/failures/helpers in historical/
-followup-initial-presence-20261009.zip; every member full CRC/physical comparison.
-No current original full/native acceptance or qualified KEEP round is inferred.
-New completed0/no-gain streak0; original player stop stays historical.
-NEXT: saved-only Python full benign EOF/referee; fresh finite capture-only14
-proposal/source/resources/actual root coordination before any local browser;
-original full core/property/7000 rosters/two leagues/25 mutations/data regens/
-disk1800 native intervals/all source guards/corruption controls/whole uploaded
-artifact and public HTML. Open supplemental Draft against preserved Ready3.
-After genuine new green, re-read job/five weaknesses/fix worst/measure/log/push
-until THREE new consecutive no-player-gain rounds. No unchanged timing retry,
-clock/threshold/corpus weakening or source-after-Ready/merge.
-Re-verify when web works: human difficulty remains unmeasured; prior blocked
-ArXiv/Wikipedia/MathWorld were not read. Phone is CPU4x emulation, not real hardware.
-Preserve all unique G10 licensed files/data/deps and literal BLOCKED main row.
+Actual single approved capture-only14 failed14:15:57.066954Z in7.439s after
+file navigation returned net::ERR_BLOCKED_BY_ADMINISTRATOR. Zero native frame
+samples and zero PNGs. All3036 source/runtime/self/installed and28 original
+guards stayed exact; actual final owned descendants empty/no forced signals.
+The failed wrapper flag naturalClosure=false denotes failed proof, not a leaked
+process. Child numerical exit was not separately archived; required zero-exit
+predicate failed, raw uncaught error/stdout/stderr and wrapper EXIT1 preserved.
+Original report moved byte-for-byte to historical/capture-14-managed-file-policy-
+failure.json.txt and whole proof archive; original browser profile remains intact.
+Every media capture is required to pass schema, so failed raw belongs in history;
+no validation is weakened. Old capture13 is preserved historical source evidence.
+
+Current capture references are15, not failed14 or stale13. Capture15 is NOT run
+or accepted. Next: exact isolated new-head worktree for supported --http
+--capture-only --record --milestone15; source/binary/full28/PNG/video guards,
+finite original120/240s and1GiB RSS proposal/root review and exact grant first.
+HTTP clip is explicitly partial transport proof. Hosted original real file://
+and1800 native RAF intervals with >=59fps/p95<=18ms remain mandatory unchanged.
+No unchanged local FPS retry or policy bypass. Preserve all prior profiles/raws.
+
+Material failure/referee helpers, full guards, exact grant and every receipt in
+historical/followup-capture14-failure-benign-referee-20261009.zip; complete CRC
+and physical member comparison. Existing initial presence archive remains intact.
+Full current original npm test/workflow/whole genuine official artifact/logs,
+actual public HTML EOF and current15 clip are pending. No supplemental PR yet.
+New completed qualified KEEP rounds0/no-gain streak0; initial repair pre-green.
+After genuinely green: enumerate five weaknesses, fix worst, measure/log/push
+until THREE NEW consecutive no-player-gain rounds; old stopped branch is history.
+No source-after-Ready commit/merge. Keep every main refresh serialized/foreign
+rows immutable. Re-verify when web works: human calibration remains unmeasured;
+prior blocked references unread; CPU4x phone is emulation, not physical hardware.
+Unique G10 full licensed HTML/data/deps and literal BLOCKED row remain untouched.

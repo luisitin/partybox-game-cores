@@ -720,3 +720,14 @@ Natural13:56:17.333050Z/all2509 inputs/peak276951040B<512MiB180s/no signals.
 Original exactsolver/certificate/data/samplers/bot strategy remain unchanged.
 New capture14/current original full and independent whole official receipt
 remain pending; no local browser or sampled frame retry has been run.
+
+## Follow-up actual complete saved referee and managed file failure
+Whole independent referee natural14:15:23.908299Z/all2478 physical guards unchanged,
+38,080,512B<512MiB/90s/no signals. Full519,794,971 decoded bytes/1003 independently
+derived ordered seeds/12167 events+bots/118392 views/results/RNG/max4390B equal.
+Exact original capture-only14 natural processes closed14:15:57.066954Z; controller
+CLOSED_FAILED/7.439s<=240 due managed file:// navigation ERR_BLOCKED_BY_ADMINISTRATOR,
+zero samples/PNGs,3036+28 unchanged, no forced signals/remaining descendants.
+Full source/runtime/self proof, grant, stdout/stderr, actual raw failed report and
+receipts archived with complete CRC/physical equality; old profile retained.
+All current15/full original/hosted disk/performance/delivery gates remain pending.
