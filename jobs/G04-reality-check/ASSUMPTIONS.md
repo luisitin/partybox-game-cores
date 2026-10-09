@@ -192,3 +192,18 @@ does not count as a game failure/no-gain. Original raw and earlier failed checks
 stay preserved. Completed qualified3/streak2; round4 prospective final third.
 The public495059-byte file is actual GitHub HTTP delivery, distinct from decoded
 video/runtime checks. Exact new-head full and final qualification are mandatory.
+
+## Final handoff and formal stopping point
+079 genuine full original and exact public delivery qualify the actual fourth
+follow-up review, third consecutive no-player-gain. The final documentation-only
+completion commit records this binding STOP and a concrete conditional handoff;
+it is not another player round or a new performance claim. Its own exact original
+hosted checks and whole public single-file receipt are mandatory before Ready18.
+After Ready no further source receipt commits or merge are authorized here.
+Snapshot cleanup first failed only an extra assumed node_modules symlink shape;
+full tracked file-set and byte checks had passed. Corrected cleanup accepts the
+actual f79 nested zod link, preserves target dependencies and all unique evidence,
+and removes only the two explicitly verified reproducible Git-archive directories.
+Original failure receipt is kept unchanged with a precise later clarification.
+Physical phone testing remains unavailable; original Chromium phone4x evidence
+retains its stated scope. G10 actual public upload remains separately BLOCKED.

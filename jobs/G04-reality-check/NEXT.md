@@ -1,70 +1,58 @@
-# G04 supplemental follow-up handoff
-Owner codex-reality-followup-20261009; job/G04-reality-check-followup-20261009,
-Draft PR18 targets preserved Ready PR14/738de72b. Original README/RULES/JOBS,
-contract/game rules/four pinned sources read; preserve canonicalPR4, old Ready
-source/three-no-gain stop, all failures and unique G10 licensed HTML/data/deps.
-All new work/metadata/dependencies under/tmp; only own job files may change.
+# G04 final supplemental handoff
+Owner codex-reality-followup-20261009; branch
+job/G04-reality-check-followup-20261009; PR18 targets preserved Ready PR14.
+Original README/RULES/JOBS, contract, job rules and four pinned sources read.
+CanonicalPR4 and ReadyPR14/738de72b remain untouched. Preserve every raw failure,
+the original historical KEEP stop and unique G10 licensed HTML/data/dependencies.
+Only own job files changed; all new work and metadata are under/tmp.
 
-Last actual source2fdb92060e17016378ce48007c477eccd61dc613 normal push
-12:32:40.853633Z/readback12:32:41.582521Z, interval1418.703211s EARLY/HARD PASS.
-Own main e6d9137042c27e8f0e7f8c82f6ad635e51da382c row12:34:02Z,
-normal push12:34:04.581587Z/readback12:34:05.157820Z; all foreign rows/tree byte
-equal/literal G10 BLOCKED preserved/lease released. This next material source
-early12:57:40.853633Z/hard13:02:40.853633Z; actual normal publication receipt
-resets the30-minute window. Fresh remote/readback and serialized own-row lease.
-Historical0ad EARLYmiss105.733498s/hardPASS remains exact; no earlier time invented.
+Final player work is STOPPED: qualified new rounds4, no-gain streak3.
+KEEP1 fixed admitted malformed/binary text causing33 oversized saved states,
+peak288469>262144; fixed maximal controls151384 and original full0ad accepted.
+KEEP2 independent Unicode credit1003 games/Python awards/replays qualifies no-gain1.
+KEEP3 exhaustive1120690 UTF16 cases and9 maximum admitted catalog games,
+peak158015<262144, qualifies no-gain2. The failed extra oracle is retained:
+pinned Zod4.6.5 raw max160 uses codepoints; stored normalized limit160 uses UTF16.
+KEEP4 all7 phases/private retries/pause/disconnection1003 full games/17718 legal
+events/144408 refusals/2004 valid retries/729324 view assertions and separate
+Python whole-EOF hashes/projections qualifies no-gain3. Producer/reader/local
+37 focused+4 strict controls all naturally closed with original bounds/guards.
+No failed or unexecuted protocol counts as a round. No new native timing was run.
 
-Actual fixes: normalized160->2880 fake/max676419B; accepted truth162 unwritable;
-malformed text/maximal catalogs33 states oversized/max288469. Current product
-refuses unwritable normalized/malformed writes and malformed/binary catalog text,
-preserving emoji/whitespace/C0 write cleanup/casefold/scoring/bots/timers.
-KEEP1 qualified robustness gain0ad whole original11:59:05.436258Z.
-KEEP2 independent Unicode credit1003 games/48106 events/Python referee qualifies
-first no-player-gain, genuinec30 whole12:16:38.815738Z.
-KEEP3 complete1120690 UTF16 cases/Python EOF/maximum admitted4byte catalogs9
-games1560 legal events/max158015<262144 qualifies second no-player-gain.
-Actual raw Zod4.6.5 max160 is Unicode codepoints; normalized storage/UI max160 is
-UTF16 units. Original failed extra oracle, installed source, output-only reader
-allocation failure and failed-wrapper unchanged-guard supplement stay exact.
-Genuine CURRENT2fdb original whole accepted12:44:05.074969Z/run37930745755/
-artifact11616461807/full1437634B/SHA1d567eccbe08e3a8833dc49fe6766873068e72bda213241a4b3e72213c4cb3bf.
-Whole59-testlog/25kills; unchanged original reader all1034 public module/source
-guards,3000 native intervals,66 controls/five full VP8 decodes pass;287 reception
-inputs unchanged/natural empty/no signals/88797184B. Qualified rounds3/streak2.
-
-KEEP4 five weaknesses: private Unicode refusal/pause/presence; catalog metadata;
-physical phone approximation; future engine/content ABI; manual hot-seat privacy.
-Worst additional pure corpus:1003 full legal timer games/counts2–8/three modes/
-four rounds,17718 legal events/6017 phase anchors/all seven phases/144408 refused
-writes/2004 valid private retries/729324 actual view checks.48136 paused and48136
-disconnected controls. Frozen source/deadlines/RNG retain identity; owner-only
-retry projections exact; all legal replays/final scores exact. Producer natural
-closure12:46:28.915189Z/all3843 guards/173887488B<256MiB180s/no signals.
-Whole gzip5753708B/SHAa9bcb969e3be8c3b07b8973e516ad47af47817227658afad3d0622b56b66167c.
-Separate Python strictUTF16/NFKC refusal/state/retry-hash/projection/seeded whole
-EOF reader PASS12:48:35.369198Z/all7 input guards; wrapper natural
-12:48:36.267304Z/all3846 guards/15876096B/no signals/no new games/timing.
-Permanent independent all-phase refusal/privacy regression added. Local37focused/
-four original strict/types/data/two identical fixtures/builds/freshness/checksums/
-42 benign3395 states and10000 matching cases PASS12:50:03.287439Z/all3842
-guards/no output changes/431173632B<512MiB60sphase bound/natural empty.
-Production/reducer/page/catalog/scoring/bots/UI/original10k/workflow/contract
-stay byte equal2fdb; previous unexecuted v1 and read-only v2 saved-projection
-addition preserved. PR-body script parse failed before mutation; original actual
-error retained, corrected only formatting. No failed/unexecuted round counted.
-
-Single-file public delivery: actual HTTP200 whole2fdb HTML EOF12:51:31.614999Z,
+KEEP4 genuinely qualified on079538c51f1685fe8b4765c42f301fb6ee44863b:
+original run37933314761/artifact11617204820/full1443958B/
+SHA d1206d18428a1a3a63bc8f2c0288ec0302a10666b72843e3ecf91bd90494e608,
+whole accepted13:12:07.032288Z.60 main tests/four strict/25 mutation kills,
+original unchanged reader1034 source/module guards/3000 native intervals/
+66 controls/five complete VP8 decodes/all290 reception inputs unchanged.
+Whole public079 standalone file HTTP200/EOF13:12:59.510111Z:
 495059B/SHA234c7b430308269b610fea599042a9bdaec70f74745a308659da344b9f036a21;
-full physical bytes equal accepted standalone file/all5 inputs unchanged/natural
-empty/10223616B<64MiB60s. Current new source must also qualify via exact full.
-Full official2fdb/current corpus/reader/projections/publicHTML/helpers/oldhandoff
-in results/keep4-private-refusals-20261009/proof.zip; all fullCRC/physical reads.
+every physical byte equal/offline page/all5 inputs unchanged/natural closure.
+Final qualification/whole official/public file/source bridge/earlier handoff
+in results/final-followup-stop-20261009/proof.zip; full CRC/physical comparisons.
 
-NEXT: changed-head original full workflow/full decoded log/whole genuine official
-ZIP, unchanged reader all1034/3000/66/fiveclips, exact new-head public HTML EOF.
-KEEP4 measured player gain0 is prospective third no-gain; current completed3/
-streak2. Only after genuine new full can completed4/streak3 stop qualify.
-Then publish material final qualification/handoff/source proof once, await that
-final exact original full, and markPR18Ready; do not create proof-only push loops.
-No new native timing retries/gate/corpus/bot/clock changes. G10 remainsBLOCKED.
-If final checks fail, preserve actual failures and resolve actual cause; no Ready.
+Last pre-handoff source079 normalpush12:55:54.213448Z/readback12:55:54.913099Z,
+interval1393.359815s EARLY25/HARD30PASS. Own main refreshe2ae10696967fa2c4ed320acd52f74b3961c03df,
+row12:57:45Z/normalpush12:57:48.137792Z/readback12:57:48.662934Z,
+all foreign rows/tree equal/literalG10BLOCKED preserved/lease released.
+This single final STOP/completion handoff is binding delivery work. Its actual
+normal source publication/readback resets the window; private/public PR receipts
+record that exact new head.079 early13:20:54.213448Z/hard13:25:54.213448Z.
+Historical0ad EARLYmiss105.733498s/HARD30PASS remains disclosed.
+
+Completion gate for this final handoff commit: actual exact current branch HEAD
+original full workflow/whole decoded log/whole official ZIP/unchanged1034 guard
+reader/all3000 intervals/66 controls/five full clips AND exact-head public HTML
+full EOF/hash/physical bytes. Do not inherit079 acceptance onto the new head.
+PR18 remains Draft until those actual gates pass. Once PR18 is Ready and its
+latest exact-head workflow is green, final acceptance is in PR18 and official
+evidence; no remaining G04 player work, no source-after-Ready commit or merge.
+If Draft/checks pending, await and independently receive the genuine evidence.
+If a real check fails, preserve failure and resolve its cause before Ready.
+After Ready, continue the fresh serialized main queue; do not repeat completed
+rounds or alter the original samplers, clocks, bots, gates or reader inventory.
+G10 remains BLOCKED on actual public large-file upload authorization; game/runtime
+passes do not satisfy that delivery. Protect every G10 licensed byte.
+Only my reproducible f79/e32 Git-archive snapshots were removed after complete
+source equality; raw evidence/dependencies/Ready/G10 stayed. Initial dependency
+link-shape assumption failure and exact corrected cleanup receipt are preserved.

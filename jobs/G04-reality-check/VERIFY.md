@@ -745,3 +745,30 @@ five VP8 full decodes/all287 receipt guards. New source requires exact full agai
 Earlier unexecuted v1 preserved; v2 adds saved actual projections only. PR-body
 JS parse failure before all mutation is retained; corrected string formatting.
 Original job/rules remain binding; no local browser/frame/physical-phone claim.
+
+## Final qualified follow-up stop and delivery
+Complete exact helpers/arguments/outputs/source guards/physical inputs in
+results/final-followup-stop-20261009/proof.zip, full archive CRC/member byte reads.
+python /tmp/G04-079-whole-hosted-curl-20261009.py naturally CLOSED_PASS
+13:12:07.032288Z: genuine official artifact11617204820/run37933314761,
+1443958B SHA d1206d18428a1a3a63bc8f2c0288ec0302a10666b72843e3ecf91bd90494e608.
+Whole decoded original log60 main/four strict tests,25 mutation kills/all21
+thousand-game cohorts/replay/idle/added regressions. Unchanged original reader
+all1034 source/module guards/all3000 native intervals/66 browser controls/five
+full VP8 decode outputs pass.290 source/runtime/self inputs before==always-final;
+actualEXIT0/empty owned groups/no signals/peak84578304B<512MiB180s.
+python /tmp/G04-079-public-html-eof-20261009.py naturally CLOSED_PASS
+13:12:59.510111Z: public HTTP200/fullEOF/every byte physically equal accepted
+single file495059B SHA234c7b430308269b610fea599042a9bdaec70f74745a308659da344b9f036a21,
+all5 inputs unchanged/empty/no signals/peak10223616B<64MiB60s.
+Separate qualification records KEEP4 third no-gain/completed4/streak3/player STOP.
+The generic immutable reader's qualifiedKeepRounds0 means no classification by
+that reader, not absence of independently recorded qualified rounds.
+Final source publication commands, original-product/test bridge and checksum
+write/check are recorded by the exact archived final publisher. No test/product/
+page/catalog/strategy/sampler/dependency/workflow/performance-gate change.
+This completion source must genuinely pass its own whole original and exact-head
+public delivery before Ready. No current-head acceptance is inferred from079.
+Only reproducible f79/e32 snapshot copies were reclaimed after full source-byte
+checks; actual failed extra dependency-link-shape expectation preserved/corrected,
+no unique proof/raw/Ready/dependency/G10 files deleted. No browser/native replay.
