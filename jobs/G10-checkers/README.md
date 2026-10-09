@@ -43,7 +43,8 @@ Previous delivered full baseline:1,390,845,993bytes SHA-256:
 Artifacts expire after seven days and are not persistent Release assets.
 Tracked play.html is the older2–5-piece baseline. Rebuild the full current page
 with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough space.
-Startup remains the next measured player issue; renewed KEEP remains open.
+Private International startup output passed full raw/source-byte checks.
+Real browser/delivery/timing checks and renewed KEEP remain open.
 
 American data terms require Chinook/University of Alberta acknowledgement and
 prohibit database sale. Ed Gilbert permits International data distribution.

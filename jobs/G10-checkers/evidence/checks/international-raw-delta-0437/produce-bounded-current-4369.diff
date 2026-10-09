@@ -1,0 +1,13 @@
+--- fully-reviewed-unexecuted-1005.py
++++ actual-current-head-4369.py
+@@ -6,8 +6,8 @@
+ BASE=Path(__file__).resolve().parent
+ JOB=BASE.parent.parent
+ REPO=JOB.parent.parent
+-HEAD='474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f'
+-SPEC=BASE/'producer-spec.json'
++HEAD='4369bbdd1f71f34960893afd1ba456fee8e24ecd'
++SPEC=BASE/'producer-spec-current-4369.json'
+ NODE=JOB/'.work/memory-json-private/node22/runtime/bin/node'
+ HELPER=JOB/'.work/hosted-df-memory-parts-cd9/receive.py'
+ WALL_SECONDS=180

@@ -1,0 +1,65 @@
+{
+  "status": "CLOSED_GENERATED",
+  "startedAt": "2026-10-09T04:25:16.343896+00:00",
+  "closedAt": "2026-10-09T04:25:29.357771+00:00",
+  "head": "4369bbdd1f71f34960893afd1ba456fee8e24ecd",
+  "actualExitCode": 0,
+  "natural": true,
+  "closure": {
+    "actualRemainingGroup": [],
+    "groupSignals": [],
+    "reapedAdoptedDescendants": [
+      {
+        "pid": 270858,
+        "waitStatus": 0
+      }
+    ],
+    "actualExitCode": 0,
+    "natural": true
+  },
+  "rawOutput": {
+    "status": "GENERATED_FULL_RAW_UNADOPTED",
+    "startedAt": "2026-10-09T04:25:23.083Z",
+    "closedAt": "2026-10-09T04:25:26.002Z",
+    "outputBytes": 1390847100,
+    "outputSha256": "b85a8288345c8e0040d523e3998d31216aa61b6872c8e3bc76313944802dd1b2",
+    "canonicalCandidateBuilderSha256": "4d1ce03c9c546dac6d0763aca705f2555c638234f820f71dc5f93c1837c53885",
+    "originalProductionBuilderSha256": "37489e755e6ec672fd77b8b95a08afe50ce7e0c620554bccddb77ec46ec1f703",
+    "candidateBrowserSourceSha256": "bf8b12c6a389daa050f70f602e53480b506c0f4810288c24ebb6810a6aa477cf",
+    "bootstrapBytes": 12220760,
+    "bootstrapSha256": "72672a22c0ea636bbcfe0c69a9852a8bb8b6bb7bfc6f6823213b316cf6c07f64",
+    "bootstrapStart": 12092,
+    "signals": [
+      {
+        "name": "chinook",
+        "payloadStart": 12232862,
+        "afterCompletePayloadOffset": 48754224,
+        "compressedBytes": 27390965,
+        "compressedSha256": "3b8c99c4864bd22e1fb7e372d442537c8269bc9163c45325900423c7d13b0db4"
+      },
+      {
+        "name": "tunstall-v2",
+        "payloadStart": 48754305,
+        "afterCompletePayloadOffset": 48770771,
+        "compressedBytes": 12289,
+        "compressedSha256": "50d4192a888f9fb31dafec15c3ba2607a31f79b7b041df24eaa95da58cb1072c"
+      }
+    ],
+    "originalFiles": 41,
+    "originalParts": 1304,
+    "originalDataBytes": 1006478762,
+    "scope": "Actual canonical candidate compiler and original bounded full licensed-data writer through raw EOF/count/SHA; only private source overlay/output targets/hash sink/receipt added. No physical HTML or gzip allocated, no browser/game/timing/player gain/production adoption/KEEP acceptance. Independent complete source-byte delta comparison follows."
+  },
+  "memoryBefore": {
+    "maxBytes": 17179869184,
+    "currentBytes": 13919502336,
+    "headroomBytes": 3260366848
+  },
+  "memoryAfter": {
+    "maxBytes": 17179869184,
+    "currentBytes": 13987061760,
+    "headroomBytes": 3192807424
+  },
+  "maxChildRssBytes": 428171264,
+  "scope": "One actual finite full canonical private candidate raw EOF generation, all349/sixdocs/fullinstalledaliases/self/code/source/runtime frozen unchanged. No full HTML/gzip allocated, no native timing, game/FPS acceptance or production/playergain/KEEP adoption. Independent complete source-byte/delta comparison still required."
+}
