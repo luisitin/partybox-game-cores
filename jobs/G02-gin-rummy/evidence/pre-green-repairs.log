@@ -1,0 +1,21 @@
+{"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+✔ 10000 batch outcomes retain exact standalone layouts and independent minima (3623.694557ms)
+✔ actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs (9.479879ms)
+✔ actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes (9.671758ms)
+✔ winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting (4.431718ms)
+✔ aces low, set cardinality, runs and overlap (2.620854ms)
+✔ joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs (9.453369ms)
+✔ every score formula, tie undercut and spade whole-hand doubling (6.397728ms)
+✔ opening offers, forced stock, exact immediate-return restriction, stock draw boundary (22.717352ms)
+✔ Oklahoma limits / ace / spade configurations from all 52 initial upcards (24.343413ms)
+✔ pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end (3.327225ms)
+✔ all required roster settings, default sanitization, exact phase fixtures and manifest (127.846602ms)
+✔ same-timestamp turns cannot share timer instance identity (11.803281ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3780.739782

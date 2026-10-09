@@ -1,0 +1,49 @@
+{
+  "utc": "2026-10-08T19:45:38.218Z",
+  "scope": "current35-source-bound actual functional clips only; first local desktopFPS FAILED; phoneFPS NOTRUN",
+  "sourceMatched": true,
+  "guardedSources": 35,
+  "performanceMeasurement": false,
+  "rows": [
+    {
+      "path": "media/strict-reverify-1900-desktop.webm",
+      "bytes": 726815,
+      "sha256": "b63b3b2168a6366fe20bf2271b3b7fd5a1b56bf3455fccd8adbb9decca793483",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "14.000000"
+        }
+      },
+      "fullDecodeExit": 0
+    },
+    {
+      "path": "media/strict-reverify-1900-phone4x.webm",
+      "bytes": 546355,
+      "sha256": "0fbd0abba423959bb0002dd461699a592507d50781fa923bfcf8acf2069e036c",
+      "probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 844
+          }
+        ],
+        "format": {
+          "duration": "14.320000"
+        }
+      },
+      "fullDecodeExit": 0
+    }
+  ]
+}

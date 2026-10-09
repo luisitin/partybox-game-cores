@@ -1,0 +1,720 @@
+verify	Set up job	﻿2026-10-08T12:29:37.8143000Z Current runner version: '2.337.0'
+verify	Set up job	2026-10-08T12:29:37.8168203Z ##[group]Runner Image Provisioner
+verify	Set up job	2026-10-08T12:29:37.8169228Z Hosted Compute Agent
+verify	Set up job	2026-10-08T12:29:37.8169788Z Version: 20261002.596
+verify	Set up job	2026-10-08T12:29:37.8170365Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+verify	Set up job	2026-10-08T12:29:37.8171079Z Build Date: 2026-10-02T22:28:27Z
+verify	Set up job	2026-10-08T12:29:37.8171725Z Worker ID: {6d0605e6-f172-4e59-82bb-fde80c3ff548}
+verify	Set up job	2026-10-08T12:29:37.8172415Z Region: westus3
+verify	Set up job	2026-10-08T12:29:37.8172935Z Cloud: Azure
+verify	Set up job	2026-10-08T12:29:37.8173636Z ##[endgroup]
+verify	Set up job	2026-10-08T12:29:37.8175027Z ##[group]Operating System
+verify	Set up job	2026-10-08T12:29:37.8175603Z Ubuntu
+verify	Set up job	2026-10-08T12:29:37.8176153Z 24.04.5
+verify	Set up job	2026-10-08T12:29:37.8176630Z LTS
+verify	Set up job	2026-10-08T12:29:37.8177096Z ##[endgroup]
+verify	Set up job	2026-10-08T12:29:37.8177625Z ##[group]Runner Image
+verify	Set up job	2026-10-08T12:29:37.8178170Z Image: ubuntu-24.04
+verify	Set up job	2026-10-08T12:29:37.8178690Z Version: 20261004.327.1
+verify	Set up job	2026-10-08T12:29:37.8179682Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+verify	Set up job	2026-10-08T12:29:37.8181298Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+verify	Set up job	2026-10-08T12:29:37.8182186Z ##[endgroup]
+verify	Set up job	2026-10-08T12:29:37.8183393Z ##[group]GITHUB_TOKEN Permissions
+verify	Set up job	2026-10-08T12:29:37.8185252Z Contents: read
+verify	Set up job	2026-10-08T12:29:37.8185800Z Metadata: read
+verify	Set up job	2026-10-08T12:29:37.8186393Z ##[endgroup]
+verify	Set up job	2026-10-08T12:29:37.8188580Z Secret source: Actions
+verify	Set up job	2026-10-08T12:29:37.8189552Z Cache mode: write
+verify	Set up job	2026-10-08T12:29:37.8190198Z Prepare workflow directory
+verify	Set up job	2026-10-08T12:29:37.8624003Z Prepare all required actions
+verify	Set up job	2026-10-08T12:29:37.8673707Z Getting action download info
+verify	Set up job	2026-10-08T12:29:38.1863646Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+verify	Set up job	2026-10-08T12:29:38.2626098Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+verify	Set up job	2026-10-08T12:29:38.3368936Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify	Set up job	2026-10-08T12:29:38.5100180Z Complete job name: verify
+verify	Run actions/checkout@v4	﻿2026-10-08T12:29:38.5914407Z ##[group]Run actions/checkout@v4
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5915209Z with:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5915650Z   repository: luisitin/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5919164Z   token: ***
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5919561Z   ssh-strict: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5919974Z   ssh-user: git
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5920391Z   persist-credentials: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5920856Z   clean: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5921286Z   sparse-checkout-cone-mode: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5921790Z   fetch-depth: 1
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5922204Z   fetch-tags: false
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5922626Z   show-progress: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5923051Z   lfs: false
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5923563Z   submodules: false
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5924014Z   set-safe-directory: true
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5924496Z   allow-unsafe-pr-checkout: false
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.5925195Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6940005Z Syncing repository: luisitin/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6942965Z ##[group]Getting Git version info
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6944547Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6946618Z [command]/usr/bin/git version
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6964303Z git version 2.55.0
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.6984496Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7002055Z Temporarily overriding HOME='/home/runner/work/_temp/79f1edc0-064d-4615-8329-be835029d383' before making global git config changes
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7004215Z Adding repository directory to the temporary git global config as a safe directory
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7010461Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7054808Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7065080Z ##[group]Initializing the repository
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7070162Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7150610Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7152521Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7154479Z hint: to use in all of your new repositories, which will suppress this warning,
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7156376Z hint: call:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7157362Z hint:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7158398Z hint: 	git config --global init.defaultBranch <name>
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7159665Z hint:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7160828Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7162673Z hint: 'development'. The just-created branch can be renamed via this command:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7164301Z hint:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7165244Z hint: 	git branch -m <name>
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7166243Z hint:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7167550Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7170114Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7174422Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7205764Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7207116Z ##[group]Disabling automatic garbage collection
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7210484Z [command]/usr/bin/git config --local gc.auto 0
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7239558Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7240774Z ##[group]Setting up auth
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7247415Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7285278Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7590566Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7642679Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7859211Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.7894284Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.8083961Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.8118719Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.8119574Z ##[group]Fetching the repository
+verify	Run actions/checkout@v4	2026-10-08T12:29:38.8128065Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +8a8b3c49711efb2395162cda98e02c52a345c565:refs/remotes/pull/2/merge
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5802093Z From https://github.com/luisitin/partybox-game-cores
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5804325Z  * [new ref]         8a8b3c49711efb2395162cda98e02c52a345c565 -> pull/2/merge
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5810284Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5812584Z ##[group]Determining the checkout info
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5815631Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5817392Z [command]/usr/bin/git sparse-checkout disable
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5868683Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5899822Z ##[group]Checking out the ref
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.5903023Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/2/merge
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6827707Z Note: switching to 'refs/remotes/pull/2/merge'.
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6829698Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6831224Z You are in 'detached HEAD' state. You can look around, make experimental
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6833959Z changes and commit them, and you can discard any commits you make in this
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6836847Z state without impacting any branches by switching back to a branch.
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6838173Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6839255Z If you want to create a new branch to retain commits you create, you may
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6841667Z do so (now or later) by using -c with the switch command. Example:
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6842876Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6843654Z   git switch -c <new-branch-name>
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6844576Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6845228Z Or undo this operation with:
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6846450Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6847053Z   git switch -
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6848210Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6849400Z Turn off this advice by setting config variable advice.detachedHead to false
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6851067Z 
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6852908Z HEAD is now at 8a8b3c4 Merge 82b0301b75874bbe720983d47e6b7c1572576923 into 638b7cd193795ffd0cfd602d5883aca31a066d24
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6860169Z ##[endgroup]
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6876067Z [command]/usr/bin/git log -1 --format=%H
+verify	Run actions/checkout@v4	2026-10-08T12:29:40.6900296Z 8a8b3c49711efb2395162cda98e02c52a345c565
+verify	Run actions/setup-node@v4	﻿2026-10-08T12:29:40.7250794Z ##[group]Run actions/setup-node@v4
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7251954Z with:
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7252793Z   node-version: 22.16.0
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7253872Z   cache: npm
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7255025Z   cache-dependency-path: jobs/G02-gin-rummy/package-lock.json
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7256476Z   always-auth: false
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7257420Z   check-latest: false
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7266421Z   token: ***
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.7267286Z ##[endgroup]
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.8691740Z Attempting to download 22.16.0...
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.8796354Z (node:2231) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	Run actions/setup-node@v4	2026-10-08T12:29:40.8799194Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	Run actions/setup-node@v4	2026-10-08T12:29:41.9134816Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+verify	Run actions/setup-node@v4	2026-10-08T12:29:42.4581408Z Extracting ...
+verify	Run actions/setup-node@v4	2026-10-08T12:29:42.4680381Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/ca453dd2-f5d8-4344-af28-6443b01a8f0e -f /home/runner/work/_temp/2c11ac10-534d-4cfb-8c93-7a9bbafe663b
+verify	Run actions/setup-node@v4	2026-10-08T12:29:43.6007415Z Adding to the cache ...
+verify	Run actions/setup-node@v4	2026-10-08T12:29:44.9415943Z ##[group]Environment details
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.1591140Z node: v22.16.0
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.1591567Z npm: 10.9.2
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.1591759Z yarn: 1.22.22
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.1592258Z ##[endgroup]
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.1614015Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.2472254Z /home/runner/.npm
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.4612619Z Cache hit for: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+verify	Run actions/setup-node@v4	2026-10-08T12:29:45.4768145Z (node:2231) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify	Run actions/setup-node@v4	2026-10-08T12:29:46.6046985Z Received 12677163 of 12677163 (100.0%), 13.3 MBs/sec
+verify	Run actions/setup-node@v4	2026-10-08T12:29:46.6047633Z Cache Size: ~12 MB (12677163 B)
+verify	Run actions/setup-node@v4	2026-10-08T12:29:46.6175975Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4b6c930e-02d5-4774-8e72-e20af345d178/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+verify	Run actions/setup-node@v4	2026-10-08T12:29:46.7852159Z Cache restored successfully
+verify	Run actions/setup-node@v4	2026-10-08T12:29:46.7861151Z Cache restored from key: node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	﻿2026-10-08T12:29:46.8004127Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	2026-10-08T12:29:46.8004701Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	2026-10-08T12:29:46.8170754Z shell: /usr/bin/bash -e {0}
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	2026-10-08T12:29:46.8171099Z ##[endgroup]
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	2026-10-08T12:29:47.6756865Z 
+verify	Run npm ci --ignore-scripts --no-audit --no-fund	2026-10-08T12:29:47.6763924Z added 6 packages in 805ms
+verify	Run npx playwright install --with-deps chromium	﻿2026-10-08T12:29:47.7043660Z ##[group]Run npx playwright install --with-deps chromium
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:47.7044141Z [36;1mnpx playwright install --with-deps chromium[0m
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:47.7084773Z shell: /usr/bin/bash -e {0}
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:47.7085294Z ##[endgroup]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.4640785Z Installing dependencies...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.4694276Z Switching to root user to install dependencies...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5394523Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5714142Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5715507Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5755639Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5786909Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.5810378Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.6781114Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [475 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.6914287Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.6944935Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.6988297Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7172584Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7256755Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7304910Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7395036Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [341 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7417735Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7471646Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7500470Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.7534794Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.8087077Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1074 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.8143398Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [223 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.8638656Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1218 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.8694421Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:48.8714481Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [11.6 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:51.6629716Z Fetched 10.1 MB in 1s (9762 kB/s)
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.6031078Z Reading package lists...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.6328404Z Reading package lists...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.8391658Z Building dependency tree...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.8398116Z Reading state information...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9991445Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9992240Z libasound2t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9992961Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9994091Z libatk-bridge2.0-0t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9994924Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9995712Z libatk1.0-0t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9996608Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9997472Z libatspi2.0-0t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9998258Z libcairo2 is already the newest version (1.18.0-3build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9999205Z libcairo2 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:52.9999754Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0000404Z libcups2t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0001026Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0001507Z libdbus-1-3 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0001994Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0002460Z libdrm2 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0002920Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0003546Z libgbm1 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0004199Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.9).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0004682Z libglib2.0-0t64 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0005183Z libnspr4 is already the newest version (2:4.35-1.1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0005633Z libnspr4 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0006153Z libnss3 is already the newest version (2:3.98-1ubuntu0.2).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0006640Z libnss3 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0007117Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0007634Z libpango-1.0-0 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0008090Z libx11-6 is already the newest version (2:1.8.7-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0008517Z libx11-6 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0008949Z libxcb1 is already the newest version (1.15-1ubuntu2).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0009408Z libxcb1 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0009933Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0010428Z libxcomposite1 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0011010Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0011468Z libxdamage1 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0011923Z libxext6 is already the newest version (2:1.3.4-1build2).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0012353Z libxext6 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0012805Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0013257Z libxfixes3 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0013880Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0014345Z libxkbcommon0 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0014812Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0015262Z libxrandr2 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0015724Z xvfb is already the newest version (2:21.1.12-1ubuntu1.8).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0016342Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0016994Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0017471Z libfontconfig1 set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0017945Z fonts-liberation is already the newest version (1:2.1.5-3).
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0018416Z fonts-liberation set to manually installed.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0019007Z The following additional packages will be installed:
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0019420Z   xfonts-encodings xfonts-utils
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0019750Z Recommended packages:
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0020104Z   fonts-ipafont-mincho fonts-tlwg-loma
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0202825Z The following NEW packages will be installed:
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0203660Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0211550Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0212061Z   xfonts-utils
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0217503Z The following packages will be upgraded:
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0222612Z   libfreetype6
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0377241Z 1 upgraded, 9 newly installed, 0 to remove and 16 not upgraded.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0379194Z Need to get 21.5 MB of archives.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0379870Z After this operation, 79.5 MB of additional disk space will be used.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.0380641Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.1207532Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.2500449Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.3961219Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.4618403Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.5852048Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.8012649Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 libfreetype6 amd64 2.13.2+dfsg-1ubuntu0.2 [403 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.8732585Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:53.9479620Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.0140391Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.0849851Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3596292Z Fetched 21.5 MB in 1s (20.2 MB/s)
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3811006Z Selecting previously unselected package fonts-ipafont-gothic.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3985517Z (Reading database ... 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3985893Z (Reading database ... 5%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3986166Z (Reading database ... 10%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3986436Z (Reading database ... 15%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3986699Z (Reading database ... 20%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3986956Z (Reading database ... 25%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3987215Z (Reading database ... 30%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3987469Z (Reading database ... 35%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3987727Z (Reading database ... 40%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3987957Z (Reading database ... 45%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.3988195Z (Reading database ... 50%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.4030538Z (Reading database ... 55%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.4752763Z (Reading database ... 60%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.5406378Z (Reading database ... 65%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.7319190Z (Reading database ... 70%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:54.9170754Z (Reading database ... 75%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.0773544Z (Reading database ... 80%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.2644846Z (Reading database ... 85%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.4262594Z (Reading database ... 90%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.5778008Z (Reading database ... 95%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.5778684Z (Reading database ... 100%
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.5779259Z (Reading database ... 203191 files and directories currently installed.)
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.5823245Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.5905833Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.8181160Z Selecting previously unselected package fonts-freefont-ttf.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.8296545Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.8307104Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9033754Z Selecting previously unselected package fonts-tlwg-loma-otf.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9149726Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9158231Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9327099Z Selecting previously unselected package fonts-unifont.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9441545Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:55.9448087Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.0454655Z Selecting previously unselected package fonts-wqy-zenhei.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.0571432Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.0660565Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.5464551Z Preparing to unpack .../5-libfreetype6_2.13.2+dfsg-1ubuntu0.2_amd64.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.5493446Z Unpacking libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) over (2.13.2+dfsg-1ubuntu0.1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.5701512Z Selecting previously unselected package xfonts-encodings.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.5865885Z Preparing to unpack .../6-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.5894864Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6185351Z Selecting previously unselected package xfonts-utils.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6310960Z Preparing to unpack .../7-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6321287Z Unpacking xfonts-utils (1:7.7+6build3) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6632462Z Selecting previously unselected package xfonts-cyrillic.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6747618Z Preparing to unpack .../8-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6754089Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.6969101Z Selecting previously unselected package xfonts-scalable.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7081157Z Preparing to unpack .../9-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7088624Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7432770Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7534292Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7546676Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7559863Z Setting up libfreetype6:amd64 (2.13.2+dfsg-1ubuntu0.2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7573205Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7587013Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7636781Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7648168Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7659965Z Setting up xfonts-utils (1:7.7+6build3) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7692317Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.7921841Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.8133473Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.8350480Z Processing triggers for man-db (2.12.0-4build2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.8368448Z Not building database; man-db/auto-update is not 'true'.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:56.8381016Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.4690852Z 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.4691646Z Running kernel seems to be up-to-date.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.4691898Z 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.4692014Z Restarting services...
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.4759116Z  systemctl restart php8.3-fpm.service
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5582611Z 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5584150Z No containers need to be restarted.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5584596Z 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5594618Z No user sessions are running outdated binaries.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5595062Z 
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:57.5595507Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:58.5264802Z Downloading Chromium 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-linux.zip
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:58.7019378Z |                                                                                |   0% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:58.8565140Z |■■■■■■■■                                                                        |  10% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:58.9220910Z |■■■■■■■■■■■■■■■■                                                                |  20% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:58.9862434Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.0321022Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.0786548Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.1230123Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.1676838Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.2156632Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.2670278Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:29:59.3129489Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 173.9 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.5129556Z Chromium 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium-1194
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.5133054Z Downloading FFMPEG playwright build v1011 from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1011/ffmpeg-linux.zip
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.6786191Z |                                                                                |   0% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7035250Z |■■■■■■■■                                                                        |  10% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7127646Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7206831Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7278678Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7304647Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7370260Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7393772Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7405301Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7458066Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7473038Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7948954Z FFMPEG playwright build v1011 downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1011
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.7952576Z Downloading Chromium Headless Shell 141.0.7390.37 (playwright build v1194) from https://cdn.playwright.dev/dbazure/download/playwright/builds/chromium/1194/chromium-headless-shell-linux.zip
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:02.9479998Z |                                                                                |   0% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.0690934Z |■■■■■■■■                                                                        |  10% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.1158021Z |■■■■■■■■■■■■■■■■                                                                |  20% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.1580836Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.1910227Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.2291218Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.2572260Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.2867534Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.3174009Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.3463767Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:03.3818074Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 104.3 MiB
+verify	Run npx playwright install --with-deps chromium	2026-10-08T12:30:05.0477848Z Chromium Headless Shell 141.0.7390.37 (playwright build v1194) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1194
+verify	Run npm test	﻿2026-10-08T12:30:05.1217337Z ##[group]Run npm test
+verify	Run npm test	2026-10-08T12:30:05.1217621Z [36;1mnpm test[0m
+verify	Run npm test	2026-10-08T12:30:05.1254486Z shell: /usr/bin/bash -e {0}
+verify	Run npm test	2026-10-08T12:30:05.1254771Z ##[endgroup]
+verify	Run npm test	2026-10-08T12:30:05.2158505Z 
+verify	Run npm test	2026-10-08T12:30:05.2159129Z > partybox-g02-gin-rummy@1.2.1 test
+verify	Run npm test	2026-10-08T12:30:05.2160030Z > npm run build && node --test tests/*.test.mjs && node scripts/league.mjs && node scripts/mutations.mjs && node scripts/browser-check.mjs && node scripts/integrity.mjs
+verify	Run npm test	2026-10-08T12:30:05.2160578Z 
+verify	Run npm test	2026-10-08T12:30:05.3058151Z 
+verify	Run npm test	2026-10-08T12:30:05.3058818Z > partybox-g02-gin-rummy@1.2.1 build
+verify	Run npm test	2026-10-08T12:30:05.3059330Z > tsc --noEmit && node scripts/build.mjs
+verify	Run npm test	2026-10-08T12:30:05.3059542Z 
+verify	Run npm test	2026-10-08T12:30:07.2457933Z TAP version 13
+verify	Run npm test	2026-10-08T12:30:07.3964669Z # {"suite":"all-phases","phases":6,"cases":408}
+verify	Run npm test	2026-10-08T12:30:07.4009656Z # Subtest: every event family, roster id and bot skill in every delivered phase
+verify	Run npm test	2026-10-08T12:30:07.4017319Z ok 1 - every event family, roster id and bot skill in every delivered phase
+verify	Run npm test	2026-10-08T12:30:07.4034256Z   ---
+verify	Run npm test	2026-10-08T12:30:07.4074157Z   duration_ms: 40.529984
+verify	Run npm test	2026-10-08T12:30:07.4081801Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:07.4084318Z   ...
+verify	Run npm test	2026-10-08T12:30:07.4086381Z # Subtest: registered prototype-looking ids remain valid players and finite result keys
+verify	Run npm test	2026-10-08T12:30:07.4087650Z ok 2 - registered prototype-looking ids remain valid players and finite result keys
+verify	Run npm test	2026-10-08T12:30:07.4088392Z   ---
+verify	Run npm test	2026-10-08T12:30:07.4088747Z   duration_ms: 2.289949
+verify	Run npm test	2026-10-08T12:30:07.4089141Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:07.4089481Z   ...
+verify	Run npm test	2026-10-08T12:30:13.3169275Z # {"suite":"batch-discard-proof","hands":1000,"outcomes":10500,"exactLayouts":true}
+verify	Run npm test	2026-10-08T12:30:13.3259599Z # Subtest: 10500 batch outcomes retain exact standalone layouts and independent minima
+verify	Run npm test	2026-10-08T12:30:13.3261371Z ok 3 - 10500 batch outcomes retain exact standalone layouts and independent minima
+verify	Run npm test	2026-10-08T12:30:13.3262283Z   ---
+verify	Run npm test	2026-10-08T12:30:13.3263226Z   duration_ms: 5968.634193
+verify	Run npm test	2026-10-08T12:30:13.3264078Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:13.3264623Z   ...
+verify	Run npm test	2026-10-08T12:30:18.1114547Z # {"suite":"boundary-fuzz","seed":912701,"invalidInputs":1000,"phases":6,"rejectedInputs":6000,"metadataChecks":282,"viewChecks":66}
+verify	Run npm test	2026-10-08T12:30:18.1116582Z # Subtest: 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase
+verify	Run npm test	2026-10-08T12:30:18.1118112Z ok 4 - 1000 seeded invalid JSON inputs and malformed event/identity metadata in every phase
+verify	Run npm test	2026-10-08T12:30:18.1119015Z   ---
+verify	Run npm test	2026-10-08T12:30:18.1119552Z   duration_ms: 52.017815
+verify	Run npm test	2026-10-08T12:30:18.1120141Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:18.1120665Z   ...
+verify	Run npm test	2026-10-08T12:30:18.1122283Z # {"suite":"mixed-event-replay","phaseStarts":6,"seedsPerPhase":100,"transitions":48000,"changed":12742,"eventFamilies":["input","player","speech","speechStart","timer","vip"]}
+verify	Run npm test	2026-10-08T12:30:18.1124411Z # Subtest: mixed event families replay through JSON after every transition from every phase
+verify	Run npm test	2026-10-08T12:30:18.1125866Z ok 5 - mixed event families replay through JSON after every transition from every phase
+verify	Run npm test	2026-10-08T12:30:18.1126804Z   ---
+verify	Run npm test	2026-10-08T12:30:18.1127292Z   duration_ms: 10729.447003
+verify	Run npm test	2026-10-08T12:30:18.1127872Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:18.1128367Z   ...
+verify	Run npm test	2026-10-08T12:30:18.1290969Z # Subtest: branching target ends retain exact minima, legal chains, layouts and all cards
+verify	Run npm test	2026-10-08T12:30:18.1292395Z ok 6 - branching target ends retain exact minima, legal chains, layouts and all cards
+verify	Run npm test	2026-10-08T12:30:18.1299318Z   ---
+verify	Run npm test	2026-10-08T12:30:18.1300004Z   duration_ms: 31.265162
+verify	Run npm test	2026-10-08T12:30:18.1303134Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:18.1304550Z   ...
+verify	Run npm test	2026-10-08T12:30:18.1305870Z # Subtest: meld validation rejects impossible card IDs while preserving legitimate edge runs/sets
+verify	Run npm test	2026-10-08T12:30:18.1307517Z ok 7 - meld validation rejects impossible card IDs while preserving legitimate edge runs/sets
+verify	Run npm test	2026-10-08T12:30:18.1308683Z   ---
+verify	Run npm test	2026-10-08T12:30:18.1309280Z   duration_ms: 0.974756
+verify	Run npm test	2026-10-08T12:30:18.1310117Z   type: 'test'
+verify	Run npm test	2026-10-08T12:30:18.1311288Z   ...
+verify	Run npm test	2026-10-08T12:30:43.8473004Z # {"suite":"bot-contract","variant":"standard","players":2,"games":1000,"replays":1000,"totalEvents":261181,"maxEvents":612,"replayChecks":261181,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:31:15.5333167Z # {"suite":"bot-contract","variant":"standard","players":3,"games":1000,"replays":1000,"totalEvents":286246,"maxEvents":775,"replayChecks":286246,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:31:54.9035481Z # {"suite":"bot-contract","variant":"standard","players":4,"games":1000,"replays":1000,"totalEvents":343987,"maxEvents":825,"replayChecks":343987,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:32:24.1625185Z # {"suite":"bot-contract","variant":"oklahoma","players":2,"games":1000,"replays":1000,"totalEvents":258472,"maxEvents":755,"replayChecks":258472,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:32:55.5260916Z # {"suite":"bot-contract","variant":"oklahoma","players":3,"games":1000,"replays":1000,"totalEvents":269750,"maxEvents":812,"replayChecks":269750,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:33:33.0380431Z # {"suite":"bot-contract","variant":"oklahoma","players":4,"games":1000,"replays":1000,"totalEvents":317252,"maxEvents":929,"replayChecks":317252,"comparison":"every-event SHA256 and bytes; JSON-roundtrip replay"}
+verify	Run npm test	2026-10-08T12:33:46.1346974Z # {"suite":"properties","seeds":1003,"events":420546}
+verify	Run npm test	2026-10-08T12:33:50.0601032Z # {"suite":"secrecy","comparisons":7925}
+verify	Run npm test	2026-10-08T12:33:50.0881411Z # Subtest: 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event
+verify	Run npm test	2026-10-08T12:33:50.0883463Z ok 8 - 1000 finished seeded bot games at EACH valid count/edition, hash replay after EVERY event
+verify	Run npm test	2026-10-08T12:33:50.0885610Z   ---
+verify	Run npm test	2026-10-08T12:33:50.0918827Z   duration_ms: 205259.326915
+verify	Run npm test	2026-10-08T12:33:50.0944230Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.0950164Z   ...
+verify	Run npm test	2026-10-08T12:33:50.0950850Z # Subtest: property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+verify	Run npm test	2026-10-08T12:33:50.0951933Z ok 9 - property seeds 1,2,3 plus 1000 random seeds: adversarial event sequences and immutability
+verify	Run npm test	2026-10-08T12:33:50.0952481Z   ---
+verify	Run npm test	2026-10-08T12:33:50.0952791Z   duration_ms: 13095.649679
+verify	Run npm test	2026-10-08T12:33:50.0953170Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.0953611Z   ...
+verify	Run npm test	2026-10-08T12:33:50.0954159Z # Subtest: hidden-card/order perturbations never change TV, another controller or bot decisions
+verify	Run npm test	2026-10-08T12:33:50.0955032Z ok 10 - hidden-card/order perturbations never change TV, another controller or bot decisions
+verify	Run npm test	2026-10-08T12:33:50.0955440Z   ---
+verify	Run npm test	2026-10-08T12:33:50.0955634Z   duration_ms: 3925.288184
+verify	Run npm test	2026-10-08T12:33:50.0955872Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.0956060Z   ...
+verify	Run npm test	2026-10-08T12:33:50.0956471Z # Subtest: idle/no-clock matches remain until explicit end, every phase can exit via VIP
+verify	Run npm test	2026-10-08T12:33:50.0957109Z ok 11 - idle/no-clock matches remain until explicit end, every phase can exit via VIP
+verify	Run npm test	2026-10-08T12:33:50.0957500Z   ---
+verify	Run npm test	2026-10-08T12:33:50.0957691Z   duration_ms: 25.737254
+verify	Run npm test	2026-10-08T12:33:50.0957911Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.0958107Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1115824Z # {"suite":"departures","initialCases":1000,"completeMatches":120,"events":17184,"maxAutomatedTransitions":75}
+verify	Run npm test	2026-10-08T12:33:50.1117659Z # Subtest: departures in every live phase finish the absent turn without exposing its hand
+verify	Run npm test	2026-10-08T12:33:50.1118957Z ok 12 - departures in every live phase finish the absent turn without exposing its hand
+verify	Run npm test	2026-10-08T12:33:50.1119606Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1119996Z   duration_ms: 23.439607
+verify	Run npm test	2026-10-08T12:33:50.1120419Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1120779Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1121663Z # Subtest: 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+verify	Run npm test	2026-10-08T12:33:50.1123009Z ok 13 - 1000 departure/drop cases and 120 full matches never leave an absent seat blocking play
+verify	Run npm test	2026-10-08T12:33:50.1124461Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1124822Z   duration_ms: 5836.880799
+verify	Run npm test	2026-10-08T12:33:50.1125185Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1125509Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1126395Z # Subtest: empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+verify	Run npm test	2026-10-08T12:33:50.1127848Z ok 14 - empty rooms pause, reconnect resumes only an automatic pause, and permanent leaves cannot rejoin
+verify	Run npm test	2026-10-08T12:33:50.1128658Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1129004Z   duration_ms: 1.677298
+verify	Run npm test	2026-10-08T12:33:50.1129423Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1129770Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1130597Z # Subtest: departures during VIP pause drain only on resume; malformed control events do nothing
+verify	Run npm test	2026-10-08T12:33:50.1131939Z ok 15 - departures during VIP pause drain only on resume; malformed control events do nothing
+verify	Run npm test	2026-10-08T12:33:50.1132716Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1133074Z   duration_ms: 0.677186
+verify	Run npm test	2026-10-08T12:33:50.1133659Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1133996Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1134945Z # {"suite":"deadwood-proof","hands":10000,"tenCard":5000,"elevenCard":5000,"seed":20261008,"checksum":584788}
+verify	Run npm test	2026-10-08T12:33:50.1136197Z # Subtest: independent exhaustive meld-subset packing proves 10000 exact minima
+verify	Run npm test	2026-10-08T12:33:50.1137283Z ok 16 - independent exhaustive meld-subset packing proves 10000 exact minima
+verify	Run npm test	2026-10-08T12:33:50.1137965Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1138333Z   duration_ms: 10380.596775
+verify	Run npm test	2026-10-08T12:33:50.1138754Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1139099Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1140029Z # Subtest: actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+verify	Run npm test	2026-10-08T12:33:50.1141495Z ok 17 - actual Big Gin reducer keeps eleven cards, rejects disabled/incomplete claims and prevents layoffs
+verify	Run npm test	2026-10-08T12:33:50.1142336Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1142673Z   duration_ms: 7.343592
+verify	Run npm test	2026-10-08T12:33:50.1143084Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1144355Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1145302Z # Subtest: actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+verify	Run npm test	2026-10-08T12:33:50.1146755Z ok 18 - actual Gin/normal knock phases, custom layout rejection, match completion and Oklahoma boxes
+verify	Run npm test	2026-10-08T12:33:50.1147597Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1148081Z   duration_ms: 4.12154
+verify	Run npm test	2026-10-08T12:33:50.1148476Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1148830Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1149717Z # Subtest: winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+verify	Run npm test	2026-10-08T12:33:50.1151088Z ok 19 - winner-stays queue for every rotation size, drawn hand retains seats, each dealer setting
+verify	Run npm test	2026-10-08T12:33:50.1151866Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1152217Z   duration_ms: 1.80959
+verify	Run npm test	2026-10-08T12:33:50.1152605Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1152908Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1154006Z # {"suite":"joint-layoff-proof","hands":2000,"twoTarget":1000,"threeTarget":1000,"seed":816777,"checksum":102460,"actualLaidCards":1534}
+verify	Run npm test	2026-10-08T12:33:50.1155375Z # Subtest: 2000 independent joint meld/layoff weighted packings including chained extensions
+verify	Run npm test	2026-10-08T12:33:50.1156632Z ok 20 - 2000 independent joint meld/layoff weighted packings including chained extensions
+verify	Run npm test	2026-10-08T12:33:50.1157335Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1157659Z   duration_ms: 5870.2804
+verify	Run npm test	2026-10-08T12:33:50.1158190Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1158541Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1159438Z # {"suite":"opening-pass-attribution","directPassCases":360,"editions":2,"counts":[2,3,4]}
+verify	Run npm test	2026-10-08T12:33:50.1160663Z # {"suite":"pass-valid-ids","cases":240,"ids":["","__proto__","constructor","last"]}
+verify	Run npm test	2026-10-08T12:33:50.1161727Z # {"suite":"automatic-pass-attribution","routes":["timer","vip","player"]}
+verify	Run npm test	2026-10-08T12:33:50.1162923Z # Subtest: both opening passes identify their actual actors across counts, editions and seeds
+verify	Run npm test	2026-10-08T12:33:50.1164624Z ok 21 - both opening passes identify their actual actors across counts, editions and seeds
+verify	Run npm test	2026-10-08T12:33:50.1165399Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1165713Z   duration_ms: 88.578283
+verify	Run npm test	2026-10-08T12:33:50.1166561Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1166878Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1167546Z # Subtest: empty and prototype-shaped original IDs retain pass attribution as own keys
+verify	Run npm test	2026-10-08T12:33:50.1168639Z ok 22 - empty and prototype-shaped original IDs retain pass attribution as own keys
+verify	Run npm test	2026-10-08T12:33:50.1169274Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1169587Z   duration_ms: 38.123676
+verify	Run npm test	2026-10-08T12:33:50.1169980Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1170306Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1170978Z # Subtest: timer, VIP skip and absent-seat automation identify the automatic passer
+verify	Run npm test	2026-10-08T12:33:50.1172009Z ok 23 - timer, VIP skip and absent-seat automation identify the automatic passer
+verify	Run npm test	2026-10-08T12:33:50.1172629Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1172945Z   duration_ms: 1.606835
+verify	Run npm test	2026-10-08T12:33:50.1173268Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1173863Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1174663Z # Subtest: first raw target winner keeps the crown even when final box settlement reverses points
+verify	Run npm test	2026-10-08T12:33:50.1175844Z ok 24 - first raw target winner keeps the crown even when final box settlement reverses points
+verify	Run npm test	2026-10-08T12:33:50.1176564Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1176898Z   duration_ms: 7.537154
+verify	Run npm test	2026-10-08T12:33:50.1177265Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1177595Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1178331Z # Subtest: every valid string ID, including empty, wins, earns bonuses and stays in rotation
+verify	Run npm test	2026-10-08T12:33:50.1179313Z ok 25 - every valid string ID, including empty, wins, earns bonuses and stays in rotation
+verify	Run npm test	2026-10-08T12:33:50.1180076Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1180359Z   duration_ms: 12.006482
+verify	Run npm test	2026-10-08T12:33:50.1180703Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1180988Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1181716Z # Subtest: malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+verify	Run npm test	2026-10-08T12:33:50.1182827Z ok 26 - malformed identity metadata cannot coerce a registered ID, throw or reveal a hand
+verify	Run npm test	2026-10-08T12:33:50.1183567Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1184115Z   duration_ms: 1.891518
+verify	Run npm test	2026-10-08T12:33:50.1184442Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1184824Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1185475Z # Subtest: early end preserves earned raw points and reports current standings
+verify	Run npm test	2026-10-08T12:33:50.1186322Z ok 27 - early end preserves earned raw points and reports current standings
+verify	Run npm test	2026-10-08T12:33:50.1186929Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1187273Z   duration_ms: 0.727473
+verify	Run npm test	2026-10-08T12:33:50.1187640Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1187942Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1188479Z # Subtest: aces low, set cardinality, runs and overlap
+verify	Run npm test	2026-10-08T12:33:50.1189161Z ok 28 - aces low, set cardinality, runs and overlap
+verify	Run npm test	2026-10-08T12:33:50.1189639Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1189960Z   duration_ms: 1.589314
+verify	Run npm test	2026-10-08T12:33:50.1190329Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1190620Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1191397Z # Subtest: joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+verify	Run npm test	2026-10-08T12:33:50.1192555Z ok 29 - joint meld/layoff optimizer finds chains and forbids gin/deadwood/four-card layoffs
+verify	Run npm test	2026-10-08T12:33:50.1193502Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1193795Z   duration_ms: 2.934692
+verify	Run npm test	2026-10-08T12:33:50.1194185Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1194471Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1195138Z # Subtest: every score formula, tie undercut and spade whole-hand doubling
+verify	Run npm test	2026-10-08T12:33:50.1196081Z ok 30 - every score formula, tie undercut and spade whole-hand doubling
+verify	Run npm test	2026-10-08T12:33:50.1196718Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1197007Z   duration_ms: 1.731031
+verify	Run npm test	2026-10-08T12:33:50.1197405Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1197695Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1198504Z # Subtest: opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+verify	Run npm test	2026-10-08T12:33:50.1199718Z ok 31 - opening offers, forced stock, exact immediate-return restriction, stock draw boundary
+verify	Run npm test	2026-10-08T12:33:50.1200446Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1200807Z   duration_ms: 15.336712
+verify	Run npm test	2026-10-08T12:33:50.1201196Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1201491Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1202207Z # Subtest: Oklahoma limits / ace / spade configurations from all 52 initial upcards
+verify	Run npm test	2026-10-08T12:33:50.1203524Z ok 32 - Oklahoma limits / ace / spade configurations from all 52 initial upcards
+verify	Run npm test	2026-10-08T12:33:50.1204125Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1204328Z   duration_ms: 26.65068
+verify	Run npm test	2026-10-08T12:33:50.1204542Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1204740Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1205477Z # Subtest: pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+verify	Run npm test	2026-10-08T12:33:50.1206159Z ok 33 - pause, resume, stale/early timer, spectators, malformed input, late leaver, explicit end
+verify	Run npm test	2026-10-08T12:33:50.1206587Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1206787Z   duration_ms: 1.738952
+verify	Run npm test	2026-10-08T12:33:50.1207001Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1207193Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1207634Z # Subtest: all required roster settings, default sanitization, exact phase fixtures and manifest
+verify	Run npm test	2026-10-08T12:33:50.1208291Z ok 34 - all required roster settings, default sanitization, exact phase fixtures and manifest
+verify	Run npm test	2026-10-08T12:33:50.1208695Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1208897Z   duration_ms: 84.898536
+verify	Run npm test	2026-10-08T12:33:50.1209110Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1209292Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1209624Z # Subtest: same-timestamp turns cannot share timer instance identity
+verify	Run npm test	2026-10-08T12:33:50.1210112Z ok 35 - same-timestamp turns cannot share timer instance identity
+verify	Run npm test	2026-10-08T12:33:50.1210422Z   ---
+verify	Run npm test	2026-10-08T12:33:50.1210601Z   duration_ms: 7.89227
+verify	Run npm test	2026-10-08T12:33:50.1210816Z   type: 'test'
+verify	Run npm test	2026-10-08T12:33:50.1211002Z   ...
+verify	Run npm test	2026-10-08T12:33:50.1211176Z 1..35
+verify	Run npm test	2026-10-08T12:33:50.1211356Z # tests 35
+verify	Run npm test	2026-10-08T12:33:50.1211535Z # suites 0
+verify	Run npm test	2026-10-08T12:33:50.1211715Z # pass 35
+verify	Run npm test	2026-10-08T12:33:50.1211896Z # fail 0
+verify	Run npm test	2026-10-08T12:33:50.1212086Z # cancelled 0
+verify	Run npm test	2026-10-08T12:33:50.1212282Z # skipped 0
+verify	Run npm test	2026-10-08T12:33:50.1212465Z # todo 0
+verify	Run npm test	2026-10-08T12:33:50.1212669Z # duration_ms 222889.128265
+verify	Run npm test	2026-10-08T12:34:13.7826315Z {"stronger":"sharp","weaker":"normal","games":2000,"wins":1152,"losses":848,"ties":0,"winRate":0.576,"wilsonLower":0.5542157372425242,"events":527438,"pairedSeeds":true}
+verify	Run npm test	2026-10-08T12:34:35.2934579Z {"stronger":"normal","weaker":"easy","games":2000,"wins":1743,"losses":257,"ties":0,"winRate":0.8715,"wilsonLower":0.8561180625080238,"events":490034,"pairedSeeds":true}
+verify	Run npm test	2026-10-08T12:34:35.9080287Z M01 caught wrong rank
+verify	Run npm test	2026-10-08T12:34:36.1807465Z M02 caught wrong suit
+verify	Run npm test	2026-10-08T12:34:36.4508260Z M03 caught wrong face value
+verify	Run npm test	2026-10-08T12:34:36.7587798Z M04 caught reject three-card meld
+verify	Run npm test	2026-10-08T12:34:37.0629199Z M05 caught reject four-card set
+verify	Run npm test	2026-10-08T12:34:37.3617201Z M06 caught off-by-one run
+verify	Run npm test	2026-10-08T12:34:37.6699011Z M07 caught omit three-card candidate runs
+verify	Run npm test	2026-10-08T12:34:37.9673981Z M08 caught omit three-of-kind candidates
+verify	Run npm test	2026-10-08T12:34:38.2617924Z M09 caught maximize instead of minimize
+verify	Run npm test	2026-10-08T12:34:38.5596722Z M10 caught invert Gin layoff prohibition
+verify	Run npm test	2026-10-08T12:34:38.8568515Z M11 caught omit layoffs
+verify	Run npm test	2026-10-08T12:34:39.1545052Z M12 caught allow discard after two opening passes
+verify	Run npm test	2026-10-08T12:34:39.4486980Z M13 caught allow opening stock draw
+verify	Run npm test	2026-10-08T12:34:39.7393685Z M14 caught allow immediate returned upcard
+verify	Run npm test	2026-10-08T12:34:40.0364681Z M15 caught continue past two stock cards
+verify	Run npm test	2026-10-08T12:34:40.3330609Z M16 caught deny tie undercut
+verify	Run npm test	2026-10-08T12:34:40.6400189Z M17 caught subtract opponent Gin deadwood
+verify	Run npm test	2026-10-08T12:34:40.9350689Z M18 caught Big Gin wrong bonus
+verify	Run npm test	2026-10-08T12:34:41.2342658Z M19 caught reverse undercut difference
+verify	Run npm test	2026-10-08T12:34:41.5338295Z M20 caught wrong knock difference
+verify	Run npm test	2026-10-08T12:34:41.8202472Z M21 caught ignore double Big Gin
+verify	Run npm test	2026-10-08T12:34:42.0957805Z M22 caught Oklahoma ace wrong limit
+verify	Run npm test	2026-10-08T12:34:42.3732347Z M23 caught double hearts instead of spades
+verify	Run npm test	2026-10-08T12:34:42.6705775Z M24 caught accept stale timer
+verify	Run npm test	2026-10-08T12:34:42.9666724Z M25 caught resume omits pause duration
+verify	Run npm test	2026-10-08T12:34:43.2707650Z M26 caught attribute opening Pass to next player
+verify	Run npm test	2026-10-08T12:34:43.6167227Z {"kind":"full browser proof","started":"2026-10-08T12:34:43.615Z","pid":3898,"sourceStart":{"play.html":"a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f","src/core.ts":"59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf","src/cards.ts":"e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9","src/browser.ts":"56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4","src/play.template.html":"1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"}}
+verify	Run npm test	2026-10-08T12:34:54.4990725Z {"label":"desktop","fps":60.00180005400161,"meanMs":16.66616666666667,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+verify	Run npm test	2026-10-08T12:35:05.5672894Z {"label":"phone4x","fps":60.00180005400161,"meanMs":16.66616666666667,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"networkRequests":0,"pageErrors":0}
+verify	Run npm test	2026-10-08T12:35:05.8410331Z {"kind":"synthetic delayed-host-callback and pause regression","elapsedMs":20000,"configuredTurnMs":10000,"firstExpiredCallbackCount":1,"actionsBefore":0,"actionsAfter":1,"deadlineAdvancedOnElapsedTime":true,"visibleCountdown":true,"pausePreservesRemainingTime":true,"entropyCalls":1,"controlledTestSeed":7199}
+verify	Run npm test	2026-10-08T12:35:08.1218969Z {"customMeldRegression":[{"label":"desktop","cpuThrottle":1,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"},{"label":"phone4x","cpuThrottle":4,"namedCardControls":10,"privateDraftCleared":true,"invalidGroupsPreventKnock":true,"closedControlsRestoreAutomaticKnock":true,"revealShowsDeclaredLayout":true,"defenderResolvedDeadwood":0,"undercutPoints":11,"pageErrors":0,"networkRequests":0,"fixture":"initial state only; production reducer, solver and renderer"}]}
+verify	Run npm test	2026-10-08T12:35:09.0667373Z {"resultsRegression":[{"label":"desktop","cpuThrottle":1,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"},{"label":"phone4x","cpuThrottle":4,"targetWinner":"p0","displayedWinner":"Target winner","finalPoints":{"p0":388,"p1":499},"explanationVisible":true,"pageErrors":0,"fixture":"initial state only; production reducer and renderer"}]}
+verify	Run npm test	2026-10-08T12:35:09.6746617Z {"payload":"<svg onload=alert(1)>","renderedAsText":true,"insertedMarkupNodes":0,"dialogs":0,"pageErrors":0,"networkRequests":0,"cpuThrottle":4}
+verify	Run npm test	2026-10-08T12:35:11.8389536Z {"runId":"2026-10-08T12-34-43-615Z","passed":true,"sourceUnchanged":true,"extraHostChecks":5,"rows":[{"label":"desktop","fps":60.00180005400161,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true},{"label":"phone4x","fps":60.00180005400161,"p99Ms":16.800000000000182,"maxMs":16.80000000000109,"frameGatePassed":true}]}
+verify	Run npm test	2026-10-08T12:35:12.2857549Z {"suite":"integrity","fileHashes":271,"regenerationRuns":2,"byteIdentical":true,"coreNoIo":true,"mediaUnder10MB":true}
+verify	Run actions/upload-artifact@v4	﻿2026-10-08T12:35:12.3000593Z ##[group]Run actions/upload-artifact@v4
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3000910Z with:
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3001124Z   name: G02-browser-evidence
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3002102Z   path: jobs/G02-gin-rummy/.work/browser/*-frames.json
+verify	Run actions/upload-artifact@v4	jobs/G02-gin-rummy/.work/browser/report.json
+verify	Run actions/upload-artifact@v4	jobs/G02-gin-rummy/.work/clock-after.json
+verify	Run actions/upload-artifact@v4	jobs/G02-gin-rummy/.work/custom-meld-after.json
+verify	Run actions/upload-artifact@v4	jobs/G02-gin-rummy/.work/results-after.json
+verify	Run actions/upload-artifact@v4	jobs/G02-gin-rummy/.work/name-check.json
+verify	Run actions/upload-artifact@v4	
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3003111Z   include-hidden-files: true
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3003685Z   if-no-files-found: warn
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3003920Z   compression-level: 6
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3004143Z   overwrite: false
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.3004347Z ##[endgroup]
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4634315Z (node:4129) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4635625Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4723268Z Multiple search paths detected. Calculating the least common ancestor of all paths
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4727353Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G02-gin-rummy/.work. This will be the root directory of the artifact
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4728352Z With the provided path, there will be 7 files uploaded
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4733185Z Artifact name is valid!
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.4734330Z Root directory input is valid!
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.9493539Z Beginning upload of artifact content to blob storage
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:12.9760990Z (node:4129) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.1921158Z Uploaded bytes 5663
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.2617823Z Finished uploading artifact content to blob storage!
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.2619112Z SHA256 digest of uploaded artifact zip is db53e21fbbbff59d2eb5f7a2f8bff0a344f673dbdfbd70e65968b348888c8c5b
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.2620643Z Finalizing artifact upload
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.5179340Z Artifact G02-browser-evidence.zip successfully finalized. Artifact ID 11551086328
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.5181500Z Artifact G02-browser-evidence has been successfully uploaded! Final size is 5663 bytes. Artifact ID is 11551086328
+verify	Run actions/upload-artifact@v4	2026-10-08T12:35:13.5187559Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37777230686/artifacts/11551086328
+verify	Post Run actions/setup-node@v4	﻿2026-10-08T12:35:13.5372268Z Post job cleanup.
+verify	Post Run actions/setup-node@v4	2026-10-08T12:35:13.6596581Z (node:4142) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify	Post Run actions/setup-node@v4	2026-10-08T12:35:13.6597382Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify	Post Run actions/setup-node@v4	2026-10-08T12:35:13.6600383Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-d48b0073b1be2df746cbb2cab1dca64dc5674a863aed54a4ee7f428aad681317, not saving cache.
+verify	Post Run actions/checkout@v4	﻿2026-10-08T12:35:13.6740628Z Post job cleanup.
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7615512Z [command]/usr/bin/git version
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7654390Z git version 2.55.0
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7692227Z Temporarily overriding HOME='/home/runner/work/_temp/50ff0344-4f7e-411e-b127-69323cb1d7c7' before making global git config changes
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7693935Z Adding repository directory to the temporary git global config as a safe directory
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7698923Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7737631Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7770231Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7974195Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.7999542Z http.https://github.com/.extraheader
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.8010286Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.8044201Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.8267214Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify	Post Run actions/checkout@v4	2026-10-08T12:35:13.8330910Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify	Complete job	﻿2026-10-08T12:35:13.8692356Z Cleaning up orphan processes
+verify	Complete job	2026-10-08T12:35:13.8954907Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

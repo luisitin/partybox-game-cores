@@ -1,0 +1,15 @@
+{
+  "recordedAt": "2026-10-08T03:05:01.344223+00:00",
+  "version": "1.2.0",
+  "fullCommand": "npm test",
+  "fullExitCode": 1,
+  "fullFailure": "desktop58.3809FPS after all24 tests, both2000-game leagues and25/25 mutants passed",
+  "freshStandaloneBrowserCommand": "node scripts/browser-check.mjs --capture",
+  "freshStandaloneBrowserExitCode": 0,
+  "freshDesktopFps": 59.67180507210342,
+  "freshPhone4xFps": 60.00200006666889,
+  "sameCodeComparison": "both1.1.0/1.2.0 at both viewports60.002\u201360.004FPS; page handler max2.1ms on4x for1.2.0",
+  "failureCause": "not established; failed runs retained",
+  "currentHostedCi": "not yet run",
+  "observableGain": "absent turns no longer block the remaining player"
+}

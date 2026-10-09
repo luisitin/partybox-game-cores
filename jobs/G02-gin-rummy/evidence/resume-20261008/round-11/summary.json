@@ -1,0 +1,32 @@
+{
+  "round": 11,
+  "parentHead": "82b0301b75874bbe720983d47e6b7c1572576923",
+  "parentExactCi": 37777230686,
+  "parentCiConclusion": "success",
+  "parentCiLogActuallyRead": true,
+  "parentArtifactContentsRead": false,
+  "productionSourcesUnchanged": {
+    "play.html": "a5a56d6a6926ff7ef83b61028296cc068e163f92ea62cd45aa463d5fb6e0be2f",
+    "src/core.ts": "59bd505525bdc2eb3540ce78e4daba00a99d5b557318214af189a5a7fdeb43cf",
+    "src/cards.ts": "e309e103393bc1aaaf10b34e3994de815dd693d1828a61566723b8fba573fdb9",
+    "src/browser.ts": "56fb3b450aa29e9dda800a69b187d66d5446e056bf2b89b349a9bef1479131e4",
+    "src/play.template.html": "1b5188f105cfd9766f3f19c0a6f3cfa1b522cbd676ec5fde0dbfa1566a09f8c7"
+  },
+  "acceptedLocalRawRun": "2026-10-08T12-15-12-540Z",
+  "retainedRawIntervals": 1200,
+  "focusedProofTestsPassed": 8,
+  "corruptProofVariantsRejected": 20,
+  "oldStaleProofIntegrityExit": 0,
+  "newStaleProofIntegrityExit": 1,
+  "expectedNegativeAssertion": "accepted proof has stale source hashes",
+  "freshCaptureTag": "round-11-proof-guard",
+  "captureBytes": [
+    732226,
+    580051
+  ],
+  "localCoreMatrixRepeated": false,
+  "localLeaguesRepeated": false,
+  "localFullBrowserRepeated": false,
+  "playerNoticeableGain": false,
+  "consecutiveNoPlayerGain": 2
+}
