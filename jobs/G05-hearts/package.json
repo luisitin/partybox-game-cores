@@ -1,0 +1,19 @@
+{
+  "name": "partybox-hearts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/build.mjs",
+    "test": "npm run build && node scripts/html.mjs --check && node --test --test-concurrency=1 tests/*.test.mjs && node scripts/mutations.mjs && node scripts/check-repro.mjs && node scripts/check-research.mjs && node scripts/check-data.mjs && node scripts/visual.mjs && node scripts/check-visual.mjs",
+    "generate": "npm run build && node scripts/html.mjs && node scripts/generate.mjs"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "esbuild": "0.25.12",
+    "ajv": "8.17.1"
+  }
+}

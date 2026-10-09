@@ -1,0 +1,51 @@
+{
+  "purpose": "functional capture component only; not current FPS acceptance",
+  "completedAt": "2026-10-08T21:42:58.968Z",
+  "decoded": {
+    "videoPath": "media/milestone-17.webm",
+    "strictMilestone": true,
+    "codec": "vp9",
+    "width": 1920,
+    "height": 1080,
+    "encodedFrameRate": "10/1",
+    "durationSeconds": 3.6,
+    "decodedFrames": 36,
+    "frameHashSha256": "918d362fdefd7d15023ded5705b3131042669a5751db6f9de29a3220b12e253b",
+    "probe": {
+      "executable": "/usr/bin/ffprobe",
+      "version": "ffprobe version 7.1.5-0+deb13u1 Copyright (c) 2007-2026 the FFmpeg developers",
+      "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+      "args": [
+        "-v",
+        "error",
+        "-show_streams",
+        "-show_format",
+        "-of",
+        "json",
+        "media/milestone-17.webm"
+      ]
+    },
+    "decoder": {
+      "executable": "/usr/bin/ffmpeg",
+      "version": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+      "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+      "args": [
+        "-v",
+        "error",
+        "-xerror",
+        "-err_detect",
+        "explode",
+        "-i",
+        "media/milestone-17.webm",
+        "-map",
+        "0:v:0",
+        "-an",
+        "-f",
+        "framehash",
+        "-hash",
+        "sha256",
+        "-"
+      ]
+    }
+  }
+}

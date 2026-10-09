@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "method": "One focal stronger bot vs three weaker bots; focal seat cycles0–3; designated rival is the next seat; tied first places split credit. Full100-point matches with held-out seeds distinct from pilot0–199.",
+  "leagues": [
+    {
+      "league": "sharp vs normal",
+      "games": 2000,
+      "seedStart": 10000,
+      "seedEnd": 11999,
+      "players": 4,
+      "target": 100,
+      "moon": "add",
+      "jack": false,
+      "wins": 1422,
+      "ties": 16,
+      "headToHeadRate": 0.711,
+      "wilson95": [
+        0.690744140951787,
+        0.7304468650955241
+      ],
+      "firstPlaceShare": 0.4805,
+      "focalMean": 56.81,
+      "rivalMean": 76.734,
+      "steps": 1493568,
+      "stateHash": "2fe649b3a66bd86bb028eb09ece02e753353a5cc40826c88adcdad3f5a84816f"
+    },
+    {
+      "league": "normal vs easy",
+      "games": 2000,
+      "seedStart": 20000,
+      "seedEnd": 21999,
+      "players": 4,
+      "target": 100,
+      "moon": "add",
+      "jack": false,
+      "wins": 1559,
+      "ties": 10,
+      "headToHeadRate": 0.7795,
+      "wilson95": [
+        0.7608040997991647,
+        0.797124270770615
+      ],
+      "firstPlaceShare": 0.57325,
+      "focalMean": 52.488,
+      "rivalMean": 79.1455,
+      "steps": 1522522,
+      "stateHash": "485caaf307856a4e7436cd6088cef4fc0fd301413bfff546ac74e2e777f90e85"
+    }
+  ]
+}
