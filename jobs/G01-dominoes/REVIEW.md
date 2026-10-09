@@ -171,3 +171,17 @@ Re-read G01. Five weaknesses ranked:malformed-envelope coverage is limited to ni
 ## Round23
 
 Re-read G01 and selected rules. Five weaknesses ranked:browser evidence predates the core guard;managed file navigation cannot be verified directly;physical phone unavailable;finite64-world hidden-hand sampling;coalition model still has rejected alternatives. Run the existing browser regression unmodified on new standalone bytes,with a new captured milestone. Hot-seat/private hands,complete bot/mixed-idle matches,zero requests/errors,reduced motion,and300-frame TV/4×CPU phone measurements pass.60.0036/59.6054fps,p95 16.7/16.8ms;VP9 clip decodes. No new player-visible gain;streak3,stop met. Final full pipeline/current-head CI remains required.
+
+
+## Current review after the first retained diagnostic (no completed round)
+
+Re-read original README/RULES/JOBS. Five weaknesses, ranked: (1) Strong-search
+responsiveness gain is unestablished: saved old2d/original8c diagnostic fails
+the declared gain gates and native acceptance, despite four retained profiles;
+(2) currentd01 full official artifact needs complete independent acceptance;
+(3) four-seat/partner phone interaction and physical hardware coverage;
+(4) thinking-dot/rendering costs remain unmeasured; (5) bot strength is finite
+and upstream-reference scope remains bounded. Inspect the saved failed native
+predicate offline, preserve it, then fix/measure the worst substantive current
+player weakness. No unchanged luck retry or weaker gate. Renewed KEEP remains0;
+this source-isolated diagnostic is not a current-face-down improvement round.

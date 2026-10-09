@@ -143,3 +143,42 @@ Completed face-clone replay first requires restoring its deleted exact e4 blob
 from public838 Git; the exact recipe is archived. Original canonical PR1 stays
 unchanged/draft on8c; this is an audit evidence checkpoint. Full new headCI
 remains pending; source838 green certifies exact838. Renewed KEEP rounds/gains0.
+
+
+## Latest retained responsiveness diagnostic — not accepted
+
+The distinct original8c-versus-Worker2d logging diagnostic ran once with the
+fresh actual root grant after independent complete-input static review. Child
+started03:12:53.989796UTC, naturally closed03:13:07.843250UTC/exit0; controller
+closed03:13:10.239188UTC/exit1/FAIL/no owned process. All1,818 source/five runtime
+and complete installed-package/alias/symlink/stat guards passed. All four full
+native raw profiles are retained before assertions; raw-retention acceptance
+PASS. The controller's native acceptance failed with a silent AssertionError.
+Preserve that exact failure; inspect saved predicates offline before making
+any interpretation. No retry or retrospective weakening of any predicate.
+
+The declared gain gate separately FAILED both viewports. TV longest gap
+100→66.6ms gives33.4ms/33.4% reduction, below the required50ms; phone baseline
+33.4→candidate50ms is worse16.6ms/49.7%. First-move latency regressed0.9577%/
+3.1397%. Trusted-start→first native callback latency is reported separately in
+paired-diagnostic-retained-first.json; it is outside longest consecutive gap.
+This old2d/original8c diagnostic does not certify the current face-down838
+player, original300 FPS gates, full pipeline or a player-visible improvement.
+Renewed KEEP remains0. The original earlier failed pair's offending raw is
+still ABSENT; this distinct retained trace cannot explain that past failure.
+
+media/paired-diagnostic-retained-first-proof.zip preserves complete actual raw,
+unmodified controller receipt, grant, all installed-input maps, independent
+review and the root prelaunch helper failure. That helper failed before any
+native launch because of a wrong absence assertion; correction preceded the
+one actual grant/trial. No claim of a second native attempt.
+
+Exactd01 full workflow37875754087/job113643842516 SUCCEEDED02:55:26UTC.
+Official11592298166/102,143,626B/cac53273… independent complete-artifact
+acceptance remains PENDING. Exact838 prior1,252-check proof stays accepted.
+The current evidence checkpoint's own new-headCI remains required.
+
+Cadence03:11:16.486356UTC was exceeded during the local-writer HOLD from
+02:59:55.407220 through root release after actual trial closure. Last source
+push was02:41:16.486356UTC. Read the new actual push receipt for the next
+30-minute deadline; no backdated timestamps or metadata-as-push substitutes.

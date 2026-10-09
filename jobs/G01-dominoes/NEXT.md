@@ -5,6 +5,44 @@ Validation PR11 is open and draft against job/G01-dominoes. Original PR1 stays
 open, draft and unchanged on canonical 8c57376. No merge or force-push.
 Read CLAIMS.md on current main; refresh only G01 after every source push.
 
+## Latest retained responsiveness diagnostic — not accepted
+
+The distinct original8c-versus-Worker2d logging diagnostic ran once with the
+fresh actual root grant after independent complete-input static review. Child
+started03:12:53.989796UTC, naturally closed03:13:07.843250UTC/exit0; controller
+closed03:13:10.239188UTC/exit1/FAIL/no owned process. All1,818 source/five runtime
+and complete installed-package/alias/symlink/stat guards passed. All four full
+native raw profiles are retained before assertions; raw-retention acceptance
+PASS. The controller's native acceptance failed with a silent AssertionError.
+Preserve that exact failure; inspect saved predicates offline before making
+any interpretation. No retry or retrospective weakening of any predicate.
+
+The declared gain gate separately FAILED both viewports. TV longest gap
+100→66.6ms gives33.4ms/33.4% reduction, below the required50ms; phone baseline
+33.4→candidate50ms is worse16.6ms/49.7%. First-move latency regressed0.9577%/
+3.1397%. Trusted-start→first native callback latency is reported separately in
+paired-diagnostic-retained-first.json; it is outside longest consecutive gap.
+This old2d/original8c diagnostic does not certify the current face-down838
+player, original300 FPS gates, full pipeline or a player-visible improvement.
+Renewed KEEP remains0. The original earlier failed pair's offending raw is
+still ABSENT; this distinct retained trace cannot explain that past failure.
+
+media/paired-diagnostic-retained-first-proof.zip preserves complete actual raw,
+unmodified controller receipt, grant, all installed-input maps, independent
+review and the root prelaunch helper failure. That helper failed before any
+native launch because of a wrong absence assertion; correction preceded the
+one actual grant/trial. No claim of a second native attempt.
+
+Exactd01 full workflow37875754087/job113643842516 SUCCEEDED02:55:26UTC.
+Official11592298166/102,143,626B/cac53273… independent complete-artifact
+acceptance remains PENDING. Exact838 prior1,252-check proof stays accepted.
+The current evidence checkpoint's own new-headCI remains required.
+
+Cadence03:11:16.486356UTC was exceeded during the local-writer HOLD from
+02:59:55.407220 through root release after actual trial closure. Last source
+push was02:41:16.486356UTC. Read the new actual push receipt for the next
+30-minute deadline; no backdated timestamps or metadata-as-push substitutes.
+
 ## Latest exact current full proof
 
 Full original838 workflow37872579179/job113633825656 SUCCEEDED02:24:25UTC.
@@ -19,8 +57,8 @@ is current; historical local failures and missing first-pair raw remain.
 
 The new evidence-only checkpoint keeps exact838 player bytes. Original PR1
 stays unchanged/draft; PR11 draft. Full newest-headCI and substantive renewed
-KEEP remain; no measured player gain. Prepared logging diagnostic remains first
-UNEXECUTED, requires current-head bridge/review/rootgrant. Current /tmp checkout
+KEEP remain; no measured player gain. The first distinct logging diagnostic is now retained FAIL as described above;
+older preparation-only UNEXECUTED records remain immutable historical evidence. Current /tmp checkout
 is authoritative after its push because original writable workspace is ENOSPC.
 
 ## Current player and genuine native result
@@ -110,8 +148,9 @@ and unique whole2d/current838 ZIP/history remain intact. Read actual new push
 receipt for fresh30-minute cadence, and current mainCLAIMS for own-row refresh.
 Only fully recoverable authorized e4 duplicates were deleted; completed face
 clone needs its exact immutable838 public Git blob restored before any replay.
-No paired diagnostic launched; current190 identities remain frozen on old838,
-so a fresh current source bridge/review/rootgrant is required. Physical phone
+The distinct diagnostic launched once and retained all four raw profiles; its
+original complete-input READY/controller/receipt remain immutable. Any further
+trial requires a substantive justified change, new review and fresh grant. Physical phone
 remains unverified; native4xCPU is emulation.
 After the required stopping condition, fresh-read main and branch activity,
 then legally claim the lowest eligible queue job. Never stop at a cosmetic gain.
