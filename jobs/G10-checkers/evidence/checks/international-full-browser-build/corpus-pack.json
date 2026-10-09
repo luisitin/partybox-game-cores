@@ -1,0 +1,80 @@
+{
+  "variants": {
+    "american": [
+      {
+        "name": "chinook",
+        "rawBytes": 48132029,
+        "compressedBytes": 27390965,
+        "rawSha256": "baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f",
+        "compressedSha256": "3b8c99c4864bd22e1fb7e372d442537c8269bc9163c45325900423c7d13b0db4"
+      }
+    ],
+    "international": [
+      {
+        "name": "tunstall-v2",
+        "rawBytes": 61077,
+        "compressedBytes": 12289,
+        "rawSha256": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9",
+        "compressedSha256": "50d4192a888f9fb31dafec15c3ba2607a31f79b7b041df24eaa95da58cb1072c"
+      }
+    ]
+  },
+  "internationalOriginal": {
+    "maximumPieces": 6,
+    "files": [
+      "db2",
+      "db3",
+      "db4",
+      "db5",
+      "db6-0303",
+      "db6-0312",
+      "db6-0321",
+      "db6-0330",
+      "db6-0402",
+      "db6-0411",
+      "db6-0420",
+      "db6-0501",
+      "db6-0510",
+      "db6-1212",
+      "db6-1221",
+      "db6-1230",
+      "db6-1302",
+      "db6-1311",
+      "db6-1320",
+      "db6-1401",
+      "db6-1410",
+      "db6-2121",
+      "db6-2130",
+      "db6-2202",
+      "db6-2211",
+      "db6-2220",
+      "db6-2301",
+      "db6-2310",
+      "db6-3030",
+      "db6-3102",
+      "db6-3111",
+      "db6-3120",
+      "db6-3201",
+      "db6-3210",
+      "db6-4002",
+      "db6-4011",
+      "db6-4020",
+      "db6-4101",
+      "db6-4110",
+      "db6-5001",
+      "db6-5010"
+    ],
+    "dataBytes": 1006478762,
+    "parts": 1304
+  },
+  "workers": {
+    "american": {
+      "bytes": 39479460,
+      "sha256": "950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175"
+    },
+    "international": {
+      "bytes": 6401409,
+      "sha256": "31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2"
+    }
+  }
+}

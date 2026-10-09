@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-08T22:34:08.547047+00:00",
+  "closedAt": "2026-10-08T22:34:19.182302+00:00",
+  "head": "fa0b337e1178177ff5b871acae697897c687ee11",
+  "workflowRunId": 37852024033,
+  "parts": [
+    {
+      "artifactId": 11582778057,
+      "name": "G10-standalone-part-00-fa0b337e1178177ff5b871acae697897c687ee11",
+      "zipBytes": 275345042,
+      "zipSha256": "44a149b6958c7a579f418e0af9c9ae7501324f1c15f9f4a777ad133e6e21a86c",
+      "memberBytes": 402653184,
+      "memberSha256": "d234b7c10286cf203fc2cb3fba3b334697c084d49c5a5dd6e48c6ad83290cdde",
+      "offset": 0,
+      "members": 4,
+      "CRC": "PASS"
+    },
+    {
+      "artifactId": 11582683117,
+      "name": "G10-standalone-part-01-fa0b337e1178177ff5b871acae697897c687ee11",
+      "zipBytes": 278877123,
+      "zipSha256": "a2fbeb92d32dd517be90dd23c2889927c8310354b164848bd56ce7305bba9292",
+      "memberBytes": 402653184,
+      "memberSha256": "799b61da7870d427439e890ee3fcd5b0607ce0c74e96ba75da8f628fb7792b8d",
+      "offset": 402653184,
+      "members": 4,
+      "CRC": "PASS"
+    },
+    {
+      "artifactId": 11583197159,
+      "name": "G10-standalone-part-02-fa0b337e1178177ff5b871acae697897c687ee11",
+      "zipBytes": 286220427,
+      "zipSha256": "e51c86d3a1601a67a48bacbbc591867809b9080fed66b21dfba27824a5f4ccd5",
+      "memberBytes": 402653184,
+      "memberSha256": "e1bbd324a8d8a691e99cab07f7b72ede54c96b9ae5a23a968e20c2d0cde8ae0f",
+      "offset": 805306368,
+      "members": 4,
+      "CRC": "PASS"
+    },
+    {
+      "artifactId": 11582643257,
+      "name": "G10-standalone-part-03-fa0b337e1178177ff5b871acae697897c687ee11",
+      "zipBytes": 127624362,
+      "zipSha256": "fbd491d16f86a9ef15d8e8febcf23110e528b0f45370061d6a8867f31bf0c57f",
+      "memberBytes": 182886441,
+      "memberSha256": "b7dfabfcaa2a28a654b4b7f2a621fe2434b6628cda60d5305a626a899d91f9da",
+      "offset": 1207959552,
+      "members": 4,
+      "CRC": "PASS"
+    }
+  ],
+  "totalBytes": 1390845993,
+  "wholeSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "helperOriginalGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+  "scope": "All four actual official downloaded artifact ZIPs, official complete ZIP bytes/digests, every unique safe member/CRC, identical receipts/manifests, original Git helper bytes, exact source head/part order/offset/size/SHA and streamed original complete HTML SHA. No 1.39-GB duplicate extraction, no current CI/KEEP inference beyond the validated delivery bytes."
+}

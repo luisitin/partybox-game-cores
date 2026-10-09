@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-08T14:55:09.450199+00:00",
+  "commands": [
+    {
+      "command": "G10_BUILD_BROWSER_ONLY=1 G10_HTML_OUT=.work/play-full-early.html npm run build",
+      "pgid": 154178,
+      "exitCode": 0,
+      "rawStdout": "build.stdout"
+    },
+    {
+      "command": "node .work/check-early-human.mjs",
+      "pgid": 154521,
+      "exitCode": 0,
+      "closedAt": "2026-10-08T14:47:39.333Z",
+      "rawStdout": "check.stdout"
+    }
+  ],
+  "inputSha256": {
+    "src/browser.ts": "7c97da816495d2859dc1d16ac6e43cbaffefbdbfde13604f03093d32d69ce272",
+    "src/play.template.html": "2d0345f395daa04b5bbe7153b4045bd2b553d28f0deaeaa689ad4aedc559dcef",
+    "src/bot-worker.ts": "eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653",
+    "scripts/build.mjs": "f56963115646b812c6d045484cee25662862384e1eecc6e09a7c464467a639ff",
+    "scripts/browser-check.mjs": "3c4d586ad61c6ff175d21bff5e2910f50117e5e9d89364fa03a36a5930989b27",
+    ".work/check-early-human.mjs": "869ca090f51807c0d97b799cb9f80b16449c92a5a737cdf8595d7c1bea76b119",
+    "dist/worker-american.mjs": "950c58445422dbd59898195a526ad4fc113d832dac49381fe49f2ea624b91175",
+    "dist/worker-international.mjs": "31d06dd836dd1567391b3c5051f8dc53a7904e833887b045be19354f70ae1ee2"
+  },
+  "htmlSha256": "edc476ee9a9bb9b3acbd3ff0efd631814f079a1f6a29cd88a1c188f6b17ca101",
+  "htmlBytes": 1390845907,
+  "fullOriginalCorpusManifestSha256": "6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c",
+  "scope": "Actual file-navigation commit, usable controls and legal turns while original data still parses; bots remain gated until complete DOM. No frame-rate acceptance.",
+  "status": "PASS_EARLY_HUMAN_FUNCTIONALS",
+  "strictFrames": "PENDING_NEW_SOURCE; retained old2f desktopFAIL56.5176FPS/p9933.3ms, phoneNOTRUN"
+}

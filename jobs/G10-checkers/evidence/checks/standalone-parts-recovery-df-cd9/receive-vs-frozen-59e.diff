@@ -1,0 +1,106 @@
+--- frozen59e-unexecuted
++++ cd9-head-freeze-runtime-input-guard
+@@ -12,7 +12,7 @@
+ JOB=BASE.parent.parent
+ REPOSITORY=JOB.parent.parent
+ HEAD='df123c797b226c479b50a998011c1ea6d0157391'
+-CURRENT='ed7e8e9baaf817a14d632e9ac2af39239fe97c5c'
++CURRENT='cd9c554133769c264e0157c298d0bdc682d87b27'
+ RUN=37870240814
+ HTML_BYTES=1390846291
+ HTML_SHA='b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb'
+@@ -26,6 +26,8 @@
+ GROUP_TERM_SECONDS=3
+ GROUP_KILL_SECONDS=3
+ STAGES=['node','league-american','league-international','browser']
++CURL_BINARY=Path('/usr/bin/curl')
++GIT_BINARY=Path('/usr/bin/git')
+ def utc():return datetime.now(timezone.utc).isoformat()
+ def write(path,value):path.write_text(json.dumps(value,indent=2)+'\n')
+ def digest_file(path):
+@@ -35,7 +37,7 @@
+  return result.hexdigest()
+ def identity(path):
+  s=path.stat();return {'dev':s.st_dev,'ino':s.st_ino,'bytes':s.st_size,'mtimeNs':s.st_mtime_ns,'ctimeNs':s.st_ctime_ns}
+-def git(args):return subprocess.check_output(['git']+args,cwd=REPOSITORY,timeout=60)
++def git(args):return subprocess.check_output([str(GIT_BINARY)]+args,cwd=REPOSITORY,timeout=60)
+ def unique_object(pairs):
+  result={}
+  for key,value in pairs:
+@@ -60,6 +62,21 @@
+  for doc in proof['sixCurrentDocumentationGitBridge']:
+   actual=(REPOSITORY/doc['path']).read_bytes();assert sha256(actual).hexdigest()==doc['currentGitSha256'];assert actual==git(['cat-file','blob',CURRENT+':'+doc['path']])
+  return sha256(json.dumps(guards,sort_keys=True).encode()).hexdigest()
++def frozen_code_inputs_runtime():
++ freeze_path=BASE/'execution-freeze.json';raw=freeze_path.read_bytes();freeze=json_bytes(raw)
++ assert freeze['artifactHead']==HEAD and freeze['currentCheckpoint']==CURRENT and freeze['workflowRunId']==RUN
++ expected=freeze['files'];assert set(expected)=={'receiver','privateSpec','sourceBridge','originalDfStage','pythonBinary','curlBinary','gitBinary','node22Binary'}
++ assert Path(expected['receiver']['path']).resolve()==Path(__file__).resolve()
++ assert Path(expected['pythonBinary']['path']).resolve()==Path(sys.executable).resolve()
++ assert Path(expected['curlBinary']['path']).resolve()==CURL_BINARY and Path(expected['gitBinary']['path']).resolve()==GIT_BINARY
++ actual={}
++ for label,row in expected.items():
++  path=Path(row['path']);assert path.is_absolute()
++  observed={'path':str(path),'identity':identity(path),'sha256':digest_file(path)}
++  assert observed==row,'Frozen code/input/runtime drift: '+label
++  assert identity(path)==row['identity'],'Frozen code/input/runtime stat drift after full read: '+label
++  actual[label]=observed
++ return {'executionFreezeSha256':sha256(raw).hexdigest(),'executionFreezeIdentity':identity(freeze_path),'files':actual}
+ def group_members(pgid):
+  result=[]
+  for path in Path('/proc').iterdir():
+@@ -99,7 +116,7 @@
+  return {'actualRemainingGroup':remaining,'groupSignals':actions,'reapedAdoptedDescendants':reaped,'actualExitCode':child.returncode,'natural':not failed and not actions and child.returncode==0 and not remaining}
+ def worker(index):
+  resource.setrlimit(resource.RLIMIT_AS,(RAM_LIMIT,RAM_LIMIT))
+- started=utc();spec=json_bytes((BASE/'private-spec.json').read_bytes());item=spec['parts'][index];artifact=item['artifact']
++ started=utc();execution_before=frozen_code_inputs_runtime();spec=json_bytes((BASE/'private-spec.json').read_bytes());item=spec['parts'][index];artifact=item['artifact']
+  assert spec['sourceHead']==HEAD and spec['workflowRunId']==RUN and artifact['name']==f'G10-standalone-part-{index:02d}-{HEAD}'
+  assert artifact['expired'] is False and artifact['workflow_run']['head_sha']==HEAD and artifact['workflow_run']['id']==RUN
+  assert datetime.fromisoformat(artifact['expires_at'].replace('Z','+00:00'))>datetime.now(timezone.utc)
+@@ -113,7 +130,7 @@
+   curl_stderr=BASE/f'part-{index:02d}-curl.stderr'
+   with curl_stderr.open('wb') as stderr:
+    try:
+-    curl=subprocess.Popen(['curl','--silent','--show-error','--fail','--location','--connect-timeout','15','--max-time',str(CURL_WALL_SECONDS),'--retry','0','--write-out','%{stderr}\nG10_HTTP_STATUS:%{http_code}\n','--output','-','--config','-'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=stderr)
++    curl=subprocess.Popen([str(CURL_BINARY),'--silent','--show-error','--fail','--location','--connect-timeout','15','--max-time',str(CURL_WALL_SECONDS),'--retry','0','--write-out','%{stderr}\nG10_HTTP_STATUS:%{http_code}\n','--output','-','--config','-'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=stderr)
+     curl.stdin.write(config);curl.stdin.close()
+     while block:=curl.stdout.read(BLOCK):
+      downloaded+=len(block);assert downloaded<=expected_zip_bytes;download_hash.update(block);body.write(block)
+@@ -162,12 +179,14 @@
+      count+=len(block);member_hash.update(block);sys.stdout.buffer.write(block)
+    sys.stdout.buffer.flush();assert count==row['bytes'] and member_hash.hexdigest()==row['sha256']
+   result={'status':'PASS','startedAt':started,'closedAt':utc(),'artifactId':artifact['id'],'head':HEAD,'workflowRunId':RUN,'index':index,'zipBytes':downloaded,'zipSha256':download_hash.hexdigest(),'downloadResponseStartedAt':download_started,'downloadResponseEOFCLOSEDAt':download_closed,'memberBytes':count,'memberSha256':member_hash.hexdigest(),'offset':row['offset'],'members':4,'safeUniqueMembers':True,'allMemberCRC':'PASS','helperGitSha256':helper_sha,'peakResidentBytes':resource.getrusage(resource.RUSAGE_SELF).ru_maxrss*1024,'addressSpaceLimitBytes':RAM_LIMIT,'zipStorage':'One official body in private BytesIO, fixed1MiB raw blocks, no disk temp or second whole ZIP/raw copy'}
++ assert frozen_code_inputs_runtime()==execution_before
++ result['frozenCodeInputsRuntimeBeforeAfter']=execution_before
+  write(BASE/f'part-{index:02d}-worker.json',result)
+ def receiver():
+  def whole_deadline(signum,frame):raise TimeoutError('Declared whole finite receiver deadline exceeded')
+  signal.signal(signal.SIGALRM,whole_deadline);signal.alarm(CONTROLLER_WALL_SECONDS)
+  assert ctypes.CDLL(None).prctl(36,1,0,0,0)==0,'Cannot enable actual orphan-descendant subreaping'
+- started=utc();spec=json_bytes((BASE/'private-spec.json').read_bytes());assert spec['sourceHead']==HEAD and spec['workflowRunId']==RUN and spec['currentCheckpoint']==CURRENT and [r['index'] for r in spec['parts']]==list(range(4))
++ started=utc();execution_before=frozen_code_inputs_runtime();write(BASE/'execution-freeze-before.json',execution_before);spec=json_bytes((BASE/'private-spec.json').read_bytes());assert spec['sourceHead']==HEAD and spec['workflowRunId']==RUN and spec['currentCheckpoint']==CURRENT and [r['index'] for r in spec['parts']]==list(range(4))
+  guards_before=guard_sources(spec);physical=JOB/'.work/play-full-candidate-b4.html';initial=identity(physical);assert initial['bytes']==HTML_BYTES and digest_file(physical)==HTML_SHA and identity(physical)==initial
+  joined=sha256();total=0;results=[];canonical=None
+  write(BASE/'controller.json',{'status':'RUNNING','startedAt':started,'head':HEAD,'physicalIdentity':initial,'sourceGuardFingerprint':guards_before})
+@@ -212,8 +231,10 @@
+    total+=received;results.append({**result,'naturalWorkerClosure':record});write(BASE/'progress.json',{'status':'RUNNING','partsNaturallyClosed':len(results),'totalBytes':total,'parts':results});print(json.dumps({'part':index,'status':'CLOSED_PASS','receivedBytes':received,'total':total}),flush=True)
+   assert original.read(1)==b''
+  assert total==HTML_BYTES and joined.hexdigest()==HTML_SHA and identity(physical)==initial and digest_file(physical)==HTML_SHA and identity(physical)==initial and guard_sources(spec)==guards_before
++ execution_after=frozen_code_inputs_runtime();assert execution_after==execution_before;write(BASE/'execution-freeze-after.json',execution_after)
+  signal.alarm(0)
+- result={'status':'PASS','startedAt':started,'closedAt':utc(),'head':HEAD,'currentCheckpointPreserved':CURRENT,'workflowRunId':RUN,'parts':results,'totalBytes':total,'wholeReceivedSha256':joined.hexdigest(),'physicalBeforeAfterSha256':HTML_SHA,'physicalBeforeAfterIdentity':initial,'sourceGuardFingerprintBeforeAfter':guards_before,'identicalAllFourManifestReceiptHelperBytes':True,'wholePartSecondsLimit':PART_WALL_SECONDS,'wholeControllerSecondsLimit':CONTROLLER_WALL_SECONDS,'scope':'Actual four exact df official ZIP bodies each complete size/SHA in boundedRAM/safeunique all-memberCRC/original immutableGit helper, identical manifest/source receipt, all contiguous raw ranges streamed through EOF and byte-compared to current immutable physicalb4, complete joined actualSHA/all349guards/explicit immutable df-to-ed7runtime and six currentdocs bridge/final whole physicalSHA/stat. Proper providerURL only private curlstdin config, finite whole curl/worker/controller bounds, original raw ranges count-bounded before forwarding, all workers naturally reaped with actual groups[]. No temp ZIP, no source/uniquehistory deletion, no timing/FPS/KEEP or automatic currented7 nativeCI acceptance claim.'}
++ result={'status':'PASS','startedAt':started,'closedAt':utc(),'head':HEAD,'currentCheckpointPreserved':CURRENT,'workflowRunId':RUN,'parts':results,'totalBytes':total,'wholeReceivedSha256':joined.hexdigest(),'physicalBeforeAfterSha256':HTML_SHA,'physicalBeforeAfterIdentity':initial,'sourceGuardFingerprintBeforeAfter':guards_before,'identicalAllFourManifestReceiptHelperBytes':True,'wholePartSecondsLimit':PART_WALL_SECONDS,'wholeControllerSecondsLimit':CONTROLLER_WALL_SECONDS,'scope':'Actual four exact df official ZIP bodies each complete size/SHA in boundedRAM/safeunique all-memberCRC/original immutableGit helper, identical manifest/source receipt, all contiguous raw ranges streamed through EOF and byte-compared to current immutable physicalb4, complete joined actualSHA/all349guards/explicit immutable df-to-cd9runtime and six currentdocs bridge/final whole physicalSHA/stat. Proper providerURL only private curlstdin config, finite whole curl/worker/controller bounds, original raw ranges count-bounded before forwarding, all workers naturally reaped with actual groups[]. No temp ZIP, no source/uniquehistory deletion, no timing/FPS/KEEP or automatic currentcd9 nativeCI acceptance claim.'}
++ result['frozenCodeInputsRuntimeBeforeAfter']=execution_before
+  write(BASE/'independent-downloaded-parts.json',result);write(BASE/'controller.json',{'status':'CLOSED_PASS','exitCode':0,'startedAt':started,'closedAt':utc(),'result':'independent-downloaded-parts.json'});print(json.dumps({'status':'PASS','parts':4,'bytes':total,'sha256':joined.hexdigest(),'closedAt':result['closedAt']}),flush=True)
+ if __name__=='__main__':
+  try:
+@@ -222,3 +243,8 @@
+  except BaseException as error:
+   name='worker-'+sys.argv[2]+'-failure.json' if len(sys.argv)==3 else 'failure.json'
+   write(BASE/name,{'status':'FAILED','closedAt':utc(),'errorType':type(error).__name__,'error':str(error),'traceback':traceback.format_exc(),'scope':'Original finite RAM reception failure preserved, no PASS/source mutation/tempfile/unique history deletion. Official source artifact remains referenced for recovery.'});raise
++ finally:
++  signal.alarm(0)
++  if not (len(sys.argv)==3 and sys.argv[1]=='worker'):
++   try:write(BASE/'execution-freeze-finally.json',{'status':'PASS','closedAt':utc(),'actual':frozen_code_inputs_runtime()})
++   except BaseException as freeze_error:write(BASE/'execution-freeze-finally.json',{'status':'FAILED','closedAt':utc(),'errorType':type(freeze_error).__name__,'error':str(freeze_error)});raise

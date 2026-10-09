@@ -1,0 +1,124 @@
+TAP version 13
+# Subtest: contract manifest/counts/settings and deterministic initial boards
+ok 1 - contract manifest/counts/settings and deterministic initial boards
+  ---
+  duration_ms: 4.20002
+  type: 'test'
+  ...
+# Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+ok 2 - contract total immutable reducer ignores malformed/unknown events in both phases
+  ---
+  duration_ms: 8.729667
+  type: 'test'
+  ...
+# Subtest: contract live timer requires exact phase instance and elapsed deadline
+ok 3 - contract live timer requires exact phase instance and elapsed deadline
+  ---
+  duration_ms: 1.261148
+  type: 'test'
+  ...
+# Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+not ok 4 - VIP pause/resume shifts only the deadline; skip/end remain available
+  ---
+  duration_ms: 11.965458
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:43:1'
+  failureType: 'testCodeFailure'
+  error: "Cannot read properties of undefined (reading 'at')"
+  code: 'ERR_TEST_FAILURE'
+  name: 'TypeError'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:48:128)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+ok 5 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+  ---
+  duration_ms: 3.051958
+  type: 'test'
+  ...
+# Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+not ok 6 - hostile seat IDs, public view equality, spectator safety and cloned projections
+  ---
+  duration_ms: 4.120062
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:64:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        '__proto__',
+    -   'constructor'
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: '__proto__'
+    1: 'constructor'
+  actual:
+    0: '__proto__'
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:70:146)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: complete legal inputs and terminal scores preserve every original seat
+not ok 7 - complete legal inputs and terminal scores preserve every original seat
+  ---
+  duration_ms: 3.99557
+  type: 'test'
+  location: '/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:74:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    'move' !== 'done'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: 'done'
+  actual: 'move'
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core.test.mjs:77:144)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+    Test.postRun (node:internal/test_runner/test:1522:19)
+    Test.run (node:internal/test_runner/test:1447:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+  ...
+# Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+ok 8 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+  ---
+  duration_ms: 529.046247
+  type: 'test'
+  ...
+# Subtest: manifest and every generated phase fixture replay without throwing
+ok 9 - manifest and every generated phase fixture replay without throwing
+  ---
+  duration_ms: 20.94381
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 6
+# fail 3
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2534.241337

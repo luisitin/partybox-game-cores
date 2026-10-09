@@ -1,0 +1,389 @@
+﻿2026-10-08T22:12:55.2743758Z Current runner version: '2.337.0'
+2026-10-08T22:12:55.2767281Z ##[group]Runner Image Provisioner
+2026-10-08T22:12:55.2768160Z Hosted Compute Agent
+2026-10-08T22:12:55.2768737Z Version: 20261002.596
+2026-10-08T22:12:55.2769798Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T22:12:55.2770554Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T22:12:55.2771296Z Worker ID: {e346dcd9-cc03-41c2-a2dd-465367f753e6}
+2026-10-08T22:12:55.2772061Z Region: westus
+2026-10-08T22:12:55.2772590Z Cloud: Azure
+2026-10-08T22:12:55.2773217Z ##[endgroup]
+2026-10-08T22:12:55.2774671Z ##[group]Operating System
+2026-10-08T22:12:55.2775359Z Ubuntu
+2026-10-08T22:12:55.2775958Z 24.04.5
+2026-10-08T22:12:55.2776464Z LTS
+2026-10-08T22:12:55.2777052Z ##[endgroup]
+2026-10-08T22:12:55.2777601Z ##[group]Runner Image
+2026-10-08T22:12:55.2778181Z Image: ubuntu-24.04
+2026-10-08T22:12:55.2778842Z Version: 20261004.327.1
+2026-10-08T22:12:55.2780321Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T22:12:55.2782054Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T22:12:55.2782985Z ##[endgroup]
+2026-10-08T22:12:55.2784168Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T22:12:55.2786087Z Contents: read
+2026-10-08T22:12:55.2786747Z Metadata: read
+2026-10-08T22:12:55.2787308Z ##[endgroup]
+2026-10-08T22:12:55.2789702Z Secret source: Actions
+2026-10-08T22:12:55.2790681Z Cache mode: write
+2026-10-08T22:12:55.2791511Z Prepare workflow directory
+2026-10-08T22:12:55.3340272Z Prepare all required actions
+2026-10-08T22:12:55.3388643Z Getting action download info
+2026-10-08T22:12:55.6703913Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T22:12:55.7656650Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T22:12:55.8602551Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T22:12:56.0509862Z Complete job name: checks (league-american)
+2026-10-08T22:12:56.1228928Z ##[group]Run actions/checkout@v4
+2026-10-08T22:12:56.1230159Z with:
+2026-10-08T22:12:56.1230711Z   ref: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:12:56.1231360Z   repository: luisitin/partybox-game-cores
+2026-10-08T22:12:56.1235419Z   token: ***
+2026-10-08T22:12:56.1235848Z   ssh-strict: true
+2026-10-08T22:12:56.1236282Z   ssh-user: git
+2026-10-08T22:12:56.1236722Z   persist-credentials: true
+2026-10-08T22:12:56.1237207Z   clean: true
+2026-10-08T22:12:56.1237648Z   sparse-checkout-cone-mode: true
+2026-10-08T22:12:56.1238158Z   fetch-depth: 1
+2026-10-08T22:12:56.1238596Z   fetch-tags: false
+2026-10-08T22:12:56.1239034Z   show-progress: true
+2026-10-08T22:12:56.1239675Z   lfs: false
+2026-10-08T22:12:56.1240090Z   submodules: false
+2026-10-08T22:12:56.1240578Z   set-safe-directory: true
+2026-10-08T22:12:56.1241080Z   allow-unsafe-pr-checkout: false
+2026-10-08T22:12:56.1241841Z env:
+2026-10-08T22:12:56.1242436Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:12:56.1243086Z ##[endgroup]
+2026-10-08T22:12:56.2237897Z Syncing repository: luisitin/partybox-game-cores
+2026-10-08T22:12:56.2240561Z ##[group]Getting Git version info
+2026-10-08T22:12:56.2241900Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T22:12:56.2243771Z [command]/usr/bin/git version
+2026-10-08T22:12:56.2326857Z git version 2.55.0
+2026-10-08T22:12:56.2363429Z ##[endgroup]
+2026-10-08T22:12:56.2374862Z Temporarily overriding HOME='/home/runner/work/_temp/a942a731-4ab3-41d3-952e-8053a9b0b50c' before making global git config changes
+2026-10-08T22:12:56.2376298Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T22:12:56.2383164Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T22:12:56.2440659Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T22:12:56.2451523Z ##[group]Initializing the repository
+2026-10-08T22:12:56.2456456Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T22:12:56.2579031Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T22:12:56.2581072Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T22:12:56.2582696Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T22:12:56.2583942Z hint: call:
+2026-10-08T22:12:56.2584434Z hint:
+2026-10-08T22:12:56.2585327Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T22:12:56.2586133Z hint:
+2026-10-08T22:12:56.2587137Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T22:12:56.2588516Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T22:12:56.2589571Z hint:
+2026-10-08T22:12:56.2590289Z hint: 	git branch -m <name>
+2026-10-08T22:12:56.2590961Z hint:
+2026-10-08T22:12:56.2591605Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T22:12:56.2592764Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-08T22:12:56.2608394Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-08T22:12:56.2647240Z ##[endgroup]
+2026-10-08T22:12:56.2648794Z ##[group]Disabling automatic garbage collection
+2026-10-08T22:12:56.2651134Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T22:12:56.2690508Z ##[endgroup]
+2026-10-08T22:12:56.2691669Z ##[group]Setting up auth
+2026-10-08T22:12:56.2699047Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T22:12:56.2751026Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T22:12:56.5125562Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T22:12:56.5162439Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T22:12:56.5389857Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T22:12:56.5425940Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T22:12:56.5646910Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T22:12:56.5687560Z ##[endgroup]
+2026-10-08T22:12:56.5688409Z ##[group]Fetching the repository
+2026-10-08T22:12:56.5697293Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:14.0263036Z From https://github.com/luisitin/partybox-game-cores
+2026-10-08T22:13:14.0263776Z  * branch            fa0b337e1178177ff5b871acae697897c687ee11 -> FETCH_HEAD
+2026-10-08T22:13:14.0270389Z ##[endgroup]
+2026-10-08T22:13:14.0271111Z ##[group]Determining the checkout info
+2026-10-08T22:13:14.0271837Z ##[endgroup]
+2026-10-08T22:13:14.0278176Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T22:13:14.0365246Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T22:13:14.0396163Z ##[group]Checking out the ref
+2026-10-08T22:13:14.0399703Z [command]/usr/bin/git checkout --progress --force fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:15.2768219Z Updating files:  11% (180/1560)
+2026-10-08T22:13:16.1226033Z Updating files:  12% (188/1560)
+2026-10-08T22:13:16.4720779Z Updating files:  12% (199/1560)
+2026-10-08T22:13:17.1374369Z Updating files:  13% (203/1560)
+2026-10-08T22:13:17.3360649Z Updating files:  13% (216/1560)
+2026-10-08T22:13:18.0876987Z Updating files:  14% (219/1560)
+2026-10-08T22:13:18.4601322Z Updating files:  14% (226/1560)
+2026-10-08T22:13:19.1294462Z Updating files:  15% (234/1560)
+2026-10-08T22:13:19.4431403Z Updating files:  15% (243/1560)
+2026-10-08T22:13:19.7260366Z Updating files:  16% (250/1560)
+2026-10-08T22:13:19.7270845Z Updating files:  17% (266/1560)
+2026-10-08T22:13:19.7280153Z Updating files:  18% (281/1560)
+2026-10-08T22:13:19.7291454Z Updating files:  19% (297/1560)
+2026-10-08T22:13:19.7488315Z Updating files:  20% (312/1560)
+2026-10-08T22:13:19.7496468Z Updating files:  21% (328/1560)
+2026-10-08T22:13:19.7503033Z Updating files:  22% (344/1560)
+2026-10-08T22:13:19.7524013Z Updating files:  23% (359/1560)
+2026-10-08T22:13:19.7721217Z Updating files:  24% (375/1560)
+2026-10-08T22:13:19.7728144Z Updating files:  25% (390/1560)
+2026-10-08T22:13:19.7736308Z Updating files:  26% (406/1560)
+2026-10-08T22:13:19.7743261Z Updating files:  27% (422/1560)
+2026-10-08T22:13:19.7755310Z Updating files:  28% (437/1560)
+2026-10-08T22:13:19.7770218Z Updating files:  29% (453/1560)
+2026-10-08T22:13:19.7782839Z Updating files:  30% (468/1560)
+2026-10-08T22:13:19.7794945Z Updating files:  31% (484/1560)
+2026-10-08T22:13:19.7807162Z Updating files:  32% (500/1560)
+2026-10-08T22:13:19.7814940Z Updating files:  33% (515/1560)
+2026-10-08T22:13:19.7824154Z Updating files:  34% (531/1560)
+2026-10-08T22:13:19.7895297Z Updating files:  35% (546/1560)
+2026-10-08T22:13:19.7917518Z Updating files:  36% (562/1560)
+2026-10-08T22:13:19.8087024Z Updating files:  37% (578/1560)
+2026-10-08T22:13:19.8257699Z Updating files:  38% (593/1560)
+2026-10-08T22:13:19.8341105Z Updating files:  39% (609/1560)
+2026-10-08T22:13:19.8507216Z Updating files:  40% (624/1560)
+2026-10-08T22:13:19.8517916Z Updating files:  41% (640/1560)
+2026-10-08T22:13:19.8527521Z Updating files:  42% (656/1560)
+2026-10-08T22:13:19.8577426Z Updating files:  43% (671/1560)
+2026-10-08T22:13:19.8591559Z Updating files:  44% (687/1560)
+2026-10-08T22:13:19.8602061Z Updating files:  45% (702/1560)
+2026-10-08T22:13:19.8611454Z Updating files:  46% (718/1560)
+2026-10-08T22:13:19.8629614Z Updating files:  47% (734/1560)
+2026-10-08T22:13:19.8762044Z Updating files:  48% (749/1560)
+2026-10-08T22:13:19.8918289Z Updating files:  49% (765/1560)
+2026-10-08T22:13:19.8980206Z Updating files:  50% (780/1560)
+2026-10-08T22:13:19.9121405Z Updating files:  51% (796/1560)
+2026-10-08T22:13:19.9176186Z Updating files:  52% (812/1560)
+2026-10-08T22:13:19.9192368Z Updating files:  53% (827/1560)
+2026-10-08T22:13:19.9200235Z Updating files:  54% (843/1560)
+2026-10-08T22:13:19.9227278Z Updating files:  55% (858/1560)
+2026-10-08T22:13:19.9264088Z Updating files:  56% (874/1560)
+2026-10-08T22:13:19.9305728Z Updating files:  57% (890/1560)
+2026-10-08T22:13:19.9324134Z Updating files:  58% (905/1560)
+2026-10-08T22:13:19.9353459Z Updating files:  59% (921/1560)
+2026-10-08T22:13:19.9389310Z Updating files:  60% (936/1560)
+2026-10-08T22:13:19.9434638Z Updating files:  61% (952/1560)
+2026-10-08T22:13:19.9470009Z Updating files:  62% (968/1560)
+2026-10-08T22:13:19.9515483Z Updating files:  63% (983/1560)
+2026-10-08T22:13:19.9523262Z Updating files:  64% (999/1560)
+2026-10-08T22:13:19.9545656Z Updating files:  65% (1014/1560)
+2026-10-08T22:13:19.9573187Z Updating files:  66% (1030/1560)
+2026-10-08T22:13:19.9601981Z Updating files:  67% (1046/1560)
+2026-10-08T22:13:19.9639968Z Updating files:  68% (1061/1560)
+2026-10-08T22:13:19.9672864Z Updating files:  69% (1077/1560)
+2026-10-08T22:13:19.9695870Z Updating files:  70% (1092/1560)
+2026-10-08T22:13:19.9719591Z Updating files:  71% (1108/1560)
+2026-10-08T22:13:19.9746383Z Updating files:  72% (1124/1560)
+2026-10-08T22:13:19.9780684Z Updating files:  73% (1139/1560)
+2026-10-08T22:13:19.9822358Z Updating files:  74% (1155/1560)
+2026-10-08T22:13:19.9869293Z Updating files:  75% (1170/1560)
+2026-10-08T22:13:19.9879692Z Updating files:  76% (1186/1560)
+2026-10-08T22:13:19.9888704Z Updating files:  77% (1202/1560)
+2026-10-08T22:13:19.9909551Z Updating files:  78% (1217/1560)
+2026-10-08T22:13:19.9918296Z Updating files:  79% (1233/1560)
+2026-10-08T22:13:19.9926419Z Updating files:  80% (1248/1560)
+2026-10-08T22:13:19.9934139Z Updating files:  81% (1264/1560)
+2026-10-08T22:13:19.9941628Z Updating files:  82% (1280/1560)
+2026-10-08T22:13:19.9947856Z Updating files:  83% (1295/1560)
+2026-10-08T22:13:19.9969631Z Updating files:  84% (1311/1560)
+2026-10-08T22:13:19.9995331Z Updating files:  85% (1326/1560)
+2026-10-08T22:13:20.0002985Z Updating files:  86% (1342/1560)
+2026-10-08T22:13:20.0010305Z Updating files:  87% (1358/1560)
+2026-10-08T22:13:20.0026958Z Updating files:  88% (1373/1560)
+2026-10-08T22:13:20.0064714Z Updating files:  89% (1389/1560)
+2026-10-08T22:13:20.0118296Z Updating files:  90% (1404/1560)
+2026-10-08T22:13:20.0155335Z Updating files:  91% (1420/1560)
+2026-10-08T22:13:20.0170165Z Updating files:  92% (1436/1560)
+2026-10-08T22:13:20.0179191Z Updating files:  93% (1451/1560)
+2026-10-08T22:13:20.0463332Z Updating files:  94% (1467/1560)
+2026-10-08T22:13:20.3802767Z Updating files:  94% (1476/1560)
+2026-10-08T22:13:20.3809480Z Updating files:  95% (1482/1560)
+2026-10-08T22:13:20.3819566Z Updating files:  96% (1498/1560)
+2026-10-08T22:13:20.3827488Z Updating files:  97% (1514/1560)
+2026-10-08T22:13:20.3837304Z Updating files:  98% (1529/1560)
+2026-10-08T22:13:20.3846742Z Updating files:  99% (1545/1560)
+2026-10-08T22:13:20.3847495Z Updating files: 100% (1560/1560)
+2026-10-08T22:13:20.3847988Z Updating files: 100% (1560/1560), done.
+2026-10-08T22:13:20.3870591Z Note: switching to 'fa0b337e1178177ff5b871acae697897c687ee11'.
+2026-10-08T22:13:20.3871229Z 
+2026-10-08T22:13:20.3871606Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T22:13:20.3872471Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T22:13:20.3873288Z state without impacting any branches by switching back to a branch.
+2026-10-08T22:13:20.3873841Z 
+2026-10-08T22:13:20.3874144Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T22:13:20.3875144Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T22:13:20.3875571Z 
+2026-10-08T22:13:20.3875781Z   git switch -c <new-branch-name>
+2026-10-08T22:13:20.3876087Z 
+2026-10-08T22:13:20.3876289Z Or undo this operation with:
+2026-10-08T22:13:20.3876566Z 
+2026-10-08T22:13:20.3876720Z   git switch -
+2026-10-08T22:13:20.3876922Z 
+2026-10-08T22:13:20.3877292Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T22:13:20.3877831Z 
+2026-10-08T22:13:20.3878204Z HEAD is now at fa0b337 G10 archive first green PR proof and start ranked review
+2026-10-08T22:13:20.4021234Z ##[endgroup]
+2026-10-08T22:13:20.4073435Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T22:13:20.4103281Z fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:20.4358473Z ##[group]Run actions/setup-node@v4
+2026-10-08T22:13:20.4358765Z with:
+2026-10-08T22:13:20.4358964Z   node-version: 22.16.0
+2026-10-08T22:13:20.4359375Z   cache: npm
+2026-10-08T22:13:20.4359678Z   cache-dependency-path: jobs/G10-checkers/package-lock.json
+2026-10-08T22:13:20.4360028Z   always-auth: false
+2026-10-08T22:13:20.4360246Z   check-latest: false
+2026-10-08T22:13:20.4362952Z   token: ***
+2026-10-08T22:13:20.4363148Z env:
+2026-10-08T22:13:20.4363399Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:20.4363724Z ##[endgroup]
+2026-10-08T22:13:20.5715998Z Attempting to download 22.16.0...
+2026-10-08T22:13:20.5820763Z (node:2314) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T22:13:20.5822035Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T22:13:21.2402455Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-08T22:13:21.7058899Z Extracting ...
+2026-10-08T22:13:21.7187604Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/0fe0edb4-f6e3-43e6-867e-84f1fc5c29d7 -f /home/runner/work/_temp/65a8e14c-7f26-4583-9c1b-44688e44aebb
+2026-10-08T22:13:22.8812204Z Adding to the cache ...
+2026-10-08T22:13:24.8880718Z ##[group]Environment details
+2026-10-08T22:13:25.6802552Z node: v22.16.0
+2026-10-08T22:13:25.6802931Z npm: 10.9.2
+2026-10-08T22:13:25.6803186Z yarn: 1.22.22
+2026-10-08T22:13:25.6803751Z ##[endgroup]
+2026-10-08T22:13:25.6825529Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-08T22:13:25.7746167Z /home/runner/.npm
+2026-10-08T22:13:26.3101293Z Cache hit for: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-08T22:13:26.3202997Z (node:2314) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T22:13:27.5765052Z Received 4287722 of 12676330 (33.8%), 4.1 MBs/sec
+2026-10-08T22:13:27.6764896Z Received 12676330 of 12676330 (100.0%), 11.0 MBs/sec
+2026-10-08T22:13:27.6765494Z Cache Size: ~12 MB (12676330 B)
+2026-10-08T22:13:27.6867554Z [command]/usr/bin/tar -xf /home/runner/work/_temp/e9280ee8-4653-4f8d-89ab-31136579ee8a/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-08T22:13:27.7093166Z Cache restored successfully
+2026-10-08T22:13:27.7103440Z Cache restored from key: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-08T22:13:27.7293037Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-08T22:13:27.7293550Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-08T22:13:27.7552669Z shell: /usr/bin/bash -e {0}
+2026-10-08T22:13:27.7553007Z env:
+2026-10-08T22:13:27.7553353Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:27.7553791Z ##[endgroup]
+2026-10-08T22:13:28.7246617Z 
+2026-10-08T22:13:28.7255646Z added 6 packages in 910ms
+2026-10-08T22:13:28.7781378Z ##[group]Run node --version
+2026-10-08T22:13:28.7781724Z [36;1mnode --version[0m
+2026-10-08T22:13:28.7781961Z [36;1mnproc[0m
+2026-10-08T22:13:28.7782206Z [36;1mawk '/MemTotal/ { print }' /proc/meminfo[0m
+2026-10-08T22:13:28.7782508Z [36;1mdf -Pk .[0m
+2026-10-08T22:13:28.7849560Z shell: /usr/bin/bash -e {0}
+2026-10-08T22:13:28.7849826Z env:
+2026-10-08T22:13:28.7850105Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:28.7850457Z ##[endgroup]
+2026-10-08T22:13:28.7965229Z v22.16.0
+2026-10-08T22:13:28.7984674Z 4
+2026-10-08T22:13:28.8004324Z MemTotal:       16373452 kB
+2026-10-08T22:13:28.8025552Z Filesystem     1024-blocks     Used Available Capacity Mounted on
+2026-10-08T22:13:28.8026323Z /dev/root        151263856 63884364  87363108      43% /
+2026-10-08T22:13:28.8084523Z ##[group]Run set -o pipefail
+2026-10-08T22:13:28.8084836Z [36;1mset -o pipefail[0m
+2026-10-08T22:13:28.8085325Z [36;1mnode scripts/check.mjs --stage 'league-american' 2>&1 | tee '.work-stage-league-american.stdout'[0m
+2026-10-08T22:13:28.8148751Z shell: /usr/bin/bash -e {0}
+2026-10-08T22:13:28.8149019Z env:
+2026-10-08T22:13:28.8149425Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:13:28.8149784Z ##[endgroup]
+2026-10-08T22:13:28.9526297Z 
+2026-10-08T22:13:28.9527103Z > partybox-g10-checkers@1.0.0 build
+2026-10-08T22:13:28.9527904Z > tsc --noEmit && node scripts/build.mjs
+2026-10-08T22:13:28.9528296Z 
+2026-10-08T22:13:42.0074276Z PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+2026-10-08T22:14:00.2321807Z PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page (delivery execution gates explicitly excluded).
+2026-10-08T22:14:05.7695769Z {"prewarm":"american","index":0,"kind":"ready","variant":"american","importSeconds":0.6786702429999998,"memory":{"rss":379269120,"heapTotal":169807872,"heapUsed":159434384,"external":99203571,"arrayBuffers":96274437}}
+2026-10-08T22:14:06.4234239Z {"prewarm":"american","index":1,"kind":"ready","variant":"american","importSeconds":0.6164885790000001,"memory":{"rss":698261504,"heapTotal":169496576,"heapUsed":157355696,"external":99203571,"arrayBuffers":96274437}}
+2026-10-08T22:14:07.0778212Z {"prewarm":"american","index":2,"kind":"ready","variant":"american","importSeconds":0.620126248,"memory":{"rss":984944640,"heapTotal":186970112,"heapUsed":154627064,"external":99203571,"arrayBuffers":96274437}}
+2026-10-08T22:14:07.7185549Z {"prewarm":"american","index":3,"kind":"ready","variant":"american","importSeconds":0.6068990329999997,"memory":{"rss":1271173120,"heapTotal":169758720,"heapUsed":156955056,"external":99203571,"arrayBuffers":96274437}}
+2026-10-08T22:14:47.5462095Z {"variant":"american","higher":"sharp","lower":"normal","start":100,"end":150,"games":50,"wins":46,"draws":3,"losses":1,"elapsedSeconds":39.804139634,"raw":"american-sharp-normal-0100.jsonl"}
+2026-10-08T22:14:47.8034497Z {"variant":"american","higher":"sharp","lower":"normal","start":0,"end":50,"games":50,"wins":45,"draws":5,"losses":0,"elapsedSeconds":40.067235279,"raw":"american-sharp-normal-0000.jsonl"}
+2026-10-08T22:14:48.0564703Z {"variant":"american","higher":"sharp","lower":"normal","start":150,"end":200,"games":50,"wins":46,"draws":2,"losses":2,"elapsedSeconds":40.31449417300001,"raw":"american-sharp-normal-0150.jsonl"}
+2026-10-08T22:15:00.3311776Z {"variant":"american","higher":"sharp","lower":"normal","start":50,"end":100,"games":50,"wins":44,"draws":4,"losses":2,"elapsedSeconds":52.594577045,"raw":"american-sharp-normal-0050.jsonl"}
+2026-10-08T22:15:26.5421431Z {"variant":"american","higher":"sharp","lower":"normal","start":250,"end":300,"games":50,"wins":47,"draws":1,"losses":2,"elapsedSeconds":38.718430301999994,"raw":"american-sharp-normal-0250.jsonl"}
+2026-10-08T22:15:34.7316172Z {"variant":"american","higher":"sharp","lower":"normal","start":300,"end":350,"games":50,"wins":43,"draws":5,"losses":2,"elapsedSeconds":46.66016223300001,"raw":"american-sharp-normal-0300.jsonl"}
+2026-10-08T22:15:39.6679003Z {"variant":"american","higher":"sharp","lower":"normal","start":200,"end":250,"games":50,"wins":42,"draws":5,"losses":3,"elapsedSeconds":52.10562460800001,"raw":"american-sharp-normal-0200.jsonl"}
+2026-10-08T22:15:43.6991697Z {"variant":"american","higher":"sharp","lower":"normal","start":350,"end":400,"games":50,"wins":45,"draws":4,"losses":1,"elapsedSeconds":43.349453952999994,"raw":"american-sharp-normal-0350.jsonl"}
+2026-10-08T22:16:10.9576065Z {"variant":"american","higher":"sharp","lower":"normal","start":400,"end":450,"games":50,"wins":43,"draws":6,"losses":1,"elapsedSeconds":44.398833647000004,"raw":"american-sharp-normal-0400.jsonl"}
+2026-10-08T22:16:12.2352292Z {"variant":"american","higher":"sharp","lower":"normal","start":450,"end":500,"games":50,"wins":47,"draws":2,"losses":1,"elapsedSeconds":37.48515827700001,"raw":"american-sharp-normal-0450.jsonl"}
+2026-10-08T22:16:20.1090075Z {"variant":"american","higher":"sharp","lower":"normal","start":500,"end":550,"games":50,"wins":41,"draws":7,"losses":2,"elapsedSeconds":40.420749798,"raw":"american-sharp-normal-0500.jsonl"}
+2026-10-08T22:16:29.9603439Z {"variant":"american","higher":"sharp","lower":"normal","start":550,"end":600,"games":50,"wins":42,"draws":4,"losses":4,"elapsedSeconds":46.24261453399999,"raw":"american-sharp-normal-0550.jsonl"}
+2026-10-08T22:16:48.0661798Z {"variant":"american","higher":"sharp","lower":"normal","start":600,"end":650,"games":50,"wins":44,"draws":3,"losses":3,"elapsedSeconds":37.08915983700001,"raw":"american-sharp-normal-0600.jsonl"}
+2026-10-08T22:16:48.3342966Z {"variant":"american","higher":"sharp","lower":"normal","start":650,"end":700,"games":50,"wins":43,"draws":5,"losses":2,"elapsedSeconds":36.081622120999995,"raw":"american-sharp-normal-0650.jsonl"}
+2026-10-08T22:16:58.7282623Z {"variant":"american","higher":"sharp","lower":"normal","start":700,"end":750,"games":50,"wins":46,"draws":3,"losses":1,"elapsedSeconds":38.599173482999994,"raw":"american-sharp-normal-0700.jsonl"}
+2026-10-08T22:17:16.8683671Z {"variant":"american","higher":"sharp","lower":"normal","start":750,"end":800,"games":50,"wins":45,"draws":5,"losses":0,"elapsedSeconds":46.89077384799998,"raw":"american-sharp-normal-0750.jsonl"}
+2026-10-08T22:17:26.4686173Z {"variant":"american","higher":"sharp","lower":"normal","start":800,"end":850,"games":50,"wins":41,"draws":6,"losses":3,"elapsedSeconds":38.38161181599999,"raw":"american-sharp-normal-0800.jsonl"}
+2026-10-08T22:17:27.4491829Z {"variant":"american","higher":"normal","lower":"easy","start":0,"end":50,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9697226800000063,"raw":"american-normal-easy-0000.jsonl"}
+2026-10-08T22:17:28.3183350Z {"variant":"american","higher":"normal","lower":"easy","start":50,"end":100,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8605700899999938,"raw":"american-normal-easy-0050.jsonl"}
+2026-10-08T22:17:29.1350008Z {"variant":"american","higher":"sharp","lower":"normal","start":850,"end":900,"games":50,"wins":45,"draws":4,"losses":1,"elapsedSeconds":40.78031156100001,"raw":"american-sharp-normal-0850.jsonl"}
+2026-10-08T22:17:29.1781747Z {"variant":"american","higher":"normal","lower":"easy","start":100,"end":150,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8504910950000049,"raw":"american-normal-easy-0100.jsonl"}
+2026-10-08T22:17:30.0117523Z {"variant":"american","higher":"normal","lower":"easy","start":200,"end":250,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8277576750000007,"raw":"american-normal-easy-0200.jsonl"}
+2026-10-08T22:17:30.0851827Z {"variant":"american","higher":"normal","lower":"easy","start":150,"end":200,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9262773570000136,"raw":"american-normal-easy-0150.jsonl"}
+2026-10-08T22:17:30.8971641Z {"variant":"american","higher":"normal","lower":"easy","start":250,"end":300,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8708687569999892,"raw":"american-normal-easy-0250.jsonl"}
+2026-10-08T22:17:31.0000423Z {"variant":"american","higher":"normal","lower":"easy","start":300,"end":350,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9017422329999972,"raw":"american-normal-easy-0300.jsonl"}
+2026-10-08T22:17:31.7502662Z {"variant":"american","higher":"normal","lower":"easy","start":350,"end":400,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8471108629999798,"raw":"american-normal-easy-0350.jsonl"}
+2026-10-08T22:17:31.9547369Z {"variant":"american","higher":"normal","lower":"easy","start":400,"end":450,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9447837650000002,"raw":"american-normal-easy-0400.jsonl"}
+2026-10-08T22:17:32.6364578Z {"variant":"american","higher":"normal","lower":"easy","start":450,"end":500,"games":50,"wins":49,"draws":0,"losses":1,"elapsedSeconds":0.8791975000000093,"raw":"american-normal-easy-0450.jsonl"}
+2026-10-08T22:17:32.8912672Z {"variant":"american","higher":"normal","lower":"easy","start":500,"end":550,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9292058790000156,"raw":"american-normal-easy-0500.jsonl"}
+2026-10-08T22:17:33.6262236Z {"variant":"american","higher":"normal","lower":"easy","start":550,"end":600,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9772718629999727,"raw":"american-normal-easy-0550.jsonl"}
+2026-10-08T22:17:33.8235772Z {"variant":"american","higher":"normal","lower":"easy","start":600,"end":650,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9242097680000007,"raw":"american-normal-easy-0600.jsonl"}
+2026-10-08T22:17:34.4678111Z {"variant":"american","higher":"normal","lower":"easy","start":650,"end":700,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8331373550000135,"raw":"american-normal-easy-0650.jsonl"}
+2026-10-08T22:17:34.7462461Z {"variant":"american","higher":"normal","lower":"easy","start":700,"end":750,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9147070729999978,"raw":"american-normal-easy-0700.jsonl"}
+2026-10-08T22:17:35.4063831Z {"variant":"american","higher":"normal","lower":"easy","start":750,"end":800,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9322064769999997,"raw":"american-normal-easy-0750.jsonl"}
+2026-10-08T22:17:35.6698088Z {"variant":"american","higher":"normal","lower":"easy","start":800,"end":850,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8919027260000003,"raw":"american-normal-easy-0800.jsonl"}
+2026-10-08T22:17:36.3495537Z {"variant":"american","higher":"normal","lower":"easy","start":850,"end":900,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.9360234090000158,"raw":"american-normal-easy-0850.jsonl"}
+2026-10-08T22:17:36.5312015Z {"variant":"american","higher":"normal","lower":"easy","start":900,"end":950,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.854532120000018,"raw":"american-normal-easy-0900.jsonl"}
+2026-10-08T22:17:37.2028662Z {"variant":"american","higher":"normal","lower":"easy","start":950,"end":1000,"games":50,"wins":50,"draws":0,"losses":0,"elapsedSeconds":0.8458782969999884,"raw":"american-normal-easy-0950.jsonl"}
+2026-10-08T22:17:39.9963814Z {"variant":"american","higher":"sharp","lower":"normal","start":900,"end":950,"games":50,"wins":45,"draws":4,"losses":1,"elapsedSeconds":41.25975530399999,"raw":"american-sharp-normal-0900.jsonl"}
+2026-10-08T22:17:54.6088812Z {"variant":"american","higher":"sharp","lower":"normal","start":950,"end":1000,"games":50,"wins":43,"draws":4,"losses":3,"elapsedSeconds":37.728842865999994,"raw":"american-sharp-normal-0950.jsonl"}
+2026-10-08T22:17:54.6837403Z {"command":"node scripts/league.mjs --variant american --ci-partition","gamesPerVariantComparison":1000,"gamesPerComparison":1000,"workers":4,"ciPartition":"american","opening":"Standard starting board; paired identical seed with stronger side alternated. No outcome-based opening selection.","startAt":"2026-10-08T22:14:04.033Z","comparisons":[{"variant":"american","higher":"sharp","lower":"normal","games":1000,"wins":883,"draws":82,"losses":35,"scoreShare":0.924,"decisiveWinRate":0.9618736383442266,"decisiveWilson95":[0.9474376150738386,0.9724601200685112],"moves":105277,"maximumPlies":332,"workerSeconds":838.972724319,"transcriptSha256":"f56714892ef061448c7c13302bc2a88d3870bc8a1eed37ab150e6dcf5fd51ada"},{"variant":"american","higher":"normal","lower":"easy","games":1000,"wins":999,"draws":0,"losses":1,"scoreShare":0.999,"decisiveWinRate":0.999,"decisiveWilson95":[0.9943572970398398,0.9998234581709429],"moves":50305,"maximumPlies":116,"workerSeconds":17.917596982000017,"transcriptSha256":"c32d24cc7b7ff46176330317b6a6880bbaafb3e4ae9abcd8ff546c726b96094e"}],"botSourceSha256":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","gameInputHashes":{"data/chinook/DB6.bin":"baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f","data/chinook/DB6.idx":"10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd","data/endgames.json":"edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d","data/international/db2.bin":"305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed","data/international/db2.idx":"9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2","data/international/db3.bin":"9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa","data/international/db3.idx":"84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa","data/international/db4.bin":"14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa","data/international/db4.idx":"4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e","data/international/db5.bin":"b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02","data/international/db5.idx":"4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a","data/international/six/db6-0303.000.chunk":"75d63f54a4aefbb6a29871ac2c96fe8064239630c141c79298c99ede5af7bfae","data/international/six/db6-0303.idx":"9f6e7dddd055eb1234cc79750e749c9b2ef49bdf410d7761a0a27f76dc606b04","data/international/six/db6-0312.000.chunk":"a65ac7e0daf00efcb905cec95900ce8fe7c7afda3d242a693a229b2584fcdd89","data/international/six/db6-0312.idx":"9df486596addc03a3454c242a25198c35f0a371dbd0055ca1ad777bff28bc43a","data/international/six/db6-0321.000.chunk":"4f4af0182c39c3646128b9e17d2b283196e8cb4441452b4a01e9c2532e4b6b53","data/international/six/db6-0321.001.chunk":"b8d62083255a57d82395b04eddf6cf735700f3ead646b526fc9882bace3a0e40","data/international/six/db6-0321.idx":"af4c2df56553f4386223b11ad75e7ad4f5c26625be854d52b1e6f8760d8c3bee","data/international/six/db6-0330.000.chunk":"de1dfc76776fe69bf25a7e64b4f1800c17b196f7e9cf2258cb792f51d17fd5c1","data/international/six/db6-0330.idx":"ce6bba6b659d289f3823a0221a5927fe0cbdf313af052cadfbfe0259791590ca","data/international/six/db6-0402.000.chunk":"9508c060e20d0f01da854b4cd4e018f634241b5abb90e73ece71bd4ca69c2517","data/international/six/db6-0402.idx":"096c6e3b12ecf960f7012878baec51d00f1cafda9880d2b29128b21cb3821485","data/international/six/db6-0411.000.chunk":"d3a9300cbe73b288d4d897d20434b6f4373166f58cc69328043a835efbf03247","data/international/six/db6-0411.idx":"1c92044e7b38d59c1485a0b064ed22e5b685346a0d62ac8fce74c3d6d5130cf0","data/international/six/db6-0420.000.chunk":"26162642d1c3439d6e3abcef8c1a210857b371607d82a1714cb99a47ad803a6e","data/international/six/db6-0420.idx":"4d47ac027225d63cf773a0f5fe9258c5e5f3b3670b04de677bc0a10399e3a56d","data/international/six/db6-0501.000.chunk":"82881a78d8a5052037911bc0e1d33231fd1dce64f283fd5f53bb297c26e60221","data/international/six/db6-0501.idx":"d29f8d532adce5f2ba9befd66ae47413b3e91e0666b891c1f08b8b0c7eb4ea10","data/international/six/db6-0510.000.chunk":"28f286c57a29bac59c095d9efdbd2cd87ee648416a0d4e85099bd8c192bc8383","data/international/six/db6-0510.idx":"356a04a2d92ce1c614671b5e246d4c74215c55728480d79d24065252b1e3689a","data/international/six/db6-1212.000.chunk":"5f8cc263773a36546efb0af5e5f6e4bdb4bbd497a50bf00e477aec30e478923f","data/international/six/db6-1212.001.chunk":"578a53681f654ca3463c205428c02a2812751af0fc83aabb26912573bfeabf79","data/international/six/db6-1212.idx":"62c58abb6f24f8280d0f2b0d99cf2e78c85e4a8b8a37da142fdafce33911db7a","data/international/six/db6-1221.000.chunk":"acc65c6b904a669302b3f1dacf917f44852baa3febb2d33379ecdb9153dfd898","data/international/six/db6-1221.001.chunk":"44b31af46ccd5df50c10eea39107f33244be8d98ea39300c2ef739173573f775","data/international/six/db6-1221.002.chunk":"471ec101d7053b0029059f4ce617ffb88512a7d08d86f2be7e170abc29e8c2e9","data/international/six/db6-1221.003.chunk":"67460687baa048e40deaf19e4168f3fd644a9ffaad0475a02a7c65462a249738","data/international/six/db6-1221.idx":"893f2a20b42eb9b6a437b2a4c79635190b1b7d8303d67c2c6048ad762b654072","data/international/six/db6-1230.000.chunk":"45e595ea9c3279d783cf4632762912554f98103bb24fd3712ea5cd371ae077c6","data/international/six/db6-1230.001.chunk":"86282c8af312b2ee4e8a8c36a228ccd72b5a81ae7bd9e03ed86e63c92ba386cb","data/international/six/db6-1230.idx":"56f9a806af26475371ea04d7230e2316e6ce8206ea14fe28628b646ac5415d37","data/international/six/db6-1302.000.chunk":"a0bde8399fecc594fe8ad84b953018c2fd3796805de67f5361982b244027413f","data/international/six/db6-1302.001.chunk":"7398a50ae97329727420dca59b959f28ed295dbdd59e6dd54fb54d88554decfa","data/international/six/db6-1302.idx":"fc695c254e053157a79dfd22c287fcde716e887ba4a0e5765cc27be221efd7ab","data/international/six/db6-1311.000.chunk":"eac5625451bccbdee80bb5d98c1ae8b7d9dc7bcd218240d543e04ec76d692a36","data/international/six/db6-1311.001.chunk":"cc9e1d6f56f80b7f6fe73d30a878bd2c7e9be3cea795d0c64e2847976e57d88b","data/international/six/db6-1311.002.chunk":"33eb6b6262f6d2b248c2772ab41277231e227a0024007db766ae48edc31e7c6a","data/international/six/db6-1311.003.chunk":"d59c08b053c2d047da4cb9f793c9bcb905c689b0ada2108569428639f20eb107","data/international/six/db6-1311.idx":"824155526e1423c28dfc5a9e6ce803006fcdaabe5c5dcb72f52e4e0b29eb634a","data/international/six/db6-1320.000.chunk":"d37c461f883e519b95482bf38863e22c5cf71e3d4d26da2758aa06d8c5a69c1d","data/international/six/db6-1320.idx":"d9787b34307105c715e7b1f7cd463398386f5bdfa4d863fdee92af34b1dbf334","data/international/six/db6-1401.000.chunk":"45bb9b0339452bab7a464741003a168e43178944b286320b1eb70eb15458d17e","data/international/six/db6-1401.idx":"36c748d544a0d108e25f26a748f107ced6045229854dc0ec5cbabf39dccfd078","data/international/six/db6-1410.000.chunk":"6f3110cbbe9f88c12a01a7779b2034df76cc065e7767d153f17fd9d90efead51","data/international/six/db6-1410.idx":"f7a26d77bd12fb29b4d8492481e56c5c692a2c280062cc9518728882acd65890","data/international/six/db6-2121.000.chunk":"2b0d462e7d6f4e9188dec28fac5b91df1d93b655bd6f381e01dc7f82426dc742","data/international/six/db6-2121.001.chunk":"dd308ec8c23cb58e50f3be495b79934782cc3624036f88272a8526c87e6cd1f9","data/international/six/db6-2121.idx":"f3c643c2ac5d25da70b71339bc23d9c452e00244bd29562fd424b6a84ca3ad40","data/international/six/db6-2130.000.chunk":"320904de62832a1c6c9054c7650c61f10dd181da2e9b1b04aa86d2977656fde7","data/international/six/db6-2130.001.chunk":"a96061fbe9ec9d57d2edd5773fbd89145aafc7e5a5845c81bc58c5ecab63d2d6","data/international/six/db6-2130.idx":"9d6ed91ef56e08a1b98ee184839d9a880198c141aba47005a13587c572342a50","data/international/six/db6-2202.000.chunk":"43057f23a613a28f06bc9cd465b7ed44cf887dfe50e7001b7d1ef473cdbfd4b2","data/international/six/db6-2202.001.chunk":"585615fed0ec078a94e0ac32e3d52ac4d16b3eb7375663ff30d45e1293b3d44a","data/international/six/db6-2202.idx":"bae2e2b0a9709d4b46e397efdcdf322b2d461c492f221eb11f0638b2eb5951ec","data/international/six/db6-2211.000.chunk":"11dd5e990995f60597ec46e5f37a79429b072d11cf7353322dd95f7058c6d1ed","data/international/six/db6-2211.001.chunk":"8142e6725e68cefe12a42a8a8530a52182e9f44a2b85cb5ded48e445bc85bd7f","data/international/six/db6-2211.002.chunk":"c4d38e79e79b87802b26eded2a7c364946fea4d95450d35f10d7dcce343a8c69","data/international/six/db6-2211.003.chunk":"20b4af2d5329d20ebb3075c8cb31878935c15512cc2808546418879729f79402","data/international/six/db6-2211.004.chunk":"a4367099cfdacac510225de250b300e8fed1ba70d4438e14b311b7c796501089","data/international/six/db6-2211.005.chunk":"19b3a66dbf1497e2e455732a0f7ffb927c9e577f56c75419716439f524e9d514","data/international/six/db6-2211.006.chunk":"8bd6bc5bd76720a95a312bd8c6bae30701a6e99be19886e16126ca6abc3b2a7e","data/international/six/db6-2211.idx":"a525a93cfb7ccef53dce68366382a0c8764af216568b02b045edd8bd1230012a","data/international/six/db6-2220.000.chunk":"e1af2d5283389f43c81708a249e3c0b9968ed4aa322ac0bca48ca1ccc5d4dd7c","data/international/six/db6-2220.idx":"e3f4b23066c9f91d4a0f43984cbea7c01817d6a0e25c3705c7fb8327eb8a31a6","data/international/six/db6-2301.000.chunk":"0b6489a374a7680cb6697f2e78d0261558c15e5f6c629279b84f760cc5e2d4e4","data/international/six/db6-2301.idx":"fdcbc2bd251bf3b73822bd0e2b92cb8791deaa009bd2ab8730a25e3395ce7726","data/international/six/db6-2310.000.chunk":"13ae77b5d13ad94678dab0cfb4ca74f4db89190371eacc10bd92cadf10eb350f","data/international/six/db6-2310.idx":"1f8ece0f98423c4b9213ab41a2eec40fe32679fe71268bce240714d1b7896cda","data/international/six/db6-3030.000.chunk":"cecd125dd3e9f0e1fa8f42abd0d51c9b3f679839db56a60b50b380e764302569","data/international/six/db6-3030.idx":"c41521d134874aaa3151b4595373caf3a91afc0aea9e249c0d722612c0370a82","data/international/six/db6-3102.000.chunk":"c90c2e7384f00811e0445f566d7aa7243e861b65c71791df05f3679c1e6080c1","data/international/six/db6-3102.idx":"f0161e4b20319d077c04ae0e4607ac81a7b50315ea72ff456494b00072dac06d","data/international/six/db6-3111.000.chunk":"e62bab91ea59dbef862261975d320585d13f83fbaf709c7d686e0a085b594576","data/international/six/db6-3111.001.chunk":"49c653dccca0ad25d6c3e858f8dd55e540dfb48d6cee1dba749214d8d12b129b","data/international/six/db6-3111.002.chunk":"f3e3f75261fe41cc65d1ee5c3e4c391c5945e96c7635c091e384ed10d253043c","data/international/six/db6-3111.003.chunk":"5c6f451ee293fea2955580ac6717a2aeb991c58693c1f9a0aa5f7107c506d075","data/international/six/db6-3111.004.chunk":"53e58423b9d85e32bbb2eb3552df28124d5172ca983c214738558e7cf543234d","data/international/six/db6-3111.005.chunk":"6fa72cec7f0dcd4a79458b766c04f2fbbc3eeb1804f8ab8f1a3d546c1d0c04df","data/international/six/db6-3111.idx":"552cea6807e5de8bdaaa7430e48429d2876663c1c13bf8a80438ec3fc11222db","data/international/six/db6-3120.000.chunk":"4849d82cf6c7978ef034fc98ef90951d041b740fd79510c67f902a447061a5d2","data/international/six/db6-3120.idx":"b5243e519c0a2fb6f513062094758a95306e9144a48c7a555a79ed1887780c86","data/international/six/db6-3201.000.chunk":"8d899206c06202a55395530df8eab92bbd29b879e1310c0b704bdd26d1131772","data/international/six/db6-3201.idx":"f9b27e6e4cee762ed97a568b8f32673b1bfe5c22a64d0c5b47b7a18f39749958","data/international/six/db6-3210.000.chunk":"f829ad406b3b2b1f45e1ac30bc0e43440ce2b808025c27d3bfff2f704edeffb4","data/international/six/db6-3210.idx":"ab335ebeed4f38b97ad72512c77a84aa1a7a5b5d63f00278d205e9386b07c3be","data/international/six/db6-4002.000.chunk":"1f810fcb514771696b8b44d264a552607de2068b0595e165ee1b337f691d2530","data/international/six/db6-4002.idx":"7813f455b5b0225444c95e3424c3f30414373dae0cc6065d9b3e7bd07c304c67","data/international/six/db6-4011.000.chunk":"4e9176f2619ef1c62e5cbc5cb1e3ca7a0c45035148e4fb526eefc1266e1e7e38","data/international/six/db6-4011.idx":"84ad8d66b8560bdcf7a999b867381f36d93ee7724cf89d5abda8020ff9658e2d","data/international/six/db6-4020.000.chunk":"c1b0099c29929bd38f39e02b805bfa395e8b058bc73b3710bf6112efc2a56413","data/international/six/db6-4020.idx":"ed46094e80d77e4f27bdae4fe5678903eac0d72ff11bfbf0addf2d84205b7acd","data/international/six/db6-4101.000.chunk":"84e48039e29063ac53bb53f825c070190c6d424d91e41b3c6b8a5712d99dc07a","data/international/six/db6-4101.idx":"5b89058e3c8e2d225b5f80560b27f8001e42d648b410a616165747f2dc2f2a1b","data/international/six/db6-4110.000.chunk":"271c7e822c1a87b1a01c50a0705040d4e22f6f1a6850ba2baf547b09019a9e9c","data/international/six/db6-4110.idx":"99d0d61cfa656d9c84500f41892c66fbe9d24ebd96b873e63d8b3a3315a0fa78","data/international/six/db6-5001.000.chunk":"abb0af9db0c77accee65b836150e0eeed6c24d79d1c552ff21c9f1825e3846cf","data/international/six/db6-5001.idx":"3316a344e28cc3115daf8ed5d0dbf7f66dc57cafc39262172026d7efea6aab76","data/international/six/db6-5010.000.chunk":"b842fd58f936f742947a84e4587ba88fbc656ffa85371e2e75f57b79af612c5b","data/international/six/db6-5010.idx":"bd8c7a7853c0528d92799fbad5a1344a1ae4e7478598c9c82171afccef8cee41","data/international/six/manifest.json":"6532df5af4306b1b6b16723155b756faacef549bcc8292ccbf0e7663a707a28c","data/international/tunstall-v2.bin":"92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9","src/bots.ts":"450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219","src/chinook-corpus.ts":"d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8","src/chinook.ts":"97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a","src/core.ts":"516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b","src/draws.ts":"e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1","src/endgame.ts":"f9f6cea20233c09dbd4cc3cf1337300ecc0cd5b833674e94baa193d04db98821","src/international-corpus.ts":"356c00f5c25642a9393e73e16306f0e02bb31e10818e0cdcfd99e26534b84a8a","src/international-indexes.ts":"fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625","src/international-search.ts":"67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee","src/international-six-data.ts":"08566eb9e7c6d7b324ac3a26f72edf86f8b22634361ec052d099bdab88e851d6","src/international-six-indexes.ts":"641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99","src/international.ts":"832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce","src/moves.ts":"d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1","src/retrograde.ts":"62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03","src/schema.ts":"416cb6ea418a0c71eb31e4cf8452bb16fbf455d23bd338a0326a76c22e0670ee","src/types.ts":"079cd5dbb2e20329bf386c3f506c3009534d2afce98804a1a999a239fe1cb16a"},"workerAllocation":[[{"variant":"american","workers":4}]],"warmups":[{"kind":"ready","variant":"american","importSeconds":0.6786702429999998,"memory":{"rss":379269120,"heapTotal":169807872,"heapUsed":159434384,"external":99203571,"arrayBuffers":96274437}},{"kind":"ready","variant":"american","importSeconds":0.6164885790000001,"memory":{"rss":698261504,"heapTotal":169496576,"heapUsed":157355696,"external":99203571,"arrayBuffers":96274437}},{"kind":"ready","variant":"american","importSeconds":0.620126248,"memory":{"rss":984944640,"heapTotal":186970112,"heapUsed":154627064,"external":99203571,"arrayBuffers":96274437}},{"kind":"ready","variant":"american","importSeconds":0.6068990329999997,"memory":{"rss":1271173120,"heapTotal":169758720,"heapUsed":156955056,"external":99203571,"arrayBuffers":96274437}}],"wholeProcessPeakRssKiB":3116788,"totalGames":2000,"elapsedSeconds":229.621871376}
+2026-10-08T22:17:58.3511802Z {"status":"PASS","stage":"league-american","sourceCommit":"fa0b337e1178177ff5b871acae697897c687ee11","elapsedSeconds":269.491366543}
+2026-10-08T22:17:58.3648343Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T22:17:58.3648655Z with:
+2026-10-08T22:17:58.3649004Z   name: G10-stage-league-american-fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:17:58.3650155Z   path: jobs/G10-checkers/.work-stage-league-american.stdout
+jobs/G10-checkers/.work/checks
+jobs/G10-checkers/.work/browser
+jobs/G10-checkers/.work/media
+
+2026-10-08T22:17:58.3650842Z   if-no-files-found: error
+2026-10-08T22:17:58.3651086Z   include-hidden-files: true
+2026-10-08T22:17:58.3651333Z   retention-days: 7
+2026-10-08T22:17:58.3651551Z   compression-level: 6
+2026-10-08T22:17:58.3651768Z   overwrite: false
+2026-10-08T22:17:58.3651961Z env:
+2026-10-08T22:17:58.3652216Z   G10_SOURCE_COMMIT: fa0b337e1178177ff5b871acae697897c687ee11
+2026-10-08T22:17:58.3652535Z ##[endgroup]
+2026-10-08T22:17:58.5305695Z (node:2544) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T22:17:58.5306954Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T22:17:58.5478989Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T22:17:58.5482632Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers. This will be the root directory of the artifact
+2026-10-08T22:17:58.5484121Z With the provided path, there will be 43 files uploaded
+2026-10-08T22:17:58.5488291Z Artifact name is valid!
+2026-10-08T22:17:58.5489541Z Root directory input is valid!
+2026-10-08T22:17:58.9603715Z Beginning upload of artifact content to blob storage
+2026-10-08T22:17:59.0901307Z (node:2544) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T22:17:59.6573080Z Uploaded bytes 372087
+2026-10-08T22:17:59.7379460Z Finished uploading artifact content to blob storage!
+2026-10-08T22:17:59.7380582Z SHA256 digest of uploaded artifact zip is 669881c1a6c5ff6dc649836736f489c8c75328c45d6adea31b57bd281aa94244
+2026-10-08T22:17:59.7381919Z Finalizing artifact upload
+2026-10-08T22:18:00.0082461Z Artifact G10-stage-league-american-fa0b337e1178177ff5b871acae697897c687ee11.zip successfully finalized. Artifact ID 11582416954
+2026-10-08T22:18:00.0085882Z Artifact G10-stage-league-american-fa0b337e1178177ff5b871acae697897c687ee11 has been successfully uploaded! Final size is 372087 bytes. Artifact ID is 11582416954
+2026-10-08T22:18:00.0089486Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37852024033/artifacts/11582416954
+2026-10-08T22:18:00.0273387Z Post job cleanup.
+2026-10-08T22:18:00.1544734Z (node:2557) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T22:18:00.1546043Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T22:18:00.1548657Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a, not saving cache.
+2026-10-08T22:18:00.1700433Z Post job cleanup.
+2026-10-08T22:18:00.2548038Z [command]/usr/bin/git version
+2026-10-08T22:18:00.2591706Z git version 2.55.0
+2026-10-08T22:18:00.2634298Z Temporarily overriding HOME='/home/runner/work/_temp/787bde19-69ee-4f7e-bc1f-ed6f7676365f' before making global git config changes
+2026-10-08T22:18:00.2636262Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T22:18:00.2640888Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T22:18:00.2680691Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T22:18:00.2716408Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T22:18:00.2981395Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T22:18:00.3000916Z http.https://github.com/.extraheader
+2026-10-08T22:18:00.3019884Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T22:18:00.3049087Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T22:18:00.3371213Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T22:18:00.3430760Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T22:18:00.3917429Z Cleaning up orphan processes
+2026-10-08T22:18:00.4194627Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

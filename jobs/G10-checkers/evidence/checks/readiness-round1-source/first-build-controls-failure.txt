@@ -1,0 +1,21 @@
+Actual owned session97112 CLOSED EXIT1, observed 2026-10-08 22:22:41 UTC:
+PASS full strict ES2022 private source overlay
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(start>=8&&end>start)
+
+    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/american-ready-private/build-bootstrap.mjs:78:142 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '=='
+}
+
+Node.js v22.16.0
+
+Scope: original private helper used a fixed2MiB prefix that did not reach the actual compiled bootstrap end. No game/CI/browser/timing acceptance is inferred.

@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-10-08T15:50:57.725873+00:00",
+  "branch": "job/G10-checkers-complete-20261008",
+  "priorSuccessfulPush": {
+    "head": "35fa869",
+    "utc": "2026-10-08T15:28:19Z",
+    "intervalSeconds": 1726
+  },
+  "completeRecordPilotGames": 16,
+  "completeRecordEquivalence": "PASS",
+  "actualPilotMaxRssKiB": 5341180,
+  "actualPilotElapsedSeconds": 91.01967121798953,
+  "templateCost": "Measured private A/B completed; no causal or frame gain; no production adoption",
+  "pending": [
+    "final4000 strength",
+    "final7000 matrix",
+    "actual CI30minute fit",
+    "strict browser desktop and phone",
+    "full page publication",
+    "pull request",
+    "KEEP GOING"
+  ],
+  "sourceUnavailable": false,
+  "nextSuccessfulPushTarget": "2026-10-08T15:53:19Z",
+  "hardDeadline": "2026-10-08T15:58:19Z"
+}

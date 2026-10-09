@@ -1,0 +1,77 @@
+{
+  "status": "PASS_EXACT_RECORDS_PROFILE",
+  "scope": "Four fixed unchanged International Strong/Medium games; actual CPU profile, no speed or CI claim",
+  "archivedAt": "2026-10-08T15:59:20.492923+00:00",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 4090,
+      "sha256": "a761be3155310f9da0eb71ea861e924c4b500293e8bc5a88bd5ba36af4f129aa"
+    },
+    {
+      "file": "actual-games.jsonl",
+      "bytes": 15464,
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c"
+    },
+    {
+      "file": "cpu-profile.json",
+      "bytes": 216407,
+      "sha256": "f8a5084f3120ad2e129276967b3d88c4c1624ff9d2c5994bcfb5800d5a6f570b"
+    },
+    {
+      "file": "function-costs.json",
+      "bytes": 26733,
+      "sha256": "e7ac449eb053fcea9dd6ce1d8b63e36a1df1e07a097313580d23138ce8703b0d"
+    },
+    {
+      "file": "game-result.json",
+      "bytes": 54332,
+      "sha256": "a4b7c13a3d2f9d40427ce27314a2811ea6ca16a381d03eecb89d2158defd10d3"
+    },
+    {
+      "file": "original-league-worker.mjs",
+      "bytes": 2249,
+      "sha256": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557"
+    },
+    {
+      "file": "pause-receipt.json",
+      "bytes": 347,
+      "sha256": "e836e4b4407a4a3fb3c1c2666e4072ee53df3063287fdfbcf241e6be5e3e3b0f"
+    },
+    {
+      "file": "profile.mjs",
+      "bytes": 5752,
+      "sha256": "a1082ccd77f0eaa18c097197869114aeafafc9596e1346b25a0af96f93c63133"
+    },
+    {
+      "file": "report.json",
+      "bytes": 38707,
+      "sha256": "4a21f5ff33de708efb8d4a9c7bf6c57d748c67a8cb62bfa45a8f14c593dcba1a"
+    },
+    {
+      "file": "resource-wrapper.py",
+      "bytes": 619,
+      "sha256": "141011e4e43e6910d70ba0e378ca35a5f7c5b0a61d120ab524ef1ddd609f1774"
+    },
+    {
+      "file": "resources.json",
+      "bytes": 378,
+      "sha256": "3b93351c67300d38301a92132e3975a1105d6f1a94dfa2df3e05312174e19461"
+    },
+    {
+      "file": "stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "stdout.jsonl",
+      "bytes": 10905,
+      "sha256": "6fac26bcf97d9add63e16102cd9947dbd910dd1ffb06aaba00fe6584ec73b8f3"
+    },
+    {
+      "file": "worker.mjs",
+      "bytes": 1339,
+      "sha256": "0255408da66fe5c9701d2026798c6927f84cdd531b1e52caec15e97b5c9f7b97"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "id": "checkers",
+  "name": "Checkers",
+  "icon": "⚫",
+  "tagline": "Every capture counts. Find the winning line.",
+  "description": "American and International draughts, complete capture sequences, three bot levels and official draw counters.",
+  "howToPlay": [
+    "Move diagonally on the dark squares; highlighted moves are legal.",
+    "Capture whenever possible and complete every required jump.",
+    "Crown your men and leave the opponent without a legal move."
+  ],
+  "version": "1.0.0",
+  "minPlayers": 2,
+  "maxPlayers": 2,
+  "estimatedMinutes": 20,
+  "unlimitedDuration": true,
+  "tags": [
+    "classic",
+    "strategy"
+  ],
+  "presence": {
+    "needs": "same-room"
+  },
+  "addedOn": "2026-10-08",
+  "supportsBots": true,
+  "saveable": true,
+  "noCards": true,
+  "settings": [
+    {
+      "key": "variant",
+      "label": "Rules",
+      "type": "select",
+      "default": "american",
+      "options": [
+        {
+          "value": "american",
+          "label": "American · 8 × 8"
+        },
+        {
+          "value": "international",
+          "label": "International · 10 × 10"
+        }
+      ]
+    },
+    {
+      "key": "drawPolicy",
+      "label": "Move-count draw",
+      "type": "select",
+      "default": "official",
+      "options": [
+        {
+          "value": "official",
+          "label": "Official for selected rules"
+        },
+        {
+          "value": "fortyMove",
+          "label": "40 moves each · house rule"
+        }
+      ]
+    },
+    {
+      "key": "repetition",
+      "label": "Threefold repetition draw",
+      "type": "boolean",
+      "default": true
+    },
+    {
+      "key": "turnSeconds",
+      "label": "Seconds per move (0 is off)",
+      "type": "number",
+      "default": 0,
+      "min": 0,
+      "max": 300,
+      "step": 1
+    }
+  ]
+}

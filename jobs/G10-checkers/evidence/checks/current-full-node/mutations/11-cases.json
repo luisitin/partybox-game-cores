@@ -1,0 +1,80 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": true
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected \"actual\" to be reference-equal to \"expected\":\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n    drawWindows: [],\n+   endReason: 'resignation',\n-   endReason: null,\n    lastMove: null,\n    left: [],\n    moveLog: [],\n    order: [\n      'light',\n...\n    phase: {\n+     deadline: null,\n+     id: 'done',\n+     startedAt: 1001\n-     deadline: 4000,\n-     id: 'move',\n-     startedAt: 1000\n    },\n+   phaseClock: 1001,\n-   phaseClock: 1000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'original-1',\n        connected: true,\n...\n    variant: 'american',\n+   winner: 'dark'\n-   winner: null\n  }\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected \"actual\" to be reference-equal to \"expected\":\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n    drawWindows: [],\n+   endReason: 'resignation',\n-   endReason: null,\n    lastMove: null,\n    left: [],\n    moveLog: [],\n    order: [\n      'light',\n...\n    phase: {\n+     deadline: null,\n+     id: 'done',\n+     startedAt: 1001\n-     deadline: 4000,\n-     id: 'move',\n-     startedAt: 1000\n    },\n+   phaseClock: 1001,\n-   phaseClock: 1000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'original-1',\n        connected: true,\n...\n    variant: 'american',\n+   winner: 'dark'\n-   winner: null\n  }\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:32:69\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "The expression evaluated to a falsy value:\n\n  assert(next.phase.startedAt>first.phase.startedAt)\n",
+      "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(next.phase.startedAt>first.phase.startedAt)\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:44:134\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": true
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\n12200 !== 12000\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n12200 !== 12000\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:62:174\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly equal:\n\nfalse !== true\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:72:312\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "American forced complete double jump excludes quiet moves\n\n0 !== 1\n",
+      "stack": "AssertionError [ERR_ASSERTION]: American forced complete double jump excludes quiet moves\n\n0 !== 1\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:81:274\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "The expression evaluated to a falsy value:\n\n  assert(inputSchema.safeParse(a).success)\n",
+      "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(inputSchema.safeParse(a).success)\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:91:176\n    at verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:15)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": false,
+    "error": {
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION",
+      "message": "Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n    drawWindows: [],\n+   endReason: null,\n-   endReason: 'resignation',\n    lastMove: null,\n    left: [],\n    moveLog: [],\n    order: [\n      'light',\n...\n      deadline: null,\n+     id: 'move',\n+     startedAt: 1000\n-     id: 'done',\n-     startedAt: 2000\n    },\n+   phaseClock: 1000,\n-   phaseClock: 2000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'dark',\n        connected: true,\n...\n    variant: 'american',\n+   winner: null\n-   winner: 'dark'\n  }\n",
+      "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    autoPaused: false,\n    board: [\n      -1,\n      -1,\n...\n    drawWindows: [],\n+   endReason: null,\n-   endReason: 'resignation',\n    lastMove: null,\n    left: [],\n    moveLog: [],\n    order: [\n      'light',\n...\n      deadline: null,\n+     id: 'move',\n+     startedAt: 1000\n-     id: 'done',\n-     startedAt: 2000\n    },\n+   phaseClock: 1000,\n-   phaseClock: 2000,\n    phoneOnly: false,\n    players: {\n      dark: {\n        avatarId: 'dark',\n        connected: true,\n...\n    variant: 'american',\n+   winner: null\n-   winner: 'dark'\n  }\n\n    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/tests/core-cases.mjs:102:105\n    at async verifyCases (file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:40:9)\n    at async file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/mutations.mjs:54:15"
+    }
+  }
+]

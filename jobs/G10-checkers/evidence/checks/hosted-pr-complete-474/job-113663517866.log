@@ -1,0 +1,1261 @@
+﻿2026-10-09T04:02:12.5746023Z Current runner version: '2.337.0'
+2026-10-09T04:02:12.5771016Z ##[group]Runner Image Provisioner
+2026-10-09T04:02:12.5771913Z Hosted Compute Agent
+2026-10-09T04:02:12.5772565Z Version: 20261002.596
+2026-10-09T04:02:12.5773214Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T04:02:12.5773939Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T04:02:12.5774666Z Worker ID: {2a2e5393-f000-4756-a753-985b911885fe}
+2026-10-09T04:02:12.5775414Z Region: eastus
+2026-10-09T04:02:12.5775950Z Cloud: Azure
+2026-10-09T04:02:12.5776559Z ##[endgroup]
+2026-10-09T04:02:12.5778698Z ##[group]Operating System
+2026-10-09T04:02:12.5779481Z Ubuntu
+2026-10-09T04:02:12.5780046Z 24.04.5
+2026-10-09T04:02:12.5780547Z LTS
+2026-10-09T04:02:12.5781135Z ##[endgroup]
+2026-10-09T04:02:12.5781754Z ##[group]Runner Image
+2026-10-09T04:02:12.5782414Z Image: ubuntu-24.04
+2026-10-09T04:02:12.5783018Z Version: 20261004.327.1
+2026-10-09T04:02:12.5784332Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T04:02:12.5785908Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T04:02:12.5786943Z ##[endgroup]
+2026-10-09T04:02:12.5788677Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T04:02:12.5790708Z Contents: read
+2026-10-09T04:02:12.5791312Z Metadata: read
+2026-10-09T04:02:12.5791855Z ##[endgroup]
+2026-10-09T04:02:12.5794079Z Secret source: Actions
+2026-10-09T04:02:12.5795130Z Cache mode: write
+2026-10-09T04:02:12.5795841Z Prepare workflow directory
+2026-10-09T04:02:12.6349161Z Prepare all required actions
+2026-10-09T04:02:12.6398768Z Getting action download info
+2026-10-09T04:02:12.8671867Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T04:02:12.9790042Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T04:02:13.0762009Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2026-10-09T04:02:13.2434627Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T04:02:13.5101244Z Complete job name: delivery
+2026-10-09T04:02:13.6358271Z ##[group]Run actions/checkout@v4
+2026-10-09T04:02:13.6359683Z with:
+2026-10-09T04:02:13.6360538Z   ref: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:13.6361721Z   repository: luisitin/partybox-game-cores
+2026-10-09T04:02:13.6370712Z   token: ***
+2026-10-09T04:02:13.6371485Z   ssh-strict: true
+2026-10-09T04:02:13.6372275Z   ssh-user: git
+2026-10-09T04:02:13.6373074Z   persist-credentials: true
+2026-10-09T04:02:13.6373971Z   clean: true
+2026-10-09T04:02:13.6374782Z   sparse-checkout-cone-mode: true
+2026-10-09T04:02:13.6375748Z   fetch-depth: 1
+2026-10-09T04:02:13.6376535Z   fetch-tags: false
+2026-10-09T04:02:13.6377481Z   show-progress: true
+2026-10-09T04:02:13.6378332Z   lfs: false
+2026-10-09T04:02:13.6379088Z   submodules: false
+2026-10-09T04:02:13.6379910Z   set-safe-directory: true
+2026-10-09T04:02:13.6380872Z   allow-unsafe-pr-checkout: false
+2026-10-09T04:02:13.6382116Z env:
+2026-10-09T04:02:13.6383120Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:13.6384315Z ##[endgroup]
+2026-10-09T04:02:13.7447950Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T04:02:13.7452085Z ##[group]Getting Git version info
+2026-10-09T04:02:13.7454572Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T04:02:13.7458382Z [command]/usr/bin/git version
+2026-10-09T04:02:13.7508231Z git version 2.55.0
+2026-10-09T04:02:13.7533590Z ##[endgroup]
+2026-10-09T04:02:13.7550036Z Temporarily overriding HOME='/home/runner/work/_temp/857ee5c1-d189-41dc-87bb-45130209cf4c' before making global git config changes
+2026-10-09T04:02:13.7553171Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T04:02:13.7556568Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T04:02:13.7619369Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T04:02:13.7623321Z ##[group]Initializing the repository
+2026-10-09T04:02:13.7628645Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T04:02:13.7758178Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T04:02:13.7761969Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T04:02:13.7765073Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T04:02:13.7767979Z hint: call:
+2026-10-09T04:02:13.7769341Z hint:
+2026-10-09T04:02:13.7770891Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T04:02:13.7772863Z hint:
+2026-10-09T04:02:13.7774786Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T04:02:13.7778235Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T04:02:13.7780581Z hint:
+2026-10-09T04:02:13.7782363Z hint: 	git branch -m <name>
+2026-10-09T04:02:13.7784199Z hint:
+2026-10-09T04:02:13.7786437Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T04:02:13.7790441Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T04:02:13.7796178Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T04:02:13.7832007Z ##[endgroup]
+2026-10-09T04:02:13.7834516Z ##[group]Disabling automatic garbage collection
+2026-10-09T04:02:13.7836716Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T04:02:13.7874533Z ##[endgroup]
+2026-10-09T04:02:13.7876751Z ##[group]Setting up auth
+2026-10-09T04:02:13.7881368Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T04:02:13.7916563Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T04:02:13.8341666Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T04:02:13.8386767Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T04:02:13.8620037Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T04:02:13.8657009Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T04:02:13.8884806Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T04:02:13.8926125Z ##[endgroup]
+2026-10-09T04:02:13.8927948Z ##[group]Fetching the repository
+2026-10-09T04:02:13.8936756Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:35.6662567Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T04:02:35.6663357Z  * branch            474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f -> FETCH_HEAD
+2026-10-09T04:02:35.6667797Z ##[endgroup]
+2026-10-09T04:02:35.6669366Z ##[group]Determining the checkout info
+2026-10-09T04:02:35.6671844Z ##[endgroup]
+2026-10-09T04:02:35.6707950Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T04:02:35.6759813Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T04:02:35.6785711Z ##[group]Checking out the ref
+2026-10-09T04:02:35.6798543Z [command]/usr/bin/git checkout --progress --force 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:36.9483697Z Updating files:   8% (180/2109)
+2026-10-09T04:02:37.7716694Z Updating files:   9% (190/2109)
+2026-10-09T04:02:38.4369358Z Updating files:   9% (199/2109)
+2026-10-09T04:02:38.7945328Z Updating files:  10% (211/2109)
+2026-10-09T04:02:39.7461436Z Updating files:  10% (216/2109)
+2026-10-09T04:02:40.1096553Z Updating files:  10% (226/2109)
+2026-10-09T04:02:40.7761284Z Updating files:  11% (232/2109)
+2026-10-09T04:02:41.1402973Z Updating files:  11% (243/2109)
+2026-10-09T04:02:41.3696200Z Updating files:  12% (254/2109)
+2026-10-09T04:02:41.3707359Z Updating files:  13% (275/2109)
+2026-10-09T04:02:41.3722029Z Updating files:  14% (296/2109)
+2026-10-09T04:02:41.3927603Z Updating files:  15% (317/2109)
+2026-10-09T04:02:41.3937431Z Updating files:  16% (338/2109)
+2026-10-09T04:02:41.3975694Z Updating files:  17% (359/2109)
+2026-10-09T04:02:41.4126128Z Updating files:  18% (380/2109)
+2026-10-09T04:02:41.4148405Z Updating files:  19% (401/2109)
+2026-10-09T04:02:41.4168473Z Updating files:  20% (422/2109)
+2026-10-09T04:02:41.4187042Z Updating files:  21% (443/2109)
+2026-10-09T04:02:41.4217170Z Updating files:  22% (464/2109)
+2026-10-09T04:02:41.4243205Z Updating files:  23% (486/2109)
+2026-10-09T04:02:41.4265684Z Updating files:  24% (507/2109)
+2026-10-09T04:02:41.4282626Z Updating files:  25% (528/2109)
+2026-10-09T04:02:41.4378725Z Updating files:  26% (549/2109)
+2026-10-09T04:02:41.4559650Z Updating files:  27% (570/2109)
+2026-10-09T04:02:41.4735505Z Updating files:  28% (591/2109)
+2026-10-09T04:02:41.4793149Z Updating files:  29% (612/2109)
+2026-10-09T04:02:41.4846028Z Updating files:  30% (633/2109)
+2026-10-09T04:02:41.5111985Z Updating files:  31% (654/2109)
+2026-10-09T04:02:41.5301529Z Updating files:  32% (675/2109)
+2026-10-09T04:02:41.5313254Z Updating files:  33% (696/2109)
+2026-10-09T04:02:41.5492823Z Updating files:  34% (718/2109)
+2026-10-09T04:02:41.5501284Z Updating files:  35% (739/2109)
+2026-10-09T04:02:41.5694708Z Updating files:  36% (760/2109)
+2026-10-09T04:02:41.5880938Z Updating files:  37% (781/2109)
+2026-10-09T04:02:41.5912881Z Updating files:  38% (802/2109)
+2026-10-09T04:02:41.5928345Z Updating files:  39% (823/2109)
+2026-10-09T04:02:41.6117605Z Updating files:  40% (844/2109)
+2026-10-09T04:02:41.6308434Z Updating files:  41% (865/2109)
+2026-10-09T04:02:41.6325140Z Updating files:  42% (886/2109)
+2026-10-09T04:02:41.6347865Z Updating files:  43% (907/2109)
+2026-10-09T04:02:41.6397589Z Updating files:  44% (928/2109)
+2026-10-09T04:02:41.6408183Z Updating files:  45% (950/2109)
+2026-10-09T04:02:41.6421644Z Updating files:  46% (971/2109)
+2026-10-09T04:02:41.6567240Z Updating files:  47% (992/2109)
+2026-10-09T04:02:41.6735686Z Updating files:  48% (1013/2109)
+2026-10-09T04:02:41.6861959Z Updating files:  49% (1034/2109)
+2026-10-09T04:02:41.6889456Z Updating files:  49% (1051/2109)
+2026-10-09T04:02:41.7064428Z Updating files:  50% (1055/2109)
+2026-10-09T04:02:41.7083593Z Updating files:  51% (1076/2109)
+2026-10-09T04:02:41.7095737Z Updating files:  52% (1097/2109)
+2026-10-09T04:02:41.7115688Z Updating files:  53% (1118/2109)
+2026-10-09T04:02:41.7166024Z Updating files:  54% (1139/2109)
+2026-10-09T04:02:41.7213223Z Updating files:  55% (1160/2109)
+2026-10-09T04:02:41.7248039Z Updating files:  56% (1182/2109)
+2026-10-09T04:02:41.7303765Z Updating files:  57% (1203/2109)
+2026-10-09T04:02:41.7361355Z Updating files:  58% (1224/2109)
+2026-10-09T04:02:41.7421788Z Updating files:  59% (1245/2109)
+2026-10-09T04:02:41.7441865Z Updating files:  60% (1266/2109)
+2026-10-09T04:02:41.7473213Z Updating files:  61% (1287/2109)
+2026-10-09T04:02:41.7512896Z Updating files:  62% (1308/2109)
+2026-10-09T04:02:41.7556398Z Updating files:  63% (1329/2109)
+2026-10-09T04:02:41.7607907Z Updating files:  64% (1350/2109)
+2026-10-09T04:02:41.7635531Z Updating files:  65% (1371/2109)
+2026-10-09T04:02:41.7675272Z Updating files:  66% (1392/2109)
+2026-10-09T04:02:41.7721345Z Updating files:  67% (1414/2109)
+2026-10-09T04:02:41.7787897Z Updating files:  68% (1435/2109)
+2026-10-09T04:02:41.7800960Z Updating files:  69% (1456/2109)
+2026-10-09T04:02:41.7810676Z Updating files:  70% (1477/2109)
+2026-10-09T04:02:41.7835055Z Updating files:  71% (1498/2109)
+2026-10-09T04:02:41.7846917Z Updating files:  72% (1519/2109)
+2026-10-09T04:02:41.7856829Z Updating files:  73% (1540/2109)
+2026-10-09T04:02:41.7864885Z Updating files:  74% (1561/2109)
+2026-10-09T04:02:41.7905700Z Updating files:  75% (1582/2109)
+2026-10-09T04:02:41.7917887Z Updating files:  76% (1603/2109)
+2026-10-09T04:02:41.7929695Z Updating files:  77% (1624/2109)
+2026-10-09T04:02:41.7942282Z Updating files:  78% (1646/2109)
+2026-10-09T04:02:41.7952348Z Updating files:  79% (1667/2109)
+2026-10-09T04:02:41.7962857Z Updating files:  80% (1688/2109)
+2026-10-09T04:02:41.7972807Z Updating files:  81% (1709/2109)
+2026-10-09T04:02:41.7983368Z Updating files:  82% (1730/2109)
+2026-10-09T04:02:41.8011966Z Updating files:  83% (1751/2109)
+2026-10-09T04:02:41.8022151Z Updating files:  84% (1772/2109)
+2026-10-09T04:02:41.8032355Z Updating files:  85% (1793/2109)
+2026-10-09T04:02:41.8040470Z Updating files:  86% (1814/2109)
+2026-10-09T04:02:41.8051333Z Updating files:  87% (1835/2109)
+2026-10-09T04:02:41.8061356Z Updating files:  88% (1856/2109)
+2026-10-09T04:02:41.8071292Z Updating files:  89% (1878/2109)
+2026-10-09T04:02:41.8080512Z Updating files:  90% (1899/2109)
+2026-10-09T04:02:41.8097923Z Updating files:  91% (1920/2109)
+2026-10-09T04:02:41.8144937Z Updating files:  92% (1941/2109)
+2026-10-09T04:02:41.8228169Z Updating files:  93% (1962/2109)
+2026-10-09T04:02:41.8244743Z Updating files:  94% (1983/2109)
+2026-10-09T04:02:41.8538823Z Updating files:  95% (2004/2109)
+2026-10-09T04:02:42.1634886Z Updating files:  96% (2025/2109)
+2026-10-09T04:02:42.1645320Z Updating files:  97% (2046/2109)
+2026-10-09T04:02:42.1657320Z Updating files:  98% (2067/2109)
+2026-10-09T04:02:42.1669699Z Updating files:  99% (2088/2109)
+2026-10-09T04:02:42.1670531Z Updating files: 100% (2109/2109)
+2026-10-09T04:02:42.1671091Z Updating files: 100% (2109/2109), done.
+2026-10-09T04:02:42.1696785Z Note: switching to '474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f'.
+2026-10-09T04:02:42.1697336Z 
+2026-10-09T04:02:42.1708720Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T04:02:42.1709695Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T04:02:42.1710982Z state without impacting any branches by switching back to a branch.
+2026-10-09T04:02:42.1711512Z 
+2026-10-09T04:02:42.1712120Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T04:02:42.1712709Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T04:02:42.1713038Z 
+2026-10-09T04:02:42.1713176Z   git switch -c <new-branch-name>
+2026-10-09T04:02:42.1713392Z 
+2026-10-09T04:02:42.1713520Z Or undo this operation with:
+2026-10-09T04:02:42.1713719Z 
+2026-10-09T04:02:42.1713834Z   git switch -
+2026-10-09T04:02:42.1713990Z 
+2026-10-09T04:02:42.1714286Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T04:02:42.1714701Z 
+2026-10-09T04:02:42.1715006Z HEAD is now at 474c1a6 G10 archive current full proof and International startup controls
+2026-10-09T04:02:42.1849133Z ##[endgroup]
+2026-10-09T04:02:42.1895213Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T04:02:42.1926487Z 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:42.2195048Z ##[group]Run actions/setup-node@v4
+2026-10-09T04:02:42.2195338Z with:
+2026-10-09T04:02:42.2195544Z   node-version: 22.16.0
+2026-10-09T04:02:42.2195761Z   cache: npm
+2026-10-09T04:02:42.2196039Z   cache-dependency-path: jobs/G10-checkers/package-lock.json
+2026-10-09T04:02:42.2196378Z   always-auth: false
+2026-10-09T04:02:42.2196587Z   check-latest: false
+2026-10-09T04:02:42.2199286Z   token: ***
+2026-10-09T04:02:42.2199483Z env:
+2026-10-09T04:02:42.2199735Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:42.2200060Z ##[endgroup]
+2026-10-09T04:02:42.3663124Z Attempting to download 22.16.0...
+2026-10-09T04:02:42.3777999Z (node:2367) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:02:42.3779618Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:02:42.9370696Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T04:02:43.3454117Z Extracting ...
+2026-10-09T04:02:43.3585602Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/87ee6075-89f6-4cc7-8180-a4d0e6f9c8b1 -f /home/runner/work/_temp/fa3767c8-00c9-4c3c-a249-99135ed47fc9
+2026-10-09T04:02:44.5093703Z Adding to the cache ...
+2026-10-09T04:02:46.8981278Z ##[group]Environment details
+2026-10-09T04:02:47.1366379Z node: v22.16.0
+2026-10-09T04:02:47.1366906Z npm: 10.9.2
+2026-10-09T04:02:47.1367606Z yarn: 1.22.22
+2026-10-09T04:02:47.1368627Z ##[endgroup]
+2026-10-09T04:02:47.1388963Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T04:02:47.2318706Z /home/runner/.npm
+2026-10-09T04:02:47.3063671Z Cache hit for: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T04:02:47.3187177Z (node:2367) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:02:47.5623373Z Received 12676330 of 12676330 (100.0%), 59.6 MBs/sec
+2026-10-09T04:02:47.5624121Z Cache Size: ~12 MB (12676330 B)
+2026-10-09T04:02:47.5732835Z [command]/usr/bin/tar -xf /home/runner/work/_temp/90cb1ad9-04c7-4803-9baf-198f4ea17b6e/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T04:02:47.5990613Z Cache restored successfully
+2026-10-09T04:02:47.6001995Z Cache restored from key: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T04:02:47.6200894Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-09T04:02:47.6201383Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-09T04:02:47.6501733Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:02:47.6502099Z env:
+2026-10-09T04:02:47.6502451Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:47.6502891Z ##[endgroup]
+2026-10-09T04:02:48.6137111Z 
+2026-10-09T04:02:48.6144152Z added 6 packages in 903ms
+2026-10-09T04:02:48.6620158Z ##[group]Run if [ -f /etc/apt/apt-mirrors.txt ]; then
+2026-10-09T04:02:48.6620605Z [36;1mif [ -f /etc/apt/apt-mirrors.txt ]; then[0m
+2026-10-09T04:02:48.6621250Z [36;1m  sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt[0m
+2026-10-09T04:02:48.6621820Z [36;1mfi[0m
+2026-10-09T04:02:48.6684620Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:02:48.6684878Z env:
+2026-10-09T04:02:48.6685153Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:48.6685490Z ##[endgroup]
+2026-10-09T04:02:48.6919211Z ##[group]Run sudo apt-get update
+2026-10-09T04:02:48.6919553Z [36;1msudo apt-get update[0m
+2026-10-09T04:02:48.6919831Z [36;1msudo apt-get install -y ffmpeg[0m
+2026-10-09T04:02:48.6920136Z [36;1mffprobe -version[0m
+2026-10-09T04:02:48.6920384Z [36;1mffmpeg -version[0m
+2026-10-09T04:02:48.6981297Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:02:48.6981564Z env:
+2026-10-09T04:02:48.6981834Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:02:48.6982177Z ##[endgroup]
+2026-10-09T04:02:48.8589523Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T04:02:48.8820028Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-09T04:02:49.0670228Z Hit:2 https://archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T04:02:49.0852216Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-09T04:02:49.1012013Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-09T04:02:49.1174853Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-09T04:02:49.1239802Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-09T04:02:49.1375706Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [475 kB]
+2026-10-09T04:02:49.1441755Z Get:4 https://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-09T04:02:49.1784787Z Get:5 https://archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-09T04:02:49.2444674Z Get:11 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-09T04:02:49.3169926Z Get:12 https://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-09T04:02:49.3341259Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-09T04:02:49.3826404Z Get:14 https://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-09T04:02:49.3989478Z Get:15 https://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-09T04:02:49.4300551Z Get:16 https://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-09T04:02:49.4463643Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-09T04:02:49.4612841Z Get:18 https://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-09T04:02:49.4772431Z Get:19 https://archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1118 kB]
+2026-10-09T04:02:49.5311016Z Get:20 https://archive.ubuntu.com/ubuntu noble-security/main Translation-en [228 kB]
+2026-10-09T04:02:49.6026206Z Get:21 https://archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-09T04:02:49.6372575Z Get:22 https://archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-09T04:02:49.6582304Z Get:23 https://archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1667 kB]
+2026-10-09T04:02:49.6943823Z Get:24 https://archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [383 kB]
+2026-10-09T04:02:49.7239076Z Get:25 https://archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [49.8 kB]
+2026-10-09T04:02:49.7404662Z Get:26 https://archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+2026-10-09T04:02:58.0588688Z Fetched 12.3 MB in 1s (8204 kB/s)
+2026-10-09T04:02:58.9402305Z Reading package lists...
+2026-10-09T04:02:58.9711432Z Reading package lists...
+2026-10-09T04:02:59.1750133Z Building dependency tree...
+2026-10-09T04:02:59.1757413Z Reading state information...
+2026-10-09T04:02:59.3439396Z The following additional packages will be installed:
+2026-10-09T04:02:59.3440700Z   i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T04:02:59.3442163Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T04:02:59.3444175Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T04:02:59.3445635Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T04:02:59.3447146Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T04:02:59.3448720Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T04:02:59.3449894Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T04:02:59.3450606Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T04:02:59.3451310Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T04:02:59.3452008Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T04:02:59.3452689Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T04:02:59.3453400Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T04:02:59.3454372Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T04:02:59.3455144Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T04:02:59.3456130Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T04:02:59.3457076Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T04:02:59.3458414Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T04:02:59.3459369Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T04:02:59.3460070Z Suggested packages:
+2026-10-09T04:02:59.3460735Z   ffmpeg-doc i965-va-driver-shaders libcuda1 libnvcuvid1 libnvidia-encode1
+2026-10-09T04:02:59.3461567Z   libbluray-bdj jackd2 libportaudio2 opus-tools pulseaudio libraw1394-doc
+2026-10-09T04:02:59.3462084Z   librsvg2-bin serdi sndiod sordi speex opencl-icd libvdpau-va-gl1
+2026-10-09T04:02:59.4272941Z The following NEW packages will be installed:
+2026-10-09T04:02:59.4274426Z   ffmpeg i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T04:02:59.4275818Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T04:02:59.4277083Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T04:02:59.4278785Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T04:02:59.4279836Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T04:02:59.4280777Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T04:02:59.4281543Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T04:02:59.4282213Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T04:02:59.4282887Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T04:02:59.4283750Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T04:02:59.4284438Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T04:02:59.4285141Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T04:02:59.4285838Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T04:02:59.4286543Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T04:02:59.4287299Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T04:02:59.4288411Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T04:02:59.4289455Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T04:02:59.4290390Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T04:02:59.4506208Z 0 upgraded, 99 newly installed, 0 to remove and 23 not upgraded.
+2026-10-09T04:02:59.4506909Z Need to get 94.1 MB of archives.
+2026-10-09T04:02:59.4507858Z After this operation, 227 MB of additional disk space will be used.
+2026-10-09T04:02:59.4509089Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T04:02:59.9336103Z Get:2 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva2 amd64 2.20.0-2ubuntu0.2 [66.4 kB]
+2026-10-09T04:03:00.1839425Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-drm2 amd64 2.20.0-2ubuntu0.2 [7124 B]
+2026-10-09T04:03:00.2761429Z Get:4 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-x11-2 amd64 2.20.0-2ubuntu0.2 [12.0 kB]
+2026-10-09T04:03:00.3651769Z Get:5 https://archive.ubuntu.com/ubuntu noble/main amd64 libvdpau1 amd64 1.5-2build1 [27.8 kB]
+2026-10-09T04:03:00.4643082Z Get:6 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvpl2 amd64 2023.3.0-1build1 [99.8 kB]
+2026-10-09T04:03:00.6310545Z Get:7 https://archive.ubuntu.com/ubuntu noble/universe amd64 ocl-icd-libopencl1 amd64 2.3.2-1build1 [38.5 kB]
+2026-10-09T04:03:00.7230900Z Get:8 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavutil58 amd64 7:6.1.1-3ubuntu5 [401 kB]
+2026-10-09T04:03:00.9700683Z Get:9 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1 [8998 kB]
+2026-10-09T04:03:01.6376563Z Get:10 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdav1d7 amd64 1.4.1-1build1 [604 kB]
+2026-10-09T04:03:01.7243989Z Get:11 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgsm1 amd64 1.0.22-1build1 [27.8 kB]
+2026-10-09T04:03:01.8064430Z Get:12 https://archive.ubuntu.com/ubuntu noble/universe amd64 libhwy1t64 amd64 1.0.7-8.1build1 [584 kB]
+2026-10-09T04:03:01.8932906Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libjxl0.7 amd64 0.7.0-10.2ubuntu6.1 [1001 kB]
+2026-10-09T04:03:01.9843912Z Get:14 https://archive.ubuntu.com/ubuntu noble/main amd64 libmp3lame0 amd64 3.100-6build1 [142 kB]
+2026-10-09T04:03:02.0678267Z Get:15 https://archive.ubuntu.com/ubuntu noble/main amd64 libopus0 amd64 1.4-1build1 [208 kB]
+2026-10-09T04:03:02.1510655Z Get:16 https://archive.ubuntu.com/ubuntu noble/universe amd64 librav1e0 amd64 0.7.1-2 [1022 kB]
+2026-10-09T04:03:02.2422890Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-2 amd64 2.58.0+dfsg-1ubuntu0.1 [2141 kB]
+2026-10-09T04:03:02.3457860Z Get:18 https://archive.ubuntu.com/ubuntu noble/universe amd64 libshine3 amd64 3.1.1-2build1 [23.2 kB]
+2026-10-09T04:03:02.4275627Z Get:19 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libspeex1 amd64 1.2.1-2ubuntu2.24.04.1 [59.6 kB]
+2026-10-09T04:03:02.5102251Z Get:20 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsvtav1enc1d1 amd64 1.7.0+dfsg-2build1 [2425 kB]
+2026-10-09T04:03:02.7509181Z Get:21 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsoxr0 amd64 0.1.3-4build3 [80.0 kB]
+2026-10-09T04:03:02.8361209Z Get:22 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswresample4 amd64 7:6.1.1-3ubuntu5 [63.8 kB]
+2026-10-09T04:03:02.9182267Z Get:23 https://archive.ubuntu.com/ubuntu noble/main amd64 libtheora0 amd64 1.1.1+dfsg.1-16.1build3 [211 kB]
+2026-10-09T04:03:03.0021509Z Get:24 https://archive.ubuntu.com/ubuntu noble/main amd64 libtwolame0 amd64 0.4.0-2build3 [52.3 kB]
+2026-10-09T04:03:03.0853584Z Get:25 https://archive.ubuntu.com/ubuntu noble/main amd64 libvorbisenc2 amd64 1.3.7-1build3 [80.8 kB]
+2026-10-09T04:03:03.1680915Z Get:26 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libvpx9 amd64 1.14.0-1ubuntu2.3 [1143 kB]
+2026-10-09T04:03:03.2626889Z Get:27 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx264-164 amd64 2:0.164.3108+git31e19f9-1 [604 kB]
+2026-10-09T04:03:03.3509788Z Get:28 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx265-199 amd64 3.5-2build1 [1226 kB]
+2026-10-09T04:03:03.4457041Z Get:29 https://archive.ubuntu.com/ubuntu noble/universe amd64 libxvidcore4 amd64 2:1.3.7-1build1 [219 kB]
+2026-10-09T04:03:03.5312437Z Get:30 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi-common all 0.2.42-2 [42.4 kB]
+2026-10-09T04:03:03.6131181Z Get:31 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi0t64 amd64 0.2.42-2 [261 kB]
+2026-10-09T04:03:03.6995851Z Get:32 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavcodec60 amd64 7:6.1.1-3ubuntu5 [5851 kB]
+2026-10-09T04:03:03.8648806Z Get:33 https://archive.ubuntu.com/ubuntu noble/main amd64 libraw1394-11 amd64 2.1.2-2build3 [26.2 kB]
+2026-10-09T04:03:03.9465159Z Get:34 https://archive.ubuntu.com/ubuntu noble/main amd64 libavc1394-0 amd64 0.5.4-5build3 [15.4 kB]
+2026-10-09T04:03:04.0280419Z Get:35 https://archive.ubuntu.com/ubuntu noble/universe amd64 libunibreak5 amd64 5.1-2build1 [25.0 kB]
+2026-10-09T04:03:04.1097220Z Get:36 https://archive.ubuntu.com/ubuntu noble/universe amd64 libass9 amd64 1:0.17.1-2build1 [104 kB]
+2026-10-09T04:03:04.1919702Z Get:37 https://archive.ubuntu.com/ubuntu noble/universe amd64 libudfread0 amd64 1.1.2-1build1 [19.0 kB]
+2026-10-09T04:03:04.2738969Z Get:38 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbluray2 amd64 1:1.3.4-1build1 [159 kB]
+2026-10-09T04:03:04.3570189Z Get:39 https://archive.ubuntu.com/ubuntu noble/universe amd64 libchromaprint1 amd64 1.5.1-5 [30.5 kB]
+2026-10-09T04:03:04.5613188Z Get:40 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgme0 amd64 0.6.3-7build1 [134 kB]
+2026-10-09T04:03:04.6439347Z Get:41 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpg123-0t64 amd64 1.32.5-1ubuntu1.1 [169 kB]
+2026-10-09T04:03:04.7269491Z Get:42 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenmpt0t64 amd64 0.7.3-1.1build3 [647 kB]
+2026-10-09T04:03:04.8130593Z Get:43 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcjson1 amd64 1.7.17-1 [24.8 kB]
+2026-10-09T04:03:04.8949690Z Get:44 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmbedcrypto7t64 amd64 2.28.8-1 [209 kB]
+2026-10-09T04:03:04.9779165Z Get:45 https://archive.ubuntu.com/ubuntu noble/universe amd64 librist4 amd64 0.2.10+dfsg-2 [74.9 kB]
+2026-10-09T04:03:05.0602637Z Get:46 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsrt1.5-gnutls amd64 1.5.3-1build2 [316 kB]
+2026-10-09T04:03:05.1441695Z Get:47 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-gcrypt-4 amd64 0.10.6-2ubuntu0.5 [226 kB]
+2026-10-09T04:03:05.2279626Z Get:48 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavformat60 amd64 7:6.1.1-3ubuntu5 [1153 kB]
+2026-10-09T04:03:05.3169562Z Get:49 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbs2b0 amd64 3.1.0+dfsg-7build1 [10.6 kB]
+2026-10-09T04:03:05.3987101Z Get:50 https://archive.ubuntu.com/ubuntu noble/universe amd64 libflite1 amd64 2.2-6build3 [13.6 MB]
+2026-10-09T04:03:05.5923787Z Get:51 https://archive.ubuntu.com/ubuntu noble/universe amd64 libserd-0-0 amd64 0.32.2-1 [43.6 kB]
+2026-10-09T04:03:05.6751809Z Get:52 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzix-0-0 amd64 0.4.2-2build1 [23.6 kB]
+2026-10-09T04:03:05.7570775Z Get:53 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsord-0-0 amd64 0.16.16-2build1 [15.8 kB]
+2026-10-09T04:03:05.8391424Z Get:54 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsratom-0-0 amd64 0.6.16-1build1 [17.3 kB]
+2026-10-09T04:03:05.9211539Z Get:55 https://archive.ubuntu.com/ubuntu noble/universe amd64 liblilv-0-0 amd64 0.24.22-1build1 [41.0 kB]
+2026-10-09T04:03:06.0036335Z Get:56 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmysofa1 amd64 1.3.2+dfsg-2ubuntu2 [1158 kB]
+2026-10-09T04:03:06.0984628Z Get:57 https://archive.ubuntu.com/ubuntu noble/universe amd64 libplacebo338 amd64 6.338.2-2build1 [2654 kB]
+2026-10-09T04:03:06.2139640Z Get:58 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libblas3 amd64 3.12.0-3build1.1 [238 kB]
+2026-10-09T04:03:06.2979717Z Get:59 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblapack3 amd64 3.12.0-3build1.1 [2646 kB]
+2026-10-09T04:03:06.5248508Z Get:60 https://archive.ubuntu.com/ubuntu noble/main amd64 libasyncns0 amd64 0.8-6build4 [11.3 kB]
+2026-10-09T04:03:06.6074747Z Get:61 https://archive.ubuntu.com/ubuntu noble/main amd64 libflac12t64 amd64 1.4.3+ds-2.1ubuntu2 [197 kB]
+2026-10-09T04:03:06.6904646Z Get:62 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsndfile1 amd64 1.2.2-1ubuntu5.24.04.1 [209 kB]
+2026-10-09T04:03:06.7753646Z Get:63 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpulse0 amd64 1:16.1+dfsg1-2ubuntu10.1 [292 kB]
+2026-10-09T04:03:06.8605451Z Get:64 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsphinxbase3t64 amd64 0.8+5prealpha+1-17build2 [126 kB]
+2026-10-09T04:03:06.9430017Z Get:65 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpocketsphinx3 amd64 0.8.0+real5prealpha+1-15ubuntu5 [133 kB]
+2026-10-09T04:03:07.0251990Z Get:66 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpostproc57 amd64 7:6.1.1-3ubuntu5 [49.9 kB]
+2026-10-09T04:03:07.1070724Z Get:67 https://archive.ubuntu.com/ubuntu noble/main amd64 libsamplerate0 amd64 0.2.2-4build1 [1344 kB]
+2026-10-09T04:03:07.1972497Z Get:68 https://archive.ubuntu.com/ubuntu noble/universe amd64 librubberband2 amd64 3.3.0+dfsg-2build1 [130 kB]
+2026-10-09T04:03:07.2795498Z Get:69 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswscale7 amd64 7:6.1.1-3ubuntu5 [193 kB]
+2026-10-09T04:03:07.3620955Z Get:70 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvidstab1.1 amd64 1.1.0-2build1 [38.5 kB]
+2026-10-09T04:03:07.4437221Z Get:71 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzimg2 amd64 3.0.5+ds1-1build1 [254 kB]
+2026-10-09T04:03:07.5269430Z Get:72 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavfilter9 amd64 7:6.1.1-3ubuntu5 [4235 kB]
+2026-10-09T04:03:07.6346575Z Get:73 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcaca0 amd64 0.99.beta20-4ubuntu0.2 [209 kB]
+2026-10-09T04:03:07.7175601Z Get:74 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcdio19t64 amd64 2.1.0-4.1ubuntu1.2 [62.4 kB]
+2026-10-09T04:03:07.7994370Z Get:75 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-cdda2t64 amd64 10.2+2.0.1-1.1build2 [16.5 kB]
+2026-10-09T04:03:07.8808262Z Get:76 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-paranoia2t64 amd64 10.2+2.0.1-1.1build2 [16.6 kB]
+2026-10-09T04:03:07.9629302Z Get:77 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdc1394-25 amd64 2.2.6-4build1 [90.1 kB]
+2026-10-09T04:03:08.1668326Z Get:78 https://archive.ubuntu.com/ubuntu noble/main amd64 libiec61883-0 amd64 1.2.0-6build1 [24.5 kB]
+2026-10-09T04:03:08.2486034Z Get:79 https://archive.ubuntu.com/ubuntu noble/main amd64 libjack-jackd2-0 amd64 1.9.21~dfsg-3ubuntu3 [289 kB]
+2026-10-09T04:03:08.3317708Z Get:80 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal-data all 1:1.23.1-4build1 [161 kB]
+2026-10-09T04:03:08.4139642Z Get:81 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsndio7.0 amd64 1.9.0-0.3build3 [29.6 kB]
+2026-10-09T04:03:08.4958271Z Get:82 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal1 amd64 1:1.23.1-4build1 [540 kB]
+2026-10-09T04:03:08.5802577Z Get:83 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-0 amd64 0.2.2-1build2 [16.5 kB]
+2026-10-09T04:03:08.6617737Z Get:84 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsdl2-2.0-0 amd64 2.30.0+dfsg-1ubuntu3.1 [686 kB]
+2026-10-09T04:03:08.7483893Z Get:85 https://archive.ubuntu.com/ubuntu noble/main amd64 libxcb-shape0 amd64 1.15-1ubuntu2 [6100 B]
+2026-10-09T04:03:08.8297086Z Get:86 https://archive.ubuntu.com/ubuntu noble/main amd64 libxv1 amd64 2:1.0.11-1.1build1 [10.7 kB]
+2026-10-09T04:03:08.9113615Z Get:87 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavdevice60 amd64 7:6.1.1-3ubuntu5 [82.3 kB]
+2026-10-09T04:03:08.9934967Z Get:88 https://archive.ubuntu.com/ubuntu noble/universe amd64 ffmpeg amd64 7:6.1.1-3ubuntu5 [1879 kB]
+2026-10-09T04:03:09.0866578Z Get:89 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libigdgmm12 amd64 22.3.17+ds1-1ubuntu1 [145 kB]
+2026-10-09T04:03:09.1690132Z Get:90 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 intel-media-va-driver amd64 24.1.0+dfsg1-1ubuntu0.2 [3163 kB]
+2026-10-09T04:03:09.2696525Z Get:91 https://archive.ubuntu.com/ubuntu noble/universe amd64 libaacs0 amd64 0.11.1-2build1 [62.9 kB]
+2026-10-09T04:03:09.3522708Z Get:92 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbdplus0 amd64 0.2.0-3build1 [52.2 kB]
+2026-10-09T04:03:09.4343332Z Get:93 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-plugin-1-gtk amd64 0.2.2-1build2 [22.2 kB]
+2026-10-09T04:03:09.5238614Z Get:94 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-common amd64 2.58.0+dfsg-1ubuntu0.1 [11.8 kB]
+2026-10-09T04:03:09.6059238Z Get:95 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 mesa-va-drivers amd64 25.2.8-0ubuntu0.24.04.4 [6778 B]
+2026-10-09T04:03:09.6873286Z Get:96 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vdpau-drivers amd64 25.2.8-0ubuntu0.24.04.4 [23.4 kB]
+2026-10-09T04:03:09.8899527Z Get:97 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1ubuntu0.2 [332 kB]
+2026-10-09T04:03:09.9732107Z Get:98 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 va-driver-all amd64 2.20.0-2ubuntu0.2 [5014 B]
+2026-10-09T04:03:10.0545654Z Get:99 https://archive.ubuntu.com/ubuntu noble/main amd64 vdpau-driver-all amd64 1.5-2build1 [4414 B]
+2026-10-09T04:03:10.1407146Z Get:100 https://archive.ubuntu.com/ubuntu noble/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-15ubuntu5 [27.4 MB]
+2026-10-09T04:03:10.6794483Z Fetched 94.1 MB in 11s (8647 kB/s)
+2026-10-09T04:03:10.7208012Z Selecting previously unselected package libva2:amd64.
+2026-10-09T04:03:10.7744599Z (Reading database ... 
+2026-10-09T04:03:10.7744995Z (Reading database ... 5%
+2026-10-09T04:03:10.7745355Z (Reading database ... 10%
+2026-10-09T04:03:10.7745862Z (Reading database ... 15%
+2026-10-09T04:03:10.7746270Z (Reading database ... 20%
+2026-10-09T04:03:10.7746643Z (Reading database ... 25%
+2026-10-09T04:03:10.7747016Z (Reading database ... 30%
+2026-10-09T04:03:10.7748236Z (Reading database ... 35%
+2026-10-09T04:03:10.7748899Z (Reading database ... 40%
+2026-10-09T04:03:10.7749440Z (Reading database ... 45%
+2026-10-09T04:03:10.7749811Z (Reading database ... 50%
+2026-10-09T04:03:10.8060322Z (Reading database ... 55%
+2026-10-09T04:03:11.4353440Z (Reading database ... 60%
+2026-10-09T04:03:11.7300192Z (Reading database ... 65%
+2026-10-09T04:03:11.9727886Z (Reading database ... 70%
+2026-10-09T04:03:12.2832558Z (Reading database ... 75%
+2026-10-09T04:03:12.6134426Z (Reading database ... 80%
+2026-10-09T04:03:13.6999020Z (Reading database ... 85%
+2026-10-09T04:03:14.4340286Z (Reading database ... 90%
+2026-10-09T04:03:15.2444654Z (Reading database ... 95%
+2026-10-09T04:03:15.2445104Z (Reading database ... 100%
+2026-10-09T04:03:15.2445719Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-09T04:03:15.2489105Z Preparing to unpack .../00-libva2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:15.2521689Z Unpacking libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:15.2775955Z Selecting previously unselected package libva-drm2:amd64.
+2026-10-09T04:03:15.2901971Z Preparing to unpack .../01-libva-drm2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:15.2909524Z Unpacking libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:15.3150536Z Selecting previously unselected package libva-x11-2:amd64.
+2026-10-09T04:03:15.3277775Z Preparing to unpack .../02-libva-x11-2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:15.3284298Z Unpacking libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:15.3487336Z Selecting previously unselected package libvdpau1:amd64.
+2026-10-09T04:03:15.3613270Z Preparing to unpack .../03-libvdpau1_1.5-2build1_amd64.deb ...
+2026-10-09T04:03:15.3621801Z Unpacking libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T04:03:15.3832851Z Selecting previously unselected package libvpl2.
+2026-10-09T04:03:15.3959144Z Preparing to unpack .../04-libvpl2_2023.3.0-1build1_amd64.deb ...
+2026-10-09T04:03:15.3966111Z Unpacking libvpl2 (2023.3.0-1build1) ...
+2026-10-09T04:03:15.4188137Z Selecting previously unselected package ocl-icd-libopencl1:amd64.
+2026-10-09T04:03:15.4312587Z Preparing to unpack .../05-ocl-icd-libopencl1_2.3.2-1build1_amd64.deb ...
+2026-10-09T04:03:15.4319532Z Unpacking ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T04:03:15.4599639Z Selecting previously unselected package libavutil58:amd64.
+2026-10-09T04:03:15.4724826Z Preparing to unpack .../06-libavutil58_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:15.4731588Z Unpacking libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:15.4981589Z Selecting previously unselected package libcodec2-1.2:amd64.
+2026-10-09T04:03:15.5110601Z Preparing to unpack .../07-libcodec2-1.2_1.2.0-2build1_amd64.deb ...
+2026-10-09T04:03:15.5117731Z Unpacking libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T04:03:15.5891306Z Selecting previously unselected package libdav1d7:amd64.
+2026-10-09T04:03:15.6019801Z Preparing to unpack .../08-libdav1d7_1.4.1-1build1_amd64.deb ...
+2026-10-09T04:03:15.6026328Z Unpacking libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T04:03:15.6303181Z Selecting previously unselected package libgsm1:amd64.
+2026-10-09T04:03:15.6430898Z Preparing to unpack .../09-libgsm1_1.0.22-1build1_amd64.deb ...
+2026-10-09T04:03:15.6437715Z Unpacking libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T04:03:15.6646387Z Selecting previously unselected package libhwy1t64:amd64.
+2026-10-09T04:03:15.6771857Z Preparing to unpack .../10-libhwy1t64_1.0.7-8.1build1_amd64.deb ...
+2026-10-09T04:03:15.6779276Z Unpacking libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T04:03:15.7121569Z Selecting previously unselected package libjxl0.7:amd64.
+2026-10-09T04:03:15.7249828Z Preparing to unpack .../11-libjxl0.7_0.7.0-10.2ubuntu6.1_amd64.deb ...
+2026-10-09T04:03:15.7258014Z Unpacking libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T04:03:15.7603883Z Selecting previously unselected package libmp3lame0:amd64.
+2026-10-09T04:03:15.7731927Z Preparing to unpack .../12-libmp3lame0_3.100-6build1_amd64.deb ...
+2026-10-09T04:03:15.7738931Z Unpacking libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T04:03:15.7962322Z Selecting previously unselected package libopus0:amd64.
+2026-10-09T04:03:15.8088007Z Preparing to unpack .../13-libopus0_1.4-1build1_amd64.deb ...
+2026-10-09T04:03:15.8094966Z Unpacking libopus0:amd64 (1.4-1build1) ...
+2026-10-09T04:03:15.8317277Z Selecting previously unselected package librav1e0:amd64.
+2026-10-09T04:03:15.8445852Z Preparing to unpack .../14-librav1e0_0.7.1-2_amd64.deb ...
+2026-10-09T04:03:15.8453451Z Unpacking librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T04:03:15.8788191Z Selecting previously unselected package librsvg2-2:amd64.
+2026-10-09T04:03:15.8915382Z Preparing to unpack .../15-librsvg2-2_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T04:03:15.8922169Z Unpacking librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T04:03:15.9371559Z Selecting previously unselected package libshine3:amd64.
+2026-10-09T04:03:15.9496613Z Preparing to unpack .../16-libshine3_3.1.1-2build1_amd64.deb ...
+2026-10-09T04:03:15.9503043Z Unpacking libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T04:03:15.9708102Z Selecting previously unselected package libspeex1:amd64.
+2026-10-09T04:03:15.9836212Z Preparing to unpack .../17-libspeex1_1.2.1-2ubuntu2.24.04.1_amd64.deb ...
+2026-10-09T04:03:15.9843499Z Unpacking libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T04:03:16.0050887Z Selecting previously unselected package libsvtav1enc1d1:amd64.
+2026-10-09T04:03:16.0178633Z Preparing to unpack .../18-libsvtav1enc1d1_1.7.0+dfsg-2build1_amd64.deb ...
+2026-10-09T04:03:16.0186147Z Unpacking libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T04:03:16.0678359Z Selecting previously unselected package libsoxr0:amd64.
+2026-10-09T04:03:16.0803577Z Preparing to unpack .../19-libsoxr0_0.1.3-4build3_amd64.deb ...
+2026-10-09T04:03:16.0810536Z Unpacking libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T04:03:16.1017887Z Selecting previously unselected package libswresample4:amd64.
+2026-10-09T04:03:16.1145239Z Preparing to unpack .../20-libswresample4_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:16.1153424Z Unpacking libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:16.1365578Z Selecting previously unselected package libtheora0:amd64.
+2026-10-09T04:03:16.1492607Z Preparing to unpack .../21-libtheora0_1.1.1+dfsg.1-16.1build3_amd64.deb ...
+2026-10-09T04:03:16.1500058Z Unpacking libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T04:03:16.1743272Z Selecting previously unselected package libtwolame0:amd64.
+2026-10-09T04:03:16.1869558Z Preparing to unpack .../22-libtwolame0_0.4.0-2build3_amd64.deb ...
+2026-10-09T04:03:16.1876162Z Unpacking libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T04:03:16.2083108Z Selecting previously unselected package libvorbisenc2:amd64.
+2026-10-09T04:03:16.2212639Z Preparing to unpack .../23-libvorbisenc2_1.3.7-1build3_amd64.deb ...
+2026-10-09T04:03:16.2219274Z Unpacking libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T04:03:16.2443391Z Selecting previously unselected package libvpx9:amd64.
+2026-10-09T04:03:16.2574934Z Preparing to unpack .../24-libvpx9_1.14.0-1ubuntu2.3_amd64.deb ...
+2026-10-09T04:03:16.2582312Z Unpacking libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T04:03:16.2903654Z Selecting previously unselected package libx264-164:amd64.
+2026-10-09T04:03:16.3030782Z Preparing to unpack .../25-libx264-164_2%3a0.164.3108+git31e19f9-1_amd64.deb ...
+2026-10-09T04:03:16.3038044Z Unpacking libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T04:03:16.3308806Z Selecting previously unselected package libx265-199:amd64.
+2026-10-09T04:03:16.3435548Z Preparing to unpack .../26-libx265-199_3.5-2build1_amd64.deb ...
+2026-10-09T04:03:16.3443089Z Unpacking libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T04:03:16.4081019Z Selecting previously unselected package libxvidcore4:amd64.
+2026-10-09T04:03:16.4208233Z Preparing to unpack .../27-libxvidcore4_2%3a1.3.7-1build1_amd64.deb ...
+2026-10-09T04:03:16.4215478Z Unpacking libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T04:03:16.4431768Z Selecting previously unselected package libzvbi-common.
+2026-10-09T04:03:16.4559522Z Preparing to unpack .../28-libzvbi-common_0.2.42-2_all.deb ...
+2026-10-09T04:03:16.4567049Z Unpacking libzvbi-common (0.2.42-2) ...
+2026-10-09T04:03:16.5116495Z Selecting previously unselected package libzvbi0t64:amd64.
+2026-10-09T04:03:16.5242133Z Preparing to unpack .../29-libzvbi0t64_0.2.42-2_amd64.deb ...
+2026-10-09T04:03:16.5249529Z Unpacking libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T04:03:16.5494350Z Selecting previously unselected package libavcodec60:amd64.
+2026-10-09T04:03:16.5621262Z Preparing to unpack .../30-libavcodec60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:16.5628373Z Unpacking libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:16.6415618Z Selecting previously unselected package libraw1394-11:amd64.
+2026-10-09T04:03:16.6541180Z Preparing to unpack .../31-libraw1394-11_2.1.2-2build3_amd64.deb ...
+2026-10-09T04:03:16.6548126Z Unpacking libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T04:03:16.6749194Z Selecting previously unselected package libavc1394-0:amd64.
+2026-10-09T04:03:16.6873910Z Preparing to unpack .../32-libavc1394-0_0.5.4-5build3_amd64.deb ...
+2026-10-09T04:03:16.6880524Z Unpacking libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T04:03:16.7074061Z Selecting previously unselected package libunibreak5:amd64.
+2026-10-09T04:03:16.7199790Z Preparing to unpack .../33-libunibreak5_5.1-2build1_amd64.deb ...
+2026-10-09T04:03:16.7207199Z Unpacking libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T04:03:16.7408281Z Selecting previously unselected package libass9:amd64.
+2026-10-09T04:03:16.7534681Z Preparing to unpack .../34-libass9_1%3a0.17.1-2build1_amd64.deb ...
+2026-10-09T04:03:16.7542537Z Unpacking libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T04:03:16.7769928Z Selecting previously unselected package libudfread0:amd64.
+2026-10-09T04:03:16.7896809Z Preparing to unpack .../35-libudfread0_1.1.2-1build1_amd64.deb ...
+2026-10-09T04:03:16.7905026Z Unpacking libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T04:03:16.8108077Z Selecting previously unselected package libbluray2:amd64.
+2026-10-09T04:03:16.8240093Z Preparing to unpack .../36-libbluray2_1%3a1.3.4-1build1_amd64.deb ...
+2026-10-09T04:03:16.8249515Z Unpacking libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T04:03:16.8484227Z Selecting previously unselected package libchromaprint1:amd64.
+2026-10-09T04:03:16.8614721Z Preparing to unpack .../37-libchromaprint1_1.5.1-5_amd64.deb ...
+2026-10-09T04:03:16.8622103Z Unpacking libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T04:03:16.8824904Z Selecting previously unselected package libgme0:amd64.
+2026-10-09T04:03:16.8950844Z Preparing to unpack .../38-libgme0_0.6.3-7build1_amd64.deb ...
+2026-10-09T04:03:16.8957899Z Unpacking libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T04:03:16.9171446Z Selecting previously unselected package libmpg123-0t64:amd64.
+2026-10-09T04:03:16.9297603Z Preparing to unpack .../39-libmpg123-0t64_1.32.5-1ubuntu1.1_amd64.deb ...
+2026-10-09T04:03:16.9333449Z Unpacking libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T04:03:16.9549342Z Selecting previously unselected package libopenmpt0t64:amd64.
+2026-10-09T04:03:16.9677993Z Preparing to unpack .../40-libopenmpt0t64_0.7.3-1.1build3_amd64.deb ...
+2026-10-09T04:03:16.9686195Z Unpacking libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T04:03:16.9958210Z Selecting previously unselected package libcjson1:amd64.
+2026-10-09T04:03:17.0084565Z Preparing to unpack .../41-libcjson1_1.7.17-1_amd64.deb ...
+2026-10-09T04:03:17.0096991Z Unpacking libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T04:03:17.0299835Z Selecting previously unselected package libmbedcrypto7t64:amd64.
+2026-10-09T04:03:17.0429541Z Preparing to unpack .../42-libmbedcrypto7t64_2.28.8-1_amd64.deb ...
+2026-10-09T04:03:17.0443265Z Unpacking libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T04:03:17.0758448Z Selecting previously unselected package librist4:amd64.
+2026-10-09T04:03:17.0931410Z Preparing to unpack .../43-librist4_0.2.10+dfsg-2_amd64.deb ...
+2026-10-09T04:03:17.0939232Z Unpacking librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T04:03:17.1149586Z Selecting previously unselected package libsrt1.5-gnutls:amd64.
+2026-10-09T04:03:17.1280785Z Preparing to unpack .../44-libsrt1.5-gnutls_1.5.3-1build2_amd64.deb ...
+2026-10-09T04:03:17.1288894Z Unpacking libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T04:03:17.1554922Z Selecting previously unselected package libssh-gcrypt-4:amd64.
+2026-10-09T04:03:17.1689286Z Preparing to unpack .../45-libssh-gcrypt-4_0.10.6-2ubuntu0.5_amd64.deb ...
+2026-10-09T04:03:17.1696275Z Unpacking libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T04:03:17.1932362Z Selecting previously unselected package libavformat60:amd64.
+2026-10-09T04:03:17.2063761Z Preparing to unpack .../46-libavformat60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:17.2073479Z Unpacking libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:17.2384780Z Selecting previously unselected package libbs2b0:amd64.
+2026-10-09T04:03:17.2515594Z Preparing to unpack .../47-libbs2b0_3.1.0+dfsg-7build1_amd64.deb ...
+2026-10-09T04:03:17.2522698Z Unpacking libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T04:03:17.2782830Z Selecting previously unselected package libflite1:amd64.
+2026-10-09T04:03:17.2910124Z Preparing to unpack .../48-libflite1_2.2-6build3_amd64.deb ...
+2026-10-09T04:03:17.2918266Z Unpacking libflite1:amd64 (2.2-6build3) ...
+2026-10-09T04:03:17.3981490Z Selecting previously unselected package libserd-0-0:amd64.
+2026-10-09T04:03:17.4108470Z Preparing to unpack .../49-libserd-0-0_0.32.2-1_amd64.deb ...
+2026-10-09T04:03:17.4115562Z Unpacking libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T04:03:17.4316774Z Selecting previously unselected package libzix-0-0:amd64.
+2026-10-09T04:03:17.4442802Z Preparing to unpack .../50-libzix-0-0_0.4.2-2build1_amd64.deb ...
+2026-10-09T04:03:17.4449861Z Unpacking libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T04:03:17.4651320Z Selecting previously unselected package libsord-0-0:amd64.
+2026-10-09T04:03:17.4776987Z Preparing to unpack .../51-libsord-0-0_0.16.16-2build1_amd64.deb ...
+2026-10-09T04:03:17.4784323Z Unpacking libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T04:03:17.5000075Z Selecting previously unselected package libsratom-0-0:amd64.
+2026-10-09T04:03:17.5127013Z Preparing to unpack .../52-libsratom-0-0_0.6.16-1build1_amd64.deb ...
+2026-10-09T04:03:17.5135793Z Unpacking libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T04:03:17.5338471Z Selecting previously unselected package liblilv-0-0:amd64.
+2026-10-09T04:03:17.5465811Z Preparing to unpack .../53-liblilv-0-0_0.24.22-1build1_amd64.deb ...
+2026-10-09T04:03:17.5472841Z Unpacking liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T04:03:17.5676185Z Selecting previously unselected package libmysofa1:amd64.
+2026-10-09T04:03:17.5802246Z Preparing to unpack .../54-libmysofa1_1.3.2+dfsg-2ubuntu2_amd64.deb ...
+2026-10-09T04:03:17.5810405Z Unpacking libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T04:03:17.6074678Z Selecting previously unselected package libplacebo338:amd64.
+2026-10-09T04:03:17.6203477Z Preparing to unpack .../55-libplacebo338_6.338.2-2build1_amd64.deb ...
+2026-10-09T04:03:17.6211167Z Unpacking libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T04:03:17.6745763Z Selecting previously unselected package libblas3:amd64.
+2026-10-09T04:03:17.6877917Z Preparing to unpack .../56-libblas3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T04:03:17.6910525Z Unpacking libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T04:03:17.7175366Z Selecting previously unselected package liblapack3:amd64.
+2026-10-09T04:03:17.7301139Z Preparing to unpack .../57-liblapack3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T04:03:17.7332900Z Unpacking liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T04:03:17.7794088Z Selecting previously unselected package libasyncns0:amd64.
+2026-10-09T04:03:17.7918163Z Preparing to unpack .../58-libasyncns0_0.8-6build4_amd64.deb ...
+2026-10-09T04:03:17.7925832Z Unpacking libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T04:03:17.8128257Z Selecting previously unselected package libflac12t64:amd64.
+2026-10-09T04:03:17.8254877Z Preparing to unpack .../59-libflac12t64_1.4.3+ds-2.1ubuntu2_amd64.deb ...
+2026-10-09T04:03:17.8263475Z Unpacking libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T04:03:17.8489936Z Selecting previously unselected package libsndfile1:amd64.
+2026-10-09T04:03:17.8621124Z Preparing to unpack .../60-libsndfile1_1.2.2-1ubuntu5.24.04.1_amd64.deb ...
+2026-10-09T04:03:17.8628869Z Unpacking libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T04:03:17.8892291Z Selecting previously unselected package libpulse0:amd64.
+2026-10-09T04:03:17.9022867Z Preparing to unpack .../61-libpulse0_1%3a16.1+dfsg1-2ubuntu10.1_amd64.deb ...
+2026-10-09T04:03:17.9093533Z Unpacking libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T04:03:17.9373503Z Selecting previously unselected package libsphinxbase3t64:amd64.
+2026-10-09T04:03:17.9503817Z Preparing to unpack .../62-libsphinxbase3t64_0.8+5prealpha+1-17build2_amd64.deb ...
+2026-10-09T04:03:17.9512220Z Unpacking libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T04:03:17.9739080Z Selecting previously unselected package libpocketsphinx3:amd64.
+2026-10-09T04:03:17.9867031Z Preparing to unpack .../63-libpocketsphinx3_0.8.0+real5prealpha+1-15ubuntu5_amd64.deb ...
+2026-10-09T04:03:17.9876453Z Unpacking libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T04:03:18.0101883Z Selecting previously unselected package libpostproc57:amd64.
+2026-10-09T04:03:18.0259614Z Preparing to unpack .../64-libpostproc57_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:18.0288913Z Unpacking libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:18.0695973Z Selecting previously unselected package libsamplerate0:amd64.
+2026-10-09T04:03:18.0864402Z Preparing to unpack .../65-libsamplerate0_0.2.2-4build1_amd64.deb ...
+2026-10-09T04:03:18.0884518Z Unpacking libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T04:03:18.2151775Z Selecting previously unselected package librubberband2:amd64.
+2026-10-09T04:03:18.2282843Z Preparing to unpack .../66-librubberband2_3.3.0+dfsg-2build1_amd64.deb ...
+2026-10-09T04:03:18.2290228Z Unpacking librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T04:03:18.2514674Z Selecting previously unselected package libswscale7:amd64.
+2026-10-09T04:03:18.2645674Z Preparing to unpack .../67-libswscale7_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:18.2653003Z Unpacking libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:18.2886465Z Selecting previously unselected package libvidstab1.1:amd64.
+2026-10-09T04:03:18.3016441Z Preparing to unpack .../68-libvidstab1.1_1.1.0-2build1_amd64.deb ...
+2026-10-09T04:03:18.3024848Z Unpacking libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T04:03:18.3230195Z Selecting previously unselected package libzimg2:amd64.
+2026-10-09T04:03:18.3358675Z Preparing to unpack .../69-libzimg2_3.0.5+ds1-1build1_amd64.deb ...
+2026-10-09T04:03:18.3366760Z Unpacking libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T04:03:18.3616170Z Selecting previously unselected package libavfilter9:amd64.
+2026-10-09T04:03:18.3747738Z Preparing to unpack .../70-libavfilter9_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:18.3756868Z Unpacking libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:18.4442707Z Selecting previously unselected package libcaca0:amd64.
+2026-10-09T04:03:18.4573971Z Preparing to unpack .../71-libcaca0_0.99.beta20-4ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:18.4582882Z Unpacking libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T04:03:18.4849366Z Selecting previously unselected package libcdio19t64:amd64.
+2026-10-09T04:03:18.4978981Z Preparing to unpack .../72-libcdio19t64_2.1.0-4.1ubuntu1.2_amd64.deb ...
+2026-10-09T04:03:18.4990649Z Unpacking libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T04:03:18.5218400Z Selecting previously unselected package libcdio-cdda2t64:amd64.
+2026-10-09T04:03:18.5347048Z Preparing to unpack .../73-libcdio-cdda2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T04:03:18.5354468Z Unpacking libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T04:03:18.5567994Z Selecting previously unselected package libcdio-paranoia2t64:amd64.
+2026-10-09T04:03:18.5696789Z Preparing to unpack .../74-libcdio-paranoia2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T04:03:18.5704610Z Unpacking libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T04:03:18.5919461Z Selecting previously unselected package libdc1394-25:amd64.
+2026-10-09T04:03:18.6047972Z Preparing to unpack .../75-libdc1394-25_2.2.6-4build1_amd64.deb ...
+2026-10-09T04:03:18.6056533Z Unpacking libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T04:03:18.6280859Z Selecting previously unselected package libiec61883-0:amd64.
+2026-10-09T04:03:18.6409122Z Preparing to unpack .../76-libiec61883-0_1.2.0-6build1_amd64.deb ...
+2026-10-09T04:03:18.6416809Z Unpacking libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T04:03:18.6641742Z Selecting previously unselected package libjack-jackd2-0:amd64.
+2026-10-09T04:03:18.6773657Z Preparing to unpack .../77-libjack-jackd2-0_1.9.21~dfsg-3ubuntu3_amd64.deb ...
+2026-10-09T04:03:18.6782232Z Unpacking libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T04:03:18.7093091Z Selecting previously unselected package libopenal-data.
+2026-10-09T04:03:18.7224024Z Preparing to unpack .../78-libopenal-data_1%3a1.23.1-4build1_all.deb ...
+2026-10-09T04:03:18.7232933Z Unpacking libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T04:03:18.7471528Z Selecting previously unselected package libsndio7.0:amd64.
+2026-10-09T04:03:18.7600942Z Preparing to unpack .../79-libsndio7.0_1.9.0-0.3build3_amd64.deb ...
+2026-10-09T04:03:18.7610097Z Unpacking libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T04:03:18.7850156Z Selecting previously unselected package libopenal1:amd64.
+2026-10-09T04:03:18.7979330Z Preparing to unpack .../80-libopenal1_1%3a1.23.1-4build1_amd64.deb ...
+2026-10-09T04:03:18.7986531Z Unpacking libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T04:03:18.8248154Z Selecting previously unselected package libdecor-0-0:amd64.
+2026-10-09T04:03:18.8376640Z Preparing to unpack .../81-libdecor-0-0_0.2.2-1build2_amd64.deb ...
+2026-10-09T04:03:18.8385567Z Unpacking libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T04:03:18.8592756Z Selecting previously unselected package libsdl2-2.0-0:amd64.
+2026-10-09T04:03:18.8721689Z Preparing to unpack .../82-libsdl2-2.0-0_2.30.0+dfsg-1ubuntu3.1_amd64.deb ...
+2026-10-09T04:03:18.8729385Z Unpacking libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T04:03:18.9301219Z Selecting previously unselected package libxcb-shape0:amd64.
+2026-10-09T04:03:18.9429765Z Preparing to unpack .../83-libxcb-shape0_1.15-1ubuntu2_amd64.deb ...
+2026-10-09T04:03:18.9438108Z Unpacking libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T04:03:18.9651578Z Selecting previously unselected package libxv1:amd64.
+2026-10-09T04:03:18.9779523Z Preparing to unpack .../84-libxv1_2%3a1.0.11-1.1build1_amd64.deb ...
+2026-10-09T04:03:18.9791116Z Unpacking libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T04:03:19.0007233Z Selecting previously unselected package libavdevice60:amd64.
+2026-10-09T04:03:19.0135241Z Preparing to unpack .../85-libavdevice60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:19.0142602Z Unpacking libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:19.0407334Z Selecting previously unselected package ffmpeg.
+2026-10-09T04:03:19.0533552Z Preparing to unpack .../86-ffmpeg_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T04:03:19.0541119Z Unpacking ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:19.1132133Z Selecting previously unselected package libigdgmm12:amd64.
+2026-10-09T04:03:19.1260458Z Preparing to unpack .../87-libigdgmm12_22.3.17+ds1-1ubuntu1_amd64.deb ...
+2026-10-09T04:03:19.1270674Z Unpacking libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T04:03:19.1510680Z Selecting previously unselected package intel-media-va-driver:amd64.
+2026-10-09T04:03:19.1639108Z Preparing to unpack .../88-intel-media-va-driver_24.1.0+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:19.1646586Z Unpacking intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T04:03:19.2349888Z Selecting previously unselected package libaacs0:amd64.
+2026-10-09T04:03:19.2482888Z Preparing to unpack .../89-libaacs0_0.11.1-2build1_amd64.deb ...
+2026-10-09T04:03:19.2493635Z Unpacking libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T04:03:19.2714590Z Selecting previously unselected package libbdplus0:amd64.
+2026-10-09T04:03:19.2843166Z Preparing to unpack .../90-libbdplus0_0.2.0-3build1_amd64.deb ...
+2026-10-09T04:03:19.2850108Z Unpacking libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T04:03:19.3059238Z Selecting previously unselected package libdecor-0-plugin-1-gtk:amd64.
+2026-10-09T04:03:19.3186525Z Preparing to unpack .../91-libdecor-0-plugin-1-gtk_0.2.2-1build2_amd64.deb ...
+2026-10-09T04:03:19.3193637Z Unpacking libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T04:03:19.3401092Z Selecting previously unselected package librsvg2-common:amd64.
+2026-10-09T04:03:19.3528270Z Preparing to unpack .../92-librsvg2-common_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T04:03:19.3535065Z Unpacking librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T04:03:19.4090787Z Selecting previously unselected package mesa-va-drivers:amd64.
+2026-10-09T04:03:19.4218978Z Preparing to unpack .../93-mesa-va-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T04:03:19.4228051Z Unpacking mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T04:03:19.4481921Z Selecting previously unselected package mesa-vdpau-drivers:amd64.
+2026-10-09T04:03:19.4609574Z Preparing to unpack .../94-mesa-vdpau-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T04:03:19.4616727Z Unpacking mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T04:03:19.4838900Z Selecting previously unselected package i965-va-driver:amd64.
+2026-10-09T04:03:19.4966248Z Preparing to unpack .../95-i965-va-driver_2.4.1+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:19.4973704Z Unpacking i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T04:03:19.5239636Z Selecting previously unselected package va-driver-all:amd64.
+2026-10-09T04:03:19.5367602Z Preparing to unpack .../96-va-driver-all_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T04:03:19.5374251Z Unpacking va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:19.5581155Z Selecting previously unselected package vdpau-driver-all:amd64.
+2026-10-09T04:03:19.5709188Z Preparing to unpack .../97-vdpau-driver-all_1.5-2build1_amd64.deb ...
+2026-10-09T04:03:19.5716252Z Unpacking vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T04:03:19.5935179Z Selecting previously unselected package pocketsphinx-en-us.
+2026-10-09T04:03:19.6062762Z Preparing to unpack .../98-pocketsphinx-en-us_0.8.0+real5prealpha+1-15ubuntu5_all.deb ...
+2026-10-09T04:03:19.6078351Z Unpacking pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T04:03:19.8036175Z Setting up libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T04:03:19.8058127Z Setting up libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T04:03:19.8081759Z Setting up libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T04:03:19.8099704Z Setting up libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T04:03:19.8121187Z Setting up libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T04:03:19.8139045Z Setting up libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T04:03:19.8160562Z Setting up libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T04:03:19.8182400Z Setting up libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T04:03:19.8200493Z Setting up libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T04:03:19.8221193Z Setting up libvpl2 (2023.3.0-1build1) ...
+2026-10-09T04:03:19.8239179Z Setting up libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T04:03:19.8261346Z Setting up libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T04:03:19.8280494Z Setting up libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T04:03:19.8299413Z Setting up libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T04:03:19.8320631Z Setting up libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T04:03:19.8339310Z Setting up libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T04:03:19.8359342Z Setting up libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T04:03:19.8377296Z Setting up libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T04:03:19.8395377Z Setting up libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T04:03:19.8416604Z Setting up libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T04:03:19.8435280Z Setting up libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T04:03:19.8455069Z Setting up libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T04:03:19.8473522Z Setting up libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T04:03:19.8492719Z Setting up libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T04:03:19.8512669Z Setting up libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T04:03:19.8531631Z Setting up librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T04:03:19.8551930Z Setting up libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T04:03:19.8568025Z Setting up librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T04:03:19.8589966Z Setting up librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T04:03:19.8607835Z Setting up libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T04:03:19.8670093Z update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T04:03:19.8687056Z Setting up libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T04:03:19.8705240Z Setting up libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:19.8722166Z Setting up libopus0:amd64 (1.4-1build1) ...
+2026-10-09T04:03:19.8756866Z Setting up libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T04:03:19.8775588Z Setting up libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T04:03:19.8798139Z Setting up intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T04:03:19.8820562Z Setting up libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T04:03:19.8839690Z Setting up libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T04:03:19.8864798Z Setting up libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T04:03:19.8883813Z Setting up libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T04:03:19.8910957Z Setting up librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T04:03:19.9006009Z Setting up pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T04:03:19.9026839Z Setting up libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T04:03:19.9075939Z Setting up libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T04:03:19.9096840Z Setting up libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T04:03:19.9118045Z Setting up libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T04:03:19.9141730Z Setting up libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T04:03:19.9159987Z Setting up libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T04:03:19.9182083Z Setting up libflite1:amd64 (2.2-6build3) ...
+2026-10-09T04:03:19.9200667Z Setting up libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T04:03:19.9222414Z Setting up libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:19.9246015Z Setting up ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T04:03:19.9263828Z Setting up libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T04:03:19.9283417Z Setting up libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T04:03:19.9308270Z Setting up libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T04:03:19.9327230Z Setting up libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T04:03:19.9348332Z Setting up libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T04:03:19.9366267Z Setting up libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T04:03:19.9389556Z Setting up libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T04:03:19.9414762Z Setting up libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T04:03:19.9434822Z Setting up mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T04:03:19.9456391Z Setting up libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T04:03:19.9475136Z Setting up libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T04:03:19.9496226Z Setting up libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:19.9515456Z Setting up libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T04:03:19.9536137Z Setting up libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T04:03:19.9555909Z Setting up libzvbi-common (0.2.42-2) ...
+2026-10-09T04:03:19.9574867Z Setting up libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T04:03:19.9594604Z Setting up i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T04:03:19.9614753Z Setting up libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T04:03:19.9634099Z Setting up libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T04:03:19.9654031Z Setting up libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T04:03:19.9673175Z Setting up libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T04:03:19.9693888Z Setting up mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T04:03:19.9713903Z Setting up liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T04:03:19.9775253Z update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T04:03:19.9791468Z Setting up libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T04:03:19.9819688Z Setting up libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:19.9839834Z Setting up libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T04:03:19.9859898Z Setting up libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T04:03:19.9879955Z Setting up libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:19.9899582Z Setting up va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T04:03:19.9919179Z Setting up libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:19.9939177Z Setting up librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T04:03:20.0241000Z Setting up libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T04:03:20.0259361Z Setting up vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T04:03:20.0280711Z Setting up libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T04:03:20.0297677Z Setting up libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0321603Z Setting up libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T04:03:20.0341850Z Setting up libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T04:03:20.0358579Z Setting up liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T04:03:20.0378335Z Setting up libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0395406Z Setting up libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T04:03:20.0472850Z Setting up libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0493242Z Setting up libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T04:03:20.0514050Z Setting up libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T04:03:20.0538181Z Setting up libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T04:03:20.0555934Z Setting up libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0583082Z Setting up libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0602968Z Setting up ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T04:03:20.0659778Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T04:03:20.0687033Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T04:03:20.0703841Z Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-10-09T04:03:20.3528124Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T04:03:21.7323128Z 
+2026-10-09T04:03:21.7323811Z Running kernel seems to be up-to-date.
+2026-10-09T04:03:21.7324246Z 
+2026-10-09T04:03:21.7324516Z No services need to be restarted.
+2026-10-09T04:03:21.7324845Z 
+2026-10-09T04:03:21.7325111Z No containers need to be restarted.
+2026-10-09T04:03:21.7325435Z 
+2026-10-09T04:03:21.7325760Z No user sessions are running outdated binaries.
+2026-10-09T04:03:21.7326158Z 
+2026-10-09T04:03:21.7326681Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T04:03:23.0659812Z ffprobe version 6.1.1-3ubuntu5 Copyright (c) 2007-2023 the FFmpeg developers
+2026-10-09T04:03:23.0660743Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T04:03:23.0673222Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T04:03:23.0680225Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T04:03:23.0680580Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T04:03:23.0680929Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T04:03:23.0681272Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T04:03:23.0681612Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T04:03:23.0681955Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T04:03:23.0682299Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T04:03:23.0682642Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T04:03:23.1190720Z ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+2026-10-09T04:03:23.1191844Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T04:03:23.1203491Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T04:03:23.1210111Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T04:03:23.1210438Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T04:03:23.1210755Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T04:03:23.1211066Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T04:03:23.1211366Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T04:03:23.1211670Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T04:03:23.1211978Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T04:03:23.1212277Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T04:03:23.1306221Z ##[group]Run actions/download-artifact@v4
+2026-10-09T04:03:23.1306542Z with:
+2026-10-09T04:03:23.1306827Z   pattern: G10-stage-*-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:03:23.1307183Z   path: jobs/G10-checkers
+2026-10-09T04:03:23.1307814Z   merge-multiple: true
+2026-10-09T04:03:23.1308083Z   repository: luisitin/partybox-game-cores
+2026-10-09T04:03:23.1308368Z   run-id: 37881026500
+2026-10-09T04:03:23.1308574Z env:
+2026-10-09T04:03:23.1308837Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:03:23.1309157Z ##[endgroup]
+2026-10-09T04:03:23.3124119Z (node:3776) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:03:23.3125168Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:03:23.3968720Z Found 4 artifact(s)
+2026-10-09T04:03:23.3969920Z Filtering artifacts by pattern 'G10-stage-*-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f'
+2026-10-09T04:03:23.3991902Z Preparing to download the following artifacts:
+2026-10-09T04:03:23.3993716Z - G10-stage-node-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f (ID: 11595145569, Size: 136636, Expected Digest: sha256:8e70e87a843bca1c44566d6620a85a851fac19ba64cc3a8a8ad5686a62289623)
+2026-10-09T04:03:23.3996376Z - G10-stage-league-american-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f (ID: 11595055543, Size: 372122, Expected Digest: sha256:98384dd6991e7452885be071df55ed033c64f73aa4b80d22c8d9fa85d007e81c)
+2026-10-09T04:03:23.3999464Z - G10-stage-league-international-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f (ID: 11594647612, Size: 490286, Expected Digest: sha256:a23d6dc8ede85df415ea8c6fd23b87f040232644d8c0c142dfa31dd437938b57)
+2026-10-09T04:03:23.4002202Z - G10-stage-browser-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f (ID: 11594432328, Size: 8728955, Expected Digest: sha256:02c0157877c5c04662b6d55a8ade79dc43a4ddcc5fb21448a1261577b2f49126)
+2026-10-09T04:03:23.5391064Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/976e3984-5ab2-8458-a798-405815df95cf/workflow-job-run-805d2c86-282d-5baa-a71b-8c9974933c21/artifacts/05d66bd4b6e0fcef04f3235b298c23a1cf703561d6c5f79332b65d407b6f3085.zip
+2026-10-09T04:03:23.5393514Z Starting download of artifact to: /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers
+2026-10-09T04:03:23.5468350Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/976e3984-5ab2-8458-a798-405815df95cf/workflow-job-run-2dd9795c-13d7-5fc4-ad3c-26223901e180/artifacts/271b754504ad59836a659bb7412e0fae482e6332dbf7f418d58794d5d6cb4703.zip
+2026-10-09T04:03:23.5471296Z Starting download of artifact to: /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers
+2026-10-09T04:03:23.5506879Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/976e3984-5ab2-8458-a798-405815df95cf/workflow-job-run-db11b3bf-400a-56f0-b84e-5b256ba3778f/artifacts/45165a54c63cafa1fa0ccae7e24cc33c767088a10866062c957701e2dbb39c22.zip
+2026-10-09T04:03:23.5510057Z Starting download of artifact to: /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers
+2026-10-09T04:03:23.5522981Z Redirecting to blob download url: https://productionresultssa4.blob.core.windows.net/actions-results/976e3984-5ab2-8458-a798-405815df95cf/workflow-job-run-f2ebf5a2-b2f1-59ff-9e8e-cdde50dee8be/artifacts/adebd4c2200a049cdca35de491dd1f34f8c60386a90960653c8d7eb646530a27.zip
+2026-10-09T04:03:23.5526007Z Starting download of artifact to: /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers
+2026-10-09T04:03:23.5746137Z (node:3776) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2026-10-09T04:03:23.6639094Z SHA256 digest of downloaded artifact is 8e70e87a843bca1c44566d6620a85a851fac19ba64cc3a8a8ad5686a62289623
+2026-10-09T04:03:23.6640635Z Artifact download completed successfully.
+2026-10-09T04:03:23.7107626Z SHA256 digest of downloaded artifact is 98384dd6991e7452885be071df55ed033c64f73aa4b80d22c8d9fa85d007e81c
+2026-10-09T04:03:23.7108964Z Artifact download completed successfully.
+2026-10-09T04:03:23.7132434Z SHA256 digest of downloaded artifact is a23d6dc8ede85df415ea8c6fd23b87f040232644d8c0c142dfa31dd437938b57
+2026-10-09T04:03:23.7133451Z Artifact download completed successfully.
+2026-10-09T04:03:23.8571949Z SHA256 digest of downloaded artifact is 02c0157877c5c04662b6d55a8ade79dc43a4ddcc5fb21448a1261577b2f49126
+2026-10-09T04:03:23.8572621Z Artifact download completed successfully.
+2026-10-09T04:03:23.8573015Z Total of 4 artifact(s) downloaded
+2026-10-09T04:03:23.8577764Z Download artifact has finished successfully
+2026-10-09T04:03:23.8733627Z ##[group]Run set -o pipefail
+2026-10-09T04:03:23.8733986Z [36;1mset -o pipefail[0m
+2026-10-09T04:03:23.8734405Z [36;1mnode scripts/check.mjs --stage final 2>&1 | tee .work-stage-final.stdout[0m
+2026-10-09T04:03:23.8797703Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:03:23.8798099Z env:
+2026-10-09T04:03:23.8798405Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:03:23.8798773Z ##[endgroup]
+2026-10-09T04:03:24.0186735Z 
+2026-10-09T04:03:24.0187899Z > partybox-g10-checkers@1.0.0 build
+2026-10-09T04:03:24.0188880Z > tsc --noEmit && node scripts/build.mjs
+2026-10-09T04:03:24.0189318Z 
+2026-10-09T04:03:37.2525928Z PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+2026-10-09T04:03:56.1996516Z PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page (delivery execution gates explicitly excluded).
+2026-10-09T04:04:22.0303418Z {"status":"PASS","games":4000,"files":80,"independentLegalMoveReplay":true}
+2026-10-09T04:04:51.8241021Z PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page, required simulations/mutations/leagues and source-matched browser/media proof.
+2026-10-09T04:04:55.5365013Z {"status":"PASS","stage":"final","sourceCommit":"474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f","elapsedSeconds":91.612370813}
+2026-10-09T04:04:55.5482224Z ##[group]Run node scripts/standalone-receipt.mjs
+2026-10-09T04:04:55.5482715Z [36;1mnode scripts/standalone-receipt.mjs[0m
+2026-10-09T04:04:55.5546821Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:04:55.5547154Z env:
+2026-10-09T04:04:55.5547851Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:04:55.5548305Z ##[endgroup]
+2026-10-09T04:04:59.5341711Z Standalone page digest and exact-checkout receipt written.
+2026-10-09T04:04:59.5451056Z ##[group]Run python3 scripts/standalone-parts.py split .work/play.html .work/standalone-delivery.json .work/standalone-parts
+2026-10-09T04:04:59.5452035Z [36;1mpython3 scripts/standalone-parts.py split .work/play.html .work/standalone-delivery.json .work/standalone-parts[0m
+2026-10-09T04:04:59.5516822Z shell: /usr/bin/bash -e {0}
+2026-10-09T04:04:59.5517181Z env:
+2026-10-09T04:04:59.5517872Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:04:59.5518610Z ##[endgroup]
+2026-10-09T04:05:03.6564297Z {"status": "PASS", "sourceCommit": "474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f", "parts": 4, "bytes": 1390846291, "sha256": "b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb"}
+2026-10-09T04:05:03.6680641Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T04:05:03.6680968Z with:
+2026-10-09T04:05:03.6681311Z   name: G10-standalone-part-00-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:03.6682017Z   path: jobs/G10-checkers/.work/standalone-parts/play.html.part-00
+jobs/G10-checkers/.work/standalone-parts/standalone-*
+
+2026-10-09T04:05:03.6682602Z   if-no-files-found: error
+2026-10-09T04:05:03.6682871Z   include-hidden-files: true
+2026-10-09T04:05:03.6683139Z   compression-level: 1
+2026-10-09T04:05:03.6683378Z   retention-days: 7
+2026-10-09T04:05:03.6683609Z   overwrite: false
+2026-10-09T04:05:03.6683833Z env:
+2026-10-09T04:05:03.6684109Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:03.6684455Z ##[endgroup]
+2026-10-09T04:05:03.8451040Z (node:3941) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:03.8452163Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:03.8529863Z With the provided path, there will be 4 files uploaded
+2026-10-09T04:05:03.8530494Z Artifact name is valid!
+2026-10-09T04:05:03.8530962Z Root directory input is valid!
+2026-10-09T04:05:04.0503955Z Beginning upload of artifact content to blob storage
+2026-10-09T04:05:04.4233877Z (node:3941) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:05:04.5597131Z Uploaded bytes 8388608
+2026-10-09T04:05:04.9008826Z Uploaded bytes 16777216
+2026-10-09T04:05:05.2028165Z Uploaded bytes 25165824
+2026-10-09T04:05:05.5731239Z Uploaded bytes 33554432
+2026-10-09T04:05:05.9261882Z Uploaded bytes 41943040
+2026-10-09T04:05:06.2189173Z Uploaded bytes 50331648
+2026-10-09T04:05:06.5828392Z Uploaded bytes 58720256
+2026-10-09T04:05:06.8819710Z Uploaded bytes 67108864
+2026-10-09T04:05:07.2429022Z Uploaded bytes 75497472
+2026-10-09T04:05:07.4612371Z Uploaded bytes 83886080
+2026-10-09T04:05:07.8385534Z Uploaded bytes 92274688
+2026-10-09T04:05:08.2653555Z Uploaded bytes 100663296
+2026-10-09T04:05:08.4783955Z Uploaded bytes 109051904
+2026-10-09T04:05:08.8030421Z Uploaded bytes 117440512
+2026-10-09T04:05:09.1443887Z Uploaded bytes 125829120
+2026-10-09T04:05:09.4370324Z Uploaded bytes 134217728
+2026-10-09T04:05:09.7534422Z Uploaded bytes 142606336
+2026-10-09T04:05:10.1055261Z Uploaded bytes 150994944
+2026-10-09T04:05:10.3765472Z Uploaded bytes 159383552
+2026-10-09T04:05:10.7234280Z Uploaded bytes 167772160
+2026-10-09T04:05:11.0342634Z Uploaded bytes 176160768
+2026-10-09T04:05:11.3856419Z Uploaded bytes 184549376
+2026-10-09T04:05:11.6891943Z Uploaded bytes 192937984
+2026-10-09T04:05:11.9889124Z Uploaded bytes 201326592
+2026-10-09T04:05:12.3020296Z Uploaded bytes 209715200
+2026-10-09T04:05:12.6998919Z Uploaded bytes 218103808
+2026-10-09T04:05:12.9594275Z Uploaded bytes 226492416
+2026-10-09T04:05:13.2971610Z Uploaded bytes 234881024
+2026-10-09T04:05:13.6565237Z Uploaded bytes 243269632
+2026-10-09T04:05:13.9694501Z Uploaded bytes 251658240
+2026-10-09T04:05:14.3014119Z Uploaded bytes 260046848
+2026-10-09T04:05:14.7226629Z Uploaded bytes 268435456
+2026-10-09T04:05:14.9967064Z Uploaded bytes 275344900
+2026-10-09T04:05:15.0118225Z Finished uploading artifact content to blob storage!
+2026-10-09T04:05:15.0122635Z SHA256 digest of uploaded artifact zip is 606fd5907b8bbc4649396c6babc7131226c7098105558c60aa95bdca9727d10e
+2026-10-09T04:05:15.0124807Z Finalizing artifact upload
+2026-10-09T04:05:15.2202145Z Artifact G10-standalone-part-00-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f.zip successfully finalized. Artifact ID 11595235741
+2026-10-09T04:05:15.2204603Z Artifact G10-standalone-part-00-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f has been successfully uploaded! Final size is 275344900 bytes. Artifact ID is 11595235741
+2026-10-09T04:05:15.2211493Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37881026500/artifacts/11595235741
+2026-10-09T04:05:15.2451122Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T04:05:15.2451649Z with:
+2026-10-09T04:05:15.2452212Z   name: G10-standalone-part-01-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:15.2453405Z   path: jobs/G10-checkers/.work/standalone-parts/play.html.part-01
+jobs/G10-checkers/.work/standalone-parts/standalone-*
+
+2026-10-09T04:05:15.2454397Z   if-no-files-found: error
+2026-10-09T04:05:15.2454843Z   include-hidden-files: true
+2026-10-09T04:05:15.2455296Z   compression-level: 1
+2026-10-09T04:05:15.2455703Z   retention-days: 7
+2026-10-09T04:05:15.2456084Z   overwrite: false
+2026-10-09T04:05:15.2456453Z env:
+2026-10-09T04:05:15.2456913Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:15.2457811Z ##[endgroup]
+2026-10-09T04:05:15.4393159Z (node:3956) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:15.4394694Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:15.4481794Z With the provided path, there will be 4 files uploaded
+2026-10-09T04:05:15.4483748Z Artifact name is valid!
+2026-10-09T04:05:15.4484887Z Root directory input is valid!
+2026-10-09T04:05:15.6413187Z Beginning upload of artifact content to blob storage
+2026-10-09T04:05:16.0083248Z (node:3956) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:05:16.1576452Z Uploaded bytes 8388608
+2026-10-09T04:05:16.5157220Z Uploaded bytes 16777216
+2026-10-09T04:05:16.8413967Z Uploaded bytes 25165824
+2026-10-09T04:05:17.2320876Z Uploaded bytes 33554432
+2026-10-09T04:05:17.5314103Z Uploaded bytes 41943040
+2026-10-09T04:05:17.8693531Z Uploaded bytes 50331648
+2026-10-09T04:05:18.3020013Z Uploaded bytes 58720256
+2026-10-09T04:05:18.4946502Z Uploaded bytes 67108864
+2026-10-09T04:05:18.8617793Z Uploaded bytes 75497472
+2026-10-09T04:05:19.1685606Z Uploaded bytes 83886080
+2026-10-09T04:05:19.5320877Z Uploaded bytes 92274688
+2026-10-09T04:05:19.7868873Z Uploaded bytes 100663296
+2026-10-09T04:05:20.2116799Z Uploaded bytes 109051904
+2026-10-09T04:05:20.4564715Z Uploaded bytes 117440512
+2026-10-09T04:05:20.7558938Z Uploaded bytes 125829120
+2026-10-09T04:05:21.1210220Z Uploaded bytes 134217728
+2026-10-09T04:05:21.4268446Z Uploaded bytes 142606336
+2026-10-09T04:05:21.7591949Z Uploaded bytes 150994944
+2026-10-09T04:05:22.0535956Z Uploaded bytes 159383552
+2026-10-09T04:05:22.3609110Z Uploaded bytes 167772160
+2026-10-09T04:05:22.7158621Z Uploaded bytes 176160768
+2026-10-09T04:05:23.0217125Z Uploaded bytes 184549376
+2026-10-09T04:05:23.4536186Z Uploaded bytes 192937984
+2026-10-09T04:05:23.7192016Z Uploaded bytes 201326592
+2026-10-09T04:05:24.0082146Z Uploaded bytes 209715200
+2026-10-09T04:05:24.3682113Z Uploaded bytes 218103808
+2026-10-09T04:05:24.6606194Z Uploaded bytes 226492416
+2026-10-09T04:05:24.9919576Z Uploaded bytes 234881024
+2026-10-09T04:05:25.2936642Z Uploaded bytes 243269632
+2026-10-09T04:05:25.6130911Z Uploaded bytes 251658240
+2026-10-09T04:05:25.9283760Z Uploaded bytes 260046848
+2026-10-09T04:05:26.3052122Z Uploaded bytes 268435456
+2026-10-09T04:05:26.6373411Z Uploaded bytes 276824064
+2026-10-09T04:05:26.6776347Z Uploaded bytes 278876343
+2026-10-09T04:05:26.6940705Z Finished uploading artifact content to blob storage!
+2026-10-09T04:05:26.6944517Z SHA256 digest of uploaded artifact zip is 74fc36c6280b57fa4329525375be2b6bfd1170d43ea5e53627ba1aa87436a25b
+2026-10-09T04:05:26.6946198Z Finalizing artifact upload
+2026-10-09T04:05:26.8956720Z Artifact G10-standalone-part-01-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f.zip successfully finalized. Artifact ID 11594442251
+2026-10-09T04:05:26.8960086Z Artifact G10-standalone-part-01-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f has been successfully uploaded! Final size is 278876343 bytes. Artifact ID is 11594442251
+2026-10-09T04:05:26.8966341Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37881026500/artifacts/11594442251
+2026-10-09T04:05:26.9152187Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T04:05:26.9152537Z with:
+2026-10-09T04:05:26.9152895Z   name: G10-standalone-part-02-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:26.9153645Z   path: jobs/G10-checkers/.work/standalone-parts/play.html.part-02
+jobs/G10-checkers/.work/standalone-parts/standalone-*
+
+2026-10-09T04:05:26.9154257Z   if-no-files-found: error
+2026-10-09T04:05:26.9154544Z   include-hidden-files: true
+2026-10-09T04:05:26.9154826Z   compression-level: 1
+2026-10-09T04:05:26.9155081Z   retention-days: 7
+2026-10-09T04:05:26.9155322Z   overwrite: false
+2026-10-09T04:05:26.9155558Z env:
+2026-10-09T04:05:26.9155854Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:26.9156239Z ##[endgroup]
+2026-10-09T04:05:27.0875977Z (node:3970) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:27.0877943Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:27.0967026Z With the provided path, there will be 4 files uploaded
+2026-10-09T04:05:27.0973815Z Artifact name is valid!
+2026-10-09T04:05:27.0974649Z Root directory input is valid!
+2026-10-09T04:05:27.2739251Z Beginning upload of artifact content to blob storage
+2026-10-09T04:05:27.6308124Z (node:3970) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:05:27.7878575Z Uploaded bytes 8388608
+2026-10-09T04:05:28.1605180Z Uploaded bytes 16777216
+2026-10-09T04:05:28.5059590Z Uploaded bytes 25165824
+2026-10-09T04:05:28.8749870Z Uploaded bytes 33554432
+2026-10-09T04:05:29.1081250Z Uploaded bytes 41943040
+2026-10-09T04:05:29.4485924Z Uploaded bytes 50331648
+2026-10-09T04:05:29.7997823Z Uploaded bytes 58720256
+2026-10-09T04:05:30.1646228Z Uploaded bytes 67108864
+2026-10-09T04:05:30.3616939Z Uploaded bytes 75497472
+2026-10-09T04:05:30.7584173Z Uploaded bytes 83886080
+2026-10-09T04:05:31.0879699Z Uploaded bytes 92274688
+2026-10-09T04:05:31.3488691Z Uploaded bytes 100663296
+2026-10-09T04:05:31.7214546Z Uploaded bytes 109051904
+2026-10-09T04:05:32.0530486Z Uploaded bytes 117440512
+2026-10-09T04:05:32.3356689Z Uploaded bytes 125829120
+2026-10-09T04:05:32.6636619Z Uploaded bytes 134217728
+2026-10-09T04:05:33.0180139Z Uploaded bytes 142606336
+2026-10-09T04:05:33.3111892Z Uploaded bytes 150994944
+2026-10-09T04:05:33.6353997Z Uploaded bytes 159383552
+2026-10-09T04:05:33.9602954Z Uploaded bytes 167772160
+2026-10-09T04:05:34.3408141Z Uploaded bytes 176160768
+2026-10-09T04:05:34.6038570Z Uploaded bytes 184549376
+2026-10-09T04:05:34.9322343Z Uploaded bytes 192937984
+2026-10-09T04:05:35.2917105Z Uploaded bytes 201326592
+2026-10-09T04:05:35.5835023Z Uploaded bytes 209715200
+2026-10-09T04:05:35.9500660Z Uploaded bytes 218103808
+2026-10-09T04:05:36.2395488Z Uploaded bytes 226492416
+2026-10-09T04:05:36.5294062Z Uploaded bytes 234881024
+2026-10-09T04:05:36.9360694Z Uploaded bytes 243269632
+2026-10-09T04:05:37.1953212Z Uploaded bytes 251658240
+2026-10-09T04:05:37.5288591Z Uploaded bytes 260046848
+2026-10-09T04:05:37.8486000Z Uploaded bytes 268435456
+2026-10-09T04:05:38.2182071Z Uploaded bytes 276824064
+2026-10-09T04:05:38.4867699Z Uploaded bytes 285212672
+2026-10-09T04:05:38.5158139Z Uploaded bytes 286219587
+2026-10-09T04:05:38.5322370Z Finished uploading artifact content to blob storage!
+2026-10-09T04:05:38.5326133Z SHA256 digest of uploaded artifact zip is fd599dd82ff6aa12bffb03f28691c7218d621f0d2211abf29791e2fd692b46b0
+2026-10-09T04:05:38.5327869Z Finalizing artifact upload
+2026-10-09T04:05:38.7834318Z Artifact G10-standalone-part-02-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f.zip successfully finalized. Artifact ID 11595081263
+2026-10-09T04:05:38.7836773Z Artifact G10-standalone-part-02-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f has been successfully uploaded! Final size is 286219587 bytes. Artifact ID is 11595081263
+2026-10-09T04:05:38.7843080Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37881026500/artifacts/11595081263
+2026-10-09T04:05:38.8016648Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T04:05:38.8017008Z with:
+2026-10-09T04:05:38.8017657Z   name: G10-standalone-part-03-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:38.8018555Z   path: jobs/G10-checkers/.work/standalone-parts/play.html.part-03
+jobs/G10-checkers/.work/standalone-parts/standalone-*
+
+2026-10-09T04:05:38.8019164Z   if-no-files-found: error
+2026-10-09T04:05:38.8019456Z   include-hidden-files: true
+2026-10-09T04:05:38.8019742Z   compression-level: 1
+2026-10-09T04:05:38.8020019Z   retention-days: 7
+2026-10-09T04:05:38.8020278Z   overwrite: false
+2026-10-09T04:05:38.8020518Z env:
+2026-10-09T04:05:38.8020837Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:38.8021226Z ##[endgroup]
+2026-10-09T04:05:38.9781615Z (node:3983) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:38.9782715Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:38.9878181Z With the provided path, there will be 4 files uploaded
+2026-10-09T04:05:38.9879209Z Artifact name is valid!
+2026-10-09T04:05:38.9879563Z Root directory input is valid!
+2026-10-09T04:05:39.1684888Z Beginning upload of artifact content to blob storage
+2026-10-09T04:05:39.5105111Z (node:3983) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:05:39.6530352Z Uploaded bytes 8388608
+2026-10-09T04:05:39.9945430Z Uploaded bytes 16777216
+2026-10-09T04:05:40.3948459Z Uploaded bytes 25165824
+2026-10-09T04:05:40.6728619Z Uploaded bytes 33554432
+2026-10-09T04:05:40.9420456Z Uploaded bytes 41943040
+2026-10-09T04:05:41.3226868Z Uploaded bytes 50331648
+2026-10-09T04:05:41.6794708Z Uploaded bytes 58720256
+2026-10-09T04:05:41.9253147Z Uploaded bytes 67108864
+2026-10-09T04:05:42.2765873Z Uploaded bytes 75497472
+2026-10-09T04:05:42.5851874Z Uploaded bytes 83886080
+2026-10-09T04:05:43.0006578Z Uploaded bytes 92274688
+2026-10-09T04:05:43.2606006Z Uploaded bytes 100663296
+2026-10-09T04:05:43.5134602Z Uploaded bytes 109051904
+2026-10-09T04:05:43.8377770Z Uploaded bytes 117440512
+2026-10-09T04:05:44.2081964Z Uploaded bytes 125829120
+2026-10-09T04:05:44.2893583Z Uploaded bytes 127624632
+2026-10-09T04:05:44.3049742Z Finished uploading artifact content to blob storage!
+2026-10-09T04:05:44.3054143Z SHA256 digest of uploaded artifact zip is 3408bb54cabfd6e3c16ef31cf0eaa3c89d934381d030d8040f6c68ae06d8be26
+2026-10-09T04:05:44.3056400Z Finalizing artifact upload
+2026-10-09T04:05:44.5558053Z Artifact G10-standalone-part-03-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f.zip successfully finalized. Artifact ID 11595310727
+2026-10-09T04:05:44.5560065Z Artifact G10-standalone-part-03-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f has been successfully uploaded! Final size is 127624632 bytes. Artifact ID is 11595310727
+2026-10-09T04:05:44.5566105Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37881026500/artifacts/11595310727
+2026-10-09T04:05:44.5773227Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T04:05:44.5773590Z with:
+2026-10-09T04:05:44.5773938Z   name: G10-check-evidence-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:44.5774701Z   path: jobs/G10-checkers/.work-stage-*.stdout
+jobs/G10-checkers/.work/checks
+jobs/G10-checkers/.work/browser
+jobs/G10-checkers/.work/media
+
+2026-10-09T04:05:44.5775355Z   include-hidden-files: true
+2026-10-09T04:05:44.5775643Z   retention-days: 7
+2026-10-09T04:05:44.5776096Z   if-no-files-found: warn
+2026-10-09T04:05:44.5776372Z   compression-level: 6
+2026-10-09T04:05:44.5776628Z   overwrite: false
+2026-10-09T04:05:44.5776872Z env:
+2026-10-09T04:05:44.5777167Z   G10_SOURCE_COMMIT: 474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f
+2026-10-09T04:05:44.5777958Z ##[endgroup]
+2026-10-09T04:05:44.7537726Z (node:3997) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:44.7538953Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:44.8172110Z With the provided path, there will be 239 files uploaded
+2026-10-09T04:05:44.8179867Z Artifact name is valid!
+2026-10-09T04:05:44.8180686Z Root directory input is valid!
+2026-10-09T04:05:45.0021908Z Beginning upload of artifact content to blob storage
+2026-10-09T04:05:45.6493820Z (node:3997) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T04:05:45.8871595Z Uploaded bytes 8388608
+2026-10-09T04:05:46.0177097Z Uploaded bytes 10568800
+2026-10-09T04:05:46.0317889Z Finished uploading artifact content to blob storage!
+2026-10-09T04:05:46.0319500Z SHA256 digest of uploaded artifact zip is da43ed7d0cb9c9569eeefe7e7e41b5a7c7971504e436de1b3f2f0ce763f9c794
+2026-10-09T04:05:46.0320714Z Finalizing artifact upload
+2026-10-09T04:05:46.2374569Z Artifact G10-check-evidence-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f.zip successfully finalized. Artifact ID 11595076234
+2026-10-09T04:05:46.2378131Z Artifact G10-check-evidence-474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f has been successfully uploaded! Final size is 10568800 bytes. Artifact ID is 11595076234
+2026-10-09T04:05:46.2383027Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37881026500/artifacts/11595076234
+2026-10-09T04:05:46.2579238Z Post job cleanup.
+2026-10-09T04:05:46.3842934Z (node:4009) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T04:05:46.3844336Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T04:05:46.3846953Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a, not saving cache.
+2026-10-09T04:05:46.3988656Z Post job cleanup.
+2026-10-09T04:05:46.4940903Z [command]/usr/bin/git version
+2026-10-09T04:05:46.5013979Z git version 2.55.0
+2026-10-09T04:05:46.5061037Z Temporarily overriding HOME='/home/runner/work/_temp/f828dd86-c555-4606-b17e-3a1d087a9933' before making global git config changes
+2026-10-09T04:05:46.5062601Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T04:05:46.5067018Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T04:05:46.5110894Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T04:05:46.5153045Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T04:05:46.5430466Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T04:05:46.5461220Z http.https://github.com/.extraheader
+2026-10-09T04:05:46.5477339Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T04:05:46.5517146Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T04:05:46.5829933Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T04:05:46.5881905Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T04:05:46.6311606Z Cleaning up orphan processes
+2026-10-09T04:05:46.6649411Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/download-artifact@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

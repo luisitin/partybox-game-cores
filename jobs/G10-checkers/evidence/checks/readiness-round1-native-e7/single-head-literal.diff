@@ -1,0 +1,11 @@
+--- validated-preparer.mjs
++++ prepare-ready.mjs
+@@ -8,7 +8,7 @@
+ import {stageGuards,sourceCommit} from '../../scripts/check-stages.mjs';
+ import {gameInputHashes} from '../../scripts/game-inputs.mjs';
+ const directory=resolve('.work/american-ready-private'),startedAt=new Date().toISOString();
+-assert.equal(process.version,'v22.16.0');assert.equal(sourceCommit(),'21770325250068d5a2fb05a8c31209894ca806d2');
++assert.equal(process.version,'v22.16.0');assert.equal(sourceCommit(),'e7a5c6463af2f0033ff08d333fb378ad160c1e43');
+ const hash=async path=>{const h=createHash('sha256');for await(const bytes of createReadStream(path))h.update(bytes);return h.digest('hex');};
+ const old=JSON.parse(await readFile('.work/hosted-fa-final/extracted/.work/checks/stage-node.json','utf8'));
+ assert.equal(old.sourceCommit,'fa0b337e1178177ff5b871acae697897c687ee11');

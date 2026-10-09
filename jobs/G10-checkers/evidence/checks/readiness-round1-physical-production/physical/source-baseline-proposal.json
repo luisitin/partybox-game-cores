@@ -1,0 +1,67 @@
+{
+  "status": "PASS_READONLY_PROPOSAL_NOT_DELETED",
+  "startedAt": "2026-10-09T01:18:59.356236+00:00",
+  "closedAt": "2026-10-09T01:19:21.303389+00:00",
+  "accepted8b4Head": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+  "currentEvidenceOnlyHead": "4bfa6e0f41a3b860131fa227378f649766f99a43",
+  "sourceGuards": 349,
+  "currentGitSourceFilesMatchAccepted8b4": 206,
+  "exactGeneratedRuntimeGuards": 143,
+  "sixCurrentDocumentationGitBridge": [
+    {
+      "path": "jobs/G10-checkers/README.md",
+      "immutableAccepted8b4Sha256": "46ba31739322c7332fffea1cdee1dd676d2e370394c34b989f8c1c6945750528",
+      "immutableCurrent4bSha256": "46ba31739322c7332fffea1cdee1dd676d2e370394c34b989f8c1c6945750528",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/VERIFY.md",
+      "immutableAccepted8b4Sha256": "b161d79a2a0bf294c3af5ff6283238669936f0f442c0d458573cc7fbdf4f2a77",
+      "immutableCurrent4bSha256": "1c298b2bf918916f6086050abe224ab6c1fd232a13e0df5aae57df2782aca13e",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": false
+    },
+    {
+      "path": "jobs/G10-checkers/NEXT.md",
+      "immutableAccepted8b4Sha256": "8acea0dfc0e4966cf0a9ce70f6dc37f8eb6402f17dea35d7387e826dccaf7de9",
+      "immutableCurrent4bSha256": "c5bb47a01976a7013e324edf1925109de2d376f001a0b6a553d019831f38281d",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": false
+    },
+    {
+      "path": "jobs/G10-checkers/LOOP.md",
+      "immutableAccepted8b4Sha256": "46ce4f57732d3e75df6a0d1f4f876e95009a5207b1135497b749cb3072539755",
+      "immutableCurrent4bSha256": "46ce4f57732d3e75df6a0d1f4f876e95009a5207b1135497b749cb3072539755",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": true
+    },
+    {
+      "path": "jobs/G10-checkers/ASSUMPTIONS.md",
+      "immutableAccepted8b4Sha256": "f2604fe58a05f4589600f4555b789447fba0fb47d1c2e7a9697c7a89a77e8e17",
+      "immutableCurrent4bSha256": "b8e0df41baeff7705564f4c1a2471225e3dc8155549885b016097c82e380a5a0",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": false
+    },
+    {
+      "path": "jobs/G10-checkers/SHA256SUMS.txt",
+      "immutableAccepted8b4Sha256": "f4dad8dd181cc965e68cfd6a3d22ddacf80cfa9e731c719d6bc1d8f48b0b571f",
+      "immutableCurrent4bSha256": "9106e9d44b5d536f4fe456fb2daf07b3bdf9787dc4925e267c74e5dd67b4515b",
+      "currentWorkingMatchesGit": true,
+      "equalToAccepted": false
+    }
+  ],
+  "baselineActualWholeSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "baselineActualStat": {
+    "dev": 27,
+    "ino": 1465086,
+    "bytes": 1390845993,
+    "mtimeNs": 1791475280649853178,
+    "ctimeNs": 1791475280769847347
+  },
+  "baselineStatUnchangedAfterActualFullRead": true,
+  "baselineOpenFdOwners": [],
+  "physicalWriterSha256": "06ece5e34ad7aad1f1b293042407f6c877dbcb04bc75494bb61a1b28e1e54b05",
+  "strictTypecheckSha256": "2febc1d0be2961f931be6a1a0311e8f9632129691ea8a37874bdd514ff86646e",
+  "scope": "Actual current4b immutable-source/runtime equality bridge to genuineaccepted8b4 completeartifact, fullimmediatebaseline5ed SHA/samestat/zeroFD; no unlink/write/adoption/timing occurred. Rootfreshglobal guard still required."
+}

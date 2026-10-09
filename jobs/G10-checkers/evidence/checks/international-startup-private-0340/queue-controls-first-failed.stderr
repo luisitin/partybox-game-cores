@@ -1,0 +1,17 @@
+node:internal/modules/run_main:123
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+21628 !== 69632
+
+    at file:///workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/international-ready-private/queue-controls.mjs:13:89 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 21628,
+  expected: 69632,
+  operator: 'strictEqual'
+}
+
+Node.js v22.16.0

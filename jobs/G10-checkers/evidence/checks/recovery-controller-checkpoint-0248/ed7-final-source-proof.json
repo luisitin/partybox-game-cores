@@ -1,0 +1,27 @@
+{
+  "status": "CLOSED_PASS",
+  "startedAt": "2026-10-09T02:10:39.708332+00:00",
+  "closedAt": "2026-10-09T02:11:33.144828+00:00",
+  "children": [
+    {
+      "name": "hashes-final",
+      "startedAt": "2026-10-09T02:10:40.236236+00:00",
+      "natural": true,
+      "closedAt": "2026-10-09T02:10:43.509616+00:00",
+      "exitCode": 0
+    },
+    {
+      "name": "integrity-final",
+      "startedAt": "2026-10-09T02:10:43.509673+00:00",
+      "natural": true,
+      "closedAt": "2026-10-09T02:11:29.957129+00:00",
+      "exitCode": 0
+    }
+  ],
+  "nodeBeforeSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "nodeAfterSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "finalManifestSha256": "2eba35a0285b660a95a9251beaa3d7129cc3f3d787d1d6e6f90fc2506295c4eb",
+  "originalDfActualRuntimeSourceGuardCount": 349,
+  "originalImplementationUnchanged": true,
+  "scope": "Final original checksum generator after every document/evidence write; then exact supported original --sources proof and all349 actual df runtime/source hashes, changed tracked paths are checksum/handoff docs only. Original allchecks/current-head CI and standalone reception remain separate."
+}

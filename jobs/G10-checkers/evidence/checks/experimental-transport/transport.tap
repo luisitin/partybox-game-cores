@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+ok 1 - immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+  ---
+  duration_ms: 1269.737066
+  type: 'test'
+  ...
+# Subtest: an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+ok 2 - an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+  ---
+  duration_ms: 192.370461
+  type: 'test'
+  ...
+# Subtest: transaction retries require all missing original blocks and then equal native outcomes
+ok 3 - transaction retries require all missing original blocks and then equal native outcomes
+  ---
+  duration_ms: 24.289136
+  type: 'test'
+  ...
+# Subtest: encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+ok 4 - encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+  ---
+  duration_ms: 33.904276
+  type: 'test'
+  ...
+# Subtest: canonical encoding and bounded block metadata reject corrupt input before probing
+ok 5 - canonical encoding and bounded block metadata reject corrupt input before probing
+  ---
+  duration_ms: 13.687184
+  type: 'test'
+  ...
+# Subtest: one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+ok 6 - one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+  ---
+  duration_ms: 28.873137
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2815.481683

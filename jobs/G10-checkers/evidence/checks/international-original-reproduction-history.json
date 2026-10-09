@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "file": "international-reference-initial-prefix-failure.stdout",
+      "bytes": 2075,
+      "sha256": "fa0572b1c175efe0048bd1bf1a688e97a3289e67b8bba93dafe9c2008a619797",
+      "scope": "Initial source-prefix check: failed before reader correction; bytes are Node spec stdout, not TAP."
+    },
+    {
+      "file": "international-reference-prefix-corrected.stdout",
+      "bytes": 957,
+      "sha256": "8baa8db157303620e0456624602924e4b49577450b725852e763c04e49525a7e",
+      "scope": "First corrected synthetic/actual sample check; bytes are Node spec stdout, not TAP."
+    },
+    {
+      "file": "international-small-acquisition.stdout",
+      "bytes": 2887,
+      "sha256": "1519f9283b2a9e559a5cb1aacbcbdd690385c6bd1f920117522d53492981b870",
+      "scope": "Successful three-range acquisition, original installer SHA1 and driver CRC32 verification."
+    },
+    {
+      "file": "international-small-acquisition-manifest.json",
+      "bytes": 2528,
+      "sha256": "1967727831fa1624812f7a9ea83353f2ae27295ea9d08ad3a636325fce61e439",
+      "scope": "Actual 2\u20135 lower-piece payload hashes and byte counts; no complete-six claim."
+    }
+  ],
+  "sourceArchiveSha256": "9b52088cc0864e8fa68249d97145bfc2800313cbf34fac5b6eb214d0ea23f66c",
+  "executionCommand": [
+    "setsid",
+    "--wait",
+    "python3",
+    "scripts/validate-international-original.py",
+    "--database",
+    "/tmp/g10-rules-oracle-corpus/international-small/app",
+    "--dictionary",
+    "data/international/tunstall-v2.bin",
+    "--source-archive",
+    "/tmp/g10-rules-oracle-corpus/egdb-original-source.tar.gz",
+    "--work-dir",
+    ".work/international-original",
+    "--evidence-dir",
+    "evidence/checks/international-original"
+  ],
+  "sampleTestCommand": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "tests/reference-international.test.mjs"
+  ],
+  "scope": "Original C++ versus independent JS 10k direct 2\u20135 WDL; no full six or history-aware proof."
+}

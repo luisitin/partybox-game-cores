@@ -1,0 +1,187 @@
+{
+  "status": "COMPLETE_ACTUAL_ARCHIVE",
+  "builtAt": "2026-10-09T06:53:16.205494+00:00",
+  "proofZipBytes": 1358264,
+  "proofZipSha256": "c9dcd96a33d8b58b2761657037b719bb120c6be0a953f712fca232f7e153b059",
+  "members": {
+    "actual-old-closed-native/report.json": {
+      "bytes": 77598,
+      "sha256": "a67bb434f6a8142455db109c882e508bcd598710ad8bae700b737f89515cdfd6"
+    },
+    "actual-old-closed-native/server.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "actual-old-closed-native/server.stdout": {
+      "bytes": 1314,
+      "sha256": "6c53c1917d7617996838c1fb640dd8efcb41db016b3738e71d7821c4ca52d2d3"
+    },
+    "first-actual-failed/actual/controller.json": {
+      "bytes": 1613,
+      "sha256": "b93d148e39089caac31021bb7a00cffe217489ff1ad87809acf648dcfb14ba7a"
+    },
+    "first-actual-failed/actual/eager.stderr": {
+      "bytes": 664,
+      "sha256": "b43951d80cbb2350e5f50b60874c4dcc0d6000f4d840ec7145e352b7196e7277"
+    },
+    "first-actual-failed/actual/eager.stdout": {
+      "bytes": 237,
+      "sha256": "b7d14b6e330c1dac3359e9e550179fa16dc4e7917180db85899169c4149354fc"
+    },
+    "first-actual-failed/actual/failure.json": {
+      "bytes": 573,
+      "sha256": "b9c18b0074911ce334f36c899339b8b22f55942bf8d438381bb49c3e192ee1e4"
+    },
+    "first-actual-failed/actual/freeze-before.json": {
+      "bytes": 1354356,
+      "sha256": "e3a55b18a8b18b7a7db386dbc4eb5a1807512cc238aee2276b0985ebca67d726"
+    },
+    "first-actual-failed/actual/freeze-finally.json": {
+      "bytes": 1411618,
+      "sha256": "27624e60edc6f0b81e7f425453bc38e61c8dd784cc0b25ea345a67d19783d064"
+    },
+    "first-actual-failed/actual/owner-closure.json": {
+      "bytes": 262,
+      "sha256": "e937a189e55ad0604e3d90a7495e079b300d53a12c157b591b022901d7e6be8e"
+    },
+    "first-actual-failed/actual/owner.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "first-actual-failed/actual/owner.stdout": {
+      "bytes": 1415,
+      "sha256": "38fc31636eba27441f37600369434553f65c538552ad71f525bd8b04b33b006a"
+    },
+    "first-actual-failed/actual/prelaunch-resource.json": {
+      "bytes": 230,
+      "sha256": "ed3f5de79481a9cb7fca214e22a441d2deab28913b457fd43706536ccb2ea1e3"
+    },
+    "first-actual-failed/actual/spec.json": {
+      "bytes": 2920075,
+      "sha256": "83d2b15f535423a142c52ba256e87bccac1c7740f141c5e3ec4539737a1b84bc"
+    },
+    "first-actual-failed/code/common.mjs": {
+      "bytes": 4929,
+      "sha256": "b77fa267bc811e13795457c3acb5314ab1414773b06c7df8b819a37f31afe3f4"
+    },
+    "first-actual-failed/code/controller.derivation.diff": {
+      "bytes": 7092,
+      "sha256": "37b1b87d351f306af55cc6bfd00d439360933d720123b5bf8824fa5b3c1e83f8"
+    },
+    "first-actual-failed/code/controller.py": {
+      "bytes": 7216,
+      "sha256": "b12f2c795bf0d6eff0586efa75b718779a1a8e28bece8b142d0314107ce15edd"
+    },
+    "first-actual-failed/code/deferred.mjs": {
+      "bytes": 214,
+      "sha256": "0955e6a190c2624587f0b0b58ba6fef1415a2b182b9ca8c877948475c5298a4a"
+    },
+    "first-actual-failed/code/eager.mjs": {
+      "bytes": 205,
+      "sha256": "a25c823823f1ee04a35fb3717e10cfc9d0c03428c1cd9cd9297f785315dc9891"
+    },
+    "source-corrected-actual-pass/actual/controller.json": {
+      "bytes": 2929,
+      "sha256": "9def10632ad83d0e84d3cce7d51ce9f4689a56c09d0197155d6e34cc08d237d1"
+    },
+    "source-corrected-actual-pass/actual/deferred-replay.json": {
+      "bytes": 19899,
+      "sha256": "fcf0b567d88ad31a2102b98a666c678a48c3fec4b5f0d2b0135e07a8c18eae7f"
+    },
+    "source-corrected-actual-pass/actual/deferred-result.json": {
+      "bytes": 29359,
+      "sha256": "9343146ac684a77f96776ac20337daa410430e636643b0132802516c4ad66a5c"
+    },
+    "source-corrected-actual-pass/actual/deferred.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-corrected-actual-pass/actual/deferred.stdout": {
+      "bytes": 629,
+      "sha256": "46d0269d74b6e4675e9f5af63903484fb74e2d614020976e269438c58a485f1f"
+    },
+    "source-corrected-actual-pass/actual/eager-replay.json": {
+      "bytes": 19896,
+      "sha256": "a32282b4759f2725629185e295ad6a606d2713ed73b2c0c2aa50b07fd262580c"
+    },
+    "source-corrected-actual-pass/actual/eager-result.json": {
+      "bytes": 34355,
+      "sha256": "98217a6916ddf484cd722a6e0f323789db32839b0c14b2a3663aa66daf21103f"
+    },
+    "source-corrected-actual-pass/actual/eager.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-corrected-actual-pass/actual/eager.stdout": {
+      "bytes": 626,
+      "sha256": "12647c57cc820d77bd0f9b29f3fd6809ce33d144a7c3b52fcf3c63c5e15a60d9"
+    },
+    "source-corrected-actual-pass/actual/freeze-before.json": {
+      "bytes": 1355601,
+      "sha256": "ca9171655772a79711287bb60918c622a317551ccef21012a16fd07f5063afee"
+    },
+    "source-corrected-actual-pass/actual/freeze-finally.json": {
+      "bytes": 1412911,
+      "sha256": "995b956635d03c645031f4178c965673a128f33b3984eff42bb6bffd32110e41"
+    },
+    "source-corrected-actual-pass/actual/owner-closure.json": {
+      "bytes": 261,
+      "sha256": "033fdd514c0376061f1788de3490603374a8b0ebe9ba6f7849a39c542b94e01e"
+    },
+    "source-corrected-actual-pass/actual/owner.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source-corrected-actual-pass/actual/owner.stdout": {
+      "bytes": 2519,
+      "sha256": "725dad2636e6a63d3fbdb8dfd3d7c44d1a3f47e4f1b1ee80cc66b9d59191e32f"
+    },
+    "source-corrected-actual-pass/actual/spec.json": {
+      "bytes": 2921323,
+      "sha256": "c49d8f16443e3d6dfc75bb18c7da43754959450c005237cef2fd88bba5295e5f"
+    },
+    "source-corrected-actual-pass/code/common.mjs": {
+      "bytes": 4990,
+      "sha256": "4af44a9adf53a0c32ea72b3ac6768619ff5a2fc81efbb3a282c3f16d936a3fc1"
+    },
+    "source-corrected-actual-pass/code/controller.derivation.diff": {
+      "bytes": 7098,
+      "sha256": "c06e93e2e48d7126f85bd92c4dcb03d1edb163289e85823faf75b67c8b4a9ce5"
+    },
+    "source-corrected-actual-pass/code/controller.py": {
+      "bytes": 7222,
+      "sha256": "8bf06fa030086d6ff94da86d63baf1d826872c6a120a7b054ed13a653d7341cc"
+    },
+    "source-corrected-actual-pass/code/correction.json": {
+      "bytes": 553,
+      "sha256": "c5ebc0784155960e8f1377a083b3bd6c846958f5cf37032c482bb3dd309c2096"
+    },
+    "source-corrected-actual-pass/code/deferred.mjs": {
+      "bytes": 214,
+      "sha256": "0955e6a190c2624587f0b0b58ba6fef1415a2b182b9ca8c877948475c5298a4a"
+    },
+    "source-corrected-actual-pass/code/eager.mjs": {
+      "bytes": 205,
+      "sha256": "a25c823823f1ee04a35fb3717e10cfc9d0c03428c1cd9cd9297f785315dc9891"
+    },
+    "source-corrected-actual-pass/code/original-capture-before-start-order-fix.diff": {
+      "bytes": 826,
+      "sha256": "ead363b8c7d666c3345e2adb315400a31903ef4b70a1b0c591458f5e3a7bad9c"
+    }
+  },
+  "currentImmutableHead": "d61912087420a62b26bfed2f977799e529a37897",
+  "actualClosedAt": "2026-10-09T06:51:09.707543+00:00",
+  "fullFinalFreeze": "PASS",
+  "sourceRuntimeSelfPins": 2384,
+  "fullShaEofInputsEach": 2370,
+  "replayedGamesEach": 8,
+  "seed": 20261008,
+  "strongNodeBudget": 6000,
+  "canonicalSha256": "dc268a96e9dbdb1515813824ad0dd47ca80d25dffde1cdfa09485ef3519db621",
+  "eagerDeferredCanonicalPayloadByteEqual": true,
+  "peakOwnedNodeRssBytes": {
+    "eager": 3764461568,
+    "deferred": 2725892096
+  },
+  "scope": "Saved genuinely closed old native eight-game report only; same full licensed corpus/core/bots, all original legal/state and full independently recomputed bot-report/RNG/sampleInput equality. Allocation/replay scheduling proof, no new browser/native clock, no current Intl readiness/player gain/adoption/no-gain KEEP round. First incorrect extra preclick expectation failed before deferred arm; all firstcode/spec/stdios/fullEOF/RSS/final2382PASS preserved, corrected only source91 capture-before-handler semantics."
+}

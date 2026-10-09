@@ -1,0 +1,117 @@
+{
+  "command": "node --cpu-prof --cpu-prof-dir=.work/profile scripts/league.mjs --games 4 --variant international",
+  "rawProfile": "international-profile.cpuprofile",
+  "elapsedSeconds": 16.159172,
+  "samples": 13181,
+  "hotspots": [
+    {
+      "function": "compileSourceTextModule",
+      "url": "utils",
+      "line": 316,
+      "samples": 1521
+    },
+    {
+      "function": "legalMoves",
+      "url": "core.mjs",
+      "line": 23333,
+      "samples": 741
+    },
+    {
+      "function": "endingWindows",
+      "url": "core.mjs",
+      "line": 23411,
+      "samples": 571
+    },
+    {
+      "function": "visit",
+      "url": "core.mjs",
+      "line": 23480,
+      "samples": 525
+    },
+    {
+      "function": "(garbage collector)",
+      "url": "",
+      "line": 0,
+      "samples": 499
+    },
+    {
+      "function": "legalMoves",
+      "url": "core.mjs",
+      "line": 23333,
+      "samples": 447
+    },
+    {
+      "function": "nextPosition",
+      "url": "core.mjs",
+      "line": 23430,
+      "samples": 433
+    },
+    {
+      "function": "visit",
+      "url": "core.mjs",
+      "line": 23480,
+      "samples": 386
+    },
+    {
+      "function": "endingWindows",
+      "url": "core.mjs",
+      "line": 23411,
+      "samples": 349
+    },
+    {
+      "function": "legalMoves",
+      "url": "core.mjs",
+      "line": 23333,
+      "samples": 282
+    },
+    {
+      "function": "nextPosition",
+      "url": "core.mjs",
+      "line": 23430,
+      "samples": 247
+    },
+    {
+      "function": "visit",
+      "url": "core.mjs",
+      "line": 23480,
+      "samples": 240
+    },
+    {
+      "function": "walk2",
+      "url": "core.mjs",
+      "line": 23338,
+      "samples": 239
+    },
+    {
+      "function": "legalMoves",
+      "url": "core.mjs",
+      "line": 23333,
+      "samples": 222
+    },
+    {
+      "function": "moveKey",
+      "url": "core.mjs",
+      "line": 23407,
+      "samples": 216
+    },
+    {
+      "function": "endingWindows",
+      "url": "core.mjs",
+      "line": 23411,
+      "samples": 210
+    },
+    {
+      "function": "endingWindows",
+      "url": "core.mjs",
+      "line": 23411,
+      "samples": 205
+    },
+    {
+      "function": "positionKey",
+      "url": "core.mjs",
+      "line": 23408,
+      "samples": 174
+    }
+  ],
+  "interpretation": "Four-game timing is profiled and overlapped mutation work; optimized smoke is unprofiled. Matching transcripts establish result preservation, not a controlled percentage speedup."
+}

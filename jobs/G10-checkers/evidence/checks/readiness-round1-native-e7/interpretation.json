@@ -1,0 +1,167 @@
+{
+  "status": "CLOSED_DIAGNOSTIC_WITH_REJECTED_METRIC",
+  "sourceHead": "e7a5c6463af2f0033ff08d333fb378ad160c1e43",
+  "archivedAt": "2026-10-09T00:02:44.283523+00:00",
+  "originalDriverResult": "PASS, original report unchanged",
+  "acceptedInterpretation": "Actual trusted Start snapshots have botsPrepared=true and canStart=true; all eight observed first moves are legal and equal across arms by original core replay/search reports/cursors. Candidate American Start and first move precede DOMContentLoaded in both profiles. International waits until complete load. One pair per profile only.",
+  "rejectedMetric": "americanBotStartEnabled and americanOutcomesBeforeDOMContentLoaded.enabled latch transient rendered DOM during native dropdown changes while host canStart/botsPrepared are false. They are rejected as readiness evidence or timing gains; preserve original raw values.",
+  "rows": [
+    {
+      "profile": "desktop",
+      "rate": 1,
+      "arm": "baseline",
+      "trustedAmericanStartMs": 17380.09999999404,
+      "americanFirstLegalMoveMs": 22831,
+      "americanStartReadyState": "complete",
+      "americanFirstMoveReadyState": "complete",
+      "internationalStartReadyState": "complete",
+      "internationalFirstMoveReadyState": "complete",
+      "loadMs": 17303.09999999404,
+      "rejectedEarliestEnabledMetric": {
+        "at": 942.8000000119209,
+        "readyState": "loading",
+        "rendered": true,
+        "inViewport": true,
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 942.8000000119209,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        }
+      }
+    },
+    {
+      "profile": "desktop",
+      "rate": 1,
+      "arm": "candidate",
+      "trustedAmericanStartMs": 1947.0999999940395,
+      "americanFirstLegalMoveMs": 8600.40000000596,
+      "americanStartReadyState": "loading",
+      "americanFirstMoveReadyState": "loading",
+      "internationalStartReadyState": "complete",
+      "internationalFirstMoveReadyState": "complete",
+      "loadMs": 19933.79999998212,
+      "rejectedEarliestEnabledMetric": {
+        "at": 881,
+        "readyState": "loading",
+        "rendered": true,
+        "inViewport": true,
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": false,
+            "international": false
+          },
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 881,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        }
+      }
+    },
+    {
+      "profile": "phone",
+      "rate": 4,
+      "arm": "candidate",
+      "trustedAmericanStartMs": 8540,
+      "americanFirstLegalMoveMs": 17249.09999999404,
+      "americanStartReadyState": "loading",
+      "americanFirstMoveReadyState": "loading",
+      "internationalStartReadyState": "complete",
+      "internationalFirstMoveReadyState": "complete",
+      "loadMs": 81804.40000000596,
+      "rejectedEarliestEnabledMetric": {
+        "at": 4323,
+        "readyState": "loading",
+        "rendered": true,
+        "inViewport": true,
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": false,
+            "international": false
+          },
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 4323,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        }
+      }
+    },
+    {
+      "profile": "phone",
+      "rate": 4,
+      "arm": "baseline",
+      "trustedAmericanStartMs": 113067,
+      "americanFirstLegalMoveMs": 122655.80000001192,
+      "americanStartReadyState": "complete",
+      "americanFirstMoveReadyState": "complete",
+      "internationalStartReadyState": "complete",
+      "internationalFirstMoveReadyState": "complete",
+      "loadMs": 112714.19999998808,
+      "rejectedEarliestEnabledMetric": {
+        "at": 6482.9000000059605,
+        "readyState": "loading",
+        "rendered": true,
+        "inViewport": true,
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 6484.300000011921,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        }
+      }
+    }
+  ],
+  "pairDiagnosticFirstMoveReductionPercent": {
+    "desktop": 62.33016512633718,
+    "phone4x": 85.93698789621659
+  },
+  "scope": "Full original bytes over loopback HTTP, one desktop baseline then candidate and one phone4x candidate then baseline. Not startup distribution, cold cache, FPS, offline file acceptance or causal repair. 360s native shared wait budget excludes hashes and natural closure.",
+  "adopted": false,
+  "completedKeepRounds": 0,
+  "playerGains": 0,
+  "next": "Complete actual current-source bounded artifact reception and full output/gzip/data/disk delivery guards before adopting private candidate. No unchanged timing rerun."
+}

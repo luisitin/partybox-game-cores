@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "status": "PASS_PRIVATE_REPRESENTATION",
+  "publishedAt": "2026-10-08T14:47:08.476628+00:00",
+  "scope": "Private static-JSON Node data containers only. Delivered production source/default dist/build/browser unchanged; no browser frame acceptance or Node22 compatibility claimed.",
+  "nodeVersion": "v24.19.0",
+  "productionModuleSha256": {
+    "core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "international-search.mjs": "c9b7381b4f464819e1259ef3387dc395593fd41b8ddc534d553160a44cbb30a7"
+  },
+  "chunks": 61,
+  "probeCases": 10000,
+  "canonicalClasses": 37,
+  "orientationCases": 148,
+  "secondSubsliceCases": 22,
+  "coverage": {
+    "files": [
+      "db2",
+      "db3",
+      "db4",
+      "db5",
+      "db6-0303",
+      "db6-0312",
+      "db6-0321",
+      "db6-0330",
+      "db6-0402",
+      "db6-0411",
+      "db6-0420",
+      "db6-0501",
+      "db6-0510",
+      "db6-1212",
+      "db6-1221",
+      "db6-1230",
+      "db6-1302",
+      "db6-1311",
+      "db6-1320",
+      "db6-1401",
+      "db6-1410",
+      "db6-2121",
+      "db6-2130",
+      "db6-2202",
+      "db6-2211",
+      "db6-2220",
+      "db6-2301",
+      "db6-2310",
+      "db6-3030",
+      "db6-3102",
+      "db6-3111",
+      "db6-3120",
+      "db6-3201",
+      "db6-3210",
+      "db6-4002",
+      "db6-4011",
+      "db6-4020",
+      "db6-4101",
+      "db6-4110",
+      "db6-5001",
+      "db6-5010"
+    ],
+    "slices": 156,
+    "bytes": 1006478762,
+    "maximumPieces": 6,
+    "scope": "Complete original International2\u20136 theoretical WLD; current-side captures require exact resolution; game draw history remains separate"
+  },
+  "probeTranscriptSha256": "da1c308738c89729daf43600b9296d2055b9be488a119104fb445f14d8b1c904",
+  "exactSerializedSearchReportsAndRngCursors": 48,
+  "exactBlockRetryCountAndBytes": true,
+  "exactCompleteGameLengths": [
+    1,
+    84,
+    1
+  ],
+  "observedImportWorkload": {
+    "originalJS": {
+      "seconds": 25.116796655,
+      "maxRSSKiB": 3171504,
+      "withProbesMaxRSSKiB": 3246584
+    },
+    "staticJSON": {
+      "seconds": 26.143855877,
+      "maxRSSKiB": 1948724,
+      "withProbesMaxRSSKiB": 1969664
+    }
+  },
+  "staticJSONFullBehaviorMaxRSSKiB": 2860060,
+  "measurementLimits": "Sequential separate process runs on the same workload, data and compiled modules. Cache/CPU conditions were not controlled; no causal percentage or startup gain claimed. JSON was not faster in these import samples.",
+  "commands": [
+    {
+      "pgid": 152945,
+      "session": 83123,
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "180s",
+        "node",
+        ".work/memory-json-private/prepare.mjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "pgid": 153239,
+      "session": 38256,
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "180s",
+        "node",
+        ".work/memory-json-private/import-probe.mjs",
+        "json",
+        "probe"
+      ],
+      "exitCode": 0
+    },
+    {
+      "pgid": 153744,
+      "session": 73758,
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "180s",
+        "node",
+        ".work/memory-json-private/import-probe.mjs",
+        "baseline",
+        "probe"
+      ],
+      "exitCode": 0
+    },
+    {
+      "pgid": 153857,
+      "session": 22554,
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "300s",
+        "node",
+        ".work/memory-json-private/full-equivalence.mjs"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "cpuHolds": [],
+  "guardResults": "All guarded groups exited0 naturally; no stop/resume or timeout.",
+  "sourceInputSha256": {
+    "fullNativeQueries": "b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167",
+    "original48Transactions": "92fd16499b0c2ca047fb78649ea8e3a4464656f9d207959c42e00ec64329f329",
+    "original3CompleteGames": "399ecd4b5a8621a3f3afe93430253615e174be0c3b03a44448be582f7bd840ef"
+  },
+  "artifactSha256": {
+    "prepare.mjs": "6d5531aa35e067a5f613b67250f6f44487d7d9ae5b9be20d5e06c984b5438fb5",
+    "import-probe.mjs": "7ba29075528d98963aeabe3d8e6d39b4af4de504a6a13cd223e6ab357085935f",
+    "full-equivalence.mjs": "7bd0e359c66cb8e0ee779da42cd106d816ffd2c27648e9f5cc845a509986b02f",
+    "preparation.json": "c404af8a49436f0d5a68cef07e4784504f92e27e67ca4baf46c192421560da1c",
+    "preparation.stdout": "0dd070ca1a72fced5c9c677e1ffb24f3eaa464f07d6bc15322e26a2ef05bd706",
+    "preparation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "json-probe-report.json": "5cd6ad4f5d890178f2cc39e242e8f35292a01a727a4c448725d0a798720bd525",
+    "json-probe.stdout": "24dbc221d76c14c1b8952d985dd4b5dcc8f31551ad77ac13d1e5d57a031b5fa0",
+    "json-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-probe-report.json": "bc70fd8104a162eb4534906e9ec48d25fd03fd424ae46d22d61d8aa3c937ca2d",
+    "baseline-probe.stdout": "b79eb9e3d16c13f5cc22a921df883d6516680e06b25655ef7c7346eb09c061b8",
+    "baseline-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "full-equivalence-report.json": "5794373e55395924b57b8e040e3c8df63f59d4ee10c3e16eb1ec98f0dd4b1a39",
+    "full-equivalence.stdout": "2b4a3bdc252c5112d38bc7899b6210ad5f40bdfc49f8d93b73bee7a5a8d78da7",
+    "full-equivalence.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

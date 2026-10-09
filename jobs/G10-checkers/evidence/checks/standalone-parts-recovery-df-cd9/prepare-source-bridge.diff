@@ -1,0 +1,22 @@
+--- frozen-ed7-bridge
++++ explicit-cd9-bridge
+@@ -6,8 +6,8 @@
+ import subprocess
+ 
+ HEAD = 'df123c797b226c479b50a998011c1ea6d0157391'
+-CURRENT = 'ed7e8e9baaf817a14d632e9ac2af39239fe97c5c'
+-base = Path('.work/hosted-df-memory-parts')
++CURRENT = 'cd9c554133769c264e0157c298d0bdc682d87b27'
++base = Path('.work/hosted-df-memory-parts-cd9')
+ started = datetime.now(timezone.utc).isoformat()
+ assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == CURRENT
+ receipt = json.loads(Path('.work/hosted-df-browser/extracted/.work/checks/stage-browser.json').read_text())
+@@ -53,7 +53,7 @@
+ result = {'currentCheckoutPreserved':CURRENT,'all206CurrentImmutableGitOriginalBytesEqualAcceptedDf':True,'sixCurrentDocumentationGitBridge':docs,'status': 'PASS', 'startedAt': started, 'closedAt': datetime.now(timezone.utc).isoformat(),
+           'acceptedHead': HEAD, 'sourceGuardCount': len(guards),
+           'gitTrackedOriginalBytes': original, 'generatedRuntimePathsRequireCurrentByteMatch': generated,
+-          'scope': 'Explicit immutable accepteddf-to-currented7 original349 runtime/source bridge:206 accepteddf Git blobs equal currented7 immutableGit original bytes and actualworkingfiles, plus143 actual generated/runtime guards; six currented7 docs working==immutableGit with truthful accepteddf equality/difference outside349. Historicaldf genuine full native component proof preserved; currented7 exact nativeCI and four actual official part reception remain separate.'}
++          'scope': 'Explicit immutable accepteddf-to-currentcd9 original349 runtime/source bridge:206 accepteddf Git blobs equal currentcd9 immutableGit original bytes and actualworkingfiles, plus143 actual generated/runtime guards; six currentcd9 docs working==immutableGit with truthful accepteddf equality/difference outside349. Historicaldf genuine full native component proof preserved; currentcd9 exact nativeCI and four actual official part reception remain separate.'}
+ (base / 'source-bridge.json').write_text(json.dumps(result, indent=2) + '\n')
+ print(json.dumps({'status': 'PASS', 'head': HEAD, 'originalGitFiles': len(original),
+                   'generatedRuntimeFiles': len(generated), 'closedAt': result['closedAt']}))

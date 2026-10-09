@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "author": {
+      "type": "string",
+      "minLength": 1
+    },
+    "grantUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "downloadUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceFolderUrl": {
+      "type": "string",
+      "minLength": 1
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "setupSha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "files": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "bytes": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "bytes",
+          "sha256"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "installed": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "maximumInstalledPieces": {
+          "type": "integer",
+          "minimum": 2,
+          "maximum": 6
+        },
+        "fullSixPieceCoverage": {
+          "type": "boolean"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "installed",
+        "maximumInstalledPieces",
+        "fullSixPieceCoverage",
+        "scope"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "author",
+    "grantUrl",
+    "downloadUrl",
+    "sourceFolderUrl",
+    "schemaVersion",
+    "setupSha256",
+    "files",
+    "coverage"
+  ],
+  "additionalProperties": false
+}

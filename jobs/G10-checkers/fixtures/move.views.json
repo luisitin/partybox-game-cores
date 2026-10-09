@@ -1,0 +1,297 @@
+{
+  "tv": {
+    "gameId": "checkers",
+    "phaseId": "move",
+    "deadline": null,
+    "paused": false,
+    "players": [
+      {
+        "id": "light",
+        "name": "Light",
+        "avatarId": "light",
+        "connected": true,
+        "status": "active"
+      },
+      {
+        "id": "dark",
+        "name": "Dark",
+        "avatarId": "dark",
+        "connected": true,
+        "status": "waiting"
+      }
+    ],
+    "variant": "american",
+    "board": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "side": 1,
+    "turn": "light",
+    "ply": 0,
+    "settings": {
+      "variant": "american",
+      "drawPolicy": "official",
+      "repetition": true,
+      "turnSeconds": 0
+    },
+    "lastMove": null,
+    "moveLog": [],
+    "quietPlies": 0,
+    "quietLimit": 80,
+    "drawWindows": [],
+    "winner": null,
+    "endReason": null
+  },
+  "controllers": [
+    {
+      "gameId": "checkers",
+      "phaseId": "move",
+      "deadline": null,
+      "paused": false,
+      "players": [
+        {
+          "id": "light",
+          "name": "Light",
+          "avatarId": "light",
+          "connected": true,
+          "status": "active"
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "avatarId": "dark",
+          "connected": true,
+          "status": "waiting"
+        }
+      ],
+      "variant": "american",
+      "board": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "side": 1,
+      "turn": "light",
+      "ply": 0,
+      "settings": {
+        "variant": "american",
+        "drawPolicy": "official",
+        "repetition": true,
+        "turnSeconds": 0
+      },
+      "lastMove": null,
+      "moveLog": [],
+      "quietPlies": 0,
+      "quietLimit": 80,
+      "drawWindows": [],
+      "winner": null,
+      "endReason": null,
+      "me": {
+        "id": "light",
+        "role": "player"
+      },
+      "phoneOnly": false,
+      "canMove": true,
+      "canResign": true,
+      "legalMoves": [
+        {
+          "path": [
+            20,
+            16
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            21,
+            16
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            21,
+            17
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            22,
+            17
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            22,
+            18
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            23,
+            18
+          ],
+          "captures": [],
+          "promotes": false
+        },
+        {
+          "path": [
+            23,
+            19
+          ],
+          "captures": [],
+          "promotes": false
+        }
+      ]
+    },
+    {
+      "gameId": "checkers",
+      "phaseId": "move",
+      "deadline": null,
+      "paused": false,
+      "players": [
+        {
+          "id": "light",
+          "name": "Light",
+          "avatarId": "light",
+          "connected": true,
+          "status": "active"
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "avatarId": "dark",
+          "connected": true,
+          "status": "waiting"
+        }
+      ],
+      "variant": "american",
+      "board": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "side": 1,
+      "turn": "light",
+      "ply": 0,
+      "settings": {
+        "variant": "american",
+        "drawPolicy": "official",
+        "repetition": true,
+        "turnSeconds": 0
+      },
+      "lastMove": null,
+      "moveLog": [],
+      "quietPlies": 0,
+      "quietLimit": 80,
+      "drawWindows": [],
+      "winner": null,
+      "endReason": null,
+      "me": {
+        "id": "dark",
+        "role": "player"
+      },
+      "phoneOnly": false,
+      "canMove": false,
+      "canResign": false,
+      "legalMoves": []
+    }
+  ],
+  "results": null
+}

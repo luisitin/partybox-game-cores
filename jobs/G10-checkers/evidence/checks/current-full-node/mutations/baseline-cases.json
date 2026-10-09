@@ -1,0 +1,38 @@
+[
+  {
+    "name": "contract manifest/counts/settings and deterministic initial boards",
+    "pass": true
+  },
+  {
+    "name": "contract total immutable reducer ignores malformed/unknown events in both phases",
+    "pass": true
+  },
+  {
+    "name": "contract live timer requires exact phase instance and elapsed deadline",
+    "pass": true
+  },
+  {
+    "name": "VIP pause/resume shifts only the deadline; skip/end remain available",
+    "pass": true
+  },
+  {
+    "name": "presence auto-holds empty rooms, resumes clocks and permanently preserves leavers",
+    "pass": true
+  },
+  {
+    "name": "hostile seat IDs, public view equality, spectator safety and cloned projections",
+    "pass": true
+  },
+  {
+    "name": "complete legal inputs and terminal scores preserve every original seat",
+    "pass": true
+  },
+  {
+    "name": "all three bot levels are schema-valid deterministic pure choices in every phase/role",
+    "pass": true
+  },
+  {
+    "name": "manifest and every generated phase fixture replay without throwing",
+    "pass": true
+  }
+]

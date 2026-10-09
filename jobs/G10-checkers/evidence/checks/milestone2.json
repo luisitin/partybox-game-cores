@@ -1,0 +1,73 @@
+{
+  "recordedAt": "2026-10-08T09:26:58.206152+00:00",
+  "commands": [
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "result": "Strict TypeScript, node bundles and standalone inline-worker browser bundle pass",
+      "raw": "evidence/checks/build.stdout"
+    },
+    {
+      "command": "node --test tests/reference-moves.test.mjs tests/moves.test.mjs",
+      "exitCode": 0,
+      "tests": 24,
+      "pass": 24,
+      "fail": 0,
+      "raw": "evidence/checks/moves.stdout",
+      "reporter": "default Node reporter, not TAP"
+    },
+    {
+      "command": "node scripts/endgames.mjs",
+      "exitCode": 0,
+      "rows": 29286,
+      "fullSixPieceCoverage": false,
+      "raw": "evidence/checks/endgames.stdout"
+    },
+    {
+      "command": "cp data/endgames.json /tmp/g10-endgames-baseline.json; node scripts/endgames.mjs; cmp data/endgames.json /tmp/g10-endgames-baseline.json",
+      "exitCode": 0,
+      "result": "Byte-identical regeneration",
+      "rawGeneratorOutput": "evidence/checks/endgames-regeneration.stdout"
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/endgame-reference.test.mjs",
+      "exitCode": 0,
+      "tests": 3,
+      "pass": 3,
+      "fail": 0,
+      "raw": "evidence/checks/endgame-reference.tap",
+      "scope": "Independent oracle self-certificates, production table comparison pending"
+    }
+  ],
+  "inputSha256": {
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/draws.ts": "c32c9d4a8b560e95f65b35a026906c850d932fd8a5f5ab6ceaaef93ee8f33561",
+    "src/bots.ts": "3df3a11073c476dc8fb7b7ba86f45d182e3deafc07e27ac9b1a216a426d1d909",
+    "src/endgame.ts": "9ca36cc0d45a03c3d8b734c8c2804abb92674d4ed53fb0716bad361b70e57231",
+    "src/retrograde.ts": "62ac9082dd82914f4a39e29d448b2e2defb03d2292090a110d747545052eca03",
+    "src/browser.ts": "c39dbc1e2b6e5072cd15a647c54aff45aa54507a76bbd8fb35f0f38a2f46c2b7",
+    "src/bot-worker.ts": "7750fea3f6a1ff850b8dc03c718a037a1a0d7d2e4b19fed718f3ed36874cc20b",
+    "src/play.template.html": "bfa2a89321ded909b97ba0c2e0f1a1640cdaeaf91085b7f14c2af7026a583445",
+    "scripts/build.mjs": "48fb5803507f084e4a74e3214c2f1c40687f57a1d549d1d2544f374c57f9c15e",
+    "scripts/endgames.mjs": "7cfd27f702eacfbcc9d8454e64322a2815f55dcf6101a1cecd08c937ed4f0a37",
+    "data/endgames.json": "edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d",
+    "tests/reference-moves.mjs": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+    "tests/reference-moves.test.mjs": "86460373e59709a2115fed2df11fdb9db7da7f381af868dacae4667199b5673d",
+    "tests/moves.test.mjs": "144e54aa6f0acbb1888f113618e0c66ab067e94d23b222686f3dcc3e36ce3163",
+    "tests/reference-endgame.mjs": "2f5da9086fc77f1e4e02f27d5fdc78d7be82ca427a277ef45ddca151744816f9",
+    "tests/endgame-reference.test.mjs": "911c568c35928603bbf27f434484c0eb66a087e171ddbe0d08021a3b846ca5ee",
+    "play.html": "c056de0f779ac13d4ef3ed8cf473907648ad92bdd506e0f93b3c3728e048081a",
+    "package-lock.json": "90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28"
+  },
+  "remaining": [
+    "Broader full-six-piece coverage",
+    "Production table versus independent WDL",
+    "Contract properties and seeded matrix",
+    "Mutations",
+    "Bot leagues",
+    "Fixtures/schema/data spotchecks",
+    "Offline browser strict600RAF and clips",
+    "Integrity gates and PR/CI/KEEP GOING"
+  ]
+}

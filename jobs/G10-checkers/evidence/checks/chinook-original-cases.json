@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "seed": 1329832729,
+  "cases": 10000,
+  "attempts": 14613,
+  "materialSplits": {
+    "3:2v1": 1267,
+    "4:1v3": 630,
+    "5:2v3": 901,
+    "6:4v2": 631,
+    "3:1v2": 1233,
+    "4:2v2": 1208,
+    "5:1v4": 368,
+    "5:3v2": 891,
+    "6:3v3": 857,
+    "6:2v4": 669,
+    "5:4v1": 340,
+    "4:3v1": 662,
+    "6:1v5": 154,
+    "6:5v1": 189
+  },
+  "outcomes": {
+    "win": 4243,
+    "loss": 4038,
+    "draw": 1719
+  },
+  "queryInputSha256": "1f6505955a8c225bdcda313a871c597b66ad11e546a2bf19bb32c96d3284e2e2",
+  "expectedRecordsSha256": "baf14965a73f11aabbda2c1b53c43efe4a1211f59d8a4fe8f0fd5b9d6f5da48c",
+  "referenceSourceSha256": "8856f670f2c45490310a4f952c9916792e82a04931b0d2003b378b8cce3d9ff6",
+  "contract": "American theoretical WDL for direct stored positions with neither side having a capture; no draw-history proof."
+}

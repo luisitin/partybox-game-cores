@@ -1,0 +1,262 @@
+{
+  "tv": {
+    "gameId": "checkers",
+    "phaseId": "done",
+    "deadline": null,
+    "paused": false,
+    "players": [
+      {
+        "id": "light",
+        "name": "Light",
+        "avatarId": "light",
+        "connected": true,
+        "status": "submitted"
+      },
+      {
+        "id": "dark",
+        "name": "Dark",
+        "avatarId": "dark",
+        "connected": true,
+        "status": "submitted"
+      }
+    ],
+    "variant": "american",
+    "board": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "side": 1,
+    "turn": "light",
+    "ply": 0,
+    "settings": {
+      "variant": "american",
+      "drawPolicy": "official",
+      "repetition": true,
+      "turnSeconds": 0
+    },
+    "lastMove": null,
+    "moveLog": [],
+    "quietPlies": 0,
+    "quietLimit": 80,
+    "drawWindows": [],
+    "winner": "dark",
+    "endReason": "resignation"
+  },
+  "controllers": [
+    {
+      "gameId": "checkers",
+      "phaseId": "done",
+      "deadline": null,
+      "paused": false,
+      "players": [
+        {
+          "id": "light",
+          "name": "Light",
+          "avatarId": "light",
+          "connected": true,
+          "status": "submitted"
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "avatarId": "dark",
+          "connected": true,
+          "status": "submitted"
+        }
+      ],
+      "variant": "american",
+      "board": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "side": 1,
+      "turn": "light",
+      "ply": 0,
+      "settings": {
+        "variant": "american",
+        "drawPolicy": "official",
+        "repetition": true,
+        "turnSeconds": 0
+      },
+      "lastMove": null,
+      "moveLog": [],
+      "quietPlies": 0,
+      "quietLimit": 80,
+      "drawWindows": [],
+      "winner": "dark",
+      "endReason": "resignation",
+      "me": {
+        "id": "light",
+        "role": "player"
+      },
+      "phoneOnly": false,
+      "canMove": false,
+      "canResign": false,
+      "legalMoves": []
+    },
+    {
+      "gameId": "checkers",
+      "phaseId": "done",
+      "deadline": null,
+      "paused": false,
+      "players": [
+        {
+          "id": "light",
+          "name": "Light",
+          "avatarId": "light",
+          "connected": true,
+          "status": "submitted"
+        },
+        {
+          "id": "dark",
+          "name": "Dark",
+          "avatarId": "dark",
+          "connected": true,
+          "status": "submitted"
+        }
+      ],
+      "variant": "american",
+      "board": [
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        -1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "side": 1,
+      "turn": "light",
+      "ply": 0,
+      "settings": {
+        "variant": "american",
+        "drawPolicy": "official",
+        "repetition": true,
+        "turnSeconds": 0
+      },
+      "lastMove": null,
+      "moveLog": [],
+      "quietPlies": 0,
+      "quietLimit": 80,
+      "drawWindows": [],
+      "winner": "dark",
+      "endReason": "resignation",
+      "me": {
+        "id": "dark",
+        "role": "player"
+      },
+      "phoneOnly": false,
+      "canMove": false,
+      "canResign": false,
+      "legalMoves": []
+    }
+  ],
+  "results": {
+    "scores": {
+      "light": 0,
+      "dark": 1
+    },
+    "ranking": [
+      {
+        "playerId": "light",
+        "score": 0,
+        "rank": 2
+      },
+      {
+        "playerId": "dark",
+        "score": 1,
+        "rank": 1
+      }
+    ],
+    "winnerIds": [
+      "dark"
+    ],
+    "awards": [],
+    "headlineNote": "resignation"
+  }
+}

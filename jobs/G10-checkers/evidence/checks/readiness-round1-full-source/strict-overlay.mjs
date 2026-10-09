@@ -1,0 +1,14 @@
+import ts from 'typescript';
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+const path=resolve('src/browser.ts'),candidate=await readFile('.work/american-ready-private/candidate-browser.ts','utf8');
+const config=ts.readConfigFile('tsconfig.json',ts.sys.readFile);assert(!config.error);
+const parsed=ts.parseJsonConfigFileContent(config.config,ts.sys,process.cwd());assert.equal(parsed.errors.length,0);
+const options={...parsed.options,noEmit:true},host=ts.createCompilerHost(options),original=host.getSourceFile.bind(host);
+host.getSourceFile=(filename,languageVersion,onError,createNew)=>resolve(filename)===path?ts.createSourceFile(filename,candidate,languageVersion,true):original(filename,languageVersion,onError,createNew);
+const program=ts.createProgram(parsed.fileNames,options,host),diagnostics=ts.getPreEmitDiagnostics(program);
+if(diagnostics.length)console.error(ts.formatDiagnosticsWithColorAndContext(diagnostics,{getCanonicalFileName:value=>value,getCurrentDirectory:()=>process.cwd(),getNewLine:()=> '\n'}));
+assert.equal(diagnostics.length,0);
+await writeFile('.work/american-ready-private/strict-overlay.json',JSON.stringify({status:'PASS',closedAt:new Date().toISOString(),strict:options.strict,target:ts.ScriptTarget[options.target],files:parsed.fileNames.length,scope:'Full original strict ES2022 TypeScript program with only private browser-readiness contents overlaid; no source emit, browser launch or player timing.'},null,2)+'\n');
+console.log('PASS full strict ES2022 private source overlay');

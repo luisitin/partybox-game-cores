@@ -1,0 +1,705 @@
+{
+  "total_count": 5,
+  "jobs": [
+    {
+      "id": 113610578432,
+      "run_id": 37865331876,
+      "workflow_name": "G10 Checkers",
+      "head_branch": "job/G10-checkers-complete-20261008",
+      "run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/runs/37865331876",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU_sCkM8AAAAac7faAA",
+      "head_sha": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+      "url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/jobs/113610578432",
+      "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37865331876/job/113610578432",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T00:32:49Z",
+      "started_at": "2026-10-09T00:32:52Z",
+      "completed_at": "2026-10-09T00:39:30Z",
+      "name": "checks (browser)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-09T00:32:53Z",
+          "completed_at": "2026-10-09T00:32:54Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-09T00:32:54Z",
+          "completed_at": "2026-10-09T00:33:22Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-09T00:33:22Z",
+          "completed_at": "2026-10-09T00:33:29Z"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-09T00:33:29Z",
+          "completed_at": "2026-10-09T00:33:30Z"
+        },
+        {
+          "name": "Use the official Ubuntu archive for the existing runner mirror list",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-09T00:33:30Z",
+          "completed_at": "2026-10-09T00:33:30Z"
+        },
+        {
+          "name": "Install actual video probe and decoder",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-09T00:33:30Z",
+          "completed_at": "2026-10-09T00:34:04Z"
+        },
+        {
+          "name": "Record actual runner resources",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-09T00:34:04Z",
+          "completed_at": "2026-10-09T00:34:04Z"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-09T00:34:04Z",
+          "completed_at": "2026-10-09T00:34:21Z"
+        },
+        {
+          "name": "Run complete assigned workload",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-09T00:34:21Z",
+          "completed_at": "2026-10-09T00:39:26Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-09T00:39:26Z",
+          "completed_at": "2026-10-09T00:39:28Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-09T00:39:28Z",
+          "completed_at": "2026-10-09T00:39:28Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-09T00:39:28Z",
+          "completed_at": "2026-10-09T00:39:28Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-09T00:39:28Z",
+          "completed_at": "2026-10-09T00:39:28Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/check-runs/113610578432",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000804,
+      "runner_name": "GitHub Actions 1000000804",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 113610578603,
+      "run_id": 37865331876,
+      "workflow_name": "G10 Checkers",
+      "head_branch": "job/G10-checkers-complete-20261008",
+      "run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/runs/37865331876",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU_sCkM8AAAAac7faqw",
+      "head_sha": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+      "url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/jobs/113610578603",
+      "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37865331876/job/113610578603",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T00:32:49Z",
+      "started_at": "2026-10-09T00:32:52Z",
+      "completed_at": "2026-10-09T00:48:14Z",
+      "name": "checks (league-international)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-09T00:32:53Z",
+          "completed_at": "2026-10-09T00:32:54Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-09T00:32:54Z",
+          "completed_at": "2026-10-09T00:33:37Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-09T00:33:37Z",
+          "completed_at": "2026-10-09T00:33:43Z"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-09T00:33:43Z",
+          "completed_at": "2026-10-09T00:33:44Z"
+        },
+        {
+          "name": "Use the official Ubuntu archive for the existing runner mirror list",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 5,
+          "started_at": "2026-10-09T00:33:44Z",
+          "completed_at": "2026-10-09T00:33:44Z"
+        },
+        {
+          "name": "Install actual video probe and decoder",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-10-09T00:33:44Z",
+          "completed_at": "2026-10-09T00:33:44Z"
+        },
+        {
+          "name": "Record actual runner resources",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-09T00:33:44Z",
+          "completed_at": "2026-10-09T00:33:44Z"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-09T00:33:44Z",
+          "completed_at": "2026-10-09T00:33:44Z"
+        },
+        {
+          "name": "Run complete assigned workload",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-09T00:33:44Z",
+          "completed_at": "2026-10-09T00:48:09Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-09T00:48:09Z",
+          "completed_at": "2026-10-09T00:48:11Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-09T00:48:11Z",
+          "completed_at": "2026-10-09T00:48:11Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-09T00:48:11Z",
+          "completed_at": "2026-10-09T00:48:11Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-09T00:48:11Z",
+          "completed_at": "2026-10-09T00:48:11Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/check-runs/113610578603",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000805,
+      "runner_name": "GitHub Actions 1000000805",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 113610578615,
+      "run_id": 37865331876,
+      "workflow_name": "G10 Checkers",
+      "head_branch": "job/G10-checkers-complete-20261008",
+      "run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/runs/37865331876",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU_sCkM8AAAAac7fatw",
+      "head_sha": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+      "url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/jobs/113610578615",
+      "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37865331876/job/113610578615",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T00:32:49Z",
+      "started_at": "2026-10-09T00:32:52Z",
+      "completed_at": "2026-10-09T00:37:07Z",
+      "name": "checks (league-american)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-09T00:32:53Z",
+          "completed_at": "2026-10-09T00:32:54Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-09T00:32:54Z",
+          "completed_at": "2026-10-09T00:33:19Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-09T00:33:19Z",
+          "completed_at": "2026-10-09T00:33:33Z"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-09T00:33:33Z",
+          "completed_at": "2026-10-09T00:33:34Z"
+        },
+        {
+          "name": "Use the official Ubuntu archive for the existing runner mirror list",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 5,
+          "started_at": "2026-10-09T00:33:34Z",
+          "completed_at": "2026-10-09T00:33:34Z"
+        },
+        {
+          "name": "Install actual video probe and decoder",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-10-09T00:33:34Z",
+          "completed_at": "2026-10-09T00:33:34Z"
+        },
+        {
+          "name": "Record actual runner resources",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-09T00:33:34Z",
+          "completed_at": "2026-10-09T00:33:34Z"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-09T00:33:34Z",
+          "completed_at": "2026-10-09T00:33:34Z"
+        },
+        {
+          "name": "Run complete assigned workload",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-09T00:33:34Z",
+          "completed_at": "2026-10-09T00:37:03Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-09T00:37:03Z",
+          "completed_at": "2026-10-09T00:37:05Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-09T00:37:05Z",
+          "completed_at": "2026-10-09T00:37:05Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-09T00:37:05Z",
+          "completed_at": "2026-10-09T00:37:05Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-09T00:37:05Z",
+          "completed_at": "2026-10-09T00:37:05Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/check-runs/113610578615",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000806,
+      "runner_name": "GitHub Actions 1000000806",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 113610578692,
+      "run_id": 37865331876,
+      "workflow_name": "G10 Checkers",
+      "head_branch": "job/G10-checkers-complete-20261008",
+      "run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/runs/37865331876",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU_sCkM8AAAAac7fbBA",
+      "head_sha": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+      "url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/jobs/113610578692",
+      "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37865331876/job/113610578692",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T00:32:49Z",
+      "started_at": "2026-10-09T00:32:52Z",
+      "completed_at": "2026-10-09T00:36:57Z",
+      "name": "checks (node)",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-09T00:32:52Z",
+          "completed_at": "2026-10-09T00:32:53Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-09T00:32:53Z",
+          "completed_at": "2026-10-09T00:33:17Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-09T00:33:17Z",
+          "completed_at": "2026-10-09T00:33:23Z"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-09T00:33:23Z",
+          "completed_at": "2026-10-09T00:33:23Z"
+        },
+        {
+          "name": "Use the official Ubuntu archive for the existing runner mirror list",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-09T00:33:23Z",
+          "completed_at": "2026-10-09T00:33:24Z"
+        },
+        {
+          "name": "Install actual video probe and decoder",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-09T00:33:24Z",
+          "completed_at": "2026-10-09T00:33:47Z"
+        },
+        {
+          "name": "Record actual runner resources",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-09T00:33:47Z",
+          "completed_at": "2026-10-09T00:33:47Z"
+        },
+        {
+          "name": "Run npx playwright install --with-deps chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-09T00:33:47Z",
+          "completed_at": "2026-10-09T00:33:47Z"
+        },
+        {
+          "name": "Run complete assigned workload",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-09T00:33:47Z",
+          "completed_at": "2026-10-09T00:36:53Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-09T00:36:53Z",
+          "completed_at": "2026-10-09T00:36:54Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 19,
+          "started_at": "2026-10-09T00:36:54Z",
+          "completed_at": "2026-10-09T00:36:54Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 20,
+          "started_at": "2026-10-09T00:36:54Z",
+          "completed_at": "2026-10-09T00:36:55Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 21,
+          "started_at": "2026-10-09T00:36:55Z",
+          "completed_at": "2026-10-09T00:36:55Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/check-runs/113610578692",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000807,
+      "runner_name": "GitHub Actions 1000000807",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 113614730001,
+      "run_id": 37865331876,
+      "workflow_name": "G10 Checkers",
+      "head_branch": "job/G10-checkers-complete-20261008",
+      "run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/runs/37865331876",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOU_sCkM8AAAAac_czEQ",
+      "head_sha": "8b4bf64639d690247cb1929a0ad0ae25af11de70",
+      "url": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/jobs/113614730001",
+      "html_url": "https://github.com/luisitin/partybox-game-cores/actions/runs/37865331876/job/113614730001",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-09T00:48:15Z",
+      "started_at": "2026-10-09T00:48:17Z",
+      "completed_at": "2026-10-09T00:51:39Z",
+      "name": "delivery",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-09T00:48:18Z",
+          "completed_at": "2026-10-09T00:48:19Z"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-09T00:48:19Z",
+          "completed_at": "2026-10-09T00:48:47Z"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-09T00:48:47Z",
+          "completed_at": "2026-10-09T00:48:53Z"
+        },
+        {
+          "name": "Run npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-09T00:48:53Z",
+          "completed_at": "2026-10-09T00:48:54Z"
+        },
+        {
+          "name": "Use the official Ubuntu archive for the existing runner mirror list",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-09T00:48:54Z",
+          "completed_at": "2026-10-09T00:48:54Z"
+        },
+        {
+          "name": "Install actual video probe and decoder",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-09T00:48:54Z",
+          "completed_at": "2026-10-09T00:49:27Z"
+        },
+        {
+          "name": "Run actions/download-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 7,
+          "started_at": "2026-10-09T00:49:27Z",
+          "completed_at": "2026-10-09T00:49:28Z"
+        },
+        {
+          "name": "Verify every current stage and combine all4000 actual games",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 8,
+          "started_at": "2026-10-09T00:49:28Z",
+          "completed_at": "2026-10-09T00:50:50Z"
+        },
+        {
+          "name": "Run node scripts/standalone-receipt.mjs",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-10-09T00:50:50Z",
+          "completed_at": "2026-10-09T00:50:53Z"
+        },
+        {
+          "name": "Split and verify the exact accepted standalone page",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-10-09T00:50:53Z",
+          "completed_at": "2026-10-09T00:50:57Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-10-09T00:50:57Z",
+          "completed_at": "2026-10-09T00:51:08Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-09T00:51:08Z",
+          "completed_at": "2026-10-09T00:51:19Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-09T00:51:19Z",
+          "completed_at": "2026-10-09T00:51:30Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-09T00:51:30Z",
+          "completed_at": "2026-10-09T00:51:35Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-09T00:51:35Z",
+          "completed_at": "2026-10-09T00:51:37Z"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 29,
+          "started_at": "2026-10-09T00:51:37Z",
+          "completed_at": "2026-10-09T00:51:37Z"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 30,
+          "started_at": "2026-10-09T00:51:37Z",
+          "completed_at": "2026-10-09T00:51:37Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 31,
+          "started_at": "2026-10-09T00:51:37Z",
+          "completed_at": "2026-10-09T00:51:37Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/luisitin/partybox-game-cores/check-runs/113614730001",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000811,
+      "runner_name": "GitHub Actions 1000000811",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

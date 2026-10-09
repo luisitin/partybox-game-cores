@@ -1,0 +1,544 @@
+{
+  "scope": "Non-gating instrumented200RAF matchedprefix diagnostic; no near60 acceptance or causal FPS claim",
+  "skipPrefix": true,
+  "functionalChecks": 0,
+  "workersAtFrameStart": [],
+  "workersAtFrameEnd": [],
+  "workerEvents": [],
+  "frameStartUtc": "2026-10-08T17:21:01.153Z",
+  "frameStartMs": 35431.556003,
+  "initialHost": {
+    "thinking": false,
+    "workerReady": false,
+    "workerStarts": 0,
+    "workerVariant": null,
+    "botsPrepared": true,
+    "canStart": true,
+    "botCursor": {
+      "seed": 20261008,
+      "step": 0
+    },
+    "pace": "1500",
+    "now": 25123,
+    "originalBlockReads": 0,
+    "originalFiles": [],
+    "lastBotReport": null
+  },
+  "finalHost": {
+    "thinking": false,
+    "workerReady": false,
+    "workerStarts": 0,
+    "workerVariant": null,
+    "botsPrepared": true,
+    "canStart": true,
+    "botCursor": {
+      "seed": 20261008,
+      "step": 0
+    },
+    "pace": "1500",
+    "now": 28584.70000001788,
+    "originalBlockReads": 0,
+    "originalFiles": [],
+    "lastBotReport": null
+  },
+  "initialState": {
+    "phase": {
+      "id": "move",
+      "startedAt": 25092.30000001192,
+      "deadline": null
+    },
+    "phaseClock": 25092.30000001192,
+    "rng": {
+      "seed": 20261008,
+      "step": 0
+    },
+    "players": {
+      "seat-0": {
+        "id": "seat-0",
+        "name": "Player 1",
+        "avatarId": "checkers-0",
+        "connected": true
+      },
+      "seat-1": {
+        "id": "seat-1",
+        "name": "Player 2",
+        "avatarId": "checkers-1",
+        "connected": true
+      }
+    },
+    "order": [
+      "seat-0",
+      "seat-1"
+    ],
+    "settings": {
+      "variant": "international",
+      "drawPolicy": "official",
+      "repetition": true,
+      "turnSeconds": 0
+    },
+    "board": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "variant": "international",
+    "side": 1,
+    "ply": 0,
+    "quietPlies": 0,
+    "repetition": {
+      "international:1:11111111111111111111222222222233333333333333333333": 1
+    },
+    "drawWindows": [],
+    "lastMove": null,
+    "moveLog": [],
+    "left": [],
+    "autoPaused": false,
+    "winner": null,
+    "endReason": null,
+    "contentLang": "en",
+    "phoneOnly": false
+  },
+  "finalState": {
+    "phase": {
+      "id": "move",
+      "startedAt": 25092.30000001192,
+      "deadline": null
+    },
+    "phaseClock": 25092.30000001192,
+    "rng": {
+      "seed": 20261008,
+      "step": 0
+    },
+    "players": {
+      "seat-0": {
+        "id": "seat-0",
+        "name": "Player 1",
+        "avatarId": "checkers-0",
+        "connected": true
+      },
+      "seat-1": {
+        "id": "seat-1",
+        "name": "Player 2",
+        "avatarId": "checkers-1",
+        "connected": true
+      }
+    },
+    "order": [
+      "seat-0",
+      "seat-1"
+    ],
+    "settings": {
+      "variant": "international",
+      "drawPolicy": "official",
+      "repetition": true,
+      "turnSeconds": 0
+    },
+    "board": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      -1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "variant": "international",
+    "side": 1,
+    "ply": 0,
+    "quietPlies": 0,
+    "repetition": {
+      "international:1:11111111111111111111222222222233333333333333333333": 1
+    },
+    "drawWindows": [],
+    "lastMove": null,
+    "moveLog": [],
+    "left": [],
+    "autoPaused": false,
+    "winner": null,
+    "endReason": null,
+    "contentLang": "en",
+    "phoneOnly": false
+  },
+  "metricsBefore": [
+    {
+      "name": "Timestamp",
+      "value": 135728.519559
+    },
+    {
+      "name": "AudioHandlers",
+      "value": 0
+    },
+    {
+      "name": "AudioWorkletProcessors",
+      "value": 0
+    },
+    {
+      "name": "Documents",
+      "value": 3
+    },
+    {
+      "name": "Frames",
+      "value": 1
+    },
+    {
+      "name": "JSEventListeners",
+      "value": 89
+    },
+    {
+      "name": "LayoutObjects",
+      "value": 480
+    },
+    {
+      "name": "MediaKeySessions",
+      "value": 0
+    },
+    {
+      "name": "MediaKeys",
+      "value": 0
+    },
+    {
+      "name": "Nodes",
+      "value": 5897
+    },
+    {
+      "name": "Resources",
+      "value": 0
+    },
+    {
+      "name": "ContextLifecycleStateObservers",
+      "value": 7
+    },
+    {
+      "name": "V8PerContextDatas",
+      "value": 4
+    },
+    {
+      "name": "WorkerGlobalScopes",
+      "value": 0
+    },
+    {
+      "name": "UACSSResources",
+      "value": 0
+    },
+    {
+      "name": "RTCPeerConnections",
+      "value": 0
+    },
+    {
+      "name": "ResourceFetchers",
+      "value": 3
+    },
+    {
+      "name": "AdSubframes",
+      "value": 0
+    },
+    {
+      "name": "DetachedScriptStates",
+      "value": 2
+    },
+    {
+      "name": "ArrayBufferContents",
+      "value": 0
+    },
+    {
+      "name": "LayoutCount",
+      "value": 2
+    },
+    {
+      "name": "RecalcStyleCount",
+      "value": 5
+    },
+    {
+      "name": "LayoutDuration",
+      "value": 0.013927
+    },
+    {
+      "name": "RecalcStyleDuration",
+      "value": 0.003793
+    },
+    {
+      "name": "DevToolsCommandDuration",
+      "value": 0.35368
+    },
+    {
+      "name": "ScriptDuration",
+      "value": 0.00439
+    },
+    {
+      "name": "V8CompileDuration",
+      "value": 0
+    },
+    {
+      "name": "TaskDuration",
+      "value": 0.388017
+    },
+    {
+      "name": "TaskOtherDuration",
+      "value": 0.012227
+    },
+    {
+      "name": "ThreadTime",
+      "value": 0.372496
+    },
+    {
+      "name": "ProcessTime",
+      "value": 25.53
+    },
+    {
+      "name": "JSHeapUsedSize",
+      "value": 28299752
+    },
+    {
+      "name": "JSHeapTotalSize",
+      "value": 30179328
+    },
+    {
+      "name": "FirstMeaningfulPaint",
+      "value": 0
+    },
+    {
+      "name": "DomContentLoaded",
+      "value": 135727.737818
+    },
+    {
+      "name": "NavigationStart",
+      "value": 135703.388636
+    }
+  ],
+  "metricsAfter": [
+    {
+      "name": "Timestamp",
+      "value": 135731.862131
+    },
+    {
+      "name": "AudioHandlers",
+      "value": 0
+    },
+    {
+      "name": "AudioWorkletProcessors",
+      "value": 0
+    },
+    {
+      "name": "Documents",
+      "value": 3
+    },
+    {
+      "name": "Frames",
+      "value": 1
+    },
+    {
+      "name": "JSEventListeners",
+      "value": 89
+    },
+    {
+      "name": "LayoutObjects",
+      "value": 480
+    },
+    {
+      "name": "MediaKeySessions",
+      "value": 0
+    },
+    {
+      "name": "MediaKeys",
+      "value": 0
+    },
+    {
+      "name": "Nodes",
+      "value": 6098
+    },
+    {
+      "name": "Resources",
+      "value": 0
+    },
+    {
+      "name": "ContextLifecycleStateObservers",
+      "value": 7
+    },
+    {
+      "name": "V8PerContextDatas",
+      "value": 4
+    },
+    {
+      "name": "WorkerGlobalScopes",
+      "value": 0
+    },
+    {
+      "name": "UACSSResources",
+      "value": 0
+    },
+    {
+      "name": "RTCPeerConnections",
+      "value": 0
+    },
+    {
+      "name": "ResourceFetchers",
+      "value": 3
+    },
+    {
+      "name": "AdSubframes",
+      "value": 0
+    },
+    {
+      "name": "DetachedScriptStates",
+      "value": 2
+    },
+    {
+      "name": "ArrayBufferContents",
+      "value": 0
+    },
+    {
+      "name": "LayoutCount",
+      "value": 2
+    },
+    {
+      "name": "RecalcStyleCount",
+      "value": 206
+    },
+    {
+      "name": "LayoutDuration",
+      "value": 0.013927
+    },
+    {
+      "name": "RecalcStyleDuration",
+      "value": 0.037116
+    },
+    {
+      "name": "DevToolsCommandDuration",
+      "value": 0.354306
+    },
+    {
+      "name": "ScriptDuration",
+      "value": 0.054268
+    },
+    {
+      "name": "V8CompileDuration",
+      "value": 0
+    },
+    {
+      "name": "TaskDuration",
+      "value": 0.510885
+    },
+    {
+      "name": "TaskOtherDuration",
+      "value": 0.051268
+    },
+    {
+      "name": "ThreadTime",
+      "value": 0.538724
+    },
+    {
+      "name": "ProcessTime",
+      "value": 25.86
+    },
+    {
+      "name": "JSHeapUsedSize",
+      "value": 28288704
+    },
+    {
+      "name": "JSHeapTotalSize",
+      "value": 31490048
+    },
+    {
+      "name": "FirstMeaningfulPaint",
+      "value": 0
+    },
+    {
+      "name": "DomContentLoaded",
+      "value": 135727.737818
+    },
+    {
+      "name": "NavigationStart",
+      "value": 135703.388636
+    }
+  ]
+}

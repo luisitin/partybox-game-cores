@@ -1,0 +1,166 @@
+{
+  "head": "491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+  "originalIndependentProof": {
+    "status": "PASS",
+    "startedAt": "2026-10-08T22:08:35.952800+00:00",
+    "closedAt": "2026-10-08T22:08:48.834569+00:00",
+    "head": "491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+    "workflowRunId": 37848566924,
+    "parts": [
+      {
+        "artifactId": 11582435527,
+        "name": "G10-standalone-part-00-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+        "zipBytes": 275345040,
+        "zipSha256": "11eb0b47e2afb2a15f85ac7fce65c7133fc360d84e2dc293e395738b436c8bbd",
+        "memberBytes": 402653184,
+        "memberSha256": "d234b7c10286cf203fc2cb3fba3b334697c084d49c5a5dd6e48c6ad83290cdde",
+        "offset": 0,
+        "members": 4,
+        "CRC": "PASS"
+      },
+      {
+        "artifactId": 11581789360,
+        "name": "G10-standalone-part-01-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+        "zipBytes": 278877121,
+        "zipSha256": "fae406a424753185dbadc7fa2e160d0bec6c574e85588cec4ed8c1768873d22d",
+        "memberBytes": 402653184,
+        "memberSha256": "799b61da7870d427439e890ee3fcd5b0607ce0c74e96ba75da8f628fb7792b8d",
+        "offset": 402653184,
+        "members": 4,
+        "CRC": "PASS"
+      },
+      {
+        "artifactId": 11581888160,
+        "name": "G10-standalone-part-02-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+        "zipBytes": 286220425,
+        "zipSha256": "61d53ca21c807273f40d538fa126e350ecbdbf680e797972257399857ed4f3fa",
+        "memberBytes": 402653184,
+        "memberSha256": "e1bbd324a8d8a691e99cab07f7b72ede54c96b9ae5a23a968e20c2d0cde8ae0f",
+        "offset": 805306368,
+        "members": 4,
+        "CRC": "PASS"
+      },
+      {
+        "artifactId": 11581868193,
+        "name": "G10-standalone-part-03-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+        "zipBytes": 127624360,
+        "zipSha256": "ffc4553ab25461f3c1c26fe8d952900ea3053bc987bb089fc511f79f17817c72",
+        "memberBytes": 182886441,
+        "memberSha256": "b7dfabfcaa2a28a654b4b7f2a621fe2434b6628cda60d5305a626a899d91f9da",
+        "offset": 1207959552,
+        "members": 4,
+        "CRC": "PASS"
+      }
+    ],
+    "totalBytes": 1390845993,
+    "wholeSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+    "helperOriginalGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+    "scope": "All four actual official downloaded artifact ZIPs, official complete ZIP bytes/digests, every unique safe member/CRC, identical receipts/manifests, original Git helper bytes, exact source head/part order/offset/size/SHA and streamed original complete HTML SHA. No 1.39-GB duplicate extraction, no current CI/KEEP inference beyond the validated delivery bytes."
+  },
+  "proofGitHead": "fa0b337e1178177ff5b871acae697897c687ee11",
+  "proofGitPath": "jobs/G10-checkers/evidence/checks/hosted-pr-complete-491/standalone/independent-downloaded-parts.json",
+  "proofReceiptSha256": "dc5fd70b75383b1c4c113ed83424fd165e1c76369d1ef1733b940e196609ea1d",
+  "availabilityNative": {
+    "checkedAt": "2026-10-08 22:15:44 UTC",
+    "nativeTool": "github_download_workflow_artifact",
+    "repository": "luisitin/partybox-game-cores",
+    "checks": [
+      {
+        "artifactId": 11582435527,
+        "isError": false,
+        "downloadConfirmed": true
+      },
+      {
+        "artifactId": 11581789360,
+        "isError": false,
+        "downloadConfirmed": true
+      },
+      {
+        "artifactId": 11581888160,
+        "isError": false,
+        "downloadConfirmed": true
+      },
+      {
+        "artifactId": 11581868193,
+        "isError": false,
+        "downloadConfirmed": true
+      }
+    ],
+    "scope": "Exact official IDs actually returned fresh native download URLs; signed URLs are omitted."
+  },
+  "authorization": "Root explicitly authorized reversible removal of only independently fully proven actual public remote ZIP copies after fresh same-ID availability/expiry confirmation. Full original and historical HTML/source/media/failed raw evidence remain.",
+  "removals": [
+    {
+      "artifactId": 11582435527,
+      "name": "G10-standalone-part-00-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+      "removedWorkspacePath": ".work/hosted-491-final/standalone/part-00.zip",
+      "zipBytes": 275345040,
+      "zipSha256": "11eb0b47e2afb2a15f85ac7fce65c7133fc360d84e2dc293e395738b436c8bbd",
+      "expiresAt": "2026-10-15T22:05:47Z",
+      "redownloadNativeTool": "github_download_workflow_artifact",
+      "redownloadArgs": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11582435527,
+        "file_name": "part-00.zip"
+      },
+      "officialApiDownloadRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11582435527/zip",
+      "verifiedBeforeRemovalAt": "2026-10-08T22:16:08.838155+00:00",
+      "actuallyRemovedAt": "2026-10-08T22:16:08.874059+00:00"
+    },
+    {
+      "artifactId": 11581789360,
+      "name": "G10-standalone-part-01-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+      "removedWorkspacePath": ".work/hosted-491-final/standalone/part-01.zip",
+      "zipBytes": 278877121,
+      "zipSha256": "fae406a424753185dbadc7fa2e160d0bec6c574e85588cec4ed8c1768873d22d",
+      "expiresAt": "2026-10-15T22:05:57Z",
+      "redownloadNativeTool": "github_download_workflow_artifact",
+      "redownloadArgs": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11581789360,
+        "file_name": "part-01.zip"
+      },
+      "officialApiDownloadRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11581789360/zip",
+      "verifiedBeforeRemovalAt": "2026-10-08T22:16:09.914321+00:00",
+      "actuallyRemovedAt": "2026-10-08T22:16:09.952030+00:00"
+    },
+    {
+      "artifactId": 11581888160,
+      "name": "G10-standalone-part-02-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+      "removedWorkspacePath": ".work/hosted-491-final/standalone/part-02.zip",
+      "zipBytes": 286220425,
+      "zipSha256": "61d53ca21c807273f40d538fa126e350ecbdbf680e797972257399857ed4f3fa",
+      "expiresAt": "2026-10-15T22:06:06Z",
+      "redownloadNativeTool": "github_download_workflow_artifact",
+      "redownloadArgs": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11581888160,
+        "file_name": "part-02.zip"
+      },
+      "officialApiDownloadRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11581888160/zip",
+      "verifiedBeforeRemovalAt": "2026-10-08T22:16:11.003224+00:00",
+      "actuallyRemovedAt": "2026-10-08T22:16:11.035078+00:00"
+    },
+    {
+      "artifactId": 11581868193,
+      "name": "G10-standalone-part-03-491f82f6a99c992faca4a26acf8b80dc4ecc67a1",
+      "removedWorkspacePath": ".work/hosted-491-final/standalone/part-03.zip",
+      "zipBytes": 127624360,
+      "zipSha256": "ffc4553ab25461f3c1c26fe8d952900ea3053bc987bb089fc511f79f17817c72",
+      "expiresAt": "2026-10-15T22:06:16Z",
+      "redownloadNativeTool": "github_download_workflow_artifact",
+      "redownloadArgs": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11581868193,
+        "file_name": "part-03.zip"
+      },
+      "officialApiDownloadRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11581868193/zip",
+      "verifiedBeforeRemovalAt": "2026-10-08T22:16:11.435075+00:00",
+      "actuallyRemovedAt": "2026-10-08T22:16:11.448519+00:00"
+    }
+  ],
+  "status": "CLOSED",
+  "closedAt": "2026-10-08T22:16:11.448982+00:00",
+  "freedBytes": 968066946,
+  "availableDiskBytes": 1343033344
+}

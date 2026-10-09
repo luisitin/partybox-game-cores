@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "commands": [
+    {
+      "command": "npm run build",
+      "exitCode": 0,
+      "raw": "build-full-corpus.stdout"
+    },
+    {
+      "command": "node --test --test-reporter=tap --test-concurrency=1 tests/core.test.mjs tests/draws.test.mjs tests/endgame.test.mjs tests/properties.test.mjs tests/chinook.test.mjs",
+      "exitCode": 0,
+      "tests": 25,
+      "pass": 25,
+      "raw": "full-corpus-core.tap"
+    },
+    {
+      "command": "node scripts/league.mjs --games 8 --variant american",
+      "exitCode": 0,
+      "raw": "league-smoke-pvs.stdout",
+      "scope": "Smoke/performance only, full league pending"
+    }
+  ],
+  "inputSha256": {
+    "src/bots.ts": "dd83dfcb1ac418c353c0f471cdbcb42ee1d27c997161b5e208d0c389e132cae2",
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/draws.ts": "c32c9d4a8b560e95f65b35a026906c850d932fd8a5f5ab6ceaaef93ee8f33561",
+    "src/endgame.ts": "ef9c12eda9c06aece0efdde6ac443054dc107fe889fa59a25da28087eec51435",
+    "src/chinook.ts": "97310193de9dda474899a027d3519bbd536db9ee2a6ca6530a7e218f7fe5f32a",
+    "src/chinook-corpus.ts": "114307dae77291521a952bff55183a0e903e4b08185624d0fe987e94471e4ecf",
+    "src/browser.ts": "0c1ce51305ebd69e57243997018e4cb75980e8f3b76627fa4d796b66d3b2c5d7",
+    "src/bot-worker.ts": "7750fea3f6a1ff850b8dc03c718a037a1a0d7d2e4b19fed718f3ed36874cc20b",
+    "scripts/build.mjs": "4339809c04977571d8bc7d1c77f0759145ebc58186e81a3f48221bf6ff762d96",
+    "data/chinook/DB6.bin": "baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f",
+    "data/chinook/DB6.idx": "10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd",
+    "data/chinook/manifest.json": "90f1970372040946f299660c33ded627fe574c7fa2d52be168e7b16c391d55d0",
+    "data/endgames.json": "edb5d87a27caa83945e2a5587418fa6f246fb30dd3823652871a598272e0075d",
+    "play.html": "976b234049659ffa20579cf453fa27ca72ab47c8502cbad17bb036289284cbea",
+    "tests/chinook.test.mjs": "c333008bf8c63df5bf80abcb31a0d28a961f63f07fd93a70af8598eed6b7a8f1",
+    "tests/core.test.mjs": "e924aac8d16ed5403a811b4d677041272496f16357ab55bc75e493f4fcba4b02",
+    "tests/properties.test.mjs": "0e97827b3f3baca0735058891902a205c019cd467dee2ed5a16f0a374658adea",
+    "tests/draws.test.mjs": "e6694fc9cdc59d616639fe7957130be81e4070ec69decac6da0bd8f187800a96",
+    "tests/endgame.test.mjs": "95347892b3c2663ed3fc81b9700946d4f55528e8625b18f84e0b4323691bceb4",
+    "package-lock.json": "90e25862b9c85f01add8441dcfd1071b62d753ecdacb5bfeb1e830de52257c28"
+  },
+  "coverage": "American full2\u20136 quiet-corpus material tuples, exact closed capture-only proofs; opponent-only threats and full International6 pending",
+  "remaining": [
+    "7k bot matrix",
+    "25mutations",
+    "Full2k-per-comparison leagues",
+    "Offline strict600RAF+clips",
+    "Broader International6/threat coverage",
+    "Integrity/CI/PR/KEEP GOING"
+  ],
+  "cadence": {
+    "verifiedFrom": "origin/job/G10-checkers-complete-20261008 reflog, update by push",
+    "previousSuccessfulUpdate": "2026-10-08T09:49:08Z",
+    "latestSuccessfulUpdate": "2026-10-08T10:19:38Z",
+    "intervalSeconds": 1830,
+    "limitSeconds": 1800,
+    "missSeconds": 30,
+    "observationTimesNotPushTimes": [
+      "09:49:23",
+      "approximately10:19:45"
+    ],
+    "nextStageTarget": "2026-10-08T10:40:00Z",
+    "nextPushTarget": "2026-10-08T10:44:38Z",
+    "nextHardDeadline": "2026-10-08T10:49:38Z"
+  }
+}

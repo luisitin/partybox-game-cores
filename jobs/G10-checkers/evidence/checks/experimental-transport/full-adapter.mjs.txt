@@ -1,0 +1,50 @@
+import assert from 'node:assert/strict';
+import {readFile,readdir,open,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {createInternationalBlockDatabase,createInternationalEncodedDatabase,MissingInternationalBlock} from './api-dist/international.mjs';
+const base='/tmp/g10-rules-oracle-corpus',directory=base+'/international-complete/output/app';
+const option=(name,fallback)=>{const at=process.argv.indexOf(name);return at<0?fallback:process.argv[at+1];};
+const transport=option('--transport','blocks'),output=option('--out','.work/api-evidence/full-'+transport);
+assert(['blocks','encoded'].includes(transport));await mkdir(output,{recursive:true});
+const began=performance.now(),hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+const manifest=JSON.parse(await readFile(base+'/international-complete/file-manifest.json','utf8')),metadata=new Map(manifest.map(row=>[row.file,row]));
+const dictionary=new Uint8Array(await readFile('data/international/tunstall-v2.bin'));
+const raw=await readFile(base+'/international-original-complete/international-original-reference.jsonl');assert.equal(hash(raw),'b47f0d22bbf35757eba24a34d7e0b02bbddbc6651985d43dd38c828c51908167');
+const rows=raw.toString().trim().split('\n').map(JSON.parse);assert.equal(rows.length,10000);
+const files=[];
+for(const filename of (await readdir(directory)).sort()){
+ const match=/^(db(?:[2-5]|6-\d{4}))\.cpr1$/.exec(filename);if(!match)continue;
+ const name=match[1],indexBytes=await readFile(directory+'/'+name+'.idx1'),indexMeta=metadata.get(name+'.idx1'),dataMeta=metadata.get(filename);
+ assert(indexMeta&&dataMeta);assert.equal(hash(indexBytes),indexMeta.sha256);
+ files.push({name,filename,byteLength:dataMeta.bytes,indexText:indexBytes.toString('ascii'),blocks:[],chunks:[]});
+}
+assert.equal(files.length,41);assert.equal(files.filter(file=>file.name.startsWith('db6-')).length,37);
+let database,rounds=0,loadedBlocks=0,loadedBytes=0,discoveryProbes=0;
+if(transport==='encoded'){
+ const chunkBytes=3*8388608;
+ for(const file of files){
+  const input=await open(directory+'/'+file.filename,'r'),digest=createHash('sha256');let at=0;
+  try{while(at<file.byteLength){const count=Math.min(chunkBytes,file.byteLength-at),data=Buffer.allocUnsafe(count),result=await input.read(data,0,count,at);assert.equal(result.bytesRead,count);digest.update(data);file.chunks.push(data.toString('base64'));at+=count;}}finally{await input.close();}
+  assert.equal(digest.digest('hex'),metadata.get(file.filename).sha256);loadedBytes+=at;
+ }
+ database=createInternationalEncodedDatabase(files,dictionary);
+}else{
+ for(;;){database=createInternationalBlockDatabase(files,dictionary);const missing=new Map();
+  for(const row of rows){
+   try{const value=database.probe(row.board,row.side);assert.equal(value,row.value==='win'?1:row.value==='loss'?-1:0,JSON.stringify(row));}
+   catch(error){if(!(error instanceof MissingInternationalBlock))throw error;missing.set(error.file+':'+error.offset,error);}discoveryProbes++;
+  }
+  if(!missing.size)break;assert(++rounds<64);
+  const handles=new Map();
+  try{for(const error of missing.values()){
+   const file=files.find(file=>file.name===error.file);assert(file);assert(!file.blocks.some(block=>block.offset===error.offset));let input=handles.get(file.name);if(!input){input=await open(directory+'/'+file.filename,'r');handles.set(file.name,input);}
+   const data=Buffer.allocUnsafe(error.length),result=await input.read(data,0,data.length,error.offset);assert.equal(result.bytesRead,data.length);file.blocks.push({offset:error.offset,data:new Uint8Array(data)});loadedBlocks++;loadedBytes+=data.length;
+  }}finally{await Promise.all([...handles.values()].map(input=>input.close()));}
+ }
+}
+const transcript=createHash('sha256');let wins=0,losses=0,draws=0;
+for(const row of rows){const location=database.locate(row.board,row.side);assert(location);assert.equal(location.key,row.key);assert.equal(location.index,row.index);assert.equal(location.ordinal,row.ordinal);
+ const expected=row.value==='win'?1:row.value==='loss'?-1:0,value=database.probe(row.board,row.side);assert.equal(value,expected);assert.equal(row.originalCpp,expected===1?1:expected===-1?2:3);
+ if(value===1)wins++;else if(value===-1)losses++;else draws++;transcript.update(JSON.stringify([row.id,location.key,location.ordinal,value]));}
+const report={status:'PASS',transport,cases:rows.length,wins,losses,draws,rounds,loadedBlocks,loadedBytes,discoveryProbes,seconds:(performance.now()-began)/1000,coverage:database.coverage(),inputSha256:hash(raw),experimentalSourceSha256:hash(await readFile('.work/api-src/international.ts')),adapterSourceSha256:hash(await readFile('.work/api-validate-full.mjs')),dictionarySha256:hash(dictionary),transcriptSha256:transcript.digest('hex'),installedInGame:false,scope:'Private immutable reader over complete acquired2–6 source, sampled original/independent10k six-piece queries covering37classes/148orientations incl22second-subslice; no game/browser integration or exhaustive-position claim'};
+await writeFile(output+'/report.json',JSON.stringify(report,null,2)+'\n');process.stdout.write(JSON.stringify(report)+'\n');

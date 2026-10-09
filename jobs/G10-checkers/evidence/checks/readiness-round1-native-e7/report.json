@@ -1,0 +1,2760 @@
+{
+  "status": "PASS",
+  "nonce": "9d5f3327-90f2-4549-99fe-a1d3e0286f07",
+  "rootGrantNonce": "G10-native-player-e66940a7-b4ba-497a-9578-0c8cb8a627a2",
+  "startedAt": "2026-10-08T23:39:09.713Z",
+  "readySha256": "bc4b78fa9e2c3803e214e3cd0c4de3c90f5b27aab66995d8b7f29654ba1adde0",
+  "baselineHead": "fa0b337e1178177ff5b871acae697897c687ee11",
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "candidateSha256": "b4f5267561bd95d68455ea5a83b936692b246d1a8ed936199c820e430a2da3eb",
+  "baselineBytes": 1390845993,
+  "candidateBytes": 1390846291,
+  "profiles": [
+    {
+      "name": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "rate": 1,
+      "arm": "baseline",
+      "commitWallMs": 42.34069900000031,
+      "americanWallMs": 22843.811659000003,
+      "initial": {
+        "at": 496.90000000596046,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 497,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": false
+      },
+      "internationalGate": {
+        "at": 1394.5,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 1394.5999999940395,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": true
+      },
+      "loaded": {
+        "readyState": "complete",
+        "host": {
+          "thinking": false,
+          "workerReady": true,
+          "workerStarts": 1,
+          "workerVariant": "american",
+          "botsPrepared": true,
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 5
+          },
+          "pace": "1500",
+          "now": 22850.90000000596,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": {
+            "move": {
+              "path": [
+                23,
+                18
+              ],
+              "captures": [],
+              "promotes": false
+            },
+            "score": 21,
+            "nodes": 1607,
+            "completedDepth": 5,
+            "budgetExhausted": false,
+            "databaseHits": 0,
+            "corpusHits": 0
+          }
+        },
+        "loadingNoteHidden": true
+      },
+      "observer": {
+        "timeOrigin": 1791502752414,
+        "events": [
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 693.5,
+            "trusted": true,
+            "key": null,
+            "value": "human"
+          },
+          {
+            "type": "change",
+            "id": "seat-0",
+            "at": 942.8000000119209,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 943.3000000119209,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1297.199999988079,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 1368.0999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1368.199999988079,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1497.300000011921,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 1616,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1616,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 17380.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "new-game",
+            "at": 22889,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 22950.80000001192,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 22973.30000001192,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 22973.40000000596,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 23085.30000001192,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          }
+        ],
+        "americanBotStartEnabled": {
+          "at": 942.8000000119209,
+          "readyState": "loading",
+          "rendered": true,
+          "inViewport": true,
+          "host": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 942.8000000119209,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "americanMarker": null,
+        "domContentLoaded": {
+          "at": 16239.90000000596,
+          "readyState": "interactive",
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 16244.699999988079,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "load": {
+          "at": 17303.09999999404,
+          "readyState": "complete"
+        },
+        "games": [
+          {
+            "clickAt": 17380.09999999404,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "american",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 0,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 0
+              },
+              "pace": "1500",
+              "now": 17380.30000001192,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": null
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 22831,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 22824.69999998808,
+                  "deadline": null
+                },
+                "phaseClock": 22824.69999998808,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "american",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "american",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "american:-1:11111111111122222232333233333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        23,
+                        18
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 1,
+                "workerVariant": "american",
+                "botsPrepared": true,
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 22831.09999999404,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 21,
+                  "nodes": 1607,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          },
+          {
+            "clickAt": 23085.40000000596,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "international",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 1,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 5
+              },
+              "pace": "1500",
+              "now": 23085.40000000596,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": {
+                "move": {
+                  "path": [
+                    23,
+                    18
+                  ],
+                  "captures": [],
+                  "promotes": false
+                },
+                "score": 21,
+                "nodes": 1607,
+                "completedDepth": 5,
+                "budgetExhausted": false,
+                "databaseHits": 0,
+                "corpusHits": 0
+              }
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 25510.40000000596,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 25500.40000000596,
+                  "deadline": null
+                },
+                "phaseClock": 25500.40000000596,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "international",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "international",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "international:-1:11111111111111111111222222322232333333333333333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        31,
+                        26
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 2,
+                "workerVariant": "international",
+                "botsPrepared": true,
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 25510.5,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 15,
+                  "nodes": 5546,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          }
+        ],
+        "americanOutcomesBeforeDOMContentLoaded": {
+          "enabled": true,
+          "startClick": false,
+          "firstLegalMove": false
+        }
+      },
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:43529/baseline.html",
+        "blob:http://127.0.0.1:43529/c635de16-8ce2-48a9-9f4c-3255d31d54f3",
+        "blob:http://127.0.0.1:43529/b897723b-2432-4dc2-9eb0-ae2021e95998"
+      ],
+      "failedRequests": []
+    },
+    {
+      "name": "desktop",
+      "width": 1920,
+      "height": 1080,
+      "rate": 1,
+      "arm": "candidate",
+      "commitWallMs": 25.10997900000075,
+      "americanWallMs": 8633.809446,
+      "initial": {
+        "at": 455.40000000596046,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": false,
+            "international": false
+          },
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 455.5,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": false
+      },
+      "internationalGate": {
+        "at": 1444,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": true,
+            "international": false
+          },
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 1444,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": true
+      },
+      "loaded": {
+        "readyState": "complete",
+        "host": {
+          "thinking": false,
+          "workerReady": true,
+          "workerStarts": 1,
+          "workerVariant": "american",
+          "botsPrepared": true,
+          "preparedVariants": {
+            "american": true,
+            "international": true
+          },
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 5
+          },
+          "pace": "1500",
+          "now": 19941.40000000596,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": {
+            "move": {
+              "path": [
+                23,
+                18
+              ],
+              "captures": [],
+              "promotes": false
+            },
+            "score": 21,
+            "nodes": 1607,
+            "completedDepth": 5,
+            "budgetExhausted": false,
+            "databaseHits": 0,
+            "corpusHits": 0
+          }
+        },
+        "loadingNoteHidden": true
+      },
+      "observer": {
+        "timeOrigin": 1791502778308.3,
+        "events": [
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 630.6999999880791,
+            "trusted": true,
+            "key": null,
+            "value": "human"
+          },
+          {
+            "type": "change",
+            "id": "seat-0",
+            "at": 881,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 881.4000000059605,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1273.5999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 1419.5,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1419.9000000059605,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1632.7999999821186,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 1791.199999988079,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 1791.4000000059605,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 1947,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "new-game",
+            "at": 19963.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 20029,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 20052.19999998808,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 20052.29999998212,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 20093.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          }
+        ],
+        "americanBotStartEnabled": {
+          "at": 881,
+          "readyState": "loading",
+          "rendered": true,
+          "inViewport": true,
+          "host": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "preparedVariants": {
+              "american": false,
+              "international": false
+            },
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 881,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "americanMarker": {
+          "at": 1223.9000000059605,
+          "readyState": "loading",
+          "americanEncodedBytes": 36521288,
+          "lastInternationalPartPresent": false,
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": true,
+            "preparedVariants": {
+              "american": true,
+              "international": false
+            },
+            "canStart": true,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 1228.0999999940395,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "domContentLoaded": {
+          "at": 18779.79999998212,
+          "readyState": "interactive",
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": true,
+            "workerStarts": 1,
+            "workerVariant": "american",
+            "botsPrepared": true,
+            "preparedVariants": {
+              "american": true,
+              "international": false
+            },
+            "canStart": true,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 5
+            },
+            "pace": "1500",
+            "now": 18783.5,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": {
+              "move": {
+                "path": [
+                  23,
+                  18
+                ],
+                "captures": [],
+                "promotes": false
+              },
+              "score": 21,
+              "nodes": 1607,
+              "completedDepth": 5,
+              "budgetExhausted": false,
+              "databaseHits": 0,
+              "corpusHits": 0
+            }
+          }
+        },
+        "load": {
+          "at": 19933.79999998212,
+          "readyState": "complete"
+        },
+        "games": [
+          {
+            "clickAt": 1947.0999999940395,
+            "trusted": true,
+            "readyState": "loading",
+            "variant": "american",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 0,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "preparedVariants": {
+                "american": true,
+                "international": false
+              },
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 0
+              },
+              "pace": "1500",
+              "now": 1947.0999999940395,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": null
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 8600.40000000596,
+              "readyState": "loading",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 8574.799999982119,
+                  "deadline": null
+                },
+                "phaseClock": 8574.799999982119,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "american",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "american",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "american:-1:11111111111122222232333233333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        23,
+                        18
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 1,
+                "workerVariant": "american",
+                "botsPrepared": true,
+                "preparedVariants": {
+                  "american": true,
+                  "international": false
+                },
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 8600.40000000596,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 21,
+                  "nodes": 1607,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          },
+          {
+            "clickAt": 20093.09999999404,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "international",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 1,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "preparedVariants": {
+                "american": true,
+                "international": true
+              },
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 5
+              },
+              "pace": "1500",
+              "now": 20093.09999999404,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": {
+                "move": {
+                  "path": [
+                    23,
+                    18
+                  ],
+                  "captures": [],
+                  "promotes": false
+                },
+                "score": 21,
+                "nodes": 1607,
+                "completedDepth": 5,
+                "budgetExhausted": false,
+                "databaseHits": 0,
+                "corpusHits": 0
+              }
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 22503.79999998212,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 22485.59999999404,
+                  "deadline": null
+                },
+                "phaseClock": 22485.59999999404,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "international",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "international",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "international:-1:11111111111111111111222222322232333333333333333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        31,
+                        26
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 2,
+                "workerVariant": "international",
+                "botsPrepared": true,
+                "preparedVariants": {
+                  "american": true,
+                  "international": true
+                },
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 22503.90000000596,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 15,
+                  "nodes": 5546,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          }
+        ],
+        "americanOutcomesBeforeDOMContentLoaded": {
+          "enabled": true,
+          "startClick": true,
+          "firstLegalMove": true
+        }
+      },
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:43529/candidate.html",
+        "blob:http://127.0.0.1:43529/7008aa1a-b61c-417f-b76e-a4ca192fdaa4",
+        "blob:http://127.0.0.1:43529/aee269c8-7da0-41da-acfe-a7d676b7df16"
+      ],
+      "failedRequests": []
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "rate": 4,
+      "arm": "candidate",
+      "commitWallMs": 18.890895999997156,
+      "americanWallMs": 17268.683135,
+      "initial": {
+        "at": 2736,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": false,
+            "international": false
+          },
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 2736.0999999940395,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": false
+      },
+      "internationalGate": {
+        "at": 7192,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "preparedVariants": {
+            "american": true,
+            "international": false
+          },
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 7192,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": true
+      },
+      "loaded": {
+        "readyState": "complete",
+        "host": {
+          "thinking": false,
+          "workerReady": true,
+          "workerStarts": 1,
+          "workerVariant": "american",
+          "botsPrepared": true,
+          "preparedVariants": {
+            "american": true,
+            "international": true
+          },
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 5
+          },
+          "pace": "1500",
+          "now": 81844,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": {
+            "move": {
+              "path": [
+                23,
+                18
+              ],
+              "captures": [],
+              "promotes": false
+            },
+            "score": 21,
+            "nodes": 1607,
+            "completedDepth": 5,
+            "budgetExhausted": false,
+            "databaseHits": 0,
+            "corpusHits": 0
+          }
+        },
+        "loadingNoteHidden": true
+      },
+      "observer": {
+        "timeOrigin": 1791502801124.4,
+        "events": [
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 3431.800000011921,
+            "trusted": true,
+            "key": null,
+            "value": "human"
+          },
+          {
+            "type": "change",
+            "id": "seat-0",
+            "at": 4323.5999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 4325.9000000059605,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 6076.0999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 7057.5999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 7060.9000000059605,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 7592.5999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 8017.5999999940395,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 8019.5,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 8539.300000011921,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "new-game",
+            "at": 82041.30000001192,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 82222.80000001192,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 82284.59999999404,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 82284.69999998808,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 82330.30000001192,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          }
+        ],
+        "americanBotStartEnabled": {
+          "at": 4323,
+          "readyState": "loading",
+          "rendered": true,
+          "inViewport": true,
+          "host": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "preparedVariants": {
+              "american": false,
+              "international": false
+            },
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 4323,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "americanMarker": {
+          "at": 6656.0999999940395,
+          "readyState": "loading",
+          "americanEncodedBytes": 36521288,
+          "lastInternationalPartPresent": false,
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": true,
+            "preparedVariants": {
+              "american": true,
+              "international": false
+            },
+            "canStart": true,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 6684.9000000059605,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "domContentLoaded": {
+          "at": 73751.5,
+          "readyState": "interactive",
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": true,
+            "workerStarts": 1,
+            "workerVariant": "american",
+            "botsPrepared": true,
+            "preparedVariants": {
+              "american": true,
+              "international": false
+            },
+            "canStart": true,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 5
+            },
+            "pace": "1500",
+            "now": 73764.90000000596,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": {
+              "move": {
+                "path": [
+                  23,
+                  18
+                ],
+                "captures": [],
+                "promotes": false
+              },
+              "score": 21,
+              "nodes": 1607,
+              "completedDepth": 5,
+              "budgetExhausted": false,
+              "databaseHits": 0,
+              "corpusHits": 0
+            }
+          }
+        },
+        "load": {
+          "at": 81804.40000000596,
+          "readyState": "complete"
+        },
+        "games": [
+          {
+            "clickAt": 8540,
+            "trusted": true,
+            "readyState": "loading",
+            "variant": "american",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 0,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "preparedVariants": {
+                "american": true,
+                "international": false
+              },
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 0
+              },
+              "pace": "1500",
+              "now": 8540,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": null
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 17249.09999999404,
+              "readyState": "loading",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 17185.69999998808,
+                  "deadline": null
+                },
+                "phaseClock": 17185.69999998808,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "american",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "american",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "american:-1:11111111111122222232333233333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        23,
+                        18
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 1,
+                "workerVariant": "american",
+                "botsPrepared": true,
+                "preparedVariants": {
+                  "american": true,
+                  "international": false
+                },
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 17249.09999999404,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 21,
+                  "nodes": 1607,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          },
+          {
+            "clickAt": 82330.30000001192,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "international",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 1,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "preparedVariants": {
+                "american": true,
+                "international": true
+              },
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 5
+              },
+              "pace": "1500",
+              "now": 82330.30000001192,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": {
+                "move": {
+                  "path": [
+                    23,
+                    18
+                  ],
+                  "captures": [],
+                  "promotes": false
+                },
+                "score": 21,
+                "nodes": 1607,
+                "completedDepth": 5,
+                "budgetExhausted": false,
+                "databaseHits": 0,
+                "corpusHits": 0
+              }
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 85262.30000001192,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 85224.59999999404,
+                  "deadline": null
+                },
+                "phaseClock": 85224.59999999404,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "international",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "international",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "international:-1:11111111111111111111222222322232333333333333333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        31,
+                        26
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 2,
+                "workerVariant": "international",
+                "botsPrepared": true,
+                "preparedVariants": {
+                  "american": true,
+                  "international": true
+                },
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 85262.5,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 15,
+                  "nodes": 5546,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          }
+        ],
+        "americanOutcomesBeforeDOMContentLoaded": {
+          "enabled": true,
+          "startClick": true,
+          "firstLegalMove": true
+        }
+      },
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:43529/candidate.html",
+        "blob:http://127.0.0.1:43529/d51bb715-7fe1-4d77-8191-e9ca5398a408",
+        "blob:http://127.0.0.1:43529/450cefda-ea5f-460b-a21f-9b4c3002184f"
+      ],
+      "failedRequests": []
+    },
+    {
+      "name": "phone",
+      "width": 390,
+      "height": 844,
+      "rate": 4,
+      "arm": "baseline",
+      "commitWallMs": 32.104441000003135,
+      "americanWallMs": 122686.44975199999,
+      "initial": {
+        "at": 3243.0999999940395,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 3243.199999988079,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": false
+      },
+      "internationalGate": {
+        "at": 10279.40000000596,
+        "readyState": "loading",
+        "host": {
+          "thinking": false,
+          "workerReady": false,
+          "workerStarts": 0,
+          "workerVariant": null,
+          "botsPrepared": false,
+          "canStart": false,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 0
+          },
+          "pace": "1500",
+          "now": 10280.09999999404,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": null
+        },
+        "disabled": true
+      },
+      "loaded": {
+        "readyState": "complete",
+        "host": {
+          "thinking": false,
+          "workerReady": true,
+          "workerStarts": 1,
+          "workerVariant": "american",
+          "botsPrepared": true,
+          "canStart": true,
+          "botCursor": {
+            "seed": 20261008,
+            "step": 5
+          },
+          "pace": "1500",
+          "now": 122696.19999998808,
+          "originalBlockReads": 0,
+          "originalFiles": [],
+          "lastBotReport": {
+            "move": {
+              "path": [
+                23,
+                18
+              ],
+              "captures": [],
+              "promotes": false
+            },
+            "score": 21,
+            "nodes": 1607,
+            "completedDepth": 5,
+            "budgetExhausted": false,
+            "databaseHits": 0,
+            "corpusHits": 0
+          }
+        },
+        "loadingNoteHidden": true
+      },
+      "observer": {
+        "timeOrigin": 1791502886765.4,
+        "events": [
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 4385.800000011921,
+            "trusted": true,
+            "key": null,
+            "value": "human"
+          },
+          {
+            "type": "change",
+            "id": "seat-0",
+            "at": 6485.699999988079,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "seat-0",
+            "at": 6506.199999988079,
+            "trusted": true,
+            "key": null,
+            "value": "sharp"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 8869.40000000596,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 10126,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 10126.5,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 10749.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 11574,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 11574.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 113066.19999998808,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "new-game",
+            "at": 122740.09999999404,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 122876.80000001192,
+            "trusted": true,
+            "key": null,
+            "value": "american"
+          },
+          {
+            "type": "change",
+            "id": "variant",
+            "at": 122968.5,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "variant",
+            "at": 122969.40000000596,
+            "trusted": true,
+            "key": null,
+            "value": "international"
+          },
+          {
+            "type": "click",
+            "id": "start",
+            "at": 123035.19999998808,
+            "trusted": true,
+            "key": null,
+            "value": ""
+          }
+        ],
+        "americanBotStartEnabled": {
+          "at": 6482.9000000059605,
+          "readyState": "loading",
+          "rendered": true,
+          "inViewport": true,
+          "host": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 6484.300000011921,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "americanMarker": null,
+        "domContentLoaded": {
+          "at": 98194.30000001192,
+          "readyState": "interactive",
+          "hostAfter": {
+            "thinking": false,
+            "workerReady": false,
+            "workerStarts": 0,
+            "workerVariant": null,
+            "botsPrepared": false,
+            "canStart": false,
+            "botCursor": {
+              "seed": 20261008,
+              "step": 0
+            },
+            "pace": "1500",
+            "now": 98214.19999998808,
+            "originalBlockReads": 0,
+            "originalFiles": [],
+            "lastBotReport": null
+          }
+        },
+        "load": {
+          "at": 112714.19999998808,
+          "readyState": "complete"
+        },
+        "games": [
+          {
+            "clickAt": 113067,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "american",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 0,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 0
+              },
+              "pace": "1500",
+              "now": 113067.5,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": null
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 122655.80000001192,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 122627.59999999404,
+                  "deadline": null
+                },
+                "phaseClock": 122627.59999999404,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "american",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "american",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "american:-1:11111111111122222232333233333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        23,
+                        18
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 1,
+                "workerVariant": "american",
+                "botsPrepared": true,
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 122655.80000001192,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      23,
+                      18
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 21,
+                  "nodes": 1607,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          },
+          {
+            "clickAt": 123035.19999998808,
+            "trusted": true,
+            "readyState": "complete",
+            "variant": "international",
+            "host": {
+              "thinking": false,
+              "workerReady": false,
+              "workerStarts": 1,
+              "workerVariant": null,
+              "botsPrepared": true,
+              "canStart": true,
+              "botCursor": {
+                "seed": 20261008,
+                "step": 5
+              },
+              "pace": "1500",
+              "now": 123035.19999998808,
+              "originalBlockReads": 0,
+              "originalFiles": [],
+              "lastBotReport": {
+                "move": {
+                  "path": [
+                    23,
+                    18
+                  ],
+                  "captures": [],
+                  "promotes": false
+                },
+                "score": 21,
+                "nodes": 1607,
+                "completedDepth": 5,
+                "budgetExhausted": false,
+                "databaseHits": 0,
+                "corpusHits": 0
+              }
+            },
+            "beforeState": null,
+            "firstMove": {
+              "at": 126271.19999998808,
+              "readyState": "complete",
+              "state": {
+                "phase": {
+                  "id": "move",
+                  "startedAt": 126191.09999999404,
+                  "deadline": null
+                },
+                "phaseClock": 126191.09999999404,
+                "rng": {
+                  "seed": 20261008,
+                  "step": 0
+                },
+                "players": {
+                  "seat-0": {
+                    "id": "seat-0",
+                    "name": "Player 1",
+                    "avatarId": "checkers-0",
+                    "connected": true
+                  },
+                  "seat-1": {
+                    "id": "seat-1",
+                    "name": "Player 2",
+                    "avatarId": "checkers-1",
+                    "connected": true
+                  }
+                },
+                "order": [
+                  "seat-0",
+                  "seat-1"
+                ],
+                "settings": {
+                  "variant": "international",
+                  "drawPolicy": "official",
+                  "repetition": true,
+                  "turnSeconds": 0
+                },
+                "board": [
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  -1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0,
+                  1,
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1
+                ],
+                "variant": "international",
+                "side": -1,
+                "ply": 1,
+                "quietPlies": 0,
+                "repetition": {
+                  "international:-1:11111111111111111111222222322232333333333333333333": 1
+                },
+                "drawWindows": [],
+                "lastMove": {
+                  "playerId": "seat-0",
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  }
+                },
+                "moveLog": [
+                  {
+                    "playerId": "seat-0",
+                    "move": {
+                      "path": [
+                        31,
+                        26
+                      ],
+                      "captures": [],
+                      "promotes": false
+                    }
+                  }
+                ],
+                "left": [],
+                "autoPaused": false,
+                "winner": null,
+                "endReason": null,
+                "contentLang": "en",
+                "phoneOnly": false
+              },
+              "host": {
+                "thinking": false,
+                "workerReady": true,
+                "workerStarts": 2,
+                "workerVariant": "international",
+                "botsPrepared": true,
+                "canStart": true,
+                "botCursor": {
+                  "seed": 20261008,
+                  "step": 5
+                },
+                "pace": "1500",
+                "now": 126271.40000000596,
+                "originalBlockReads": 0,
+                "originalFiles": [],
+                "lastBotReport": {
+                  "move": {
+                    "path": [
+                      31,
+                      26
+                    ],
+                    "captures": [],
+                    "promotes": false
+                  },
+                  "score": 15,
+                  "nodes": 5546,
+                  "completedDepth": 5,
+                  "budgetExhausted": false,
+                  "databaseHits": 0,
+                  "corpusHits": 0
+                }
+              }
+            }
+          }
+        ],
+        "americanOutcomesBeforeDOMContentLoaded": {
+          "enabled": true,
+          "startClick": false,
+          "firstLegalMove": false
+        }
+      },
+      "errors": [],
+      "requests": [
+        "http://127.0.0.1:43529/baseline.html",
+        "blob:http://127.0.0.1:43529/c88d4c40-1ce0-4d9c-8643-4f2107103371",
+        "blob:http://127.0.0.1:43529/e9f2661f-bcad-42f4-b1df-1b229598a4c9"
+      ],
+      "failedRequests": []
+    }
+  ],
+  "scope": "First actual native/trusted matched American Strong-first-move diagnostic on the complete unchanged source, plus safe full-load International Strong-first-move behavior. One navigation per arm/profile with reversed phone order, identical uncompressed loopback transport, original6k search/seed/full payloads. No cold-cache, distribution, causal FPS repair or final disk/frame acceptance claim.",
+  "browserVersion": "141.0.7390.37",
+  "runtime": "v22.16.0",
+  "serverClosure": {
+    "code": 0,
+    "signal": null
+  },
+  "closedAt": "2026-10-08T23:43:56.339Z"
+}

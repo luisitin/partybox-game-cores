@@ -1,0 +1,74 @@
+{
+  "status": "ARCHIVED_CLOSED_PASS",
+  "preparedAt": "2026-10-09T05:08:16.920683+00:00",
+  "head": "72c2a917561f3ab5d4324554a1b40d06db1bc47f",
+  "zipBytes": 284751,
+  "zipSha256": "f826f0d40cfc7f2d6047a77259b3b576b640a5909dd3e1c0caa1b9f4e77deb61",
+  "closedActualController": "2026-10-09T05:07:05.431046+00:00",
+  "frozenFiles": 1872,
+  "sourceGuards": 349,
+  "currentImmutableDocs": 6,
+  "members": [
+    {
+      "path": "controller.json",
+      "bytes": 9851,
+      "sha256": "6247a6ac130c4b6ec3561d94ed13df5e673606221133d56a3b8d529d3298480d"
+    },
+    {
+      "path": "controller.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "controller.stdout",
+      "bytes": 1270,
+      "sha256": "d40f763755e812b7447d813a22af5429150c2081ae399c0916d0b3fbba6ab181"
+    },
+    {
+      "path": "current72-official-artifacts.json",
+      "bytes": 8025,
+      "sha256": "bddc70c92cb80d2b77c48b7bc347b3190468e09aeb92c55735b025db4f873ef4"
+    },
+    {
+      "path": "current72-official-jobs.json",
+      "bytes": 12698,
+      "sha256": "d5e07808fe6289a005fddff80b4ccfd5ae0ed427cb71bda4fff87e9515e7a37b"
+    },
+    {
+      "path": "freeze-before.json",
+      "bytes": 1015501,
+      "sha256": "d1aed02f7a76441be6da2c046936156d6d05e52413a091f1171324e7a55c52fb"
+    },
+    {
+      "path": "freeze-finally.json",
+      "bytes": 1060517,
+      "sha256": "392bd8f822af7ddd47103e0d66740382c422067ec19ee1bea51afaf274407ce6"
+    },
+    {
+      "path": "receive.py",
+      "bytes": 7746,
+      "sha256": "8ddba705157e7725de464a5a1018fab01a56c359770270cd687c100f14b5db58"
+    },
+    {
+      "path": "server-derivation.diff",
+      "bytes": 4622,
+      "sha256": "bed498460d79340cd120e752406b75f4c07393f5e4713f1bec2603a6497b4624"
+    },
+    {
+      "path": "server.mjs",
+      "bytes": 5942,
+      "sha256": "63c8ede344b56519ad9697a428aa73996dfc4c84bbaea638ceb5bc1d7847fc65"
+    },
+    {
+      "path": "server.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "server.stdout",
+      "bytes": 857,
+      "sha256": "a7ced64f7bacccc8d06a3309c0be052778b0af5d43a3b492679e84ce82cb92b6"
+    }
+  ],
+  "scope": "Actual finite untimed complete HTTP baseline/candidate byte delivery on exact current72; all349 original guards/six current immutable docs/full installed aliases/self/runtime unchanged. No browser, native timing, offline acceptance, source adoption, player gain or KEEP completion."
+}

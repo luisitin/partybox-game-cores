@@ -1,0 +1,166 @@
+name: G10 Checkers
+on:
+  pull_request:
+    paths:
+      - 'jobs/G10-checkers/**'
+      - 'contract/**'
+      - '.github/workflows/G10.yml'
+  push:
+    branches: ['job/G10-checkers-complete-20261008']
+    paths:
+      - 'jobs/G10-checkers/**'
+      - 'contract/**'
+      - '.github/workflows/G10.yml'
+permissions:
+  contents: read
+env:
+  G10_SOURCE_COMMIT: ${{ github.event.pull_request.head.sha || github.sha }}
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        stage: [node, league-american, league-international, browser]
+    defaults:
+      run:
+        working-directory: jobs/G10-checkers
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: jobs/G10-checkers/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Use the official Ubuntu archive for the existing runner mirror list
+        if: matrix.stage == 'node' || matrix.stage == 'browser'
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+          fi
+      - name: Install actual video probe and decoder
+        if: matrix.stage == 'node' || matrix.stage == 'browser'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffprobe -version
+          ffmpeg -version
+      - name: Record actual runner resources
+        run: |
+          node --version
+          nproc
+          awk '/MemTotal/ { print }' /proc/meminfo
+          df -Pk .
+      - if: matrix.stage == 'browser'
+        run: npx playwright install --with-deps chromium
+      - name: Run complete assigned workload
+        run: |
+          set -o pipefail
+          node scripts/check.mjs --stage '${{ matrix.stage }}' 2>&1 | tee '.work-stage-${{ matrix.stage }}.stdout'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G10-stage-${{ matrix.stage }}-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work-stage-${{ matrix.stage }}.stdout
+            jobs/G10-checkers/.work/checks
+            jobs/G10-checkers/.work/browser
+            jobs/G10-checkers/.work/media
+          if-no-files-found: error
+          include-hidden-files: true
+          retention-days: 7
+  delivery:
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G10-checkers
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.16.0'
+          cache: npm
+          cache-dependency-path: jobs/G10-checkers/package-lock.json
+      - run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Use the official Ubuntu archive for the existing runner mirror list
+        run: |
+          if [ -f /etc/apt/apt-mirrors.txt ]; then
+            sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt
+          fi
+      - name: Install actual video probe and decoder
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          ffprobe -version
+          ffmpeg -version
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: G10-stage-*-${{ github.event.pull_request.head.sha || github.sha }}
+          path: jobs/G10-checkers
+          merge-multiple: true
+      - name: Verify every current stage and combine all4000 actual games
+        run: |
+          set -o pipefail
+          node scripts/check.mjs --stage final 2>&1 | tee .work-stage-final.stdout
+      - run: node scripts/standalone-receipt.mjs
+      - name: Split and verify the exact accepted standalone page
+        run: python3 scripts/standalone-parts.py split .work/play.html .work/standalone-delivery.json .work/standalone-parts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-00-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-00
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-01-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-01
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-02-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-02
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        with:
+          name: G10-standalone-part-03-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work/standalone-parts/play.html.part-03
+            jobs/G10-checkers/.work/standalone-parts/standalone-*
+          if-no-files-found: error
+          include-hidden-files: true
+          compression-level: 1
+          retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: G10-check-evidence-${{ github.event.pull_request.head.sha || github.sha }}
+          path: |
+            jobs/G10-checkers/.work-stage-*.stdout
+            jobs/G10-checkers/.work/checks
+            jobs/G10-checkers/.work/browser
+            jobs/G10-checkers/.work/media
+          include-hidden-files: true
+          retention-days: 7

@@ -1,0 +1,69 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {createInternationalDatabase,createInternationalEncodedDatabase,createInternationalBlockDatabase,MissingInternationalBlock,internationalRank} from '../api-dist/international.mjs';
+const read=path=>readFileSync(new URL('../../'+path,import.meta.url));
+const dictionary=new Uint8Array(read('data/international/tunstall-v2.bin'));
+const files=[2,3,4,5].map(n=>({name:'db'+n,data:new Uint8Array(read('data/international/db'+n+'.bin')),indexText:read('data/international/db'+n+'.idx').toString()}));
+const raw=read('evidence/checks/international-original/international-original-reference.jsonl');
+const rows=raw.toString().trim().split('\n').map(JSON.parse),expected=row=>row.value==='win'?1:row.value==='loss'?-1:0;
+const encoded=files.map((file,i)=>{const value=Buffer.from(file.data).toString('base64'),step=[4,124,4096,32768][i],chunks=[];for(let start=0;start<value.length;start+=step)chunks.push(value.slice(start,start+step));return {name:file.name,byteLength:file.data.length,indexText:file.indexText,chunks};});
+const blocks=files.map(file=>({name:file.name,byteLength:file.data.length,indexText:file.indexText,blocks:Array.from({length:Math.ceil(file.data.length/4096)},(_,n)=>({offset:n*4096,data:file.data.slice(n*4096,Math.min(file.data.length,(n+1)*4096))}))}));
+const normal=createInternationalDatabase(files,dictionary),encodedDatabase=createInternationalEncodedDatabase(encoded,dictionary),blockDatabase=createInternationalBlockDatabase(blocks,dictionary);
+
+test('immutable encoded and block transports equal all10k retained independent/native WLD outcomes',()=>{
+ assert.equal(rows.length,10000);assert.equal(createHash('sha256').update(raw).digest('hex'),'4aa8260f24306d6f28d2c81fd40b92285994f9c4b5ae1773135f4de6a463a49a');
+ for(const row of rows){const value=expected(row);assert.equal(normal.probe(row.board,row.side),value);assert.equal(encodedDatabase.probe(row.board,row.side),value,JSON.stringify(row));assert.equal(blockDatabase.probe(row.board,row.side),value,JSON.stringify(row));assert.deepEqual(encodedDatabase.locate(row.board,row.side),normal.locate(row.board,row.side));}
+});
+
+test('an absent nonuniform block is explicit; uniform slices require no synthetic bytes',()=>{
+ const absent=createInternationalBlockDatabase(files.map(file=>({name:file.name,byteLength:file.data.length,indexText:file.indexText,blocks:[]})),dictionary);
+ let missing=0;
+ for(const row of rows){try{assert.equal(absent.probe(row.board,row.side),expected(row));}catch(error){assert(error instanceof MissingInternationalBlock);const file=files.find(file=>file.name===error.file);assert(file);assert.equal(error.offset%4096,0);assert.equal(error.length,Math.min(4096,file.data.length-error.offset));missing++;}}
+ assert(missing>1000);const board=Array(50).fill(0);board[0]=-2;board[49]=2;const uniform=createInternationalBlockDatabase([{name:'db2',byteLength:0,indexText:'BASE0,1,0,1,0,b:=\nBASE0,1,0,1,0,w:=\n',blocks:[]}],dictionary);assert.equal(uniform.probe(board,1),0);
+});
+
+test('transaction retries require all missing original blocks and then equal native outcomes',()=>{
+ const selected=rows.filter((_,i)=>i%37===0).slice(0,96),supplied=files.map(file=>({name:file.name,byteLength:file.data.length,indexText:file.indexText,blocks:[]}));
+ let retries=0,total=0;
+ for(;;){const candidate=createInternationalBlockDatabase(supplied,dictionary),missing=new Map();
+  for(const row of selected){try{assert.equal(candidate.probe(row.board,row.side),expected(row));}catch(error){assert(error instanceof MissingInternationalBlock);missing.set(error.file+':'+error.offset,error);}}
+  if(!missing.size)break;
+  for(const error of missing.values()){const file=files.find(file=>file.name===error.file),target=supplied.find(file=>file.name===error.file);assert(!target.blocks.some(block=>block.offset===error.offset));target.blocks.push({offset:error.offset,data:file.data.slice(error.offset,error.offset+error.length)});total++;}
+  assert(++retries<32);
+ }
+ assert(retries>0);assert(total>0);
+});
+
+test('encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots',()=>{
+ const enc=structuredClone(encoded.slice(0,1)),blk=structuredClone(blocks.slice(0,1)),dict=dictionary.slice(),a=createInternationalEncodedDatabase(enc,dict),b=createInternationalBlockDatabase(blk,dict);
+ const samples=rows.filter(row=>internationalRank(row.board,row.side).file==='db2').slice(0,30);assert(samples.length);
+ enc[0].chunks.fill('AAAA');enc[0].byteLength=0;enc[0].indexText='';for(const block of blk[0].blocks)block.data.fill(0);blk[0].blocks=[];blk[0].indexText='';dict.fill(0);
+ for(const row of samples){assert.equal(a.probe(row.board,row.side),expected(row));assert.equal(b.probe(row.board,row.side),expected(row));}
+ const coverage=a.coverage();coverage.files.push('fake');assert.deepEqual(a.coverage().files,['db2']);
+});
+
+test('canonical encoding and bounded block metadata reject corrupt input before probing',()=>{
+ const indexText='BASE0,1,0,1,0,b:=\n';
+ for(const input of [
+  {byteLength:1,chunks:['AB==']},{byteLength:2,chunks:['AAB=']},{byteLength:2,chunks:['AA==']},
+  {byteLength:3,chunks:['AAAA=AAA']},{byteLength:3,chunks:['AAA']},{byteLength:3,chunks:['AA\nA']},
+  {byteLength:4,chunks:['AA==','AA==']},{byteLength:-1,chunks:[]},{byteLength:1.5,chunks:[]},
+ ])assert.throws(()=>createInternationalEncodedDatabase([{name:'db2',indexText,...input}],dictionary),RangeError);
+ for(const chunks of [['AA=='],['AAA='],['AAAA']]){const size=chunks[0].endsWith('==')?1:chunks[0].endsWith('=')?2:3;assert.doesNotThrow(()=>createInternationalEncodedDatabase([{name:'db2',indexText,byteLength:size,chunks}],dictionary));}
+ for(const supplied of [[{offset:1,data:new Uint8Array(3)}],[{offset:0,data:new Uint8Array(3)}],[{offset:0,data:new Uint8Array(4)},{offset:0,data:new Uint8Array(4)}],[{offset:4096,data:new Uint8Array(1)}]])assert.throws(()=>createInternationalBlockDatabase([{name:'db2',indexText,byteLength:4,blocks:supplied}],dictionary),RangeError);
+});
+
+test('one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder',()=>{
+ const board=Array(50).fill(0);board[0]=-1;board[44]=1;const rank=internationalRank(board,-1);assert.equal(rank.file,'db2');
+ const indexText='BASE1,0,1,0,0,b:1/0,0,39\n',data=new Uint8Array(4097);
+ let checked=0;
+ for(let token=0;token<256&&checked<3;token++){
+  data[4096]=token;const a=createInternationalDatabase([{name:'db2',data,indexText}],dictionary),value=a.probe(board,-1);if(value===null)continue;
+  const b64=Buffer.from(data).toString('base64'),chunks=[];for(let offset=0;offset<b64.length;offset+=4)chunks.push(b64.slice(offset,offset+4));
+  const b=createInternationalEncodedDatabase([{name:'db2',byteLength:data.length,indexText,chunks}],dictionary),c=createInternationalBlockDatabase([{name:'db2',byteLength:data.length,indexText,blocks:[{offset:4096,data:data.slice(4096)}]}],dictionary);
+  assert.equal(b.probe(board,-1),value);assert.equal(c.probe(board,-1),value);checked++;
+ }
+ assert.equal(checked,3);
+});

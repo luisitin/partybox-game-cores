@@ -1,0 +1,46 @@
+TAP version 13
+# Subtest: production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+ok 1 - production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+  ---
+  duration_ms: 376.554087
+  type: 'test'
+  ...
+# Subtest: actual International dictionary/data match pinned licensed-source hashes
+ok 2 - actual International dictionary/data match pinned licensed-source hashes
+  ---
+  duration_ms: 0.329613
+  type: 'test'
+  ...
+# Subtest: production/reference International probes agree with independently closed full two-piece WLD
+ok 3 - production/reference International probes agree with independently closed full two-piece WLD
+  ---
+  duration_ms: 1868.751246
+  type: 'test'
+  ...
+# Subtest: 10,000 International material/orientation ranks agree with separately authored reference
+ok 4 - 10,000 International material/orientation ranks agree with separately authored reference
+  ---
+  duration_ms: 221.288481
+  type: 'test'
+  ...
+# Subtest: International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+ok 5 - International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+  ---
+  duration_ms: 21.779143
+  type: 'test'
+  ...
+# Subtest: variant bundles preserve exact choices, reports, cursors and complete game transcripts
+ok 6 - variant bundles preserve exact choices, reports, cursors and complete game transcripts
+  ---
+  duration_ms: 8064.886027
+  type: 'test'
+  ...
+1..6
+# tests 6
+# suites 0
+# pass 6
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 15661.758718

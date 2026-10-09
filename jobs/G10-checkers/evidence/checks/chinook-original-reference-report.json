@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "seed": 1329832729,
+  "cases": 10000,
+  "attempts": 14613,
+  "materialSplits": {
+    "3:2v1": 1267,
+    "4:1v3": 630,
+    "5:2v3": 901,
+    "6:4v2": 631,
+    "3:1v2": 1233,
+    "4:2v2": 1208,
+    "5:1v4": 368,
+    "5:3v2": 891,
+    "6:3v3": 857,
+    "6:2v4": 669,
+    "5:4v1": 340,
+    "4:3v1": 662,
+    "6:1v5": 154,
+    "6:5v1": 189
+  },
+  "outcomes": {
+    "win": 4243,
+    "loss": 4038,
+    "draw": 1719
+  },
+  "queryInputSha256": "1f6505955a8c225bdcda313a871c597b66ad11e546a2bf19bb32c96d3284e2e2",
+  "expectedRecordsSha256": "baf14965a73f11aabbda2c1b53c43efe4a1211f59d8a4fe8f0fd5b9d6f5da48c",
+  "referenceSourceSha256": "8856f670f2c45490310a4f952c9916792e82a04931b0d2003b378b8cce3d9ff6",
+  "contract": "American theoretical WDL for direct stored positions with neither side having a capture; no draw-history proof.",
+  "status": "PASS",
+  "sourceUrl": "https://webdocs.cs.ualberta.ca/~chinook/databases/code.c",
+  "originalSourceSha256": "50853f33909f5cb2b525d437cedcaad1dc52e24106c0215b6f327668a36a02ab",
+  "adaptedSourceSha256": "824e69492993f824e6b788e95379e12ff1b13a9cd90edeb0365b762b32228279",
+  "wrapperSha256": "c69339b65bc5635cbc960ab64621813c5c9e03cc1bd2bea112a1672fd1694912",
+  "compiledBinarySha256": "c3040a1ce06376b14ca87fdf5c1f2890e177216f9dccd5c3d7da89bec5c6fef3",
+  "compileCommand": [
+    "cc",
+    "-std=gnu89",
+    "-O2",
+    "-w",
+    "chinook-original-adapter.c",
+    "-o",
+    "chinook-original-driver"
+  ],
+  "caseCommand": [
+    "node",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/scripts/chinook-original-cases.mjs",
+    "--data",
+    "/tmp/g10-rules-oracle-corpus/chinook-DB6",
+    "--index",
+    "/tmp/g10-rules-oracle-corpus/chinook-DB6.idx",
+    "--out",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/evidence/checks"
+  ],
+  "transcriptSha256": "02d4ad2ac2a186c78603faaf85774e2bcd8c44a5530206e3354205babca0d236",
+  "stdoutSha256": "822f321b2c92e730ec1ac127a69aa24fefd5100d60154a71fdce8410d22fc604",
+  "stderrBytes": 0,
+  "abiChanges": [
+    "Widen three unsigned sentinel casts to match unsigned-long return type.",
+    "Use long for five square/hit arrays passed to long* rank functions.",
+    "Add system prototypes and rename the unused interactive demo main."
+  ],
+  "allocationUndefinedBehaviorRepair": "Initialize DBInit local buffers to zero before adding the buffer count.",
+  "algorithmChanges": "None: published ranking, side normalization and decompression are unchanged."
+}

@@ -1,0 +1,22 @@
+import ts from 'typescript';
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {createHash} from 'node:crypto';
+import {execFileSync} from 'node:child_process';
+const base='.work/american-ready-physical',candidatePath='.work/american-ready-private/candidate-browser.ts',target=resolve('src/browser.ts');
+const hash=value=>createHash('sha256').update(value).digest('hex');
+const current=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();assert.equal(current,'4bfa6e0f41a3b860131fa227378f649766f99a43');
+const candidate=await readFile(candidatePath,'utf8');assert.equal(hash(candidate),'1f2aeb8f075d4310e92b22c9e800ed0792822172da8adfc7b238e9b91f741d81');
+const original=await readFile(target);assert.equal(hash(original),'dc29bcce2d599e615fcf5b0d073722c5b8754332bf9fe14de2dd1d393e39c9f049');
+const configFile=resolve('tsconfig.json'),raw=ts.readConfigFile(configFile,ts.sys.readFile);assert.equal(raw.error,undefined);
+const parsed=ts.parseJsonConfigFileContent(raw.config,ts.sys,process.cwd(),{noEmit:true},configFile);assert.equal(parsed.errors.length,0);assert.equal(parsed.options.strict,true);assert.equal(parsed.options.target,ts.ScriptTarget.ES2022);assert.equal(parsed.options.module,ts.ModuleKind.ES2022);
+const guards={};for(const path of parsed.fileNames)guards[path]=hash(await readFile(path));
+const host=ts.createCompilerHost(parsed.options,true),getSource=host.getSourceFile.bind(host),read=host.readFile.bind(host);
+host.readFile=path=>resolve(path)===target?candidate:read(path);
+host.getSourceFile=(path,language,onError,createNew)=>resolve(path)===target?ts.createSourceFile(path,candidate,language,true):getSource(path,language,onError,createNew);
+const startedAt=new Date().toISOString(),program=ts.createProgram(parsed.fileNames,parsed.options,host),diagnostics=ts.getPreEmitDiagnostics(program);
+const result={status:diagnostics.length===0?'PASS':'FAIL',startedAt,closedAt:new Date().toISOString(),typeScriptVersion:ts.version,currentHead:current,strict:true,target:'ES2022',module:'ES2022',noEmit:true,sourceOriginalSha256:hash(original),sourceCandidateSha256:hash(candidate),originalConfigSha256:hash(await readFile(configFile)),diagnosticCount:diagnostics.length,diagnostics:diagnostics.map(d=>ts.flattenDiagnosticMessageText(d.messageText,'\n')),rootSourceFileCount:parsed.fileNames.length,allOriginalRootSourceGuardsUnchanged:true,scope:'Real original TypeScript strict/noEmit config compiler host overlays only actual unchanged src/browser.ts location with frozen candidate217bootstrap source. All other actual imports/source/config/options remain original; no files emitted and no production adoption.'};
+for(const path of parsed.fileNames)assert.equal(hash(await readFile(path)),guards[path]);assert.equal(hash(await readFile(target)),hash(original));assert.equal(execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),current);
+await writeFile(base+'/candidate-strict-typecheck.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));assert.equal(diagnostics.length,0);
+

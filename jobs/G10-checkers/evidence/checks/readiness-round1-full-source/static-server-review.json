@@ -1,0 +1,8 @@
+{
+  "status": "STATIC_FINDING",
+  "recordedAt": "2026-10-08T22:44:53.016821+00:00",
+  "reviewer": "independent G08",
+  "initialScript": "initial-unbound-stream-server.mjs",
+  "finding": "Initial server checked base SHA once and only byte totals per request. It must bind exact five-operation topology/offsets and actual emitted region/whole digests, plus final full baseline identity, before any READY.",
+  "actualExecution": "Server never launched; no browser, elapsed result or player gain."
+}

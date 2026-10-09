@@ -1,0 +1,376 @@
+﻿2026-10-08T20:42:30.9934210Z Current runner version: '2.337.0'
+2026-10-08T20:42:30.9964428Z ##[group]Runner Image Provisioner
+2026-10-08T20:42:30.9965799Z Hosted Compute Agent
+2026-10-08T20:42:30.9966430Z Version: 20261002.596
+2026-10-08T20:42:30.9967195Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T20:42:30.9967962Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T20:42:30.9968690Z Worker ID: {274bbef6-e929-4fa5-a86b-629ae919d40d}
+2026-10-08T20:42:30.9969449Z Region: centralus
+2026-10-08T20:42:30.9969994Z Cloud: Azure
+2026-10-08T20:42:30.9970583Z ##[endgroup]
+2026-10-08T20:42:30.9972503Z ##[group]Operating System
+2026-10-08T20:42:30.9973274Z Ubuntu
+2026-10-08T20:42:30.9973866Z 24.04.5
+2026-10-08T20:42:30.9974388Z LTS
+2026-10-08T20:42:30.9975671Z ##[endgroup]
+2026-10-08T20:42:30.9976287Z ##[group]Runner Image
+2026-10-08T20:42:30.9976875Z Image: ubuntu-24.04
+2026-10-08T20:42:30.9977567Z Version: 20261004.327.1
+2026-10-08T20:42:30.9978851Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T20:42:30.9980505Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T20:42:30.9981465Z ##[endgroup]
+2026-10-08T20:42:30.9982679Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T20:42:30.9984887Z Contents: read
+2026-10-08T20:42:30.9985960Z Metadata: read
+2026-10-08T20:42:30.9986549Z ##[endgroup]
+2026-10-08T20:42:30.9988819Z Secret source: Actions
+2026-10-08T20:42:30.9989766Z Cache mode: write
+2026-10-08T20:42:30.9990824Z Prepare workflow directory
+2026-10-08T20:42:31.0558902Z Prepare all required actions
+2026-10-08T20:42:31.0610071Z Getting action download info
+2026-10-08T20:42:31.3309440Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T20:42:31.4145884Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T20:42:31.5027405Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-08T20:42:31.7084464Z Complete job name: checks (league-international)
+2026-10-08T20:42:31.7816696Z ##[group]Run actions/checkout@v4
+2026-10-08T20:42:31.7817586Z with:
+2026-10-08T20:42:31.7818102Z   ref: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:31.7818774Z   repository: luisitin/partybox-game-cores
+2026-10-08T20:42:31.7822630Z   token: ***
+2026-10-08T20:42:31.7823090Z   ssh-strict: true
+2026-10-08T20:42:31.7823552Z   ssh-user: git
+2026-10-08T20:42:31.7824022Z   persist-credentials: true
+2026-10-08T20:42:31.7824532Z   clean: true
+2026-10-08T20:42:31.7825003Z   sparse-checkout-cone-mode: true
+2026-10-08T20:42:31.7825755Z   fetch-depth: 1
+2026-10-08T20:42:31.7826215Z   fetch-tags: false
+2026-10-08T20:42:31.7826684Z   show-progress: true
+2026-10-08T20:42:31.7827156Z   lfs: false
+2026-10-08T20:42:31.7827591Z   submodules: false
+2026-10-08T20:42:31.7828063Z   set-safe-directory: true
+2026-10-08T20:42:31.7828596Z   allow-unsafe-pr-checkout: false
+2026-10-08T20:42:31.7829408Z env:
+2026-10-08T20:42:31.7830007Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:31.7830680Z ##[endgroup]
+2026-10-08T20:42:31.8818327Z Syncing repository: luisitin/partybox-game-cores
+2026-10-08T20:42:31.8820538Z ##[group]Getting Git version info
+2026-10-08T20:42:31.8821708Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:42:31.8822926Z [command]/usr/bin/git version
+2026-10-08T20:42:31.8908572Z git version 2.55.0
+2026-10-08T20:42:31.8931511Z ##[endgroup]
+2026-10-08T20:42:31.8946628Z Temporarily overriding HOME='/home/runner/work/_temp/650c559f-0eef-44ce-ae78-49bd0f69b05d' before making global git config changes
+2026-10-08T20:42:31.8949372Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:42:31.8952335Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:42:31.9011693Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-08T20:42:31.9015634Z ##[group]Initializing the repository
+2026-10-08T20:42:31.9019337Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:42:31.9128860Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T20:42:31.9132471Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T20:42:31.9134055Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T20:42:31.9135526Z hint: call:
+2026-10-08T20:42:31.9136214Z hint:
+2026-10-08T20:42:31.9137071Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T20:42:31.9138124Z hint:
+2026-10-08T20:42:31.9139106Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T20:42:31.9140670Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T20:42:31.9141912Z hint:
+2026-10-08T20:42:31.9142599Z hint: 	git branch -m <name>
+2026-10-08T20:42:31.9143454Z hint:
+2026-10-08T20:42:31.9144507Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T20:42:31.9146805Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-08T20:42:31.9150100Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:42:31.9194165Z ##[endgroup]
+2026-10-08T20:42:31.9196877Z ##[group]Disabling automatic garbage collection
+2026-10-08T20:42:31.9199227Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T20:42:31.9230672Z ##[endgroup]
+2026-10-08T20:42:31.9232099Z ##[group]Setting up auth
+2026-10-08T20:42:31.9236021Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:42:31.9269649Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:42:31.9632185Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:42:31.9684588Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:42:31.9919859Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:42:31.9958061Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:42:32.0196112Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T20:42:32.0242205Z ##[endgroup]
+2026-10-08T20:42:32.0243805Z ##[group]Fetching the repository
+2026-10-08T20:42:32.0253354Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:53.0231327Z From https://github.com/luisitin/partybox-game-cores
+2026-10-08T20:42:53.0232189Z  * branch            1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79 -> FETCH_HEAD
+2026-10-08T20:42:53.0235946Z ##[endgroup]
+2026-10-08T20:42:53.0236688Z ##[group]Determining the checkout info
+2026-10-08T20:42:53.0238432Z ##[endgroup]
+2026-10-08T20:42:53.0244689Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T20:42:53.0298758Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T20:42:53.0331744Z ##[group]Checking out the ref
+2026-10-08T20:42:53.0371209Z [command]/usr/bin/git checkout --progress --force 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:54.7057057Z Updating files:  12% (180/1483)
+2026-10-08T20:42:55.1244053Z Updating files:  13% (193/1483)
+2026-10-08T20:42:55.7799138Z Updating files:  13% (199/1483)
+2026-10-08T20:42:56.1430340Z Updating files:  14% (208/1483)
+2026-10-08T20:42:56.6995794Z Updating files:  14% (216/1483)
+2026-10-08T20:42:57.0948674Z Updating files:  15% (223/1483)
+2026-10-08T20:42:57.6110899Z Updating files:  15% (226/1483)
+2026-10-08T20:42:58.1249409Z Updating files:  16% (238/1483)
+2026-10-08T20:42:58.4872728Z Updating files:  16% (243/1483)
+2026-10-08T20:42:58.7170018Z Updating files:  17% (253/1483)
+2026-10-08T20:42:58.7187008Z Updating files:  18% (267/1483)
+2026-10-08T20:42:58.7196516Z Updating files:  19% (282/1483)
+2026-10-08T20:42:58.7211304Z Updating files:  20% (297/1483)
+2026-10-08T20:42:58.7428955Z Updating files:  21% (312/1483)
+2026-10-08T20:42:58.7439873Z Updating files:  22% (327/1483)
+2026-10-08T20:42:58.7448227Z Updating files:  23% (342/1483)
+2026-10-08T20:42:58.7456093Z Updating files:  24% (356/1483)
+2026-10-08T20:42:58.7681845Z Updating files:  25% (371/1483)
+2026-10-08T20:42:58.7689770Z Updating files:  26% (386/1483)
+2026-10-08T20:42:58.7700161Z Updating files:  27% (401/1483)
+2026-10-08T20:42:58.7709559Z Updating files:  28% (416/1483)
+2026-10-08T20:42:58.7724207Z Updating files:  29% (431/1483)
+2026-10-08T20:42:58.7742130Z Updating files:  30% (445/1483)
+2026-10-08T20:42:58.7759612Z Updating files:  31% (460/1483)
+2026-10-08T20:42:58.7775413Z Updating files:  32% (475/1483)
+2026-10-08T20:42:58.7794670Z Updating files:  33% (490/1483)
+2026-10-08T20:42:58.7809634Z Updating files:  34% (505/1483)
+2026-10-08T20:42:58.7820103Z Updating files:  35% (520/1483)
+2026-10-08T20:42:58.7833757Z Updating files:  36% (534/1483)
+2026-10-08T20:42:58.7906189Z Updating files:  37% (549/1483)
+2026-10-08T20:42:58.8003026Z Updating files:  38% (564/1483)
+2026-10-08T20:42:58.8011625Z Updating files:  39% (579/1483)
+2026-10-08T20:42:58.8046839Z Updating files:  40% (594/1483)
+2026-10-08T20:42:58.8074609Z Updating files:  41% (609/1483)
+2026-10-08T20:42:58.8084375Z Updating files:  42% (623/1483)
+2026-10-08T20:42:58.8092411Z Updating files:  43% (638/1483)
+2026-10-08T20:42:58.8102951Z Updating files:  44% (653/1483)
+2026-10-08T20:42:58.8119761Z Updating files:  45% (668/1483)
+2026-10-08T20:42:58.8275054Z Updating files:  46% (683/1483)
+2026-10-08T20:42:58.8409859Z Updating files:  47% (698/1483)
+2026-10-08T20:42:58.8468132Z Updating files:  48% (712/1483)
+2026-10-08T20:42:58.8605140Z Updating files:  49% (727/1483)
+2026-10-08T20:42:58.8659875Z Updating files:  50% (742/1483)
+2026-10-08T20:42:58.8675257Z Updating files:  51% (757/1483)
+2026-10-08T20:42:58.8682807Z Updating files:  52% (772/1483)
+2026-10-08T20:42:58.8709938Z Updating files:  53% (786/1483)
+2026-10-08T20:42:58.8744912Z Updating files:  54% (801/1483)
+2026-10-08T20:42:58.8788475Z Updating files:  55% (816/1483)
+2026-10-08T20:42:58.8794494Z Updating files:  56% (831/1483)
+2026-10-08T20:42:58.8828869Z Updating files:  57% (846/1483)
+2026-10-08T20:42:58.8862500Z Updating files:  58% (861/1483)
+2026-10-08T20:42:58.8902402Z Updating files:  59% (875/1483)
+2026-10-08T20:42:58.8939896Z Updating files:  60% (890/1483)
+2026-10-08T20:42:58.8981066Z Updating files:  61% (905/1483)
+2026-10-08T20:42:58.9005831Z Updating files:  62% (920/1483)
+2026-10-08T20:42:58.9018103Z Updating files:  63% (935/1483)
+2026-10-08T20:42:58.9038930Z Updating files:  64% (950/1483)
+2026-10-08T20:42:58.9064852Z Updating files:  65% (964/1483)
+2026-10-08T20:42:58.9095151Z Updating files:  66% (979/1483)
+2026-10-08T20:42:58.9124294Z Updating files:  67% (994/1483)
+2026-10-08T20:42:58.9164817Z Updating files:  68% (1009/1483)
+2026-10-08T20:42:58.9183512Z Updating files:  69% (1024/1483)
+2026-10-08T20:42:58.9203405Z Updating files:  70% (1039/1483)
+2026-10-08T20:42:58.9229769Z Updating files:  71% (1053/1483)
+2026-10-08T20:42:58.9261708Z Updating files:  72% (1068/1483)
+2026-10-08T20:42:58.9301993Z Updating files:  73% (1083/1483)
+2026-10-08T20:42:58.9348751Z Updating files:  74% (1098/1483)
+2026-10-08T20:42:58.9358105Z Updating files:  75% (1113/1483)
+2026-10-08T20:42:58.9365463Z Updating files:  76% (1128/1483)
+2026-10-08T20:42:58.9386563Z Updating files:  77% (1142/1483)
+2026-10-08T20:42:58.9394389Z Updating files:  78% (1157/1483)
+2026-10-08T20:42:58.9402832Z Updating files:  79% (1172/1483)
+2026-10-08T20:42:58.9410134Z Updating files:  80% (1187/1483)
+2026-10-08T20:42:58.9418678Z Updating files:  81% (1202/1483)
+2026-10-08T20:42:58.9424451Z Updating files:  82% (1217/1483)
+2026-10-08T20:42:58.9440348Z Updating files:  83% (1231/1483)
+2026-10-08T20:42:58.9469604Z Updating files:  84% (1246/1483)
+2026-10-08T20:42:58.9477764Z Updating files:  85% (1261/1483)
+2026-10-08T20:42:58.9575588Z Updating files:  86% (1276/1483)
+2026-10-08T20:42:58.9592631Z Updating files:  87% (1291/1483)
+2026-10-08T20:42:58.9593199Z Updating files:  88% (1306/1483)
+2026-10-08T20:42:58.9593650Z Updating files:  89% (1320/1483)
+2026-10-08T20:42:58.9633767Z Updating files:  90% (1335/1483)
+2026-10-08T20:42:58.9655783Z Updating files:  91% (1350/1483)
+2026-10-08T20:42:58.9673680Z Updating files:  92% (1365/1483)
+2026-10-08T20:42:58.9811530Z Updating files:  93% (1380/1483)
+2026-10-08T20:42:59.3032931Z Updating files:  94% (1395/1483)
+2026-10-08T20:42:59.3034680Z Updating files:  94% (1405/1483)
+2026-10-08T20:42:59.3043806Z Updating files:  95% (1409/1483)
+2026-10-08T20:42:59.3052617Z Updating files:  96% (1424/1483)
+2026-10-08T20:42:59.3061339Z Updating files:  97% (1439/1483)
+2026-10-08T20:42:59.3069956Z Updating files:  98% (1454/1483)
+2026-10-08T20:42:59.3078844Z Updating files:  99% (1469/1483)
+2026-10-08T20:42:59.3079600Z Updating files: 100% (1483/1483)
+2026-10-08T20:42:59.3080055Z Updating files: 100% (1483/1483), done.
+2026-10-08T20:42:59.3100742Z Note: switching to '1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79'.
+2026-10-08T20:42:59.3101564Z 
+2026-10-08T20:42:59.3102167Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T20:42:59.3103286Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T20:42:59.3104354Z state without impacting any branches by switching back to a branch.
+2026-10-08T20:42:59.3105009Z 
+2026-10-08T20:42:59.3105702Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T20:42:59.3106671Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T20:42:59.3107308Z 
+2026-10-08T20:42:59.3108196Z   git switch -c <new-branch-name>
+2026-10-08T20:42:59.3108627Z 
+2026-10-08T20:42:59.3108806Z Or undo this operation with:
+2026-10-08T20:42:59.3109043Z 
+2026-10-08T20:42:59.3109171Z   git switch -
+2026-10-08T20:42:59.3109344Z 
+2026-10-08T20:42:59.3109662Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T20:42:59.3110119Z 
+2026-10-08T20:42:59.3110441Z HEAD is now at 1c9b8ed G10 preserve successful CI and interrupted delivery checkpoint
+2026-10-08T20:42:59.3264365Z ##[endgroup]
+2026-10-08T20:42:59.3322712Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T20:42:59.3351799Z 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:59.3602553Z ##[group]Run actions/setup-node@v4
+2026-10-08T20:42:59.3602853Z with:
+2026-10-08T20:42:59.3603061Z   node-version: 22.16.0
+2026-10-08T20:42:59.3603287Z   cache: npm
+2026-10-08T20:42:59.3603577Z   cache-dependency-path: jobs/G10-checkers/package-lock.json
+2026-10-08T20:42:59.3603956Z   always-auth: false
+2026-10-08T20:42:59.3604177Z   check-latest: false
+2026-10-08T20:42:59.3606846Z   token: ***
+2026-10-08T20:42:59.3607050Z env:
+2026-10-08T20:42:59.3607309Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:42:59.3607645Z ##[endgroup]
+2026-10-08T20:42:59.5022261Z Attempting to download 22.16.0...
+2026-10-08T20:42:59.5128075Z (node:2319) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:42:59.5129398Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:43:00.3178552Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-08T20:43:00.9271939Z Extracting ...
+2026-10-08T20:43:00.9400467Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/1c0d52d8-a855-4c87-b180-2a93a254eb71 -f /home/runner/work/_temp/ebc43187-f978-4d51-856a-7901d712a2c4
+2026-10-08T20:43:02.1302568Z Adding to the cache ...
+2026-10-08T20:43:04.2109921Z ##[group]Environment details
+2026-10-08T20:43:04.4524883Z node: v22.16.0
+2026-10-08T20:43:04.4525552Z npm: 10.9.2
+2026-10-08T20:43:04.4525795Z yarn: 1.22.22
+2026-10-08T20:43:04.4526343Z ##[endgroup]
+2026-10-08T20:43:04.4548298Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-08T20:43:04.5473208Z /home/runner/.npm
+2026-10-08T20:43:04.6893633Z Cache hit for: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-08T20:43:04.7006056Z (node:2319) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:43:05.3671667Z Received 12676417 of 12676417 (100.0%), 22.3 MBs/sec
+2026-10-08T20:43:05.3672248Z Cache Size: ~12 MB (12676417 B)
+2026-10-08T20:43:05.3779387Z [command]/usr/bin/tar -xf /home/runner/work/_temp/a15b47b2-7354-47f9-a4a9-1f0bc19d8048/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-08T20:43:05.3999620Z Cache restored successfully
+2026-10-08T20:43:05.4009923Z Cache restored from key: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-08T20:43:05.4183837Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-08T20:43:05.4184348Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-08T20:43:05.4430925Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:43:05.4431288Z env:
+2026-10-08T20:43:05.4431669Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:43:05.4432165Z ##[endgroup]
+2026-10-08T20:43:06.4206610Z 
+2026-10-08T20:43:06.4215700Z added 6 packages in 920ms
+2026-10-08T20:43:06.4708408Z ##[group]Run node --version
+2026-10-08T20:43:06.4708889Z [36;1mnode --version[0m
+2026-10-08T20:43:06.4709284Z [36;1mnproc[0m
+2026-10-08T20:43:06.4709698Z [36;1mawk '/MemTotal/ { print }' /proc/meminfo[0m
+2026-10-08T20:43:06.4710212Z [36;1mdf -Pk .[0m
+2026-10-08T20:43:06.4798135Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:43:06.4798555Z env:
+2026-10-08T20:43:06.4799015Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:43:06.4799597Z ##[endgroup]
+2026-10-08T20:43:06.4926185Z v22.16.0
+2026-10-08T20:43:06.4945156Z 4
+2026-10-08T20:43:06.4964793Z MemTotal:       16373452 kB
+2026-10-08T20:43:06.4987695Z Filesystem     1024-blocks     Used Available Capacity Mounted on
+2026-10-08T20:43:06.4989022Z /dev/root        151263856 63821240  87426232      43% /
+2026-10-08T20:43:06.5048686Z ##[group]Run set -o pipefail
+2026-10-08T20:43:06.5048997Z [36;1mset -o pipefail[0m
+2026-10-08T20:43:06.5049533Z [36;1mnode scripts/check.mjs --stage 'league-international' 2>&1 | tee '.work-stage-league-international.stdout'[0m
+2026-10-08T20:43:06.5111583Z shell: /usr/bin/bash -e {0}
+2026-10-08T20:43:06.5111865Z env:
+2026-10-08T20:43:06.5112152Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:43:06.5112510Z ##[endgroup]
+2026-10-08T20:43:06.6509263Z 
+2026-10-08T20:43:06.6510210Z > partybox-g10-checkers@1.0.0 build
+2026-10-08T20:43:06.6511525Z > tsc --noEmit && node scripts/build.mjs
+2026-10-08T20:43:06.6512095Z 
+2026-10-08T20:43:19.8642356Z PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+2026-10-08T20:43:29.9090068Z node:internal/modules/run_main:123
+2026-10-08T20:43:29.9090929Z     triggerUncaughtException(
+2026-10-08T20:43:29.9091255Z     ^
+2026-10-08T20:43:29.9091392Z 
+2026-10-08T20:43:29.9091612Z AssertionError [ERR_ASSERTION]: ASSUMPTIONS.md
+2026-10-08T20:43:29.9091978Z + actual - expected
+2026-10-08T20:43:29.9092136Z 
+2026-10-08T20:43:29.9092428Z + '581d54fd144ca93145e6de0d26c95e19e5d666004922ee4da4ec0e22eb05e821'
+2026-10-08T20:43:29.9093351Z - '9a90ac596d2493153ec85cdf90addb4e33391133a452fa13f783a2c381e3b76b'
+2026-10-08T20:43:29.9093687Z 
+2026-10-08T20:43:29.9094171Z     at file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/scripts/integrity.mjs:16:98
+2026-10-08T20:43:29.9094969Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5) {
+2026-10-08T20:43:29.9095905Z   generatedMessage: false,
+2026-10-08T20:43:29.9096484Z   code: 'ERR_ASSERTION',
+2026-10-08T20:43:29.9097190Z   actual: '581d54fd144ca93145e6de0d26c95e19e5d666004922ee4da4ec0e22eb05e821',
+2026-10-08T20:43:29.9097843Z   expected: '9a90ac596d2493153ec85cdf90addb4e33391133a452fa13f783a2c381e3b76b',
+2026-10-08T20:43:29.9098302Z   operator: 'strictEqual'
+2026-10-08T20:43:29.9098581Z }
+2026-10-08T20:43:29.9098707Z 
+2026-10-08T20:43:29.9098816Z Node.js v22.16.0
+2026-10-08T20:43:29.9381010Z node:internal/modules/run_main:123
+2026-10-08T20:43:29.9381975Z     triggerUncaughtException(
+2026-10-08T20:43:29.9382755Z     ^
+2026-10-08T20:43:29.9382980Z 
+2026-10-08T20:43:29.9384154Z AssertionError [ERR_ASSERTION]: {"command":"node","args":["scripts/integrity.mjs","--sources"],"exitCode":1,"signal":null}
+2026-10-08T20:43:29.9385690Z 
+2026-10-08T20:43:29.9385985Z 1 !== 0
+2026-10-08T20:43:29.9386311Z 
+2026-10-08T20:43:29.9387743Z     at run (file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/scripts/check.mjs:20:10)
+2026-10-08T20:43:29.9389608Z     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2026-10-08T20:43:29.9391419Z     at async file:///home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/scripts/check.mjs:24:1 {
+2026-10-08T20:43:29.9392635Z   generatedMessage: false,
+2026-10-08T20:43:29.9393196Z   code: 'ERR_ASSERTION',
+2026-10-08T20:43:29.9393829Z   actual: 1,
+2026-10-08T20:43:29.9394281Z   expected: 0,
+2026-10-08T20:43:29.9394804Z   operator: 'strictEqual'
+2026-10-08T20:43:29.9395828Z }
+2026-10-08T20:43:29.9396040Z 
+2026-10-08T20:43:29.9396244Z Node.js v22.16.0
+2026-10-08T20:43:29.9427535Z ##[error]Process completed with exit code 1.
+2026-10-08T20:43:29.9532922Z ##[group]Run actions/upload-artifact@v4
+2026-10-08T20:43:29.9533243Z with:
+2026-10-08T20:43:29.9533640Z   name: G10-stage-league-international-1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:43:29.9534517Z   path: jobs/G10-checkers/.work-stage-league-international.stdout
+jobs/G10-checkers/.work/checks
+jobs/G10-checkers/.work/browser
+jobs/G10-checkers/.work/media
+
+2026-10-08T20:43:29.9535539Z   if-no-files-found: error
+2026-10-08T20:43:29.9535823Z   include-hidden-files: true
+2026-10-08T20:43:29.9536079Z   retention-days: 7
+2026-10-08T20:43:29.9536304Z   compression-level: 6
+2026-10-08T20:43:29.9536532Z   overwrite: false
+2026-10-08T20:43:29.9536737Z env:
+2026-10-08T20:43:29.9537005Z   G10_SOURCE_COMMIT: 1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79
+2026-10-08T20:43:29.9537348Z ##[endgroup]
+2026-10-08T20:43:30.1186448Z (node:2457) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T20:43:30.1188101Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T20:43:30.1268835Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-08T20:43:30.1273448Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers. This will be the root directory of the artifact
+2026-10-08T20:43:30.1275267Z With the provided path, there will be 1 file uploaded
+2026-10-08T20:43:30.1280417Z Artifact name is valid!
+2026-10-08T20:43:30.1281169Z Root directory input is valid!
+2026-10-08T20:43:30.4003590Z Beginning upload of artifact content to blob storage
+2026-10-08T20:43:30.4194167Z (node:2457) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T20:43:30.5447326Z Uploaded bytes 849
+2026-10-08T20:43:30.5881732Z Finished uploading artifact content to blob storage!
+2026-10-08T20:43:30.5883392Z SHA256 digest of uploaded artifact zip is dd95cab78320a17d8b40491163d592515e7937d18bcdba72e2126aff4cce6c09
+2026-10-08T20:43:30.5885150Z Finalizing artifact upload
+2026-10-08T20:43:30.8714933Z Artifact G10-stage-league-international-1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79.zip successfully finalized. Artifact ID 11577398427
+2026-10-08T20:43:30.8717663Z Artifact G10-stage-league-international-1c9b8ed91d9785cb90e4a93a6b603aaee2a6fe79 has been successfully uploaded! Final size is 849 bytes. Artifact ID is 11577398427
+2026-10-08T20:43:30.8721209Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37841446160/artifacts/11577398427
+2026-10-08T20:43:30.8916431Z Post job cleanup.
+2026-10-08T20:43:30.9774223Z [command]/usr/bin/git version
+2026-10-08T20:43:30.9819476Z git version 2.55.0
+2026-10-08T20:43:30.9863558Z Temporarily overriding HOME='/home/runner/work/_temp/842514dc-235c-4a7f-bb3d-5a63cc68dd84' before making global git config changes
+2026-10-08T20:43:30.9865669Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T20:43:30.9869468Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-08T20:43:30.9907622Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T20:43:30.9943634Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T20:43:31.0192375Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T20:43:31.0216985Z http.https://github.com/.extraheader
+2026-10-08T20:43:31.0228771Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T20:43:31.0288103Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T20:43:31.0551604Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T20:43:31.0591353Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T20:43:31.0989808Z Cleaning up orphan processes
+2026-10-08T20:43:31.1276527Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

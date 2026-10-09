@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-08T17:31:26.972785+00:00",
+  "current127SourcesRehashed": true,
+  "inputCount": 127,
+  "actual16CompleteRecordsEqualOriginalAndPublicPool": true,
+  "files": [
+    {
+      "file": "american-normal-easy-0000.jsonl",
+      "sha256": "5ef189e2fe3030ad17bd8e3845b137d089e111f4be8d13d26ffd27a6fc6b7cb2",
+      "completeRecords": 4
+    },
+    {
+      "file": "american-sharp-normal-0000.jsonl",
+      "sha256": "f5b5d29eff440957be5f9a8657c6e8b8268ba90b4d9f719610e733b18af8ceb4",
+      "completeRecords": 4
+    },
+    {
+      "file": "international-normal-easy-0000.jsonl",
+      "sha256": "0509eec9c5581ac97e2a94586ed959dfe942f2aebd5183d1b96ad3cb343fa216",
+      "completeRecords": 4
+    },
+    {
+      "file": "international-sharp-normal-0000.jsonl",
+      "sha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+      "completeRecords": 4
+    }
+  ],
+  "scope": "16-game source and full-record equivalence only; resource values are observed receipt facts, not a 4000-game or CI-fit inference."
+}

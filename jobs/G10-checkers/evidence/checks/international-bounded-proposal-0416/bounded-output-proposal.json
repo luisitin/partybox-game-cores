@@ -1,0 +1,53 @@
+{
+  "status": "PROPOSED_UNEXECUTED",
+  "preparedAt": "2026-10-09T04:06:25.825203+00:00",
+  "head": "474c1a64b3a8f69b81b3bd60f0a55f2782dc8d1f",
+  "canonicalCandidateBuilderSha256": "4d1ce03c9c546dac6d0763aca705f2555c638234f820f71dc5f93c1837c53885",
+  "privateOutputBuilderSha256": "2b348c3e814e57fcc6fa304630f87ef78f691050f8ca60da8bd2a41ab8c2b760",
+  "browserCandidateSha256": "bf8b12c6a389daa050f70f602e53480b506c0f4810288c24ebb6810a6aa477cf",
+  "changes": [
+    {
+      "before": "import {createWriteStream} from 'node:fs';",
+      "after": "import {Writable} from 'node:stream';\nimport {createHash} from 'node:crypto';"
+    },
+    {
+      "before": "from './corpus-pack.mjs';",
+      "after": "from '../../scripts/corpus-pack.mjs';\nassert.equal(process.version,'v22.16.0');assert.equal(process.env.G10_BUILD_BROWSER_ONLY,'1');assert.notEqual(process.env.G10_BUILD_NODE_ONLY,'1');"
+    },
+    {
+      "before": "const browser=await build({entryPoints:['src/browser.ts']",
+      "after": "const candidateSource=await readFile('.work/international-ready-private/browser-candidate.ts');assert.equal(sha256(candidateSource),'bf8b12c6a389daa050f70f602e53480b506c0f4810288c24ebb6810a6aa477cf');\nconst privateOverlay={name:'private-exact-international-ready-candidate',setup(api){api.onLoad({filter:/src\\/browser\\.ts$/},()=>({contents:candidateSource.toString(),loader:'ts',resolveDir:resolve('src')}));}};\nconst browser=await build({entryPoints:['src/browser.ts']"
+    },
+    {
+      "before": "plugins:[stub(false,false)],define:",
+      "after": "plugins:[privateOverlay,stub(false,false)],define:"
+    },
+    {
+      "before": "const destination=createWriteStream(temporary);const append=async value=>{if(!destination.write(value))await once(destination,'drain');};",
+      "after": "const outputStartedAt=new Date().toISOString(),outputHash=createHash('sha256');let outputBytes=0;const signals=[];\nconst destination=new Writable({write(chunk,encoding,callback){try{assert(chunk.length<=64*1024*1024,'Bounded canonical output block exceeded');outputHash.update(chunk);outputBytes+=chunk.length;callback();}catch(error){callback(error);}}});const append=async value=>{if(!destination.write(value))await once(destination,'drain');};"
+    },
+    {
+      "before": "await append(before+'<script>'+script+'</script>\\n');",
+      "after": "await writeFile('.work/international-ready-private/generated/candidate-bootstrap.js',script);await writeFile('.work/international-ready-private/generated/international-parts.json',JSON.stringify(internationalParts)+'\\n');\nawait append(before+'<script>'+script+'</script>\\n');"
+    },
+    {
+      "before": "for(const {name,compressed} of Object.values(payloads).flat()){await append('<script type=\"application/octet-stream\" id=\"g10-corpus-'+name+'\">'+compressed.toString('base64')+'</script>\\n');if(name==='chinook')await append(\"<script>document.dispatchEvent(new Event('g10-american-corpus-ready'));</script>\\n\");if(name==='tunstall-v2')await append(\"<script>document.dispatchEvent(new Event('g10-international-worker-ready'));</script>\\n\");}",
+      "after": "for(const {name,compressed} of Object.values(payloads).flat()){const payloadStart=outputBytes;await append('<script type=\"application/octet-stream\" id=\"g10-corpus-'+name+'\">'+compressed.toString('base64')+'</script>\\n');signals.push({name,payloadStart,afterCompletePayloadOffset:outputBytes,compressedBytes:compressed.length,compressedSha256:sha256(compressed)});if(name==='chinook')await append(\"<script>document.dispatchEvent(new Event('g10-american-corpus-ready'));</script>\\n\");if(name==='tunstall-v2')await append(\"<script>document.dispatchEvent(new Event('g10-international-worker-ready'));</script>\\n\");}"
+    },
+    {
+      "before": "await append(after+notices);destination.end();await once(destination,'finish');await rename(temporary,htmlOut);",
+      "after": "await append(after+notices);const completed=once(destination,'finish');destination.end();await completed;const outputSha256=outputHash.digest('hex');\nassert.equal(Object.keys(internationalParts).length,41);assert.equal(sourceParts.length,1304);assert.equal(Object.values(internationalParts).reduce((n,file)=>n+file.byteLength,0),1006478762);assert(outputBytes>1390846291&&outputBytes<1390856291);"
+    },
+    {
+      "before": "'THIRD-PARTY-LICENSES.txt'",
+      "after": "'.work/international-ready-private/generated/THIRD-PARTY-LICENSES.txt'"
+    },
+    {
+      "before": "process.stdout.write('PASS: complete offline single-page game written to '+htmlOut+'; original six-piece data is read in bounded blocks.\\n');",
+      "after": "const report={status:'GENERATED_FULL_RAW_UNADOPTED',startedAt:outputStartedAt,closedAt:new Date().toISOString(),outputBytes,outputSha256,canonicalCandidateBuilderSha256:sha256(await readFile('.work/international-ready-private/build-candidate.mjs')),originalProductionBuilderSha256:sha256(await readFile('scripts/build.mjs')),candidateBrowserSourceSha256:sha256(candidateSource),bootstrapBytes:Buffer.byteLength(script),bootstrapSha256:sha256(script),bootstrapStart:Buffer.byteLength(before+'<script>'),signals,originalFiles:41,originalParts:1304,originalDataBytes:1006478762,scope:'Actual canonical candidate compiler and original bounded full licensed-data writer through raw EOF/count/SHA; only private source overlay/output targets/hash sink/receipt added. No physical HTML or gzip allocated, no browser/game/timing/player gain/production adoption/KEEP acceptance. Independent complete source-byte delta comparison follows.'};await writeFile('.work/international-ready-private/generated/raw-output.json',JSON.stringify(report,null,2)+'\\n');console.log(JSON.stringify(report));"
+    }
+  ],
+  "privateOutputs": "generated worker/compiler/license/parts receipts only (<80MiB expected); no full physical or gzip output",
+  "memoryProposal": "Fresh768MiB worker envelope plus1536MiB shared reserve; process/tree closure, source/self/spec/binaries/transitiveinstalledfiles freeze before/after/finally required; no native timing",
+  "next": "Root full source/diff review; generate ONE whole canonical raw output and independent original-data delta proof. Physical/native/production adoption separately pending."
+}

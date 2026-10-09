@@ -1,0 +1,89 @@
+{
+  "status": "CLOSED",
+  "startedAt": "2026-10-08T22:39:08.912457+00:00",
+  "acceptedSourceHead": "fa0b337e1178177ff5b871acae697897c687ee11",
+  "workflowRunId": 37852024033,
+  "proofArchiveHead": "9109bd50a9b851b68c97ae932f024f2911f6b54d",
+  "proofArchivePath": "jobs/G10-checkers/evidence/checks/hosted-pr-complete-fa/standalone/independent-downloaded-parts.json",
+  "proofArchiveSha256": "134228aa6112532caef3fa4de6e052d238335cc1a0b54ef04f5329cd5a22c85b",
+  "officialAvailabilitySha256": "3296ba4b4ac3b5b3d078434d26ecc1e5e7f5054f299414a38dc46e33ed7f0d6c",
+  "downloadRouteAvailabilitySha256": "d09b2e1552866a7d2585b817ab1600d1ec2c1a12d85d503ddbe54ed71cedc3ad",
+  "copies": [
+    {
+      "index": 0,
+      "path": ".work/hosted-fa-final/standalone/part-00.zip",
+      "artifactId": 11582778057,
+      "zipBytes": 275345042,
+      "zipSha256": "44a149b6958c7a579f418e0af9c9ae7501324f1c15f9f4a777ad133e6e21a86c",
+      "expiresAt": "2026-10-15T22:27:47Z",
+      "availabilityAt": "2026-10-08 22:38:01 UTC",
+      "nativeArguments": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11582778057,
+        "file_name": "G10-fa-11582778057.zip"
+      },
+      "restRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11582778057/zip",
+      "removalStatus": "REMOVED",
+      "lastRehashAt": "2026-10-08T22:39:10.090153+00:00",
+      "removedAt": "2026-10-08T22:39:10.120884+00:00"
+    },
+    {
+      "index": 1,
+      "path": ".work/hosted-fa-final/standalone/part-01.zip",
+      "artifactId": 11582683117,
+      "zipBytes": 278877123,
+      "zipSha256": "a2fbeb92d32dd517be90dd23c2889927c8310354b164848bd56ce7305bba9292",
+      "expiresAt": "2026-10-15T22:27:57Z",
+      "availabilityAt": "2026-10-08 22:38:01 UTC",
+      "nativeArguments": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11582683117,
+        "file_name": "G10-fa-11582683117.zip"
+      },
+      "restRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11582683117/zip",
+      "removalStatus": "REMOVED",
+      "lastRehashAt": "2026-10-08T22:39:11.398558+00:00",
+      "removedAt": "2026-10-08T22:39:11.608561+00:00"
+    },
+    {
+      "index": 2,
+      "path": ".work/hosted-fa-final/standalone/part-02.zip",
+      "artifactId": 11583197159,
+      "zipBytes": 286220427,
+      "zipSha256": "e51c86d3a1601a67a48bacbbc591867809b9080fed66b21dfba27824a5f4ccd5",
+      "expiresAt": "2026-10-15T22:28:06Z",
+      "availabilityAt": "2026-10-08 22:38:01 UTC",
+      "nativeArguments": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11583197159,
+        "file_name": "G10-fa-11583197159.zip"
+      },
+      "restRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11583197159/zip",
+      "removalStatus": "REMOVED",
+      "lastRehashAt": "2026-10-08T22:39:12.903040+00:00",
+      "removedAt": "2026-10-08T22:39:12.944505+00:00"
+    },
+    {
+      "index": 3,
+      "path": ".work/hosted-fa-final/standalone/part-03.zip",
+      "artifactId": 11582643257,
+      "zipBytes": 127624362,
+      "zipSha256": "fbd491d16f86a9ef15d8e8febcf23110e528b0f45370061d6a8867f31bf0c57f",
+      "expiresAt": "2026-10-15T22:28:15Z",
+      "availabilityAt": "2026-10-08 22:38:01 UTC",
+      "nativeArguments": {
+        "repo_full_name": "luisitin/partybox-game-cores",
+        "artifact_id": 11582643257,
+        "file_name": "G10-fa-11582643257.zip"
+      },
+      "restRoute": "https://api.github.com/repos/luisitin/partybox-game-cores/actions/artifacts/11582643257/zip",
+      "removalStatus": "REMOVED",
+      "lastRehashAt": "2026-10-08T22:39:13.543741+00:00",
+      "removedAt": "2026-10-08T22:39:13.569205+00:00"
+    }
+  ],
+  "reclaimedBytes": 968066954,
+  "scope": "Explicitly authorized removal only of these actual proven redundant public remote ZIP copies after fresh same-ID availability/not-expired and full independent evidence plus actual immutable archive binding. Exact IDs,size,SHA,routes and each removal retained. Full original HTML/source/media/raw failures and unique evidence remain unchanged. Remote artifacts expire and are not durable Releases.",
+  "closedAt": "2026-10-08T22:39:13.569748+00:00",
+  "actualAvailableBytes": 1133404160
+}

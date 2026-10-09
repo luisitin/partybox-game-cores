@@ -1,0 +1,160 @@
+TAP version 13
+# Subtest: acquired full American corpus bytes/index match fixed primary-source hashes
+ok 1 - acquired full American corpus bytes/index match fixed primary-source hashes
+  ---
+  duration_ms: 52.79069
+  type: 'test'
+  ...
+# Subtest: both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+ok 2 - both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+  ---
+  duration_ms: 668.144696
+  type: 'test'
+  ...
+# Subtest: 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+ok 3 - 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+  ---
+  duration_ms: 786.943519
+  type: 'test'
+  ...
+# Subtest: production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+ok 4 - production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+  ---
+  duration_ms: 1.798216
+  type: 'test'
+  ...
+# Subtest: contract manifest/counts/settings and deterministic initial boards
+ok 5 - contract manifest/counts/settings and deterministic initial boards
+  ---
+  duration_ms: 4.063528
+  type: 'test'
+  ...
+# Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+ok 6 - contract total immutable reducer ignores malformed/unknown events in both phases
+  ---
+  duration_ms: 5.862497
+  type: 'test'
+  ...
+# Subtest: contract live timer requires exact phase instance and elapsed deadline
+ok 7 - contract live timer requires exact phase instance and elapsed deadline
+  ---
+  duration_ms: 0.631496
+  type: 'test'
+  ...
+# Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+ok 8 - VIP pause/resume shifts only the deadline; skip/end remain available
+  ---
+  duration_ms: 8.063388
+  type: 'test'
+  ...
+# Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+ok 9 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+  ---
+  duration_ms: 3.220445
+  type: 'test'
+  ...
+# Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+ok 10 - hostile seat IDs, public view equality, spectator safety and cloned projections
+  ---
+  duration_ms: 3.124205
+  type: 'test'
+  ...
+# Subtest: complete legal inputs and terminal scores preserve every original seat
+ok 11 - complete legal inputs and terminal scores preserve every original seat
+  ---
+  duration_ms: 4.067752
+  type: 'test'
+  ...
+# Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+ok 12 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+  ---
+  duration_ms: 387.10141
+  type: 'test'
+  ...
+# Subtest: manifest and every generated phase fixture replay without throwing
+ok 13 - manifest and every generated phase fixture replay without throwing
+  ---
+  duration_ms: 18.496062
+  type: 'test'
+  ...
+# Subtest: source-backed forty/25 move allowances use both players, with exact boundary
+ok 14 - source-backed forty/25 move allowances use both players, with exact boundary
+  ---
+  duration_ms: 1.141268
+  type: 'test'
+  ...
+# Subtest: quiet king moves increment while every man move and capture reset counters/history
+ok 15 - quiet king moves increment while every man move and capture reset counters/history
+  ---
+  duration_ms: 1.828462
+  type: 'test'
+  ...
+# Subtest: threefold includes side to move and can be disabled explicitly
+ok 16 - threefold includes side to move and can be disabled explicitly
+  ---
+  duration_ms: 0.631734
+  type: 'test'
+  ...
+# Subtest: official king windows start after creation, preserve old deadlines and intersect
+ok 17 - official king windows start after creation, preserve old deadlines and intersect
+  ---
+  duration_ms: 1.255611
+  type: 'test'
+  ...
+# Subtest: latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+ok 18 - latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+  ---
+  duration_ms: 1.933244
+  type: 'test'
+  ...
+# Subtest: published32-ply FMJD regression draws when original16-each window expires
+ok 19 - published32-ply FMJD regression draws when original16-each window expires
+  ---
+  duration_ms: 16.439224
+  type: 'test'
+  ...
+# Subtest: last permitted move capturing final opponent wins before a draw counter expires
+ok 20 - last permitted move capturing final opponent wins before a draw counter expires
+  ---
+  duration_ms: 0.557523
+  type: 'test'
+  ...
+# Subtest: production complete one-vs-one lookup matches independent WDL AND distance on every row
+ok 21 - production complete one-vs-one lookup matches independent WDL AND distance on every row
+  ---
+  duration_ms: 1097.922223
+  type: 'test'
+  ...
+# Subtest: every generated three-to-six witness is independently one-turn terminal win
+ok 22 - every generated three-to-six witness is independently one-turn terminal win
+  ---
+  duration_ms: 123.501516
+  type: 'test'
+  ...
+# Subtest: six-piece full multi-jumps are proved and unresolved quiet material remains honest
+ok 23 - six-piece full multi-jumps are proved and unresolved quiet material remains honest
+  ---
+  duration_ms: 4.477611
+  type: 'test'
+  ...
+# Subtest: exact generator/dataset includes all legal one-per-side roots and cloned coverage
+ok 24 - exact generator/dataset includes all legal one-per-side roots and cloned coverage
+  ---
+  duration_ms: 62.793597
+  type: 'test'
+  ...
+# Subtest: property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+ok 25 - property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+  ---
+  duration_ms: 7951.877635
+  type: 'test'
+  ...
+1..25
+# tests 25
+# suites 0
+# pass 25
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 21114.201567

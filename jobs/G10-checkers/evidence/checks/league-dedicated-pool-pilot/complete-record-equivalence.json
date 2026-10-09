@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "command": "python3 .work/compare-league-pool.py",
+  "games": 16,
+  "comparison": "Every field of all sixteen actual original and dedicated-pool terminal game records, including seeds, skills, every move, outcomes, plies and final boards.",
+  "orderedRecordsSha256": "6af45748a2cd294b33acd29432386e92d70b50f59926b4bf467409b75c06c683",
+  "sourceSha256": {
+    "scripts/league.mjs": "22e476c013c62335416be4795e3d3e34988b602c2279c1e582371e680d52421e",
+    "scripts/league-worker.mjs": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557",
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219"
+  },
+  "baselineFiles": [
+    "evidence/checks/variant-pool-node22/task-0-normal-easy.jsonl",
+    "evidence/checks/variant-pool-node22/task-0-sharp-normal.jsonl",
+    "evidence/checks/variant-pool-node22/task-1-normal-easy.jsonl",
+    "evidence/checks/variant-pool-node22/task-1-sharp-normal.jsonl",
+    "evidence/checks/variant-pool-node22/task-2-normal-easy.jsonl",
+    "evidence/checks/variant-pool-node22/task-2-sharp-normal.jsonl",
+    "evidence/checks/variant-pool-node22/task-3-normal-easy.jsonl",
+    "evidence/checks/variant-pool-node22/task-3-sharp-normal.jsonl"
+  ],
+  "pilotFiles": [
+    ".work/league-pool-pilot/league-smoke-4-games/american-normal-easy-0000.jsonl",
+    ".work/league-pool-pilot/league-smoke-4-games/american-sharp-normal-0000.jsonl",
+    ".work/league-pool-pilot/league-smoke-4-games/international-normal-easy-0000.jsonl",
+    ".work/league-pool-pilot/league-smoke-4-games/international-sharp-normal-0000.jsonl"
+  ],
+  "scope": "Sixteen-game pilot only. Actual final 4000-game strength and CI 30-minute fit remain pending."
+}

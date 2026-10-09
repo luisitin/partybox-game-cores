@@ -1,0 +1,32 @@
+import {chromium} from 'playwright';
+import {readFile,writeFile,mkdir,appendFile} from 'node:fs/promises';
+import {createReadStream} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+const file=resolve('.work/play-full.html'),out=resolve('evidence/checks/full-host-profile-baseline');await mkdir(out,{recursive:true});
+const digest=createHash('sha256');for await(const bytes of createReadStream(file))digest.update(bytes);const sourceSha256=digest.digest('hex');
+const browser=await chromium.launch({headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+const errors=[],requests=[];let result;
+try{
+ const context=await browser.newContext({viewport:{width:1920,height:1080},reducedMotion:'reduce'}),page=await context.newPage();page.on('pageerror',e=>errors.push(String(e)));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+ await context.route(/^https?:/,r=>r.abort());const cdp=await context.newCDPSession(page);await cdp.send('Emulation.setCPUThrottlingRate',{rate:1});await cdp.send('Performance.enable');
+ const began=performance.now();await page.goto(pathToFileURL(file).href,{waitUntil:'load',timeout:300000});const loadMs=performance.now()-began;
+ await page.evaluate(()=>{document.getElementById('variant').value='american';window.__G10.start();});
+ const before=await cdp.send('Performance.getMetrics');await cdp.send('Profiler.enable');await cdp.send('Profiler.setSamplingInterval',{interval:1000});await cdp.send('Profiler.start');
+ await cdp.send('Tracing.start',{categories:'devtools.timeline,v8,disabled-by-default-v8.gc',transferMode:'ReturnAsStream'});
+ const frames=await page.evaluate(async()=>{const intervals=[],move=window.__G10.getController(window.__G10.getView().turn).legalMoves[0];let previous;await new Promise(resolve=>{function frame(timestamp){if(previous!==undefined)intervals.push(timestamp-previous);previous=timestamp;window.__G10.chooseSquare(move.path[0]);document.getElementById('undo-draft').click();if(intervals.length<600)requestAnimationFrame(frame);else resolve();}requestAnimationFrame(frame);});return intervals;});
+ const {profile}=await cdp.send('Profiler.stop'),after=await cdp.send('Performance.getMetrics');
+ const streamDone=new Promise(r=>cdp.once('Tracing.tracingComplete',r));await cdp.send('Tracing.end');const {stream}=await streamDone;await writeFile(out+'/trace.json','');
+ for(;;){const chunk=await cdp.send('IO.read',{handle:stream,size:1024*1024});await appendFile(out+'/trace.json',chunk.base64Encoded?Buffer.from(chunk.data,'base64'):chunk.data);if(chunk.eof)break;}await cdp.send('IO.close',{handle:stream});
+ await writeFile(out+'/cpu-profile.json',JSON.stringify(profile)+'\n');
+ const self=new Map();for(let i=0;i<profile.samples.length;i++)self.set(profile.samples[i],(self.get(profile.samples[i])??0)+(profile.timeDeltas[i]??0)/1000);
+ const nodes=new Map(profile.nodes.map(n=>[n.id,n]));const top=[...self].sort((a,b)=>b[1]-a[1]).slice(0,20).map(([id,selfMs])=>({id,selfMs,...nodes.get(id).callFrame}));
+ const metric=name=>(after.metrics.find(v=>v.name===name)?.value??0)-(before.metrics.find(v=>v.name===name)?.value??0);
+ const trace=JSON.parse(await readFile(out+'/trace.json','utf8')),durations={};
+ for(const e of trace.traceEvents)if(e.ph==='X'&&e.dur)durations[e.name]=(durations[e.name]??0)+e.dur/1000;
+ const sorted=[...frames].sort((a,b)=>a-b),meanMs=frames.reduce((n,v)=>n+v,0)/frames.length;
+ result={command:'node .work/profile-full-host.mjs',scope:'NONgating instrumented desktop runtime diagnostic; profiler/tracing overhead, no acceptance or cause established.',sourceSha256,loadMs,frames,meanMs,meanFps:1000/meanMs,p99Ms:sorted[Math.ceil(.99*frames.length)-1],metrics:{layoutSeconds:metric('LayoutDuration'),styleSeconds:metric('RecalcStyleDuration'),scriptSeconds:metric('ScriptDuration'),taskSeconds:metric('TaskDuration'),jsHeapBefore:before.metrics.find(v=>v.name==='JSHeapUsedSize')?.value,jsHeapAfter:after.metrics.find(v=>v.name==='JSHeapUsedSize')?.value,nodes:after.metrics.find(v=>v.name==='Nodes')?.value},topSelfCpu:top,traceDurationsMs:Object.fromEntries(Object.entries(durations).sort((a,b)=>b[1]-a[1])),errors,requests};
+ await context.close();
+}finally{await browser.close();}
+result.closedAt=new Date().toISOString();await writeFile(out+'/report.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({...result,frames:result.frames.length,topSelfCpu:result.topSelfCpu.slice(0,5)}));

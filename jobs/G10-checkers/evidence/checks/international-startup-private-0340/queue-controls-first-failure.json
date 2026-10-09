@@ -1,0 +1,8 @@
+{
+  "status": "FAILED",
+  "scope": "Finite private fixture preflight before simulated behavior controls; no browser/native/timing workload launched",
+  "sourceSha256": "86f80c7cf81f7e6a7475f08f336ec5d8c578caf4c5fb25d12594c7cc02e1a100",
+  "actualFixtureBytes": 21628,
+  "requiredFixtureBytes": 69632,
+  "reason": "Genuine db3 is too small for the requested 17-block control fixture; replace with a prefix of genuine larger db4 without padding or changing candidate"
+}

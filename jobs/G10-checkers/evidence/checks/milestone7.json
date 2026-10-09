@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-10-08T11:36:20.481004+00:00",
+  "command": "npm run build; node --test --test-reporter=tap --test-concurrency=1 tests/international.test.mjs tests/variant-bundles.test.mjs; node scripts/integrity.mjs --sources",
+  "build": {
+    "exit": 0,
+    "raw": "international-integration-build.stdout"
+  },
+  "focused": {
+    "exit": 0,
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0,
+    "raw": "international-integrated.tap"
+  },
+  "sourcesIntegrity": {
+    "exit": 0,
+    "raw": "integrity-milestone7.stdout",
+    "deliveryExecutionGatesExcluded": true
+  },
+  "baselineLeague": {
+    "exit": 0,
+    "games": 4000,
+    "rawDirectory": "league-baseline-pre-international",
+    "precedesInternationalIntegration": true
+  },
+  "pending": [
+    "compressed browser worker startup/reuse/cancel and strict frames",
+    "full International six-piece packaging",
+    "final-source league/matrix/mutations/full npm test",
+    "manual30 spot log",
+    "PR exact-head green CI KEEP GOING"
+  ],
+  "inputSha256": {
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "2f9e5af250e9d496b51046543917bc37468941efdc3d839e4bdb8d3a0d618fb6",
+    "src/endgame.ts": "c31311e7b36ed6a29e149ccc83d21b41dd0500f9fda23f4b74bf9a1afe875065",
+    "src/chinook-corpus.ts": "d38d8fc850c1d27d0e5d4b883bd87798278761a16ad5973dc78b3b3b867e08c8",
+    "src/international-corpus.ts": "4a1af4344c5ffb565eee265264cbc7a755dcc258baabd0cc85bf43688edc7309",
+    "src/international.ts": "ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe",
+    "src/browser.ts": "c0a5560163e2bfa8ff51c5643738b5466023d101fc0ce9252f1b5513cdb7b84a",
+    "scripts/build.mjs": "3202946b018955470efa054341efa26738b7c6661dc91d08a44630bc4ab4c623",
+    "scripts/corpus-pack.mjs": "125fc62d42fe147ef231ba3324d47de199b35ab60ec18e1009a8bd7658049dfe",
+    "tests/international.test.mjs": "806227f40fc243e2f8a8eabc7f60d214a9aec0c2f8e1a7f84bd2b9840c99fc9d",
+    "tests/variant-bundles.test.mjs": "fa27fa09743f8996e6f2fa4f84dd8c033a6aba3a83dffb39d49782b6d8cbfb87",
+    "play.html": "244962f12ecd4cce38c7af7ba6bc40855629f12cb3f487295e767cde8fa5acdc"
+  }
+}

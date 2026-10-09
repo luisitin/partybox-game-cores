@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-08T19:18:56.804Z",
+  "closedAt": "2026-10-08T19:18:58.296Z",
+  "node": "v22.16.0",
+  "cases": 14004,
+  "actualFinalBoards": 4000,
+  "syntheticPositions": 10000,
+  "sparseEdgeCases": 4,
+  "exactTranscriptSha256": "8e50add051aae7d63c2605f859d7e5f3c5a9859fdb31edd51ef80f6106b8ef7b",
+  "sink": 61464320,
+  "batches": [
+    {
+      "version": "original",
+      "elapsedMs": 457.96805299999994,
+      "calls": 280000
+    },
+    {
+      "version": "candidate",
+      "elapsedMs": 148.03509800000006,
+      "calls": 280000
+    },
+    {
+      "version": "candidate",
+      "elapsedMs": 129.750812,
+      "calls": 280000
+    },
+    {
+      "version": "original",
+      "elapsedMs": 404.4032410000002,
+      "calls": 280000
+    }
+  ],
+  "scope": "Exact key output/immutability across current actual final boards, synthetic dense boards and sparse edge inputs. Native ABBA string-construction microbenchmark only; not whole-game/search improvement, CI fit or frame acceptance."
+}

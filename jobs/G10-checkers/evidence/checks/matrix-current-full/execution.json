@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "actualGames": 7000,
+  "matrixConfigurations": 7,
+  "playerCount": 2,
+  "command": "G10_EVIDENCE_DIR=.work/matrix-current python3 .work/run-resource.py .work/matrix-current/resources.json .work/memory-json-private/node22/runtime/bin/node scripts/matrix.mjs",
+  "runtime": "22.16.0",
+  "recordedAt": "2026-10-08T16:02:05.727282+00:00",
+  "productionAndRunnerSha256": {
+    "src/core.ts": "516f8b970c8cd1298882b76b8e61552f74464ea4224207c304f436e2e3532c6b",
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/draws.ts": "e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1",
+    "dist/core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "dist/bots.mjs": "fce20761f9a798140f70d23bc11d81e000b68bbec180201e43cd772476619f6c",
+    "dist/endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "scripts/matrix.mjs": "0427a93778748f8401ec1cc7867ecdc2809e523c9fee72ed4373e13a93ddd7dd"
+  },
+  "holds": [],
+  "scope": "Complete matrix on actual full six-piece source. Browser-only guarded attribute writes have no effect on this pure game proof. Any future search optimization must preserve the Easy branch or be separately validated."
+}

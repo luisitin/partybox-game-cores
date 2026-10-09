@@ -1,0 +1,32 @@
+✔ production rules: American forced complete double jump excludes quiet moves (2.52747ms)
+✔ production rules: American crown ends capture even with backward king jump available (0.254731ms)
+✔ production rules: International man passes crown row and remains man after continuing (1.516822ms)
+✔ production rules: International global longest route excludes another piece short route (0.163056ms)
+✔ production rules: American permits shorter route from a different piece (0.337256ms)
+✔ production rules: International taken pieces block reversing king between two enemies (0.22631ms)
+✔ production rules: International uncrowned man captures backwards (0.5822ms)
+✔ production rules: American uncrowned man cannot capture backwards (0.110701ms)
+✔ production rules: American king may return to origin in a four-enemy capture (0.189712ms)
+✔ production rules: American short king has only adjacent quiet destinations (0.659113ms)
+✔ 10,000 independent move differentials plus color-rotated twins and every resulting board (962.642729ms)
+✔ independent oracle: American forced complete double jump excludes quiet moves (7.915662ms)
+✔ independent oracle: American crown ends capture even with backward king jump available (0.32537ms)
+✔ independent oracle: International man passes crown row and remains man after continuing (3.712549ms)
+✔ independent oracle: International global longest route excludes another piece short route (0.432612ms)
+✔ independent oracle: American permits shorter route from a different piece (0.314309ms)
+✔ independent oracle: International taken pieces block reversing king between two enemies (0.301946ms)
+✔ independent oracle: International uncrowned man captures backwards (0.190183ms)
+✔ independent oracle: American uncrowned man cannot capture backwards (0.366622ms)
+✔ independent oracle: American king may return to origin in a four-enemy capture (0.22613ms)
+✔ independent oracle: American short king has only adjacent quiet destinations (0.35651ms)
+✔ independent oracle: flying king has all seventeen quiet ray destinations (1.979048ms)
+✔ independent oracle: International complete capture can return to its origin (0.892189ms)
+✔ independent oracle: full published 16-each draw regression consists of legal turns (2.958295ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1083.700977

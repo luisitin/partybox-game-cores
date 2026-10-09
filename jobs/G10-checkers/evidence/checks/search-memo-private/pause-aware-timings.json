@@ -1,0 +1,27 @@
+{
+  "scope": "Derived timings retain every raw original receipt",
+  "confirmedHolds": [
+    {
+      "pgid": 166424,
+      "stopBefore": "2026-10-08T16:09:57.390291+00:00",
+      "stoppedAt": "2026-10-08T16:09:57.393002+00:00",
+      "action": "SIGSTOP",
+      "memberStates": [
+        " 166424  166424 Ts     868 timeout --signal=TERM --kill-after=15s 1800s python3 .work/search-memo-private/run.py",
+        " 166425  166424 T     9612 python3 .work/search-memo-private/run.py",
+        " 166438  166424 Z        0 [esbuild] <defunct>",
+        " 166447  166424 T     9476 python3 .work/run-resource.py .work/search-memo-private/equivalence-resources.json .work/memory-json-private/node22/runtime/bin/node .work/search-memo-private/full-equivalence.mjs",
+        " 166448  166424 Tl   2513460 .work/memory-json-private/node22/runtime/bin/node .work/search-memo-private/full-equivalence.mjs"
+      ],
+      "reason": "Root-coordinated G10 phone strict 600-frame quiet window",
+      "resumeBefore": "2026-10-08T16:13:53.396486+00:00",
+      "resumedAt": "2026-10-08T16:13:53.397179+00:00",
+      "holdSeconds": 236.004177
+    }
+  ],
+  "confirmedHoldSeconds": 236.004177,
+  "equivalenceRawReportSeconds": 406.360693164,
+  "equivalenceUnpausedReportSeconds": 170.356516164,
+  "pilotHolds": [],
+  "pilotTimingNote": "Same-process sequential A then B; uncontrolled order/JIT/contention. No robust speed or CI claim."
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-217-sequential/receive.py", line 197, in <module>
+    else: receiver()
+          ^^^^^^^^^^
+  File "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-217-sequential/receive.py", line 128, in receiver
+    assert download.returncode == 0
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "author": "Ed Gilbert / Kingsrow",
+  "grantUrl": "https://damforum.nl/bb3/viewtopic.php?t=8341",
+  "downloadUrl": "http://edgilbert.org/InternationalDraughts/endgame_database_downloads.htm",
+  "sourceFolderUrl": "https://mega.nz/folder/vRhFgSjR#bqlaniDcxC65fZWpnovROA",
+  "setupSha256": "7061f83d686cec8affff4d1fc69efbb7c2d6122615b3e723458db198c54f7b65",
+  "files": {
+    "db2.bin": {
+      "bytes": 404,
+      "sha256": "305a1e7eabb4bab13577774009592e1614ddf8a4efe334d6fe3cb8221000b4ed"
+    },
+    "db2.idx": {
+      "bytes": 111,
+      "sha256": "9622e861c67ea250396b384bb95fec00fd541964c3109bdc1b27ae7aae1f73f2"
+    },
+    "tunstall-v2.bin": {
+      "bytes": 61077,
+      "sha256": "92fa921a410c270c3126811dc2d8af22e1691aedaaf0d020ee01adbe572d26a9"
+    },
+    "BOOST-LICENSE.txt": {
+      "bytes": 1338,
+      "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    "db3.bin": {
+      "bytes": 21628,
+      "sha256": "9dd9170657b11b5e18e0a2d54b6475d9cfd2cf821c6f9e4e9ba78bdf130e10aa"
+    },
+    "db3.idx": {
+      "bytes": 413,
+      "sha256": "84862531a87da451037c3c1087b5c082c293ff508ffb447adbc8b7e020fa7aaa"
+    },
+    "db4.bin": {
+      "bytes": 1176396,
+      "sha256": "14e5a8fa159c33a2d7ca01538ca4cd088222c2f204a6b6ef174ffcebd28c72aa"
+    },
+    "db4.idx": {
+      "bytes": 4729,
+      "sha256": "4514098c3a0fe91fb98ea1950eb53558f94017ed4c6553d10f117c94348e393e"
+    },
+    "db5.bin": {
+      "bytes": 33886572,
+      "sha256": "b3e65f71d2c801a68fe8928f62e32c40266f7d8ae4e5ab99b643805b1ace2e02"
+    },
+    "db5.idx": {
+      "bytes": 126504,
+      "sha256": "4a94297121f50feca73beaea7ab10622942194d2b5c098d1c30c5cbe5b78715a"
+    }
+  },
+  "coverage": {
+    "installed": [
+      "db2",
+      "db3",
+      "db4",
+      "db5"
+    ],
+    "maximumInstalledPieces": 5,
+    "fullSixPieceCoverage": false,
+    "scope": "Actual International2\u20135 theoretical board-only WLD v2; current-side capture queries excluded, opponent-only threats valid at <=6; quiet6 partitions and draw-history progress remain pending"
+  }
+}

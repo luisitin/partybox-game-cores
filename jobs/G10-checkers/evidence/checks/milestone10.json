@@ -1,0 +1,49 @@
+{
+  "timestamp": "2026-10-08T12:51:56.348604+00:00",
+  "publicGameInputCommit": "642be2f",
+  "publicGameCoverage": "American2\u20136/International2\u20135; full-six integration pending",
+  "strictBrowser": {
+    "passed": 28,
+    "exit": 0,
+    "raw": "browser-round8-strict.stdout",
+    "eachFrames": 600,
+    "recorded": false,
+    "desktopMeanFps": 59.115047735401035,
+    "phoneMeanFps": 60.00259211197926,
+    "p99Ms": 16.80000000000291,
+    "closedObservedAt": "2026-10-08T12:38:31Z"
+  },
+  "sameSourceCapture": {
+    "passed": 28,
+    "exit": 0,
+    "raw": "browser-round8-capture.stdout",
+    "closedObservedAt": "2026-10-08T12:45:07Z",
+    "fpsAcceptanceClaim": false
+  },
+  "privateTransport": {
+    "strictExit": 0,
+    "passed": 6,
+    "exit": 0,
+    "actualIndependentNativeQueries": 10000,
+    "installedInGame": false,
+    "sourceSha256": "832f0dc95b0d8ac14e61af29914796df3128856c1617dbd8c8c24d20319b21ce",
+    "testSha256": "8897a655ac72f7796ad058feea3a0abaca8f2f9825b6a49fc761f754b6a5df92"
+  },
+  "inputSha256": {
+    "play.html": "d5cb8ff59e81e7f3717dbdc3047827aac5216e6b06382429c0a4bb90864a419e",
+    "scripts/browser-check.mjs": "6e4c520170d3e212c08185e4963bbc56a44cf38887d221b1ba66902953defed8",
+    "src/international.ts": "ad46f335d7d54fef149e38d0a2f08354bf73a3a3bd25082b9f12472381a1abbe"
+  },
+  "privatePayload": {
+    "bytes": 1380811379,
+    "sha256": "460a2edd8f81e5146887fd4d15cd7e7490d98d15689e9f7e3db6a1fb791bd168",
+    "browserExecuted": false,
+    "gameIntegrated": false
+  },
+  "scratchRelocation": {
+    "pgid": 141745,
+    "source": "/tmp/g10-rules-oracle-corpus",
+    "target": "/workspace/g10-private-engineering/rules-oracle-corpus",
+    "pending": true
+  }
+}

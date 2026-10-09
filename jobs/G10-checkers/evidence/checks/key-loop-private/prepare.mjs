@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import {build} from 'esbuild';
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {resolve,dirname} from 'node:path';
+const base=resolve('.work/key-loop-private');await mkdir(base,{recursive:true});
+const original=await readFile('src/moves.ts','utf8');
+const before="export const positionKey=(board:readonly Piece[],side:Side,variant:Variant)=>\n  `${variant}:${side}:${board.map(piece=>piece+2).join('')}`;";
+const after="export function positionKey(board:readonly Piece[],side:Side,variant:Variant):string{\n  let key=`${variant}:${side}:`;\n  const length=board.length;\n  for(let square=0;square<length;square++)if(square in board)key+=board[square]+2;\n  return key;\n}";
+assert.equal(original.split(before).length-1,1);const candidate=original.replace(before,after);
+await writeFile(base+'/moves.original.ts',original);await writeFile(base+'/moves.candidate.ts',candidate);
+const patch={name:'private-equivalent-key-loop',setup(api){api.onLoad({filter:/src\/moves\.ts$/},args=>({contents:candidate,loader:'ts',resolveDir:dirname(args.path)}));}};
+await build({entryPoints:['src/moves.ts'],bundle:true,platform:'node',format:'esm',target:'es2022',outfile:base+'/moves-candidate.mjs',plugins:[patch],logLevel:'error'});
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+const receipt={status:'PREPARED',scope:'Private board-key string construction only; no game state, move generation, search policy, ordering, budget or RNG change.',originalSha256:hash(original),candidateSha256:hash(candidate),moduleSha256:hash(await readFile(base+'/moves-candidate.mjs')),preparedAt:new Date().toISOString()};
+await writeFile(base+'/preparation.json',JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt));

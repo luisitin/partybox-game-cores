@@ -1,0 +1,19 @@
+{
+  "artifact_id": 11576888627,
+  "zipBytes": 968040269,
+  "officialZipSha256": "1b04adca169c200569b894a60ce9ebb26d27408fa8b4474e7c80879a1652bf08",
+  "actualNativeResult": {
+    "content": [
+      {
+        "type": "text",
+        "text": "InvalidInputException: Artifact exceeds max size of 536870912 bytes: 968040269 bytes."
+      }
+    ],
+    "structuredContent": {
+      "error": "InvalidInputException: Artifact exceeds max size of 536870912 bytes: 968040269 bytes.",
+      "error_code": "UNKNOWN"
+    },
+    "isError": true
+  },
+  "scope": "Actual native tool rejection before download; no full ZIP or HTML bytes downloaded, no digest verification inferred. Publishing four bounded exact page parts is the concrete repair."
+}

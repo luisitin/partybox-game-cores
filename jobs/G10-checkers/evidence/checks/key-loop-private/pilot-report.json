@@ -1,0 +1,193 @@
+{
+  "status": "PASS_EXACT_PILOT_RECORDS",
+  "startedAt": "2026-10-08T19:28:22.219Z",
+  "runtime": "v22.16.0",
+  "command": [
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/pilot.mjs"
+  ],
+  "order": [
+    "international-original",
+    "international-candidate",
+    "international-candidate",
+    "international-original",
+    "american-original",
+    "american-candidate",
+    "american-candidate",
+    "american-original"
+  ],
+  "results": [
+    {
+      "variant": "international",
+      "version": "original",
+      "startedAt": "2026-10-08T19:28:47.939Z",
+      "closedAt": "2026-10-08T19:29:02.095Z",
+      "originalGameBodyWallSeconds": 14.137016827000004,
+      "parentObservedWallSeconds": 14.156472031000002,
+      "byteIdenticalGold": true,
+      "recordsSha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+      "plies": [
+        150,
+        96,
+        113,
+        98
+      ]
+    },
+    {
+      "variant": "international",
+      "version": "candidate",
+      "startedAt": "2026-10-08T19:29:02.097Z",
+      "closedAt": "2026-10-08T19:29:18.876Z",
+      "originalGameBodyWallSeconds": 16.771196095,
+      "parentObservedWallSeconds": 16.779045069,
+      "byteIdenticalGold": true,
+      "recordsSha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+      "plies": [
+        150,
+        96,
+        113,
+        98
+      ]
+    },
+    {
+      "variant": "international",
+      "version": "candidate",
+      "startedAt": "2026-10-08T19:29:18.877Z",
+      "closedAt": "2026-10-08T19:29:30.138Z",
+      "originalGameBodyWallSeconds": 11.251574101,
+      "parentObservedWallSeconds": 11.260274025999992,
+      "byteIdenticalGold": true,
+      "recordsSha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+      "plies": [
+        150,
+        96,
+        113,
+        98
+      ]
+    },
+    {
+      "variant": "international",
+      "version": "original",
+      "startedAt": "2026-10-08T19:29:30.139Z",
+      "closedAt": "2026-10-08T19:29:43.657Z",
+      "originalGameBodyWallSeconds": 13.499618063000002,
+      "parentObservedWallSeconds": 13.518434928999996,
+      "byteIdenticalGold": true,
+      "recordsSha256": "74b0a12c08475172d448ef88f56b0e775991bce2b5a822540f5c7326b1a58a7c",
+      "plies": [
+        150,
+        96,
+        113,
+        98
+      ]
+    },
+    {
+      "variant": "american",
+      "version": "original",
+      "startedAt": "2026-10-08T19:29:43.659Z",
+      "closedAt": "2026-10-08T19:29:45.846Z",
+      "originalGameBodyWallSeconds": 2.17899424,
+      "parentObservedWallSeconds": 2.186880455000006,
+      "byteIdenticalGold": true,
+      "recordsSha256": "f5b5d29eff440957be5f9a8657c6e8b8268ba90b4d9f719610e733b18af8ceb4",
+      "plies": [
+        103,
+        106,
+        71,
+        76
+      ]
+    },
+    {
+      "variant": "american",
+      "version": "candidate",
+      "startedAt": "2026-10-08T19:29:45.847Z",
+      "closedAt": "2026-10-08T19:29:48.401Z",
+      "originalGameBodyWallSeconds": 2.54153456,
+      "parentObservedWallSeconds": 2.5537611460000043,
+      "byteIdenticalGold": true,
+      "recordsSha256": "f5b5d29eff440957be5f9a8657c6e8b8268ba90b4d9f719610e733b18af8ceb4",
+      "plies": [
+        103,
+        106,
+        71,
+        76
+      ]
+    },
+    {
+      "variant": "american",
+      "version": "candidate",
+      "startedAt": "2026-10-08T19:29:48.402Z",
+      "closedAt": "2026-10-08T19:29:50.294Z",
+      "originalGameBodyWallSeconds": 1.8857964440000068,
+      "parentObservedWallSeconds": 1.8915990180000082,
+      "byteIdenticalGold": true,
+      "recordsSha256": "f5b5d29eff440957be5f9a8657c6e8b8268ba90b4d9f719610e733b18af8ceb4",
+      "plies": [
+        103,
+        106,
+        71,
+        76
+      ]
+    },
+    {
+      "variant": "american",
+      "version": "original",
+      "startedAt": "2026-10-08T19:29:50.301Z",
+      "closedAt": "2026-10-08T19:29:52.054Z",
+      "originalGameBodyWallSeconds": 1.7494420099999988,
+      "parentObservedWallSeconds": 1.753826138000004,
+      "byteIdenticalGold": true,
+      "recordsSha256": "f5b5d29eff440957be5f9a8657c6e8b8268ba90b4d9f719610e733b18af8ceb4",
+      "plies": [
+        103,
+        106,
+        71,
+        76
+      ]
+    }
+  ],
+  "scope": "Native ABBA game-body timing after importing both versions and variants. Four fixed identical original games per batch. Exact complete records required. Matched diagnostic evidence only; not canonical 4000-game or 30-minute workflow acceptance.",
+  "inputsBefore": {
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/draws.ts": "e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1",
+    "scripts/league-worker.mjs": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/moves.candidate.ts": "811f8f22111b07f20fc54091dccf76872c92f3997e09f9c614c46d4765493eda",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/pilot-worker.mjs": "1fcc6515f03ecd9769ccc0a173bbecd049f1baf7b19cc3fa7ca5669f94160516",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/pilot.mjs": "605ca2216a1f14f29ec5899e06e618d65deb93cb36ddba9d6be7ec99f8387f5f",
+    "dist/core-international.mjs": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/core-international.mjs": "c1d0012d3722fea839e7cd2041b38aad4848ff6894898c028e0192125360c5e4",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/bots-international.mjs": "c60e3e445429f1748fcae6a14d2af82ced4056f72bbb755738775921d9381a90",
+    "dist/core-american.mjs": "d5c67a582247c12a36d335f38306ffce6e8fcda011993bc91af5b2f0db8fcaf5",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/core-american.mjs": "ca6ece24f31eaac2bf4eb1a51aab01d455145bede33335665b0c138db4833b3b",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/bots-american.mjs": "6999600a8107b875fb6670fd2a2436b04321445b76df61995ad7736f0ff7a368"
+  },
+  "prepared": {
+    "kind": "ready",
+    "importSeconds": 25.637170226,
+    "memory": {
+      "rss": 2062188544,
+      "heapTotal": 1626054656,
+      "heapUsed": 1594162032,
+      "external": 135458121,
+      "arrayBuffers": 132503270
+    }
+  },
+  "inputsAfter": {
+    "src/bots.ts": "450791148c7bb7c6c3d74dfa732917f51472c127abf2d32b9436376de3acc219",
+    "src/moves.ts": "d4ea90d730fb1add4f3d8fb98401fb9030a3e1e5ab83eb209b4a7839bd0044e1",
+    "src/draws.ts": "e256daaef8fb43b498e8adcb71a77451c55aa9b1c24fc0a44bc36ee613dda4d1",
+    "scripts/league-worker.mjs": "8431001b44093746f1e4f473498b04f6016de5dd75ff0d49be0ac1030c8f9557",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/moves.candidate.ts": "811f8f22111b07f20fc54091dccf76872c92f3997e09f9c614c46d4765493eda",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/pilot-worker.mjs": "1fcc6515f03ecd9769ccc0a173bbecd049f1baf7b19cc3fa7ca5669f94160516",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/pilot.mjs": "605ca2216a1f14f29ec5899e06e618d65deb93cb36ddba9d6be7ec99f8387f5f",
+    "dist/core-international.mjs": "445adfde7f6d76912b0d375fb4be84031ef7e19bd9181df653d87c36def7c691",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/core-international.mjs": "c1d0012d3722fea839e7cd2041b38aad4848ff6894898c028e0192125360c5e4",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/bots-international.mjs": "c60e3e445429f1748fcae6a14d2af82ced4056f72bbb755738775921d9381a90",
+    "dist/core-american.mjs": "d5c67a582247c12a36d335f38306ffce6e8fcda011993bc91af5b2f0db8fcaf5",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/core-american.mjs": "ca6ece24f31eaac2bf4eb1a51aab01d455145bede33335665b0c138db4833b3b",
+    "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/key-loop-private/candidate/bots-american.mjs": "6999600a8107b875fb6670fd2a2436b04321445b76df61995ad7736f0ff7a368"
+  },
+  "allInputsUnchanged": true,
+  "closedAt": "2026-10-08T19:29:52.201Z"
+}

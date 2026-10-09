@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "validatedAt": "2026-10-08T19:56:36.286Z",
+  "head": "a9c09a2dcef7fe8acf4014d879d87b550c99e9e4",
+  "run": 37834410114,
+  "artifact": 11574787510,
+  "artifactZipBytes": 4296739,
+  "artifactZipSha256": "c84b1b73dcc787ce9c37b60f55ed073d1855e9fa6f9238e27e51e4e42d2c044c",
+  "sourceSha256": "5ed2173b7264574565dd29ff14773236cac5a00833bf75df3de9e64a66451801",
+  "htmlBytes": 1390845993,
+  "currentMatchedGuards": 158,
+  "functionalChecks": 30,
+  "intervals": 2400,
+  "nativeTimestamps": 2404,
+  "samples": [
+    {
+      "profile": "desktop",
+      "variant": "american",
+      "intervals": 600,
+      "timestamps": 601,
+      "meanFps": 60.00240009600385,
+      "p99Ms": 16.799999999999272,
+      "maximumMs": 16.80000000000291,
+      "nonce": "8d51a969-d8ec-4906-9659-80d72b22010e"
+    },
+    {
+      "profile": "desktop",
+      "variant": "international",
+      "intervals": 600,
+      "timestamps": 601,
+      "meanFps": 60.00180005400161,
+      "p99Ms": 16.80000000000291,
+      "maximumMs": 16.80000000000291,
+      "nonce": "9c9be534-e6bd-4477-acaa-b2f437863f59"
+    },
+    {
+      "profile": "phone",
+      "variant": "american",
+      "intervals": 600,
+      "timestamps": 601,
+      "meanFps": 60.00219608037656,
+      "p99Ms": 16.80000000000291,
+      "maximumMs": 16.80000000000291,
+      "nonce": "aebcf006-ff11-49e6-bfe7-8718aa14a321"
+    },
+    {
+      "profile": "phone",
+      "variant": "international",
+      "intervals": 600,
+      "timestamps": 601,
+      "meanFps": 60.00279613029967,
+      "p99Ms": 16.80000000000291,
+      "maximumMs": 16.80000000000291,
+      "nonce": "8b92b497-def1-4e96-b551-fb1fdbc0cb40"
+    }
+  ],
+  "scope": "Actual historical a9 strict-only hosted artifact, independently recomputed from all four raw consecutive samples and all exact functional/error/source/identity/active-state guards. Pure game/HTML/158 browser guards remain identical. Capture failed ffprobe ENOENT; no current-head full acceptance, causal local-failure repair, clip proof or delivered standalone is inferred."
+}

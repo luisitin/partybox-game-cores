@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-08T23:30:33.183253+00:00",
+  "scope": "Finite operator sequencing record, not a source/test failure. The Git-guard command was requested after the ZIP command yielded but before its tool completion was polled. Actual Git-guard START follows actual ZIP integrity/extraction PASS; both commands were observed naturally CLOSED before the full evidence reader is launched. This orchestration shortcut is retained; no archive/checkpoint is published before all actual commands naturally close.",
+  "zipIntegrityClosedAt": "2026-10-08T23:29:33.104439+00:00",
+  "gitGuardStartedAt": "2026-10-08T23:29:33.535891+00:00",
+  "gitGuardClosedAt": "2026-10-08T23:29:55.912920+00:00",
+  "bothToolCompletionObservedBeforeFullReader": true
+}

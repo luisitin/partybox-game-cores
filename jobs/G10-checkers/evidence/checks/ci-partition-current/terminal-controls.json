@@ -1,0 +1,363 @@
+{
+  "status": "PASS",
+  "closedAt": "2026-10-08T19:44:52.323Z",
+  "sourceGuardsBefore": {
+    "scripts/check.mjs": "e7fecbbcd22bf7a2665aaccf9d801cd9d91f52639a5d3f1215381b930cec0bc3",
+    "scripts/check-stages.mjs": "936db189a62c39aeffa165bcfc6dcd152a8009bc76352bab60d590baa5a23696",
+    "scripts/league.mjs": "6db79cd222ad4baefb83df790fdb823709f3c96f235aa01739c386c0848e9daf",
+    "scripts/league-partitions.mjs": "3ecab9b2f804ef39d69ff057aeee9694a78e98d179f622af27ad6ae680135009",
+    "scripts/league-partition-evidence.mjs": "9f34c2ae34bcd10da7f7a2aa2b9d993fcb1e37dca0aaae964cb10978f9950e1b",
+    "scripts/league-partition-controls.mjs": "d457dab7b34d3e028b19a0bd44bd5c8997745c8cef8983c1afe78e3d97baa008",
+    "scripts/standalone-receipt.mjs": "ef42e0fc2b317c8184687203c7159b0cdf2f36e614e60dffdcd25afc7b4b96d0",
+    "tests/reference-moves.mjs": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+    "dist/core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "dist/endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "../../.github/workflows/G10.yml": "464d25ed8c5677e4e1db6867eb589a1cbaf0c7d3d988d8e10d387ae5243a6e86"
+  },
+  "sourceGuardsAfter": {
+    "scripts/check.mjs": "e7fecbbcd22bf7a2665aaccf9d801cd9d91f52639a5d3f1215381b930cec0bc3",
+    "scripts/check-stages.mjs": "936db189a62c39aeffa165bcfc6dcd152a8009bc76352bab60d590baa5a23696",
+    "scripts/league.mjs": "6db79cd222ad4baefb83df790fdb823709f3c96f235aa01739c386c0848e9daf",
+    "scripts/league-partitions.mjs": "3ecab9b2f804ef39d69ff057aeee9694a78e98d179f622af27ad6ae680135009",
+    "scripts/league-partition-evidence.mjs": "9f34c2ae34bcd10da7f7a2aa2b9d993fcb1e37dca0aaae964cb10978f9950e1b",
+    "scripts/league-partition-controls.mjs": "d457dab7b34d3e028b19a0bd44bd5c8997745c8cef8983c1afe78e3d97baa008",
+    "scripts/standalone-receipt.mjs": "ef42e0fc2b317c8184687203c7159b0cdf2f36e614e60dffdcd25afc7b4b96d0",
+    "tests/reference-moves.mjs": "b933331bbcfd19d3ba6e389a0595ac9aba6f1e78a0ea1674e7f57e87fd7e35f6",
+    "dist/core.mjs": "65ebf25b645314f36fce6cccc818d0ab485425e68d80c8d31269a46045520b2a",
+    "dist/endgame.mjs": "b648b97c75ad9695e1102ca1437ea0d7aa2121ad72e6e29411236f7e3bc7601a",
+    "../../.github/workflows/G10.yml": "464d25ed8c5677e4e1db6867eb589a1cbaf0c7d3d988d8e10d387ae5243a6e86"
+  },
+  "positives": 10,
+  "rejected": 72,
+  "rows": [
+    {
+      "name": "american derived structural partition component",
+      "result": "PASS"
+    },
+    {
+      "name": "american rejects reduced games",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects wrong variant",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects missing comparison",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects duplicate comparison",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects changed bot source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects changed game input",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects weak score",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american rejects unclear strength",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp/normal actual1000 independent legal-move/current-core terminal replay",
+      "result": "PASS"
+    },
+    {
+      "name": "american sharp rejects missing record",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects changed index",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects changed seed",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects changed side",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects illegal first move",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects changed final board",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american sharp rejects coherently forged terminal/outcome/summary/transcript",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal/easy actual1000 independent legal-move/current-core terminal replay",
+      "result": "PASS"
+    },
+    {
+      "name": "american normal rejects missing record",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects changed index",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects changed seed",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects changed side",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects illegal first move",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects changed final board",
+      "result": "REJECTED"
+    },
+    {
+      "name": "american normal rejects coherently forged terminal/outcome/summary/transcript",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international derived structural partition component",
+      "result": "PASS"
+    },
+    {
+      "name": "international rejects reduced games",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects wrong variant",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects missing comparison",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects duplicate comparison",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects changed bot source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects changed game input",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects weak score",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international rejects unclear strength",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp/normal actual1000 independent legal-move/current-core terminal replay",
+      "result": "PASS"
+    },
+    {
+      "name": "international sharp rejects missing record",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects changed index",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects changed seed",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects changed side",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects illegal first move",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects changed final board",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international sharp rejects coherently forged terminal/outcome/summary/transcript",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal/easy actual1000 independent legal-move/current-core terminal replay",
+      "result": "PASS"
+    },
+    {
+      "name": "international normal rejects missing record",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects changed index",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects changed seed",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects changed side",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects illegal first move",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects changed final board",
+      "result": "REJECTED"
+    },
+    {
+      "name": "international normal rejects coherently forged terminal/outcome/summary/transcript",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node explicit synthetic stage-schema unit component",
+      "result": "PASS"
+    },
+    {
+      "name": "node rejects stale head",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects different run",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects missing command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects substituted arguments",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects failed command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects changed runtime source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "node rejects wrong page",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american explicit synthetic stage-schema unit component",
+      "result": "PASS"
+    },
+    {
+      "name": "league-american rejects stale head",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects different run",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects missing command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects substituted arguments",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects failed command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects changed runtime source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-american rejects wrong page",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international explicit synthetic stage-schema unit component",
+      "result": "PASS"
+    },
+    {
+      "name": "league-international rejects stale head",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects different run",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects missing command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects substituted arguments",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects failed command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects changed runtime source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "league-international rejects wrong page",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser explicit synthetic stage-schema unit component",
+      "result": "PASS"
+    },
+    {
+      "name": "browser rejects stale head",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects different run",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects missing command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects substituted arguments",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects failed command",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects changed runtime source",
+      "result": "REJECTED"
+    },
+    {
+      "name": "browser rejects wrong page",
+      "result": "REJECTED"
+    }
+  ],
+  "scope": "Genuine current historical4000-game records replayed independently; derived partition metadata and explicit synthetic stage-schema fixtures test components only. No fresh partition execution, current hosted acceptance or CI-fit inference."
+}

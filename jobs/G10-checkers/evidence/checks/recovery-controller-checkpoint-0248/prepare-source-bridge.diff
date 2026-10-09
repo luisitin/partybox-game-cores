@@ -1,0 +1,58 @@
+--- .work/hosted-df-final/audit-git-guards.py
++++ .work/hosted-df-memory-parts/prepare-source-bridge.py
+@@ -6,10 +6,11 @@
+ import subprocess
+ 
+ HEAD = 'df123c797b226c479b50a998011c1ea6d0157391'
+-base = Path('.work/hosted-df-final')
++CURRENT = 'ed7e8e9baaf817a14d632e9ac2af39239fe97c5c'
++base = Path('.work/hosted-df-memory-parts')
+ started = datetime.now(timezone.utc).isoformat()
+-assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == 'df123c797b226c479b50a998011c1ea6d0157391'
+-receipt = json.loads((base / 'extracted/.work/checks/stage-node.json').read_text())
++assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == CURRENT
++receipt = json.loads(Path('.work/hosted-df-browser/extracted/.work/checks/stage-browser.json').read_text())
+ assert receipt['sourceCommit'] == HEAD and receipt['workflowRunId'] == '37870240814'
+ guards = receipt['sourceGuardsAfter']
+ assert receipt['sourceGuardsBefore'] == guards and len(guards) == 349
+@@ -23,6 +24,16 @@
+         while block := process.stdout.read(1024 * 1024):
+             digest.update(block)
+         assert process.wait() == 0 and digest.hexdigest() == expected, path
++        current_digest = sha256()
++        current_process = subprocess.Popen(['git', 'cat-file', 'blob', CURRENT + ':' + path], stdout=subprocess.PIPE)
++        while block := current_process.stdout.read(1024 * 1024):
++            current_digest.update(block)
++        assert current_process.wait() == 0 and current_digest.hexdigest() == expected, path
++        working_digest = sha256()
++        with Path(relative).open('rb') as source:
++            while block := source.read(1024 * 1024):
++                working_digest.update(block)
++        assert working_digest.hexdigest() == expected, relative
+         original.append(path)
+     else:
+         with Path(relative).open('rb') as source:
+@@ -31,18 +42,18 @@
+         assert digest.hexdigest() == expected, relative
+         generated.append(relative)
+ assert len(original) == 206 and len(generated) == 143
+-assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == 'df123c797b226c479b50a998011c1ea6d0157391'
++assert subprocess.check_output(['git', 'rev-parse', 'HEAD'], text=True).strip() == CURRENT
+ docs=[]
+ for name in ['README.md','VERIFY.md','NEXT.md','LOOP.md','ASSUMPTIONS.md','SHA256SUMS.txt']:
+     path='jobs/G10-checkers/'+name
+     accepted_bytes=subprocess.check_output(['git','cat-file','blob',HEAD+':'+path])
+-    current_bytes=subprocess.check_output(['git','cat-file','blob','df123c797b226c479b50a998011c1ea6d0157391'+':'+path])
++    current_bytes=subprocess.check_output(['git','cat-file','blob',CURRENT+':'+path])
+     assert Path(name).read_bytes()==current_bytes
+     docs.append({'path':path,'acceptedGitSha256':sha256(accepted_bytes).hexdigest(),'currentGitSha256':sha256(current_bytes).hexdigest(),'workingBytesMatchCurrentGit':True,'equalToAccepted':accepted_bytes==current_bytes})
+-result = {'currentCheckoutPreserved':'df123c797b226c479b50a998011c1ea6d0157391','sixCurrentDocumentationGitBridge':docs,'status': 'PASS', 'startedAt': started, 'closedAt': datetime.now(timezone.utc).isoformat(),
++result = {'currentCheckoutPreserved':CURRENT,'all206CurrentImmutableGitOriginalBytesEqualAcceptedDf':True,'sixCurrentDocumentationGitBridge':docs,'status': 'PASS', 'startedAt': started, 'closedAt': datetime.now(timezone.utc).isoformat(),
+           'acceptedHead': HEAD, 'sourceGuardCount': len(guards),
+           'gitTrackedOriginalBytes': original, 'generatedRuntimePathsRequireCurrentByteMatch': generated,
+-          'scope': 'Exact currentdf original349 Node-stage guards:206 immutabledf Git blobs plus143 loaded generated/runtime byte hashes; explicit six currentdf docs working==immutableGit outside349 guard set. Complete full-stage/media/terminal-reader and four-part delivery acceptance remain separate.'}
+-(base / 'historical-git-guards.json').write_text(json.dumps(result, indent=2) + '\n')
++          'scope': 'Explicit immutable accepteddf-to-currented7 original349 runtime/source bridge:206 accepteddf Git blobs equal currented7 immutableGit original bytes and actualworkingfiles, plus143 actual generated/runtime guards; six currented7 docs working==immutableGit with truthful accepteddf equality/difference outside349. Historicaldf genuine full native component proof preserved; currented7 exact nativeCI and four actual official part reception remain separate.'}
++(base / 'source-bridge.json').write_text(json.dumps(result, indent=2) + '\n')
+ print(json.dumps({'status': 'PASS', 'head': HEAD, 'originalGitFiles': len(original),
+                   'generatedRuntimeFiles': len(generated), 'closedAt': result['closedAt']}))

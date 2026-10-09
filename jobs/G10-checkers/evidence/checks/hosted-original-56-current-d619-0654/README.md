@@ -1,0 +1,5 @@
+# Complete actual evidence
+
+Actual complete original56db/run37891061212 official11598986877 received HTTP200 as10,553,589 bytes/SHA4297256e84c5426884a6850fb4dd31d105e1b109f533e301714a88b20d8ffb0b;239safeunique fullCRC/EOF. Unchanged original full native/game/frame/clip reader PASS06:43:36.314Z,349runtime/source and six immutable currentd619 docs. Whole owner naturally CLOSED06:43:41.438718 EXIT0/group[]; final24 self/input/runtime/independent-meta freeze PASS. Actual first preparation missing inherited job-log ID failed before spec/controller and is retained. Receipt prose has inherited historical0f labels; actual checked HEAD/run/artifact/d619 bridge are definitive. Raw native run metadata and private provider reference remain privately byte-preserved; two personal email values are omitted from public run metadata and original input SHA retained. No new browser/timing/gain/KEEP round.
+
+See archive.json for every member byte count and SHA-256. Every unique original failed/raw/source/licensed-page input remains preserved.

@@ -1,0 +1,50 @@
+{
+  "status": "FUNCTIONAL_PASS_FRAMES_PENDING",
+  "recordedAt": "2026-10-08T14:02:11.157011+00:00",
+  "commands": [
+    {
+      "command": "G10_BUILD_BROWSER_ONLY=1 G10_HTML_OUT=.work/play-full.html npm run build",
+      "exitCode": 0,
+      "raw": "full-browser-build-final.stdout"
+    },
+    {
+      "command": "G10_HTML_PATH=.work/play-full.html G10_BROWSER_DIR=evidence/browser-full-six-functional G10_MEDIA_DIR=.work/media-full-six-functional node scripts/browser-check.mjs --functional-only",
+      "exitCode": 0,
+      "raw": "full-browser-functional.stdout",
+      "totalChecks": 30
+    }
+  ],
+  "sourceSha256": {
+    "scripts/build.mjs": "f56963115646b812c6d045484cee25662862384e1eecc6e09a7c464467a639ff",
+    "src/browser.ts": "a0375af83383ce9570d269dcd75cfe841b0e244cc9baa832f82f0095c38010d9",
+    "src/bot-worker.ts": "eba2ca17afbccf6bcf06c20eb8d2aa776a3157112c2ec3db922933a39c78d653",
+    "src/international-search.ts": "67b4ba228bfbf4e122c65c3619a0d529be07a3e3423f1ad5c51227d5f99962ee",
+    "src/international-indexes.ts": "fb56f60992bbbb589bd4069d565672aba4f5a61227a5380a874e6001ee991625",
+    "src/international-six-indexes.ts": "641218fe08800d06c9ec0b592cbac46978cd0d64249cff4f32b32eff77797c99",
+    "src/play.template.html": "bfa2a89321ded909b97ba0c2e0f1a1640cdaeaf91085b7f14c2af7026a583445"
+  },
+  "html": {
+    "privatePath": ".work/play-full.html",
+    "bytes": 1390845425,
+    "sha256": "2f5ca1335b8fca10b2eaa348da3553ca7ef5d682b78c91a2c114f6c2e2a96a6b"
+  },
+  "profiles": [
+    {
+      "name": "desktop",
+      "throttle": 1,
+      "loadMs": 24460.753249999998,
+      "checks": 15,
+      "meanFps": null,
+      "p99Ms": null
+    },
+    {
+      "name": "phone",
+      "throttle": 4,
+      "loadMs": 99217.192809,
+      "checks": 15,
+      "meanFps": null,
+      "p99Ms": null
+    }
+  ],
+  "scope": "Actual complete six-piece offline browser game and real Strong original-block use; no FPS acceptance, no LFS/full artifact publication. Existing tracked play.html remains earlier2\u20135 baseline."
+}

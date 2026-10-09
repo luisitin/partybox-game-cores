@@ -1,0 +1,5 @@
+# Complete actual evidence
+
+ONE eager and ONE deferred same-full-core scheduling control over the actual CLOSED23:43 eight-game native report, not new observations. Both2370 wholeSHA/EOF, original legal/state plus independent original6000node detailedbotreport/RNG/sampleInput equality PASS; canonicaldc268a96e9dbdb1515813824ad0dd47ca80d25dffde1cdfa09485ef3519db621 identical. Actual owned peaks3,764,461,568/2,725,892,096 below unchanged4.5GiB. Final2384source/self/runtime/independentd619 metadata/allaliases PASS06:51:09.215020==before; owner naturally CLOSED06:51:09.707543 EXIT0/groups[]/no signals/emptystderr. First control failed my extra secondgame preclickcursor==0 assumption, full2370EOF/2382finalPASS/peak3.413GB retained. Original browser.ts91 resets cursor inside start AFTER capture-phase listener saw previousgame step5; only extra pre-click expectation corrected, all original assertions/resource/time/payload unchanged. Allocation/equivalence only; no browser/clock/current International gain/adoption/no-gain KEEP round.
+
+See archive.json for every member byte count and SHA-256. Every unique original failed/raw/source/licensed-page input remains preserved.

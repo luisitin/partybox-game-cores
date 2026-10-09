@@ -1,0 +1,64 @@
+{
+  "status": "CLOSED_PASS_TWO_PROVEN_DUPLICATES_REMOVED",
+  "startedAt": "2026-10-09T02:07:52.926817+00:00",
+  "at": "2026-10-09T02:07:53.565046+00:00",
+  "head": "4d7cbcaf864c2f29a39216c9a95a8081aa3c58cb",
+  "freeBytesBefore": 51744768,
+  "rows": [
+    {
+      "privatePath": ".work/hosted-df-final/complete.zip",
+      "publicPreservedPath": "evidence/checks/hosted-pr-complete-df/official-complete-11590387621.zip",
+      "bytes": 10686554,
+      "sha256": "d8c1fa54986287ceb870b2571538a7f2d8030555ad4d14c39e8c562c3645b790",
+      "immutableGitRef": "4d7cbcaf864c2f29a39216c9a95a8081aa3c58cb:jobs/G10-checkers/evidence/checks/hosted-pr-complete-df/official-complete-11590387621.zip",
+      "actualWholeStreamByteEqual": true,
+      "allCurrentPublicGitBytesMatch": true,
+      "privateStat": {
+        "dev": 27,
+        "ino": 1471155,
+        "mtimeNs": 1791511091433071834,
+        "ctimeNs": 1791511091433071834,
+        "bytes": 10686554
+      },
+      "publicStat": {
+        "dev": 27,
+        "ino": 1471470,
+        "mtimeNs": 1791511289419405178,
+        "ctimeNs": 1791511289419405178,
+        "bytes": 10686554
+      },
+      "fdOwners": [],
+      "actualPrivateUnlinkedAt": "2026-10-09T02:07:53.497926+00:00"
+    },
+    {
+      "privatePath": ".work/hosted-df-browser/browser.zip",
+      "publicPreservedPath": "evidence/checks/hosted-pr-browser-df/official-browser-11590031732.zip",
+      "bytes": 8846821,
+      "sha256": "7d24263f7363d8db96f7c6f92a664396c304fdf51ab9934cc52924e3f26e414e",
+      "immutableGitRef": "4d7cbcaf864c2f29a39216c9a95a8081aa3c58cb:jobs/G10-checkers/evidence/checks/hosted-pr-browser-df/official-browser-11590031732.zip",
+      "actualWholeStreamByteEqual": true,
+      "allCurrentPublicGitBytesMatch": true,
+      "privateStat": {
+        "dev": 27,
+        "ino": 1469458,
+        "mtimeNs": 1791510884475202340,
+        "ctimeNs": 1791510884475202340,
+        "bytes": 8846821
+      },
+      "publicStat": {
+        "dev": 27,
+        "ino": 1471425,
+        "mtimeNs": 1791511168973281034,
+        "ctimeNs": 1791511168973281034,
+        "bytes": 8846821
+      },
+      "fdOwners": [],
+      "actualPrivateUnlinkedAt": "2026-10-09T02:07:53.556425+00:00"
+    }
+  ],
+  "scope": "Onlytwo actualbyte-identical derivedprivateZIP copies, allpreserved in currentimmutableGit and publicworkingcopies; no uniqueinput/failedZIP/rawhistory/HTML/receipts/source/publiccopy deleted.",
+  "closedAt": "2026-10-09T02:07:53.565290+00:00",
+  "exitCode": 0,
+  "freeBytesAfter": 71278592,
+  "removedBytes": 19533375
+}

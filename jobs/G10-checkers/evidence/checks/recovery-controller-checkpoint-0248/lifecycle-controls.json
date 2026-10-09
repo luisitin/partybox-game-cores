@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "startedAt": "2026-10-09T02:23:44.231552+00:00",
+  "closedAt": "2026-10-09T02:23:50.172095+00:00",
+  "sourceSha256BeforeAfter": "59e2445d18de22f39356ea6b45f9c5ce97dcb1d5319104aad38f8336ed71b4e5",
+  "controls": [
+    {
+      "control": "naturally closed worker stays natural, no signals",
+      "result": {
+        "actualRemainingGroup": [],
+        "groupSignals": [],
+        "reapedAdoptedDescendants": [],
+        "actualExitCode": 0,
+        "natural": true
+      }
+    },
+    {
+      "control": "failed worker and grandchild ignore SIGTERM; bounded SIGKILL and actual adopted-descendant reap",
+      "actualMembersBefore": [
+        {
+          "pid": 249624,
+          "state": "S",
+          "startTicks": 16829222
+        },
+        {
+          "pid": 249625,
+          "state": "S",
+          "startTicks": 16829227
+        }
+      ],
+      "result": {
+        "actualRemainingGroup": [],
+        "groupSignals": [
+          {
+            "signal": "SIGTERM",
+            "at": "2026-10-09T02:23:45.360221+00:00",
+            "membersBefore": [
+              {
+                "pid": 249624,
+                "state": "S",
+                "startTicks": 16829222
+              },
+              {
+                "pid": 249625,
+                "state": "S",
+                "startTicks": 16829227
+              }
+            ]
+          },
+          {
+            "signal": "SIGKILL",
+            "at": "2026-10-09T02:23:48.549808+00:00",
+            "membersBefore": [
+              {
+                "pid": 249624,
+                "state": "S",
+                "startTicks": 16829222
+              },
+              {
+                "pid": 249625,
+                "state": "S",
+                "startTicks": 16829227
+              }
+            ]
+          }
+        ],
+        "reapedAdoptedDescendants": [
+          {
+            "pid": 249625,
+            "waitStatus": 9
+          }
+        ],
+        "actualExitCode": -9,
+        "natural": false
+      }
+    }
+  ],
+  "actualFinalGroups": [
+    [],
+    []
+  ],
+  "payloadAllocationBytes": 0,
+  "scope": "Actual private process-lifecycle controls only: naturally exited worker remains natural; own failed finite TERM-ignoring worker plus descendant are bounded-killed/reaped. No artifact download/ZIP allocation/current game/FPS/KEEP/nativeCI acceptance."
+}

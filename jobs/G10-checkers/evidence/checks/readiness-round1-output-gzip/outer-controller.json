@@ -1,0 +1,31 @@
+{
+  "status": "CLOSED",
+  "startedAt": "2026-10-09T00:27:30.633346+00:00",
+  "closedAt": "2026-10-09T00:29:50.607162+00:00",
+  "actualWallSeconds": 140.76871961998404,
+  "exitCode": 0,
+  "arms": [
+    {
+      "status": "CLOSED",
+      "arm": "baseline",
+      "startedAt": "2026-10-09T00:27:30.633382+00:00",
+      "closedAt": "2026-10-09T00:28:49.613226+00:00",
+      "exitCode": 0,
+      "childPid": 225412,
+      "liveChildren": []
+    },
+    {
+      "status": "CLOSED",
+      "arm": "candidate",
+      "startedAt": "2026-10-09T00:28:49.721693+00:00",
+      "closedAt": "2026-10-09T00:29:50.487215+00:00",
+      "exitCode": 0,
+      "childPid": 225547,
+      "liveChildren": []
+    }
+  ],
+  "scriptBeforeAfterSha256": "2291c251b6e7801a267beeea71a4b9a8b9d2091fcbff6315906ab845fce0c388",
+  "nodeBeforeSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "nodeAfterSha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+  "scope": "Genuine full source/compiler/data output and gzip counts/SHA, bounded sink only; no physical HTML created, no FPS/timing/offline/current-CI acceptance."
+}

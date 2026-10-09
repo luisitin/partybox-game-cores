@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "scope": "Reproduced original unchanged v2 driver versus independently authored JS on five actual six-piece classes only. No complete37/history claim. No original source or six-piece data committed.",
+  "files": [
+    {
+      "file": "international-original-cases.json",
+      "bytes": 3265,
+      "sha256": "7a9368d2fbbdbadaae2846c512215ab3dd6a3e6469d5eb12c7aa0a6ceee05fda"
+    },
+    {
+      "file": "international-original-compile.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "international-original-compile.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "international-original-expected.jsonl",
+      "bytes": 2281796,
+      "sha256": "d855e36054ddef54775025bf531e832747ceaee8a047f0d49a7136a717f620ca"
+    },
+    {
+      "file": "international-original-generation.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "international-original-generation.stdout",
+      "bytes": 2696,
+      "sha256": "d52085b1399a1f7d61b1bac6a7907307810696f74e92a35faf5414f92ed83c8a"
+    },
+    {
+      "file": "international-original-queries.txt",
+      "bytes": 1103982,
+      "sha256": "682d8394740f25fec4e4af28c87d5d86964e642f184e6d66d97a9b316ebccaec"
+    },
+    {
+      "file": "international-original-reference-report.json",
+      "bytes": 9139,
+      "sha256": "bbd3ad6dfc971925708e858b22a0af49ee37249b251beb03752fe9ba2040e425"
+    },
+    {
+      "file": "international-original-reference.jsonl",
+      "bytes": 2441796,
+      "sha256": "e814bb1b8db4b1cd14805e906ce142368339de019fe1bff80f3b9470fc291e2f"
+    },
+    {
+      "file": "international-original-stderr.txt",
+      "bytes": 5580,
+      "sha256": "53e27c1318f968e97d26667771c9d0b47d102336995f7e7bc3724c9d990b0efd"
+    },
+    {
+      "file": "international-original-stdout.txt",
+      "bytes": 158890,
+      "sha256": "733fe9f86693fee3f1fa41486e5e2363c70c3a9c1ab9c95a56664df2417071c8"
+    }
+  ],
+  "commands": [
+    "python3 scripts/validate-international-original.py --database /tmp/g10-rules-oracle-corpus/international-small/app --database /tmp/g10-root-international-packaging/output/app --dictionary data/international/tunstall-v2.bin --pieces 6 --direct-v2 --source-archive /tmp/g10-rules-oracle-corpus/egdb-original-source.tar.gz --work-dir .work/international-original-six --evidence-dir evidence/checks/international-original-six"
+  ],
+  "originalPrivateAndTrackedQuerySha256": "682d8394740f25fec4e4af28c87d5d86964e642f184e6d66d97a9b316ebccaec",
+  "originalPrivateAndTrackedTranscriptSha256": "e814bb1b8db4b1cd14805e906ce142368339de019fe1bff80f3b9470fc291e2f",
+  "bothInputsAndCombinedTranscriptsByteIdentical": true
+}

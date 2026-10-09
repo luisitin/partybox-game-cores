@@ -1,0 +1,221 @@
+{
+  "executionFreezeSha256": "06f13c515b7fcf2b38a97dab22d5c177b41cc74b3186f2a2c085cfed6074643e",
+  "executionFreezeIdentity": {
+    "dev": 27,
+    "ino": 1472546,
+    "bytes": 7547,
+    "mtimeNs": 1791517444503525354,
+    "ctimeNs": 1791517444503525354
+  },
+  "files": {
+    "controller": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/receive-complete.py",
+      "sha256": "9d6250de1c1f9f84239f54a19dca66ccfe41adbfb07e89cef30bdfe8caf74351",
+      "identity": {
+        "dev": 27,
+        "ino": 1472514,
+        "bytes": 10030,
+        "mtimeNs": 1791517339444126138,
+        "ctimeNs": 1791517339444126138
+      }
+    },
+    "reader": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/validate-complete.mjs",
+      "sha256": "b5860c7b346c27913f87ddb1f403fdea1a19c9f48f96b3bc0184e16bb059955a",
+      "identity": {
+        "dev": 27,
+        "ino": 1472516,
+        "bytes": 8273,
+        "mtimeNs": 1791517339445010933,
+        "ctimeNs": 1791517339445010933
+      }
+    },
+    "auditor": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/audit-git-guards.py",
+      "sha256": "87cf607ea5d9664619c8c72247a2e0dd118c7aeb69762baba263a9f0a3a98672",
+      "identity": {
+        "dev": 27,
+        "ino": 1472518,
+        "bytes": 3285,
+        "mtimeNs": 1791517425246313299,
+        "ctimeNs": 1791517425246313299
+      }
+    },
+    "groupHelper": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/receive.py",
+      "sha256": "dc9b18ff9f62430b51538c96f82cf691813f0ef3ff28a88112a70e67736fc241",
+      "identity": {
+        "dev": 27,
+        "ino": 1471804,
+        "bytes": 20276,
+        "mtimeNs": 1791514411039026616,
+        "ctimeNs": 1791514411039026616
+      }
+    },
+    "python": {
+      "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7",
+      "identity": {
+        "dev": 27,
+        "ino": 9223372036854858618,
+        "bytes": 30894944,
+        "mtimeNs": 1788486252000000000,
+        "ctimeNs": 1788486252000000000
+      }
+    },
+    "node": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+      "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d",
+      "identity": {
+        "dev": 27,
+        "ino": 1465834,
+        "bytes": 121509208,
+        "mtimeNs": 1747799879000000000,
+        "ctimeNs": 1791471121215558321
+      }
+    },
+    "git": {
+      "path": "/usr/bin/git",
+      "sha256": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60",
+      "identity": {
+        "dev": 27,
+        "ino": 9223372036855095607,
+        "bytes": 4082768,
+        "mtimeNs": 1753899052000000000,
+        "ctimeNs": 1753899052000000000
+      }
+    },
+    "curl": {
+      "path": "/usr/bin/curl",
+      "sha256": "d2136f430029a8750c6c3280effdca0383e24b1f606e32d63e3b4154409b1038",
+      "identity": {
+        "dev": 27,
+        "ino": 9223372036855093009,
+        "bytes": 321880,
+        "mtimeNs": 1778204212000000000,
+        "ctimeNs": 1778204212000000000
+      }
+    },
+    "ffmpeg": {
+      "path": "/usr/bin/ffmpeg",
+      "sha256": "e8a8d46f5225f3062cec7c07fb145d58ae73c603cb740dcd5bad34bfb54e455a",
+      "identity": {
+        "dev": 27,
+        "ino": 9223372036855093480,
+        "bytes": 366984,
+        "mtimeNs": 1782144517000000000,
+        "ctimeNs": 1782144517000000000
+      }
+    },
+    "ffprobe": {
+      "path": "/usr/bin/ffprobe",
+      "sha256": "cefc5f81c0b18429cdbf8fa5a89e1e9c759235e10f93f9b329ff1b2fdff26f46",
+      "identity": {
+        "dev": 27,
+        "ino": 9223372036855093486,
+        "bytes": 206504,
+        "mtimeNs": 1782144517000000000,
+        "ctimeNs": 1782144517000000000
+      }
+    },
+    "reference": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/official-reference.private.json",
+      "sha256": "5ade2490e1720bdf184b6d58b8c0811dbf5f4eaf93d6f166bb7f9eaf36ec4708",
+      "identity": {
+        "dev": 27,
+        "ino": 1472530,
+        "bytes": 2676,
+        "mtimeNs": 1791517380587754833,
+        "ctimeNs": 1791517380587754833
+      }
+    },
+    "runNative": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/run-native.json",
+      "sha256": "30bd2a845b6716b4fc95eff2f2d0ab0fa4e3474a0a19846ae7df32de66e2eb34",
+      "identity": {
+        "dev": 27,
+        "ino": 1472531,
+        "bytes": 13481,
+        "mtimeNs": 1791517380851742040,
+        "ctimeNs": 1791517380851742040
+      }
+    },
+    "jobsNative": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/jobs-native.json",
+      "sha256": "9d1cc3a96b8b7b90bd1a6975b70c53a6622556856cc6196225e0d01c857995a0",
+      "identity": {
+        "dev": 27,
+        "ino": 1472532,
+        "bytes": 17016,
+        "mtimeNs": 1791517381115729249,
+        "ctimeNs": 1791517381115729249
+      }
+    },
+    "artifactsNative": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/artifacts-native.json",
+      "sha256": "72c7b9ed95a8fcee4a772a780f9b9bdafce1550f1ce0a2f715bbe41109c871f3",
+      "identity": {
+        "dev": 27,
+        "ino": 1472533,
+        "bytes": 7043,
+        "mtimeNs": 1791517381383716264,
+        "ctimeNs": 1791517381383716264
+      }
+    },
+    "job-113653990414": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/job-113653990414.log",
+      "sha256": "f5d96614c472a2e911bddc54525ee225ce689279c33fb3730afccd7ba1fd3341",
+      "identity": {
+        "dev": 27,
+        "ino": 1472541,
+        "bytes": 51838,
+        "mtimeNs": 1791517444317691557,
+        "ctimeNs": 1791517444317691557
+      }
+    },
+    "job-113653990531": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/job-113653990531.log",
+      "sha256": "d18803861195946ebf30621c9a3003cbdd92dee31295b682d873f3120aae6c88",
+      "identity": {
+        "dev": 27,
+        "ino": 1472543,
+        "bytes": 187170,
+        "mtimeNs": 1791517444320745381,
+        "ctimeNs": 1791517444320745381
+      }
+    },
+    "job-113653990630": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/job-113653990630.log",
+      "sha256": "6a07c974ff155187ccf33f81468af907165a2f1a69742fc30343a00132eac7aa",
+      "identity": {
+        "dev": 27,
+        "ino": 1472544,
+        "bytes": 51536,
+        "mtimeNs": 1791517444321251320,
+        "ctimeNs": 1791517444321251320
+      }
+    },
+    "job-113653990631": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/job-113653990631.log",
+      "sha256": "cc1c144fa6d650d3cbe3a978d967445140cf507b6f4c02767cce26f2110067a0",
+      "identity": {
+        "dev": 27,
+        "ino": 1472545,
+        "bytes": 143310,
+        "mtimeNs": 1791517444322249255,
+        "ctimeNs": 1791517444322249255
+      }
+    },
+    "job-113657752587": {
+      "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-dd226-final/job-113657752587.log",
+      "sha256": "b1ce2f5fc90a1c55c54f3e673e02bcec376bc35fcb91560f20c69a01f6be33a0",
+      "identity": {
+        "dev": 27,
+        "ino": 1472542,
+        "bytes": 111164,
+        "mtimeNs": 1791517444318976618,
+        "ctimeNs": 1791517444318976618
+      }
+    }
+  }
+}

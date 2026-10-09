@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "pgid": 131912,
+  "events": [
+    {
+      "stopFirstUtc": "2026-10-08T12:11:15.823730Z",
+      "stopLastUtc": "2026-10-08T12:11:15.823801Z",
+      "sentBy": "parent",
+      "verifiedUtc": "2026-10-08T12:11:56Z",
+      "members": [
+        {
+          "pid": 131912,
+          "state": "Ts"
+        },
+        {
+          "pid": 132313,
+          "state": "T"
+        }
+      ],
+      "reason": "G02 strict browser quiet slot",
+      "resumeUtc": "2026-10-08T12:16:43.925387Z",
+      "rootReleaseUtc": "2026-10-08T12:15:54Z",
+      "laterRedundantContinueAndRunningObservationUtc": "2026-10-08T12:16:49.039765+00:00",
+      "firstActualResumeSentBy": "parent",
+      "firstActualResumeFirstUtc": "2026-10-08T12:16:43.925299Z",
+      "firstActualResumeLastUtc": "2026-10-08T12:16:43.925387Z",
+      "holdSecondsApprox": 328.101657
+    }
+  ]
+}
