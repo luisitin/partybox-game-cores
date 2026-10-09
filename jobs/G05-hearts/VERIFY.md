@@ -770,3 +770,23 @@ Public exact history recovery changed that condition; successful actual push
 11:49:04.531056Z missed first hard307.381021s. No authentication failure claim,
 force or injected credential. This evidence publication still needs its own
 original exact-head full workflow; prior accepted8b is explicitly historical.
+
+## Separate formal review20: recovered takeover ledgers
+
+Actual `node ABSOLUTE_REVIEW20_PROOF_DIRECTORY/probe.mjs` from jobs/G05-hearts,
+wrapped by the archived G05-review20-controller-20261009.py, PASS12:18:44.445408Z.
+5568 declared cases/1404624 assertions/58560 observed saved states. Every
+nonempty3–6-seat mask × noPass × moon × Jack × turnSeconds[0,1,60] ×
+target[25,200], one deterministic first hand each.23904 partial-trick
+snapshots and all five actual phases restore exact card/pass/turn/score ledgers.
+14304 ordinary reconnects preserve already-played cards;52992 recovered real
+inputs agree with independent ordinary core pause/resume controls.5376 absent
+local-roster saves intentionally stay rejected; supported fully reconnected
+p0–p5 human tables restore. Export/parser inputs are immutable and independent
+mutable copies. Repeated end after an already-scored hand is harmless.
+No normal full-match/performance/all-seeds claim; the chosen first-hand
+termination plus administrative end is explicit in the native transcript.
+190 actual source/build/probe inputs unchanged; no child remains. Script/ranking/
+raw/native/frozen receipt and prior real publication/current114-data evidence
+are in media/queue-presence-review20-proof.zip. No new player-visible gain.
+This source publication still needs its own whole original workflow.

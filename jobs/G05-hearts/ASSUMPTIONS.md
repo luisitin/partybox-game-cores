@@ -152,3 +152,10 @@ First publication11:49:04.531056 genuinely missed hard11:43:57.150035 by
 307.381021s after public-history object recovery; do not backdate delivery.
 The accepted8b first hosted video is retained byte-identically for this evidence
 milestone. Native sampler, original gates and player behavior are unchanged.
+
+Review20 is a separate formal round begun only after review19 was actually
+pushed. It intentionally finishes one genuine first hand per declared context,
+then performs VIP end at the scored hand for done/repeated-end checks. It does
+not claim an ordinary full-match victory audit. Disconnected core JSON hosts
+remain supported independently of the standalone fully-connected save parser.
+All clocks are supplied reducer data; no native browser timing is rerun.

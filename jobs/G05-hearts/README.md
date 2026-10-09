@@ -52,5 +52,5 @@ See NEXT.md and media/audit-20261009-proof.zip for exact scope and retained erro
 The new queue audit prevents disconnected opening seats and the transition
 from missing-player passes to play from blocking a nonempty table. Seven new
 checks and all46 original/current node tests pass. Both original8b full hosted
-runs and first genuine artifacts pass. Separate review19 found no further player
-defect; its own current workflow remains required. Protected Ready5/15 are separate.
+runs and first genuine artifacts pass. Separate reviews19–20 found no further
+player defect; final current workflow remains required. Protected Ready5/15 separate.

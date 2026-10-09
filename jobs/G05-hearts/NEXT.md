@@ -1,3 +1,47 @@
+# G05 queue audit — formal review20, no-player-gain streak2
+
+Draft PR19 and protected original Ready5/Ready15 remain separate/unmerged.
+Both first ORIGINAL8b full workflows/genuine ZIPs were wholly accepted;
+see the preserved review19 handoff/proof for exact IDs/SHA/gates and scope.
+Accepted repair18 fixes only disconnected startup and pass→play drainage.
+Core/rules/bots/save parser/page/contract/workflow/native sampler are unchanged.
+First actual publication11:49:04.531056 missed its hard bound307.381021s;
+real scope/object failures and public26-object recovery remain preserved.
+
+Review19 was separately pushed as8674f5e5c0b1257bdef8c8a261c71b8061b09d3b
+at12:14:10.267628/read12:14:10.869676Z. Early25-minute target missed5.736572s,
+hard30-minute window met. Own-only main refreshfad3054d at12:15:37Z,
+normal push12:15:38.516580/read12:15:39.266672; all foreign rows/tree unchanged.
+Review19's563905 assertions found no player gain; renewed streak1.
+Original whole qualification of each newer source remains distinct/pending.
+
+Only AFTER that actual publication, review20 reread/ranked5 and measured
+partial takeover ledgers through ordinary full reconnect and local recovery.
+5568 contexts: every nonempty3–6-seat mask × noPass × moon × Jack ×
+turnSeconds[0,1,60] × target[25,200], one seeded FIRST hand per context.
+1404624 assertions/58560 saved snapshots/all five actual phases/
+23904 partial tricks/14304 ordinary reconnects/52992 resumed real inputs PASS.
+5376 disconnected local-save cases remain intentionally unsupported/rejected;
+core JSON host persistence is separate. Deliberate VIP end follows a scored hand,
+which does not double-count scores/history; no ordinary full-match claim here.
+Natural CLOSED12:18:44.445408Z/EXIT0/all190 actual source/probe/build inputs same.
+No new player defect or implementation change. Renewed no-gain streak2.
+Actual script/ranking/native/frozen receipts: media/queue-presence-review20-proof.zip.
+Original first8b PR clip remains byte-identical; no new recording or native clock.
+
+Push this round separately BEFORE starting review21. Then reread/rank5,
+measure the remaining worst substantive weakness, log/push the third review
+and final handoff separately. If a real player defect appears, fix/qualify it
+and reset the streak; otherwise require OWN FINAL exact-head original full
+push and PR workflows/complete native logs/first genuine official ZIPs/
+unchanged137-assertion reader before Ready19. Keep final source static then.
+Do not weaken gates, reattribute old samples, invent timings or merge originals.
+Completed means merged; this work reaches Ready review with originals protected.
+Refresh only G05 on fresh MAIN under root's explicit serialized lease after push.
+
+---
+## Prior review19 handoff — unchanged historical record
+
 # G05 queue audit — accepted fix, formal review19
 
 Draft PR19: job/G05-hearts-queue-audit-20261009 → protected Ready15 audit.
