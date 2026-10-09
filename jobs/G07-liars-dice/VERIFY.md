@@ -742,7 +742,7 @@ still must pass before ready;prior source-specific green remains explicit.
 Commands run from jobs/G07-liars-dice unless stated otherwise.
 `npm run build`:strict PASS; actual rebuilt32 source/compiled hashes equal the
 canonical official proof. The earlier root-directory ENOENT and symlink-bundle
-hash mismatch occurred before the semantic audit and remain private diagnostics.
+hash mismatch occurred before the semantic audit and are recorded diagnostics.
 `node --check evidence/checks/independent-review-20261009/audit.mjs`:PASS.
 `node evidence/checks/independent-review-20261009/audit.mjs`:PASS1,388,223 assertions,
 336 genuine games across48 settings/every2–8 roster;72,036 exact saves,
@@ -770,3 +770,13 @@ Final `node scripts/hashes.mjs` twice/`cmp`, `sha256sum --check --quiet SHA256SU
 `node scripts/integrity.mjs`, `git diff --check`:PASS after the explicit native
 91-row/full94-summary parser correction. This correction changes evidence claims
 only; the unchanged full94 acceptance remains mandatory.
+
+
+The first audit source deadline02:24:51UTC was missed by9.939692 seconds.
+The commit actually failed ENOSPC before creating its tree; only this review's
+regenerable extracted positive/negative caches,duplicate ZIP and nonaccepted
+intermediate symlink-build outputs were deleted to recover11MB of free space.
+The original official ZIPs and all canonical444 files/old failures were preserved.
+The discarded intermediate compilation bytes are not claimed archived; their
+observed mismatch remains logged. Natural push6064463 CLOSED02:25:00.939692UTC
+EXIT0. No backdate or cadence waiver. checkpoint-6064463.json retains the receipt.

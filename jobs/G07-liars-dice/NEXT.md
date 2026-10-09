@@ -35,3 +35,8 @@ default duels remain unproved. Recovery is a trusted local convenience, not an
 adversarial save format. See the five review priorities and exact commands in
 the new evidence README/VERIFY. Freeze this review after its meaningful push;
 parent owns next-job selection. Do not repeat unchanged timing or invent KEEP.
+
+First source checkpoint6064463 pushed naturally02:25:00.939692UTC EXIT0; its
+assigned02:24:51 deadline was missed by9.939692s after actual ENOSPC. Only own
+regenerable scratch was cleared; official/canonical evidence is preserved.
+See checkpoint-6064463.json and ASSUMPTIONS; no backdate or waiver.

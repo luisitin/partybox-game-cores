@@ -195,8 +195,8 @@ claimed-main branch normally imports the unchanged canonical Ready delivery;
 no original PR6,gameplay,old failed sample or prior KEEP result is replaced.
 Sparse checkout and read-only hardlinks avoid copying54MB of old evidence;
 all444 actual canonical tracked files remained byte-identical. Build dependency
-symlinks altered emitted module path labels,so the initial mismatch was retained
-privately and a real local dependency tree rebuilt all32 exact guarded bytes.
+symlinks altered emitted module path labels; the initial mismatch was logged,
+and a real local dependency tree rebuilt all32 exact guarded bytes.
 An initial npm launcher used the repo root and failed ENOENT before compilation;
 the corrected job-folder build passed. No failed launcher is a test pass.
 The new semantic audit runs Node24.19.0; canonical full CI uses its stated Node22.
@@ -210,3 +210,13 @@ prints91 plus the full94/zero-failure summary; three offline/source rows occur
 in the complete ZIP report. Corrected proof explicitly reports91+summary94,
 while the independent ZIP reader still verifies every94 check. No row or gate
 is removed from acceptance and the observed assertion failure is retained here.
+
+
+The first audit source deadline02:24:51UTC was missed by9.939692 seconds.
+The commit actually failed ENOSPC before creating its tree; only this review's
+regenerable extracted positive/negative caches,duplicate ZIP and nonaccepted
+intermediate symlink-build outputs were deleted to recover11MB of free space.
+The original official ZIPs and all canonical444 files/old failures were preserved.
+The discarded intermediate compilation bytes are not claimed archived; their
+observed mismatch remains logged. Natural push6064463 CLOSED02:25:00.939692UTC
+EXIT0. No backdate or cadence waiver. checkpoint-6064463.json retains the receipt.
