@@ -530,3 +530,40 @@ prepared privately, UNEXECUTED; its longest-gap metric includes every raw
 interval through the first legal seed23 strong-bot move. No gain is inferred
 from these checks. Diagnose the weakest substantive issue, retain failures,
 measure any change and perform renewed KEEP after complete validation.
+
+## Current2d hosted proof and invalid first pair
+
+Exact2d full run37869016355/job113622494282 succeeded01:39:42UTC. Official
+artifact11590012046/93,181,134B/SHA948cb9cd242cfa92cee74540a24b79b690978eedb1158b582b7fb2dfcf3ad4e2
+was independently accepted1,225 assertions; reader naturally CLOSED
+01:41:22.849247UTC/exit0. All current Git/source bytes, full npm/native
+output,25mutants,600 intervals/602timestamps,36full VP9 frames, actualfile://
+privacy and16realWorker replays/fivevariants pass. The large ZIP stays
+private; bounded current fullraw outputs/native/decoder and receipts are
+in media/worker-stage-2d30473-proof.zip. No nested large ZIP is added.
+
+First fixed pair FAILED naturally01:35:43.504692UTC/exit1 before a valid
+first baseline profile. All170 guards/READY/controller stayed unchanged and
+no child remains. The helper asserted positive finite intervals BEFORE
+saving the raw trace, so offending raw values are ABSENT. Neither zero,
+NaN nor cause can be inferred; acceptedscenarios0/playergain UNMEASURED.
+Every failed byte is retained. A DISTINCT logging-only diagnostic now saves
+all provisional trace/stamps/intervals and invalid-number kinds before any
+assertion, plus a partial-failure trace. Predicates/order/criteria/clocks are
+unchanged. It is UNEXECUTED/NOT READY and clears no original failure.
+
+The private face-down deal prototype removes only a permanently hidden
+blank front face, retaining exact visibleback SVG/CSS/transform/geometry and
+45ms/420ms cue timing. All otherUI/core/RNG/Worker/source bytes are unchanged.
+Strict virtual and actual clone builds pass, with byte-exact baseline and
+worker control. Independent static audit naturally CLOSED01:44:24.106993
+UTC/exit0/all177 source+fivebinary guards; it is UNEXECUTED/unadopted, with
+no runtime/FPS/gain claim. The original once-only localTV57.8815357901FAIL
+remains; phone/capture15 NOTRUN. Renewed KEEP rounds/gains0.
+
+Next: obtain a fresh exclusive rootgrant for the frozen materially changed
+prototype's ORIGINAL browser.ts300/301/noextra settling/original58fps and
+p95<=18 gates/newcapture. Preserve every actualPASS/FAIL before any adoption.
+The logging-only diagnostic needs a separate source-bound review and grant.
+Current documentation checkpoint changes no player/policy/sampler; fresh
+full currentCI remains required. Read actual push/CLAIMS timestamps.

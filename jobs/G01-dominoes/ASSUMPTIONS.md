@@ -109,3 +109,5 @@ R20 is a real reliability gain and supersedes the previous R16–18 stop:three f
   remains unchanged/draft. All binding completion/KEEP checks remain required.
 
 - Exact e4 hosted file://, Worker and original native gates passed, while the once-only local original TV profile failed57.8815357901fps. The cause remains UNKNOWN; hosted success does not erase the local failure. Phone/capture15 were not reached locally. No paired player gain, adoption or renewed KEEP round is inferred.
+
+- First pair lost its offending baseline rawtrace because the assertion preceded save. It remains an invalid trial with zero acceptedscenarios/unknowncause; logging repair and faceDown prototype are unexecuted. No timing result or playergain is invented.
