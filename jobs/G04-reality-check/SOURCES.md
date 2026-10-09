@@ -44,3 +44,10 @@ source code, contacts, screenshots, factual catalog or art copied.
 Actual shared GAME_CONTRACT.md metadata section and schema were inspected:
 noCards is optional literal true and reserved for no cards/prompts/language text.
 The160-English-prompt quiz now omits the false declaration and defaults to English.
+
+2026-10-09 Unicode follow-up reread allfour exact pinned original source files
+live; both independent bluff analogues and log-error derivations corroborate
+the same retained mechanics/selected criterion. The NFKC expansion and state
+overflow are empirical observations from the actual pinned Node24 reducer,
+not copied data or a newly claimed external fairness result. No foreign
+source code, contacts, content rows, art or timing wrappers were introduced.

@@ -27,3 +27,27 @@ Original reducer/view/bot/UI/timer/sampler and allseven fixtures unchanged.
 Original player KEEP12–14 three-round no-gain stop remains historical; no new
 numbered player round or candidate timing invented. Current full hosted checks
 are still required; canonical c81 proof is explicitly historical baseline.
+
+## Unicode follow-up baseline, 2026-10-09
+
+Pre-green real defect |160 input→2880 stored; old676419B state | refuse normalized oversize before storage | fixed96 refusals/8995B peak;42 benign games/3395 event states plus bots/views/results equal;31 focused/4 strict controls pass | not a qualified KEEP round; new full hosted proof pending; original12–14 stop preserved; new completed rounds0/no-gain streak0.
+
+## Catalog consistency follow-up, 2026-10-09
+Pre-green real finding | two accepted catalog truths normalize to162 unwritable
+units after f79 | shared case-preserving cleanup and catalog display-length
+validation |32 focused/four strict PASS;10000 matching comparisons equal;
+42 benign games3395 states/bots/views/results equal;3830 guards/closure PASS
+| whole new original proof pending; new completed KEEP rounds0/no-gain streak0.
+
+1 follow-up | five weaknesses: escaped JSON state growth;complex Unicode projections;custom catalogs;physical phone approximation;draft refusal | fix worst: refuse malformed writes and malformed/binary-control catalog strings | actual old3 games/33 oversized states/max288469; fixed42 pre-play refusals,9 maximal valid games1971 exact legal/replay events/max151384;34 focused/four strict/3834 guards pass;42 benign3395states and10000 matching cases unchanged | actual local player robustness gain; exact changed-head full still pending; completed new rounds0/no-gain streak0 until qualification; no clock gain.
+
+KEEP1 qualification | exact0ad genuinefulloriginal/wholeofficial accepted11:59:05.436258 | actualtext/state playerrobustnessgain qualified | completednewrounds1/no-gainstreak0; immutable receiverfield0 scopedtoitsown no-classification, separate receipt records round.
+2 follow-up | fiveweaknesses: Unicodeauthor/truth credit;catalogedges;private drafts;physicalphone;futureABI | fixworst: independent Unicode credit regression/whole saved-corpus audit |1003 realgames4012rounds48106events/20040Pythonauthor awards/10890ownershipassertions/alllegal replay exact/zero mismatches;35focused4strict/3836guardsPASS;production/page/originaloracle byteunchanged | playergain0; prospectivefirstno-gain pendingchanged-headfull; qualifiedrounds1/streak0; failedv1counts0.
+
+KEEP2 qualification | genuine exact c30 whole original accepted12:16:38.815738Z/run37928163178/full1433337B SHAe387a93e5146ecc97663985673ce15608b4c595b93d682ffc18132fc44f2473f | unchanged-product independent credit coverage, player gain0 | completed new rounds2/no-gain streak1; no failed observer counts.
+3 follow-up | five weaknesses: UTF16 boundary coverage; Unicode refusal/private paths; admitted catalogs; physical phone; future ABI | worst: independent decoder/regression and admitted maximum controls |1120690 complete cases/Python strict decoder exact/2517 refusals+retries/455 catalogs;9 full maximum admitted games1560 legal events/max158015<262144;36 focused/four original strict/types/data/build/3839 guards pass; raw codepoint versus stored UTF16 assumption corrected with failed test preserved | player gain0, prospective second no-gain pending genuine changed-head full; completed2/streak1; no product/clock change.
+
+KEEP3 qualification | exact2fdb genuine original whole accepted12:44:05.074969Z/run37930745755/full1437634B SHA1d567eccbe08e3a8833dc49fe6766873068e72bda213241a4b3e72213c4cb3bf | verification-only, product unchanged/player gain0 | completed new rounds3/no-gain streak2; failed extra oracle not a round.
+4 follow-up | five weaknesses: private Unicode refusals/pause/presence; catalog metadata; physical phone; future ABI; manual concealment | worst: independent all-phase refusal/privacy regression and whole saved-game audit |1003 full games17718 legal events6017 anchors/all7phases/144408 refusals/2004 valid private retries/729324 view assertions/Python EOF hashes/projections equal;37 focused/four strict/all3842 guards pass; public495059B HTML HTTP200 full bytes exact | player gain0, prospective third no-gain until changed-head genuine original full; qualified3/streak2, no native measurement.
+
+KEEP4 FINAL qualification | exact079 genuine original whole accepted13:12:07.032288Z/run37933314761/artifact11617204820/full1443958B/SHA d1206d18428a1a3a63bc8f2c0288ec0302a10666b72843e3ecf91bd90494e608; exact public495059B HTML HTTP200/EOF/physical equal13:12:59.510111Z | unchanged-product private/refusal verification, player gain0 | completed new rounds4/no-gain streak3, formal player-work STOP. Original historical stop/failures retained; final handoff source's own exact full and public HTML required before Ready18, then no source-after-Ready push/merge.

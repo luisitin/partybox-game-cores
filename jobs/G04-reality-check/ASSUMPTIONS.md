@@ -100,3 +100,110 @@ All four original source mechanisms were reread live; uppercase first README404
 resolved from the actual pinned directory to readme.md. No external assets/code.
 BCE/CE/decade conventions remain from knowledge, unverified externally.
 Full current hosted npmtest/artifact proof is still required before audit Ready.
+
+## 2026-10-09 Unicode normalization follow-up
+
+The latest queue instruction permits claiming a finished stale job. Fresh
+main/all matching G04 committers establish G04 as lowest eligible at10:32;
+the new follow-up preserves existing Ready PR14/source and earlier stop.
+Socket length and stored length use the existing JS/Zod UTF-16-unit model.
+A genuine NFKC expansion counterexample exceeds both its stated160-unit
+fake bound and256KiB state contract. Refuse expanded oversize text rather
+than silently truncate it or lock a failed submission. Normal eligible
+Unicode answers, normalization equivalence and later retries are preserved.
+The raw before and two genuine old failures are not synthesized or retried.
+All local checks are untimed/pure/build/refusal controls; local FAST_TEST
+does not replace the binding full workflow. No native/frame/picker gain is
+claimed. The original three-no-gain gameplay stop remains historical, while
+new player-change qualification awaits current full evidence and KEEP.
+The fixed pipeline's2987 rows do not separately enumerate old installed
+Zod; the unchanged1106 original full source/Zod/runtime/helper supplement
+covers that earlier guard set across both actual controls. No overclaim of
+an unrecorded per-phase dependency path or exact instantaneous RSS is made.
+
+## Catalog normalization consistency, 2026-10-09
+The first submission bound exposed a genuine custom-catalog regression:
+accepted raw9/54-unit truths normalize to162 and cannot be submitted. Use the
+same original case-preserving cleanup at catalog load and submission, limit
+display/storage units, preserve lowercase matching keys and all original scoring.
+Three valid160-unit boundaries and a320-unit comparison key remain accepted.
+Saved original f79/source and failed regression remain unchanged; this is a
+pre-green product correction, not a qualified KEEP/no-gain round.
+The actual hosted download403 is distinct from a source/test failure. Metadata
+green and complete text logs do not accept unreceived official ZIP/native clips.
+Public signed-URL errors are redacted; all actual private original bytes remain.
+
+## KEEP1 text and saved-state budget, 2026-10-09
+Actual valid-by-old-schema malformed UTF16 fields and writes exceeded the original
+state bound. Reject lone surrogates at write validation and malformed/binary-control
+catalog fields before play. Preserve complete well-formed emoji pairs, ordinary
+whitespace/tab/newline catalog text, NFKC/display160/casefold rules. Raw C0 writes
+keep their original cleanup before storage, rather than silently changing scoring.
+This local validated content factory is not an established content-packs ABI.
+The256KiB state contract/performance gates are never relaxed; old raw33 actual
+violations and all original e32 source remain exact. Max valid3-byte/emoji/quote
+controls use ordinary bounded Seat/player metadata; no claim covers unbounded
+foreign host metadata. Parser hygiene is a deliberate admitted-content change.
+The first three-byte label actually used two-byte U+0634; the fixed maximum uses
+U+754C. The first C0 inverse substitution and corrected controls remain archived
+with original timestamps, alongside the failed material classifier and patch.
+Both genuine f79/e32 whole proof results are historical for this changed source.
+
+## KEEP2 independent author credit
+Production/runtime/page/bots/scoring and original10000-case oracle staybyteexact.
+The newregression/referee covers Unicode composition/compatibility,160/320-unit
+casefoldkeys,emoji,C0writecleanup andliteralmarkup using actual legal games.
+Oracleaccumulates authorcredits from rawwriting/publicvotetext; production totals
+voters. The independent Python EOF reader repeats author totals using its own
+Unicode implementation, and wholeactualper-event records are compared.
+Reveal legitimately offersNext to a truthwriter; waiting/null belongs tovoting.
+The failed extraharness assumption is neither gamebug nor no-gain. Its raw failed
+midgame memory was notsaved; onlyactual3 prior games/source/error retained. v2
+flushes everyevent. No replay/clock/phase contract changed to hide the failure.
+Prior0ad EARLYmiss105.733498s is explicit;hard30PASS. No forged earlierpush.
+
+## KEEP3 raw codepoints versus normalized UTF16 storage
+Actual pinned Zod4.6.5 checks.ts explicitly counts raw Unicode codepoints for string
+min/max; earlier statements equating raw socket max160 with UTF16 were incorrect.
+The reducer's existing normalized text.length<=160 and UI maxlength160 are UTF16,
+so a raw160-codepoint/320-unit emoji write can validate yet remains refused before
+storage. The catalog's normalized bluff truth uses the same writable bound.
+The first new test failure and original prose are preserved, not relabeled PASS.
+Correct only the independent length oracle; no raw admission rule, product, state
+cap, clock, sampler or original10k oracle is altered. Whole supplementary-plane
+catalog fields may contain up to two UTF16 units per raw codepoint; new actual
+maximum controls cover that admitted space, not only the earlier BMP maxima.
+C0 binary catalog controls refuse; tabs/LF/CR and C1 retain their actual original
+admission. No invented all-control rejection claim. Paired Unicode remains valid.
+Supplemental round qualification is separate from immutable generic receiver
+fields; current completed2/no-gain1, KEEP3 prospective second until new full.
+
+## KEEP4 rejected inputs and privacy
+Additional deterministic replay seeds are isolated from every original sampler.
+Frozen phase-state probes use actual pure reducer events, not browser clocks or
+synthetic performance measurements. The live/pause/disconnected variants retain
+actual identity/deadlines/RNG on malformed, normalized oversize, raw codepoint
+oversize-storage and control-only writes. Accepted retry views are saved in full
+for independent Python state-hash/projection checking. Timer-only final scores
+zero are a baseline/control, not a bot skill or strategy claim.
+Prospective v1 was never executed; v2 only adds output of actual read-only views.
+The PR-body script parse error happened before any tool/source/PR mutation and
+does not count as a game failure/no-gain. Original raw and earlier failed checks
+stay preserved. Completed qualified3/streak2; round4 prospective final third.
+The public495059-byte file is actual GitHub HTTP delivery, distinct from decoded
+video/runtime checks. Exact new-head full and final qualification are mandatory.
+
+## Final handoff and formal stopping point
+079 genuine full original and exact public delivery qualify the actual fourth
+follow-up review, third consecutive no-player-gain. The final documentation-only
+completion commit records this binding STOP and a concrete conditional handoff;
+it is not another player round or a new performance claim. Its own exact original
+hosted checks and whole public single-file receipt are mandatory before Ready18.
+After Ready no further source receipt commits or merge are authorized here.
+Snapshot cleanup first failed only an extra assumed node_modules symlink shape;
+full tracked file-set and byte checks had passed. Corrected cleanup accepts the
+actual f79 nested zod link, preserves target dependencies and all unique evidence,
+and removes only the two explicitly verified reproducible Git-archive directories.
+Original failure receipt is kept unchanged with a precise later clarification.
+Physical phone testing remains unavailable; original Chromium phone4x evidence
+retains its stated scope. G10 actual public upload remains separately BLOCKED.

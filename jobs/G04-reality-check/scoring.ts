@@ -17,4 +17,7 @@ export function quickScore(row:Row,guess:number):number{
  }
  return Math.max(0,1000-250*Math.abs(guess-row.correct)/10);
 }
-export function normalize(text:string):string{return text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').trim().replace(/\s+/gu,' ').toLowerCase();}
+export function isWellFormedText(text:string):boolean{return !/[\uD800-\uDFFF]/u.test(text);}
+export function isCatalogText(text:string):boolean{return isWellFormedText(text)&&!/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(text);}
+export function cleanText(text:string):string{return text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').trim().replace(/\s+/gu,' ');}
+export function normalize(text:string):string{return cleanText(text).toLowerCase();}

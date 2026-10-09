@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {createRng} from '../../contract/rng.ts';
 import {manifestSchema} from './preflight.ts';
-import {sampleRows,makeSamples,catalogSchema,realms} from './samples.ts';
+import {sampleRows,makeSamples,catalogSchema,rowSchema,realms} from './samples.ts';
 import {numberScore,quickScore,normalize} from './scoring.ts';
 import {numberMidpoint,initialEstimate} from './estimates.ts';
 import {replaySeeds,replaySamplerSeed} from './verification-seeds.ts';
@@ -92,6 +92,185 @@ test('all answers close a quick round and the last round doubles each award once
 test('empty and format-only fakes are rejected; normalization merges equivalent text',()=>{
  const s=toPhase('write',1,{mode:'bluff'});assert.equal(input(s,'p0',{type:'write',text:'   '}),s);assert.equal(input(s,'p0',{type:'write',text:'\u200b'}),s);
  assert.equal(normalize('  ＣＯＰＰＥＲ\n Compass '),'copper compass');
+});
+test('Unicode normalization keeps stored bluff writes within the 160-unit limit',()=>{
+ const s=toPhase('write',91,{mode:'bluff'});
+ for(const text of ['\ufdfa'.repeat(9),'\ufdfa'.repeat(160),'a'.repeat(158)+'\ufb03']){
+  assert(C.inputSchema.safeParse({type:'write',text}).success,'raw input fits the socket limit');
+  assert.equal(input(s,'p0',{type:'write',text}),s,'expanded fake must not lock a submission');
+ }
+ for(const text of ['\ufdfa'.repeat(8)+'x'.repeat(16),'a'.repeat(157)+'\ufb03','Ａ'.repeat(160)]){
+  const n=input(s,'p0',{type:'write',text});
+  assert.equal(n.responses.p0,text.normalize('NFKC'),'valid normalized boundary is retained exactly');
+  assert.equal(String(n.responses.p0).length,160);
+ }
+ assert.equal(input(input(s,'p0',{type:'write',text:'\ufdfa'.repeat(160)}),'p0',{type:'write',text:'valid retry'}).responses.p0,'valid retry','refused expansion permits a normal retry');
+});
+test('Unicode normalization cannot exceed the saved-state ceiling across twelve bluff rounds',()=>{
+ let s=C.init(context(8,91,{mode:'bluff',rounds:12}));let rejected=0,steps=0;
+ const oversized={type:'write' as const,text:'\ufdfa'.repeat(160)};
+ while(s.phase.id!=='done'&&steps++<300){
+  if(s.phase.id==='write'){
+   for(const id of s.seats){assert.equal(input(s,id,oversized),s,'oversized normalized fake is refused for every seat');rejected++;}
+   s=C.reduce(s,timer(s));
+  }else if(s.phase.id==='vote'){
+   const truth=s.options.find(option=>option.correct)!;
+   for(const id of s.seats)if(s.phase.id==='vote')s=input(s,id,{type:'vote',choice:truth.id});
+  }else s=C.reduce(s,timer(s));
+  assert(Buffer.byteLength(JSON.stringify(s))<=256*1024,'every reached state fits the original contract ceiling');
+ }
+ assert.equal(s.phase.id,'done');assert.equal(rejected,96);
+ assert.deepEqual(Object.keys(C.results(s)!.scores),s.seats);
+});
+test('catalog truth normalization uses the writable display limit without limiting casefold keys',()=>{
+ for(const correct of ['\ufdfa'.repeat(9),'\ufb03'.repeat(54)]){
+  const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,correct}:row);
+  assert.throws(()=>C.createGame(rows),'catalog must reject a truth that cannot fit a normalized submission');
+ }
+ for(const correct of ['\ufdfa'.repeat(8)+'x'.repeat(16),'Ａ'.repeat(160),'\u0130'.repeat(160)]){
+  const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,correct}:row),g=C.createGame(rows);
+  let s=g.init(context(2,91,{mode:'bluff',rounds:4}));
+  for(let step=0;step<10&&s.phase.id!=='write';step++)s=g.reduce(s,timer(s));
+  assert.equal(s.phase.id,'write');
+  s=g.reduce(s,{type:'input',playerId:'p0',input:{type:'write',text:correct},now:s.phase.startedAt+1});
+  assert.equal(String(s.responses.p0).length,160,'bounded normalized display remains writable');
+  s=g.reduce(s,timer(s));
+  assert.equal(g.controllerView(s,'p0').foundTruth,true);
+  s=g.reduce(s,timer(s));assert.equal(s.last!.awards.p0,1000,'valid truth is credited once');
+ }
+});
+test('malformed UTF16 and binary catalog controls are rejected before play',()=>{
+ for(const bad of ['\ud800','\udfff','\ud800A','A\udfff','\u0001','\u0007'])for(const field of ['id','prompt','hint','fact','correct','left','right']){
+  const rows=makeSamples(),row=rows.find(r=>r.kind===(field==='left'||field==='right'?'choice':'bluff'))!;
+  Object.assign(row,{[field]:'Visible '+bad});
+  assert.throws(()=>C.createGame(rows),'catalog text must reject malformed UTF16 or binary controls');
+ }
+ const s=toPhase('write',91,{mode:'bluff'});
+ for(const text of ['\ud800','\udfff','A\ud800','\udfffA']){
+  assert.equal(C.inputSchema.safeParse({type:'write',text}).success,false);
+  assert.equal(input(s,'p0',{type:'write',text}),s,'malformed submission must not lock a seat');
+ }
+ for(const control of ['\u0001','\u0007']){
+  assert(C.inputSchema.safeParse({type:'write',text:'A'+control.repeat(159)}).success);
+  assert.equal(input(s,'p0',{type:'write',text:'A'+control.repeat(159)}).responses.p0,'A','existing C0 write cleanup stays exact');
+  assert.equal(input(s,'p0',{type:'write',text:control.repeat(160)}),s);
+ }
+ for(const text of ['x'.repeat(158)+'🧭','\u0130'.repeat(160),' Ｃｏｐｐｅｒ\n Compass ']){
+  const n=input(s,'p0',{type:'write',text});assert.notEqual(n,s);assert(String(n.responses.p0).length<=160);
+ }
+ assert.equal(input(input(s,'p0',{type:'write',text:'\ud800'}),'p0',{type:'write',text:'valid retry'}).responses.p0,'valid retry');
+});
+test('maximal well formed catalog and three byte writes keep every saved state bounded',()=>{
+ const rows=makeSamples().map(row=>row.kind==='bluff'?{...row,id:(row.id+'界'.repeat(80)).slice(0,80),prompt:('Prompt '+'界'.repeat(240)).slice(0,240),hint:('Hint '+'界'.repeat(200)).slice(0,200),fact:('Fact '+'界'.repeat(90)).slice(0,90),correct:('Truth '+'界'.repeat(160)).slice(0,160)}:row);
+ const g=C.createGame(rows);let s=g.init(context(8,3,{mode:'bluff',rounds:12})),steps=0,writes=0;
+ const move=(event:Parameters<typeof g.reduce>[1])=>{s=g.reduce(s,event);assert(Buffer.byteLength(JSON.stringify(s))<=256*1024,'original state ceiling is unchanged');};
+ while(s.phase.id!=='done'&&steps++<300){
+  if(s.phase.id==='write'){
+   for(const [i,id] of s.seats.entries()){
+    move({type:'input',playerId:id,input:{type:'write',text:'f'+i+' '+'界'.repeat(157)},now:s.phase.startedAt+1});writes++;
+   }
+   assert.equal(s.phase.id,'vote');assert.equal(s.options.length,9);
+  }else if(s.phase.id==='vote'){
+   const ids=[...s.seats],options=structuredClone(s.options);
+   for(const [i,id] of ids.entries()){
+    const choice=options.find(option=>option.owners.includes(ids[(i+1)%ids.length]!))!;
+    move({type:'input',playerId:id,input:{type:'vote',choice:choice.id},now:s.phase.startedAt+1});
+   }
+  }else move(timer(s));
+ }
+ assert.equal(s.phase.id,'done');assert.equal(writes,96);
+ for(const id of s.seats)assert.equal(s.scores[id],6500,'independent twelve-round author award formula');
+});
+test('Unicode duplicate groups and long casefold keys match independent author credit',()=>{
+ const key=(text:string)=>text.normalize('NFKC').replace(/[\p{Cc}\p{Cf}]/gu,' ').split(/\s+/u).filter(Boolean).join(' ').toLowerCase();
+ const cases=[['ﬃ','ffi'],['Café','Cafe\u0301'],['\u0130'.repeat(80),'I\u0307'.repeat(80)],['\u0130'.repeat(160),'\u0130'.repeat(160)],['\ufdfa'.repeat(8),'\ufdfa'.repeat(8).normalize('NFKC')],['🧭 Anchor','🧭 ＡＮＣＨＯＲ'],['Anchor\u0001Watch','ＡＮＣＨＯＲ\tＷＡＴＣＨ'],['<Bluff>&"',' <BLUFF>&" ']];
+ for(const [caseIndex,words] of cases.entries()){
+  let s=C.init(context(8,31+caseIndex,{mode:'bluff',rounds:4})),steps=0,rounds=0;
+  const totals:Record<string,number>=Object.fromEntries(s.seats.map(id=>[id,0]));
+  while(s.phase.id!=='done'&&steps++<100){
+   if(s.phase.id!=='write'){s=C.reduce(s,timer(s));continue;}
+   const ids=[...s.seats],truth=String(s.question.correct),writing:Record<string,string>={},votes:Record<string,string>={};
+   for(const [i,id] of ids.entries()){
+    const text=i===3||i===6?truth.toUpperCase():i===4||i===7?'Other fake':words[i%words.length]!;
+    writing[id]=text;assert(C.inputSchema.safeParse({type:'write',text}).success);
+    s=C.reduce(s,{type:'input',playerId:id,input:{type:'write',text},now:s.phase.startedAt+1});
+   }
+   const options=s.options.map(option=>({id:option.id,text:option.text}));
+   for(const [i,id] of ids.entries()){
+    if(key(writing[id]!)===key(truth))continue;
+    const own=options.filter(o=>key(o.text)===key(writing[id]!));
+    for(const option of own)assert.equal(C.reduce(s,{type:'input',playerId:id,input:{type:'vote',choice:option.id},now:s.phase.startedAt+1}),s);
+    for(const option of C.controllerView(s,id).menu)assert.equal(option.mine,key(option.text)===key(writing[id]!));
+    const legal=options.filter(option=>key(option.text)!==key(writing[id]!)),chosen=legal[(s.round+i)%legal.length]!;
+    votes[id]=chosen.text;s=C.reduce(s,{type:'input',playerId:id,input:{type:'vote',choice:chosen.id},now:s.phase.startedAt+1});
+   }
+   assert.equal(s.phase.id,'reveal');const expected:Record<string,number>={};
+   for(const author of ids){
+    const word=key(writing[author]!),knows=word===key(truth);
+    let points=knows||key(votes[author]??'')===key(truth)?1000:0;
+    if(!knows){
+     const owners=ids.filter(id=>key(writing[id]!)===word);
+     const fooled=ids.filter(voter=>key(writing[voter]!)!==key(truth)&&!owners.includes(voter)&&key(votes[voter]??'')===word).length;
+     points+=fooled*Math.floor(500/owners.length);
+    }
+    expected[author]=points*(s.round===4?2:1);totals[author]!+=expected[author]!;
+   }
+   assert.deepEqual(s.last!.awards,expected);assert.deepEqual(s.scores,totals);rounds++;
+   assert(Buffer.byteLength(JSON.stringify(s))<=256*1024);s=C.reduce(s,timer(s));
+  }
+  assert.equal(s.phase.id,'done');assert.equal(rounds,4);assert.deepEqual(C.results(s)!.scores,totals);
+ }
+});
+test('UTF16 write and catalog admission match an independent code unit decoder',()=>{
+ const decode=(text:string)=>{
+  let points=0;
+  for(let i=0;i<text.length;i++){
+   const unit=text.charCodeAt(i);
+   if(unit>=0xd800&&unit<=0xdbff){const next=text.charCodeAt(++i);if(!(next>=0xdc00&&next<=0xdfff))return null;}
+   else if(unit>=0xdc00&&unit<=0xdfff)return null;
+   points++;
+  }
+  return points;
+ };
+ const check=(text:string)=>{const points=decode(text);assert.equal(C.inputSchema.safeParse({type:'write',text}).success,points!==null&&points>0&&points<=160);};
+ for(let unit=0;unit<65536;unit++)check('A'+String.fromCharCode(unit));
+ for(let i=0;i<1024;i++){
+  const high=0xd800+i,low=0xdc00+((i*37)&1023),pair=String.fromCharCode(high,low);
+  for(const text of ['A'+pair,'A'+pair+String.fromCharCode(high),'A'+String.fromCharCode(high,high,low),'A'+String.fromCharCode(low,high,low),'A'+pair+pair,'A'+String.fromCharCode(low)])check(text);
+ }
+ for(const text of ['', 'x'.repeat(158)+'🧭','x'.repeat(159)+'🧭'])check(text);
+ const writing=toPhase('write',91,{mode:'bluff'});
+ for(const text of ['x'.repeat(159)+'🧭','🧭'.repeat(160)]){
+  assert(C.inputSchema.safeParse({type:'write',text}).success,'pinned Zod counts raw Unicode code points');
+  assert.equal(input(writing,'p0',{type:'write',text}),writing,'normalized stored UTF16 bound remains enforced');
+ }
+ for(const text of ['x'.repeat(158)+'🧭','🧭'.repeat(80)])assert.equal(input(writing,'p0',{type:'write',text}).responses.p0,text);
+ const controls=[...Array.from({length:32},(_,i)=>i),127,...Array.from({length:32},(_,i)=>128+i)];
+ for(const unit of controls)for(const field of ['id','prompt','hint','fact','correct','left','right']){
+  const example=sampleRows.find(row=>row.kind===(field==='left'||field==='right'?'choice':'bluff'))!;
+  const row={...example,[field]:'Visible '+String.fromCharCode(unit)};
+  const allowed=unit>31&&unit!==127||unit===9||unit===10||unit===13;
+  assert.equal(rowSchema.safeParse(row).success,allowed);
+ }
+});
+test('refused Unicode writes retain every phase and private controller with a valid retry',()=>{
+ const states=[C.init(context(3)),toPhase('demo'),toPhase('answer',1,{mode:'quick'}),toPhase('write',91,{mode:'bluff'}),toPhase('vote',1,{mode:'bluff'}),toPhase('reveal'),toPhase('done')];
+ const refused=['\ud800','\udfff','A\ud800','\ufdfa'.repeat(9),'\ufdfa'.repeat(160),'a'.repeat(158)+'\ufb03','🧭'.repeat(160),'\u0001'.repeat(160)];
+ for(const source of states){
+  const s=freeze(structuredClone(source)),before=JSON.stringify(s),views=s.seats.map(id=>C.controllerView(s,id));
+  for(const candidate of [s,freeze(C.reduce(s,{type:'vip',action:'pause',now:s.phase.startedAt+1})),freeze(C.reduce(s,{type:'player',playerId:'p0',connected:false,now:s.phase.startedAt+1}))]){
+   const expected=JSON.stringify(candidate);
+   for(const text of refused){assert.equal(input(candidate,'p0',{type:'write',text}),candidate);assert.equal(JSON.stringify(candidate),expected);}
+  }
+  assert.equal(JSON.stringify(s),before);assert.deepEqual(s.seats.map(id=>C.controllerView(s,id)),views);
+  if(s.phase.id==='write'){
+   const text='Private valid retry',retry=input(s,'p0',{type:'write',text});
+   assert.equal(C.controllerView(retry,'p0').mine,text);assert.equal(retry.phase.deadline,s.phase.deadline);assert.deepEqual(retry.rng,s.rng);
+   assert(!JSON.stringify(C.tvView(retry)).includes(text));
+   for(const id of retry.seats.filter(id=>id!=='p0')){assert.equal(C.controllerView(retry,id).mine,null);assert(!JSON.stringify(C.controllerView(retry,id)).includes(text));}
+   assert.equal(input(retry,'p0',{type:'write',text:'replacement'}),retry);
+  }
+ }
 });
 test('duplicate fake authors share credit, own votes are invalid, option IDs are anonymous',()=>{
  let s=toPhase('write',1,{mode:'bluff'});s=input(s,'p0',{type:'write',text:'same fake'});s=input(s,'p1',{type:'write',text:'SAME   FAKE'});s=input(s,'p2',{type:'write',text:'other fake'});

@@ -571,3 +571,204 @@ Original frozen verify-hosted-artifact.py with --head c81b0b7e69b19782613debbc12
 clips PASS. Historical only. Corrected current full workflow, complete log,
 genuine ZIP and unchanged original reader are pending. No local timing or full
 npmtest trial was launched. All old failure bytes and predeclared gates preserved.
+
+## Unicode normalization state-bound follow-up (2026-10-09)
+
+Original Ready source738de72b is preserved. Complete commands/helpers/raw
+outputs and all resource/source receipts are in
+results/followup-unicode-20261009/proof.zip; its archive.json records actual
+member count/full-read CRC/physical comparisons/bytes/SHA.
+
+1. Actual old Node24 helper replay,8 players/12 Bluff rounds/seed91:
+   U+FDFA.repeat(160) passes the original socket schema, normalizes to2880,
+   stores96 oversized writes and reaches676419B; natural closure10:37:51.
+   This catches post-transformation bounds and real saved-state growth.
+2. Actual old-core negative command:
+   FAST_TEST=1 CORE_PATH=/workspace/game-cores-G04-audit-20261009/jobs/G04-reality-check/core.ts node --test --test-reporter=tap --test-name-pattern='Unicode normalization' test.ts
+   Actual EXIT1,2 failures/0 passes. Independent full-output reader accepts
+   exactly the two expected refusal assertions; no rerun or false PASS.
+3. Fixed bounded controller runs node node_modules/typescript/bin/tsc --noEmit,
+   node generate.ts --check, node fixtures.ts twice, node build.ts twice,
+   node build.ts --check, node checksums.ts and node checksums.ts --check.
+   All PASS;seven fixture bytes unchanged;two identical current pages.
+4. FAST_TEST=1 CORE_PATH=./core.ts node --test --test-reporter=tap test.ts:
+  31 focused PASS including raw9→162-unit expansion,2880-unit expansion,
+   Latin ligature161-unit rejection, three exact160-unit accepted boundaries
+   and valid retry after refusal. No full local21k matrix claim.
+5. node --test --test-reporter=tap strict-proof.test.ts:
+   all4 original strict controls PASS, unchanged gates and actual dependency/
+   encoder/decoder identities. Synthetic refusal fixtures stay controls.
+6. Fixed pure helper:42 independent old/fixed benign games,all2–8 counts,
+   all3 modes,seeds1/91;3395 event states, bot actions,TV/controllers/results
+   exactly equal. Same declared worst-case96 refused writes completes at
+  8995B peak; original262144B bound remains immutable.
+7. Actual bounded pipeline NATCLOSED10:45:18.033477Z, all phases EXIT0,
+   final owned groups empty/no signals, sampled peak425947136B under512MiB.
+  2987 before/final inputs stable apart from declared generated play.html;
+   pure before/final equal. Separately all1106 original physical source/Zod/
+   runtime/helper SHA/stat guards unchanged10:46:33.874573Z.
+   These are sampled process bounds, not instantaneous memory or speed gains.
+
+No local browser, frame-clock or new performance attempt occurred. The full
+original new-head npmtest workflow/genuine artifact/unchanged1034-source
+reader/all original native raw and five decoded clips are pending and
+mandatory before Ready. Previous Ready full acceptance is historical only.
+
+Final staging command first ran checksums.ts from the repository root and
+reported0 files, EXIT0; that is not job verification. Its1-byte new root
+output and actual command/cwd are preserved in proof.zip. The original
+67-member archive is retained privately; the70-member archive preserves
+all original members byte-for-byte plus this diagnostic. Correct job-cwd
+checksum write/check is required before publication; no test/native rerun.
+
+## Catalog bound consistency (2026-10-09)
+Complete probe/negative/fixed source/runtime/resource/raw receipts are in
+results/followup-catalog-normalization-20261009/proof.zip; archive.json gives
+full member CRC/exact byte comparisons and digest. Actual saved f79 catalog
+regression command FAST_TEST=1 CORE_PATH=<saved-f79>/core.ts node --test
+--test-reporter=tap --test-name-pattern='catalog truth normalization' test.ts:
+EXIT1,one expected missing-exception failure/zero pass, complete TAP read.
+New Node24 pipeline types/data/two fixtures/two builds/freshness/checksums PASS;
+FAST_TEST=1 test.ts32 PASS; unchanged strict-proof.test.ts four PASS.
+10000 seeded old/new normalization comparisons equal;2 overflow catalogs rejected,
+3 exact160 display boundaries accepted/credited, including320 lowercase key.
+42 oldReady/new games3395 states/actions/views/results exact. Same worst-case
+96 refusals8995B. Actual closure11:10:33.286930Z, all3830 guards unchanged within
+recorded declared-output scopes, peak436432896B<512MiB/no signals/empty groups.
+First f79 workflow run37920764830/job113787854390 is metadata success; whole
+decoded54-test log independently read. Official11611612904 expected1448737B/
+SHA58c9f87a4b536df5df8d5de7b77353a4eaa1e0aed429db3d1b89787348145770.
+Actual two configured403 downloads received0B; no whole/native/clip acceptance.
+First broad failed controller flag is not a source mutation finding. New source
+full original CI and unchanged complete-reader acceptance remain mandatory.
+
+## KEEP1 accepted Unicode saved states
+See results/keep1-unicode-state-20261009/proof.zip/archive.json for complete actual
+commands/raw games/source guards/resource closures/whole official archives/errata.
+1. Current e32 genuine original run37923500292 complete55-test log/all25 kills,
+   official artifact11613082801 full1432496B/SHAb4d0a9cc873ca8958032d8005783fa8e5cbe7b4917aa74aeb4bd3379ab10a1c7:
+   unchanged reader exacthead/run accepts1034 guards/3000 native/66 controls/5 clips,
+   actual reception CLOSED11:33:23.361223Z/all277 inputs unchanged/natural closure.
+2. Declared untimed original sample24 games:5256 events/2304 writes/288 rounds,
+   all legal replays/independent6500-per-seat awards/private projections exact,
+   max227496 under262144,3834 guards/256MiB60s/no signals; not a no-gain round.
+3. Distinct maximal admitted catalog3 games/seeds1/2/3:657 events/288writes/36rounds,
+   33 actual violations/max288469>262144; savedwhole games/replays exact.
+   Observer CLOSED11:38:09.388481Z means measurements closed; stateContractPass=false.
+4. Direct original U+0001/U+0007 catalog admission fields id/prompt/hint/fact/truth
+   all accepted. Original write A+159 controls storesA, wholly blank refused.
+   C0 v1 other workload retained; exact v2 valid3-byte fake/corrected raw-C0 catalogs
+   full2 games438 events max182960 CLOSED11:44:01.243332Z. No cap changed.
+5. FAST_TEST=1 CORE_PATH=/tmp/G04-e32-preserved-baseline-20261009/jobs/G04-reality-check/core.ts node --test --test-reporter=tap --test-name-pattern='malformed UTF16 and binary catalog' test.ts:
+   actual EXIT1/oneexpected missing-exception failure/zero pass; complete TAP read.
+6. Fixed node tsc --noEmit,generate.ts --check,fixtures.ts twice,build.ts twice,
+   build.ts --check,checksums.ts/write+--check allPASS. FAST_TEST=1 test.ts34PASS,
+   unchanged strict-proof.test.ts4PASS. Allseven original fixture bytes unchanged.
+7. Fixed pure scripts42 old/new benign games3395 states/actions/views/results exact,
+   10000 matching cases equal,42 malformed/control raw catalog admissions nowreject.
+   Nine maximal valid3-byte/quote/emoji8-seat12-round games1971 events/864writes/
+   108rounds, all complete replays, independent6500 scores exact,max151384<262144.
+8. Actual fixed pipeline CLOSED11:47:48.214088Z,3834 guarded inputs stable except
+   declared generatedplay.html, allchildren naturally empty/no signals, measured
+   peak428769280B<declared512MiB/perphase60s. No local browser/frame clock.
+Changed-head original whole CI remains mandatory before qualified gain/Ready.
+
+## KEEP2 complex Unicode independent credit
+Actualcomplete commands/helpers/raw/legalgames/guard/closure/wholeofficial0ad in
+results/keep2-unicode-credit-20261009/proof.zip,fullmemberCRC/physicalcomparisons.
+Corrected Node24 extra1003seed corpus under256MiB180s:1003fullgames/4012rounds/
+48106events/20040writes/17033self-voterefusals/14037duplicateauthors/3007truthwriters,
+zeroindependentaward mismatches/alllegal replay hashes equal;peak20251B;all3837
+inputguards unchanged,naturalclosure12:03:03.525068Z/no signals/peak155627520B.
+First childactualEXIT1 extra revealinputType assertion retained; all3837 failed
+inputs independently unchanged12:02:45.669976; onlythreecompletedgames were saved,
+failedmidgame rawunavailable disclosed. Corrected version addsper-eventflushing
+and phase-aware assert only,keepinggame/corpus/budget/sampler unchanged.
+Python saved-only reader whole1003gzip lines/48106 eventrows throughEOF,
+20040award/10890ownershipassertions/alltotals+winnersPASS12:06:06.167093Z,
+allfiveinputguardsunchanged,4499206B SHA14ef2989ccf9c1444c649a35b4c6f68212ddce3c0fada57ccb591b599a6ff936.
+Local tsc/data/twofixtures/twobuilds/freshness/checksums/Fasttest35/strict4PASS,
+pipeline3836guards/noactualoutputchanges/naturalCLOSED12:04:58.937904Z,
+peak444301312B<512MiB60sphasebound.42benign3395states+10000matchingcases equal.
+Exact0ad full57test/25mutant/originalwholeofficial reader all1034/3000/5clips
+accepted11:59:05.436258; qualifiesKEEP1, historical for newtest source. No local
+nativeclock. Currentnewfull remainsrequired beforequalifiedKEEP2 firstno-gain.
+
+## KEEP3 independent text validation and admitted storage maxima
+Complete exact commands/helpers/specs/raw/failures/guards/closure/whole current c30
+in results/keep3-utf16-boundaries-20261009/proof.zip, all full CRC/physical comparisons.
+Node24 finite256MiB180s producer:1120690 saved rows (65536 singles/1048576 paired/
+5120 edges/1003 new seeds/455 catalog cases), zero independent decoder/schema/
+factory discrepancies;2517 actual malformed refusals+retries;210 expected catalog
+refusals.3840 guards unchanged/natural12:20:39.087683Z/peak145997824B/no signals.
+Python strict UTF16 whole gzip EOF1120690 rows PASS12:22:19.475306Z,all6 input
+guards unchanged; wrapper3843 guards/natural12:22:20.402726Z/peak14024704B.
+Gzip10324975B SHA f450abe5087a1fc747a83304b3988f08151b419e993323fb04e79b6381135949.
+Extra permanent test actual35pass/1fail raw161UTF16-unit/160-codepoint assumption;
+original failed test/Zod4.6.5 checks.ts/source/log retained. Independent3839 guards
+all equal12:24:20.215253Z; generic failed-wrapper booleans do not show mutations.
+Correct only raw length oracle to pinned codepoints; storage limit still160 units.
+Initial independent-wrapper existing-directory allocation failed before any child,
+original helper/tool output preserved; corrected output path only.
+Distinct Node finite256MiB180s maximum actual admitted 4byte catalogs/3byte fakes:
+9 games108 rounds1560 legal events432 writes/max158015<262144/all independent
+scores/replay exact;24 raw length/14 catalog-boundary controls;all3840 guards,
+natural12:28:13.801737Z/peak87220224B/no signals.
+Corrected Node36 focused/four strict/types/data/2 fixtures/2 builds/freshness/
+checksums/42 benign3395states+10000 matching cases PASS12:29:02.179987Z;
+3839 unchanged inputs/no output changes/peak431558656B<512MiB60s phasebound.
+Original current c30 complete58test/25mutants/genuine full1433337B official accepted
+12:16:38.815738Z, unchanged reader all1034/3000 intervals/66controls/five VP8 clips.
+Current new test source requires original full again. No local browser/frameclock.
+
+## KEEP4 private refusal/pause/presence/retry coverage
+All actual commands/specs/helpers/raw/projections/current official2fdb/failures in
+results/keep4-private-refusals-20261009/proof.zip, fullCRC/physical comparisons.
+Node24 additional1003 fixed seeded full games/counts2–8/three modes:17718 legal
+timer events/6017 frozen phase states/all7phases/144408 refusals/2004 private retry
+checks/729324 view assertions,48136 paused and48136 disconnected controls.
+All replay hashes/results/deadlines/RNG/private projections exact,states3977B peak.
+Producer3843 inputs unchanged/natural12:46:28.915189Z/peak173887488B<256MiB180s.
+Python strict UTF16/NFKC wholeEOF/state variant+retry hashes/actual TV and own/other
+projection reader1003games/allcounts exact12:48:35.369198Z/all7 inputs unchanged;
+wrapper3846 guards/natural12:48:36.267304Z/peak15876096B/no signals.
+Whole gzip5753708B SHAa9bcb969e3be8c3b07b8973e516ad47af47817227658afad3d0622b56b66167c.
+Local37 focused/4 strict/types/data/twofixtures/twobuilds/freshness/checksums/
+42 benign3395 states+10000 matching cases PASS12:50:03.287439Z;3842 inputs/no
+output changes/peak431173632B<512MiB60s/natural empty. No original sampler altered.
+Configured public curl exact2fdb HTML HTTP200/fullEOF/full physical byte equality:
+495059B/SHA234c7b430308269b610fea599042a9bdaec70f74745a308659da344b9f036a21,
+12:51:31.614999Z/all5 inputs/naturalempty/peak10223616B<64MiB60s/no signals.
+Genuine2fdb original full59-tests/25mutants/official1437634B accepted
+12:44:05.074969Z/all1034 source/module guards/3000 native intervals/66controls/
+five VP8 full decodes/all287 receipt guards. New source requires exact full again.
+Earlier unexecuted v1 preserved; v2 adds saved actual projections only. PR-body
+JS parse failure before all mutation is retained; corrected string formatting.
+Original job/rules remain binding; no local browser/frame/physical-phone claim.
+
+## Final qualified follow-up stop and delivery
+Complete exact helpers/arguments/outputs/source guards/physical inputs in
+results/final-followup-stop-20261009/proof.zip, full archive CRC/member byte reads.
+python /tmp/G04-079-whole-hosted-curl-20261009.py naturally CLOSED_PASS
+13:12:07.032288Z: genuine official artifact11617204820/run37933314761,
+1443958B SHA d1206d18428a1a3a63bc8f2c0288ec0302a10666b72843e3ecf91bd90494e608.
+Whole decoded original log60 main/four strict tests,25 mutation kills/all21
+thousand-game cohorts/replay/idle/added regressions. Unchanged original reader
+all1034 source/module guards/all3000 native intervals/66 browser controls/five
+full VP8 decode outputs pass.290 source/runtime/self inputs before==always-final;
+actualEXIT0/empty owned groups/no signals/peak84578304B<512MiB180s.
+python /tmp/G04-079-public-html-eof-20261009.py naturally CLOSED_PASS
+13:12:59.510111Z: public HTTP200/fullEOF/every byte physically equal accepted
+single file495059B SHA234c7b430308269b610fea599042a9bdaec70f74745a308659da344b9f036a21,
+all5 inputs unchanged/empty/no signals/peak10223616B<64MiB60s.
+Separate qualification records KEEP4 third no-gain/completed4/streak3/player STOP.
+The generic immutable reader's qualifiedKeepRounds0 means no classification by
+that reader, not absence of independently recorded qualified rounds.
+Final source publication commands, original-product/test bridge and checksum
+write/check are recorded by the exact archived final publisher. No test/product/
+page/catalog/strategy/sampler/dependency/workflow/performance-gate change.
+This completion source must genuinely pass its own whole original and exact-head
+public delivery before Ready. No current-head acceptance is inferred from079.
+Only reproducible f79/e32 snapshot copies were reclaimed after full source-byte
+checks; actual failed extra dependency-link-shape expectation preserved/corrected,
+no unique proof/raw/Ready/dependency/G10 files deleted. No browser/native replay.
