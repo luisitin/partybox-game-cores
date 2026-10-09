@@ -10,9 +10,10 @@ their actual source blocks; the complete data and search stay intact.
 One controlled desktop/phone CPU4 comparison observed the first legal
 International move 17.5s/73.5s sooner. Detailed evidence is in VERIFY.md.
 The fix is integrated and its strict compiler/full offline build passed.
-The complete integrated original CI/native/game/raw/media/source checks
-passed. Permanent full standalone delivery and KEEP qualification remain
-pending. PR #10 stays Draft/open; this is not a completion claim.
+The complete original CI/native/game/raw/media/source checks passed.
+Permanent full standalone delivery is BLOCKED: uploads.github.com rejects
+configured credentials (HTTP401). See BLOCKED.md. KEEP remains unfinished;
+PR #10 stays Draft/open; this is not a completion claim.
 
 Requires Node 22.16+ and pinned package-lock.json. From this directory:
 
