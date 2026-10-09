@@ -1,0 +1,1594 @@
+﻿2026-10-09T02:50:28.7059044Z Current runner version: '2.337.0'
+2026-10-09T02:50:28.7094968Z ##[group]Runner Image Provisioner
+2026-10-09T02:50:28.7096734Z Hosted Compute Agent
+2026-10-09T02:50:28.7097905Z Version: 20261002.596
+2026-10-09T02:50:28.7099320Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-09T02:50:28.7100652Z Build Date: 2026-10-02T22:28:27Z
+2026-10-09T02:50:28.7101898Z Worker ID: {d7cd29bc-d256-47cf-aca2-e3c845a47d1e}
+2026-10-09T02:50:28.7103381Z Region: eastus
+2026-10-09T02:50:28.7104404Z Cloud: Azure
+2026-10-09T02:50:28.7105562Z ##[endgroup]
+2026-10-09T02:50:28.7108298Z ##[group]Operating System
+2026-10-09T02:50:28.7109367Z Ubuntu
+2026-10-09T02:50:28.7110390Z 24.04.5
+2026-10-09T02:50:28.7111329Z LTS
+2026-10-09T02:50:28.7112365Z ##[endgroup]
+2026-10-09T02:50:28.7113450Z ##[group]Runner Image
+2026-10-09T02:50:28.7114548Z Image: ubuntu-24.04
+2026-10-09T02:50:28.7115745Z Version: 20261004.327.1
+2026-10-09T02:50:28.7118294Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-09T02:50:28.7121236Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-09T02:50:28.7122819Z ##[endgroup]
+2026-10-09T02:50:28.7124765Z ##[group]GITHUB_TOKEN Permissions
+2026-10-09T02:50:28.7128236Z Contents: read
+2026-10-09T02:50:28.7129241Z Metadata: read
+2026-10-09T02:50:28.7130156Z ##[endgroup]
+2026-10-09T02:50:28.7134159Z Secret source: Actions
+2026-10-09T02:50:28.7135645Z Cache mode: write
+2026-10-09T02:50:28.7137706Z Prepare workflow directory
+2026-10-09T02:50:28.7940753Z Prepare all required actions
+2026-10-09T02:50:28.8015263Z Getting action download info
+2026-10-09T02:50:28.9833259Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-09T02:50:29.0838487Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-09T02:50:29.1718510Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-10-09T02:50:29.3820936Z Complete job name: checks (node)
+2026-10-09T02:50:29.4554926Z ##[group]Run actions/checkout@v4
+2026-10-09T02:50:29.4555870Z with:
+2026-10-09T02:50:29.4556557Z   ref: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:29.4557196Z   repository: luisitin/partybox-game-cores
+2026-10-09T02:50:29.4561398Z   token: ***
+2026-10-09T02:50:29.4561820Z   ssh-strict: true
+2026-10-09T02:50:29.4562244Z   ssh-user: git
+2026-10-09T02:50:29.4562681Z   persist-credentials: true
+2026-10-09T02:50:29.4563175Z   clean: true
+2026-10-09T02:50:29.4563622Z   sparse-checkout-cone-mode: true
+2026-10-09T02:50:29.4564141Z   fetch-depth: 1
+2026-10-09T02:50:29.4564566Z   fetch-tags: false
+2026-10-09T02:50:29.4565005Z   show-progress: true
+2026-10-09T02:50:29.4565443Z   lfs: false
+2026-10-09T02:50:29.4565854Z   submodules: false
+2026-10-09T02:50:29.4566513Z   set-safe-directory: true
+2026-10-09T02:50:29.4567027Z   allow-unsafe-pr-checkout: false
+2026-10-09T02:50:29.4568031Z env:
+2026-10-09T02:50:29.4568637Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:29.4569276Z ##[endgroup]
+2026-10-09T02:50:29.5585003Z Syncing repository: luisitin/partybox-game-cores
+2026-10-09T02:50:29.5588193Z ##[group]Getting Git version info
+2026-10-09T02:50:29.5589653Z Working directory is '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T02:50:29.5591745Z [command]/usr/bin/git version
+2026-10-09T02:50:29.5701032Z git version 2.55.0
+2026-10-09T02:50:29.5726589Z ##[endgroup]
+2026-10-09T02:50:29.5742199Z Temporarily overriding HOME='/home/runner/work/_temp/bc973dc7-4abf-415d-9513-bfaa3c1ffbb7' before making global git config changes
+2026-10-09T02:50:29.5744705Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T02:50:29.5758053Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T02:50:29.5814591Z Deleting the contents of '/home/runner/work/partybox-game-cores/partybox-game-cores'
+2026-10-09T02:50:29.5819441Z ##[group]Initializing the repository
+2026-10-09T02:50:29.5823867Z [command]/usr/bin/git init /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T02:50:29.5956647Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-09T02:50:29.5958917Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-09T02:50:29.5960887Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-09T02:50:29.5962504Z hint: call:
+2026-10-09T02:50:29.5963445Z hint:
+2026-10-09T02:50:29.5964467Z hint: 	git config --global init.defaultBranch <name>
+2026-10-09T02:50:29.5965656Z hint:
+2026-10-09T02:50:29.5967057Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-09T02:50:29.5968843Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-09T02:50:29.5970350Z hint:
+2026-10-09T02:50:29.5971228Z hint: 	git branch -m <name>
+2026-10-09T02:50:29.5972227Z hint:
+2026-10-09T02:50:29.5973439Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-09T02:50:29.5975747Z Initialized empty Git repository in /home/runner/work/partybox-game-cores/partybox-game-cores/.git/
+2026-10-09T02:50:29.5979943Z [command]/usr/bin/git remote add origin https://github.com/luisitin/partybox-game-cores
+2026-10-09T02:50:29.6061848Z ##[endgroup]
+2026-10-09T02:50:29.6063206Z ##[group]Disabling automatic garbage collection
+2026-10-09T02:50:29.6067520Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-09T02:50:29.6104392Z ##[endgroup]
+2026-10-09T02:50:29.6105810Z ##[group]Setting up auth
+2026-10-09T02:50:29.6115452Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T02:50:29.6161111Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T02:50:29.6597434Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T02:50:29.6636816Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T02:50:29.6892636Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T02:50:29.6935116Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T02:50:29.7201931Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-09T02:50:29.7248349Z ##[endgroup]
+2026-10-09T02:50:29.7249825Z ##[group]Fetching the repository
+2026-10-09T02:50:29.7260076Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:46.8079521Z From https://github.com/luisitin/partybox-game-cores
+2026-10-09T02:50:46.8081647Z  * branch            cd9c554133769c264e0157c298d0bdc682d87b27 -> FETCH_HEAD
+2026-10-09T02:50:46.8086982Z ##[endgroup]
+2026-10-09T02:50:46.8089063Z ##[group]Determining the checkout info
+2026-10-09T02:50:46.8090779Z ##[endgroup]
+2026-10-09T02:50:46.8100885Z [command]/usr/bin/git sparse-checkout disable
+2026-10-09T02:50:46.8160332Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-09T02:50:46.8192970Z ##[group]Checking out the ref
+2026-10-09T02:50:46.8198478Z [command]/usr/bin/git checkout --progress --force cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:48.5904394Z Updating files:   9% (180/1944)
+2026-10-09T02:50:48.9128990Z Updating files:  10% (195/1944)
+2026-10-09T02:50:49.7943038Z Updating files:  10% (199/1944)
+2026-10-09T02:50:49.9259258Z Updating files:  11% (214/1944)
+2026-10-09T02:50:50.8728716Z Updating files:  11% (216/1944)
+2026-10-09T02:50:51.2359703Z Updating files:  11% (226/1944)
+2026-10-09T02:50:51.9022766Z Updating files:  12% (234/1944)
+2026-10-09T02:50:52.2653093Z Updating files:  12% (243/1944)
+2026-10-09T02:50:52.4946752Z Updating files:  13% (253/1944)
+2026-10-09T02:50:52.4965842Z Updating files:  14% (273/1944)
+2026-10-09T02:50:52.4977234Z Updating files:  15% (292/1944)
+2026-10-09T02:50:52.5173074Z Updating files:  16% (312/1944)
+2026-10-09T02:50:52.5181294Z Updating files:  17% (331/1944)
+2026-10-09T02:50:52.5198974Z Updating files:  18% (350/1944)
+2026-10-09T02:50:52.5406469Z Updating files:  19% (370/1944)
+2026-10-09T02:50:52.5425246Z Updating files:  20% (389/1944)
+2026-10-09T02:50:52.5434283Z Updating files:  21% (409/1944)
+2026-10-09T02:50:52.5442823Z Updating files:  22% (428/1944)
+2026-10-09T02:50:52.5459218Z Updating files:  23% (448/1944)
+2026-10-09T02:50:52.5474871Z Updating files:  24% (467/1944)
+2026-10-09T02:50:52.5490276Z Updating files:  25% (486/1944)
+2026-10-09T02:50:52.5506513Z Updating files:  26% (506/1944)
+2026-10-09T02:50:52.5516478Z Updating files:  27% (525/1944)
+2026-10-09T02:50:52.5530138Z Updating files:  28% (545/1944)
+2026-10-09T02:50:52.5614971Z Updating files:  29% (564/1944)
+2026-10-09T02:50:52.5789733Z Updating files:  30% (584/1944)
+2026-10-09T02:50:52.5962276Z Updating files:  31% (603/1944)
+2026-10-09T02:50:52.6050020Z Updating files:  32% (623/1944)
+2026-10-09T02:50:52.6065850Z Updating files:  33% (642/1944)
+2026-10-09T02:50:52.6327510Z Updating files:  34% (661/1944)
+2026-10-09T02:50:52.6510975Z Updating files:  35% (681/1944)
+2026-10-09T02:50:52.6520955Z Updating files:  36% (700/1944)
+2026-10-09T02:50:52.6696091Z Updating files:  37% (720/1944)
+2026-10-09T02:50:52.6718288Z Updating files:  38% (739/1944)
+2026-10-09T02:50:52.6904320Z Updating files:  39% (759/1944)
+2026-10-09T02:50:52.7079025Z Updating files:  40% (778/1944)
+2026-10-09T02:50:52.7097333Z Updating files:  41% (798/1944)
+2026-10-09T02:50:52.7108715Z Updating files:  42% (817/1944)
+2026-10-09T02:50:52.7165565Z Updating files:  43% (836/1944)
+2026-10-09T02:50:52.7178290Z Updating files:  44% (856/1944)
+2026-10-09T02:50:52.7188402Z Updating files:  45% (875/1944)
+2026-10-09T02:50:52.7208616Z Updating files:  46% (895/1944)
+2026-10-09T02:50:52.7367580Z Updating files:  47% (914/1944)
+2026-10-09T02:50:52.7520622Z Updating files:  48% (934/1944)
+2026-10-09T02:50:52.7599977Z Updating files:  49% (953/1944)
+2026-10-09T02:50:52.7748852Z Updating files:  50% (972/1944)
+2026-10-09T02:50:52.7766616Z Updating files:  51% (992/1944)
+2026-10-09T02:50:52.7786269Z Updating files:  52% (1011/1944)
+2026-10-09T02:50:52.7832732Z Updating files:  53% (1031/1944)
+2026-10-09T02:50:52.7878554Z Updating files:  54% (1050/1944)
+2026-10-09T02:50:52.7904301Z Updating files:  55% (1070/1944)
+2026-10-09T02:50:52.7950097Z Updating files:  56% (1089/1944)
+2026-10-09T02:50:52.7997883Z Updating files:  57% (1109/1944)
+2026-10-09T02:50:52.8039927Z Updating files:  58% (1128/1944)
+2026-10-09T02:50:52.8088926Z Updating files:  59% (1147/1944)
+2026-10-09T02:50:52.8104290Z Updating files:  60% (1167/1944)
+2026-10-09T02:50:52.8136267Z Updating files:  61% (1186/1944)
+2026-10-09T02:50:52.8172748Z Updating files:  62% (1206/1944)
+2026-10-09T02:50:52.8225515Z Updating files:  63% (1225/1944)
+2026-10-09T02:50:52.8258069Z Updating files:  64% (1245/1944)
+2026-10-09T02:50:52.8291398Z Updating files:  64% (1253/1944)
+2026-10-09T02:50:52.8330754Z Updating files:  65% (1264/1944)
+2026-10-09T02:50:52.8382602Z Updating files:  66% (1284/1944)
+2026-10-09T02:50:52.8434780Z Updating files:  67% (1303/1944)
+2026-10-09T02:50:52.8518768Z Updating files:  68% (1322/1944)
+2026-10-09T02:50:52.8552468Z Updating files:  69% (1342/1944)
+2026-10-09T02:50:52.8563099Z Updating files:  70% (1361/1944)
+2026-10-09T02:50:52.8585426Z Updating files:  71% (1381/1944)
+2026-10-09T02:50:52.8596758Z Updating files:  72% (1400/1944)
+2026-10-09T02:50:52.8608675Z Updating files:  73% (1420/1944)
+2026-10-09T02:50:52.8617678Z Updating files:  74% (1439/1944)
+2026-10-09T02:50:52.8626184Z Updating files:  75% (1458/1944)
+2026-10-09T02:50:52.8665344Z Updating files:  76% (1478/1944)
+2026-10-09T02:50:52.8677221Z Updating files:  77% (1497/1944)
+2026-10-09T02:50:52.8687526Z Updating files:  78% (1517/1944)
+2026-10-09T02:50:52.8696496Z Updating files:  79% (1536/1944)
+2026-10-09T02:50:52.8705696Z Updating files:  80% (1556/1944)
+2026-10-09T02:50:52.8716425Z Updating files:  81% (1575/1944)
+2026-10-09T02:50:52.8724964Z Updating files:  82% (1595/1944)
+2026-10-09T02:50:52.8734499Z Updating files:  83% (1614/1944)
+2026-10-09T02:50:52.8745907Z Updating files:  84% (1633/1944)
+2026-10-09T02:50:52.8774762Z Updating files:  85% (1653/1944)
+2026-10-09T02:50:52.8783565Z Updating files:  86% (1672/1944)
+2026-10-09T02:50:52.8793386Z Updating files:  87% (1692/1944)
+2026-10-09T02:50:52.8802602Z Updating files:  88% (1711/1944)
+2026-10-09T02:50:52.8810203Z Updating files:  89% (1731/1944)
+2026-10-09T02:50:52.8826653Z Updating files:  90% (1750/1944)
+2026-10-09T02:50:52.8868673Z Updating files:  91% (1770/1944)
+2026-10-09T02:50:52.8926036Z Updating files:  92% (1789/1944)
+2026-10-09T02:50:52.8964585Z Updating files:  93% (1808/1944)
+2026-10-09T02:50:52.8982125Z Updating files:  94% (1828/1944)
+2026-10-09T02:50:53.2340065Z Updating files:  95% (1847/1944)
+2026-10-09T02:50:53.2349003Z Updating files:  96% (1867/1944)
+2026-10-09T02:50:53.2360779Z Updating files:  97% (1886/1944)
+2026-10-09T02:50:53.2372080Z Updating files:  98% (1906/1944)
+2026-10-09T02:50:53.2384518Z Updating files:  99% (1925/1944)
+2026-10-09T02:50:53.2385205Z Updating files: 100% (1944/1944)
+2026-10-09T02:50:53.2385669Z Updating files: 100% (1944/1944), done.
+2026-10-09T02:50:53.2413997Z Note: switching to 'cd9c554133769c264e0157c298d0bdc682d87b27'.
+2026-10-09T02:50:53.2414515Z 
+2026-10-09T02:50:53.2414765Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-09T02:50:53.2415338Z changes and commit them, and you can discard any commits you make in this
+2026-10-09T02:50:53.2415894Z state without impacting any branches by switching back to a branch.
+2026-10-09T02:50:53.2416795Z 
+2026-10-09T02:50:53.2417250Z If you want to create a new branch to retain commits you create, you may
+2026-10-09T02:50:53.2417804Z do so (now or later) by using -c with the switch command. Example:
+2026-10-09T02:50:53.2418103Z 
+2026-10-09T02:50:53.2418232Z   git switch -c <new-branch-name>
+2026-10-09T02:50:53.2418435Z 
+2026-10-09T02:50:53.2418548Z Or undo this operation with:
+2026-10-09T02:50:53.2418734Z 
+2026-10-09T02:50:53.2418830Z   git switch -
+2026-10-09T02:50:53.2418974Z 
+2026-10-09T02:50:53.2419217Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-09T02:50:53.2419581Z 
+2026-10-09T02:50:53.2419891Z HEAD is now at cd9c554 G10 archive bounded delivery controller and recover duplicate installer
+2026-10-09T02:50:53.2566625Z ##[endgroup]
+2026-10-09T02:50:53.2623037Z [command]/usr/bin/git log -1 --format=%H
+2026-10-09T02:50:53.2655686Z cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:53.2914837Z ##[group]Run actions/setup-node@v4
+2026-10-09T02:50:53.2915170Z with:
+2026-10-09T02:50:53.2915378Z   node-version: 22.16.0
+2026-10-09T02:50:53.2915610Z   cache: npm
+2026-10-09T02:50:53.2916243Z   cache-dependency-path: jobs/G10-checkers/package-lock.json
+2026-10-09T02:50:53.2916708Z   always-auth: false
+2026-10-09T02:50:53.2916930Z   check-latest: false
+2026-10-09T02:50:53.2919641Z   token: ***
+2026-10-09T02:50:53.2919846Z env:
+2026-10-09T02:50:53.2920103Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:53.2920442Z ##[endgroup]
+2026-10-09T02:50:53.4305622Z Attempting to download 22.16.0...
+2026-10-09T02:50:53.4419295Z (node:2309) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T02:50:53.4420822Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T02:50:53.9945428Z Acquiring 22.16.0 - x64 from https://github.com/actions/node-versions/releases/download/22.16.0-15177438473/node-22.16.0-linux-x64.tar.gz
+2026-10-09T02:50:54.4561338Z Extracting ...
+2026-10-09T02:50:54.4687692Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/55a50e53-3258-42c4-b9a2-410a203718c8 -f /home/runner/work/_temp/f2872705-3f44-4df8-8c99-616845b4da23
+2026-10-09T02:50:55.6591481Z Adding to the cache ...
+2026-10-09T02:50:57.7120248Z ##[group]Environment details
+2026-10-09T02:50:57.9378022Z node: v22.16.0
+2026-10-09T02:50:57.9378397Z npm: 10.9.2
+2026-10-09T02:50:57.9378612Z yarn: 1.22.22
+2026-10-09T02:50:57.9379152Z ##[endgroup]
+2026-10-09T02:50:57.9402180Z [command]/opt/hostedtoolcache/node/22.16.0/x64/bin/npm config get cache
+2026-10-09T02:50:58.0362376Z /home/runner/.npm
+2026-10-09T02:50:58.1018699Z Cache hit for: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T02:50:58.1130755Z (node:2309) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T02:50:58.3439705Z Received 12676330 of 12676330 (100.0%), 63.3 MBs/sec
+2026-10-09T02:50:58.3440284Z Cache Size: ~12 MB (12676330 B)
+2026-10-09T02:50:58.3544221Z [command]/usr/bin/tar -xf /home/runner/work/_temp/02056d1f-10af-4bf6-a556-97a0ec93c726/cache.tzst -P -C /home/runner/work/partybox-game-cores/partybox-game-cores --use-compress-program unzstd
+2026-10-09T02:50:58.3782130Z Cache restored successfully
+2026-10-09T02:50:58.3792547Z Cache restored from key: node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a
+2026-10-09T02:50:58.3974919Z ##[group]Run npm ci --ignore-scripts --no-audit --no-fund
+2026-10-09T02:50:58.3975442Z [36;1mnpm ci --ignore-scripts --no-audit --no-fund[0m
+2026-10-09T02:50:58.4261790Z shell: /usr/bin/bash -e {0}
+2026-10-09T02:50:58.4262097Z env:
+2026-10-09T02:50:58.4262397Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:58.4262793Z ##[endgroup]
+2026-10-09T02:50:59.3966146Z 
+2026-10-09T02:50:59.3973055Z added 6 packages in 912ms
+2026-10-09T02:50:59.4452184Z ##[group]Run if [ -f /etc/apt/apt-mirrors.txt ]; then
+2026-10-09T02:50:59.4452632Z [36;1mif [ -f /etc/apt/apt-mirrors.txt ]; then[0m
+2026-10-09T02:50:59.4453306Z [36;1m  sudo sed -i 's#http://azure.archive.ubuntu.com/ubuntu#https://archive.ubuntu.com/ubuntu#g' /etc/apt/apt-mirrors.txt[0m
+2026-10-09T02:50:59.4453887Z [36;1mfi[0m
+2026-10-09T02:50:59.4519315Z shell: /usr/bin/bash -e {0}
+2026-10-09T02:50:59.4519578Z env:
+2026-10-09T02:50:59.4519857Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:59.4520208Z ##[endgroup]
+2026-10-09T02:50:59.4729318Z ##[group]Run sudo apt-get update
+2026-10-09T02:50:59.4729657Z [36;1msudo apt-get update[0m
+2026-10-09T02:50:59.4729947Z [36;1msudo apt-get install -y ffmpeg[0m
+2026-10-09T02:50:59.4730238Z [36;1mffprobe -version[0m
+2026-10-09T02:50:59.4730485Z [36;1mffmpeg -version[0m
+2026-10-09T02:50:59.4794411Z shell: /usr/bin/bash -e {0}
+2026-10-09T02:50:59.4794692Z env:
+2026-10-09T02:50:59.4794967Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:50:59.4795310Z ##[endgroup]
+2026-10-09T02:50:59.5659745Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T02:50:59.5995411Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-10-09T02:50:59.6790782Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main armhf Packages [12.3 kB]
+2026-10-09T02:50:59.6916447Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [475 kB]
+2026-10-09T02:50:59.7000329Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [531 kB]
+2026-10-09T02:50:59.7092450Z Get:10 https://packages.microsoft.com/ubuntu/24.04/prod noble/main all Packages [640 B]
+2026-10-09T02:51:00.1350990Z Hit:2 https://archive.ubuntu.com/ubuntu noble InRelease
+2026-10-09T02:51:00.2355677Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-10-09T02:51:00.5839034Z Get:4 https://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-10-09T02:51:00.8840467Z Get:5 https://archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-10-09T02:51:01.0876487Z Get:11 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1375 kB]
+2026-10-09T02:51:01.6037982Z Get:12 https://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [306 kB]
+2026-10-09T02:51:01.6856330Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1702 kB]
+2026-10-09T02:51:01.8897641Z Get:14 https://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [342 kB]
+2026-10-09T02:51:01.9804141Z Get:15 https://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1761 kB]
+2026-10-09T02:51:02.1605175Z Get:16 https://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [401 kB]
+2026-10-09T02:51:02.3311171Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [55.0 kB]
+2026-10-09T02:51:02.4710950Z Get:18 https://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-10-09T02:51:02.5805781Z Get:19 https://archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1118 kB]
+2026-10-09T02:51:02.6939420Z Get:20 https://archive.ubuntu.com/ubuntu noble-security/main Translation-en [228 kB]
+2026-10-09T02:51:02.9029031Z Get:21 https://archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1220 kB]
+2026-10-09T02:51:03.0204996Z Get:22 https://archive.ubuntu.com/ubuntu noble-security/universe Translation-en [245 kB]
+2026-10-09T02:51:03.1085678Z Get:23 https://archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1667 kB]
+2026-10-09T02:51:03.2385755Z Get:24 https://archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [383 kB]
+2026-10-09T02:51:03.3290572Z Get:25 https://archive.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [49.8 kB]
+2026-10-09T02:51:03.4110514Z Get:26 https://archive.ubuntu.com/ubuntu noble-security/multiverse Translation-en [12.4 kB]
+2026-10-09T02:51:05.5052667Z Fetched 12.3 MB in 4s (3172 kB/s)
+2026-10-09T02:51:06.3547154Z Reading package lists...
+2026-10-09T02:51:06.3854158Z Reading package lists...
+2026-10-09T02:51:06.5620910Z Building dependency tree...
+2026-10-09T02:51:06.5628388Z Reading state information...
+2026-10-09T02:51:06.7230471Z The following additional packages will be installed:
+2026-10-09T02:51:06.7231407Z   i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T02:51:06.7232365Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T02:51:06.7233840Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T02:51:06.7234866Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T02:51:06.7235930Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T02:51:06.7237270Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T02:51:06.7238270Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T02:51:06.7239220Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T02:51:06.7240087Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T02:51:06.7240695Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T02:51:06.7241273Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T02:51:06.7241867Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T02:51:06.7242475Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T02:51:06.7243072Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T02:51:06.7243708Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T02:51:06.7244338Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T02:51:06.7245870Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T02:51:06.7246783Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T02:51:06.7248386Z Suggested packages:
+2026-10-09T02:51:06.7249073Z   ffmpeg-doc i965-va-driver-shaders libcuda1 libnvcuvid1 libnvidia-encode1
+2026-10-09T02:51:06.7249758Z   libbluray-bdj jackd2 libportaudio2 opus-tools pulseaudio libraw1394-doc
+2026-10-09T02:51:06.7250305Z   librsvg2-bin serdi sndiod sordi speex opencl-icd libvdpau-va-gl1
+2026-10-09T02:51:06.7706745Z The following NEW packages will be installed:
+2026-10-09T02:51:06.7708124Z   ffmpeg i965-va-driver intel-media-va-driver libaacs0 libass9 libasyncns0
+2026-10-09T02:51:06.7709382Z   libavc1394-0 libavcodec60 libavdevice60 libavfilter9 libavformat60
+2026-10-09T02:51:06.7710515Z   libavutil58 libbdplus0 libblas3 libbluray2 libbs2b0 libcaca0
+2026-10-09T02:51:06.7711754Z   libcdio-cdda2t64 libcdio-paranoia2t64 libcdio19t64 libchromaprint1 libcjson1
+2026-10-09T02:51:06.7713151Z   libcodec2-1.2 libdav1d7 libdc1394-25 libdecor-0-0 libdecor-0-plugin-1-gtk
+2026-10-09T02:51:06.7714539Z   libflac12t64 libflite1 libgme0 libgsm1 libhwy1t64 libiec61883-0 libigdgmm12
+2026-10-09T02:51:06.7715795Z   libjack-jackd2-0 libjxl0.7 liblapack3 liblilv-0-0 libmbedcrypto7t64
+2026-10-09T02:51:06.7717170Z   libmp3lame0 libmpg123-0t64 libmysofa1 libopenal-data libopenal1
+2026-10-09T02:51:06.7718092Z   libopenmpt0t64 libopus0 libplacebo338 libpocketsphinx3 libpostproc57
+2026-10-09T02:51:06.7719019Z   libpulse0 librav1e0 libraw1394-11 librist4 librsvg2-2 librsvg2-common
+2026-10-09T02:51:06.7719924Z   librubberband2 libsamplerate0 libsdl2-2.0-0 libserd-0-0 libshine3
+2026-10-09T02:51:06.7720848Z   libsndfile1 libsndio7.0 libsord-0-0 libsoxr0 libspeex1 libsphinxbase3t64
+2026-10-09T02:51:06.7721627Z   libsratom-0-0 libsrt1.5-gnutls libssh-gcrypt-4 libsvtav1enc1d1
+2026-10-09T02:51:06.7722215Z   libswresample4 libswscale7 libtheora0 libtwolame0 libudfread0 libunibreak5
+2026-10-09T02:51:06.7722858Z   libva-drm2 libva-x11-2 libva2 libvdpau1 libvidstab1.1 libvorbisenc2 libvpl2
+2026-10-09T02:51:06.7723479Z   libvpx9 libx264-164 libx265-199 libxcb-shape0 libxv1 libxvidcore4 libzimg2
+2026-10-09T02:51:06.7724085Z   libzix-0-0 libzvbi-common libzvbi0t64 mesa-va-drivers mesa-vdpau-drivers
+2026-10-09T02:51:06.7724697Z   ocl-icd-libopencl1 pocketsphinx-en-us va-driver-all vdpau-driver-all
+2026-10-09T02:51:06.7928244Z 0 upgraded, 99 newly installed, 0 to remove and 23 not upgraded.
+2026-10-09T02:51:06.7928915Z Need to get 94.1 MB of archives.
+2026-10-09T02:51:06.7929371Z After this operation, 227 MB of additional disk space will be used.
+2026-10-09T02:51:06.7930143Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [139 B]
+2026-10-09T02:51:06.9100450Z Get:2 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva2 amd64 2.20.0-2ubuntu0.2 [66.4 kB]
+2026-10-09T02:51:06.9524178Z Get:3 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-drm2 amd64 2.20.0-2ubuntu0.2 [7124 B]
+2026-10-09T02:51:06.9677355Z Get:4 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libva-x11-2 amd64 2.20.0-2ubuntu0.2 [12.0 kB]
+2026-10-09T02:51:06.9828457Z Get:5 https://archive.ubuntu.com/ubuntu noble/main amd64 libvdpau1 amd64 1.5-2build1 [27.8 kB]
+2026-10-09T02:51:06.9989498Z Get:6 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvpl2 amd64 2023.3.0-1build1 [99.8 kB]
+2026-10-09T02:51:07.0269531Z Get:7 https://archive.ubuntu.com/ubuntu noble/universe amd64 ocl-icd-libopencl1 amd64 2.3.2-1build1 [38.5 kB]
+2026-10-09T02:51:07.0421104Z Get:8 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavutil58 amd64 7:6.1.1-3ubuntu5 [401 kB]
+2026-10-09T02:51:07.0846278Z Get:9 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcodec2-1.2 amd64 1.2.0-2build1 [8998 kB]
+2026-10-09T02:51:07.2063738Z Get:10 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdav1d7 amd64 1.4.1-1build1 [604 kB]
+2026-10-09T02:51:07.2237940Z Get:11 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgsm1 amd64 1.0.22-1build1 [27.8 kB]
+2026-10-09T02:51:07.2380945Z Get:12 https://archive.ubuntu.com/ubuntu noble/universe amd64 libhwy1t64 amd64 1.0.7-8.1build1 [584 kB]
+2026-10-09T02:51:07.2555495Z Get:13 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libjxl0.7 amd64 0.7.0-10.2ubuntu6.1 [1001 kB]
+2026-10-09T02:51:07.2753118Z Get:14 https://archive.ubuntu.com/ubuntu noble/main amd64 libmp3lame0 amd64 3.100-6build1 [142 kB]
+2026-10-09T02:51:07.2901962Z Get:15 https://archive.ubuntu.com/ubuntu noble/main amd64 libopus0 amd64 1.4-1build1 [208 kB]
+2026-10-09T02:51:07.3054522Z Get:16 https://archive.ubuntu.com/ubuntu noble/universe amd64 librav1e0 amd64 0.7.1-2 [1022 kB]
+2026-10-09T02:51:07.3253984Z Get:17 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-2 amd64 2.58.0+dfsg-1ubuntu0.1 [2141 kB]
+2026-10-09T02:51:07.3518171Z Get:18 https://archive.ubuntu.com/ubuntu noble/universe amd64 libshine3 amd64 3.1.1-2build1 [23.2 kB]
+2026-10-09T02:51:07.3661557Z Get:19 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libspeex1 amd64 1.2.1-2ubuntu2.24.04.1 [59.6 kB]
+2026-10-09T02:51:07.3806350Z Get:20 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsvtav1enc1d1 amd64 1.7.0+dfsg-2build1 [2425 kB]
+2026-10-09T02:51:07.4635628Z Get:21 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsoxr0 amd64 0.1.3-4build3 [80.0 kB]
+2026-10-09T02:51:07.4779922Z Get:22 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswresample4 amd64 7:6.1.1-3ubuntu5 [63.8 kB]
+2026-10-09T02:51:07.4923574Z Get:23 https://archive.ubuntu.com/ubuntu noble/main amd64 libtheora0 amd64 1.1.1+dfsg.1-16.1build3 [211 kB]
+2026-10-09T02:51:07.5075585Z Get:24 https://archive.ubuntu.com/ubuntu noble/main amd64 libtwolame0 amd64 0.4.0-2build3 [52.3 kB]
+2026-10-09T02:51:07.5219777Z Get:25 https://archive.ubuntu.com/ubuntu noble/main amd64 libvorbisenc2 amd64 1.3.7-1build3 [80.8 kB]
+2026-10-09T02:51:07.5364652Z Get:26 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libvpx9 amd64 1.14.0-1ubuntu2.3 [1143 kB]
+2026-10-09T02:51:07.5577087Z Get:27 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx264-164 amd64 2:0.164.3108+git31e19f9-1 [604 kB]
+2026-10-09T02:51:07.5753624Z Get:28 https://archive.ubuntu.com/ubuntu noble/universe amd64 libx265-199 amd64 3.5-2build1 [1226 kB]
+2026-10-09T02:51:07.5968575Z Get:29 https://archive.ubuntu.com/ubuntu noble/universe amd64 libxvidcore4 amd64 2:1.3.7-1build1 [219 kB]
+2026-10-09T02:51:07.6122154Z Get:30 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi-common all 0.2.42-2 [42.4 kB]
+2026-10-09T02:51:07.6266453Z Get:31 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzvbi0t64 amd64 0.2.42-2 [261 kB]
+2026-10-09T02:51:07.6417732Z Get:32 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavcodec60 amd64 7:6.1.1-3ubuntu5 [5851 kB]
+2026-10-09T02:51:07.6920486Z Get:33 https://archive.ubuntu.com/ubuntu noble/main amd64 libraw1394-11 amd64 2.1.2-2build3 [26.2 kB]
+2026-10-09T02:51:07.7060557Z Get:34 https://archive.ubuntu.com/ubuntu noble/main amd64 libavc1394-0 amd64 0.5.4-5build3 [15.4 kB]
+2026-10-09T02:51:07.7199185Z Get:35 https://archive.ubuntu.com/ubuntu noble/universe amd64 libunibreak5 amd64 5.1-2build1 [25.0 kB]
+2026-10-09T02:51:07.7338949Z Get:36 https://archive.ubuntu.com/ubuntu noble/universe amd64 libass9 amd64 1:0.17.1-2build1 [104 kB]
+2026-10-09T02:51:07.7483997Z Get:37 https://archive.ubuntu.com/ubuntu noble/universe amd64 libudfread0 amd64 1.1.2-1build1 [19.0 kB]
+2026-10-09T02:51:07.7628627Z Get:38 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbluray2 amd64 1:1.3.4-1build1 [159 kB]
+2026-10-09T02:51:07.7775768Z Get:39 https://archive.ubuntu.com/ubuntu noble/universe amd64 libchromaprint1 amd64 1.5.1-5 [30.5 kB]
+2026-10-09T02:51:07.8452022Z Get:40 https://archive.ubuntu.com/ubuntu noble/universe amd64 libgme0 amd64 0.6.3-7build1 [134 kB]
+2026-10-09T02:51:07.8600464Z Get:41 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libmpg123-0t64 amd64 1.32.5-1ubuntu1.1 [169 kB]
+2026-10-09T02:51:07.8749949Z Get:42 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenmpt0t64 amd64 0.7.3-1.1build3 [647 kB]
+2026-10-09T02:51:07.8929772Z Get:43 https://archive.ubuntu.com/ubuntu noble/universe amd64 libcjson1 amd64 1.7.17-1 [24.8 kB]
+2026-10-09T02:51:07.9070198Z Get:44 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmbedcrypto7t64 amd64 2.28.8-1 [209 kB]
+2026-10-09T02:51:07.9220399Z Get:45 https://archive.ubuntu.com/ubuntu noble/universe amd64 librist4 amd64 0.2.10+dfsg-2 [74.9 kB]
+2026-10-09T02:51:07.9368541Z Get:46 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsrt1.5-gnutls amd64 1.5.3-1build2 [316 kB]
+2026-10-09T02:51:07.9528109Z Get:47 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libssh-gcrypt-4 amd64 0.10.6-2ubuntu0.5 [226 kB]
+2026-10-09T02:51:07.9682514Z Get:48 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavformat60 amd64 7:6.1.1-3ubuntu5 [1153 kB]
+2026-10-09T02:51:07.9888226Z Get:49 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbs2b0 amd64 3.1.0+dfsg-7build1 [10.6 kB]
+2026-10-09T02:51:08.0031102Z Get:50 https://archive.ubuntu.com/ubuntu noble/universe amd64 libflite1 amd64 2.2-6build3 [13.6 MB]
+2026-10-09T02:51:08.1017716Z Get:51 https://archive.ubuntu.com/ubuntu noble/universe amd64 libserd-0-0 amd64 0.32.2-1 [43.6 kB]
+2026-10-09T02:51:08.1163925Z Get:52 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzix-0-0 amd64 0.4.2-2build1 [23.6 kB]
+2026-10-09T02:51:08.1302739Z Get:53 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsord-0-0 amd64 0.16.16-2build1 [15.8 kB]
+2026-10-09T02:51:08.1443323Z Get:54 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsratom-0-0 amd64 0.6.16-1build1 [17.3 kB]
+2026-10-09T02:51:08.1583482Z Get:55 https://archive.ubuntu.com/ubuntu noble/universe amd64 liblilv-0-0 amd64 0.24.22-1build1 [41.0 kB]
+2026-10-09T02:51:08.1727287Z Get:56 https://archive.ubuntu.com/ubuntu noble/universe amd64 libmysofa1 amd64 1.3.2+dfsg-2ubuntu2 [1158 kB]
+2026-10-09T02:51:08.1937306Z Get:57 https://archive.ubuntu.com/ubuntu noble/universe amd64 libplacebo338 amd64 6.338.2-2build1 [2654 kB]
+2026-10-09T02:51:08.2235883Z Get:58 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libblas3 amd64 3.12.0-3build1.1 [238 kB]
+2026-10-09T02:51:08.2390957Z Get:59 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 liblapack3 amd64 3.12.0-3build1.1 [2646 kB]
+2026-10-09T02:51:08.3242321Z Get:60 https://archive.ubuntu.com/ubuntu noble/main amd64 libasyncns0 amd64 0.8-6build4 [11.3 kB]
+2026-10-09T02:51:08.3382574Z Get:61 https://archive.ubuntu.com/ubuntu noble/main amd64 libflac12t64 amd64 1.4.3+ds-2.1ubuntu2 [197 kB]
+2026-10-09T02:51:08.3537282Z Get:62 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsndfile1 amd64 1.2.2-1ubuntu5.24.04.1 [209 kB]
+2026-10-09T02:51:08.3690243Z Get:63 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libpulse0 amd64 1:16.1+dfsg1-2ubuntu10.1 [292 kB]
+2026-10-09T02:51:08.3849294Z Get:64 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsphinxbase3t64 amd64 0.8+5prealpha+1-17build2 [126 kB]
+2026-10-09T02:51:08.3997466Z Get:65 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpocketsphinx3 amd64 0.8.0+real5prealpha+1-15ubuntu5 [133 kB]
+2026-10-09T02:51:08.4143985Z Get:66 https://archive.ubuntu.com/ubuntu noble/universe amd64 libpostproc57 amd64 7:6.1.1-3ubuntu5 [49.9 kB]
+2026-10-09T02:51:08.4289143Z Get:67 https://archive.ubuntu.com/ubuntu noble/main amd64 libsamplerate0 amd64 0.2.2-4build1 [1344 kB]
+2026-10-09T02:51:08.4513982Z Get:68 https://archive.ubuntu.com/ubuntu noble/universe amd64 librubberband2 amd64 3.3.0+dfsg-2build1 [130 kB]
+2026-10-09T02:51:08.4662340Z Get:69 https://archive.ubuntu.com/ubuntu noble/universe amd64 libswscale7 amd64 7:6.1.1-3ubuntu5 [193 kB]
+2026-10-09T02:51:08.4813630Z Get:70 https://archive.ubuntu.com/ubuntu noble/universe amd64 libvidstab1.1 amd64 1.1.0-2build1 [38.5 kB]
+2026-10-09T02:51:08.4958573Z Get:71 https://archive.ubuntu.com/ubuntu noble/universe amd64 libzimg2 amd64 3.0.5+ds1-1build1 [254 kB]
+2026-10-09T02:51:08.5114733Z Get:72 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavfilter9 amd64 7:6.1.1-3ubuntu5 [4235 kB]
+2026-10-09T02:51:08.5532817Z Get:73 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcaca0 amd64 0.99.beta20-4ubuntu0.2 [209 kB]
+2026-10-09T02:51:08.5683706Z Get:74 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcdio19t64 amd64 2.1.0-4.1ubuntu1.2 [62.4 kB]
+2026-10-09T02:51:08.5824814Z Get:75 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-cdda2t64 amd64 10.2+2.0.1-1.1build2 [16.5 kB]
+2026-10-09T02:51:08.5963834Z Get:76 https://archive.ubuntu.com/ubuntu noble/main amd64 libcdio-paranoia2t64 amd64 10.2+2.0.1-1.1build2 [16.6 kB]
+2026-10-09T02:51:08.6103036Z Get:77 https://archive.ubuntu.com/ubuntu noble/universe amd64 libdc1394-25 amd64 2.2.6-4build1 [90.1 kB]
+2026-10-09T02:51:08.6784511Z Get:78 https://archive.ubuntu.com/ubuntu noble/main amd64 libiec61883-0 amd64 1.2.0-6build1 [24.5 kB]
+2026-10-09T02:51:08.6924838Z Get:79 https://archive.ubuntu.com/ubuntu noble/main amd64 libjack-jackd2-0 amd64 1.9.21~dfsg-3ubuntu3 [289 kB]
+2026-10-09T02:51:08.7087261Z Get:80 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal-data all 1:1.23.1-4build1 [161 kB]
+2026-10-09T02:51:08.7247713Z Get:81 https://archive.ubuntu.com/ubuntu noble/universe amd64 libsndio7.0 amd64 1.9.0-0.3build3 [29.6 kB]
+2026-10-09T02:51:08.7396984Z Get:82 https://archive.ubuntu.com/ubuntu noble/universe amd64 libopenal1 amd64 1:1.23.1-4build1 [540 kB]
+2026-10-09T02:51:08.7567292Z Get:83 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-0 amd64 0.2.2-1build2 [16.5 kB]
+2026-10-09T02:51:08.7708415Z Get:84 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 libsdl2-2.0-0 amd64 2.30.0+dfsg-1ubuntu3.1 [686 kB]
+2026-10-09T02:51:08.7890586Z Get:85 https://archive.ubuntu.com/ubuntu noble/main amd64 libxcb-shape0 amd64 1.15-1ubuntu2 [6100 B]
+2026-10-09T02:51:08.8027569Z Get:86 https://archive.ubuntu.com/ubuntu noble/main amd64 libxv1 amd64 2:1.0.11-1.1build1 [10.7 kB]
+2026-10-09T02:51:08.8190150Z Get:87 https://archive.ubuntu.com/ubuntu noble/universe amd64 libavdevice60 amd64 7:6.1.1-3ubuntu5 [82.3 kB]
+2026-10-09T02:51:08.8867968Z Get:88 https://archive.ubuntu.com/ubuntu noble/universe amd64 ffmpeg amd64 7:6.1.1-3ubuntu5 [1879 kB]
+2026-10-09T02:51:08.9673845Z Get:89 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libigdgmm12 amd64 22.3.17+ds1-1ubuntu1 [145 kB]
+2026-10-09T02:51:08.9845546Z Get:90 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 intel-media-va-driver amd64 24.1.0+dfsg1-1ubuntu0.2 [3163 kB]
+2026-10-09T02:51:09.0176814Z Get:91 https://archive.ubuntu.com/ubuntu noble/universe amd64 libaacs0 amd64 0.11.1-2build1 [62.9 kB]
+2026-10-09T02:51:09.0342558Z Get:92 https://archive.ubuntu.com/ubuntu noble/universe amd64 libbdplus0 amd64 0.2.0-3build1 [52.2 kB]
+2026-10-09T02:51:09.0485033Z Get:93 https://archive.ubuntu.com/ubuntu noble/main amd64 libdecor-0-plugin-1-gtk amd64 0.2.2-1build2 [22.2 kB]
+2026-10-09T02:51:09.0627809Z Get:94 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 librsvg2-common amd64 2.58.0+dfsg-1ubuntu0.1 [11.8 kB]
+2026-10-09T02:51:09.0773650Z Get:95 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 mesa-va-drivers amd64 25.2.8-0ubuntu0.24.04.4 [6778 B]
+2026-10-09T02:51:09.0914164Z Get:96 https://archive.ubuntu.com/ubuntu noble-updates/main amd64 mesa-vdpau-drivers amd64 25.2.8-0ubuntu0.24.04.4 [23.4 kB]
+2026-10-09T02:51:09.1604649Z Get:97 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1ubuntu0.2 [332 kB]
+2026-10-09T02:51:09.1761613Z Get:98 https://archive.ubuntu.com/ubuntu noble-updates/universe amd64 va-driver-all amd64 2.20.0-2ubuntu0.2 [5014 B]
+2026-10-09T02:51:09.1900335Z Get:99 https://archive.ubuntu.com/ubuntu noble/main amd64 vdpau-driver-all amd64 1.5-2build1 [4414 B]
+2026-10-09T02:51:09.2038498Z Get:100 https://archive.ubuntu.com/ubuntu noble/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-15ubuntu5 [27.4 MB]
+2026-10-09T02:51:09.6959909Z Fetched 94.1 MB in 3s (36.4 MB/s)
+2026-10-09T02:51:09.7208105Z Selecting previously unselected package libva2:amd64.
+2026-10-09T02:51:09.7493628Z (Reading database ... 
+2026-10-09T02:51:09.7494313Z (Reading database ... 5%
+2026-10-09T02:51:09.7494818Z (Reading database ... 10%
+2026-10-09T02:51:09.7495221Z (Reading database ... 15%
+2026-10-09T02:51:09.7495602Z (Reading database ... 20%
+2026-10-09T02:51:09.7496289Z (Reading database ... 25%
+2026-10-09T02:51:09.7496920Z (Reading database ... 30%
+2026-10-09T02:51:09.7497374Z (Reading database ... 35%
+2026-10-09T02:51:09.7497767Z (Reading database ... 40%
+2026-10-09T02:51:09.7498028Z (Reading database ... 45%
+2026-10-09T02:51:09.7498309Z (Reading database ... 50%
+2026-10-09T02:51:09.7555058Z (Reading database ... 55%
+2026-10-09T02:51:09.8490457Z (Reading database ... 60%
+2026-10-09T02:51:10.0551565Z (Reading database ... 65%
+2026-10-09T02:51:10.2597486Z (Reading database ... 70%
+2026-10-09T02:51:10.4099434Z (Reading database ... 75%
+2026-10-09T02:51:10.5584115Z (Reading database ... 80%
+2026-10-09T02:51:10.6563179Z (Reading database ... 85%
+2026-10-09T02:51:10.7579841Z (Reading database ... 90%
+2026-10-09T02:51:10.8659916Z (Reading database ... 95%
+2026-10-09T02:51:10.8660621Z (Reading database ... 100%
+2026-10-09T02:51:10.8661617Z (Reading database ... 203191 files and directories currently installed.)
+2026-10-09T02:51:10.8704737Z Preparing to unpack .../00-libva2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:10.8740627Z Unpacking libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:10.8968376Z Selecting previously unselected package libva-drm2:amd64.
+2026-10-09T02:51:10.9094128Z Preparing to unpack .../01-libva-drm2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:10.9102841Z Unpacking libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:10.9310147Z Selecting previously unselected package libva-x11-2:amd64.
+2026-10-09T02:51:10.9437170Z Preparing to unpack .../02-libva-x11-2_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:10.9444375Z Unpacking libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:10.9670279Z Selecting previously unselected package libvdpau1:amd64.
+2026-10-09T02:51:10.9794691Z Preparing to unpack .../03-libvdpau1_1.5-2build1_amd64.deb ...
+2026-10-09T02:51:10.9803699Z Unpacking libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T02:51:11.0016318Z Selecting previously unselected package libvpl2.
+2026-10-09T02:51:11.0139973Z Preparing to unpack .../04-libvpl2_2023.3.0-1build1_amd64.deb ...
+2026-10-09T02:51:11.0147663Z Unpacking libvpl2 (2023.3.0-1build1) ...
+2026-10-09T02:51:11.0368278Z Selecting previously unselected package ocl-icd-libopencl1:amd64.
+2026-10-09T02:51:11.0494188Z Preparing to unpack .../05-ocl-icd-libopencl1_2.3.2-1build1_amd64.deb ...
+2026-10-09T02:51:11.0502888Z Unpacking ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T02:51:11.0760129Z Selecting previously unselected package libavutil58:amd64.
+2026-10-09T02:51:11.0883093Z Preparing to unpack .../06-libavutil58_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:11.0891360Z Unpacking libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:11.1144038Z Selecting previously unselected package libcodec2-1.2:amd64.
+2026-10-09T02:51:11.1269713Z Preparing to unpack .../07-libcodec2-1.2_1.2.0-2build1_amd64.deb ...
+2026-10-09T02:51:11.1278152Z Unpacking libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T02:51:11.2063716Z Selecting previously unselected package libdav1d7:amd64.
+2026-10-09T02:51:11.2189216Z Preparing to unpack .../08-libdav1d7_1.4.1-1build1_amd64.deb ...
+2026-10-09T02:51:11.2196375Z Unpacking libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T02:51:11.2458809Z Selecting previously unselected package libgsm1:amd64.
+2026-10-09T02:51:11.2583743Z Preparing to unpack .../09-libgsm1_1.0.22-1build1_amd64.deb ...
+2026-10-09T02:51:11.2592432Z Unpacking libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T02:51:11.2793782Z Selecting previously unselected package libhwy1t64:amd64.
+2026-10-09T02:51:11.2920276Z Preparing to unpack .../10-libhwy1t64_1.0.7-8.1build1_amd64.deb ...
+2026-10-09T02:51:11.2943153Z Unpacking libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T02:51:11.3260889Z Selecting previously unselected package libjxl0.7:amd64.
+2026-10-09T02:51:11.3384815Z Preparing to unpack .../11-libjxl0.7_0.7.0-10.2ubuntu6.1_amd64.deb ...
+2026-10-09T02:51:11.3402258Z Unpacking libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T02:51:11.3731792Z Selecting previously unselected package libmp3lame0:amd64.
+2026-10-09T02:51:11.3857398Z Preparing to unpack .../12-libmp3lame0_3.100-6build1_amd64.deb ...
+2026-10-09T02:51:11.3866627Z Unpacking libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T02:51:11.4077566Z Selecting previously unselected package libopus0:amd64.
+2026-10-09T02:51:11.4201932Z Preparing to unpack .../13-libopus0_1.4-1build1_amd64.deb ...
+2026-10-09T02:51:11.4209253Z Unpacking libopus0:amd64 (1.4-1build1) ...
+2026-10-09T02:51:11.4422179Z Selecting previously unselected package librav1e0:amd64.
+2026-10-09T02:51:11.4546764Z Preparing to unpack .../14-librav1e0_0.7.1-2_amd64.deb ...
+2026-10-09T02:51:11.4555544Z Unpacking librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T02:51:11.4879257Z Selecting previously unselected package librsvg2-2:amd64.
+2026-10-09T02:51:11.5003174Z Preparing to unpack .../15-librsvg2-2_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T02:51:11.5010359Z Unpacking librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T02:51:11.5478185Z Selecting previously unselected package libshine3:amd64.
+2026-10-09T02:51:11.5603119Z Preparing to unpack .../16-libshine3_3.1.1-2build1_amd64.deb ...
+2026-10-09T02:51:11.5610956Z Unpacking libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T02:51:11.5799957Z Selecting previously unselected package libspeex1:amd64.
+2026-10-09T02:51:11.5923021Z Preparing to unpack .../17-libspeex1_1.2.1-2ubuntu2.24.04.1_amd64.deb ...
+2026-10-09T02:51:11.5935267Z Unpacking libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T02:51:11.6131356Z Selecting previously unselected package libsvtav1enc1d1:amd64.
+2026-10-09T02:51:11.6257345Z Preparing to unpack .../18-libsvtav1enc1d1_1.7.0+dfsg-2build1_amd64.deb ...
+2026-10-09T02:51:11.6274102Z Unpacking libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T02:51:11.6741164Z Selecting previously unselected package libsoxr0:amd64.
+2026-10-09T02:51:11.6865625Z Preparing to unpack .../19-libsoxr0_0.1.3-4build3_amd64.deb ...
+2026-10-09T02:51:11.6875826Z Unpacking libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T02:51:11.7081990Z Selecting previously unselected package libswresample4:amd64.
+2026-10-09T02:51:11.7206942Z Preparing to unpack .../20-libswresample4_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:11.7214279Z Unpacking libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:11.7419425Z Selecting previously unselected package libtheora0:amd64.
+2026-10-09T02:51:11.7543234Z Preparing to unpack .../21-libtheora0_1.1.1+dfsg.1-16.1build3_amd64.deb ...
+2026-10-09T02:51:11.7550118Z Unpacking libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T02:51:11.7781973Z Selecting previously unselected package libtwolame0:amd64.
+2026-10-09T02:51:11.7906989Z Preparing to unpack .../22-libtwolame0_0.4.0-2build3_amd64.deb ...
+2026-10-09T02:51:11.7914389Z Unpacking libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T02:51:11.8111871Z Selecting previously unselected package libvorbisenc2:amd64.
+2026-10-09T02:51:11.8235148Z Preparing to unpack .../23-libvorbisenc2_1.3.7-1build3_amd64.deb ...
+2026-10-09T02:51:11.8242133Z Unpacking libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T02:51:11.8518424Z Selecting previously unselected package libvpx9:amd64.
+2026-10-09T02:51:11.8644416Z Preparing to unpack .../24-libvpx9_1.14.0-1ubuntu2.3_amd64.deb ...
+2026-10-09T02:51:11.8652503Z Unpacking libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T02:51:11.8975305Z Selecting previously unselected package libx264-164:amd64.
+2026-10-09T02:51:11.9099547Z Preparing to unpack .../25-libx264-164_2%3a0.164.3108+git31e19f9-1_amd64.deb ...
+2026-10-09T02:51:11.9106896Z Unpacking libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T02:51:11.9370861Z Selecting previously unselected package libx265-199:amd64.
+2026-10-09T02:51:11.9495433Z Preparing to unpack .../26-libx265-199_3.5-2build1_amd64.deb ...
+2026-10-09T02:51:11.9502559Z Unpacking libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T02:51:12.0145776Z Selecting previously unselected package libxvidcore4:amd64.
+2026-10-09T02:51:12.0271218Z Preparing to unpack .../27-libxvidcore4_2%3a1.3.7-1build1_amd64.deb ...
+2026-10-09T02:51:12.0279028Z Unpacking libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T02:51:12.0496879Z Selecting previously unselected package libzvbi-common.
+2026-10-09T02:51:12.0621448Z Preparing to unpack .../28-libzvbi-common_0.2.42-2_all.deb ...
+2026-10-09T02:51:12.0629365Z Unpacking libzvbi-common (0.2.42-2) ...
+2026-10-09T02:51:12.1582027Z Selecting previously unselected package libzvbi0t64:amd64.
+2026-10-09T02:51:12.1707543Z Preparing to unpack .../29-libzvbi0t64_0.2.42-2_amd64.deb ...
+2026-10-09T02:51:12.1715565Z Unpacking libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T02:51:12.1957486Z Selecting previously unselected package libavcodec60:amd64.
+2026-10-09T02:51:12.2080783Z Preparing to unpack .../30-libavcodec60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:12.2089070Z Unpacking libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:12.2911912Z Selecting previously unselected package libraw1394-11:amd64.
+2026-10-09T02:51:12.3037465Z Preparing to unpack .../31-libraw1394-11_2.1.2-2build3_amd64.deb ...
+2026-10-09T02:51:12.3045637Z Unpacking libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T02:51:12.3251463Z Selecting previously unselected package libavc1394-0:amd64.
+2026-10-09T02:51:12.3374951Z Preparing to unpack .../32-libavc1394-0_0.5.4-5build3_amd64.deb ...
+2026-10-09T02:51:12.3383567Z Unpacking libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T02:51:12.3585962Z Selecting previously unselected package libunibreak5:amd64.
+2026-10-09T02:51:12.3711128Z Preparing to unpack .../33-libunibreak5_5.1-2build1_amd64.deb ...
+2026-10-09T02:51:12.3718969Z Unpacking libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T02:51:12.3940383Z Selecting previously unselected package libass9:amd64.
+2026-10-09T02:51:12.4065373Z Preparing to unpack .../34-libass9_1%3a0.17.1-2build1_amd64.deb ...
+2026-10-09T02:51:12.4072919Z Unpacking libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T02:51:12.4284001Z Selecting previously unselected package libudfread0:amd64.
+2026-10-09T02:51:12.4408009Z Preparing to unpack .../35-libudfread0_1.1.2-1build1_amd64.deb ...
+2026-10-09T02:51:12.4416249Z Unpacking libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T02:51:12.4618514Z Selecting previously unselected package libbluray2:amd64.
+2026-10-09T02:51:12.4742324Z Preparing to unpack .../36-libbluray2_1%3a1.3.4-1build1_amd64.deb ...
+2026-10-09T02:51:12.4750171Z Unpacking libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T02:51:12.4964075Z Selecting previously unselected package libchromaprint1:amd64.
+2026-10-09T02:51:12.5090020Z Preparing to unpack .../37-libchromaprint1_1.5.1-5_amd64.deb ...
+2026-10-09T02:51:12.5098510Z Unpacking libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T02:51:12.5302250Z Selecting previously unselected package libgme0:amd64.
+2026-10-09T02:51:12.5425622Z Preparing to unpack .../38-libgme0_0.6.3-7build1_amd64.deb ...
+2026-10-09T02:51:12.5433422Z Unpacking libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T02:51:12.5650331Z Selecting previously unselected package libmpg123-0t64:amd64.
+2026-10-09T02:51:12.5772833Z Preparing to unpack .../39-libmpg123-0t64_1.32.5-1ubuntu1.1_amd64.deb ...
+2026-10-09T02:51:12.5780484Z Unpacking libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T02:51:12.6002682Z Selecting previously unselected package libopenmpt0t64:amd64.
+2026-10-09T02:51:12.6127262Z Preparing to unpack .../40-libopenmpt0t64_0.7.3-1.1build3_amd64.deb ...
+2026-10-09T02:51:12.6134096Z Unpacking libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T02:51:12.6407342Z Selecting previously unselected package libcjson1:amd64.
+2026-10-09T02:51:12.6530894Z Preparing to unpack .../41-libcjson1_1.7.17-1_amd64.deb ...
+2026-10-09T02:51:12.6538523Z Unpacking libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T02:51:12.6745516Z Selecting previously unselected package libmbedcrypto7t64:amd64.
+2026-10-09T02:51:12.6869580Z Preparing to unpack .../42-libmbedcrypto7t64_2.28.8-1_amd64.deb ...
+2026-10-09T02:51:12.6876878Z Unpacking libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T02:51:12.7099985Z Selecting previously unselected package librist4:amd64.
+2026-10-09T02:51:12.7223703Z Preparing to unpack .../43-librist4_0.2.10+dfsg-2_amd64.deb ...
+2026-10-09T02:51:12.7230790Z Unpacking librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T02:51:12.7444038Z Selecting previously unselected package libsrt1.5-gnutls:amd64.
+2026-10-09T02:51:12.7568037Z Preparing to unpack .../44-libsrt1.5-gnutls_1.5.3-1build2_amd64.deb ...
+2026-10-09T02:51:12.7575019Z Unpacking libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T02:51:12.7808059Z Selecting previously unselected package libssh-gcrypt-4:amd64.
+2026-10-09T02:51:12.7932196Z Preparing to unpack .../45-libssh-gcrypt-4_0.10.6-2ubuntu0.5_amd64.deb ...
+2026-10-09T02:51:12.7940046Z Unpacking libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T02:51:12.8177851Z Selecting previously unselected package libavformat60:amd64.
+2026-10-09T02:51:12.8301978Z Preparing to unpack .../46-libavformat60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:12.8309352Z Unpacking libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:12.8620881Z Selecting previously unselected package libbs2b0:amd64.
+2026-10-09T02:51:12.8746387Z Preparing to unpack .../47-libbs2b0_3.1.0+dfsg-7build1_amd64.deb ...
+2026-10-09T02:51:12.8754314Z Unpacking libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T02:51:12.9654224Z Selecting previously unselected package libflite1:amd64.
+2026-10-09T02:51:12.9780096Z Preparing to unpack .../48-libflite1_2.2-6build3_amd64.deb ...
+2026-10-09T02:51:12.9788158Z Unpacking libflite1:amd64 (2.2-6build3) ...
+2026-10-09T02:51:13.0874478Z Selecting previously unselected package libserd-0-0:amd64.
+2026-10-09T02:51:13.1001784Z Preparing to unpack .../49-libserd-0-0_0.32.2-1_amd64.deb ...
+2026-10-09T02:51:13.1009843Z Unpacking libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T02:51:13.1219284Z Selecting previously unselected package libzix-0-0:amd64.
+2026-10-09T02:51:13.1347443Z Preparing to unpack .../50-libzix-0-0_0.4.2-2build1_amd64.deb ...
+2026-10-09T02:51:13.1355229Z Unpacking libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T02:51:13.1562560Z Selecting previously unselected package libsord-0-0:amd64.
+2026-10-09T02:51:13.1686338Z Preparing to unpack .../51-libsord-0-0_0.16.16-2build1_amd64.deb ...
+2026-10-09T02:51:13.1715162Z Unpacking libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T02:51:13.1914433Z Selecting previously unselected package libsratom-0-0:amd64.
+2026-10-09T02:51:13.2038081Z Preparing to unpack .../52-libsratom-0-0_0.6.16-1build1_amd64.deb ...
+2026-10-09T02:51:13.2045017Z Unpacking libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T02:51:13.2240921Z Selecting previously unselected package liblilv-0-0:amd64.
+2026-10-09T02:51:13.2364989Z Preparing to unpack .../53-liblilv-0-0_0.24.22-1build1_amd64.deb ...
+2026-10-09T02:51:13.2372994Z Unpacking liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T02:51:13.2578067Z Selecting previously unselected package libmysofa1:amd64.
+2026-10-09T02:51:13.2700888Z Preparing to unpack .../54-libmysofa1_1.3.2+dfsg-2ubuntu2_amd64.deb ...
+2026-10-09T02:51:13.2708851Z Unpacking libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T02:51:13.2977420Z Selecting previously unselected package libplacebo338:amd64.
+2026-10-09T02:51:13.3101084Z Preparing to unpack .../55-libplacebo338_6.338.2-2build1_amd64.deb ...
+2026-10-09T02:51:13.3109515Z Unpacking libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T02:51:13.3663675Z Selecting previously unselected package libblas3:amd64.
+2026-10-09T02:51:13.3793179Z Preparing to unpack .../56-libblas3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T02:51:13.3825510Z Unpacking libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T02:51:13.4077869Z Selecting previously unselected package liblapack3:amd64.
+2026-10-09T02:51:13.4202206Z Preparing to unpack .../57-liblapack3_3.12.0-3build1.1_amd64.deb ...
+2026-10-09T02:51:13.4232850Z Unpacking liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T02:51:13.4718725Z Selecting previously unselected package libasyncns0:amd64.
+2026-10-09T02:51:13.4843543Z Preparing to unpack .../58-libasyncns0_0.8-6build4_amd64.deb ...
+2026-10-09T02:51:13.4851090Z Unpacking libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T02:51:13.5050636Z Selecting previously unselected package libflac12t64:amd64.
+2026-10-09T02:51:13.5173700Z Preparing to unpack .../59-libflac12t64_1.4.3+ds-2.1ubuntu2_amd64.deb ...
+2026-10-09T02:51:13.5181816Z Unpacking libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T02:51:13.5407708Z Selecting previously unselected package libsndfile1:amd64.
+2026-10-09T02:51:13.5530621Z Preparing to unpack .../60-libsndfile1_1.2.2-1ubuntu5.24.04.1_amd64.deb ...
+2026-10-09T02:51:13.5538516Z Unpacking libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T02:51:13.5788265Z Selecting previously unselected package libpulse0:amd64.
+2026-10-09T02:51:13.5911449Z Preparing to unpack .../61-libpulse0_1%3a16.1+dfsg1-2ubuntu10.1_amd64.deb ...
+2026-10-09T02:51:13.5980910Z Unpacking libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T02:51:13.6235394Z Selecting previously unselected package libsphinxbase3t64:amd64.
+2026-10-09T02:51:13.6361146Z Preparing to unpack .../62-libsphinxbase3t64_0.8+5prealpha+1-17build2_amd64.deb ...
+2026-10-09T02:51:13.6369139Z Unpacking libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T02:51:13.6584195Z Selecting previously unselected package libpocketsphinx3:amd64.
+2026-10-09T02:51:13.6711307Z Preparing to unpack .../63-libpocketsphinx3_0.8.0+real5prealpha+1-15ubuntu5_amd64.deb ...
+2026-10-09T02:51:13.6719197Z Unpacking libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T02:51:13.6939052Z Selecting previously unselected package libpostproc57:amd64.
+2026-10-09T02:51:13.7063909Z Preparing to unpack .../64-libpostproc57_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:13.7071310Z Unpacking libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:13.7276634Z Selecting previously unselected package libsamplerate0:amd64.
+2026-10-09T02:51:13.7402016Z Preparing to unpack .../65-libsamplerate0_0.2.2-4build1_amd64.deb ...
+2026-10-09T02:51:13.7410651Z Unpacking libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T02:51:13.7670740Z Selecting previously unselected package librubberband2:amd64.
+2026-10-09T02:51:13.7795477Z Preparing to unpack .../66-librubberband2_3.3.0+dfsg-2build1_amd64.deb ...
+2026-10-09T02:51:13.7802538Z Unpacking librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T02:51:13.8017665Z Selecting previously unselected package libswscale7:amd64.
+2026-10-09T02:51:13.8142248Z Preparing to unpack .../67-libswscale7_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:13.8152401Z Unpacking libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:13.8371124Z Selecting previously unselected package libvidstab1.1:amd64.
+2026-10-09T02:51:13.8495129Z Preparing to unpack .../68-libvidstab1.1_1.1.0-2build1_amd64.deb ...
+2026-10-09T02:51:13.8502579Z Unpacking libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T02:51:13.8697931Z Selecting previously unselected package libzimg2:amd64.
+2026-10-09T02:51:13.8823653Z Preparing to unpack .../69-libzimg2_3.0.5+ds1-1build1_amd64.deb ...
+2026-10-09T02:51:13.8831338Z Unpacking libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T02:51:13.9062747Z Selecting previously unselected package libavfilter9:amd64.
+2026-10-09T02:51:13.9187086Z Preparing to unpack .../70-libavfilter9_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:13.9194808Z Unpacking libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:13.9858332Z Selecting previously unselected package libcaca0:amd64.
+2026-10-09T02:51:13.9983674Z Preparing to unpack .../71-libcaca0_0.99.beta20-4ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:13.9990411Z Unpacking libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T02:51:14.0224761Z Selecting previously unselected package libcdio19t64:amd64.
+2026-10-09T02:51:14.0349676Z Preparing to unpack .../72-libcdio19t64_2.1.0-4.1ubuntu1.2_amd64.deb ...
+2026-10-09T02:51:14.0356552Z Unpacking libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T02:51:14.0581884Z Selecting previously unselected package libcdio-cdda2t64:amd64.
+2026-10-09T02:51:14.0708119Z Preparing to unpack .../73-libcdio-cdda2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T02:51:14.0715072Z Unpacking libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T02:51:14.0914753Z Selecting previously unselected package libcdio-paranoia2t64:amd64.
+2026-10-09T02:51:14.1042105Z Preparing to unpack .../74-libcdio-paranoia2t64_10.2+2.0.1-1.1build2_amd64.deb ...
+2026-10-09T02:51:14.1049810Z Unpacking libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T02:51:14.1255092Z Selecting previously unselected package libdc1394-25:amd64.
+2026-10-09T02:51:14.1380325Z Preparing to unpack .../75-libdc1394-25_2.2.6-4build1_amd64.deb ...
+2026-10-09T02:51:14.1388393Z Unpacking libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T02:51:14.1593980Z Selecting previously unselected package libiec61883-0:amd64.
+2026-10-09T02:51:14.1718957Z Preparing to unpack .../76-libiec61883-0_1.2.0-6build1_amd64.deb ...
+2026-10-09T02:51:14.1726992Z Unpacking libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T02:51:14.1922424Z Selecting previously unselected package libjack-jackd2-0:amd64.
+2026-10-09T02:51:14.2048442Z Preparing to unpack .../77-libjack-jackd2-0_1.9.21~dfsg-3ubuntu3_amd64.deb ...
+2026-10-09T02:51:14.2055348Z Unpacking libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T02:51:14.2312077Z Selecting previously unselected package libopenal-data.
+2026-10-09T02:51:14.2438429Z Preparing to unpack .../78-libopenal-data_1%3a1.23.1-4build1_all.deb ...
+2026-10-09T02:51:14.2446632Z Unpacking libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T02:51:14.2674227Z Selecting previously unselected package libsndio7.0:amd64.
+2026-10-09T02:51:14.2800704Z Preparing to unpack .../79-libsndio7.0_1.9.0-0.3build3_amd64.deb ...
+2026-10-09T02:51:14.2808746Z Unpacking libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T02:51:14.3014150Z Selecting previously unselected package libopenal1:amd64.
+2026-10-09T02:51:14.3140265Z Preparing to unpack .../80-libopenal1_1%3a1.23.1-4build1_amd64.deb ...
+2026-10-09T02:51:14.3148271Z Unpacking libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T02:51:14.3417144Z Selecting previously unselected package libdecor-0-0:amd64.
+2026-10-09T02:51:14.3542960Z Preparing to unpack .../81-libdecor-0-0_0.2.2-1build2_amd64.deb ...
+2026-10-09T02:51:14.3550343Z Unpacking libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T02:51:14.3749074Z Selecting previously unselected package libsdl2-2.0-0:amd64.
+2026-10-09T02:51:14.3876531Z Preparing to unpack .../82-libsdl2-2.0-0_2.30.0+dfsg-1ubuntu3.1_amd64.deb ...
+2026-10-09T02:51:14.3884263Z Unpacking libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T02:51:14.4441526Z Selecting previously unselected package libxcb-shape0:amd64.
+2026-10-09T02:51:14.4566355Z Preparing to unpack .../83-libxcb-shape0_1.15-1ubuntu2_amd64.deb ...
+2026-10-09T02:51:14.4574634Z Unpacking libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T02:51:14.4766385Z Selecting previously unselected package libxv1:amd64.
+2026-10-09T02:51:14.4891411Z Preparing to unpack .../84-libxv1_2%3a1.0.11-1.1build1_amd64.deb ...
+2026-10-09T02:51:14.4898740Z Unpacking libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T02:51:14.5102895Z Selecting previously unselected package libavdevice60:amd64.
+2026-10-09T02:51:14.5241362Z Preparing to unpack .../85-libavdevice60_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:14.5245817Z Unpacking libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:14.5446075Z Selecting previously unselected package ffmpeg.
+2026-10-09T02:51:14.5569780Z Preparing to unpack .../86-ffmpeg_7%3a6.1.1-3ubuntu5_amd64.deb ...
+2026-10-09T02:51:14.5578235Z Unpacking ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:14.5986808Z Selecting previously unselected package libigdgmm12:amd64.
+2026-10-09T02:51:14.6111814Z Preparing to unpack .../87-libigdgmm12_22.3.17+ds1-1ubuntu1_amd64.deb ...
+2026-10-09T02:51:14.6120299Z Unpacking libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T02:51:14.6335359Z Selecting previously unselected package intel-media-va-driver:amd64.
+2026-10-09T02:51:14.6460276Z Preparing to unpack .../88-intel-media-va-driver_24.1.0+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:14.6467016Z Unpacking intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T02:51:14.7113486Z Selecting previously unselected package libaacs0:amd64.
+2026-10-09T02:51:14.7240523Z Preparing to unpack .../89-libaacs0_0.11.1-2build1_amd64.deb ...
+2026-10-09T02:51:14.7251678Z Unpacking libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T02:51:14.7453033Z Selecting previously unselected package libbdplus0:amd64.
+2026-10-09T02:51:14.7577760Z Preparing to unpack .../90-libbdplus0_0.2.0-3build1_amd64.deb ...
+2026-10-09T02:51:14.7588068Z Unpacking libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T02:51:14.7775636Z Selecting previously unselected package libdecor-0-plugin-1-gtk:amd64.
+2026-10-09T02:51:14.7899367Z Preparing to unpack .../91-libdecor-0-plugin-1-gtk_0.2.2-1build2_amd64.deb ...
+2026-10-09T02:51:14.7906656Z Unpacking libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T02:51:14.8102530Z Selecting previously unselected package librsvg2-common:amd64.
+2026-10-09T02:51:14.8225822Z Preparing to unpack .../92-librsvg2-common_2.58.0+dfsg-1ubuntu0.1_amd64.deb ...
+2026-10-09T02:51:14.8232713Z Unpacking librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T02:51:14.8461669Z Selecting previously unselected package mesa-va-drivers:amd64.
+2026-10-09T02:51:14.8586587Z Preparing to unpack .../93-mesa-va-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T02:51:14.8592841Z Unpacking mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T02:51:14.8794238Z Selecting previously unselected package mesa-vdpau-drivers:amd64.
+2026-10-09T02:51:14.8919583Z Preparing to unpack .../94-mesa-vdpau-drivers_25.2.8-0ubuntu0.24.04.4_amd64.deb ...
+2026-10-09T02:51:14.8926571Z Unpacking mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T02:51:14.9128075Z Selecting previously unselected package i965-va-driver:amd64.
+2026-10-09T02:51:14.9252623Z Preparing to unpack .../95-i965-va-driver_2.4.1+dfsg1-1ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:14.9260152Z Unpacking i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T02:51:14.9515183Z Selecting previously unselected package va-driver-all:amd64.
+2026-10-09T02:51:14.9640979Z Preparing to unpack .../96-va-driver-all_2.20.0-2ubuntu0.2_amd64.deb ...
+2026-10-09T02:51:14.9647309Z Unpacking va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:14.9832110Z Selecting previously unselected package vdpau-driver-all:amd64.
+2026-10-09T02:51:14.9956685Z Preparing to unpack .../97-vdpau-driver-all_1.5-2build1_amd64.deb ...
+2026-10-09T02:51:14.9966642Z Unpacking vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T02:51:15.0149809Z Selecting previously unselected package pocketsphinx-en-us.
+2026-10-09T02:51:15.0273650Z Preparing to unpack .../98-pocketsphinx-en-us_0.8.0+real5prealpha+1-15ubuntu5_all.deb ...
+2026-10-09T02:51:15.0280481Z Unpacking pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T02:51:15.2204137Z Setting up libgme0:amd64 (0.6.3-7build1) ...
+2026-10-09T02:51:15.2232167Z Setting up libchromaprint1:amd64 (1.5.1-5) ...
+2026-10-09T02:51:15.2248499Z Setting up libssh-gcrypt-4:amd64 (0.10.6-2ubuntu0.5) ...
+2026-10-09T02:51:15.2267336Z Setting up libhwy1t64:amd64 (1.0.7-8.1build1) ...
+2026-10-09T02:51:15.2285908Z Setting up libudfread0:amd64 (1.1.2-1build1) ...
+2026-10-09T02:51:15.2302547Z Setting up libraw1394-11:amd64 (2.1.2-2build3) ...
+2026-10-09T02:51:15.2325822Z Setting up libspeex1:amd64 (1.2.1-2ubuntu2.24.04.1) ...
+2026-10-09T02:51:15.2343568Z Setting up libshine3:amd64 (3.1.1-2build1) ...
+2026-10-09T02:51:15.2363565Z Setting up libcaca0:amd64 (0.99.beta20-4ubuntu0.2) ...
+2026-10-09T02:51:15.2388152Z Setting up libvpl2 (2023.3.0-1build1) ...
+2026-10-09T02:51:15.2406423Z Setting up libx264-164:amd64 (2:0.164.3108+git31e19f9-1) ...
+2026-10-09T02:51:15.2428957Z Setting up libtwolame0:amd64 (0.4.0-2build3) ...
+2026-10-09T02:51:15.2447133Z Setting up libmbedcrypto7t64:amd64 (2.28.8-1) ...
+2026-10-09T02:51:15.2466195Z Setting up libgsm1:amd64 (1.0.22-1build1) ...
+2026-10-09T02:51:15.2484385Z Setting up libsoxr0:amd64 (0.1.3-4build3) ...
+2026-10-09T02:51:15.2503226Z Setting up libzix-0-0:amd64 (0.4.2-2build1) ...
+2026-10-09T02:51:15.2525465Z Setting up libcodec2-1.2:amd64 (1.2.0-2build1) ...
+2026-10-09T02:51:15.2551502Z Setting up libmysofa1:amd64 (1.3.2+dfsg-2ubuntu2) ...
+2026-10-09T02:51:15.2571186Z Setting up libxcb-shape0:amd64 (1.15-1ubuntu2) ...
+2026-10-09T02:51:15.2589281Z Setting up libcdio19t64:amd64 (2.1.0-4.1ubuntu1.2) ...
+2026-10-09T02:51:15.2608253Z Setting up libsvtav1enc1d1:amd64 (1.7.0+dfsg-2build1) ...
+2026-10-09T02:51:15.2626798Z Setting up libigdgmm12:amd64 (22.3.17+ds1-1ubuntu1) ...
+2026-10-09T02:51:15.2645133Z Setting up libmpg123-0t64:amd64 (1.32.5-1ubuntu1.1) ...
+2026-10-09T02:51:15.2665655Z Setting up libcjson1:amd64 (1.7.17-1) ...
+2026-10-09T02:51:15.2706095Z Setting up libxvidcore4:amd64 (2:1.3.7-1build1) ...
+2026-10-09T02:51:15.2728390Z Setting up librav1e0:amd64 (0.7.1-2) ...
+2026-10-09T02:51:15.2746461Z Setting up libcdio-cdda2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T02:51:15.2765902Z Setting up librist4:amd64 (0.2.10+dfsg-2) ...
+2026-10-09T02:51:15.2786605Z Setting up librsvg2-2:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T02:51:15.2803908Z Setting up libblas3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T02:51:15.2868162Z update-alternatives: using /usr/lib/x86_64-linux-gnu/blas/libblas.so.3 to provide /usr/lib/x86_64-linux-gnu/libblas.so.3 (libblas.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T02:51:15.2883891Z Setting up libplacebo338:amd64 (6.338.2-2build1) ...
+2026-10-09T02:51:15.2902449Z Setting up libva2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:15.2923323Z Setting up libopus0:amd64 (1.4-1build1) ...
+2026-10-09T02:51:15.2941803Z Setting up libcdio-paranoia2t64:amd64 (10.2+2.0.1-1.1build2) ...
+2026-10-09T02:51:15.2961533Z Setting up libdc1394-25:amd64 (2.2.6-4build1) ...
+2026-10-09T02:51:15.2978873Z Setting up intel-media-va-driver:amd64 (24.1.0+dfsg1-1ubuntu0.2) ...
+2026-10-09T02:51:15.3000399Z Setting up libxv1:amd64 (2:1.0.11-1.1build1) ...
+2026-10-09T02:51:15.3019123Z Setting up libunibreak5:amd64 (5.1-2build1) ...
+2026-10-09T02:51:15.3038063Z Setting up libaacs0:amd64 (0.11.1-2build1) ...
+2026-10-09T02:51:15.3065712Z Setting up libjxl0.7:amd64 (0.7.0-10.2ubuntu6.1) ...
+2026-10-09T02:51:15.3082706Z Setting up librsvg2-common:amd64 (2.58.0+dfsg-1ubuntu0.1) ...
+2026-10-09T02:51:15.3136468Z Setting up pocketsphinx-en-us (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T02:51:15.3155621Z Setting up libx265-199:amd64 (3.5-2build1) ...
+2026-10-09T02:51:15.3173740Z Setting up libsndio7.0:amd64 (1.9.0-0.3build3) ...
+2026-10-09T02:51:15.3234238Z Setting up libbdplus0:amd64 (0.2.0-3build1) ...
+2026-10-09T02:51:15.3234838Z Setting up libvidstab1.1:amd64 (1.1.0-2build1) ...
+2026-10-09T02:51:15.3235323Z Setting up libvpx9:amd64 (1.14.0-1ubuntu2.3) ...
+2026-10-09T02:51:15.3252400Z Setting up libsrt1.5-gnutls:amd64 (1.5.3-1build2) ...
+2026-10-09T02:51:15.3269038Z Setting up libflite1:amd64 (2.2-6build3) ...
+2026-10-09T02:51:15.3287926Z Setting up libdav1d7:amd64 (1.4.1-1build1) ...
+2026-10-09T02:51:15.3308651Z Setting up libva-drm2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:15.3327969Z Setting up ocl-icd-libopencl1:amd64 (2.3.2-1build1) ...
+2026-10-09T02:51:15.3345257Z Setting up libasyncns0:amd64 (0.8-6build4) ...
+2026-10-09T02:51:15.3364894Z Setting up libvdpau1:amd64 (1.5-2build1) ...
+2026-10-09T02:51:15.3391272Z Setting up libbs2b0:amd64 (3.1.0+dfsg-7build1) ...
+2026-10-09T02:51:15.3412054Z Setting up libtheora0:amd64 (1.1.1+dfsg.1-16.1build3) ...
+2026-10-09T02:51:15.3431679Z Setting up libdecor-0-0:amd64 (0.2.2-1build2) ...
+2026-10-09T02:51:15.3449941Z Setting up libzimg2:amd64 (3.0.5+ds1-1build1) ...
+2026-10-09T02:51:15.3471965Z Setting up libopenal-data (1:1.23.1-4build1) ...
+2026-10-09T02:51:15.3500110Z Setting up libflac12t64:amd64 (1.4.3+ds-2.1ubuntu2) ...
+2026-10-09T02:51:15.3520095Z Setting up mesa-va-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T02:51:15.3540150Z Setting up libbluray2:amd64 (1:1.3.4-1build1) ...
+2026-10-09T02:51:15.3558782Z Setting up libsamplerate0:amd64 (0.2.2-4build1) ...
+2026-10-09T02:51:15.3579890Z Setting up libva-x11-2:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:15.3600057Z Setting up libdecor-0-plugin-1-gtk:amd64 (0.2.2-1build2) ...
+2026-10-09T02:51:15.3620106Z Setting up libopenmpt0t64:amd64 (0.7.3-1.1build3) ...
+2026-10-09T02:51:15.3640093Z Setting up libzvbi-common (0.2.42-2) ...
+2026-10-09T02:51:15.3660146Z Setting up libmp3lame0:amd64 (3.100-6build1) ...
+2026-10-09T02:51:15.3679818Z Setting up i965-va-driver:amd64 (2.4.1+dfsg1-1ubuntu0.2) ...
+2026-10-09T02:51:15.3697410Z Setting up libvorbisenc2:amd64 (1.3.7-1build3) ...
+2026-10-09T02:51:15.3716274Z Setting up libiec61883-0:amd64 (1.2.0-6build1) ...
+2026-10-09T02:51:15.3736332Z Setting up libserd-0-0:amd64 (0.32.2-1) ...
+2026-10-09T02:51:15.3753594Z Setting up libavc1394-0:amd64 (0.5.4-5build3) ...
+2026-10-09T02:51:15.3795167Z Setting up mesa-vdpau-drivers:amd64 (25.2.8-0ubuntu0.24.04.4) ...
+2026-10-09T02:51:15.3816602Z Setting up liblapack3:amd64 (3.12.0-3build1.1) ...
+2026-10-09T02:51:15.3879103Z update-alternatives: using /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3 to provide /usr/lib/x86_64-linux-gnu/liblapack.so.3 (liblapack.so.3-x86_64-linux-gnu) in auto mode
+2026-10-09T02:51:15.3894818Z Setting up libzvbi0t64:amd64 (0.2.42-2) ...
+2026-10-09T02:51:15.3914285Z Setting up libavutil58:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.3933795Z Setting up libopenal1:amd64 (1:1.23.1-4build1) ...
+2026-10-09T02:51:15.3953135Z Setting up libass9:amd64 (1:0.17.1-2build1) ...
+2026-10-09T02:51:15.3973994Z Setting up libswresample4:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.3993711Z Setting up va-driver-all:amd64 (2.20.0-2ubuntu0.2) ...
+2026-10-09T02:51:15.4013022Z Setting up libavcodec60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4031560Z Setting up librubberband2:amd64 (3.3.0+dfsg-2build1) ...
+2026-10-09T02:51:15.4276539Z Setting up libjack-jackd2-0:amd64 (1.9.21~dfsg-3ubuntu3) ...
+2026-10-09T02:51:15.4293894Z Setting up vdpau-driver-all:amd64 (1.5-2build1) ...
+2026-10-09T02:51:15.4313615Z Setting up libsord-0-0:amd64 (0.16.16-2build1) ...
+2026-10-09T02:51:15.4330670Z Setting up libpostproc57:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4348196Z Setting up libsratom-0-0:amd64 (0.6.16-1build1) ...
+2026-10-09T02:51:15.4368682Z Setting up libsndfile1:amd64 (1.2.2-1ubuntu5.24.04.1) ...
+2026-10-09T02:51:15.4386209Z Setting up liblilv-0-0:amd64 (0.24.22-1build1) ...
+2026-10-09T02:51:15.4408138Z Setting up libswscale7:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4425815Z Setting up libpulse0:amd64 (1:16.1+dfsg1-2ubuntu10.1) ...
+2026-10-09T02:51:15.4495696Z Setting up libavformat60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4518429Z Setting up libsphinxbase3t64:amd64 (0.8+5prealpha+1-17build2) ...
+2026-10-09T02:51:15.4535248Z Setting up libsdl2-2.0-0:amd64 (2.30.0+dfsg-1ubuntu3.1) ...
+2026-10-09T02:51:15.4553245Z Setting up libpocketsphinx3:amd64 (0.8.0+real5prealpha+1-15ubuntu5) ...
+2026-10-09T02:51:15.4574652Z Setting up libavfilter9:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4592646Z Setting up libavdevice60:amd64 (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4611180Z Setting up ffmpeg (7:6.1.1-3ubuntu5) ...
+2026-10-09T02:51:15.4632619Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-10-09T02:51:15.4654524Z Not building database; man-db/auto-update is not 'true'.
+2026-10-09T02:51:15.4669173Z Processing triggers for libgdk-pixbuf-2.0-0:amd64 (2.42.10+dfsg-3ubuntu3.3) ...
+2026-10-09T02:51:15.5063095Z Processing triggers for libc-bin (2.39-0ubuntu8.9) ...
+2026-10-09T02:51:16.1904576Z 
+2026-10-09T02:51:16.1905399Z Running kernel seems to be up-to-date.
+2026-10-09T02:51:16.1905885Z 
+2026-10-09T02:51:16.1906898Z No services need to be restarted.
+2026-10-09T02:51:16.1907285Z 
+2026-10-09T02:51:16.1907620Z No containers need to be restarted.
+2026-10-09T02:51:16.1908019Z 
+2026-10-09T02:51:16.1908408Z No user sessions are running outdated binaries.
+2026-10-09T02:51:16.1908872Z 
+2026-10-09T02:51:16.1909494Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-10-09T02:51:17.3521543Z ffprobe version 6.1.1-3ubuntu5 Copyright (c) 2007-2023 the FFmpeg developers
+2026-10-09T02:51:17.3522136Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T02:51:17.3530035Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T02:51:17.3536448Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T02:51:17.3536818Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T02:51:17.3537173Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T02:51:17.3537514Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T02:51:17.3537823Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T02:51:17.3538129Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T02:51:17.3538430Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T02:51:17.3538730Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T02:51:17.4024021Z ffmpeg version 6.1.1-3ubuntu5 Copyright (c) 2000-2023 the FFmpeg developers
+2026-10-09T02:51:17.4024894Z built with gcc 13 (Ubuntu 13.2.0-23ubuntu3)
+2026-10-09T02:51:17.4034680Z configuration: --prefix=/usr --extra-version=3ubuntu5 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --disable-omx --enable-gnutls --enable-libaom --enable-libass --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libdav1d --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libglslang --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzimg --enable-openal --enable-opencl --enable-opengl --disable-sndio --enable-libvpl --disable-libmfx --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-chromaprint --enable-frei0r --enable-ladspa --enable-libbluray --enable-libjack --enable-libpulse --enable-librabbitmq --enable-librist --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libx264 --enable-libzmq --enable-libzvbi --enable-lv2 --enable-sdl2 --enable-libplacebo --enable-librav1e --enable-pocketsphinx --enable-librsvg --enable-libjxl --enable-shared
+2026-10-09T02:51:17.4040919Z libavutil      58. 29.100 / 58. 29.100
+2026-10-09T02:51:17.4041246Z libavcodec     60. 31.102 / 60. 31.102
+2026-10-09T02:51:17.4041568Z libavformat    60. 16.100 / 60. 16.100
+2026-10-09T02:51:17.4041882Z libavdevice    60.  3.100 / 60.  3.100
+2026-10-09T02:51:17.4042188Z libavfilter     9. 12.100 /  9. 12.100
+2026-10-09T02:51:17.4042497Z libswscale      7.  5.100 /  7.  5.100
+2026-10-09T02:51:17.4042799Z libswresample   4. 12.100 /  4. 12.100
+2026-10-09T02:51:17.4043101Z libpostproc    57.  3.100 / 57.  3.100
+2026-10-09T02:51:17.4087598Z ##[group]Run node --version
+2026-10-09T02:51:17.4087947Z [36;1mnode --version[0m
+2026-10-09T02:51:17.4088185Z [36;1mnproc[0m
+2026-10-09T02:51:17.4088446Z [36;1mawk '/MemTotal/ { print }' /proc/meminfo[0m
+2026-10-09T02:51:17.4088763Z [36;1mdf -Pk .[0m
+2026-10-09T02:51:17.4151173Z shell: /usr/bin/bash -e {0}
+2026-10-09T02:51:17.4151443Z env:
+2026-10-09T02:51:17.4151729Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:51:17.4152090Z ##[endgroup]
+2026-10-09T02:51:17.4264368Z v22.16.0
+2026-10-09T02:51:17.4284562Z 4
+2026-10-09T02:51:17.4304334Z MemTotal:       16373452 kB
+2026-10-09T02:51:17.4324940Z Filesystem     1024-blocks     Used Available Capacity Mounted on
+2026-10-09T02:51:17.4325743Z /dev/root        151263856 64421420  86826052      43% /
+2026-10-09T02:51:17.4383243Z ##[group]Run set -o pipefail
+2026-10-09T02:51:17.4383564Z [36;1mset -o pipefail[0m
+2026-10-09T02:51:17.4383959Z [36;1mnode scripts/check.mjs --stage 'node' 2>&1 | tee '.work-stage-node.stdout'[0m
+2026-10-09T02:51:17.4444778Z shell: /usr/bin/bash -e {0}
+2026-10-09T02:51:17.4445042Z env:
+2026-10-09T02:51:17.4445318Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:51:17.4445655Z ##[endgroup]
+2026-10-09T02:51:17.5823156Z 
+2026-10-09T02:51:17.5823964Z > partybox-g10-checkers@1.0.0 build
+2026-10-09T02:51:17.5824526Z > tsc --noEmit && node scripts/build.mjs
+2026-10-09T02:51:17.5824848Z 
+2026-10-09T02:51:31.1413016Z PASS: complete offline single-page game written to /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers/.work/play.html; original six-piece data is read in bounded blocks.
+2026-10-09T02:51:49.5309907Z PASS: checksums, authoritative schemas/manifest, pure core source, fixed corpus provenance, original offline page (delivery execution gates explicitly excluded).
+2026-10-09T02:51:53.4776468Z {"status": "PASS", "positives": 4, "rejected": 21, "controls": ["wrong-part-order", "duplicate-part", "gap-offset", "wrong-part-size", "wrong-part-sha", "wrong-whole-sha", "wrong-checkout", "wrong-whole-size", "oversized-part-limit", "absolute-part-path", "wrong-helper-sha", "missing-accepted-stage", "coherent-sidecars-wrong-whole-sha", "truncated-part", "changed-part-same-size", "JOIN-removes-incomplete-output", "missing-part", "symlink-part", "extra-stale-part", "duplicate-json-key", "JOIN-keeps-existing-output"], "scope": "Real split/re-read/JOIN boundary fixture plus meaningful part/order/digest/source and incomplete-output corruptions; not game delivery acceptance"}
+2026-10-09T02:52:04.2366260Z {"status":"PASS","positives":14,"rejected":127,"scope":"Independent host-validator component controls against genuine historical 30-check reports, American-only 600-frame data, actual failed International data and actual historical WebM clips, plus explicitly labeled structural identity/telemetry/relative-coordinate components and isolated counterfactual thresholds. No current browser/capture acceptance is inferred."}
+2026-10-09T02:52:25.3967507Z {"status":"PASS","positives":10,"rejected":72,"scope":"Genuine current historical4000-game records replayed independently; derived partition metadata and explicit synthetic stage-schema fixtures test components only. No fresh partition execution, current hosted acceptance or CI-fit inference."}
+2026-10-09T02:52:35.3343468Z {"suite":"endgame-generation","stats":{"american":{"positions":7216,"edges":16138,"wins":1552,"losses":924,"draws":4740,"maximumDtm":13,"tacticalThreeToSix":{"candidates":10931,"accepted":2000,"definition":"every legal forced capture removes the sole opposing piece"}},"international":{"positions":18070,"edges":105140,"wins":6600,"losses":4114,"draws":7356,"maximumDtm":17,"tacticalThreeToSix":{"candidates":5892,"accepted":2000,"definition":"every legal forced capture removes the sole opposing piece"}}},"totalRows":29286}
+2026-10-09T02:52:44.7627498Z Two phase fixtures, projections, schemas and manifest generated.
+2026-10-09T02:52:54.5969626Z {"suite":"endgame-generation","stats":{"american":{"positions":7216,"edges":16138,"wins":1552,"losses":924,"draws":4740,"maximumDtm":13,"tacticalThreeToSix":{"candidates":10931,"accepted":2000,"definition":"every legal forced capture removes the sole opposing piece"}},"international":{"positions":18070,"edges":105140,"wins":6600,"losses":4114,"draws":7356,"maximumDtm":17,"tacticalThreeToSix":{"candidates":5892,"accepted":2000,"definition":"every legal forced capture removes the sole opposing piece"}}},"totalRows":29286}
+2026-10-09T02:53:04.0222199Z Two phase fixtures, projections, schemas and manifest generated.
+2026-10-09T02:53:04.1058903Z {"phase": "start", "pid": 3997, "pgid": 2059}
+2026-10-09T02:53:05.8377066Z {"phase": "complete", "manifest": {"schemaVersion": 1, "author": "Chinook project, University of Alberta", "archiveUrl": "https://webdocs.cs.ualberta.ca/~chinook/DataBases/DB6.zip", "termsUrl": "https://webdocs.cs.ualberta.ca/~chinook/Software/", "terms": "Free use requires acknowledgement of the Chinook project; sale of these databases is prohibited.", "formatSourceUrl": "https://webdocs.cs.ualberta.ca/~chinook/databases/code.c", "files": {"DB6.zip": {"bytes": 27701728, "sha256": "35835dae65a962eafdf5cde290bce380117445acb21819dd0e266b3b0efab3b3"}, "DB6": {"bytes": 48132029, "sha256": "baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f"}, "DB6.idx": {"bytes": 900418, "sha256": "10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd"}}, "baseSlices": 3935, "materialCoverage": [{"pieces": 2, "pieceTypeTuples": 4, "materialSplits": [[1, 1]]}, {"pieces": 3, "pieceTypeTuples": 12, "materialSplits": [[1, 2]]}, {"pieces": 4, "pieceTypeTuples": 25, "materialSplits": [[1, 3], [2, 2]]}, {"pieces": 5, "pieceTypeTuples": 44, "materialSplits": [[1, 4], [2, 3]]}, {"pieces": 6, "pieceTypeTuples": 70, "materialSplits": [[1, 5], [2, 4], [3, 3]]}], "coverageCheckScope": "All nonempty 2\u20136 material/king/man tuples are present; probe/rank correctness requires separate independent checks.", "probeContract": "American theoretical WDL; direct stored queries require no capture for either side. Draw history is not stored."}}
+2026-10-09T02:53:05.9565805Z {"phase": "start", "pid": 3998, "pgid": 2059}
+2026-10-09T02:53:06.2947133Z {"phase": "complete", "manifest": {"schemaVersion": 1, "author": "Chinook project, University of Alberta", "archiveUrl": "https://webdocs.cs.ualberta.ca/~chinook/DataBases/DB6.zip", "termsUrl": "https://webdocs.cs.ualberta.ca/~chinook/Software/", "terms": "Free use requires acknowledgement of the Chinook project; sale of these databases is prohibited.", "formatSourceUrl": "https://webdocs.cs.ualberta.ca/~chinook/databases/code.c", "files": {"DB6.zip": {"bytes": 27701728, "sha256": "35835dae65a962eafdf5cde290bce380117445acb21819dd0e266b3b0efab3b3"}, "DB6": {"bytes": 48132029, "sha256": "baee42a2b49390edd96e5a751189366275619c941d79021f3ca45774c3e7071f"}, "DB6.idx": {"bytes": 900418, "sha256": "10cb5cfc2a8c67e18c322563c17ceef0adeac87786a16c767c4616e9a574f4fd"}}, "baseSlices": 3935, "materialCoverage": [{"pieces": 2, "pieceTypeTuples": 4, "materialSplits": [[1, 1]]}, {"pieces": 3, "pieceTypeTuples": 12, "materialSplits": [[1, 2]]}, {"pieces": 4, "pieceTypeTuples": 25, "materialSplits": [[1, 3], [2, 2]]}, {"pieces": 5, "pieceTypeTuples": 44, "materialSplits": [[1, 4], [2, 3]]}, {"pieces": 6, "pieceTypeTuples": 70, "materialSplits": [[1, 5], [2, 4], [3, 3]]}], "coverageCheckScope": "All nonempty 2\u20136 material/king/man tuples are present; probe/rank correctness requires separate independent checks.", "probeContract": "American theoretical WDL; direct stored queries require no capture for either side. Draw history is not stored."}}
+2026-10-09T02:53:06.4024843Z TAP version 13
+2026-10-09T02:53:18.5927130Z # Subtest: PVS/transposition tie handling agrees with independent exhaustive minimax and capture horizon
+2026-10-09T02:53:18.5935859Z ok 1 - PVS/transposition tie handling agrees with independent exhaustive minimax and capture horizon
+2026-10-09T02:53:18.5937807Z   ---
+2026-10-09T02:53:18.5938835Z   duration_ms: 448.737858
+2026-10-09T02:53:18.5939301Z   type: 'test'
+2026-10-09T02:53:18.5939664Z   ...
+2026-10-09T02:53:18.5940391Z # Subtest: independent Chinook reader decodes high-to-low ternary digits
+2026-10-09T02:53:18.5941523Z ok 2 - independent Chinook reader decodes high-to-low ternary digits
+2026-10-09T02:53:18.5942212Z   ---
+2026-10-09T02:53:18.5942583Z   duration_ms: 1.159547
+2026-10-09T02:53:18.5943013Z   type: 'test'
+2026-10-09T02:53:18.5943374Z   ...
+2026-10-09T02:53:18.5944200Z # Subtest: independent Chinook reader consumes default runs before ordinary records
+2026-10-09T02:53:18.5945396Z ok 3 - independent Chinook reader consumes default runs before ordinary records
+2026-10-09T02:53:18.5946499Z   ---
+2026-10-09T02:53:18.5946826Z   duration_ms: 0.307687
+2026-10-09T02:53:18.5947225Z   type: 'test'
+2026-10-09T02:53:18.5947585Z   ...
+2026-10-09T02:53:18.5948550Z # Subtest: independent Chinook uniform records need no binary payload
+2026-10-09T02:53:18.5949506Z ok 4 - independent Chinook uniform records need no binary payload
+2026-10-09T02:53:18.5950117Z   ---
+2026-10-09T02:53:18.5950454Z   duration_ms: 0.185187
+2026-10-09T02:53:18.5950838Z   type: 'test'
+2026-10-09T02:53:18.5951181Z   ...
+2026-10-09T02:53:18.5952024Z # Subtest: independent Chinook raw stored probe rejects current-side and opponent-only captures
+2026-10-09T02:53:18.5953292Z ok 5 - independent Chinook raw stored probe rejects current-side and opponent-only captures
+2026-10-09T02:53:18.5954068Z   ---
+2026-10-09T02:53:18.5954402Z   duration_ms: 0.325652
+2026-10-09T02:53:18.5954788Z   type: 'test'
+2026-10-09T02:53:18.5955128Z   ...
+2026-10-09T02:53:18.5955881Z # Subtest: independent Chinook reader rejects malformed or out-of-bounds index records
+2026-10-09T02:53:18.5957252Z ok 6 - independent Chinook reader rejects malformed or out-of-bounds index records
+2026-10-09T02:53:18.5957971Z   ---
+2026-10-09T02:53:18.5958302Z   duration_ms: 0.36751
+2026-10-09T02:53:18.5958679Z   type: 'test'
+2026-10-09T02:53:18.5959013Z   ...
+2026-10-09T02:53:18.5959771Z # Subtest: acquired full American corpus bytes/index match fixed primary-source hashes
+2026-10-09T02:53:18.5960890Z ok 7 - acquired full American corpus bytes/index match fixed primary-source hashes
+2026-10-09T02:53:18.5961569Z   ---
+2026-10-09T02:53:18.5961908Z   duration_ms: 31.570236
+2026-10-09T02:53:18.5962306Z   type: 'test'
+2026-10-09T02:53:18.5962633Z   ...
+2026-10-09T02:53:18.5963555Z # Subtest: both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+2026-10-09T02:53:18.5964969Z ok 8 - both independent corpus readers match exact fully closed two-piece WDL where wire format applies
+2026-10-09T02:53:18.5965770Z   ---
+2026-10-09T02:53:18.5966317Z   duration_ms: 367.349675
+2026-10-09T02:53:18.5966718Z   type: 'test'
+2026-10-09T02:53:18.5967047Z   ...
+2026-10-09T02:53:18.5970145Z # Subtest: 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+2026-10-09T02:53:18.5971924Z ok 9 - 10,000 mixed2–6piece production ranks/decodes equal independent enumeration and reject capture threats
+2026-10-09T02:53:18.5972780Z   ---
+2026-10-09T02:53:18.5973128Z   duration_ms: 538.918905
+2026-10-09T02:53:18.5973529Z   type: 'test'
+2026-10-09T02:53:18.5973864Z   ...
+2026-10-09T02:53:18.5974728Z # Subtest: production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+2026-10-09T02:53:18.5976285Z ok 10 - production corpus factory snapshots inputs and rejects damaged or incompatible metadata
+2026-10-09T02:53:18.5977428Z   ---
+2026-10-09T02:53:18.5977769Z   duration_ms: 0.823506
+2026-10-09T02:53:18.5978161Z   type: 'test'
+2026-10-09T02:53:18.5978492Z   ...
+2026-10-09T02:53:18.5979192Z # Subtest: contract manifest/counts/settings and deterministic initial boards
+2026-10-09T02:53:18.5980233Z ok 11 - contract manifest/counts/settings and deterministic initial boards
+2026-10-09T02:53:18.5980876Z   ---
+2026-10-09T02:53:18.5981205Z   duration_ms: 2.084443
+2026-10-09T02:53:18.5981601Z   type: 'test'
+2026-10-09T02:53:18.5981918Z   ...
+2026-10-09T02:53:18.5982381Z # Subtest: contract total immutable reducer ignores malformed/unknown events in both phases
+2026-10-09T02:53:18.5983090Z ok 12 - contract total immutable reducer ignores malformed/unknown events in both phases
+2026-10-09T02:53:18.5983528Z   ---
+2026-10-09T02:53:18.5983721Z   duration_ms: 4.578664
+2026-10-09T02:53:18.5983946Z   type: 'test'
+2026-10-09T02:53:18.5984149Z   ...
+2026-10-09T02:53:18.5984569Z # Subtest: contract live timer requires exact phase instance and elapsed deadline
+2026-10-09T02:53:18.5985192Z ok 13 - contract live timer requires exact phase instance and elapsed deadline
+2026-10-09T02:53:18.5985582Z   ---
+2026-10-09T02:53:18.5985771Z   duration_ms: 0.323197
+2026-10-09T02:53:18.5986339Z   type: 'test'
+2026-10-09T02:53:18.5986735Z   ...
+2026-10-09T02:53:18.5987398Z # Subtest: VIP pause/resume shifts only the deadline; skip/end remain available
+2026-10-09T02:53:18.5988028Z ok 14 - VIP pause/resume shifts only the deadline; skip/end remain available
+2026-10-09T02:53:18.5988412Z   ---
+2026-10-09T02:53:18.5988606Z   duration_ms: 3.658487
+2026-10-09T02:53:18.5988832Z   type: 'test'
+2026-10-09T02:53:18.5989025Z   ...
+2026-10-09T02:53:18.5989489Z # Subtest: presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+2026-10-09T02:53:18.5990592Z ok 15 - presence auto-holds empty rooms, resumes clocks and permanently preserves leavers
+2026-10-09T02:53:18.5991029Z   ---
+2026-10-09T02:53:18.5991225Z   duration_ms: 4.360955
+2026-10-09T02:53:18.5991447Z   type: 'test'
+2026-10-09T02:53:18.5991637Z   ...
+2026-10-09T02:53:18.5992074Z # Subtest: hostile seat IDs, public view equality, spectator safety and cloned projections
+2026-10-09T02:53:18.5992726Z ok 16 - hostile seat IDs, public view equality, spectator safety and cloned projections
+2026-10-09T02:53:18.5993129Z   ---
+2026-10-09T02:53:18.5993330Z   duration_ms: 2.271183
+2026-10-09T02:53:18.5993545Z   type: 'test'
+2026-10-09T02:53:18.5993736Z   ...
+2026-10-09T02:53:18.5994137Z # Subtest: complete legal inputs and terminal scores preserve every original seat
+2026-10-09T02:53:18.5994746Z ok 17 - complete legal inputs and terminal scores preserve every original seat
+2026-10-09T02:53:18.5995126Z   ---
+2026-10-09T02:53:18.5995496Z   duration_ms: 2.289267
+2026-10-09T02:53:18.5995883Z   type: 'test'
+2026-10-09T02:53:18.5996364Z   ...
+2026-10-09T02:53:18.5996876Z # Subtest: all three bot levels are schema-valid deterministic pure choices in every phase/role
+2026-10-09T02:53:18.5997603Z ok 18 - all three bot levels are schema-valid deterministic pure choices in every phase/role
+2026-10-09T02:53:18.5998036Z   ---
+2026-10-09T02:53:18.5998235Z   duration_ms: 212.956259
+2026-10-09T02:53:18.5998463Z   type: 'test'
+2026-10-09T02:53:18.5998652Z   ...
+2026-10-09T02:54:33.8344180Z # Subtest: manifest and every generated phase fixture replay without throwing
+2026-10-09T02:54:33.8345428Z ok 19 - manifest and every generated phase fixture replay without throwing
+2026-10-09T02:54:33.8346340Z   ---
+2026-10-09T02:54:33.8346591Z   duration_ms: 8.531003
+2026-10-09T02:54:33.8346841Z   type: 'test'
+2026-10-09T02:54:33.8347051Z   ...
+2026-10-09T02:54:33.8347532Z # Subtest: authoritative state/data schemas validate generated files and reject corrupt rows
+2026-10-09T02:54:33.8348286Z ok 20 - authoritative state/data schemas validate generated files and reject corrupt rows
+2026-10-09T02:54:33.8357539Z   ---
+2026-10-09T02:54:33.8358048Z   duration_ms: 207.18317
+2026-10-09T02:54:33.8358518Z   type: 'test'
+2026-10-09T02:54:33.8359286Z   ...
+2026-10-09T02:54:33.8360127Z # Subtest: source-backed forty/25 move allowances use both players, with exact boundary
+2026-10-09T02:54:33.8361383Z ok 21 - source-backed forty/25 move allowances use both players, with exact boundary
+2026-10-09T02:54:33.8362142Z   ---
+2026-10-09T02:54:33.8362513Z   duration_ms: 0.468369
+2026-10-09T02:54:33.8362962Z   type: 'test'
+2026-10-09T02:54:33.8363327Z   ...
+2026-10-09T02:54:33.8364189Z # Subtest: quiet king moves increment while every man move and capture reset counters/history
+2026-10-09T02:54:33.8365495Z ok 22 - quiet king moves increment while every man move and capture reset counters/history
+2026-10-09T02:54:33.8366586Z   ---
+2026-10-09T02:54:33.8366965Z   duration_ms: 1.085357
+2026-10-09T02:54:33.8367401Z   type: 'test'
+2026-10-09T02:54:33.8367787Z   ...
+2026-10-09T02:54:33.8368501Z # Subtest: threefold includes side to move and can be disabled explicitly
+2026-10-09T02:54:33.8369542Z ok 23 - threefold includes side to move and can be disabled explicitly
+2026-10-09T02:54:33.8370235Z   ---
+2026-10-09T02:54:33.8370612Z   duration_ms: 0.187251
+2026-10-09T02:54:33.8371042Z   type: 'test'
+2026-10-09T02:54:33.8371520Z   ...
+2026-10-09T02:54:33.8372377Z # Subtest: official king windows start after creation, preserve old deadlines and intersect
+2026-10-09T02:54:33.8374016Z ok 24 - official king windows start after creation, preserve old deadlines and intersect
+2026-10-09T02:54:33.8374861Z   ---
+2026-10-09T02:54:33.8375317Z   duration_ms: 0.50617
+2026-10-09T02:54:33.8375740Z   type: 'test'
+2026-10-09T02:54:33.8376399Z   ...
+2026-10-09T02:54:33.8377340Z # Subtest: latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+2026-10-09T02:54:33.8378714Z ok 25 - latest FMJD large diagonal has a five-each window only when occupied solely by weak king
+2026-10-09T02:54:33.8379542Z   ---
+2026-10-09T02:54:33.8379934Z   duration_ms: 0.236735
+2026-10-09T02:54:33.8380358Z   type: 'test'
+2026-10-09T02:54:33.8380729Z   ...
+2026-10-09T02:54:33.8381573Z # Subtest: published32-ply FMJD regression draws when original16-each window expires
+2026-10-09T02:54:33.8382790Z ok 26 - published32-ply FMJD regression draws when original16-each window expires
+2026-10-09T02:54:33.8383544Z   ---
+2026-10-09T02:54:33.8383922Z   duration_ms: 2.327148
+2026-10-09T02:54:33.8384342Z   type: 'test'
+2026-10-09T02:54:33.8384715Z   ...
+2026-10-09T02:54:33.8385563Z # Subtest: last permitted move capturing final opponent wins before a draw counter expires
+2026-10-09T02:54:33.8387093Z ok 27 - last permitted move capturing final opponent wins before a draw counter expires
+2026-10-09T02:54:33.8387865Z   ---
+2026-10-09T02:54:33.8388243Z   duration_ms: 0.228639
+2026-10-09T02:54:33.8388665Z   type: 'test'
+2026-10-09T02:54:33.8389025Z   ...
+2026-10-09T02:54:33.8390053Z # Subtest: optimized ending classification matches independently counted material and diagonal memberships
+2026-10-09T02:54:33.8391611Z ok 28 - optimized ending classification matches independently counted material and diagonal memberships
+2026-10-09T02:54:33.8392527Z   ---
+2026-10-09T02:54:33.8392907Z   duration_ms: 84.048326
+2026-10-09T02:54:33.8393353Z   type: 'test'
+2026-10-09T02:54:33.8393716Z   ...
+2026-10-09T02:54:33.8394414Z # Subtest: independent WDL never labels a truncated king graph as draw
+2026-10-09T02:54:33.8395444Z ok 29 - independent WDL never labels a truncated king graph as draw
+2026-10-09T02:54:33.8396378Z   ---
+2026-10-09T02:54:33.8396775Z   duration_ms: 0.265078
+2026-10-09T02:54:33.8397204Z   type: 'test'
+2026-10-09T02:54:33.8397582Z   ...
+2026-10-09T02:54:33.8398385Z # Subtest: independent WDL certifies complete six-piece forced-capture components
+2026-10-09T02:54:33.8399566Z ok 30 - independent WDL certifies complete six-piece forced-capture components
+2026-10-09T02:54:33.8400325Z   ---
+2026-10-09T02:54:33.8400703Z   duration_ms: 0.665089
+2026-10-09T02:54:33.8401127Z   type: 'test'
+2026-10-09T02:54:33.8401502Z   ...
+2026-10-09T02:54:33.8402427Z # Subtest: independent complete one-vs-one man/king domains have valid WDL and distance certificates
+2026-10-09T02:54:33.8404151Z ok 31 - independent complete one-vs-one man/king domains have valid WDL and distance certificates
+2026-10-09T02:54:33.8405020Z   ---
+2026-10-09T02:54:33.8405398Z   duration_ms: 972.152629
+2026-10-09T02:54:33.8405833Z   type: 'test'
+2026-10-09T02:54:33.8406502Z   ...
+2026-10-09T02:54:33.8407441Z # Subtest: production complete one-vs-one lookup matches independent WDL AND distance on every row
+2026-10-09T02:54:33.8408835Z ok 32 - production complete one-vs-one lookup matches independent WDL AND distance on every row
+2026-10-09T02:54:33.8409668Z   ---
+2026-10-09T02:54:33.8410048Z   duration_ms: 706.168154
+2026-10-09T02:54:33.8410478Z   type: 'test'
+2026-10-09T02:54:33.8410834Z   ...
+2026-10-09T02:54:33.8411643Z # Subtest: every generated three-to-six witness is independently one-turn terminal win
+2026-10-09T02:54:33.8412865Z ok 33 - every generated three-to-six witness is independently one-turn terminal win
+2026-10-09T02:54:33.8413624Z   ---
+2026-10-09T02:54:33.8414001Z   duration_ms: 116.31506
+2026-10-09T02:54:33.8414439Z   type: 'test'
+2026-10-09T02:54:33.8414807Z   ...
+2026-10-09T02:54:33.8415810Z # Subtest: six-piece full jumps and installed quiet draws resolve while absent or oversized data stays unknown
+2026-10-09T02:54:33.8417905Z ok 34 - six-piece full jumps and installed quiet draws resolve while absent or oversized data stays unknown
+2026-10-09T02:54:33.8418855Z   ---
+2026-10-09T02:54:33.8419254Z   duration_ms: 14.000078
+2026-10-09T02:54:33.8419691Z   type: 'test'
+2026-10-09T02:54:33.8420067Z   ...
+2026-10-09T02:54:33.8420948Z # Subtest: exact generator/dataset includes all legal one-per-side roots and cloned coverage
+2026-10-09T02:54:33.8422285Z ok 35 - exact generator/dataset includes all legal one-per-side roots and cloned coverage
+2026-10-09T02:54:33.8423097Z   ---
+2026-10-09T02:54:33.8423473Z   duration_ms: 50.903124
+2026-10-09T02:54:33.8423919Z   type: 'test'
+2026-10-09T02:54:33.8424282Z   ...
+2026-10-09T02:54:33.8425254Z # Subtest: actual public default has all41 files/156 slices and agrees with all10k native/reference cases
+2026-10-09T02:54:33.8426986Z ok 36 - actual public default has all41 files/156 slices and agrees with all10k native/reference cases
+2026-10-09T02:54:33.8427854Z   ---
+2026-10-09T02:54:33.8428237Z   duration_ms: 2532.219479
+2026-10-09T02:54:33.8428709Z   type: 'test'
+2026-10-09T02:54:33.8429082Z   ...
+2026-10-09T02:54:33.8430008Z # Subtest: actual default Strong game respects captures, official/house clocks and third repetition
+2026-10-09T02:54:33.8431594Z ok 37 - actual default Strong game respects captures, official/house clocks and third repetition
+2026-10-09T02:54:33.8432335Z   ---
+2026-10-09T02:54:33.8432620Z   duration_ms: 178.048794
+2026-10-09T02:54:33.8432940Z   type: 'test'
+2026-10-09T02:54:33.8433203Z   ...
+2026-10-09T02:54:33.8433895Z # Subtest: 48 predeclared default/block transactions preserve every report field and random cursor
+2026-10-09T02:54:33.8434923Z ok 38 - 48 predeclared default/block transactions preserve every report field and random cursor
+2026-10-09T02:54:33.8435547Z   ---
+2026-10-09T02:54:33.8435830Z   duration_ms: 33791.847465
+2026-10-09T02:54:33.8436486Z   type: 'test'
+2026-10-09T02:54:33.8436806Z   ...
+2026-10-09T02:54:33.8454724Z # Subtest: three complete game transcripts match default/block decisions and independent legal transitions
+2026-10-09T02:54:33.8456202Z ok 39 - three complete game transcripts match default/block decisions and independent legal transitions
+2026-10-09T02:54:33.8474322Z   ---
+2026-10-09T02:54:33.8474804Z   duration_ms: 25783.22743
+2026-10-09T02:54:33.8475353Z   type: 'test'
+2026-10-09T02:54:33.8475742Z   ...
+2026-10-09T02:54:33.8477163Z # Subtest: immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+2026-10-09T02:54:33.8478671Z ok 40 - immutable encoded and block transports equal all10k retained independent/native WLD outcomes
+2026-10-09T02:54:33.8479554Z   ---
+2026-10-09T02:54:33.8480024Z   duration_ms: 1126.188047
+2026-10-09T02:54:33.8480766Z   type: 'test'
+2026-10-09T02:54:33.8481148Z   ...
+2026-10-09T02:54:33.8482005Z # Subtest: an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+2026-10-09T02:54:33.8483287Z ok 41 - an absent nonuniform block is explicit; uniform slices require no synthetic bytes
+2026-10-09T02:54:33.8484074Z   ---
+2026-10-09T02:54:33.8484490Z   duration_ms: 190.624345
+2026-10-09T02:54:33.8484940Z   type: 'test'
+2026-10-09T02:54:33.8485313Z   ...
+2026-10-09T02:54:33.8486627Z # Subtest: transaction retries require all missing original blocks and then equal native outcomes
+2026-10-09T02:54:33.8488095Z ok 42 - transaction retries require all missing original blocks and then equal native outcomes
+2026-10-09T02:54:33.8488916Z   ---
+2026-10-09T02:54:33.8489293Z   duration_ms: 66.810389
+2026-10-09T02:54:33.8489734Z   type: 'test'
+2026-10-09T02:54:33.8490102Z   ...
+2026-10-09T02:54:33.8491085Z # Subtest: encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+2026-10-09T02:54:33.8492592Z ok 43 - encoded lists, block buffers, source metadata and dictionary inputs remain immutable snapshots
+2026-10-09T02:54:33.8493482Z   ---
+2026-10-09T02:54:33.8493858Z   duration_ms: 55.845432
+2026-10-09T02:54:33.8494288Z   type: 'test'
+2026-10-09T02:54:33.8494661Z   ...
+2026-10-09T02:54:33.8495769Z # Subtest: canonical encoding and bounded block metadata reject corrupt input before probing
+2026-10-09T02:54:33.8497316Z ok 44 - canonical encoding and bounded block metadata reject corrupt input before probing
+2026-10-09T02:54:33.8498058Z   ---
+2026-10-09T02:54:33.8498395Z   duration_ms: 4.494208
+2026-10-09T02:54:33.8498770Z   type: 'test'
+2026-10-09T02:54:33.8499107Z   ...
+2026-10-09T02:54:33.8499913Z # Subtest: one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+2026-10-09T02:54:33.8501118Z ok 45 - one-byte final blocks and nonaligned encoded ranges match the full snapshot decoder
+2026-10-09T02:54:33.8501834Z   ---
+2026-10-09T02:54:33.8502180Z   duration_ms: 49.253085
+2026-10-09T02:54:33.8502570Z   type: 'test'
+2026-10-09T02:54:33.8502899Z   ...
+2026-10-09T02:54:33.8504183Z # Subtest: production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+2026-10-09T02:54:33.8505635Z ok 46 - production actual2–5 WLD/ranks match 10,000 retained original C++ and independent queries
+2026-10-09T02:54:33.8507146Z   ---
+2026-10-09T02:54:33.8507511Z   duration_ms: 316.930839
+2026-10-09T02:54:33.8507911Z   type: 'test'
+2026-10-09T02:54:33.8508243Z   ...
+2026-10-09T02:54:33.8508992Z # Subtest: actual International dictionary/data match pinned licensed-source hashes
+2026-10-09T02:54:33.8510096Z ok 47 - actual International dictionary/data match pinned licensed-source hashes
+2026-10-09T02:54:33.8510786Z   ---
+2026-10-09T02:54:33.8511104Z   duration_ms: 0.240792
+2026-10-09T02:54:33.8511448Z   type: 'test'
+2026-10-09T02:54:33.8511738Z   ...
+2026-10-09T02:54:33.8512561Z # Subtest: production/reference International probes agree with independently closed full two-piece WLD
+2026-10-09T02:54:33.8513881Z ok 48 - production/reference International probes agree with independently closed full two-piece WLD
+2026-10-09T02:54:33.8514683Z   ---
+2026-10-09T02:54:33.8515020Z   duration_ms: 1384.38325
+2026-10-09T02:54:33.8515424Z   type: 'test'
+2026-10-09T02:54:33.8515759Z   ...
+2026-10-09T02:54:33.8516849Z # Subtest: 10,000 International material/orientation ranks agree with separately authored reference
+2026-10-09T02:54:33.8518185Z ok 49 - 10,000 International material/orientation ranks agree with separately authored reference
+2026-10-09T02:54:33.8518959Z   ---
+2026-10-09T02:54:33.8519290Z   duration_ms: 144.382344
+2026-10-09T02:54:33.8519691Z   type: 'test'
+2026-10-09T02:54:33.8520007Z   ...
+2026-10-09T02:54:33.8520912Z # Subtest: International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+2026-10-09T02:54:33.8522344Z ok 50 - International constructor snapshots buffers and rejects corrupt dictionaries/index metadata
+2026-10-09T02:54:33.8523398Z   ---
+2026-10-09T02:54:33.8523730Z   duration_ms: 29.412162
+2026-10-09T02:54:33.8524118Z   type: 'test'
+2026-10-09T02:54:33.8524458Z   ...
+2026-10-09T02:54:33.8525236Z # Subtest: production rules: American forced complete double jump excludes quiet moves
+2026-10-09T02:54:33.8526829Z ok 51 - production rules: American forced complete double jump excludes quiet moves
+2026-10-09T02:54:33.8527566Z   ---
+2026-10-09T02:54:33.8527903Z   duration_ms: 0.477867
+2026-10-09T02:54:33.8528325Z   type: 'test'
+2026-10-09T02:54:33.8528661Z   ...
+2026-10-09T02:54:33.8529508Z # Subtest: production rules: American crown ends capture even with backward king jump available
+2026-10-09T02:54:33.8530807Z ok 52 - production rules: American crown ends capture even with backward king jump available
+2026-10-09T02:54:33.8531574Z   ---
+2026-10-09T02:54:33.8531908Z   duration_ms: 0.152386
+2026-10-09T02:54:33.8532295Z   type: 'test'
+2026-10-09T02:54:33.8532632Z   ...
+2026-10-09T02:54:33.8533474Z # Subtest: production rules: International man passes crown row and remains man after continuing
+2026-10-09T02:54:33.8534640Z ok 53 - production rules: International man passes crown row and remains man after continuing
+2026-10-09T02:54:33.8535342Z   ---
+2026-10-09T02:54:33.8535653Z   duration_ms: 0.193393
+2026-10-09T02:54:33.8536265Z   type: 'test'
+2026-10-09T02:54:33.8536865Z   ...
+2026-10-09T02:54:33.8537764Z # Subtest: production rules: International global longest route excludes another piece short route
+2026-10-09T02:54:33.8538582Z ok 54 - production rules: International global longest route excludes another piece short route
+2026-10-09T02:54:33.8539043Z   ---
+2026-10-09T02:54:33.8539256Z   duration_ms: 0.145363
+2026-10-09T02:54:33.8539488Z   type: 'test'
+2026-10-09T02:54:33.8539686Z   ...
+2026-10-09T02:54:33.8540116Z # Subtest: production rules: American permits shorter route from a different piece
+2026-10-09T02:54:33.8540758Z ok 55 - production rules: American permits shorter route from a different piece
+2026-10-09T02:54:33.8541165Z   ---
+2026-10-09T02:54:33.8541419Z   duration_ms: 0.173536
+2026-10-09T02:54:33.8541652Z   type: 'test'
+2026-10-09T02:54:33.8541866Z   ...
+2026-10-09T02:54:33.8542360Z # Subtest: production rules: International taken pieces block reversing king between two enemies
+2026-10-09T02:54:33.8543261Z ok 56 - production rules: International taken pieces block reversing king between two enemies
+2026-10-09T02:54:33.8543752Z   ---
+2026-10-09T02:54:33.8543954Z   duration_ms: 0.378191
+2026-10-09T02:54:33.8544180Z   type: 'test'
+2026-10-09T02:54:33.8544375Z   ...
+2026-10-09T02:54:33.8544765Z # Subtest: production rules: International uncrowned man captures backwards
+2026-10-09T02:54:33.8545373Z ok 57 - production rules: International uncrowned man captures backwards
+2026-10-09T02:54:33.8545756Z   ---
+2026-10-09T02:54:33.8545961Z   duration_ms: 0.137659
+2026-10-09T02:54:33.8546891Z   type: 'test'
+2026-10-09T02:54:33.8547293Z   ...
+2026-10-09T02:54:33.8547806Z # Subtest: production rules: American uncrowned man cannot capture backwards
+2026-10-09T02:54:33.8548722Z ok 58 - production rules: American uncrowned man cannot capture backwards
+2026-10-09T02:54:33.8549226Z   ---
+2026-10-09T02:54:33.8549429Z   duration_ms: 0.121618
+2026-10-09T02:54:33.8549652Z   type: 'test'
+2026-10-09T02:54:33.8549889Z   ...
+2026-10-09T02:54:33.8550348Z # Subtest: production rules: American king may return to origin in a four-enemy capture
+2026-10-09T02:54:33.8551475Z ok 59 - production rules: American king may return to origin in a four-enemy capture
+2026-10-09T02:54:33.8552209Z   ---
+2026-10-09T02:54:33.8552543Z   duration_ms: 0.133942
+2026-10-09T02:54:33.8552915Z   type: 'test'
+2026-10-09T02:54:33.8553230Z   ...
+2026-10-09T02:54:33.8553950Z # Subtest: production rules: American short king has only adjacent quiet destinations
+2026-10-09T02:54:33.8555094Z ok 60 - production rules: American short king has only adjacent quiet destinations
+2026-10-09T02:54:33.8555757Z   ---
+2026-10-09T02:54:33.8556289Z   duration_ms: 0.134613
+2026-10-09T02:54:33.8556902Z   type: 'test'
+2026-10-09T02:54:33.8557220Z   ...
+2026-10-09T02:54:33.8558049Z # Subtest: 10,000 independent move differentials plus color-rotated twins and every resulting board
+2026-10-09T02:54:33.8559327Z ok 61 - 10,000 independent move differentials plus color-rotated twins and every resulting board
+2026-10-09T02:54:33.8560074Z   ---
+2026-10-09T02:54:33.8560393Z   duration_ms: 759.859168
+2026-10-09T02:54:33.8560761Z   type: 'test'
+2026-10-09T02:54:33.8561074Z   ...
+2026-10-09T02:54:33.8561939Z # Subtest: property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+2026-10-09T02:54:33.8563274Z ok 62 - property seeds1,2,3 plus1,000 recorded random seeds conserve material and deterministic replay
+2026-10-09T02:54:33.8564042Z   ---
+2026-10-09T02:54:33.8564351Z   duration_ms: 6476.093742
+2026-10-09T02:54:33.8564723Z   type: 'test'
+2026-10-09T02:54:33.8565066Z   ...
+2026-10-09T02:54:33.8566167Z # Subtest: purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+2026-10-09T02:54:33.8567656Z ok 63 - purity scanner distinguishes actual host identifiers from comments, strings and local draw windows
+2026-10-09T02:54:33.8568495Z   ---
+2026-10-09T02:54:33.8568820Z   duration_ms: 15.258049
+2026-10-09T02:54:33.8569209Z   type: 'test'
+2026-10-09T02:54:33.8569529Z   ...
+2026-10-09T02:54:33.8570552Z # Subtest: all delivered pure production modules pass AST inspection; host adapters are explicit
+2026-10-09T02:54:33.8571836Z ok 64 - all delivered pure production modules pass AST inspection; host adapters are explicit
+2026-10-09T02:54:33.8572587Z   ---
+2026-10-09T02:54:33.8572923Z   duration_ms: 116.471882
+2026-10-09T02:54:33.8573308Z   type: 'test'
+2026-10-09T02:54:33.8573653Z   ...
+2026-10-09T02:54:33.8574351Z # Subtest: independent International rank has exact back-rank group boundaries
+2026-10-09T02:54:33.8575469Z ok 65 - independent International rank has exact back-rank group boundaries
+2026-10-09T02:54:33.8576327Z   ---
+2026-10-09T02:54:33.8576656Z   duration_ms: 0.593514
+2026-10-09T02:54:33.8577027Z   type: 'test'
+2026-10-09T02:54:33.8577357Z   ...
+2026-10-09T02:54:33.8578018Z # Subtest: all two-piece material ranks are complete independent bijections
+2026-10-09T02:54:33.8578987Z ok 66 - all two-piece material ranks are complete independent bijections
+2026-10-09T02:54:33.8579605Z   ---
+2026-10-09T02:54:33.8579943Z   duration_ms: 27.015304
+2026-10-09T02:54:33.8580321Z   type: 'test'
+2026-10-09T02:54:33.8580644Z   ...
+2026-10-09T02:54:33.8581252Z # Subtest: rotation and colour reversal preserve canonical location
+2026-10-09T02:54:33.8582120Z ok 67 - rotation and colour reversal preserve canonical location
+2026-10-09T02:54:33.8582692Z   ---
+2026-10-09T02:54:33.8583023Z   duration_ms: 0.485161
+2026-10-09T02:54:33.8583396Z   type: 'test'
+2026-10-09T02:54:33.8583721Z   ...
+2026-10-09T02:54:33.8584218Z # Subtest: six-piece ranks include 3v3 and 5v1 kings
+2026-10-09T02:54:33.8584898Z ok 68 - six-piece ranks include 3v3 and 5v1 kings
+2026-10-09T02:54:33.8585400Z   ---
+2026-10-09T02:54:33.8585716Z   duration_ms: 0.135505
+2026-10-09T02:54:33.8586266Z   type: 'test'
+2026-10-09T02:54:33.8586598Z   ...
+2026-10-09T02:54:33.8587362Z # Subtest: invalid crowns, side, board and out-of-scope material do not produce ranks
+2026-10-09T02:54:33.8588453Z ok 69 - invalid crowns, side, board and out-of-scope material do not produce ranks
+2026-10-09T02:54:33.8589126Z   ---
+2026-10-09T02:54:33.8589444Z   duration_ms: 0.13304
+2026-10-09T02:54:33.8589801Z   type: 'test'
+2026-10-09T02:54:33.8590133Z   ...
+2026-10-09T02:54:33.8590838Z # Subtest: synthetic token mapping and uniform slice decode without mutation
+2026-10-09T02:54:33.8591886Z ok 70 - synthetic token mapping and uniform slice decode without mutation
+2026-10-09T02:54:33.8592530Z   ---
+2026-10-09T02:54:33.8592881Z   duration_ms: 6.935012
+2026-10-09T02:54:33.8593292Z   type: 'test'
+2026-10-09T02:54:33.8593645Z   ...
+2026-10-09T02:54:33.8594407Z # Subtest: synthetic checkpoint changes catalogue at the physical block boundary
+2026-10-09T02:54:33.8595795Z ok 71 - synthetic checkpoint changes catalogue at the physical block boundary
+2026-10-09T02:54:33.8596767Z   ---
+2026-10-09T02:54:33.8597122Z   duration_ms: 1.115451
+2026-10-09T02:54:33.8597536Z   type: 'test'
+2026-10-09T02:54:33.8597903Z   ...
+2026-10-09T02:54:33.8598647Z # Subtest: a token uses a declared-length prefix of a longer shared run record
+2026-10-09T02:54:33.8599727Z ok 72 - a token uses a declared-length prefix of a longer shared run record
+2026-10-09T02:54:33.8600409Z   ---
+2026-10-09T02:54:33.8600767Z   duration_ms: 0.982675
+2026-10-09T02:54:33.8601177Z   type: 'test'
+2026-10-09T02:54:33.8601545Z   ...
+2026-10-09T02:54:33.8602386Z # Subtest: current captures are excluded but opponent-only threats are valid for v2 at <=6
+2026-10-09T02:54:33.8603631Z ok 73 - current captures are excluded but opponent-only threats are valid for v2 at <=6
+2026-10-09T02:54:33.8604375Z   ---
+2026-10-09T02:54:33.8604732Z   duration_ms: 1.016739
+2026-10-09T02:54:33.8605150Z   type: 'test'
+2026-10-09T02:54:33.8605507Z   ...
+2026-10-09T02:54:33.8606456Z # Subtest: malformed dictionary, permutation and checkpoint are rejected
+2026-10-09T02:54:33.8607486Z ok 74 - malformed dictionary, permutation and checkpoint are rejected
+2026-10-09T02:54:33.8608138Z   ---
+2026-10-09T02:54:33.8608503Z   duration_ms: 0.589236
+2026-10-09T02:54:33.8609114Z   type: 'test'
+2026-10-09T02:54:33.8609504Z   ...
+2026-10-09T02:54:33.8610346Z # Subtest: actual licensed two-piece sample agrees with exact corner and quiet-king cases
+2026-10-09T02:54:33.8611592Z ok 75 - actual licensed two-piece sample agrees with exact corner and quiet-king cases
+2026-10-09T02:54:33.8612349Z   ---
+2026-10-09T02:54:33.8612716Z   duration_ms: 8.831713
+2026-10-09T02:54:33.8613127Z   type: 'test'
+2026-10-09T02:54:33.8613486Z   ...
+2026-10-09T02:54:33.8614303Z # Subtest: independent oracle: American forced complete double jump excludes quiet moves
+2026-10-09T02:54:33.8615533Z ok 76 - independent oracle: American forced complete double jump excludes quiet moves
+2026-10-09T02:54:33.8616518Z   ---
+2026-10-09T02:54:33.8616879Z   duration_ms: 0.217408
+2026-10-09T02:54:33.8617296Z   type: 'test'
+2026-10-09T02:54:33.8617653Z   ...
+2026-10-09T02:54:33.8618545Z # Subtest: independent oracle: American crown ends capture even with backward king jump available
+2026-10-09T02:54:33.8619912Z ok 77 - independent oracle: American crown ends capture even with backward king jump available
+2026-10-09T02:54:33.8620718Z   ---
+2026-10-09T02:54:33.8621070Z   duration_ms: 0.094407
+2026-10-09T02:54:33.8621481Z   type: 'test'
+2026-10-09T02:54:33.8621834Z   ...
+2026-10-09T02:54:33.8622731Z # Subtest: independent oracle: International man passes crown row and remains man after continuing
+2026-10-09T02:54:33.8624109Z ok 78 - independent oracle: International man passes crown row and remains man after continuing
+2026-10-09T02:54:33.8624923Z   ---
+2026-10-09T02:54:33.8625280Z   duration_ms: 0.087334
+2026-10-09T02:54:33.8625682Z   type: 'test'
+2026-10-09T02:54:33.8626211Z   ...
+2026-10-09T02:54:33.8627049Z # Subtest: independent oracle: International global longest route excludes another piece short route
+2026-10-09T02:54:33.8628427Z ok 79 - independent oracle: International global longest route excludes another piece short route
+2026-10-09T02:54:33.8629259Z   ---
+2026-10-09T02:54:33.8629608Z   duration_ms: 0.085971
+2026-10-09T02:54:33.8630028Z   type: 'test'
+2026-10-09T02:54:33.8630389Z   ...
+2026-10-09T02:54:33.8631173Z # Subtest: independent oracle: American permits shorter route from a different piece
+2026-10-09T02:54:33.8632356Z ok 80 - independent oracle: American permits shorter route from a different piece
+2026-10-09T02:54:33.8633084Z   ---
+2026-10-09T02:54:33.8633444Z   duration_ms: 0.086814
+2026-10-09T02:54:33.8633856Z   type: 'test'
+2026-10-09T02:54:33.8634205Z   ...
+2026-10-09T02:54:33.8635131Z # Subtest: independent oracle: International taken pieces block reversing king between two enemies
+2026-10-09T02:54:33.8637033Z ok 81 - independent oracle: International taken pieces block reversing king between two enemies
+2026-10-09T02:54:33.8637953Z   ---
+2026-10-09T02:54:33.8638234Z   duration_ms: 0.263866
+2026-10-09T02:54:33.8638532Z   type: 'test'
+2026-10-09T02:54:33.8638780Z   ...
+2026-10-09T02:54:33.8639308Z # Subtest: independent oracle: International uncrowned man captures backwards
+2026-10-09T02:54:33.8640092Z ok 82 - independent oracle: International uncrowned man captures backwards
+2026-10-09T02:54:33.8640565Z   ---
+2026-10-09T02:54:33.8640813Z   duration_ms: 0.098134
+2026-10-09T02:54:33.8641103Z   type: 'test'
+2026-10-09T02:54:33.8641348Z   ...
+2026-10-09T02:54:33.8641852Z # Subtest: independent oracle: American uncrowned man cannot capture backwards
+2026-10-09T02:54:33.8642667Z ok 83 - independent oracle: American uncrowned man cannot capture backwards
+2026-10-09T02:54:33.8643146Z   ---
+2026-10-09T02:54:33.8643385Z   duration_ms: 0.080852
+2026-10-09T02:54:33.8643667Z   type: 'test'
+2026-10-09T02:54:33.8643905Z   ...
+2026-10-09T02:54:33.8644469Z # Subtest: independent oracle: American king may return to origin in a four-enemy capture
+2026-10-09T02:54:33.8645306Z ok 84 - independent oracle: American king may return to origin in a four-enemy capture
+2026-10-09T02:54:33.8645718Z   ---
+2026-10-09T02:54:33.8645910Z   duration_ms: 0.08522
+2026-10-09T02:54:33.8646458Z   type: 'test'
+2026-10-09T02:54:33.8646656Z   ...
+2026-10-09T02:54:33.8647253Z # Subtest: independent oracle: American short king has only adjacent quiet destinations
+2026-10-09T02:54:33.8647935Z ok 85 - independent oracle: American short king has only adjacent quiet destinations
+2026-10-09T02:54:33.8648348Z   ---
+2026-10-09T02:54:33.8648539Z   duration_ms: 0.086403
+2026-10-09T02:54:33.8648761Z   type: 'test'
+2026-10-09T02:54:33.8648956Z   ...
+2026-10-09T02:54:33.8649373Z # Subtest: independent oracle: flying king has all seventeen quiet ray destinations
+2026-10-09T02:54:33.8649992Z ok 86 - independent oracle: flying king has all seventeen quiet ray destinations
+2026-10-09T02:54:33.8650384Z   ---
+2026-10-09T02:54:33.8650579Z   duration_ms: 0.168426
+2026-10-09T02:54:33.8650795Z   type: 'test'
+2026-10-09T02:54:33.8650984Z   ...
+2026-10-09T02:54:33.8651407Z # Subtest: independent oracle: International complete capture can return to its origin
+2026-10-09T02:54:33.8652048Z ok 87 - independent oracle: International complete capture can return to its origin
+2026-10-09T02:54:33.8652443Z   ---
+2026-10-09T02:54:33.8652635Z   duration_ms: 0.14878
+2026-10-09T02:54:33.8652851Z   type: 'test'
+2026-10-09T02:54:33.8653039Z   ...
+2026-10-09T02:54:33.8653503Z # Subtest: independent oracle: full published 16-each draw regression consists of legal turns
+2026-10-09T02:54:33.8654202Z ok 88 - independent oracle: full published 16-each draw regression consists of legal turns
+2026-10-09T02:54:33.8654626Z   ---
+2026-10-09T02:54:33.8654823Z   duration_ms: 1.066783
+2026-10-09T02:54:33.8655044Z   type: 'test'
+2026-10-09T02:54:33.8655237Z   ...
+2026-10-09T02:54:47.2577441Z # Subtest: variant bundles preserve exact choices, reports, cursors and complete game transcripts
+2026-10-09T02:54:47.2578753Z ok 89 - variant bundles preserve exact choices, reports, cursors and complete game transcripts
+2026-10-09T02:54:47.2592265Z   ---
+2026-10-09T02:54:47.2592937Z   duration_ms: 12285.161109
+2026-10-09T02:54:47.2593457Z   type: 'test'
+2026-10-09T02:54:47.2593838Z   ...
+2026-10-09T02:54:52.9155724Z # Subtest: native decompression reproduces exact installed corpora and preserves queued first requests
+2026-10-09T02:54:52.9157616Z ok 90 - native decompression reproduces exact installed corpora and preserves queued first requests
+2026-10-09T02:54:52.9158543Z   ---
+2026-10-09T02:54:52.9158817Z   duration_ms: 6794.494642
+2026-10-09T02:54:52.9159122Z   type: 'test'
+2026-10-09T02:54:52.9159371Z   ...
+2026-10-09T02:54:52.9166649Z # Subtest: bootstrap reports unsupported native decompression without losing a pending caller silently
+2026-10-09T02:54:52.9168201Z ok 91 - bootstrap reports unsupported native decompression without losing a pending caller silently
+2026-10-09T02:54:52.9169455Z   ---
+2026-10-09T02:54:52.9169935Z   duration_ms: 2.526252
+2026-10-09T02:54:52.9170363Z   type: 'test'
+2026-10-09T02:54:52.9170735Z   ...
+2026-10-09T02:54:53.0619753Z 1..91
+2026-10-09T02:54:53.0620164Z # tests 91
+2026-10-09T02:54:53.0627509Z # suites 0
+2026-10-09T02:54:53.0627927Z # pass 91
+2026-10-09T02:54:53.0628302Z # fail 0
+2026-10-09T02:54:53.0628723Z # cancelled 0
+2026-10-09T02:54:53.0629121Z # skipped 0
+2026-10-09T02:54:53.0629482Z # todo 0
+2026-10-09T02:54:53.0629901Z # duration_ms 106673.922934
+2026-10-09T02:55:02.7817908Z {"baseline":"PASS","cases":9}
+2026-10-09T02:55:03.1282512Z {"id":1,"name":"input admits extra fields","before":").max(21)}).strict(),","after":").max(21)}),","caseCount":9,"failedCases":["contract total immutable reducer ignores malformed/unknown events in both phases"],"assertionKilled":true}
+2026-10-09T02:55:03.4528643Z {"id":2,"name":"International input truncated to32 squares","before":".int().min(0).max(49)","after":".int().min(0).max(31)","caseCount":9,"failedCases":["all three bot levels are schema-valid deterministic pure choices in every phase/role"],"assertionKilled":true}
+2026-10-09T02:55:03.6318578Z {"id":3,"name":"International variant ignored","before":"values.variant==='international'","after":"false","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards","complete legal inputs and terminal scores preserve every original seat","all three bot levels are schema-valid deterministic pure choices in every phase/role"],"assertionKilled":true}
+2026-10-09T02:55:03.9585900Z {"id":4,"name":"forty-move house setting ignored","before":"values.drawPolicy==='fortyMove'","after":"false","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:04.2761185Z {"id":5,"name":"repetition setting inverted","before":"typeof values.repetition==='boolean'?values.repetition:true","after":"typeof values.repetition==='boolean'?!values.repetition:true","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:04.6015088Z {"id":6,"name":"turn clock cap becomes30","before":"Math.min(300,Math.round(seconds))","after":"Math.min(30,Math.round(seconds))","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:04.9180938Z {"id":7,"name":"zero host time rejected","before":"now>=0","after":"now>0","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:05.2391314Z {"id":8,"name":"duplicate seats accepted","before":"new Set(ctx.players.map(player=>player.id)).size!==2","after":"false","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:05.3319475Z {"id":9,"name":"wrong player count accepted","before":"ctx.players.length!==2","after":"ctx.players.length===2","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards","contract total immutable reducer ignores malformed/unknown events in both phases","contract live timer requires exact phase instance and elapsed deadline","VIP pause/resume shifts only the deadline; skip/end remain available","presence auto-holds empty rooms, resumes clocks and permanently preserves leavers","hostile seat IDs, public view equality, spectator safety and cloned projections","complete legal inputs and terminal scores preserve every original seat","all three bot levels are schema-valid deterministic pure choices in every phase/role"],"assertionKilled":true}
+2026-10-09T02:55:05.6616594Z {"id":10,"name":"disconnected seats always present","before":"s.players[id].connected&&!s.left.includes(id)","after":"true&&!s.left.includes(id)","caseCount":9,"failedCases":["presence auto-holds empty rooms, resumes clocks and permanently preserves leavers"],"assertionKilled":true}
+2026-10-09T02:55:05.7751339Z {"id":11,"name":"light side assigned wrong turn","before":"s.side===1?0:1","after":"s.side===1?1:0","caseCount":9,"failedCases":["contract total immutable reducer ignores malformed/unknown events in both phases","contract live timer requires exact phase instance and elapsed deadline","presence auto-holds empty rooms, resumes clocks and permanently preserves leavers","hostile seat IDs, public view equality, spectator safety and cloned projections","complete legal inputs and terminal scores preserve every original seat","all three bot levels are schema-valid deterministic pure choices in every phase/role","manifest and every generated phase fixture replay without throwing"],"assertionKilled":true}
+2026-10-09T02:55:06.1068657Z {"id":12,"name":"same-tick phase uniqueness removed","before":"Math.max(now,s.phaseClock+1)","after":"now","caseCount":9,"failedCases":["contract live timer requires exact phase instance and elapsed deadline"],"assertionKilled":true}
+2026-10-09T02:55:06.4480920Z {"id":13,"name":"untimed game receives immediate clock","before":"s.settings.turnSeconds>0","after":"s.settings.turnSeconds>=0","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards","contract live timer requires exact phase instance and elapsed deadline"],"assertionKilled":true}
+2026-10-09T02:55:06.7712627Z {"id":14,"name":"seed discarded","before":"rng:seedRng(ctx.seed)","after":"rng:seedRng(0)","caseCount":9,"failedCases":["contract manifest/counts/settings and deterministic initial boards"],"assertionKilled":true}
+2026-10-09T02:55:07.0817386Z {"id":15,"name":"empty initialization misses automatic hold","before":"state={...state,autoPaused:true","after":"state={...state,autoPaused:false","caseCount":9,"failedCases":["presence auto-holds empty rooms, resumes clocks and permanently preserves leavers"],"assertionKilled":true}
+2026-10-09T02:55:07.3908807Z {"id":16,"name":"winner assigned to losing side","before":"s.order[winner===1?0:1]","after":"s.order[winner===1?1:0]","caseCount":9,"failedCases":["contract live timer requires exact phase instance and elapsed deadline","complete legal inputs and terminal scores preserve every original seat","manifest and every generated phase fixture replay without throwing"],"assertionKilled":true}
+2026-10-09T02:55:07.4940347Z {"id":17,"name":"finish reenters move phase","before":"endReason:reason},'done',now)","after":"endReason:reason},'move',now)","caseCount":9,"failedCases":["contract live timer requires exact phase instance and elapsed deadline","VIP pause/resume shifts only the deadline; skip/end remain available","hostile seat IDs, public view equality, spectator safety and cloned projections","complete legal inputs and terminal scores preserve every original seat","all three bot levels are schema-valid deterministic pure choices in every phase/role","manifest and every generated phase fixture replay without throwing"],"assertionKilled":true}
+2026-10-09T02:55:07.8150513Z {"id":18,"name":"opponent legal moves cause incorrect win","before":"if(!legalMoves(next.board,next.variant,next.side).length)","after":"if(legalMoves(next.board,next.variant,next.side).length)","caseCount":9,"failedCases":["VIP pause/resume shifts only the deadline; skip/end remain available","hostile seat IDs, public view equality, spectator safety and cloned projections","complete legal inputs and terminal scores preserve every original seat"],"assertionKilled":true}
+2026-10-09T02:55:08.1324407Z {"id":19,"name":"left seat reconnects","before":"connected=!wasLeft&&!gone&&e.connected","after":"connected=e.connected","caseCount":9,"failedCases":["presence auto-holds empty rooms, resumes clocks and permanently preserves leavers"],"assertionKilled":true}
+2026-10-09T02:55:08.4568240Z {"id":20,"name":"resume subtracts held time","before":"next.phase.deadline+delta","after":"next.phase.deadline-delta","caseCount":9,"failedCases":["presence auto-holds empty rooms, resumes clocks and permanently preserves leavers"],"assertionKilled":true}
+2026-10-09T02:55:08.7824036Z {"id":21,"name":"paused VIP skip forgets to hold next turn","before":"s.phase.paused&&next.phase.id!=='done'","after":"false&&next.phase.id!=='done'","caseCount":9,"failedCases":["VIP pause/resume shifts only the deadline; skip/end remain available"],"assertionKilled":true}
+2026-10-09T02:55:09.1035306Z {"id":22,"name":"timer ignores instance identity","before":"e.startedAt===s.phase.startedAt&&","after":"","caseCount":9,"failedCases":["contract total immutable reducer ignores malformed/unknown events in both phases","contract live timer requires exact phase instance and elapsed deadline"],"assertionKilled":true}
+2026-10-09T02:55:09.4138373Z {"id":23,"name":"exact deadline does not fire","before":"e.now>=s.phase.deadline","after":"e.now>s.phase.deadline","caseCount":9,"failedCases":["contract live timer requires exact phase instance and elapsed deadline"],"assertionKilled":true}
+2026-10-09T02:55:09.7304094Z {"id":24,"name":"inactive seat can resign","before":"e.playerId!==turnId(s)||","after":"","caseCount":9,"failedCases":["contract total immutable reducer ignores malformed/unknown events in both phases"],"assertionKilled":true}
+2026-10-09T02:55:10.0459407Z {"id":25,"name":"paused game accepts inputs/timers","before":"if(s.phase.paused||s.phase.id==='done')","after":"if(s.phase.id==='done')","caseCount":9,"failedCases":["VIP pause/resume shifts only the deadline; skip/end remain available"],"assertionKilled":true}
+2026-10-09T02:55:26.5277722Z {"settings":{"variant":"american"},"playerCount":2,"games":1000,"wins":954,"draws":46,"moves":70215,"maximumPlies":219}
+2026-10-09T02:55:32.2761495Z {"settings":{"variant":"american","drawPolicy":"fortyMove"},"playerCount":2,"games":1000,"wins":964,"draws":36,"moves":69087,"maximumPlies":221}
+2026-10-09T02:55:38.5548088Z {"settings":{"variant":"american","repetition":false},"playerCount":2,"games":1000,"wins":993,"draws":7,"moves":72973,"maximumPlies":230}
+2026-10-09T02:55:44.6184543Z {"settings":{"variant":"american","turnSeconds":20},"playerCount":2,"games":1000,"wins":964,"draws":36,"moves":69907,"maximumPlies":205}
+2026-10-09T02:55:53.7396828Z {"settings":{"variant":"international"},"playerCount":2,"games":1000,"wins":972,"draws":28,"moves":92727,"maximumPlies":152}
+2026-10-09T02:56:02.7050383Z {"settings":{"variant":"international","drawPolicy":"fortyMove"},"playerCount":2,"games":1000,"wins":1000,"draws":0,"moves":91599,"maximumPlies":166}
+2026-10-09T02:56:11.7302912Z {"settings":{"variant":"international","repetition":false},"playerCount":2,"games":1000,"wins":973,"draws":27,"moves":91917,"maximumPlies":165}
+2026-10-09T02:56:15.4669453Z {"status":"PASS","stage":"node","sourceCommit":"cd9c554133769c264e0157c298d0bdc682d87b27","elapsedSeconds":297.98023329200004}
+2026-10-09T02:56:15.4821456Z ##[group]Run actions/upload-artifact@v4
+2026-10-09T02:56:15.4821787Z with:
+2026-10-09T02:56:15.4822082Z   name: G10-stage-node-cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:56:15.4822799Z   path: jobs/G10-checkers/.work-stage-node.stdout
+jobs/G10-checkers/.work/checks
+jobs/G10-checkers/.work/browser
+jobs/G10-checkers/.work/media
+
+2026-10-09T02:56:15.4823457Z   if-no-files-found: error
+2026-10-09T02:56:15.4823702Z   include-hidden-files: true
+2026-10-09T02:56:15.4823950Z   retention-days: 7
+2026-10-09T02:56:15.4824162Z   compression-level: 6
+2026-10-09T02:56:15.4824377Z   overwrite: false
+2026-10-09T02:56:15.4824571Z env:
+2026-10-09T02:56:15.4824826Z   G10_SOURCE_COMMIT: cd9c554133769c264e0157c298d0bdc682d87b27
+2026-10-09T02:56:15.4825146Z ##[endgroup]
+2026-10-09T02:56:15.6639153Z (node:4114) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T02:56:15.6640079Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T02:56:15.6894497Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-10-09T02:56:15.6897636Z The least common ancestor is /home/runner/work/partybox-game-cores/partybox-game-cores/jobs/G10-checkers. This will be the root directory of the artifact
+2026-10-09T02:56:15.6899531Z With the provided path, there will be 51 files uploaded
+2026-10-09T02:56:15.6900456Z Artifact name is valid!
+2026-10-09T02:56:15.6900963Z Root directory input is valid!
+2026-10-09T02:56:15.9140862Z Beginning upload of artifact content to blob storage
+2026-10-09T02:56:16.0098673Z (node:4114) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-09T02:56:16.0628215Z Uploaded bytes 136625
+2026-10-09T02:56:16.0791108Z Finished uploading artifact content to blob storage!
+2026-10-09T02:56:16.0792953Z SHA256 digest of uploaded artifact zip is 7e39afb812e7faba16e8a583c58dd02434da9a6bb03a7fc804858bd36af81081
+2026-10-09T02:56:16.0794456Z Finalizing artifact upload
+2026-10-09T02:56:16.2938147Z Artifact G10-stage-node-cd9c554133769c264e0157c298d0bdc682d87b27.zip successfully finalized. Artifact ID 11592737328
+2026-10-09T02:56:16.2939913Z Artifact G10-stage-node-cd9c554133769c264e0157c298d0bdc682d87b27 has been successfully uploaded! Final size is 136625 bytes. Artifact ID is 11592737328
+2026-10-09T02:56:16.2944598Z Artifact download URL: https://github.com/luisitin/partybox-game-cores/actions/runs/37876461892/artifacts/11592737328
+2026-10-09T02:56:16.3134588Z Post job cleanup.
+2026-10-09T02:56:16.4362561Z (node:4127) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-09T02:56:16.4363655Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-09T02:56:16.4366284Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-b79e3f2344d4218dbbb2f93f566da8e1ac49738aa1184813b150890d461d0c8a, not saving cache.
+2026-10-09T02:56:16.4503471Z Post job cleanup.
+2026-10-09T02:56:16.5469250Z [command]/usr/bin/git version
+2026-10-09T02:56:16.5527148Z git version 2.55.0
+2026-10-09T02:56:16.5571556Z Temporarily overriding HOME='/home/runner/work/_temp/30df031c-50cc-4808-886c-fec9ff9440dd' before making global git config changes
+2026-10-09T02:56:16.5572803Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-09T02:56:16.5573874Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/partybox-game-cores/partybox-game-cores
+2026-10-09T02:56:16.5619776Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-09T02:56:16.5663411Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-09T02:56:16.5950606Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-09T02:56:16.5987470Z http.https://github.com/.extraheader
+2026-10-09T02:56:16.5999477Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-09T02:56:16.6042334Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-09T02:56:16.6331701Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-09T02:56:16.6370425Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-09T02:56:16.6828825Z Cleaning up orphan processes
+2026-10-09T02:56:16.7245192Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -1,0 +1,7 @@
+{
+  "status": "FAILED_PREPARATION_REPORT_ONLY",
+  "recordedAt": "2026-10-09T03:05:15.916823+00:00",
+  "error": "NameError: name CHILD_PATH is not defined in one-off preparation reporting script after controller source was written and compile-checked",
+  "actualArtifactOrNativeWorkload": "UNEXECUTED",
+  "correction": "Read actual written controller SHA and literal child path in a separate bounded preparation report; no source assertions weakened."
+}

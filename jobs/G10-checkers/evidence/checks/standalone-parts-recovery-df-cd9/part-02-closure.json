@@ -1,0 +1,25 @@
+{
+  "status": "NATURALLY_CLOSED",
+  "startedAt": "2026-10-09T02:54:47.854429+00:00",
+  "index": 2,
+  "memoryBudgetBefore": {
+    "memAvailableBytes": 15002480640,
+    "cgroupMax": "17179869184",
+    "cgroupCurrentBytes": 13130326016,
+    "effectiveHeadroomBytes": 4049543168,
+    "workerAddressSpaceLimitBytes": 805306368,
+    "sharedReserveBytes": 1610612736
+  },
+  "pid": 254697,
+  "wholePartSecondsLimit": 240,
+  "closedAt": "2026-10-09T02:54:59.507168+00:00",
+  "exitCode": 0,
+  "readerException": false,
+  "bytesReceived": 402653184,
+  "mismatchOffsets": [],
+  "actualRemainingGroup": [],
+  "groupSignals": [],
+  "reapedAdoptedDescendants": [],
+  "actualExitCode": 0,
+  "natural": true
+}

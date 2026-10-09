@@ -1,0 +1,599 @@
+{
+  "status": "RUNNING",
+  "partsNaturallyClosed": 4,
+  "totalBytes": 1390846291,
+  "parts": [
+    {
+      "status": "PASS",
+      "startedAt": "2026-10-09T02:54:23.362389+00:00",
+      "closedAt": "2026-10-09T02:54:35.249104+00:00",
+      "artifactId": 11590473690,
+      "head": "df123c797b226c479b50a998011c1ea6d0157391",
+      "workflowRunId": 37870240814,
+      "index": 0,
+      "zipBytes": 275344902,
+      "zipSha256": "ac0251ff127a83834b04fd7422c1a09f1a8ef299e5de93bba7891d099a7f69b9",
+      "downloadResponseStartedAt": "2026-10-09T02:54:24.471450+00:00",
+      "downloadResponseEOFCLOSEDAt": "2026-10-09T02:54:31.694213+00:00",
+      "memberBytes": 402653184,
+      "memberSha256": "2da5eea2d881b3cc7ae252de8ab17f77c8dcd57c0b713dbe150a6d741e571100",
+      "offset": 0,
+      "members": 4,
+      "safeUniqueMembers": true,
+      "allMemberCRC": "PASS",
+      "helperGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+      "peakResidentBytes": 295272448,
+      "addressSpaceLimitBytes": 805306368,
+      "zipStorage": "One official body in private BytesIO, fixed1MiB raw blocks, no disk temp or second whole ZIP/raw copy",
+      "frozenCodeInputsRuntimeBeforeAfter": {
+        "executionFreezeSha256": "c0f5f55e11acb2180460a930a4c00afa2ae740cd7ec9e96f1333227301f351a1",
+        "executionFreezeIdentity": {
+          "dev": 27,
+          "ino": 1471806,
+          "bytes": 3641,
+          "mtimeNs": 1791514411044963831,
+          "ctimeNs": 1791514411044963831
+        },
+        "files": {
+          "receiver": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/receive.py",
+            "identity": {
+              "dev": 27,
+              "ino": 1471804,
+              "bytes": 20276,
+              "mtimeNs": 1791514411039026616,
+              "ctimeNs": 1791514411039026616
+            },
+            "sha256": "dc9b18ff9f62430b51538c96f82cf691813f0ef3ff28a88112a70e67736fc241"
+          },
+          "privateSpec": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/private-spec.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471803,
+              "bytes": 6004,
+              "mtimeNs": 1791514342655270627,
+              "ctimeNs": 1791514342823262482
+            },
+            "sha256": "fa2bcfa420156475ae03419111b4f0b1a70f99e33ab11316856ef140ee3e6029"
+          },
+          "sourceBridge": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/source-bridge.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471093,
+              "bytes": 19384,
+              "mtimeNs": 1791514284378297735,
+              "ctimeNs": 1791514284378297735
+            },
+            "sha256": "259d52e14cd74ba5e8cb9d8a3ec359ac7cae08dff97c0847af8f40a0a7d4572d"
+          },
+          "originalDfStage": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-browser/extracted/.work/checks/stage-browser.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471098,
+              "bytes": 74873,
+              "mtimeNs": 1791510884610246300,
+              "ctimeNs": 1791510884610246300
+            },
+            "sha256": "d83f3bea114e4b40eb3a5978a07b990befcf711df4655029c72c8c0a4deac7ec"
+          },
+          "pythonBinary": {
+            "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036854858618,
+              "bytes": 30894944,
+              "mtimeNs": 1788486252000000000,
+              "ctimeNs": 1788486252000000000
+            },
+            "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+          },
+          "curlBinary": {
+            "path": "/usr/bin/curl",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855093009,
+              "bytes": 321880,
+              "mtimeNs": 1778204212000000000,
+              "ctimeNs": 1778204212000000000
+            },
+            "sha256": "d2136f430029a8750c6c3280effdca0383e24b1f606e32d63e3b4154409b1038"
+          },
+          "gitBinary": {
+            "path": "/usr/bin/git",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855095607,
+              "bytes": 4082768,
+              "mtimeNs": 1753899052000000000,
+              "ctimeNs": 1753899052000000000
+            },
+            "sha256": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60"
+          },
+          "node22Binary": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+            "identity": {
+              "dev": 27,
+              "ino": 1465834,
+              "bytes": 121509208,
+              "mtimeNs": 1747799879000000000,
+              "ctimeNs": 1791471121215558321
+            },
+            "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+          }
+        }
+      },
+      "naturalWorkerClosure": {
+        "status": "NATURALLY_CLOSED",
+        "startedAt": "2026-10-09T02:54:23.296967+00:00",
+        "index": 0,
+        "memoryBudgetBefore": {
+          "memAvailableBytes": 15945244672,
+          "cgroupMax": "17179869184",
+          "cgroupCurrentBytes": 13129297920,
+          "effectiveHeadroomBytes": 4050571264,
+          "workerAddressSpaceLimitBytes": 805306368,
+          "sharedReserveBytes": 1610612736
+        },
+        "pid": 254643,
+        "wholePartSecondsLimit": 240,
+        "closedAt": "2026-10-09T02:54:35.894995+00:00",
+        "exitCode": 0,
+        "readerException": false,
+        "bytesReceived": 402653184,
+        "mismatchOffsets": [],
+        "actualRemainingGroup": [],
+        "groupSignals": [],
+        "reapedAdoptedDescendants": [],
+        "actualExitCode": 0,
+        "natural": true
+      }
+    },
+    {
+      "status": "PASS",
+      "startedAt": "2026-10-09T02:54:36.001599+00:00",
+      "closedAt": "2026-10-09T02:54:47.024893+00:00",
+      "artifactId": 11589869559,
+      "head": "df123c797b226c479b50a998011c1ea6d0157391",
+      "workflowRunId": 37870240814,
+      "index": 1,
+      "zipBytes": 278876345,
+      "zipSha256": "61becb4fb168c8c2352f1e99ea4628f76eca2ee726075d73e3b06204b7794611",
+      "downloadResponseStartedAt": "2026-10-09T02:54:36.465626+00:00",
+      "downloadResponseEOFCLOSEDAt": "2026-10-09T02:54:43.494345+00:00",
+      "memberBytes": 402653184,
+      "memberSha256": "e165d8af23d88020e151d8bfba43bab6c080892aa8d88d86a9f26a20874279c6",
+      "offset": 402653184,
+      "members": 4,
+      "safeUniqueMembers": true,
+      "allMemberCRC": "PASS",
+      "helperGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+      "peakResidentBytes": 298602496,
+      "addressSpaceLimitBytes": 805306368,
+      "zipStorage": "One official body in private BytesIO, fixed1MiB raw blocks, no disk temp or second whole ZIP/raw copy",
+      "frozenCodeInputsRuntimeBeforeAfter": {
+        "executionFreezeSha256": "c0f5f55e11acb2180460a930a4c00afa2ae740cd7ec9e96f1333227301f351a1",
+        "executionFreezeIdentity": {
+          "dev": 27,
+          "ino": 1471806,
+          "bytes": 3641,
+          "mtimeNs": 1791514411044963831,
+          "ctimeNs": 1791514411044963831
+        },
+        "files": {
+          "receiver": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/receive.py",
+            "identity": {
+              "dev": 27,
+              "ino": 1471804,
+              "bytes": 20276,
+              "mtimeNs": 1791514411039026616,
+              "ctimeNs": 1791514411039026616
+            },
+            "sha256": "dc9b18ff9f62430b51538c96f82cf691813f0ef3ff28a88112a70e67736fc241"
+          },
+          "privateSpec": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/private-spec.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471803,
+              "bytes": 6004,
+              "mtimeNs": 1791514342655270627,
+              "ctimeNs": 1791514342823262482
+            },
+            "sha256": "fa2bcfa420156475ae03419111b4f0b1a70f99e33ab11316856ef140ee3e6029"
+          },
+          "sourceBridge": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/source-bridge.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471093,
+              "bytes": 19384,
+              "mtimeNs": 1791514284378297735,
+              "ctimeNs": 1791514284378297735
+            },
+            "sha256": "259d52e14cd74ba5e8cb9d8a3ec359ac7cae08dff97c0847af8f40a0a7d4572d"
+          },
+          "originalDfStage": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-browser/extracted/.work/checks/stage-browser.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471098,
+              "bytes": 74873,
+              "mtimeNs": 1791510884610246300,
+              "ctimeNs": 1791510884610246300
+            },
+            "sha256": "d83f3bea114e4b40eb3a5978a07b990befcf711df4655029c72c8c0a4deac7ec"
+          },
+          "pythonBinary": {
+            "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036854858618,
+              "bytes": 30894944,
+              "mtimeNs": 1788486252000000000,
+              "ctimeNs": 1788486252000000000
+            },
+            "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+          },
+          "curlBinary": {
+            "path": "/usr/bin/curl",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855093009,
+              "bytes": 321880,
+              "mtimeNs": 1778204212000000000,
+              "ctimeNs": 1778204212000000000
+            },
+            "sha256": "d2136f430029a8750c6c3280effdca0383e24b1f606e32d63e3b4154409b1038"
+          },
+          "gitBinary": {
+            "path": "/usr/bin/git",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855095607,
+              "bytes": 4082768,
+              "mtimeNs": 1753899052000000000,
+              "ctimeNs": 1753899052000000000
+            },
+            "sha256": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60"
+          },
+          "node22Binary": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+            "identity": {
+              "dev": 27,
+              "ino": 1465834,
+              "bytes": 121509208,
+              "mtimeNs": 1747799879000000000,
+              "ctimeNs": 1791471121215558321
+            },
+            "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+          }
+        }
+      },
+      "naturalWorkerClosure": {
+        "status": "NATURALLY_CLOSED",
+        "startedAt": "2026-10-09T02:54:35.896432+00:00",
+        "index": 1,
+        "memoryBudgetBefore": {
+          "memAvailableBytes": 15751413760,
+          "cgroupMax": "17179869184",
+          "cgroupCurrentBytes": 13130129408,
+          "effectiveHeadroomBytes": 4049739776,
+          "workerAddressSpaceLimitBytes": 805306368,
+          "sharedReserveBytes": 1610612736
+        },
+        "pid": 254655,
+        "wholePartSecondsLimit": 240,
+        "closedAt": "2026-10-09T02:54:47.851571+00:00",
+        "exitCode": 0,
+        "readerException": false,
+        "bytesReceived": 402653184,
+        "mismatchOffsets": [],
+        "actualRemainingGroup": [],
+        "groupSignals": [],
+        "reapedAdoptedDescendants": [],
+        "actualExitCode": 0,
+        "natural": true
+      }
+    },
+    {
+      "status": "PASS",
+      "startedAt": "2026-10-09T02:54:47.914890+00:00",
+      "closedAt": "2026-10-09T02:54:58.966050+00:00",
+      "artifactId": 11589978782,
+      "head": "df123c797b226c479b50a998011c1ea6d0157391",
+      "workflowRunId": 37870240814,
+      "index": 2,
+      "zipBytes": 286219589,
+      "zipSha256": "02749a7ef1f87107b3c5a6675716842c6d1577e735f8bed33769334f85f793bf",
+      "downloadResponseStartedAt": "2026-10-09T02:54:48.280147+00:00",
+      "downloadResponseEOFCLOSEDAt": "2026-10-09T02:54:55.666997+00:00",
+      "memberBytes": 402653184,
+      "memberSha256": "5f4b8e9528673e968bf497bd1ea15ffaf13d26fbb8b8a21bb590ec1f20f9c2d5",
+      "offset": 805306368,
+      "members": 4,
+      "safeUniqueMembers": true,
+      "allMemberCRC": "PASS",
+      "helperGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+      "peakResidentBytes": 306024448,
+      "addressSpaceLimitBytes": 805306368,
+      "zipStorage": "One official body in private BytesIO, fixed1MiB raw blocks, no disk temp or second whole ZIP/raw copy",
+      "frozenCodeInputsRuntimeBeforeAfter": {
+        "executionFreezeSha256": "c0f5f55e11acb2180460a930a4c00afa2ae740cd7ec9e96f1333227301f351a1",
+        "executionFreezeIdentity": {
+          "dev": 27,
+          "ino": 1471806,
+          "bytes": 3641,
+          "mtimeNs": 1791514411044963831,
+          "ctimeNs": 1791514411044963831
+        },
+        "files": {
+          "receiver": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/receive.py",
+            "identity": {
+              "dev": 27,
+              "ino": 1471804,
+              "bytes": 20276,
+              "mtimeNs": 1791514411039026616,
+              "ctimeNs": 1791514411039026616
+            },
+            "sha256": "dc9b18ff9f62430b51538c96f82cf691813f0ef3ff28a88112a70e67736fc241"
+          },
+          "privateSpec": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/private-spec.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471803,
+              "bytes": 6004,
+              "mtimeNs": 1791514342655270627,
+              "ctimeNs": 1791514342823262482
+            },
+            "sha256": "fa2bcfa420156475ae03419111b4f0b1a70f99e33ab11316856ef140ee3e6029"
+          },
+          "sourceBridge": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/source-bridge.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471093,
+              "bytes": 19384,
+              "mtimeNs": 1791514284378297735,
+              "ctimeNs": 1791514284378297735
+            },
+            "sha256": "259d52e14cd74ba5e8cb9d8a3ec359ac7cae08dff97c0847af8f40a0a7d4572d"
+          },
+          "originalDfStage": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-browser/extracted/.work/checks/stage-browser.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471098,
+              "bytes": 74873,
+              "mtimeNs": 1791510884610246300,
+              "ctimeNs": 1791510884610246300
+            },
+            "sha256": "d83f3bea114e4b40eb3a5978a07b990befcf711df4655029c72c8c0a4deac7ec"
+          },
+          "pythonBinary": {
+            "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036854858618,
+              "bytes": 30894944,
+              "mtimeNs": 1788486252000000000,
+              "ctimeNs": 1788486252000000000
+            },
+            "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+          },
+          "curlBinary": {
+            "path": "/usr/bin/curl",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855093009,
+              "bytes": 321880,
+              "mtimeNs": 1778204212000000000,
+              "ctimeNs": 1778204212000000000
+            },
+            "sha256": "d2136f430029a8750c6c3280effdca0383e24b1f606e32d63e3b4154409b1038"
+          },
+          "gitBinary": {
+            "path": "/usr/bin/git",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855095607,
+              "bytes": 4082768,
+              "mtimeNs": 1753899052000000000,
+              "ctimeNs": 1753899052000000000
+            },
+            "sha256": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60"
+          },
+          "node22Binary": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+            "identity": {
+              "dev": 27,
+              "ino": 1465834,
+              "bytes": 121509208,
+              "mtimeNs": 1747799879000000000,
+              "ctimeNs": 1791471121215558321
+            },
+            "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+          }
+        }
+      },
+      "naturalWorkerClosure": {
+        "status": "NATURALLY_CLOSED",
+        "startedAt": "2026-10-09T02:54:47.854429+00:00",
+        "index": 2,
+        "memoryBudgetBefore": {
+          "memAvailableBytes": 15002480640,
+          "cgroupMax": "17179869184",
+          "cgroupCurrentBytes": 13130326016,
+          "effectiveHeadroomBytes": 4049543168,
+          "workerAddressSpaceLimitBytes": 805306368,
+          "sharedReserveBytes": 1610612736
+        },
+        "pid": 254697,
+        "wholePartSecondsLimit": 240,
+        "closedAt": "2026-10-09T02:54:59.507168+00:00",
+        "exitCode": 0,
+        "readerException": false,
+        "bytesReceived": 402653184,
+        "mismatchOffsets": [],
+        "actualRemainingGroup": [],
+        "groupSignals": [],
+        "reapedAdoptedDescendants": [],
+        "actualExitCode": 0,
+        "natural": true
+      }
+    },
+    {
+      "status": "PASS",
+      "startedAt": "2026-10-09T02:54:59.565757+00:00",
+      "closedAt": "2026-10-09T02:55:04.752334+00:00",
+      "artifactId": 11590138049,
+      "head": "df123c797b226c479b50a998011c1ea6d0157391",
+      "workflowRunId": 37870240814,
+      "index": 3,
+      "zipBytes": 127624634,
+      "zipSha256": "8a4df8bb22cade4e2761d5b8c9ddf734faebdf7c2bcfb155250f02dd433be724",
+      "downloadResponseStartedAt": "2026-10-09T02:54:59.792409+00:00",
+      "downloadResponseEOFCLOSEDAt": "2026-10-09T02:55:03.277084+00:00",
+      "memberBytes": 182886739,
+      "memberSha256": "75ffe5c7d6b10d0e3c95e592e105687e035f5e3743c4f16d28e98d360b2ad2d9",
+      "offset": 1207959552,
+      "members": 4,
+      "safeUniqueMembers": true,
+      "allMemberCRC": "PASS",
+      "helperGitSha256": "2bcabd69f5cf115b44ca72efd9c16695c879512c062eaa0da28e1b051c4f2274",
+      "peakResidentBytes": 147353600,
+      "addressSpaceLimitBytes": 805306368,
+      "zipStorage": "One official body in private BytesIO, fixed1MiB raw blocks, no disk temp or second whole ZIP/raw copy",
+      "frozenCodeInputsRuntimeBeforeAfter": {
+        "executionFreezeSha256": "c0f5f55e11acb2180460a930a4c00afa2ae740cd7ec9e96f1333227301f351a1",
+        "executionFreezeIdentity": {
+          "dev": 27,
+          "ino": 1471806,
+          "bytes": 3641,
+          "mtimeNs": 1791514411044963831,
+          "ctimeNs": 1791514411044963831
+        },
+        "files": {
+          "receiver": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/receive.py",
+            "identity": {
+              "dev": 27,
+              "ino": 1471804,
+              "bytes": 20276,
+              "mtimeNs": 1791514411039026616,
+              "ctimeNs": 1791514411039026616
+            },
+            "sha256": "dc9b18ff9f62430b51538c96f82cf691813f0ef3ff28a88112a70e67736fc241"
+          },
+          "privateSpec": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/private-spec.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471803,
+              "bytes": 6004,
+              "mtimeNs": 1791514342655270627,
+              "ctimeNs": 1791514342823262482
+            },
+            "sha256": "fa2bcfa420156475ae03419111b4f0b1a70f99e33ab11316856ef140ee3e6029"
+          },
+          "sourceBridge": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-memory-parts-cd9/source-bridge.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471093,
+              "bytes": 19384,
+              "mtimeNs": 1791514284378297735,
+              "ctimeNs": 1791514284378297735
+            },
+            "sha256": "259d52e14cd74ba5e8cb9d8a3ec359ac7cae08dff97c0847af8f40a0a7d4572d"
+          },
+          "originalDfStage": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/hosted-df-browser/extracted/.work/checks/stage-browser.json",
+            "identity": {
+              "dev": 27,
+              "ino": 1471098,
+              "bytes": 74873,
+              "mtimeNs": 1791510884610246300,
+              "ctimeNs": 1791510884610246300
+            },
+            "sha256": "d83f3bea114e4b40eb3a5978a07b990befcf711df4655029c72c8c0a4deac7ec"
+          },
+          "pythonBinary": {
+            "path": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036854858618,
+              "bytes": 30894944,
+              "mtimeNs": 1788486252000000000,
+              "ctimeNs": 1788486252000000000
+            },
+            "sha256": "fa67443527ed9647f760d807e2a38f26340757123e643c4639cf273ed15d5ea7"
+          },
+          "curlBinary": {
+            "path": "/usr/bin/curl",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855093009,
+              "bytes": 321880,
+              "mtimeNs": 1778204212000000000,
+              "ctimeNs": 1778204212000000000
+            },
+            "sha256": "d2136f430029a8750c6c3280effdca0383e24b1f606e32d63e3b4154409b1038"
+          },
+          "gitBinary": {
+            "path": "/usr/bin/git",
+            "identity": {
+              "dev": 27,
+              "ino": 9223372036855095607,
+              "bytes": 4082768,
+              "mtimeNs": 1753899052000000000,
+              "ctimeNs": 1753899052000000000
+            },
+            "sha256": "356db14e102d68a1a37d8a1ac577dfd678d45d46e92f468bef8b7154e7bfdc60"
+          },
+          "node22Binary": {
+            "path": "/workspace/game-cores-G10-audit-worker/jobs/G10-checkers/.work/memory-json-private/node22/runtime/bin/node",
+            "identity": {
+              "dev": 27,
+              "ino": 1465834,
+              "bytes": 121509208,
+              "mtimeNs": 1747799879000000000,
+              "ctimeNs": 1791471121215558321
+            },
+            "sha256": "8142d37c6f2f372ef040419e7a111a6baf17df89f8078d02447d6c639ae20c1d"
+          }
+        }
+      },
+      "naturalWorkerClosure": {
+        "status": "NATURALLY_CLOSED",
+        "startedAt": "2026-10-09T02:54:59.508483+00:00",
+        "index": 3,
+        "memoryBudgetBefore": {
+          "memAvailableBytes": 15332159488,
+          "cgroupMax": "17179869184",
+          "cgroupCurrentBytes": 13130448896,
+          "effectiveHeadroomBytes": 4049420288,
+          "workerAddressSpaceLimitBytes": 805306368,
+          "sharedReserveBytes": 1610612736
+        },
+        "pid": 254701,
+        "wholePartSecondsLimit": 240,
+        "closedAt": "2026-10-09T02:55:05.245750+00:00",
+        "exitCode": 0,
+        "readerException": false,
+        "bytesReceived": 182886739,
+        "mismatchOffsets": [],
+        "actualRemainingGroup": [],
+        "groupSignals": [],
+        "reapedAdoptedDescendants": [],
+        "actualExitCode": 0,
+        "natural": true
+      }
+    }
+  ]
+}
