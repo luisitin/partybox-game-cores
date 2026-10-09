@@ -2,14 +2,14 @@
 
 American 8×8 and International 10×10 for two seats, hot-seat or bots.
 Full licensed American and International 2–6-piece databases are included.
-Draft PR #10 stays open. Exact474 full native checks and clips passed.
+Draft PR #10 stays open. Genuine72 full checks/clips passed with source bridges.
 Four df download parts passed whole-byte verification with explicit source bridges.
 New-head verification and the renewed KEEP loop remain pending.
 
 The draft startup change lets American bots start after American data loads.
 International bots wait for the complete page. Its actual physical page,
 original strict TypeScript and direct full production output hashes passed.
-Exact474 gameplay and original FPS passed independent full verification.
+Genuine72 gameplay and original FPS passed independent full verification.
 The genuine df full download parts passed every ZIP/raw/whole-page check.
 
 Exact historical8b4 hosted proof passed 91 tests,25 real mutants,7,000

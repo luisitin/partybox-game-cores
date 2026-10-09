@@ -1,0 +1,3 @@
+# Genuine full original verification and pending International startup trial
+
+proof.zip includes the actual received official72 full 239-member archive, unchanged full original reader/auditor/controller, all five original native logs, full349/current961 immutable source/document bridge and every natural closure/final freeze. Private provider references are excluded. The separate unexecuted-native-proposal contains the complete four-arm driver, finite controller, exact ready/spec and retained first unexecuted nonce/spec. Two actual finite untimed detached-child lifecycle controls prove transitive RSS monitoring and failure-only cleanup; exact earlier tested controller bytes/SHA and the extra guard-only diff are preserved. No browser or elapsed player trial was run.
