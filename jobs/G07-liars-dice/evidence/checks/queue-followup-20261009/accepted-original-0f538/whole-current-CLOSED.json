@@ -1,0 +1,57 @@
+{
+  "startedUtc": "2026-10-09T10:29:51.571290+00:00",
+  "closedUtc": "2026-10-09T10:29:51.773354+00:00",
+  "exitCode": 0,
+  "head": "0f538c9e95cf4406aabf8fc60d2d1cc0db800632",
+  "runId": 37916703749,
+  "jobId": 113774542147,
+  "actualWholeWorkflowConclusion": "success",
+  "allNativeCharacters": 140245,
+  "allNativeBytes": 142895,
+  "allNativeSha256": "521495840d2a9a27a9876e658b77497c967b3805b9cc4c50b68ea490c5b03027",
+  "allParsedJsonRows": 122,
+  "nodePassGroups": [
+    122,
+    88
+  ],
+  "nodeFailGroups": [
+    0,
+    0
+  ],
+  "nodeTotalPassed": 210,
+  "realCompiledAssertionKilledMutants": 25,
+  "allIndividuallyLoggedBrowserRowsMatchGenuineReport": 91,
+  "genuineReportRows": 94,
+  "actualHostedIntegrity": {
+    "suite": "integrity",
+    "fileHashes": 500,
+    "regenerationRuns": 2,
+    "byteIdentical": true,
+    "coreNoIo": true,
+    "mediaUnder10MB": true
+  },
+  "allTrackedSourceAndWholeArtifactInputs": 584,
+  "allInputsUnchanged": true,
+  "childrenReaped": true,
+  "nativeSamplerRerun": false,
+  "argv": [
+    "python3",
+    "/tmp/G07-full-0f538-first-20261009/current-zip-reader.py",
+    "--base",
+    "/tmp/G07-full-0f538-first-20261009",
+    "--local-repository",
+    "/tmp/G07-source-queue-audit-20261009",
+    "--head",
+    "0f538c9e95cf4406aabf8fc60d2d1cc0db800632",
+    "--run-id",
+    "37916703749",
+    "--job-id",
+    "113774542147",
+    "--artifact-id",
+    "11610242472",
+    "--zip-bytes",
+    "1252435",
+    "--zip-sha256",
+    "a09c85039783c7de2d565aed08d3ba7292577c841d6a4e91f9322ab7a5eaeb3b"
+  ]
+}

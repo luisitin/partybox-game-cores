@@ -50,6 +50,14 @@
       "error": "ERR_MODULE_NOT_FOUND: one excess parent component in relative import",
       "recovery": "Corrected helper import; actual historical controls and original59 tests passed10:14:35.460987",
       "failureTimestampRecorded": false
+    },
+    {
+      "scope": "read-only review helper lookup",
+      "command": "sed independent-review-20261009/review.mjs",
+      "exitCode": 2,
+      "error": "guessed review.mjs path did not exist",
+      "recovery": "Read the actual independent-review-20261009/audit.mjs; no source was unavailable or modified",
+      "failureTimestampRecorded": false
     }
   ],
   "noneCountsAsFunctionalPass": true

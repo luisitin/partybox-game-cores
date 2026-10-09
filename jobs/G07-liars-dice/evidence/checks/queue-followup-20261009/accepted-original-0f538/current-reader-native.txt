@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-09T10:29:51.756322+00:00",
+  "scope": "Actual specified current hosted source/raw bytes; specific successful run, not a universal timing guarantee or replacement for retained local failures",
+  "head": "0f538c9e95cf4406aabf8fc60d2d1cc0db800632",
+  "runId": 37916703749,
+  "jobId": 113774542147,
+  "artifactId": 11610242472,
+  "zipBytes": 1252435,
+  "zipSha256": "a09c85039783c7de2d565aed08d3ba7292577c841d6a4e91f9322ab7a5eaeb3b",
+  "independentAssertions": 1387,
+  "additionalZipCacheAssertions": 219,
+  "reportRunId": "20261009102503461",
+  "checks": 94,
+  "rawIntervals": 1200,
+  "metrics": [
+    {
+      "profile": "desktop",
+      "intervals": 600,
+      "totalMs": 9999.6,
+      "meanMs": 16.666,
+      "fps": 60.00240009600384,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "droppedIntervalsOver17Ms": 0
+    },
+    {
+      "profile": "phone4x",
+      "intervals": 600,
+      "totalMs": 9999.5,
+      "meanMs": 16.66583333333333,
+      "fps": 60.0030001500075,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "droppedIntervalsOver17Ms": 0
+    }
+  ],
+  "originalTimedCallbackBytes": 1493,
+  "originalTimedCallbackSha256": "4d12a4f66f7d97066534f3693fea41583a7e1779640d29cfc1259433368879ba",
+  "gameplayUnchanged": false
+}

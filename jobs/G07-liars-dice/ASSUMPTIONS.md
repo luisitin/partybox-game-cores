@@ -27,6 +27,14 @@ No new measurements are attributed to the old runner. A first official-download
 checker/head acceptance remains pending. Original publication/lease receipts use
 actual UTC only; new receipt must retain any real cadence miss.
 
+Corrected source0f538 now has genuine whole original acceptance. Its saved proof
+certifies that specific runtime source, not an unexecuted later checkpoint.
+Review1 intentionally broadens natural startup recovery to every presence mask
+and all48 settings at three valid clock/host profiles; results are semantic,
+not FPS/win-rate measures. No defect or runtime change was found; new gain0.
+The newly adopted startup gain starts its own follow-up streak; original KEEP6–8
+remain unchanged. Each new review is logged/pushed before the next starts.
+
 - Owner's 2–8 players extends publisher 2–6; start with five dice each.
 - Fair independent dice, public remaining counts, private rolls. Raw exact odds
   condition only on the viewing player's cup; learned bid information is heuristic.

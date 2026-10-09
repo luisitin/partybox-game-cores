@@ -1,52 +1,49 @@
-# Current G07 queue follow-up — 2026-10-09
+# Current G07 queue follow-up — post-green review1, 2026-10-09
 
-Owner codex-dice-queue-audit-20261009; branch job/G07-liars-dice-queue-audit-20261009.
-Created from actually claimed main0f9a28cff22ad9a79dcf4a5521904093520db1fb, then
-normally merged protected028 history. Original Ready PR13/028 and PR6/1cc remain
-untouched; new supplemental PR17 is Draft. Main CLAIMS is authoritative. Own row
-refresh09:52:01Z/normal push09:52:02.562584/read09:52:03.364996, maincbc254e2,
-only own row/tree changed. The source PR retains base CLAIMS for G07-only scope.
+Owner codex-dice-queue-audit-20261009, branch job/G07-liars-dice-queue-audit-20261009,
+new supplemental Draft PR17/base protected028. Original Ready13/028 and Ready6/1cc
+remain untouched. Isolated branch came from actual claimed main0f9a28c.
+Main authoritative row refreshed10:18:26Z, exact claim G07 push10:18:27.690759 /
+readback CLOSED10:18:28.456907 main7743d5cb; all other rows/tree unchanged.
+Source coordination copy remains base's CLAIMS so this PR is G07-only.
 
-Narrow player fix: init uses the existing ordinary departure policy if its
-random starter is disconnected. The original genuine startup assertion failed
-09:31:33.572792 with465 inputs unchanged. Independent comparison verifies11,878
-previously stranded starts become playable,12,506 present/empty and8,064 fully
-connected states remain byte-identical. Six regression tests cover24,384 starts,
-3,048 clocks,28 save/recovery contexts and336 actual complete games. Original
-five-round clips fully decoded10:01:50.457497 with all486 source inputs unchanged;
-recordings are functional evidence, not FPS proof.
+Genuine narrow startup correction is adopted:11,878 formerly stranded starts
+become playable with exactly the old ordinary departure policy;12,506 present/
+empty and8,064 fully connected initial states remain byte-identical. All target
+6 tests/24,384 starts,3,048 clock contexts,28 recovery cases,336 games passed.
+Original failed assertion and whole first f123 failed run remain protected.
+Old-f8 integrity now pins its actual immutable three original inputs; no new
+sample is attributed to the old runner. Current-only CLI/32 guards/callback,
+clock/frame criteria and sole workflow are unchanged. Cross-source controls reject
+wrong old identities, historical-as-current and stale-first-checker-as-current.
 
-First source f123cd8b9c0cc1aa0baaa4517e98b26f8e641577 pushed09:49:19.921738,
-readback09:49:20.989803 EXIT0, before hard09:50:16. Original workflow37913827444,
-verify113765092874, actually FAILED at integrity's historical-page comparison.
-All210 tests (122+88),25 real compiled mutant kills and91 individually logged
-browser rows match the whole94-row report. Entire143,417-byte native log is saved
-losslessly. Official11608627454 ZIP1,252,110B/e3c47013519e4a065425768bbf1db65f80dd76c12be4b1904aa18f5f9dc7d3a6 has all72 files CRC/source verified; no partial cache.
-Independent reader10:12:07.882236 passes1,387 semantic+219 ZIP checks,32 actual
-current guards/physical bundles/full94/1200 untrimmed intervals and original
-clock gates. Specific desktop/phone samples60.0024fps,p99/max16.8ms; original1493
-callback bytes identical. All561 reader inputs unchanged, child reaped. This
-qualifies f123 runtime only; overall original workflow FAILURE remains retained.
-First transfer really returned403; a fresh reference for the SAME immutable
-artifact downloaded without a new browser run. Both native receipts are saved.
+Corrected source0f538 pushed10:17:34.790516/read10:17:35.326390 before its hard bound.
+Original37916703749/113774542147 ACTUALLY SUCCESS allsteps. Whole independent proof
+CLOSED10:29:51.773354/all584 inputs unchanged:official11610242472 ZIP1,252,435B,
+SHAa09c85039783c7de2d565aed08d3ba7292577c841d6a4e91f9322ab7a5eaeb3b,all72 CRC/source
+files,1,387+219 assertions/32 actual source and physical bundles/full94/1200 raw,
+original clocks/callback. Entire142,895-byte native confirms210 tests/25 actual
+compiled kills/500 hashes/twice-regeneration. Specific samples60.0024/60.0030fps,
+p99/max16.8ms. First f123 failed whole log/ZIP and403 are retained separately.
 
-Material checker correction pins the immutable old-f8 archive to its three
-independently verified original inputs, rather than comparing it to today's
-changed game. The archive, actual old runner, current-only CLI, all timing/clock
-criteria, callback and sole workflow remain unchanged. Read-only positive and
-negative controls PASS10:14:35; all3 wrong old identities fail, the historical
-report cannot certify current source, and the genuine f123 report cannot certify
-the changed checker. Original59 evidence tests PASS. Do not label old samples as
-new or claim a full green before the corrected head's genuine original run.
+Binding post-green review1 reread10:30:56/rank five; worst=natural initial saved
+recovery at clock endpoints. PASS949,991 assertions/73,152 actual saves/restores
+(all48 settings/every2–8 count/everypresence mask/clock0,1,120/host0,.5,1e15),
+max2,736B,all639 inputs unchanged,naturally CLOSED10:31:29.055714.
+No new player defect/runtime edit; gain0,new follow-up no-gain streak1.
+Two required five-round source-matched clips/full VP8 decode PASS10:33:32.
+This review is being logged and published before round2 begins. Original KEEP6–8
+remain immutable; new player fix receives its own truthful follow-up streak.
 
-Next: read the corrected head's complete original workflow/native/official ZIP,
-reconstruct exact source and compiled guards, decode both current clips, then
-complete binding substantive KEEP review and mark PR17 Ready only if all pass.
-Preserve original KEEP6–8 three no-gain stop and all failures. Never repeat an
-unchanged sampler, alter runtime/clock gates, or make cosmetic CI succession.
-Last actual publication09:49:19.921738 sets hard next10:19:19.921738; actual next
-receipt must retain any miss. Source/checker correction is not yet remote in this
-saved text. See evidence/checks/queue-followup-20261009/first-current-f123/.
+Next AFTER normal publication: refresh ONLY own main row under root's exclusive
+lease, then reread/rank five and perform review2 on empty-room/reconnect/VIP/timer
+sequencing. Log/measure/push it separately before review3. Final third review
+handoff must precede its own whole exact-head original CI, then Ready17 only after
+all pass. No new local frame sampler, weakened gate or cosmetic post-Ready commit.
+Current saved text qualifies source0f538; this review's new checkpoint full run is
+pending. Last actual publication10:17:34.790516 gives hard10:47:34.790516; retain
+actual next receipt and any miss. Evidence is in queue-followup-20261009/review1
+and accepted-original-0f538. Parent owns serialized main coordination.
 
 # Protected independent queue review — 2026-10-09
 

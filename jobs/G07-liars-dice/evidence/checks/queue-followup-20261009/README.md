@@ -16,7 +16,7 @@ Startup now invokes exactly the existing ordinary-disconnection policy.
 | Actual canonical/new state comparison | PASS11,878 stranded starts→0; all match the old ordinary departure policy |
 | Unaffected initial states | PASS12,506 present/empty states plus8,064 fully connected controls byte-identical |
 | Current functional recordings | Two actual5-round clips, no errors/network; recorded separately from performance |
-| New original full CI/current-source browser proof | PENDING; original historical positive does not certify this source |
+| Corrected-source whole original CI | PASS0f538 original37916703749/113774542147; permanent11610242472 official ZIP/210 tests/25 mutants/full94/1200; later checkpoint CI pending |
 
 From jobs/G07-liars-dice: `npm run build` then
 `node --test --test-reporter=tap tests/initial-presence.test.mjs`.
@@ -31,3 +31,7 @@ preserved; whole native/video and unchanged ZIP-reader receipts are included.
 No timing callback, original clock bounds, FPS criterion or workflow was edited.
 Old KEEP6–8 stopping rounds remain intact. This is a substantive newly established
 startup problem; full changed-source acceptance and subsequent KEEP remain open.
+
+Post-green review1 is logged separately:review1/README.md/report.json lists the
+five priorities,73152 actual saves/restores and measured player gain0/streak1.
+Later reviews execute only after this first review is normally published.

@@ -1,8 +1,8 @@
 # G07 — Liar's Dice
 
 Current queue follow-up fixes an initially disconnected random starter.
-First new-source runtime94/94 passes; full CI failed a stale historical binding.
-That comparison is corrected; new-head full acceptance is pending. See NEXT.md.
+Corrected-source full210 tests/25 mutants/94 browser checks pass.
+First post-green review passes73,152 saves/restores; next checkpoint CI pending.
 The completed delivery and measurements below describe the protected prior source.
 
 Complete Perudo-style private-cup game for 2–8 players: wild ones, palifico,

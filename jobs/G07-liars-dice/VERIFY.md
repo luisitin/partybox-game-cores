@@ -1,5 +1,19 @@
 # Verification log
 
+## Post-green review1 — 2026-10-09
+Actual original0f538 workflow37916703749/113774542147 SUCCESS/all steps, whole
+11610242472 official archive independently source/raw/native accepted10:29:51;
+see accepted-original-0f538/ for immutable full ZIP, native and receipts.
+`node /tmp/G07-followup-postgreen-review-20261009.mjs --job=/tmp/G07-source-queue-audit-20261009/jobs/G07-liars-dice --out=/tmp/G07-followup-round1-20261009 --round=1 --head=0f538c9e95cf4406aabf8fc60d2d1cc0db800632`:PASS949,991 assertions/73,152 actual natural saves/restores;
+would catch missing initial auto-play metadata, unsupported valid clocks,
+state mutation, missing seats, rerolls or lost remaining time on recovery.
+Reread/rank five before execution; all639 tracked/source inputs unchanged;
+CLOSED10:31:29.055714 EXIT0. No new player defect/runtime change/gain; streak1.
+`node scripts/capture.mjs queue-followup-review1`:PASS two source-matched5-round
+clips; each actual whole file ffprobe and full `ffmpeg -v error -i <clip> -f null -`
+decode PASS10:33:32.001102, zero network/errors; no performance inference.
+New review checkpoint still requires its own whole exact-head original CI.
+
 ## Current queue follow-up — 2026-10-09, corrected-head full acceptance pending
 Original protected full proof/physical build/readers/videos are qualified only
 for the original source; the original failed startup assertion is retained.
