@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "minItems": 1003,
+  "maxItems": 1003,
+  "type": "array",
+  "items": {
+    "type": "integer",
+    "minimum": 0,
+    "maximum": 4294967295
+  }
+}
