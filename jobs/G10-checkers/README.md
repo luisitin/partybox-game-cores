@@ -46,7 +46,8 @@ with G10_HTML_OUT=.work/play-current.html npm run build on a disk with enough sp
 Private International startup output passed full raw/source-byte checks.
 Full HTTP bytes passed. One native trial exceeded its memory bound.
 Saved8-game full-core replay and actual process-closure controls passed.
-A fresh deferred native protocol is prepared; no new timing or adoption.
+Deferred native replay now checks the final original time limit.
+Its process controls passed; performance testing remains unexecuted.
 The candidate remains unadopted; renewed KEEP and current checks stay open.
 
 American data terms require Chinook/University of Alberta acknowledgement and
