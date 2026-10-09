@@ -57,3 +57,10 @@ All direct-pair bounds also exceed50%;zero pair ties. Average hands
 19.4645,22.4640,12.3320,12.2545;maxima31,45,24,31. Largest final state
 5,643bytes. `bot-results-2001.json` records the reproducible exact counts.
 No player-visible policy change was warranted by this held-out audit.
+
+2026-10-09 failed-nil recovery: with failedNilCounts=true only, once an own nil
+has already failed, normal/strong bots use the existing partner-contract play
+policy. When nil is still alive or contribution is false, the previous nil
+strategy stays intact. Actual legal seed377 improves−160→−40; no universal
+win-rate improvement is claimed. Original default leagues and seed44 results
+are unchanged; changed-head original full leagues/CI remain pending.

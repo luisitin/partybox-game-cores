@@ -144,3 +144,9 @@ Additional delivery review8 (applied after the full-suite snapshot finishes):
 - `checksums.ts`:include the delivered dependency notice in the hashed path
   set. Runtime game/UI behavior is unchanged;standalone licensing survives
   the minifier instead of existing only as a dependency file outside HTML.
+
+2026-10-09: help a partner contract after an own nil has already failed under
+the selectable contribution rule. Keep default exclusion, successful nil,Easy
+RNG and original timing/scoring rules. Actual legal replay shows120points; add
+five default replay/ledger/policy/privacy regressions and retain exactpre-edit
+bot data. Rebuildpage and captureunused14; all original full gates retained.

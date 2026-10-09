@@ -113,3 +113,11 @@ Resumed pre-edit review 2026-10-09T05:07:07.154379+00:00: see audit-resume-20261
 ranked weaknesses, actual live two-source scoring reread, and unadopted failed-nil
 contract-support lead. Whole canonical tracked job bytes matched immutable Git
 before edits. Current full acceptance and any measured gameplay gain are pending.
+
+KEEP14 measured worst weakness, prepared2026-10-09T05:34:12.249638+00:00: original wholly accepted0ed
+full workflow, then finite legal seeded probe3014hands/208127replayevents finds
+120point contract gain. Adopt only failedNilCounts&&ownwon>0 guard; retain exact
+default/Easy policy and source-bound legal/reference/privacy controls. Five
+weaknesses remain listed in the first resumed audit; next address already-failed
+partner-nil protection only with actual legal evidence, not speculation. New
+current full accepted proof pending; no renewed no-gain round has been counted.

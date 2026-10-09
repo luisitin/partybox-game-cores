@@ -307,3 +307,16 @@ with `git show <canonical>:<path>` using full bytes before editing. PASS all119
 retained job files. This detects accidental source, media, workflow, fixture or
 baseline-evidence alteration; it does not substitute for full current npm/CI gates.
 No new local native frames/full timing trial has run in this continuation.
+
+2026-10-09 actual before/after recovery checks: `node --test failed-nil-test.ts`
+PASS5groups; actual original module diagnostic3FAIL2PASS retained. Full legal
+seed377 event prefix and continuations, independent ledger and card-winner
+reference, default/Easy RNG controls,400 genuine first hands and hidden-view
+controls delivered. `npm run check && node build.ts` PASS; newpage490391B.
+Original seed44 three complete core outcomes unchanged226/503,547/397/86,
+368/305/518. `python /tmp/G06-run-capture14-20261009.py` actual original
+`node capture.ts --milestone=14` PASS05:30:34.417327/all3892guards/88884B/0HTTP.
+This does not run native frames. Parentexact0ed full genuine99998native and
+104105BofficialZIP/all1800raw/18guards/18decodedVP8 PASS05:28:24.442692.
+See public archive:42members/936433B/SHAb63c8cf8e12a7c97748e29e7dc47bbd1a34958260cdad1294cda2ea0081fce4c.
+Full changed-head original npm/CI and renewedthree-round stop are pending.

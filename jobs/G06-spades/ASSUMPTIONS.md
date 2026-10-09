@@ -50,3 +50,10 @@ restart/recovery/root coordination; record actual publication rather than backda
 Failed-nil bot lead is unproved and unadopted; default rules/strategy unchanged.
 No new local native frame or unchanged full timing rerun is authorized by this
 checkpoint. Preserve all original failed evidence and gates.
+
+2026-10-09 actual measured nil recovery: optional contribution permits tricks
+from a failed nil to make the partner contract. Original live-source disagreement
+is already a setting. Do not change default exclusion or nil penalties. New
+archive baseline bots is immutable own-repository regression data only, excluded
+from runtime build. Parent0ed genuinefull is historical after adoption. Fresh
+unused14 captures functionality with original clock/encoder, never native FPS.

@@ -27,7 +27,7 @@ function play(v:PhoneView,rng:Rng,skill:BotSkill):number{
  if(skill==='easy')return rng.pick(legal);
  const winning=legal.filter(card=>winningPlay([...v.trick,{playerId:v.me.id,card}])?.playerId===v.me.id);
  const losing=legal.filter(card=>!winning.includes(card)),low=(cards:number[])=>[...cards].sort((a,b)=>danger(a)-danger(b))[0]!,high=(cards:number[])=>[...cards].sort((a,b)=>danger(b)-danger(a))[0]!;
- if(mine?.kind!=='number'&&!(v.settings.failedNilCounts&&v.won[v.me.id]!>0))return losing.length?high(losing):low(legal);
+ if(mine?.kind!=='number')return losing.length?high(losing):low(legal);
  const mySide=v.sides.find(side=>side.ids.includes(v.me.id))!,contract=mySide.ids.reduce((n,id)=>n+(v.bids[id]?.kind==='number'?v.bids[id]!.value:0),0);
  const taken=mySide.ids.reduce((n,id)=>n+((v.settings.failedNilCounts||v.bids[id]?.kind==='number')?v.won[id]!:0),0),needed=taken<contract;
  if(current&&v.partner===current.playerId&&v.bids[current.playerId]?.kind!=='number')return winning.length?low(winning):low(legal);

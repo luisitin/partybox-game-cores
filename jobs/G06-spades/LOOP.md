@@ -16,3 +16,9 @@ Corrective12 | reread/rank5 after exact416afd1 CI37803971795GREEN | explicitvali
 2026-10-09 resumed pre-green audit 2026-10-09T05:07:07.154379+00:00 | live pinned standard scoring
 reread; rankfive weaknesses; inspect failed-nil bot contract support | no policy
 adopted/no measured gain/no new no-gain round; current full acceptance pending.
+
+KEEP14 | rereadG06/two-source selected failed-nil conflict; rankfive inresumed
+audit; worstownfailednil keepsducking despiteoptionalcontribution | legitimate
+seed377 old9spades vswinningJspades, completecontract−60→+60/team−160→−40;
+5newdefaultgroupsPASS/finite400hands/default+Easy+privacycontrols; fresh14
+functionalclipPASS | playergain provisionalpendingnewfull, renewedstreak0.
