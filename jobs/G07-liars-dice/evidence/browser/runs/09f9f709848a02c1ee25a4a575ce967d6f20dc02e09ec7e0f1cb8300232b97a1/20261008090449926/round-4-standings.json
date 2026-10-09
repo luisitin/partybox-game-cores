@@ -1,0 +1,236 @@
+{
+  "beforeCommit": "30eec5b",
+  "fixture": {
+    "players": 8,
+    "counts": [
+      5,
+      5,
+      4,
+      3,
+      3,
+      1,
+      0,
+      0
+    ],
+    "eliminated": [
+      "p7",
+      "p6"
+    ],
+    "names": [
+      "<img src=x onerror=alert(1)>",
+      "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+      "A<&\"quote\">",
+      "Player four",
+      "Player five",
+      "Player six",
+      "Player seven",
+      "Player eight"
+    ],
+    "transition": "prepared live state followed by the actual End game button"
+  },
+  "before": {
+    "htmlSha256": "48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378",
+    "endReason": "vip-end",
+    "title": "Thanks for playing",
+    "standingsRows": 0,
+    "namedTieWinners": 0,
+    "expected": {
+      "scores": {
+        "p0": 8.5,
+        "p1": 8.5,
+        "p2": 8.4,
+        "p3": 8.3,
+        "p4": 8.3,
+        "p5": 8.1,
+        "p6": 2,
+        "p7": 1
+      },
+      "ranking": [
+        {
+          "playerId": "p0",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p1",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p2",
+          "score": 8.4,
+          "rank": 3
+        },
+        {
+          "playerId": "p3",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p4",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p5",
+          "score": 8.1,
+          "rank": 6
+        },
+        {
+          "playerId": "p6",
+          "score": 2,
+          "rank": 7
+        },
+        {
+          "playerId": "p7",
+          "score": 1,
+          "rank": 8
+        }
+      ],
+      "winnerIds": [
+        "p0",
+        "p1"
+      ],
+      "awards": [],
+      "headlineNote": "Ended by the host; remaining dice decide the standings."
+    }
+  },
+  "after": {
+    "htmlSha256": "09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1",
+    "title": "A tie for first place",
+    "standingsRows": 8,
+    "namedTieWinners": 2,
+    "expected": {
+      "scores": {
+        "p0": 8.5,
+        "p1": 8.5,
+        "p2": 8.4,
+        "p3": 8.3,
+        "p4": 8.3,
+        "p5": 8.1,
+        "p6": 2,
+        "p7": 1
+      },
+      "ranking": [
+        {
+          "playerId": "p0",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p1",
+          "score": 8.5,
+          "rank": 1
+        },
+        {
+          "playerId": "p2",
+          "score": 8.4,
+          "rank": 3
+        },
+        {
+          "playerId": "p3",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p4",
+          "score": 8.3,
+          "rank": 4
+        },
+        {
+          "playerId": "p5",
+          "score": 8.1,
+          "rank": 6
+        },
+        {
+          "playerId": "p6",
+          "score": 2,
+          "rank": 7
+        },
+        {
+          "playerId": "p7",
+          "score": 1,
+          "rank": 8
+        }
+      ],
+      "winnerIds": [
+        "p0",
+        "p1"
+      ],
+      "awards": [],
+      "headlineNote": "Ended by the host; remaining dice decide the standings."
+    },
+    "actual": [
+      {
+        "playerId": "p0",
+        "rank": 1,
+        "name": "<img src=x onerror=alert(1)>",
+        "dice": 5,
+        "status": "Tied winner"
+      },
+      {
+        "playerId": "p1",
+        "rank": 1,
+        "name": "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL",
+        "dice": 5,
+        "status": "Tied winner"
+      },
+      {
+        "playerId": "p2",
+        "rank": 3,
+        "name": "A<&\"quote\">",
+        "dice": 4,
+        "status": "At host end"
+      },
+      {
+        "playerId": "p3",
+        "rank": 4,
+        "name": "Player four",
+        "dice": 3,
+        "status": "At host end"
+      },
+      {
+        "playerId": "p4",
+        "rank": 4,
+        "name": "Player five",
+        "dice": 3,
+        "status": "At host end"
+      },
+      {
+        "playerId": "p5",
+        "rank": 6,
+        "name": "Player six",
+        "dice": 1,
+        "status": "At host end"
+      },
+      {
+        "playerId": "p6",
+        "rank": 7,
+        "name": "Player seven",
+        "dice": 0,
+        "status": "2nd out"
+      },
+      {
+        "playerId": "p7",
+        "rank": 8,
+        "name": "Player eight",
+        "dice": 0,
+        "status": "1st out"
+      }
+    ]
+  },
+  "measuredGain": {
+    "visibleFinishingPlaces": {
+      "before": 0,
+      "after": 8
+    },
+    "identifiedTiedWinners": {
+      "before": 0,
+      "after": 2
+    }
+  },
+  "baselineFile": "round-4-before-standings.json",
+  "baselineSha256": "b69c41a27884cd8e949e82c2fd18592b9d65b7a4925a50eddbda98a66a645288",
+  "networkRequests": 0,
+  "pageErrors": 0
+}

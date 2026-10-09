@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-08",
+  "salt": 2066847458,
+  "pairs": 1000,
+  "method": "Fixed fresh salt, paired seats, no strategy tuning on these seeds",
+  "matchups": [
+    {
+      "stronger": "sharp",
+      "weaker": "normal",
+      "games": 2000,
+      "pairs": 1000,
+      "wins": 1282,
+      "winRate": 0.641,
+      "wilson95": [
+        0.619724409680054,
+        0.6617349829866326
+      ],
+      "paired95": [
+        0.6206568686433628,
+        0.6613431313566372
+      ],
+      "meanRounds": 6.8585
+    },
+    {
+      "stronger": "normal",
+      "weaker": "easy",
+      "games": 2000,
+      "pairs": 1000,
+      "wins": 1180,
+      "winRate": 0.59,
+      "wilson95": [
+        0.5682922967087976,
+        0.611362634780577
+      ],
+      "paired95": [
+        0.5709977020514011,
+        0.6090022979485988
+      ],
+      "meanRounds": 7.104
+    }
+  ]
+}

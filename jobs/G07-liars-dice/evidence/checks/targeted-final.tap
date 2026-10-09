@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+ok 1 - contract 1: total, immutable reducer handles every event type in every phase and rejects unknown prototype ids
+  ---
+  duration_ms: 34.786549
+  type: 'test'
+  ...
+# Subtest: contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+ok 2 - contract 2: game modules contain no clocks, unseeded randomness, I/O, or module mutable declarations
+  ---
+  duration_ms: 2.211891
+  type: 'test'
+  ...
+# Subtest: contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+ok 3 - contract 3: timer identity, deadline, pause duration, stale replay and no-clock unlimited idle behavior
+  ---
+  duration_ms: 4.276574
+  type: 'test'
+  ...
+# Subtest: empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+ok 4 - empty rooms pause without a fallback, reconnect resumes auto-hold, intentional VIP hold remains
+  ---
+  duration_ms: 2.176049
+  type: 'test'
+  ...
+# Subtest: permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+ok 5 - permanent leavers play automatically while room occupied and cannot reclaim a departed seat
+  ---
+  duration_ms: 1.393134
+  type: 'test'
+  ...
+# Subtest: legitimate empty-string and prototype-named seats remain playable and ranked
+ok 6 - legitimate empty-string and prototype-named seats remain playable and ranked
+  ---
+  duration_ms: 1.343302
+  type: 'test'
+  ...
+# Subtest: contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+ok 7 - contract 5: counterfactual private cups and RNG cannot alter public or another player view; reveals become public
+  ---
+  duration_ms: 3.940384
+  type: 'test'
+  ...
+# Subtest: contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+ok 8 - contract 6 and 7: each phase accepts explicit end and skip makes progress; unlimited idle never silently ends
+  ---
+  duration_ms: 1.502846
+  type: 'test'
+  ...
+# Subtest: contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+ok 9 - contract 8: every skill supplies legal schema-valid action or null in every phase and inactive seat
+  ---
+  duration_ms: 3.562407
+  type: 'test'
+  ...
+# Subtest: contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+ok 10 - contract 9: exact shared manifest schema, exact disk equality, phase fixture JSON schemas and continued games
+  ---
+  duration_ms: 215.693539
+  type: 'test'
+  ...
+# Subtest: initial rolls, defaults, finite deadlines and starting seats are deterministic
+ok 11 - initial rolls, defaults, finite deadlines and starting seats are deterministic
+  ---
+  duration_ms: 9.881181
+  type: 'test'
+  ...
+# Subtest: only the current connected active seat bids; bids must raise and preserve the old state
+ok 12 - only the current connected active seat bids; bids must raise and preserve the old state
+  ---
+  duration_ms: 7.237272
+  type: 'test'
+  ...
+# Subtest: impossible bluff quantities remain finite and a bot can challenge them without an unbounded legal-bid list
+ok 13 - impossible bluff quantities remain finite and a bot can challenge them without an unbounded legal-bid list
+  ---
+  duration_ms: 6.067044
+  type: 'test'
+  ...
+# Subtest: dudo counts wild ones and assigns exactly one die loss to the right participant
+ok 14 - dudo counts wild ones and assigns exactly one die loss to the right participant
+  ---
+  duration_ms: 1.242896
+  type: 'test'
+  ...
+# Subtest: reveal continuation rerolls the public new counts, clears the bid, and advances the round
+ok 15 - reveal continuation rerolls the public new counts, clears the bid, and advances the round
+  ---
+  duration_ms: 1.294659
+  type: 'test'
+  ...
+# Subtest: elimination removes a seat from turn rotation, clockwise survivor starts, and all original players stay in results
+ok 16 - elimination removes a seat from turn rotation, clockwise survivor starts, and all original players stay in results
+  ---
+  duration_ms: 1.756169
+  type: 'test'
+  ...
+# Subtest: first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter
+ok 17 - first one-die loss triggers one palifico round, locks face, disables wild ones, and never repeats for that starter
+  ---
+  duration_ms: 1.000015
+  type: 'test'
+  ...
+# Subtest: calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind
+ok 18 - calza exact success gains one capped die; failure loses one; policy and two-player restrictions bind
+  ---
+  duration_ms: 1.623216
+  type: 'test'
+  ...
+# Subtest: controller odds are exact raw conditional probabilities; model learning uses revealed public truth
+ok 19 - controller odds are exact raw conditional probabilities; model learning uses revealed public truth
+  ---
+  duration_ms: 2.292662
+  type: 'test'
+  ...
+# Subtest: sharp bots can call an eligible out-of-turn calza; interrupted caller conditions on only its own cup
+ok 20 - sharp bots can call an eligible out-of-turn calza; interrupted caller conditions on only its own cup
+  ---
+  duration_ms: 1.124302
+  type: 'test'
+  ...
+# Subtest: all skills are deterministic and ignore counterfactual unseen cups, hidden PRNG and future starter
+ok 21 - all skills are deterministic and ignore counterfactual unseen cups, hidden PRNG and future starter
+  ---
+  duration_ms: 95.443084
+  type: 'test'
+  ...
+# Subtest: sharp decisions adapt to publicly learned truthful and bluffing histories
+ok 22 - sharp decisions adapt to publicly learned truthful and bluffing histories
+  ---
+  duration_ms: 5.425801
+  type: 'test'
+  ...
+# Subtest: exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+ok 23 - exact probability matches independent outcome-convolution oracle over its complete boundary domain and 10,000 random conditional cases
+  ---
+  duration_ms: 802.773387
+  type: 'test'
+  ...
+# Subtest: probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+ok 24 - probability handles certainty, impossible bids, ones, raw exact mass and invalid arguments
+  ---
+  duration_ms: 0.699467
+  type: 'test'
+  ...
+# Subtest: raise legality exhaustively matches independently stated Perudo transitions
+ok 25 - raise legality exhaustively matches independently stated Perudo transitions
+  ---
+  duration_ms: 313.342183
+  type: 'test'
+  ...
+# Subtest: counting ones distinguishes wild faces, literal ones, and palifico
+ok 26 - counting ones distinguishes wild faces, literal ones, and palifico
+  ---
+  duration_ms: 0.360966
+  type: 'test'
+  ...
+# Subtest: unsupported timestamps cannot corrupt state, change player presence, or consume any phase event
+ok 27 - unsupported timestamps cannot corrupt state, change player presence, or consume any phase event
+  ---
+  duration_ms: 15.028992
+  type: 'test'
+  ...
+# Subtest: valid zero, fractional and upper-bound timestamps preserve finite JSON and distinct phase identities
+ok 28 - valid zero, fractional and upper-bound timestamps preserve finite JSON and distinct phase identities
+  ---
+  duration_ms: 76.355538
+  type: 'test'
+  ...
+# Subtest: pause/resume and empty-room reconnect shifts remain finite and replay identically near the host-time limit
+ok 29 - pause/resume and empty-room reconnect shifts remain finite and replay identically near the host-time limit
+  ---
+  duration_ms: 1.825726
+  type: 'test'
+  ...
+# Subtest: hostile metadata, throwing getters and unknown identities are ignored by reference without coercion
+ok 30 - hostile metadata, throwing getters and unknown identities are ignored by reference without coercion
+  ---
+  duration_ms: 1.529711
+  type: 'test'
+  ...
+# Subtest: mutating every nested public or controller view container cannot mutate a frozen source state
+ok 31 - mutating every nested public or controller view container cannot mutate a frozen source state
+  ---
+  duration_ms: 4.288356
+  type: 'test'
+  ...
+# Subtest: empty and prototype-named legitimate seats complete entire games with the actual winner and all scores
+ok 32 - empty and prototype-named legitimate seats complete entire games with the actual winner and all scores
+  ---
+  duration_ms: 90.329572
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1299.221393

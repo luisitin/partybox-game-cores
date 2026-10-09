@@ -1,0 +1,1112 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {access, copyFile, mkdir, readFile, writeFile} from 'node:fs/promises';
+import {constants} from 'node:fs';
+import {dirname, resolve} from 'node:path';
+import {fileURLToPath, pathToFileURL} from 'node:url';
+import {chromium} from 'playwright';
+
+// This is an integration test of the standalone, offline browser adapter. The
+// browser-only __G07 hook intentionally exposes state to deterministic tests;
+// production public/controller views are checked separately below.
+const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const html = resolve(root, 'play.html');
+const evidence = resolve(root, 'evidence/browser');
+const work = resolve(root, '.work/browser');
+const saveKey = 'partybox.g07.session.v1';
+const snapshot = process.argv.includes('--snapshot');
+const performanceOnly = process.argv.includes('--performance-only');
+const functionalOnly = process.argv.includes('--functional-only');
+assert(!(performanceOnly && functionalOnly), 'choose only one partial-check mode');
+assert(!(snapshot && (functionalOnly || performanceOnly)), 'only a fresh default full run can publish a snapshot');
+await mkdir(work, {recursive: true});
+const runId = new Date().toISOString().replace(/\D/g, '');
+const htmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
+const archive = resolve(work, 'runs', htmlSha256, runId);
+await mkdir(archive, {recursive: true});
+const profiles = [
+  {label: 'desktop', width: 1920, height: 1080, cpuThrottle: 1},
+  {label: 'phone4x', width: 390, height: 844, cpuThrottle: 4},
+];
+const rows = [];
+const checks = [];
+const pacingMeasurements = [];
+const report = {
+  runId,
+  htmlSha256,
+  browser: '', physicalPhoneTested: false, performanceWhileRecording: false,
+  performanceRequirements: {intervals: 600, minimumMeanFps: 59, maximumP99Ms: 17},
+  frameFiltering: 'none: all 600 consecutive requestAnimationFrame intervals retained',
+  benchmark: {players: 8, existingBid: {quantity: 8, face: 3}, openPrivateDice: 5,
+    interaction: 'change quantity and face every 30 intervals, including exact controller odds',
+    isolation: 'fresh browser context; functional test navigation history is not retained'},
+  recoveryStorage: {key: saveKey, scope: 'same-tab sessionStorage', ordinaryChecks: 'remove only this key before each document', recoveryChecks: 'fresh isolated contexts preserve this key across actual reloads'},
+  seed: 7199, profiles: rows, checks, pacingMeasurements, passed: false,
+  scope: performanceOnly ? 'performance-only' : functionalOnly ? 'functional-only' : 'full',
+};
+async function executablePath() {
+  if (process.env.CHROMIUM_PATH) return process.env.CHROMIUM_PATH;
+  try { await access(chromium.executablePath(), constants.X_OK); return undefined; }
+  catch { await access('/usr/bin/chromium', constants.X_OK); return '/usr/bin/chromium'; }
+}
+const browser = await chromium.launch({headless: true, executablePath: await executablePath(), args: ['--no-sandbox']});
+report.browser = browser.version();
+
+async function state(page) { return page.evaluate(() => window.__G07.state()); }
+async function control(page) { return page.evaluate(() => window.__G07.controller()); }
+async function init(page, options = {}) {
+  await page.evaluate(options => window.__G07.init({players: 3, mode: 'hotseat', seed: 7199, ...options}), options);
+}
+async function show(page) { await page.locator('#show-cup').click(); }
+async function privateGone(page, reason) {
+  assert.equal(await page.locator('#cup .die').count(), 0, `${reason}: private dice must be removed from the DOM`);
+}
+async function noOverflow(page) {
+  const sizes = await page.evaluate(() => ({
+    width: innerWidth, document: document.documentElement.scrollWidth, body: document.body.scrollWidth,
+  }));
+  assert(sizes.document <= sizes.width + 1, `document horizontal overflow: ${JSON.stringify(sizes)}`);
+  assert(sizes.body <= sizes.width + 1, `body horizontal overflow: ${JSON.stringify(sizes)}`);
+}
+async function chooseBid(page, bid) {
+  await page.locator('#bid-quantity').selectOption(String(bid.quantity));
+  await page.locator('#bid-face').selectOption(String(bid.face));
+}
+async function makeBid(page, bid) { await chooseBid(page, bid); await page.locator('#make-bid').click(); }
+async function publicSecretsAbsent(page) {
+  const view = await page.evaluate(() => window.__G07.view());
+  for (const key of ['cups', 'rng', 'models', 'ownDice']) {
+    assert(!Object.hasOwn(view, key), `public view contains private ${key}`);
+  }
+}
+async function legalOptionsMatch(page) {
+  const cv = await control(page);
+  const expected = cv.legalBids.map(bid => `${bid.quantity}:${bid.face}`).sort();
+  const quantities = await page.locator('#bid-quantity option:not([disabled])').evaluateAll(options => options.map(option => option.value));
+  const offered = [];
+  for (const quantity of quantities) {
+    await page.locator('#bid-quantity').selectOption(quantity);
+    const faces = await page.locator('#bid-face option:not([disabled])').evaluateAll(options => options.map(option => option.value));
+    for (const face of faces) offered.push(`${quantity}:${face}`);
+  }
+  assert.deepEqual(offered.sort(), expected, 'bid controls must offer exactly the legal raises');
+  assert(expected.length > 0, 'active player must have a legal opening/raise');
+}
+async function singleDieState(page, count) {
+  await init(page, {players: count, settings: {onesWild: false, palificoEnabled: false, calzaEnabled: true}});
+  const s = await state(page);
+  for (const id of s.order) { s.diceCount[id] = 1; s.cups[id] = [6]; }
+  s.turn = s.order[0]; s.nextStarter = s.turn;
+  s.bid = null; s.bidLog = []; s.palifico = false; s.palificoStarter = null;
+  await page.evaluate(s => window.__G07.setState(s), s);
+  return s;
+}
+async function armBot(page, pace, turnSeconds = 0) {
+  await init(page, {players: 2, mode: 'bots', ...(pace ? {pace} : {}), settings: {turnSeconds, calzaEnabled: false}});
+  return page.evaluate(() => {
+    const s = window.__G07.state(); s.turn = 'p1';
+    window.__G07.setState(s);
+    return {armedAt: window.__G07.time(), state: window.__G07.state()};
+  });
+}
+async function observeChange(page, before, timeoutMs = 6000) {
+  return page.evaluate(async ({before, timeoutMs}) => {
+    const signature = s => JSON.stringify({phase: s.phase.id, round: s.round, turn: s.turn, bid: s.bid, bids: s.bidLog.length});
+    const initial = signature(before.state);
+    return new Promise((resolve, reject) => {
+      let lastUnchangedAt = before.armedAt;
+      const poll = () => {
+        const at = window.__G07.time(), s = window.__G07.state();
+        if (signature(s) !== initial) return resolve({armedAt: before.armedAt, observedAt: at,
+          elapsedMs: at - before.armedAt, lastUnchangedMs: lastUnchangedAt - before.armedAt,
+          phaseStartedAt: s.phase.startedAt, phase: s.phase.id, turn: s.turn, bid: s.bid});
+        lastUnchangedAt = at;
+        if (at - before.armedAt > timeoutMs) return reject(new Error(`No scheduled action within ${timeoutMs}ms`));
+        requestAnimationFrame(poll);
+      };
+      requestAnimationFrame(poll);
+    });
+  }, {before, timeoutMs});
+}
+async function assertHeld(page, before, milliseconds) {
+  await page.waitForTimeout(milliseconds);
+  const held = await state(page);
+  assert.equal(held.phase.id, before.state.phase.id);
+  assert.equal(held.turn, before.state.turn);
+  assert.equal(held.round, before.state.round);
+  assert.deepEqual(held.bid, before.state.bid);
+  return (await page.evaluate(() => window.__G07.time())) - before.armedAt;
+}
+async function interruptFixture(page, pace, humanTurn = false) {
+  await init(page, {players: 3, mode: 'bots', skill: 'sharp', pace, settings: {
+    onesWild: false, calzaEnabled: true, calzaPolicy: 'interruptOnly', turnSeconds: 0,
+  }});
+  return page.evaluate(humanTurn => {
+    const s = window.__G07.state();
+    for (const id of s.order) s.diceCount[id] = 1;
+    s.cups = {p0: [6], p1: [4], p2: [2]};
+    s.turn = humanTurn ? 'p0' : 'p1'; s.palifico = false; s.palificoStarter = null;
+    s.bid = {quantity: 1, face: 2, playerId: humanTurn ? 'p1' : 'p0'}; s.bidLog = [s.bid];
+    window.__G07.setState(s);
+    return {armedAt: window.__G07.time(), state: window.__G07.state()};
+  }, humanTurn);
+}
+
+try {
+  for (const profile of profiles) {
+    let context = await browser.newContext({viewport: {width: profile.width, height: profile.height}, offline: true});
+    await context.addInitScript(key => { try { sessionStorage.removeItem(key); } catch {} }, saveKey);
+    let page = await context.newPage();
+    const errors = [], network = [], resources = [], dialogs = [];
+    function observe(page) {
+      page.on('pageerror', error => errors.push(String(error)));
+      page.on('request', request => {
+        if (/^(https?|wss?):/i.test(request.url())) network.push(request.url());
+        if (request.url() !== pathToFileURL(html).href && !/^(data|blob|about):/.test(request.url())) resources.push(request.url());
+      });
+      page.on('websocket', socket => network.push(socket.url()));
+      page.on('dialog', dialog => { dialogs.push(dialog.message()); void dialog.dismiss(); });
+    }
+    observe(page);
+    const cdp = await context.newCDPSession(page);
+    await cdp.send('Emulation.setCPUThrottlingRate', {rate: profile.cpuThrottle});
+    async function run(name, fn, {reduce = false, fresh = false, recovery = false, storageFault = null} = {}) {
+      if (performanceOnly && !fresh) return;
+      if (functionalOnly && fresh) return;
+      const check = {profile: profile.label, name, passed: false};
+      checks.push(check);
+      try {
+        if (fresh || recovery) {
+          // Repeated full-document navigation belongs to the integration test
+          // harness. Measure ordinary live play in its own context so discarded
+          // functional documents do not accumulate in the benchmark renderer.
+          await context.close();
+          context = await browser.newContext({viewport: {width: profile.width, height: profile.height}, offline: true});
+          if (!recovery) await context.addInitScript(key => { try { sessionStorage.removeItem(key); } catch {} }, saveKey);
+          if (storageFault) await context.addInitScript(method => { Storage.prototype[method] = function () { throw new DOMException('Blocked test storage', 'SecurityError'); }; }, storageFault);
+          page = await context.newPage();
+          observe(page);
+          const freshCdp = await context.newCDPSession(page);
+          await freshCdp.send('Emulation.setCPUThrottlingRate', {rate: profile.cpuThrottle});
+        }
+        await page.emulateMedia({reducedMotion: reduce ? 'reduce' : 'no-preference'});
+        await page.goto(pathToFileURL(html).href);
+        await page.waitForFunction(() => Boolean(window.__G07));
+        await fn();
+        await noOverflow(page);
+        check.passed = true;
+      } catch (error) {
+        check.error = error instanceof Error ? error.stack : String(error);
+      }
+      console.log(JSON.stringify(check));
+    }
+
+    await run('lobby supports every roster from 2 through 8 and explicit settings', async () => {
+      for (let count = 2; count <= 8; count++) {
+        await page.locator('#player-count').selectOption(String(count));
+        await page.locator('#start').click();
+        const s = await state(page);
+        assert.equal(s.order.length, count);
+        assert.equal(Object.keys(s.players).length, count);
+        assert.equal(s.phase.id, 'bid');
+        assert.equal(s.phase.deadline, null, 'default no-clock game must have no hidden deadline');
+        await privateGone(page, `${count}-player start`);
+        await publicSecretsAbsent(page);
+        await noOverflow(page);
+        await page.locator('#new-game').click();
+      }
+      await page.locator('#player-count').selectOption('3');
+      await page.locator('#setting-onesWild').uncheck();
+      await page.locator('#setting-calzaEnabled').check();
+      await page.locator('#setting-turnSeconds').fill('12');
+      await page.locator('#start').click();
+      const s = await state(page);
+      assert.equal(s.settings.onesWild, false);
+      assert.equal(s.settings.calzaEnabled, true);
+      assert.equal(s.settings.turnSeconds, 12);
+      assert.equal(s.phase.deadline - s.phase.startedAt, 12000);
+    });
+
+    await run('private cup disappears on hide, pass, pause and resume', async () => {
+      await init(page, {players: 2});
+      await privateGone(page, 'handoff');
+      assert(await page.locator('#handoff').isVisible());
+      await show(page);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      await page.locator('#hide-cup').click();
+      await privateGone(page, 'hidden');
+      await show(page);
+      const before = await state(page);
+      await makeBid(page, (await control(page)).legalBids[0]);
+      assert.notEqual((await state(page)).turn, before.turn);
+      await privateGone(page, 'passed device');
+      assert(await page.locator('#handoff').isVisible());
+      await show(page);
+      await page.locator('#pause').click();
+      assert((await state(page)).phase.paused);
+      await privateGone(page, 'paused');
+      await page.locator('#resume').click();
+      assert(!(await state(page)).phase.paused);
+      await privateGone(page, 'resumed before new owner opens cup');
+      await publicSecretsAbsent(page);
+    });
+
+    await run('changing the device holder clears private dice, odds and bid choices', async () => {
+      await init(page, {players: 3});
+      await show(page);
+      await makeBid(page, {quantity: 2, face: 4});
+      await show(page);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      assert((await page.locator('#private-note').textContent()).length > 0);
+      assert((await page.locator('#bid-quantity option').count()) > 0);
+      const s = await state(page);
+      await page.locator('#viewer').selectOption(s.order.find(id => id !== s.turn));
+      await privateGone(page, 'device holder changed');
+      assert.equal(await page.locator('#private-note').textContent(), '');
+      assert.equal(await page.locator('#bid-quantity option').count(), 0);
+      assert.equal(await page.locator('#bid-face option').count(), 0);
+      assert(await page.locator('#handoff').isVisible());
+    });
+
+    await run('legal bid selectors cover normal, wild-one and palifico raises', async () => {
+      for (const onesWild of [false, true]) {
+        await init(page, {settings: {onesWild, turnSeconds: 0}});
+        await show(page);
+        await legalOptionsMatch(page);
+        await makeBid(page, {quantity: 3, face: 4});
+        await show(page);
+        await legalOptionsMatch(page);
+        if (onesWild) {
+          const bids = (await control(page)).legalBids;
+          assert(bids.some(bid => bid.quantity === 2 && bid.face === 1));
+          assert(!bids.some(bid => bid.quantity === 1 && bid.face === 1));
+        }
+      }
+      await init(page, {settings: {onesWild: true, palificoEnabled: true, palificoExemption: 'none'}});
+      const s = await state(page);
+      s.palifico = true; s.palificoStarter = s.turn;
+      s.diceCount[s.turn] = 1; s.cups[s.turn] = [4];
+      await page.evaluate(s => window.__G07.setState(s), s);
+      await show(page);
+      await makeBid(page, {quantity: 1, face: 4});
+      await show(page);
+      await legalOptionsMatch(page);
+      assert((await control(page)).legalBids.every(bid => bid.face === 4));
+    });
+
+    await run('dudo reveals cups, applies loss and continues to a fresh round', async () => {
+      const initial = await singleDieState(page, 3);
+      await show(page);
+      await makeBid(page, {quantity: 1, face: 2});
+      await show(page);
+      await page.locator('#dudo').click();
+      const revealed = await state(page);
+      assert.equal(revealed.phase.id, 'reveal');
+      assert.equal(revealed.reveal.kind, 'dudo');
+      assert.equal(revealed.reveal.matches, 0);
+      assert.equal(revealed.reveal.loser, initial.turn);
+      assert.equal(revealed.diceCount[initial.turn], 0);
+      assert(revealed.eliminated.includes(initial.turn));
+      assert.deepEqual(revealed.reveal.dice, initial.cups);
+      await privateGone(page, 'public reveal has no private cup');
+      await publicSecretsAbsent(page);
+      await noOverflow(page);
+      await page.locator('#next-round').click();
+      const continued = await state(page);
+      assert.equal(continued.phase.id, 'bid');
+      assert.equal(continued.round, initial.round + 1);
+      assert.equal(continued.bid, null);
+      assert.equal(continued.reveal, null);
+      await privateGone(page, 'next round');
+    });
+
+    await run('optional calza is available only when legal and exact claims gain a die', async () => {
+      let s = await singleDieState(page, 3);
+      for (const id of s.order) s.cups[id] = [2];
+      await page.evaluate(s => window.__G07.setState(s), s);
+      await show(page);
+      await makeBid(page, {quantity: 3, face: 2});
+      await show(page);
+      const caller = (await state(page)).turn;
+      assert((await control(page)).canCalza);
+      assert(await page.locator('#calza').isEnabled());
+      await page.locator('#calza').click();
+      s = await state(page);
+      assert.equal(s.phase.id, 'reveal');
+      assert.equal(s.reveal.kind, 'calza');
+      assert.equal(s.reveal.matches, 3);
+      assert.equal(s.reveal.correct, true);
+      assert.equal(s.reveal.gained, true);
+      assert.equal(s.diceCount[caller], 2);
+      await page.locator('#next-round').click();
+      await privateGone(page, 'after calza continue');
+      for (const options of [
+        {players: 2, settings: {calzaEnabled: true}},
+        {players: 3, settings: {calzaEnabled: false}},
+      ]) {
+        await init(page, options); await show(page);
+        await makeBid(page, {quantity: 1, face: 2}); await show(page);
+        assert(!(await control(page)).canCalza);
+        assert(await page.locator('#calza').isDisabled() || !(await page.locator('#calza').isVisible()));
+      }
+      await init(page, {players: 3, settings: {calzaEnabled: true, calzaPolicy: 'interruptOnly'}});
+      await show(page); await makeBid(page, {quantity: 1, face: 2}); await show(page);
+      assert(!(await control(page)).canCalza, 'interruptOnly excludes the active turn holder');
+      const interruption = await state(page);
+      const other = interruption.order.find(id => id !== interruption.turn && id !== interruption.bid.playerId);
+      await page.locator('#viewer').selectOption(other);
+      await show(page);
+      assert((await control(page)).canCalza, 'another non-bidding seat may interrupt');
+      assert(await page.locator('#calza').isEnabled());
+      await page.locator('#calza').click();
+      const called = await state(page);
+      assert.equal(called.phase.id, 'reveal');
+      assert.equal(called.reveal.kind, 'calza');
+      assert.equal(called.reveal.caller, other);
+    });
+
+    await run('final loss reaches a visible winner and a new game can start', async () => {
+      const initial = await singleDieState(page, 2);
+      await show(page); await makeBid(page, {quantity: 1, face: 2}); await show(page);
+      const surviving = (await state(page)).turn;
+      await page.locator('#dudo').click();
+      if ((await state(page)).phase.id === 'reveal') await page.locator('#next-round').click();
+      const done = await state(page);
+      assert.equal(done.phase.id, 'done');
+      assert.equal(done.winner, surviving);
+      assert.equal(done.diceCount[initial.turn], 0);
+      assert((await page.locator('#status').textContent()).includes(done.players[surviving].name));
+      await privateGone(page, 'winner');
+      await noOverflow(page);
+      await page.locator('#new-game').click();
+      assert(await page.locator('#start').isVisible());
+      await page.locator('#start').click();
+      assert.equal((await state(page)).phase.id, 'bid');
+    });
+
+    await run('bots automate turns for easy, normal and sharp skills', async () => {
+      for (const skill of ['easy', 'normal', 'sharp']) {
+        await init(page, {players: 4, mode: 'bots', skill, settings: {turnSeconds: 0}});
+        let s = await state(page);
+        assert.equal(Object.values(s.players).filter(player => player.bot).length, 3);
+        // Observe the real browser scheduler. No bot inputs are injected here.
+        if (s.players[s.turn].bot) {
+          const snapshot = JSON.stringify({turn: s.turn, bid: s.bid, round: s.round, phase: s.phase.id});
+          await page.waitForFunction(snapshot => {
+            const s = window.__G07.state();
+            return JSON.stringify({turn: s.turn, bid: s.bid, round: s.round, phase: s.phase.id}) !== snapshot;
+          }, snapshot, {timeout: 5000});
+        } else {
+          await show(page); await makeBid(page, (await control(page)).legalBids[0]);
+          s = await state(page);
+          assert(s.players[s.turn].bot);
+          const snapshot = JSON.stringify({turn: s.turn, bid: s.bid, round: s.round, phase: s.phase.id});
+          await page.waitForFunction(snapshot => {
+            const s = window.__G07.state();
+            return JSON.stringify({turn: s.turn, bid: s.bid, round: s.round, phase: s.phase.id}) !== snapshot;
+          }, snapshot, {timeout: 5000});
+        }
+        await privateGone(page, `bot action at ${skill} skill`);
+        await publicSecretsAbsent(page);
+      }
+    });
+
+    await run('the manual bot-step control is reachable while a human holds the device', async () => {
+      await init(page, {players: 4, mode: 'bots', settings: {turnSeconds: 0}});
+      const before = await state(page);
+      before.turn = before.order.find(id => before.players[id].bot);
+      await page.evaluate(s => window.__G07.setState(s), before);
+      assert(await page.locator('#handoff').isVisible(), 'human device holder remains available during bot turn');
+      assert(await page.locator('#bot-step').isVisible(), 'manual bot control must not be inside a hidden waiting panel');
+      await page.locator('#bot-step').click();
+      const after = await state(page);
+      assert.notEqual(after.turn, before.turn);
+      assert.equal(after.bid.playerId, before.turn);
+      await privateGone(page, 'manual bot step');
+    });
+
+    await run('eligible bots make actual interrupt-only calza calls before the active turn', async () => {
+      await init(page, {players: 3, mode: 'bots', skill: 'sharp', pace: 'fast', settings: {
+        onesWild: false, calzaEnabled: true, calzaPolicy: 'interruptOnly', turnSeconds: 0,
+      }});
+      const s = await state(page);
+      for (const id of s.order) s.diceCount[id] = 1;
+      s.cups = {p0: [6], p1: [4], p2: [2]};
+      s.turn = 'p1'; s.palifico = false; s.palificoStarter = null;
+      s.bid = {quantity: 1, face: 2, playerId: 'p0'}; s.bidLog = [s.bid];
+      await page.evaluate(s => window.__G07.setState(s), s);
+      // p2 sees one matching die plus two unknowns: exact chance 25/36.
+      // The real browser schedules the eligible interrupt; no calza is injected.
+      await page.waitForFunction(() => window.__G07.state().phase.id === 'reveal', null, {timeout: 2000});
+      const called = await state(page);
+      assert.equal(called.reveal.caller, 'p2');
+      assert.equal(called.reveal.kind, 'calza');
+      assert.equal(called.reveal.correct, true);
+      assert.equal(called.reveal.matches, 1);
+      await privateGone(page, 'bot interrupt');
+    });
+
+    await run('an all-bot table holds its reveal until explicitly acknowledged', async () => {
+      await singleDieState(page, 3);
+      await show(page); await makeBid(page, {quantity: 1, face: 2}); await show(page);
+      await page.locator('#dudo').click();
+      const revealed = await state(page);
+      assert.equal(revealed.phase.id, 'reveal');
+      for (const player of Object.values(revealed.players)) player.bot = true;
+      await page.evaluate(s => window.__G07.setState(s), revealed);
+      await privateGone(page, 'all-bot reveal');
+      await page.waitForTimeout(2100);
+      const held = await state(page);
+      assert.equal(held.phase.id, 'reveal');
+      assert.equal(held.round, revealed.round);
+      assert.deepEqual(held.reveal, revealed.reveal);
+      await page.locator('#next-round').click();
+      const continued = await state(page);
+      assert.equal(continued.phase.id, 'bid');
+      assert.equal(continued.round, revealed.round + 1);
+      assert.equal(continued.reveal, null);
+      assert.equal(continued.phase.deadline, null, 'manual continuation must not invent a visible clock');
+      await privateGone(page, 'all-bot next round');
+    });
+
+    await run('an eliminated human can read and explicitly acknowledge the reveal', async () => {
+      const initial = await singleDieState(page, 3);
+      await show(page); await makeBid(page, {quantity: 1, face: 2}); await show(page);
+      await page.locator('#dudo').click();
+      const revealed = await state(page);
+      assert.equal(revealed.phase.id, 'reveal');
+      assert.equal(revealed.diceCount[initial.turn], 0);
+      for (const id of revealed.order) revealed.players[id].bot = id !== initial.turn;
+      await page.evaluate(s => window.__G07.setState(s), revealed);
+      await page.waitForTimeout(2100);
+      const held = await state(page);
+      assert.equal(held.phase.id, 'reveal');
+      assert.equal(held.round, revealed.round);
+      assert.deepEqual(held.reveal, revealed.reveal);
+      await page.locator('#next-round').click();
+      const continued = await state(page);
+      assert.equal(continued.phase.id, 'bid');
+      assert.equal(continued.round, revealed.round + 1);
+      await privateGone(page, 'observer acknowledged');
+    });
+
+    await run('normal, fast and slow bot pacing use actual selected delays', async () => {
+      assert.equal(await page.locator('#bot-pace-setup').inputValue(), 'normal', 'default lobby pace');
+      for (const [pace, minimum, maximum] of [['normal', 1900, 2300], ['fast', 650, 1100], ['slow', 3900, 4500]]) {
+        const before = await armBot(page, pace === 'normal' ? undefined : pace);
+        assert.equal(await page.locator('#bot-pace').inputValue(), pace);
+        assert.equal(await page.evaluate(() => window.__G07.pace()), pace);
+        const measured = await observeChange(page, before);
+        pacingMeasurements.push({profile: profile.label, kind: 'regular', pace, ...measured});
+        assert(measured.elapsedMs >= minimum && measured.elapsedMs <= maximum,
+          `${pace} actual action ${measured.elapsedMs}ms outside ${minimum}–${maximum}ms`);
+        if (pace === 'slow') assert(measured.lastUnchangedMs > 3000);
+        await privateGone(page, `${pace} bot action`);
+      }
+      for (const [pace, minimum, maximum] of [['fast', 350, 800], ['normal', 1550, 2000], ['slow', 3550, 4100]]) {
+        const before = await interruptFixture(page, pace);
+        const measured = await observeChange(page, before);
+        pacingMeasurements.push({profile: profile.label, kind: 'interrupt', pace, ...measured});
+        assert(measured.elapsedMs >= minimum && measured.elapsedMs <= maximum,
+          `${pace} interrupt was ${measured.elapsedMs}ms`);
+        assert.equal((await state(page)).reveal.caller, 'p2');
+      }
+    });
+
+    await run('manual pacing holds regular bot actions until one explicit step', async () => {
+      const before = await armBot(page, 'manual');
+      await show(page);
+      const elapsedMs = await assertHeld(page, before, 2250);
+      assert(elapsedMs >= 2200);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      assert(await page.locator('#bot-step').isVisible());
+      await page.locator('#bot-step').click();
+      const after = await state(page);
+      assert.equal(after.bid.playerId, 'p1');
+      assert.equal(after.bidLog.length, before.state.bidLog.length + 1);
+      pacingMeasurements.push({profile: profile.label, kind: 'manual-regular', pace: 'manual', heldMs: elapsedMs});
+      await privateGone(page, 'manual bot step');
+    });
+
+    await run('manual pacing exposes an eligible bot calza even during a human turn', async () => {
+      const before = await interruptFixture(page, 'manual', true);
+      assert(await page.locator('#bot-step').isVisible());
+      const heldMs = await assertHeld(page, before, 2250);
+      await page.locator('#bot-step').click();
+      const after = await state(page);
+      assert.equal(after.reveal.kind, 'calza');
+      assert.equal(after.reveal.caller, 'p2');
+      assert.equal(after.reveal.correct, true);
+      pacingMeasurements.push({profile: profile.label, kind: 'manual-interrupt', pace: 'manual', heldMs});
+      await privateGone(page, 'manual calza');
+    });
+
+    await run('live pace changes synchronize controls, cover the cup and restart scheduling', async () => {
+      const before = await armBot(page, 'fast');
+      await show(page);
+      await page.waitForTimeout(250);
+      await page.locator('#bot-pace').selectOption('manual');
+      assert.equal(await page.locator('#bot-pace-setup').inputValue(), 'manual');
+      await privateGone(page, 'pace change');
+      assert.equal(await page.locator('#private-note').textContent(), '');
+      assert.equal(await page.locator('#bid-quantity option').count(), 0);
+      await assertHeld(page, before, 2250);
+      await page.locator('#bot-pace').selectOption('fast');
+      const restarted = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      const measured = await observeChange(page, restarted);
+      assert(measured.elapsedMs >= 650 && measured.elapsedMs <= 1100);
+      pacingMeasurements.push({profile: profile.label, kind: 'pace-change', pace: 'fast', ...measured});
+    });
+
+    await run('pause holds bot actions and resume starts a fresh selected wait', async () => {
+      const before = await armBot(page, 'normal');
+      await page.waitForTimeout(800);
+      await page.locator('#pause').click();
+      await assertHeld(page, before, 2250);
+      await page.locator('#resume').click();
+      const resumed = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      const measured = await observeChange(page, resumed);
+      assert(measured.elapsedMs >= 1900 && measured.elapsedMs <= 2300,
+        `resumed selected wait was ${measured.elapsedMs}ms`);
+      pacingMeasurements.push({profile: profile.label, kind: 'resume', pace: 'normal', ...measured});
+      await privateGone(page, 'resumed bot action');
+    });
+
+    await run('a human can call calza after reading for over 900ms at normal pace', async () => {
+      await init(page, {players: 3, mode: 'bots', pace: 'normal', settings: {
+        onesWild: false, calzaEnabled: true, calzaPolicy: 'anyOther', turnSeconds: 0,
+      }});
+      const before = await page.evaluate(() => {
+        const s = window.__G07.state();
+        for (const id of s.order) s.diceCount[id] = 1;
+        s.cups = {p0: [2], p1: [6], p2: [4]}; s.turn = 'p1'; s.palifico = false;
+        s.bid = {quantity: 1, face: 2, playerId: 'p2'}; s.bidLog = [s.bid];
+        window.__G07.setState(s); return {armedAt: window.__G07.time(), state: window.__G07.state()};
+      });
+      await show(page);
+      await assertHeld(page, before, 1050);
+      assert(await page.locator('#calza').isEnabled());
+      const calledAt = await page.evaluate(() => window.__G07.time());
+      assert(calledAt - before.armedAt > 900 && calledAt - before.armedAt < 1650);
+      await page.locator('#calza').click();
+      const after = await state(page);
+      assert.equal(after.reveal.caller, 'p0'); assert.equal(after.reveal.correct, true);
+      const dispatchedMs = after.phase.startedAt - before.armedAt;
+      assert(dispatchedMs > 900 && dispatchedMs < 1650, `human calza dispatched at ${dispatchedMs}ms`);
+      pacingMeasurements.push({profile: profile.label, kind: 'human-calza', pace: 'normal', elapsedMs: dispatchedMs, requestedAt: calledAt});
+      await privateGone(page, 'human calza');
+    });
+
+    await run('a visible one-second core clock takes priority over normal and manual pacing', async () => {
+      for (const pace of ['normal', 'manual']) {
+        const before = await armBot(page, pace, 1);
+        const measured = await observeChange(page, before, 2500);
+        assert(measured.elapsedMs >= 800 && measured.elapsedMs < 1500);
+        assert(measured.bid, 'core deadline must produce a legal automatic opening bid');
+        pacingMeasurements.push({profile: profile.label, kind: 'core-clock', pace, ...measured});
+        await privateGone(page, 'core deadline');
+      }
+      await interruptFixture(page, 'manual');
+      const overdue = await page.evaluate(() => {
+        const s = window.__G07.state(), armedAt = window.__G07.time();
+        s.phase.startedAt = armedAt; s.phase.deadline = armedAt + 1000;
+        window.__G07.setState(s);
+        while (performance.now() < s.phase.deadline + 10) { /* hold queued interval until explicit click */ }
+        window.__G07.event({type: 'timer', now: window.__G07.time(), phaseId: s.phase.id, startedAt: s.phase.startedAt});
+        const expected = window.__G07.state();
+        window.__G07.setState(s);
+        document.querySelector('#bot-step').click();
+        const after = window.__G07.state();
+        const pick = v => ({phase: v.phase.id, turn: v.turn, bid: v.bid, bidLog: v.bidLog,
+          diceCount: v.diceCount, reveal: v.reveal, winner: v.winner});
+        return {armedAt, clickedAt: window.__G07.time(), deadline: s.phase.deadline,
+          expected: pick(expected), actual: pick(after)};
+      });
+      assert.deepEqual(overdue.actual, overdue.expected, 'the actual core timer outcome must precede and consume a manual calza');
+      pacingMeasurements.push({profile: profile.label, kind: 'overdue-clock-manual-step', pace: 'manual', ...overdue});
+      await init(page, {players: 3, mode: 'hotseat', pace: 'manual', settings: {turnSeconds: 1, calzaEnabled: false}});
+      const overdueHuman = await page.evaluate(() => {
+        const h = window.__G07, s = h.state(), armedAt = h.time();
+        s.turn = 'p0'; s.bid = null; s.bidLog = [];
+        s.phase.startedAt = armedAt; s.phase.deadline = armedAt + 1000;
+        h.setState(s);
+        const choices = h.controller().legalBids;
+        while (performance.now() < s.phase.deadline + 10) { /* queue a late human click after a real stall */ }
+        h.event({type: 'timer', now: h.time(), phaseId: s.phase.id, startedAt: s.phase.startedAt});
+        const expected = h.state();
+        const late = choices.find(b => b.quantity !== expected.bid.quantity || b.face !== expected.bid.face);
+        h.setState(s);
+        document.querySelector('#show-cup').click();
+        const quantity = document.querySelector('#bid-quantity');
+        quantity.value = String(late.quantity); quantity.dispatchEvent(new Event('change'));
+        document.querySelector('#bid-face').value = String(late.face);
+        document.querySelector('#make-bid').click();
+        const pick = v => ({phase: v.phase.id, bid: v.bid, bidLog: v.bidLog, turn: v.turn, round: v.round});
+        return {armedAt, clickedAt: h.time(), deadline: s.phase.deadline, late,
+          expected: pick(expected), actual: pick(h.state())};
+      });
+      assert.equal(overdueHuman.expected.phase, 'bid');
+      assert.equal(overdueHuman.expected.bidLog.length, 1);
+      assert.deepEqual(overdueHuman.actual, overdueHuman.expected, 'an expired human click must neither beat the timer nor replay into the new turn');
+      pacingMeasurements.push({profile: profile.label, kind: 'overdue-clock-human-input', pace: 'manual', ...overdueHuman});
+      await privateGone(page, 'expired human input');
+    });
+
+    if (profile.label === 'desktop') await run('normal pacing extends the measured eight-seat public bid window', async () => {
+      const beforeBytes = await readFile(resolve(evidence, 'round-1-before-pacing.json'));
+      const baseline = JSON.parse(beforeBytes);
+      await init(page, {players: 8, mode: 'bots', pace: 'normal', settings: {calzaEnabled: true, turnSeconds: 0}, seed: 17});
+      const after = await page.evaluate(async () => {
+        const s = window.__G07.state(); s.turn = 'p1';
+        s.bid = {quantity: 1, face: 2, playerId: 'p7'}; s.bidLog = [s.bid];
+        for (const id of s.order) s.cups[id] = [2, 3, 4, 5, 6];
+        window.__G07.setState(s);
+        const armedAt = window.__G07.time();
+        document.querySelector('#show-cup').click();
+        const capture = () => {
+          const state = window.__G07.state(), calza = document.querySelector('#calza');
+          return {at: window.__G07.time(), phaseStartedAt: state.phase.startedAt, bid: state.bid,
+            turn: state.turn, phase: state.phase.id, canHumanCalza: window.__G07.controller()?.canCalza ?? false,
+            openDice: document.querySelectorAll('#cup .die').length, bidText: document.querySelector('#bid-description').textContent,
+            calzaVisible: calza.getClientRects().length > 0, calzaEnabled: !calza.disabled};
+        };
+        const records = [capture()];
+        return new Promise((resolve, reject) => {
+          const poll = () => {
+            const state = window.__G07.state(), previous = records.at(-1);
+            if (state.turn !== previous.turn || state.phase.id !== previous.phase) records.push(capture());
+            if (state.turn === 'p0' || state.phase.id !== 'bid') return resolve({armedAt, records});
+            if (window.__G07.time() - armedAt > 24000) return reject(new Error('Eight-seat pacing probe did not reach the human'));
+            requestAnimationFrame(poll);
+          };
+          requestAnimationFrame(poll);
+        });
+      });
+      const intervals = after.records.slice(1).map((record, index) => ({elapsedMs: record.at - after.records[index].at,
+        previousBidTextWords: after.records[index].bidText.trim().split(/\s+/).length,
+        oldHumanCupOpen: after.records[index].openDice > 0, newHumanCupOpen: record.openDice > 0}));
+      assert.equal(intervals.length, 7);
+      const trajectory = records => records.map(({turn, phase, bid}) => ({turn, phase, bid}));
+      assert.deepEqual(trajectory(after.records), trajectory(baseline.records), 'before/after probes must have the identical public game trajectory');
+      assert(intervals.every(row => row.elapsedMs >= 1900 && row.elapsedMs <= 2300));
+      const mean = rows => rows.reduce((sum, row) => sum + row.elapsedMs, 0) / rows.length;
+      const probe = {schemaVersion: 1, htmlSha256, browser: report.browser, scope: 'actual standalone browser; no CPU throttle',
+        viewport: {width: profile.width, height: profile.height}, cpuThrottle: profile.cpuThrottle,
+        fixture: {players: 8, mode: 'bots', skill: 'normal', seed: 17, settings: {calzaEnabled: true, turnSeconds: 0},
+          edits: {turn: 'p1', bid: {quantity: 1, face: 2, playerId: 'p7'}, allCups: [2, 3, 4, 5, 6]}},
+        beforeFile: 'round-1-before-pacing.json', beforeSha256: createHash('sha256').update(beforeBytes).digest('hex'),
+        beforeIntervals: baseline.intervals, after: {pace: 'normal', regularDelayMs: 2000, interruptDelayMs: 1650, ...after, intervals},
+        comparison: {beforeMeanMs: mean(baseline.intervals), afterMeanMs: mean(intervals),
+          meanWindowRatio: mean(intervals) / mean(baseline.intervals)}, passed: true};
+      await writeFile(resolve(work, 'round-1-pacing.json'), JSON.stringify(probe, null, 2) + '\n');
+      await writeFile(resolve(archive, 'round-1-pacing.json'), JSON.stringify(probe, null, 2) + '\n');
+      report.pacingProbeFile = 'round-1-pacing.json';
+    });
+
+    await run('pause holds real deadlines and resume shifts by actual elapsed time', async () => {
+      await init(page, {players: 2, settings: {turnSeconds: 1}});
+      const initial = await state(page);
+      assert.equal(initial.phase.deadline - initial.phase.startedAt, 1000);
+      await show(page);
+      await page.waitForTimeout(150);
+      await page.locator('#pause').click();
+      const paused = await state(page);
+      assert(paused.phase.paused);
+      const pausedAt = paused.phase.paused.at;
+      await page.waitForTimeout(1250);
+      const held = await state(page);
+      assert.equal(held.turn, paused.turn);
+      assert.deepEqual(held.bid, paused.bid);
+      assert.equal(held.phase.deadline, paused.phase.deadline);
+      assert((await page.evaluate(() => window.__G07.time())) - pausedAt >= 1200);
+      await privateGone(page, 'deadline paused');
+      await page.locator('#resume').click();
+      const resumed = await state(page);
+      const reading = await page.evaluate(() => window.__G07.time());
+      assert(!resumed.phase.paused);
+      const shiftedBy = resumed.phase.deadline - paused.phase.deadline;
+      assert(shiftedBy >= 1200, `resume shift was only ${shiftedBy}ms`);
+      assert(Math.abs(shiftedBy - (reading - pausedAt)) < 200, 'deadline shift must use elapsed clock time');
+      await privateGone(page, 'deadline resumed');
+      await page.waitForTimeout(100);
+      assert.equal((await state(page)).turn, resumed.turn, 'paused time must not cause an immediate timeout');
+      await page.waitForFunction(turn => window.__G07.state().turn !== turn, resumed.turn, {timeout: 2500});
+      assert((await state(page)).bid, 'expired opener receives the core automatic legal bid');
+    });
+
+    await run('deadline catches up after a real main-thread stall', async () => {
+      await init(page, {players: 2, settings: {turnSeconds: 1}});
+      const before = await state(page);
+      const elapsed = await page.evaluate(() => {
+        const start = performance.now();
+        while (performance.now() - start < 1250) { /* simulate a suspended/busy foreground adapter */ }
+        window.__G07.tick();
+        return performance.now() - start;
+      });
+      assert(elapsed >= 1250);
+      const after = await state(page);
+      assert.notEqual(after.turn, before.turn, 'adapter must compare elapsed time with the deadline');
+      assert(after.bid);
+      await privateGone(page, 'timeout handoff');
+    });
+
+    await run('player names render as safe literal text', async () => {
+      await page.locator('#player-count').selectOption('3');
+      const names = ['<img src=x onerror=alert(1)>', 'A<&"quote">', 'L'.repeat(40)];
+      for (let index = 0; index < names.length; index++) await page.locator(`#name-${index}`).fill(names[index]);
+      await page.locator('#start').click();
+      const s = await state(page);
+      s.turn = s.order[2];
+      await page.evaluate(s => window.__G07.setState(s), s);
+      const text = await page.locator('#players').textContent();
+      for (const id of s.order) assert(text.includes(s.players[id].name));
+      assert((await page.locator('#status').textContent()).includes(names[2]));
+      await noOverflow(page);
+      assert.equal(await page.locator('#players img, #players script, #status img, #status script').count(), 0);
+      assert.equal(dialogs.length, 0, 'untrusted names must not execute event handlers');
+      await show(page);
+      await makeBid(page, (await control(page)).legalBids[0]);
+      await show(page); await page.locator('#dudo').click();
+      assert.equal(await page.locator('img[src="x"]').count(), 0);
+    });
+
+    await run('reduced motion removes running animations and long transitions', async () => {
+      await init(page, {players: 8}); await show(page);
+      const reduced = await page.evaluate(() => {
+        const long = value => value.split(',').some(value => parseFloat(value) * (value.trim().endsWith('ms') ? 1 : 1000) > 1);
+        return {
+          matches: matchMedia('(prefers-reduced-motion: reduce)').matches,
+          offenders: [...document.querySelectorAll('*')].flatMap(element => {
+            const css = getComputedStyle(element);
+            const runningAnimation = css.animationName !== 'none' && long(css.animationDuration);
+            return runningAnimation || long(css.transitionDuration) ? [element.id || element.className || element.tagName] : [];
+          }),
+        };
+      });
+      assert(reduced.matches);
+      assert.deepEqual(reduced.offenders, []);
+    }, {reduce: true});
+
+    async function checkpoint() {
+      return page.evaluate(key => {
+        window.__G07.save();
+        const raw = sessionStorage.getItem(key);
+        if (!raw) throw new Error('The live session was not checkpointed');
+        return {raw, saved: JSON.parse(raw), state: window.__G07.state(), host: window.__G07.host()};
+      }, saveKey);
+    }
+    async function reloadRecovery() {
+      await page.reload();
+      await page.waitForFunction(() => Boolean(window.__G07));
+    }
+    async function assertPending() {
+      assert.equal(await state(page), null, 'a saved game must wait for explicit consent');
+      assert.deepEqual(await page.evaluate(() => [window.__G07.view(), window.__G07.controller()]), [null, null]);
+      assert.equal((await page.evaluate(() => window.__G07.host())).pending, true);
+      assert(await page.locator('#recovery').isVisible());
+      await privateGone(page, 'saved-game gate');
+      assert.equal(await page.locator('#private-note').textContent(), '');
+      assert.equal(await page.locator('#bid-quantity option, #bid-face option').count(), 0);
+      assert.equal(await page.locator('#reveal-cups .die').count(), 0);
+    }
+    async function installRaw(raw) {
+      await page.evaluate(({key, raw}) => {
+        document.querySelector('#new-game').click();
+        sessionStorage.setItem(key, raw);
+      }, {key: saveKey, raw});
+      await reloadRecovery();
+    }
+    function equivalentRecovered(actual, expected) {
+      assert.equal(actual.phase.startedAt, expected.phase.startedAt);
+      assert.equal(actual.phaseClock, expected.phaseClock);
+      const copy = structuredClone(actual);
+      if (expected.phase.deadline !== null && !expected.phase.paused && expected.phase.id !== 'done') {
+        const shift = actual.phase.deadline - expected.phase.deadline;
+        assert(shift >= 0, `saved hold/resume clock shift ${shift}ms`);
+        copy.phase.deadline = expected.phase.deadline;
+      }
+      assert.deepEqual(copy, expected, 'resumption must preserve the complete game state');
+    }
+    function withoutClock(s) {
+      const copy = structuredClone(s);
+      delete copy.phase.startedAt; delete copy.phase.deadline; delete copy.phaseClock;
+      return copy;
+    }
+
+    await run('reload hides an open cup behind an explicit saved-game gate', async () => {
+      await init(page, {players: 3, pace: 'manual'}); await show(page);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      const before = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      equivalentRecovered(await state(page), before.state);
+      assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+      await privateGone(page, 'explicit saved-game resume');
+      await show(page);
+      assert.deepEqual(await page.locator('#cup .die').evaluateAll(dice => dice.map(die => Number(die.getAttribute('aria-label')))),
+        (await control(page)).ownDice);
+    }, {recovery: true});
+
+    await run('pending time and a second reload preserve the original remaining turn clock', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 3}});
+      const before = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      const first = await page.evaluate(key => sessionStorage.getItem(key), saveKey);
+      await page.waitForTimeout(1250);
+      await reloadRecovery(); await assertPending();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), first, 'pending reload must not rewrite the candidate');
+      await page.waitForTimeout(500);
+      await page.locator('#resume-saved').click();
+      const after = await state(page), at = await page.evaluate(() => window.__G07.time());
+      equivalentRecovered(after, before.state);
+      assert(Math.abs((after.phase.deadline - at) - (before.saved.state.phase.deadline - before.saved.savedHostNow)) < 250);
+      assert.equal(after.bid, null, 'time spent deciding whether to resume cannot take a turn');
+      await privateGone(page, 'clock recovery');
+    }, {recovery: true});
+
+    await run('an already-expired saved turn is consumed once after explicit resume', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 1}});
+      const before = await checkpoint(), saved = before.saved;
+      saved.state.phase.deadline = saved.savedHostNow - 1;
+      await installRaw(JSON.stringify(saved)); await assertPending();
+      await page.waitForTimeout(200);
+      await page.locator('#resume-saved').click();
+      await page.waitForFunction(() => window.__G07.state()?.bidLog.length === 1, null, {timeout: 2000});
+      const after = await state(page);
+      assert.notEqual(after.turn, saved.state.turn);
+      assert.equal(after.bidLog.length, 1);
+      await privateGone(page, 'expired saved timer');
+      await page.evaluate(() => { window.__G07.tick(); window.__G07.tick(); });
+      assert.equal((await state(page)).bidLog.length, 1, 'the old timer cannot be replayed');
+    }, {recovery: true});
+
+    await run('intentional and empty-room pauses survive saved-game recovery', async () => {
+      await init(page, {players: 2, pace: 'manual', settings: {turnSeconds: 3}});
+      await page.locator('#pause').click();
+      const held = await checkpoint();
+      await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      assert.deepEqual(await state(page), held.state);
+      await page.waitForTimeout(250);
+      assert((await state(page)).phase.paused, 'recovery consent is not a VIP resume');
+      await privateGone(page, 'held saved game');
+      await page.locator('#resume').click(); assert(!(await state(page)).phase.paused);
+      await page.evaluate(() => {
+        const h = window.__G07;
+        for (const id of h.state().order) h.event({type: 'player', playerId: id, connected: false, now: h.time()});
+      });
+      assert.equal((await state(page)).autoPaused, true);
+      const empty = await checkpoint(); await reloadRecovery(); await assertPending();
+      await page.locator('#resume-saved').click();
+      assert.deepEqual(await state(page), empty.state);
+      await page.locator('#resume').click();
+      assert((await state(page)).phase.paused, 'an empty room remains auto-paused');
+    }, {recovery: true});
+
+    await run('reveal and winner phases survive recovery without automatic acknowledgement', async () => {
+      for (const players of [3, 2]) {
+        await singleDieState(page, players); await show(page);
+        await makeBid(page, {quantity: players, face: 6}); await show(page); await page.locator('#dudo').click();
+        const before = await checkpoint();
+        assert.equal(before.state.phase.id, players === 3 ? 'reveal' : 'done');
+        await reloadRecovery(); await assertPending(); await page.locator('#resume-saved').click();
+        equivalentRecovered(await state(page), before.state);
+        await privateGone(page, 'public reveal recovered');
+        await page.waitForTimeout(250);
+        assert.equal((await state(page)).phase.id, before.state.phase.id);
+        if (players === 3) { await page.locator('#next-round').click(); assert.equal((await state(page)).round, before.state.round + 1); }
+        else assert((await page.locator('#status').textContent()).includes('wins'));
+      }
+    }, {recovery: true});
+
+    await run('saved manual bot cursor, mixed skills and phase markers continue deterministically', async () => {
+      await init(page, {players: 3, mode: 'bots', pace: 'manual', seed: 17, settings: {calzaEnabled: false}});
+      const fixture = await state(page); fixture.turn = 'p1';
+      fixture.bid = {quantity: 1, face: 2, playerId: 'p0'}; fixture.bidLog = [fixture.bid];
+      await page.evaluate(s => window.__G07.setState(s), fixture);
+      const original = await checkpoint(), saved = original.saved;
+      saved.skills = [['p0', 'easy'], ['p1', 'sharp'], ['p2', 'normal']];
+      saved.currentTimerConsumed = true; saved.sampledCurrentBid = true;
+      await installRaw(JSON.stringify(saved)); await assertPending(); await page.locator('#resume-saved').click();
+      const host = await page.evaluate(() => window.__G07.host());
+      assert.deepEqual(host.botRng, saved.botRng); assert.deepEqual(host.skills, saved.skills);
+      assert.equal(host.pace, 'manual'); assert.equal(host.currentTimerConsumed, true); assert.equal(host.sampledCurrentBid, true);
+      const before = await checkpoint();
+      await page.waitForTimeout(300); assert.deepEqual((await state(page)).bid, saved.state.bid);
+      await page.locator('#bot-step').click();
+      const first = {state: withoutClock(await state(page)), host: await page.evaluate(() => window.__G07.host())};
+      await installRaw(before.raw); await assertPending(); await page.locator('#resume-saved').click();
+      await page.locator('#bot-step').click();
+      assert.deepEqual(withoutClock(await state(page)), first.state, 'the saved bot must sample the same next input');
+      assert.deepEqual((await page.evaluate(() => window.__G07.host())).botRng, first.host.botRng);
+      await privateGone(page, 'recovered bot action');
+    }, {recovery: true});
+
+    await run('saved automatic pacing restarts a full presentation wait after resume', async () => {
+      const before = await armBot(page, 'normal');
+      await page.waitForTimeout(500); await checkpoint(); await reloadRecovery(); await assertPending();
+      await page.waitForTimeout(500); await page.locator('#resume-saved').click();
+      const resumed = {armedAt: await page.evaluate(() => window.__G07.time()), state: await state(page)};
+      assert.equal(resumed.state.turn, before.state.turn);
+      await assertHeld(page, resumed, 1000);
+      const measured = await observeChange(page, resumed, 3000);
+      assert(measured.elapsedMs >= 1900 && measured.elapsedMs <= 2300);
+      pacingMeasurements.push({profile: profile.label, kind: 'saved-game-resume', pace: 'normal', ...measured});
+      await privateGone(page, 'recovered automatic bot action');
+    }, {recovery: true});
+
+    await run('corrupt, incompatible and invalid own-leaf saves are rejected safely', async () => {
+      await init(page, {players: 3, pace: 'manual'}); const before = await checkpoint();
+      const variants = ['{'];
+      for (const mutate of [
+        saved => { saved.version = 2; }, saved => { saved.gameVersion = '0.0.0'; },
+        saved => { saved.state.cups.p0[0] = 7; }, saved => { saved.botRng.step = -1; },
+        saved => { saved.state.models.p0.truth = 0; },
+        saved => { Object.defineProperty(saved.state.cups, '__proto__', {value: [7], enumerable: true}); },
+      ]) { const saved = structuredClone(before.saved); mutate(saved); variants.push(JSON.stringify(saved)); }
+      for (const raw of variants) {
+        await installRaw(raw);
+        assert.equal(await state(page), null);
+        assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+        assert(await page.locator('#setup').isVisible()); await privateGone(page, 'invalid save');
+        assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null, 'bad saves are removed');
+      }
+      await page.locator('#start').click(); assert.equal((await state(page)).phase.id, 'bid');
+    }, {recovery: true});
+
+    await run('Discard and New game remove only the session checkpoint', async () => {
+      await init(page, {players: 2, pace: 'manual'}); await checkpoint();
+      await page.evaluate(() => sessionStorage.setItem('g07-test-unrelated', 'keep'));
+      await reloadRecovery(); await assertPending(); await page.locator('#discard-saved').click();
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      assert.equal(await page.evaluate(() => sessionStorage.getItem('g07-test-unrelated')), 'keep');
+      await page.locator('#start').click(); await checkpoint(); await page.locator('#new-game').click();
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), null);
+      await reloadRecovery(); assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+    }, {recovery: true});
+
+    await run('blocked storage reads keep the game playable with a visible notice', async () => {
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert((await page.locator('#storage-note').textContent()).trim());
+      await page.locator('#start').click(); await show(page);
+      await makeBid(page, (await control(page)).legalBids[0]); await privateGone(page, 'blocked storage read');
+    }, {recovery: true, storageFault: 'getItem'});
+
+    await run('blocked storage writes keep ordinary play and explicit pause working', async () => {
+      await init(page, {players: 2, pace: 'manual'});
+      await page.evaluate(() => window.__G07.save());
+      assert((await page.locator('#storage-note').textContent()).trim());
+      await show(page); await makeBid(page, (await control(page)).legalBids[0]);
+      await page.locator('#pause').click(); assert((await state(page)).phase.paused);
+      await privateGone(page, 'blocked storage write');
+    }, {recovery: true, storageFault: 'setItem'});
+
+    await run('blocked removal uses a tombstone without trapping the table', async () => {
+      await init(page, {players: 2, pace: 'manual'}); await checkpoint();
+      await reloadRecovery(); await assertPending(); await page.locator('#discard-saved').click();
+      assert.equal(await state(page), null); assert(await page.locator('#setup').isVisible());
+      assert.equal(await page.evaluate(key => sessionStorage.getItem(key), saveKey), '', 'blocked removal must tombstone the old checkpoint');
+      await reloadRecovery(); assert.equal((await page.evaluate(() => window.__G07.host())).pending, false);
+      await page.locator('#start').click(); assert.equal((await state(page)).phase.id, 'bid');
+      await page.locator('#new-game').click(); assert.equal(await state(page), null);
+      await privateGone(page, 'blocked storage removal');
+    }, {recovery: true, storageFault: 'removeItem'});
+
+    await run('600 actual animation-frame intervals meet the strict refresh budget', async () => {
+      await init(page, {players: 8, settings: {turnSeconds: 0}});
+      await show(page);
+      await makeBid(page, {quantity: 8, face: 3});
+      await show(page);
+      assert.equal(await page.locator('#cup .die').count(), 5);
+      assert((await control(page)).odds !== null, 'sample must include exact odds for a real existing bid');
+      const sample = await page.evaluate(async () => {
+        const timestamps = [], intervals = [];
+        return new Promise(resolve => {
+          const frame = time => {
+            timestamps.push(time);
+            if (timestamps.length > 1) intervals.push(time - timestamps[timestamps.length - 2]);
+            // Exercise the real visible bid UI throughout the run. There is no
+            // warm-up exclusion, outlier removal, or synthetic timestamp clock.
+            if (intervals.length % 30 === 0) {
+              const quantity = document.querySelector('#bid-quantity');
+              const quantities = [...quantity.options].filter(option => !option.disabled);
+              const currentQuantity = quantities.findIndex(option => option.value === quantity.value);
+              quantity.value = quantities[(currentQuantity + 1) % quantities.length].value;
+              quantity.dispatchEvent(new Event('change', {bubbles: true}));
+              const face = document.querySelector('#bid-face');
+              const options = [...face.options].filter(option => !option.disabled);
+              const index = options.findIndex(option => option.value === face.value);
+              face.value = options[(index + 1) % options.length].value;
+              face.dispatchEvent(new Event('change', {bubbles: true}));
+            }
+            if (intervals.length === 600) resolve({timestampsMs: timestamps, intervalsMs: intervals});
+            else requestAnimationFrame(frame);
+          };
+          requestAnimationFrame(frame);
+        });
+      });
+      assert.equal(sample.intervalsMs.length, 600);
+      assert.equal(sample.timestampsMs.length, 601);
+      const sorted = [...sample.intervalsMs].sort((a, b) => a - b);
+      const totalMs = sample.intervalsMs.reduce((sum, value) => sum + value, 0);
+      const measurement = {
+        ...profile, ...sample, totalMs, meanMs: totalMs / 600,
+        fps: 600000 / totalMs, p99Ms: sorted[Math.ceil(600 * 0.99) - 1], maxMs: sorted.at(-1),
+        droppedIntervalsOver17Ms: sample.intervalsMs.filter(value => value > 17).length,
+        sampleCount: 600, filtering: 'none', recordedVideo: false,
+      };
+      const raw = JSON.stringify(measurement, null, 2) + '\n';
+      await writeFile(resolve(work, `${profile.label}-frames.json`), raw);
+      await writeFile(resolve(archive, `${profile.label}-frames.json`), raw);
+      rows.push({...profile, frameFile: `${profile.label}-frames.json`, totalMs,
+        archivedFrameFile: `runs/${htmlSha256}/${runId}/${profile.label}-frames.json`,
+        meanMs: measurement.meanMs, fps: measurement.fps, p99Ms: measurement.p99Ms, maxMs: measurement.maxMs,
+        droppedIntervalsOver17Ms: measurement.droppedIntervalsOver17Ms, sampleCount: 600});
+      assert(measurement.fps >= 59, `${profile.label} actual mean rate ${measurement.fps} FPS is below 59`);
+      assert(measurement.p99Ms <= 17, `${profile.label} actual p99 ${measurement.p99Ms}ms exceeds 17ms`);
+      await page.screenshot({path: resolve(work, `${profile.label}-active.png`), fullPage: true});
+    }, {fresh: true});
+
+    checks.push({profile: profile.label, name: 'self-contained file works offline without network, external resources, errors or dialogs',
+      passed: !network.length && !resources.length && !errors.length && !dialogs.length,
+      networkRequests: network, additionalResources: resources, pageErrors: errors, dialogs});
+    await context.close();
+  }
+} catch (error) {
+  checks.push({profile: 'runner', name: 'runner completion', passed: false,
+    error: error instanceof Error ? error.stack : String(error)});
+} finally {
+  await browser.close();
+  const finalHtmlSha256 = createHash('sha256').update(await readFile(html)).digest('hex');
+  checks.push({profile: 'runner', name: 'HTML source stayed unchanged throughout the run',
+    passed: finalHtmlSha256 === htmlSha256, initialHtmlSha256: htmlSha256, finalHtmlSha256});
+  report.passed = checks.length > 0 && checks.every(check => check.passed) && rows.length === (functionalOnly ? 0 : profiles.length);
+  const result = JSON.stringify(report, null, 2) + '\n';
+  await writeFile(resolve(work, 'report.json'), result);
+  await writeFile(resolve(archive, 'report.json'), result);
+  // npm test must not rewrite committed evidence covered by SHA256SUMS. An
+  // explicit successful --snapshot publishes the reviewed run and its archive.
+  // Failed runs remain fully recorded under ignored .work/browser/runs/.
+  if (snapshot && report.passed) {
+    const publishedArchive = resolve(evidence, 'runs', htmlSha256, runId);
+    await mkdir(publishedArchive, {recursive: true});
+    for (const file of ['report.json', ...profiles.map(profile => `${profile.label}-frames.json`)]) {
+      await copyFile(resolve(work, file), resolve(evidence, file));
+      await copyFile(resolve(archive, file), resolve(publishedArchive, file));
+    }
+    for (const profile of profiles) await copyFile(resolve(work, `${profile.label}-active.png`), resolve(evidence, `${profile.label}-active.png`));
+    if (report.functionalProof) {
+      const destination = resolve(evidence, report.functionalProof.reportFile);
+      await mkdir(dirname(destination), {recursive: true});
+      await copyFile(resolve(work, report.functionalProof.reportFile), destination);
+    }
+    if (report.pacingProbeFile) {
+      await copyFile(resolve(work, report.pacingProbeFile), resolve(evidence, report.pacingProbeFile));
+      await copyFile(resolve(archive, report.pacingProbeFile), resolve(publishedArchive, report.pacingProbeFile));
+    }
+  }
+}
+console.log(JSON.stringify({passed: report.passed, scope: report.scope, report: `${snapshot && report.passed ? 'evidence/browser' : '.work/browser'}/report.json`, checks: checks.length,
+  failures: checks.filter(check => !check.passed).length}));
+if (!report.passed) process.exitCode = 1;

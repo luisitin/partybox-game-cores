@@ -1,0 +1,38 @@
+{
+  "round": 8,
+  "changed": "Document trusted raw state injection versus metadata-complete validated recovery and stable final handoff",
+  "implementationBefore": {
+    "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "src/core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "src/rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "src/probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0",
+    "src/session.ts": "0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30",
+    "src/browser.ts": "137c5fbe410014fca97f78b2603ee94ecbae9e5ad98f8a14a77f18b5c60b51a0",
+    "src/play.template.html": "90792c1fe2e95049a81fb3cc0ef0cc553351bdcc2d3a197ec192e9d6796e9f72",
+    "scripts/browser-check.mjs": "f8a8d602885ee9cd15a91860196a4841dd3ef21b310d319908c374bdd5bcba77",
+    "scripts/capture.mjs": "a0b206637116ef6dcd99b8fe53de09bb79252432aa788b42454e901508ad7560",
+    "manifest.json": "4d4831f00da81ff0832bacd8b6589ea38affe1c7d348a0f6573095e5a7f14c4c"
+  },
+  "implementationAfter": {
+    "play.html": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "src/core.ts": "5d10032d64f7a91361e22423bc1203181bde488d16d895f2753d03911ededb18",
+    "src/rules.ts": "a23db1137fa8e4ef7c070ea1e4ffa5aa6a58fb4fa4bb5cdc69631f2f0ed7dedc",
+    "src/probability.ts": "63972ba218b9ede50bb3312a7000d2eb203fcc0bc32382eb9b8e0e1607b4aef0",
+    "src/session.ts": "0538ddf71f775de7ac519e4056a47401c4d554a56b900096429caf58ca77cc30",
+    "src/browser.ts": "137c5fbe410014fca97f78b2603ee94ecbae9e5ad98f8a14a77f18b5c60b51a0",
+    "src/play.template.html": "90792c1fe2e95049a81fb3cc0ef0cc553351bdcc2d3a197ec192e9d6796e9f72",
+    "scripts/browser-check.mjs": "f8a8d602885ee9cd15a91860196a4841dd3ef21b310d319908c374bdd5bcba77",
+    "scripts/capture.mjs": "a0b206637116ef6dcd99b8fe53de09bb79252432aa788b42454e901508ad7560",
+    "manifest.json": "4d4831f00da81ff0832bacd8b6589ea38affe1c7d348a0f6573095e5a7f14c4c"
+  },
+  "implementationFilesChanged": 0,
+  "playerVisibleGain": 0,
+  "consecutiveNoPlayerGainRounds": 3,
+  "currentFullBrowserChecks": 94,
+  "currentFullBrowserReport": "evidence/browser/report.json",
+  "captures": "evidence/browser/round-8-captures.json",
+  "freshCaptureActualGames": 2,
+  "freshCaptureRoundsEach": 5,
+  "recordingMeasuresPerformance": false,
+  "checkPolicy": "Retain passed unchanged local core/browser/frame tests; fresh clips and all-file SHA/integrity checks."
+}

@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "checkedAt": "2026-10-09T02:17:20.258179+00:00",
+  "scope": "Negative provenance control only; original acceptance of a mismatched genuine cache is invalid evidence, never a current positive",
+  "expectedCurrentHead": "1cc4a9709a60783ecad45476c02668d62f4c8a4a",
+  "actualCurrentReportRunId": "20261008195929879",
+  "genuineEarlierCachedReportRunId": "20261008193007731",
+  "currentArtifactSha256": "b0765a5995d353f111d5019034bbc300f378dd20956a57e0f61a9278f9c916fd",
+  "earlierArtifactSha256": "87a98e203ec7f2b5bac369258e52a9d51081f0184861963d23a0f324c834f739",
+  "originalIncorrectlyAcceptedMismatchedCache": true,
+  "repairedRejectsMismatchedCache": true,
+  "timingValuesEdited": false,
+  "gameplayChanged": false,
+  "rows": [
+    {
+      "reader": "original",
+      "exitCode": 0,
+      "stdoutSha256": "d2f5ca05b915966cf65eefa9e0073394ae33aac9efebb365dee27cd9bf4a3f75",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "reader": "repaired",
+      "exitCode": 1,
+      "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderrSha256": "0102490b83537dea906f12ca6c93d0abb9907ccf2641bd0ae1f121679fbaf052"
+    }
+  ]
+}

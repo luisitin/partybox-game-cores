@@ -1,0 +1,452 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "G07 complete saved state",
+  "type": "object",
+  "properties": {
+    "phase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "enum": [
+            "bid",
+            "reveal",
+            "done"
+          ]
+        },
+        "startedAt": {
+          "type": "number"
+        },
+        "deadline": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "paused": {
+          "type": "object",
+          "properties": {
+            "at": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "startedAt",
+        "deadline"
+      ],
+      "additionalProperties": false
+    },
+    "phaseClock": {
+      "type": "number"
+    },
+    "rng": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "type": "integer"
+        },
+        "step": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "seed",
+        "step"
+      ],
+      "additionalProperties": false
+    },
+    "players": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "avatarId": {
+            "type": "string"
+          },
+          "connected": {
+            "type": "boolean"
+          },
+          "bot": {
+            "type": "boolean"
+          },
+          "canSeeTv": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "avatarId",
+          "connected"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "order": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 2,
+      "maxItems": 8
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "onesWild": {
+          "type": "boolean"
+        },
+        "palificoEnabled": {
+          "type": "boolean"
+        },
+        "palificoExemption": {
+          "enum": [
+            "none",
+            "oneDie",
+            "experienced"
+          ]
+        },
+        "calzaEnabled": {
+          "type": "boolean"
+        },
+        "calzaPolicy": {
+          "enum": [
+            "anyOther",
+            "interruptOnly"
+          ]
+        },
+        "turnSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 120
+        }
+      },
+      "required": [
+        "onesWild",
+        "palificoEnabled",
+        "palificoExemption",
+        "calzaEnabled",
+        "calzaPolicy",
+        "turnSeconds"
+      ],
+      "additionalProperties": false
+    },
+    "cups": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "maxItems": 5,
+        "items": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6
+        }
+      }
+    },
+    "diceCount": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 5
+      }
+    },
+    "turn": {
+      "type": "string"
+    },
+    "round": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "bid": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "quantity": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1000000
+            },
+            "face": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6
+            },
+            "playerId": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "quantity",
+            "face",
+            "playerId"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "bidLog": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quantity": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 1000000
+          },
+          "face": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "playerId": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "quantity",
+          "face",
+          "playerId"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "palifico": {
+      "type": "boolean"
+    },
+    "palificoStarter": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "seenPalifico": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "nextStarter": {
+      "type": "string"
+    },
+    "nextPalifico": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reveal": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "enum": [
+                "dudo",
+                "calza"
+              ]
+            },
+            "caller": {
+              "type": "string"
+            },
+            "bid": {
+              "type": "object",
+              "properties": {
+                "quantity": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 1000000
+                },
+                "face": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
+                },
+                "playerId": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quantity",
+                "face",
+                "playerId"
+              ],
+              "additionalProperties": false
+            },
+            "matches": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 40
+            },
+            "correct": {
+              "type": "boolean"
+            },
+            "loser": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "gained": {
+              "type": "boolean"
+            },
+            "dice": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "array",
+                "maxItems": 5,
+                "items": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 6
+                }
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "caller",
+            "bid",
+            "matches",
+            "correct",
+            "loser",
+            "gained",
+            "dice"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "eliminated": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "left": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "models": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "truth": {
+            "type": "number",
+            "minimum": 0
+          },
+          "false": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "truth",
+          "false"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "autoPaused": {
+      "type": "boolean"
+    },
+    "winner": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "endReason": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "contentLang": {
+      "enum": [
+        "en",
+        "es"
+      ]
+    },
+    "phoneOnly": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "phase",
+    "phaseClock",
+    "rng",
+    "players",
+    "order",
+    "settings",
+    "cups",
+    "diceCount",
+    "turn",
+    "round",
+    "bid",
+    "bidLog",
+    "palifico",
+    "palificoStarter",
+    "seenPalifico",
+    "nextStarter",
+    "nextPalifico",
+    "reveal",
+    "eliminated",
+    "left",
+    "models",
+    "autoPaused",
+    "winner",
+    "endReason",
+    "contentLang",
+    "phoneOnly"
+  ],
+  "additionalProperties": false
+}

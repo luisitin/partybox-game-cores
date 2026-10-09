@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "phases": [
+    "bid",
+    "reveal",
+    "done"
+  ],
+  "manifestSchema": "exact repository gameManifestSchema",
+  "schema": "fixtures/schema.json",
+  "doneEqualsContinuedReveal": true
+}

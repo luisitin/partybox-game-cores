@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "htmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "browser": "141.0.7390.37",
+  "scope": "actual standalone browser; no CPU throttle",
+  "viewport": {
+    "width": 1920,
+    "height": 1080
+  },
+  "cpuThrottle": 1,
+  "fixture": {
+    "players": 8,
+    "mode": "bots",
+    "skill": "normal",
+    "seed": 17,
+    "settings": {
+      "calzaEnabled": true,
+      "turnSeconds": 0
+    },
+    "edits": {
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p7"
+      },
+      "allCups": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    }
+  },
+  "beforeFile": "round-1-before-pacing.json",
+  "beforeSha256": "bd913d9d83fdba49c7b422c709e0cf580bf26f801296b456822033a119d30971",
+  "beforeIntervals": [
+    {
+      "elapsedMs": 741,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": true,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 796,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 801,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 799,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    }
+  ],
+  "after": {
+    "pace": "normal",
+    "regularDelayMs": 2000,
+    "interruptDelayMs": 1650,
+    "armedAt": 202,
+    "records": [
+      {
+        "at": 224,
+        "phaseStartedAt": 155,
+        "bid": {
+          "quantity": 1,
+          "face": 2,
+          "playerId": "p7"
+        },
+        "turn": "p1",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 5,
+        "bidText": "Player 8 says there are at least 1 2s, counting wild ones.",
+        "calzaVisible": true,
+        "calzaEnabled": true
+      },
+      {
+        "at": 2316,
+        "phaseStartedAt": 2301,
+        "bid": {
+          "quantity": 1,
+          "face": 3,
+          "playerId": "p1"
+        },
+        "turn": "p2",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 2 says there are at least 1 3s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 4404,
+        "phaseStartedAt": 4396,
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p2"
+        },
+        "turn": "p3",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 3 says there are at least 1 4s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 6499,
+        "phaseStartedAt": 6495,
+        "bid": {
+          "quantity": 1,
+          "face": 5,
+          "playerId": "p3"
+        },
+        "turn": "p4",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 4 says there are at least 1 5s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 8616,
+        "phaseStartedAt": 8612,
+        "bid": {
+          "quantity": 1,
+          "face": 6,
+          "playerId": "p4"
+        },
+        "turn": "p5",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 5 says there are at least 1 6s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 10698,
+        "phaseStartedAt": 10695,
+        "bid": {
+          "quantity": 2,
+          "face": 2,
+          "playerId": "p5"
+        },
+        "turn": "p6",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 6 says there are at least 2 2s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 12800,
+        "phaseStartedAt": 12797,
+        "bid": {
+          "quantity": 2,
+          "face": 3,
+          "playerId": "p6"
+        },
+        "turn": "p7",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 7 says there are at least 2 3s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      },
+      {
+        "at": 14898,
+        "phaseStartedAt": 14895,
+        "bid": {
+          "quantity": 2,
+          "face": 4,
+          "playerId": "p7"
+        },
+        "turn": "p0",
+        "phase": "bid",
+        "canHumanCalza": true,
+        "openDice": 0,
+        "bidText": "Player 8 says there are at least 2 4s, counting wild ones.",
+        "calzaVisible": false,
+        "calzaEnabled": true
+      }
+    ],
+    "intervals": [
+      {
+        "elapsedMs": 2092,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": true,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2088,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2095,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2117,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2082,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2102,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      },
+      {
+        "elapsedMs": 2098,
+        "previousBidTextWords": 12,
+        "oldHumanCupOpen": false,
+        "newHumanCupOpen": false
+      }
+    ]
+  },
+  "comparison": {
+    "beforeMeanMs": 791,
+    "afterMeanMs": 2096.285714285714,
+    "meanWindowRatio": 2.650171573054
+  },
+  "passed": true
+}
