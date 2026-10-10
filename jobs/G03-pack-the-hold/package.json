@@ -1,0 +1,20 @@
+{
+  "name": "pack-the-hold",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/build-html.mjs",
+    "test": "node scripts/check-hashes.mjs && npm run build && node --test --test-concurrency=1 tests/*.test.mjs && node scripts/mutations.mjs && node scripts/check-data.mjs && node scripts/visual.mjs && node scripts/verify-visual.mjs && node scripts/verify-visual.mjs --capture-report media/capture-13-report.json && node --test scripts/verify-visual.test.mjs scripts/frame-coordination.test.mjs scripts/verify-capture.test.mjs",
+    "generate": "tsc -p tsconfig.json && node scripts/generate.mjs",
+    "visual": "node scripts/visual.mjs"
+  },
+  "dependencies": {
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "esbuild": "0.25.12",
+    "typescript": "5.9.3"
+  }
+}

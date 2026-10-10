@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "profile": {
+      "type": "string",
+      "enum": [
+        "desktop",
+        "phone"
+      ]
+    },
+    "width": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "height": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "cpu": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "intervals": {
+      "minItems": 900,
+      "maxItems": 900,
+      "type": "array",
+      "items": {
+        "type": "number",
+        "exclusiveMinimum": 0
+      }
+    },
+    "count": {
+      "type": "number",
+      "const": 900
+    },
+    "warmupFrames": {
+      "type": "number",
+      "const": 60
+    },
+    "filtering": {
+      "type": "string",
+      "const": "none"
+    },
+    "interaction": {
+      "type": "string",
+      "const": "keyboard ghost movement at10Hz"
+    },
+    "nativeRaf": {
+      "type": "boolean",
+      "const": true
+    },
+    "capturing": {
+      "type": "boolean",
+      "const": false
+    },
+    "sampledAtUtc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "finishedAtUtc": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z))$"
+    },
+    "sourceHashesStart": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    },
+    "sourceHashesEnd": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    }
+  },
+  "required": [
+    "profile",
+    "width",
+    "height",
+    "cpu",
+    "intervals",
+    "count",
+    "warmupFrames",
+    "filtering",
+    "interaction",
+    "nativeRaf",
+    "capturing",
+    "sampledAtUtc",
+    "finishedAtUtc",
+    "sourceHashesStart",
+    "sourceHashesEnd"
+  ],
+  "additionalProperties": false
+}
