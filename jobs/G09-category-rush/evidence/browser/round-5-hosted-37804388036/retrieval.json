@@ -1,0 +1,50 @@
+{
+  "artifactId": 11562995314,
+  "runId": 37804388036,
+  "headSha": "fa319698ccf15ccb26afcdebaac10e1a11673d86",
+  "zipBytes": 1068730,
+  "zipSha256": "7ea175bab727ca041e5235a95539d05face2e3d896b5d72121f73f1e94ca9a9c",
+  "githubDigestMatch": true,
+  "uploadedFileCount": 8,
+  "allUploadedManifestEntriesMatch": true,
+  "sourceFingerprints": {
+    "client-save.ts": true,
+    "client.ts": true,
+    "build-play.ts": true,
+    "src/play.template.html": true,
+    "src/index.ts": true,
+    "src/model.ts": true,
+    "src/scoring.ts": true,
+    "src/match.ts": true,
+    "src/select.ts": true,
+    "content/categories.ts": true,
+    "package-lock.json": true,
+    "LICENSE": true,
+    "THIRD_PARTY_NOTICES.txt": true,
+    "node_modules/zod/LICENSE": true,
+    "../../contract/rng.ts": true,
+    "scripts/browser-performance.mjs": true
+  },
+  "htmlSha256": "abde34978aafaefeaf178a1ab51f20a0992ef714a33659ddc4ed4427ef22a97b",
+  "runnerSha256": "9caabfd972f723c957df22d8adda5d50e5b59646d60c6cdb0a7240e1d73c2444",
+  "runnerCopy": "Locally copied verified exact-head source, not claimed as uploaded.",
+  "hostedFramesAndClipsPass": true,
+  "fullCiStatus": "SUCCESS: actual complete job113404718193, run37804388036, exactfa319698ccf15ccb26afcdebaac10e1a11673d86; full logs independently read",
+  "localPhoneFailure": "Preserved separately at round-5-frame-first; not converted to PASS.",
+  "clipsDecoded": {
+    "desktop": {
+      "codec": "vp8",
+      "width": 1280,
+      "height": 720,
+      "frames": 97,
+      "durationSeconds": 3.88
+    },
+    "phone4x": {
+      "codec": "vp8",
+      "width": 390,
+      "height": 720,
+      "frames": 112,
+      "durationSeconds": 4.48
+    }
+  }
+}

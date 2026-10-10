@@ -1,0 +1,31 @@
+{
+  "delegatedBy": "/root",
+  "coordinator": "/root/recover_g09_2040",
+  "scope": "ONE changed-setup native typing observer; no FPS sampling or hard handler-latency gate",
+  "grantedAt": "2026-10-08T21:23:14.218493+00:00",
+  "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+  "runnerSha256": "25a88a4fd5807fbbbb6e7261161c0a5e5ca545edb9a669dc7f34b42ffd78b678",
+  "authenticSnapshotSha256": "2566e0245ac55382354457130f24e1c330c9d19c5211a7deb0c62263b822ba4b",
+  "freshGlobalRunnableWorkloads": [],
+  "freshQuietOwners": [
+    "/root/recover_g04_2040",
+    "/root/recover_g08_2040",
+    "/root/recover_g10_2040",
+    "/root/recover_tracker_2040",
+    "/root/recover_b19_candidate_2040"
+  ],
+  "rootStatement": "G05 paused with zero live heavy process or source writer",
+  "ackEvidence": [
+    "G04 finite artifact reader naturally CLOSED PASS 21:21:37 UTC; all owned workloads/writers zero.",
+    "G08 zero owned workloads/writer; only native GitHub reads until release.",
+    "G10 finite reader CLOSED PASS 21:21:37.429337 UTC; zero-process audit 21:22:00.262880146 UTC.",
+    "Tracker HTTP/VM/shell closed after actual 21:19:54.344217 push; no runnable workload/writer.",
+    "B19 zero owned browser/compiler/test/Git/writer; first local full test NOT started; waiting direct release."
+  ],
+  "noStop": true,
+  "nativeClocks": true,
+  "actualProbeClosedAt": "2026-10-08T21:23:38.750Z",
+  "actualProbePassed": true,
+  "releasedAt": "2026-10-08T21:23:53.231577+00:00",
+  "zeroRunnableOwnedGroupsAfterClose": true
+}

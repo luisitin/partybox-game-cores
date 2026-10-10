@@ -1,0 +1,256 @@
+{
+  "total": 25,
+  "killed": 25,
+  "mutations": [
+    {
+      "id": "M01 retain leading articles",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (38.116511ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.819806ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M02 do not decompose accents",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (6.086131ms)",
+        "✖ failing tests:",
+        "✖ normalization: articles accents punctuation number words and plural matching (6.086131ms)"
+      ]
+    },
+    {
+      "id": "M03 omit number-word conversion",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (17.235426ms)",
+        "✖ failing tests:",
+        "✖ normalization: articles accents punctuation number words and plural matching (17.235426ms)"
+      ]
+    },
+    {
+      "id": "M04 disable plural stemming",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (34.614566ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (9.735512ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M05 disable long-answer typo matching",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (29.345721ms)",
+        "✖ failing tests:",
+        "✖ normalization: articles accents punctuation number words and plural matching (29.345721ms)"
+      ]
+    },
+    {
+      "id": "M06 fuzzy-match numerical answers",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (42.035852ms)",
+        "✖ failing tests:",
+        "✖ normalization: articles accents punctuation number words and plural matching (42.035852ms)"
+      ]
+    },
+    {
+      "id": "M07 do not group duplicates",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ normalization: articles accents punctuation number words and plural matching (110.701848ms)",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (2.428022ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M08 allow repeated own answer across categories",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.563964ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.563964ms)"
+      ]
+    },
+    {
+      "id": "M09 allow wrong initial",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.91311ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (7.91311ms)"
+      ]
+    },
+    {
+      "id": "M10 award duplicate groups",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.234953ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.234953ms)"
+      ]
+    },
+    {
+      "id": "M11 always accept group vote",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.035019ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (8.035019ms)"
+      ]
+    },
+    {
+      "id": "M12 keep author vote on tie",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.573084ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (5.573084ms)"
+      ]
+    },
+    {
+      "id": "M13 reject unchallenged answers",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.771273ms)",
+        "✖ failing tests:",
+        "✖ score cancellation and group vote ties exclude author, numeric and article handling (10.771273ms)"
+      ]
+    },
+    {
+      "id": "M14 accept stale startedAt",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ settings clamp stale values and phases have sound timers (14.99523ms)",
+        "✖ failing tests:",
+        "✖ settings clamp stale values and phases have sound timers (14.99523ms)"
+      ]
+    },
+    {
+      "id": "M15 fire timer before deadline",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ settings clamp stale values and phases have sound timers (8.509863ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (1.896174ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M16 stepped review never re-arms later",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ settings clamp stale values and phases have sound timers (34.070206ms)",
+        "✖ failing tests:",
+        "✖ settings clamp stale values and phases have sound timers (34.070206ms)"
+      ]
+    },
+    {
+      "id": "M17 allow inputs while paused",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (11.596684ms)",
+        "✖ failing tests:",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (11.596684ms)"
+      ]
+    },
+    {
+      "id": "M18 fail to shift deadline on resume",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (9.399236ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (4.554966ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M19 put an active deadline on done",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (36.969635ms)",
+        "✖ failing tests:",
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (36.969635ms)"
+      ]
+    },
+    {
+      "id": "M20 trust inherited prototype player keys",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (1.241872ms)",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (2.80279ms)",
+        "✖ failing tests:"
+      ]
+    },
+    {
+      "id": "M21 expose another player own answers",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (13.841383ms)",
+        "✖ failing tests:",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (13.841383ms)"
+      ]
+    },
+    {
+      "id": "M22 leak all private answers in TV envelope",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (28.608606ms)",
+        "✖ failing tests:",
+        "✖ views never expose others answers, authors, votes or future review; own views roundtrip (28.608606ms)"
+      ]
+    },
+    {
+      "id": "M23 fail totality on malformed input",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (6.361654ms)",
+        "✖ failing tests:",
+        "✖ reducer is total across every event in every phase, immutable and strict inputs (6.361654ms)"
+      ]
+    },
+    {
+      "id": "M24 ignore explicit VIP end",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (25.560834ms)",
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (2.208788ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (6.910726ms)"
+      ]
+    },
+    {
+      "id": "M25 omit initialized seat from results",
+      "killed": true,
+      "exitCode": 1,
+      "failures": [
+        "✖ pause ignores an empty-review deadline until explicit resume at both roster extremes (10.988855ms)",
+        "✖ unknown prototype seats never act; genuine prototype ids survive JSON and results (3.029925ms)",
+        "✖ failing tests:"
+      ]
+    }
+  ]
+}

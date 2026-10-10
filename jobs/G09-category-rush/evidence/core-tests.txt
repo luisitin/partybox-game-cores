@@ -1,0 +1,36 @@
+
+> category-rush-core@1.0.0 test
+> npm run typecheck && tsx --test tests/*.test.ts
+
+
+> category-rush-core@1.0.0 typecheck
+> tsc --noEmit
+
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (95.82863ms)
+✔ the emitted JSON Schema independently rejects malformed content (109.06392ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (11.356857ms)
+✔ original source regenerates generated content byte for byte (74.186458ms)
+✔ normalization: articles accents punctuation number words and plural matching (3.148829ms)
+✔ independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication (57645.732515ms)
+✔ score cancellation and group vote ties exclude author, numeric and article handling (2.681146ms)
+✔ settings clamp stale values and phases have sound timers (3.405585ms)
+✔ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (5.119392ms)
+✔ unknown prototype seats never act; genuine prototype ids survive JSON and results (2.161705ms)
+✔ views never expose others answers, authors, votes or future review; own views roundtrip (3.169063ms)
+✔ reducer is total across every event in every phase, immutable and strict inputs (3.673017ms)
+✔ manifest exact types, JSON artifact and every phase fixture (33.184878ms)
+✔ all nine invariants: 1,000 restored-every-event bot games at each roster 2–8 (634669.864243ms)
+✔ property seeds 1,2,3 plus 1,000 reproducible random seeds; idle and gone seats finish (536.202387ms)
+✔ bot strategies cannot inspect private answers or ballots; skill controls coverage (2.035032ms)
+✔ event fuzz across every real phase and bot/view role preserves totality and JSON (2329.175031ms)
+✔ future own-repeat adjudication leaks neither a view flag nor bot ballot (1.118873ms)
+✔ pure core source has no random clock callback IO or runtime dependency beyond zod (1.62641ms)
+✔ done fixture is the played-out last scores fixture; every fixture reaches finite results (8.697198ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 695996.017223

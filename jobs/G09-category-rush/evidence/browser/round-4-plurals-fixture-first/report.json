@@ -1,0 +1,32 @@
+{
+  "mode": "baseline",
+  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
+  "runnerSha256": "e92566adf39bf8c0077ff0f2a42421ce01674561ad860cb7ade42b566accaa71",
+  "fixture": {
+    "seed": 159,
+    "letter": "M",
+    "categoryIndex": 9,
+    "categoryId": "wildlife-01",
+    "prompt": "An animal that makes a home underground",
+    "singular": "mouse",
+    "plural": "mice"
+  },
+  "startedAt": "2026-10-08T12:27:17.270Z",
+  "checks": [
+    {
+      "name": "2 people review and score a real mouse/mice duplicate",
+      "passed": false,
+      "error": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#seed')\u001b[22m\n\u001b[2m    - locator resolved to <input min=\"0\" step=\"1\" id=\"seed\" value=\"42\" class=\"field\" type=\"number\" max=\"4294967295\"/>\u001b[22m\n\u001b[2m    - fill(\"159\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    59 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "rosters": [],
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  },
+  "passed": false,
+  "browser": "141.0.7390.37",
+  "failure": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#seed')\u001b[22m\n\u001b[2m    - locator resolved to <input min=\"0\" step=\"1\" id=\"seed\" value=\"42\" class=\"field\" type=\"number\" max=\"4294967295\"/>\u001b[22m\n\u001b[2m    - fill(\"159\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying fill action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    59 × waiting for element to be visible, enabled and editable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying fill action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+  "finishedAt": "2026-10-08T12:27:47.682Z"
+}

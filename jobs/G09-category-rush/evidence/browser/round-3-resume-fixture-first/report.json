@@ -1,0 +1,246 @@
+{
+  "mode": "after",
+  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
+  "runnerSha256": "0fe39fc49a9c9d24c57cd9c17e28b5d62421e26eef2b45247e588890f0283b40",
+  "startedAt": "2026-10-08T11:36:16.380Z",
+  "checks": [
+    {
+      "name": "2 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during review",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during scores",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during review",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during scores",
+      "passed": true
+    },
+    {
+      "name": "reloading twice on a restored handover keeps draft private and timer frozen",
+      "passed": true
+    },
+    {
+      "name": "saved host pause restores controls and waits before private Ready",
+      "passed": true
+    },
+    {
+      "name": "near-expiry restore times out through the real submit flow",
+      "passed": true
+    },
+    {
+      "name": "host skip and end remain available after resume with settled scores",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Play again\\n→'\n- 'Play again →'\n             ^\n"
+    }
+  ],
+  "cases": [
+    {
+      "count": 2,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "review",
+      "before": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "scores",
+      "before": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "after": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": false,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "review",
+      "before": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "scores",
+      "before": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "after": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": false,
+      "resumeAvailable": true,
+      "restored": true
+    }
+  ],
+  "details": [
+    {
+      "case": "double handover reload",
+      "timer": "0:50",
+      "draft": "Private repeated draft"
+    },
+    {
+      "case": "host pause",
+      "timer": "0:50",
+      "pausedSave": null
+    },
+    {
+      "case": "near expiry",
+      "submitted": true,
+      "answer": "Near expiry draft",
+      "next": "p2"
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "requests": [],
+    "dialogs": []
+  },
+  "passed": false,
+  "browser": "141.0.7390.37",
+  "failure": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Play again\\n→'\n- 'Play again →'\n             ^\n",
+  "finishedAt": "2026-10-08T11:36:48.002Z"
+}

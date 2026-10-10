@@ -1,0 +1,134 @@
+name: G09 Category Rush
+on:
+  pull_request:
+    paths:
+      - 'jobs/G09-category-rush/**'
+      - 'contract/**'
+      - '.github/workflows/G09.yml'
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: jobs/G09-category-rush
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: jobs/G09-category-rush/package-lock.json
+      - run: npm ci
+      - name: Deterministic regeneration and JSON Schema
+        run: |
+          npm run typecheck
+          node scripts/generate-content.mjs --check
+          npx tsx scripts/content-schema.ts --check
+          npm run generate
+          npm run build:play
+          git diff --exit-code -- content/categories.json content/categories.ts content/categories.schema.json manifest.json fixtures play.html
+          npx tsx scripts/checksums.ts --check
+      - name: Install pinned development browser and capture dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Genuine exact-head hosted strict frames and separate captures
+        env:
+          G09_EVIDENCE_HEAD: ${{ github.event.pull_request.head.sha }}
+          G09_EVIDENCE_RUN: ${{ github.run_id }}
+          G09_EVIDENCE_ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          node --input-type=module - <<'JS'
+          import {readFileSync,writeFileSync} from 'node:fs';
+          import {createHash} from 'node:crypto';
+          const hash=path=>createHash('sha256').update(readFileSync(path)).digest('hex');
+          writeFileSync('evidence/browser/hosted-run.json',JSON.stringify({origin:'github-actions',headSha:process.env.G09_EVIDENCE_HEAD,runId:process.env.G09_EVIDENCE_RUN,attempt:process.env.G09_EVIDENCE_ATTEMPT,htmlSha256:hash('play.html'),runnerSha256:hash('scripts/browser-performance.mjs')},null,2)+'\n');
+          JS
+          node scripts/browser-performance.mjs
+      - name: Fresh exact-head recovery, privacy and storage failures before artifact binding
+        run: node scripts/browser-resume.mjs after
+      - name: Hash hosted evidence, retaining failed measurements too
+        if: always()
+        run: |
+          npx tsx scripts/checksums.ts
+          npx tsx scripts/checksums.ts --check
+      - name: Retain exact-head hosted visual evidence and raw intervals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G09-strict-${{ github.event.pull_request.head.sha }}-${{ github.run_id }}
+          compression-level: 0
+          retention-days: 14
+          path: |
+            jobs/G09-category-rush/evidence/browser/hosted-run.json
+            jobs/G09-category-rush/evidence/browser/performance-report.json
+            jobs/G09-category-rush/evidence/browser/desktop-frames.json
+            jobs/G09-category-rush/evidence/browser/phone4x-frames.json
+            jobs/G09-category-rush/media/delivery-final-desktop.webm
+            jobs/G09-category-rush/media/delivery-final-phone4x.webm
+            jobs/G09-category-rush/play.html
+            jobs/G09-category-rush/SHA256SUMS.txt
+      - name: Strict core, artifact binding, independent oracle, all rosters and property seeds
+        run: npm test
+      - name: Forty-three real planted bugs including selection and privacy defects
+        run: npm run mutations
+      - name: Two thousand duels per adjacent bot skill
+        run: npm run bots
+      - name: Replayed eight-Strong-bot variety experiment
+        run: |
+          node scripts/regenerate-breadth.mjs --check
+          git diff --exit-code -- evidence/breadth-baseline.json evidence/breadth-bank-only.json evidence/breadth-after.json evidence/breadth-lexical.json
+      - name: Registered original and revised selection evidence
+        run: |
+          node scripts/regenerate-selection.mjs --check
+          node scripts/compare-selection.mjs --check
+          git diff --exit-code -- evidence/selection-revision-baseline.json evidence/selection-revision-candidate.json evidence/selection-revision-comparison.json evidence/selection-revision-seeds.json
+      - name: Source-bound singular and plural duplicate protocols
+        run: |
+          node scripts/regenerate-plural-baseline.mjs --check
+          npx tsx scripts/plural-protocol.ts
+          npx tsx scripts/lexical-audit.ts
+          git diff --exit-code -- evidence/plural-protocol-baseline.json evidence/plural-protocol-after.json evidence/plural-protocol.schema.json evidence/lexical-audit-baseline.json evidence/lexical-audit-after.json evidence/lexical-audit.schema.json
+      - name: Real offline file gameplay and accessibility
+        run: node scripts/browser-check.mjs
+      - name: Empty-review pacing, host controls and stepped review clock
+        run: |
+          node scripts/browser-empty-review.mjs after
+          node scripts/browser-clock.mjs
+      - name: Completed-round receipts, scored reasons and keyboard focus
+        run: node scripts/browser-receipts.mjs after
+      - name: Real human plural duplicate review and scored receipts
+        run: node scripts/browser-plurals.mjs after
+      - name: Private nonblocking draft feedback and previous-sheet privacy
+        run: node scripts/browser-draft-hints.mjs after
+      - name: Native clipboard word boundaries, bounded selection and scoring
+        run: |
+          node scripts/browser-paste.mjs after
+          node scripts/browser-legacy-save.mjs
+      - name: Authentic late-game full-sheet typing and autosave recovery
+        run: |
+          node scripts/browser-late-save.mjs
+          npx tsx --test tests/late-save-artifact.test.ts
+      - name: Hash the complete latest recovery and late-save attempt
+        if: always()
+        run: |
+          npx tsx scripts/checksums.ts
+          npx tsx scripts/checksums.ts --check
+      - name: Retain the complete recovery attempt even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: G09-recovery-${{ github.event.pull_request.head.sha }}-${{ github.run_id }}
+          retention-days: 14
+          compression-level: 0
+          path: |
+            jobs/G09-category-rush/evidence/browser/round-3-resume-after/report.json
+            jobs/G09-category-rush/scripts/browser-resume.mjs
+            jobs/G09-category-rush/evidence/browser/round-9-legacy-save/
+            jobs/G09-category-rush/scripts/browser-legacy-save.mjs
+            jobs/G09-category-rush/evidence/browser/round-10-late-save/
+            jobs/G09-category-rush/scripts/browser-late-save.mjs
+            jobs/G09-category-rush/SHA256SUMS.txt

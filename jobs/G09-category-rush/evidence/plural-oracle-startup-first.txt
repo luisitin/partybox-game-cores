@@ -1,0 +1,107 @@
+{
+  "label": "baseline",
+  "cases": 18,
+  "matched": 0,
+  "awarded": 36,
+  "replayMatches": 18,
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+    "experiment": "d1cb91b00af1fd81feb1e955eefacce3b1eb6318e62b8ab8ebd1ca3f9b74f466"
+  }
+}
+node:internal/errors:985
+  const err = new Error(message);
+              ^
+
+Error: Command failed: /opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node --import tsx --test --test-name-pattern=independent hardest-function oracle tests/core.test.ts
+    at genericNodeError (node:internal/errors:985:15)
+    at wrappedFn (node:internal/errors:539:14)
+    at checkExecSyncError (node:child_process:942:11)
+    at execFileSync (node:child_process:978:15)
+    at file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/regenerate-plural-baseline.mjs:18:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  status: 1,
+  signal: null,
+  output: [
+    null,
+    '\n' +
+      'node:internal/modules/run_main:107\n' +
+      '    triggerUncaughtException(\n' +
+      '    ^\n' +
+      "Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'zod' imported from /tmp/g09-plural-ff4xRR/contract/contract.ts\n" +
+      '    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n' +
+      '    at packageResolve (node:internal/modules/esm/resolve:768:81)\n' +
+      '    at moduleResolve (node:internal/modules/esm/resolve:859:18)\n' +
+      '    at defaultResolve (node:internal/modules/esm/resolve:992:11)\n' +
+      '    at nextResolve (node:internal/modules/esm/hooks:785:28)\n' +
+      '    at resolveBase (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:3744)\n' +
+      '    at resolveDirectory (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:4243)\n' +
+      '    at resolveTsPaths (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:4984)\n' +
+      '    at resolve (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:5361)\n' +
+      '    at nextResolve (node:internal/modules/esm/hooks:785:28) {\n' +
+      "  code: 'ERR_MODULE_NOT_FOUND'\n" +
+      '}\n' +
+      '\n' +
+      'Node.js v24.19.0\n' +
+      '✖ tests/core.test.ts (1358.938117ms)\n' +
+      'ℹ tests 1\n' +
+      'ℹ suites 0\n' +
+      'ℹ pass 0\n' +
+      'ℹ fail 1\n' +
+      'ℹ cancelled 0\n' +
+      'ℹ skipped 0\n' +
+      'ℹ todo 0\n' +
+      'ℹ duration_ms 1402.475367\n' +
+      '\n' +
+      '✖ failing tests:\n' +
+      '\n' +
+      'test at tests/core.test.ts:1:1\n' +
+      '✖ tests/core.test.ts (1358.938117ms)\n' +
+      "  'test failed'\n",
+    ''
+  ],
+  pid: 133101,
+  stdout: '\n' +
+    'node:internal/modules/run_main:107\n' +
+    '    triggerUncaughtException(\n' +
+    '    ^\n' +
+    "Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'zod' imported from /tmp/g09-plural-ff4xRR/contract/contract.ts\n" +
+    '    at Object.getPackageJSONURL (node:internal/modules/package_json_reader:301:9)\n' +
+    '    at packageResolve (node:internal/modules/esm/resolve:768:81)\n' +
+    '    at moduleResolve (node:internal/modules/esm/resolve:859:18)\n' +
+    '    at defaultResolve (node:internal/modules/esm/resolve:992:11)\n' +
+    '    at nextResolve (node:internal/modules/esm/hooks:785:28)\n' +
+    '    at resolveBase (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:3744)\n' +
+    '    at resolveDirectory (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:4243)\n' +
+    '    at resolveTsPaths (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:4984)\n' +
+    '    at resolve (file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/node_modules/tsx/dist/esm/index.mjs?1791461900499:2:5361)\n' +
+    '    at nextResolve (node:internal/modules/esm/hooks:785:28) {\n' +
+    "  code: 'ERR_MODULE_NOT_FOUND'\n" +
+    '}\n' +
+    '\n' +
+    'Node.js v24.19.0\n' +
+    '✖ tests/core.test.ts (1358.938117ms)\n' +
+    'ℹ tests 1\n' +
+    'ℹ suites 0\n' +
+    'ℹ pass 0\n' +
+    'ℹ fail 1\n' +
+    'ℹ cancelled 0\n' +
+    'ℹ skipped 0\n' +
+    'ℹ todo 0\n' +
+    'ℹ duration_ms 1402.475367\n' +
+    '\n' +
+    '✖ failing tests:\n' +
+    '\n' +
+    'test at tests/core.test.ts:1:1\n' +
+    '✖ tests/core.test.ts (1358.938117ms)\n' +
+    "  'test failed'\n",
+  stderr: ''
+}
+
+Node.js v24.19.0

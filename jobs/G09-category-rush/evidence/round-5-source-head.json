@@ -1,0 +1,102 @@
+{
+  "round": 5,
+  "sourceHeadSha": "fa319698ccf15ccb26afcdebaac10e1a11673d86",
+  "workflowRunId": 37804388036,
+  "workflowJobId": 113404718193,
+  "conclusion": "success",
+  "verifiedAt": "2026-10-08T16:16:09.425728+00:00",
+  "ciFullLogSha256": "0b78bf035a50830855a746ceaaeb827d042f5cbd18a1ee1ac1249d785e475c96",
+  "sourceFingerprints": {
+    "client-save.ts": "3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff",
+    "client.ts": "9426215a59608ca221b44517671fb1c28a4856eda2ddd3b53969d34baf339ea3",
+    "build-play.ts": "ab3b89a8289f52a8914202b89b3746ed85cd2cdb31cb926276b8c749b05eb12a",
+    "src/play.template.html": "c570fa36c6dd537473bc125566a648a6131fb719be1a270a116317b323d069c0",
+    "src/index.ts": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+    "src/model.ts": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4",
+    "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "src/match.ts": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "src/select.ts": "1fe2cfaf8bfdb4ab3de945bbb31ce61a124f34fee80963821178800112ae1c07",
+    "content/categories.ts": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851",
+    "package-lock.json": "0da98f3882641b8411cfa4137b5533f9f7e5944d5f99101e59a979e9e372da38",
+    "LICENSE": "17936c55642f589858b3023756fc8c73706f0d4118be9d23cf174b1e485d627e",
+    "THIRD_PARTY_NOTICES.txt": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164",
+    "node_modules/zod/LICENSE": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+    "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+    "scripts/browser-performance.mjs": "9caabfd972f723c957df22d8adda5d50e5b59646d60c6cdb0a7240e1d73c2444"
+  },
+  "htmlSha256": "abde34978aafaefeaf178a1ab51f20a0992ef714a33659ddc4ed4427ef22a97b",
+  "strictRunnerSha256": "9caabfd972f723c957df22d8adda5d50e5b59646d60c6cdb0a7240e1d73c2444",
+  "hostedStrictStartedAt": "2026-10-08T15:53:53.411Z",
+  "hostedStrictFinishedAt": "2026-10-08T15:54:23.947Z",
+  "strictArtifact": {
+    "artifactId": 11562995314,
+    "runId": 37804388036,
+    "headSha": "fa319698ccf15ccb26afcdebaac10e1a11673d86",
+    "zipBytes": 1068730,
+    "zipSha256": "7ea175bab727ca041e5235a95539d05face2e3d896b5d72121f73f1e94ca9a9c",
+    "githubDigestMatch": true,
+    "uploadedFileCount": 8,
+    "allUploadedManifestEntriesMatch": true,
+    "sourceFingerprints": {
+      "client-save.ts": true,
+      "client.ts": true,
+      "build-play.ts": true,
+      "src/play.template.html": true,
+      "src/index.ts": true,
+      "src/model.ts": true,
+      "src/scoring.ts": true,
+      "src/match.ts": true,
+      "src/select.ts": true,
+      "content/categories.ts": true,
+      "package-lock.json": true,
+      "LICENSE": true,
+      "THIRD_PARTY_NOTICES.txt": true,
+      "node_modules/zod/LICENSE": true,
+      "../../contract/rng.ts": true,
+      "scripts/browser-performance.mjs": true
+    },
+    "htmlSha256": "abde34978aafaefeaf178a1ab51f20a0992ef714a33659ddc4ed4427ef22a97b",
+    "runnerSha256": "9caabfd972f723c957df22d8adda5d50e5b59646d60c6cdb0a7240e1d73c2444",
+    "runnerCopy": "Locally copied verified exact-head source, not claimed as uploaded.",
+    "hostedFramesAndClipsPass": true,
+    "fullCiStatus": "SUCCESS: actual complete job113404718193, run37804388036, exactfa319698ccf15ccb26afcdebaac10e1a11673d86; full logs independently read",
+    "localPhoneFailure": "Preserved separately at round-5-frame-first; not converted to PASS.",
+    "clipsDecoded": {
+      "desktop": {
+        "codec": "vp8",
+        "width": 1280,
+        "height": 720,
+        "frames": 97,
+        "durationSeconds": 3.88
+      },
+      "phone4x": {
+        "codec": "vp8",
+        "width": 390,
+        "height": 720,
+        "frames": 112,
+        "durationSeconds": 4.48
+      }
+    }
+  },
+  "pilotComparisonSha256": "8a942b74f2a6c71490c2d28799bf855a00ca78b3eff883f892930317b21d36fe",
+  "guardLimitsUnchanged": true,
+  "playerGain": {
+    "scope": "800 newly registered balanced heldout all-Sharp-bot games per roster, unchanged actual sampler/scoring",
+    "eightSeatMeanBefore": 1.3175,
+    "eightSeatMeanAfter": 2.42375,
+    "eightSeatZeroTablesBefore": 355,
+    "eightSeatZeroTablesAfter": 244,
+    "games": 800,
+    "bankCoverageBefore": 2389,
+    "bankCoverageAfter": 2211,
+    "fourSeatWorsenedGames": 13,
+    "eightSeatWorsenedGames": 17
+  },
+  "historicalFailedTrials": [
+    "evidence/selection-k3-first",
+    "evidence/browser/round-5-frame-first"
+  ],
+  "localPhoneAcceptance": false,
+  "hostedPhoneAcceptance": true,
+  "noGainStreak": 0
+}

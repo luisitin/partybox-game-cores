@@ -1,0 +1,38 @@
+{
+  "scope": "Retained first independent reader failure of an extra arbitrary10ms diagnostic, outside original acceptance gates",
+  "actualReaderExitCode": 1,
+  "profiles": [
+    {
+      "profile": "desktop",
+      "nativeRAFElapsedMs": 9999.51,
+      "actualDateElapsedMs": 9984,
+      "differenceMs": -15.510000000000218,
+      "extraPrivateTenMsCheckPassed": false,
+      "originalStrictGatePassed": true,
+      "phaseWitnessPassed": true,
+      "timerStartSeconds": 60,
+      "timerEndSeconds": 50,
+      "callbackPerformanceNowRecorded": false,
+      "absoluteCallbackRAFTimestampsRecorded": false,
+      "cause": "unresolved; callback-versus-frame dispatch offset is a hypothesis, not reconstructible from retained Date values plus RAF deltas alone"
+    },
+    {
+      "profile": "phone4x",
+      "nativeRAFElapsedMs": 9999.51,
+      "actualDateElapsedMs": 10000,
+      "differenceMs": 0.4899999999997817,
+      "extraPrivateTenMsCheckPassed": true,
+      "originalStrictGatePassed": true,
+      "phaseWitnessPassed": true,
+      "timerStartSeconds": 60,
+      "timerEndSeconds": 50,
+      "callbackPerformanceNowRecorded": false,
+      "absoluteCallbackRAFTimestampsRecorded": false,
+      "cause": "unresolved; callback-versus-frame dispatch offset is a hypothesis, not reconstructible from retained Date values plus RAF deltas alone"
+    }
+  ],
+  "rawDataModified": false,
+  "originalGatesModified": false,
+  "newFrameRun": false,
+  "nextAction": "Read documented distinct timestamp semantics, keep this nongating observed discrepancy explicit; independently validate every unchanged original native/source/phase/capture gate"
+}

@@ -1,0 +1,47 @@
+{
+  "mode": "after",
+  "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+  "startedAt": "2026-10-08T10:05:00.921Z",
+  "checks": [
+    {
+      "name": "2 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "8 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "mixed empty, accepted, wrong-initial and duplicate categories retain every nonempty private ballot",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Invalid · 0/. Input:\n\n'04 · Something used to shape wet clay\\n' +\n  'A wrong-initial\\n' +\n  '\\n' +\n  'Alex, Sam\\n' +\n  '\\n' +\n  'Duplicate · 0'\n"
+    }
+  ],
+  "blankProfiles": [
+    {
+      "humans": 2,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 46.52080500000011,
+      "categories": []
+    },
+    {
+      "humans": 8,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 23.94264099999964,
+      "categories": []
+    }
+  ],
+  "runtime": {
+    "pageErrors": [],
+    "networkRequests": [],
+    "dialogs": []
+  },
+  "passed": false,
+  "browser": "141.0.7390.37",
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Invalid · 0/. Input:\n\n'04 · Something used to shape wet clay\\n' +\n  'A wrong-initial\\n' +\n  '\\n' +\n  'Alex, Sam\\n' +\n  '\\n' +\n  'Duplicate · 0'\n",
+  "finishedAt": "2026-10-08T10:05:14.777Z"
+}

@@ -1,0 +1,73 @@
+{
+  "mode": "after",
+  "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+  "startedAt": "2026-10-08T10:11:16.520Z",
+  "checks": [
+    {
+      "name": "2 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "8 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "mixed empty, accepted, wrong-initial and duplicate categories retain every nonempty private ballot",
+      "passed": true
+    },
+    {
+      "name": "host skip crosses an empty block and preserves the next nonempty private ballot",
+      "passed": true
+    },
+    {
+      "name": "paused blank handover stays paused; explicit host skip settles the blank round",
+      "passed": true
+    },
+    {
+      "name": "ending paused blank writing preserves completed-round scores",
+      "passed": true
+    },
+    {
+      "name": "two blank rounds settle independently and continue through the real next-round input",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /round 2/. Input:\n\n'PRIVATE ANSWER TIME · ROUND 2'\n"
+    }
+  ],
+  "blankProfiles": [
+    {
+      "humans": 2,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 36.95335699999987,
+      "categories": []
+    },
+    {
+      "humans": 8,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 31.96918100000039,
+      "categories": []
+    }
+  ],
+  "runtime": {
+    "pageErrors": [],
+    "networkRequests": [],
+    "dialogs": []
+  },
+  "passed": false,
+  "browser": "141.0.7390.37",
+  "mixed": {
+    "nonemptyCategories": [
+      2,
+      4,
+      8,
+      10
+    ],
+    "emptyCategoriesSkipped": 8,
+    "ballotLocks": 8
+  },
+  "failure": "AssertionError [ERR_ASSERTION]: The input did not match the regular expression /round 2/. Input:\n\n'PRIVATE ANSWER TIME · ROUND 2'\n",
+  "finishedAt": "2026-10-08T10:11:38.586Z"
+}

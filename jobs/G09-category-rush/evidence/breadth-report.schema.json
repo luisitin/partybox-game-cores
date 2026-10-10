@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "type": "string",
+      "const": "eight-sharp-one-round-200-v1"
+    },
+    "label": {
+      "type": "string",
+      "enum": [
+        "baseline",
+        "after"
+      ]
+    },
+    "games": {
+      "type": "number",
+      "const": 200
+    },
+    "players": {
+      "type": "number",
+      "const": 8
+    },
+    "seeds": {
+      "minItems": 2,
+      "maxItems": 2,
+      "type": "array",
+      "items": {
+        "type": "number"
+      }
+    },
+    "sourceHashes": {
+      "type": "object",
+      "properties": {
+        "authored": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "data": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "generated": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "core": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "scoring": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "matcher": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "experiment": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "required": [
+        "authored",
+        "data",
+        "generated",
+        "core",
+        "scoring",
+        "matcher",
+        "experiment"
+      ],
+      "additionalProperties": false
+    },
+    "breadth": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "number"
+        },
+        "examples": {
+          "type": "number"
+        },
+        "banks": {
+          "type": "number"
+        },
+        "singleton": {
+          "type": "number"
+        },
+        "median": {
+          "type": "number"
+        },
+        "widthAtLeast4": {
+          "type": "number"
+        },
+        "widthAtLeast8": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "categories",
+        "examples",
+        "banks",
+        "singleton",
+        "median",
+        "widthAtLeast4",
+        "widthAtLeast8"
+      ],
+      "additionalProperties": false
+    },
+    "outcomes": {
+      "type": "object",
+      "properties": {
+        "submitted": {
+          "type": "number"
+        },
+        "duplicated": {
+          "type": "number"
+        },
+        "duplicateOwnerRate": {
+          "type": "number"
+        },
+        "awarded": {
+          "type": "number"
+        },
+        "meanAwardedPerGame": {
+          "type": "number"
+        },
+        "meanAwardedPerSeat": {
+          "type": "number"
+        },
+        "blank": {
+          "type": "number"
+        },
+        "repeatedOwn": {
+          "type": "number"
+        },
+        "replayMatches": {
+          "type": "number"
+        },
+        "distinctAnswerSheets": {
+          "type": "number"
+        },
+        "distinctFinalStates": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "submitted",
+        "duplicated",
+        "duplicateOwnerRate",
+        "awarded",
+        "meanAwardedPerGame",
+        "meanAwardedPerSeat",
+        "blank",
+        "repeatedOwn",
+        "replayMatches",
+        "distinctAnswerSheets",
+        "distinctFinalStates"
+      ],
+      "additionalProperties": false
+    },
+    "bankImpacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "categoryId": {
+            "type": "string"
+          },
+          "letter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "appearances": {
+            "type": "number"
+          },
+          "submitted": {
+            "type": "number"
+          },
+          "duplicated": {
+            "type": "number"
+          },
+          "awarded": {
+            "type": "number"
+          },
+          "width": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "categoryId",
+          "letter",
+          "appearances",
+          "submitted",
+          "duplicated",
+          "awarded",
+          "width"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "rows": {
+      "minItems": 200,
+      "maxItems": 200,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "seed": {
+            "type": "number"
+          },
+          "letter": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1
+          },
+          "layout": {
+            "minItems": 12,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "submitted": {
+            "type": "number"
+          },
+          "duplicated": {
+            "type": "number"
+          },
+          "awarded": {
+            "type": "number"
+          },
+          "scores": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "answerHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "stateHash": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          }
+        },
+        "required": [
+          "seed",
+          "letter",
+          "layout",
+          "submitted",
+          "duplicated",
+          "awarded",
+          "scores",
+          "answerHash",
+          "stateHash"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "protocol",
+    "label",
+    "games",
+    "players",
+    "seeds",
+    "sourceHashes",
+    "breadth",
+    "outcomes",
+    "bankImpacts",
+    "rows"
+  ],
+  "additionalProperties": false
+}

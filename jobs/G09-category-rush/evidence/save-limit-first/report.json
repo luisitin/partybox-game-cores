@@ -1,0 +1,13 @@
+{
+  "command": "npx tsx --test --test-name-pattern=\"maximum-length Unicode\" tests/client-save.test.ts",
+  "boundUtf8Bytes": 200000,
+  "boundUtf16CodeUnits": 200000,
+  "passed": false,
+  "observedClosedAt": "2026-10-08T11:35:06Z",
+  "reason": "An actual legal eight-seat five-round maximum-length Unicode history was rejected by encodeSave. The final larger bounded version must pass before acceptance.",
+  "sourceHashes": {
+    "client-save.ts": "1dce400092d821b2b1e9fe9c2f7dd57c004a534d44daf9c27000163e4bdcdc85",
+    "tests-client-save.test.ts": "3d7df63ebc18b9b586534b987f3eb01b49d0d00e2e9bfeb715361ea0f690570d",
+    "output.txt": "03a3b82ae4e92e8f4b1a45b9a1d5d750f598630eb2f120cf773d7469032602d4"
+  }
+}

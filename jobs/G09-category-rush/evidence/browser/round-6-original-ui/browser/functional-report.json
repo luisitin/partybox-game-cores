@@ -1,0 +1,152 @@
+{
+  "sourceSha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
+  "browser": "141.0.7390.37",
+  "checks": [
+    {
+      "profile": "source",
+      "name": "HTML embeds its scripts/styles and blocks network by CSP",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "setup and active screen have no horizontal overflow",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "named players are safely escaped; 12 labeled keyboard inputs",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "private handover removes previous answers from the DOM",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "host pause freezes time and preserves draft; keyboard modal traps focus",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "author names are absent from anonymous voting cards; duplicates marked zero",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "all 12 review categories advance; duplicate and rejected-answer scoring come from the actual core",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "final results rank the winner and allow a fresh seeded game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "reduced motion disables entrance animation",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "timer expiry locks typed answers and waits at a private handover",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "setup and active screen have no horizontal overflow",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "named players are safely escaped; 12 labeled keyboard inputs",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "private handover removes previous answers from the DOM",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "host pause freezes time and preserves draft; keyboard modal traps focus",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "author names are absent from anonymous voting cards; duplicates marked zero",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "all 12 review categories advance; duplicate and rejected-answer scoring come from the actual core",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "final results rank the winner and allow a fresh seeded game",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "reduced motion disables entrance animation",
+      "passed": true
+    },
+    {
+      "profile": "phone",
+      "name": "timer expiry locks typed answers and waits at a private handover",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "2 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "3 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "4 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "5 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "6 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "7 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "desktop",
+      "name": "8 seats with easy/medium/strong bots play a whole game",
+      "passed": true
+    },
+    {
+      "profile": "runtime",
+      "name": "offline file made zero network calls and raised no errors or dialogs",
+      "passed": true
+    },
+    {
+      "profile": "provenance",
+      "name": "HTML stayed byte-identical during the whole browser suite",
+      "passed": true
+    }
+  ],
+  "passed": true,
+  "runtime": {
+    "errors": [],
+    "dialogs": [],
+    "networkRequests": []
+  }
+}

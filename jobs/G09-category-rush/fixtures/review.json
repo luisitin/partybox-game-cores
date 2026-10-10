@@ -1,0 +1,183 @@
+{
+  "phase": {
+    "id": "review",
+    "startedAt": 1010,
+    "deadline": 20736
+  },
+  "phaseClock": 1010,
+  "rng": {
+    "seed": 42,
+    "step": 265
+  },
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "face1",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "face2",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "face3",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "order": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "cfg": {
+    "rounds": 1,
+    "roundSeconds": 30
+  },
+  "round": 1,
+  "letter": "S",
+  "usedLetters": [
+    "S"
+  ],
+  "categories": [
+    {
+      "id": "school-08",
+      "prompt": "Something on a teacher's desk",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "school"
+    },
+    {
+      "id": "produce-05",
+      "prompt": "Something edible picked from a climbing plant",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "produce"
+    },
+    {
+      "id": "jobs-10",
+      "prompt": "A worker who makes or repairs jewelry",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "jobs"
+    },
+    {
+      "id": "art-08",
+      "prompt": "Something used to shape wet clay",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "art"
+    },
+    {
+      "id": "music-07",
+      "prompt": "Something carried in a guitar case",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "music"
+    },
+    {
+      "id": "games-toys-01",
+      "prompt": "Something that rolls in a tabletop game",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "games-toys"
+    },
+    {
+      "id": "events-10",
+      "prompt": "Something used to identify staff at an event",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "events"
+    },
+    {
+      "id": "parks-07",
+      "prompt": "Something you might feed to garden birds",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "parks"
+    },
+    {
+      "id": "digital-05",
+      "prompt": "Something that can store a digital photograph",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "digital"
+    },
+    {
+      "id": "community-01",
+      "prompt": "A place where neighbors can borrow something",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "community"
+    },
+    {
+      "id": "paper-03",
+      "prompt": "Something used to mark a page in a book",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "paper"
+    },
+    {
+      "id": "pantry-08",
+      "prompt": "An ingredient that sweetens cake batter",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "pantry"
+    }
+  ],
+  "answers": {
+    "p0": [
+      "",
+      "snap pea",
+      "",
+      "",
+      "strap",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "",
+      "string",
+      "stevia"
+    ],
+    "p1": [
+      "sticky note",
+      "squash",
+      "",
+      "stamp",
+      "string",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "school",
+      "",
+      "stevia"
+    ],
+    "p2": [
+      "sticky note",
+      "snap pea",
+      "silversmith",
+      "stamp",
+      "slide",
+      "spinner wheel",
+      "shirt",
+      "sunflower seed",
+      "server",
+      "school",
+      "strip",
+      "sugar"
+    ]
+  },
+  "submitted": {
+    "p0": true,
+    "p1": true,
+    "p2": true
+  },
+  "reviewIndex": 0,
+  "votes": {},
+  "reviewed": [],
+  "scores": {
+    "p0": 0,
+    "p1": 0,
+    "p2": 0
+  },
+  "roundResult": null,
+  "history": []
+}

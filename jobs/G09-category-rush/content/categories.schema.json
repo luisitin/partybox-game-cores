@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1
+    },
+    "lang": {
+      "type": "string",
+      "const": "en"
+    },
+    "letters": {
+      "minItems": 20,
+      "maxItems": 20,
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "R",
+          "S",
+          "T",
+          "W"
+        ]
+      }
+    },
+    "categories": {
+      "minItems": 300,
+      "maxItems": 1000,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z]+(?:-[a-z]+)*-\\d{2}$"
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 15,
+            "maxLength": 110
+          },
+          "clarification": {
+            "type": "string",
+            "minLength": 20,
+            "maxLength": 180
+          },
+          "theme": {
+            "type": "string",
+            "pattern": "^[a-z]+(?:-[a-z]+)*$"
+          },
+          "answers": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string",
+              "enum": [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "R",
+                "S",
+                "T",
+                "W"
+              ]
+            },
+            "additionalProperties": {
+              "minItems": 1,
+              "maxItems": 40,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 2,
+                "maxLength": 80,
+                "pattern": "^[a-z0-9][a-z0-9 ,.'()/-]*$"
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "prompt",
+          "clarification",
+          "theme",
+          "answers"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "lang",
+    "letters",
+    "categories"
+  ],
+  "additionalProperties": false
+}

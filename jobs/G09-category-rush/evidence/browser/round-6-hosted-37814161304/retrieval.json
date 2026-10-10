@@ -1,0 +1,106 @@
+{
+  "origin": "github-actions-actual-downloaded-bytes",
+  "headSha": "79e9c90b76603137fe5412a81ac33ecbc02419c6",
+  "runId": 37814161304,
+  "artifactId": 11565694396,
+  "artifactBytes": 1136733,
+  "artifactSha256": "391757c424ce317429f50a3e8c0d5251be874a5c23936cf4f33471e215239f5e",
+  "sourceSha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
+  "sourceGuardCount": 18,
+  "files": [
+    {
+      "path": "SHA256SUMS.txt",
+      "sha256": "79756e233b265f509e65fb643b2d1e842005aa48317781930200c088e6402a9b",
+      "bytes": 45331
+    },
+    {
+      "path": "evidence/browser/desktop-frames.json",
+      "sha256": "ff15282413cad446ea020a3af4e87288f09c1eb717b68ef0b2b0bba7f7295b61",
+      "bytes": 15051
+    },
+    {
+      "path": "evidence/browser/hosted-run.json",
+      "sha256": "6aecc32dcbbacbaaa27bc723e7f2b02a9f498b49d933f73e940e83e677fc37e4",
+      "bytes": 304
+    },
+    {
+      "path": "evidence/browser/performance-report.json",
+      "sha256": "40414a5252d662aa23fc19f97bbb6cf7878708a343a224c88fd352cba3e7d792",
+      "bytes": 5311
+    },
+    {
+      "path": "evidence/browser/phone4x-frames.json",
+      "sha256": "d42966a239a7e5615c22a12207aea9d0332f94603418743f8acc1266524a900c",
+      "bytes": 15043
+    },
+    {
+      "path": "media/delivery-final-desktop.webm",
+      "sha256": "1e659f677e94f4922deca89bcdb41bc6d863213f441ecc921a84c9a6ca6faa4a",
+      "bytes": 357866
+    },
+    {
+      "path": "media/delivery-final-phone4x.webm",
+      "sha256": "e59047557e7fa1f67ef4cc4071a40d4e852a880514420bbee962af3455d0193b",
+      "bytes": 239171
+    },
+    {
+      "path": "play.html",
+      "sha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
+      "bytes": 457432
+    }
+  ],
+  "profiles": [
+    {
+      "profile": "desktop",
+      "count": 600,
+      "fps": 60.002784129183595,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "videoBytes": 357866,
+      "videoSha256": "1e659f677e94f4922deca89bcdb41bc6d863213f441ecc921a84c9a6ca6faa4a",
+      "decoder": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 1280,
+            "height": 720,
+            "nb_read_frames": "105"
+          }
+        ],
+        "format": {
+          "duration": "4.200000",
+          "size": "357866"
+        }
+      }
+    },
+    {
+      "profile": "phone4x",
+      "count": 600,
+      "fps": 60.00258011094477,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "videoBytes": 239171,
+      "videoSha256": "e59047557e7fa1f67ef4cc4071a40d4e852a880514420bbee962af3455d0193b",
+      "decoder": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "vp8",
+            "width": 390,
+            "height": 720,
+            "nb_read_frames": "107"
+          }
+        ],
+        "format": {
+          "duration": "4.280000",
+          "size": "239171"
+        }
+      }
+    }
+  ],
+  "verifiedAt": "2026-10-08T17:13:59.335192+00:00",
+  "runnerCopyScope": "current exact locally verified copy; not an uploaded artifact file"
+}

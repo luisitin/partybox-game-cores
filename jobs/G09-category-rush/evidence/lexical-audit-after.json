@@ -1,0 +1,1033 @@
+{
+  "sourceHashes": {
+    "match": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "core": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea"
+  },
+  "cases": 62,
+  "positive": 46,
+  "positiveSame": 46,
+  "positiveFailures": [],
+  "stemFailures": [],
+  "negative": 9,
+  "negativeFalseMerges": [],
+  "rows": [
+    {
+      "a": "child",
+      "b": "children",
+      "kind": "positive",
+      "same": true,
+      "stemA": "child",
+      "stemB": "child",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "foot",
+      "b": "feet",
+      "kind": "positive",
+      "same": true,
+      "stemA": "foot",
+      "stemB": "foot",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "tooth",
+      "b": "teeth",
+      "kind": "positive",
+      "same": true,
+      "stemA": "tooth",
+      "stemB": "tooth",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "person",
+      "b": "people",
+      "kind": "positive",
+      "same": true,
+      "stemA": "person",
+      "stemB": "person",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "mouse",
+      "b": "mice",
+      "kind": "positive",
+      "same": true,
+      "stemA": "mouse",
+      "stemB": "mouse",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "goose",
+      "b": "geese",
+      "kind": "positive",
+      "same": true,
+      "stemA": "goose",
+      "stemB": "goose",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "man",
+      "b": "men",
+      "kind": "positive",
+      "same": true,
+      "stemA": "man",
+      "stemB": "man",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "woman",
+      "b": "women",
+      "kind": "positive",
+      "same": true,
+      "stemA": "woman",
+      "stemB": "woman",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "knife",
+      "b": "knives",
+      "kind": "positive",
+      "same": true,
+      "stemA": "knife",
+      "stemB": "knife",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "leaf",
+      "b": "leaves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "leaf",
+      "stemB": "leaf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "shelf",
+      "b": "shelves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "shelf",
+      "stemB": "shelf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "life",
+      "b": "lives",
+      "kind": "positive",
+      "same": true,
+      "stemA": "life",
+      "stemB": "life",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "wife",
+      "b": "wives",
+      "kind": "positive",
+      "same": true,
+      "stemA": "wife",
+      "stemB": "wife",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "half",
+      "b": "halves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "half",
+      "stemB": "half",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "loaf",
+      "b": "loaves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "loaf",
+      "stemB": "loaf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "elf",
+      "b": "elves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "elf",
+      "stemB": "elf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "cactus",
+      "b": "cacti",
+      "kind": "positive",
+      "same": true,
+      "stemA": "cactus",
+      "stemB": "cactus",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "fungus",
+      "b": "fungi",
+      "kind": "positive",
+      "same": true,
+      "stemA": "fungus",
+      "stemB": "fungus",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "datum",
+      "b": "data",
+      "kind": "positive",
+      "same": true,
+      "stemA": "datum",
+      "stemB": "datum",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "syllabus",
+      "b": "syllabi",
+      "kind": "positive",
+      "same": true,
+      "stemA": "syllabus",
+      "stemB": "syllabus",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "analysis",
+      "b": "analyses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "analysis",
+      "stemB": "analysis",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "diagnosis",
+      "b": "diagnoses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "diagnosis",
+      "stemB": "diagnosis",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "oasis",
+      "b": "oases",
+      "kind": "positive",
+      "same": true,
+      "stemA": "oasis",
+      "stemB": "oasis",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "thesis",
+      "b": "theses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "thesis",
+      "stemB": "thesis",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "crisis",
+      "b": "crises",
+      "kind": "positive",
+      "same": true,
+      "stemA": "crisis",
+      "stemB": "crisis",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "potato",
+      "b": "potatoes",
+      "kind": "positive",
+      "same": true,
+      "stemA": "potato",
+      "stemB": "potato",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "tomato",
+      "b": "tomatoes",
+      "kind": "positive",
+      "same": true,
+      "stemA": "tomato",
+      "stemB": "tomato",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "sheep",
+      "b": "sheep",
+      "kind": "positive",
+      "same": true,
+      "stemA": "sheep",
+      "stemB": "sheep",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "fish",
+      "b": "fish",
+      "kind": "positive",
+      "same": true,
+      "stemA": "fish",
+      "stemB": "fish",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "deer",
+      "b": "deer",
+      "kind": "positive",
+      "same": true,
+      "stemA": "deer",
+      "stemB": "deer",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "species",
+      "b": "species",
+      "kind": "positive",
+      "same": true,
+      "stemA": "speci",
+      "stemB": "speci",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "aircraft",
+      "b": "aircraft",
+      "kind": "positive",
+      "same": true,
+      "stemA": "aircraft",
+      "stemB": "aircraft",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "hero",
+      "b": "heroes",
+      "kind": "positive",
+      "same": true,
+      "stemA": "hero",
+      "stemB": "hero",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "echo",
+      "b": "echoes",
+      "kind": "positive",
+      "same": true,
+      "stemA": "echo",
+      "stemB": "echo",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "bus",
+      "b": "buses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "bus",
+      "stemB": "bus",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "quiz",
+      "b": "quizzes",
+      "kind": "positive",
+      "same": true,
+      "stemA": "quiz",
+      "stemB": "quiz",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "status",
+      "b": "statuses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "status",
+      "stemB": "status",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "roof",
+      "b": "roofs",
+      "kind": "positive",
+      "same": true,
+      "stemA": "roof",
+      "stemB": "roof",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "chief",
+      "b": "chiefs",
+      "kind": "positive",
+      "same": true,
+      "stemA": "chief",
+      "stemB": "chief",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "proof",
+      "b": "proofs",
+      "kind": "positive",
+      "same": true,
+      "stemA": "proof",
+      "stemB": "proof",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "wolf",
+      "b": "wolves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "wolf",
+      "stemB": "wolf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "calf",
+      "b": "calves",
+      "kind": "positive",
+      "same": true,
+      "stemA": "calf",
+      "stemB": "calf",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "gas",
+      "b": "gases",
+      "kind": "positive",
+      "same": true,
+      "stemA": "gas",
+      "stemB": "gas",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "gas",
+      "b": "gasses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "gas",
+      "stemB": "gas",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "cactus",
+      "b": "cactuses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "cactus",
+      "stemB": "cactus",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "house",
+      "b": "houses",
+      "kind": "positive",
+      "same": true,
+      "stemA": "house",
+      "stemB": "house",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "news",
+      "b": "new",
+      "kind": "negative",
+      "same": false,
+      "stemA": "news",
+      "stemB": "new",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "chief",
+      "b": "chieves",
+      "kind": "negative",
+      "same": false,
+      "stemA": "chief",
+      "stemB": "chieve",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "proof",
+      "b": "prooves",
+      "kind": "negative",
+      "same": false,
+      "stemA": "proof",
+      "stemB": "proove",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "roof",
+      "b": "rooves",
+      "kind": "nonselected-variant",
+      "same": false,
+      "stemA": "roof",
+      "stemB": "roove",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "axis",
+      "b": "axe",
+      "kind": "negative",
+      "same": false,
+      "stemA": "axis",
+      "stemB": "axe",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "axis",
+      "b": "axes",
+      "kind": "ambiguous",
+      "same": false,
+      "stemA": "axis",
+      "stemB": "axe",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "axe",
+      "b": "axes",
+      "kind": "ambiguous",
+      "same": true,
+      "stemA": "axe",
+      "stemB": "axe",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "basis",
+      "b": "base",
+      "kind": "negative",
+      "same": false,
+      "stemA": "basis",
+      "stemB": "base",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "basis",
+      "b": "bases",
+      "kind": "ambiguous",
+      "same": false,
+      "stemA": "basis",
+      "stemB": "base",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "base",
+      "b": "bases",
+      "kind": "ambiguous",
+      "same": true,
+      "stemA": "base",
+      "stemB": "base",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "species",
+      "b": "specie",
+      "kind": "semantic-fuzzy-guard",
+      "same": true,
+      "stemA": "speci",
+      "stemB": "speci",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "bus",
+      "b": "business",
+      "kind": "negative",
+      "same": false,
+      "stemA": "bus",
+      "stemB": "business",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "leaf",
+      "b": "leave",
+      "kind": "negative",
+      "same": false,
+      "stemA": "leaf",
+      "stemB": "leave",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "knife",
+      "b": "knave",
+      "kind": "negative",
+      "same": false,
+      "stemA": "knife",
+      "stemB": "knave",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    },
+    {
+      "a": "status",
+      "b": "statue",
+      "kind": "semantic-fuzzy-guard",
+      "same": true,
+      "stemA": "status",
+      "stemB": "statue",
+      "groups": [
+        [
+          0,
+          1
+        ]
+      ],
+      "awarded": 0,
+      "ownAwarded": 0
+    },
+    {
+      "a": "house",
+      "b": "hose",
+      "kind": "negative",
+      "same": false,
+      "stemA": "house",
+      "stemB": "hose",
+      "groups": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "awarded": 2,
+      "ownAwarded": 2
+    }
+  ]
+}

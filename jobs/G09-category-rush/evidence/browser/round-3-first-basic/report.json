@@ -1,0 +1,136 @@
+{
+  "mode": "after",
+  "sourceSha256": "e4ce5e2dc46727a92dd810146cdad33f3913cb68194e06b730dd43a258072774",
+  "runnerSha256": "5e2dfae7bc766b058411e31ba01be9a91f39ebdf17acbc58bbc8c0b9b226f9d8",
+  "startedAt": "2026-10-08T11:32:02.225Z",
+  "checks": [
+    {
+      "name": "2 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during review",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during scores",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during review",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during scores",
+      "passed": true
+    },
+    {
+      "name": "exact HTML and offline runtime stayed clean",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "count": 2,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50"
+      },
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "review",
+      "before": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18"
+      },
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "scores",
+      "before": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null
+      },
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50"
+      },
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "review",
+      "before": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18"
+      },
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "scores",
+      "before": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null
+      },
+      "resumeAvailable": true,
+      "restored": true
+    }
+  ],
+  "runtime": {
+    "errors": [],
+    "requests": [],
+    "dialogs": []
+  },
+  "passed": true,
+  "browser": "141.0.7390.37",
+  "finishedAt": "2026-10-08T11:32:29.155Z"
+}

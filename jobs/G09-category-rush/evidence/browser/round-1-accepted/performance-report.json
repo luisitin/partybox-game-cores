@@ -1,0 +1,115 @@
+{
+  "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+  "sourceFingerprints": {
+    "client.ts": "a220085b5a5bb0f2b8bc264d3913e0c15a03aebb2d2347fc20c58ade464f6431",
+    "build-play.ts": "4f8a9b8c0b42d23de11e609c210a9ad0c0c79a5275ef7d77dded268cb646d609",
+    "src/play.template.html": "b913dc187eca239fb65acbffde3b2b05fe8dfa3d6ff395a3418b01717a1f519e",
+    "src/index.ts": "966bb2da3500e5adfdd556e9f830c4acb9e14b80c6b347b4db4f5e2e9f9dab66",
+    "src/model.ts": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4",
+    "src/scoring.ts": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "src/match.ts": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "content/categories.ts": "be63b334a080dabe5299802fd507a502043a15cd38bd0b119f7a53f18ef89cb5",
+    "package-lock.json": "0da98f3882641b8411cfa4137b5533f9f7e5944d5f99101e59a979e9e372da38",
+    "LICENSE": "17936c55642f589858b3023756fc8c73706f0d4118be9d23cf174b1e485d627e",
+    "THIRD_PARTY_NOTICES.txt": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164",
+    "node_modules/zod/LICENSE": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+    "../../contract/rng.ts": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe",
+    "scripts/browser-performance.mjs": "274a54ce91f1dc173e094b06af713e8cc945e75983985ca8623d4cd5a018720a"
+  },
+  "licenseChecks": {
+    "LICENSE": true,
+    "node_modules/zod/LICENSE": true
+  },
+  "samplingRecording": false,
+  "recordingDuringMeasurement": false,
+  "browser": "141.0.7390.37",
+  "startedAt": "2026-10-08T10:16:48.265Z",
+  "profiles": [
+    {
+      "profile": "desktop",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "cpuThrottle": 1,
+      "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+      "samplingRecording": false,
+      "recordingDuringMeasurement": false,
+      "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
+      "count": 600,
+      "totalMs": 10116.136,
+      "meanMs": 16.860226666666666,
+      "fps": 59.31118363770514,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 50.100000000000364,
+      "networkRequests": [
+        "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+      ],
+      "pageErrors": [],
+      "passed": true,
+      "video": "media/delivery-final-desktop.webm",
+      "clipContext": {
+        "separateFromSampling": true,
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "cpuThrottle": 1,
+        "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+        "activeRecordingMs": 3000,
+        "workload": "same 12-category answer screen with active timer",
+        "pageErrors": [],
+        "networkRequests": [
+          "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+        ]
+      },
+      "videoBytes": 320822,
+      "archivedVideo": "media/round-1-accepted-desktop.webm"
+    },
+    {
+      "profile": "phone4x",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuThrottle": 4,
+      "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+      "samplingRecording": false,
+      "recordingDuringMeasurement": false,
+      "sampleMethod": "601 consecutive actual requestAnimationFrame timestamps, 600 adjacent deltas; no sleeps, filtering, skipped frames or synthetic timestamps",
+      "count": 600,
+      "totalMs": 9999.47,
+      "meanMs": 16.665783333333334,
+      "fps": 60.00318016854894,
+      "p95Ms": 16.700000000000728,
+      "p99Ms": 16.800000000000182,
+      "maxMs": 16.80000000000109,
+      "networkRequests": [
+        "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+      ],
+      "pageErrors": [],
+      "passed": true,
+      "video": "media/delivery-final-phone4x.webm",
+      "clipContext": {
+        "separateFromSampling": true,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "cpuThrottle": 4,
+        "sourceSha256": "0a9940c56f3b46c4c10df4ab4a8c7d62b7efb90950abce530e652885e0be53f3",
+        "activeRecordingMs": 3000,
+        "workload": "same 12-category answer screen with active timer",
+        "pageErrors": [],
+        "networkRequests": [
+          "file:///workspace/game-cores-G09-parallel/jobs/G09-category-rush/play.html"
+        ]
+      },
+      "videoBytes": 213656,
+      "archivedVideo": "media/round-1-accepted-phone4x.webm"
+    }
+  ],
+  "passed": true,
+  "finishedAt": "2026-10-08T10:17:19.487Z"
+}

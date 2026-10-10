@@ -1,0 +1,139 @@
+{
+  "scope": "Actual first sampled attempt, invalid active-answer-workload scope; all raw native results retained. No causal claim explains phone failure.",
+  "profiles": [
+    {
+      "profile": "desktop",
+      "count": 600,
+      "fps": 59.70429655999735,
+      "p99Ms": 16.800000000046566,
+      "maxMs": 50.100000000034925,
+      "numericalGatePassed": true,
+      "activeAnswerWorkloadValidated": false
+    },
+    {
+      "profile": "phone4x",
+      "count": 600,
+      "fps": 58.444306082961255,
+      "p99Ms": 33.30000000000291,
+      "maxMs": 116.60000000000582,
+      "numericalGatePassed": false,
+      "activeAnswerWorkloadValidated": false
+    }
+  ],
+  "sourceGuards": [
+    {
+      "source": "client-save.ts",
+      "copy": "sources/client-save.ts",
+      "sha256": "3554023cef9122b262eb96c48ada2483fc7e432e2bd29a6b8d040db5c2ce48ff"
+    },
+    {
+      "source": "client-draft.ts",
+      "copy": "sources/client-draft.ts",
+      "sha256": "9a5acea792abf2bcb6e727c4b8e69e0e26e8b337463108042ee312fa03af526a"
+    },
+    {
+      "source": "client.ts",
+      "copy": "sources/client.ts",
+      "sha256": "73a9e39fb2753185fe2bad12156e99fbc414a272230f33dc5540f64223530167"
+    },
+    {
+      "source": "build-play.ts",
+      "copy": "sources/build-play.ts",
+      "sha256": "ab3b89a8289f52a8914202b89b3746ed85cd2cdb31cb926276b8c749b05eb12a"
+    },
+    {
+      "source": "src/play.template.html",
+      "copy": "sources/src/play.template.html",
+      "sha256": "2b89c3dbeb69326a4c6a29bc84882ae25dd3462c502142ccb70359a1a288a501"
+    },
+    {
+      "source": "src/index.ts",
+      "copy": "sources/src/index.ts",
+      "sha256": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12"
+    },
+    {
+      "source": "src/model.ts",
+      "copy": "sources/src/model.ts",
+      "sha256": "817d57cc78e07925747a80f8f7bc74bfcb07d27dfb59be57a3db89e253a0cda4"
+    },
+    {
+      "source": "src/scoring.ts",
+      "copy": "sources/src/scoring.ts",
+      "sha256": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff"
+    },
+    {
+      "source": "src/match.ts",
+      "copy": "sources/src/match.ts",
+      "sha256": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b"
+    },
+    {
+      "source": "src/select.ts",
+      "copy": "sources/src/select.ts",
+      "sha256": "1fe2cfaf8bfdb4ab3de945bbb31ce61a124f34fee80963821178800112ae1c07"
+    },
+    {
+      "source": "content/categories.ts",
+      "copy": "sources/content/categories.ts",
+      "sha256": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851"
+    },
+    {
+      "source": "package-lock.json",
+      "copy": "sources/package-lock.json",
+      "sha256": "0da98f3882641b8411cfa4137b5533f9f7e5944d5f99101e59a979e9e372da38"
+    },
+    {
+      "source": "LICENSE",
+      "copy": "sources/LICENSE",
+      "sha256": "17936c55642f589858b3023756fc8c73706f0d4118be9d23cf174b1e485d627e"
+    },
+    {
+      "source": "THIRD_PARTY_NOTICES.txt",
+      "copy": "sources/THIRD_PARTY_NOTICES.txt",
+      "sha256": "24596274ff6862e2e9143cd1c092b809f95106cf5037db51a07772497a520164"
+    },
+    {
+      "source": "node_modules/zod/LICENSE",
+      "copy": "sources/licenses/zod.txt",
+      "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+    },
+    {
+      "source": "../../contract/rng.ts",
+      "copy": "sources/contract/rng.ts",
+      "sha256": "7cfcf3024723607e8dd1ce6ccc5683a48d71fcc617947304cc5b9f6d3d7842fe"
+    },
+    {
+      "source": "scripts/browser-performance.mjs",
+      "copy": "sources/scripts/browser-performance.mjs",
+      "sha256": "d01db1f397f05307187273714f1fe1c09137910248fb45d88963e35e44f09448"
+    },
+    {
+      "source": "scripts/frame-window.mjs",
+      "copy": "sources/scripts/frame-window.mjs",
+      "sha256": "d1b84945e7257f8a494b2834ef3393d809c76b36fcabe4fd596cfe35ecbc290a"
+    }
+  ],
+  "actualExitCode": 1,
+  "actualProcessClosure": "2026-10-08T18:10:49.006Z",
+  "phoneRecording": "NOTRUN; its600 native sample DID run and failed",
+  "desktopVideoBytes": 346200,
+  "desktopVideoSha256": "8c9c6de63c89e88570d8228ae90b2bf5e4e1ac4f6f89eb997434849523d5071e",
+  "desktopDecoder": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "vp8",
+        "width": 1280,
+        "height": 720,
+        "nb_read_frames": "103"
+      }
+    ],
+    "format": {
+      "duration": "4.120000",
+      "size": "346200"
+    }
+  },
+  "cancelCommand": "Failed no-grant assertion before any signal/write; actual samples and outcomes were not cancelled or rewritten",
+  "timerBeforeWaitLimitation": "The old harness starts60-second timer before quiet waiting, with no phase endpoint. Expiry inferred from code/wait duration; inspect actual archived screenshots. Hosted no-wait CI has independent scope.",
+  "verifiedAt": "2026-10-08T18:14:40.801116+00:00"
+}

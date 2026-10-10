@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/workspace/game-cores-G09-parallel/jobs/G09-category-rush/.work/validate-d131-hosted.py", line 57, in <module>
+    assert abs((last-first)-total)<10,'observed wall/RAF elapsed agreement'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: observed wall/RAF elapsed agreement

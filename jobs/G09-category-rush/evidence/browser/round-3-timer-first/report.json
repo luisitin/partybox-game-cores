@@ -1,0 +1,143 @@
+{
+  "mode": "after",
+  "sourceSha256": "084962917ba355e1c012253359f9f885ecab2a2b930f5493b1bcb46daf45f4aa",
+  "runnerSha256": "6b30612c0e7fa2a35869960fdaf4a1506799ba2533a423da4be912b06ba7d28d",
+  "startedAt": "2026-10-08T11:37:13.701Z",
+  "checks": [
+    {
+      "name": "2 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during review",
+      "passed": true
+    },
+    {
+      "name": "2 humans reload during scores",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during answer",
+      "passed": true
+    },
+    {
+      "name": "8 humans reload during review",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: exact draft, ballot, score, receipts and active time restored\n+ actual - expected\n\n  {\n    draft: null,\n    keepSelected: 'true',\n    phase: 'review',\n    receiptCount: 0,\n    score: [],\n+   timer: '0:20'\n-   timer: '0:18'\n  }\n"
+    }
+  ],
+  "cases": [
+    {
+      "count": 2,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "review",
+      "before": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "review",
+        "score": [],
+        "draft": null,
+        "keepSelected": "true",
+        "timer": "0:18",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 2,
+      "phase": "scores",
+      "before": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "after": {
+        "phase": "scores",
+        "score": [
+          "1",
+          "0"
+        ],
+        "draft": null,
+        "keepSelected": null,
+        "timer": null,
+        "receiptCount": 12
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": false,
+      "resumeAvailable": true,
+      "restored": true
+    },
+    {
+      "count": 8,
+      "phase": "answer",
+      "before": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "after": {
+        "phase": "answer",
+        "score": [],
+        "draft": "S reload-probe",
+        "keepSelected": null,
+        "timer": "0:50",
+        "receiptCount": 0
+      },
+      "hiddenBeforeResume": true,
+      "privateHandover": true,
+      "resumeAvailable": true,
+      "restored": true
+    }
+  ],
+  "details": [],
+  "runtime": {
+    "errors": [],
+    "requests": [],
+    "dialogs": []
+  },
+  "passed": false,
+  "browser": "141.0.7390.37",
+  "failure": "AssertionError [ERR_ASSERTION]: exact draft, ballot, score, receipts and active time restored\n+ actual - expected\n\n  {\n    draft: null,\n    keepSelected: 'true',\n    phase: 'review',\n    receiptCount: 0,\n    score: [],\n+   timer: '0:20'\n-   timer: '0:18'\n  }\n",
+  "finishedAt": "2026-10-08T11:37:29.977Z"
+}

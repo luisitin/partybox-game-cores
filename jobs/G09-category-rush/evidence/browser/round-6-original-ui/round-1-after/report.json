@@ -1,0 +1,75 @@
+{
+  "mode": "after",
+  "sourceSha256": "68f43a976c73b98b0b3a55d56cb39a17cf7bfcaf6476e96540f77b9e1de6b91c",
+  "startedAt": "2026-10-08T16:51:50.457Z",
+  "checks": [
+    {
+      "name": "2 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "8 humans all blank: measured compulsory review actions",
+      "passed": true
+    },
+    {
+      "name": "mixed empty, accepted, wrong-initial and duplicate categories retain every nonempty private ballot",
+      "passed": true
+    },
+    {
+      "name": "host skip crosses an empty block and preserves the next nonempty private ballot",
+      "passed": true
+    },
+    {
+      "name": "paused blank handover stays paused; explicit host skip settles the blank round",
+      "passed": true
+    },
+    {
+      "name": "ending paused blank writing preserves completed-round scores",
+      "passed": true
+    },
+    {
+      "name": "two blank rounds settle independently and continue through the real next-round input",
+      "passed": true
+    },
+    {
+      "name": "offline runtime and exact tested HTML remain clean",
+      "passed": true
+    }
+  ],
+  "blankProfiles": [
+    {
+      "humans": 2,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 72.58541299999979,
+      "categories": []
+    },
+    {
+      "humans": 8,
+      "readyClicks": 0,
+      "ballotLocks": 0,
+      "reviewActionCount": 0,
+      "reviewElapsedMs": 65.82527900000059,
+      "categories": []
+    }
+  ],
+  "runtime": {
+    "pageErrors": [],
+    "networkRequests": [],
+    "dialogs": []
+  },
+  "passed": true,
+  "browser": "141.0.7390.37",
+  "mixed": {
+    "nonemptyCategories": [
+      2,
+      4,
+      8,
+      10
+    ],
+    "emptyCategoriesSkipped": 8,
+    "ballotLocks": 8
+  },
+  "finishedAt": "2026-10-08T16:52:16.459Z"
+}

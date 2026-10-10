@@ -1,0 +1,1177 @@
+{
+  "phase": {
+    "id": "done",
+    "startedAt": 55767,
+    "deadline": null
+  },
+  "phaseClock": 55767,
+  "rng": {
+    "seed": 42,
+    "step": 265
+  },
+  "players": {
+    "p0": {
+      "id": "p0",
+      "name": "Player 1",
+      "avatarId": "face1",
+      "connected": true,
+      "bot": true
+    },
+    "p1": {
+      "id": "p1",
+      "name": "Player 2",
+      "avatarId": "face2",
+      "connected": true,
+      "bot": true
+    },
+    "p2": {
+      "id": "p2",
+      "name": "Player 3",
+      "avatarId": "face3",
+      "connected": true,
+      "bot": true
+    }
+  },
+  "order": [
+    "p0",
+    "p1",
+    "p2"
+  ],
+  "left": [],
+  "cfg": {
+    "rounds": 1,
+    "roundSeconds": 30
+  },
+  "round": 1,
+  "letter": "S",
+  "usedLetters": [
+    "S"
+  ],
+  "categories": [
+    {
+      "id": "school-08",
+      "prompt": "Something on a teacher's desk",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "school"
+    },
+    {
+      "id": "produce-05",
+      "prompt": "Something edible picked from a climbing plant",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "produce"
+    },
+    {
+      "id": "jobs-10",
+      "prompt": "A worker who makes or repairs jewelry",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "jobs"
+    },
+    {
+      "id": "art-08",
+      "prompt": "Something used to shape wet clay",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "art"
+    },
+    {
+      "id": "music-07",
+      "prompt": "Something carried in a guitar case",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "music"
+    },
+    {
+      "id": "games-toys-01",
+      "prompt": "Something that rolls in a tabletop game",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "games-toys"
+    },
+    {
+      "id": "events-10",
+      "prompt": "Something used to identify staff at an event",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "events"
+    },
+    {
+      "id": "parks-07",
+      "prompt": "Something you might feed to garden birds",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "parks"
+    },
+    {
+      "id": "digital-05",
+      "prompt": "Something that can store a digital photograph",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "digital"
+    },
+    {
+      "id": "community-01",
+      "prompt": "A place where neighbors can borrow something",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "community"
+    },
+    {
+      "id": "paper-03",
+      "prompt": "Something used to mark a page in a book",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "paper"
+    },
+    {
+      "id": "pantry-08",
+      "prompt": "An ingredient that sweetens cake batter",
+      "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+      "theme": "pantry"
+    }
+  ],
+  "answers": {
+    "p0": [
+      "",
+      "snap pea",
+      "",
+      "",
+      "strap",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "",
+      "string",
+      "stevia"
+    ],
+    "p1": [
+      "sticky note",
+      "squash",
+      "",
+      "stamp",
+      "string",
+      "spinner wheel",
+      "shirt",
+      "seed",
+      "server",
+      "school",
+      "",
+      "stevia"
+    ],
+    "p2": [
+      "sticky note",
+      "snap pea",
+      "silversmith",
+      "stamp",
+      "slide",
+      "spinner wheel",
+      "shirt",
+      "sunflower seed",
+      "server",
+      "school",
+      "strip",
+      "sugar"
+    ]
+  },
+  "submitted": {
+    "p0": true,
+    "p1": true,
+    "p2": true
+  },
+  "reviewIndex": 11,
+  "votes": {
+    "p0": [
+      true,
+      true
+    ],
+    "p1": [
+      true,
+      true
+    ],
+    "p2": [
+      true,
+      true
+    ]
+  },
+  "reviewed": [
+    {
+      "categoryId": "school-08",
+      "groups": [
+        {
+          "id": "r1-c0-g0",
+          "text": "sticky note",
+          "owners": [
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "produce-05",
+      "groups": [
+        {
+          "id": "r1-c1-g0",
+          "text": "snap pea",
+          "owners": [
+            "p0",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        },
+        {
+          "id": "r1-c1-g1",
+          "text": "squash",
+          "owners": [
+            "p1"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "jobs-10",
+      "groups": [
+        {
+          "id": "r1-c2-g0",
+          "text": "silversmith",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "art-08",
+      "groups": [
+        {
+          "id": "r1-c3-g0",
+          "text": "stamp",
+          "owners": [
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "music-07",
+      "groups": [
+        {
+          "id": "r1-c4-g0",
+          "text": "strap",
+          "owners": [
+            "p0"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        },
+        {
+          "id": "r1-c4-g1",
+          "text": "string",
+          "owners": [
+            "p1"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        },
+        {
+          "id": "r1-c4-g2",
+          "text": "slide",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "games-toys-01",
+      "groups": [
+        {
+          "id": "r1-c5-g0",
+          "text": "spinner wheel",
+          "owners": [
+            "p0",
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "events-10",
+      "groups": [
+        {
+          "id": "r1-c6-g0",
+          "text": "shirt",
+          "owners": [
+            "p0",
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "parks-07",
+      "groups": [
+        {
+          "id": "r1-c7-g0",
+          "text": "seed",
+          "owners": [
+            "p0",
+            "p1"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        },
+        {
+          "id": "r1-c7-g1",
+          "text": "sunflower seed",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "digital-05",
+      "groups": [
+        {
+          "id": "r1-c8-g0",
+          "text": "server",
+          "owners": [
+            "p0",
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "community-01",
+      "groups": [
+        {
+          "id": "r1-c9-g0",
+          "text": "school",
+          "owners": [
+            "p1",
+            "p2"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        }
+      ]
+    },
+    {
+      "categoryId": "paper-03",
+      "groups": [
+        {
+          "id": "r1-c10-g0",
+          "text": "string",
+          "owners": [
+            "p0"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        },
+        {
+          "id": "r1-c10-g1",
+          "text": "strip",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    },
+    {
+      "categoryId": "pantry-08",
+      "groups": [
+        {
+          "id": "r1-c11-g0",
+          "text": "stevia",
+          "owners": [
+            "p0",
+            "p1"
+          ],
+          "duplicate": true,
+          "eligible": true,
+          "accepted": true,
+          "points": 0
+        },
+        {
+          "id": "r1-c11-g1",
+          "text": "sugar",
+          "owners": [
+            "p2"
+          ],
+          "duplicate": false,
+          "eligible": true,
+          "accepted": true,
+          "points": 1
+        }
+      ]
+    }
+  ],
+  "scores": {
+    "p0": 2,
+    "p1": 2,
+    "p2": 5
+  },
+  "roundResult": {
+    "round": 1,
+    "letter": "S",
+    "categories": [
+      {
+        "id": "school-08",
+        "prompt": "Something on a teacher's desk",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "school"
+      },
+      {
+        "id": "produce-05",
+        "prompt": "Something edible picked from a climbing plant",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "produce"
+      },
+      {
+        "id": "jobs-10",
+        "prompt": "A worker who makes or repairs jewelry",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "jobs"
+      },
+      {
+        "id": "art-08",
+        "prompt": "Something used to shape wet clay",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "art"
+      },
+      {
+        "id": "music-07",
+        "prompt": "Something carried in a guitar case",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "music"
+      },
+      {
+        "id": "games-toys-01",
+        "prompt": "Something that rolls in a tabletop game",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "games-toys"
+      },
+      {
+        "id": "events-10",
+        "prompt": "Something used to identify staff at an event",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "events"
+      },
+      {
+        "id": "parks-07",
+        "prompt": "Something you might feed to garden birds",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "parks"
+      },
+      {
+        "id": "digital-05",
+        "prompt": "Something that can store a digital photograph",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "digital"
+      },
+      {
+        "id": "community-01",
+        "prompt": "A place where neighbors can borrow something",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "community"
+      },
+      {
+        "id": "paper-03",
+        "prompt": "Something used to mark a page in a book",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "paper"
+      },
+      {
+        "id": "pantry-08",
+        "prompt": "An ingredient that sweetens cake batter",
+        "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+        "theme": "pantry"
+      }
+    ],
+    "points": {
+      "p0": 2,
+      "p1": 2,
+      "p2": 5
+    },
+    "entries": [
+      {
+        "categoryId": "school-08",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "sticky note",
+            "owners": [
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "produce-05",
+        "groups": [
+          {
+            "id": "r1-c1-g0",
+            "text": "snap pea",
+            "owners": [
+              "p0",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          },
+          {
+            "id": "r1-c1-g1",
+            "text": "squash",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "jobs-10",
+        "groups": [
+          {
+            "id": "r1-c2-g0",
+            "text": "silversmith",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "art-08",
+        "groups": [
+          {
+            "id": "r1-c3-g0",
+            "text": "stamp",
+            "owners": [
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "music-07",
+        "groups": [
+          {
+            "id": "r1-c4-g0",
+            "text": "strap",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c4-g1",
+            "text": "string",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c4-g2",
+            "text": "slide",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "games-toys-01",
+        "groups": [
+          {
+            "id": "r1-c5-g0",
+            "text": "spinner wheel",
+            "owners": [
+              "p0",
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "events-10",
+        "groups": [
+          {
+            "id": "r1-c6-g0",
+            "text": "shirt",
+            "owners": [
+              "p0",
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "parks-07",
+        "groups": [
+          {
+            "id": "r1-c7-g0",
+            "text": "seed",
+            "owners": [
+              "p0",
+              "p1"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          },
+          {
+            "id": "r1-c7-g1",
+            "text": "sunflower seed",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "digital-05",
+        "groups": [
+          {
+            "id": "r1-c8-g0",
+            "text": "server",
+            "owners": [
+              "p0",
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "community-01",
+        "groups": [
+          {
+            "id": "r1-c9-g0",
+            "text": "school",
+            "owners": [
+              "p1",
+              "p2"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          }
+        ]
+      },
+      {
+        "categoryId": "paper-03",
+        "groups": [
+          {
+            "id": "r1-c10-g0",
+            "text": "string",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c10-g1",
+            "text": "strip",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      {
+        "categoryId": "pantry-08",
+        "groups": [
+          {
+            "id": "r1-c11-g0",
+            "text": "stevia",
+            "owners": [
+              "p0",
+              "p1"
+            ],
+            "duplicate": true,
+            "eligible": true,
+            "accepted": true,
+            "points": 0
+          },
+          {
+            "id": "r1-c11-g1",
+            "text": "sugar",
+            "owners": [
+              "p2"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      }
+    ]
+  },
+  "history": [
+    {
+      "round": 1,
+      "letter": "S",
+      "categories": [
+        {
+          "id": "school-08",
+          "prompt": "Something on a teacher's desk",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "school"
+        },
+        {
+          "id": "produce-05",
+          "prompt": "Something edible picked from a climbing plant",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "produce"
+        },
+        {
+          "id": "jobs-10",
+          "prompt": "A worker who makes or repairs jewelry",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "jobs"
+        },
+        {
+          "id": "art-08",
+          "prompt": "Something used to shape wet clay",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "art"
+        },
+        {
+          "id": "music-07",
+          "prompt": "Something carried in a guitar case",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "music"
+        },
+        {
+          "id": "games-toys-01",
+          "prompt": "Something that rolls in a tabletop game",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "games-toys"
+        },
+        {
+          "id": "events-10",
+          "prompt": "Something used to identify staff at an event",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "events"
+        },
+        {
+          "id": "parks-07",
+          "prompt": "Something you might feed to garden birds",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "parks"
+        },
+        {
+          "id": "digital-05",
+          "prompt": "Something that can store a digital photograph",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "digital"
+        },
+        {
+          "id": "community-01",
+          "prompt": "A place where neighbors can borrow something",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "community"
+        },
+        {
+          "id": "paper-03",
+          "prompt": "Something used to mark a page in a book",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "paper"
+        },
+        {
+          "id": "pantry-08",
+          "prompt": "An ingredient that sweetens cake batter",
+          "clarification": "Give a real example. Established compound names count; decorative modifiers do not.",
+          "theme": "pantry"
+        }
+      ],
+      "points": {
+        "p0": 2,
+        "p1": 2,
+        "p2": 5
+      },
+      "entries": [
+        {
+          "categoryId": "school-08",
+          "groups": [
+            {
+              "id": "r1-c0-g0",
+              "text": "sticky note",
+              "owners": [
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "produce-05",
+          "groups": [
+            {
+              "id": "r1-c1-g0",
+              "text": "snap pea",
+              "owners": [
+                "p0",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            },
+            {
+              "id": "r1-c1-g1",
+              "text": "squash",
+              "owners": [
+                "p1"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "jobs-10",
+          "groups": [
+            {
+              "id": "r1-c2-g0",
+              "text": "silversmith",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "art-08",
+          "groups": [
+            {
+              "id": "r1-c3-g0",
+              "text": "stamp",
+              "owners": [
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "music-07",
+          "groups": [
+            {
+              "id": "r1-c4-g0",
+              "text": "strap",
+              "owners": [
+                "p0"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            },
+            {
+              "id": "r1-c4-g1",
+              "text": "string",
+              "owners": [
+                "p1"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            },
+            {
+              "id": "r1-c4-g2",
+              "text": "slide",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "games-toys-01",
+          "groups": [
+            {
+              "id": "r1-c5-g0",
+              "text": "spinner wheel",
+              "owners": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "events-10",
+          "groups": [
+            {
+              "id": "r1-c6-g0",
+              "text": "shirt",
+              "owners": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "parks-07",
+          "groups": [
+            {
+              "id": "r1-c7-g0",
+              "text": "seed",
+              "owners": [
+                "p0",
+                "p1"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            },
+            {
+              "id": "r1-c7-g1",
+              "text": "sunflower seed",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "digital-05",
+          "groups": [
+            {
+              "id": "r1-c8-g0",
+              "text": "server",
+              "owners": [
+                "p0",
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "community-01",
+          "groups": [
+            {
+              "id": "r1-c9-g0",
+              "text": "school",
+              "owners": [
+                "p1",
+                "p2"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            }
+          ]
+        },
+        {
+          "categoryId": "paper-03",
+          "groups": [
+            {
+              "id": "r1-c10-g0",
+              "text": "string",
+              "owners": [
+                "p0"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            },
+            {
+              "id": "r1-c10-g1",
+              "text": "strip",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        },
+        {
+          "categoryId": "pantry-08",
+          "groups": [
+            {
+              "id": "r1-c11-g0",
+              "text": "stevia",
+              "owners": [
+                "p0",
+                "p1"
+              ],
+              "duplicate": true,
+              "eligible": true,
+              "accepted": true,
+              "points": 0
+            },
+            {
+              "id": "r1-c11-g1",
+              "text": "sugar",
+              "owners": [
+                "p2"
+              ],
+              "duplicate": false,
+              "eligible": true,
+              "accepted": true,
+              "points": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

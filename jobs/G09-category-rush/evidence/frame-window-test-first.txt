@@ -1,0 +1,33 @@
+✔ writing hints distinguish blanks, initial articles, accents and numeric initials (4.156859ms)
+✔ every directly equivalent own row warns with exact category numbers and no semantic veto (8.895122ms)
+✔ a fuzzy chain lists direct scoring pairs rather than inventing endpoint matches (2.706875ms)
+✔ bounded own-draft advice is pure and matches independently enumerated pairs on varied full sheets (3382.80173ms)
+✖ only an exact fresh grant authorizes a frame window; closure preserves actual summary (560.848842ms)
+✔ CI without local coordination performs no waits or disk marker work (1.611395ms)
+ℹ Error: Test "only an exact fresh grant authorizes a frame window; closure preserves actual summary" at tests/frame-window.test.ts:1:645 generated asynchronous activity after the test ended. This activity created the error "Error: ENOENT: no such file or directory, open '/tmp/g09-frame-of6SRz/desktop-ready-0cefe245-b6be-4666-876f-31ba72331435.tmp'" and would have caused the test to fail, but instead triggered an unhandledRejection event.
+ℹ tests 6
+ℹ suites 0
+ℹ pass 5
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4038.295797
+
+✖ failing tests:
+
+test at tests/frame-window.test.ts:1:645
+✖ only an exact fresh grant authorizes a frame window; closure preserves actual summary (560.848842ms)
+  AssertionError [ERR_ASSERTION]: Expected "actual" to be strictly unequal to:
+  
+  '07c0b8c4-14cc-4c4f-95de-e090baff89d1'
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/frame-window.test.ts:30:104)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '07c0b8c4-14cc-4c4f-95de-e090baff89d1',
+    expected: '07c0b8c4-14cc-4c4f-95de-e090baff89d1',
+    operator: 'notStrictEqual',
+    diff: 'simple'
+  }

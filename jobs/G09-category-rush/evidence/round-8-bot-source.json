@@ -1,0 +1,56 @@
+{
+  "scope": "Formal round8 independently actual exactec current hosted league versus public summaries/documentation",
+  "headSha": "ec224692d406ebe7a1bb612937e983d214beec26",
+  "runId": 37833413069,
+  "jobId": 113504276655,
+  "ciConclusion": "success",
+  "ciCompleted": "2026-10-08T19:50:07Z",
+  "actualLogChars": 133489,
+  "actualLogSha256": "6891754c9f809e94f8c559ea0412e46d99870b66634f3aaf197d984393dd0c80",
+  "sourceHashes": {
+    "src/index.ts": "a62e5fffde424f8d20cdedb1c52f5fbf7a850e771c79919b229d8cb15d7fda12",
+    "src/match.ts": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "content/categories.json": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "content/categories.ts": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851",
+    "scripts/bots.ts": "94639897637d43cfa8ad300f04bb757bb02fc6f983313e71fb0d029d374fdf44",
+    "evidence/bot-matchups.jsonl": "a1a16af72be65fd8486de39cd928fd9f60fa867e6d3afe7116fa5b869c911ff8",
+    "play.html": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236"
+  },
+  "matchups": [
+    {
+      "matchup": "sharp vs normal",
+      "games": 2000,
+      "firstWins": 1970,
+      "secondWins": 11,
+      "ties": 19,
+      "firstMean": 10.866,
+      "secondMean": 5.6745
+    },
+    {
+      "matchup": "normal vs easy",
+      "games": 2000,
+      "firstWins": 1981,
+      "secondWins": 11,
+      "ties": 8,
+      "firstMean": 15.397,
+      "secondMean": 6.379
+    }
+  ],
+  "actualGames": 4000,
+  "incorrectCurrentCoreLabelsBefore": 1,
+  "currentDocumentCoreBefore": "320c99f2",
+  "currentActualCore": "a62e5fff",
+  "originalDocumentSha256": "bc5329218a16f4f194295b4a4e22d2f1972e46040032c7942b2c56c6b35d3f8c",
+  "corrected": true,
+  "playerVisibleGain": false,
+  "consecutiveNoGainAfterCorrection": 1,
+  "scopeLimits": [
+    "Two-player three-round league only; not eight-player strength",
+    "Two summary rows rather than4000 individual transcripts",
+    "Does not claim old-control recovery or typing/autosave throughput"
+  ],
+  "currentDocumentCoreAfter": "a62e5fff",
+  "incorrectCurrentCoreLabelsAfter": 0,
+  "correctedDocumentSha256": "0604b638131c4450cd199d53835839a8267abc52f4bdcebaaaf2485c64234697",
+  "runtimeAndSummaryByteChanges": 0
+}

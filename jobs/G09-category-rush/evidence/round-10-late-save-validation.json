@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "actualAssertions": 3894,
+  "actualClosedAt": "2026-10-08T21:23:38.750Z",
+  "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+  "runtimeChanges": "none",
+  "playerVisibleGain": false,
+  "formalReview": 10,
+  "consecutiveNoPlayerGainRounds": 3,
+  "profiles": [
+    {
+      "profile": "desktop",
+      "nativeInputs": 960,
+      "trustedCharacterPrefixes": 960,
+      "savedBytes": 95426,
+      "saveWaitMs": 268.6094580000008,
+      "handlerP99Ms": 1.7999999821186066,
+      "handlerMaxMs": 4,
+      "timerBefore": "1:00",
+      "timerAfter": "0:58",
+      "restoredTimer": "0:57",
+      "refusesSecondSeed": true,
+      "longTasks": []
+    },
+    {
+      "profile": "phone4x",
+      "nativeInputs": 960,
+      "trustedCharacterPrefixes": 960,
+      "savedBytes": 95414,
+      "saveWaitMs": 271.15953400000217,
+      "handlerP99Ms": 9.199999988079071,
+      "handlerMaxMs": 20.099999994039536,
+      "timerBefore": "1:00",
+      "timerAfter": "0:50",
+      "restoredTimer": "0:49",
+      "refusesSecondSeed": true,
+      "longTasks": [
+        {
+          "startTime": 5654.299999982119,
+          "duration": 55,
+          "name": "self"
+        }
+      ]
+    }
+  ],
+  "capture": {
+    "path": "late-save-phone4x.webm",
+    "canonicalPath": "media/round-10-late-save-phone4x.webm",
+    "bytes": 393783,
+    "sha256": "e2f9584058bd1de143ca6fefb7753cf04fdb58a5b1ef4b2644db402b852817c0",
+    "sourceSha256": "91a0c95d5680c1e691a9206ee13252d2d312439e3086e4aed24c4ba4ac10e236",
+    "separateFromObservationalTyping": true,
+    "scope": "Actual native private typing and save-status recording, no FPS measurement",
+    "decoder": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 720,
+          "nb_read_frames": "160"
+        }
+      ],
+      "format": {
+        "duration": "6.400000",
+        "size": "393783"
+      }
+    },
+    "fullFfmpegDecode": "EXIT0 using ffmpeg -hide_banner -v error -threads 1 -i evidence/browser/round-10-late-save/late-save-phone4x.webm -map 0:v:0 -f null -"
+  },
+  "firstFailedAttemptPreserved": "evidence/browser/round-10-late-save-first",
+  "timingScope": "Native capture-before/production-handler/bubble-after observations only; no FPS run, hard latency gate, cross-attempt speed gain or physical-device claim",
+  "functionalArtifactTest": "npx tsx --test tests/late-save-artifact.test.ts: actual1pass/0fail; strictTS PASS"
+}

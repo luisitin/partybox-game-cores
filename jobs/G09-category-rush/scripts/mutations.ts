@@ -1,0 +1,83 @@
+import {readFileSync,writeFileSync,mkdtempSync,cpSync,mkdirSync,symlinkSync,rmSync} from 'node:fs';
+import {spawnSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {fileURLToPath} from 'node:url';
+type Mutation={id:string;file:string;before:string;after:string};
+const mutations:Mutation[]=[
+  {id:'M01 retain leading articles',file:'match.ts',before:".replace(/^(a|an|the)\\s+/,'')",after:".replace(/^(a|an|the)\\s+/,'the ')"},
+  {id:'M02 do not decompose accents',file:'match.ts',before:"normalize('NFD')",after:"normalize('NFC')"},
+  {id:'M03 omit number-word conversion',file:'match.ts',before:"const tens=TENS.indexOf(words[i]),one=ONES.indexOf(words[i]);",after:"const tens=-1,one=-1;"},
+  {id:'M04 disable plural stemming',file:'match.ts',before:"export function stem(word:string):string {",after:"export function stem(word:string):string { return word;"},
+  {id:'M05 disable long-answer typo matching',file:'match.ts',before:'Math.min(left.compact.length,right.compact.length)>=6',after:'Math.min(left.compact.length,right.compact.length)>=99'},
+  {id:'M06 fuzzy-match numerical answers',file:'match.ts',before:"!/[0-9]/.test(left.compact+right.compact)&&",after:''},
+  {id:'M07 do not group duplicates',file:'match.ts',before:'if(sameAnswer(texts[i],texts[j]))',after:'if(false)'},
+  {id:'M08 allow repeated own answer across categories',file:'scoring.ts',before:'const eligible=group.eligible&&!ownRepeated;',after:'const eligible=group.eligible;'},
+  {id:'M09 allow wrong initial',file:'scoring.ts',before:'eligible:firstLetter(text)===s.letter',after:'eligible:true'},
+  {id:'M10 award duplicate groups',file:'scoring.ts',before:'points:accepted&&!group.duplicate?1:0',after:'points:accepted?1:0'},
+  {id:'M11 always accept group vote',file:'scoring.ts',before:'return all===0?sum(ballots.filter(x=>!owners.includes(x.id)))>0:all>0;',after:'return true;'},
+  {id:'M12 keep author vote on tie',file:'scoring.ts',before:'return all===0?sum(ballots.filter(x=>!owners.includes(x.id)))>0:all>0;',after:'return all>=0;'},
+  {id:'M13 reject unchallenged answers',file:'scoring.ts',before:'if(ballots.length===0)return true;',after:'if(ballots.length===0)return false;'},
+  {id:'M14 accept stale startedAt',file:'index.ts',before:'event.startedAt===s.phase.startedAt&&',after:''},
+  {id:'M15 fire timer before deadline',file:'index.ts',before:'event.now>=s.phase.deadline?advance(s,event.now):s;',after:'true?advance(s,event.now):s;'},
+  {id:'M16 stepped review never re-arms later',file:'index.ts',before:'const deadline=Math.max(now+reviewMs(s,index),(s.phase.deadline??now)+1);',after:'const deadline=s.phase.deadline;'},
+  {id:'M17 allow inputs while paused',file:'index.ts',before:"if(s.phase.paused||s.phase.id==='done')return s;",after:"if(s.phase.id==='done')return s;"},
+  {id:'M18 fail to shift deadline on resume',file:'index.ts',before:'s.phase.deadline+held',after:'s.phase.deadline'},
+  {id:'M19 put an active deadline on done',file:'index.ts',before:"phase(s,'done',now,null)",after:"phase(s,'done',now,1000)"},
+  {id:'M20 trust inherited prototype player keys',file:'index.ts',before:'Object.hasOwn(s.players,id)',after:'Boolean(s.players[id])'},
+  {id:'M21 expose another player own answers',file:'index.ts',before:'myAnswers:valid?[...s.answers[id]]:[]',after:'myAnswers:valid?[...s.answers[s.order[0]]]:[]'},
+  {id:'M22 leak all private answers in TV envelope',file:'index.ts',before:'return {gameId:manifest.id,phaseId:s.phase.id',after:'return {answers:s.answers,gameId:manifest.id,phaseId:s.phase.id'},
+  {id:'M23 fail totality on malformed input',file:'index.ts',before:'const parsed=inputSchema.safeParse(event.input);if(!parsed.success)return s;',after:'const parsed={success:true,data:event.input};'},
+  {id:'M24 ignore explicit VIP end',file:'index.ts',before:"if(event.action==='end')return finish(s,event.now);",after:"if(event.action==='end')return s;"},
+  {id:'M25 omit initialized seat from results',file:'index.ts',before:'scores:{...s.scores},ranking',after:'scores:Object.fromEntries(Object.entries(s.scores).slice(1)),ranking'},
+  {id:'M26 omit sourced plural aliases',file:'match.ts',before:'word=PLURAL_NOUNS.get(word)??word;',after:''},
+  {id:'M27 merge news with new',file:'match.ts',before:"if(word==='news')return word;",after:''},
+  {id:'M28 break plural possessive composition',file:'match.ts',before:'base=PLURAL_NOUNS.get(base)??base;',after:''},
+  {id:'M29 exceed three-candidate window',file:'select.ts',before:'list.length<3',after:'list.length<4'},
+  {id:'M30 replace earliest equal-quality candidate',file:'select.ts',before:'quality(candidate)>quality(best)',after:'quality(candidate)>=quality(best)'},
+  {id:'M31 ignore public roster cap',file:'select.ts',before:'return Math.min(width,presentCount);',after:'return width;'},
+  {id:'M32 remove exploration positions',file:'select.ts',before:'if(slot%3===0)return leader;',after:'if(false)return leader;'},
+  {id:'M33 keep legacy selection at four seats',file:'select.ts',before:'presentCount<4||',after:'presentCount<=4||'},
+  {id:'M34 count surface forms as semantic choices',file:'select.ts',before:'groupAnswers(category.answers[letter]??[]).length',after:'(category.answers[letter]??[]).length'},
+  {id:'M35 ignore empty banks inside candidate window',file:'select.ts',before:'const list=firstThree.get(category.theme);',after:'if((category.answers[letter]?.length??0)===0)continue;const list=firstThree.get(category.theme);'},
+  {id:'M36 reverse caller-owned shuffled deck',file:'select.ts',before:'for(const category of deck){',after:'(deck as T[]).reverse();for(const category of deck){'},
+  {id:'M37 remove scarce-theme whole fallback',file:'select.ts',before:'presentCount<4||leaders.length<12',after:'presentCount<4'},
+  {id:'M38 count absent initialized seats',file:'index.ts',before:'s.order.filter(id=>present(s,id)).length',after:'s.order.length'},
+  {id:'M39 use bot flags to choose prompts',file:'index.ts',before:'s.order.filter(id=>present(s,id)).length',after:'s.order.filter(id=>present(s,id)&&s.players[id].bot).length'},
+  {id:'M40 use private submissions to choose prompts',file:'index.ts',before:'s.order.filter(id=>present(s,id)).length',after:'s.order.filter(id=>present(s,id)&&s.submitted[id]).length'},
+  {id:'M41 consume extra core RNG after shuffle',file:'index.ts',before:'const [deck,rng]=shuffle(rng1,pool);',after:'const [deck,afterShuffle]=shuffle(rng1,pool);const [,rng]=nextInt(afterShuffle,0,1);'},
+  {id:'M42 retain rejected exploration positions',file:'select.ts',before:'slot%3===0',after:'slot%4===0'},
+  {id:'M43 accidentally combine old and new exploration sets',file:'select.ts',before:'slot%3===0',after:'slot%3===0||slot%4===0'},
+];
+const report:unknown[]=[];
+const pattern='normalization:|score cancellation|settings clamp|pause ignores|unknown prototype|views never|reducer is total|manifest exact|bot strategies|47 independently sourced|noun exceptions|bounded noun facts|selector fixtures:|selector integration:';
+const targetedTests=['tests/core.test.ts','tests/plurals.test.ts','tests/selection.test.ts'];
+// Actual source mutations in isolated copies avoid races with real-page proof.
+const job=fileURLToPath(new URL('../',import.meta.url)),temporary=mkdtempSync(join(tmpdir(),'g09-mutants-')),isolated=join(temporary,'jobs','current');
+mkdirSync(isolated,{recursive:true});
+cpSync(new URL('../../../contract/',import.meta.url),join(temporary,'contract'),{recursive:true});
+symlinkSync(join(job,'node_modules'),join(temporary,'node_modules'),'dir');
+for(const name of ['src','tests','content','fixtures'])cpSync(join(job,name),join(isolated,name),{recursive:true});
+for(const name of ['package.json','manifest.json'])cpSync(join(job,name),join(isolated,name));
+symlinkSync(join(job,'node_modules'),join(isolated,'node_modules'),'dir');
+try{
+const clean=spawnSync(process.execPath,['--import','tsx','--test',`--test-name-pattern=${pattern}`,...targetedTests],{cwd:isolated,encoding:'utf8',timeout:120000});
+if(clean.status!==0||clean.error)throw new Error(`Unmutated isolated targeted tests failed: ${clean.stdout}\n${clean.stderr}`);
+for(const mutation of mutations){
+  const path=join(isolated,'src',mutation.file),original=readFileSync(path,'utf8');
+  if(!original.includes(mutation.before))throw new Error(`Mutation anchor unavailable: ${mutation.id}`);
+  let result:ReturnType<typeof spawnSync>;
+  try{
+    writeFileSync(path,original.replace(mutation.before,mutation.after));
+    result=spawnSync(process.execPath,['--import','tsx','--test',`--test-name-pattern=${pattern}`,...targetedTests],{cwd:isolated,encoding:'utf8',timeout:120000});
+  }finally{writeFileSync(path,original);}
+  const killed=result!.status!==0&&!result!.error;
+  const failures=(result!.stdout+'\n'+result!.stderr).split('\n').filter(line=>line.includes('not ok')||line.startsWith('✖')).slice(0,3);
+  report.push({id:mutation.id,killed,exitCode:result!.status,failures});console.log(`${killed?'KILLED':'SURVIVED'} ${mutation.id}`);
+}
+}finally{rmSync(temporary,{recursive:true,force:true});}
+const killed=report.filter((row:any)=>row.killed).length;
+const sourceHashes=Object.fromEntries(['src/index.ts','src/match.ts','src/scoring.ts','src/select.ts','tests/core.test.ts','tests/plurals.test.ts','tests/reference.ts','tests/selection.test.ts','tests/selection-reference.ts','scripts/mutations.ts'].map(name=>[name,createHash('sha256').update(readFileSync(join(job,name))).digest('hex')]));
+writeFileSync(new URL('../evidence/mutations.json',import.meta.url),JSON.stringify({total:mutations.length,killed,isolatedActualSource:true,sourceHashes,mutations:report},null,2)+'\n');
+if(killed<mutations.length-1)throw new Error(`Only ${killed}/${mutations.length} real mutations killed`);

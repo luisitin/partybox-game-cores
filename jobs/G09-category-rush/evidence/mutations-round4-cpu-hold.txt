@@ -1,0 +1,29 @@
+
+> category-rush-core@1.0.0 typecheck
+> tsc --noEmit
+
+✔ retained content experiment files obey independent emitted JSON schemas (150.906515ms)
+✔ expanded banks preserve support/layouts and add no core-equivalent answers (577.185622ms)
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (47.337154ms)
+✔ the emitted JSON Schema independently rejects malformed content (79.04761ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (7.387489ms)
+✔ original source regenerates generated content byte for byte (82.2455ms)
+✔ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (36.041565ms)
+✔ source-bound lexical audit fixes 33 scored pair failures and the news false merge without hiding ambiguities (13.298599ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1293.544911
+
+> category-rush-core@1.0.0 mutations
+> tsx scripts/mutations.ts
+
+KILLED M01 retain leading articles
+KILLED M02 do not decompose accents
+KILLED M03 omit number-word conversion
+KILLED M04 disable plural stemming
+KILLED M05 disable long-answer typo matching

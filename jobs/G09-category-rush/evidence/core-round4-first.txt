@@ -1,0 +1,141 @@
+320 original categories; 20 letters; 4155 curated examples
+Draft 2020-12 JSON Schema regenerated and authored category pack validated.
+
+> category-rush-core@1.0.0 generate
+> tsx scripts/generate.ts
+
+Generated manifest and 4 actual-core fixtures.
+{
+  "label": "after",
+  "sourceHashes": {
+    "authored": "34608c2cc9d9415286fa781572842535946912727af68ee75b44545735e4380d",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "generated": "e78c84f1aae2f43f1c21922c1d2bcfff84560c96158dfed0e0fc8546a86c0851",
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "matcher": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "experiment": "77a8474c22ec1c2b0dfe0a686a30cf62b603900e1539e40275ed4092d5c657ec"
+  },
+  "breadth": {
+    "categories": 320,
+    "examples": 4155,
+    "banks": 2565,
+    "singleton": 1589,
+    "median": 1,
+    "widthAtLeast4": 130,
+    "widthAtLeast8": 10
+  },
+  "outcomes": {
+    "submitted": 17942,
+    "duplicated": 17659,
+    "duplicateOwnerRate": 0.9842269535168877,
+    "awarded": 283,
+    "meanAwardedPerGame": 1.415,
+    "meanAwardedPerSeat": 0.176875,
+    "blank": 1258,
+    "repeatedOwn": 0,
+    "replayMatches": 200,
+    "distinctAnswerSheets": 200,
+    "distinctFinalStates": 200
+  }
+}
+baseline: 200 actual-core rounds reproduced byte-identically
+bank-only: 200 actual-core rounds reproduced byte-identically
+after: 200 actual-core rounds reproduced byte-identically
+baseline: 200 actual-core rounds reproduced byte-identically
+bank-only: 200 actual-core rounds reproduced byte-identically
+after: 200 actual-core rounds reproduced byte-identically
+{
+  "label": "baseline",
+  "cases": 18,
+  "matched": 0,
+  "awarded": 36,
+  "replayMatches": 18,
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+    "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+  }
+}
+{
+  "label": "after",
+  "cases": 18,
+  "matched": 18,
+  "awarded": 0,
+  "replayMatches": 18,
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "74827b3d1851caffc384b420ac468ec771783e6858d6c885d2bdb19d72806e4b",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "e8f4eb9d111b30bba12b9ef5121a1d9ec39ff76278afe0b5557c51f934c531be",
+    "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+  }
+}
+
+> category-rush-core@1.0.0 typecheck
+> tsc --noEmit
+
+✔ retained content experiment files obey independent emitted JSON schemas (233.533022ms)
+✔ expanded banks preserve support/layouts and add no core-equivalent answers (822.327574ms)
+Measured largest legal five-round Unicode save: 246896 UTF-8 bytes
+✔ bounded local snapshots retain actual played two/eight-seat states, private draft and pause (2171.826837ms)
+✔ corrupt, oversized, stale and inconsistent local saves are rejected before reducer use (15.841689ms)
+✔ restored actual contract RNG continues exactly through all supported saved counters (4.052509ms)
+✔ a legal five-round eight-seat maximum-length Unicode history remains saveable (558.703788ms)
+✔ original category content obeys the authoritative schema and JSON Schema has no drift (84.487847ms)
+✔ the emitted JSON Schema independently rejects malformed content (128.944363ms)
+✔ prompts and IDs are unique and every allowed letter has twelve playable categories (12.373935ms)
+✔ original source regenerates generated content byte for byte (99.548088ms)
+✔ normalization: articles accents punctuation number words and plural matching (9.084856ms)
+✔ independent hardest-function oracle: 10,000 seeded cases, normalization grouping adjudication (74425.289679ms)
+✔ score cancellation and group vote ties exclude author, numeric and article handling (0.670331ms)
+✔ settings clamp stale values and phases have sound timers (1.105894ms)
+✔ pause ignores inputs/timers, shifts deadlines, player drops close on resume, done remains terminal (3.449932ms)
+✔ pause ignores an empty-review deadline until explicit resume at both roster extremes (2.321087ms)
+✔ unknown prototype seats never act; genuine prototype ids survive JSON and results (0.764302ms)
+✔ views never expose others answers, authors, votes or future review; own views roundtrip (1.476433ms)
+✔ reducer is total across every event in every phase, immutable and strict inputs (3.761778ms)
+✔ manifest exact types, JSON artifact and every phase fixture (19.246515ms)
+✔ all nine invariants: 1,000 restored-every-event bot games at each roster 2–8 (247695.839445ms)
+✔ property seeds 1,2,3 plus 1,000 reproducible random seeds; idle and gone seats finish (570.848649ms)
+✔ bot strategies cannot inspect private answers or ballots; skill controls coverage (2.250678ms)
+✔ event fuzz across every real phase and bot/view role preserves totality and JSON (2623.935999ms)
+✔ future own-repeat adjudication leaks neither a view flag nor bot ballot (0.722234ms)
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (14.716413ms)
+✔ 47 independently sourced singular/plural facts meet in stems and sameAnswer (11.978412ms)
+✔ noun exceptions compose with normalization, compound words and existing possessives (1.815039ms)
+✔ bounded noun facts preserve regular exceptions and do not resolve ambiguous plurals blindly (5.030043ms)
+✔ sourced plural duplicates cancel actual two-seat and eight-seat scores (461.086089ms)
+✔ using singular and plural in separate rows cancels both own scores (90.018586ms)
+✔ 750 seeded lexical, spelling, numeric and ballot cases agree with the independent graph oracle (8799.021826ms)
+✔ the bounded fix introduces no new equivalent options within the 2,565 frozen banks (14.439683ms)
+✔ pure core source has no random clock callback IO or runtime dependency beyond zod (26.381444ms)
+✔ done fixture is the played-out last scores fixture; every fixture reaches finite results (100.588893ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 34
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 326979.346033
+
+✖ failing tests:
+
+test at tests/plural-protocol.test.ts:1:621
+✖ actual restored plural protocols cancel nine duplicate pairs on both rosters and bind independent evidence (14.716413ms)
+  Error: Unsupported JSON Schema keyword: anyOf
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:19:72)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:44:56)
+      at <anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:36:52)
+      at Array.forEach (<anonymous>)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:34:11)
+      at validateJsonSchema (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/scripts/json-schema-validator.ts:44:56)
+      at TestContext.<anonymous> (/workspace/game-cores-G09-parallel/jobs/G09-category-rush/tests/plural-protocol.test.ts:13:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)

@@ -1,0 +1,1095 @@
+{
+  "protocol": "accepted-nine-plural-pairs-two-eight-seats-v1",
+  "label": "baseline",
+  "assumption": "The players unanimously accept the two answers for the selected prompt; banks do not veto creative answers. This isolates duplicate adjudication, not semantic fitness for random prompts.",
+  "sourceHashes": {
+    "core": "320c99f20ed38543d53cfe22a558b92f18f4d84735f45ed3617ca4e340d880d1",
+    "matcher": "122be10962c5afb81580e6b307c0b0d60c576ceb7096d9eb300967c6b26d78a7",
+    "scoring": "6df081171d36c780d68e6fe217c71645154a1c313313ac2e6fc72a2e7d40a3ff",
+    "data": "5ae665bbbafc1a1bf8d7f4a692761c9ede63ab74a7e6d3f8c62a3300e7148dea",
+    "reference": "5f329372ac4935e8870ab6165f955b4ca77d50eaca22f417da419a6e419ed7d4",
+    "experiment": "6483b3bed12a84c2e1efe40b45d75ae0980011a4f45aca999f6c59af5018db8e"
+  },
+  "rows": [
+    {
+      "count": 2,
+      "singular": "knife",
+      "plural": "knives",
+      "seed": 11,
+      "letter": "K",
+      "layout": [
+        "practical-actions-06",
+        "kitchen-tools-02",
+        "produce-06",
+        "wildlife-04",
+        "cooking-06",
+        "garden-04",
+        "sports-02",
+        "home-rooms-05",
+        "digital-06",
+        "dining-02",
+        "community-08",
+        "transport-01"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "practical-actions-06",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "knife",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "knives",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "mouse",
+      "plural": "mice",
+      "seed": 22,
+      "letter": "M",
+      "layout": [
+        "events-07",
+        "practical-actions-01",
+        "travel-packing-06",
+        "music-05",
+        "pantry-09",
+        "breakfast-06",
+        "school-07",
+        "community-04",
+        "garden-10",
+        "parks-08",
+        "digital-01",
+        "science-08"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "events-07",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "mouse",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "mice",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "person",
+      "plural": "people",
+      "seed": 35,
+      "letter": "P",
+      "layout": [
+        "events-03",
+        "landscape-08",
+        "practical-actions-07",
+        "parks-09",
+        "digital-04",
+        "garden-08",
+        "art-10",
+        "house-maintenance-06",
+        "kitchen-tools-10",
+        "transport-07",
+        "cooking-01",
+        "produce-03"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "events-03",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "person",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "people",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "leaf",
+      "plural": "leaves",
+      "seed": 39,
+      "letter": "L",
+      "layout": [
+        "sports-02",
+        "transport-05",
+        "parks-02",
+        "music-03",
+        "wildlife-10",
+        "garden-08",
+        "paper-03",
+        "weather-03",
+        "produce-03",
+        "storage-03",
+        "water-world-09",
+        "landscape-01"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "sports-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "leaf",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "leaves",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "child",
+      "plural": "children",
+      "seed": 3,
+      "letter": "C",
+      "layout": [
+        "streets-07",
+        "kitchen-tools-04",
+        "home-rooms-10",
+        "practical-actions-02",
+        "water-world-06",
+        "games-toys-08",
+        "hygiene-10",
+        "art-02",
+        "clothing-05",
+        "community-01",
+        "travel-packing-10",
+        "pantry-03"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "streets-07",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "child",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "children",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "tooth",
+      "plural": "teeth",
+      "seed": 4,
+      "letter": "T",
+      "layout": [
+        "clothing-04",
+        "pantry-08",
+        "breakfast-07",
+        "house-maintenance-09",
+        "produce-03",
+        "landscape-06",
+        "sports-06",
+        "hygiene-08",
+        "wildlife-09",
+        "music-09",
+        "paper-04",
+        "events-08"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "clothing-04",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "tooth",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "teeth",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "foot",
+      "plural": "feet",
+      "seed": 6,
+      "letter": "F",
+      "layout": [
+        "community-02",
+        "transport-05",
+        "house-maintenance-02",
+        "paper-02",
+        "clothing-05",
+        "parks-07",
+        "games-toys-05",
+        "garden-05",
+        "streets-01",
+        "dining-03",
+        "cooking-04",
+        "jobs-06"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "community-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "foot",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "feet",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "goose",
+      "plural": "geese",
+      "seed": 14,
+      "letter": "G",
+      "layout": [
+        "breakfast-02",
+        "parks-07",
+        "water-world-01",
+        "games-toys-08",
+        "transport-01",
+        "weather-02",
+        "events-01",
+        "garden-08",
+        "dining-07",
+        "pantry-03",
+        "science-06",
+        "music-07"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "breakfast-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "goose",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "geese",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 2,
+      "singular": "shelf",
+      "plural": "shelves",
+      "seed": 7,
+      "letter": "S",
+      "layout": [
+        "kitchen-tools-08",
+        "landscape-04",
+        "jobs-10",
+        "parks-02",
+        "practical-actions-10",
+        "music-03",
+        "home-rooms-08",
+        "paper-08",
+        "house-maintenance-01",
+        "art-02",
+        "storage-04",
+        "digital-09"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "kitchen-tools-08",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "shelf",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "shelves",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1
+      },
+      "eventCount": 27,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "knife",
+      "plural": "knives",
+      "seed": 11,
+      "letter": "K",
+      "layout": [
+        "practical-actions-06",
+        "kitchen-tools-02",
+        "produce-06",
+        "wildlife-04",
+        "cooking-06",
+        "garden-04",
+        "sports-02",
+        "home-rooms-05",
+        "digital-06",
+        "dining-02",
+        "community-08",
+        "transport-01"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "practical-actions-06",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "knife",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "knives",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "mouse",
+      "plural": "mice",
+      "seed": 22,
+      "letter": "M",
+      "layout": [
+        "events-07",
+        "practical-actions-01",
+        "travel-packing-06",
+        "music-05",
+        "pantry-09",
+        "breakfast-06",
+        "school-07",
+        "community-04",
+        "garden-10",
+        "parks-08",
+        "digital-01",
+        "science-08"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "events-07",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "mouse",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "mice",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "person",
+      "plural": "people",
+      "seed": 35,
+      "letter": "P",
+      "layout": [
+        "events-03",
+        "landscape-08",
+        "practical-actions-07",
+        "parks-09",
+        "digital-04",
+        "garden-08",
+        "art-10",
+        "house-maintenance-06",
+        "kitchen-tools-10",
+        "transport-07",
+        "cooking-01",
+        "produce-03"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "events-03",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "person",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "people",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "leaf",
+      "plural": "leaves",
+      "seed": 39,
+      "letter": "L",
+      "layout": [
+        "sports-02",
+        "transport-05",
+        "parks-02",
+        "music-03",
+        "wildlife-10",
+        "garden-08",
+        "paper-03",
+        "weather-03",
+        "produce-03",
+        "storage-03",
+        "water-world-09",
+        "landscape-01"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "sports-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "leaf",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "leaves",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "child",
+      "plural": "children",
+      "seed": 3,
+      "letter": "C",
+      "layout": [
+        "streets-07",
+        "kitchen-tools-04",
+        "home-rooms-10",
+        "practical-actions-02",
+        "water-world-06",
+        "games-toys-08",
+        "hygiene-10",
+        "art-02",
+        "clothing-05",
+        "community-01",
+        "travel-packing-10",
+        "pantry-03"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "streets-07",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "child",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "children",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "tooth",
+      "plural": "teeth",
+      "seed": 4,
+      "letter": "T",
+      "layout": [
+        "clothing-04",
+        "pantry-08",
+        "breakfast-07",
+        "house-maintenance-09",
+        "produce-03",
+        "landscape-06",
+        "sports-06",
+        "hygiene-08",
+        "wildlife-09",
+        "music-09",
+        "paper-04",
+        "events-08"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "clothing-04",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "tooth",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "teeth",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "foot",
+      "plural": "feet",
+      "seed": 6,
+      "letter": "F",
+      "layout": [
+        "community-02",
+        "transport-05",
+        "house-maintenance-02",
+        "paper-02",
+        "clothing-05",
+        "parks-07",
+        "games-toys-05",
+        "garden-05",
+        "streets-01",
+        "dining-03",
+        "cooking-04",
+        "jobs-06"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "community-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "foot",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "feet",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "goose",
+      "plural": "geese",
+      "seed": 14,
+      "letter": "G",
+      "layout": [
+        "breakfast-02",
+        "parks-07",
+        "water-world-01",
+        "games-toys-08",
+        "transport-01",
+        "weather-02",
+        "events-01",
+        "garden-08",
+        "dining-07",
+        "pantry-03",
+        "science-06",
+        "music-07"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "breakfast-02",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "goose",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "geese",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    },
+    {
+      "count": 8,
+      "singular": "shelf",
+      "plural": "shelves",
+      "seed": 7,
+      "letter": "S",
+      "layout": [
+        "kitchen-tools-08",
+        "landscape-04",
+        "jobs-10",
+        "parks-02",
+        "practical-actions-10",
+        "music-03",
+        "home-rooms-08",
+        "paper-08",
+        "house-maintenance-01",
+        "art-02",
+        "storage-04",
+        "digital-09"
+      ],
+      "matches": false,
+      "publicGroups": 2,
+      "receipt": {
+        "categoryId": "kitchen-tools-08",
+        "groups": [
+          {
+            "id": "r1-c0-g0",
+            "text": "shelf",
+            "owners": [
+              "p0"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          },
+          {
+            "id": "r1-c0-g1",
+            "text": "shelves",
+            "owners": [
+              "p1"
+            ],
+            "duplicate": false,
+            "eligible": true,
+            "accepted": true,
+            "points": 1
+          }
+        ]
+      },
+      "awarded": 2,
+      "scores": {
+        "p0": 1,
+        "p1": 1,
+        "p2": 0,
+        "p3": 0,
+        "p4": 0,
+        "p5": 0,
+        "p6": 0,
+        "p7": 0
+      },
+      "eventCount": 105,
+      "replayMatches": true
+    }
+  ]
+}

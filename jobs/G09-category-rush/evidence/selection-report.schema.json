@@ -1,0 +1,2461 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source-bound revised K3 actual-game selection report",
+  "type": "object",
+  "properties": {
+    "protocol": {
+      "const": "theme-window-k3-exploration4-v2"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "baseline",
+        "candidate"
+      ]
+    },
+    "sourceHashes": {
+      "type": "object",
+      "properties": {
+        "core": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "matcher": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "scoring": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "data": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "experiment": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "selection": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "core",
+        "matcher",
+        "scoring",
+        "data",
+        "experiment",
+        "selection"
+      ],
+      "additionalProperties": false
+    },
+    "fixtureSha256": {
+      "const": "ff2ba2d81fb1e48b8b75bcd4b810b0dc26fa53b53de9510a634e133ef5642366"
+    },
+    "guards": {
+      "type": "object",
+      "properties": {
+        "minimumEightSeatMeanGain": {
+          "const": 1
+        },
+        "alternativeZeroTableReductionPercentagePoints": {
+          "const": 10
+        },
+        "maximumRelativeBankCoverageLoss": {
+          "const": 0.1
+        },
+        "maximumRelativePromptCoverageLoss": {
+          "const": 0.1
+        },
+        "minimumEntropyRatio": {
+          "const": 0.9
+        },
+        "maximumBlankRateIncreasePercentagePoints": {
+          "const": 0.5
+        },
+        "maximumNewOwnRepeats": {
+          "const": 0
+        },
+        "smallRosterExactStateIdentity": {
+          "const": true
+        },
+        "letterAndThemeSchedulesUnchanged": {
+          "const": true
+        }
+      },
+      "required": [
+        "minimumEightSeatMeanGain",
+        "alternativeZeroTableReductionPercentagePoints",
+        "maximumRelativeBankCoverageLoss",
+        "maximumRelativePromptCoverageLoss",
+        "minimumEntropyRatio",
+        "maximumBlankRateIncreasePercentagePoints",
+        "maximumNewOwnRepeats",
+        "smallRosterExactStateIdentity",
+        "letterAndThemeSchedulesUnchanged"
+      ],
+      "additionalProperties": false
+    },
+    "cohorts": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "pilot"
+            },
+            "players": {
+              "const": 2
+            },
+            "games": {
+              "const": 200
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4800
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 4800
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 2400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 200,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "pilot"
+            },
+            "players": {
+              "const": 4
+            },
+            "games": {
+              "const": 200
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9600
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 9600
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 2400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 200,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "pilot"
+            },
+            "players": {
+              "const": 8
+            },
+            "games": {
+              "const": 200
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 19200
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 200
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 19200
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 2400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 8,
+                    "maxItems": 8
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 200,
+              "maxItems": 200
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "heldout"
+            },
+            "players": {
+              "const": 2
+            },
+            "games": {
+              "const": 800
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 19200
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 19200
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 800
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 6400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 2,
+                    "maxItems": 2
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 24
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 800,
+              "maxItems": 800
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "heldout"
+            },
+            "players": {
+              "const": 4
+            },
+            "games": {
+              "const": 800
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 38400
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 38400
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 800
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 6400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 48
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 800,
+              "maxItems": 800
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "cohort": {
+              "const": "heldout"
+            },
+            "players": {
+              "const": 8
+            },
+            "games": {
+              "const": 800
+            },
+            "summary": {
+              "type": "object",
+              "properties": {
+                "points": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "meanPoints": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 96
+                },
+                "zeroTables": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "zeroTableRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "zeroSeats": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "submitted": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicates": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "duplicateOwnerRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "blank": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "blankRate": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "exhaustedBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "availablePoolBlanks": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "repeatedOwn": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 1000000
+                },
+                "replays": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 800
+                },
+                "bankCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 6400
+                },
+                "promptCoverage": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 320
+                },
+                "entropyBits": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 20
+                },
+                "maxBankShare": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "points",
+                "meanPoints",
+                "zeroTables",
+                "zeroTableRate",
+                "zeroSeats",
+                "submitted",
+                "duplicates",
+                "duplicateOwnerRate",
+                "blank",
+                "blankRate",
+                "exhaustedBlanks",
+                "availablePoolBlanks",
+                "repeatedOwn",
+                "replays",
+                "bankCoverage",
+                "promptCoverage",
+                "entropyBits",
+                "maxBankShare"
+              ],
+              "additionalProperties": false
+            },
+            "perLetter": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "games": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 76800
+                  },
+                  "zeroTables": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 800
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 76800
+                  }
+                },
+                "required": [
+                  "letter",
+                  "games",
+                  "points",
+                  "zeroTables",
+                  "blank"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 20,
+              "maxItems": 20
+            },
+            "exposures": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "bank": {
+                    "type": "string",
+                    "pattern": "^[a-z0-9-]+/[A-PRSTW]$"
+                  },
+                  "count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 800
+                  }
+                },
+                "required": [
+                  "bank",
+                  "count"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 12,
+              "maxItems": 6400
+            },
+            "rows": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "seed": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 4294967295
+                  },
+                  "letter": {
+                    "type": "string",
+                    "enum": [
+                      "A",
+                      "B",
+                      "C",
+                      "D",
+                      "E",
+                      "F",
+                      "G",
+                      "H",
+                      "I",
+                      "J",
+                      "K",
+                      "L",
+                      "M",
+                      "N",
+                      "O",
+                      "P",
+                      "R",
+                      "S",
+                      "T",
+                      "W"
+                    ]
+                  },
+                  "layout": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "themes": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "minItems": 12,
+                    "maxItems": 12
+                  },
+                  "initialRng": {
+                    "type": "object",
+                    "properties": {
+                      "seed": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 4294967295
+                      },
+                      "step": {
+                        "type": "integer",
+                        "minimum": 0,
+                        "maximum": 10000
+                      }
+                    },
+                    "required": [
+                      "seed",
+                      "step"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "points": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "scores": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 12
+                    },
+                    "minItems": 8,
+                    "maxItems": 8
+                  },
+                  "submitted": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "duplicates": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "blank": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "exhaustedBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "availablePoolBlanks": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "repeatedOwn": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 96
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 200
+                  },
+                  "eventHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "stateHash": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                },
+                "required": [
+                  "seed",
+                  "letter",
+                  "layout",
+                  "themes",
+                  "initialRng",
+                  "points",
+                  "scores",
+                  "submitted",
+                  "duplicates",
+                  "blank",
+                  "exhaustedBlanks",
+                  "availablePoolBlanks",
+                  "repeatedOwn",
+                  "steps",
+                  "eventHash",
+                  "stateHash"
+                ],
+                "additionalProperties": false
+              },
+              "minItems": 800,
+              "maxItems": 800
+            }
+          },
+          "required": [
+            "cohort",
+            "players",
+            "games",
+            "summary",
+            "perLetter",
+            "exposures",
+            "rows"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "items": false,
+      "minItems": 6,
+      "maxItems": 6
+    }
+  },
+  "required": [
+    "protocol",
+    "mode",
+    "sourceHashes",
+    "fixtureSha256",
+    "guards",
+    "cohorts"
+  ],
+  "additionalProperties": false,
+  "anyOf": [
+    {
+      "properties": {
+        "mode": {
+          "const": "baseline"
+        },
+        "sourceHashes": {
+          "properties": {
+            "selection": {
+              "type": "null"
+            }
+          }
+        }
+      }
+    },
+    {
+      "properties": {
+        "mode": {
+          "const": "candidate"
+        },
+        "sourceHashes": {
+          "properties": {
+            "selection": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
