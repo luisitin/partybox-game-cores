@@ -1,0 +1,86 @@
+{
+  "baselineFile": "round-5-before-host.json",
+  "baselineSha256": "a9730a41b7bb138f0494b8f597d259587ca33b5f1f493b345ecdc7a48377bce5",
+  "before": {
+    "htmlSha256": "09f9f709848a02c1ee25a4a575ce967d6f20dc02e09ec7e0f1cb8300232b97a1",
+    "stateTurn": "",
+    "controllerNull": true,
+    "showCupVisible": false,
+    "cupDice": 0,
+    "legalChoices": 0,
+    "palificoHelp": "Palifico. When a player first falls to one die, they start a special round if enabled. Ones stop being wild, and later bids must keep the first face. The exemption setting may let a one-die or experienced player change the face. A player starts palifico only once.",
+    "programmaticHiddenButtonProbe": {
+      "ordinaryHumanClick": false,
+      "cupDiceAfterClick": 0
+    }
+  },
+  "after": {
+    "htmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+    "emptySeatControllerId": "",
+    "visibleEmptyCupDice": 5,
+    "ordinaryEmptyBidAccepted": true,
+    "prototypeBidAccepted": true,
+    "constructorCupOpened": true,
+    "unknownSeatPrivateDice": 0
+  },
+  "fixture": {
+    "ids": [
+      "",
+      "__proto__",
+      "constructor"
+    ],
+    "players": [
+      {
+        "id": "",
+        "name": "Empty seat",
+        "avatarId": "face-0",
+        "connected": true,
+        "bot": false
+      },
+      {
+        "id": "__proto__",
+        "name": "Prototype seat",
+        "avatarId": "face-1",
+        "connected": true,
+        "bot": false
+      },
+      {
+        "id": "constructor",
+        "name": "Constructor seat",
+        "avatarId": "face-2",
+        "connected": true,
+        "bot": false
+      }
+    ],
+    "seed": 1,
+    "now": 100,
+    "savedHostNow": 100,
+    "skills": [
+      [
+        "",
+        "normal"
+      ],
+      [
+        "__proto__",
+        "normal"
+      ],
+      [
+        "constructor",
+        "normal"
+      ]
+    ],
+    "botRng": {
+      "seed": 3282421853,
+      "step": 0
+    },
+    "pace": "manual",
+    "stateWasCreatedByActualCoreInit": true,
+    "turnWasNotEdited": true
+  },
+  "measuredGain": {
+    "emptySeatPrivateDiceAvailable": {
+      "before": 0,
+      "after": 5
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "runId": 37749780610,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37749780610",
+  "headSha": "ea57ee08f125ed2ec105cc3a629770cef3cb7e72",
+  "conclusion": "failure",
+  "completedAt": "2026-10-08T08:35:59Z",
+  "nodeTests": {
+    "tests": 46,
+    "passed": 46,
+    "failed": 0
+  },
+  "browserChecks": {
+    "scope": "full",
+    "checks": 76,
+    "passed": 76,
+    "failed": 0,
+    "bothStrictFrameGatesPassed": true
+  },
+  "mutations": {
+    "compiled": 25,
+    "assertionKills": 25,
+    "survivors": []
+  },
+  "failedGate": {
+    "suite": "integrity",
+    "assertion": "browser evidence must match delivered page",
+    "actualRetainedSnapshotHtmlSha256": "e17275c67a008d7c3202dc6cc34647cf9d6d6d8aa27b48ad17ec88d736ba50c3",
+    "expectedDeliveredHtmlSha256": "48be0c5b183f23176431d8383265c56b8fa927beb672c3692a66f95169065378"
+  },
+  "checkpointScope": "The cadence push explicitly marked new source-matched local browser evidence pending. GitHub passed all core/session/mutation/full-browser checks, then correctly rejected the retained prior-HTML snapshot. No gate is relaxed; a completed-evidence head must be green before acceptance.",
+  "browserArtifact": {
+    "id": 11537921864,
+    "name": "G07-browser-evidence",
+    "size_in_bytes": 530658,
+    "expired": false,
+    "created_at": "2026-10-08T08:35:57Z",
+    "workflow_run": {
+      "head_branch": "job/G07-liars-dice",
+      "head_sha": "ea57ee08f125ed2ec105cc3a629770cef3cb7e72",
+      "id": 37749780610
+    }
+  },
+  "artifactReadback": "Not downloaded. Hosted logs confirm both unchanged frame gates and all 76 checks passed, but no hosted FPS values are inferred from local recordings or artifact metadata."
+}

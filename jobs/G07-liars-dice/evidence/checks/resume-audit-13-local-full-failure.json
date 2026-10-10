@@ -1,0 +1,52 @@
+{
+  "scope": "Actual local full93/94 failure retained; both source-bound native frame profiles pass independently, but this is not complete acceptance",
+  "runId": "20261008192314580",
+  "head": "41f6226274e0eb693adfe00c29bd0ae8ae981ff9",
+  "passedFullReport": false,
+  "passedChecks": 93,
+  "checks": 94,
+  "failures": [
+    {
+      "profile": "phone4x",
+      "name": "a human can call calza after reading for over 900ms at normal pace",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(calledAt - before.armedAt > 900 && calledAt - before.armedAt < 1650)\n\n    at file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:832:7\n    at async run (file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:309:9)\n    at async file:///workspace/game-cores-G07-resume/jobs/G07-liars-dice/scripts/browser-check.mjs:817:5"
+    }
+  ],
+  "sourceGuards": 32,
+  "sourceGuardsUnchanged": true,
+  "rawIntervals": 1200,
+  "metrics": [
+    {
+      "profile": "desktop",
+      "fps": 60.002400096003804,
+      "p99Ms": 16.79999999998836,
+      "maxMs": 16.800000000017462,
+      "droppedIntervalsOver17Ms": 0,
+      "sampleCount": 600
+    },
+    {
+      "profile": "phone4x",
+      "fps": 59.31080840631859,
+      "p99Ms": 16.80000000000291,
+      "maxMs": 66.69999999999709,
+      "droppedIntervalsOver17Ms": 3,
+      "sampleCount": 600
+    }
+  ],
+  "actualClose": {
+    "scope": "Actual corrected full browser run; zero samples before exact nonce grant",
+    "startedAt": "2026-10-08T19:23:13.887843+00:00",
+    "pid": 184493,
+    "pgid": 184493,
+    "barrier": "/workspace/game-cores-G07-resume/jobs/G07-liars-dice/.work/frame-grant-resume-audit-12",
+    "log": "/workspace/game-cores-G07-resume/jobs/G07-liars-dice/.work/recovered-map-full-browser.log",
+    "closedAt": "2026-10-08T19:31:11.671262+00:00",
+    "actualExitCode": 1
+  },
+  "causeUnproved": true,
+  "unchangedStrictRetry": false,
+  "currentCompleteCheckerRejectsThisReport": true,
+  "rootGlobalQuietRelease": "2026-10-08T19:33:36.516122Z",
+  "quietScope": "Continuous G07 phone -> G02 desktop -> G08 English TV; no invented intermediate release. Desktop waiting-only STOP/CONT has its separate real receipt."
+}

@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: raise legality exhaustively matches independently stated Perudo transitions
+not ok 1 - raise legality exhaustively matches independently stated Perudo transitions
+  ---
+  duration_ms: 32.849756
+  type: 'test'
+  location: '/workspace/game-cores-G07/jobs/G07-liars-dice/tests/rules.test.mjs:15:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (file:///workspace/game-cores-G07/jobs/G07-liars-dice/tests/rules.test.mjs:25:164)
+    Test.runInAsyncScope (node:async_hooks:227:14)
+    Test.run (node:internal/test_runner/test:1382:25)
+    Test.start (node:internal/test_runner/test:1242:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+  ...
+# Subtest: counting ones distinguishes wild faces, literal ones, and palifico
+ok 2 - counting ones distinguishes wild faces, literal ones, and palifico
+  ---
+  duration_ms: 0.419596
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 1
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 205.635426

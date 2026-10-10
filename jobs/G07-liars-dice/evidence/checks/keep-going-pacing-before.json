@@ -1,0 +1,239 @@
+{
+  "head": "6dd4c32b980695de88465b284b0763e287787915",
+  "scope": "read-only final standalone browser review, no CPU throttle",
+  "case": "human calza window and public bot-bid pacing",
+  "before": {
+    "at": 115,
+    "phaseStartedAt": 89,
+    "bid": {
+      "quantity": 1,
+      "face": 2,
+      "playerId": "p7"
+    },
+    "turn": "p1",
+    "phase": "bid",
+    "canHumanCalza": true,
+    "openDice": 5,
+    "bidText": "Player 8 says there are at least 1 2s, counting wild ones."
+  },
+  "records": [
+    {
+      "at": 115,
+      "phaseStartedAt": 89,
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p7"
+      },
+      "turn": "p1",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 5,
+      "bidText": "Player 8 says there are at least 1 2s, counting wild ones."
+    },
+    {
+      "at": 856,
+      "phaseStartedAt": 852,
+      "bid": {
+        "quantity": 1,
+        "face": 3,
+        "playerId": "p1"
+      },
+      "turn": "p2",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 2 says there are at least 1 3s, counting wild ones."
+    },
+    {
+      "at": 1652,
+      "phaseStartedAt": 1651,
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p2"
+      },
+      "turn": "p3",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 3 says there are at least 1 4s, counting wild ones."
+    },
+    {
+      "at": 2453,
+      "phaseStartedAt": 2451,
+      "bid": {
+        "quantity": 1,
+        "face": 5,
+        "playerId": "p3"
+      },
+      "turn": "p4",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 4 says there are at least 1 5s, counting wild ones."
+    },
+    {
+      "at": 3252,
+      "phaseStartedAt": 3251,
+      "bid": {
+        "quantity": 1,
+        "face": 6,
+        "playerId": "p4"
+      },
+      "turn": "p5",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 5 says there are at least 1 6s, counting wild ones."
+    },
+    {
+      "at": 4052,
+      "phaseStartedAt": 4051,
+      "bid": {
+        "quantity": 2,
+        "face": 2,
+        "playerId": "p5"
+      },
+      "turn": "p6",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 6 says there are at least 2 2s, counting wild ones."
+    },
+    {
+      "at": 4852,
+      "phaseStartedAt": 4851,
+      "bid": {
+        "quantity": 2,
+        "face": 3,
+        "playerId": "p6"
+      },
+      "turn": "p7",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 7 says there are at least 2 3s, counting wild ones."
+    },
+    {
+      "at": 5652,
+      "phaseStartedAt": 5651,
+      "bid": {
+        "quantity": 2,
+        "face": 4,
+        "playerId": "p7"
+      },
+      "turn": "p0",
+      "phase": "bid",
+      "canHumanCalza": true,
+      "openDice": 0,
+      "bidText": "Player 8 says there are at least 2 4s, counting wild ones."
+    }
+  ],
+  "intervals": [
+    {
+      "elapsedMs": 741,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": true,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 796,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 801,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 799,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    },
+    {
+      "elapsedMs": 800,
+      "previousBidTextWords": 12,
+      "oldHumanCupOpen": false,
+      "newHumanCupOpen": false
+    }
+  ],
+  "hostEndedStandings": {
+    "phase": "done",
+    "headline": "Thanks for playing",
+    "copy": "The host ended the game. Set up another table whenever you are ready.",
+    "resultText": "The last cup standingThanks for playingThe host ended the game. Set up another table whenever you are ready.Play again",
+    "playerText": "1YouHuman52Player 2Normal bot43Player 3Normal bot34Player 4Normal bot25Player 5Normal bot16Player 6Out of the game07Player 7Out of the game08Player 8Out of the game0"
+  },
+  "reload": {
+    "case": "standalone reload recovery",
+    "state": null,
+    "setupVisible": true,
+    "tableVisible": false
+  },
+  "activeReloadCase": {
+    "before": {
+      "phase": "bid",
+      "round": 1,
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p2"
+      },
+      "order": [
+        "p0",
+        "p1",
+        "p2"
+      ]
+    },
+    "after": {
+      "state": null,
+      "setupVisible": true,
+      "tableVisible": false
+    }
+  },
+  "htmlSha256": "f0559458c404cd5ec6e7b1a06141216b8fe8fe61a54a24b1cc3c7f87b7ecabb8",
+  "seed": 17,
+  "setup": {
+    "players": 8,
+    "mode": "bots",
+    "skill": "normal",
+    "settings": {
+      "calzaEnabled": true,
+      "turnSeconds": 0
+    },
+    "controlledState": {
+      "turn": "p1",
+      "bid": {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p7"
+      },
+      "bidLog": "single bid above",
+      "allCups": [
+        2,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "action": "open human p0 cup, observe until turn p0 or non-bid phase"
+  }
+}

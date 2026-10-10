@@ -1,0 +1,408 @@
+{
+  "description": "Original deterministic endgame regression transcript for KEEP GOING round 2. Seven deliberate, legal impossible bluffs reduce the two seats to two and one dice; four further legal bids expose Medium challenging a claim guaranteed by its own cup.",
+  "provenance": {
+    "kind": "Original project-authored test inputs and seeded rolls; no external data",
+    "beforeRevision": "6387696d0891f25e01df76f50aa4c7aefdb3ee35",
+    "beforeCoreSha256": "d45b2a5b68b7082b1543dea949777a89ac1f3af5664cae2c5240852e20bea7ee",
+    "beforeSourceSha256": "db7373ae850fa2ae88ecea1cd873516034ce534daa9c7748729893c1c3ab5df3"
+  },
+  "context": {
+    "players": [
+      {
+        "id": "p0",
+        "name": "Player 1",
+        "avatarId": "face-0",
+        "connected": true,
+        "bot": true,
+        "canSeeTv": true
+      },
+      {
+        "id": "p1",
+        "name": "Player 2",
+        "avatarId": "face-1",
+        "connected": true,
+        "bot": true,
+        "canSeeTv": true
+      }
+    ],
+    "settings": {},
+    "seed": 1309716532,
+    "now": 1000
+  },
+  "events": [
+    {
+      "type": "input",
+      "now": 1001,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 1,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1002,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 11,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1003,
+      "playerId": "p0",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1004,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1005,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 10,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1006,
+      "playerId": "p0",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1007,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1008,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 9,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1009,
+      "playerId": "p0",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1010,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1011,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 8,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1012,
+      "playerId": "p0",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1013,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1014,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 1,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1015,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 7,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1016,
+      "playerId": "p1",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1017,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1018,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 6,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1019,
+      "playerId": "p1",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1020,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1021,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 5,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1022,
+      "playerId": "p1",
+      "input": {
+        "type": "dudo"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1023,
+      "playerId": "p0",
+      "input": {
+        "type": "continue"
+      }
+    },
+    {
+      "type": "input",
+      "now": 1024,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 1,
+        "face": 2
+      }
+    },
+    {
+      "type": "input",
+      "now": 1025,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 1,
+        "face": 3
+      }
+    },
+    {
+      "type": "input",
+      "now": 1026,
+      "playerId": "p0",
+      "input": {
+        "type": "bid",
+        "quantity": 1,
+        "face": 1
+      }
+    },
+    {
+      "type": "input",
+      "now": 1027,
+      "playerId": "p1",
+      "input": {
+        "type": "bid",
+        "quantity": 2,
+        "face": 1
+      }
+    }
+  ],
+  "expectedState": {
+    "phase": {
+      "id": "bid",
+      "startedAt": 1027,
+      "deadline": null
+    },
+    "phaseClock": 1027,
+    "rng": {
+      "seed": 1309716532,
+      "step": 53
+    },
+    "players": {
+      "p0": {
+        "id": "p0",
+        "name": "Player 1",
+        "avatarId": "face-0",
+        "connected": true,
+        "bot": true,
+        "canSeeTv": true
+      },
+      "p1": {
+        "id": "p1",
+        "name": "Player 2",
+        "avatarId": "face-1",
+        "connected": true,
+        "bot": true,
+        "canSeeTv": true
+      }
+    },
+    "order": [
+      "p0",
+      "p1"
+    ],
+    "settings": {
+      "onesWild": true,
+      "palificoEnabled": true,
+      "palificoExemption": "none",
+      "calzaEnabled": false,
+      "calzaPolicy": "anyOther",
+      "turnSeconds": 0
+    },
+    "cups": {
+      "p0": [
+        1,
+        1
+      ],
+      "p1": [
+        3
+      ]
+    },
+    "diceCount": {
+      "p0": 2,
+      "p1": 1
+    },
+    "turn": "p0",
+    "round": 8,
+    "bid": {
+      "quantity": 2,
+      "face": 1,
+      "playerId": "p1"
+    },
+    "bidLog": [
+      {
+        "quantity": 1,
+        "face": 2,
+        "playerId": "p0"
+      },
+      {
+        "quantity": 1,
+        "face": 3,
+        "playerId": "p1"
+      },
+      {
+        "quantity": 1,
+        "face": 1,
+        "playerId": "p0"
+      },
+      {
+        "quantity": 2,
+        "face": 1,
+        "playerId": "p1"
+      }
+    ],
+    "palifico": false,
+    "palificoStarter": null,
+    "seenPalifico": {
+      "p0": false,
+      "p1": false
+    },
+    "nextStarter": "p0",
+    "nextPalifico": null,
+    "reveal": null,
+    "eliminated": [],
+    "left": [],
+    "models": {
+      "p0": {
+        "truth": 4,
+        "false": 5
+      },
+      "p1": {
+        "truth": 4,
+        "false": 6
+      }
+    },
+    "autoPaused": false,
+    "winner": null,
+    "endReason": null,
+    "contentLang": "en",
+    "phoneOnly": false
+  },
+  "externalBotRngSeed": 6789,
+  "beforeActions": {
+    "easy": {
+      "type": "bid",
+      "quantity": 3,
+      "face": 1
+    },
+    "normal": {
+      "type": "dudo"
+    },
+    "sharp": {
+      "type": "bid",
+      "quantity": 3,
+      "face": 1
+    }
+  },
+  "expectedMediumAction": {
+    "type": "bid",
+    "quantity": 3,
+    "face": 1
+  },
+  "proofScope": "Replay starts with unmodified init and uses only accepted inputs plus actual seeded rolls. The action proof varies all six compatible opposing one-die values while preserving own/public information. Three ones is the sole positive-probability legal raise, with exact raw probability 1/6. This is an immediate die-loss correction, not a new full-game strength claim."
+}

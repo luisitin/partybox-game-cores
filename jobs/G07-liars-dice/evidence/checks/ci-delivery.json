@@ -1,0 +1,46 @@
+{
+  "runId": 37737745593,
+  "runUrl": "https://github.com/luisitin/partybox-game-cores/actions/runs/37737745593",
+  "headSha": "6dd4c32b980695de88465b284b0763e287787915",
+  "conclusion": "success",
+  "commands": [
+    "npm ci --ignore-scripts --no-audit --no-fund",
+    "npx playwright install --with-deps chromium",
+    "npm test"
+  ],
+  "nodeTests": {
+    "tests": 35,
+    "passed": 35,
+    "failed": 0
+  },
+  "browserChecks": {
+    "checks": 37,
+    "passed": 37,
+    "failed": 0,
+    "scope": "full"
+  },
+  "mutations": {
+    "compiled": 25,
+    "assertionKills": 25,
+    "survivors": []
+  },
+  "integrity": {
+    "fileHashes": 155,
+    "regenerationRuns": 2,
+    "byteIdentical": true
+  },
+  "browserArtifact": {
+    "expired": false,
+    "id": 11532289074,
+    "name": "G07-browser-evidence",
+    "size_in_bytes": 520314,
+    "workflow_run": {
+      "head_branch": "job/G07-liars-dice",
+      "head_repository_id": 1408959120,
+      "head_sha": "6dd4c32b980695de88465b284b0763e287787915",
+      "id": 37737745593,
+      "repository_id": 1408959120
+    }
+  },
+  "artifactReadback": "Download unavailable in this environment. GitHub logs independently show both browser gates and full suite passing; raw artifact remains on the linked run. No new hosted FPS values are inferred from local frames."
+}

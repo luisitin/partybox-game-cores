@@ -1,0 +1,766 @@
+{
+  "diagnosticOnly": true,
+  "authoritativeGate": false,
+  "htmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "runId": "20261008095803839",
+  "measurement": "actual pause click capture/bubble snapshots, hold from accepted pause, deliberate late click, then exact600 phone workload with LongTasks and no CDP tracing/CPU profiler",
+  "processSamplingAddsOverhead": true,
+  "processSnapshots": [
+    {
+      "stage": "before-pause",
+      "at": "2026-10-08T09:58:03.865Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    2.2        0 bash",
+        " 108018  108015  108015 Sl    119        0 MainThread",
+        " 108030  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:04.875Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.6        0 bash",
+        " 108018  108015  108015 Sl   44.3        0 MainThread",
+        " 108031  108018  108031 Ssl  17.3        0 headless_shell",
+        " 108033  108031  108031 S     1.0        0 headless_shell",
+        " 108034  108031  108031 S     1.0        0 headless_shell",
+        " 108050  108033  108031 Sl    4.3        0 headless_shell",
+        " 108052  108031  108031 Sl    3.3        0 headless_shell",
+        " 108069  108034  108031 Rl    111        0 headless_shell",
+        " 108090  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:05.873Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.4        0 bash",
+        " 108018  108015  108015 Sl   27.2        0 MainThread",
+        " 108031  108018  108031 Ssl   9.0        0 headless_shell",
+        " 108033  108031  108031 S     0.5        0 headless_shell",
+        " 108034  108031  108031 S     0.5        0 headless_shell",
+        " 108050  108033  108031 Sl    2.6        0 headless_shell",
+        " 108052  108031  108031 Sl    1.5        0 headless_shell",
+        " 108069  108034  108031 Rl    100        1 headless_shell",
+        " 108091  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:06.881Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.2        0 bash",
+        " 108018  108015  108015 Sl   19.8        0 MainThread",
+        " 108031  108018  108031 Ssl   6.0        0 headless_shell",
+        " 108033  108031  108031 S     0.3        0 headless_shell",
+        " 108034  108031  108031 S     0.3        0 headless_shell",
+        " 108050  108033  108031 Sl    2.0        0 headless_shell",
+        " 108052  108031  108031 Sl    1.0        0 headless_shell",
+        " 108069  108034  108031 Rl   96.1        2 headless_shell",
+        " 108092  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:07.918Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.2        0 bash",
+        " 108018  108015  108015 Sl   16.8        0 MainThread",
+        " 108031  108018  108031 Ssl   4.5        0 headless_shell",
+        " 108033  108031  108031 S     0.2        0 headless_shell",
+        " 108034  108031  108031 S     0.2        0 headless_shell",
+        " 108050  108033  108031 Sl    1.7        0 headless_shell",
+        " 108052  108031  108031 Sl    0.7        0 headless_shell",
+        " 108069  108034  108031 Rl   93.5        3 headless_shell",
+        " 108093  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:08.884Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.1        0 bash",
+        " 108018  108015  108015 Sl   17.3        0 MainThread",
+        " 108031  108018  108031 Ssl   3.8        0 headless_shell",
+        " 108033  108031  108031 S     0.2        0 headless_shell",
+        " 108034  108031  108031 S     0.2        0 headless_shell",
+        " 108050  108033  108031 Sl    1.6        0 headless_shell",
+        " 108052  108031  108031 Sl    0.6        0 headless_shell",
+        " 108069  108034  108031 Rl   93.4        4 headless_shell",
+        " 108094  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:09.868Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.1        0 bash",
+        " 108018  108015  108015 Sl   14.7        0 MainThread",
+        " 108031  108018  108031 Ssl   3.1        0 headless_shell",
+        " 108033  108031  108031 S     0.1        0 headless_shell",
+        " 108034  108031  108031 S     0.1        0 headless_shell",
+        " 108050  108033  108031 Sl    1.6        0 headless_shell",
+        " 108052  108031  108031 Sl    0.5        0 headless_shell",
+        " 108069  108034  108031 Rl   91.4        5 headless_shell",
+        " 108095  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:10.867Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.1        0 bash",
+        " 108018  108015  108015 Sl   13.0        0 MainThread",
+        " 108031  108018  108031 Ssl   2.7        0 headless_shell",
+        " 108033  108031  108031 S     0.1        0 headless_shell",
+        " 108034  108031  108031 S     0.1        0 headless_shell",
+        " 108050  108033  108031 Sl    1.5        0 headless_shell",
+        " 108052  108031  108031 Sl    0.4        0 headless_shell",
+        " 108069  108034  108031 Sl   91.3        6 headless_shell",
+        " 108096  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:11.893Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.1        0 bash",
+        " 108018  108015  108015 Sl   11.5        0 MainThread",
+        " 108031  108018  108031 Ssl   2.3        0 headless_shell",
+        " 108033  108031  108031 S     0.1        0 headless_shell",
+        " 108034  108031  108031 S     0.1        0 headless_shell",
+        " 108050  108033  108031 Sl    1.5        0 headless_shell",
+        " 108052  108031  108031 Sl    0.3        0 headless_shell",
+        " 108069  108034  108031 Rl   90.8        7 headless_shell",
+        " 108097  108018  108015 R     400        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:12.868Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.1        0 bash",
+        " 108018  108015  108015 Sl   10.5        0 MainThread",
+        " 108031  108018  108031 Ssl   2.2        0 headless_shell",
+        " 108033  108031  108031 S     0.1        0 headless_shell",
+        " 108034  108031  108031 S     0.1        0 headless_shell",
+        " 108050  108033  108031 Sl    1.3        0 headless_shell",
+        " 108052  108031  108031 Sl    0.3        0 headless_shell",
+        " 108069  108034  108031 Rl   89.8        7 headless_shell",
+        " 108098  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:13.866Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    9.5        1 MainThread",
+        " 108031  108018  108031 Ssl   2.1        0 headless_shell",
+        " 108033  108031  108031 S     0.1        0 headless_shell",
+        " 108034  108031  108031 S     0.1        0 headless_shell",
+        " 108050  108033  108031 Sl    1.4        0 headless_shell",
+        " 108052  108031  108031 Sl    0.3        0 headless_shell",
+        " 108069  108034  108031 Sl   88.9        8 headless_shell",
+        " 108099  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:14.881Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    8.9        1 MainThread",
+        " 108031  108018  108031 Ssl   1.9        0 headless_shell",
+        " 108033  108031  108031 S     0.0        0 headless_shell",
+        " 108034  108031  108031 S     0.0        0 headless_shell",
+        " 108050  108033  108031 Sl    1.2        0 headless_shell",
+        " 108052  108031  108031 Sl    0.2        0 headless_shell",
+        " 108069  108034  108031 Rl   88.4        9 headless_shell",
+        " 108100  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "before-exact600",
+      "at": "2026-10-08T09:58:15.645Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    8.7        1 MainThread",
+        " 108105  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:15.867Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    8.6        1 MainThread",
+        " 108106  108018  108015 Rl    125        0 MainThread",
+        " 108114  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:16.876Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    8.0        1 MainThread",
+        " 108106  108018  108015 Sl   43.8        0 MainThread",
+        " 108119  108106  108119 Ssl  16.6        0 headless_shell",
+        " 108121  108119  108119 S     1.2        0 headless_shell",
+        " 108122  108119  108119 S     1.2        0 headless_shell",
+        " 108137  108121  108119 Sl    6.3        0 headless_shell",
+        " 108139  108119  108119 Sl    3.8        0 headless_shell",
+        " 108165  108122  108119 Rl    108        0 headless_shell",
+        " 108175  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:17.873Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    7.5        1 MainThread",
+        " 108106  108018  108015 Sl   27.2        0 MainThread",
+        " 108119  108106  108119 Ssl   9.8        0 headless_shell",
+        " 108121  108119  108119 S     0.5        0 headless_shell",
+        " 108122  108119  108119 S     0.5        0 headless_shell",
+        " 108137  108121  108119 Sl    3.3        0 headless_shell",
+        " 108139  108119  108119 Sl    1.6        0 headless_shell",
+        " 108165  108122  108119 Rl    106        1 headless_shell",
+        " 108177  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:18.883Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    7.0        1 MainThread",
+        " 108106  108018  108015 Sl   18.6        0 MainThread",
+        " 108119  108106  108119 Ssl   6.3        0 headless_shell",
+        " 108121  108119  108119 S     0.3        0 headless_shell",
+        " 108122  108119  108119 S     0.3        0 headless_shell",
+        " 108137  108121  108119 Sl    2.5        0 headless_shell",
+        " 108139  108119  108119 Sl    1.0        0 headless_shell",
+        " 108165  108122  108119 Rl   98.1        2 headless_shell",
+        " 108178  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:19.881Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    6.6        1 MainThread",
+        " 108106  108018  108015 Sl   14.2        0 MainThread",
+        " 108119  108106  108119 Ssl   4.6        0 headless_shell",
+        " 108121  108119  108119 S     0.2        0 headless_shell",
+        " 108122  108119  108119 S     0.2        0 headless_shell",
+        " 108137  108121  108119 Sl    2.3        0 headless_shell",
+        " 108139  108119  108119 Sl    0.7        0 headless_shell",
+        " 108165  108122  108119 Rl   95.1        3 headless_shell",
+        " 108179  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:20.879Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    6.3        1 MainThread",
+        " 108106  108018  108015 Sl   11.7        0 MainThread",
+        " 108119  108106  108119 Ssl   3.7        0 headless_shell",
+        " 108121  108119  108119 S     0.2        0 headless_shell",
+        " 108122  108119  108119 S     0.2        0 headless_shell",
+        " 108137  108121  108119 Sl    2.0        0 headless_shell",
+        " 108139  108119  108119 Sl    0.6        0 headless_shell",
+        " 108165  108122  108119 Rl   93.4        4 headless_shell",
+        " 108183  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:21.884Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    5.9        1 MainThread",
+        " 108106  108018  108015 Sl    9.8        0 MainThread",
+        " 108119  108106  108119 Ssl   3.0        0 headless_shell",
+        " 108121  108119  108119 S     0.1        0 headless_shell",
+        " 108122  108119  108119 S     0.1        0 headless_shell",
+        " 108137  108121  108119 Sl    1.8        0 headless_shell",
+        " 108139  108119  108119 Sl    0.5        0 headless_shell",
+        " 108165  108122  108119 Rl   92.3        5 headless_shell",
+        " 108184  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:22.886Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    5.7        1 MainThread",
+        " 108106  108018  108015 Sl    8.4        0 MainThread",
+        " 108119  108106  108119 Ssl   2.6        0 headless_shell",
+        " 108121  108119  108119 S     0.1        0 headless_shell",
+        " 108122  108119  108119 S     0.1        0 headless_shell",
+        " 108137  108121  108119 Sl    1.6        0 headless_shell",
+        " 108139  108119  108119 Sl    0.4        0 headless_shell",
+        " 108165  108122  108119 Rl   91.3        6 headless_shell",
+        " 108185  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:23.885Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    5.4        1 MainThread",
+        " 108106  108018  108015 Sl    7.5        0 MainThread",
+        " 108119  108106  108119 Ssl   2.2        0 headless_shell",
+        " 108121  108119  108119 S     0.1        0 headless_shell",
+        " 108122  108119  108119 S     0.1        0 headless_shell",
+        " 108137  108121  108119 Sl    1.5        0 headless_shell",
+        " 108139  108119  108119 Sl    0.3        0 headless_shell",
+        " 108165  108122  108119 Rl   90.6        7 headless_shell",
+        " 108186  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:24.887Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    5.2        1 MainThread",
+        " 108106  108018  108015 Sl    6.7        0 MainThread",
+        " 108119  108106  108119 Ssl   2.0        0 headless_shell",
+        " 108121  108119  108119 S     0.1        0 headless_shell",
+        " 108122  108119  108119 S     0.1        0 headless_shell",
+        " 108137  108121  108119 Sl    1.5        0 headless_shell",
+        " 108139  108119  108119 Sl    0.3        0 headless_shell",
+        " 108165  108122  108119 Rl   90.1        7 headless_shell",
+        " 108187  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:25.901Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    5.1        1 MainThread",
+        " 108106  108018  108015 Sl    6.1        0 MainThread",
+        " 108119  108106  108119 Ssl   1.9        0 headless_shell",
+        " 108121  108119  108119 S     0.1        0 headless_shell",
+        " 108122  108119  108119 S     0.1        0 headless_shell",
+        " 108137  108121  108119 Sl    1.5        0 headless_shell",
+        " 108139  108119  108119 Sl    0.3        0 headless_shell",
+        " 108165  108122  108119 Rl   89.6        8 headless_shell",
+        " 108188  108018  108015 R     200        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "periodic",
+      "at": "2026-10-08T09:58:26.888Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    4.9        1 MainThread",
+        " 108106  108018  108015 Sl    5.6        0 MainThread",
+        " 108119  108106  108119 Ssl   1.7        0 headless_shell",
+        " 108121  108119  108119 S     0.0        0 headless_shell",
+        " 108122  108119  108119 S     0.0        0 headless_shell",
+        " 108137  108121  108119 Sl    1.5        0 headless_shell",
+        " 108139  108119  108119 Sl    0.2        0 headless_shell",
+        " 108165  108122  108119 Rl   88.9        9 headless_shell",
+        " 108189  108018  108015 R     100        0 ps",
+        ""
+      ]
+    },
+    {
+      "stage": "after-exact600",
+      "at": "2026-10-08T09:58:27.829Z",
+      "rows": [
+        "    PID    PPID    PGID STAT %CPU     TIME COMMAND",
+        "      1       0       0 S+    0.0       38 tail",
+        "      2       1       0 S+    0.0        0 caas-prefix-tra",
+        "    199       1     199 Ssl   0.0       67 dockerd",
+        "    248     199     248 Ssl   0.4      521 containerd",
+        "    464       0       0 Sl+   0.1      122 codex",
+        " 108015     464  108015 Ss    0.0        0 bash",
+        " 108018  108015  108015 Sl    4.7        1 MainThread",
+        " 108190  108018  108015 R     0.0        0 ps",
+        ""
+      ]
+    }
+  ],
+  "pause": {
+    "armedAt": 678,
+    "armedStateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+    "acceptedPause": {
+      "button": "pause",
+      "stage": "bubble-after-onclick",
+      "at": 1765,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null,\"paused\":{\"at\":1741}},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+      "botRng": {
+        "seed": 3282424899,
+        "step": 0
+      },
+      "cupDice": 0,
+      "turn": "p1",
+      "phase": "bid",
+      "paused": {
+        "at": 1741
+      },
+      "bid": null
+    },
+    "afterHold": {
+      "at": 4078,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null,\"paused\":{\"at\":1741}},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+      "botRng": {
+        "seed": 3282424899,
+        "step": 0
+      },
+      "cupDice": 0
+    },
+    "heldFromAcceptedPauseMs": 2313,
+    "stateHeldFromAcceptedPause": true,
+    "rngHeldFromAcceptedPause": true,
+    "stateWasAlreadyDifferentBeforePause": false,
+    "afterResume1800": {
+      "at": 5975,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}"
+    },
+    "afterResume2400": {
+      "at": 6583,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":6226,\"deadline\":null},\"phaseClock\":6226,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p0\",\"round\":1,\"bid\":{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"},\"bidLog\":[{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"}],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}"
+    },
+    "clicks": [
+      {
+        "button": "pause",
+        "stage": "capture-before-onclick",
+        "at": 1740,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 5,
+        "turn": "p1",
+        "phase": "bid",
+        "bid": null
+      },
+      {
+        "button": "pause",
+        "stage": "bubble-after-onclick",
+        "at": 1765,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null,\"paused\":{\"at\":1741}},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 0,
+        "turn": "p1",
+        "phase": "bid",
+        "paused": {
+          "at": 1741
+        },
+        "bid": null
+      },
+      {
+        "button": "resume",
+        "stage": "capture-before-onclick",
+        "at": 4121,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null,\"paused\":{\"at\":1741}},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 0,
+        "turn": "p1",
+        "phase": "bid",
+        "paused": {
+          "at": 1741
+        },
+        "bid": null
+      },
+      {
+        "button": "resume",
+        "stage": "bubble-after-onclick",
+        "at": 4139,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":573,\"deadline\":null},\"phaseClock\":573,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 0,
+        "turn": "p1",
+        "phase": "bid",
+        "bid": null
+      }
+    ],
+    "resumeActualActionMs": 2087,
+    "resumeWithinOriginalBounds": true
+  },
+  "frameChild": {
+    "stdout": "{\"profile\":\"phone4x\",\"fps\":59.70386881069893,\"p99Ms\":16.800000000000182,\"maxMs\":33.399999999999636,\"output\":\"/workspace/game-cores-G07/jobs/G07-liars-dice/.work/browser-diagnostics/round-5-current-20261008095816017\"}\n",
+    "stderr": ""
+  },
+  "delayedPause": {
+    "armedAt": 6677,
+    "armedStateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":6622,\"deadline\":null},\"phaseClock\":6622,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p1\",\"round\":1,\"bid\":null,\"bidLog\":[],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+    "armedBotRng": {
+      "seed": 3282424899,
+      "step": 0
+    },
+    "acceptedPause": {
+      "button": "pause",
+      "stage": "bubble-after-onclick",
+      "at": 9248,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":8720,\"deadline\":null,\"paused\":{\"at\":9240}},\"phaseClock\":8720,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p0\",\"round\":1,\"bid\":{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"},\"bidLog\":[{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"}],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+      "botRng": {
+        "seed": 3282424899,
+        "step": 0
+      },
+      "cupDice": 0,
+      "turn": "p0",
+      "phase": "bid",
+      "paused": {
+        "at": 9240
+      },
+      "bid": {
+        "quantity": 1,
+        "face": 4,
+        "playerId": "p1"
+      }
+    },
+    "afterHold": {
+      "at": 11539,
+      "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":8720,\"deadline\":null,\"paused\":{\"at\":9240}},\"phaseClock\":8720,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p0\",\"round\":1,\"bid\":{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"},\"bidLog\":[{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"}],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+      "botRng": {
+        "seed": 3282424899,
+        "step": 0
+      },
+      "cupDice": 0
+    },
+    "clicks": [
+      {
+        "button": "pause",
+        "stage": "capture-before-onclick",
+        "at": 9240,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":8720,\"deadline\":null},\"phaseClock\":8720,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p0\",\"round\":1,\"bid\":{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"},\"bidLog\":[{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"}],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 0,
+        "turn": "p0",
+        "phase": "bid",
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        }
+      },
+      {
+        "button": "pause",
+        "stage": "bubble-after-onclick",
+        "at": 9248,
+        "stateJson": "{\"phase\":{\"id\":\"bid\",\"startedAt\":8720,\"deadline\":null,\"paused\":{\"at\":9240}},\"phaseClock\":8720,\"rng\":{\"seed\":7199,\"step\":11},\"players\":{\"p0\":{\"id\":\"p0\",\"name\":\"You\",\"avatarId\":\"face-0\",\"connected\":true,\"bot\":false},\"p1\":{\"id\":\"p1\",\"name\":\"Player 2\",\"avatarId\":\"face-1\",\"connected\":true,\"bot\":true}},\"order\":[\"p0\",\"p1\"],\"settings\":{\"onesWild\":true,\"palificoEnabled\":true,\"palificoExemption\":\"none\",\"calzaEnabled\":false,\"calzaPolicy\":\"anyOther\",\"turnSeconds\":0},\"cups\":{\"p0\":[1,1,5,6,6],\"p1\":[2,6,5,4,4]},\"diceCount\":{\"p0\":5,\"p1\":5},\"turn\":\"p0\",\"round\":1,\"bid\":{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"},\"bidLog\":[{\"quantity\":1,\"face\":4,\"playerId\":\"p1\"}],\"palifico\":false,\"palificoStarter\":null,\"seenPalifico\":{\"p0\":false,\"p1\":false},\"nextStarter\":\"p0\",\"nextPalifico\":null,\"reveal\":null,\"eliminated\":[],\"left\":[],\"models\":{\"p0\":{\"truth\":3,\"false\":2},\"p1\":{\"truth\":3,\"false\":2}},\"autoPaused\":false,\"winner\":null,\"endReason\":null,\"contentLang\":\"en\",\"phoneOnly\":false}",
+        "botRng": {
+          "seed": 3282424899,
+          "step": 0
+        },
+        "cupDice": 0,
+        "turn": "p0",
+        "phase": "bid",
+        "paused": {
+          "at": 9240
+        },
+        "bid": {
+          "quantity": 1,
+          "face": 4,
+          "playerId": "p1"
+        }
+      }
+    ],
+    "stateAlreadyMovedBeforeClick": true,
+    "stateHeldFromAcceptedPause": true,
+    "rngHeldFromAcceptedPause": true
+  },
+  "finalHtmlSha256": "33f5e801d975192c26fd6eaf297086a81d828f7a1074b8b4328e20baf6c7d37a",
+  "sourceUnchanged": true
+}
