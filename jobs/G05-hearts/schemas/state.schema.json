@@ -1,0 +1,419 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "phase": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "enum": [
+            "pass",
+            "play",
+            "trick",
+            "hand",
+            "done"
+          ]
+        },
+        "startedAt": {
+          "type": "number"
+        },
+        "deadline": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "paused": {
+          "type": "object",
+          "properties": {
+            "at": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "at"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "id",
+        "startedAt",
+        "deadline"
+      ],
+      "additionalProperties": false
+    },
+    "rng": {
+      "type": "object",
+      "properties": {
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "step": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        }
+      },
+      "required": [
+        "seed",
+        "step"
+      ],
+      "additionalProperties": false
+    },
+    "players": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "avatarId": {
+            "type": "string"
+          },
+          "connected": {
+            "type": "boolean"
+          },
+          "bot": {
+            "type": "boolean"
+          },
+          "canSeeTv": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "avatarId",
+          "connected"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "settings": {
+      "type": "object",
+      "properties": {
+        "target": {
+          "type": "integer",
+          "minimum": 25,
+          "maximum": 200
+        },
+        "moon": {
+          "type": "string",
+          "enum": [
+            "add",
+            "subtract"
+          ]
+        },
+        "jack": {
+          "type": "boolean"
+        },
+        "noPass": {
+          "type": "boolean"
+        },
+        "queenBreaks": {
+          "type": "boolean"
+        },
+        "threeDeck": {
+          "type": "string",
+          "enum": [
+            "diamonds",
+            "clubs"
+          ]
+        },
+        "turnSeconds": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 60
+        }
+      },
+      "required": [
+        "target",
+        "moon",
+        "jack",
+        "noPass",
+        "queenBreaks",
+        "threeDeck",
+        "turnSeconds"
+      ],
+      "additionalProperties": false
+    },
+    "order": {
+      "minItems": 3,
+      "maxItems": 6,
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "left": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "handNumber": {
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+    },
+    "dealer": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 5
+    },
+    "hands": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "maxItems": 52,
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        }
+      }
+    },
+    "passes": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "maxItems": 52,
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        }
+      }
+    },
+    "sent": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "maxItems": 52,
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        }
+      }
+    },
+    "received": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "maxItems": 52,
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        }
+      }
+    },
+    "passOffset": {
+      "type": "integer",
+      "minimum": -2,
+      "maximum": 3
+    },
+    "opening": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 51
+    },
+    "actor": {
+      "type": "string"
+    },
+    "trick": {
+      "maxItems": 6,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string"
+          },
+          "card": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 51
+          }
+        },
+        "required": [
+          "playerId",
+          "card"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "lastTrick": {
+      "maxItems": 6,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string"
+          },
+          "card": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 51
+          }
+        },
+        "required": [
+          "playerId",
+          "card"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "lastWinner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "trickNumber": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 17
+    },
+    "played": {
+      "maxItems": 52,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "playerId": {
+            "type": "string"
+          },
+          "card": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 51
+          }
+        },
+        "required": [
+          "playerId",
+          "card"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "captured": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "maxItems": 52,
+        "type": "array",
+        "items": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 51
+        }
+      }
+    },
+    "heartsBroken": {
+      "type": "boolean"
+    },
+    "scores": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "handScored": {
+      "type": "boolean"
+    },
+    "history": {
+      "maxItems": 8,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "hand": {
+            "type": "integer",
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991
+          },
+          "points": {
+            "type": "object",
+            "propertyNames": {
+              "type": "string"
+            },
+            "additionalProperties": {
+              "type": "number"
+            }
+          },
+          "moon": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "hand",
+          "points",
+          "moon"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "phase",
+    "rng",
+    "players",
+    "settings",
+    "order",
+    "left",
+    "handNumber",
+    "dealer",
+    "hands",
+    "passes",
+    "sent",
+    "received",
+    "passOffset",
+    "opening",
+    "actor",
+    "trick",
+    "lastTrick",
+    "lastWinner",
+    "trickNumber",
+    "played",
+    "captured",
+    "heartsBroken",
+    "scores",
+    "handScored",
+    "history"
+  ],
+  "additionalProperties": false
+}
