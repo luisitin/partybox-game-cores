@@ -1,0 +1,33 @@
+{
+  "coordinator": "root",
+  "grantUtc": "2026-10-08T20:48:38.245329+00:00",
+  "identity": {
+    "profile": "tv",
+    "sourceSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "attemptNonce": "28419e2b-ed9e-4140-8c77-5e3051ac64c5"
+  },
+  "otherOwnersAcknowledged": [
+    "G08",
+    "G09",
+    "G10",
+    "B19",
+    "tracker"
+  ],
+  "heldPureReaderGroup": 194608,
+  "g04NodeGroup": 194454,
+  "g04BrowserGroup": 194467,
+  "scope": "Continuous native quiet window; no other live browser, runnable decoder, heavy test or source writer. G10 pure recorded-evidence reader stopped before grant.",
+  "observedClosedUtc": "2026-10-08T20:48:49.081905+00:00",
+  "actualClosure": {
+    "profile": "tv",
+    "sourceSha256": "e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b",
+    "attemptNonce": "28419e2b-ed9e-4140-8c77-5e3051ac64c5",
+    "coordination": "root-granted",
+    "readyUtc": "2026-10-08T20:45:05.714Z",
+    "grantUtc": "2026-10-08T20:48:38.260Z",
+    "status": "samples-written",
+    "rawIntervals": 600,
+    "rawPath": ".work/strict/tv-raw.json",
+    "utc": "2026-10-08T20:48:49.017Z"
+  }
+}

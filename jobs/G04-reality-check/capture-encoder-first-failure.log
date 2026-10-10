@@ -1,0 +1,22 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: [in#0 @ 0x4353100] Error opening input: No such file or directory
+Error opening input file /tmp/G04-notice-capture-9cMHYa/%03d.png.
+Error opening input files: No such file or directory
+
+
+254 !== 0
+
+    at encodeCapture (file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/capture-encoder.ts:11:9)
+    at file:///workspace/game-cores-G04-reality/jobs/G04-reality-check/capture.ts:32:2 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 254,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0

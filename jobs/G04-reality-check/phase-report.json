@@ -1,0 +1,83 @@
+{
+  "randomSeed": 100933670,
+  "states": 7000,
+  "ignoredEvents": 195000,
+  "pausedEvents": 30000,
+  "privateComparisons": 60000,
+  "botComparisons": 90000,
+  "acceptedActions": 36000,
+  "detachedViews": 49000,
+  "failures": 0,
+  "phases": [
+    {
+      "phase": "wheel",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 12000,
+      "botComparisons": 18000,
+      "acceptedActions": 0,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "demo",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 12000,
+      "botComparisons": 18000,
+      "acceptedActions": 0,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "answer",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 12000,
+      "botComparisons": 18000,
+      "acceptedActions": 9000,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "write",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 12000,
+      "botComparisons": 18000,
+      "acceptedActions": 9000,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "vote",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 12000,
+      "botComparisons": 18000,
+      "acceptedActions": 9000,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "reveal",
+      "samples": 1000,
+      "ignoredEvents": 28000,
+      "pausedEvents": 5000,
+      "privateComparisons": 0,
+      "botComparisons": 0,
+      "acceptedActions": 9000,
+      "detachedViews": 7000
+    },
+    {
+      "phase": "done",
+      "samples": 1000,
+      "ignoredEvents": 27000,
+      "pausedEvents": 0,
+      "privateComparisons": 0,
+      "botComparisons": 0,
+      "acceptedActions": 0,
+      "detachedViews": 7000
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+import {chromium} from 'playwright';
+import {readFileSync,writeFileSync,mkdirSync,renameSync,statSync} from 'node:fs';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+import assert from 'node:assert/strict';
+import {game} from '../../core.ts';
+const sha=file=>createHash('sha256').update(readFileSync(file)).digest('hex');
+const files=['play.html','ui.ts','core.ts','bots.ts','late-input.ts'];
+const guards=()=>Object.fromEntries(files.map(file=>[file,sha(file)]));
+const before=guards();assert.equal(before['play.html'],'e5701ea67a70424bd205ae6ff303fa34de9922b80bb72449fb5ea80b2eff984b');
+const tmp=resolve('.work/diagnostics/deadline-capture-temp');mkdirSync(tmp,{recursive:true});mkdirSync('media',{recursive:true});
+const out='media/milestone-13-deadline.webm';const startedAt=new Date().toISOString(),errors=[],requests=[];
+console.log(JSON.stringify({startedAt,pid:process.pid,htmlSha256:before['play.html']}));
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+let metadata;
+try {
+ const context=await browser.newContext({viewport:{width:390,height:844},recordVideo:{dir:tmp,size:{width:390,height:844}}});
+ const page=await context.newPage(),video=page.video(),url=pathToFileURL(resolve('play.html')).href;
+ page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
+ await page.route('**/*',r=>r.request().url()===url?r.continue():r.abort());await page.goto(url);assert.equal(page.url(),url);
+ await page.clock.install({time:100000});await page.clock.pauseAt(101000);
+ const players=[0,1].map(i=>({id:'p'+i,name:'Player '+(i+1),avatarId:'🙂',connected:true,bot:false}));let seed,state;
+ for(let s=1;s<1000;s++){const candidate=game.init({players,seed:s,now:101000,settings:{mode:'quick',rounds:4}});if(candidate.question.kind==='number'){seed=s;state=candidate;break;}}
+ assert(state);await page.selectOption('#mode','quick');await page.selectOption('#rounds','4');await page.fill('#seed',String(seed));await page.click('#start');
+ for(let i=0;i<2;i++){const now=await page.evaluate(()=>Date.now());await page.click('#skip');state=game.reduce(state,{type:'vip',action:'skip',now});}
+ await page.click('#reveal-private');await page.fill('#answer',String(state.question.correct));
+ const hold=ms=>new Promise(resolve=>setTimeout(resolve,ms));await hold(700);
+ const deadline=state.phase.deadline;await page.clock.setSystemTime(deadline+10);await page.clock.runFor(100);await hold(900);
+ const inputNow=await page.evaluate(()=>Date.now());assert.equal(await page.locator('#controller-countdown').textContent(),'0 s');
+ await page.click('#lock-answer');assert.equal(await page.locator('#public').getAttribute('data-phase'),'reveal');
+ const scores=await page.locator('.score strong').allTextContents();assert.deepEqual(scores,['0','0']);assert.equal(await page.locator('#private input,#private textarea').count(),0);
+ await page.locator('#public').scrollIntoViewIfNeeded();await hold(1300);await page.locator('.scoreboard').scrollIntoViewIfNeeded();await hold(1300);
+ await context.close();renameSync(await video.path(),out);
+ const after=guards();assert.deepEqual(after,before);assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);assert(statSync(out).size<10*1024*1024);
+ metadata={startedAt,finishedAt:new Date().toISOString(),recordingMeasuresPerformance:false,navigationMode:'Actual file://',fixture:'Playwright held phase timers; wallDate set beyond deadline; original native countdown allowed to show0s; ordinary correct-answer button advances expired timer to zero-point reveal.',viewport:{width:390,height:844},seed,deadline,inputNow,lateByMs:inputNow-deadline,phaseAfter:'reveal',scores:[0,0],privateInputCount:0,errors,externalRequests:requests,sourceHashesAtStart:before,sourceHashesAtEnd:after,sourceGuardsMatch:true,video:out,bytes:statSync(out).size,sha256:sha(out)};
+ writeFileSync('.work/diagnostics/deadline-capture-metadata.json',JSON.stringify(metadata,null,2)+'\n');console.log(JSON.stringify(metadata));
+} finally {await browser.close();}

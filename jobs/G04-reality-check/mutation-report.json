@@ -1,0 +1,107 @@
+{
+  "planted": 25,
+  "killed": 25,
+  "baseline": "28 focused tests passed",
+  "mutations": [
+    {
+      "name": "stale phase accepted",
+      "killed": true
+    },
+    {
+      "name": "stale nonce accepted",
+      "killed": true
+    },
+    {
+      "name": "early timer accepted",
+      "killed": true
+    },
+    {
+      "name": "paused play accepted",
+      "killed": true
+    },
+    {
+      "name": "prototype spectator becomes player",
+      "killed": true
+    },
+    {
+      "name": "century zero accepted",
+      "killed": true
+    },
+    {
+      "name": "nondecade answer accepted",
+      "killed": true
+    },
+    {
+      "name": "out-of-range estimate accepted",
+      "killed": true
+    },
+    {
+      "name": "answer can be replaced",
+      "killed": true
+    },
+    {
+      "name": "own fake vote accepted",
+      "killed": true
+    },
+    {
+      "name": "duplicate author lost",
+      "killed": true
+    },
+    {
+      "name": "fake case normalization lost",
+      "killed": true
+    },
+    {
+      "name": "correct write earns nothing",
+      "killed": true
+    },
+    {
+      "name": "fooled credit removed",
+      "killed": true
+    },
+    {
+      "name": "truth overwrites earlier fooled credit",
+      "killed": true
+    },
+    {
+      "name": "last round not doubled",
+      "killed": true
+    },
+    {
+      "name": "results never returned",
+      "killed": true
+    },
+    {
+      "name": "left seat omitted from ranking",
+      "killed": true
+    },
+    {
+      "name": "pause duration lost",
+      "killed": true
+    },
+    {
+      "name": "resume remains paused",
+      "killed": true
+    },
+    {
+      "name": "demo only one second",
+      "killed": true
+    },
+    {
+      "name": "every repeat gets demo",
+      "killed": true
+    },
+    {
+      "name": "demo reveals live row",
+      "killed": true
+    },
+    {
+      "name": "live answer leaks in projection",
+      "killed": true
+    },
+    {
+      "name": "phone gets another private answer",
+      "killed": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "actions": 9000,
+  "invalid": 2674,
+  "results": [
+    {
+      "kind": "number",
+      "min": 1e-200,
+      "max": 1e-180,
+      "skill": "easy",
+      "actions": 1000,
+      "invalid": 0
+    },
+    {
+      "kind": "number",
+      "min": 1e-200,
+      "max": 1e-180,
+      "skill": "normal",
+      "actions": 1000,
+      "invalid": 0
+    },
+    {
+      "kind": "number",
+      "min": 1e-200,
+      "max": 1e-180,
+      "skill": "sharp",
+      "actions": 1000,
+      "invalid": 1000
+    },
+    {
+      "kind": "number",
+      "min": 5e-324,
+      "max": 1e-310,
+      "skill": "easy",
+      "actions": 1000,
+      "invalid": 0
+    },
+    {
+      "kind": "number",
+      "min": 5e-324,
+      "max": 1e-310,
+      "skill": "normal",
+      "actions": 1000,
+      "invalid": 0
+    },
+    {
+      "kind": "number",
+      "min": 5e-324,
+      "max": 1e-310,
+      "skill": "sharp",
+      "actions": 1000,
+      "invalid": 1000
+    },
+    {
+      "kind": "century",
+      "min": -1,
+      "max": 0,
+      "skill": "easy",
+      "actions": 1000,
+      "invalid": 510
+    },
+    {
+      "kind": "century",
+      "min": -1,
+      "max": 0,
+      "skill": "normal",
+      "actions": 1000,
+      "invalid": 164
+    },
+    {
+      "kind": "century",
+      "min": -1,
+      "max": 0,
+      "skill": "sharp",
+      "actions": 1000,
+      "invalid": 0
+    }
+  ]
+}

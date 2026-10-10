@@ -1,0 +1,126 @@
+import {chromium,type BrowserContext,type Page} from 'playwright';
+import {readFileSync,writeFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {resolve} from 'node:path';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+import {game,type Input,type State} from './core.ts';
+
+type ReplayEvent={type:'vip';action:'skip'|'pause'|'resume'}|{type:'input';playerId:string;input:Input};
+type Snapshot={dateNow:number;performanceNow:number;phase:string|null;publicText:string;privateText:string;privateOpen:string|null;privateInputCount:number;clock:string|null;controllerClock:string|null;scores:number[];menu:{id:string;text:string;disabled:boolean}[];skipDisabled:boolean};
+type Step={selector:string;now:number;event?:ReplayEvent;before:Snapshot;after:Snapshot};
+type Fixture={context:BrowserContext;page:Page;seed:number;steps:Step[];readonly state:State;click(selector:string,event?:ReplayEvent):Promise<number>};
+type CaseReport={name:string;status:'pending'|'passed'|'failed';snapshots:Snapshot[];evidence?:unknown;error?:string};
+const guardedFiles=['play.html','ui.ts','core.ts','bots.ts','samples.ts','scoring.ts','estimates.ts','browser.ts','.mutation-old-six.ts','RULES.md','../../contract/contract.ts'];
+const hash=(bytes:Uint8Array|string)=>createHash('sha256').update(bytes).digest('hex');
+const sourceHashes=()=>Object.fromEntries(guardedFiles.map(file=>[file,hash(readFileSync(file))]));
+const html=readFileSync('play.html','utf8');
+const initialHashes=sourceHashes();
+const fileUrl=pathToFileURL(resolve('play.html')).href;
+const report:{startedAt:string;finishedAt?:string;passed:boolean;navigationMode:string;fixtureLimits:string;contract:string;htmlSha256:string;inlineScriptSha256:string[];sourceHashesAtStart:Record<string,string>;sourceHashesAtEnd?:Record<string,string>;sourceGuardsMatch?:boolean;externalRequests:string[];errors:string[];cases:CaseReport[];failures:string[]}={
+ startedAt:new Date().toISOString(),passed:false,navigationMode:'Actual self-contained play.html from disk via file://',
+ fixtureLimits:'Playwright timers are held. setSystemTime changes wall Date without delivering phase timers; human late cases advance100ms fake time, then150ms real Node time allows the pre-install native countdown interval to refresh. The actual bot case delivers its scheduled350ms callback. This proves overdue actions cannot beat timer delivery in this controlled fixture; physical-device race frequency and performance are not measured.',
+ contract:'contract/contract.ts PhaseInfo: engine fires exactly one timer event per(id,startedAt) once deadline reached. Selected RULES: quick50s/write40s/vote30s; pause shifts deadlines.',
+ htmlSha256:initialHashes['play.html']!,inlineScriptSha256:[...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)].map(m=>hash(m[1]!)),sourceHashesAtStart:initialHashes,externalRequests:[],errors:[],cases:[],failures:[]
+};
+const save=()=>writeFileSync('.work/deadline-mutation-old-six.json',JSON.stringify(report,null,2)+'\n');
+let activeCase:CaseReport|null=null;
+save();
+const browser=await chromium.launch({headless:true,args:['--no-sandbox']});
+console.log(JSON.stringify({startedAt:report.startedAt,pid:process.pid,htmlSha256:report.htmlSha256}));
+
+async function snapshot(page:Page):Promise<Snapshot>{
+ const observed=await page.evaluate(()=>{
+  const publicEl=document.getElementById('public')!,privateEl=document.getElementById('private')!;
+  return {dateNow:Date.now(),performanceNow:performance.now(),phase:publicEl.getAttribute('data-phase'),publicText:publicEl.textContent??'',privateText:privateEl.textContent??'',privateOpen:privateEl.getAttribute('data-open'),privateInputCount:privateEl.querySelectorAll('input,textarea').length,clock:document.getElementById('countdown')?.textContent??null,controllerClock:document.getElementById('controller-countdown')?.textContent??null,scores:Array.from(document.querySelectorAll('.score strong'),e=>Number(e.textContent)),menu:Array.from(document.querySelectorAll<HTMLButtonElement>('[data-choice]'),e=>({id:e.dataset.choice!,text:e.textContent??'',disabled:e.disabled})),skipDisabled:(document.getElementById('skip') as HTMLButtonElement).disabled};
+ });
+ activeCase?.snapshots.push(observed);
+ return observed;
+}
+function roster(bot=false){return [0,1].map(i=>({id:`p${i}`,name:`Player ${i+1}`,avatarId:'🙂',connected:true,bot:bot&&i===1}));}
+function findSeed(mode:'quick'|'bluff',kind?:string):number{
+ for(let seed=1;seed<1000;seed++){
+  const state=game.init({players:roster(),seed,now:101000,settings:{mode,rounds:4}});
+  if(!kind||state.question.kind===kind)return seed;
+ }
+ throw new Error('No fixture seed for '+mode+'/'+kind);
+}
+async function fixture(mode:'quick'|'bluff',kind?:string,bot=false):Promise<Fixture>{
+ const context=await browser.newContext({viewport:{width:390,height:844}}),page=await context.newPage();
+ page.setDefaultTimeout(10000);
+ page.on('pageerror',error=>report.errors.push(error.message));
+ page.on('request',request=>{if(/^https?:/.test(request.url()))report.externalRequests.push(request.url());});
+ await page.route('**/*',route=>route.request().url()===fileUrl?route.continue():route.abort());
+ await page.goto(fileUrl);
+ if(page.url()!==fileUrl)throw new Error('Actual file navigation failed');
+ await page.clock.install({time:100000});await page.clock.pauseAt(101000);
+ const seed=findSeed(mode,kind);
+ await page.selectOption('#players','2');if(bot)await page.selectOption('#seat-1','sharp');
+ await page.selectOption('#mode',mode);await page.selectOption('#rounds','4');await page.fill('#seed',String(seed));
+ let state=game.init({players:roster(bot),seed,now:await page.evaluate(()=>Date.now()),settings:{mode,rounds:4}});
+ const steps:Step[]=[];
+ async function click(selector:string,event?:ReplayEvent):Promise<number>{
+  const before=await snapshot(page),now=before.dateNow;
+  await page.click(selector);
+  if(event)state=game.reduce(state,{...event,now});
+  steps.push({selector,now,event,before,after:await snapshot(page)});
+  return now;
+ }
+ await page.click('#start');await click('#skip',{type:'vip',action:'skip'});await click('#skip',{type:'vip',action:'skip'});
+ return {context,page,seed,steps,get state(){return state;},click};
+}
+async function jumpPast(f:Fixture,deadline:number,advanceMs=100):Promise<Snapshot>{
+ await f.page.clock.setSystemTime(deadline+10);
+ if(advanceMs)await f.page.clock.runFor(advanceMs);
+ await new Promise<void>(resolve=>setTimeout(resolve,150));
+ return snapshot(f.page);
+}
+const deadlineOf=(state:State):number=>{if(state.phase.deadline===null)throw new Error('Fixture has no deadline');return state.phase.deadline;};
+const timerFirst=(state:State,now:number):State=>game.reduce(state,{type:'timer',phaseId:state.phase.id,startedAt:state.phase.startedAt,now});
+const expectedScores=(state:State)=>game.tvView(state).players.map(p=>p.score??0);
+const matchTimer=(actual:Snapshot,expected:State)=>{assert.equal(actual.phase,expected.phase.id,'expired timer must advance before the input');assert.deepEqual(actual.scores,expectedScores(expected));};
+async function runCase<T>(name:string,gather:()=>Promise<T>,validate:(evidence:T)=>void):Promise<void>{
+ const item:CaseReport={name,status:'pending',snapshots:[]};activeCase=item;report.cases.push(item);save();
+ try{const evidence=await gather();item.evidence=evidence;save();validate(evidence);item.status='passed';}
+ catch(error){item.status='failed';item.error=error instanceof Error?error.stack??error.message:String(error);report.failures.push(name+': '+item.error);console.error(item.error);}
+ save();activeCase=null;
+}
+try{
+ await runCase('late correct quick answer',async()=>{
+  const f=await fixture('quick','number');
+  try{await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));const old=f.state,deadline=deadlineOf(old),before=await jumpPast(f,deadline),inputNow=await f.click('#lock-answer'),after=await snapshot(f.page);return {seed:f.seed,deadline,inputNow,before,after,expected:timerFirst(old,inputNow),steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.before.clock,'0 s');assert(e.inputNow>e.deadline);matchTimer(e.after,e.expected);assert.equal(e.after.phase,'reveal');assert.deepEqual(e.after.scores,[0,0]);assert.equal(e.after.privateInputCount,0);assert(e.after.publicText.includes('No answer'));});
+
+ await runCase('late bluff write',async()=>{
+  const f=await fixture('bluff');
+  try{const fake='Late copper harbour';await f.page.click('#reveal-private');await f.page.fill('#fake',fake);const old=f.state,deadline=deadlineOf(old),before=await jumpPast(f,deadline),inputNow=await f.click('#input-form button[type=submit]'),after=await snapshot(f.page);await f.page.click('#reveal-private');const menu=await snapshot(f.page);return {seed:f.seed,fake,deadline,inputNow,before,after,menu,expected:timerFirst(old,inputNow),steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.before.clock,'0 s');matchTimer(e.after,e.expected);assert.equal(e.after.phase,'vote');assert.equal(e.after.privateInputCount,0);assert.equal(e.after.privateOpen,'false');assert.deepEqual(e.menu.menu.map(o=>({id:o.id,text:o.text})),e.expected.options.map(o=>({id:o.id,text:o.text})));assert.equal(e.menu.menu.some(o=>o.text.includes(e.fake)),false);});
+
+ await runCase('late correct bluff vote',async()=>{
+  const f=await fixture('bluff');
+  try{for(let i=0;i<2;i++){const text=i?'Another timber beacon':'First copper beacon';await f.page.click('#reveal-private');await f.page.fill('#fake',text);await f.click('#input-form button[type=submit]',{type:'input',playerId:`p${i}`,input:{type:'write',text}});}await f.page.click('#reveal-private');const old=f.state,choice=old.options.find(o=>o.correct);if(!choice)throw new Error('No truth option');const deadline=deadlineOf(old),before=await jumpPast(f,deadline),inputNow=await f.click(`[data-choice="${choice.id}"]`),after=await snapshot(f.page);return {seed:f.seed,choice,deadline,inputNow,before,after,expected:timerFirst(old,inputNow),steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.before.clock,'0 s');matchTimer(e.after,e.expected);assert.equal(e.after.phase,'reveal');assert.deepEqual(e.after.scores,[0,0]);assert.equal(e.after.privateInputCount,0);});
+
+ await runCase('actual scheduled expired sharp-bot write',async()=>{
+  const f=await fixture('bluff',undefined,true);
+  try{await f.page.click('#reveal-private');const old=f.state,deadline=deadlineOf(old),before=await jumpPast(f,deadline,0);await f.page.clock.runFor(350);const afterBot=await snapshot(f.page);await f.page.click('#reveal-private');const menu=await snapshot(f.page);return {seed:f.seed,actor:'p1',skill:'sharp',scheduledDelayMs:350,deadline,before,afterBot,menu,expected:timerFirst(old,afterBot.dateNow),inputObservation:'Actual scheduled bot callback is delivered; menu/phase are observed. No private RNG assertion.',steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.before.clock,'0 s');assert(e.before.publicText.includes('0 of 2 answers locked in.'));assert(e.afterBot.dateNow>e.deadline);matchTimer(e.afterBot,e.expected);assert.equal(e.afterBot.phase,'vote');assert.equal(e.afterBot.privateOpen,'false');assert.equal(e.afterBot.privateInputCount,0);assert.deepEqual(e.menu.menu.map(o=>({id:o.id,text:o.text})),e.expected.options.map(o=>({id:o.id,text:o.text})));assert.equal(e.menu.menu.length,1,'expired bot must not add a fake');});
+
+ await runCase('on-time deadline minus1ms control',async()=>{
+  const f=await fixture('quick','number');
+  try{const deadline=deadlineOf(f.state);await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));await f.page.clock.setSystemTime(deadline-1);await new Promise<void>(resolve=>setTimeout(resolve,150));const before=await snapshot(f.page),inputNow=await f.click('#lock-answer',{type:'input',playerId:'p0',input:{type:'answer',value:Number(f.state.question.correct)}}),after=await snapshot(f.page);await f.click('#skip',{type:'vip',action:'skip'});const reveal=await snapshot(f.page);return {seed:f.seed,deadline,inputNow,before,after,reveal,expected:f.state,steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.inputNow,e.deadline-1);assert.equal(e.before.clock,'1 s');assert.equal(e.after.phase,'answer');assert(e.after.publicText.includes('1 of 2 answers locked in.'));matchTimer(e.reveal,e.expected);assert.deepEqual(e.reveal.scores,[1000,0]);});
+
+ await runCase('paused and shifted-deadline control',async()=>{
+  const f=await fixture('quick','number');
+  try{await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));const oldDeadline=deadlineOf(f.state);await f.click('#pause',{type:'vip',action:'pause'});const pausedBefore=await snapshot(f.page),pausedAfter=await jumpPast(f,oldDeadline+4990);await f.click('#pause',{type:'vip',action:'resume'});const shiftedDeadline=deadlineOf(f.state);await f.page.click('#reveal-private');await f.page.fill('#answer',String(f.state.question.correct));const inputNow=await f.click('#lock-answer',{type:'input',playerId:'p0',input:{type:'answer',value:Number(f.state.question.correct)}}),after=await snapshot(f.page);await f.click('#skip',{type:'vip',action:'skip'});const reveal=await snapshot(f.page);return {seed:f.seed,oldDeadline,shiftedDeadline,inputNow,pausedBefore,pausedAfter,after,reveal,expected:f.state,steps:f.steps};}finally{await f.context.close();}
+ },e=>{assert.equal(e.pausedAfter.phase,'answer');assert.equal(e.pausedAfter.clock,'Paused');assert.equal(e.pausedAfter.privateInputCount,0);assert(e.pausedAfter.skipDisabled);assert(e.shiftedDeadline>e.oldDeadline);assert(e.inputNow<e.shiftedDeadline);assert(e.after.publicText.includes('1 of 2 answers locked in.'));matchTimer(e.reveal,e.expected);assert.deepEqual(e.reveal.scores,[1000,0]);});
+}finally{
+ await browser.close();report.finishedAt=new Date().toISOString();report.sourceHashesAtEnd=sourceHashes();report.sourceGuardsMatch=JSON.stringify(initialHashes)===JSON.stringify(report.sourceHashesAtEnd);
+ if(!report.sourceGuardsMatch)report.failures.push('Source files changed during the regression run');
+ if(report.externalRequests.length)report.failures.push('External HTTP requests observed');
+ if(report.errors.length)report.failures.push('Browser page errors observed');
+ report.passed=report.failures.length===0&&report.cases.length===6&&report.cases.every(c=>c.status==='passed');save();
+}
+assert.equal(report.passed,true,report.failures.join('\n')||'Incomplete regression run; see late-input-report.json');
+console.log(`Late-input regression ${report.cases.length}/6 passed; actual file, covered handover, timer-first scores, offline and source guards verified`);
