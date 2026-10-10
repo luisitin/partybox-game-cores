@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "minItems": 52,
+  "maxItems": 52,
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 51
+      },
+      "rank": {
+        "type": "integer",
+        "minimum": 2,
+        "maximum": 14
+      },
+      "suit": {
+        "type": "string",
+        "enum": [
+          "clubs",
+          "diamonds",
+          "hearts",
+          "spades"
+        ]
+      },
+      "label": {
+        "type": "string",
+        "minLength": 2,
+        "maxLength": 4
+      }
+    },
+    "required": [
+      "id",
+      "rank",
+      "suit",
+      "label"
+    ],
+    "additionalProperties": false
+  }
+}
