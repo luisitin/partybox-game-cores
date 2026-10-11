@@ -6,6 +6,8 @@ import { playerCountsSchema, validPlayerCounts } from './player-count-schema';
 import { CONTENT_LANGS } from './constants';
 import type { BotSkill, ContentLang, GamePresence } from './constants';
 import type { Rng, RngState } from './rng';
+import { GAME_CATEGORIES } from './game-category';
+import type { GameOutcome } from './game-outcome';
 
 // ─── Manifest + settings ────────────────────────────────────────────────────────────────────────
 
@@ -158,6 +160,8 @@ export const gameManifestSchema = z
       })
       .optional(),
     tags: z.array(z.enum(GAME_TAGS)).min(1).max(3),
+    /** ADR-099: the picker's top-level category. Required: every game is in exactly one. */
+    category: z.enum(GAME_CATEGORIES),
     presence: z.object({
       needs: z.enum(PRESENCE_NEEDS),
       /** One sentence for the lobby notice when this game is chosen in a room that conflicts. */
@@ -167,7 +171,7 @@ export const gameManifestSchema = z
     addedOn: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
     /** The game ships a `PhoneSettings` panel for the lobby's 🎨 sheet (loaded on expand). */
     phoneSettings: z.boolean().optional(),
-    settings: z.array(settingSpecSchema).max(12),
+    settings: z.array(settingSpecSchema).max(14),
     /** ADR-002: raise for stroke-list inputs (drawing games). */
     maxInputBytes: z.number().int().min(1024).max(HARD_MAX_INPUT_BYTES).optional(),
     /**
@@ -181,7 +185,7 @@ export const gameManifestSchema = z
      * whole state is JSON and needs no clock but `event.now` (the contract) can honestly say yes.
      */
     saveable: z.boolean().optional(),
-    /** ADR-087: the game can run as a 20-90 s minigame inside a board game; absent = it cannot. */
+    /** ADR-087: the game can run as a 20-120 s minigame inside a board game; absent = it cannot. */
     minigame: minigameSpecSchema.optional(),
     /** ADR-054: the content languages the game ships (its deck, bot lines, reader); absent = ['en'].
      *  A room in a language the game lacks plays it in the first one listed (herd-mind 07b839). */
@@ -230,6 +234,12 @@ export interface PhaseInfo {
   /** ms timestamp; the engine fires exactly one `timer` event per (id, startedAt) once reached. */
   deadline: number | null;
   paused?: { at: number };
+  /**
+   * Set only by a VIP skip while paused that moved this instance on to a beat (ADR-101): the skip's time.
+   * The views read it as the instance start (`phaseAt`) in place of `startedAt`; every other phase
+   * leaves it unset.
+   */
+  beatAt?: number;
 }
 
 export interface GameStateBase {
@@ -245,6 +255,10 @@ export interface InitContext {
   now: number;
   /** ADR-047: where everyone is, fixed at start. Optional: absent means all in one room with a TV. */
   presence?: GamePresence;
+  /** ADR-104: how well the room's bots play (ADR-059), fixed at start like `contentLang` (the VIP
+   *  cannot change it mid-game). Absent means `normal`. For a game whose views or state show what the
+   *  bots play at; `sampleInput` still gets the live `skill`. */
+  botSkill?: Exclude<BotSkill, 'normal'>;
   /** ADR-054: the language of this game's shared content (deck, bot lines, reader, matcher),
    *  fixed at start. Optional: absent means 'en'. A game with no pack in it keeps its own. */
   contentLang?: ContentLang;
@@ -324,6 +338,14 @@ export interface ViewEnvelope {
   phaseId: string;
   deadline: number | null;
   paused: boolean;
+  /** Server time at which play was held; lets a late/reloaded screen land on the same beat. */
+  clockHeldAt?: number;
+  /**
+   * Start of the phase instance: `phase.beatAt` after a VIP skip while paused moved it to a beat, else
+   * `phase.startedAt`. With `phaseId` it names the instance: a VIP resume keeps it; a new phase, a skip
+   * or a beat skipped into while paused changes it (ADR-097, ADR-101).
+   */
+  phaseAt: number;
   players: ViewPlayer[];
   /**
    * How the shells present `deadline` (ADR-030). `normal` (default): digits, red + ticks in the last
@@ -335,11 +357,9 @@ export interface ViewEnvelope {
    * I-134 A: what a spectator should be shown while they wait. The shell knows a spectator is
    * waiting but nothing about the game they are waiting on; a game that has something worth
    * watching (a number being called) fills this and the wait stops being a blank screen.
+   * `line` is the live line: for Bingo, the call and its nickname.
    */
-  spectator?: {
-    /** The live line — for Bingo, the call and its nickname. */
-    line: string;
-  };
+  spectator?: { line: string };
   /**
    * I-774 B: what the VIP's Skip / Next does in this phase, in words ("Next card (2 of 4)"). The
    * TV's host bar and the ★ menu show it instead of the generic "Skip / Next".
@@ -418,23 +438,13 @@ export interface GameResults {
   /** T-0257: short labels under a player's name on the results board, TV and phone (English,
    *  each translated like `headline`): a hidden role revealed, a power used ("Hitler", "Executed"). */
   tags?: Record<string, string[]>;
+  /** Unit of `scores` when not points: `ms` shows as seconds ("30.0 s"). Ranks and ties compare raw numbers. */
+  scoreUnit?: 'ms';
   /** T-0496: what the TV's outro film shows beyond the scoreboard (the clue solution, the nightfall roles,
    *  the secret-hitler boards), plain JSON, a few hundred bytes, public at the end of the game. The film
    *  hooks (client/intro/film/films.ts) read the keys each game documents in docs/GAME_CONTRACT.md. */
   detail?: Record<string, unknown>;
 }
-
-/** ADR-052: co-op (everyone wins or nobody does) or teams (`winner` null = a draw). */
-export type GameOutcome =
-  | { kind: 'coop'; won: boolean }
-  | {
-      kind: 'teams';
-      winner: string | null;
-      /** `mark` (▲ / ●) goes with the name, so a team never rests on colour alone. `color` is the
-       *  game's own colour for the team (a CSS colour or token, e.g. 'var(--pb-info)'): the shell
-       *  heads the team's group and tints the winner's headline with it (ADR-052). */
-      teams: { id: string; name: string; mark?: string; color?: string; members: string[] }[];
-    };
 
 /** One extra file a recap writes next to `recap.md` (a drawing as SVG, a CSV). */
 export interface RecapFile {

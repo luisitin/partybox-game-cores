@@ -17,7 +17,7 @@ export interface GameDefinition<
   manifest: GameManifest; // must deep-equal games/<id>/manifest.json (contract test)
   phases: readonly string[]; // every phase id, in typical order; each needs fixtures/<id>.json
   inputSchema: z.ZodType<I>; // validated at the socket BEFORE reduce sees the input
-  init(ctx: InitContext): S; // { players, settings, seed, now, presence?, contentLang?, minigame? } — minigame (ADR-087): set when a board game runs the game as a minigame, see "Minigame mode" below; presence (ADR-047): { mode: 'together' | 'remote-voice' | 'remote-text', phoneOnly }, fixed for the game; absent = together with a TV. contentLang (ADR-054): 'en' | 'es', the language of the game's deck, bot lines, reader and matcher, fixed for the game; absent = 'en'. On the client, a deck rendered there reads the pushed view's `contentLang` (the running game's), never `room.contentLang` (the next game's)
+  init(ctx: InitContext): S; // { players, settings, seed, now, presence?, botSkill?, contentLang?, minigame? } — botSkill (ADR-104): 'easy' | 'sharp', the room's bot skill when the game started, fixed for the game; absent = normal; minigame (ADR-087): set when a board game runs the game as a minigame, see "Minigame mode" below; presence (ADR-047): { mode: 'together' | 'remote-voice' | 'remote-text', phoneOnly }, fixed for the game; absent = together with a TV. contentLang (ADR-054): 'en' | 'es', the language of the game's deck, bot lines, reader and matcher, fixed for the game; absent = 'en'. On the client, a deck rendered there reads the pushed view's `contentLang` (the running game's), never `room.contentLang` (the next game's)
   reduce(state: S, event: GameEvent<I>): S; // PURE + TOTAL — never throws
   tvView(state: S): TV; // JSON; identical for every TV
   controllerView(state: S, playerId: string): CV; // JSON; per player
@@ -132,9 +132,11 @@ For classic board games, a manifest may declare `unlimitedDuration: true` (ADR-0
 ## Pausing
 
 On `vip.pause` the shared helper stores `phase.paused = { at: now }`; on `resume` it shifts `deadline` by
-the paused duration and clears `paused`. While paused, ignore inputs and timers (the helper does this for you).
+the paused duration and clears `paused`. While paused, ignore inputs and timers (the helper does this for you), except the inputs `composeReduce`'s `whilePaused` takes: a card-style sheet or settings menu closed on a phone, which the resume must see (T-0774).
+A VIP skip into a phase with the same id starts a new instance (`phaseAt` changes), so its countdown restarts (ADR-097). A skip while paused that moves the same instance on to a beat names it with `phase.beatAt` (the skip time, ADR-101), so `phaseAt` changes and a resume keeps it. A pause never re-stamps a phase, a minigame included.
 A game with clocks of its own (a secret pop time, a day's bot beats) moves them by the same amount on
 resume: `pausedFor(state, now)` before `applyVip`, then `shiftClocks(obj, ['popAt'], ms)` (unset ones stay).
+A VIP skip sent while paused runs the resume first (the whole reduce: `prepare`, the unpause, `afterVip`), then the skip, so paused time never counts as play; a resume that already moved the phase on leaves the skip nothing (T-0784).
 The VIP's phone sends `pause` itself when it opens the ★ menu and `resume` when it closes (T-0538, D-074), but only
 while the view shows a clock (`deadline` set): a game with nothing counting down is left running. So a view's
 `deadline` means "a clock the people can see runs"; don't set it for a hidden fallback. The hold lives in the
@@ -172,12 +174,16 @@ the game must still work on its own. The opening film plays after the pick, with
 Both views share the envelope; the shells render it (timer, player chips, VIP overlay) and hand the whole
 view to your components.
 
+A view may name its own countdown with the envelope's `deadline` and `phaseAt` options (docs/sdk/views.md). A phase that re-arms a short beat inside a longer round passes the round's end, so the shells count the round and not the beat. The `phaseAt` it passes must hold through a pause: pass a stamp taken at the round's (or the stage's) start, never its end, since a resume moves the end on.
+
 ```ts
 interface ViewEnvelope {
   gameId: string;
   phaseId: string;
   deadline: number | null;
   paused: boolean;
+  clockHeldAt?: number; // server hold time while paused, including for late/reloaded screens (ADR-096)
+  phaseAt: number; // the view's phaseAt option (T-0833), else phase.beatAt (ADR-101), else phase.startedAt: with phaseId it names the phase instance; a resume keeps it, a new phase, a same-id skip or a beat skipped into while paused changes it (ADR-097)
   players: ViewPlayer[]; // { id, name, avatarId, connected, status, score? }  status: 'active' | 'submitted' | 'waiting' | 'spectator'
   timerMode?: 'normal' | 'quiet' | 'hidden'; // ADR-030: quiet = bar only (a rhythm, not a countdown); hidden = nothing
   screen?: string; // T-0147: a new screen inside one phase id (a reveal per card: `card ${i}`); the phone's screen reader says a screen when phaseId or this changes. Leave it out for a phase that restarts on a rhythm (a bingo call)
@@ -218,7 +224,8 @@ interface GameResults {
   headline?: string;
   // T-0208, optional: a smaller line under the headline, English, translated like headline: why the
   // winner won when the rules decided ("Tie-break: the quickest to spot the imposter"); the headline
-  // stays the shell's "Ana wins!"
+  // stays the shell's "Ana wins!". On a board nobody scored a note replaces the shell's "The game
+  // ended before anyone could." (TV and phone alike): a game with its own line says why there.
   headlineNote?: string;
   // T-0196, optional: a player's own results-phone line in place of the shell's ("Level on points:
   // Sam spotted the imposter quicker."), English, translated like headline
@@ -226,6 +233,9 @@ interface GameResults {
   // T-0257: short labels under a player's name on the results board, TV and phone (English, each
   // translated like headline): a hidden role revealed, a power used
   tags?: Record<string, string[]>;
+  // T-0866, optional: the unit of `scores` and `ranking` when it is not points: 'ms' is milliseconds,
+  // shown as seconds on the boards ("30.0 s"). Ranks and ties still compare the raw numbers.
+  scoreUnit?: 'ms';
   // T-0496, optional: public end-state the TV's outro film shows beyond the scoreboard (small JSON).
   // Keys by game: clue { solution: {suspect, weapon, room}, winner: suspectId | null }; nightfall
   // { day, seats: { [playerId]: { role, alive } } }; secret-hitler { liberal, fascist } (policies
@@ -333,7 +343,7 @@ shape: a save from another version is refused, not migrated.
 
 ### Minigame mode (`manifest.minigame`, ADR-087)
 
-A manifest `minigame` block (`modes` of `ffa` | `2v2` | `1v3` | `duel`, `seconds` 20-90, `settings`, `controls`, `howTo`, optional `practice`, optional `teamScore: "sum"`) lets a board game (Party World) run the game as one round. `init` then gets `ctx.minigame` (`mode`, `teams`, `seconds`) and `ctx.settings` is the defaults plus `minigame.settings`; a team mode ends with a winning side. The wrapper, its screens and the contract test: [docs/sdk/minigame.md](sdk/minigame.md).
+A manifest `minigame` block (`modes` of `ffa` | `2v2` | `1v3` | `duel`, `seconds` 20-180, `settings`, `controls`, `howTo`, optional `practice`, optional `teamScore: "sum"`, optional `category: "boss"`, optional `jamboreeOnly: true`) lets a board game (Party World) run the game as one round. `init` then gets `ctx.minigame` (`mode`, `teams`, `seconds`) and `ctx.settings` is the defaults plus `minigame.settings`; a team mode ends with a winning side. The wrapper, its screens and the contract test: [docs/sdk/minigame.md](sdk/minigame.md). Every game with this block belongs exclusively to the Party World picker family, alongside the whole Party World modes; Classics uses its complement (ADR-091, amended 2026-10-08). `jamboreeOnly` remains engine metadata, not the shelf filter.
 
 ### Bots (`manifest.supportsBots`)
 
@@ -343,8 +353,12 @@ add bot seats from the lobby and they will play with your bot logic. Without the
 start your game while bots are in the room. When you set it, make the bot an honest opponent: it acts in
 every input phase, its inputs vary (the contract suite fails a bot that always sends the same input), and it
 never needs information a phone would not have. Bots are never VIP and count toward `minPlayers`/`maxPlayers`.
+A `null` is a sit-out, not an end: the runner asks the bot again after a beat (300–1200 ms), so a random sampler is
+safe. It rolls once to decide and once more to act (`packages/server/src/bots.ts`), so a roll of `p` taps about `p²` of beats.
 `skill` (ADR-059) is how well the room's bots play — `easy`, `normal` or `sharp`, the VIP's choice; absent
 means `normal`. Reading it is optional; if your bot does, keep `normal` exactly the bot it was.
+The VIP cannot change it mid-game, so `init` also gets it as `ctx.botSkill` (`easy` or `sharp`; absent = normal, ADR-104):
+a game that shows what level its bots play at (a seat label) keeps it in state; `sampleInput`'s `skill` stays the live value.
 
 **Smarter bots (ADR-068, optional).** `bot.llm = { ask(state, playerId), answer(state, playerId, reply) }`
 lets a host that runs a language model (`PARTYBOX_LLM_BOTS`) play a bot's turn with it. Both are pure:
@@ -458,7 +472,7 @@ server writes renders through `L.sent(text)` (the table's exact entry, or a `{pl
 matches it). The manifest's own sentences (tagline, description, how-to-play, setting labels) go in
 `manifest.es.json` next to it: the host serves them to the picker, About and the settings form, so the
 picker never loads game code (ADR-049). `scripts/i18n-coverage.test.ts` fails until each has its
-Spanish. Content stays as written.
+Spanish (an English-only `jamboree` game is exempt, D-093). Content stays as written.
 
 ## Worked example — the template game (`games/_template`)
 
