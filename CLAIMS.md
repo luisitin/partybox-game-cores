@@ -8,3 +8,14 @@ G06 2026-10-09T10:22:18Z codex-spades-audit-20261009
 G07 2026-10-09T10:51:30Z codex-dice-queue-audit-20261009
 G08 2026-10-09T05:18:37Z codex-shake-audit-20261009
 G09 2026-10-09T05:33:07Z codex-category-audit-20261009
+
+G01 DONE consumed by pb T-0316
+G02 DONE consumed by pb T-0319
+G03 DONE consumed by pb T-0566
+G04 DONE consumed by pb T-0577
+G05 DONE consumed by pb T-0795
+G06 DONE pb T-0793 merged
+G07 DONE consumed by pb T-0713
+G08 DONE pb T-0617 merged
+G09 DONE pb T-0794 merged
+G10 DONE dropped, 1.4 GB and endgame db licence unverified
